@@ -1,0 +1,20 @@
+configVersion: 1.0.0
+generation:
+  comments:
+    disableComments: false
+    omitDescriptionIfSummaryPresent: false
+  baseServerURL: ""
+  flattenGlobalSecurity: true
+  repoURL: https://github.com/unified-to/unified-typescript-sdk.git
+  sdkClassName: Unified-to
+  singleTagPerOp: false
+  tagNamespacingDisabled: false
+  usageSnippets:
+    optionalPropertyRendering: withExample
+ruby:
+  version: 0.0.1
+  author: Unified API Inc
+  description: Ruby Client SDK for Unified.to
+  maxMethodParams: 4
+  module: OpenApiSdk
+  packageName: Unified-ruby-sdk
