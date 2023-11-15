@@ -11,6 +11,12 @@ generation:
   tagNamespacingDisabled: false
   usageSnippets:
     optionalPropertyRendering: withExample
+csharp:
+  version: 0.0.1
+  author: Unified API Inc
+  dotnetVersion: net5.0
+  maxMethodParams: 4
+  packageName: Unified-csharp-sdk
 ruby:
   version: 0.0.1
   author: Unified API Inc
