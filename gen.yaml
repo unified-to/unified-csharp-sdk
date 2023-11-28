@@ -2,7 +2,7 @@ configVersion: 1.0.0
 generation:
   comments: {}
   sdkClassName: Unified-to
-  repoURL: https://github.com/unified-to/unified-go-sdk.git
+  repoURL: https://github.com/unified-to/unified-python-sdk.git
   usageSnippets:
     optionalPropertyRendering: withExample
   baseServerURL: ""
