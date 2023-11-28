@@ -1,21 +1,27 @@
 configVersion: 1.0.0
 generation:
-  comments:
-    disableComments: false
-    omitDescriptionIfSummaryPresent: false
-  baseServerURL: ""
-  flattenGlobalSecurity: true
-  repoURL: https://github.com/unified-to/unified-typescript-sdk.git
+  comments: {}
   sdkClassName: Unified-to
-  singleTagPerOp: false
-  tagNamespacingDisabled: false
+  repoURL: https://github.com/unified-to/unified-go-sdk.git
   usageSnippets:
     optionalPropertyRendering: withExample
+  baseServerURL: ""
+  flattenGlobalSecurity: true
 csharp:
   version: 0.0.1
   author: Unified API Inc
   dotnetVersion: net5.0
+  imports:
+    option: openapi
+    paths:
+      callbacks: Models/Callbacks
+      errors: Models/Errors
+      operations: Models/Requests
+      shared: Models/Components
+      webhooks: Models/Webhooks
+  inputModelSuffix: input
   maxMethodParams: 4
+  outputModelSuffix: output
   packageName: Unified-csharp-sdk
 ruby:
   version: 0.0.1
