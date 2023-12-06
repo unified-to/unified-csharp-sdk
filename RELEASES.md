@@ -7,3 +7,11 @@ Based on:
 - Speakeasy CLI 1.124.1 (2.205.0) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [csharp v0.1.0] .
+
+## 2023-12-06 15:36:56
+### Changes
+Based on:
+- OpenAPI Doc 1.0 
+- Speakeasy CLI 1.125.2 (2.210.6) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.1.1] .

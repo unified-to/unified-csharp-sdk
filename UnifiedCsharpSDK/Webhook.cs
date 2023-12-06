@@ -27,7 +27,7 @@ namespace UnifiedCsharpSDK
         /// Create webhook subscription
         /// 
         /// <remarks>
-        /// To maintain compatibility with the webhooks specification and Zapier webhooks, only the hook_url field is required in the payload when creating a Webhook.  When updated/new objects are found, the array of objects will be POSTed to the hook_url with the paramater hookId=&lt;hookId&gt;.
+        /// To maintain compatibility with the webhooks specification and Zapier webhooks, only the hook_url field is required in the payload when creating a Webhook.  When updated/new objects are found, the array of objects will be POSTed to the hook_url with the paramater hookId=&lt;hookId&gt;. The data payload received by your server is described at https://docs.unified.to/unified/overview
         /// </remarks>
         /// </summary>
         Task<CreateUnifiedWebhookResponse> CreateUnifiedWebhookAsync(string connectionId, string objectP, Models.Components.Webhook? webhook = null, List<Events>? events = null);
@@ -52,10 +52,10 @@ namespace UnifiedCsharpSDK
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.1.0";
-        private const string _sdkGenVersion = "2.205.0";
+        private const string _sdkVersion = "0.1.1";
+        private const string _sdkGenVersion = "2.210.6";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.1.0 2.205.0 1.0 Unified-csharp-sdk";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.1.1 2.210.6 1.0 Unified-csharp-sdk";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
