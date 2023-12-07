@@ -38,6 +38,9 @@ namespace UnifiedCsharpSDK.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonProperty("cursors_cache")]
+        public List<Undefined>? CursorsCache { get; set; }
+
         [JsonProperty("environment")]
         public string? Environment { get; set; }
 
@@ -52,6 +55,12 @@ namespace UnifiedCsharpSDK.Models.Components
 
         [JsonProperty("is_paused")]
         public bool? IsPaused { get; set; }
+
+        [JsonProperty("last_healthy_at")]
+        public DateTime? LastHealthyAt { get; set; }
+
+        [JsonProperty("last_unhealthy_at")]
+        public DateTime? LastUnhealthyAt { get; set; }
 
         [JsonProperty("permissions")]
         public List<PropertyConnectionPermissions> Permissions { get; set; } = default!;

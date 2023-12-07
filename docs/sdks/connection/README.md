@@ -39,6 +39,9 @@ Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Accounting,
     },
+    CursorsCache = new List<Undefined>() {
+        new Undefined() {},
+    },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
         PropertyConnectionPermissions.AtsDocumentWrite,
@@ -165,6 +168,9 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(Id: "string", Connect
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Martech,
     },
+    CursorsCache = new List<Undefined>() {
+        new Undefined() {},
+    },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
         PropertyConnectionPermissions.MartechListRead,
@@ -249,6 +255,9 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(Id: "string", Connec
     },
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Ticketing,
+    },
+    CursorsCache = new List<Undefined>() {
+        new Undefined() {},
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
