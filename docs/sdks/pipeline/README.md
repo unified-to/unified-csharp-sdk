@@ -23,7 +23,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Pipeline.CreateCrmPipelineAsync(ConnectionId: "string", CrmPipeline: new CrmPipeline() {
@@ -60,7 +60,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Pipeline.GetCrmPipelineAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
@@ -98,7 +98,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 ListCrmPipelinesRequest req = new ListCrmPipelinesRequest() {
@@ -138,7 +138,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Pipeline.PatchCrmPipelineAsync(ConnectionId: "string", Id: "string", CrmPipeline: new CrmPipeline() {
@@ -175,7 +175,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Pipeline.RemoveCrmPipelineAsync(ConnectionId: "string", Id: "string");
@@ -209,7 +209,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Pipeline.UpdateCrmPipelineAsync(ConnectionId: "string", Id: "string", CrmPipeline: new CrmPipeline() {

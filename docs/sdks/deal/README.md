@@ -24,7 +24,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Deal.CreateCrmDealAsync(ConnectionId: "string", CrmDeal: new CrmDeal() {
@@ -64,7 +64,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Deal.GetCrmDealAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
@@ -102,7 +102,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 ListCrmDealsRequest req = new ListCrmDealsRequest() {
@@ -143,7 +143,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Deal.PatchCrmDealAsync(ConnectionId: "string", Id: "string", CrmDeal: new CrmDeal() {
@@ -183,7 +183,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Deal.RemoveCrmDealAsync(ConnectionId: "string", Id: "string");
@@ -218,7 +218,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Deal.UpdateCrmDealAsync(ConnectionId: "string", Id: "string", CrmDeal: new CrmDeal() {

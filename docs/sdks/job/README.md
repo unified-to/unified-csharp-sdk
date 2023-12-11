@@ -24,7 +24,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Job.CreateAtsJobAsync(ConnectionId: "string", AtsJob: new AtsJob() {
@@ -81,7 +81,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Job.GetAtsJobAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
@@ -119,7 +119,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 ListAtsJobsRequest req = new ListAtsJobsRequest() {
@@ -160,7 +160,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Job.PatchAtsJobAsync(ConnectionId: "string", Id: "string", AtsJob: new AtsJob() {
@@ -217,7 +217,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Job.RemoveAtsJobAsync(ConnectionId: "string", Id: "string");
@@ -252,7 +252,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Job.UpdateAtsJobAsync(ConnectionId: "string", Id: "string", AtsJob: new AtsJob() {

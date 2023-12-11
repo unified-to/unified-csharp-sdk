@@ -25,7 +25,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Uc.CreateUcContactAsync(ConnectionId: "string", UcContact: new UcContact() {
@@ -72,7 +72,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Uc.GetUcContactAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
@@ -110,7 +110,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 ListUcCallsRequest req = new ListUcCallsRequest() {
@@ -151,7 +151,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 ListUcContactsRequest req = new ListUcContactsRequest() {
@@ -192,7 +192,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Uc.PatchUcContactAsync(ConnectionId: "string", Id: "string", UcContact: new UcContact() {
@@ -239,7 +239,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Uc.RemoveUcContactAsync(ConnectionId: "string", Id: "string");
@@ -274,7 +274,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Uc.UpdateUcContactAsync(ConnectionId: "string", Id: "string", UcContact: new UcContact() {

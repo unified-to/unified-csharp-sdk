@@ -30,7 +30,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Hris.CreateHrisEmployeeAsync(ConnectionId: "string", HrisEmployee: new HrisEmployee() {
@@ -78,7 +78,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Hris.CreateHrisGroupAsync(ConnectionId: "string", HrisGroup: new HrisGroup() {
@@ -121,7 +121,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Hris.GetHrisEmployeeAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
@@ -159,7 +159,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Hris.GetHrisGroupAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
@@ -197,7 +197,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 ListHrisEmployeesRequest req = new ListHrisEmployeesRequest() {
@@ -238,7 +238,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 ListHrisGroupsRequest req = new ListHrisGroupsRequest() {
@@ -279,7 +279,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Hris.PatchHrisEmployeeAsync(ConnectionId: "string", Id: "string", HrisEmployee: new HrisEmployee() {
@@ -328,7 +328,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Hris.PatchHrisGroupAsync(ConnectionId: "string", Id: "string", HrisGroup: new HrisGroup() {
@@ -371,7 +371,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Hris.RemoveHrisEmployeeAsync(ConnectionId: "string", Id: "string");
@@ -405,7 +405,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Hris.RemoveHrisGroupAsync(ConnectionId: "string", Id: "string");
@@ -440,7 +440,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Hris.UpdateHrisEmployeeAsync(ConnectionId: "string", Id: "string", HrisEmployee: new HrisEmployee() {
@@ -489,7 +489,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Hris.UpdateHrisGroupAsync(ConnectionId: "string", Id: "string", HrisGroup: new HrisGroup() {

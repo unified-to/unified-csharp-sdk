@@ -22,7 +22,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Passthrough.CreatePassthroughAsync(ConnectionId: "string", Path: "string", Undefined: new Undefined() {});
@@ -57,7 +57,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Passthrough.ListPassthroughsAsync(ConnectionId: "string", Path: "string");
@@ -91,7 +91,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Passthrough.PatchPassthroughAsync(ConnectionId: "string", Path: "string", Undefined: new Undefined() {});
@@ -126,7 +126,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Passthrough.RemovePassthroughAsync(ConnectionId: "string", Path: "string");
@@ -160,7 +160,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Passthrough.UpdatePassthroughAsync(ConnectionId: "string", Path: "string", Undefined: new Undefined() {});

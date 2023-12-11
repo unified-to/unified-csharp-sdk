@@ -22,7 +22,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Webhook.CreateUnifiedWebhookAsync(ConnectionId: "string", Object: "string", Webhook: new Models.Components.Webhook() {
@@ -73,7 +73,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Webhook.GetUnifiedWebhookAsync(Id: "string");
@@ -106,7 +106,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 ListUnifiedWebhooksRequest req = new ListUnifiedWebhooksRequest() {};
@@ -141,7 +141,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Webhook.RemoveUnifiedWebhookAsync(Id: "string");

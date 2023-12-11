@@ -16,6 +16,6 @@ namespace UnifiedCsharpSDK.Models.Components
     {
 
         [SpeakeasyMetadata("security:scheme=true,type=apiKey,subType=header,name=authorization")]
-        public string Jwt { get; set; } = default!;
+        public string? Jwt { get; set; }
     }
 }

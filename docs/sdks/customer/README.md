@@ -30,7 +30,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Customer.CreateAccountingCustomerAsync(ConnectionId: "string", AccountingCustomer: new AccountingCustomer() {
@@ -79,7 +79,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Customer.CreateTicketingCustomerAsync(ConnectionId: "string", TicketingCustomer: new TicketingCustomer() {
@@ -129,7 +129,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Customer.GetAccountingCustomerAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
@@ -167,7 +167,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Customer.GetTicketingCustomerAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
@@ -205,7 +205,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 ListAccountingCustomersRequest req = new ListAccountingCustomersRequest() {
@@ -246,7 +246,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 ListTicketingCustomersRequest req = new ListTicketingCustomersRequest() {
@@ -287,7 +287,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Customer.PatchAccountingCustomerAsync(ConnectionId: "string", Id: "string", AccountingCustomer: new AccountingCustomer() {
@@ -337,7 +337,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Customer.PatchTicketingCustomerAsync(ConnectionId: "string", Id: "string", TicketingCustomer: new TicketingCustomer() {
@@ -387,7 +387,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Customer.RemoveAccountingCustomerAsync(ConnectionId: "string", Id: "string");
@@ -421,7 +421,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Customer.RemoveTicketingCustomerAsync(ConnectionId: "string", Id: "string");
@@ -456,7 +456,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Customer.UpdateAccountingCustomerAsync(ConnectionId: "string", Id: "string", AccountingCustomer: new AccountingCustomer() {
@@ -506,7 +506,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Customer.UpdateTicketingCustomerAsync(ConnectionId: "string", Id: "string", TicketingCustomer: new TicketingCustomer() {

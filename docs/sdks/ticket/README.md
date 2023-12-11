@@ -24,7 +24,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Ticket.CreateTicketingTicketAsync(ConnectionId: "string", TicketingTicket: new TicketingTicket() {
@@ -64,7 +64,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Ticket.GetTicketingTicketAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
@@ -102,7 +102,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 ListTicketingTicketsRequest req = new ListTicketingTicketsRequest() {
@@ -143,7 +143,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Ticket.PatchTicketingTicketAsync(ConnectionId: "string", Id: "string", TicketingTicket: new TicketingTicket() {
@@ -183,7 +183,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Ticket.RemoveTicketingTicketAsync(ConnectionId: "string", Id: "string");
@@ -218,7 +218,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Ticket.UpdateTicketingTicketAsync(ConnectionId: "string", Id: "string", TicketingTicket: new TicketingTicket() {

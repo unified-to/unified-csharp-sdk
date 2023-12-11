@@ -23,7 +23,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 Models.Components.Connection req = new Models.Components.Connection() {
@@ -78,7 +78,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Connection.GetUnifiedConnectionAsync(Id: "string");
@@ -112,7 +112,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 ListUnifiedConnectionsRequest req = new ListUnifiedConnectionsRequest() {
@@ -152,7 +152,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Connection.PatchUnifiedConnectionAsync(Id: "string", Connection: new Models.Components.Connection() {
@@ -206,7 +206,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Connection.RemoveUnifiedConnectionAsync(Id: "string");
@@ -240,7 +240,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Connection.UpdateUnifiedConnectionAsync(Id: "string", Connection: new Models.Components.Connection() {

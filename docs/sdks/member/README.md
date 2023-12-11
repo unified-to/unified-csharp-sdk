@@ -24,7 +24,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Member.CreateMartechMemberAsync(ConnectionId: "string", MarketingMember: new MarketingMember() {
@@ -72,7 +72,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Member.GetMartechMemberAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
@@ -110,7 +110,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 ListMartechMembersRequest req = new ListMartechMembersRequest() {
@@ -151,7 +151,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Member.PatchMartechMemberAsync(ConnectionId: "string", Id: "string", MarketingMember: new MarketingMember() {
@@ -199,7 +199,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Member.RemoveMartechMemberAsync(ConnectionId: "string", Id: "string");
@@ -234,7 +234,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Member.UpdateMartechMemberAsync(ConnectionId: "string", Id: "string", MarketingMember: new MarketingMember() {

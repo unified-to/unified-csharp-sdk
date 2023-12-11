@@ -24,7 +24,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Event.CreateCrmEventAsync(ConnectionId: "string", CrmEvent: new CrmEvent() {
@@ -85,7 +85,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Event.GetCrmEventAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
@@ -123,7 +123,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 ListCrmEventsRequest req = new ListCrmEventsRequest() {
@@ -164,7 +164,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Event.PatchCrmEventAsync(ConnectionId: "string", Id: "string", CrmEvent: new CrmEvent() {
@@ -225,7 +225,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Event.RemoveCrmEventAsync(ConnectionId: "string", Id: "string");
@@ -260,7 +260,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Event.UpdateCrmEventAsync(ConnectionId: "string", Id: "string", CrmEvent: new CrmEvent() {

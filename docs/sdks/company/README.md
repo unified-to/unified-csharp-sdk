@@ -25,7 +25,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Company.CreateCrmCompanyAsync(ConnectionId: "string", CrmCompany: new CrmCompany() {
@@ -80,7 +80,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Company.GetCrmCompanyAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
@@ -118,7 +118,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 ListCrmCompaniesRequest req = new ListCrmCompaniesRequest() {
@@ -158,7 +158,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Company.ListEnrichCompaniesAsync(ConnectionId: "string", Domain: "string", Name: "string");
@@ -194,7 +194,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Company.PatchCrmCompanyAsync(ConnectionId: "string", Id: "string", CrmCompany: new CrmCompany() {
@@ -249,7 +249,7 @@ using UnifiedCsharpSDK.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Company.RemoveCrmCompanyAsync(ConnectionId: "string", Id: "string");
@@ -284,7 +284,7 @@ using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
-        Jwt = "",
+        Jwt = "<YOUR_API_KEY_HERE>",
     });
 
 var res = await sdk.Company.UpdateCrmCompanyAsync(ConnectionId: "string", Id: "string", CrmCompany: new CrmCompany() {
