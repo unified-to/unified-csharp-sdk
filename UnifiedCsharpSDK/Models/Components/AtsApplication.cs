@@ -25,6 +25,9 @@ namespace UnifiedCsharpSDK.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonProperty("hired_at")]
+        public DateTime? HiredAt { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
