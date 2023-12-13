@@ -16,6 +16,7 @@
 * [GetAtsJob](#getatsjob) - Retrieve a job
 * [GetAtsScorecard](#getatsscorecard) - Retrieve a scorecard
 * [ListAtsApplications](#listatsapplications) - List all applications
+* [ListAtsApplicationstatuses](#listatsapplicationstatuses) - List all application statuss
 * [ListAtsCandidates](#listatscandidates) - List all candidates
 * [ListAtsDocuments](#listatsdocuments) - List all documents
 * [ListAtsInterviews](#listatsinterviews) - List all interviews
@@ -566,6 +567,47 @@ var res = await sdk.Ats.ListAtsApplicationsAsync(req);
 ### Response
 
 **[ListAtsApplicationsResponse](../../Models/Requests/ListAtsApplicationsResponse.md)**
+
+
+## ListAtsApplicationstatuses
+
+List all application statuss
+
+### Example Usage
+
+```csharp
+using UnifiedCsharpSDK;
+using UnifiedCsharpSDK.Models.Components;
+using UnifiedCsharpSDK.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedTo(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListAtsApplicationstatusesRequest req = new ListAtsApplicationstatusesRequest() {
+    ConnectionId = "string",
+    Fields = new List<string>() {
+        "string",
+    },
+};
+
+var res = await sdk.Ats.ListAtsApplicationstatusesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [ListAtsApplicationstatusesRequest](../../Models/Requests/ListAtsApplicationstatusesRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+
+
+### Response
+
+**[ListAtsApplicationstatusesResponse](../../Models/Requests/ListAtsApplicationstatusesResponse.md)**
 
 
 ## ListAtsCandidates

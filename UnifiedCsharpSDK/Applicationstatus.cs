@@ -10,27 +10,26 @@
 #nullable enable
 namespace UnifiedCsharpSDK
 {
+    using Newtonsoft.Json;
+    using System.Collections.Generic;
     using System.Net.Http.Headers;
     using System.Net.Http;
     using System.Threading.Tasks;
     using System;
+    using UnifiedCsharpSDK.Models.Components;
     using UnifiedCsharpSDK.Models.Requests;
     using UnifiedCsharpSDK.Utils;
 
-    public interface ILogin
+    public interface IApplicationstatus
     {
 
         /// <summary>
-        /// Sign in a user
-        /// 
-        /// <remarks>
-        /// Returns an authentication URL for the specified integration.  Once a successful authentication occurs, the name and emails are returned.
-        /// </remarks>
+        /// List all application statuss
         /// </summary>
-        Task<GetUnifiedIntegrationLoginResponse> GetUnifiedIntegrationLoginAsync(GetUnifiedIntegrationLoginRequest? request = null);
+        Task<ListAtsApplicationstatusesResponse> ListAtsApplicationstatusesAsync(ListAtsApplicationstatusesRequest? request = null);
     }
 
-    public class Login: ILogin
+    public class Applicationstatus: IApplicationstatus
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
@@ -42,7 +41,7 @@ namespace UnifiedCsharpSDK
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
 
-        public Login(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
+        public Applicationstatus(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
             _securityClient = securityClient;
@@ -51,10 +50,10 @@ namespace UnifiedCsharpSDK
         }
         
 
-        public async Task<GetUnifiedIntegrationLoginResponse> GetUnifiedIntegrationLoginAsync(GetUnifiedIntegrationLoginRequest? request = null)
+        public async Task<ListAtsApplicationstatusesResponse> ListAtsApplicationstatusesAsync(ListAtsApplicationstatusesRequest? request = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/integration/login/{workspace_id}/{integration_type}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/applicationstatus", request);
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
@@ -66,7 +65,7 @@ namespace UnifiedCsharpSDK
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new GetUnifiedIntegrationLoginResponse
+            var response = new ListAtsApplicationstatusesResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -75,9 +74,9 @@ namespace UnifiedCsharpSDK
             
             if((response.StatusCode == 200))
             {
-                if(Utilities.IsContentTypeMatch("text/plain",response.ContentType))
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.Res = await httpResponse.Content.ReadAsStringAsync();
+                    response.AtsStatuses = JsonConvert.DeserializeObject<List<AtsStatus>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;

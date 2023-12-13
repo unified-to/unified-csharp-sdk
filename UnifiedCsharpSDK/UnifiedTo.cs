@@ -33,6 +33,7 @@ namespace UnifiedCsharpSDK
         public ITransaction Transaction { get; }
         public IAts Ats { get; }
         public IApplication Application { get; }
+        public IApplicationstatus Applicationstatus { get; }
         public ICandidate Candidate { get; }
         public IDocument Document { get; }
         public IInterview Interview { get; }
@@ -98,10 +99,10 @@ namespace UnifiedCsharpSDK
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.1";
+        private const string _sdkVersion = "0.2.2";
         private const string _sdkGenVersion = "2.214.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.2.1 2.214.3 1.0 Unified-csharp-sdk";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.2.2 2.214.3 1.0 Unified-csharp-sdk";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -113,6 +114,7 @@ namespace UnifiedCsharpSDK
         public ITransaction Transaction { get; private set; }
         public IAts Ats { get; private set; }
         public IApplication Application { get; private set; }
+        public IApplicationstatus Applicationstatus { get; private set; }
         public ICandidate Candidate { get; private set; }
         public IDocument Document { get; private set; }
         public IInterview Interview { get; private set; }
@@ -178,6 +180,7 @@ namespace UnifiedCsharpSDK
             Transaction = new Transaction(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Ats = new Ats(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Application = new Application(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            Applicationstatus = new Applicationstatus(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Candidate = new Candidate(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Document = new Document(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Interview = new Interview(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);

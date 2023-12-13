@@ -6,6 +6,7 @@ UnifiedCsharpSDK/Payment.cs
 UnifiedCsharpSDK/Transaction.cs
 UnifiedCsharpSDK/Ats.cs
 UnifiedCsharpSDK/Application.cs
+UnifiedCsharpSDK/Applicationstatus.cs
 UnifiedCsharpSDK/Candidate.cs
 UnifiedCsharpSDK/Document.cs
 UnifiedCsharpSDK/Interview.cs
@@ -153,6 +154,8 @@ UnifiedCsharpSDK/Models/Requests/GetAtsScorecardRequest.cs
 UnifiedCsharpSDK/Models/Requests/GetAtsScorecardResponse.cs
 UnifiedCsharpSDK/Models/Requests/ListAtsApplicationsRequest.cs
 UnifiedCsharpSDK/Models/Requests/ListAtsApplicationsResponse.cs
+UnifiedCsharpSDK/Models/Requests/ListAtsApplicationstatusesRequest.cs
+UnifiedCsharpSDK/Models/Requests/ListAtsApplicationstatusesResponse.cs
 UnifiedCsharpSDK/Models/Requests/ListAtsCandidatesRequest.cs
 UnifiedCsharpSDK/Models/Requests/ListAtsCandidatesResponse.cs
 UnifiedCsharpSDK/Models/Requests/ListAtsDocumentsRequest.cs
@@ -476,6 +479,9 @@ UnifiedCsharpSDK/Models/Components/AtsAddress.cs
 UnifiedCsharpSDK/Models/Components/Recommendation.cs
 UnifiedCsharpSDK/Models/Components/AtsScorecard.cs
 UnifiedCsharpSDK/Models/Components/PropertyAtsScorecardRaw.cs
+UnifiedCsharpSDK/Models/Components/AtsStatusStatus.cs
+UnifiedCsharpSDK/Models/Components/AtsStatus.cs
+UnifiedCsharpSDK/Models/Components/PropertyAtsStatusRaw.cs
 UnifiedCsharpSDK/Models/Components/CrmCompany.cs
 UnifiedCsharpSDK/Models/Components/CrmTelephoneType.cs
 UnifiedCsharpSDK/Models/Components/CrmTelephone.cs
@@ -667,6 +673,8 @@ docs/Models/Requests/GetAtsScorecardRequest.md
 docs/Models/Requests/GetAtsScorecardResponse.md
 docs/Models/Requests/ListAtsApplicationsRequest.md
 docs/Models/Requests/ListAtsApplicationsResponse.md
+docs/Models/Requests/ListAtsApplicationstatusesRequest.md
+docs/Models/Requests/ListAtsApplicationstatusesResponse.md
 docs/Models/Requests/ListAtsCandidatesRequest.md
 docs/Models/Requests/ListAtsCandidatesResponse.md
 docs/Models/Requests/ListAtsDocumentsRequest.md
@@ -990,6 +998,9 @@ docs/Models/Components/AtsAddress.md
 docs/Models/Components/Recommendation.md
 docs/Models/Components/AtsScorecard.md
 docs/Models/Components/PropertyAtsScorecardRaw.md
+docs/Models/Components/AtsStatusStatus.md
+docs/Models/Components/AtsStatus.md
+docs/Models/Components/PropertyAtsStatusRaw.md
 docs/Models/Components/CrmCompany.md
 docs/Models/Components/CrmTelephoneType.md
 docs/Models/Components/CrmTelephone.md
@@ -1092,6 +1103,7 @@ docs/sdks/payment/README.md
 docs/sdks/transaction/README.md
 docs/sdks/ats/README.md
 docs/sdks/application/README.md
+docs/sdks/applicationstatus/README.md
 docs/sdks/candidate/README.md
 docs/sdks/document/README.md
 docs/sdks/interview/README.md

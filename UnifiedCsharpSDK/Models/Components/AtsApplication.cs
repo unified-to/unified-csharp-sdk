@@ -34,6 +34,9 @@ namespace UnifiedCsharpSDK.Models.Components
         [JsonProperty("job_id")]
         public string? JobId { get; set; }
 
+        [JsonProperty("original_status")]
+        public string? OriginalStatus { get; set; }
+
         [JsonProperty("raw")]
         public PropertyAtsApplicationRaw? Raw { get; set; }
 

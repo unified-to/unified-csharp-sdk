@@ -45,6 +45,8 @@ namespace UnifiedCsharpSDK.Models.Components
         AtsApplicationRead,
         [JsonProperty("ats_application_write")]
         AtsApplicationWrite,
+        [JsonProperty("ats_applicationstatus_read")]
+        AtsApplicationstatusRead,
         [JsonProperty("ats_candidate_read")]
         AtsCandidateRead,
         [JsonProperty("ats_candidate_write")]
