@@ -22,7 +22,7 @@ namespace UnifiedCsharpSDK.Models.Components
         public string? Id { get; set; }
 
         [JsonProperty("original_status")]
-        public string OriginalStatus { get; set; } = default!;
+        public string? OriginalStatus { get; set; }
 
         [JsonProperty("raw")]
         public PropertyAtsStatusRaw? Raw { get; set; }

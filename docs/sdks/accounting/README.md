@@ -63,7 +63,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(ConnectionId: "strin
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
-| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | A user's bank account                                             |
 
 
 ### Response
@@ -224,7 +224,6 @@ var res = await sdk.Accounting.CreateAccountingTransactionAsync(ConnectionId: "s
     Id = "<ID>",
     LineItems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
-            Id = "<ID>",
             TotalAmount = 4969.62D,
         },
     },
@@ -674,7 +673,7 @@ var res = await sdk.Accounting.PatchAccountingAccountAsync(ConnectionId: "string
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Account                                                 |
-| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | A user's bank account                                             |
 
 
 ### Response
@@ -838,7 +837,6 @@ var res = await sdk.Accounting.PatchAccountingTransactionAsync(ConnectionId: "st
     Id = "<ID>",
     LineItems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
-            Id = "<ID>",
             TotalAmount = 5633.69D,
         },
     },
@@ -1064,7 +1062,7 @@ var res = await sdk.Accounting.UpdateAccountingAccountAsync(ConnectionId: "strin
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Account                                                 |
-| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | A user's bank account                                             |
 
 
 ### Response
@@ -1228,7 +1226,6 @@ var res = await sdk.Accounting.UpdateAccountingTransactionAsync(ConnectionId: "s
     Id = "<ID>",
     LineItems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
-            Id = "<ID>",
             TotalAmount = 6498.37D,
         },
     },

@@ -13,6 +13,9 @@ namespace UnifiedCsharpSDK.Models.Components
     using Newtonsoft.Json;
     using System;
     
+    /// <summary>
+    /// A user&apos;s bank account
+    /// </summary>
     public class AccountingAccount
     {
 

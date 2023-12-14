@@ -22,7 +22,7 @@ namespace UnifiedCsharpSDK.Models.Components
         public string? Description { get; set; }
 
         [JsonProperty("id")]
-        public string Id { get; set; } = default!;
+        public string? Id { get; set; }
 
         [JsonProperty("invoice_id")]
         public string? InvoiceId { get; set; }

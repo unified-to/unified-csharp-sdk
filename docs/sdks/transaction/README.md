@@ -32,7 +32,6 @@ var res = await sdk.Transaction.CreateAccountingTransactionAsync(ConnectionId: "
     Id = "<ID>",
     LineItems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
-            Id = "<ID>",
             TotalAmount = 4969.62D,
         },
     },
@@ -158,7 +157,6 @@ var res = await sdk.Transaction.PatchAccountingTransactionAsync(ConnectionId: "s
     Id = "<ID>",
     LineItems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
-            Id = "<ID>",
             TotalAmount = 5633.69D,
         },
     },
@@ -240,7 +238,6 @@ var res = await sdk.Transaction.UpdateAccountingTransactionAsync(ConnectionId: "
     Id = "<ID>",
     LineItems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
-            Id = "<ID>",
             TotalAmount = 6498.37D,
         },
     },

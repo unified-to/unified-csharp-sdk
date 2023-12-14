@@ -7,7 +7,7 @@
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `CustomerId`       | *string*           | :heavy_minus_sign: | N/A                |
 | `Description`      | *string*           | :heavy_minus_sign: | N/A                |
-| `Id`               | *string*           | :heavy_check_mark: | N/A                |
+| `Id`               | *string*           | :heavy_minus_sign: | N/A                |
 | `InvoiceId`        | *string*           | :heavy_minus_sign: | N/A                |
 | `PaymentId`        | *string*           | :heavy_minus_sign: | N/A                |
 | `TaxAmount`        | *double*           | :heavy_minus_sign: | N/A                |
