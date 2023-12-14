@@ -47,6 +47,9 @@ namespace UnifiedCsharpSDK.Models.Components
         [JsonProperty("tax_exemption")]
         public TaxExemption? TaxExemption { get; set; }
 
+        [JsonProperty("tax_number")]
+        public string? TaxNumber { get; set; }
+
         [JsonProperty("telephones")]
         public List<AccountingTelephone>? Telephones { get; set; }
 
