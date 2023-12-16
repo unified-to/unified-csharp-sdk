@@ -93,20 +93,22 @@ var sdk = new UnifiedTo(
     });
 
 var res = await sdk.Unified.CreateUnifiedWebhookAsync(ConnectionId: "string", Object: "string", Webhook: new Models.Components.Webhook() {
-    ConnectionId = "string",
+    Event = Models.Components.Event.Created,
     Events = new List<PropertyWebhookEvents>() {
-        PropertyWebhookEvents.Created,
+        PropertyWebhookEvents.Updated,
     },
     HookUrl = "string",
-    IntegrationType = "string",
-    Interval = 188.12D,
-    ObjectType = ObjectType.CrmDeal,
+    Interval = 4583.16D,
+    Meta = new PropertyWebhookMeta() {},
+    ObjectType = ObjectType.HrisEmployee,
+    Runs = new List<string>() {
+        "string",
+    },
     Subscriptions = new List<string>() {
         "string",
     },
-    WorkspaceId = "string",
 }, Events: new List<Events>() {
-    Events.Created,
+    Events.Updated,
 });
 
 // handle response

@@ -562,8 +562,11 @@ UnifiedCsharpSDK/Models/Components/PropertyConnectionPermissions.cs
 UnifiedCsharpSDK/Models/Components/PropertyConnectionCategories.cs
 UnifiedCsharpSDK/Models/Components/PropertyConnectionAuth.cs
 UnifiedCsharpSDK/Models/Components/PropertyPropertyConnectionAuthMeta.cs
+UnifiedCsharpSDK/Models/Components/Event.cs
 UnifiedCsharpSDK/Models/Components/ObjectType.cs
+UnifiedCsharpSDK/Models/Components/WebhookWebhookType.cs
 UnifiedCsharpSDK/Models/Components/Webhook.cs
+UnifiedCsharpSDK/Models/Components/PropertyWebhookMeta.cs
 UnifiedCsharpSDK/Models/Components/PropertyWebhookEvents.cs
 UnifiedCsharpSDK/Models/Components/ApiCallType.cs
 UnifiedCsharpSDK/Models/Components/ApiCall.cs
@@ -1081,8 +1084,11 @@ docs/Models/Components/PropertyConnectionPermissions.md
 docs/Models/Components/PropertyConnectionCategories.md
 docs/Models/Components/PropertyConnectionAuth.md
 docs/Models/Components/PropertyPropertyConnectionAuthMeta.md
+docs/Models/Components/Event.md
 docs/Models/Components/ObjectType.md
+docs/Models/Components/WebhookWebhookType.md
 docs/Models/Components/Webhook.md
+docs/Models/Components/PropertyWebhookMeta.md
 docs/Models/Components/PropertyWebhookEvents.md
 docs/Models/Components/ApiCallType.md
 docs/Models/Components/ApiCall.md

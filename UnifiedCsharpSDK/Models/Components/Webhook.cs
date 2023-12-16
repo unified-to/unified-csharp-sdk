@@ -24,7 +24,7 @@ namespace UnifiedCsharpSDK.Models.Components
         public DateTime? CheckedAt { get; set; }
 
         [JsonProperty("connection_id")]
-        public string ConnectionId { get; set; } = default!;
+        public string? ConnectionId { get; set; }
 
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
@@ -32,8 +32,14 @@ namespace UnifiedCsharpSDK.Models.Components
         [JsonProperty("environment")]
         public string? Environment { get; set; }
 
+        [JsonProperty("event")]
+        public Models.Components.Event Event { get; set; } = default!;
+
         [JsonProperty("events")]
         public List<PropertyWebhookEvents> Events { get; set; } = default!;
+
+        [JsonProperty("fields")]
+        public string? Fields { get; set; }
 
         [JsonProperty("hook_url")]
         public string HookUrl { get; set; } = default!;
@@ -45,13 +51,22 @@ namespace UnifiedCsharpSDK.Models.Components
         public bool? IncludeRaw { get; set; }
 
         [JsonProperty("integration_type")]
-        public string IntegrationType { get; set; } = default!;
+        public string? IntegrationType { get; set; }
 
         [JsonProperty("interval")]
         public double Interval { get; set; } = default!;
 
+        [JsonProperty("meta")]
+        public PropertyWebhookMeta? Meta { get; set; }
+
         [JsonProperty("object_type")]
         public ObjectType ObjectType { get; set; } = default!;
+
+        /// <summary>
+        /// An array of the most revent virtual webhook runs
+        /// </summary>
+        [JsonProperty("runs")]
+        public List<string>? Runs { get; set; }
 
         /// <summary>
         /// integration-specific subscriptions IDs
@@ -62,7 +77,10 @@ namespace UnifiedCsharpSDK.Models.Components
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        [JsonProperty("webhook_type")]
+        public WebhookWebhookType? WebhookType { get; set; }
+
         [JsonProperty("workspace_id")]
-        public string WorkspaceId { get; set; } = default!;
+        public string? WorkspaceId { get; set; }
     }
 }
