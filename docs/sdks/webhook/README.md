@@ -33,7 +33,7 @@ var res = await sdk.Webhook.CreateUnifiedWebhookAsync(ConnectionId: "string", Ob
     HookUrl = "string",
     Interval = 4583.16D,
     Meta = new PropertyWebhookMeta() {},
-    ObjectType = ObjectType.HrisEmployee,
+    ObjectType = ObjectType.CrmPipeline,
     Runs = new List<string>() {
         "string",
     },

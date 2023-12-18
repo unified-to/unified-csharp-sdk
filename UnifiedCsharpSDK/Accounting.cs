@@ -44,6 +44,11 @@ namespace UnifiedCsharpSDK
         Task<CreateAccountingPaymentResponse> CreateAccountingPaymentAsync(string connectionId, AccountingPayment? accountingPayment = null);
 
         /// <summary>
+        /// Create a taxrate
+        /// </summary>
+        Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(string connectionId, AccountingTaxrate? accountingTaxrate = null);
+
+        /// <summary>
         /// Create a transaction
         /// </summary>
         Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(string connectionId, AccountingTransaction? accountingTransaction = null);
@@ -64,9 +69,19 @@ namespace UnifiedCsharpSDK
         Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
+        /// Retrieve an organization
+        /// </summary>
+        Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null);
+
+        /// <summary>
         /// Retrieve a payment
         /// </summary>
         Task<GetAccountingPaymentResponse> GetAccountingPaymentAsync(string connectionId, string id, List<string>? fields = null);
+
+        /// <summary>
+        /// Retrieve a taxrate
+        /// </summary>
+        Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a transaction
@@ -89,9 +104,19 @@ namespace UnifiedCsharpSDK
         Task<ListAccountingInvoicesResponse> ListAccountingInvoicesAsync(ListAccountingInvoicesRequest? request = null);
 
         /// <summary>
+        /// List all organizations
+        /// </summary>
+        Task<ListAccountingOrganizationsResponse> ListAccountingOrganizationsAsync(ListAccountingOrganizationsRequest? request = null);
+
+        /// <summary>
         /// List all payments
         /// </summary>
         Task<ListAccountingPaymentsResponse> ListAccountingPaymentsAsync(ListAccountingPaymentsRequest? request = null);
+
+        /// <summary>
+        /// List all taxrates
+        /// </summary>
+        Task<ListAccountingTaxratesResponse> ListAccountingTaxratesAsync(ListAccountingTaxratesRequest? request = null);
 
         /// <summary>
         /// List all transactions
@@ -119,6 +144,11 @@ namespace UnifiedCsharpSDK
         Task<PatchAccountingPaymentResponse> PatchAccountingPaymentAsync(string connectionId, string id, AccountingPayment? accountingPayment = null);
 
         /// <summary>
+        /// Update a taxrate
+        /// </summary>
+        Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null);
+
+        /// <summary>
         /// Update a transaction
         /// </summary>
         Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null);
@@ -142,6 +172,11 @@ namespace UnifiedCsharpSDK
         /// Remove a payment
         /// </summary>
         Task<RemoveAccountingPaymentResponse> RemoveAccountingPaymentAsync(string connectionId, string id);
+
+        /// <summary>
+        /// Remove a taxrate
+        /// </summary>
+        Task<RemoveAccountingTaxrateResponse> RemoveAccountingTaxrateAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a transaction
@@ -169,6 +204,11 @@ namespace UnifiedCsharpSDK
         Task<UpdateAccountingPaymentResponse> UpdateAccountingPaymentAsync(string connectionId, string id, AccountingPayment? accountingPayment = null);
 
         /// <summary>
+        /// Update a taxrate
+        /// </summary>
+        Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null);
+
+        /// <summary>
         /// Update a transaction
         /// </summary>
         Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null);
@@ -178,10 +218,10 @@ namespace UnifiedCsharpSDK
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.6";
+        private const string _sdkVersion = "0.2.7";
         private const string _sdkGenVersion = "2.214.10";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.2.6 2.214.10 1.0 Unified-csharp-sdk";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.2.7 2.214.10 1.0 Unified-csharp-sdk";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -375,6 +415,51 @@ namespace UnifiedCsharpSDK
         }
         
 
+        public async Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(string connectionId, AccountingTaxrate? accountingTaxrate = null)
+        {
+            var request = new CreateAccountingTaxrateRequest()
+            {
+                ConnectionId = connectionId,
+                AccountingTaxrate = accountingTaxrate,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTaxrate", "json");
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new CreateAccountingTaxrateResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingTaxrate = JsonConvert.DeserializeObject<AccountingTaxrate>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
         public async Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(string connectionId, AccountingTransaction? accountingTransaction = null)
         {
             var request = new CreateAccountingTransactionRequest()
@@ -543,6 +628,47 @@ namespace UnifiedCsharpSDK
         }
         
 
+        public async Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null)
+        {
+            var request = new GetAccountingOrganizationRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                Fields = fields,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/organization/{id}", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new GetAccountingOrganizationResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingOrganization = JsonConvert.DeserializeObject<AccountingOrganization>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
         public async Task<GetAccountingPaymentResponse> GetAccountingPaymentAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetAccountingPaymentRequest()
@@ -576,6 +702,47 @@ namespace UnifiedCsharpSDK
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.AccountingPayment = JsonConvert.DeserializeObject<AccountingPayment>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
+        public async Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<string>? fields = null)
+        {
+            var request = new GetAccountingTaxrateRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                Fields = fields,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate/{id}", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new GetAccountingTaxrateResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingTaxrate = JsonConvert.DeserializeObject<AccountingTaxrate>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -730,6 +897,41 @@ namespace UnifiedCsharpSDK
         }
         
 
+        public async Task<ListAccountingOrganizationsResponse> ListAccountingOrganizationsAsync(ListAccountingOrganizationsRequest? request = null)
+        {
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/organization", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new ListAccountingOrganizationsResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingOrganizations = JsonConvert.DeserializeObject<List<AccountingOrganization>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
         public async Task<ListAccountingPaymentsResponse> ListAccountingPaymentsAsync(ListAccountingPaymentsRequest? request = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
@@ -757,6 +959,41 @@ namespace UnifiedCsharpSDK
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.AccountingPayments = JsonConvert.DeserializeObject<List<AccountingPayment>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
+        public async Task<ListAccountingTaxratesResponse> ListAccountingTaxratesAsync(ListAccountingTaxratesRequest? request = null)
+        {
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new ListAccountingTaxratesResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingTaxrates = JsonConvert.DeserializeObject<List<AccountingTaxrate>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -984,6 +1221,52 @@ namespace UnifiedCsharpSDK
         }
         
 
+        public async Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null)
+        {
+            var request = new PatchAccountingTaxrateRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                AccountingTaxrate = accountingTaxrate,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate/{id}", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTaxrate", "json");
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new PatchAccountingTaxrateResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingTaxrate = JsonConvert.DeserializeObject<AccountingTaxrate>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
         public async Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null)
         {
             var request = new PatchAccountingTransactionRequest()
@@ -1144,6 +1427,37 @@ namespace UnifiedCsharpSDK
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
             var response = new RemoveAccountingPaymentResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            throw new InvalidOperationException("API returned unexpected status code or content type");
+        }
+        
+
+        public async Task<RemoveAccountingTaxrateResponse> RemoveAccountingTaxrateAsync(string connectionId, string id)
+        {
+            var request = new RemoveAccountingTaxrateRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate/{id}", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new RemoveAccountingTaxrateResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -1361,6 +1675,52 @@ namespace UnifiedCsharpSDK
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.AccountingPayment = JsonConvert.DeserializeObject<AccountingPayment>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
+        public async Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null)
+        {
+            var request = new UpdateAccountingTaxrateRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                AccountingTaxrate = accountingTaxrate,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate/{id}", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTaxrate", "json");
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new UpdateAccountingTaxrateResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingTaxrate = JsonConvert.DeserializeObject<AccountingTaxrate>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;

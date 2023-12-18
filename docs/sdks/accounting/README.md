@@ -7,31 +7,39 @@
 * [CreateAccountingCustomer](#createaccountingcustomer) - Create a customer
 * [CreateAccountingInvoice](#createaccountinginvoice) - Create a invoice
 * [CreateAccountingPayment](#createaccountingpayment) - Create a payment
+* [CreateAccountingTaxrate](#createaccountingtaxrate) - Create a taxrate
 * [CreateAccountingTransaction](#createaccountingtransaction) - Create a transaction
 * [GetAccountingAccount](#getaccountingaccount) - Retrieve an account
 * [GetAccountingCustomer](#getaccountingcustomer) - Retrieve a customer
 * [GetAccountingInvoice](#getaccountinginvoice) - Retrieve a invoice
+* [GetAccountingOrganization](#getaccountingorganization) - Retrieve an organization
 * [GetAccountingPayment](#getaccountingpayment) - Retrieve a payment
+* [GetAccountingTaxrate](#getaccountingtaxrate) - Retrieve a taxrate
 * [GetAccountingTransaction](#getaccountingtransaction) - Retrieve a transaction
 * [ListAccountingAccounts](#listaccountingaccounts) - List all accounts
 * [ListAccountingCustomers](#listaccountingcustomers) - List all customers
 * [ListAccountingInvoices](#listaccountinginvoices) - List all invoices
+* [ListAccountingOrganizations](#listaccountingorganizations) - List all organizations
 * [ListAccountingPayments](#listaccountingpayments) - List all payments
+* [ListAccountingTaxrates](#listaccountingtaxrates) - List all taxrates
 * [ListAccountingTransactions](#listaccountingtransactions) - List all transactions
 * [PatchAccountingAccount](#patchaccountingaccount) - Update an account
 * [PatchAccountingCustomer](#patchaccountingcustomer) - Update a customer
 * [PatchAccountingInvoice](#patchaccountinginvoice) - Update a invoice
 * [PatchAccountingPayment](#patchaccountingpayment) - Update a payment
+* [PatchAccountingTaxrate](#patchaccountingtaxrate) - Update a taxrate
 * [PatchAccountingTransaction](#patchaccountingtransaction) - Update a transaction
 * [RemoveAccountingAccount](#removeaccountingaccount) - Remove an account
 * [RemoveAccountingCustomer](#removeaccountingcustomer) - Remove a customer
 * [RemoveAccountingInvoice](#removeaccountinginvoice) - Remove a invoice
 * [RemoveAccountingPayment](#removeaccountingpayment) - Remove a payment
+* [RemoveAccountingTaxrate](#removeaccountingtaxrate) - Remove a taxrate
 * [RemoveAccountingTransaction](#removeaccountingtransaction) - Remove a transaction
 * [UpdateAccountingAccount](#updateaccountingaccount) - Update an account
 * [UpdateAccountingCustomer](#updateaccountingcustomer) - Update a customer
 * [UpdateAccountingInvoice](#updateaccountinginvoice) - Update a invoice
 * [UpdateAccountingPayment](#updateaccountingpayment) - Update a payment
+* [UpdateAccountingTaxrate](#updateaccountingtaxrate) - Update a taxrate
 * [UpdateAccountingTransaction](#updateaccountingtransaction) - Update a transaction
 
 ## CreateAccountingAccount
@@ -202,6 +210,44 @@ var res = await sdk.Accounting.CreateAccountingPaymentAsync(ConnectionId: "strin
 **[CreateAccountingPaymentResponse](../../Models/Requests/CreateAccountingPaymentResponse.md)**
 
 
+## CreateAccountingTaxrate
+
+Create a taxrate
+
+### Example Usage
+
+```csharp
+using UnifiedCsharpSDK;
+using UnifiedCsharpSDK.Models.Components;
+using UnifiedCsharpSDK.Models.Requests;
+
+var sdk = new UnifiedTo(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Accounting.CreateAccountingTaxrateAsync(ConnectionId: "string", AccountingTaxrate: new AccountingTaxrate() {
+    Name = "string",
+    Rate = 1719.1D,
+    Raw = new PropertyAccountingTaxrateRaw() {},
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `AccountingTaxrate`                                               | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md) | :heavy_minus_sign:                                                | N/A                                                               |
+
+
+### Response
+
+**[CreateAccountingTaxrateResponse](../../Models/Requests/CreateAccountingTaxrateResponse.md)**
+
+
 ## CreateAccountingTransaction
 
 Create a transaction
@@ -362,6 +408,44 @@ var res = await sdk.Accounting.GetAccountingInvoiceAsync(ConnectionId: "string",
 **[GetAccountingInvoiceResponse](../../Models/Requests/GetAccountingInvoiceResponse.md)**
 
 
+## GetAccountingOrganization
+
+Retrieve an organization
+
+### Example Usage
+
+```csharp
+using UnifiedCsharpSDK;
+using UnifiedCsharpSDK.Models.Components;
+using UnifiedCsharpSDK.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedTo(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Accounting.GetAccountingOrganizationAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+    "string",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Organization           |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetAccountingOrganizationResponse](../../Models/Requests/GetAccountingOrganizationResponse.md)**
+
+
 ## GetAccountingPayment
 
 Retrieve a payment
@@ -398,6 +482,44 @@ var res = await sdk.Accounting.GetAccountingPaymentAsync(ConnectionId: "string",
 ### Response
 
 **[GetAccountingPaymentResponse](../../Models/Requests/GetAccountingPaymentResponse.md)**
+
+
+## GetAccountingTaxrate
+
+Retrieve a taxrate
+
+### Example Usage
+
+```csharp
+using UnifiedCsharpSDK;
+using UnifiedCsharpSDK.Models.Components;
+using UnifiedCsharpSDK.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedTo(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Accounting.GetAccountingTaxrateAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+    "string",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Taxrate                |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetAccountingTaxrateResponse](../../Models/Requests/GetAccountingTaxrateResponse.md)**
 
 
 ## GetAccountingTransaction
@@ -561,6 +683,47 @@ var res = await sdk.Accounting.ListAccountingInvoicesAsync(req);
 **[ListAccountingInvoicesResponse](../../Models/Requests/ListAccountingInvoicesResponse.md)**
 
 
+## ListAccountingOrganizations
+
+List all organizations
+
+### Example Usage
+
+```csharp
+using UnifiedCsharpSDK;
+using UnifiedCsharpSDK.Models.Components;
+using UnifiedCsharpSDK.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedTo(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListAccountingOrganizationsRequest req = new ListAccountingOrganizationsRequest() {
+    ConnectionId = "string",
+    Fields = new List<string>() {
+        "string",
+    },
+};
+
+var res = await sdk.Accounting.ListAccountingOrganizationsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `request`                                                                                         | [ListAccountingOrganizationsRequest](../../Models/Requests/ListAccountingOrganizationsRequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
+
+
+### Response
+
+**[ListAccountingOrganizationsResponse](../../Models/Requests/ListAccountingOrganizationsResponse.md)**
+
+
 ## ListAccountingPayments
 
 List all payments
@@ -600,6 +763,47 @@ var res = await sdk.Accounting.ListAccountingPaymentsAsync(req);
 ### Response
 
 **[ListAccountingPaymentsResponse](../../Models/Requests/ListAccountingPaymentsResponse.md)**
+
+
+## ListAccountingTaxrates
+
+List all taxrates
+
+### Example Usage
+
+```csharp
+using UnifiedCsharpSDK;
+using UnifiedCsharpSDK.Models.Components;
+using UnifiedCsharpSDK.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedTo(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListAccountingTaxratesRequest req = new ListAccountingTaxratesRequest() {
+    ConnectionId = "string",
+    Fields = new List<string>() {
+        "string",
+    },
+};
+
+var res = await sdk.Accounting.ListAccountingTaxratesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListAccountingTaxratesRequest](../../Models/Requests/ListAccountingTaxratesRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+
+
+### Response
+
+**[ListAccountingTaxratesResponse](../../Models/Requests/ListAccountingTaxratesResponse.md)**
 
 
 ## ListAccountingTransactions
@@ -815,6 +1019,45 @@ var res = await sdk.Accounting.PatchAccountingPaymentAsync(ConnectionId: "string
 **[PatchAccountingPaymentResponse](../../Models/Requests/PatchAccountingPaymentResponse.md)**
 
 
+## PatchAccountingTaxrate
+
+Update a taxrate
+
+### Example Usage
+
+```csharp
+using UnifiedCsharpSDK;
+using UnifiedCsharpSDK.Models.Components;
+using UnifiedCsharpSDK.Models.Requests;
+
+var sdk = new UnifiedTo(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Accounting.PatchAccountingTaxrateAsync(ConnectionId: "string", Id: "string", AccountingTaxrate: new AccountingTaxrate() {
+    Name = "string",
+    Rate = 5991.47D,
+    Raw = new PropertyAccountingTaxrateRaw() {},
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Taxrate                                                 |
+| `AccountingTaxrate`                                               | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md) | :heavy_minus_sign:                                                | N/A                                                               |
+
+
+### Response
+
+**[PatchAccountingTaxrateResponse](../../Models/Requests/PatchAccountingTaxrateResponse.md)**
+
+
 ## PatchAccountingTransaction
 
 Update a transaction
@@ -996,6 +1239,40 @@ var res = await sdk.Accounting.RemoveAccountingPaymentAsync(ConnectionId: "strin
 ### Response
 
 **[RemoveAccountingPaymentResponse](../../Models/Requests/RemoveAccountingPaymentResponse.md)**
+
+
+## RemoveAccountingTaxrate
+
+Remove a taxrate
+
+### Example Usage
+
+```csharp
+using UnifiedCsharpSDK;
+using UnifiedCsharpSDK.Models.Components;
+using UnifiedCsharpSDK.Models.Requests;
+
+var sdk = new UnifiedTo(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Accounting.RemoveAccountingTaxrateAsync(ConnectionId: "string", Id: "string");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Taxrate    |
+
+
+### Response
+
+**[RemoveAccountingTaxrateResponse](../../Models/Requests/RemoveAccountingTaxrateResponse.md)**
 
 
 ## RemoveAccountingTransaction
@@ -1202,6 +1479,45 @@ var res = await sdk.Accounting.UpdateAccountingPaymentAsync(ConnectionId: "strin
 ### Response
 
 **[UpdateAccountingPaymentResponse](../../Models/Requests/UpdateAccountingPaymentResponse.md)**
+
+
+## UpdateAccountingTaxrate
+
+Update a taxrate
+
+### Example Usage
+
+```csharp
+using UnifiedCsharpSDK;
+using UnifiedCsharpSDK.Models.Components;
+using UnifiedCsharpSDK.Models.Requests;
+
+var sdk = new UnifiedTo(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(ConnectionId: "string", Id: "string", AccountingTaxrate: new AccountingTaxrate() {
+    Name = "string",
+    Rate = 3382.78D,
+    Raw = new PropertyAccountingTaxrateRaw() {},
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Taxrate                                                 |
+| `AccountingTaxrate`                                               | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md) | :heavy_minus_sign:                                                | N/A                                                               |
+
+
+### Response
+
+**[UpdateAccountingTaxrateResponse](../../Models/Requests/UpdateAccountingTaxrateResponse.md)**
 
 
 ## UpdateAccountingTransaction

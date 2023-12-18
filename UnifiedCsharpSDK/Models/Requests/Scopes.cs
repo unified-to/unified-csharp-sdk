@@ -37,6 +37,12 @@ namespace UnifiedCsharpSDK.Models.Requests
         AccountingPaymentRead,
         [JsonProperty("accounting_payment_write")]
         AccountingPaymentWrite,
+        [JsonProperty("accounting_taxrate_read")]
+        AccountingTaxrateRead,
+        [JsonProperty("accounting_taxrate_write")]
+        AccountingTaxrateWrite,
+        [JsonProperty("accounting_organization_read")]
+        AccountingOrganizationRead,
         [JsonProperty("ats_scorecard_read")]
         AtsScorecardRead,
         [JsonProperty("ats_scorecard_write")]

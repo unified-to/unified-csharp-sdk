@@ -29,7 +29,9 @@ namespace UnifiedCsharpSDK
         public IAccount Account { get; }
         public ICustomer Customer { get; }
         public IInvoice Invoice { get; }
+        public IOrganization Organization { get; }
         public IPayment Payment { get; }
+        public ITaxrate Taxrate { get; }
         public ITransaction Transaction { get; }
         public IAts Ats { get; }
         public IApplication Application { get; }
@@ -99,10 +101,10 @@ namespace UnifiedCsharpSDK
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.6";
+        private const string _sdkVersion = "0.2.7";
         private const string _sdkGenVersion = "2.214.10";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.2.6 2.214.10 1.0 Unified-csharp-sdk";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.2.7 2.214.10 1.0 Unified-csharp-sdk";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -110,7 +112,9 @@ namespace UnifiedCsharpSDK
         public IAccount Account { get; private set; }
         public ICustomer Customer { get; private set; }
         public IInvoice Invoice { get; private set; }
+        public IOrganization Organization { get; private set; }
         public IPayment Payment { get; private set; }
+        public ITaxrate Taxrate { get; private set; }
         public ITransaction Transaction { get; private set; }
         public IAts Ats { get; private set; }
         public IApplication Application { get; private set; }
@@ -176,7 +180,9 @@ namespace UnifiedCsharpSDK
             Account = new Account(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Customer = new Customer(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Invoice = new Invoice(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            Organization = new Organization(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Payment = new Payment(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            Taxrate = new Taxrate(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Transaction = new Transaction(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Ats = new Ats(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Application = new Application(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
