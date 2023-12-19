@@ -11,6 +11,7 @@
 namespace UnifiedCsharpSDK.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
     
     /// <summary>
     /// The call object, when type = call
@@ -23,5 +24,8 @@ namespace UnifiedCsharpSDK.Models.Components
 
         [JsonProperty("duration")]
         public double? Duration { get; set; }
+
+        [JsonProperty("start_at")]
+        public DateTime? StartAt { get; set; }
     }
 }

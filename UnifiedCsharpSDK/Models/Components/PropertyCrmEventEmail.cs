@@ -12,6 +12,7 @@ namespace UnifiedCsharpSDK.Models.Components
 {
     using Newtonsoft.Json;
     using System.Collections.Generic;
+    using System;
     
     /// <summary>
     /// The email object, when type = email
@@ -27,6 +28,9 @@ namespace UnifiedCsharpSDK.Models.Components
         /// </summary>
         [JsonProperty("cc")]
         public List<string>? Cc { get; set; }
+
+        [JsonProperty("created_at")]
+        public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("from")]
         public string? From { get; set; }

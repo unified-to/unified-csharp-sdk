@@ -11,6 +11,7 @@
 namespace UnifiedCsharpSDK.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
     
     /// <summary>
     /// The task object, when type = task
@@ -20,6 +21,9 @@ namespace UnifiedCsharpSDK.Models.Components
 
         [JsonProperty("description")]
         public string? Description { get; set; }
+
+        [JsonProperty("due_at")]
+        public DateTime? DueAt { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }

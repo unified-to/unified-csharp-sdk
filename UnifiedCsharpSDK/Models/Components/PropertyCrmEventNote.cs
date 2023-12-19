@@ -11,12 +11,16 @@
 namespace UnifiedCsharpSDK.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
     
     /// <summary>
     /// The note object, when type = note
     /// </summary>
     public class PropertyCrmEventNote
     {
+
+        [JsonProperty("created_at")]
+        public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
