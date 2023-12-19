@@ -56,6 +56,9 @@ namespace UnifiedCsharpSDK.Models.Components
         [JsonProperty("interval")]
         public double Interval { get; set; } = default!;
 
+        [JsonProperty("is_healthy")]
+        public bool? IsHealthy { get; set; }
+
         [JsonProperty("meta")]
         public PropertyWebhookMeta? Meta { get; set; }
 

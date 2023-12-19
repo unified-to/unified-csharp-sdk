@@ -28,11 +28,14 @@ namespace UnifiedCsharpSDK.Models.Components
         [JsonProperty("item_description")]
         public string? ItemDescription { get; set; }
 
-        [JsonProperty("item_identifier")]
-        public string? ItemIdentifier { get; set; }
+        [JsonProperty("item_id")]
+        public string? ItemId { get; set; }
 
         [JsonProperty("item_name")]
         public string? ItemName { get; set; }
+
+        [JsonProperty("item_sku")]
+        public string? ItemSku { get; set; }
 
         [JsonProperty("notes")]
         public string? Notes { get; set; }
