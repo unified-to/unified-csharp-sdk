@@ -2,6 +2,7 @@ UnifiedCsharpSDK/Accounting.cs
 UnifiedCsharpSDK/Account.cs
 UnifiedCsharpSDK/Customer.cs
 UnifiedCsharpSDK/Invoice.cs
+UnifiedCsharpSDK/Item.cs
 UnifiedCsharpSDK/Organization.cs
 UnifiedCsharpSDK/Payment.cs
 UnifiedCsharpSDK/Taxrate.cs
@@ -64,6 +65,8 @@ UnifiedCsharpSDK/Models/Requests/CreateAccountingCustomerRequest.cs
 UnifiedCsharpSDK/Models/Requests/CreateAccountingCustomerResponse.cs
 UnifiedCsharpSDK/Models/Requests/CreateAccountingInvoiceRequest.cs
 UnifiedCsharpSDK/Models/Requests/CreateAccountingInvoiceResponse.cs
+UnifiedCsharpSDK/Models/Requests/CreateAccountingItemRequest.cs
+UnifiedCsharpSDK/Models/Requests/CreateAccountingItemResponse.cs
 UnifiedCsharpSDK/Models/Requests/CreateAccountingPaymentRequest.cs
 UnifiedCsharpSDK/Models/Requests/CreateAccountingPaymentResponse.cs
 UnifiedCsharpSDK/Models/Requests/CreateAccountingTaxrateRequest.cs
@@ -76,6 +79,8 @@ UnifiedCsharpSDK/Models/Requests/GetAccountingCustomerRequest.cs
 UnifiedCsharpSDK/Models/Requests/GetAccountingCustomerResponse.cs
 UnifiedCsharpSDK/Models/Requests/GetAccountingInvoiceRequest.cs
 UnifiedCsharpSDK/Models/Requests/GetAccountingInvoiceResponse.cs
+UnifiedCsharpSDK/Models/Requests/GetAccountingItemRequest.cs
+UnifiedCsharpSDK/Models/Requests/GetAccountingItemResponse.cs
 UnifiedCsharpSDK/Models/Requests/GetAccountingOrganizationRequest.cs
 UnifiedCsharpSDK/Models/Requests/GetAccountingOrganizationResponse.cs
 UnifiedCsharpSDK/Models/Requests/GetAccountingPaymentRequest.cs
@@ -90,6 +95,8 @@ UnifiedCsharpSDK/Models/Requests/ListAccountingCustomersRequest.cs
 UnifiedCsharpSDK/Models/Requests/ListAccountingCustomersResponse.cs
 UnifiedCsharpSDK/Models/Requests/ListAccountingInvoicesRequest.cs
 UnifiedCsharpSDK/Models/Requests/ListAccountingInvoicesResponse.cs
+UnifiedCsharpSDK/Models/Requests/ListAccountingItemsRequest.cs
+UnifiedCsharpSDK/Models/Requests/ListAccountingItemsResponse.cs
 UnifiedCsharpSDK/Models/Requests/ListAccountingOrganizationsRequest.cs
 UnifiedCsharpSDK/Models/Requests/ListAccountingOrganizationsResponse.cs
 UnifiedCsharpSDK/Models/Requests/ListAccountingPaymentsRequest.cs
@@ -104,6 +111,8 @@ UnifiedCsharpSDK/Models/Requests/PatchAccountingCustomerRequest.cs
 UnifiedCsharpSDK/Models/Requests/PatchAccountingCustomerResponse.cs
 UnifiedCsharpSDK/Models/Requests/PatchAccountingInvoiceRequest.cs
 UnifiedCsharpSDK/Models/Requests/PatchAccountingInvoiceResponse.cs
+UnifiedCsharpSDK/Models/Requests/PatchAccountingItemRequest.cs
+UnifiedCsharpSDK/Models/Requests/PatchAccountingItemResponse.cs
 UnifiedCsharpSDK/Models/Requests/PatchAccountingPaymentRequest.cs
 UnifiedCsharpSDK/Models/Requests/PatchAccountingPaymentResponse.cs
 UnifiedCsharpSDK/Models/Requests/PatchAccountingTaxrateRequest.cs
@@ -116,6 +125,8 @@ UnifiedCsharpSDK/Models/Requests/RemoveAccountingCustomerRequest.cs
 UnifiedCsharpSDK/Models/Requests/RemoveAccountingCustomerResponse.cs
 UnifiedCsharpSDK/Models/Requests/RemoveAccountingInvoiceRequest.cs
 UnifiedCsharpSDK/Models/Requests/RemoveAccountingInvoiceResponse.cs
+UnifiedCsharpSDK/Models/Requests/RemoveAccountingItemRequest.cs
+UnifiedCsharpSDK/Models/Requests/RemoveAccountingItemResponse.cs
 UnifiedCsharpSDK/Models/Requests/RemoveAccountingPaymentRequest.cs
 UnifiedCsharpSDK/Models/Requests/RemoveAccountingPaymentResponse.cs
 UnifiedCsharpSDK/Models/Requests/RemoveAccountingTaxrateRequest.cs
@@ -128,6 +139,8 @@ UnifiedCsharpSDK/Models/Requests/UpdateAccountingCustomerRequest.cs
 UnifiedCsharpSDK/Models/Requests/UpdateAccountingCustomerResponse.cs
 UnifiedCsharpSDK/Models/Requests/UpdateAccountingInvoiceRequest.cs
 UnifiedCsharpSDK/Models/Requests/UpdateAccountingInvoiceResponse.cs
+UnifiedCsharpSDK/Models/Requests/UpdateAccountingItemRequest.cs
+UnifiedCsharpSDK/Models/Requests/UpdateAccountingItemResponse.cs
 UnifiedCsharpSDK/Models/Requests/UpdateAccountingPaymentRequest.cs
 UnifiedCsharpSDK/Models/Requests/UpdateAccountingPaymentResponse.cs
 UnifiedCsharpSDK/Models/Requests/UpdateAccountingTaxrateRequest.cs
@@ -458,6 +471,8 @@ UnifiedCsharpSDK/Models/Components/PropertyAccountingCustomerBillingAddress.cs
 UnifiedCsharpSDK/Models/Components/AccountingInvoice.cs
 UnifiedCsharpSDK/Models/Components/PropertyAccountingInvoiceRaw.cs
 UnifiedCsharpSDK/Models/Components/AccountingLineitem.cs
+UnifiedCsharpSDK/Models/Components/AccountingItem.cs
+UnifiedCsharpSDK/Models/Components/PropertyAccountingItemRaw.cs
 UnifiedCsharpSDK/Models/Components/AccountingPayment.cs
 UnifiedCsharpSDK/Models/Components/PropertyAccountingPaymentRaw.cs
 UnifiedCsharpSDK/Models/Components/AccountingTaxrate.cs
@@ -607,6 +622,8 @@ docs/Models/Requests/CreateAccountingCustomerRequest.md
 docs/Models/Requests/CreateAccountingCustomerResponse.md
 docs/Models/Requests/CreateAccountingInvoiceRequest.md
 docs/Models/Requests/CreateAccountingInvoiceResponse.md
+docs/Models/Requests/CreateAccountingItemRequest.md
+docs/Models/Requests/CreateAccountingItemResponse.md
 docs/Models/Requests/CreateAccountingPaymentRequest.md
 docs/Models/Requests/CreateAccountingPaymentResponse.md
 docs/Models/Requests/CreateAccountingTaxrateRequest.md
@@ -619,6 +636,8 @@ docs/Models/Requests/GetAccountingCustomerRequest.md
 docs/Models/Requests/GetAccountingCustomerResponse.md
 docs/Models/Requests/GetAccountingInvoiceRequest.md
 docs/Models/Requests/GetAccountingInvoiceResponse.md
+docs/Models/Requests/GetAccountingItemRequest.md
+docs/Models/Requests/GetAccountingItemResponse.md
 docs/Models/Requests/GetAccountingOrganizationRequest.md
 docs/Models/Requests/GetAccountingOrganizationResponse.md
 docs/Models/Requests/GetAccountingPaymentRequest.md
@@ -633,6 +652,8 @@ docs/Models/Requests/ListAccountingCustomersRequest.md
 docs/Models/Requests/ListAccountingCustomersResponse.md
 docs/Models/Requests/ListAccountingInvoicesRequest.md
 docs/Models/Requests/ListAccountingInvoicesResponse.md
+docs/Models/Requests/ListAccountingItemsRequest.md
+docs/Models/Requests/ListAccountingItemsResponse.md
 docs/Models/Requests/ListAccountingOrganizationsRequest.md
 docs/Models/Requests/ListAccountingOrganizationsResponse.md
 docs/Models/Requests/ListAccountingPaymentsRequest.md
@@ -647,6 +668,8 @@ docs/Models/Requests/PatchAccountingCustomerRequest.md
 docs/Models/Requests/PatchAccountingCustomerResponse.md
 docs/Models/Requests/PatchAccountingInvoiceRequest.md
 docs/Models/Requests/PatchAccountingInvoiceResponse.md
+docs/Models/Requests/PatchAccountingItemRequest.md
+docs/Models/Requests/PatchAccountingItemResponse.md
 docs/Models/Requests/PatchAccountingPaymentRequest.md
 docs/Models/Requests/PatchAccountingPaymentResponse.md
 docs/Models/Requests/PatchAccountingTaxrateRequest.md
@@ -659,6 +682,8 @@ docs/Models/Requests/RemoveAccountingCustomerRequest.md
 docs/Models/Requests/RemoveAccountingCustomerResponse.md
 docs/Models/Requests/RemoveAccountingInvoiceRequest.md
 docs/Models/Requests/RemoveAccountingInvoiceResponse.md
+docs/Models/Requests/RemoveAccountingItemRequest.md
+docs/Models/Requests/RemoveAccountingItemResponse.md
 docs/Models/Requests/RemoveAccountingPaymentRequest.md
 docs/Models/Requests/RemoveAccountingPaymentResponse.md
 docs/Models/Requests/RemoveAccountingTaxrateRequest.md
@@ -671,6 +696,8 @@ docs/Models/Requests/UpdateAccountingCustomerRequest.md
 docs/Models/Requests/UpdateAccountingCustomerResponse.md
 docs/Models/Requests/UpdateAccountingInvoiceRequest.md
 docs/Models/Requests/UpdateAccountingInvoiceResponse.md
+docs/Models/Requests/UpdateAccountingItemRequest.md
+docs/Models/Requests/UpdateAccountingItemResponse.md
 docs/Models/Requests/UpdateAccountingPaymentRequest.md
 docs/Models/Requests/UpdateAccountingPaymentResponse.md
 docs/Models/Requests/UpdateAccountingTaxrateRequest.md
@@ -1001,6 +1028,8 @@ docs/Models/Components/PropertyAccountingCustomerBillingAddress.md
 docs/Models/Components/AccountingInvoice.md
 docs/Models/Components/PropertyAccountingInvoiceRaw.md
 docs/Models/Components/AccountingLineitem.md
+docs/Models/Components/AccountingItem.md
+docs/Models/Components/PropertyAccountingItemRaw.md
 docs/Models/Components/AccountingPayment.md
 docs/Models/Components/PropertyAccountingPaymentRaw.md
 docs/Models/Components/AccountingTaxrate.md
@@ -1149,6 +1178,7 @@ docs/sdks/accounting/README.md
 docs/sdks/account/README.md
 docs/sdks/customer/README.md
 docs/sdks/invoice/README.md
+docs/sdks/item/README.md
 docs/sdks/organization/README.md
 docs/sdks/payment/README.md
 docs/sdks/taxrate/README.md

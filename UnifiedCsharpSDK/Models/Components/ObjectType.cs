@@ -29,6 +29,8 @@ namespace UnifiedCsharpSDK.Models.Components
         AccountingTaxrate,
         [JsonProperty("accounting_organization")]
         AccountingOrganization,
+        [JsonProperty("accounting_item")]
+        AccountingItem,
         [JsonProperty("ats_application")]
         AtsApplication,
         [JsonProperty("ats_applicationstatus")]

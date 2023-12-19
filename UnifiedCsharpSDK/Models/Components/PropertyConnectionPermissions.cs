@@ -43,6 +43,8 @@ namespace UnifiedCsharpSDK.Models.Components
         AccountingTaxrateWrite,
         [JsonProperty("accounting_organization_read")]
         AccountingOrganizationRead,
+        [JsonProperty("accounting_item_read")]
+        AccountingItemRead,
         [JsonProperty("ats_scorecard_read")]
         AtsScorecardRead,
         [JsonProperty("ats_scorecard_write")]

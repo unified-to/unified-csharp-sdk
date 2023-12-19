@@ -39,6 +39,11 @@ namespace UnifiedCsharpSDK
         Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(string connectionId, AccountingInvoice? accountingInvoice = null);
 
         /// <summary>
+        /// Create an item
+        /// </summary>
+        Task<CreateAccountingItemResponse> CreateAccountingItemAsync(string connectionId, AccountingItem? accountingItem = null);
+
+        /// <summary>
         /// Create a payment
         /// </summary>
         Task<CreateAccountingPaymentResponse> CreateAccountingPaymentAsync(string connectionId, AccountingPayment? accountingPayment = null);
@@ -67,6 +72,11 @@ namespace UnifiedCsharpSDK
         /// Retrieve a invoice
         /// </summary>
         Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null);
+
+        /// <summary>
+        /// Retrieve an item
+        /// </summary>
+        Task<GetAccountingItemResponse> GetAccountingItemAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve an organization
@@ -104,6 +114,11 @@ namespace UnifiedCsharpSDK
         Task<ListAccountingInvoicesResponse> ListAccountingInvoicesAsync(ListAccountingInvoicesRequest? request = null);
 
         /// <summary>
+        /// List all items
+        /// </summary>
+        Task<ListAccountingItemsResponse> ListAccountingItemsAsync(ListAccountingItemsRequest? request = null);
+
+        /// <summary>
         /// List all organizations
         /// </summary>
         Task<ListAccountingOrganizationsResponse> ListAccountingOrganizationsAsync(ListAccountingOrganizationsRequest? request = null);
@@ -139,6 +154,11 @@ namespace UnifiedCsharpSDK
         Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null);
 
         /// <summary>
+        /// Update an item
+        /// </summary>
+        Task<PatchAccountingItemResponse> PatchAccountingItemAsync(string connectionId, string id, AccountingItem? accountingItem = null);
+
+        /// <summary>
         /// Update a payment
         /// </summary>
         Task<PatchAccountingPaymentResponse> PatchAccountingPaymentAsync(string connectionId, string id, AccountingPayment? accountingPayment = null);
@@ -167,6 +187,11 @@ namespace UnifiedCsharpSDK
         /// Remove a invoice
         /// </summary>
         Task<RemoveAccountingInvoiceResponse> RemoveAccountingInvoiceAsync(string connectionId, string id);
+
+        /// <summary>
+        /// Remove an item
+        /// </summary>
+        Task<RemoveAccountingItemResponse> RemoveAccountingItemAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a payment
@@ -199,6 +224,11 @@ namespace UnifiedCsharpSDK
         Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null);
 
         /// <summary>
+        /// Update an item
+        /// </summary>
+        Task<UpdateAccountingItemResponse> UpdateAccountingItemAsync(string connectionId, string id, AccountingItem? accountingItem = null);
+
+        /// <summary>
         /// Update a payment
         /// </summary>
         Task<UpdateAccountingPaymentResponse> UpdateAccountingPaymentAsync(string connectionId, string id, AccountingPayment? accountingPayment = null);
@@ -218,10 +248,10 @@ namespace UnifiedCsharpSDK
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.9";
+        private const string _sdkVersion = "0.2.10";
         private const string _sdkGenVersion = "2.220.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.2.9 2.220.3 1.0 Unified-csharp-sdk";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.2.10 2.220.3 1.0 Unified-csharp-sdk";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -362,6 +392,51 @@ namespace UnifiedCsharpSDK
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.AccountingInvoice = JsonConvert.DeserializeObject<AccountingInvoice>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
+        public async Task<CreateAccountingItemResponse> CreateAccountingItemAsync(string connectionId, AccountingItem? accountingItem = null)
+        {
+            var request = new CreateAccountingItemRequest()
+            {
+                ConnectionId = connectionId,
+                AccountingItem = accountingItem,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/item", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingItem", "json");
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new CreateAccountingItemResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingItem = JsonConvert.DeserializeObject<AccountingItem>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -620,6 +695,47 @@ namespace UnifiedCsharpSDK
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.AccountingInvoice = JsonConvert.DeserializeObject<AccountingInvoice>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
+        public async Task<GetAccountingItemResponse> GetAccountingItemAsync(string connectionId, string id, List<string>? fields = null)
+        {
+            var request = new GetAccountingItemRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                Fields = fields,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/item/{id}", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new GetAccountingItemResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingItem = JsonConvert.DeserializeObject<AccountingItem>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -889,6 +1005,41 @@ namespace UnifiedCsharpSDK
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.AccountingInvoices = JsonConvert.DeserializeObject<List<AccountingInvoice>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
+        public async Task<ListAccountingItemsResponse> ListAccountingItemsAsync(ListAccountingItemsRequest? request = null)
+        {
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/item", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new ListAccountingItemsResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingItems = JsonConvert.DeserializeObject<List<AccountingItem>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -1175,6 +1326,52 @@ namespace UnifiedCsharpSDK
         }
         
 
+        public async Task<PatchAccountingItemResponse> PatchAccountingItemAsync(string connectionId, string id, AccountingItem? accountingItem = null)
+        {
+            var request = new PatchAccountingItemRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                AccountingItem = accountingItem,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/item/{id}", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingItem", "json");
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new PatchAccountingItemResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingItem = JsonConvert.DeserializeObject<AccountingItem>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
         public async Task<PatchAccountingPaymentResponse> PatchAccountingPaymentAsync(string connectionId, string id, AccountingPayment? accountingPayment = null)
         {
             var request = new PatchAccountingPaymentRequest()
@@ -1396,6 +1593,37 @@ namespace UnifiedCsharpSDK
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
             var response = new RemoveAccountingInvoiceResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            throw new InvalidOperationException("API returned unexpected status code or content type");
+        }
+        
+
+        public async Task<RemoveAccountingItemResponse> RemoveAccountingItemAsync(string connectionId, string id)
+        {
+            var request = new RemoveAccountingItemRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/item/{id}", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new RemoveAccountingItemResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -1629,6 +1857,52 @@ namespace UnifiedCsharpSDK
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.AccountingInvoice = JsonConvert.DeserializeObject<AccountingInvoice>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
+        public async Task<UpdateAccountingItemResponse> UpdateAccountingItemAsync(string connectionId, string id, AccountingItem? accountingItem = null)
+        {
+            var request = new UpdateAccountingItemRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                AccountingItem = accountingItem,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/item/{id}", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingItem", "json");
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new UpdateAccountingItemResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingItem = JsonConvert.DeserializeObject<AccountingItem>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;

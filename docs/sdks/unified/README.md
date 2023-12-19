@@ -54,7 +54,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.AtsJobWrite,
+        PropertyConnectionPermissions.AtsJobRead,
     },
 };
 
@@ -100,7 +100,7 @@ var res = await sdk.Unified.CreateUnifiedWebhookAsync(ConnectionId: "string", Ob
     HookUrl = "string",
     Interval = 4583.16D,
     Meta = new PropertyWebhookMeta() {},
-    ObjectType = ObjectType.CrmPipeline,
+    ObjectType = ObjectType.CrmLead,
     Runs = new List<string>() {
         "string",
     },
@@ -529,7 +529,7 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(Id: "string", Connection
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.CrmPipelineWrite,
+        PropertyConnectionPermissions.CrmPipelineRead,
     },
 });
 
@@ -650,7 +650,7 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(Id: "string", Connectio
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.CrmContactRead,
+        PropertyConnectionPermissions.CrmCompanyWrite,
     },
 });
 
