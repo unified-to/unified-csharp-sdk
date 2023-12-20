@@ -3,9 +3,60 @@
 
 ### Available Operations
 
+* [CreateUnifiedWebhook](#createunifiedwebhook) - Create webhook subscription
 * [GetUnifiedWebhook](#getunifiedwebhook) - Retrieve webhook by its ID
 * [ListUnifiedWebhooks](#listunifiedwebhooks) - Returns all registered webhooks
 * [RemoveUnifiedWebhook](#removeunifiedwebhook) - Remove webhook subscription
+
+## CreateUnifiedWebhook
+
+The data payload received by your server is described at https://docs.unified.to/unified/overview.  The `interval` field can be set as low as 15 minutes for paid accounts, and 60 minutes for free accounts.
+
+### Example Usage
+
+```csharp
+using UnifiedCsharpSDK;
+using UnifiedCsharpSDK.Models.Components;
+using UnifiedCsharpSDK.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedTo(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Webhook.CreateUnifiedWebhookAsync(Webhook: new Models.Components.Webhook() {
+    Event = Models.Components.Event.Created,
+    Events = new List<PropertyWebhookEvents>() {
+        PropertyWebhookEvents.Updated,
+    },
+    HookUrl = "string",
+    Interval = 4583.16D,
+    Meta = new PropertyWebhookMeta() {},
+    ObjectType = ObjectType.CrmLead,
+    Runs = new List<string>() {
+        "string",
+    },
+    Subscriptions = new List<string>() {
+        "string",
+    },
+}, IncludeAll: false);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `Webhook`                                                         | [Models.Components.Webhook](../../Models/Components/Webhook.md)   | :heavy_minus_sign:                                                | N/A                                                               |
+| `IncludeAll`                                                      | *bool*                                                            | :heavy_minus_sign:                                                | When set, all of the existing data will sent back to your server. |
+
+
+### Response
+
+**[CreateUnifiedWebhookResponse](../../Models/Requests/CreateUnifiedWebhookResponse.md)**
+
 
 ## GetUnifiedWebhook
 

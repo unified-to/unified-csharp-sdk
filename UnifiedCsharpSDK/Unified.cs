@@ -29,6 +29,15 @@ namespace UnifiedCsharpSDK
         Task<CreateUnifiedConnectionResponse> CreateUnifiedConnectionAsync(Models.Components.Connection? request = null);
 
         /// <summary>
+        /// Create webhook subscription
+        /// 
+        /// <remarks>
+        /// The data payload received by your server is described at https://docs.unified.to/unified/overview.  The `interval` field can be set as low as 15 minutes for paid accounts, and 60 minutes for free accounts.
+        /// </remarks>
+        /// </summary>
+        Task<CreateUnifiedWebhookResponse> CreateUnifiedWebhookAsync(Models.Components.Webhook? webhook = null, bool? includeAll = null);
+
+        /// <summary>
         /// Retrieve specific API Call by its ID
         /// </summary>
         Task<GetUnifiedApicallResponse> GetUnifiedApicallAsync(string id);
@@ -111,10 +120,10 @@ namespace UnifiedCsharpSDK
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.11";
+        private const string _sdkVersion = "0.2.12";
         private const string _sdkGenVersion = "2.221.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.2.11 2.221.0 1.0 Unified-csharp-sdk";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.2.12 2.221.0 1.0 Unified-csharp-sdk";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -160,6 +169,51 @@ namespace UnifiedCsharpSDK
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.Connection = JsonConvert.DeserializeObject<Models.Components.Connection>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
+        public async Task<CreateUnifiedWebhookResponse> CreateUnifiedWebhookAsync(Models.Components.Webhook? webhook = null, bool? includeAll = null)
+        {
+            var request = new CreateUnifiedWebhookRequest()
+            {
+                Webhook = webhook,
+                IncludeAll = includeAll,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/unified/webhook", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            var serializedBody = RequestBodySerializer.Serialize(request, "Webhook", "json");
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new CreateUnifiedWebhookResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.Webhook = JsonConvert.DeserializeObject<Models.Components.Webhook>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
