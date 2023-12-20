@@ -36,7 +36,7 @@ namespace UnifiedCsharpSDK.Models.Components
         public Models.Components.Event Event { get; set; } = default!;
 
         [JsonProperty("events")]
-        public List<PropertyWebhookEvents> Events { get; set; } = default!;
+        public List<PropertyWebhookEvents>? Events { get; set; }
 
         [JsonProperty("fields")]
         public string? Fields { get; set; }
