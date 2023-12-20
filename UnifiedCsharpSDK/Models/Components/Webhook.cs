@@ -24,7 +24,7 @@ namespace UnifiedCsharpSDK.Models.Components
         public DateTime? CheckedAt { get; set; }
 
         [JsonProperty("connection_id")]
-        public string? ConnectionId { get; set; }
+        public string ConnectionId { get; set; } = default!;
 
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
@@ -35,9 +35,6 @@ namespace UnifiedCsharpSDK.Models.Components
         [JsonProperty("event")]
         public Models.Components.Event Event { get; set; } = default!;
 
-        [JsonProperty("events")]
-        public List<PropertyWebhookEvents>? Events { get; set; }
-
         [JsonProperty("fields")]
         public string? Fields { get; set; }
 
@@ -46,9 +43,6 @@ namespace UnifiedCsharpSDK.Models.Components
 
         [JsonProperty("id")]
         public string? Id { get; set; }
-
-        [JsonProperty("include_raw")]
-        public bool? IncludeRaw { get; set; }
 
         [JsonProperty("integration_type")]
         public string? IntegrationType { get; set; }
@@ -70,12 +64,6 @@ namespace UnifiedCsharpSDK.Models.Components
         /// </summary>
         [JsonProperty("runs")]
         public List<string>? Runs { get; set; }
-
-        /// <summary>
-        /// integration-specific subscriptions IDs
-        /// </summary>
-        [JsonProperty("subscriptions")]
-        public List<string>? Subscriptions { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

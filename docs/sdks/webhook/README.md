@@ -26,18 +26,13 @@ var sdk = new UnifiedTo(
     });
 
 var res = await sdk.Webhook.CreateUnifiedWebhookAsync(Webhook: new Models.Components.Webhook() {
+    ConnectionId = "string",
     Event = Models.Components.Event.Created,
-    Events = new List<PropertyWebhookEvents>() {
-        PropertyWebhookEvents.Updated,
-    },
     HookUrl = "string",
-    Interval = 4583.16D,
+    Interval = 188.12D,
     Meta = new PropertyWebhookMeta() {},
-    ObjectType = ObjectType.CrmLead,
+    ObjectType = ObjectType.CrmCompany,
     Runs = new List<string>() {
-        "string",
-    },
-    Subscriptions = new List<string>() {
         "string",
     },
 }, IncludeAll: false);

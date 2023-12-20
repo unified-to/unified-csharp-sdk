@@ -605,7 +605,6 @@ UnifiedCsharpSDK/Models/Components/ObjectType.cs
 UnifiedCsharpSDK/Models/Components/WebhookWebhookType.cs
 UnifiedCsharpSDK/Models/Components/Webhook.cs
 UnifiedCsharpSDK/Models/Components/PropertyWebhookMeta.cs
-UnifiedCsharpSDK/Models/Components/PropertyWebhookEvents.cs
 UnifiedCsharpSDK/Models/Components/ApiCallType.cs
 UnifiedCsharpSDK/Models/Components/ApiCall.cs
 UnifiedCsharpSDK/Models/Components/Integration.cs
@@ -1162,7 +1161,6 @@ docs/Models/Components/ObjectType.md
 docs/Models/Components/WebhookWebhookType.md
 docs/Models/Components/Webhook.md
 docs/Models/Components/PropertyWebhookMeta.md
-docs/Models/Components/PropertyWebhookEvents.md
 docs/Models/Components/ApiCallType.md
 docs/Models/Components/ApiCall.md
 docs/Models/Components/Integration.md
