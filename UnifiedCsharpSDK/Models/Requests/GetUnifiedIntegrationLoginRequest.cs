@@ -40,7 +40,7 @@ namespace UnifiedCsharpSDK.Models.Requests
         public string? State { get; set; }
 
         /// <summary>
-        /// The URL where you want the user to be redirect to after a successful authentication.  The connection ID will be appended with (id=&lt;connectionId&gt;) to this URL, as will the state that was provided.
+        /// The URL where you want the user to be redirect to after a successful authentication/sign-in.  A &quot;jwt&quot; parameter will be appended to the URL which will contain a name and email of the user who just signed-in.
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=success_redirect")]
         public string? SuccessRedirect { get; set; }

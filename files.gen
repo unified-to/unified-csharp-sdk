@@ -418,9 +418,6 @@ UnifiedCsharpSDK/Models/Requests/UpdateTicketingTicketResponse.cs
 UnifiedCsharpSDK/Models/Requests/ListUcCallsRequest.cs
 UnifiedCsharpSDK/Models/Requests/ListUcCallsResponse.cs
 UnifiedCsharpSDK/Models/Requests/CreateUnifiedConnectionResponse.cs
-UnifiedCsharpSDK/Models/Requests/Events.cs
-UnifiedCsharpSDK/Models/Requests/CreateUnifiedWebhookRequest.cs
-UnifiedCsharpSDK/Models/Requests/CreateUnifiedWebhookResponse.cs
 UnifiedCsharpSDK/Models/Requests/GetUnifiedApicallRequest.cs
 UnifiedCsharpSDK/Models/Requests/GetUnifiedApicallResponse.cs
 UnifiedCsharpSDK/Models/Requests/GetUnifiedConnectionRequest.cs
@@ -471,6 +468,7 @@ UnifiedCsharpSDK/Models/Components/PropertyAccountingCustomerBillingAddress.cs
 UnifiedCsharpSDK/Models/Components/AccountingInvoice.cs
 UnifiedCsharpSDK/Models/Components/PropertyAccountingInvoiceRaw.cs
 UnifiedCsharpSDK/Models/Components/AccountingLineitem.cs
+UnifiedCsharpSDK/Models/Components/PropertyAccountingLineitemRaw.cs
 UnifiedCsharpSDK/Models/Components/AccountingItem.cs
 UnifiedCsharpSDK/Models/Components/PropertyAccountingItemRaw.cs
 UnifiedCsharpSDK/Models/Components/AccountingPayment.cs
@@ -600,12 +598,6 @@ UnifiedCsharpSDK/Models/Components/PropertyConnectionPermissions.cs
 UnifiedCsharpSDK/Models/Components/PropertyConnectionCategories.cs
 UnifiedCsharpSDK/Models/Components/PropertyConnectionAuth.cs
 UnifiedCsharpSDK/Models/Components/PropertyPropertyConnectionAuthMeta.cs
-UnifiedCsharpSDK/Models/Components/Event.cs
-UnifiedCsharpSDK/Models/Components/ObjectType.cs
-UnifiedCsharpSDK/Models/Components/WebhookWebhookType.cs
-UnifiedCsharpSDK/Models/Components/Webhook.cs
-UnifiedCsharpSDK/Models/Components/PropertyWebhookMeta.cs
-UnifiedCsharpSDK/Models/Components/PropertyWebhookEvents.cs
 UnifiedCsharpSDK/Models/Components/ApiCallType.cs
 UnifiedCsharpSDK/Models/Components/ApiCall.cs
 UnifiedCsharpSDK/Models/Components/Integration.cs
@@ -615,6 +607,12 @@ UnifiedCsharpSDK/Models/Components/PropertyIntegrationSupportWebhookEvents.cs
 UnifiedCsharpSDK/Models/Components/PropertyIntegrationSupportOutboundFields.cs
 UnifiedCsharpSDK/Models/Components/PropertyIntegrationSupportInboundFields.cs
 UnifiedCsharpSDK/Models/Components/PropertyIntegrationCategories.cs
+UnifiedCsharpSDK/Models/Components/Event.cs
+UnifiedCsharpSDK/Models/Components/ObjectType.cs
+UnifiedCsharpSDK/Models/Components/WebhookWebhookType.cs
+UnifiedCsharpSDK/Models/Components/Webhook.cs
+UnifiedCsharpSDK/Models/Components/PropertyWebhookMeta.cs
+UnifiedCsharpSDK/Models/Components/PropertyWebhookEvents.cs
 UnifiedCsharpSDK/Models/Components/Security.cs
 docs/Models/Requests/CreateAccountingAccountRequest.md
 docs/Models/Requests/CreateAccountingAccountResponse.md
@@ -975,9 +973,6 @@ docs/Models/Requests/UpdateTicketingTicketResponse.md
 docs/Models/Requests/ListUcCallsRequest.md
 docs/Models/Requests/ListUcCallsResponse.md
 docs/Models/Requests/CreateUnifiedConnectionResponse.md
-docs/Models/Requests/Events.md
-docs/Models/Requests/CreateUnifiedWebhookRequest.md
-docs/Models/Requests/CreateUnifiedWebhookResponse.md
 docs/Models/Requests/GetUnifiedApicallRequest.md
 docs/Models/Requests/GetUnifiedApicallResponse.md
 docs/Models/Requests/GetUnifiedConnectionRequest.md
@@ -1028,6 +1023,7 @@ docs/Models/Components/PropertyAccountingCustomerBillingAddress.md
 docs/Models/Components/AccountingInvoice.md
 docs/Models/Components/PropertyAccountingInvoiceRaw.md
 docs/Models/Components/AccountingLineitem.md
+docs/Models/Components/PropertyAccountingLineitemRaw.md
 docs/Models/Components/AccountingItem.md
 docs/Models/Components/PropertyAccountingItemRaw.md
 docs/Models/Components/AccountingPayment.md
@@ -1157,12 +1153,6 @@ docs/Models/Components/PropertyConnectionPermissions.md
 docs/Models/Components/PropertyConnectionCategories.md
 docs/Models/Components/PropertyConnectionAuth.md
 docs/Models/Components/PropertyPropertyConnectionAuthMeta.md
-docs/Models/Components/Event.md
-docs/Models/Components/ObjectType.md
-docs/Models/Components/WebhookWebhookType.md
-docs/Models/Components/Webhook.md
-docs/Models/Components/PropertyWebhookMeta.md
-docs/Models/Components/PropertyWebhookEvents.md
 docs/Models/Components/ApiCallType.md
 docs/Models/Components/ApiCall.md
 docs/Models/Components/Integration.md
@@ -1172,6 +1162,12 @@ docs/Models/Components/PropertyIntegrationSupportWebhookEvents.md
 docs/Models/Components/PropertyIntegrationSupportOutboundFields.md
 docs/Models/Components/PropertyIntegrationSupportInboundFields.md
 docs/Models/Components/PropertyIntegrationCategories.md
+docs/Models/Components/Event.md
+docs/Models/Components/ObjectType.md
+docs/Models/Components/WebhookWebhookType.md
+docs/Models/Components/Webhook.md
+docs/Models/Components/PropertyWebhookMeta.md
+docs/Models/Components/PropertyWebhookEvents.md
 docs/Models/Components/Security.md
 docs/sdks/unifiedto/README.md
 docs/sdks/accounting/README.md

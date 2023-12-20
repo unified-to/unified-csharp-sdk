@@ -28,9 +28,6 @@ namespace UnifiedCsharpSDK.Models.Requests
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;
 
-        /// <summary>
-        /// A user&apos;s bank account
-        /// </summary>
         [SpeakeasyMetadata("request:mediaType=application/json")]
         public AccountingAccount? AccountingAccount { get; set; }
     }

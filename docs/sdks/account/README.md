@@ -39,7 +39,7 @@ var res = await sdk.Account.CreateAccountingAccountAsync(ConnectionId: "string",
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
-| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | A user's bank account                                             |
+| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response
@@ -156,7 +156,7 @@ var res = await sdk.Account.PatchAccountingAccountAsync(ConnectionId: "string", 
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Account                                                 |
-| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | A user's bank account                                             |
+| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response
@@ -228,7 +228,7 @@ var res = await sdk.Account.UpdateAccountingAccountAsync(ConnectionId: "string",
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Account                                                 |
-| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | A user's bank account                                             |
+| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response

@@ -4,7 +4,6 @@
 ### Available Operations
 
 * [CreateUnifiedConnection](#createunifiedconnection) - Create connection
-* [CreateUnifiedWebhook](#createunifiedwebhook) - Create webhook subscription
 * [GetUnifiedApicall](#getunifiedapicall) - Retrieve specific API Call by its ID
 * [GetUnifiedConnection](#getunifiedconnection) - Retrieve connection
 * [GetUnifiedIntegration](#getunifiedintegration) - Retrieve an integration
@@ -73,60 +72,6 @@ var res = await sdk.Unified.CreateUnifiedConnectionAsync(req);
 ### Response
 
 **[CreateUnifiedConnectionResponse](../../Models/Requests/CreateUnifiedConnectionResponse.md)**
-
-
-## CreateUnifiedWebhook
-
-To maintain compatibility with the webhooks specification and Zapier webhooks, only the hook_url field is required in the payload when creating a Webhook.  When updated/new objects are found, the array of objects will be POSTed to the hook_url with the paramater hookId=<hookId>. The data payload received by your server is described at https://docs.unified.to/unified/overview.  The `interval` field can be set as low as 15 minutes for paid accounts, and 60 minutes for free accounts.
-
-### Example Usage
-
-```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
-using System.Collections.Generic;
-
-var sdk = new UnifiedTo(
-    security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Unified.CreateUnifiedWebhookAsync(ConnectionId: "string", Object: "string", Webhook: new Models.Components.Webhook() {
-    Event = Models.Components.Event.Created,
-    Events = new List<PropertyWebhookEvents>() {
-        PropertyWebhookEvents.Updated,
-    },
-    HookUrl = "string",
-    Interval = 4583.16D,
-    Meta = new PropertyWebhookMeta() {},
-    ObjectType = ObjectType.CrmLead,
-    Runs = new List<string>() {
-        "string",
-    },
-    Subscriptions = new List<string>() {
-        "string",
-    },
-}, Events: new List<Events>() {
-    Events.Updated,
-});
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
-| `Object`                                                        | *string*                                                        | :heavy_check_mark:                                              | The object to subscribe to                                      |
-| `Webhook`                                                       | [Models.Components.Webhook](../../Models/Components/Webhook.md) | :heavy_minus_sign:                                              | N/A                                                             |
-| `Events`                                                        | List<[Events](../../Models/Requests/Events.md)>                 | :heavy_minus_sign:                                              | Which events to subscribe to.                                   |
-
-
-### Response
-
-**[CreateUnifiedWebhookResponse](../../Models/Requests/CreateUnifiedWebhookResponse.md)**
 
 
 ## GetUnifiedApicall

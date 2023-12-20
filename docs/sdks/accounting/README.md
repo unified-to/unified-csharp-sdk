@@ -77,7 +77,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(ConnectionId: "strin
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
-| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | A user's bank account                                             |
+| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response
@@ -154,6 +154,7 @@ var sdk = new UnifiedTo(
 var res = await sdk.Accounting.CreateAccountingInvoiceAsync(ConnectionId: "string", AccountingInvoice: new AccountingInvoice() {
     Lineitems = new List<AccountingLineitem>() {
         new AccountingLineitem() {
+            Raw = new PropertyAccountingLineitemRaw() {},
             TotalAmount = 6736.06D,
         },
     },
@@ -999,7 +1000,7 @@ var res = await sdk.Accounting.PatchAccountingAccountAsync(ConnectionId: "string
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Account                                                 |
-| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | A user's bank account                                             |
+| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response
@@ -1077,6 +1078,7 @@ var sdk = new UnifiedTo(
 var res = await sdk.Accounting.PatchAccountingInvoiceAsync(ConnectionId: "string", Id: "string", AccountingInvoice: new AccountingInvoice() {
     Lineitems = new List<AccountingLineitem>() {
         new AccountingLineitem() {
+            Raw = new PropertyAccountingLineitemRaw() {},
             TotalAmount = 7374.1D,
         },
     },
@@ -1533,7 +1535,7 @@ var res = await sdk.Accounting.UpdateAccountingAccountAsync(ConnectionId: "strin
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Account                                                 |
-| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | A user's bank account                                             |
+| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response
@@ -1611,6 +1613,7 @@ var sdk = new UnifiedTo(
 var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(ConnectionId: "string", Id: "string", AccountingInvoice: new AccountingInvoice() {
     Lineitems = new List<AccountingLineitem>() {
         new AccountingLineitem() {
+            Raw = new PropertyAccountingLineitemRaw() {},
             TotalAmount = 6974.28D,
         },
     },

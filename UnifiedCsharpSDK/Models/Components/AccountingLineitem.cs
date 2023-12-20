@@ -16,6 +16,9 @@ namespace UnifiedCsharpSDK.Models.Components
     public class AccountingLineitem
     {
 
+        [JsonProperty("account_id")]
+        public string? AccountId { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -39,6 +42,9 @@ namespace UnifiedCsharpSDK.Models.Components
 
         [JsonProperty("notes")]
         public string? Notes { get; set; }
+
+        [JsonProperty("raw")]
+        public PropertyAccountingLineitemRaw? Raw { get; set; }
 
         [JsonProperty("refunded_amount")]
         public double? RefundedAmount { get; set; }
