@@ -35,6 +35,8 @@ namespace UnifiedCsharpSDK.Models.Requests
         Uc,
         [JsonProperty("accounting")]
         Accounting,
+        [JsonProperty("storage")]
+        Storage,
     }
 
     public static class ListUnifiedIntegrationsQueryParamCategoriesExtension

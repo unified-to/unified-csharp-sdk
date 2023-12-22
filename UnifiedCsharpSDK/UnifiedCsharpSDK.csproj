@@ -2,7 +2,7 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <PackageId>Unified-csharp-sdk</PackageId>
-    <Version>0.2.14</Version>
+    <Version>0.2.15</Version>
     <Authors>Unified API Inc</Authors>
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>

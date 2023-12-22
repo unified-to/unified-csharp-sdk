@@ -35,6 +35,8 @@ namespace UnifiedCsharpSDK.Models.Components
         Uc,
         [JsonProperty("accounting")]
         Accounting,
+        [JsonProperty("storage")]
+        Storage,
     }
 
     public static class PropertyIntegrationCategoriesExtension

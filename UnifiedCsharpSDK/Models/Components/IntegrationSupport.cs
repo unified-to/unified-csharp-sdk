@@ -55,6 +55,9 @@ namespace UnifiedCsharpSDK.Models.Components
         [JsonProperty("list_order")]
         public bool? ListOrder { get; set; }
 
+        [JsonProperty("list_parent_id")]
+        public bool? ListParentId { get; set; }
+
         [JsonProperty("list_query")]
         public bool? ListQuery { get; set; }
 

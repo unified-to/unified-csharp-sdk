@@ -37,14 +37,14 @@ Models.Components.Connection req = new Models.Components.Connection() {
         },
     },
     Categories = new List<PropertyConnectionCategories>() {
-        PropertyConnectionCategories.Accounting,
+        PropertyConnectionCategories.Storage,
     },
     CursorsCache = new List<Undefined>() {
         new Undefined() {},
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.AtsJobRead,
+        PropertyConnectionPermissions.AtsJobWrite,
     },
 };
 
@@ -166,14 +166,14 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(Id: "string", Connect
         },
     },
     Categories = new List<PropertyConnectionCategories>() {
-        PropertyConnectionCategories.Martech,
+        PropertyConnectionCategories.Ticketing,
     },
     CursorsCache = new List<Undefined>() {
         new Undefined() {},
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.CrmPipelineRead,
+        PropertyConnectionPermissions.MartechListRead,
     },
 });
 
@@ -254,14 +254,14 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(Id: "string", Connec
         },
     },
     Categories = new List<PropertyConnectionCategories>() {
-        PropertyConnectionCategories.Ticketing,
+        PropertyConnectionCategories.Uc,
     },
     CursorsCache = new List<Undefined>() {
         new Undefined() {},
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.CrmCompanyWrite,
+        PropertyConnectionPermissions.CrmContactRead,
     },
 });
 

@@ -61,7 +61,7 @@ var sdk = new UnifiedTo(
 GetUnifiedIntegrationAuthRequest req = new GetUnifiedIntegrationAuthRequest() {
     IntegrationType = "string",
     Scopes = new List<Scopes>() {
-        Scopes.HrisEmployeeRead,
+        Scopes.HrisGroupRead,
     },
     WorkspaceId = "string",
 };
@@ -102,7 +102,7 @@ var sdk = new UnifiedTo(
 
 ListUnifiedIntegrationWorkspacesRequest req = new ListUnifiedIntegrationWorkspacesRequest() {
     Categories = new List<QueryParamCategories>() {
-        QueryParamCategories.Ticketing,
+        QueryParamCategories.Uc,
     },
     WorkspaceId = "string",
 };

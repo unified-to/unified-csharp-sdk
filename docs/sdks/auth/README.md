@@ -26,7 +26,7 @@ var sdk = new UnifiedTo(
 GetUnifiedIntegrationAuthRequest req = new GetUnifiedIntegrationAuthRequest() {
     IntegrationType = "string",
     Scopes = new List<Scopes>() {
-        Scopes.HrisEmployeeRead,
+        Scopes.HrisGroupRead,
     },
     WorkspaceId = "string",
 };

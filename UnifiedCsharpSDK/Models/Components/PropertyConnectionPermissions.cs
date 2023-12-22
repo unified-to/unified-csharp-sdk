@@ -129,6 +129,10 @@ namespace UnifiedCsharpSDK.Models.Components
         HrisGroupWrite,
         [JsonProperty("uc_call_read")]
         UcCallRead,
+        [JsonProperty("storage_file_read")]
+        StorageFileRead,
+        [JsonProperty("storage_file_write")]
+        StorageFileWrite,
         [JsonProperty("webhook")]
         Webhook,
     }

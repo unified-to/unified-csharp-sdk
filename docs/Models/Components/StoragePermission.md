@@ -1,0 +1,10 @@
+# StoragePermission
+
+
+## Fields
+
+| Field                                                                                             | Type                                                                                              | Required                                                                                          | Description                                                                                       |
+| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `GroupId`                                                                                         | *string*                                                                                          | :heavy_minus_sign:                                                                                | N/A                                                                                               |
+| `Roles`                                                                                           | List<[PropertyStoragePermissionRoles](../../Models/Components/PropertyStoragePermissionRoles.md)> | :heavy_check_mark:                                                                                | N/A                                                                                               |
+| `UserId`                                                                                          | *string*                                                                                          | :heavy_minus_sign:                                                                                | N/A                                                                                               |

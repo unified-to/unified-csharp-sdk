@@ -37,10 +37,10 @@ namespace UnifiedCsharpSDK
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.14";
-        private const string _sdkGenVersion = "2.221.0";
+        private const string _sdkVersion = "0.2.15";
+        private const string _sdkGenVersion = "2.223.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.2.14 2.221.0 1.0 Unified-csharp-sdk";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.2.15 2.223.0 1.0 Unified-csharp-sdk";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;

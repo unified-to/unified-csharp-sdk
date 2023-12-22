@@ -83,6 +83,8 @@ namespace UnifiedCsharpSDK.Models.Components
         EnrichPerson,
         [JsonProperty("enrich_company")]
         EnrichCompany,
+        [JsonProperty("storage_file")]
+        StorageFile,
     }
 
     public static class ObjectTypeExtension

@@ -59,6 +59,7 @@ namespace UnifiedCsharpSDK
         public IList List { get; }
         public IMember Member { get; }
         public IPassthrough Passthrough { get; }
+        public IStorage Storage { get; }
         public ITicketing Ticketing { get; }
         public INote Note { get; }
         public ITicket Ticket { get; }
@@ -102,10 +103,10 @@ namespace UnifiedCsharpSDK
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.2.14";
-        private const string _sdkGenVersion = "2.221.0";
+        private const string _sdkVersion = "0.2.15";
+        private const string _sdkGenVersion = "2.223.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.2.14 2.221.0 1.0 Unified-csharp-sdk";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.2.15 2.223.0 1.0 Unified-csharp-sdk";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -143,6 +144,7 @@ namespace UnifiedCsharpSDK
         public IList List { get; private set; }
         public IMember Member { get; private set; }
         public IPassthrough Passthrough { get; private set; }
+        public IStorage Storage { get; private set; }
         public ITicketing Ticketing { get; private set; }
         public INote Note { get; private set; }
         public ITicket Ticket { get; private set; }
@@ -212,6 +214,7 @@ namespace UnifiedCsharpSDK
             List = new List(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Member = new Member(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Passthrough = new Passthrough(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            Storage = new Storage(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Ticketing = new Ticketing(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Note = new Note(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Ticket = new Ticket(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
