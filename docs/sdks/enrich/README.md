@@ -13,9 +13,9 @@ Retrieve enrichment information for a company
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
@@ -48,9 +48,9 @@ Retrieve enrichment information for a person
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {

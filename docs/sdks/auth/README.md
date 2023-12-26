@@ -13,9 +13,9 @@ Returns an authorization URL for the specified integration.  Once a successful a
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
@@ -55,9 +55,9 @@ Returns an authentication URL for the specified integration.  Once a successful 
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {

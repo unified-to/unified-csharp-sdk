@@ -12,9 +12,9 @@ List all calls
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 using System.Collections.Generic;
 
 var sdk = new UnifiedTo(

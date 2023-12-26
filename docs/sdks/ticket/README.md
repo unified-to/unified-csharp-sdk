@@ -17,9 +17,9 @@ Create a ticket
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
@@ -57,9 +57,9 @@ Retrieve a ticket
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
@@ -95,9 +95,9 @@ List all tickets
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
@@ -136,9 +136,9 @@ Update a ticket
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
@@ -177,9 +177,9 @@ Remove a ticket
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
@@ -211,9 +211,9 @@ Update a ticket
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 using System.Collections.Generic;
 
 var sdk = new UnifiedTo(

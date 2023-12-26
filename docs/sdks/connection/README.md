@@ -17,8 +17,8 @@ Create connection
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
+using Unified.To;
+using Unified.To.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
@@ -72,9 +72,9 @@ Retrieve connection
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
@@ -105,9 +105,9 @@ List all connections
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
@@ -145,9 +145,9 @@ Update connection
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
@@ -200,9 +200,9 @@ Remove connection
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
@@ -233,9 +233,9 @@ Update connection
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 using System.Collections.Generic;
 
 var sdk = new UnifiedTo(

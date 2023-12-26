@@ -17,9 +17,9 @@ Create a candidate
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
@@ -71,9 +71,9 @@ Retrieve a candidate
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
@@ -109,9 +109,9 @@ List all candidates
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
@@ -150,9 +150,9 @@ Update a candidate
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
@@ -205,9 +205,9 @@ Remove a candidate
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
@@ -239,9 +239,9 @@ Update a candidate
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 using System.Collections.Generic;
 
 var sdk = new UnifiedTo(

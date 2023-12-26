@@ -22,7 +22,7 @@ It has been generated successfully based on your OpenAPI spec. However, it is no
 ### Nuget
 
 ```bash
-dotnet add package Unified-csharp-sdk
+dotnet add package Unified.to
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -32,9 +32,9 @@ dotnet add package Unified-csharp-sdk
 ### Example
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using Unified.To;
+using Unified.To.Models.Components;
+using Unified.To.Models.Requests;
 
 var sdk = new UnifiedTo(
     security: new Security() {
