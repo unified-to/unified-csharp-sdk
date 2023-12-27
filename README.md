@@ -6,7 +6,7 @@ dotnet add package Unified-csharp-sdk
 <!-- End SDK Installation [installation] -->
 
 <!-- Start SDK Example Usage [usage] -->
-## Example Usage
+## SDK Example Usage
 
 ### Example
 
@@ -595,6 +595,16 @@ You can override the default server globally by passing a server index to the `s
 
 The default server can also be overridden globally by passing a URL to the `serverUrl: str` optional parameter when initializing the SDK client instance. For example:
 <!-- End Server Selection [server] -->
+
+<!-- Start SDK Installation [installation] -->
+## SDK Installation
+
+### Nuget
+
+```bash
+dotnet add package Unified-csharp-sdk
+```
+<!-- End SDK Installation [installation] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

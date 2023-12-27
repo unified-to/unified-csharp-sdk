@@ -2,8 +2,8 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <PackageId>Unified-csharp-sdk</PackageId>
-    <Version>0.2.15</Version>
-    <Authors>Unified API Inc</Authors>
+    <Version>0.3.0</Version>
+    <Authors>Unified API Inc.</Authors>
     <TargetFramework>net5.0</TargetFramework>
     <Nullable>enable</Nullable>
     <PackageReadmeFile>README.md</PackageReadmeFile>

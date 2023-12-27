@@ -151,3 +151,13 @@ Based on:
 - Speakeasy CLI 1.128.1 (2.223.0) https://github.com/speakeasy-api/speakeasy
 ### Generated
 - [csharp v0.2.15] .
+
+## 2023-12-27 16:46:56
+### Changes
+Based on:
+- OpenAPI Doc 1.0 
+- Speakeasy CLI 1.129.1 (2.223.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.3.0] .
+### Releases
+- [NuGet v0.3.0] https://www.nuget.org/packages/Unified-csharp-sdk/0.3.0 - .
