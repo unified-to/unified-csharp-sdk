@@ -36,6 +36,9 @@ var res = await sdk.Company.CreateCrmCompanyAsync(ConnectionId: "string", CrmCom
     Emails = new List<CrmEmail>() {
         new CrmEmail() {},
     },
+    LinkUrls = new List<string>() {
+        "string",
+    },
     Raw = new PropertyCrmCompanyRaw() {},
     Tags = new List<string>() {
         "string",
@@ -205,6 +208,9 @@ var res = await sdk.Company.PatchCrmCompanyAsync(ConnectionId: "string", Id: "st
     Emails = new List<CrmEmail>() {
         new CrmEmail() {},
     },
+    LinkUrls = new List<string>() {
+        "string",
+    },
     Raw = new PropertyCrmCompanyRaw() {},
     Tags = new List<string>() {
         "string",
@@ -294,6 +300,9 @@ var res = await sdk.Company.UpdateCrmCompanyAsync(ConnectionId: "string", Id: "s
     },
     Emails = new List<CrmEmail>() {
         new CrmEmail() {},
+    },
+    LinkUrls = new List<string>() {
+        "string",
     },
     Raw = new PropertyCrmCompanyRaw() {},
     Tags = new List<string>() {

@@ -547,6 +547,7 @@ UnifiedCsharpSDK/Models/Components/CrmDeal.cs
 UnifiedCsharpSDK/Models/Components/PropertyCrmDealRaw.cs
 UnifiedCsharpSDK/Models/Components/CrmEventType.cs
 UnifiedCsharpSDK/Models/Components/CrmEvent.cs
+UnifiedCsharpSDK/Models/Components/PropertyCrmEventTaskStatus.cs
 UnifiedCsharpSDK/Models/Components/PropertyCrmEventTask.cs
 UnifiedCsharpSDK/Models/Components/PropertyCrmEventRaw.cs
 UnifiedCsharpSDK/Models/Components/PropertyCrmEventNote.cs
@@ -1120,6 +1121,7 @@ docs/Models/Components/CrmDeal.md
 docs/Models/Components/PropertyCrmDealRaw.md
 docs/Models/Components/CrmEventType.md
 docs/Models/Components/CrmEvent.md
+docs/Models/Components/PropertyCrmEventTaskStatus.md
 docs/Models/Components/PropertyCrmEventTask.md
 docs/Models/Components/PropertyCrmEventRaw.md
 docs/Models/Components/PropertyCrmEventNote.md

@@ -32,14 +32,26 @@ namespace UnifiedCsharpSDK.Models.Components
         [JsonProperty("deal_ids")]
         public List<string>? DealIds { get; set; }
 
+        [JsonProperty("description")]
+        public string? Description { get; set; }
+
         [JsonProperty("emails")]
         public List<CrmEmail>? Emails { get; set; }
+
+        [JsonProperty("employees")]
+        public double? Employees { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("industry")]
+        public string? Industry { get; set; }
+
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
+
+        [JsonProperty("link_urls")]
+        public List<string>? LinkUrls { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }
@@ -55,6 +67,9 @@ namespace UnifiedCsharpSDK.Models.Components
 
         [JsonProperty("telephones")]
         public List<CrmTelephone>? Telephones { get; set; }
+
+        [JsonProperty("timezone")]
+        public string? Timezone { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

@@ -1,6 +1,6 @@
 configVersion: 1.0.0
 management:
-  docChecksum: e3b0fa817f6bbf89903e69969ea4a236
+  docChecksum: a9825a86d81034301b0f56cc9b76ba30
   docVersion: "1.0"
   speakeasyVersion: 1.129.1
   generationVersion: 2.223.3
@@ -22,7 +22,7 @@ features:
     globalSecurity: 2.81.2
     globalServerURLs: 2.82.2
 csharp:
-  version: 0.3.0
+  version: 0.3.1
   author: Unified API Inc.
   dotnetVersion: net5.0
   imports:

@@ -29,6 +29,6 @@ namespace UnifiedCsharpSDK.Models.Components
         public string? Name { get; set; }
 
         [JsonProperty("status")]
-        public string? Status { get; set; }
+        public PropertyCrmEventTaskStatus? Status { get; set; }
     }
 }
