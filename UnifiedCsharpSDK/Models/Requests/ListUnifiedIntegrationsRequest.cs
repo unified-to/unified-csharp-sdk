@@ -46,6 +46,12 @@ namespace UnifiedCsharpSDK.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=summary")]
         public bool? Summary { get; set; }
 
+        /// <summary>
+        /// Filter the results for only this integration type
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=type")]
+        public string? Type { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public string? UpdatedGte { get; set; }
     }

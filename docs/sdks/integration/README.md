@@ -3,43 +3,9 @@
 
 ### Available Operations
 
-* [GetUnifiedIntegration](#getunifiedintegration) - Retrieve an integration
 * [GetUnifiedIntegrationAuth](#getunifiedintegrationauth) - Create connection indirectly
 * [ListUnifiedIntegrationWorkspaces](#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
 * [ListUnifiedIntegrations](#listunifiedintegrations) - Returns all integrations
-
-## GetUnifiedIntegration
-
-Retrieve an integration
-
-### Example Usage
-
-```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
-
-var sdk = new UnifiedTo(
-    security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Integration.GetUnifiedIntegrationAsync(IntegrationType: "string");
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                         | Type                              | Required                          | Description                       |
-| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
-| `IntegrationType`                 | *string*                          | :heavy_check_mark:                | Type of the supported integration |
-
-
-### Response
-
-**[GetUnifiedIntegrationResponse](../../Models/Requests/GetUnifiedIntegrationResponse.md)**
-
 
 ## GetUnifiedIntegrationAuth
 

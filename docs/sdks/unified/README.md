@@ -7,7 +7,6 @@
 * [CreateUnifiedWebhook](#createunifiedwebhook) - Create webhook subscription
 * [GetUnifiedApicall](#getunifiedapicall) - Retrieve specific API Call by its ID
 * [GetUnifiedConnection](#getunifiedconnection) - Retrieve connection
-* [GetUnifiedIntegration](#getunifiedintegration) - Retrieve an integration
 * [GetUnifiedIntegrationAuth](#getunifiedintegrationauth) - Create connection indirectly
 * [GetUnifiedWebhook](#getunifiedwebhook) - Retrieve webhook by its ID
 * [ListUnifiedApicalls](#listunifiedapicalls) - Returns API Calls
@@ -184,39 +183,6 @@ var res = await sdk.Unified.GetUnifiedConnectionAsync(Id: "string");
 ### Response
 
 **[GetUnifiedConnectionResponse](../../Models/Requests/GetUnifiedConnectionResponse.md)**
-
-
-## GetUnifiedIntegration
-
-Retrieve an integration
-
-### Example Usage
-
-```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
-
-var sdk = new UnifiedTo(
-    security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Unified.GetUnifiedIntegrationAsync(IntegrationType: "string");
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                         | Type                              | Required                          | Description                       |
-| --------------------------------- | --------------------------------- | --------------------------------- | --------------------------------- |
-| `IntegrationType`                 | *string*                          | :heavy_check_mark:                | Type of the supported integration |
-
-
-### Response
-
-**[GetUnifiedIntegrationResponse](../../Models/Requests/GetUnifiedIntegrationResponse.md)**
 
 
 ## GetUnifiedIntegrationAuth

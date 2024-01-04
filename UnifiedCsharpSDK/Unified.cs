@@ -48,11 +48,6 @@ namespace UnifiedCsharpSDK
         Task<GetUnifiedConnectionResponse> GetUnifiedConnectionAsync(string id);
 
         /// <summary>
-        /// Retrieve an integration
-        /// </summary>
-        Task<GetUnifiedIntegrationResponse> GetUnifiedIntegrationAsync(string integrationType);
-
-        /// <summary>
         /// Create connection indirectly
         /// 
         /// <remarks>
@@ -120,10 +115,10 @@ namespace UnifiedCsharpSDK
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.3.2";
-        private const string _sdkGenVersion = "2.225.0";
+        private const string _sdkVersion = "0.3.3";
+        private const string _sdkGenVersion = "2.225.2";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.3.2 2.225.0 1.0 Unified-csharp-sdk";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.3.3 2.225.2 1.0 Unified-csharp-sdk";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -292,45 +287,6 @@ namespace UnifiedCsharpSDK
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.Connection = JsonConvert.DeserializeObject<Models.Components.Connection>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-                
-                return response;
-            }
-            return response;
-        }
-        
-
-        public async Task<GetUnifiedIntegrationResponse> GetUnifiedIntegrationAsync(string integrationType)
-        {
-            var request = new GetUnifiedIntegrationRequest()
-            {
-                IntegrationType = integrationType,
-            };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/unified/integration/{integration_type}", request);
-            
-            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-            
-            
-            var client = _securityClient;
-            
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-            
-            var response = new GetUnifiedIntegrationResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-            
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.Integration = JsonConvert.DeserializeObject<Models.Components.Integration>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;

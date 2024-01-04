@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: e3411ce3831f158718f8cc0477e33856
+  docChecksum: 56cbb60774d35fb7bb0337c12bcc7948
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.225.0
-  releaseVersion: 0.3.2
-  configChecksum: f1978d4f3d6109eacc0f18a30d227dc5
+  generationVersion: 2.225.2
+  releaseVersion: 0.3.3
+  configChecksum: d4e15689da8649328d51fcb04296f878
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -456,8 +456,6 @@ generatedFiles:
   - UnifiedCsharpSDK/Models/Requests/GetUnifiedApicallResponse.cs
   - UnifiedCsharpSDK/Models/Requests/GetUnifiedConnectionRequest.cs
   - UnifiedCsharpSDK/Models/Requests/GetUnifiedConnectionResponse.cs
-  - UnifiedCsharpSDK/Models/Requests/GetUnifiedIntegrationRequest.cs
-  - UnifiedCsharpSDK/Models/Requests/GetUnifiedIntegrationResponse.cs
   - UnifiedCsharpSDK/Models/Requests/Scopes.cs
   - UnifiedCsharpSDK/Models/Requests/GetUnifiedIntegrationAuthRequest.cs
   - UnifiedCsharpSDK/Models/Requests/GetUnifiedIntegrationAuthResponse.cs
@@ -1030,8 +1028,6 @@ generatedFiles:
   - docs/Models/Requests/GetUnifiedApicallResponse.md
   - docs/Models/Requests/GetUnifiedConnectionRequest.md
   - docs/Models/Requests/GetUnifiedConnectionResponse.md
-  - docs/Models/Requests/GetUnifiedIntegrationRequest.md
-  - docs/Models/Requests/GetUnifiedIntegrationResponse.md
   - docs/Models/Requests/Scopes.md
   - docs/Models/Requests/GetUnifiedIntegrationAuthRequest.md
   - docs/Models/Requests/GetUnifiedIntegrationAuthResponse.md
