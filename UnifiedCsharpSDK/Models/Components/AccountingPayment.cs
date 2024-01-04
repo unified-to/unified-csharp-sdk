@@ -11,7 +11,6 @@
 namespace UnifiedCsharpSDK.Models.Components
 {
     using Newtonsoft.Json;
-    using System.Collections.Generic;
     using System;
     
     public class AccountingPayment
@@ -29,8 +28,8 @@ namespace UnifiedCsharpSDK.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
-        [JsonProperty("invoice_ids")]
-        public List<string>? InvoiceIds { get; set; }
+        [JsonProperty("invoice_id")]
+        public string? InvoiceId { get; set; }
 
         [JsonProperty("notes")]
         public string? Notes { get; set; }

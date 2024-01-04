@@ -20,7 +20,6 @@ Create a payment
 using UnifiedCsharpSDK;
 using UnifiedCsharpSDK.Models.Components;
 using UnifiedCsharpSDK.Models.Requests;
-using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
@@ -28,9 +27,6 @@ var sdk = new UnifiedTo(
     });
 
 var res = await sdk.Payment.CreateAccountingPaymentAsync(ConnectionId: "string", AccountingPayment: new AccountingPayment() {
-    InvoiceIds = new List<string>() {
-        "string",
-    },
     Raw = new PropertyAccountingPaymentRaw() {},
 });
 
@@ -139,7 +135,6 @@ Update a payment
 using UnifiedCsharpSDK;
 using UnifiedCsharpSDK.Models.Components;
 using UnifiedCsharpSDK.Models.Requests;
-using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
@@ -147,9 +142,6 @@ var sdk = new UnifiedTo(
     });
 
 var res = await sdk.Payment.PatchAccountingPaymentAsync(ConnectionId: "string", Id: "string", AccountingPayment: new AccountingPayment() {
-    InvoiceIds = new List<string>() {
-        "string",
-    },
     Raw = new PropertyAccountingPaymentRaw() {},
 });
 
@@ -214,7 +206,6 @@ Update a payment
 using UnifiedCsharpSDK;
 using UnifiedCsharpSDK.Models.Components;
 using UnifiedCsharpSDK.Models.Requests;
-using System.Collections.Generic;
 
 var sdk = new UnifiedTo(
     security: new Security() {
@@ -222,9 +213,6 @@ var sdk = new UnifiedTo(
     });
 
 var res = await sdk.Payment.UpdateAccountingPaymentAsync(ConnectionId: "string", Id: "string", AccountingPayment: new AccountingPayment() {
-    InvoiceIds = new List<string>() {
-        "string",
-    },
     Raw = new PropertyAccountingPaymentRaw() {},
 });
 
