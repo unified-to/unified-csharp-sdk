@@ -16,6 +16,9 @@ namespace UnifiedCsharpSDK.Models.Components
     public class AccountingPayment
     {
 
+        [JsonProperty("account_id")]
+        public string? AccountId { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 

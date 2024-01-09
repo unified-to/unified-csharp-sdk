@@ -71,4 +71,5 @@ namespace UnifiedCsharpSDK.Models.Requests
             throw new Exception($"Unknown value {value} for enum ListUnifiedIntegrationsQueryParamCategories");
         }
     }
+
 }
