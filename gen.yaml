@@ -11,7 +11,7 @@ generation:
 csharp:
   version: 0.4.2
   author: Unified API Inc.
-  dotnetVersion: net5.0
+  dotnetVersion: net6.0
   imports:
     option: openapi
     paths:
