@@ -23,7 +23,7 @@ csharp:
   inputModelSuffix: input
   maxMethodParams: 4
   outputModelSuffix: output
-  packageName: Unified-csharp-sdk
+  packageName: UnifiedTo
 ruby:
   version: 0.0.1
   author: Unified API Inc
