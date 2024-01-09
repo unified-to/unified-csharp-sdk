@@ -26,11 +26,11 @@ Create connection
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -81,12 +81,12 @@ The data payload received by your server is described at https://docs.unified.to
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -126,11 +126,11 @@ Retrieve specific API Call by its ID
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -159,11 +159,11 @@ Retrieve connection
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -192,12 +192,12 @@ Returns an authorization URL for the specified integration.  Once a successful a
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -234,11 +234,11 @@ Retrieve webhook by its ID
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -267,11 +267,11 @@ Returns API Calls
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -302,12 +302,12 @@ List all connections
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -342,12 +342,12 @@ No authentication required as this is to be used by front-end interface
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -383,12 +383,12 @@ Returns all integrations
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -423,11 +423,11 @@ Returns all registered webhooks
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -458,12 +458,12 @@ Update connection
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -513,11 +513,11 @@ Remove connection
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -546,11 +546,11 @@ Remove webhook subscription
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -579,12 +579,12 @@ Update connection
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });

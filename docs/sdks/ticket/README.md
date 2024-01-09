@@ -17,12 +17,12 @@ Create a ticket
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -57,12 +57,12 @@ Retrieve a ticket
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -95,12 +95,12 @@ List all tickets
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -136,12 +136,12 @@ Update a ticket
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -177,11 +177,11 @@ Remove a ticket
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -211,12 +211,12 @@ Update a ticket
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });

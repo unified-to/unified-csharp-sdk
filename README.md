@@ -11,11 +11,11 @@ dotnet add package Unified-csharp-sdk
 ### Example
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -600,7 +600,7 @@ The default server can also be overridden globally by passing a URL to the `serv
 ### Nuget
 
 ```bash
-dotnet add package Unified-csharp-sdk
+dotnet add package UnifiedTo
 ```
 <!-- End SDK Installation [installation] -->
 

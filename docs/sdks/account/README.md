@@ -17,11 +17,11 @@ Create an account
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -54,12 +54,12 @@ Retrieve an account
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -92,12 +92,12 @@ List all accounts
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -133,11 +133,11 @@ Update an account
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -171,11 +171,11 @@ Remove an account
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
@@ -205,11 +205,11 @@ Update an account
 ### Example Usage
 
 ```csharp
-using UnifiedCsharpSDK;
-using UnifiedCsharpSDK.Models.Components;
-using UnifiedCsharpSDK.Models.Requests;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedTo(
+var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
