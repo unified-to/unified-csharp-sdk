@@ -6,7 +6,9 @@
 * [CreateUnifiedWebhook](#createunifiedwebhook) - Create webhook subscription
 * [GetUnifiedWebhook](#getunifiedwebhook) - Retrieve webhook by its ID
 * [ListUnifiedWebhooks](#listunifiedwebhooks) - Returns all registered webhooks
+* [PatchUnifiedWebhookTrigger](#patchunifiedwebhooktrigger) - Trigger webhook
 * [RemoveUnifiedWebhook](#removeunifiedwebhook) - Remove webhook subscription
+* [UpdateUnifiedWebhookTrigger](#updateunifiedwebhooktrigger) - Trigger webhook
 
 ## CreateUnifiedWebhook
 
@@ -121,6 +123,39 @@ var res = await sdk.Webhook.ListUnifiedWebhooksAsync(req);
 **[ListUnifiedWebhooksResponse](../../Models/Requests/ListUnifiedWebhooksResponse.md)**
 
 
+## PatchUnifiedWebhookTrigger
+
+Trigger webhook
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Webhook.PatchUnifiedWebhookTriggerAsync(Id: "string");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `Id`               | *string*           | :heavy_check_mark: | ID of the Webhook  |
+
+
+### Response
+
+**[PatchUnifiedWebhookTriggerResponse](../../Models/Requests/PatchUnifiedWebhookTriggerResponse.md)**
+
+
 ## RemoveUnifiedWebhook
 
 Remove webhook subscription
@@ -152,4 +187,37 @@ var res = await sdk.Webhook.RemoveUnifiedWebhookAsync(Id: "string");
 ### Response
 
 **[RemoveUnifiedWebhookResponse](../../Models/Requests/RemoveUnifiedWebhookResponse.md)**
+
+
+## UpdateUnifiedWebhookTrigger
+
+Trigger webhook
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Webhook.UpdateUnifiedWebhookTriggerAsync(Id: "string");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `Id`               | *string*           | :heavy_check_mark: | ID of the Webhook  |
+
+
+### Response
+
+**[UpdateUnifiedWebhookTriggerResponse](../../Models/Requests/UpdateUnifiedWebhookTriggerResponse.md)**
 

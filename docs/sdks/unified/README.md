@@ -15,9 +15,11 @@
 * [ListUnifiedIntegrations](#listunifiedintegrations) - Returns all integrations
 * [ListUnifiedWebhooks](#listunifiedwebhooks) - Returns all registered webhooks
 * [PatchUnifiedConnection](#patchunifiedconnection) - Update connection
+* [PatchUnifiedWebhookTrigger](#patchunifiedwebhooktrigger) - Trigger webhook
 * [RemoveUnifiedConnection](#removeunifiedconnection) - Remove connection
 * [RemoveUnifiedWebhook](#removeunifiedwebhook) - Remove webhook subscription
 * [UpdateUnifiedConnection](#updateunifiedconnection) - Update connection
+* [UpdateUnifiedWebhookTrigger](#updateunifiedwebhooktrigger) - Trigger webhook
 
 ## CreateUnifiedConnection
 
@@ -506,6 +508,39 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(Id: "string", Connection
 **[PatchUnifiedConnectionResponse](../../Models/Requests/PatchUnifiedConnectionResponse.md)**
 
 
+## PatchUnifiedWebhookTrigger
+
+Trigger webhook
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Unified.PatchUnifiedWebhookTriggerAsync(Id: "string");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `Id`               | *string*           | :heavy_check_mark: | ID of the Webhook  |
+
+
+### Response
+
+**[PatchUnifiedWebhookTriggerResponse](../../Models/Requests/PatchUnifiedWebhookTriggerResponse.md)**
+
+
 ## RemoveUnifiedConnection
 
 Remove connection
@@ -625,4 +660,37 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(Id: "string", Connectio
 ### Response
 
 **[UpdateUnifiedConnectionResponse](../../Models/Requests/UpdateUnifiedConnectionResponse.md)**
+
+
+## UpdateUnifiedWebhookTrigger
+
+Trigger webhook
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Unified.UpdateUnifiedWebhookTriggerAsync(Id: "string");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `Id`               | *string*           | :heavy_check_mark: | ID of the Webhook  |
+
+
+### Response
+
+**[UpdateUnifiedWebhookTriggerResponse](../../Models/Requests/UpdateUnifiedWebhookTriggerResponse.md)**
 

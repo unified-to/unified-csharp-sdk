@@ -43,19 +43,29 @@ namespace UnifiedTo
         Task<ListUnifiedWebhooksResponse> ListUnifiedWebhooksAsync(ListUnifiedWebhooksRequest? request = null);
 
         /// <summary>
+        /// Trigger webhook
+        /// </summary>
+        Task<PatchUnifiedWebhookTriggerResponse> PatchUnifiedWebhookTriggerAsync(string id);
+
+        /// <summary>
         /// Remove webhook subscription
         /// </summary>
         Task<RemoveUnifiedWebhookResponse> RemoveUnifiedWebhookAsync(string id);
+
+        /// <summary>
+        /// Trigger webhook
+        /// </summary>
+        Task<UpdateUnifiedWebhookTriggerResponse> UpdateUnifiedWebhookTriggerAsync(string id);
     }
 
     public class Webhook: IWebhook
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.5.0";
-        private const string _sdkGenVersion = "2.230.1";
+        private const string _sdkVersion = "0.5.1";
+        private const string _sdkGenVersion = "2.230.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.5.0 2.230.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.5.1 2.230.3 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -188,6 +198,36 @@ namespace UnifiedTo
         }
         
 
+        public async Task<PatchUnifiedWebhookTriggerResponse> PatchUnifiedWebhookTriggerAsync(string id)
+        {
+            var request = new PatchUnifiedWebhookTriggerRequest()
+            {
+                Id = id,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/unified/webhook/{id}/trigger", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new PatchUnifiedWebhookTriggerResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            throw new InvalidOperationException("API returned unexpected status code or content type");
+        }
+        
+
         public async Task<RemoveUnifiedWebhookResponse> RemoveUnifiedWebhookAsync(string id)
         {
             var request = new RemoveUnifiedWebhookRequest()
@@ -208,6 +248,36 @@ namespace UnifiedTo
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
             var response = new RemoveUnifiedWebhookResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            throw new InvalidOperationException("API returned unexpected status code or content type");
+        }
+        
+
+        public async Task<UpdateUnifiedWebhookTriggerResponse> UpdateUnifiedWebhookTriggerAsync(string id)
+        {
+            var request = new UpdateUnifiedWebhookTriggerRequest()
+            {
+                Id = id,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/unified/webhook/{id}/trigger", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new UpdateUnifiedWebhookTriggerResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
