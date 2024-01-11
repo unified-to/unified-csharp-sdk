@@ -17,9 +17,6 @@ namespace UnifiedTo.Models.Requests
     public class ListUcContactsRequest
     {
 
-        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=agent_id")]
-        public string? AgentId { get; set; }
-
         /// <summary>
         /// ID of the connection
         /// </summary>
@@ -55,5 +52,8 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public DateTime? UpdatedGte { get; set; }
+
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=user_id")]
+        public string? UserId { get; set; }
     }
 }

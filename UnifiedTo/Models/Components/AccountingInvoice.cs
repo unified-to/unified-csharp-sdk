@@ -68,6 +68,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("refunded_at")]
         public DateTime? RefundedAt { get; set; }
 
+        [JsonProperty("status")]
+        public AccountingInvoiceStatus? Status { get; set; }
+
         [JsonProperty("tax_amount")]
         public double? TaxAmount { get; set; }
 

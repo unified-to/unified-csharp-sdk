@@ -18,12 +18,6 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
-        /// The agent ID to filter results
-        /// </summary>
-        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=agent_id")]
-        public string? AgentId { get; set; }
-
-        /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
@@ -64,5 +58,11 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public DateTime? UpdatedGte { get; set; }
+
+        /// <summary>
+        /// The user/agent ID to filter results
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=user_id")]
+        public string? UserId { get; set; }
     }
 }

@@ -16,9 +16,6 @@ namespace UnifiedTo.Models.Components
     public class UcCall
     {
 
-        [JsonProperty("agency_id")]
-        public string AgencyId { get; set; } = default!;
-
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
@@ -48,5 +45,8 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
+
+        [JsonProperty("user_id")]
+        public string? UserId { get; set; }
     }
 }

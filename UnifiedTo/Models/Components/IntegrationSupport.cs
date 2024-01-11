@@ -19,9 +19,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("inbound_fields")]
         public PropertyIntegrationSupportInboundFields? InboundFields { get; set; }
 
-        [JsonProperty("list_agent_id")]
-        public bool? ListAgentId { get; set; }
-
         [JsonProperty("list_application_id")]
         public bool? ListApplicationId { get; set; }
 
@@ -72,6 +69,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_updated_gte")]
         public bool? ListUpdatedGte { get; set; }
+
+        [JsonProperty("list_user_id")]
+        public bool? ListUserId { get; set; }
 
         [JsonProperty("methods")]
         public Dictionary<string, bool>? Methods { get; set; }

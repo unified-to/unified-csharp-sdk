@@ -16,9 +16,6 @@ namespace UnifiedTo.Models.Components
     public class TicketingNote
     {
 
-        [JsonProperty("agent_id")]
-        public string? AgentId { get; set; }
-
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -39,5 +36,8 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("updated_at")]
         public string? UpdatedAt { get; set; }
+
+        [JsonProperty("user_id")]
+        public string? UserId { get; set; }
     }
 }
