@@ -225,6 +225,9 @@ var res = await sdk.Crm.CreateCrmEventAsync(ConnectionId: "string", CrmEvent: ne
         "string",
     },
     Email = new PropertyCrmEventEmail() {
+        AttachmentFileIds = new List<string>() {
+            "string",
+        },
         Cc = new List<string>() {
             "string",
         },
@@ -1110,6 +1113,9 @@ var res = await sdk.Crm.PatchCrmEventAsync(ConnectionId: "string", Id: "string",
         "string",
     },
     Email = new PropertyCrmEventEmail() {
+        AttachmentFileIds = new List<string>() {
+            "string",
+        },
         Cc = new List<string>() {
             "string",
         },
@@ -1684,6 +1690,9 @@ var res = await sdk.Crm.UpdateCrmEventAsync(ConnectionId: "string", Id: "string"
         "string",
     },
     Email = new PropertyCrmEventEmail() {
+        AttachmentFileIds = new List<string>() {
+            "string",
+        },
         Cc = new List<string>() {
             "string",
         },

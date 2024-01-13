@@ -16,9 +16,6 @@ namespace UnifiedTo.Models.Components
     public class CrmFile
     {
 
-        [JsonProperty("activity_id")]
-        public string? ActivityId { get; set; }
-
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
 
@@ -34,17 +31,11 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
-        [JsonProperty("file_name")]
-        public string? FileName { get; set; }
+        [JsonProperty("download_url")]
+        public string? DownloadUrl { get; set; }
 
-        [JsonProperty("file_size")]
-        public double? FileSize { get; set; }
-
-        [JsonProperty("file_type")]
-        public string? FileType { get; set; }
-
-        [JsonProperty("file_url")]
-        public string? FileUrl { get; set; }
+        [JsonProperty("event_id")]
+        public string? EventId { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
@@ -55,8 +46,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("lead_id")]
         public string? LeadId { get; set; }
 
+        [JsonProperty("mime_type")]
+        public string? MimeType { get; set; }
+
+        [JsonProperty("name")]
+        public string? Name { get; set; }
+
         [JsonProperty("raw")]
         public PropertyCrmFileRaw? Raw { get; set; }
+
+        [JsonProperty("size")]
+        public double? Size { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

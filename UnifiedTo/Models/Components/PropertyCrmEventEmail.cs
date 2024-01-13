@@ -20,6 +20,9 @@ namespace UnifiedTo.Models.Components
     public class PropertyCrmEventEmail
     {
 
+        [JsonProperty("attachment_file_ids")]
+        public List<string>? AttachmentFileIds { get; set; }
+
         [JsonProperty("body")]
         public string? Body { get; set; }
 
