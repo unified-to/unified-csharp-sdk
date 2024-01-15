@@ -1,7 +1,7 @@
 ### Installation
 
 ```bash
-dotnet add package Unified-csharp-sdk
+dotnet add package UnifiedTo
 ```
 <!-- End SDK Installation [installation] -->
 
