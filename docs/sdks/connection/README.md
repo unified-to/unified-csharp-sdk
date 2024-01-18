@@ -44,7 +44,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.AtsJobWrite,
+        PropertyConnectionPermissions.AtsJobRead,
     },
 };
 
@@ -261,7 +261,7 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(Id: "string", Connec
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.CrmContactRead,
+        PropertyConnectionPermissions.CrmCompanyWrite,
     },
 });
 

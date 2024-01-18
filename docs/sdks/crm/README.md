@@ -7,42 +7,36 @@
 * [CreateCrmContact](#createcrmcontact) - Create a contact
 * [CreateCrmDeal](#createcrmdeal) - Create a deal
 * [CreateCrmEvent](#createcrmevent) - Create a event
-* [CreateCrmFile](#createcrmfile) - Create a file
 * [CreateCrmLead](#createcrmlead) - Create a lead
 * [CreateCrmPipeline](#createcrmpipeline) - Create a pipeline
 * [GetCrmCompany](#getcrmcompany) - Retrieve a company
 * [GetCrmContact](#getcrmcontact) - Retrieve a contact
 * [GetCrmDeal](#getcrmdeal) - Retrieve a deal
 * [GetCrmEvent](#getcrmevent) - Retrieve a event
-* [GetCrmFile](#getcrmfile) - Retrieve a file
 * [GetCrmLead](#getcrmlead) - Retrieve a lead
 * [GetCrmPipeline](#getcrmpipeline) - Retrieve a pipeline
 * [ListCrmCompanies](#listcrmcompanies) - List all companies
 * [ListCrmContacts](#listcrmcontacts) - List all contacts
 * [ListCrmDeals](#listcrmdeals) - List all deals
 * [ListCrmEvents](#listcrmevents) - List all events
-* [ListCrmFiles](#listcrmfiles) - List all files
 * [ListCrmLeads](#listcrmleads) - List all leads
 * [ListCrmPipelines](#listcrmpipelines) - List all pipelines
 * [PatchCrmCompany](#patchcrmcompany) - Update a company
 * [PatchCrmContact](#patchcrmcontact) - Update a contact
 * [PatchCrmDeal](#patchcrmdeal) - Update a deal
 * [PatchCrmEvent](#patchcrmevent) - Update a event
-* [PatchCrmFile](#patchcrmfile) - Update a file
 * [PatchCrmLead](#patchcrmlead) - Update a lead
 * [PatchCrmPipeline](#patchcrmpipeline) - Update a pipeline
 * [RemoveCrmCompany](#removecrmcompany) - Remove a company
 * [RemoveCrmContact](#removecrmcontact) - Remove a contact
 * [RemoveCrmDeal](#removecrmdeal) - Remove a deal
 * [RemoveCrmEvent](#removecrmevent) - Remove a event
-* [RemoveCrmFile](#removecrmfile) - Remove a file
 * [RemoveCrmLead](#removecrmlead) - Remove a lead
 * [RemoveCrmPipeline](#removecrmpipeline) - Remove a pipeline
 * [UpdateCrmCompany](#updatecrmcompany) - Update a company
 * [UpdateCrmContact](#updatecrmcontact) - Update a contact
 * [UpdateCrmDeal](#updatecrmdeal) - Update a deal
 * [UpdateCrmEvent](#updatecrmevent) - Update a event
-* [UpdateCrmFile](#updatecrmfile) - Update a file
 * [UpdateCrmLead](#updatecrmlead) - Update a lead
 * [UpdateCrmPipeline](#updatecrmpipeline) - Update a pipeline
 
@@ -258,42 +252,6 @@ var res = await sdk.Crm.CreateCrmEventAsync(ConnectionId: "string", CrmEvent: ne
 ### Response
 
 **[CreateCrmEventResponse](../../Models/Requests/CreateCrmEventResponse.md)**
-
-
-## CreateCrmFile
-
-Create a file
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(
-    security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Crm.CreateCrmFileAsync(ConnectionId: "string", CrmFile: new CrmFile() {
-    Raw = new PropertyCrmFileRaw() {},
-});
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                     | Type                                          | Required                                      | Description                                   |
-| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-| `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
-| `CrmFile`                                     | [CrmFile](../../Models/Components/CrmFile.md) | :heavy_minus_sign:                            | N/A                                           |
-
-
-### Response
-
-**[CreateCrmFileResponse](../../Models/Requests/CreateCrmFileResponse.md)**
 
 
 ## CreateCrmLead
@@ -528,44 +486,6 @@ var res = await sdk.Crm.GetCrmEventAsync(ConnectionId: "string", Id: "string", F
 ### Response
 
 **[GetCrmEventResponse](../../Models/Requests/GetCrmEventResponse.md)**
-
-
-## GetCrmFile
-
-Retrieve a file
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
-
-var sdk = new UnifiedToSDK(
-    security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Crm.GetCrmFileAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
-    "string",
-});
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the File                   |
-| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
-
-
-### Response
-
-**[GetCrmFileResponse](../../Models/Requests/GetCrmFileResponse.md)**
 
 
 ## GetCrmLead
@@ -806,47 +726,6 @@ var res = await sdk.Crm.ListCrmEventsAsync(req);
 ### Response
 
 **[ListCrmEventsResponse](../../Models/Requests/ListCrmEventsResponse.md)**
-
-
-## ListCrmFiles
-
-List all files
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
-
-var sdk = new UnifiedToSDK(
-    security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-ListCrmFilesRequest req = new ListCrmFilesRequest() {
-    ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
-};
-
-var res = await sdk.Crm.ListCrmFilesAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `request`                                                           | [ListCrmFilesRequest](../../Models/Requests/ListCrmFilesRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
-
-
-### Response
-
-**[ListCrmFilesResponse](../../Models/Requests/ListCrmFilesResponse.md)**
 
 
 ## ListCrmLeads
@@ -1149,43 +1028,6 @@ var res = await sdk.Crm.PatchCrmEventAsync(ConnectionId: "string", Id: "string",
 **[PatchCrmEventResponse](../../Models/Requests/PatchCrmEventResponse.md)**
 
 
-## PatchCrmFile
-
-Update a file
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(
-    security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Crm.PatchCrmFileAsync(ConnectionId: "string", Id: "string", CrmFile: new CrmFile() {
-    Raw = new PropertyCrmFileRaw() {},
-});
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                     | Type                                          | Required                                      | Description                                   |
-| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-| `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
-| `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the File                                |
-| `CrmFile`                                     | [CrmFile](../../Models/Components/CrmFile.md) | :heavy_minus_sign:                            | N/A                                           |
-
-
-### Response
-
-**[PatchCrmFileResponse](../../Models/Requests/PatchCrmFileResponse.md)**
-
-
 ## PatchCrmLead
 
 Update a lead
@@ -1404,40 +1246,6 @@ var res = await sdk.Crm.RemoveCrmEventAsync(ConnectionId: "string", Id: "string"
 ### Response
 
 **[RemoveCrmEventResponse](../../Models/Requests/RemoveCrmEventResponse.md)**
-
-
-## RemoveCrmFile
-
-Remove a file
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(
-    security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Crm.RemoveCrmFileAsync(ConnectionId: "string", Id: "string");
-
-// handle response
-```
-
-### Parameters
-
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the File       |
-
-
-### Response
-
-**[RemoveCrmFileResponse](../../Models/Requests/RemoveCrmFileResponse.md)**
 
 
 ## RemoveCrmLead
@@ -1724,43 +1532,6 @@ var res = await sdk.Crm.UpdateCrmEventAsync(ConnectionId: "string", Id: "string"
 ### Response
 
 **[UpdateCrmEventResponse](../../Models/Requests/UpdateCrmEventResponse.md)**
-
-
-## UpdateCrmFile
-
-Update a file
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(
-    security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Crm.UpdateCrmFileAsync(ConnectionId: "string", Id: "string", CrmFile: new CrmFile() {
-    Raw = new PropertyCrmFileRaw() {},
-});
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                     | Type                                          | Required                                      | Description                                   |
-| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-| `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
-| `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the File                                |
-| `CrmFile`                                     | [CrmFile](../../Models/Components/CrmFile.md) | :heavy_minus_sign:                            | N/A                                           |
-
-
-### Response
-
-**[UpdateCrmFileResponse](../../Models/Requests/UpdateCrmFileResponse.md)**
 
 
 ## UpdateCrmLead

@@ -47,7 +47,6 @@ namespace UnifiedTo
         public IContact Contact { get; }
         public IDeal Deal { get; }
         public IEvent Event { get; }
-        public IFile File { get; }
         public ILead Lead { get; }
         public IPipeline Pipeline { get; }
         public IEnrich Enrich { get; }
@@ -60,6 +59,7 @@ namespace UnifiedTo
         public IMember Member { get; }
         public IPassthrough Passthrough { get; }
         public IStorage Storage { get; }
+        public IFile File { get; }
         public ITicketing Ticketing { get; }
         public INote Note { get; }
         public ITicket Ticket { get; }
@@ -103,10 +103,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.5.5";
-        private const string _sdkGenVersion = "2.234.3";
+        private const string _sdkVersion = "0.5.6";
+        private const string _sdkGenVersion = "2.235.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.5.5 2.234.3 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.5.6 2.235.3 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -132,7 +132,6 @@ namespace UnifiedTo
         public IContact Contact { get; private set; }
         public IDeal Deal { get; private set; }
         public IEvent Event { get; private set; }
-        public IFile File { get; private set; }
         public ILead Lead { get; private set; }
         public IPipeline Pipeline { get; private set; }
         public IEnrich Enrich { get; private set; }
@@ -145,6 +144,7 @@ namespace UnifiedTo
         public IMember Member { get; private set; }
         public IPassthrough Passthrough { get; private set; }
         public IStorage Storage { get; private set; }
+        public IFile File { get; private set; }
         public ITicketing Ticketing { get; private set; }
         public INote Note { get; private set; }
         public ITicket Ticket { get; private set; }
@@ -202,7 +202,6 @@ namespace UnifiedTo
             Contact = new Contact(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Deal = new Deal(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Event = new Event(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
-            File = new File(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Lead = new Lead(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Pipeline = new Pipeline(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Enrich = new Enrich(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
@@ -215,6 +214,7 @@ namespace UnifiedTo
             Member = new Member(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Passthrough = new Passthrough(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Storage = new Storage(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            File = new File(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Ticketing = new Ticketing(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Note = new Note(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Ticket = new Ticket(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);

@@ -44,11 +44,6 @@ namespace UnifiedTo
         Task<CreateCrmEventResponse> CreateCrmEventAsync(string connectionId, CrmEvent? crmEvent = null);
 
         /// <summary>
-        /// Create a file
-        /// </summary>
-        Task<CreateCrmFileResponse> CreateCrmFileAsync(string connectionId, CrmFile? crmFile = null);
-
-        /// <summary>
         /// Create a lead
         /// </summary>
         Task<CreateCrmLeadResponse> CreateCrmLeadAsync(string connectionId, CrmLead? crmLead = null);
@@ -77,11 +72,6 @@ namespace UnifiedTo
         /// Retrieve a event
         /// </summary>
         Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<string>? fields = null);
-
-        /// <summary>
-        /// Retrieve a file
-        /// </summary>
-        Task<GetCrmFileResponse> GetCrmFileAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a lead
@@ -114,11 +104,6 @@ namespace UnifiedTo
         Task<ListCrmEventsResponse> ListCrmEventsAsync(ListCrmEventsRequest? request = null);
 
         /// <summary>
-        /// List all files
-        /// </summary>
-        Task<ListCrmFilesResponse> ListCrmFilesAsync(ListCrmFilesRequest? request = null);
-
-        /// <summary>
         /// List all leads
         /// </summary>
         Task<ListCrmLeadsResponse> ListCrmLeadsAsync(ListCrmLeadsRequest? request = null);
@@ -147,11 +132,6 @@ namespace UnifiedTo
         /// Update a event
         /// </summary>
         Task<PatchCrmEventResponse> PatchCrmEventAsync(string connectionId, string id, CrmEvent? crmEvent = null);
-
-        /// <summary>
-        /// Update a file
-        /// </summary>
-        Task<PatchCrmFileResponse> PatchCrmFileAsync(string connectionId, string id, CrmFile? crmFile = null);
 
         /// <summary>
         /// Update a lead
@@ -184,11 +164,6 @@ namespace UnifiedTo
         Task<RemoveCrmEventResponse> RemoveCrmEventAsync(string connectionId, string id);
 
         /// <summary>
-        /// Remove a file
-        /// </summary>
-        Task<RemoveCrmFileResponse> RemoveCrmFileAsync(string connectionId, string id);
-
-        /// <summary>
         /// Remove a lead
         /// </summary>
         Task<RemoveCrmLeadResponse> RemoveCrmLeadAsync(string connectionId, string id);
@@ -219,11 +194,6 @@ namespace UnifiedTo
         Task<UpdateCrmEventResponse> UpdateCrmEventAsync(string connectionId, string id, CrmEvent? crmEvent = null);
 
         /// <summary>
-        /// Update a file
-        /// </summary>
-        Task<UpdateCrmFileResponse> UpdateCrmFileAsync(string connectionId, string id, CrmFile? crmFile = null);
-
-        /// <summary>
         /// Update a lead
         /// </summary>
         Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(string connectionId, string id, CrmLead? crmLead = null);
@@ -238,10 +208,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.5.5";
-        private const string _sdkGenVersion = "2.234.3";
+        private const string _sdkVersion = "0.5.6";
+        private const string _sdkGenVersion = "2.235.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.5.5 2.234.3 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.5.6 2.235.3 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -427,51 +397,6 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.CrmEvent = JsonConvert.DeserializeObject<CrmEvent>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-                
-                return response;
-            }
-            return response;
-        }
-        
-
-        public async Task<CreateCrmFileResponse> CreateCrmFileAsync(string connectionId, CrmFile? crmFile = null)
-        {
-            var request = new CreateCrmFileRequest()
-            {
-                ConnectionId = connectionId,
-                CrmFile = crmFile,
-            };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/file", request);
-            
-            var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-            
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmFile", "json");
-            if (serializedBody != null)
-            {
-                httpRequest.Content = serializedBody;
-            }
-            
-            var client = _securityClient;
-            
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-            
-            var response = new CreateCrmFileResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-            
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.CrmFile = JsonConvert.DeserializeObject<CrmFile>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -734,47 +659,6 @@ namespace UnifiedTo
         }
         
 
-        public async Task<GetCrmFileResponse> GetCrmFileAsync(string connectionId, string id, List<string>? fields = null)
-        {
-            var request = new GetCrmFileRequest()
-            {
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/file/{id}", request);
-            
-            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-            
-            
-            var client = _securityClient;
-            
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-            
-            var response = new GetCrmFileResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-            
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.CrmFile = JsonConvert.DeserializeObject<CrmFile>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-                
-                return response;
-            }
-            return response;
-        }
-        
-
         public async Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetCrmLeadRequest()
@@ -989,41 +873,6 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.CrmEvents = JsonConvert.DeserializeObject<List<CrmEvent>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-                
-                return response;
-            }
-            return response;
-        }
-        
-
-        public async Task<ListCrmFilesResponse> ListCrmFilesAsync(ListCrmFilesRequest? request = null)
-        {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/file", request);
-            
-            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-            
-            
-            var client = _securityClient;
-            
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-            
-            var response = new ListCrmFilesResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-            
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.CrmFiles = JsonConvert.DeserializeObject<List<CrmFile>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -1286,52 +1135,6 @@ namespace UnifiedTo
         }
         
 
-        public async Task<PatchCrmFileResponse> PatchCrmFileAsync(string connectionId, string id, CrmFile? crmFile = null)
-        {
-            var request = new PatchCrmFileRequest()
-            {
-                ConnectionId = connectionId,
-                Id = id,
-                CrmFile = crmFile,
-            };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/file/{id}", request);
-            
-            var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-            
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmFile", "json");
-            if (serializedBody != null)
-            {
-                httpRequest.Content = serializedBody;
-            }
-            
-            var client = _securityClient;
-            
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-            
-            var response = new PatchCrmFileResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-            
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.CrmFile = JsonConvert.DeserializeObject<CrmFile>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-                
-                return response;
-            }
-            return response;
-        }
-        
-
         public async Task<PatchCrmLeadResponse> PatchCrmLeadAsync(string connectionId, string id, CrmLead? crmLead = null)
         {
             var request = new PatchCrmLeadRequest()
@@ -1538,37 +1341,6 @@ namespace UnifiedTo
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
             var response = new RemoveCrmEventResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-            
-            throw new InvalidOperationException("API returned unexpected status code or content type");
-        }
-        
-
-        public async Task<RemoveCrmFileResponse> RemoveCrmFileAsync(string connectionId, string id)
-        {
-            var request = new RemoveCrmFileRequest()
-            {
-                ConnectionId = connectionId,
-                Id = id,
-            };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/file/{id}", request);
-            
-            var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-            
-            
-            var client = _securityClient;
-            
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-            
-            var response = new RemoveCrmFileResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -1817,52 +1589,6 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.CrmEvent = JsonConvert.DeserializeObject<CrmEvent>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-                
-                return response;
-            }
-            return response;
-        }
-        
-
-        public async Task<UpdateCrmFileResponse> UpdateCrmFileAsync(string connectionId, string id, CrmFile? crmFile = null)
-        {
-            var request = new UpdateCrmFileRequest()
-            {
-                ConnectionId = connectionId,
-                Id = id,
-                CrmFile = crmFile,
-            };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/file/{id}", request);
-            
-            var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-            
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmFile", "json");
-            if (serializedBody != null)
-            {
-                httpRequest.Content = serializedBody;
-            }
-            
-            var client = _securityClient;
-            
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-            
-            var response = new UpdateCrmFileResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-            
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.CrmFile = JsonConvert.DeserializeObject<CrmFile>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;

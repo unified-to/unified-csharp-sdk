@@ -53,8 +53,6 @@ namespace UnifiedTo.Models.Components
         CrmDeal,
         [JsonProperty("crm_event")]
         CrmEvent,
-        [JsonProperty("crm_file")]
-        CrmFile,
         [JsonProperty("crm_lead")]
         CrmLead,
         [JsonProperty("crm_pipeline")]

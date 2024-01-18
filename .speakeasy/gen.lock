@@ -1,18 +1,18 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: fcf38ba1245f7399c1338dc1ef8df2e7
+  docChecksum: ede9055e4403162b0dc1469530be3da9
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.234.3
-  releaseVersion: 0.5.5
-  configChecksum: 0f4bf4f82ed1d85cb1adffdd91230b5f
+  generationVersion: 2.235.3
+  releaseVersion: 0.5.6
+  configChecksum: b794297f6cb2c2de9c7dded4ebcc47a9
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
 features:
   csharp:
-    core: 3.3.0
+    core: 3.3.1
     flattening: 2.81.1
     globalSecurity: 2.81.2
     globalServerURLs: 2.82.2
@@ -39,7 +39,6 @@ generatedFiles:
   - UnifiedTo/Contact.cs
   - UnifiedTo/Deal.cs
   - UnifiedTo/Event.cs
-  - UnifiedTo/File.cs
   - UnifiedTo/Lead.cs
   - UnifiedTo/Pipeline.cs
   - UnifiedTo/Enrich.cs
@@ -52,6 +51,7 @@ generatedFiles:
   - UnifiedTo/Member.cs
   - UnifiedTo/Passthrough.cs
   - UnifiedTo/Storage.cs
+  - UnifiedTo/File.cs
   - UnifiedTo/Ticketing.cs
   - UnifiedTo/Note.cs
   - UnifiedTo/Ticket.cs
@@ -261,8 +261,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateCrmDealResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmEventRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmEventResponse.cs
-  - UnifiedTo/Models/Requests/CreateCrmFileRequest.cs
-  - UnifiedTo/Models/Requests/CreateCrmFileResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmLeadRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmLeadResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmPipelineRequest.cs
@@ -275,8 +273,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetCrmDealResponse.cs
   - UnifiedTo/Models/Requests/GetCrmEventRequest.cs
   - UnifiedTo/Models/Requests/GetCrmEventResponse.cs
-  - UnifiedTo/Models/Requests/GetCrmFileRequest.cs
-  - UnifiedTo/Models/Requests/GetCrmFileResponse.cs
   - UnifiedTo/Models/Requests/GetCrmLeadRequest.cs
   - UnifiedTo/Models/Requests/GetCrmLeadResponse.cs
   - UnifiedTo/Models/Requests/GetCrmPipelineRequest.cs
@@ -289,8 +285,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListCrmDealsResponse.cs
   - UnifiedTo/Models/Requests/ListCrmEventsRequest.cs
   - UnifiedTo/Models/Requests/ListCrmEventsResponse.cs
-  - UnifiedTo/Models/Requests/ListCrmFilesRequest.cs
-  - UnifiedTo/Models/Requests/ListCrmFilesResponse.cs
   - UnifiedTo/Models/Requests/ListCrmLeadsRequest.cs
   - UnifiedTo/Models/Requests/ListCrmLeadsResponse.cs
   - UnifiedTo/Models/Requests/ListCrmPipelinesRequest.cs
@@ -303,8 +297,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchCrmDealResponse.cs
   - UnifiedTo/Models/Requests/PatchCrmEventRequest.cs
   - UnifiedTo/Models/Requests/PatchCrmEventResponse.cs
-  - UnifiedTo/Models/Requests/PatchCrmFileRequest.cs
-  - UnifiedTo/Models/Requests/PatchCrmFileResponse.cs
   - UnifiedTo/Models/Requests/PatchCrmLeadRequest.cs
   - UnifiedTo/Models/Requests/PatchCrmLeadResponse.cs
   - UnifiedTo/Models/Requests/PatchCrmPipelineRequest.cs
@@ -317,8 +309,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveCrmDealResponse.cs
   - UnifiedTo/Models/Requests/RemoveCrmEventRequest.cs
   - UnifiedTo/Models/Requests/RemoveCrmEventResponse.cs
-  - UnifiedTo/Models/Requests/RemoveCrmFileRequest.cs
-  - UnifiedTo/Models/Requests/RemoveCrmFileResponse.cs
   - UnifiedTo/Models/Requests/RemoveCrmLeadRequest.cs
   - UnifiedTo/Models/Requests/RemoveCrmLeadResponse.cs
   - UnifiedTo/Models/Requests/RemoveCrmPipelineRequest.cs
@@ -331,8 +321,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateCrmDealResponse.cs
   - UnifiedTo/Models/Requests/UpdateCrmEventRequest.cs
   - UnifiedTo/Models/Requests/UpdateCrmEventResponse.cs
-  - UnifiedTo/Models/Requests/UpdateCrmFileRequest.cs
-  - UnifiedTo/Models/Requests/UpdateCrmFileResponse.cs
   - UnifiedTo/Models/Requests/UpdateCrmLeadRequest.cs
   - UnifiedTo/Models/Requests/UpdateCrmLeadResponse.cs
   - UnifiedTo/Models/Requests/UpdateCrmPipelineRequest.cs
@@ -351,18 +339,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveUcContactResponse.cs
   - UnifiedTo/Models/Requests/UpdateUcContactRequest.cs
   - UnifiedTo/Models/Requests/UpdateUcContactResponse.cs
-  - UnifiedTo/Models/Requests/CreateStorageFileRequest.cs
-  - UnifiedTo/Models/Requests/CreateStorageFileResponse.cs
-  - UnifiedTo/Models/Requests/GetStorageFileRequest.cs
-  - UnifiedTo/Models/Requests/GetStorageFileResponse.cs
-  - UnifiedTo/Models/Requests/ListStorageFilesRequest.cs
-  - UnifiedTo/Models/Requests/ListStorageFilesResponse.cs
-  - UnifiedTo/Models/Requests/PatchStorageFileRequest.cs
-  - UnifiedTo/Models/Requests/PatchStorageFileResponse.cs
-  - UnifiedTo/Models/Requests/RemoveStorageFileRequest.cs
-  - UnifiedTo/Models/Requests/RemoveStorageFileResponse.cs
-  - UnifiedTo/Models/Requests/UpdateStorageFileRequest.cs
-  - UnifiedTo/Models/Requests/UpdateStorageFileResponse.cs
   - UnifiedTo/Models/Requests/ListEnrichPeopleRequest.cs
   - UnifiedTo/Models/Requests/ListEnrichPeopleResponse.cs
   - UnifiedTo/Models/Requests/CreateHrisEmployeeRequest.cs
@@ -423,6 +399,18 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemovePassthroughResponse.cs
   - UnifiedTo/Models/Requests/UpdatePassthroughRequest.cs
   - UnifiedTo/Models/Requests/UpdatePassthroughResponse.cs
+  - UnifiedTo/Models/Requests/CreateStorageFileRequest.cs
+  - UnifiedTo/Models/Requests/CreateStorageFileResponse.cs
+  - UnifiedTo/Models/Requests/GetStorageFileRequest.cs
+  - UnifiedTo/Models/Requests/GetStorageFileResponse.cs
+  - UnifiedTo/Models/Requests/ListStorageFilesRequest.cs
+  - UnifiedTo/Models/Requests/ListStorageFilesResponse.cs
+  - UnifiedTo/Models/Requests/PatchStorageFileRequest.cs
+  - UnifiedTo/Models/Requests/PatchStorageFileResponse.cs
+  - UnifiedTo/Models/Requests/RemoveStorageFileRequest.cs
+  - UnifiedTo/Models/Requests/RemoveStorageFileResponse.cs
+  - UnifiedTo/Models/Requests/UpdateStorageFileRequest.cs
+  - UnifiedTo/Models/Requests/UpdateStorageFileResponse.cs
   - UnifiedTo/Models/Requests/CreateTicketingNoteRequest.cs
   - UnifiedTo/Models/Requests/CreateTicketingNoteResponse.cs
   - UnifiedTo/Models/Requests/CreateTicketingTicketRequest.cs
@@ -576,8 +564,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyCrmEventMeeting.cs
   - UnifiedTo/Models/Components/PropertyCrmEventEmail.cs
   - UnifiedTo/Models/Components/PropertyCrmEventCall.cs
-  - UnifiedTo/Models/Components/CrmFile.cs
-  - UnifiedTo/Models/Components/PropertyCrmFileRaw.cs
   - UnifiedTo/Models/Components/CrmLead.cs
   - UnifiedTo/Models/Components/PropertyCrmLeadRaw.cs
   - UnifiedTo/Models/Components/PropertyCrmLeadAddress.cs
@@ -594,11 +580,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyUcContactRaw.cs
   - UnifiedTo/Models/Components/UcEmailType.cs
   - UnifiedTo/Models/Components/UcEmail.cs
-  - UnifiedTo/Models/Components/StorageFileType.cs
-  - UnifiedTo/Models/Components/StorageFile.cs
-  - UnifiedTo/Models/Components/PropertyStorageFileRaw.cs
-  - UnifiedTo/Models/Components/StoragePermission.cs
-  - UnifiedTo/Models/Components/PropertyStoragePermissionRoles.cs
   - UnifiedTo/Models/Components/Gender.cs
   - UnifiedTo/Models/Components/EnrichPerson.cs
   - UnifiedTo/Models/Components/EnrichPersonWorkHistory.cs
@@ -627,6 +608,11 @@ generatedFiles:
   - UnifiedTo/Models/Components/MarketingEmailType.cs
   - UnifiedTo/Models/Components/MarketingEmail.cs
   - UnifiedTo/Models/Components/Undefined.cs
+  - UnifiedTo/Models/Components/StorageFileType.cs
+  - UnifiedTo/Models/Components/StorageFile.cs
+  - UnifiedTo/Models/Components/PropertyStorageFileRaw.cs
+  - UnifiedTo/Models/Components/StoragePermission.cs
+  - UnifiedTo/Models/Components/PropertyStoragePermissionRoles.cs
   - UnifiedTo/Models/Components/TicketingNote.cs
   - UnifiedTo/Models/Components/PropertyTicketingNoteRaw.cs
   - UnifiedTo/Models/Components/TicketingTicketStatus.cs
@@ -838,8 +824,6 @@ generatedFiles:
   - docs/Models/Requests/CreateCrmDealResponse.md
   - docs/Models/Requests/CreateCrmEventRequest.md
   - docs/Models/Requests/CreateCrmEventResponse.md
-  - docs/Models/Requests/CreateCrmFileRequest.md
-  - docs/Models/Requests/CreateCrmFileResponse.md
   - docs/Models/Requests/CreateCrmLeadRequest.md
   - docs/Models/Requests/CreateCrmLeadResponse.md
   - docs/Models/Requests/CreateCrmPipelineRequest.md
@@ -852,8 +836,6 @@ generatedFiles:
   - docs/Models/Requests/GetCrmDealResponse.md
   - docs/Models/Requests/GetCrmEventRequest.md
   - docs/Models/Requests/GetCrmEventResponse.md
-  - docs/Models/Requests/GetCrmFileRequest.md
-  - docs/Models/Requests/GetCrmFileResponse.md
   - docs/Models/Requests/GetCrmLeadRequest.md
   - docs/Models/Requests/GetCrmLeadResponse.md
   - docs/Models/Requests/GetCrmPipelineRequest.md
@@ -866,8 +848,6 @@ generatedFiles:
   - docs/Models/Requests/ListCrmDealsResponse.md
   - docs/Models/Requests/ListCrmEventsRequest.md
   - docs/Models/Requests/ListCrmEventsResponse.md
-  - docs/Models/Requests/ListCrmFilesRequest.md
-  - docs/Models/Requests/ListCrmFilesResponse.md
   - docs/Models/Requests/ListCrmLeadsRequest.md
   - docs/Models/Requests/ListCrmLeadsResponse.md
   - docs/Models/Requests/ListCrmPipelinesRequest.md
@@ -880,8 +860,6 @@ generatedFiles:
   - docs/Models/Requests/PatchCrmDealResponse.md
   - docs/Models/Requests/PatchCrmEventRequest.md
   - docs/Models/Requests/PatchCrmEventResponse.md
-  - docs/Models/Requests/PatchCrmFileRequest.md
-  - docs/Models/Requests/PatchCrmFileResponse.md
   - docs/Models/Requests/PatchCrmLeadRequest.md
   - docs/Models/Requests/PatchCrmLeadResponse.md
   - docs/Models/Requests/PatchCrmPipelineRequest.md
@@ -894,8 +872,6 @@ generatedFiles:
   - docs/Models/Requests/RemoveCrmDealResponse.md
   - docs/Models/Requests/RemoveCrmEventRequest.md
   - docs/Models/Requests/RemoveCrmEventResponse.md
-  - docs/Models/Requests/RemoveCrmFileRequest.md
-  - docs/Models/Requests/RemoveCrmFileResponse.md
   - docs/Models/Requests/RemoveCrmLeadRequest.md
   - docs/Models/Requests/RemoveCrmLeadResponse.md
   - docs/Models/Requests/RemoveCrmPipelineRequest.md
@@ -908,8 +884,6 @@ generatedFiles:
   - docs/Models/Requests/UpdateCrmDealResponse.md
   - docs/Models/Requests/UpdateCrmEventRequest.md
   - docs/Models/Requests/UpdateCrmEventResponse.md
-  - docs/Models/Requests/UpdateCrmFileRequest.md
-  - docs/Models/Requests/UpdateCrmFileResponse.md
   - docs/Models/Requests/UpdateCrmLeadRequest.md
   - docs/Models/Requests/UpdateCrmLeadResponse.md
   - docs/Models/Requests/UpdateCrmPipelineRequest.md
@@ -928,18 +902,6 @@ generatedFiles:
   - docs/Models/Requests/RemoveUcContactResponse.md
   - docs/Models/Requests/UpdateUcContactRequest.md
   - docs/Models/Requests/UpdateUcContactResponse.md
-  - docs/Models/Requests/CreateStorageFileRequest.md
-  - docs/Models/Requests/CreateStorageFileResponse.md
-  - docs/Models/Requests/GetStorageFileRequest.md
-  - docs/Models/Requests/GetStorageFileResponse.md
-  - docs/Models/Requests/ListStorageFilesRequest.md
-  - docs/Models/Requests/ListStorageFilesResponse.md
-  - docs/Models/Requests/PatchStorageFileRequest.md
-  - docs/Models/Requests/PatchStorageFileResponse.md
-  - docs/Models/Requests/RemoveStorageFileRequest.md
-  - docs/Models/Requests/RemoveStorageFileResponse.md
-  - docs/Models/Requests/UpdateStorageFileRequest.md
-  - docs/Models/Requests/UpdateStorageFileResponse.md
   - docs/Models/Requests/ListEnrichPeopleRequest.md
   - docs/Models/Requests/ListEnrichPeopleResponse.md
   - docs/Models/Requests/CreateHrisEmployeeRequest.md
@@ -1000,6 +962,18 @@ generatedFiles:
   - docs/Models/Requests/RemovePassthroughResponse.md
   - docs/Models/Requests/UpdatePassthroughRequest.md
   - docs/Models/Requests/UpdatePassthroughResponse.md
+  - docs/Models/Requests/CreateStorageFileRequest.md
+  - docs/Models/Requests/CreateStorageFileResponse.md
+  - docs/Models/Requests/GetStorageFileRequest.md
+  - docs/Models/Requests/GetStorageFileResponse.md
+  - docs/Models/Requests/ListStorageFilesRequest.md
+  - docs/Models/Requests/ListStorageFilesResponse.md
+  - docs/Models/Requests/PatchStorageFileRequest.md
+  - docs/Models/Requests/PatchStorageFileResponse.md
+  - docs/Models/Requests/RemoveStorageFileRequest.md
+  - docs/Models/Requests/RemoveStorageFileResponse.md
+  - docs/Models/Requests/UpdateStorageFileRequest.md
+  - docs/Models/Requests/UpdateStorageFileResponse.md
   - docs/Models/Requests/CreateTicketingNoteRequest.md
   - docs/Models/Requests/CreateTicketingNoteResponse.md
   - docs/Models/Requests/CreateTicketingTicketRequest.md
@@ -1153,8 +1127,6 @@ generatedFiles:
   - docs/Models/Components/PropertyCrmEventMeeting.md
   - docs/Models/Components/PropertyCrmEventEmail.md
   - docs/Models/Components/PropertyCrmEventCall.md
-  - docs/Models/Components/CrmFile.md
-  - docs/Models/Components/PropertyCrmFileRaw.md
   - docs/Models/Components/CrmLead.md
   - docs/Models/Components/PropertyCrmLeadRaw.md
   - docs/Models/Components/PropertyCrmLeadAddress.md
@@ -1171,11 +1143,6 @@ generatedFiles:
   - docs/Models/Components/PropertyUcContactRaw.md
   - docs/Models/Components/UcEmailType.md
   - docs/Models/Components/UcEmail.md
-  - docs/Models/Components/StorageFileType.md
-  - docs/Models/Components/StorageFile.md
-  - docs/Models/Components/PropertyStorageFileRaw.md
-  - docs/Models/Components/StoragePermission.md
-  - docs/Models/Components/PropertyStoragePermissionRoles.md
   - docs/Models/Components/Gender.md
   - docs/Models/Components/EnrichPerson.md
   - docs/Models/Components/EnrichPersonWorkHistory.md
@@ -1204,6 +1171,11 @@ generatedFiles:
   - docs/Models/Components/MarketingEmailType.md
   - docs/Models/Components/MarketingEmail.md
   - docs/Models/Components/Undefined.md
+  - docs/Models/Components/StorageFileType.md
+  - docs/Models/Components/StorageFile.md
+  - docs/Models/Components/PropertyStorageFileRaw.md
+  - docs/Models/Components/StoragePermission.md
+  - docs/Models/Components/PropertyStoragePermissionRoles.md
   - docs/Models/Components/TicketingNote.md
   - docs/Models/Components/PropertyTicketingNoteRaw.md
   - docs/Models/Components/TicketingTicketStatus.md
@@ -1256,7 +1228,6 @@ generatedFiles:
   - docs/sdks/contact/README.md
   - docs/sdks/deal/README.md
   - docs/sdks/event/README.md
-  - docs/sdks/file/README.md
   - docs/sdks/lead/README.md
   - docs/sdks/pipeline/README.md
   - docs/sdks/enrich/README.md
@@ -1269,6 +1240,7 @@ generatedFiles:
   - docs/sdks/member/README.md
   - docs/sdks/passthrough/README.md
   - docs/sdks/storage/README.md
+  - docs/sdks/file/README.md
   - docs/sdks/ticketing/README.md
   - docs/sdks/note/README.md
   - docs/sdks/ticket/README.md

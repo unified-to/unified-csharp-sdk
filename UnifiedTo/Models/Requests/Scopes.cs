@@ -91,10 +91,6 @@ namespace UnifiedTo.Models.Requests
         CrmLeadRead,
         [JsonProperty("crm_lead_write")]
         CrmLeadWrite,
-        [JsonProperty("crm_file_read")]
-        CrmFileRead,
-        [JsonProperty("crm_file_write")]
-        CrmFileWrite,
         [JsonProperty("crm_pipeline_read")]
         CrmPipelineRead,
         [JsonProperty("crm_pipeline_write")]
