@@ -76,6 +76,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_sort_by_updated_at")]
         public bool? ListSortByUpdatedAt { get; set; }
 
+        [JsonProperty("list_ticket_id")]
+        public bool? ListTicketId { get; set; }
+
         [JsonProperty("list_updated_gte")]
         public bool? ListUpdatedGte { get; set; }
 
