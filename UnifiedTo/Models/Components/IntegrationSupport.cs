@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("inbound_fields")]
         public PropertyIntegrationSupportInboundFields? InboundFields { get; set; }
 
+        [JsonProperty("list_account_id")]
+        public bool? ListAccountId { get; set; }
+
         [JsonProperty("list_application_id")]
         public bool? ListApplicationId { get; set; }
 
@@ -37,6 +40,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_deal_id")]
         public bool? ListDealId { get; set; }
 
+        [JsonProperty("list_interview_id")]
+        public bool? ListInterviewId { get; set; }
+
         [JsonProperty("list_invoice_id")]
         public bool? ListInvoiceId { get; set; }
 
@@ -45,6 +51,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_limit")]
         public bool? ListLimit { get; set; }
+
+        [JsonProperty("list_list_id")]
+        public bool? ListListId { get; set; }
 
         [JsonProperty("list_offset")]
         public bool? ListOffset { get; set; }
