@@ -16,9 +16,6 @@ namespace UnifiedTo.Models.Components
     public class AccountingTransaction
     {
 
-        [JsonProperty("account_id")]
-        public string AccountId { get; set; } = default!;
-
         [JsonProperty("created_at")]
         public string? CreatedAt { get; set; }
 
@@ -43,11 +40,8 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("tax_amount")]
         public double? TaxAmount { get; set; }
 
-        [JsonProperty("total_amount")]
-        public double TotalAmount { get; set; } = default!;
-
-        [JsonProperty("type")]
-        public AccountingTransactionType Type { get; set; } = default!;
+        [JsonProperty("taxrate_id")]
+        public string? TaxrateId { get; set; }
 
         [JsonProperty("updated_at")]
         public string? UpdatedAt { get; set; }

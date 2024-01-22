@@ -82,13 +82,13 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Hris.CreateHrisGroupAsync(ConnectionId: "string", HrisGroup: new HrisGroup() {
-    EmployeeIds = new List<string>() {
-        "string",
-    },
     ManagerIds = new List<string>() {
         "string",
     },
     Raw = new PropertyHrisGroupRaw() {},
+    UserIds = new List<string>() {
+        "string",
+    },
 });
 
 // handle response
@@ -332,13 +332,13 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Hris.PatchHrisGroupAsync(ConnectionId: "string", Id: "string", HrisGroup: new HrisGroup() {
-    EmployeeIds = new List<string>() {
-        "string",
-    },
     ManagerIds = new List<string>() {
         "string",
     },
     Raw = new PropertyHrisGroupRaw() {},
+    UserIds = new List<string>() {
+        "string",
+    },
 });
 
 // handle response
@@ -493,13 +493,13 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Hris.UpdateHrisGroupAsync(ConnectionId: "string", Id: "string", HrisGroup: new HrisGroup() {
-    EmployeeIds = new List<string>() {
-        "string",
-    },
     ManagerIds = new List<string>() {
         "string",
     },
     Raw = new PropertyHrisGroupRaw() {},
+    UserIds = new List<string>() {
+        "string",
+    },
 });
 
 // handle response

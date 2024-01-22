@@ -19,9 +19,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("balance")]
         public double? Balance { get; set; }
 
-        [JsonProperty("bank_account_number")]
-        public string? BankAccountNumber { get; set; }
-
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 

@@ -306,16 +306,14 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Accounting.CreateAccountingTransactionAsync(ConnectionId: "string", AccountingTransaction: new AccountingTransaction() {
-    AccountId = "string",
     Id = "<ID>",
     LineItems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
+            AccountId = "string",
             TotalAmount = 4969.62D,
         },
     },
     Raw = new PropertyAccountingTransactionRaw() {},
-    TotalAmount = 6267.93D,
-    Type = AccountingTransactionType.Spend,
 });
 
 // handle response
@@ -1230,16 +1228,14 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Accounting.PatchAccountingTransactionAsync(ConnectionId: "string", Id: "string", AccountingTransaction: new AccountingTransaction() {
-    AccountId = "string",
     Id = "<ID>",
     LineItems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
+            AccountId = "string",
             TotalAmount = 5633.69D,
         },
     },
     Raw = new PropertyAccountingTransactionRaw() {},
-    TotalAmount = 4558.63D,
-    Type = AccountingTransactionType.Spend,
 });
 
 // handle response
@@ -1761,16 +1757,14 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Accounting.UpdateAccountingTransactionAsync(ConnectionId: "string", Id: "string", AccountingTransaction: new AccountingTransaction() {
-    AccountId = "string",
     Id = "<ID>",
     LineItems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
+            AccountId = "string",
             TotalAmount = 6498.37D,
         },
     },
     Raw = new PropertyAccountingTransactionRaw() {},
-    TotalAmount = 5659.17D,
-    Type = AccountingTransactionType.Spend,
 });
 
 // handle response

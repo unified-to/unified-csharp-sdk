@@ -23,9 +23,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
-        [JsonProperty("employee_ids")]
-        public List<string>? EmployeeIds { get; set; }
-
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -49,5 +46,8 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
+
+        [JsonProperty("user_ids")]
+        public List<string>? UserIds { get; set; }
     }
 }

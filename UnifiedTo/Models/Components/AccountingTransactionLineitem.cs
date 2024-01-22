@@ -15,6 +15,9 @@ namespace UnifiedTo.Models.Components
     public class AccountingTransactionLineitem
     {
 
+        [JsonProperty("account_id")]
+        public string AccountId { get; set; } = default!;
+
         [JsonProperty("customer_id")]
         public string? CustomerId { get; set; }
 
