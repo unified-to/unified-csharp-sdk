@@ -20,7 +20,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("deal_probability")]
-        public bool? DealProbability { get; set; }
+        public double? DealProbability { get; set; }
 
         [JsonProperty("display_order")]
         public double? DisplayOrder { get; set; }
