@@ -18,8 +18,8 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("account_id")]
         public string AccountId { get; set; } = default!;
 
-        [JsonProperty("customer_id")]
-        public string? CustomerId { get; set; }
+        [JsonProperty("contact_id")]
+        public string? ContactId { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }

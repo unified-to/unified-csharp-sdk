@@ -27,7 +27,7 @@ namespace UnifiedTo
     {
         public IAccounting Accounting { get; }
         public IAccount Account { get; }
-        public ICustomer Customer { get; }
+        public IContact Contact { get; }
         public IInvoice Invoice { get; }
         public IItem Item { get; }
         public IOrganization Organization { get; }
@@ -44,7 +44,6 @@ namespace UnifiedTo
         public IScorecard Scorecard { get; }
         public ICrm Crm { get; }
         public ICompany Company { get; }
-        public IContact Contact { get; }
         public IDeal Deal { get; }
         public IEvent Event { get; }
         public ILead Lead { get; }
@@ -61,6 +60,7 @@ namespace UnifiedTo
         public IStorage Storage { get; }
         public IFile File { get; }
         public ITicketing Ticketing { get; }
+        public ICustomer Customer { get; }
         public INote Note { get; }
         public ITicket Ticket { get; }
         public IUc Uc { get; }
@@ -103,16 +103,16 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.5.10";
+        private const string _sdkVersion = "0.5.11";
         private const string _sdkGenVersion = "2.237.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.5.10 2.237.3 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.5.11 2.237.3 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
         public IAccounting Accounting { get; private set; }
         public IAccount Account { get; private set; }
-        public ICustomer Customer { get; private set; }
+        public IContact Contact { get; private set; }
         public IInvoice Invoice { get; private set; }
         public IItem Item { get; private set; }
         public IOrganization Organization { get; private set; }
@@ -129,7 +129,6 @@ namespace UnifiedTo
         public IScorecard Scorecard { get; private set; }
         public ICrm Crm { get; private set; }
         public ICompany Company { get; private set; }
-        public IContact Contact { get; private set; }
         public IDeal Deal { get; private set; }
         public IEvent Event { get; private set; }
         public ILead Lead { get; private set; }
@@ -146,6 +145,7 @@ namespace UnifiedTo
         public IStorage Storage { get; private set; }
         public IFile File { get; private set; }
         public ITicketing Ticketing { get; private set; }
+        public ICustomer Customer { get; private set; }
         public INote Note { get; private set; }
         public ITicket Ticket { get; private set; }
         public IUc Uc { get; private set; }
@@ -182,7 +182,7 @@ namespace UnifiedTo
 
             Accounting = new Accounting(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Account = new Account(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
-            Customer = new Customer(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            Contact = new Contact(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Invoice = new Invoice(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Item = new Item(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Organization = new Organization(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
@@ -199,7 +199,6 @@ namespace UnifiedTo
             Scorecard = new Scorecard(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Crm = new Crm(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Company = new Company(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
-            Contact = new Contact(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Deal = new Deal(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Event = new Event(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Lead = new Lead(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
@@ -216,6 +215,7 @@ namespace UnifiedTo
             Storage = new Storage(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             File = new File(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Ticketing = new Ticketing(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            Customer = new Customer(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Note = new Note(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Ticket = new Ticket(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Uc = new Uc(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);

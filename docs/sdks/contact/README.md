@@ -3,18 +3,73 @@
 
 ### Available Operations
 
+* [CreateAccountingContact](#createaccountingcontact) - Create a contact
 * [CreateCrmContact](#createcrmcontact) - Create a contact
 * [CreateUcContact](#createuccontact) - Create a contact
+* [GetAccountingContact](#getaccountingcontact) - Retrieve a contact
 * [GetCrmContact](#getcrmcontact) - Retrieve a contact
 * [GetUcContact](#getuccontact) - Retrieve a contact
+* [ListAccountingContacts](#listaccountingcontacts) - List all contacts
 * [ListCrmContacts](#listcrmcontacts) - List all contacts
 * [ListUcContacts](#listuccontacts) - List all contacts
+* [PatchAccountingContact](#patchaccountingcontact) - Update a contact
 * [PatchCrmContact](#patchcrmcontact) - Update a contact
 * [PatchUcContact](#patchuccontact) - Update a contact
+* [RemoveAccountingContact](#removeaccountingcontact) - Remove a contact
 * [RemoveCrmContact](#removecrmcontact) - Remove a contact
 * [RemoveUcContact](#removeuccontact) - Remove a contact
+* [UpdateAccountingContact](#updateaccountingcontact) - Update a contact
 * [UpdateCrmContact](#updatecrmcontact) - Update a contact
 * [UpdateUcContact](#updateuccontact) - Update a contact
+
+## CreateAccountingContact
+
+Create a contact
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Contact.CreateAccountingContactAsync(ConnectionId: "string", AccountingContact: new AccountingContact() {
+    BillingAddress = new PropertyAccountingContactBillingAddress() {},
+    Emails = new List<AccountingEmail>() {
+        new AccountingEmail() {
+            Email = "Mac36@gmail.com",
+        },
+    },
+    Raw = new PropertyAccountingContactRaw() {},
+    ShippingAddress = new PropertyAccountingContactShippingAddress() {},
+    Telephones = new List<AccountingTelephone>() {
+        new AccountingTelephone() {
+            Telephone = "string",
+        },
+    },
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `AccountingContact`                                               | [AccountingContact](../../Models/Components/AccountingContact.md) | :heavy_minus_sign:                                                | N/A                                                               |
+
+
+### Response
+
+**[CreateAccountingContactResponse](../../Models/Requests/CreateAccountingContactResponse.md)**
+
 
 ## CreateCrmContact
 
@@ -115,6 +170,44 @@ var res = await sdk.Contact.CreateUcContactAsync(ConnectionId: "string", UcConta
 **[CreateUcContactResponse](../../Models/Requests/CreateUcContactResponse.md)**
 
 
+## GetAccountingContact
+
+Retrieve a contact
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Contact.GetAccountingContactAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+    "string",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Contact                |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetAccountingContactResponse](../../Models/Requests/GetAccountingContactResponse.md)**
+
+
 ## GetCrmContact
 
 Retrieve a contact
@@ -189,6 +282,47 @@ var res = await sdk.Contact.GetUcContactAsync(ConnectionId: "string", Id: "strin
 ### Response
 
 **[GetUcContactResponse](../../Models/Requests/GetUcContactResponse.md)**
+
+
+## ListAccountingContacts
+
+List all contacts
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListAccountingContactsRequest req = new ListAccountingContactsRequest() {
+    ConnectionId = "string",
+    Fields = new List<string>() {
+        "string",
+    },
+};
+
+var res = await sdk.Contact.ListAccountingContactsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListAccountingContactsRequest](../../Models/Requests/ListAccountingContactsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+
+
+### Response
+
+**[ListAccountingContactsResponse](../../Models/Requests/ListAccountingContactsResponse.md)**
 
 
 ## ListCrmContacts
@@ -271,6 +405,56 @@ var res = await sdk.Contact.ListUcContactsAsync(req);
 ### Response
 
 **[ListUcContactsResponse](../../Models/Requests/ListUcContactsResponse.md)**
+
+
+## PatchAccountingContact
+
+Update a contact
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Contact.PatchAccountingContactAsync(ConnectionId: "string", Id: "string", AccountingContact: new AccountingContact() {
+    BillingAddress = new PropertyAccountingContactBillingAddress() {},
+    Emails = new List<AccountingEmail>() {
+        new AccountingEmail() {
+            Email = "Sylvester.Kuhic@yahoo.com",
+        },
+    },
+    Raw = new PropertyAccountingContactRaw() {},
+    ShippingAddress = new PropertyAccountingContactShippingAddress() {},
+    Telephones = new List<AccountingTelephone>() {
+        new AccountingTelephone() {
+            Telephone = "string",
+        },
+    },
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Contact                                                 |
+| `AccountingContact`                                               | [AccountingContact](../../Models/Components/AccountingContact.md) | :heavy_minus_sign:                                                | N/A                                                               |
+
+
+### Response
+
+**[PatchAccountingContactResponse](../../Models/Requests/PatchAccountingContactResponse.md)**
 
 
 ## PatchCrmContact
@@ -374,6 +558,40 @@ var res = await sdk.Contact.PatchUcContactAsync(ConnectionId: "string", Id: "str
 **[PatchUcContactResponse](../../Models/Requests/PatchUcContactResponse.md)**
 
 
+## RemoveAccountingContact
+
+Remove a contact
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Contact.RemoveAccountingContactAsync(ConnectionId: "string", Id: "string");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Contact    |
+
+
+### Response
+
+**[RemoveAccountingContactResponse](../../Models/Requests/RemoveAccountingContactResponse.md)**
+
+
 ## RemoveCrmContact
 
 Remove a contact
@@ -440,6 +658,56 @@ var res = await sdk.Contact.RemoveUcContactAsync(ConnectionId: "string", Id: "st
 ### Response
 
 **[RemoveUcContactResponse](../../Models/Requests/RemoveUcContactResponse.md)**
+
+
+## UpdateAccountingContact
+
+Update a contact
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Contact.UpdateAccountingContactAsync(ConnectionId: "string", Id: "string", AccountingContact: new AccountingContact() {
+    BillingAddress = new PropertyAccountingContactBillingAddress() {},
+    Emails = new List<AccountingEmail>() {
+        new AccountingEmail() {
+            Email = "Kaci_Hane@hotmail.com",
+        },
+    },
+    Raw = new PropertyAccountingContactRaw() {},
+    ShippingAddress = new PropertyAccountingContactShippingAddress() {},
+    Telephones = new List<AccountingTelephone>() {
+        new AccountingTelephone() {
+            Telephone = "string",
+        },
+    },
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Contact                                                 |
+| `AccountingContact`                                               | [AccountingContact](../../Models/Components/AccountingContact.md) | :heavy_minus_sign:                                                | N/A                                                               |
+
+
+### Response
+
+**[UpdateAccountingContactResponse](../../Models/Requests/UpdateAccountingContactResponse.md)**
 
 
 ## UpdateCrmContact

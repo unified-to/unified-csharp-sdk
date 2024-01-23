@@ -24,10 +24,10 @@ namespace UnifiedTo.Models.Requests
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
-        /// The customer ID to filter results
+        /// The customer/supplier ID to filter results
         /// </summary>
-        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=customer_id")]
-        public string? CustomerId { get; set; }
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=contact_id")]
+        public string? ContactId { get; set; }
 
         /// <summary>
         /// Comma-delimited fields to return

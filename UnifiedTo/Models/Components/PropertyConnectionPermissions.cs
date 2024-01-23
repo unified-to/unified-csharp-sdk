@@ -29,10 +29,10 @@ namespace UnifiedTo.Models.Components
         AccountingInvoiceRead,
         [JsonProperty("accounting_invoice_write")]
         AccountingInvoiceWrite,
-        [JsonProperty("accounting_customer_read")]
-        AccountingCustomerRead,
-        [JsonProperty("accounting_customer_write")]
-        AccountingCustomerWrite,
+        [JsonProperty("accounting_contact_read")]
+        AccountingContactRead,
+        [JsonProperty("accounting_contact_write")]
+        AccountingContactWrite,
         [JsonProperty("accounting_payment_read")]
         AccountingPaymentRead,
         [JsonProperty("accounting_payment_write")]

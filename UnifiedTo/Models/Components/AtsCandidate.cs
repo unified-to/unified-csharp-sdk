@@ -47,6 +47,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        [JsonProperty("origin")]
+        public Origin? Origin { get; set; }
+
         [JsonProperty("raw")]
         public PropertyAtsCandidateRaw? Raw { get; set; }
 

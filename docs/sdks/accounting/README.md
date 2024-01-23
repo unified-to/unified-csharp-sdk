@@ -4,14 +4,14 @@
 ### Available Operations
 
 * [CreateAccountingAccount](#createaccountingaccount) - Create an account
-* [CreateAccountingCustomer](#createaccountingcustomer) - Create a customer
+* [CreateAccountingContact](#createaccountingcontact) - Create a contact
 * [CreateAccountingInvoice](#createaccountinginvoice) - Create a invoice
 * [CreateAccountingItem](#createaccountingitem) - Create an item
 * [CreateAccountingPayment](#createaccountingpayment) - Create a payment
 * [CreateAccountingTaxrate](#createaccountingtaxrate) - Create a taxrate
 * [CreateAccountingTransaction](#createaccountingtransaction) - Create a transaction
 * [GetAccountingAccount](#getaccountingaccount) - Retrieve an account
-* [GetAccountingCustomer](#getaccountingcustomer) - Retrieve a customer
+* [GetAccountingContact](#getaccountingcontact) - Retrieve a contact
 * [GetAccountingInvoice](#getaccountinginvoice) - Retrieve a invoice
 * [GetAccountingItem](#getaccountingitem) - Retrieve an item
 * [GetAccountingOrganization](#getaccountingorganization) - Retrieve an organization
@@ -19,7 +19,7 @@
 * [GetAccountingTaxrate](#getaccountingtaxrate) - Retrieve a taxrate
 * [GetAccountingTransaction](#getaccountingtransaction) - Retrieve a transaction
 * [ListAccountingAccounts](#listaccountingaccounts) - List all accounts
-* [ListAccountingCustomers](#listaccountingcustomers) - List all customers
+* [ListAccountingContacts](#listaccountingcontacts) - List all contacts
 * [ListAccountingInvoices](#listaccountinginvoices) - List all invoices
 * [ListAccountingItems](#listaccountingitems) - List all items
 * [ListAccountingOrganizations](#listaccountingorganizations) - List all organizations
@@ -27,21 +27,21 @@
 * [ListAccountingTaxrates](#listaccountingtaxrates) - List all taxrates
 * [ListAccountingTransactions](#listaccountingtransactions) - List all transactions
 * [PatchAccountingAccount](#patchaccountingaccount) - Update an account
-* [PatchAccountingCustomer](#patchaccountingcustomer) - Update a customer
+* [PatchAccountingContact](#patchaccountingcontact) - Update a contact
 * [PatchAccountingInvoice](#patchaccountinginvoice) - Update a invoice
 * [PatchAccountingItem](#patchaccountingitem) - Update an item
 * [PatchAccountingPayment](#patchaccountingpayment) - Update a payment
 * [PatchAccountingTaxrate](#patchaccountingtaxrate) - Update a taxrate
 * [PatchAccountingTransaction](#patchaccountingtransaction) - Update a transaction
 * [RemoveAccountingAccount](#removeaccountingaccount) - Remove an account
-* [RemoveAccountingCustomer](#removeaccountingcustomer) - Remove a customer
+* [RemoveAccountingContact](#removeaccountingcontact) - Remove a contact
 * [RemoveAccountingInvoice](#removeaccountinginvoice) - Remove a invoice
 * [RemoveAccountingItem](#removeaccountingitem) - Remove an item
 * [RemoveAccountingPayment](#removeaccountingpayment) - Remove a payment
 * [RemoveAccountingTaxrate](#removeaccountingtaxrate) - Remove a taxrate
 * [RemoveAccountingTransaction](#removeaccountingtransaction) - Remove a transaction
 * [UpdateAccountingAccount](#updateaccountingaccount) - Update an account
-* [UpdateAccountingCustomer](#updateaccountingcustomer) - Update a customer
+* [UpdateAccountingContact](#updateaccountingcontact) - Update a contact
 * [UpdateAccountingInvoice](#updateaccountinginvoice) - Update a invoice
 * [UpdateAccountingItem](#updateaccountingitem) - Update an item
 * [UpdateAccountingPayment](#updateaccountingpayment) - Update a payment
@@ -85,9 +85,9 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(ConnectionId: "strin
 **[CreateAccountingAccountResponse](../../Models/Requests/CreateAccountingAccountResponse.md)**
 
 
-## CreateAccountingCustomer
+## CreateAccountingContact
 
-Create a customer
+Create a contact
 
 ### Example Usage
 
@@ -102,15 +102,15 @@ var sdk = new UnifiedToSDK(
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.CreateAccountingCustomerAsync(ConnectionId: "string", AccountingCustomer: new AccountingCustomer() {
-    BillingAddress = new PropertyAccountingCustomerBillingAddress() {},
+var res = await sdk.Accounting.CreateAccountingContactAsync(ConnectionId: "string", AccountingContact: new AccountingContact() {
+    BillingAddress = new PropertyAccountingContactBillingAddress() {},
     Emails = new List<AccountingEmail>() {
         new AccountingEmail() {
-            Email = "Kevon_Schultz42@gmail.com",
+            Email = "Mac36@gmail.com",
         },
     },
-    Raw = new PropertyAccountingCustomerRaw() {},
-    ShippingAddress = new PropertyAccountingCustomerShippingAddress() {},
+    Raw = new PropertyAccountingContactRaw() {},
+    ShippingAddress = new PropertyAccountingContactShippingAddress() {},
     Telephones = new List<AccountingTelephone>() {
         new AccountingTelephone() {
             Telephone = "string",
@@ -123,15 +123,15 @@ var res = await sdk.Accounting.CreateAccountingCustomerAsync(ConnectionId: "stri
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `ConnectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
-| `AccountingCustomer`                                                | [AccountingCustomer](../../Models/Components/AccountingCustomer.md) | :heavy_minus_sign:                                                  | N/A                                                                 |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `AccountingContact`                                               | [AccountingContact](../../Models/Components/AccountingContact.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response
 
-**[CreateAccountingCustomerResponse](../../Models/Requests/CreateAccountingCustomerResponse.md)**
+**[CreateAccountingContactResponse](../../Models/Requests/CreateAccountingContactResponse.md)**
 
 
 ## CreateAccountingInvoice
@@ -370,9 +370,9 @@ var res = await sdk.Accounting.GetAccountingAccountAsync(ConnectionId: "string",
 **[GetAccountingAccountResponse](../../Models/Requests/GetAccountingAccountResponse.md)**
 
 
-## GetAccountingCustomer
+## GetAccountingContact
 
-Retrieve a customer
+Retrieve a contact
 
 ### Example Usage
 
@@ -387,7 +387,7 @@ var sdk = new UnifiedToSDK(
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.GetAccountingCustomerAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Accounting.GetAccountingContactAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
     "string",
 });
 
@@ -399,13 +399,13 @@ var res = await sdk.Accounting.GetAccountingCustomerAsync(ConnectionId: "string"
 | Parameter                        | Type                             | Required                         | Description                      |
 | -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
 | `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Customer               |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Contact                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
 
 ### Response
 
-**[GetAccountingCustomerResponse](../../Models/Requests/GetAccountingCustomerResponse.md)**
+**[GetAccountingContactResponse](../../Models/Requests/GetAccountingContactResponse.md)**
 
 
 ## GetAccountingInvoice
@@ -677,9 +677,9 @@ var res = await sdk.Accounting.ListAccountingAccountsAsync(req);
 **[ListAccountingAccountsResponse](../../Models/Requests/ListAccountingAccountsResponse.md)**
 
 
-## ListAccountingCustomers
+## ListAccountingContacts
 
-List all customers
+List all contacts
 
 ### Example Usage
 
@@ -694,28 +694,28 @@ var sdk = new UnifiedToSDK(
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-ListAccountingCustomersRequest req = new ListAccountingCustomersRequest() {
+ListAccountingContactsRequest req = new ListAccountingContactsRequest() {
     ConnectionId = "string",
     Fields = new List<string>() {
         "string",
     },
 };
 
-var res = await sdk.Accounting.ListAccountingCustomersAsync(req);
+var res = await sdk.Accounting.ListAccountingContactsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [ListAccountingCustomersRequest](../../Models/Requests/ListAccountingCustomersRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListAccountingContactsRequest](../../Models/Requests/ListAccountingContactsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 
 ### Response
 
-**[ListAccountingCustomersResponse](../../Models/Requests/ListAccountingCustomersResponse.md)**
+**[ListAccountingContactsResponse](../../Models/Requests/ListAccountingContactsResponse.md)**
 
 
 ## ListAccountingInvoices
@@ -1002,9 +1002,9 @@ var res = await sdk.Accounting.PatchAccountingAccountAsync(ConnectionId: "string
 **[PatchAccountingAccountResponse](../../Models/Requests/PatchAccountingAccountResponse.md)**
 
 
-## PatchAccountingCustomer
+## PatchAccountingContact
 
-Update a customer
+Update a contact
 
 ### Example Usage
 
@@ -1019,15 +1019,15 @@ var sdk = new UnifiedToSDK(
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.PatchAccountingCustomerAsync(ConnectionId: "string", Id: "string", AccountingCustomer: new AccountingCustomer() {
-    BillingAddress = new PropertyAccountingCustomerBillingAddress() {},
+var res = await sdk.Accounting.PatchAccountingContactAsync(ConnectionId: "string", Id: "string", AccountingContact: new AccountingContact() {
+    BillingAddress = new PropertyAccountingContactBillingAddress() {},
     Emails = new List<AccountingEmail>() {
         new AccountingEmail() {
-            Email = "Trever_Orn@hotmail.com",
+            Email = "Sylvester.Kuhic@yahoo.com",
         },
     },
-    Raw = new PropertyAccountingCustomerRaw() {},
-    ShippingAddress = new PropertyAccountingCustomerShippingAddress() {},
+    Raw = new PropertyAccountingContactRaw() {},
+    ShippingAddress = new PropertyAccountingContactShippingAddress() {},
     Telephones = new List<AccountingTelephone>() {
         new AccountingTelephone() {
             Telephone = "string",
@@ -1040,16 +1040,16 @@ var res = await sdk.Accounting.PatchAccountingCustomerAsync(ConnectionId: "strin
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `ConnectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
-| `Id`                                                                | *string*                                                            | :heavy_check_mark:                                                  | ID of the Customer                                                  |
-| `AccountingCustomer`                                                | [AccountingCustomer](../../Models/Components/AccountingCustomer.md) | :heavy_minus_sign:                                                  | N/A                                                                 |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Contact                                                 |
+| `AccountingContact`                                               | [AccountingContact](../../Models/Components/AccountingContact.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response
 
-**[PatchAccountingCustomerResponse](../../Models/Requests/PatchAccountingCustomerResponse.md)**
+**[PatchAccountingContactResponse](../../Models/Requests/PatchAccountingContactResponse.md)**
 
 
 ## PatchAccountingInvoice
@@ -1289,9 +1289,9 @@ var res = await sdk.Accounting.RemoveAccountingAccountAsync(ConnectionId: "strin
 **[RemoveAccountingAccountResponse](../../Models/Requests/RemoveAccountingAccountResponse.md)**
 
 
-## RemoveAccountingCustomer
+## RemoveAccountingContact
 
-Remove a customer
+Remove a contact
 
 ### Example Usage
 
@@ -1305,7 +1305,7 @@ var sdk = new UnifiedToSDK(
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.RemoveAccountingCustomerAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Accounting.RemoveAccountingContactAsync(ConnectionId: "string", Id: "string");
 
 // handle response
 ```
@@ -1315,12 +1315,12 @@ var res = await sdk.Accounting.RemoveAccountingCustomerAsync(ConnectionId: "stri
 | Parameter            | Type                 | Required             | Description          |
 | -------------------- | -------------------- | -------------------- | -------------------- |
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Customer   |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Contact    |
 
 
 ### Response
 
-**[RemoveAccountingCustomerResponse](../../Models/Requests/RemoveAccountingCustomerResponse.md)**
+**[RemoveAccountingContactResponse](../../Models/Requests/RemoveAccountingContactResponse.md)**
 
 
 ## RemoveAccountingInvoice
@@ -1531,9 +1531,9 @@ var res = await sdk.Accounting.UpdateAccountingAccountAsync(ConnectionId: "strin
 **[UpdateAccountingAccountResponse](../../Models/Requests/UpdateAccountingAccountResponse.md)**
 
 
-## UpdateAccountingCustomer
+## UpdateAccountingContact
 
-Update a customer
+Update a contact
 
 ### Example Usage
 
@@ -1548,15 +1548,15 @@ var sdk = new UnifiedToSDK(
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.UpdateAccountingCustomerAsync(ConnectionId: "string", Id: "string", AccountingCustomer: new AccountingCustomer() {
-    BillingAddress = new PropertyAccountingCustomerBillingAddress() {},
+var res = await sdk.Accounting.UpdateAccountingContactAsync(ConnectionId: "string", Id: "string", AccountingContact: new AccountingContact() {
+    BillingAddress = new PropertyAccountingContactBillingAddress() {},
     Emails = new List<AccountingEmail>() {
         new AccountingEmail() {
-            Email = "Myrtice_Jacobi77@hotmail.com",
+            Email = "Kaci_Hane@hotmail.com",
         },
     },
-    Raw = new PropertyAccountingCustomerRaw() {},
-    ShippingAddress = new PropertyAccountingCustomerShippingAddress() {},
+    Raw = new PropertyAccountingContactRaw() {},
+    ShippingAddress = new PropertyAccountingContactShippingAddress() {},
     Telephones = new List<AccountingTelephone>() {
         new AccountingTelephone() {
             Telephone = "string",
@@ -1569,16 +1569,16 @@ var res = await sdk.Accounting.UpdateAccountingCustomerAsync(ConnectionId: "stri
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `ConnectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
-| `Id`                                                                | *string*                                                            | :heavy_check_mark:                                                  | ID of the Customer                                                  |
-| `AccountingCustomer`                                                | [AccountingCustomer](../../Models/Components/AccountingCustomer.md) | :heavy_minus_sign:                                                  | N/A                                                                 |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Contact                                                 |
+| `AccountingContact`                                               | [AccountingContact](../../Models/Components/AccountingContact.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response
 
-**[UpdateAccountingCustomerResponse](../../Models/Requests/UpdateAccountingCustomerResponse.md)**
+**[UpdateAccountingContactResponse](../../Models/Requests/UpdateAccountingContactResponse.md)**
 
 
 ## UpdateAccountingInvoice

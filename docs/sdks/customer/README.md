@@ -3,67 +3,12 @@
 
 ### Available Operations
 
-* [CreateAccountingCustomer](#createaccountingcustomer) - Create a customer
 * [CreateTicketingCustomer](#createticketingcustomer) - Create a customer
-* [GetAccountingCustomer](#getaccountingcustomer) - Retrieve a customer
 * [GetTicketingCustomer](#getticketingcustomer) - Retrieve a customer
-* [ListAccountingCustomers](#listaccountingcustomers) - List all customers
 * [ListTicketingCustomers](#listticketingcustomers) - List all customers
-* [PatchAccountingCustomer](#patchaccountingcustomer) - Update a customer
 * [PatchTicketingCustomer](#patchticketingcustomer) - Update a customer
-* [RemoveAccountingCustomer](#removeaccountingcustomer) - Remove a customer
 * [RemoveTicketingCustomer](#removeticketingcustomer) - Remove a customer
-* [UpdateAccountingCustomer](#updateaccountingcustomer) - Update a customer
 * [UpdateTicketingCustomer](#updateticketingcustomer) - Update a customer
-
-## CreateAccountingCustomer
-
-Create a customer
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
-
-var sdk = new UnifiedToSDK(
-    security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Customer.CreateAccountingCustomerAsync(ConnectionId: "string", AccountingCustomer: new AccountingCustomer() {
-    BillingAddress = new PropertyAccountingCustomerBillingAddress() {},
-    Emails = new List<AccountingEmail>() {
-        new AccountingEmail() {
-            Email = "Kevon_Schultz42@gmail.com",
-        },
-    },
-    Raw = new PropertyAccountingCustomerRaw() {},
-    ShippingAddress = new PropertyAccountingCustomerShippingAddress() {},
-    Telephones = new List<AccountingTelephone>() {
-        new AccountingTelephone() {
-            Telephone = "string",
-        },
-    },
-});
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `ConnectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
-| `AccountingCustomer`                                                | [AccountingCustomer](../../Models/Components/AccountingCustomer.md) | :heavy_minus_sign:                                                  | N/A                                                                 |
-
-
-### Response
-
-**[CreateAccountingCustomerResponse](../../Models/Requests/CreateAccountingCustomerResponse.md)**
-
 
 ## CreateTicketingCustomer
 
@@ -115,44 +60,6 @@ var res = await sdk.Customer.CreateTicketingCustomerAsync(ConnectionId: "string"
 **[CreateTicketingCustomerResponse](../../Models/Requests/CreateTicketingCustomerResponse.md)**
 
 
-## GetAccountingCustomer
-
-Retrieve a customer
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
-
-var sdk = new UnifiedToSDK(
-    security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Customer.GetAccountingCustomerAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
-    "string",
-});
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Customer               |
-| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
-
-
-### Response
-
-**[GetAccountingCustomerResponse](../../Models/Requests/GetAccountingCustomerResponse.md)**
-
-
 ## GetTicketingCustomer
 
 Retrieve a customer
@@ -189,47 +96,6 @@ var res = await sdk.Customer.GetTicketingCustomerAsync(ConnectionId: "string", I
 ### Response
 
 **[GetTicketingCustomerResponse](../../Models/Requests/GetTicketingCustomerResponse.md)**
-
-
-## ListAccountingCustomers
-
-List all customers
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
-
-var sdk = new UnifiedToSDK(
-    security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-ListAccountingCustomersRequest req = new ListAccountingCustomersRequest() {
-    ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
-};
-
-var res = await sdk.Customer.ListAccountingCustomersAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [ListAccountingCustomersRequest](../../Models/Requests/ListAccountingCustomersRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
-
-
-### Response
-
-**[ListAccountingCustomersResponse](../../Models/Requests/ListAccountingCustomersResponse.md)**
 
 
 ## ListTicketingCustomers
@@ -271,56 +137,6 @@ var res = await sdk.Customer.ListTicketingCustomersAsync(req);
 ### Response
 
 **[ListTicketingCustomersResponse](../../Models/Requests/ListTicketingCustomersResponse.md)**
-
-
-## PatchAccountingCustomer
-
-Update a customer
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
-
-var sdk = new UnifiedToSDK(
-    security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Customer.PatchAccountingCustomerAsync(ConnectionId: "string", Id: "string", AccountingCustomer: new AccountingCustomer() {
-    BillingAddress = new PropertyAccountingCustomerBillingAddress() {},
-    Emails = new List<AccountingEmail>() {
-        new AccountingEmail() {
-            Email = "Trever_Orn@hotmail.com",
-        },
-    },
-    Raw = new PropertyAccountingCustomerRaw() {},
-    ShippingAddress = new PropertyAccountingCustomerShippingAddress() {},
-    Telephones = new List<AccountingTelephone>() {
-        new AccountingTelephone() {
-            Telephone = "string",
-        },
-    },
-});
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `ConnectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
-| `Id`                                                                | *string*                                                            | :heavy_check_mark:                                                  | ID of the Customer                                                  |
-| `AccountingCustomer`                                                | [AccountingCustomer](../../Models/Components/AccountingCustomer.md) | :heavy_minus_sign:                                                  | N/A                                                                 |
-
-
-### Response
-
-**[PatchAccountingCustomerResponse](../../Models/Requests/PatchAccountingCustomerResponse.md)**
 
 
 ## PatchTicketingCustomer
@@ -374,40 +190,6 @@ var res = await sdk.Customer.PatchTicketingCustomerAsync(ConnectionId: "string",
 **[PatchTicketingCustomerResponse](../../Models/Requests/PatchTicketingCustomerResponse.md)**
 
 
-## RemoveAccountingCustomer
-
-Remove a customer
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(
-    security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Customer.RemoveAccountingCustomerAsync(ConnectionId: "string", Id: "string");
-
-// handle response
-```
-
-### Parameters
-
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Customer   |
-
-
-### Response
-
-**[RemoveAccountingCustomerResponse](../../Models/Requests/RemoveAccountingCustomerResponse.md)**
-
-
 ## RemoveTicketingCustomer
 
 Remove a customer
@@ -440,56 +222,6 @@ var res = await sdk.Customer.RemoveTicketingCustomerAsync(ConnectionId: "string"
 ### Response
 
 **[RemoveTicketingCustomerResponse](../../Models/Requests/RemoveTicketingCustomerResponse.md)**
-
-
-## UpdateAccountingCustomer
-
-Update a customer
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
-
-var sdk = new UnifiedToSDK(
-    security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Customer.UpdateAccountingCustomerAsync(ConnectionId: "string", Id: "string", AccountingCustomer: new AccountingCustomer() {
-    BillingAddress = new PropertyAccountingCustomerBillingAddress() {},
-    Emails = new List<AccountingEmail>() {
-        new AccountingEmail() {
-            Email = "Myrtice_Jacobi77@hotmail.com",
-        },
-    },
-    Raw = new PropertyAccountingCustomerRaw() {},
-    ShippingAddress = new PropertyAccountingCustomerShippingAddress() {},
-    Telephones = new List<AccountingTelephone>() {
-        new AccountingTelephone() {
-            Telephone = "string",
-        },
-    },
-});
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `ConnectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
-| `Id`                                                                | *string*                                                            | :heavy_check_mark:                                                  | ID of the Customer                                                  |
-| `AccountingCustomer`                                                | [AccountingCustomer](../../Models/Components/AccountingCustomer.md) | :heavy_minus_sign:                                                  | N/A                                                                 |
-
-
-### Response
-
-**[UpdateAccountingCustomerResponse](../../Models/Requests/UpdateAccountingCustomerResponse.md)**
 
 
 ## UpdateTicketingCustomer

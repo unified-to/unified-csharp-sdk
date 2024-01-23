@@ -29,9 +29,9 @@ namespace UnifiedTo
         Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(string connectionId, AccountingAccount? accountingAccount = null);
 
         /// <summary>
-        /// Create a customer
+        /// Create a contact
         /// </summary>
-        Task<CreateAccountingCustomerResponse> CreateAccountingCustomerAsync(string connectionId, AccountingCustomer? accountingCustomer = null);
+        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(string connectionId, AccountingContact? accountingContact = null);
 
         /// <summary>
         /// Create a invoice
@@ -64,9 +64,9 @@ namespace UnifiedTo
         Task<GetAccountingAccountResponse> GetAccountingAccountAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
-        /// Retrieve a customer
+        /// Retrieve a contact
         /// </summary>
-        Task<GetAccountingCustomerResponse> GetAccountingCustomerAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a invoice
@@ -104,9 +104,9 @@ namespace UnifiedTo
         Task<ListAccountingAccountsResponse> ListAccountingAccountsAsync(ListAccountingAccountsRequest? request = null);
 
         /// <summary>
-        /// List all customers
+        /// List all contacts
         /// </summary>
-        Task<ListAccountingCustomersResponse> ListAccountingCustomersAsync(ListAccountingCustomersRequest? request = null);
+        Task<ListAccountingContactsResponse> ListAccountingContactsAsync(ListAccountingContactsRequest? request = null);
 
         /// <summary>
         /// List all invoices
@@ -144,9 +144,9 @@ namespace UnifiedTo
         Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null);
 
         /// <summary>
-        /// Update a customer
+        /// Update a contact
         /// </summary>
-        Task<PatchAccountingCustomerResponse> PatchAccountingCustomerAsync(string connectionId, string id, AccountingCustomer? accountingCustomer = null);
+        Task<PatchAccountingContactResponse> PatchAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null);
 
         /// <summary>
         /// Update a invoice
@@ -179,9 +179,9 @@ namespace UnifiedTo
         Task<RemoveAccountingAccountResponse> RemoveAccountingAccountAsync(string connectionId, string id);
 
         /// <summary>
-        /// Remove a customer
+        /// Remove a contact
         /// </summary>
-        Task<RemoveAccountingCustomerResponse> RemoveAccountingCustomerAsync(string connectionId, string id);
+        Task<RemoveAccountingContactResponse> RemoveAccountingContactAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a invoice
@@ -214,9 +214,9 @@ namespace UnifiedTo
         Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null);
 
         /// <summary>
-        /// Update a customer
+        /// Update a contact
         /// </summary>
-        Task<UpdateAccountingCustomerResponse> UpdateAccountingCustomerAsync(string connectionId, string id, AccountingCustomer? accountingCustomer = null);
+        Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null);
 
         /// <summary>
         /// Update a invoice
@@ -248,10 +248,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.5.10";
+        private const string _sdkVersion = "0.5.11";
         private const string _sdkGenVersion = "2.237.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.5.10 2.237.3 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.5.11 2.237.3 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -310,20 +310,20 @@ namespace UnifiedTo
         }
         
 
-        public async Task<CreateAccountingCustomerResponse> CreateAccountingCustomerAsync(string connectionId, AccountingCustomer? accountingCustomer = null)
+        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(string connectionId, AccountingContact? accountingContact = null)
         {
-            var request = new CreateAccountingCustomerRequest()
+            var request = new CreateAccountingContactRequest()
             {
                 ConnectionId = connectionId,
-                AccountingCustomer = accountingCustomer,
+                AccountingContact = accountingContact,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/customer", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact", request);
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingCustomer", "json");
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingContact", "json");
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -335,7 +335,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new CreateAccountingCustomerResponse
+            var response = new CreateAccountingContactResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -346,7 +346,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.AccountingCustomer = JsonConvert.DeserializeObject<AccountingCustomer>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.AccountingContact = JsonConvert.DeserializeObject<AccountingContact>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -621,16 +621,16 @@ namespace UnifiedTo
         }
         
 
-        public async Task<GetAccountingCustomerResponse> GetAccountingCustomerAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null)
         {
-            var request = new GetAccountingCustomerRequest()
+            var request = new GetAccountingContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/customer/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
@@ -642,7 +642,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new GetAccountingCustomerResponse
+            var response = new GetAccountingContactResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -653,7 +653,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.AccountingCustomer = JsonConvert.DeserializeObject<AccountingCustomer>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.AccountingContact = JsonConvert.DeserializeObject<AccountingContact>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -943,10 +943,10 @@ namespace UnifiedTo
         }
         
 
-        public async Task<ListAccountingCustomersResponse> ListAccountingCustomersAsync(ListAccountingCustomersRequest? request = null)
+        public async Task<ListAccountingContactsResponse> ListAccountingContactsAsync(ListAccountingContactsRequest? request = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/customer", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact", request);
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
@@ -958,7 +958,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new ListAccountingCustomersResponse
+            var response = new ListAccountingContactsResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -969,7 +969,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.AccountingCustomers = JsonConvert.DeserializeObject<List<AccountingCustomer>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.AccountingContacts = JsonConvert.DeserializeObject<List<AccountingContact>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -1234,21 +1234,21 @@ namespace UnifiedTo
         }
         
 
-        public async Task<PatchAccountingCustomerResponse> PatchAccountingCustomerAsync(string connectionId, string id, AccountingCustomer? accountingCustomer = null)
+        public async Task<PatchAccountingContactResponse> PatchAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null)
         {
-            var request = new PatchAccountingCustomerRequest()
+            var request = new PatchAccountingContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingCustomer = accountingCustomer,
+                AccountingContact = accountingContact,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/customer/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingCustomer", "json");
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingContact", "json");
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1260,7 +1260,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new PatchAccountingCustomerResponse
+            var response = new PatchAccountingContactResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -1271,7 +1271,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.AccountingCustomer = JsonConvert.DeserializeObject<AccountingCustomer>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.AccountingContact = JsonConvert.DeserializeObject<AccountingContact>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -1541,15 +1541,15 @@ namespace UnifiedTo
         }
         
 
-        public async Task<RemoveAccountingCustomerResponse> RemoveAccountingCustomerAsync(string connectionId, string id)
+        public async Task<RemoveAccountingContactResponse> RemoveAccountingContactAsync(string connectionId, string id)
         {
-            var request = new RemoveAccountingCustomerRequest()
+            var request = new RemoveAccountingContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/customer/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
@@ -1561,7 +1561,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new RemoveAccountingCustomerResponse
+            var response = new RemoveAccountingContactResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -1773,21 +1773,21 @@ namespace UnifiedTo
         }
         
 
-        public async Task<UpdateAccountingCustomerResponse> UpdateAccountingCustomerAsync(string connectionId, string id, AccountingCustomer? accountingCustomer = null)
+        public async Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null)
         {
-            var request = new UpdateAccountingCustomerRequest()
+            var request = new UpdateAccountingContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingCustomer = accountingCustomer,
+                AccountingContact = accountingContact,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/customer/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingCustomer", "json");
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingContact", "json");
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1799,7 +1799,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new UpdateAccountingCustomerResponse
+            var response = new UpdateAccountingContactResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -1810,7 +1810,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.AccountingCustomer = JsonConvert.DeserializeObject<AccountingCustomer>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.AccountingContact = JsonConvert.DeserializeObject<AccountingContact>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;

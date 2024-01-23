@@ -26,12 +26,22 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact
         /// </summary>
+        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(string connectionId, AccountingContact? accountingContact = null);
+
+        /// <summary>
+        /// Create a contact
+        /// </summary>
         Task<CreateCrmContactResponse> CreateCrmContactAsync(string connectionId, CrmContact? crmContact = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
         Task<CreateUcContactResponse> CreateUcContactAsync(string connectionId, UcContact? ucContact = null);
+
+        /// <summary>
+        /// Retrieve a contact
+        /// </summary>
+        Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a contact
@@ -46,12 +56,22 @@ namespace UnifiedTo
         /// <summary>
         /// List all contacts
         /// </summary>
+        Task<ListAccountingContactsResponse> ListAccountingContactsAsync(ListAccountingContactsRequest? request = null);
+
+        /// <summary>
+        /// List all contacts
+        /// </summary>
         Task<ListCrmContactsResponse> ListCrmContactsAsync(ListCrmContactsRequest? request = null);
 
         /// <summary>
         /// List all contacts
         /// </summary>
         Task<ListUcContactsResponse> ListUcContactsAsync(ListUcContactsRequest? request = null);
+
+        /// <summary>
+        /// Update a contact
+        /// </summary>
+        Task<PatchAccountingContactResponse> PatchAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null);
 
         /// <summary>
         /// Update a contact
@@ -66,12 +86,22 @@ namespace UnifiedTo
         /// <summary>
         /// Remove a contact
         /// </summary>
+        Task<RemoveAccountingContactResponse> RemoveAccountingContactAsync(string connectionId, string id);
+
+        /// <summary>
+        /// Remove a contact
+        /// </summary>
         Task<RemoveCrmContactResponse> RemoveCrmContactAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a contact
         /// </summary>
         Task<RemoveUcContactResponse> RemoveUcContactAsync(string connectionId, string id);
+
+        /// <summary>
+        /// Update a contact
+        /// </summary>
+        Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null);
 
         /// <summary>
         /// Update a contact
@@ -88,10 +118,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.5.10";
+        private const string _sdkVersion = "0.5.11";
         private const string _sdkGenVersion = "2.237.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.5.10 2.237.3 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.5.11 2.237.3 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -102,6 +132,51 @@ namespace UnifiedTo
             _securityClient = securityClient;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
+        }
+        
+
+        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(string connectionId, AccountingContact? accountingContact = null)
+        {
+            var request = new CreateAccountingContactRequest()
+            {
+                ConnectionId = connectionId,
+                AccountingContact = accountingContact,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingContact", "json");
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new CreateAccountingContactResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingContact = JsonConvert.DeserializeObject<AccountingContact>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
         }
         
 
@@ -195,6 +270,47 @@ namespace UnifiedTo
         }
         
 
+        public async Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null)
+        {
+            var request = new GetAccountingContactRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                Fields = fields,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new GetAccountingContactResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingContact = JsonConvert.DeserializeObject<AccountingContact>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
         public async Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetCrmContactRequest()
@@ -277,6 +393,41 @@ namespace UnifiedTo
         }
         
 
+        public async Task<ListAccountingContactsResponse> ListAccountingContactsAsync(ListAccountingContactsRequest? request = null)
+        {
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new ListAccountingContactsResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingContacts = JsonConvert.DeserializeObject<List<AccountingContact>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
         public async Task<ListCrmContactsResponse> ListCrmContactsAsync(ListCrmContactsRequest? request = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
@@ -339,6 +490,52 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.UcContacts = JsonConvert.DeserializeObject<List<UcContact>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
+        public async Task<PatchAccountingContactResponse> PatchAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null)
+        {
+            var request = new PatchAccountingContactRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                AccountingContact = accountingContact,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingContact", "json");
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new PatchAccountingContactResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingContact = JsonConvert.DeserializeObject<AccountingContact>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -439,6 +636,37 @@ namespace UnifiedTo
         }
         
 
+        public async Task<RemoveAccountingContactResponse> RemoveAccountingContactAsync(string connectionId, string id)
+        {
+            var request = new RemoveAccountingContactRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new RemoveAccountingContactResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            throw new InvalidOperationException("API returned unexpected status code or content type");
+        }
+        
+
         public async Task<RemoveCrmContactResponse> RemoveCrmContactAsync(string connectionId, string id)
         {
             var request = new RemoveCrmContactRequest()
@@ -498,6 +726,52 @@ namespace UnifiedTo
             };
             
             throw new InvalidOperationException("API returned unexpected status code or content type");
+        }
+        
+
+        public async Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null)
+        {
+            var request = new UpdateAccountingContactRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                AccountingContact = accountingContact,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingContact", "json");
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new UpdateAccountingContactResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingContact = JsonConvert.DeserializeObject<AccountingContact>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
         }
         
 

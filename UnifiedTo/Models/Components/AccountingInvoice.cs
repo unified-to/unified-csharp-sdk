@@ -23,14 +23,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("cancelled_at")]
         public DateTime? CancelledAt { get; set; }
 
+        [JsonProperty("contact_id")]
+        public string? ContactId { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("currency")]
         public string? Currency { get; set; }
-
-        [JsonProperty("customer_id")]
-        public string? CustomerId { get; set; }
 
         [JsonProperty("discount_amount")]
         public double? DiscountAmount { get; set; }
