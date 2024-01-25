@@ -34,6 +34,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("is_payable")]
+        public bool? IsPayable { get; set; }
+
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 
