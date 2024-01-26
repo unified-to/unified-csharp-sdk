@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 5160b83a94b66b2e0ad89d7f5d90cf8c
+  docChecksum: e6d7bb30e178bd0903f2f07c8ad4601f
   docVersion: "1.0"
   speakeasyVersion: internal
   generationVersion: 2.239.4
-  releaseVersion: 0.5.12
-  configChecksum: 02011a7ac2ba91c5a247bfecb31d2a4c
+  releaseVersion: 0.5.13
+  configChecksum: ccb9d489c51b5c9a1afbd390307ccfdc
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -493,7 +493,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingInvoice.cs
   - UnifiedTo/Models/Components/PropertyAccountingInvoiceRaw.cs
   - UnifiedTo/Models/Components/AccountingLineitem.cs
-  - UnifiedTo/Models/Components/PropertyAccountingLineitemRaw.cs
   - UnifiedTo/Models/Components/AccountingItem.cs
   - UnifiedTo/Models/Components/PropertyAccountingItemRaw.cs
   - UnifiedTo/Models/Components/AccountingPayment.cs
@@ -1056,7 +1055,6 @@ generatedFiles:
   - docs/Models/Components/AccountingInvoice.md
   - docs/Models/Components/PropertyAccountingInvoiceRaw.md
   - docs/Models/Components/AccountingLineitem.md
-  - docs/Models/Components/PropertyAccountingLineitemRaw.md
   - docs/Models/Components/AccountingItem.md
   - docs/Models/Components/PropertyAccountingItemRaw.md
   - docs/Models/Components/AccountingPayment.md

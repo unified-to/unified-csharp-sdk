@@ -43,9 +43,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("notes")]
         public string? Notes { get; set; }
 
-        [JsonProperty("raw")]
-        public PropertyAccountingLineitemRaw? Raw { get; set; }
-
         [JsonProperty("refunded_amount")]
         public double? RefundedAmount { get; set; }
 

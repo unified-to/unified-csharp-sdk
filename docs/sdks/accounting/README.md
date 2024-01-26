@@ -154,7 +154,6 @@ var sdk = new UnifiedToSDK(
 var res = await sdk.Accounting.CreateAccountingInvoiceAsync(ConnectionId: "string", AccountingInvoice: new AccountingInvoice() {
     Lineitems = new List<AccountingLineitem>() {
         new AccountingLineitem() {
-            Raw = new PropertyAccountingLineitemRaw() {},
             TotalAmount = 6736.06D,
         },
     },
@@ -1072,7 +1071,6 @@ var sdk = new UnifiedToSDK(
 var res = await sdk.Accounting.PatchAccountingInvoiceAsync(ConnectionId: "string", Id: "string", AccountingInvoice: new AccountingInvoice() {
     Lineitems = new List<AccountingLineitem>() {
         new AccountingLineitem() {
-            Raw = new PropertyAccountingLineitemRaw() {},
             TotalAmount = 7374.1D,
         },
     },
@@ -1601,7 +1599,6 @@ var sdk = new UnifiedToSDK(
 var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(ConnectionId: "string", Id: "string", AccountingInvoice: new AccountingInvoice() {
     Lineitems = new List<AccountingLineitem>() {
         new AccountingLineitem() {
-            Raw = new PropertyAccountingLineitemRaw() {},
             TotalAmount = 6974.28D,
         },
     },
