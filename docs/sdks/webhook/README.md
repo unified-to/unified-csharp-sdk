@@ -32,7 +32,9 @@ var res = await sdk.Webhook.CreateUnifiedWebhookAsync(Webhook: new Models.Compon
     Event = Models.Components.Event.Created,
     HookUrl = "string",
     Interval = 188.12D,
-    Meta = new PropertyWebhookMeta() {},
+    Meta = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     ObjectType = ObjectType.CrmCompany,
     Runs = new List<string>() {
         "string",

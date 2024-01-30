@@ -20,6 +20,7 @@ Create an item
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -28,7 +29,9 @@ var sdk = new UnifiedToSDK(
 
 var res = await sdk.Item.CreateAccountingItemAsync(ConnectionId: "string", AccountingItem: new AccountingItem() {
     Name = "string",
-    Raw = new PropertyAccountingItemRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -136,6 +139,7 @@ Update an item
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -144,7 +148,9 @@ var sdk = new UnifiedToSDK(
 
 var res = await sdk.Item.PatchAccountingItemAsync(ConnectionId: "string", Id: "string", AccountingItem: new AccountingItem() {
     Name = "string",
-    Raw = new PropertyAccountingItemRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -208,6 +214,7 @@ Update an item
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -216,7 +223,9 @@ var sdk = new UnifiedToSDK(
 
 var res = await sdk.Item.UpdateAccountingItemAsync(ConnectionId: "string", Id: "string", AccountingItem: new AccountingItem() {
     Name = "string",
-    Raw = new PropertyAccountingItemRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response

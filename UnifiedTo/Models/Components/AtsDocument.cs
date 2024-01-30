@@ -11,6 +11,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using System;
     
     public class AtsDocument
@@ -41,7 +42,7 @@ namespace UnifiedTo.Models.Components
         public string? JobId { get; set; }
 
         [JsonProperty("raw")]
-        public PropertyAtsDocumentRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("type")]
         public AtsDocumentType? Type { get; set; }

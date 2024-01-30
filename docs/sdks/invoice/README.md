@@ -33,7 +33,9 @@ var res = await sdk.Invoice.CreateAccountingInvoiceAsync(ConnectionId: "string",
             TotalAmount = 6736.06D,
         },
     },
-    Raw = new PropertyAccountingInvoiceRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -154,7 +156,9 @@ var res = await sdk.Invoice.PatchAccountingInvoiceAsync(ConnectionId: "string", 
             TotalAmount = 7374.1D,
         },
     },
-    Raw = new PropertyAccountingInvoiceRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -231,7 +235,9 @@ var res = await sdk.Invoice.UpdateAccountingInvoiceAsync(ConnectionId: "string",
             TotalAmount = 6974.28D,
         },
     },
-    Raw = new PropertyAccountingInvoiceRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response

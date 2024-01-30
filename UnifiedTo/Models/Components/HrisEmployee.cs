@@ -75,7 +75,7 @@ namespace UnifiedTo.Models.Components
         public string? Name { get; set; }
 
         [JsonProperty("raw")]
-        public PropertyHrisEmployeeRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("telephones")]
         public List<HrisTelephone>? Telephones { get; set; }

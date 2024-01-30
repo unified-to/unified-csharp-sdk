@@ -11,6 +11,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using System;
     
     /// <summary>
@@ -32,7 +33,7 @@ namespace UnifiedTo.Models.Components
         /// The raw data returned by the integration for this list
         /// </summary>
         [JsonProperty("raw")]
-        public PropertyMarketingListRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

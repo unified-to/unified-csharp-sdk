@@ -28,7 +28,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Deal.CreateCrmDealAsync(ConnectionId: "string", CrmDeal: new CrmDeal() {
-    Raw = new PropertyCrmDealRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -147,7 +149,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Deal.PatchCrmDealAsync(ConnectionId: "string", Id: "string", CrmDeal: new CrmDeal() {
-    Raw = new PropertyCrmDealRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -222,7 +226,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Deal.UpdateCrmDealAsync(ConnectionId: "string", Id: "string", CrmDeal: new CrmDeal() {
-    Raw = new PropertyCrmDealRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },

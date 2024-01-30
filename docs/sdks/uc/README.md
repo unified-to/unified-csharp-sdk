@@ -34,7 +34,9 @@ var res = await sdk.Uc.CreateUcContactAsync(ConnectionId: "string", UcContact: n
             Email = "Dulce_Becker30@yahoo.com",
         },
     },
-    Raw = new PropertyUcContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<UcTelephone>() {
         new UcTelephone() {
             Telephone = "string",
@@ -201,7 +203,9 @@ var res = await sdk.Uc.PatchUcContactAsync(ConnectionId: "string", Id: "string",
             Email = "Norene_Boehm97@hotmail.com",
         },
     },
-    Raw = new PropertyUcContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<UcTelephone>() {
         new UcTelephone() {
             Telephone = "string",
@@ -283,7 +287,9 @@ var res = await sdk.Uc.UpdateUcContactAsync(ConnectionId: "string", Id: "string"
             Email = "Kianna.Witting90@gmail.com",
         },
     },
-    Raw = new PropertyUcContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<UcTelephone>() {
         new UcTelephone() {
             Telephone = "string",

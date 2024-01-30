@@ -54,7 +54,7 @@ namespace UnifiedTo.Models.Components
         public List<string>? PublicJobUrls { get; set; }
 
         [JsonProperty("raw")]
-        public PropertyAtsJobRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("recruiter_ids")]
         public List<string>? RecruiterIds { get; set; }

@@ -11,6 +11,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using System;
     
     public class AtsApplication
@@ -38,7 +39,7 @@ namespace UnifiedTo.Models.Components
         public string? OriginalStatus { get; set; }
 
         [JsonProperty("raw")]
-        public PropertyAtsApplicationRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("rejected_at")]
         public DateTime? RejectedAt { get; set; }

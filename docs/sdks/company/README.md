@@ -39,7 +39,9 @@ var res = await sdk.Company.CreateCrmCompanyAsync(ConnectionId: "string", CrmCom
     LinkUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyCrmCompanyRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -211,7 +213,9 @@ var res = await sdk.Company.PatchCrmCompanyAsync(ConnectionId: "string", Id: "st
     LinkUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyCrmCompanyRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -304,7 +308,9 @@ var res = await sdk.Company.UpdateCrmCompanyAsync(ConnectionId: "string", Id: "s
     LinkUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyCrmCompanyRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },

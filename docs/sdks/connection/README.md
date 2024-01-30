@@ -31,7 +31,9 @@ Models.Components.Connection req = new Models.Components.Connection() {
         Emails = new List<string>() {
             "string",
         },
-        Meta = new PropertyPropertyConnectionAuthMeta() {},
+        Meta = new Dictionary<string, object>() {
+            { "key", "string" },
+        },
         OtherAuthInfo = new List<string>() {
             "string",
         },
@@ -39,8 +41,10 @@ Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Storage,
     },
-    CursorsCache = new List<Undefined>() {
-        new Undefined() {},
+    CursorsCache = new List<Dictionary<string, object>>() {
+        new Dictionary<string, object>() {
+            { "key", "string" },
+        },
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
@@ -160,7 +164,9 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(Id: "string", Connect
         Emails = new List<string>() {
             "string",
         },
-        Meta = new PropertyPropertyConnectionAuthMeta() {},
+        Meta = new Dictionary<string, object>() {
+            { "key", "string" },
+        },
         OtherAuthInfo = new List<string>() {
             "string",
         },
@@ -168,8 +174,10 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(Id: "string", Connect
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Ticketing,
     },
-    CursorsCache = new List<Undefined>() {
-        new Undefined() {},
+    CursorsCache = new List<Dictionary<string, object>>() {
+        new Dictionary<string, object>() {
+            { "key", "string" },
+        },
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
@@ -248,7 +256,9 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(Id: "string", Connec
         Emails = new List<string>() {
             "string",
         },
-        Meta = new PropertyPropertyConnectionAuthMeta() {},
+        Meta = new Dictionary<string, object>() {
+            { "key", "string" },
+        },
         OtherAuthInfo = new List<string>() {
             "string",
         },
@@ -256,8 +266,10 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(Id: "string", Connec
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Uc,
     },
-    CursorsCache = new List<Undefined>() {
-        new Undefined() {},
+    CursorsCache = new List<Dictionary<string, object>>() {
+        new Dictionary<string, object>() {
+            { "key", "string" },
+        },
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {

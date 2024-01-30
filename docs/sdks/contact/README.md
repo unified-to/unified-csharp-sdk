@@ -46,7 +46,9 @@ var res = await sdk.Contact.CreateAccountingContactAsync(ConnectionId: "string",
             Email = "Mac36@gmail.com",
         },
     },
-    Raw = new PropertyAccountingContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     ShippingAddress = new PropertyAccountingContactShippingAddress() {},
     Telephones = new List<AccountingTelephone>() {
         new AccountingTelephone() {
@@ -99,7 +101,9 @@ var res = await sdk.Contact.CreateCrmContactAsync(ConnectionId: "string", CrmCon
     Emails = new List<CrmEmail>() {
         new CrmEmail() {},
     },
-    Raw = new PropertyCrmContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<CrmTelephone>() {
         new CrmTelephone() {
             Telephone = "string",
@@ -146,7 +150,9 @@ var res = await sdk.Contact.CreateUcContactAsync(ConnectionId: "string", UcConta
             Email = "Dulce_Becker30@yahoo.com",
         },
     },
-    Raw = new PropertyUcContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<UcTelephone>() {
         new UcTelephone() {
             Telephone = "string",
@@ -431,7 +437,9 @@ var res = await sdk.Contact.PatchAccountingContactAsync(ConnectionId: "string", 
             Email = "Sylvester.Kuhic@yahoo.com",
         },
     },
-    Raw = new PropertyAccountingContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     ShippingAddress = new PropertyAccountingContactShippingAddress() {},
     Telephones = new List<AccountingTelephone>() {
         new AccountingTelephone() {
@@ -485,7 +493,9 @@ var res = await sdk.Contact.PatchCrmContactAsync(ConnectionId: "string", Id: "st
     Emails = new List<CrmEmail>() {
         new CrmEmail() {},
     },
-    Raw = new PropertyCrmContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<CrmTelephone>() {
         new CrmTelephone() {
             Telephone = "string",
@@ -533,7 +543,9 @@ var res = await sdk.Contact.PatchUcContactAsync(ConnectionId: "string", Id: "str
             Email = "Norene_Boehm97@hotmail.com",
         },
     },
-    Raw = new PropertyUcContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<UcTelephone>() {
         new UcTelephone() {
             Telephone = "string",
@@ -684,7 +696,9 @@ var res = await sdk.Contact.UpdateAccountingContactAsync(ConnectionId: "string",
             Email = "Kaci_Hane@hotmail.com",
         },
     },
-    Raw = new PropertyAccountingContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     ShippingAddress = new PropertyAccountingContactShippingAddress() {},
     Telephones = new List<AccountingTelephone>() {
         new AccountingTelephone() {
@@ -738,7 +752,9 @@ var res = await sdk.Contact.UpdateCrmContactAsync(ConnectionId: "string", Id: "s
     Emails = new List<CrmEmail>() {
         new CrmEmail() {},
     },
-    Raw = new PropertyCrmContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<CrmTelephone>() {
         new CrmTelephone() {
             Telephone = "string",
@@ -786,7 +802,9 @@ var res = await sdk.Contact.UpdateUcContactAsync(ConnectionId: "string", Id: "st
             Email = "Kianna.Witting90@gmail.com",
         },
     },
-    Raw = new PropertyUcContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<UcTelephone>() {
         new UcTelephone() {
             Telephone = "string",

@@ -75,7 +75,7 @@ namespace UnifiedTo.Models.Components
         /// The raw data returned by the integration for this company
         /// </summary>
         [JsonProperty("raw")]
-        public PropertyEnrichCompanyRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("revenue")]
         public string? Revenue { get; set; }

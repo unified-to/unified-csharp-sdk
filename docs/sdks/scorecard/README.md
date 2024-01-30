@@ -20,6 +20,7 @@ Create a scorecard
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -27,7 +28,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Scorecard.CreateAtsScorecardAsync(ConnectionId: "string", AtsScorecard: new AtsScorecard() {
-    Raw = new PropertyAtsScorecardRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -135,6 +138,7 @@ Update a scorecard
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -142,7 +146,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Scorecard.PatchAtsScorecardAsync(ConnectionId: "string", Id: "string", AtsScorecard: new AtsScorecard() {
-    Raw = new PropertyAtsScorecardRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -206,6 +212,7 @@ Update a scorecard
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -213,7 +220,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Scorecard.UpdateAtsScorecardAsync(ConnectionId: "string", Id: "string", AtsScorecard: new AtsScorecard() {
-    Raw = new PropertyAtsScorecardRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response

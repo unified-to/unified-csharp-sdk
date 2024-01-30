@@ -35,7 +35,9 @@ var res = await sdk.Transaction.CreateAccountingTransactionAsync(ConnectionId: "
             TotalAmount = 4969.62D,
         },
     },
-    Raw = new PropertyAccountingTransactionRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -158,7 +160,9 @@ var res = await sdk.Transaction.PatchAccountingTransactionAsync(ConnectionId: "s
             TotalAmount = 5633.69D,
         },
     },
-    Raw = new PropertyAccountingTransactionRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -237,7 +241,9 @@ var res = await sdk.Transaction.UpdateAccountingTransactionAsync(ConnectionId: "
             TotalAmount = 6498.37D,
         },
     },
-    Raw = new PropertyAccountingTransactionRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response

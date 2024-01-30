@@ -26,6 +26,7 @@ Create a list
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -33,7 +34,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Martech.CreateMartechListAsync(ConnectionId: "string", MarketingList: new MarketingList() {
-    Raw = new PropertyMarketingListRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -78,7 +81,9 @@ var res = await sdk.Martech.CreateMartechMemberAsync(ConnectionId: "string", Mar
     ListIds = new List<string>() {
         "string",
     },
-    Raw = new PropertyMarketingMemberRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -268,6 +273,7 @@ Update a list
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -275,7 +281,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Martech.PatchMartechListAsync(ConnectionId: "string", Id: "string", MarketingList: new MarketingList() {
-    Raw = new PropertyMarketingListRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -321,7 +329,9 @@ var res = await sdk.Martech.PatchMartechMemberAsync(ConnectionId: "string", Id: 
     ListIds = new List<string>() {
         "string",
     },
-    Raw = new PropertyMarketingMemberRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -422,6 +432,7 @@ Update a list
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -429,7 +440,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Martech.UpdateMartechListAsync(ConnectionId: "string", Id: "string", MarketingList: new MarketingList() {
-    Raw = new PropertyMarketingListRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -475,7 +488,9 @@ var res = await sdk.Martech.UpdateMartechMemberAsync(ConnectionId: "string", Id:
     ListIds = new List<string>() {
         "string",
     },
-    Raw = new PropertyMarketingMemberRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },

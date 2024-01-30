@@ -35,7 +35,9 @@ var res = await sdk.File.CreateStorageFileAsync(ConnectionId: "string", StorageF
             },
         },
     },
-    Raw = new PropertyStorageFileRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -158,7 +160,9 @@ var res = await sdk.File.PatchStorageFileAsync(ConnectionId: "string", Id: "stri
             },
         },
     },
-    Raw = new PropertyStorageFileRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -237,7 +241,9 @@ var res = await sdk.File.UpdateStorageFileAsync(ConnectionId: "string", Id: "str
             },
         },
     },
-    Raw = new PropertyStorageFileRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response

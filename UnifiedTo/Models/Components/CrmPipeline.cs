@@ -11,6 +11,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using System;
     
     public class CrmPipeline
@@ -35,7 +36,7 @@ namespace UnifiedTo.Models.Components
         public string? Name { get; set; }
 
         [JsonProperty("raw")]
-        public PropertyCrmPipelineRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

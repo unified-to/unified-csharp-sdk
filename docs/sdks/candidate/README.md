@@ -37,7 +37,9 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(ConnectionId: "string", At
     LinkUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyAtsCandidateRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -170,7 +172,9 @@ var res = await sdk.Candidate.PatchAtsCandidateAsync(ConnectionId: "string", Id:
     LinkUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyAtsCandidateRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -259,7 +263,9 @@ var res = await sdk.Candidate.UpdateAtsCandidateAsync(ConnectionId: "string", Id
     LinkUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyAtsCandidateRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },

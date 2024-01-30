@@ -42,7 +42,9 @@ Models.Components.Connection req = new Models.Components.Connection() {
         Emails = new List<string>() {
             "string",
         },
-        Meta = new PropertyPropertyConnectionAuthMeta() {},
+        Meta = new Dictionary<string, object>() {
+            { "key", "string" },
+        },
         OtherAuthInfo = new List<string>() {
             "string",
         },
@@ -50,8 +52,10 @@ Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Storage,
     },
-    CursorsCache = new List<Undefined>() {
-        new Undefined() {},
+    CursorsCache = new List<Dictionary<string, object>>() {
+        new Dictionary<string, object>() {
+            { "key", "string" },
+        },
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
@@ -98,7 +102,9 @@ var res = await sdk.Unified.CreateUnifiedWebhookAsync(Webhook: new Models.Compon
     Event = Models.Components.Event.Created,
     HookUrl = "string",
     Interval = 188.12D,
-    Meta = new PropertyWebhookMeta() {},
+    Meta = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     ObjectType = ObjectType.CrmCompany,
     Runs = new List<string>() {
         "string",
@@ -475,7 +481,9 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(Id: "string", Connection
         Emails = new List<string>() {
             "string",
         },
-        Meta = new PropertyPropertyConnectionAuthMeta() {},
+        Meta = new Dictionary<string, object>() {
+            { "key", "string" },
+        },
         OtherAuthInfo = new List<string>() {
             "string",
         },
@@ -483,8 +491,10 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(Id: "string", Connection
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Ticketing,
     },
-    CursorsCache = new List<Undefined>() {
-        new Undefined() {},
+    CursorsCache = new List<Dictionary<string, object>>() {
+        new Dictionary<string, object>() {
+            { "key", "string" },
+        },
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
@@ -629,7 +639,9 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(Id: "string", Connectio
         Emails = new List<string>() {
             "string",
         },
-        Meta = new PropertyPropertyConnectionAuthMeta() {},
+        Meta = new Dictionary<string, object>() {
+            { "key", "string" },
+        },
         OtherAuthInfo = new List<string>() {
             "string",
         },
@@ -637,8 +649,10 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(Id: "string", Connectio
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Uc,
     },
-    CursorsCache = new List<Undefined>() {
-        new Undefined() {},
+    CursorsCache = new List<Dictionary<string, object>>() {
+        new Dictionary<string, object>() {
+            { "key", "string" },
+        },
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {

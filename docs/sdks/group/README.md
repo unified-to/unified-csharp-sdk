@@ -31,7 +31,9 @@ var res = await sdk.Group.CreateHrisGroupAsync(ConnectionId: "string", HrisGroup
     ManagerIds = new List<string>() {
         "string",
     },
-    Raw = new PropertyHrisGroupRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     UserIds = new List<string>() {
         "string",
     },
@@ -153,7 +155,9 @@ var res = await sdk.Group.PatchHrisGroupAsync(ConnectionId: "string", Id: "strin
     ManagerIds = new List<string>() {
         "string",
     },
-    Raw = new PropertyHrisGroupRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     UserIds = new List<string>() {
         "string",
     },
@@ -231,7 +235,9 @@ var res = await sdk.Group.UpdateHrisGroupAsync(ConnectionId: "string", Id: "stri
     ManagerIds = new List<string>() {
         "string",
     },
-    Raw = new PropertyHrisGroupRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     UserIds = new List<string>() {
         "string",
     },

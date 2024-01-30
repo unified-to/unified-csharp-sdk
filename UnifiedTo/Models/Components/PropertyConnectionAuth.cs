@@ -57,7 +57,7 @@ namespace UnifiedTo.Models.Components
         public string? Key { get; set; }
 
         [JsonProperty("meta")]
-        public PropertyPropertyConnectionAuthMeta? Meta { get; set; }
+        public Dictionary<string, object>? Meta { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }

@@ -10,9 +10,9 @@
 #nullable enable
 namespace UnifiedTo.Models.Requests
 {
+    using System.Collections.Generic;
     using System.Net.Http;
     using System;
-    using UnifiedTo.Models.Components;
     
     public class ListPassthroughsResponse
     {
@@ -35,6 +35,6 @@ namespace UnifiedTo.Models.Requests
         /// <summary>
         /// Successful
         /// </summary>
-        public Undefined? Undefined { get; set; }
+        public Dictionary<string, object>? Undefined { get; set; }
     }
 }

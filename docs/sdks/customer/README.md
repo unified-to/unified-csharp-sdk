@@ -33,7 +33,9 @@ var res = await sdk.Customer.CreateTicketingCustomerAsync(ConnectionId: "string"
             Email = "Guadalupe78@yahoo.com",
         },
     },
-    Raw = new PropertyTicketingCustomerRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -162,7 +164,9 @@ var res = await sdk.Customer.PatchTicketingCustomerAsync(ConnectionId: "string",
             Email = "Raymundo93@hotmail.com",
         },
     },
-    Raw = new PropertyTicketingCustomerRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -247,7 +251,9 @@ var res = await sdk.Customer.UpdateTicketingCustomerAsync(ConnectionId: "string"
             Email = "Mohamed.Friesen@hotmail.com",
         },
     },
-    Raw = new PropertyTicketingCustomerRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },

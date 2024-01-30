@@ -11,6 +11,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using System;
     
     /// <summary>
@@ -47,7 +48,7 @@ namespace UnifiedTo.Models.Components
         public double? QuantityOnHand { get; set; }
 
         [JsonProperty("raw")]
-        public PropertyAccountingItemRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("sku")]
         public string? Sku { get; set; }

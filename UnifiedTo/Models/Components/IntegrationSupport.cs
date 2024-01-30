@@ -17,7 +17,7 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("inbound_fields")]
-        public PropertyIntegrationSupportInboundFields? InboundFields { get; set; }
+        public Dictionary<string, object>? InboundFields { get; set; }
 
         [JsonProperty("list_account_id")]
         public bool? ListAccountId { get; set; }
@@ -89,7 +89,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, bool>? Methods { get; set; }
 
         [JsonProperty("outbound_fields")]
-        public PropertyIntegrationSupportOutboundFields? OutboundFields { get; set; }
+        public Dictionary<string, object>? OutboundFields { get; set; }
 
         [JsonProperty("search_domain")]
         public bool? SearchDomain { get; set; }

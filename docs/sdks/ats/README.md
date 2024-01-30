@@ -51,6 +51,7 @@ Create an application
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -58,7 +59,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ats.CreateAtsApplicationAsync(ConnectionId: "string", AtsApplication: new AtsApplication() {
-    Raw = new PropertyAtsApplicationRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -104,7 +107,9 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(ConnectionId: "string", AtsCandi
     LinkUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyAtsCandidateRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -141,6 +146,7 @@ Create a document
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -148,7 +154,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ats.CreateAtsDocumentAsync(ConnectionId: "string", AtsDocument: new AtsDocument() {
-    Raw = new PropertyAtsDocumentRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -185,7 +193,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ats.CreateAtsInterviewAsync(ConnectionId: "string", AtsInterview: new AtsInterview() {
-    Raw = new PropertyAtsInterviewRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     UserIds = new List<string>() {
         "string",
     },
@@ -242,7 +252,9 @@ var res = await sdk.Ats.CreateAtsJobAsync(ConnectionId: "string", AtsJob: new At
     PublicJobUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyAtsJobRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     RecruiterIds = new List<string>() {
         "string",
     },
@@ -274,6 +286,7 @@ Create a scorecard
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -281,7 +294,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ats.CreateAtsScorecardAsync(ConnectionId: "string", AtsScorecard: new AtsScorecard() {
-    Raw = new PropertyAtsScorecardRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -825,6 +840,7 @@ Update an application
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -832,7 +848,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ats.PatchAtsApplicationAsync(ConnectionId: "string", Id: "string", AtsApplication: new AtsApplication() {
-    Raw = new PropertyAtsApplicationRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -879,7 +897,9 @@ var res = await sdk.Ats.PatchAtsCandidateAsync(ConnectionId: "string", Id: "stri
     LinkUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyAtsCandidateRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -917,6 +937,7 @@ Update a document
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -924,7 +945,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ats.PatchAtsDocumentAsync(ConnectionId: "string", Id: "string", AtsDocument: new AtsDocument() {
-    Raw = new PropertyAtsDocumentRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -962,7 +985,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ats.PatchAtsInterviewAsync(ConnectionId: "string", Id: "string", AtsInterview: new AtsInterview() {
-    Raw = new PropertyAtsInterviewRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     UserIds = new List<string>() {
         "string",
     },
@@ -1020,7 +1045,9 @@ var res = await sdk.Ats.PatchAtsJobAsync(ConnectionId: "string", Id: "string", A
     PublicJobUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyAtsJobRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     RecruiterIds = new List<string>() {
         "string",
     },
@@ -1053,6 +1080,7 @@ Update a scorecard
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -1060,7 +1088,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ats.PatchAtsScorecardAsync(ConnectionId: "string", Id: "string", AtsScorecard: new AtsScorecard() {
-    Raw = new PropertyAtsScorecardRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -1294,6 +1324,7 @@ Update an application
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -1301,7 +1332,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ats.UpdateAtsApplicationAsync(ConnectionId: "string", Id: "string", AtsApplication: new AtsApplication() {
-    Raw = new PropertyAtsApplicationRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -1348,7 +1381,9 @@ var res = await sdk.Ats.UpdateAtsCandidateAsync(ConnectionId: "string", Id: "str
     LinkUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyAtsCandidateRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -1386,6 +1421,7 @@ Update a document
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -1393,7 +1429,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ats.UpdateAtsDocumentAsync(ConnectionId: "string", Id: "string", AtsDocument: new AtsDocument() {
-    Raw = new PropertyAtsDocumentRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -1431,7 +1469,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ats.UpdateAtsInterviewAsync(ConnectionId: "string", Id: "string", AtsInterview: new AtsInterview() {
-    Raw = new PropertyAtsInterviewRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     UserIds = new List<string>() {
         "string",
     },
@@ -1489,7 +1529,9 @@ var res = await sdk.Ats.UpdateAtsJobAsync(ConnectionId: "string", Id: "string", 
     PublicJobUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyAtsJobRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     RecruiterIds = new List<string>() {
         "string",
     },
@@ -1522,6 +1564,7 @@ Update a scorecard
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -1529,7 +1572,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ats.UpdateAtsScorecardAsync(ConnectionId: "string", Id: "string", AtsScorecard: new AtsScorecard() {
-    Raw = new PropertyAtsScorecardRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response

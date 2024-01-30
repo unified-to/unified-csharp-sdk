@@ -54,7 +54,7 @@ namespace UnifiedTo.Models.Components
         public bool? IsHealthy { get; set; }
 
         [JsonProperty("meta")]
-        public PropertyWebhookMeta? Meta { get; set; }
+        public Dictionary<string, object>? Meta { get; set; }
 
         [JsonProperty("object_type")]
         public ObjectType ObjectType { get; set; } = default!;

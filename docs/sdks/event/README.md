@@ -54,7 +54,9 @@ var res = await sdk.Event.CreateCrmEventAsync(ConnectionId: "string", CrmEvent: 
     },
     Meeting = new PropertyCrmEventMeeting() {},
     Note = new PropertyCrmEventNote() {},
-    Raw = new PropertyCrmEventRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Task = new PropertyCrmEventTask() {},
 });
 
@@ -197,7 +199,9 @@ var res = await sdk.Event.PatchCrmEventAsync(ConnectionId: "string", Id: "string
     },
     Meeting = new PropertyCrmEventMeeting() {},
     Note = new PropertyCrmEventNote() {},
-    Raw = new PropertyCrmEventRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Task = new PropertyCrmEventTask() {},
 });
 
@@ -296,7 +300,9 @@ var res = await sdk.Event.UpdateCrmEventAsync(ConnectionId: "string", Id: "strin
     },
     Meeting = new PropertyCrmEventMeeting() {},
     Note = new PropertyCrmEventNote() {},
-    Raw = new PropertyCrmEventRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Task = new PropertyCrmEventTask() {},
 });
 

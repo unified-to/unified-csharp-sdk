@@ -20,6 +20,7 @@ Create a pipeline
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -27,7 +28,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Pipeline.CreateCrmPipelineAsync(ConnectionId: "string", CrmPipeline: new CrmPipeline() {
-    Raw = new PropertyCrmPipelineRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -135,6 +138,7 @@ Update a pipeline
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -142,7 +146,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Pipeline.PatchCrmPipelineAsync(ConnectionId: "string", Id: "string", CrmPipeline: new CrmPipeline() {
-    Raw = new PropertyCrmPipelineRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -206,6 +212,7 @@ Update a pipeline
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -213,7 +220,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Pipeline.UpdateCrmPipelineAsync(ConnectionId: "string", Id: "string", CrmPipeline: new CrmPipeline() {
-    Raw = new PropertyCrmPipelineRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response

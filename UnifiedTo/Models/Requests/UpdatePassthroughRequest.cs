@@ -10,7 +10,7 @@
 #nullable enable
 namespace UnifiedTo.Models.Requests
 {
-    using UnifiedTo.Models.Components;
+    using System.Collections.Generic;
     using UnifiedTo.Utils;
     
     public class UpdatePassthroughRequest
@@ -29,6 +29,6 @@ namespace UnifiedTo.Models.Requests
         /// integration-specific payload
         /// </summary>
         [SpeakeasyMetadata("request:mediaType=application/json")]
-        public Undefined? Undefined { get; set; }
+        public Dictionary<string, object>? RequestBody { get; set; }
     }
 }

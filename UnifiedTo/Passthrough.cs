@@ -11,11 +11,11 @@
 namespace UnifiedTo
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using System.Net.Http.Headers;
     using System.Net.Http;
     using System.Threading.Tasks;
     using System;
-    using UnifiedTo.Models.Components;
     using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
 
@@ -25,7 +25,7 @@ namespace UnifiedTo
         /// <summary>
         /// Passthrough POST
         /// </summary>
-        Task<CreatePassthroughResponse> CreatePassthroughAsync(string connectionId, string path, Undefined? undefined = null);
+        Task<CreatePassthroughResponse> CreatePassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null);
 
         /// <summary>
         /// Passthrough GET
@@ -35,7 +35,7 @@ namespace UnifiedTo
         /// <summary>
         /// Passthrough PUT
         /// </summary>
-        Task<PatchPassthroughResponse> PatchPassthroughAsync(string connectionId, string path, Undefined? undefined = null);
+        Task<PatchPassthroughResponse> PatchPassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null);
 
         /// <summary>
         /// Passthrough DELETE
@@ -45,17 +45,17 @@ namespace UnifiedTo
         /// <summary>
         /// Passthrough PUT
         /// </summary>
-        Task<UpdatePassthroughResponse> UpdatePassthroughAsync(string connectionId, string path, Undefined? undefined = null);
+        Task<UpdatePassthroughResponse> UpdatePassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null);
     }
 
     public class Passthrough: IPassthrough
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.5.13";
+        private const string _sdkVersion = "0.5.14";
         private const string _sdkGenVersion = "2.239.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.5.13 2.239.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.5.14 2.239.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -69,13 +69,13 @@ namespace UnifiedTo
         }
         
 
-        public async Task<CreatePassthroughResponse> CreatePassthroughAsync(string connectionId, string path, Undefined? undefined = null)
+        public async Task<CreatePassthroughResponse> CreatePassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null)
         {
             var request = new CreatePassthroughRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
-                Undefined = undefined,
+                RequestBody = requestBody,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
@@ -83,7 +83,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             
-            var serializedBody = RequestBodySerializer.Serialize(request, "Undefined", "json");
+            var serializedBody = RequestBodySerializer.Serialize(request, "RequestBody", "json");
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -106,7 +106,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.Undefined = JsonConvert.DeserializeObject<Undefined>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.Undefined = JsonConvert.DeserializeObject<Dictionary<string, object>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -146,7 +146,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.Undefined = JsonConvert.DeserializeObject<Undefined>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.Undefined = JsonConvert.DeserializeObject<Dictionary<string, object>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -155,13 +155,13 @@ namespace UnifiedTo
         }
         
 
-        public async Task<PatchPassthroughResponse> PatchPassthroughAsync(string connectionId, string path, Undefined? undefined = null)
+        public async Task<PatchPassthroughResponse> PatchPassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null)
         {
             var request = new PatchPassthroughRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
-                Undefined = undefined,
+                RequestBody = requestBody,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
@@ -169,7 +169,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             
-            var serializedBody = RequestBodySerializer.Serialize(request, "Undefined", "json");
+            var serializedBody = RequestBodySerializer.Serialize(request, "RequestBody", "json");
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -192,7 +192,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.Undefined = JsonConvert.DeserializeObject<Undefined>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.Undefined = JsonConvert.DeserializeObject<Dictionary<string, object>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -232,7 +232,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.Undefined = JsonConvert.DeserializeObject<Undefined>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.Undefined = JsonConvert.DeserializeObject<Dictionary<string, object>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -241,13 +241,13 @@ namespace UnifiedTo
         }
         
 
-        public async Task<UpdatePassthroughResponse> UpdatePassthroughAsync(string connectionId, string path, Undefined? undefined = null)
+        public async Task<UpdatePassthroughResponse> UpdatePassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null)
         {
             var request = new UpdatePassthroughRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
-                Undefined = undefined,
+                RequestBody = requestBody,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
@@ -255,7 +255,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             
-            var serializedBody = RequestBodySerializer.Serialize(request, "Undefined", "json");
+            var serializedBody = RequestBodySerializer.Serialize(request, "RequestBody", "json");
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -278,7 +278,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.Undefined = JsonConvert.DeserializeObject<Undefined>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.Undefined = JsonConvert.DeserializeObject<Dictionary<string, object>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;

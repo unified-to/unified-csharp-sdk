@@ -40,7 +40,9 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(ConnectionId: "string", HrisEmp
             Email = "Adriel_Hansen@hotmail.com",
         },
     },
-    Raw = new PropertyHrisEmployeeRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<HrisTelephone>() {
         new HrisTelephone() {
             Telephone = "string",
@@ -85,7 +87,9 @@ var res = await sdk.Hris.CreateHrisGroupAsync(ConnectionId: "string", HrisGroup:
     ManagerIds = new List<string>() {
         "string",
     },
-    Raw = new PropertyHrisGroupRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     UserIds = new List<string>() {
         "string",
     },
@@ -289,7 +293,9 @@ var res = await sdk.Hris.PatchHrisEmployeeAsync(ConnectionId: "string", Id: "str
             Email = "Zetta.Cassin@yahoo.com",
         },
     },
-    Raw = new PropertyHrisEmployeeRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<HrisTelephone>() {
         new HrisTelephone() {
             Telephone = "string",
@@ -335,7 +341,9 @@ var res = await sdk.Hris.PatchHrisGroupAsync(ConnectionId: "string", Id: "string
     ManagerIds = new List<string>() {
         "string",
     },
-    Raw = new PropertyHrisGroupRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     UserIds = new List<string>() {
         "string",
     },
@@ -450,7 +458,9 @@ var res = await sdk.Hris.UpdateHrisEmployeeAsync(ConnectionId: "string", Id: "st
             Email = "Abbie_Aufderhar@gmail.com",
         },
     },
-    Raw = new PropertyHrisEmployeeRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<HrisTelephone>() {
         new HrisTelephone() {
             Telephone = "string",
@@ -496,7 +506,9 @@ var res = await sdk.Hris.UpdateHrisGroupAsync(ConnectionId: "string", Id: "strin
     ManagerIds = new List<string>() {
         "string",
     },
-    Raw = new PropertyHrisGroupRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     UserIds = new List<string>() {
         "string",
     },

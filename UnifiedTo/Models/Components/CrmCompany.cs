@@ -60,7 +60,7 @@ namespace UnifiedTo.Models.Components
         /// The raw data returned by the integration for this company
         /// </summary>
         [JsonProperty("raw")]
-        public PropertyCrmCompanyRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }

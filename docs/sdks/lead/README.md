@@ -32,7 +32,9 @@ var res = await sdk.Lead.CreateCrmLeadAsync(ConnectionId: "string", CrmLead: new
     Emails = new List<CrmEmail>() {
         new CrmEmail() {},
     },
-    Raw = new PropertyCrmLeadRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<CrmTelephone>() {
         new CrmTelephone() {
             Telephone = "string",
@@ -157,7 +159,9 @@ var res = await sdk.Lead.PatchCrmLeadAsync(ConnectionId: "string", Id: "string",
     Emails = new List<CrmEmail>() {
         new CrmEmail() {},
     },
-    Raw = new PropertyCrmLeadRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<CrmTelephone>() {
         new CrmTelephone() {
             Telephone = "string",
@@ -238,7 +242,9 @@ var res = await sdk.Lead.UpdateCrmLeadAsync(ConnectionId: "string", Id: "string"
     Emails = new List<CrmEmail>() {
         new CrmEmail() {},
     },
-    Raw = new PropertyCrmLeadRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<CrmTelephone>() {
         new CrmTelephone() {
             Telephone = "string",

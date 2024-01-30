@@ -28,7 +28,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Interview.CreateAtsInterviewAsync(ConnectionId: "string", AtsInterview: new AtsInterview() {
-    Raw = new PropertyAtsInterviewRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     UserIds = new List<string>() {
         "string",
     },
@@ -147,7 +149,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Interview.PatchAtsInterviewAsync(ConnectionId: "string", Id: "string", AtsInterview: new AtsInterview() {
-    Raw = new PropertyAtsInterviewRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     UserIds = new List<string>() {
         "string",
     },
@@ -222,7 +226,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Interview.UpdateAtsInterviewAsync(ConnectionId: "string", Id: "string", AtsInterview: new AtsInterview() {
-    Raw = new PropertyAtsInterviewRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     UserIds = new List<string>() {
         "string",
     },

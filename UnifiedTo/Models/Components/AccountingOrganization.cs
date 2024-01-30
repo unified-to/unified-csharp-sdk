@@ -11,6 +11,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using System;
     
     public class AccountingOrganization
@@ -38,7 +39,7 @@ namespace UnifiedTo.Models.Components
         public string Name { get; set; } = default!;
 
         [JsonProperty("raw")]
-        public PropertyAccountingOrganizationRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("tax_number")]
         public string? TaxNumber { get; set; }

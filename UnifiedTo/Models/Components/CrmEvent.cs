@@ -75,7 +75,7 @@ namespace UnifiedTo.Models.Components
         /// The raw data returned by the integration for this event.
         /// </summary>
         [JsonProperty("raw")]
-        public PropertyCrmEventRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         /// <summary>
         /// The task object, when type = task

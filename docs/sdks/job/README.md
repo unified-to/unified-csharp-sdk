@@ -45,7 +45,9 @@ var res = await sdk.Job.CreateAtsJobAsync(ConnectionId: "string", AtsJob: new At
     PublicJobUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyAtsJobRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     RecruiterIds = new List<string>() {
         "string",
     },
@@ -181,7 +183,9 @@ var res = await sdk.Job.PatchAtsJobAsync(ConnectionId: "string", Id: "string", A
     PublicJobUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyAtsJobRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     RecruiterIds = new List<string>() {
         "string",
     },
@@ -273,7 +277,9 @@ var res = await sdk.Job.UpdateAtsJobAsync(ConnectionId: "string", Id: "string", 
     PublicJobUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyAtsJobRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     RecruiterIds = new List<string>() {
         "string",
     },

@@ -36,7 +36,9 @@ var res = await sdk.Member.CreateMartechMemberAsync(ConnectionId: "string", Mark
     ListIds = new List<string>() {
         "string",
     },
-    Raw = new PropertyMarketingMemberRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -163,7 +165,9 @@ var res = await sdk.Member.PatchMartechMemberAsync(ConnectionId: "string", Id: "
     ListIds = new List<string>() {
         "string",
     },
-    Raw = new PropertyMarketingMemberRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -246,7 +250,9 @@ var res = await sdk.Member.UpdateMartechMemberAsync(ConnectionId: "string", Id: 
     ListIds = new List<string>() {
         "string",
     },
-    Raw = new PropertyMarketingMemberRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },

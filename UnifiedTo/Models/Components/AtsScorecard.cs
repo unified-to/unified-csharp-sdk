@@ -11,6 +11,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using System;
     
     public class AtsScorecard
@@ -41,7 +42,7 @@ namespace UnifiedTo.Models.Components
         public string? JobId { get; set; }
 
         [JsonProperty("raw")]
-        public PropertyAtsScorecardRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("recommendation")]
         public Recommendation? Recommendation { get; set; }

@@ -32,7 +32,7 @@ namespace UnifiedTo.Models.Components
         public List<AccountingTransactionLineitem>? LineItems { get; set; }
 
         [JsonProperty("raw")]
-        public PropertyAccountingTransactionRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("reference")]
         public string? Reference { get; set; }

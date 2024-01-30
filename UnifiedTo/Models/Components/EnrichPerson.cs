@@ -75,7 +75,7 @@ namespace UnifiedTo.Models.Components
         /// The raw data returned by the integration for this person
         /// </summary>
         [JsonProperty("raw")]
-        public PropertyEnrichPersonRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         /// <summary>
         /// An array of telephones for this person

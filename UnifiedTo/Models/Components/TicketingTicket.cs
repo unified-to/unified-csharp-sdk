@@ -39,7 +39,7 @@ namespace UnifiedTo.Models.Components
         public string? Priority { get; set; }
 
         [JsonProperty("raw")]
-        public PropertyTicketingTicketRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("source")]
         public string? Source { get; set; }

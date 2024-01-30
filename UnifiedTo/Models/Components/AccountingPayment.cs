@@ -11,6 +11,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using System;
     
     public class AccountingPayment
@@ -41,7 +42,7 @@ namespace UnifiedTo.Models.Components
         public string? PaymentMethod { get; set; }
 
         [JsonProperty("raw")]
-        public PropertyAccountingPaymentRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("reference")]
         public string? Reference { get; set; }

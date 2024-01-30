@@ -45,7 +45,9 @@ var res = await sdk.Ticketing.CreateTicketingCustomerAsync(ConnectionId: "string
             Email = "Guadalupe78@yahoo.com",
         },
     },
-    Raw = new PropertyTicketingCustomerRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -82,6 +84,7 @@ Create a note
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -89,7 +92,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ticketing.CreateTicketingNoteAsync(ConnectionId: "string", TicketingNote: new TicketingNote() {
-    Raw = new PropertyTicketingNoteRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -126,7 +131,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ticketing.CreateTicketingTicketAsync(ConnectionId: "string", TicketingTicket: new TicketingTicket() {
-    Raw = new PropertyTicketingTicketRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -408,7 +415,9 @@ var res = await sdk.Ticketing.PatchTicketingCustomerAsync(ConnectionId: "string"
             Email = "Raymundo93@hotmail.com",
         },
     },
-    Raw = new PropertyTicketingCustomerRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -446,6 +455,7 @@ Update a note
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -453,7 +463,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ticketing.PatchTicketingNoteAsync(ConnectionId: "string", Id: "string", TicketingNote: new TicketingNote() {
-    Raw = new PropertyTicketingNoteRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -491,7 +503,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ticketing.PatchTicketingTicketAsync(ConnectionId: "string", Id: "string", TicketingTicket: new TicketingTicket() {
-    Raw = new PropertyTicketingTicketRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -639,7 +653,9 @@ var res = await sdk.Ticketing.UpdateTicketingCustomerAsync(ConnectionId: "string
             Email = "Mohamed.Friesen@hotmail.com",
         },
     },
-    Raw = new PropertyTicketingCustomerRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -677,6 +693,7 @@ Update a note
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -684,7 +701,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ticketing.UpdateTicketingNoteAsync(ConnectionId: "string", Id: "string", TicketingNote: new TicketingNote() {
-    Raw = new PropertyTicketingNoteRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -722,7 +741,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ticketing.UpdateTicketingTicketAsync(ConnectionId: "string", Id: "string", TicketingTicket: new TicketingTicket() {
-    Raw = new PropertyTicketingTicketRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },

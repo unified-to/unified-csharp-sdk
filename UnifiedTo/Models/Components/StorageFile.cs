@@ -42,7 +42,7 @@ namespace UnifiedTo.Models.Components
         public List<StoragePermission>? Permissions { get; set; }
 
         [JsonProperty("raw")]
-        public PropertyStorageFileRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("size")]
         public double? Size { get; set; }

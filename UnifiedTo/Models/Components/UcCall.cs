@@ -11,6 +11,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using System;
     
     public class UcCall
@@ -32,7 +33,7 @@ namespace UnifiedTo.Models.Components
         /// The raw data returned by the integration for this call
         /// </summary>
         [JsonProperty("raw")]
-        public PropertyUcCallRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }

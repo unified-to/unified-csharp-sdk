@@ -28,7 +28,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ticket.CreateTicketingTicketAsync(ConnectionId: "string", TicketingTicket: new TicketingTicket() {
-    Raw = new PropertyTicketingTicketRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -147,7 +149,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ticket.PatchTicketingTicketAsync(ConnectionId: "string", Id: "string", TicketingTicket: new TicketingTicket() {
-    Raw = new PropertyTicketingTicketRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -222,7 +226,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Ticket.UpdateTicketingTicketAsync(ConnectionId: "string", Id: "string", TicketingTicket: new TicketingTicket() {
-    Raw = new PropertyTicketingTicketRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },

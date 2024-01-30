@@ -68,7 +68,9 @@ var res = await sdk.Crm.CreateCrmCompanyAsync(ConnectionId: "string", CrmCompany
     LinkUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyCrmCompanyRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -126,7 +128,9 @@ var res = await sdk.Crm.CreateCrmContactAsync(ConnectionId: "string", CrmContact
     Emails = new List<CrmEmail>() {
         new CrmEmail() {},
     },
-    Raw = new PropertyCrmContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<CrmTelephone>() {
         new CrmTelephone() {
             Telephone = "string",
@@ -168,7 +172,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Crm.CreateCrmDealAsync(ConnectionId: "string", CrmDeal: new CrmDeal() {
-    Raw = new PropertyCrmDealRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -234,7 +240,9 @@ var res = await sdk.Crm.CreateCrmEventAsync(ConnectionId: "string", CrmEvent: ne
     },
     Meeting = new PropertyCrmEventMeeting() {},
     Note = new PropertyCrmEventNote() {},
-    Raw = new PropertyCrmEventRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Task = new PropertyCrmEventTask() {},
 });
 
@@ -276,7 +284,9 @@ var res = await sdk.Crm.CreateCrmLeadAsync(ConnectionId: "string", CrmLead: new 
     Emails = new List<CrmEmail>() {
         new CrmEmail() {},
     },
-    Raw = new PropertyCrmLeadRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<CrmTelephone>() {
         new CrmTelephone() {
             Telephone = "string",
@@ -310,6 +320,7 @@ Create a pipeline
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -317,7 +328,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Crm.CreateCrmPipelineAsync(ConnectionId: "string", CrmPipeline: new CrmPipeline() {
-    Raw = new PropertyCrmPipelineRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -838,7 +851,9 @@ var res = await sdk.Crm.PatchCrmCompanyAsync(ConnectionId: "string", Id: "string
     LinkUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyCrmCompanyRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -897,7 +912,9 @@ var res = await sdk.Crm.PatchCrmContactAsync(ConnectionId: "string", Id: "string
     Emails = new List<CrmEmail>() {
         new CrmEmail() {},
     },
-    Raw = new PropertyCrmContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<CrmTelephone>() {
         new CrmTelephone() {
             Telephone = "string",
@@ -940,7 +957,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Crm.PatchCrmDealAsync(ConnectionId: "string", Id: "string", CrmDeal: new CrmDeal() {
-    Raw = new PropertyCrmDealRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -1007,7 +1026,9 @@ var res = await sdk.Crm.PatchCrmEventAsync(ConnectionId: "string", Id: "string",
     },
     Meeting = new PropertyCrmEventMeeting() {},
     Note = new PropertyCrmEventNote() {},
-    Raw = new PropertyCrmEventRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Task = new PropertyCrmEventTask() {},
 });
 
@@ -1050,7 +1071,9 @@ var res = await sdk.Crm.PatchCrmLeadAsync(ConnectionId: "string", Id: "string", 
     Emails = new List<CrmEmail>() {
         new CrmEmail() {},
     },
-    Raw = new PropertyCrmLeadRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<CrmTelephone>() {
         new CrmTelephone() {
             Telephone = "string",
@@ -1085,6 +1108,7 @@ Update a pipeline
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -1092,7 +1116,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Crm.PatchCrmPipelineAsync(ConnectionId: "string", Id: "string", CrmPipeline: new CrmPipeline() {
-    Raw = new PropertyCrmPipelineRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -1344,7 +1370,9 @@ var res = await sdk.Crm.UpdateCrmCompanyAsync(ConnectionId: "string", Id: "strin
     LinkUrls = new List<string>() {
         "string",
     },
-    Raw = new PropertyCrmCompanyRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -1403,7 +1431,9 @@ var res = await sdk.Crm.UpdateCrmContactAsync(ConnectionId: "string", Id: "strin
     Emails = new List<CrmEmail>() {
         new CrmEmail() {},
     },
-    Raw = new PropertyCrmContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<CrmTelephone>() {
         new CrmTelephone() {
             Telephone = "string",
@@ -1446,7 +1476,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Crm.UpdateCrmDealAsync(ConnectionId: "string", Id: "string", CrmDeal: new CrmDeal() {
-    Raw = new PropertyCrmDealRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Tags = new List<string>() {
         "string",
     },
@@ -1513,7 +1545,9 @@ var res = await sdk.Crm.UpdateCrmEventAsync(ConnectionId: "string", Id: "string"
     },
     Meeting = new PropertyCrmEventMeeting() {},
     Note = new PropertyCrmEventNote() {},
-    Raw = new PropertyCrmEventRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Task = new PropertyCrmEventTask() {},
 });
 
@@ -1556,7 +1590,9 @@ var res = await sdk.Crm.UpdateCrmLeadAsync(ConnectionId: "string", Id: "string",
     Emails = new List<CrmEmail>() {
         new CrmEmail() {},
     },
-    Raw = new PropertyCrmLeadRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<CrmTelephone>() {
         new CrmTelephone() {
             Telephone = "string",
@@ -1591,6 +1627,7 @@ Update a pipeline
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -1598,7 +1635,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Crm.UpdateCrmPipelineAsync(ConnectionId: "string", Id: "string", CrmPipeline: new CrmPipeline() {
-    Raw = new PropertyCrmPipelineRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response

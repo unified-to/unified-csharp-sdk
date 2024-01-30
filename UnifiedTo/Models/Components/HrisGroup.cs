@@ -39,7 +39,7 @@ namespace UnifiedTo.Models.Components
         public string? ParentId { get; set; }
 
         [JsonProperty("raw")]
-        public PropertyHrisGroupRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("type")]
         public HrisGroupType? Type { get; set; }

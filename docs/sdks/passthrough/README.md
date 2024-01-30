@@ -19,24 +19,27 @@ Passthrough POST
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Passthrough.CreatePassthroughAsync(ConnectionId: "string", Path: "string", Undefined: new Undefined() {});
+var res = await sdk.Passthrough.CreatePassthroughAsync(ConnectionId: "string", Path: "string", RequestBody: new Dictionary<string, object>() {
+    { "key", "string" },
+});
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                         | Type                                              | Required                                          | Description                                       |
-| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
-| `Path`                                            | *string*                                          | :heavy_check_mark:                                | N/A                                               |
-| `Undefined`                                       | [Undefined](../../Models/Components/Undefined.md) | :heavy_minus_sign:                                | integration-specific payload                      |
+| Parameter                    | Type                         | Required                     | Description                  |
+| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
+| `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
+| `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
+| `RequestBody`                | Dictionary<String, *object*> | :heavy_minus_sign:           | integration-specific payload |
 
 
 ### Response
@@ -88,24 +91,27 @@ Passthrough PUT
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Passthrough.PatchPassthroughAsync(ConnectionId: "string", Path: "string", Undefined: new Undefined() {});
+var res = await sdk.Passthrough.PatchPassthroughAsync(ConnectionId: "string", Path: "string", RequestBody: new Dictionary<string, object>() {
+    { "key", "string" },
+});
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                         | Type                                              | Required                                          | Description                                       |
-| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
-| `Path`                                            | *string*                                          | :heavy_check_mark:                                | N/A                                               |
-| `Undefined`                                       | [Undefined](../../Models/Components/Undefined.md) | :heavy_minus_sign:                                | integration-specific payload                      |
+| Parameter                    | Type                         | Required                     | Description                  |
+| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
+| `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
+| `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
+| `RequestBody`                | Dictionary<String, *object*> | :heavy_minus_sign:           | integration-specific payload |
 
 
 ### Response
@@ -157,24 +163,27 @@ Passthrough PUT
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Passthrough.UpdatePassthroughAsync(ConnectionId: "string", Path: "string", Undefined: new Undefined() {});
+var res = await sdk.Passthrough.UpdatePassthroughAsync(ConnectionId: "string", Path: "string", RequestBody: new Dictionary<string, object>() {
+    { "key", "string" },
+});
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                         | Type                                              | Required                                          | Description                                       |
-| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-| `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
-| `Path`                                            | *string*                                          | :heavy_check_mark:                                | N/A                                               |
-| `Undefined`                                       | [Undefined](../../Models/Components/Undefined.md) | :heavy_minus_sign:                                | integration-specific payload                      |
+| Parameter                    | Type                         | Required                     | Description                  |
+| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
+| `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
+| `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
+| `RequestBody`                | Dictionary<String, *object*> | :heavy_minus_sign:           | integration-specific payload |
 
 
 ### Response

@@ -14,6 +14,7 @@ dotnet add package UnifiedTo
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -22,7 +23,9 @@ var sdk = new UnifiedToSDK(
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(ConnectionId: "string", AccountingAccount: new AccountingAccount() {
     Name = "string",
-    Raw = new PropertyAccountingAccountRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response

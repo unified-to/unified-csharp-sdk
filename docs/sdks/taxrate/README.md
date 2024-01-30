@@ -20,6 +20,7 @@ Create a taxrate
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -29,7 +30,9 @@ var sdk = new UnifiedToSDK(
 var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(ConnectionId: "string", AccountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 1719.1D,
-    Raw = new PropertyAccountingTaxrateRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -137,6 +140,7 @@ Update a taxrate
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -146,7 +150,9 @@ var sdk = new UnifiedToSDK(
 var res = await sdk.Taxrate.PatchAccountingTaxrateAsync(ConnectionId: "string", Id: "string", AccountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 5991.47D,
-    Raw = new PropertyAccountingTaxrateRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -210,6 +216,7 @@ Update a taxrate
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -219,7 +226,9 @@ var sdk = new UnifiedToSDK(
 var res = await sdk.Taxrate.UpdateAccountingTaxrateAsync(ConnectionId: "string", Id: "string", AccountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 3382.78D,
-    Raw = new PropertyAccountingTaxrateRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response

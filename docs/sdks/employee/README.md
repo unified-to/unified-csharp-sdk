@@ -34,7 +34,9 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(ConnectionId: "string", Hri
             Email = "Adriel_Hansen@hotmail.com",
         },
     },
-    Raw = new PropertyHrisEmployeeRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<HrisTelephone>() {
         new HrisTelephone() {
             Telephone = "string",
@@ -161,7 +163,9 @@ var res = await sdk.Employee.PatchHrisEmployeeAsync(ConnectionId: "string", Id: 
             Email = "Zetta.Cassin@yahoo.com",
         },
     },
-    Raw = new PropertyHrisEmployeeRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<HrisTelephone>() {
         new HrisTelephone() {
             Telephone = "string",
@@ -244,7 +248,9 @@ var res = await sdk.Employee.UpdateHrisEmployeeAsync(ConnectionId: "string", Id:
             Email = "Abbie_Aufderhar@gmail.com",
         },
     },
-    Raw = new PropertyHrisEmployeeRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     Telephones = new List<HrisTelephone>() {
         new HrisTelephone() {
             Telephone = "string",

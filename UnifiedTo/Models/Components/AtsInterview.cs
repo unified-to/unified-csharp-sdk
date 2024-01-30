@@ -42,7 +42,7 @@ namespace UnifiedTo.Models.Components
         public string? Location { get; set; }
 
         [JsonProperty("raw")]
-        public PropertyAtsInterviewRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }

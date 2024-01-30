@@ -51,7 +51,7 @@ namespace UnifiedTo.Models.Components
         /// The raw data returned by the integration for this deal
         /// </summary>
         [JsonProperty("raw")]
-        public PropertyCrmDealRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("source")]
         public string? Source { get; set; }

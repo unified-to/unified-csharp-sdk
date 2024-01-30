@@ -58,6 +58,7 @@ Create an account
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -66,7 +67,9 @@ var sdk = new UnifiedToSDK(
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(ConnectionId: "string", AccountingAccount: new AccountingAccount() {
     Name = "string",
-    Raw = new PropertyAccountingAccountRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -109,7 +112,9 @@ var res = await sdk.Accounting.CreateAccountingContactAsync(ConnectionId: "strin
             Email = "Mac36@gmail.com",
         },
     },
-    Raw = new PropertyAccountingContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     ShippingAddress = new PropertyAccountingContactShippingAddress() {},
     Telephones = new List<AccountingTelephone>() {
         new AccountingTelephone() {
@@ -157,7 +162,9 @@ var res = await sdk.Accounting.CreateAccountingInvoiceAsync(ConnectionId: "strin
             TotalAmount = 6736.06D,
         },
     },
-    Raw = new PropertyAccountingInvoiceRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -186,6 +193,7 @@ Create an item
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -194,7 +202,9 @@ var sdk = new UnifiedToSDK(
 
 var res = await sdk.Accounting.CreateAccountingItemAsync(ConnectionId: "string", AccountingItem: new AccountingItem() {
     Name = "string",
-    Raw = new PropertyAccountingItemRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -223,6 +233,7 @@ Create a payment
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -230,7 +241,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Accounting.CreateAccountingPaymentAsync(ConnectionId: "string", AccountingPayment: new AccountingPayment() {
-    Raw = new PropertyAccountingPaymentRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -259,6 +272,7 @@ Create a taxrate
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -268,7 +282,9 @@ var sdk = new UnifiedToSDK(
 var res = await sdk.Accounting.CreateAccountingTaxrateAsync(ConnectionId: "string", AccountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 1719.1D,
-    Raw = new PropertyAccountingTaxrateRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -312,7 +328,9 @@ var res = await sdk.Accounting.CreateAccountingTransactionAsync(ConnectionId: "s
             TotalAmount = 4969.62D,
         },
     },
-    Raw = new PropertyAccountingTransactionRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -973,6 +991,7 @@ Update an account
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -981,7 +1000,9 @@ var sdk = new UnifiedToSDK(
 
 var res = await sdk.Accounting.PatchAccountingAccountAsync(ConnectionId: "string", Id: "string", AccountingAccount: new AccountingAccount() {
     Name = "string",
-    Raw = new PropertyAccountingAccountRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -1025,7 +1046,9 @@ var res = await sdk.Accounting.PatchAccountingContactAsync(ConnectionId: "string
             Email = "Sylvester.Kuhic@yahoo.com",
         },
     },
-    Raw = new PropertyAccountingContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     ShippingAddress = new PropertyAccountingContactShippingAddress() {},
     Telephones = new List<AccountingTelephone>() {
         new AccountingTelephone() {
@@ -1074,7 +1097,9 @@ var res = await sdk.Accounting.PatchAccountingInvoiceAsync(ConnectionId: "string
             TotalAmount = 7374.1D,
         },
     },
-    Raw = new PropertyAccountingInvoiceRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -1104,6 +1129,7 @@ Update an item
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -1112,7 +1138,9 @@ var sdk = new UnifiedToSDK(
 
 var res = await sdk.Accounting.PatchAccountingItemAsync(ConnectionId: "string", Id: "string", AccountingItem: new AccountingItem() {
     Name = "string",
-    Raw = new PropertyAccountingItemRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -1142,6 +1170,7 @@ Update a payment
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -1149,7 +1178,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Accounting.PatchAccountingPaymentAsync(ConnectionId: "string", Id: "string", AccountingPayment: new AccountingPayment() {
-    Raw = new PropertyAccountingPaymentRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -1179,6 +1210,7 @@ Update a taxrate
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -1188,7 +1220,9 @@ var sdk = new UnifiedToSDK(
 var res = await sdk.Accounting.PatchAccountingTaxrateAsync(ConnectionId: "string", Id: "string", AccountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 5991.47D,
-    Raw = new PropertyAccountingTaxrateRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -1233,7 +1267,9 @@ var res = await sdk.Accounting.PatchAccountingTransactionAsync(ConnectionId: "st
             TotalAmount = 5633.69D,
         },
     },
-    Raw = new PropertyAccountingTransactionRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -1501,6 +1537,7 @@ Update an account
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -1509,7 +1546,9 @@ var sdk = new UnifiedToSDK(
 
 var res = await sdk.Accounting.UpdateAccountingAccountAsync(ConnectionId: "string", Id: "string", AccountingAccount: new AccountingAccount() {
     Name = "string",
-    Raw = new PropertyAccountingAccountRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -1553,7 +1592,9 @@ var res = await sdk.Accounting.UpdateAccountingContactAsync(ConnectionId: "strin
             Email = "Kaci_Hane@hotmail.com",
         },
     },
-    Raw = new PropertyAccountingContactRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
     ShippingAddress = new PropertyAccountingContactShippingAddress() {},
     Telephones = new List<AccountingTelephone>() {
         new AccountingTelephone() {
@@ -1602,7 +1643,9 @@ var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(ConnectionId: "strin
             TotalAmount = 6974.28D,
         },
     },
-    Raw = new PropertyAccountingInvoiceRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -1632,6 +1675,7 @@ Update an item
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -1640,7 +1684,9 @@ var sdk = new UnifiedToSDK(
 
 var res = await sdk.Accounting.UpdateAccountingItemAsync(ConnectionId: "string", Id: "string", AccountingItem: new AccountingItem() {
     Name = "string",
-    Raw = new PropertyAccountingItemRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -1670,6 +1716,7 @@ Update a payment
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -1677,7 +1724,9 @@ var sdk = new UnifiedToSDK(
     });
 
 var res = await sdk.Accounting.UpdateAccountingPaymentAsync(ConnectionId: "string", Id: "string", AccountingPayment: new AccountingPayment() {
-    Raw = new PropertyAccountingPaymentRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -1707,6 +1756,7 @@ Update a taxrate
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(
     security: new Security() {
@@ -1716,7 +1766,9 @@ var sdk = new UnifiedToSDK(
 var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(ConnectionId: "string", Id: "string", AccountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 3382.78D,
-    Raw = new PropertyAccountingTaxrateRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response
@@ -1761,7 +1813,9 @@ var res = await sdk.Accounting.UpdateAccountingTransactionAsync(ConnectionId: "s
             TotalAmount = 6498.37D,
         },
     },
-    Raw = new PropertyAccountingTransactionRaw() {},
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
 });
 
 // handle response

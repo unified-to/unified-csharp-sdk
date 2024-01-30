@@ -11,6 +11,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using System;
     
     public class TicketingNote
@@ -29,7 +30,7 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         [JsonProperty("raw")]
-        public PropertyTicketingNoteRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("ticket_id")]
         public string? TicketId { get; set; }
