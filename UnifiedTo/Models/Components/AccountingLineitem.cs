@@ -43,6 +43,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("notes")]
         public string? Notes { get; set; }
 
+        [JsonProperty("refund_amount")]
+        public double? RefundAmount { get; set; }
+
         [JsonProperty("refunded_amount")]
         public double? RefundedAmount { get; set; }
 

@@ -31,6 +31,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("line_items")]
         public List<AccountingTransactionLineitem>? LineItems { get; set; }
 
+        /// <summary>
+        /// new field name
+        /// </summary>
+        [JsonProperty("lineitems")]
+        public List<AccountingTransactionLineitem>? Lineitems { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

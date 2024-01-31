@@ -9,7 +9,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 csharp:
-  version: 0.5.14
+  version: 0.5.15
   author: Unified API Inc.
   dotnetVersion: net6.0
   imports:
