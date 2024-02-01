@@ -22,12 +22,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Group.CreateHrisGroupAsync(ConnectionId: "string", HrisGroup: new HrisGroup() {
+var res = await sdk.Group.CreateHrisGroupAsync(
+    connectionId: "string",
+    hrisGroup: new HrisGroup() {
     ManagerIds = new List<string>() {
         "string",
     },
@@ -67,12 +68,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Group.GetHrisGroupAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Group.GetHrisGroupAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -105,8 +108,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -146,12 +148,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Group.PatchHrisGroupAsync(ConnectionId: "string", Id: "string", HrisGroup: new HrisGroup() {
+var res = await sdk.Group.PatchHrisGroupAsync(
+    connectionId: "string",
+    id: "string",
+    hrisGroup: new HrisGroup() {
     ManagerIds = new List<string>() {
         "string",
     },
@@ -191,12 +195,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Group.RemoveHrisGroupAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Group.RemoveHrisGroupAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -226,12 +231,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Group.UpdateHrisGroupAsync(ConnectionId: "string", Id: "string", HrisGroup: new HrisGroup() {
+var res = await sdk.Group.UpdateHrisGroupAsync(
+    connectionId: "string",
+    id: "string",
+    hrisGroup: new HrisGroup() {
     ManagerIds = new List<string>() {
         "string",
     },

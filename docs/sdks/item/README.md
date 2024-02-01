@@ -22,12 +22,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Item.CreateAccountingItemAsync(ConnectionId: "string", AccountingItem: new AccountingItem() {
+var res = await sdk.Item.CreateAccountingItemAsync(
+    connectionId: "string",
+    accountingItem: new AccountingItem() {
     Name = "string",
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
@@ -62,12 +63,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Item.GetAccountingItemAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Item.GetAccountingItemAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -100,8 +103,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -141,12 +143,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Item.PatchAccountingItemAsync(ConnectionId: "string", Id: "string", AccountingItem: new AccountingItem() {
+var res = await sdk.Item.PatchAccountingItemAsync(
+    connectionId: "string",
+    id: "string",
+    accountingItem: new AccountingItem() {
     Name = "string",
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
@@ -181,12 +185,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Item.RemoveAccountingItemAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Item.RemoveAccountingItemAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -216,12 +221,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Item.UpdateAccountingItemAsync(ConnectionId: "string", Id: "string", AccountingItem: new AccountingItem() {
+var res = await sdk.Item.UpdateAccountingItemAsync(
+    connectionId: "string",
+    id: "string",
+    accountingItem: new AccountingItem() {
     Name = "string",
     Raw = new Dictionary<string, object>() {
         { "key", "string" },

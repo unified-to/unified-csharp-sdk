@@ -22,12 +22,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Scorecard.CreateAtsScorecardAsync(ConnectionId: "string", AtsScorecard: new AtsScorecard() {
+var res = await sdk.Scorecard.CreateAtsScorecardAsync(
+    connectionId: "string",
+    atsScorecard: new AtsScorecard() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -61,12 +62,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Scorecard.GetAtsScorecardAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Scorecard.GetAtsScorecardAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -99,8 +102,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -140,12 +142,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Scorecard.PatchAtsScorecardAsync(ConnectionId: "string", Id: "string", AtsScorecard: new AtsScorecard() {
+var res = await sdk.Scorecard.PatchAtsScorecardAsync(
+    connectionId: "string",
+    id: "string",
+    atsScorecard: new AtsScorecard() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -179,12 +183,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Scorecard.RemoveAtsScorecardAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Scorecard.RemoveAtsScorecardAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -214,12 +219,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Scorecard.UpdateAtsScorecardAsync(ConnectionId: "string", Id: "string", AtsScorecard: new AtsScorecard() {
+var res = await sdk.Scorecard.UpdateAtsScorecardAsync(
+    connectionId: "string",
+    id: "string",
+    atsScorecard: new AtsScorecard() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },

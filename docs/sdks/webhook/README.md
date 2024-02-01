@@ -22,12 +22,12 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Webhook.CreateUnifiedWebhookAsync(Webhook: new Models.Components.Webhook() {
+var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
+    webhook: new Models.Components.Webhook() {
     ConnectionId = "string",
     Event = Models.Components.Event.Created,
     HookUrl = "string",
@@ -39,7 +39,8 @@ var res = await sdk.Webhook.CreateUnifiedWebhookAsync(Webhook: new Models.Compon
     Runs = new List<string>() {
         "string",
     },
-}, IncludeAll: false);
+},
+    includeAll: false);
 
 // handle response
 ```
@@ -68,12 +69,11 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Webhook.GetUnifiedWebhookAsync(Id: "string");
+var res = await sdk.Webhook.GetUnifiedWebhookAsync(id: "string");
 
 // handle response
 ```
@@ -101,8 +101,7 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -136,12 +135,11 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Webhook.PatchUnifiedWebhookTriggerAsync(Id: "string");
+var res = await sdk.Webhook.PatchUnifiedWebhookTriggerAsync(id: "string");
 
 // handle response
 ```
@@ -169,12 +167,11 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Webhook.RemoveUnifiedWebhookAsync(Id: "string");
+var res = await sdk.Webhook.RemoveUnifiedWebhookAsync(id: "string");
 
 // handle response
 ```
@@ -202,12 +199,11 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Webhook.UpdateUnifiedWebhookTriggerAsync(Id: "string");
+var res = await sdk.Webhook.UpdateUnifiedWebhookTriggerAsync(id: "string");
 
 // handle response
 ```

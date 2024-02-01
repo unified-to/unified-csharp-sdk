@@ -21,12 +21,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Passthrough.CreatePassthroughAsync(ConnectionId: "string", Path: "string", RequestBody: new Dictionary<string, object>() {
+var res = await sdk.Passthrough.CreatePassthroughAsync(
+    connectionId: "string",
+    path: "string",
+    requestBody: new Dictionary<string, object>() {
     { "key", "string" },
 });
 
@@ -58,12 +60,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Passthrough.ListPassthroughsAsync(ConnectionId: "string", Path: "string");
+var res = await sdk.Passthrough.ListPassthroughsAsync(
+    connectionId: "string",
+    path: "string");
 
 // handle response
 ```
@@ -93,12 +96,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Passthrough.PatchPassthroughAsync(ConnectionId: "string", Path: "string", RequestBody: new Dictionary<string, object>() {
+var res = await sdk.Passthrough.PatchPassthroughAsync(
+    connectionId: "string",
+    path: "string",
+    requestBody: new Dictionary<string, object>() {
     { "key", "string" },
 });
 
@@ -130,12 +135,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Passthrough.RemovePassthroughAsync(ConnectionId: "string", Path: "string");
+var res = await sdk.Passthrough.RemovePassthroughAsync(
+    connectionId: "string",
+    path: "string");
 
 // handle response
 ```
@@ -165,12 +171,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Passthrough.UpdatePassthroughAsync(ConnectionId: "string", Path: "string", RequestBody: new Dictionary<string, object>() {
+var res = await sdk.Passthrough.UpdatePassthroughAsync(
+    connectionId: "string",
+    path: "string",
+    requestBody: new Dictionary<string, object>() {
     { "key", "string" },
 });
 

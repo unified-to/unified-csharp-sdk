@@ -22,12 +22,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Job.CreateAtsJobAsync(ConnectionId: "string", AtsJob: new AtsJob() {
+var res = await sdk.Job.CreateAtsJobAsync(
+    connectionId: "string",
+    atsJob: new AtsJob() {
     Addresses = new List<AtsAddress>() {
         new AtsAddress() {},
     },
@@ -81,12 +82,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Job.GetAtsJobAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Job.GetAtsJobAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -119,8 +122,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -160,12 +162,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Job.PatchAtsJobAsync(ConnectionId: "string", Id: "string", AtsJob: new AtsJob() {
+var res = await sdk.Job.PatchAtsJobAsync(
+    connectionId: "string",
+    id: "string",
+    atsJob: new AtsJob() {
     Addresses = new List<AtsAddress>() {
         new AtsAddress() {},
     },
@@ -219,12 +223,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Job.RemoveAtsJobAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Job.RemoveAtsJobAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -254,12 +259,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Job.UpdateAtsJobAsync(ConnectionId: "string", Id: "string", AtsJob: new AtsJob() {
+var res = await sdk.Job.UpdateAtsJobAsync(
+    connectionId: "string",
+    id: "string",
+    atsJob: new AtsJob() {
     Addresses = new List<AtsAddress>() {
         new AtsAddress() {},
     },

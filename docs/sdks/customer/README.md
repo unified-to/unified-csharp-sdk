@@ -22,12 +22,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Customer.CreateTicketingCustomerAsync(ConnectionId: "string", TicketingCustomer: new TicketingCustomer() {
+var res = await sdk.Customer.CreateTicketingCustomerAsync(
+    connectionId: "string",
+    ticketingCustomer: new TicketingCustomer() {
     Emails = new List<TicketingEmail>() {
         new TicketingEmail() {
             Email = "Guadalupe78@yahoo.com",
@@ -74,12 +75,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Customer.GetTicketingCustomerAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Customer.GetTicketingCustomerAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -112,8 +115,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -153,12 +155,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Customer.PatchTicketingCustomerAsync(ConnectionId: "string", Id: "string", TicketingCustomer: new TicketingCustomer() {
+var res = await sdk.Customer.PatchTicketingCustomerAsync(
+    connectionId: "string",
+    id: "string",
+    ticketingCustomer: new TicketingCustomer() {
     Emails = new List<TicketingEmail>() {
         new TicketingEmail() {
             Email = "Raymundo93@hotmail.com",
@@ -205,12 +209,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Customer.RemoveTicketingCustomerAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Customer.RemoveTicketingCustomerAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -240,12 +245,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Customer.UpdateTicketingCustomerAsync(ConnectionId: "string", Id: "string", TicketingCustomer: new TicketingCustomer() {
+var res = await sdk.Customer.UpdateTicketingCustomerAsync(
+    connectionId: "string",
+    id: "string",
+    ticketingCustomer: new TicketingCustomer() {
     Emails = new List<TicketingEmail>() {
         new TicketingEmail() {
             Email = "Mohamed.Friesen@hotmail.com",

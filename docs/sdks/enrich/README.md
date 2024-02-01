@@ -17,12 +17,14 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Enrich.ListEnrichCompaniesAsync(ConnectionId: "string", Domain: "string", Name: "string");
+var res = await sdk.Enrich.ListEnrichCompaniesAsync(
+    connectionId: "string",
+    domain: "string",
+    name: "string");
 
 // handle response
 ```
@@ -52,8 +54,7 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 

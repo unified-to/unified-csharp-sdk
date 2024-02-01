@@ -22,12 +22,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Event.CreateCrmEventAsync(ConnectionId: "string", CrmEvent: new CrmEvent() {
+var res = await sdk.Event.CreateCrmEventAsync(
+    connectionId: "string",
+    crmEvent: new CrmEvent() {
     Call = new PropertyCrmEventCall() {},
     CompanyIds = new List<string>() {
         "string",
@@ -88,12 +89,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Event.GetCrmEventAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Event.GetCrmEventAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -126,8 +129,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -167,12 +169,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Event.PatchCrmEventAsync(ConnectionId: "string", Id: "string", CrmEvent: new CrmEvent() {
+var res = await sdk.Event.PatchCrmEventAsync(
+    connectionId: "string",
+    id: "string",
+    crmEvent: new CrmEvent() {
     Call = new PropertyCrmEventCall() {},
     CompanyIds = new List<string>() {
         "string",
@@ -233,12 +237,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Event.RemoveCrmEventAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Event.RemoveCrmEventAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -268,12 +273,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Event.UpdateCrmEventAsync(ConnectionId: "string", Id: "string", CrmEvent: new CrmEvent() {
+var res = await sdk.Event.UpdateCrmEventAsync(
+    connectionId: "string",
+    id: "string",
+    crmEvent: new CrmEvent() {
     Call = new PropertyCrmEventCall() {},
     CompanyIds = new List<string>() {
         "string",

@@ -22,12 +22,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Pipeline.CreateCrmPipelineAsync(ConnectionId: "string", CrmPipeline: new CrmPipeline() {
+var res = await sdk.Pipeline.CreateCrmPipelineAsync(
+    connectionId: "string",
+    crmPipeline: new CrmPipeline() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -61,12 +62,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Pipeline.GetCrmPipelineAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Pipeline.GetCrmPipelineAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -99,8 +102,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -140,12 +142,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Pipeline.PatchCrmPipelineAsync(ConnectionId: "string", Id: "string", CrmPipeline: new CrmPipeline() {
+var res = await sdk.Pipeline.PatchCrmPipelineAsync(
+    connectionId: "string",
+    id: "string",
+    crmPipeline: new CrmPipeline() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -179,12 +183,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Pipeline.RemoveCrmPipelineAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Pipeline.RemoveCrmPipelineAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -214,12 +219,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Pipeline.UpdateCrmPipelineAsync(ConnectionId: "string", Id: "string", CrmPipeline: new CrmPipeline() {
+var res = await sdk.Pipeline.UpdateCrmPipelineAsync(
+    connectionId: "string",
+    id: "string",
+    crmPipeline: new CrmPipeline() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },

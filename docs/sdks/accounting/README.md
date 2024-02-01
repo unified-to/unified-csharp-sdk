@@ -60,12 +60,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.CreateAccountingAccountAsync(ConnectionId: "string", AccountingAccount: new AccountingAccount() {
+var res = await sdk.Accounting.CreateAccountingAccountAsync(
+    connectionId: "string",
+    accountingAccount: new AccountingAccount() {
     Name = "string",
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
@@ -100,12 +101,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.CreateAccountingContactAsync(ConnectionId: "string", AccountingContact: new AccountingContact() {
+var res = await sdk.Accounting.CreateAccountingContactAsync(
+    connectionId: "string",
+    accountingContact: new AccountingContact() {
     BillingAddress = new PropertyAccountingContactBillingAddress() {},
     Emails = new List<AccountingEmail>() {
         new AccountingEmail() {
@@ -151,12 +153,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.CreateAccountingInvoiceAsync(ConnectionId: "string", AccountingInvoice: new AccountingInvoice() {
+var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
+    connectionId: "string",
+    accountingInvoice: new AccountingInvoice() {
     Lineitems = new List<AccountingLineitem>() {
         new AccountingLineitem() {
             TotalAmount = 6736.06D,
@@ -195,12 +198,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.CreateAccountingItemAsync(ConnectionId: "string", AccountingItem: new AccountingItem() {
+var res = await sdk.Accounting.CreateAccountingItemAsync(
+    connectionId: "string",
+    accountingItem: new AccountingItem() {
     Name = "string",
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
@@ -235,12 +239,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.CreateAccountingPaymentAsync(ConnectionId: "string", AccountingPayment: new AccountingPayment() {
+var res = await sdk.Accounting.CreateAccountingPaymentAsync(
+    connectionId: "string",
+    accountingPayment: new AccountingPayment() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -274,12 +279,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.CreateAccountingTaxrateAsync(ConnectionId: "string", AccountingTaxrate: new AccountingTaxrate() {
+var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
+    connectionId: "string",
+    accountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 1719.1D,
     Raw = new Dictionary<string, object>() {
@@ -315,12 +321,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.CreateAccountingTransactionAsync(ConnectionId: "string", AccountingTransaction: new AccountingTransaction() {
+var res = await sdk.Accounting.CreateAccountingTransactionAsync(
+    connectionId: "string",
+    accountingTransaction: new AccountingTransaction() {
     Id = "<ID>",
     LineItems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
@@ -367,12 +374,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.GetAccountingAccountAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Accounting.GetAccountingAccountAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -405,12 +414,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.GetAccountingContactAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Accounting.GetAccountingContactAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -443,12 +454,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.GetAccountingInvoiceAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Accounting.GetAccountingInvoiceAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -481,12 +494,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.GetAccountingItemAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Accounting.GetAccountingItemAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -519,12 +534,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.GetAccountingOrganizationAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Accounting.GetAccountingOrganizationAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -557,12 +574,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.GetAccountingPaymentAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Accounting.GetAccountingPaymentAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -595,12 +614,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.GetAccountingTaxrateAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Accounting.GetAccountingTaxrateAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -633,12 +654,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.GetAccountingTransactionAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Accounting.GetAccountingTransactionAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -671,8 +694,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -712,8 +734,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -753,8 +774,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -794,8 +814,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -835,8 +854,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -876,8 +894,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -917,8 +934,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -958,8 +974,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -999,12 +1014,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.PatchAccountingAccountAsync(ConnectionId: "string", Id: "string", AccountingAccount: new AccountingAccount() {
+var res = await sdk.Accounting.PatchAccountingAccountAsync(
+    connectionId: "string",
+    id: "string",
+    accountingAccount: new AccountingAccount() {
     Name = "string",
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
@@ -1040,12 +1057,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.PatchAccountingContactAsync(ConnectionId: "string", Id: "string", AccountingContact: new AccountingContact() {
+var res = await sdk.Accounting.PatchAccountingContactAsync(
+    connectionId: "string",
+    id: "string",
+    accountingContact: new AccountingContact() {
     BillingAddress = new PropertyAccountingContactBillingAddress() {},
     Emails = new List<AccountingEmail>() {
         new AccountingEmail() {
@@ -1092,12 +1111,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.PatchAccountingInvoiceAsync(ConnectionId: "string", Id: "string", AccountingInvoice: new AccountingInvoice() {
+var res = await sdk.Accounting.PatchAccountingInvoiceAsync(
+    connectionId: "string",
+    id: "string",
+    accountingInvoice: new AccountingInvoice() {
     Lineitems = new List<AccountingLineitem>() {
         new AccountingLineitem() {
             TotalAmount = 7374.1D,
@@ -1137,12 +1158,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.PatchAccountingItemAsync(ConnectionId: "string", Id: "string", AccountingItem: new AccountingItem() {
+var res = await sdk.Accounting.PatchAccountingItemAsync(
+    connectionId: "string",
+    id: "string",
+    accountingItem: new AccountingItem() {
     Name = "string",
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
@@ -1178,12 +1201,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.PatchAccountingPaymentAsync(ConnectionId: "string", Id: "string", AccountingPayment: new AccountingPayment() {
+var res = await sdk.Accounting.PatchAccountingPaymentAsync(
+    connectionId: "string",
+    id: "string",
+    accountingPayment: new AccountingPayment() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -1218,12 +1243,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.PatchAccountingTaxrateAsync(ConnectionId: "string", Id: "string", AccountingTaxrate: new AccountingTaxrate() {
+var res = await sdk.Accounting.PatchAccountingTaxrateAsync(
+    connectionId: "string",
+    id: "string",
+    accountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 5991.47D,
     Raw = new Dictionary<string, object>() {
@@ -1260,12 +1287,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.PatchAccountingTransactionAsync(ConnectionId: "string", Id: "string", AccountingTransaction: new AccountingTransaction() {
+var res = await sdk.Accounting.PatchAccountingTransactionAsync(
+    connectionId: "string",
+    id: "string",
+    accountingTransaction: new AccountingTransaction() {
     Id = "<ID>",
     LineItems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
@@ -1312,12 +1341,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.RemoveAccountingAccountAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Accounting.RemoveAccountingAccountAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -1346,12 +1376,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.RemoveAccountingContactAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Accounting.RemoveAccountingContactAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -1380,12 +1411,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.RemoveAccountingInvoiceAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Accounting.RemoveAccountingInvoiceAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -1414,12 +1446,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.RemoveAccountingItemAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Accounting.RemoveAccountingItemAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -1448,12 +1481,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.RemoveAccountingPaymentAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Accounting.RemoveAccountingPaymentAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -1482,12 +1516,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.RemoveAccountingTaxrateAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Accounting.RemoveAccountingTaxrateAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -1516,12 +1551,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.RemoveAccountingTransactionAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Accounting.RemoveAccountingTransactionAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -1551,12 +1587,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.UpdateAccountingAccountAsync(ConnectionId: "string", Id: "string", AccountingAccount: new AccountingAccount() {
+var res = await sdk.Accounting.UpdateAccountingAccountAsync(
+    connectionId: "string",
+    id: "string",
+    accountingAccount: new AccountingAccount() {
     Name = "string",
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
@@ -1592,12 +1630,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.UpdateAccountingContactAsync(ConnectionId: "string", Id: "string", AccountingContact: new AccountingContact() {
+var res = await sdk.Accounting.UpdateAccountingContactAsync(
+    connectionId: "string",
+    id: "string",
+    accountingContact: new AccountingContact() {
     BillingAddress = new PropertyAccountingContactBillingAddress() {},
     Emails = new List<AccountingEmail>() {
         new AccountingEmail() {
@@ -1644,12 +1684,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(ConnectionId: "string", Id: "string", AccountingInvoice: new AccountingInvoice() {
+var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(
+    connectionId: "string",
+    id: "string",
+    accountingInvoice: new AccountingInvoice() {
     Lineitems = new List<AccountingLineitem>() {
         new AccountingLineitem() {
             TotalAmount = 6974.28D,
@@ -1689,12 +1731,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.UpdateAccountingItemAsync(ConnectionId: "string", Id: "string", AccountingItem: new AccountingItem() {
+var res = await sdk.Accounting.UpdateAccountingItemAsync(
+    connectionId: "string",
+    id: "string",
+    accountingItem: new AccountingItem() {
     Name = "string",
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
@@ -1730,12 +1774,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.UpdateAccountingPaymentAsync(ConnectionId: "string", Id: "string", AccountingPayment: new AccountingPayment() {
+var res = await sdk.Accounting.UpdateAccountingPaymentAsync(
+    connectionId: "string",
+    id: "string",
+    accountingPayment: new AccountingPayment() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -1770,12 +1816,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(ConnectionId: "string", Id: "string", AccountingTaxrate: new AccountingTaxrate() {
+var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(
+    connectionId: "string",
+    id: "string",
+    accountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 3382.78D,
     Raw = new Dictionary<string, object>() {
@@ -1812,12 +1860,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.UpdateAccountingTransactionAsync(ConnectionId: "string", Id: "string", AccountingTransaction: new AccountingTransaction() {
+var res = await sdk.Accounting.UpdateAccountingTransactionAsync(
+    connectionId: "string",
+    id: "string",
+    accountingTransaction: new AccountingTransaction() {
     Id = "<ID>",
     LineItems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {

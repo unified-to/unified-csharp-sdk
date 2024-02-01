@@ -22,12 +22,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Candidate.CreateAtsCandidateAsync(ConnectionId: "string", AtsCandidate: new AtsCandidate() {
+var res = await sdk.Candidate.CreateAtsCandidateAsync(
+    connectionId: "string",
+    atsCandidate: new AtsCandidate() {
     Address = new PropertyAtsCandidateAddress() {},
     Emails = new List<AtsEmail>() {
         new AtsEmail() {
@@ -78,12 +79,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Candidate.GetAtsCandidateAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Candidate.GetAtsCandidateAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -116,8 +119,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -157,12 +159,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Candidate.PatchAtsCandidateAsync(ConnectionId: "string", Id: "string", AtsCandidate: new AtsCandidate() {
+var res = await sdk.Candidate.PatchAtsCandidateAsync(
+    connectionId: "string",
+    id: "string",
+    atsCandidate: new AtsCandidate() {
     Address = new PropertyAtsCandidateAddress() {},
     Emails = new List<AtsEmail>() {
         new AtsEmail() {
@@ -213,12 +217,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Candidate.RemoveAtsCandidateAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Candidate.RemoveAtsCandidateAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -248,12 +253,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Candidate.UpdateAtsCandidateAsync(ConnectionId: "string", Id: "string", AtsCandidate: new AtsCandidate() {
+var res = await sdk.Candidate.UpdateAtsCandidateAsync(
+    connectionId: "string",
+    id: "string",
+    atsCandidate: new AtsCandidate() {
     Address = new PropertyAtsCandidateAddress() {},
     Emails = new List<AtsEmail>() {
         new AtsEmail() {

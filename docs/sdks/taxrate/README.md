@@ -22,12 +22,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(ConnectionId: "string", AccountingTaxrate: new AccountingTaxrate() {
+var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
+    connectionId: "string",
+    accountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 1719.1D,
     Raw = new Dictionary<string, object>() {
@@ -63,12 +64,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Taxrate.GetAccountingTaxrateAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Taxrate.GetAccountingTaxrateAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -101,8 +104,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -142,12 +144,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Taxrate.PatchAccountingTaxrateAsync(ConnectionId: "string", Id: "string", AccountingTaxrate: new AccountingTaxrate() {
+var res = await sdk.Taxrate.PatchAccountingTaxrateAsync(
+    connectionId: "string",
+    id: "string",
+    accountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 5991.47D,
     Raw = new Dictionary<string, object>() {
@@ -183,12 +187,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Taxrate.RemoveAccountingTaxrateAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Taxrate.RemoveAccountingTaxrateAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -218,12 +223,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Taxrate.UpdateAccountingTaxrateAsync(ConnectionId: "string", Id: "string", AccountingTaxrate: new AccountingTaxrate() {
+var res = await sdk.Taxrate.UpdateAccountingTaxrateAsync(
+    connectionId: "string",
+    id: "string",
+    accountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 3382.78D,
     Raw = new Dictionary<string, object>() {

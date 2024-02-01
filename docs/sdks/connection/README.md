@@ -21,8 +21,7 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -80,12 +79,11 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Connection.GetUnifiedConnectionAsync(Id: "string");
+var res = await sdk.Connection.GetUnifiedConnectionAsync(id: "string");
 
 // handle response
 ```
@@ -114,8 +112,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -154,12 +151,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Connection.PatchUnifiedConnectionAsync(Id: "string", Connection: new Models.Components.Connection() {
+var res = await sdk.Connection.PatchUnifiedConnectionAsync(
+    id: "string",
+    connection: new Models.Components.Connection() {
     Auth = new PropertyConnectionAuth() {
         Emails = new List<string>() {
             "string",
@@ -212,12 +210,11 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Connection.RemoveUnifiedConnectionAsync(Id: "string");
+var res = await sdk.Connection.RemoveUnifiedConnectionAsync(id: "string");
 
 // handle response
 ```
@@ -246,12 +243,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Connection.UpdateUnifiedConnectionAsync(Id: "string", Connection: new Models.Components.Connection() {
+var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
+    id: "string",
+    connection: new Models.Components.Connection() {
     Auth = new PropertyConnectionAuth() {
         Emails = new List<string>() {
             "string",

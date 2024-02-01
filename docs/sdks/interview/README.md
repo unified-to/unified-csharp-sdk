@@ -22,12 +22,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Interview.CreateAtsInterviewAsync(ConnectionId: "string", AtsInterview: new AtsInterview() {
+var res = await sdk.Interview.CreateAtsInterviewAsync(
+    connectionId: "string",
+    atsInterview: new AtsInterview() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -64,12 +65,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Interview.GetAtsInterviewAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Interview.GetAtsInterviewAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -102,8 +105,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -143,12 +145,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Interview.PatchAtsInterviewAsync(ConnectionId: "string", Id: "string", AtsInterview: new AtsInterview() {
+var res = await sdk.Interview.PatchAtsInterviewAsync(
+    connectionId: "string",
+    id: "string",
+    atsInterview: new AtsInterview() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -185,12 +189,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Interview.RemoveAtsInterviewAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Interview.RemoveAtsInterviewAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -220,12 +225,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Interview.UpdateAtsInterviewAsync(ConnectionId: "string", Id: "string", AtsInterview: new AtsInterview() {
+var res = await sdk.Interview.UpdateAtsInterviewAsync(
+    connectionId: "string",
+    id: "string",
+    atsInterview: new AtsInterview() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },

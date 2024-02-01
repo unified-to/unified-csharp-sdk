@@ -5,12 +5,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Accounting.CreateAccountingAccountAsync(ConnectionId: "string", AccountingAccount: new AccountingAccount() {
+var res = await sdk.Accounting.CreateAccountingAccountAsync(
+    connectionId: "string",
+    accountingAccount: new AccountingAccount() {
     Name = "string",
     Raw = new Dictionary<string, object>() {
         { "key", "string" },

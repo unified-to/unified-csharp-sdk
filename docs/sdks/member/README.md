@@ -22,12 +22,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Member.CreateMartechMemberAsync(ConnectionId: "string", MarketingMember: new MarketingMember() {
+var res = await sdk.Member.CreateMartechMemberAsync(
+    connectionId: "string",
+    marketingMember: new MarketingMember() {
     Emails = new List<MarketingEmail>() {
         new MarketingEmail() {
             Email = "Eldridge.Marvin@gmail.com",
@@ -72,12 +73,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Member.GetMartechMemberAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Member.GetMartechMemberAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -110,8 +113,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -151,12 +153,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Member.PatchMartechMemberAsync(ConnectionId: "string", Id: "string", MarketingMember: new MarketingMember() {
+var res = await sdk.Member.PatchMartechMemberAsync(
+    connectionId: "string",
+    id: "string",
+    marketingMember: new MarketingMember() {
     Emails = new List<MarketingEmail>() {
         new MarketingEmail() {
             Email = "Shana_Boyle@yahoo.com",
@@ -201,12 +205,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Member.RemoveMartechMemberAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Member.RemoveMartechMemberAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -236,12 +241,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Member.UpdateMartechMemberAsync(ConnectionId: "string", Id: "string", MarketingMember: new MarketingMember() {
+var res = await sdk.Member.UpdateMartechMemberAsync(
+    connectionId: "string",
+    id: "string",
+    marketingMember: new MarketingMember() {
     Emails = new List<MarketingEmail>() {
         new MarketingEmail() {
             Email = "Antonette.Kerluke@hotmail.com",

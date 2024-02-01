@@ -23,12 +23,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Uc.CreateUcContactAsync(ConnectionId: "string", UcContact: new UcContact() {
+var res = await sdk.Uc.CreateUcContactAsync(
+    connectionId: "string",
+    ucContact: new UcContact() {
     Emails = new List<UcEmail>() {
         new UcEmail() {
             Email = "Dulce_Becker30@yahoo.com",
@@ -72,12 +73,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Uc.GetUcContactAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Uc.GetUcContactAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -110,8 +113,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -151,8 +153,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -192,12 +193,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Uc.PatchUcContactAsync(ConnectionId: "string", Id: "string", UcContact: new UcContact() {
+var res = await sdk.Uc.PatchUcContactAsync(
+    connectionId: "string",
+    id: "string",
+    ucContact: new UcContact() {
     Emails = new List<UcEmail>() {
         new UcEmail() {
             Email = "Norene_Boehm97@hotmail.com",
@@ -241,12 +244,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Uc.RemoveUcContactAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Uc.RemoveUcContactAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -276,12 +280,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Uc.UpdateUcContactAsync(ConnectionId: "string", Id: "string", UcContact: new UcContact() {
+var res = await sdk.Uc.UpdateUcContactAsync(
+    connectionId: "string",
+    id: "string",
+    ucContact: new UcContact() {
     Emails = new List<UcEmail>() {
         new UcEmail() {
             Email = "Kianna.Witting90@gmail.com",

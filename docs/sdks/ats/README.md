@@ -53,12 +53,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.CreateAtsApplicationAsync(ConnectionId: "string", AtsApplication: new AtsApplication() {
+var res = await sdk.Ats.CreateAtsApplicationAsync(
+    connectionId: "string",
+    atsApplication: new AtsApplication() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -92,12 +93,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.CreateAtsCandidateAsync(ConnectionId: "string", AtsCandidate: new AtsCandidate() {
+var res = await sdk.Ats.CreateAtsCandidateAsync(
+    connectionId: "string",
+    atsCandidate: new AtsCandidate() {
     Address = new PropertyAtsCandidateAddress() {},
     Emails = new List<AtsEmail>() {
         new AtsEmail() {
@@ -148,12 +150,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.CreateAtsDocumentAsync(ConnectionId: "string", AtsDocument: new AtsDocument() {
+var res = await sdk.Ats.CreateAtsDocumentAsync(
+    connectionId: "string",
+    atsDocument: new AtsDocument() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -187,12 +190,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.CreateAtsInterviewAsync(ConnectionId: "string", AtsInterview: new AtsInterview() {
+var res = await sdk.Ats.CreateAtsInterviewAsync(
+    connectionId: "string",
+    atsInterview: new AtsInterview() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -229,12 +233,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.CreateAtsJobAsync(ConnectionId: "string", AtsJob: new AtsJob() {
+var res = await sdk.Ats.CreateAtsJobAsync(
+    connectionId: "string",
+    atsJob: new AtsJob() {
     Addresses = new List<AtsAddress>() {
         new AtsAddress() {},
     },
@@ -288,12 +293,13 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.CreateAtsScorecardAsync(ConnectionId: "string", AtsScorecard: new AtsScorecard() {
+var res = await sdk.Ats.CreateAtsScorecardAsync(
+    connectionId: "string",
+    atsScorecard: new AtsScorecard() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -327,12 +333,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.GetAtsApplicationAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Ats.GetAtsApplicationAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -365,12 +373,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.GetAtsCandidateAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Ats.GetAtsCandidateAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -403,12 +413,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.GetAtsDocumentAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Ats.GetAtsDocumentAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -441,12 +453,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.GetAtsInterviewAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Ats.GetAtsInterviewAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -479,12 +493,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.GetAtsJobAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Ats.GetAtsJobAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -517,12 +533,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.GetAtsScorecardAsync(ConnectionId: "string", Id: "string", Fields: new List<string>() {
+var res = await sdk.Ats.GetAtsScorecardAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
     "string",
 });
 
@@ -555,8 +573,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -596,8 +613,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -637,8 +653,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -678,8 +693,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -719,8 +733,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -760,8 +773,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -801,8 +813,7 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
@@ -842,12 +853,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.PatchAtsApplicationAsync(ConnectionId: "string", Id: "string", AtsApplication: new AtsApplication() {
+var res = await sdk.Ats.PatchAtsApplicationAsync(
+    connectionId: "string",
+    id: "string",
+    atsApplication: new AtsApplication() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -882,12 +895,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.PatchAtsCandidateAsync(ConnectionId: "string", Id: "string", AtsCandidate: new AtsCandidate() {
+var res = await sdk.Ats.PatchAtsCandidateAsync(
+    connectionId: "string",
+    id: "string",
+    atsCandidate: new AtsCandidate() {
     Address = new PropertyAtsCandidateAddress() {},
     Emails = new List<AtsEmail>() {
         new AtsEmail() {
@@ -939,12 +954,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.PatchAtsDocumentAsync(ConnectionId: "string", Id: "string", AtsDocument: new AtsDocument() {
+var res = await sdk.Ats.PatchAtsDocumentAsync(
+    connectionId: "string",
+    id: "string",
+    atsDocument: new AtsDocument() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -979,12 +996,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.PatchAtsInterviewAsync(ConnectionId: "string", Id: "string", AtsInterview: new AtsInterview() {
+var res = await sdk.Ats.PatchAtsInterviewAsync(
+    connectionId: "string",
+    id: "string",
+    atsInterview: new AtsInterview() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -1022,12 +1041,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.PatchAtsJobAsync(ConnectionId: "string", Id: "string", AtsJob: new AtsJob() {
+var res = await sdk.Ats.PatchAtsJobAsync(
+    connectionId: "string",
+    id: "string",
+    atsJob: new AtsJob() {
     Addresses = new List<AtsAddress>() {
         new AtsAddress() {},
     },
@@ -1082,12 +1103,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.PatchAtsScorecardAsync(ConnectionId: "string", Id: "string", AtsScorecard: new AtsScorecard() {
+var res = await sdk.Ats.PatchAtsScorecardAsync(
+    connectionId: "string",
+    id: "string",
+    atsScorecard: new AtsScorecard() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -1121,12 +1144,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.RemoveAtsApplicationAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Ats.RemoveAtsApplicationAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -1155,12 +1179,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.RemoveAtsCandidateAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Ats.RemoveAtsCandidateAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -1189,12 +1214,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.RemoveAtsDocumentAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Ats.RemoveAtsDocumentAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -1223,12 +1249,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.RemoveAtsInterviewAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Ats.RemoveAtsInterviewAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -1257,12 +1284,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.RemoveAtsJobAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Ats.RemoveAtsJobAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -1291,12 +1319,13 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.RemoveAtsScorecardAsync(ConnectionId: "string", Id: "string");
+var res = await sdk.Ats.RemoveAtsScorecardAsync(
+    connectionId: "string",
+    id: "string");
 
 // handle response
 ```
@@ -1326,12 +1355,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.UpdateAtsApplicationAsync(ConnectionId: "string", Id: "string", AtsApplication: new AtsApplication() {
+var res = await sdk.Ats.UpdateAtsApplicationAsync(
+    connectionId: "string",
+    id: "string",
+    atsApplication: new AtsApplication() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -1366,12 +1397,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.UpdateAtsCandidateAsync(ConnectionId: "string", Id: "string", AtsCandidate: new AtsCandidate() {
+var res = await sdk.Ats.UpdateAtsCandidateAsync(
+    connectionId: "string",
+    id: "string",
+    atsCandidate: new AtsCandidate() {
     Address = new PropertyAtsCandidateAddress() {},
     Emails = new List<AtsEmail>() {
         new AtsEmail() {
@@ -1423,12 +1456,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.UpdateAtsDocumentAsync(ConnectionId: "string", Id: "string", AtsDocument: new AtsDocument() {
+var res = await sdk.Ats.UpdateAtsDocumentAsync(
+    connectionId: "string",
+    id: "string",
+    atsDocument: new AtsDocument() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -1463,12 +1498,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.UpdateAtsInterviewAsync(ConnectionId: "string", Id: "string", AtsInterview: new AtsInterview() {
+var res = await sdk.Ats.UpdateAtsInterviewAsync(
+    connectionId: "string",
+    id: "string",
+    atsInterview: new AtsInterview() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -1506,12 +1543,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.UpdateAtsJobAsync(ConnectionId: "string", Id: "string", AtsJob: new AtsJob() {
+var res = await sdk.Ats.UpdateAtsJobAsync(
+    connectionId: "string",
+    id: "string",
+    atsJob: new AtsJob() {
     Addresses = new List<AtsAddress>() {
         new AtsAddress() {},
     },
@@ -1566,12 +1605,14 @@ using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(
-    security: new Security() {
+var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Ats.UpdateAtsScorecardAsync(ConnectionId: "string", Id: "string", AtsScorecard: new AtsScorecard() {
+var res = await sdk.Ats.UpdateAtsScorecardAsync(
+    connectionId: "string",
+    id: "string",
+    atsScorecard: new AtsScorecard() {
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
