@@ -3,16 +3,16 @@
 
 ### Available Operations
 
-* [CreateAccountingItem](#createaccountingitem) - Create an item
-* [GetAccountingItem](#getaccountingitem) - Retrieve an item
-* [ListAccountingItems](#listaccountingitems) - List all items
-* [PatchAccountingItem](#patchaccountingitem) - Update an item
-* [RemoveAccountingItem](#removeaccountingitem) - Remove an item
-* [UpdateAccountingItem](#updateaccountingitem) - Update an item
+* [CreateCommerceItem](#createcommerceitem) - Create an item/product
+* [GetCommerceItem](#getcommerceitem) - Retrieve an item/product
+* [ListCommerceItems](#listcommerceitems) - List all items/products
+* [PatchCommerceItem](#patchcommerceitem) - Update an item/product
+* [RemoveCommerceItem](#removecommerceitem) - Remove an item/product
+* [UpdateCommerceItem](#updatecommerceitem) - Update an item/product
 
-## CreateAccountingItem
+## CreateCommerceItem
 
-Create an item
+Create an item/product
 
 ### Example Usage
 
@@ -26,12 +26,47 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Item.CreateAccountingItemAsync(
+var res = await sdk.Item.CreateCommerceItemAsync(
     connectionId: "string",
-    accountingItem: new AccountingItem() {
+    commerceItem: new CommerceItem() {
+    Media = new List<CommerceItemMedia>() {
+        new CommerceItemMedia() {
+            Url = "http://loud-minister.name",
+        },
+    },
     Name = "string",
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
+    },
+    Tags = new List<string>() {
+        "string",
+    },
+    Variants = new List<CommerceItemVariant>() {
+        new CommerceItemVariant() {
+            Media = new List<CommerceItemMedia>() {
+                new CommerceItemMedia() {
+                    Url = "http://other-external.info",
+                },
+            },
+            Name = "string",
+            Options = new List<CommerceItemOption>() {
+                new CommerceItemOption() {
+                    Id = "<ID>",
+                    Name = "string",
+                    Values = new List<string>() {
+                        "string",
+                    },
+                },
+            },
+            Prices = new List<CommerceItemPrice>() {
+                new CommerceItemPrice() {
+                    Price = 3330.74D,
+                },
+            },
+            Tags = new List<string>() {
+                "string",
+            },
+        },
     },
 });
 
@@ -40,20 +75,20 @@ var res = await sdk.Item.CreateAccountingItemAsync(
 
 ### Parameters
 
-| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
-| `AccountingItem`                                            | [AccountingItem](../../Models/Components/AccountingItem.md) | :heavy_minus_sign:                                          | An item or product                                          |
+| Parameter                                               | Type                                                    | Required                                                | Description                                             |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
+| `CommerceItem`                                          | [CommerceItem](../../Models/Components/CommerceItem.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
 
 ### Response
 
-**[CreateAccountingItemResponse](../../Models/Requests/CreateAccountingItemResponse.md)**
+**[CreateCommerceItemResponse](../../Models/Requests/CreateCommerceItemResponse.md)**
 
 
-## GetAccountingItem
+## GetCommerceItem
 
-Retrieve an item
+Retrieve an item/product
 
 ### Example Usage
 
@@ -67,7 +102,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Item.GetAccountingItemAsync(
+var res = await sdk.Item.GetCommerceItemAsync(
     connectionId: "string",
     id: "string",
     fields: new List<string>() {
@@ -88,12 +123,12 @@ var res = await sdk.Item.GetAccountingItemAsync(
 
 ### Response
 
-**[GetAccountingItemResponse](../../Models/Requests/GetAccountingItemResponse.md)**
+**[GetCommerceItemResponse](../../Models/Requests/GetCommerceItemResponse.md)**
 
 
-## ListAccountingItems
+## ListCommerceItems
 
-List all items
+List all items/products
 
 ### Example Usage
 
@@ -107,33 +142,33 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-ListAccountingItemsRequest req = new ListAccountingItemsRequest() {
+ListCommerceItemsRequest req = new ListCommerceItemsRequest() {
     ConnectionId = "string",
     Fields = new List<string>() {
         "string",
     },
 };
 
-var res = await sdk.Item.ListAccountingItemsAsync(req);
+var res = await sdk.Item.ListCommerceItemsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListAccountingItemsRequest](../../Models/Requests/ListAccountingItemsRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListCommerceItemsRequest](../../Models/Requests/ListCommerceItemsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 
 ### Response
 
-**[ListAccountingItemsResponse](../../Models/Requests/ListAccountingItemsResponse.md)**
+**[ListCommerceItemsResponse](../../Models/Requests/ListCommerceItemsResponse.md)**
 
 
-## PatchAccountingItem
+## PatchCommerceItem
 
-Update an item
+Update an item/product
 
 ### Example Usage
 
@@ -147,13 +182,48 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Item.PatchAccountingItemAsync(
+var res = await sdk.Item.PatchCommerceItemAsync(
     connectionId: "string",
     id: "string",
-    accountingItem: new AccountingItem() {
+    commerceItem: new CommerceItem() {
+    Media = new List<CommerceItemMedia>() {
+        new CommerceItemMedia() {
+            Url = "http://frank-galley.biz",
+        },
+    },
     Name = "string",
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
+    },
+    Tags = new List<string>() {
+        "string",
+    },
+    Variants = new List<CommerceItemVariant>() {
+        new CommerceItemVariant() {
+            Media = new List<CommerceItemMedia>() {
+                new CommerceItemMedia() {
+                    Url = "http://irresponsible-reason.biz",
+                },
+            },
+            Name = "string",
+            Options = new List<CommerceItemOption>() {
+                new CommerceItemOption() {
+                    Id = "<ID>",
+                    Name = "string",
+                    Values = new List<string>() {
+                        "string",
+                    },
+                },
+            },
+            Prices = new List<CommerceItemPrice>() {
+                new CommerceItemPrice() {
+                    Price = 4506.62D,
+                },
+            },
+            Tags = new List<string>() {
+                "string",
+            },
+        },
     },
 });
 
@@ -162,21 +232,21 @@ var res = await sdk.Item.PatchAccountingItemAsync(
 
 ### Parameters
 
-| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
-| `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Item                                              |
-| `AccountingItem`                                            | [AccountingItem](../../Models/Components/AccountingItem.md) | :heavy_minus_sign:                                          | An item or product                                          |
+| Parameter                                               | Type                                                    | Required                                                | Description                                             |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
+| `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Item                                          |
+| `CommerceItem`                                          | [CommerceItem](../../Models/Components/CommerceItem.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
 
 ### Response
 
-**[PatchAccountingItemResponse](../../Models/Requests/PatchAccountingItemResponse.md)**
+**[PatchCommerceItemResponse](../../Models/Requests/PatchCommerceItemResponse.md)**
 
 
-## RemoveAccountingItem
+## RemoveCommerceItem
 
-Remove an item
+Remove an item/product
 
 ### Example Usage
 
@@ -189,7 +259,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Item.RemoveAccountingItemAsync(
+var res = await sdk.Item.RemoveCommerceItemAsync(
     connectionId: "string",
     id: "string");
 
@@ -206,12 +276,12 @@ var res = await sdk.Item.RemoveAccountingItemAsync(
 
 ### Response
 
-**[RemoveAccountingItemResponse](../../Models/Requests/RemoveAccountingItemResponse.md)**
+**[RemoveCommerceItemResponse](../../Models/Requests/RemoveCommerceItemResponse.md)**
 
 
-## UpdateAccountingItem
+## UpdateCommerceItem
 
-Update an item
+Update an item/product
 
 ### Example Usage
 
@@ -225,13 +295,48 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Item.UpdateAccountingItemAsync(
+var res = await sdk.Item.UpdateCommerceItemAsync(
     connectionId: "string",
     id: "string",
-    accountingItem: new AccountingItem() {
+    commerceItem: new CommerceItem() {
+    Media = new List<CommerceItemMedia>() {
+        new CommerceItemMedia() {
+            Url = "https://aggressive-major-league.org",
+        },
+    },
     Name = "string",
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
+    },
+    Tags = new List<string>() {
+        "string",
+    },
+    Variants = new List<CommerceItemVariant>() {
+        new CommerceItemVariant() {
+            Media = new List<CommerceItemMedia>() {
+                new CommerceItemMedia() {
+                    Url = "https://reasonable-cast.biz",
+                },
+            },
+            Name = "string",
+            Options = new List<CommerceItemOption>() {
+                new CommerceItemOption() {
+                    Id = "<ID>",
+                    Name = "string",
+                    Values = new List<string>() {
+                        "string",
+                    },
+                },
+            },
+            Prices = new List<CommerceItemPrice>() {
+                new CommerceItemPrice() {
+                    Price = 8467.25D,
+                },
+            },
+            Tags = new List<string>() {
+                "string",
+            },
+        },
     },
 });
 
@@ -240,14 +345,14 @@ var res = await sdk.Item.UpdateAccountingItemAsync(
 
 ### Parameters
 
-| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
-| `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Item                                              |
-| `AccountingItem`                                            | [AccountingItem](../../Models/Components/AccountingItem.md) | :heavy_minus_sign:                                          | An item or product                                          |
+| Parameter                                               | Type                                                    | Required                                                | Description                                             |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
+| `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Item                                          |
+| `CommerceItem`                                          | [CommerceItem](../../Models/Components/CommerceItem.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
 
 ### Response
 
-**[UpdateAccountingItemResponse](../../Models/Requests/UpdateAccountingItemResponse.md)**
+**[UpdateCommerceItemResponse](../../Models/Requests/UpdateCommerceItemResponse.md)**
 

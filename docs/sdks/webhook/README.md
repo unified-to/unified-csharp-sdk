@@ -35,7 +35,7 @@ var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
     Meta = new Dictionary<string, object>() {
         { "key", "string" },
     },
-    ObjectType = ObjectType.CrmCompany,
+    ObjectType = ObjectType.AtsJob,
     Runs = new List<string>() {
         "string",
     },

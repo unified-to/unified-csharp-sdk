@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: dd7e435592a9ea6528f806cf1e9e4701
+  docChecksum: a19ba4935c486a523296da7841502792
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.245.1
-  releaseVersion: 0.6.0
-  configChecksum: 473a2579568d0b60cc7215d1e5882ba7
+  generationVersion: 2.246.3
+  releaseVersion: 0.6.1
+  configChecksum: 7dcbb36d0d8d91ed38d247b05f461884
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -21,7 +21,6 @@ generatedFiles:
   - UnifiedTo/Account.cs
   - UnifiedTo/Contact.cs
   - UnifiedTo/Invoice.cs
-  - UnifiedTo/Item.cs
   - UnifiedTo/Organization.cs
   - UnifiedTo/Payment.cs
   - UnifiedTo/Taxrate.cs
@@ -34,6 +33,11 @@ generatedFiles:
   - UnifiedTo/Interview.cs
   - UnifiedTo/Job.cs
   - UnifiedTo/Scorecard.cs
+  - UnifiedTo/Commerce.cs
+  - UnifiedTo/Collection.cs
+  - UnifiedTo/Inventory.cs
+  - UnifiedTo/Item.cs
+  - UnifiedTo/Location.cs
   - UnifiedTo/Crm.cs
   - UnifiedTo/Company.cs
   - UnifiedTo/Deal.cs
@@ -85,8 +89,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateAccountingContactResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingInvoiceResponse.cs
-  - UnifiedTo/Models/Requests/CreateAccountingItemRequest.cs
-  - UnifiedTo/Models/Requests/CreateAccountingItemResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingPaymentRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingPaymentResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingTaxrateRequest.cs
@@ -99,8 +101,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetAccountingContactResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingInvoiceResponse.cs
-  - UnifiedTo/Models/Requests/GetAccountingItemRequest.cs
-  - UnifiedTo/Models/Requests/GetAccountingItemResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingOrganizationRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingOrganizationResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingPaymentRequest.cs
@@ -115,8 +115,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListAccountingContactsResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingInvoicesRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingInvoicesResponse.cs
-  - UnifiedTo/Models/Requests/ListAccountingItemsRequest.cs
-  - UnifiedTo/Models/Requests/ListAccountingItemsResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingOrganizationsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingOrganizationsResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingPaymentsRequest.cs
@@ -131,8 +129,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchAccountingContactResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingInvoiceResponse.cs
-  - UnifiedTo/Models/Requests/PatchAccountingItemRequest.cs
-  - UnifiedTo/Models/Requests/PatchAccountingItemResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingPaymentRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingPaymentResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingTaxrateRequest.cs
@@ -145,8 +141,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveAccountingContactResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingInvoiceResponse.cs
-  - UnifiedTo/Models/Requests/RemoveAccountingItemRequest.cs
-  - UnifiedTo/Models/Requests/RemoveAccountingItemResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingPaymentRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingPaymentResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingTaxrateRequest.cs
@@ -159,8 +153,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateAccountingContactResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingInvoiceResponse.cs
-  - UnifiedTo/Models/Requests/UpdateAccountingItemRequest.cs
-  - UnifiedTo/Models/Requests/UpdateAccountingItemResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingPaymentRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingPaymentResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingTaxrateRequest.cs
@@ -265,6 +257,54 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateAtsJobResponse.cs
   - UnifiedTo/Models/Requests/UpdateAtsScorecardRequest.cs
   - UnifiedTo/Models/Requests/UpdateAtsScorecardResponse.cs
+  - UnifiedTo/Models/Requests/CreateCommerceCollectionRequest.cs
+  - UnifiedTo/Models/Requests/CreateCommerceCollectionResponse.cs
+  - UnifiedTo/Models/Requests/CreateCommerceInventoryRequest.cs
+  - UnifiedTo/Models/Requests/CreateCommerceInventoryResponse.cs
+  - UnifiedTo/Models/Requests/CreateCommerceItemRequest.cs
+  - UnifiedTo/Models/Requests/CreateCommerceItemResponse.cs
+  - UnifiedTo/Models/Requests/CreateCommerceLocationRequest.cs
+  - UnifiedTo/Models/Requests/CreateCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/GetCommerceCollectionRequest.cs
+  - UnifiedTo/Models/Requests/GetCommerceCollectionResponse.cs
+  - UnifiedTo/Models/Requests/GetCommerceInventoryRequest.cs
+  - UnifiedTo/Models/Requests/GetCommerceInventoryResponse.cs
+  - UnifiedTo/Models/Requests/GetCommerceItemRequest.cs
+  - UnifiedTo/Models/Requests/GetCommerceItemResponse.cs
+  - UnifiedTo/Models/Requests/GetCommerceLocationRequest.cs
+  - UnifiedTo/Models/Requests/GetCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/ListCommerceCollectionsRequest.cs
+  - UnifiedTo/Models/Requests/ListCommerceCollectionsResponse.cs
+  - UnifiedTo/Models/Requests/ListCommerceInventoriesRequest.cs
+  - UnifiedTo/Models/Requests/ListCommerceInventoriesResponse.cs
+  - UnifiedTo/Models/Requests/ListCommerceItemsRequest.cs
+  - UnifiedTo/Models/Requests/ListCommerceItemsResponse.cs
+  - UnifiedTo/Models/Requests/ListCommerceLocationsRequest.cs
+  - UnifiedTo/Models/Requests/ListCommerceLocationsResponse.cs
+  - UnifiedTo/Models/Requests/PatchCommerceCollectionRequest.cs
+  - UnifiedTo/Models/Requests/PatchCommerceCollectionResponse.cs
+  - UnifiedTo/Models/Requests/PatchCommerceInventoryRequest.cs
+  - UnifiedTo/Models/Requests/PatchCommerceInventoryResponse.cs
+  - UnifiedTo/Models/Requests/PatchCommerceItemRequest.cs
+  - UnifiedTo/Models/Requests/PatchCommerceItemResponse.cs
+  - UnifiedTo/Models/Requests/PatchCommerceLocationRequest.cs
+  - UnifiedTo/Models/Requests/PatchCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceCollectionRequest.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceCollectionResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceInventoryRequest.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceInventoryResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceItemRequest.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceItemResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceLocationRequest.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceCollectionRequest.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceCollectionResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceInventoryRequest.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceInventoryResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceItemRequest.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceItemResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceLocationRequest.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceLocationResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmDealRequest.cs
@@ -490,7 +530,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingInvoiceStatus.cs
   - UnifiedTo/Models/Components/AccountingInvoice.cs
   - UnifiedTo/Models/Components/AccountingLineitem.cs
-  - UnifiedTo/Models/Components/AccountingItem.cs
   - UnifiedTo/Models/Components/AccountingPayment.cs
   - UnifiedTo/Models/Components/AccountingTaxrate.cs
   - UnifiedTo/Models/Components/AccountingTransaction.cs
@@ -532,6 +571,18 @@ generatedFiles:
   - UnifiedTo/Models/Components/AtsScorecard.cs
   - UnifiedTo/Models/Components/AtsStatusStatus.cs
   - UnifiedTo/Models/Components/AtsStatus.cs
+  - UnifiedTo/Models/Components/CommerceCollection.cs
+  - UnifiedTo/Models/Components/CommerceItemMediaType.cs
+  - UnifiedTo/Models/Components/CommerceItemMedia.cs
+  - UnifiedTo/Models/Components/CommerceInventory.cs
+  - UnifiedTo/Models/Components/CommerceItem.cs
+  - UnifiedTo/Models/Components/SizeUnit.cs
+  - UnifiedTo/Models/Components/WeightUnit.cs
+  - UnifiedTo/Models/Components/CommerceItemVariant.cs
+  - UnifiedTo/Models/Components/CommerceItemPrice.cs
+  - UnifiedTo/Models/Components/CommerceItemOption.cs
+  - UnifiedTo/Models/Components/CommerceLocation.cs
+  - UnifiedTo/Models/Components/PropertyCommerceLocationAddress.cs
   - UnifiedTo/Models/Components/CrmCompany.cs
   - UnifiedTo/Models/Components/PropertyCrmCompanyAddress.cs
   - UnifiedTo/Models/Components/CrmDeal.cs
@@ -609,8 +660,6 @@ generatedFiles:
   - docs/Models/Requests/CreateAccountingContactResponse.md
   - docs/Models/Requests/CreateAccountingInvoiceRequest.md
   - docs/Models/Requests/CreateAccountingInvoiceResponse.md
-  - docs/Models/Requests/CreateAccountingItemRequest.md
-  - docs/Models/Requests/CreateAccountingItemResponse.md
   - docs/Models/Requests/CreateAccountingPaymentRequest.md
   - docs/Models/Requests/CreateAccountingPaymentResponse.md
   - docs/Models/Requests/CreateAccountingTaxrateRequest.md
@@ -623,8 +672,6 @@ generatedFiles:
   - docs/Models/Requests/GetAccountingContactResponse.md
   - docs/Models/Requests/GetAccountingInvoiceRequest.md
   - docs/Models/Requests/GetAccountingInvoiceResponse.md
-  - docs/Models/Requests/GetAccountingItemRequest.md
-  - docs/Models/Requests/GetAccountingItemResponse.md
   - docs/Models/Requests/GetAccountingOrganizationRequest.md
   - docs/Models/Requests/GetAccountingOrganizationResponse.md
   - docs/Models/Requests/GetAccountingPaymentRequest.md
@@ -639,8 +686,6 @@ generatedFiles:
   - docs/Models/Requests/ListAccountingContactsResponse.md
   - docs/Models/Requests/ListAccountingInvoicesRequest.md
   - docs/Models/Requests/ListAccountingInvoicesResponse.md
-  - docs/Models/Requests/ListAccountingItemsRequest.md
-  - docs/Models/Requests/ListAccountingItemsResponse.md
   - docs/Models/Requests/ListAccountingOrganizationsRequest.md
   - docs/Models/Requests/ListAccountingOrganizationsResponse.md
   - docs/Models/Requests/ListAccountingPaymentsRequest.md
@@ -655,8 +700,6 @@ generatedFiles:
   - docs/Models/Requests/PatchAccountingContactResponse.md
   - docs/Models/Requests/PatchAccountingInvoiceRequest.md
   - docs/Models/Requests/PatchAccountingInvoiceResponse.md
-  - docs/Models/Requests/PatchAccountingItemRequest.md
-  - docs/Models/Requests/PatchAccountingItemResponse.md
   - docs/Models/Requests/PatchAccountingPaymentRequest.md
   - docs/Models/Requests/PatchAccountingPaymentResponse.md
   - docs/Models/Requests/PatchAccountingTaxrateRequest.md
@@ -669,8 +712,6 @@ generatedFiles:
   - docs/Models/Requests/RemoveAccountingContactResponse.md
   - docs/Models/Requests/RemoveAccountingInvoiceRequest.md
   - docs/Models/Requests/RemoveAccountingInvoiceResponse.md
-  - docs/Models/Requests/RemoveAccountingItemRequest.md
-  - docs/Models/Requests/RemoveAccountingItemResponse.md
   - docs/Models/Requests/RemoveAccountingPaymentRequest.md
   - docs/Models/Requests/RemoveAccountingPaymentResponse.md
   - docs/Models/Requests/RemoveAccountingTaxrateRequest.md
@@ -683,8 +724,6 @@ generatedFiles:
   - docs/Models/Requests/UpdateAccountingContactResponse.md
   - docs/Models/Requests/UpdateAccountingInvoiceRequest.md
   - docs/Models/Requests/UpdateAccountingInvoiceResponse.md
-  - docs/Models/Requests/UpdateAccountingItemRequest.md
-  - docs/Models/Requests/UpdateAccountingItemResponse.md
   - docs/Models/Requests/UpdateAccountingPaymentRequest.md
   - docs/Models/Requests/UpdateAccountingPaymentResponse.md
   - docs/Models/Requests/UpdateAccountingTaxrateRequest.md
@@ -789,6 +828,54 @@ generatedFiles:
   - docs/Models/Requests/UpdateAtsJobResponse.md
   - docs/Models/Requests/UpdateAtsScorecardRequest.md
   - docs/Models/Requests/UpdateAtsScorecardResponse.md
+  - docs/Models/Requests/CreateCommerceCollectionRequest.md
+  - docs/Models/Requests/CreateCommerceCollectionResponse.md
+  - docs/Models/Requests/CreateCommerceInventoryRequest.md
+  - docs/Models/Requests/CreateCommerceInventoryResponse.md
+  - docs/Models/Requests/CreateCommerceItemRequest.md
+  - docs/Models/Requests/CreateCommerceItemResponse.md
+  - docs/Models/Requests/CreateCommerceLocationRequest.md
+  - docs/Models/Requests/CreateCommerceLocationResponse.md
+  - docs/Models/Requests/GetCommerceCollectionRequest.md
+  - docs/Models/Requests/GetCommerceCollectionResponse.md
+  - docs/Models/Requests/GetCommerceInventoryRequest.md
+  - docs/Models/Requests/GetCommerceInventoryResponse.md
+  - docs/Models/Requests/GetCommerceItemRequest.md
+  - docs/Models/Requests/GetCommerceItemResponse.md
+  - docs/Models/Requests/GetCommerceLocationRequest.md
+  - docs/Models/Requests/GetCommerceLocationResponse.md
+  - docs/Models/Requests/ListCommerceCollectionsRequest.md
+  - docs/Models/Requests/ListCommerceCollectionsResponse.md
+  - docs/Models/Requests/ListCommerceInventoriesRequest.md
+  - docs/Models/Requests/ListCommerceInventoriesResponse.md
+  - docs/Models/Requests/ListCommerceItemsRequest.md
+  - docs/Models/Requests/ListCommerceItemsResponse.md
+  - docs/Models/Requests/ListCommerceLocationsRequest.md
+  - docs/Models/Requests/ListCommerceLocationsResponse.md
+  - docs/Models/Requests/PatchCommerceCollectionRequest.md
+  - docs/Models/Requests/PatchCommerceCollectionResponse.md
+  - docs/Models/Requests/PatchCommerceInventoryRequest.md
+  - docs/Models/Requests/PatchCommerceInventoryResponse.md
+  - docs/Models/Requests/PatchCommerceItemRequest.md
+  - docs/Models/Requests/PatchCommerceItemResponse.md
+  - docs/Models/Requests/PatchCommerceLocationRequest.md
+  - docs/Models/Requests/PatchCommerceLocationResponse.md
+  - docs/Models/Requests/RemoveCommerceCollectionRequest.md
+  - docs/Models/Requests/RemoveCommerceCollectionResponse.md
+  - docs/Models/Requests/RemoveCommerceInventoryRequest.md
+  - docs/Models/Requests/RemoveCommerceInventoryResponse.md
+  - docs/Models/Requests/RemoveCommerceItemRequest.md
+  - docs/Models/Requests/RemoveCommerceItemResponse.md
+  - docs/Models/Requests/RemoveCommerceLocationRequest.md
+  - docs/Models/Requests/RemoveCommerceLocationResponse.md
+  - docs/Models/Requests/UpdateCommerceCollectionRequest.md
+  - docs/Models/Requests/UpdateCommerceCollectionResponse.md
+  - docs/Models/Requests/UpdateCommerceInventoryRequest.md
+  - docs/Models/Requests/UpdateCommerceInventoryResponse.md
+  - docs/Models/Requests/UpdateCommerceItemRequest.md
+  - docs/Models/Requests/UpdateCommerceItemResponse.md
+  - docs/Models/Requests/UpdateCommerceLocationRequest.md
+  - docs/Models/Requests/UpdateCommerceLocationResponse.md
   - docs/Models/Requests/CreateCrmCompanyRequest.md
   - docs/Models/Requests/CreateCrmCompanyResponse.md
   - docs/Models/Requests/CreateCrmDealRequest.md
@@ -1014,7 +1101,6 @@ generatedFiles:
   - docs/Models/Components/AccountingInvoiceStatus.md
   - docs/Models/Components/AccountingInvoice.md
   - docs/Models/Components/AccountingLineitem.md
-  - docs/Models/Components/AccountingItem.md
   - docs/Models/Components/AccountingPayment.md
   - docs/Models/Components/AccountingTaxrate.md
   - docs/Models/Components/AccountingTransaction.md
@@ -1056,6 +1142,18 @@ generatedFiles:
   - docs/Models/Components/AtsScorecard.md
   - docs/Models/Components/AtsStatusStatus.md
   - docs/Models/Components/AtsStatus.md
+  - docs/Models/Components/CommerceCollection.md
+  - docs/Models/Components/CommerceItemMediaType.md
+  - docs/Models/Components/CommerceItemMedia.md
+  - docs/Models/Components/CommerceInventory.md
+  - docs/Models/Components/CommerceItem.md
+  - docs/Models/Components/SizeUnit.md
+  - docs/Models/Components/WeightUnit.md
+  - docs/Models/Components/CommerceItemVariant.md
+  - docs/Models/Components/CommerceItemPrice.md
+  - docs/Models/Components/CommerceItemOption.md
+  - docs/Models/Components/CommerceLocation.md
+  - docs/Models/Components/PropertyCommerceLocationAddress.md
   - docs/Models/Components/CrmCompany.md
   - docs/Models/Components/PropertyCrmCompanyAddress.md
   - docs/Models/Components/CrmDeal.md
@@ -1132,7 +1230,6 @@ generatedFiles:
   - docs/sdks/account/README.md
   - docs/sdks/contact/README.md
   - docs/sdks/invoice/README.md
-  - docs/sdks/item/README.md
   - docs/sdks/organization/README.md
   - docs/sdks/payment/README.md
   - docs/sdks/taxrate/README.md
@@ -1145,6 +1242,11 @@ generatedFiles:
   - docs/sdks/interview/README.md
   - docs/sdks/job/README.md
   - docs/sdks/scorecard/README.md
+  - docs/sdks/commerce/README.md
+  - docs/sdks/collection/README.md
+  - docs/sdks/inventory/README.md
+  - docs/sdks/item/README.md
+  - docs/sdks/location/README.md
   - docs/sdks/crm/README.md
   - docs/sdks/company/README.md
   - docs/sdks/deal/README.md

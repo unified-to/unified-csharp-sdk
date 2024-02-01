@@ -1,0 +1,253 @@
+# Inventory
+(*Inventory*)
+
+### Available Operations
+
+* [CreateCommerceInventory](#createcommerceinventory) - Create an inventory
+* [GetCommerceInventory](#getcommerceinventory) - Retrieve an inventory
+* [ListCommerceInventories](#listcommerceinventories) - List all inventories
+* [PatchCommerceInventory](#patchcommerceinventory) - Update an inventory
+* [RemoveCommerceInventory](#removecommerceinventory) - Remove an inventory
+* [UpdateCommerceInventory](#updatecommerceinventory) - Update an inventory
+
+## CreateCommerceInventory
+
+Create an inventory
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Inventory.CreateCommerceInventoryAsync(
+    connectionId: "string",
+    commerceInventory: new CommerceInventory() {
+    Available = 5165.08D,
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
+
+
+### Response
+
+**[CreateCommerceInventoryResponse](../../Models/Requests/CreateCommerceInventoryResponse.md)**
+
+
+## GetCommerceInventory
+
+Retrieve an inventory
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Inventory.GetCommerceInventoryAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
+    "string",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Inventory              |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetCommerceInventoryResponse](../../Models/Requests/GetCommerceInventoryResponse.md)**
+
+
+## ListCommerceInventories
+
+List all inventories
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListCommerceInventoriesRequest req = new ListCommerceInventoriesRequest() {
+    ConnectionId = "string",
+    Fields = new List<string>() {
+        "string",
+    },
+};
+
+var res = await sdk.Inventory.ListCommerceInventoriesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [ListCommerceInventoriesRequest](../../Models/Requests/ListCommerceInventoriesRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+
+
+### Response
+
+**[ListCommerceInventoriesResponse](../../Models/Requests/ListCommerceInventoriesResponse.md)**
+
+
+## PatchCommerceInventory
+
+Update an inventory
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Inventory.PatchCommerceInventoryAsync(
+    connectionId: "string",
+    id: "string",
+    commerceInventory: new CommerceInventory() {
+    Available = 615.23D,
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Inventory                                               |
+| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
+
+
+### Response
+
+**[PatchCommerceInventoryResponse](../../Models/Requests/PatchCommerceInventoryResponse.md)**
+
+
+## RemoveCommerceInventory
+
+Remove an inventory
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Inventory.RemoveCommerceInventoryAsync(
+    connectionId: "string",
+    id: "string");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Inventory  |
+
+
+### Response
+
+**[RemoveCommerceInventoryResponse](../../Models/Requests/RemoveCommerceInventoryResponse.md)**
+
+
+## UpdateCommerceInventory
+
+Update an inventory
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
+    connectionId: "string",
+    id: "string",
+    commerceInventory: new CommerceInventory() {
+    Available = 9360.02D,
+    Raw = new Dictionary<string, object>() {
+        { "key", "string" },
+    },
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Inventory                                               |
+| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
+
+
+### Response
+
+**[UpdateCommerceInventoryResponse](../../Models/Requests/UpdateCommerceInventoryResponse.md)**
+

@@ -30,16 +30,10 @@ var res = await sdk.Transaction.CreateAccountingTransactionAsync(
     connectionId: "string",
     accountingTransaction: new AccountingTransaction() {
     Id = "<ID>",
-    LineItems = new List<AccountingTransactionLineitem>() {
-        new AccountingTransactionLineitem() {
-            AccountId = "string",
-            TotalAmount = 4969.62D,
-        },
-    },
     Lineitems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
             AccountId = "string",
-            TotalAmount = 6267.93D,
+            TotalAmount = 4969.62D,
         },
     },
     Raw = new Dictionary<string, object>() {
@@ -164,16 +158,10 @@ var res = await sdk.Transaction.PatchAccountingTransactionAsync(
     id: "string",
     accountingTransaction: new AccountingTransaction() {
     Id = "<ID>",
-    LineItems = new List<AccountingTransactionLineitem>() {
-        new AccountingTransactionLineitem() {
-            AccountId = "string",
-            TotalAmount = 5633.69D,
-        },
-    },
     Lineitems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
             AccountId = "string",
-            TotalAmount = 4558.63D,
+            TotalAmount = 5633.69D,
         },
     },
     Raw = new Dictionary<string, object>() {
@@ -254,16 +242,10 @@ var res = await sdk.Transaction.UpdateAccountingTransactionAsync(
     id: "string",
     accountingTransaction: new AccountingTransaction() {
     Id = "<ID>",
-    LineItems = new List<AccountingTransactionLineitem>() {
-        new AccountingTransactionLineitem() {
-            AccountId = "string",
-            TotalAmount = 6498.37D,
-        },
-    },
     Lineitems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
             AccountId = "string",
-            TotalAmount = 5659.17D,
+            TotalAmount = 6498.37D,
         },
     },
     Raw = new Dictionary<string, object>() {

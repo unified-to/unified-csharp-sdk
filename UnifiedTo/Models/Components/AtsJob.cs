@@ -50,6 +50,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        [JsonProperty("number_of_openings")]
+        public double? NumberOfOpenings { get; set; }
+
         [JsonProperty("public_job_urls")]
         public List<string>? PublicJobUrls { get; set; }
 

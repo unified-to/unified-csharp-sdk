@@ -1,0 +1,13 @@
+# CommerceItemMedia
+
+
+## Fields
+
+| Field                                                                     | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `Alt`                                                                     | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Height`                                                                  | *double*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Position`                                                                | *double*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Type`                                                                    | [CommerceItemMediaType](../../Models/Components/CommerceItemMediaType.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Url`                                                                     | *string*                                                                  | :heavy_check_mark:                                                        | N/A                                                                       |
+| `Width`                                                                   | *double*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |

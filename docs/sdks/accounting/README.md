@@ -6,14 +6,12 @@
 * [CreateAccountingAccount](#createaccountingaccount) - Create an account
 * [CreateAccountingContact](#createaccountingcontact) - Create a contact
 * [CreateAccountingInvoice](#createaccountinginvoice) - Create a invoice
-* [CreateAccountingItem](#createaccountingitem) - Create an item
 * [CreateAccountingPayment](#createaccountingpayment) - Create a payment
 * [CreateAccountingTaxrate](#createaccountingtaxrate) - Create a taxrate
 * [CreateAccountingTransaction](#createaccountingtransaction) - Create a transaction
 * [GetAccountingAccount](#getaccountingaccount) - Retrieve an account
 * [GetAccountingContact](#getaccountingcontact) - Retrieve a contact
 * [GetAccountingInvoice](#getaccountinginvoice) - Retrieve a invoice
-* [GetAccountingItem](#getaccountingitem) - Retrieve an item
 * [GetAccountingOrganization](#getaccountingorganization) - Retrieve an organization
 * [GetAccountingPayment](#getaccountingpayment) - Retrieve a payment
 * [GetAccountingTaxrate](#getaccountingtaxrate) - Retrieve a taxrate
@@ -21,7 +19,6 @@
 * [ListAccountingAccounts](#listaccountingaccounts) - List all accounts
 * [ListAccountingContacts](#listaccountingcontacts) - List all contacts
 * [ListAccountingInvoices](#listaccountinginvoices) - List all invoices
-* [ListAccountingItems](#listaccountingitems) - List all items
 * [ListAccountingOrganizations](#listaccountingorganizations) - List all organizations
 * [ListAccountingPayments](#listaccountingpayments) - List all payments
 * [ListAccountingTaxrates](#listaccountingtaxrates) - List all taxrates
@@ -29,21 +26,18 @@
 * [PatchAccountingAccount](#patchaccountingaccount) - Update an account
 * [PatchAccountingContact](#patchaccountingcontact) - Update a contact
 * [PatchAccountingInvoice](#patchaccountinginvoice) - Update a invoice
-* [PatchAccountingItem](#patchaccountingitem) - Update an item
 * [PatchAccountingPayment](#patchaccountingpayment) - Update a payment
 * [PatchAccountingTaxrate](#patchaccountingtaxrate) - Update a taxrate
 * [PatchAccountingTransaction](#patchaccountingtransaction) - Update a transaction
 * [RemoveAccountingAccount](#removeaccountingaccount) - Remove an account
 * [RemoveAccountingContact](#removeaccountingcontact) - Remove a contact
 * [RemoveAccountingInvoice](#removeaccountinginvoice) - Remove a invoice
-* [RemoveAccountingItem](#removeaccountingitem) - Remove an item
 * [RemoveAccountingPayment](#removeaccountingpayment) - Remove a payment
 * [RemoveAccountingTaxrate](#removeaccountingtaxrate) - Remove a taxrate
 * [RemoveAccountingTransaction](#removeaccountingtransaction) - Remove a transaction
 * [UpdateAccountingAccount](#updateaccountingaccount) - Update an account
 * [UpdateAccountingContact](#updateaccountingcontact) - Update a contact
 * [UpdateAccountingInvoice](#updateaccountinginvoice) - Update a invoice
-* [UpdateAccountingItem](#updateaccountingitem) - Update an item
 * [UpdateAccountingPayment](#updateaccountingpayment) - Update a payment
 * [UpdateAccountingTaxrate](#updateaccountingtaxrate) - Update a taxrate
 * [UpdateAccountingTransaction](#updateaccountingtransaction) - Update a transaction
@@ -186,47 +180,6 @@ var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
 **[CreateAccountingInvoiceResponse](../../Models/Requests/CreateAccountingInvoiceResponse.md)**
 
 
-## CreateAccountingItem
-
-Create an item
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Accounting.CreateAccountingItemAsync(
-    connectionId: "string",
-    accountingItem: new AccountingItem() {
-    Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
-| `AccountingItem`                                            | [AccountingItem](../../Models/Components/AccountingItem.md) | :heavy_minus_sign:                                          | An item or product                                          |
-
-
-### Response
-
-**[CreateAccountingItemResponse](../../Models/Requests/CreateAccountingItemResponse.md)**
-
-
 ## CreateAccountingPayment
 
 Create a payment
@@ -329,16 +282,10 @@ var res = await sdk.Accounting.CreateAccountingTransactionAsync(
     connectionId: "string",
     accountingTransaction: new AccountingTransaction() {
     Id = "<ID>",
-    LineItems = new List<AccountingTransactionLineitem>() {
-        new AccountingTransactionLineitem() {
-            AccountId = "string",
-            TotalAmount = 4969.62D,
-        },
-    },
     Lineitems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
             AccountId = "string",
-            TotalAmount = 6267.93D,
+            TotalAmount = 4969.62D,
         },
     },
     Raw = new Dictionary<string, object>() {
@@ -480,46 +427,6 @@ var res = await sdk.Accounting.GetAccountingInvoiceAsync(
 ### Response
 
 **[GetAccountingInvoiceResponse](../../Models/Requests/GetAccountingInvoiceResponse.md)**
-
-
-## GetAccountingItem
-
-Retrieve an item
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Accounting.GetAccountingItemAsync(
-    connectionId: "string",
-    id: "string",
-    fields: new List<string>() {
-    "string",
-});
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Item                   |
-| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
-
-
-### Response
-
-**[GetAccountingItemResponse](../../Models/Requests/GetAccountingItemResponse.md)**
 
 
 ## GetAccountingOrganization
@@ -800,46 +707,6 @@ var res = await sdk.Accounting.ListAccountingInvoicesAsync(req);
 ### Response
 
 **[ListAccountingInvoicesResponse](../../Models/Requests/ListAccountingInvoicesResponse.md)**
-
-
-## ListAccountingItems
-
-List all items
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-ListAccountingItemsRequest req = new ListAccountingItemsRequest() {
-    ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
-};
-
-var res = await sdk.Accounting.ListAccountingItemsAsync(req);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListAccountingItemsRequest](../../Models/Requests/ListAccountingItemsRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
-
-
-### Response
-
-**[ListAccountingItemsResponse](../../Models/Requests/ListAccountingItemsResponse.md)**
 
 
 ## ListAccountingOrganizations
@@ -1146,49 +1013,6 @@ var res = await sdk.Accounting.PatchAccountingInvoiceAsync(
 **[PatchAccountingInvoiceResponse](../../Models/Requests/PatchAccountingInvoiceResponse.md)**
 
 
-## PatchAccountingItem
-
-Update an item
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Accounting.PatchAccountingItemAsync(
-    connectionId: "string",
-    id: "string",
-    accountingItem: new AccountingItem() {
-    Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
-| `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Item                                              |
-| `AccountingItem`                                            | [AccountingItem](../../Models/Components/AccountingItem.md) | :heavy_minus_sign:                                          | An item or product                                          |
-
-
-### Response
-
-**[PatchAccountingItemResponse](../../Models/Requests/PatchAccountingItemResponse.md)**
-
-
 ## PatchAccountingPayment
 
 Update a payment
@@ -1296,16 +1120,10 @@ var res = await sdk.Accounting.PatchAccountingTransactionAsync(
     id: "string",
     accountingTransaction: new AccountingTransaction() {
     Id = "<ID>",
-    LineItems = new List<AccountingTransactionLineitem>() {
-        new AccountingTransactionLineitem() {
-            AccountId = "string",
-            TotalAmount = 5633.69D,
-        },
-    },
     Lineitems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
             AccountId = "string",
-            TotalAmount = 4558.63D,
+            TotalAmount = 5633.69D,
         },
     },
     Raw = new Dictionary<string, object>() {
@@ -1433,41 +1251,6 @@ var res = await sdk.Accounting.RemoveAccountingInvoiceAsync(
 ### Response
 
 **[RemoveAccountingInvoiceResponse](../../Models/Requests/RemoveAccountingInvoiceResponse.md)**
-
-
-## RemoveAccountingItem
-
-Remove an item
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Accounting.RemoveAccountingItemAsync(
-    connectionId: "string",
-    id: "string");
-
-// handle response
-```
-
-### Parameters
-
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Item       |
-
-
-### Response
-
-**[RemoveAccountingItemResponse](../../Models/Requests/RemoveAccountingItemResponse.md)**
 
 
 ## RemoveAccountingPayment
@@ -1719,49 +1502,6 @@ var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(
 **[UpdateAccountingInvoiceResponse](../../Models/Requests/UpdateAccountingInvoiceResponse.md)**
 
 
-## UpdateAccountingItem
-
-Update an item
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Accounting.UpdateAccountingItemAsync(
-    connectionId: "string",
-    id: "string",
-    accountingItem: new AccountingItem() {
-    Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
-| `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Item                                              |
-| `AccountingItem`                                            | [AccountingItem](../../Models/Components/AccountingItem.md) | :heavy_minus_sign:                                          | An item or product                                          |
-
-
-### Response
-
-**[UpdateAccountingItemResponse](../../Models/Requests/UpdateAccountingItemResponse.md)**
-
-
 ## UpdateAccountingPayment
 
 Update a payment
@@ -1869,16 +1609,10 @@ var res = await sdk.Accounting.UpdateAccountingTransactionAsync(
     id: "string",
     accountingTransaction: new AccountingTransaction() {
     Id = "<ID>",
-    LineItems = new List<AccountingTransactionLineitem>() {
-        new AccountingTransactionLineitem() {
-            AccountId = "string",
-            TotalAmount = 6498.37D,
-        },
-    },
     Lineitems = new List<AccountingTransactionLineitem>() {
         new AccountingTransactionLineitem() {
             AccountId = "string",
-            TotalAmount = 5659.17D,
+            TotalAmount = 6498.37D,
         },
     },
     Raw = new Dictionary<string, object>() {

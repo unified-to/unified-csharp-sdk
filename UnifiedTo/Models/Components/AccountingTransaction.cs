@@ -28,9 +28,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string Id { get; set; } = default!;
 
-        [JsonProperty("line_items")]
-        public List<AccountingTransactionLineitem>? LineItems { get; set; }
-
         /// <summary>
         /// new field name
         /// </summary>

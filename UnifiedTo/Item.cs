@@ -24,44 +24,44 @@ namespace UnifiedTo
     {
 
         /// <summary>
-        /// Create an item
+        /// Create an item/product
         /// </summary>
-        Task<CreateAccountingItemResponse> CreateAccountingItemAsync(string connectionId, AccountingItem? accountingItem = null);
+        Task<CreateCommerceItemResponse> CreateCommerceItemAsync(string connectionId, CommerceItem? commerceItem = null);
 
         /// <summary>
-        /// Retrieve an item
+        /// Retrieve an item/product
         /// </summary>
-        Task<GetAccountingItemResponse> GetAccountingItemAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
-        /// List all items
+        /// List all items/products
         /// </summary>
-        Task<ListAccountingItemsResponse> ListAccountingItemsAsync(ListAccountingItemsRequest? request = null);
+        Task<ListCommerceItemsResponse> ListCommerceItemsAsync(ListCommerceItemsRequest? request = null);
 
         /// <summary>
-        /// Update an item
+        /// Update an item/product
         /// </summary>
-        Task<PatchAccountingItemResponse> PatchAccountingItemAsync(string connectionId, string id, AccountingItem? accountingItem = null);
+        Task<PatchCommerceItemResponse> PatchCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null);
 
         /// <summary>
-        /// Remove an item
+        /// Remove an item/product
         /// </summary>
-        Task<RemoveAccountingItemResponse> RemoveAccountingItemAsync(string connectionId, string id);
+        Task<RemoveCommerceItemResponse> RemoveCommerceItemAsync(string connectionId, string id);
 
         /// <summary>
-        /// Update an item
+        /// Update an item/product
         /// </summary>
-        Task<UpdateAccountingItemResponse> UpdateAccountingItemAsync(string connectionId, string id, AccountingItem? accountingItem = null);
+        Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null);
     }
 
     public class Item: IItem
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.6.0";
-        private const string _sdkGenVersion = "2.245.1";
+        private const string _sdkVersion = "0.6.1";
+        private const string _sdkGenVersion = "2.246.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.6.0 2.245.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.6.1 2.246.3 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -75,20 +75,20 @@ namespace UnifiedTo
         }
         
 
-        public async Task<CreateAccountingItemResponse> CreateAccountingItemAsync(string connectionId, AccountingItem? accountingItem = null)
+        public async Task<CreateCommerceItemResponse> CreateCommerceItemAsync(string connectionId, CommerceItem? commerceItem = null)
         {
-            var request = new CreateAccountingItemRequest()
+            var request = new CreateCommerceItemRequest()
             {
                 ConnectionId = connectionId,
-                AccountingItem = accountingItem,
+                CommerceItem = commerceItem,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/item", request);
+            var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item", request);
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingItem", "json");
+            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceItem", "json");
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -100,7 +100,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new CreateAccountingItemResponse
+            var response = new CreateCommerceItemResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -111,7 +111,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.AccountingItem = JsonConvert.DeserializeObject<AccountingItem>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.CommerceItem = JsonConvert.DeserializeObject<CommerceItem>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -120,16 +120,16 @@ namespace UnifiedTo
         }
         
 
-        public async Task<GetAccountingItemResponse> GetAccountingItemAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<string>? fields = null)
         {
-            var request = new GetAccountingItemRequest()
+            var request = new GetCommerceItemRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/item/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item/{id}", request);
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
@@ -141,7 +141,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new GetAccountingItemResponse
+            var response = new GetCommerceItemResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -152,7 +152,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.AccountingItem = JsonConvert.DeserializeObject<AccountingItem>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.CommerceItem = JsonConvert.DeserializeObject<CommerceItem>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -161,10 +161,10 @@ namespace UnifiedTo
         }
         
 
-        public async Task<ListAccountingItemsResponse> ListAccountingItemsAsync(ListAccountingItemsRequest? request = null)
+        public async Task<ListCommerceItemsResponse> ListCommerceItemsAsync(ListCommerceItemsRequest? request = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/item", request);
+            var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item", request);
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
@@ -176,7 +176,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new ListAccountingItemsResponse
+            var response = new ListCommerceItemsResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -187,7 +187,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.AccountingItems = JsonConvert.DeserializeObject<List<AccountingItem>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.CommerceItems = JsonConvert.DeserializeObject<List<CommerceItem>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -196,21 +196,21 @@ namespace UnifiedTo
         }
         
 
-        public async Task<PatchAccountingItemResponse> PatchAccountingItemAsync(string connectionId, string id, AccountingItem? accountingItem = null)
+        public async Task<PatchCommerceItemResponse> PatchCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null)
         {
-            var request = new PatchAccountingItemRequest()
+            var request = new PatchCommerceItemRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingItem = accountingItem,
+                CommerceItem = commerceItem,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/item/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item/{id}", request);
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingItem", "json");
+            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceItem", "json");
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -222,7 +222,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new PatchAccountingItemResponse
+            var response = new PatchCommerceItemResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -233,7 +233,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.AccountingItem = JsonConvert.DeserializeObject<AccountingItem>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.CommerceItem = JsonConvert.DeserializeObject<CommerceItem>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;
@@ -242,15 +242,15 @@ namespace UnifiedTo
         }
         
 
-        public async Task<RemoveAccountingItemResponse> RemoveAccountingItemAsync(string connectionId, string id)
+        public async Task<RemoveCommerceItemResponse> RemoveCommerceItemAsync(string connectionId, string id)
         {
-            var request = new RemoveAccountingItemRequest()
+            var request = new RemoveCommerceItemRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/item/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item/{id}", request);
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
@@ -262,7 +262,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new RemoveAccountingItemResponse
+            var response = new RemoveCommerceItemResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -273,21 +273,21 @@ namespace UnifiedTo
         }
         
 
-        public async Task<UpdateAccountingItemResponse> UpdateAccountingItemAsync(string connectionId, string id, AccountingItem? accountingItem = null)
+        public async Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null)
         {
-            var request = new UpdateAccountingItemRequest()
+            var request = new UpdateCommerceItemRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingItem = accountingItem,
+                CommerceItem = commerceItem,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/item/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item/{id}", request);
             
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
             
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingItem", "json");
+            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceItem", "json");
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -299,7 +299,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             
-            var response = new UpdateAccountingItemResponse
+            var response = new UpdateCommerceItemResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -310,7 +310,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.AccountingItem = JsonConvert.DeserializeObject<AccountingItem>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.CommerceItem = JsonConvert.DeserializeObject<CommerceItem>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;

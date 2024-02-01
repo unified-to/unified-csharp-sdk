@@ -66,7 +66,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListUnifiedIntegrationWorkspacesRequest req = new ListUnifiedIntegrationWorkspacesRequest() {
     Categories = new List<QueryParamCategories>() {
-        QueryParamCategories.Uc,
+        QueryParamCategories.Accounting,
     },
     WorkspaceId = "string",
 };
@@ -106,7 +106,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListUnifiedIntegrationsRequest req = new ListUnifiedIntegrationsRequest() {
     Categories = new List<ListUnifiedIntegrationsQueryParamCategories>() {
-        ListUnifiedIntegrationsQueryParamCategories.Auth,
+        ListUnifiedIntegrationsQueryParamCategories.Crm,
     },
 };
 

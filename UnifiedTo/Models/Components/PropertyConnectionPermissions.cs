@@ -43,8 +43,22 @@ namespace UnifiedTo.Models.Components
         AccountingTaxrateWrite,
         [JsonProperty("accounting_organization_read")]
         AccountingOrganizationRead,
-        [JsonProperty("accounting_item_read")]
-        AccountingItemRead,
+        [JsonProperty("commerce_item_read")]
+        CommerceItemRead,
+        [JsonProperty("commerce_item_write")]
+        CommerceItemWrite,
+        [JsonProperty("commerce_collection_read")]
+        CommerceCollectionRead,
+        [JsonProperty("commerce_collection_write")]
+        CommerceCollectionWrite,
+        [JsonProperty("commerce_inventory_read")]
+        CommerceInventoryRead,
+        [JsonProperty("commerce_inventory_write")]
+        CommerceInventoryWrite,
+        [JsonProperty("commerce_location_read")]
+        CommerceLocationRead,
+        [JsonProperty("commerce_location_write")]
+        CommerceLocationWrite,
         [JsonProperty("ats_scorecard_read")]
         AtsScorecardRead,
         [JsonProperty("ats_scorecard_write")]

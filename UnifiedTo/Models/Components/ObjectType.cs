@@ -29,8 +29,14 @@ namespace UnifiedTo.Models.Components
         AccountingTaxrate,
         [JsonProperty("accounting_organization")]
         AccountingOrganization,
-        [JsonProperty("accounting_item")]
-        AccountingItem,
+        [JsonProperty("commerce_item")]
+        CommerceItem,
+        [JsonProperty("commerce_collection")]
+        CommerceCollection,
+        [JsonProperty("commerce_inventory")]
+        CommerceInventory,
+        [JsonProperty("commerce_location")]
+        CommerceLocation,
         [JsonProperty("ats_application")]
         AtsApplication,
         [JsonProperty("ats_applicationstatus")]

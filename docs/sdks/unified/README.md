@@ -49,7 +49,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
         },
     },
     Categories = new List<PropertyConnectionCategories>() {
-        PropertyConnectionCategories.Storage,
+        PropertyConnectionCategories.Commerce,
     },
     CursorsCache = new List<Dictionary<string, object>>() {
         new Dictionary<string, object>() {
@@ -58,7 +58,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.AtsJobRead,
+        PropertyConnectionPermissions.AtsCandidateRead,
     },
 };
 
@@ -104,7 +104,7 @@ var res = await sdk.Unified.CreateUnifiedWebhookAsync(
     Meta = new Dictionary<string, object>() {
         { "key", "string" },
     },
-    ObjectType = ObjectType.CrmCompany,
+    ObjectType = ObjectType.AtsJob,
     Runs = new List<string>() {
         "string",
     },
@@ -316,7 +316,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListUnifiedConnectionsRequest req = new ListUnifiedConnectionsRequest() {
     Categories = new List<Categories>() {
-        Categories.Enrich,
+        Categories.Martech,
     },
 };
 
@@ -355,7 +355,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListUnifiedIntegrationWorkspacesRequest req = new ListUnifiedIntegrationWorkspacesRequest() {
     Categories = new List<QueryParamCategories>() {
-        QueryParamCategories.Uc,
+        QueryParamCategories.Accounting,
     },
     WorkspaceId = "string",
 };
@@ -395,7 +395,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListUnifiedIntegrationsRequest req = new ListUnifiedIntegrationsRequest() {
     Categories = new List<ListUnifiedIntegrationsQueryParamCategories>() {
-        ListUnifiedIntegrationsQueryParamCategories.Auth,
+        ListUnifiedIntegrationsQueryParamCategories.Crm,
     },
 };
 
@@ -490,7 +490,7 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.MartechListRead,
+        PropertyConnectionPermissions.CrmPipelineRead,
     },
 });
 
@@ -637,7 +637,7 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
         },
     },
     Categories = new List<PropertyConnectionCategories>() {
-        PropertyConnectionCategories.Uc,
+        PropertyConnectionCategories.Accounting,
     },
     CursorsCache = new List<Dictionary<string, object>>() {
         new Dictionary<string, object>() {
@@ -646,7 +646,7 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.CrmCompanyWrite,
+        PropertyConnectionPermissions.AtsDocumentRead,
     },
 });
 

@@ -38,7 +38,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
         },
     },
     Categories = new List<PropertyConnectionCategories>() {
-        PropertyConnectionCategories.Storage,
+        PropertyConnectionCategories.Commerce,
     },
     CursorsCache = new List<Dictionary<string, object>>() {
         new Dictionary<string, object>() {
@@ -47,7 +47,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.AtsJobRead,
+        PropertyConnectionPermissions.AtsCandidateRead,
     },
 };
 
@@ -118,7 +118,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListUnifiedConnectionsRequest req = new ListUnifiedConnectionsRequest() {
     Categories = new List<Categories>() {
-        Categories.Enrich,
+        Categories.Martech,
     },
 };
 
@@ -179,7 +179,7 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.MartechListRead,
+        PropertyConnectionPermissions.CrmPipelineRead,
     },
 });
 
@@ -262,7 +262,7 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
         },
     },
     Categories = new List<PropertyConnectionCategories>() {
-        PropertyConnectionCategories.Uc,
+        PropertyConnectionCategories.Accounting,
     },
     CursorsCache = new List<Dictionary<string, object>>() {
         new Dictionary<string, object>() {
@@ -271,7 +271,7 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.CrmCompanyWrite,
+        PropertyConnectionPermissions.AtsDocumentRead,
     },
 });
 

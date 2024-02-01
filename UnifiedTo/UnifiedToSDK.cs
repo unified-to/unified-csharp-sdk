@@ -29,7 +29,6 @@ namespace UnifiedTo
         public IAccount Account { get; }
         public IContact Contact { get; }
         public IInvoice Invoice { get; }
-        public IItem Item { get; }
         public IOrganization Organization { get; }
         public IPayment Payment { get; }
         public ITaxrate Taxrate { get; }
@@ -42,6 +41,11 @@ namespace UnifiedTo
         public IInterview Interview { get; }
         public IJob Job { get; }
         public IScorecard Scorecard { get; }
+        public ICommerce Commerce { get; }
+        public ICollection Collection { get; }
+        public IInventory Inventory { get; }
+        public IItem Item { get; }
+        public ILocation Location { get; }
         public ICrm Crm { get; }
         public ICompany Company { get; }
         public IDeal Deal { get; }
@@ -103,10 +107,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.6.0";
-        private const string _sdkGenVersion = "2.245.1";
+        private const string _sdkVersion = "0.6.1";
+        private const string _sdkGenVersion = "2.246.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.6.0 2.245.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.6.1 2.246.3 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _defaultClient;
@@ -115,7 +119,6 @@ namespace UnifiedTo
         public IAccount Account { get; private set; }
         public IContact Contact { get; private set; }
         public IInvoice Invoice { get; private set; }
-        public IItem Item { get; private set; }
         public IOrganization Organization { get; private set; }
         public IPayment Payment { get; private set; }
         public ITaxrate Taxrate { get; private set; }
@@ -128,6 +131,11 @@ namespace UnifiedTo
         public IInterview Interview { get; private set; }
         public IJob Job { get; private set; }
         public IScorecard Scorecard { get; private set; }
+        public ICommerce Commerce { get; private set; }
+        public ICollection Collection { get; private set; }
+        public IInventory Inventory { get; private set; }
+        public IItem Item { get; private set; }
+        public ILocation Location { get; private set; }
         public ICrm Crm { get; private set; }
         public ICompany Company { get; private set; }
         public IDeal Deal { get; private set; }
@@ -193,7 +201,6 @@ namespace UnifiedTo
             Account = new Account(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Contact = new Contact(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Invoice = new Invoice(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
-            Item = new Item(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Organization = new Organization(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Payment = new Payment(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Taxrate = new Taxrate(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
@@ -206,6 +213,11 @@ namespace UnifiedTo
             Interview = new Interview(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Job = new Job(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Scorecard = new Scorecard(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            Commerce = new Commerce(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            Collection = new Collection(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            Inventory = new Inventory(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            Item = new Item(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            Location = new Location(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Crm = new Crm(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Company = new Company(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Deal = new Deal(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
