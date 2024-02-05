@@ -37,6 +37,7 @@ namespace UnifiedTo
         public IApplication Application { get; }
         public IApplicationstatus Applicationstatus { get; }
         public ICandidate Candidate { get; }
+        public ICompany Company { get; }
         public IDocument Document { get; }
         public IInterview Interview { get; }
         public IJob Job { get; }
@@ -47,7 +48,6 @@ namespace UnifiedTo
         public IItem Item { get; }
         public ILocation Location { get; }
         public ICrm Crm { get; }
-        public ICompany Company { get; }
         public IDeal Deal { get; }
         public IEvent Event { get; }
         public ILead Lead { get; }
@@ -107,10 +107,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.6.1";
-        private const string _sdkGenVersion = "2.246.3";
+        private const string _sdkVersion = "0.7.0";
+        private const string _sdkGenVersion = "2.249.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.6.1 2.246.3 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.7.0 2.249.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _defaultClient;
@@ -127,6 +127,7 @@ namespace UnifiedTo
         public IApplication Application { get; private set; }
         public IApplicationstatus Applicationstatus { get; private set; }
         public ICandidate Candidate { get; private set; }
+        public ICompany Company { get; private set; }
         public IDocument Document { get; private set; }
         public IInterview Interview { get; private set; }
         public IJob Job { get; private set; }
@@ -137,7 +138,6 @@ namespace UnifiedTo
         public IItem Item { get; private set; }
         public ILocation Location { get; private set; }
         public ICrm Crm { get; private set; }
-        public ICompany Company { get; private set; }
         public IDeal Deal { get; private set; }
         public IEvent Event { get; private set; }
         public ILead Lead { get; private set; }
@@ -209,6 +209,7 @@ namespace UnifiedTo
             Application = new Application(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Applicationstatus = new Applicationstatus(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Candidate = new Candidate(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
+            Company = new Company(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Document = new Document(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Interview = new Interview(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Job = new Job(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
@@ -219,7 +220,6 @@ namespace UnifiedTo
             Item = new Item(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Location = new Location(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Crm = new Crm(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
-            Company = new Company(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Deal = new Deal(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Event = new Event(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);
             Lead = new Lead(_defaultClient, _securityClient, _serverUrl, SDKConfiguration);

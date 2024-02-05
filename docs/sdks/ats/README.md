@@ -11,6 +11,7 @@
 * [CreateAtsScorecard](#createatsscorecard) - Create a scorecard
 * [GetAtsApplication](#getatsapplication) - Retrieve an application
 * [GetAtsCandidate](#getatscandidate) - Retrieve a candidate
+* [GetAtsCompany](#getatscompany) - Retrieve a company
 * [GetAtsDocument](#getatsdocument) - Retrieve a document
 * [GetAtsInterview](#getatsinterview) - Retrieve a interview
 * [GetAtsJob](#getatsjob) - Retrieve a job
@@ -18,6 +19,7 @@
 * [ListAtsApplications](#listatsapplications) - List all applications
 * [ListAtsApplicationstatuses](#listatsapplicationstatuses) - List all application statuses
 * [ListAtsCandidates](#listatscandidates) - List all candidates
+* [ListAtsCompanies](#listatscompanies) - List all companies
 * [ListAtsDocuments](#listatsdocuments) - List all documents
 * [ListAtsInterviews](#listatsinterviews) - List all interviews
 * [ListAtsJobs](#listatsjobs) - List all jobs
@@ -401,6 +403,46 @@ var res = await sdk.Ats.GetAtsCandidateAsync(
 **[GetAtsCandidateResponse](../../Models/Requests/GetAtsCandidateResponse.md)**
 
 
+## GetAtsCompany
+
+Retrieve a company
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Ats.GetAtsCompanyAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
+    "string",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Company                |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetAtsCompanyResponse](../../Models/Requests/GetAtsCompanyResponse.md)**
+
+
 ## GetAtsDocument
 
 Retrieve a document
@@ -679,6 +721,46 @@ var res = await sdk.Ats.ListAtsCandidatesAsync(req);
 ### Response
 
 **[ListAtsCandidatesResponse](../../Models/Requests/ListAtsCandidatesResponse.md)**
+
+
+## ListAtsCompanies
+
+List all companies
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListAtsCompaniesRequest req = new ListAtsCompaniesRequest() {
+    ConnectionId = "string",
+    Fields = new List<string>() {
+        "string",
+    },
+};
+
+var res = await sdk.Ats.ListAtsCompaniesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListAtsCompaniesRequest](../../Models/Requests/ListAtsCompaniesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+
+
+### Response
+
+**[ListAtsCompaniesResponse](../../Models/Requests/ListAtsCompaniesResponse.md)**
 
 
 ## ListAtsDocuments

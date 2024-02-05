@@ -23,6 +23,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("closed_at")]
         public DateTime? ClosedAt { get; set; }
 
+        [JsonProperty("company_id")]
+        public string? CompanyId { get; set; }
+
         [JsonProperty("compensation")]
         public List<AtsCompensation>? Compensation { get; set; }
 

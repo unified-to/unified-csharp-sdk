@@ -20,6 +20,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyAtsCandidateAddress? Address { get; set; }
 
+        [JsonProperty("company_id")]
+        public string? CompanyId { get; set; }
+
         [JsonProperty("company_name")]
         public string? CompanyName { get; set; }
 

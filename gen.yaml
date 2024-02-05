@@ -6,10 +6,11 @@ generation:
   useClassNamesForArrayFields: true
   fixes:
     nameResolutionDec2023: false
+    parameterOrderingFeb2024: false
   baseServerURL: ""
   flattenGlobalSecurity: true
 csharp:
-  version: 0.6.1
+  version: 0.7.0
   author: Unified API Inc.
   dotnetVersion: net6.0
   flattenGlobalSecurity: false

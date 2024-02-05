@@ -31,7 +31,17 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a company
         /// </summary>
+        Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null);
+
+        /// <summary>
+        /// Retrieve a company
+        /// </summary>
         Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null);
+
+        /// <summary>
+        /// List all companies
+        /// </summary>
+        Task<ListAtsCompaniesResponse> ListAtsCompaniesAsync(ListAtsCompaniesRequest? request = null);
 
         /// <summary>
         /// List all companies
@@ -63,10 +73,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.6.1";
-        private const string _sdkGenVersion = "2.246.3";
+        private const string _sdkVersion = "0.7.0";
+        private const string _sdkGenVersion = "2.249.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.6.1 2.246.3 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.7.0 2.249.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private ISpeakeasyHttpClient _securityClient;
@@ -125,6 +135,47 @@ namespace UnifiedTo
         }
         
 
+        public async Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null)
+        {
+            var request = new GetAtsCompanyRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                Fields = fields,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/company/{id}", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new GetAtsCompanyResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AtsCompany = JsonConvert.DeserializeObject<AtsCompany>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
         public async Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetCrmCompanyRequest()
@@ -158,6 +209,41 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.CrmCompany = JsonConvert.DeserializeObject<CrmCompany>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+                
+                return response;
+            }
+            return response;
+        }
+        
+
+        public async Task<ListAtsCompaniesResponse> ListAtsCompaniesAsync(ListAtsCompaniesRequest? request = null)
+        {
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/company", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _securityClient;
+            
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new ListAtsCompaniesResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AtsCompanies = JsonConvert.DeserializeObject<List<AtsCompany>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
                 
                 return response;

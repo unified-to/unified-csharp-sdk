@@ -58,7 +58,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.AtsCandidateRead,
+        PropertyConnectionPermissions.AtsCandidateWrite,
     },
 };
 
@@ -104,7 +104,7 @@ var res = await sdk.Unified.CreateUnifiedWebhookAsync(
     Meta = new Dictionary<string, object>() {
         { "key", "string" },
     },
-    ObjectType = ObjectType.AtsJob,
+    ObjectType = ObjectType.AtsScorecard,
     Runs = new List<string>() {
         "string",
     },
@@ -210,7 +210,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 GetUnifiedIntegrationAuthRequest req = new GetUnifiedIntegrationAuthRequest() {
     IntegrationType = "string",
     Scopes = new List<Scopes>() {
-        Scopes.HrisGroupRead,
+        Scopes.HrisEmployeeWrite,
     },
     WorkspaceId = "string",
 };
@@ -646,7 +646,7 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
     },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.AtsDocumentRead,
+        PropertyConnectionPermissions.AtsCompanyRead,
     },
 });
 

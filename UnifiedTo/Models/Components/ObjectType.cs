@@ -51,6 +51,8 @@ namespace UnifiedTo.Models.Components
         AtsJob,
         [JsonProperty("ats_scorecard")]
         AtsScorecard,
+        [JsonProperty("ats_company")]
+        AtsCompany,
         [JsonProperty("crm_company")]
         CrmCompany,
         [JsonProperty("crm_contact")]

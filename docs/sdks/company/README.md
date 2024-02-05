@@ -4,7 +4,9 @@
 ### Available Operations
 
 * [CreateCrmCompany](#createcrmcompany) - Create a company
+* [GetAtsCompany](#getatscompany) - Retrieve a company
 * [GetCrmCompany](#getcrmcompany) - Retrieve a company
+* [ListAtsCompanies](#listatscompanies) - List all companies
 * [ListCrmCompanies](#listcrmcompanies) - List all companies
 * [ListEnrichCompanies](#listenrichcompanies) - Retrieve enrichment information for a company
 * [PatchCrmCompany](#patchcrmcompany) - Update a company
@@ -72,6 +74,46 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
 **[CreateCrmCompanyResponse](../../Models/Requests/CreateCrmCompanyResponse.md)**
 
 
+## GetAtsCompany
+
+Retrieve a company
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Company.GetAtsCompanyAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
+    "string",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Company                |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetAtsCompanyResponse](../../Models/Requests/GetAtsCompanyResponse.md)**
+
+
 ## GetCrmCompany
 
 Retrieve a company
@@ -110,6 +152,46 @@ var res = await sdk.Company.GetCrmCompanyAsync(
 ### Response
 
 **[GetCrmCompanyResponse](../../Models/Requests/GetCrmCompanyResponse.md)**
+
+
+## ListAtsCompanies
+
+List all companies
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListAtsCompaniesRequest req = new ListAtsCompaniesRequest() {
+    ConnectionId = "string",
+    Fields = new List<string>() {
+        "string",
+    },
+};
+
+var res = await sdk.Company.ListAtsCompaniesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListAtsCompaniesRequest](../../Models/Requests/ListAtsCompaniesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+
+
+### Response
+
+**[ListAtsCompaniesResponse](../../Models/Requests/ListAtsCompaniesResponse.md)**
 
 
 ## ListCrmCompanies
