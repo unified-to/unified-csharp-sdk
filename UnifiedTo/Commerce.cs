@@ -148,18 +148,18 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.7.0";
-        private const string _sdkGenVersion = "2.249.1";
+        private const string _sdkVersion = "0.8.0";
+        private const string _sdkGenVersion = "2.250.2";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.7.0 2.249.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.8.0 2.250.2 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
-        private ISpeakeasyHttpClient _securityClient;
+        private Func<Security>? _securitySource;
 
-        public Commerce(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
+        public Commerce(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
-            _securityClient = securityClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
@@ -184,8 +184,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -203,11 +207,12 @@ namespace UnifiedTo
                 {
                     response.CommerceCollection = JsonConvert.DeserializeObject<CommerceCollection>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(string connectionId, CommerceInventory? commerceInventory = null)
@@ -229,8 +234,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -248,11 +257,12 @@ namespace UnifiedTo
                 {
                     response.CommerceInventory = JsonConvert.DeserializeObject<CommerceInventory>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<CreateCommerceItemResponse> CreateCommerceItemAsync(string connectionId, CommerceItem? commerceItem = null)
@@ -274,8 +284,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -293,11 +307,12 @@ namespace UnifiedTo
                 {
                     response.CommerceItem = JsonConvert.DeserializeObject<CommerceItem>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(string connectionId, CommerceLocation? commerceLocation = null)
@@ -319,8 +334,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -338,11 +357,12 @@ namespace UnifiedTo
                 {
                     response.CommerceLocation = JsonConvert.DeserializeObject<CommerceLocation>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<GetCommerceCollectionResponse> GetCommerceCollectionAsync(string connectionId, string id, List<string>? fields = null)
@@ -360,8 +380,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -379,11 +403,12 @@ namespace UnifiedTo
                 {
                     response.CommerceCollection = JsonConvert.DeserializeObject<CommerceCollection>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(string connectionId, string id, List<string>? fields = null)
@@ -401,8 +426,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -420,11 +449,12 @@ namespace UnifiedTo
                 {
                     response.CommerceInventory = JsonConvert.DeserializeObject<CommerceInventory>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<string>? fields = null)
@@ -442,8 +472,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -461,11 +495,12 @@ namespace UnifiedTo
                 {
                     response.CommerceItem = JsonConvert.DeserializeObject<CommerceItem>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<GetCommerceLocationResponse> GetCommerceLocationAsync(string connectionId, string id, List<string>? fields = null)
@@ -483,8 +518,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -502,11 +541,12 @@ namespace UnifiedTo
                 {
                     response.CommerceLocation = JsonConvert.DeserializeObject<CommerceLocation>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<ListCommerceCollectionsResponse> ListCommerceCollectionsAsync(ListCommerceCollectionsRequest? request = null)
@@ -518,8 +558,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -537,11 +581,12 @@ namespace UnifiedTo
                 {
                     response.CommerceCollections = JsonConvert.DeserializeObject<List<CommerceCollection>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<ListCommerceInventoriesResponse> ListCommerceInventoriesAsync(ListCommerceInventoriesRequest? request = null)
@@ -553,8 +598,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -572,11 +621,12 @@ namespace UnifiedTo
                 {
                     response.CommerceInventories = JsonConvert.DeserializeObject<List<CommerceInventory>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<ListCommerceItemsResponse> ListCommerceItemsAsync(ListCommerceItemsRequest? request = null)
@@ -588,8 +638,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -607,11 +661,12 @@ namespace UnifiedTo
                 {
                     response.CommerceItems = JsonConvert.DeserializeObject<List<CommerceItem>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<ListCommerceLocationsResponse> ListCommerceLocationsAsync(ListCommerceLocationsRequest? request = null)
@@ -623,8 +678,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -642,11 +701,12 @@ namespace UnifiedTo
                 {
                     response.CommerceLocations = JsonConvert.DeserializeObject<List<CommerceLocation>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<PatchCommerceCollectionResponse> PatchCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null)
@@ -669,8 +729,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -688,11 +752,12 @@ namespace UnifiedTo
                 {
                     response.CommerceCollection = JsonConvert.DeserializeObject<CommerceCollection>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null)
@@ -715,8 +780,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -734,11 +803,12 @@ namespace UnifiedTo
                 {
                     response.CommerceInventory = JsonConvert.DeserializeObject<CommerceInventory>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<PatchCommerceItemResponse> PatchCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null)
@@ -761,8 +831,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -780,11 +854,12 @@ namespace UnifiedTo
                 {
                     response.CommerceItem = JsonConvert.DeserializeObject<CommerceItem>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null)
@@ -807,8 +882,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -826,11 +905,12 @@ namespace UnifiedTo
                 {
                     response.CommerceLocation = JsonConvert.DeserializeObject<CommerceLocation>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<RemoveCommerceCollectionResponse> RemoveCommerceCollectionAsync(string connectionId, string id)
@@ -847,8 +927,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -862,6 +946,7 @@ namespace UnifiedTo
             
             throw new InvalidOperationException("API returned unexpected status code or content type");
         }
+
         
 
         public async Task<RemoveCommerceInventoryResponse> RemoveCommerceInventoryAsync(string connectionId, string id)
@@ -878,8 +963,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -893,6 +982,7 @@ namespace UnifiedTo
             
             throw new InvalidOperationException("API returned unexpected status code or content type");
         }
+
         
 
         public async Task<RemoveCommerceItemResponse> RemoveCommerceItemAsync(string connectionId, string id)
@@ -909,8 +999,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -924,6 +1018,7 @@ namespace UnifiedTo
             
             throw new InvalidOperationException("API returned unexpected status code or content type");
         }
+
         
 
         public async Task<RemoveCommerceLocationResponse> RemoveCommerceLocationAsync(string connectionId, string id)
@@ -940,8 +1035,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -955,6 +1054,7 @@ namespace UnifiedTo
             
             throw new InvalidOperationException("API returned unexpected status code or content type");
         }
+
         
 
         public async Task<UpdateCommerceCollectionResponse> UpdateCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null)
@@ -977,8 +1077,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -996,11 +1100,12 @@ namespace UnifiedTo
                 {
                     response.CommerceCollection = JsonConvert.DeserializeObject<CommerceCollection>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null)
@@ -1023,8 +1128,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1042,11 +1151,12 @@ namespace UnifiedTo
                 {
                     response.CommerceInventory = JsonConvert.DeserializeObject<CommerceInventory>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null)
@@ -1069,8 +1179,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1088,11 +1202,12 @@ namespace UnifiedTo
                 {
                     response.CommerceItem = JsonConvert.DeserializeObject<CommerceItem>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null)
@@ -1115,8 +1230,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1134,11 +1253,12 @@ namespace UnifiedTo
                 {
                     response.CommerceLocation = JsonConvert.DeserializeObject<CommerceLocation>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
     }
 }

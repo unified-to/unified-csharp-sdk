@@ -208,18 +208,18 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.7.0";
-        private const string _sdkGenVersion = "2.249.1";
+        private const string _sdkVersion = "0.8.0";
+        private const string _sdkGenVersion = "2.250.2";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.7.0 2.249.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.8.0 2.250.2 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
-        private ISpeakeasyHttpClient _securityClient;
+        private Func<Security>? _securitySource;
 
-        public Crm(ISpeakeasyHttpClient defaultClient, ISpeakeasyHttpClient securityClient, string serverUrl, SDKConfig config)
+        public Crm(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
-            _securityClient = securityClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
@@ -244,8 +244,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -263,11 +267,12 @@ namespace UnifiedTo
                 {
                     response.CrmCompany = JsonConvert.DeserializeObject<CrmCompany>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<CreateCrmContactResponse> CreateCrmContactAsync(string connectionId, CrmContact? crmContact = null)
@@ -289,8 +294,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -308,11 +317,12 @@ namespace UnifiedTo
                 {
                     response.CrmContact = JsonConvert.DeserializeObject<CrmContact>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<CreateCrmDealResponse> CreateCrmDealAsync(string connectionId, CrmDeal? crmDeal = null)
@@ -334,8 +344,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -353,11 +367,12 @@ namespace UnifiedTo
                 {
                     response.CrmDeal = JsonConvert.DeserializeObject<CrmDeal>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<CreateCrmEventResponse> CreateCrmEventAsync(string connectionId, CrmEvent? crmEvent = null)
@@ -379,8 +394,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -398,11 +417,12 @@ namespace UnifiedTo
                 {
                     response.CrmEvent = JsonConvert.DeserializeObject<CrmEvent>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<CreateCrmLeadResponse> CreateCrmLeadAsync(string connectionId, CrmLead? crmLead = null)
@@ -424,8 +444,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -443,11 +467,12 @@ namespace UnifiedTo
                 {
                     response.CrmLead = JsonConvert.DeserializeObject<CrmLead>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(string connectionId, CrmPipeline? crmPipeline = null)
@@ -469,8 +494,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -488,11 +517,12 @@ namespace UnifiedTo
                 {
                     response.CrmPipeline = JsonConvert.DeserializeObject<CrmPipeline>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null)
@@ -510,8 +540,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -529,11 +563,12 @@ namespace UnifiedTo
                 {
                     response.CrmCompany = JsonConvert.DeserializeObject<CrmCompany>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<string>? fields = null)
@@ -551,8 +586,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -570,11 +609,12 @@ namespace UnifiedTo
                 {
                     response.CrmContact = JsonConvert.DeserializeObject<CrmContact>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<GetCrmDealResponse> GetCrmDealAsync(string connectionId, string id, List<string>? fields = null)
@@ -592,8 +632,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -611,11 +655,12 @@ namespace UnifiedTo
                 {
                     response.CrmDeal = JsonConvert.DeserializeObject<CrmDeal>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<string>? fields = null)
@@ -633,8 +678,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -652,11 +701,12 @@ namespace UnifiedTo
                 {
                     response.CrmEvent = JsonConvert.DeserializeObject<CrmEvent>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<string>? fields = null)
@@ -674,8 +724,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -693,11 +747,12 @@ namespace UnifiedTo
                 {
                     response.CrmLead = JsonConvert.DeserializeObject<CrmLead>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<string>? fields = null)
@@ -715,8 +770,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -734,11 +793,12 @@ namespace UnifiedTo
                 {
                     response.CrmPipeline = JsonConvert.DeserializeObject<CrmPipeline>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<ListCrmCompaniesResponse> ListCrmCompaniesAsync(ListCrmCompaniesRequest? request = null)
@@ -750,8 +810,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -769,11 +833,12 @@ namespace UnifiedTo
                 {
                     response.CrmCompanies = JsonConvert.DeserializeObject<List<CrmCompany>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<ListCrmContactsResponse> ListCrmContactsAsync(ListCrmContactsRequest? request = null)
@@ -785,8 +850,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -804,11 +873,12 @@ namespace UnifiedTo
                 {
                     response.CrmContacts = JsonConvert.DeserializeObject<List<CrmContact>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<ListCrmDealsResponse> ListCrmDealsAsync(ListCrmDealsRequest? request = null)
@@ -820,8 +890,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -839,11 +913,12 @@ namespace UnifiedTo
                 {
                     response.CrmDeals = JsonConvert.DeserializeObject<List<CrmDeal>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<ListCrmEventsResponse> ListCrmEventsAsync(ListCrmEventsRequest? request = null)
@@ -855,8 +930,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -874,11 +953,12 @@ namespace UnifiedTo
                 {
                     response.CrmEvents = JsonConvert.DeserializeObject<List<CrmEvent>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<ListCrmLeadsResponse> ListCrmLeadsAsync(ListCrmLeadsRequest? request = null)
@@ -890,8 +970,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -909,11 +993,12 @@ namespace UnifiedTo
                 {
                     response.CrmLeads = JsonConvert.DeserializeObject<List<CrmLead>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<ListCrmPipelinesResponse> ListCrmPipelinesAsync(ListCrmPipelinesRequest? request = null)
@@ -925,8 +1010,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -944,11 +1033,12 @@ namespace UnifiedTo
                 {
                     response.CrmPipelines = JsonConvert.DeserializeObject<List<CrmPipeline>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null)
@@ -971,8 +1061,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -990,11 +1084,12 @@ namespace UnifiedTo
                 {
                     response.CrmCompany = JsonConvert.DeserializeObject<CrmCompany>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<PatchCrmContactResponse> PatchCrmContactAsync(string connectionId, string id, CrmContact? crmContact = null)
@@ -1017,8 +1112,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1036,11 +1135,12 @@ namespace UnifiedTo
                 {
                     response.CrmContact = JsonConvert.DeserializeObject<CrmContact>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<PatchCrmDealResponse> PatchCrmDealAsync(string connectionId, string id, CrmDeal? crmDeal = null)
@@ -1063,8 +1163,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1082,11 +1186,12 @@ namespace UnifiedTo
                 {
                     response.CrmDeal = JsonConvert.DeserializeObject<CrmDeal>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<PatchCrmEventResponse> PatchCrmEventAsync(string connectionId, string id, CrmEvent? crmEvent = null)
@@ -1109,8 +1214,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1128,11 +1237,12 @@ namespace UnifiedTo
                 {
                     response.CrmEvent = JsonConvert.DeserializeObject<CrmEvent>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<PatchCrmLeadResponse> PatchCrmLeadAsync(string connectionId, string id, CrmLead? crmLead = null)
@@ -1155,8 +1265,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1174,11 +1288,12 @@ namespace UnifiedTo
                 {
                     response.CrmLead = JsonConvert.DeserializeObject<CrmLead>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(string connectionId, string id, CrmPipeline? crmPipeline = null)
@@ -1201,8 +1316,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1220,11 +1339,12 @@ namespace UnifiedTo
                 {
                     response.CrmPipeline = JsonConvert.DeserializeObject<CrmPipeline>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<RemoveCrmCompanyResponse> RemoveCrmCompanyAsync(string connectionId, string id)
@@ -1241,8 +1361,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1256,6 +1380,7 @@ namespace UnifiedTo
             
             throw new InvalidOperationException("API returned unexpected status code or content type");
         }
+
         
 
         public async Task<RemoveCrmContactResponse> RemoveCrmContactAsync(string connectionId, string id)
@@ -1272,8 +1397,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1287,6 +1416,7 @@ namespace UnifiedTo
             
             throw new InvalidOperationException("API returned unexpected status code or content type");
         }
+
         
 
         public async Task<RemoveCrmDealResponse> RemoveCrmDealAsync(string connectionId, string id)
@@ -1303,8 +1433,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1318,6 +1452,7 @@ namespace UnifiedTo
             
             throw new InvalidOperationException("API returned unexpected status code or content type");
         }
+
         
 
         public async Task<RemoveCrmEventResponse> RemoveCrmEventAsync(string connectionId, string id)
@@ -1334,8 +1469,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1349,6 +1488,7 @@ namespace UnifiedTo
             
             throw new InvalidOperationException("API returned unexpected status code or content type");
         }
+
         
 
         public async Task<RemoveCrmLeadResponse> RemoveCrmLeadAsync(string connectionId, string id)
@@ -1365,8 +1505,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1380,6 +1524,7 @@ namespace UnifiedTo
             
             throw new InvalidOperationException("API returned unexpected status code or content type");
         }
+
         
 
         public async Task<RemoveCrmPipelineResponse> RemoveCrmPipelineAsync(string connectionId, string id)
@@ -1396,8 +1541,12 @@ namespace UnifiedTo
             httpRequest.Headers.Add("user-agent", _userAgent);
             
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1411,6 +1560,7 @@ namespace UnifiedTo
             
             throw new InvalidOperationException("API returned unexpected status code or content type");
         }
+
         
 
         public async Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null)
@@ -1433,8 +1583,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1452,11 +1606,12 @@ namespace UnifiedTo
                 {
                     response.CrmCompany = JsonConvert.DeserializeObject<CrmCompany>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<UpdateCrmContactResponse> UpdateCrmContactAsync(string connectionId, string id, CrmContact? crmContact = null)
@@ -1479,8 +1634,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1498,11 +1657,12 @@ namespace UnifiedTo
                 {
                     response.CrmContact = JsonConvert.DeserializeObject<CrmContact>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<UpdateCrmDealResponse> UpdateCrmDealAsync(string connectionId, string id, CrmDeal? crmDeal = null)
@@ -1525,8 +1685,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1544,11 +1708,12 @@ namespace UnifiedTo
                 {
                     response.CrmDeal = JsonConvert.DeserializeObject<CrmDeal>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<UpdateCrmEventResponse> UpdateCrmEventAsync(string connectionId, string id, CrmEvent? crmEvent = null)
@@ -1571,8 +1736,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1590,11 +1759,12 @@ namespace UnifiedTo
                 {
                     response.CrmEvent = JsonConvert.DeserializeObject<CrmEvent>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(string connectionId, string id, CrmLead? crmLead = null)
@@ -1617,8 +1787,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1636,11 +1810,12 @@ namespace UnifiedTo
                 {
                     response.CrmLead = JsonConvert.DeserializeObject<CrmLead>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
 
         public async Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(string connectionId, string id, CrmPipeline? crmPipeline = null)
@@ -1663,8 +1838,12 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
             
-            var client = _securityClient;
-            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
@@ -1682,11 +1861,12 @@ namespace UnifiedTo
                 {
                     response.CrmPipeline = JsonConvert.DeserializeObject<CrmPipeline>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
-                
+
                 return response;
             }
             return response;
         }
+
         
     }
 }

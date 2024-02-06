@@ -4,9 +4,9 @@ management:
   docChecksum: 18ccf953df89af94fa8ee7505288f024
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.249.1
-  releaseVersion: 0.7.0
-  configChecksum: 077d55b1be935d293ae479df5ff681ad
+  generationVersion: 2.250.2
+  releaseVersion: 0.8.0
+  configChecksum: bee8329b2975921be96b8d065fa39bac
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -14,7 +14,7 @@ features:
   csharp:
     core: 3.3.1
     flattening: 2.81.1
-    globalSecurity: 2.82.0
+    globalSecurity: 2.83.0
     globalServerURLs: 2.82.2
 generatedFiles:
   - UnifiedTo/Accounting.cs
