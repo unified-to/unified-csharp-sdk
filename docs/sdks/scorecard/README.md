@@ -29,6 +29,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Scorecard.CreateAtsScorecardAsync(
     connectionId: "string",
     atsScorecard: new AtsScorecard() {
+    Questions = new List<AtsScorecardQuestion>() {
+        new AtsScorecardQuestion() {
+            Text = "string",
+        },
+    },
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -150,6 +155,11 @@ var res = await sdk.Scorecard.PatchAtsScorecardAsync(
     connectionId: "string",
     id: "string",
     atsScorecard: new AtsScorecard() {
+    Questions = new List<AtsScorecardQuestion>() {
+        new AtsScorecardQuestion() {
+            Text = "string",
+        },
+    },
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },
@@ -227,6 +237,11 @@ var res = await sdk.Scorecard.UpdateAtsScorecardAsync(
     connectionId: "string",
     id: "string",
     atsScorecard: new AtsScorecard() {
+    Questions = new List<AtsScorecardQuestion>() {
+        new AtsScorecardQuestion() {
+            Text = "string",
+        },
+    },
     Raw = new Dictionary<string, object>() {
         { "key", "string" },
     },

@@ -41,6 +41,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("job_id")]
         public string? JobId { get; set; }
 
+        [JsonProperty("questions")]
+        public List<AtsScorecardQuestion>? Questions { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

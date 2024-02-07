@@ -3,16 +3,16 @@
 
 ### Available Operations
 
-* [CreateCommerceItem](#createcommerceitem) - Create an item/product
-* [GetCommerceItem](#getcommerceitem) - Retrieve an item/product
-* [ListCommerceItems](#listcommerceitems) - List all items/products
-* [PatchCommerceItem](#patchcommerceitem) - Update an item/product
-* [RemoveCommerceItem](#removecommerceitem) - Remove an item/product
-* [UpdateCommerceItem](#updatecommerceitem) - Update an item/product
+* [CreateCommerceItem](#createcommerceitem) - Create an item
+* [GetCommerceItem](#getcommerceitem) - Retrieve an item
+* [ListCommerceItems](#listcommerceitems) - List all items
+* [PatchCommerceItem](#patchcommerceitem) - Update an item
+* [RemoveCommerceItem](#removecommerceitem) - Remove an item
+* [UpdateCommerceItem](#updatecommerceitem) - Update an item
 
 ## CreateCommerceItem
 
-Create an item/product
+Create an item
 
 ### Example Usage
 
@@ -88,7 +88,7 @@ var res = await sdk.Item.CreateCommerceItemAsync(
 
 ## GetCommerceItem
 
-Retrieve an item/product
+Retrieve an item
 
 ### Example Usage
 
@@ -128,7 +128,7 @@ var res = await sdk.Item.GetCommerceItemAsync(
 
 ## ListCommerceItems
 
-List all items/products
+List all items
 
 ### Example Usage
 
@@ -168,7 +168,7 @@ var res = await sdk.Item.ListCommerceItemsAsync(req);
 
 ## PatchCommerceItem
 
-Update an item/product
+Update an item
 
 ### Example Usage
 
@@ -246,7 +246,7 @@ var res = await sdk.Item.PatchCommerceItemAsync(
 
 ## RemoveCommerceItem
 
-Remove an item/product
+Remove an item
 
 ### Example Usage
 
@@ -281,7 +281,7 @@ var res = await sdk.Item.RemoveCommerceItemAsync(
 
 ## UpdateCommerceItem
 
-Update an item/product
+Update an item
 
 ### Example Usage
 

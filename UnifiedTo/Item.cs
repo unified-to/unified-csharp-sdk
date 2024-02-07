@@ -24,32 +24,32 @@ namespace UnifiedTo
     {
 
         /// <summary>
-        /// Create an item/product
+        /// Create an item
         /// </summary>
         Task<CreateCommerceItemResponse> CreateCommerceItemAsync(string connectionId, CommerceItem? commerceItem = null);
 
         /// <summary>
-        /// Retrieve an item/product
+        /// Retrieve an item
         /// </summary>
         Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
-        /// List all items/products
+        /// List all items
         /// </summary>
         Task<ListCommerceItemsResponse> ListCommerceItemsAsync(ListCommerceItemsRequest? request = null);
 
         /// <summary>
-        /// Update an item/product
+        /// Update an item
         /// </summary>
         Task<PatchCommerceItemResponse> PatchCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null);
 
         /// <summary>
-        /// Remove an item/product
+        /// Remove an item
         /// </summary>
         Task<RemoveCommerceItemResponse> RemoveCommerceItemAsync(string connectionId, string id);
 
         /// <summary>
-        /// Update an item/product
+        /// Update an item
         /// </summary>
         Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null);
     }
@@ -58,10 +58,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.9.1";
-        private const string _sdkGenVersion = "2.250.12";
+        private const string _sdkVersion = "0.9.2";
+        private const string _sdkGenVersion = "2.250.16";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.9.1 2.250.12 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.9.2 2.250.16 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private Func<Security>? _securitySource;

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: e16aa34043cd80d620a23e298a14e5c0
+  docChecksum: 6de3144fa3dee858558168257bc841a5
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.250.12
-  releaseVersion: 0.9.1
-  configChecksum: 20ade4fcdce2d05765fd09edc4d53207
+  generationVersion: 2.250.16
+  releaseVersion: 0.9.2
+  configChecksum: 1eafe6217b1b421406cdad4a6965f86f
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -573,6 +573,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/AtsAddress.cs
   - UnifiedTo/Models/Components/Recommendation.cs
   - UnifiedTo/Models/Components/AtsScorecard.cs
+  - UnifiedTo/Models/Components/AtsScorecardQuestion.cs
   - UnifiedTo/Models/Components/AtsCompany.cs
   - UnifiedTo/Models/Components/PropertyAtsCompanyAddress.cs
   - UnifiedTo/Models/Components/AtsStatusStatus.cs
@@ -1150,6 +1151,7 @@ generatedFiles:
   - docs/Models/Components/AtsAddress.md
   - docs/Models/Components/Recommendation.md
   - docs/Models/Components/AtsScorecard.md
+  - docs/Models/Components/AtsScorecardQuestion.md
   - docs/Models/Components/AtsCompany.md
   - docs/Models/Components/PropertyAtsCompanyAddress.md
   - docs/Models/Components/AtsStatusStatus.md

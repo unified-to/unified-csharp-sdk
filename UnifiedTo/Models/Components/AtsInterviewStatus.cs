@@ -21,6 +21,10 @@ namespace UnifiedTo.Models.Components
         AwaitingFeedback,
         [JsonProperty("COMPLETE")]
         Complete,
+        [JsonProperty("CANCELED")]
+        Canceled,
+        [JsonProperty("NEEDS_SCHEDULING")]
+        NeedsScheduling,
     }
 
     public static class AtsInterviewStatusExtension
