@@ -59,6 +59,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("object_type")]
         public ObjectType ObjectType { get; set; } = default!;
 
+        [JsonProperty("page_max_limit")]
+        public double? PageMaxLimit { get; set; }
+
         /// <summary>
         /// An array of the most revent virtual webhook runs
         /// </summary>
