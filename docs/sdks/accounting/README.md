@@ -14,6 +14,8 @@
 * [GetAccountingInvoice](#getaccountinginvoice) - Retrieve a invoice
 * [GetAccountingOrganization](#getaccountingorganization) - Retrieve an organization
 * [GetAccountingPayment](#getaccountingpayment) - Retrieve a payment
+* [GetAccountingPayout](#getaccountingpayout) - Retrieve a payout
+* [GetAccountingRefund](#getaccountingrefund) - Retrieve a refund
 * [GetAccountingTaxrate](#getaccountingtaxrate) - Retrieve a taxrate
 * [GetAccountingTransaction](#getaccountingtransaction) - Retrieve a transaction
 * [ListAccountingAccounts](#listaccountingaccounts) - List all accounts
@@ -21,6 +23,8 @@
 * [ListAccountingInvoices](#listaccountinginvoices) - List all invoices
 * [ListAccountingOrganizations](#listaccountingorganizations) - List all organizations
 * [ListAccountingPayments](#listaccountingpayments) - List all payments
+* [ListAccountingPayouts](#listaccountingpayouts) - List all payouts
+* [ListAccountingRefunds](#listaccountingrefunds) - List all refunds
 * [ListAccountingTaxrates](#listaccountingtaxrates) - List all taxrates
 * [ListAccountingTransactions](#listaccountingtransactions) - List all transactions
 * [PatchAccountingAccount](#patchaccountingaccount) - Update an account
@@ -509,6 +513,86 @@ var res = await sdk.Accounting.GetAccountingPaymentAsync(
 **[GetAccountingPaymentResponse](../../Models/Requests/GetAccountingPaymentResponse.md)**
 
 
+## GetAccountingPayout
+
+Retrieve a payout
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Accounting.GetAccountingPayoutAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
+    "string",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Payout                 |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetAccountingPayoutResponse](../../Models/Requests/GetAccountingPayoutResponse.md)**
+
+
+## GetAccountingRefund
+
+Retrieve a refund
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Accounting.GetAccountingRefundAsync(
+    connectionId: "string",
+    id: "string",
+    fields: new List<string>() {
+    "string",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Refund                 |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetAccountingRefundResponse](../../Models/Requests/GetAccountingRefundResponse.md)**
+
+
 ## GetAccountingTaxrate
 
 Retrieve a taxrate
@@ -787,6 +871,86 @@ var res = await sdk.Accounting.ListAccountingPaymentsAsync(req);
 ### Response
 
 **[ListAccountingPaymentsResponse](../../Models/Requests/ListAccountingPaymentsResponse.md)**
+
+
+## ListAccountingPayouts
+
+List all payouts
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListAccountingPayoutsRequest req = new ListAccountingPayoutsRequest() {
+    ConnectionId = "string",
+    Fields = new List<string>() {
+        "string",
+    },
+};
+
+var res = await sdk.Accounting.ListAccountingPayoutsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListAccountingPayoutsRequest](../../Models/Requests/ListAccountingPayoutsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+
+
+### Response
+
+**[ListAccountingPayoutsResponse](../../Models/Requests/ListAccountingPayoutsResponse.md)**
+
+
+## ListAccountingRefunds
+
+List all refunds
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListAccountingRefundsRequest req = new ListAccountingRefundsRequest() {
+    ConnectionId = "string",
+    Fields = new List<string>() {
+        "string",
+    },
+};
+
+var res = await sdk.Accounting.ListAccountingRefundsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListAccountingRefundsRequest](../../Models/Requests/ListAccountingRefundsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+
+
+### Response
+
+**[ListAccountingRefundsResponse](../../Models/Requests/ListAccountingRefundsResponse.md)**
 
 
 ## ListAccountingTaxrates

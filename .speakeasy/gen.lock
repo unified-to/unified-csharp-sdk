@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 6de3144fa3dee858558168257bc841a5
+  docChecksum: 161ec91764788890e81ad43a9895d9e4
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.250.16
-  releaseVersion: 0.9.2
-  configChecksum: 1eafe6217b1b421406cdad4a6965f86f
+  generationVersion: 2.252.2
+  releaseVersion: 0.9.3
+  configChecksum: ad74b886691af593b337b5751757ca5e
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -23,6 +23,8 @@ generatedFiles:
   - UnifiedTo/Invoice.cs
   - UnifiedTo/Organization.cs
   - UnifiedTo/Payment.cs
+  - UnifiedTo/Payout.cs
+  - UnifiedTo/Refund.cs
   - UnifiedTo/Taxrate.cs
   - UnifiedTo/Transaction.cs
   - UnifiedTo/Ats.cs
@@ -67,6 +69,7 @@ generatedFiles:
   - UnifiedTo/Integration.cs
   - UnifiedTo/Auth.cs
   - UnifiedTo/Login.cs
+  - UnifiedTo/Issue.cs
   - UnifiedTo/Webhook.cs
   - UnifiedTo/UnifiedToSDK.cs
   - UnifiedTo/Utils/BigIntSerializer.cs
@@ -105,6 +108,10 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetAccountingOrganizationResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingPaymentRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingPaymentResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingPayoutRequest.cs
+  - UnifiedTo/Models/Requests/GetAccountingPayoutResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingRefundRequest.cs
+  - UnifiedTo/Models/Requests/GetAccountingRefundResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingTaxrateResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingTransactionRequest.cs
@@ -119,6 +126,10 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListAccountingOrganizationsResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingPaymentsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingPaymentsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingPayoutsRequest.cs
+  - UnifiedTo/Models/Requests/ListAccountingPayoutsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingRefundsRequest.cs
+  - UnifiedTo/Models/Requests/ListAccountingRefundsResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingTaxratesRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingTaxratesResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingTransactionsRequest.cs
@@ -504,6 +515,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListUnifiedIntegrationsQueryParamCategories.cs
   - UnifiedTo/Models/Requests/ListUnifiedIntegrationsRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedIntegrationsResponse.cs
+  - UnifiedTo/Models/Requests/ListUnifiedIssuesRequest.cs
+  - UnifiedTo/Models/Requests/ListUnifiedIssuesResponse.cs
   - UnifiedTo/Models/Requests/ListUnifiedWebhooksRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedWebhooksResponse.cs
   - UnifiedTo/Models/Requests/PatchUnifiedConnectionRequest.cs
@@ -540,6 +553,10 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingTransactionLineitem.cs
   - UnifiedTo/Models/Components/AccountingOrganization.cs
   - UnifiedTo/Models/Components/PropertyAccountingOrganizationAddress.cs
+  - UnifiedTo/Models/Components/AccountingPayoutStatus.cs
+  - UnifiedTo/Models/Components/AccountingPayout.cs
+  - UnifiedTo/Models/Components/AccountingRefundStatus.cs
+  - UnifiedTo/Models/Components/AccountingRefund.cs
   - UnifiedTo/Models/Components/CrmContact.cs
   - UnifiedTo/Models/Components/CrmTelephoneType.cs
   - UnifiedTo/Models/Components/CrmTelephone.cs
@@ -660,6 +677,9 @@ generatedFiles:
   - UnifiedTo/Models/Components/IntegrationSupport.cs
   - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEvents.cs
   - UnifiedTo/Models/Components/PropertyIntegrationCategories.cs
+  - UnifiedTo/Models/Components/IssueStatus.cs
+  - UnifiedTo/Models/Components/IssueType.cs
+  - UnifiedTo/Models/Components/Issue.cs
   - UnifiedTo/Models/Components/Security.cs
   - docs/Models/Requests/CreateAccountingAccountRequest.md
   - docs/Models/Requests/CreateAccountingAccountResponse.md
@@ -683,6 +703,10 @@ generatedFiles:
   - docs/Models/Requests/GetAccountingOrganizationResponse.md
   - docs/Models/Requests/GetAccountingPaymentRequest.md
   - docs/Models/Requests/GetAccountingPaymentResponse.md
+  - docs/Models/Requests/GetAccountingPayoutRequest.md
+  - docs/Models/Requests/GetAccountingPayoutResponse.md
+  - docs/Models/Requests/GetAccountingRefundRequest.md
+  - docs/Models/Requests/GetAccountingRefundResponse.md
   - docs/Models/Requests/GetAccountingTaxrateRequest.md
   - docs/Models/Requests/GetAccountingTaxrateResponse.md
   - docs/Models/Requests/GetAccountingTransactionRequest.md
@@ -697,6 +721,10 @@ generatedFiles:
   - docs/Models/Requests/ListAccountingOrganizationsResponse.md
   - docs/Models/Requests/ListAccountingPaymentsRequest.md
   - docs/Models/Requests/ListAccountingPaymentsResponse.md
+  - docs/Models/Requests/ListAccountingPayoutsRequest.md
+  - docs/Models/Requests/ListAccountingPayoutsResponse.md
+  - docs/Models/Requests/ListAccountingRefundsRequest.md
+  - docs/Models/Requests/ListAccountingRefundsResponse.md
   - docs/Models/Requests/ListAccountingTaxratesRequest.md
   - docs/Models/Requests/ListAccountingTaxratesResponse.md
   - docs/Models/Requests/ListAccountingTransactionsRequest.md
@@ -1082,6 +1110,8 @@ generatedFiles:
   - docs/Models/Requests/ListUnifiedIntegrationsQueryParamCategories.md
   - docs/Models/Requests/ListUnifiedIntegrationsRequest.md
   - docs/Models/Requests/ListUnifiedIntegrationsResponse.md
+  - docs/Models/Requests/ListUnifiedIssuesRequest.md
+  - docs/Models/Requests/ListUnifiedIssuesResponse.md
   - docs/Models/Requests/ListUnifiedWebhooksRequest.md
   - docs/Models/Requests/ListUnifiedWebhooksResponse.md
   - docs/Models/Requests/PatchUnifiedConnectionRequest.md
@@ -1118,6 +1148,10 @@ generatedFiles:
   - docs/Models/Components/AccountingTransactionLineitem.md
   - docs/Models/Components/AccountingOrganization.md
   - docs/Models/Components/PropertyAccountingOrganizationAddress.md
+  - docs/Models/Components/AccountingPayoutStatus.md
+  - docs/Models/Components/AccountingPayout.md
+  - docs/Models/Components/AccountingRefundStatus.md
+  - docs/Models/Components/AccountingRefund.md
   - docs/Models/Components/CrmContact.md
   - docs/Models/Components/CrmTelephoneType.md
   - docs/Models/Components/CrmTelephone.md
@@ -1238,6 +1272,9 @@ generatedFiles:
   - docs/Models/Components/IntegrationSupport.md
   - docs/Models/Components/PropertyIntegrationSupportWebhookEvents.md
   - docs/Models/Components/PropertyIntegrationCategories.md
+  - docs/Models/Components/IssueStatus.md
+  - docs/Models/Components/IssueType.md
+  - docs/Models/Components/Issue.md
   - docs/Models/Components/Security.md
   - docs/sdks/unifiedto/README.md
   - docs/sdks/accounting/README.md
@@ -1246,6 +1283,8 @@ generatedFiles:
   - docs/sdks/invoice/README.md
   - docs/sdks/organization/README.md
   - docs/sdks/payment/README.md
+  - docs/sdks/payout/README.md
+  - docs/sdks/refund/README.md
   - docs/sdks/taxrate/README.md
   - docs/sdks/transaction/README.md
   - docs/sdks/ats/README.md
@@ -1290,6 +1329,7 @@ generatedFiles:
   - docs/sdks/integration/README.md
   - docs/sdks/auth/README.md
   - docs/sdks/login/README.md
+  - docs/sdks/issue/README.md
   - docs/sdks/webhook/README.md
   - USAGE.md
   - .gitattributes

@@ -13,6 +13,7 @@
 * [ListUnifiedConnections](#listunifiedconnections) - List all connections
 * [ListUnifiedIntegrationWorkspaces](#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
 * [ListUnifiedIntegrations](#listunifiedintegrations) - Returns all integrations
+* [ListUnifiedIssues](#listunifiedissues) - List support issues
 * [ListUnifiedWebhooks](#listunifiedwebhooks) - Returns all registered webhooks
 * [PatchUnifiedConnection](#patchunifiedconnection) - Update connection
 * [PatchUnifiedWebhookTrigger](#patchunifiedwebhooktrigger) - Trigger webhook
@@ -414,6 +415,40 @@ var res = await sdk.Unified.ListUnifiedIntegrationsAsync(req);
 ### Response
 
 **[ListUnifiedIntegrationsResponse](../../Models/Requests/ListUnifiedIntegrationsResponse.md)**
+
+
+## ListUnifiedIssues
+
+List support issues
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListUnifiedIssuesRequest req = new ListUnifiedIssuesRequest() {};
+
+var res = await sdk.Unified.ListUnifiedIssuesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListUnifiedIssuesRequest](../../Models/Requests/ListUnifiedIssuesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+
+### Response
+
+**[ListUnifiedIssuesResponse](../../Models/Requests/ListUnifiedIssuesResponse.md)**
 
 
 ## ListUnifiedWebhooks

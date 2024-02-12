@@ -79,6 +79,16 @@ namespace UnifiedTo
         Task<GetAccountingPaymentResponse> GetAccountingPaymentAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
+        /// Retrieve a payout
+        /// </summary>
+        Task<GetAccountingPayoutResponse> GetAccountingPayoutAsync(string connectionId, string id, List<string>? fields = null);
+
+        /// <summary>
+        /// Retrieve a refund
+        /// </summary>
+        Task<GetAccountingRefundResponse> GetAccountingRefundAsync(string connectionId, string id, List<string>? fields = null);
+
+        /// <summary>
         /// Retrieve a taxrate
         /// </summary>
         Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<string>? fields = null);
@@ -112,6 +122,16 @@ namespace UnifiedTo
         /// List all payments
         /// </summary>
         Task<ListAccountingPaymentsResponse> ListAccountingPaymentsAsync(ListAccountingPaymentsRequest? request = null);
+
+        /// <summary>
+        /// List all payouts
+        /// </summary>
+        Task<ListAccountingPayoutsResponse> ListAccountingPayoutsAsync(ListAccountingPayoutsRequest? request = null);
+
+        /// <summary>
+        /// List all refunds
+        /// </summary>
+        Task<ListAccountingRefundsResponse> ListAccountingRefundsAsync(ListAccountingRefundsRequest? request = null);
 
         /// <summary>
         /// List all taxrates
@@ -218,10 +238,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.9.2";
-        private const string _sdkGenVersion = "2.250.16";
+        private const string _sdkVersion = "0.9.3";
+        private const string _sdkGenVersion = "2.252.2";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.9.2 2.250.16 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.9.3 2.252.2 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private Func<Security>? _securitySource;
@@ -765,6 +785,98 @@ namespace UnifiedTo
 
         
 
+        public async Task<GetAccountingPayoutResponse> GetAccountingPayoutAsync(string connectionId, string id, List<string>? fields = null)
+        {
+            var request = new GetAccountingPayoutRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                Fields = fields,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/payout/{id}", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new GetAccountingPayoutResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingPayout = JsonConvert.DeserializeObject<AccountingPayout>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+
+                return response;
+            }
+            return response;
+        }
+
+        
+
+        public async Task<GetAccountingRefundResponse> GetAccountingRefundAsync(string connectionId, string id, List<string>? fields = null)
+        {
+            var request = new GetAccountingRefundRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                Fields = fields,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/refund/{id}", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new GetAccountingRefundResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingRefund = JsonConvert.DeserializeObject<AccountingRefund>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+
+                return response;
+            }
+            return response;
+        }
+
+        
+
         public async Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetAccountingTaxrateRequest()
@@ -1048,6 +1160,86 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.AccountingPayments = JsonConvert.DeserializeObject<List<AccountingPayment>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+
+                return response;
+            }
+            return response;
+        }
+
+        
+
+        public async Task<ListAccountingPayoutsResponse> ListAccountingPayoutsAsync(ListAccountingPayoutsRequest? request = null)
+        {
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/payout", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new ListAccountingPayoutsResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingPayouts = JsonConvert.DeserializeObject<List<AccountingPayout>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+
+                return response;
+            }
+            return response;
+        }
+
+        
+
+        public async Task<ListAccountingRefundsResponse> ListAccountingRefundsAsync(ListAccountingRefundsRequest? request = null)
+        {
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/refund", request);
+            
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+            
+            
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            
+            var response = new ListAccountingRefundsResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AccountingRefunds = JsonConvert.DeserializeObject<List<AccountingRefund>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
 
                 return response;

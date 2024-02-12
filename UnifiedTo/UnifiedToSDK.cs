@@ -31,6 +31,8 @@ namespace UnifiedTo
         public IInvoice Invoice { get; }
         public IOrganization Organization { get; }
         public IPayment Payment { get; }
+        public IPayout Payout { get; }
+        public IRefund Refund { get; }
         public ITaxrate Taxrate { get; }
         public ITransaction Transaction { get; }
         public IAts Ats { get; }
@@ -75,6 +77,7 @@ namespace UnifiedTo
         public IIntegration Integration { get; }
         public IAuth Auth { get; }
         public ILogin Login { get; }
+        public IIssue Issue { get; }
         public IWebhook Webhook { get; }
     }
     
@@ -107,10 +110,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.9.2";
-        private const string _sdkGenVersion = "2.250.16";
+        private const string _sdkVersion = "0.9.3";
+        private const string _sdkGenVersion = "2.252.2";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.9.2 2.250.16 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.9.3 2.252.2 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _defaultClient;
@@ -121,6 +124,8 @@ namespace UnifiedTo
         public IInvoice Invoice { get; private set; }
         public IOrganization Organization { get; private set; }
         public IPayment Payment { get; private set; }
+        public IPayout Payout { get; private set; }
+        public IRefund Refund { get; private set; }
         public ITaxrate Taxrate { get; private set; }
         public ITransaction Transaction { get; private set; }
         public IAts Ats { get; private set; }
@@ -165,6 +170,7 @@ namespace UnifiedTo
         public IIntegration Integration { get; private set; }
         public IAuth Auth { get; private set; }
         public ILogin Login { get; private set; }
+        public IIssue Issue { get; private set; }
         public IWebhook Webhook { get; private set; }
 
         public UnifiedToSDK(Security? security = null, Func<Security>? securitySource = null, int? serverIndex = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, ISpeakeasyHttpClient? client = null)
@@ -206,6 +212,8 @@ namespace UnifiedTo
             Invoice = new Invoice(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Organization = new Organization(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Payment = new Payment(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Payout = new Payout(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Refund = new Refund(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Taxrate = new Taxrate(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Transaction = new Transaction(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Ats = new Ats(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
@@ -250,6 +258,7 @@ namespace UnifiedTo
             Integration = new Integration(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Auth = new Auth(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Login = new Login(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Issue = new Issue(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Webhook = new Webhook(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
         }
     }
