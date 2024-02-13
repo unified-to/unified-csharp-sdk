@@ -29,11 +29,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Location.CreateCommerceLocationAsync(
     connectionId: "string",
     commerceLocation: new CommerceLocation() {
-    Address = new PropertyCommerceLocationAddress() {},
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -110,9 +106,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListCommerceLocationsRequest req = new ListCommerceLocationsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Location.ListCommerceLocationsAsync(req);
@@ -152,11 +145,7 @@ var res = await sdk.Location.PatchCommerceLocationAsync(
     connectionId: "string",
     id: "string",
     commerceLocation: new CommerceLocation() {
-    Address = new PropertyCommerceLocationAddress() {},
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -231,11 +220,7 @@ var res = await sdk.Location.UpdateCommerceLocationAsync(
     connectionId: "string",
     id: "string",
     commerceLocation: new CommerceLocation() {
-    Address = new PropertyCommerceLocationAddress() {},
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response

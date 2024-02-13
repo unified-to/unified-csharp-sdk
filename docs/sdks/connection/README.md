@@ -26,28 +26,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 Models.Components.Connection req = new Models.Components.Connection() {
-    Auth = new PropertyConnectionAuth() {
-        Emails = new List<string>() {
-            "string",
-        },
-        Meta = new Dictionary<string, object>() {
-            { "key", "string" },
-        },
-        OtherAuthInfo = new List<string>() {
-            "string",
-        },
-    },
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Commerce,
     },
-    CursorsCache = new List<Dictionary<string, object>>() {
-        new Dictionary<string, object>() {
-            { "key", "string" },
-        },
-    },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.AtsCandidateWrite,
+        PropertyConnectionPermissions.AtsApplicationstatusRead,
     },
 };
 
@@ -116,11 +100,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-ListUnifiedConnectionsRequest req = new ListUnifiedConnectionsRequest() {
-    Categories = new List<Categories>() {
-        Categories.Martech,
-    },
-};
+ListUnifiedConnectionsRequest req = new ListUnifiedConnectionsRequest() {};
 
 var res = await sdk.Connection.ListUnifiedConnectionsAsync(req);
 
@@ -158,28 +138,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Connection.PatchUnifiedConnectionAsync(
     id: "string",
     connection: new Models.Components.Connection() {
-    Auth = new PropertyConnectionAuth() {
-        Emails = new List<string>() {
-            "string",
-        },
-        Meta = new Dictionary<string, object>() {
-            { "key", "string" },
-        },
-        OtherAuthInfo = new List<string>() {
-            "string",
-        },
-    },
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Ticketing,
     },
-    CursorsCache = new List<Dictionary<string, object>>() {
-        new Dictionary<string, object>() {
-            { "key", "string" },
-        },
-    },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.CrmPipelineRead,
+        PropertyConnectionPermissions.CrmLeadWrite,
     },
 });
 
@@ -250,28 +214,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
     id: "string",
     connection: new Models.Components.Connection() {
-    Auth = new PropertyConnectionAuth() {
-        Emails = new List<string>() {
-            "string",
-        },
-        Meta = new Dictionary<string, object>() {
-            { "key", "string" },
-        },
-        OtherAuthInfo = new List<string>() {
-            "string",
-        },
-    },
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Accounting,
     },
-    CursorsCache = new List<Dictionary<string, object>>() {
-        new Dictionary<string, object>() {
-            { "key", "string" },
-        },
-    },
     IntegrationType = "string",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.AtsCompanyRead,
+        PropertyConnectionPermissions.AtsJobWrite,
     },
 });
 

@@ -28,14 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticket.CreateTicketingTicketAsync(
     connectionId: "string",
-    ticketingTicket: new TicketingTicket() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-});
+    ticketingTicket: new TicketingTicket() {});
 
 // handle response
 ```
@@ -111,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListTicketingTicketsRequest req = new ListTicketingTicketsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Ticket.ListTicketingTicketsAsync(req);
@@ -152,14 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ticket.PatchTicketingTicketAsync(
     connectionId: "string",
     id: "string",
-    ticketingTicket: new TicketingTicket() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-});
+    ticketingTicket: new TicketingTicket() {});
 
 // handle response
 ```
@@ -232,14 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ticket.UpdateTicketingTicketAsync(
     connectionId: "string",
     id: "string",
-    ticketingTicket: new TicketingTicket() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-});
+    ticketingTicket: new TicketingTicket() {});
 
 // handle response
 ```

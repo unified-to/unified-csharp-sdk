@@ -28,11 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Pipeline.CreateCrmPipelineAsync(
     connectionId: "string",
-    crmPipeline: new CrmPipeline() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    crmPipeline: new CrmPipeline() {});
 
 // handle response
 ```
@@ -108,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListCrmPipelinesRequest req = new ListCrmPipelinesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Pipeline.ListCrmPipelinesAsync(req);
@@ -149,11 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Pipeline.PatchCrmPipelineAsync(
     connectionId: "string",
     id: "string",
-    crmPipeline: new CrmPipeline() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    crmPipeline: new CrmPipeline() {});
 
 // handle response
 ```
@@ -226,11 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Pipeline.UpdateCrmPipelineAsync(
     connectionId: "string",
     id: "string",
-    crmPipeline: new CrmPipeline() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    crmPipeline: new CrmPipeline() {});
 
 // handle response
 ```

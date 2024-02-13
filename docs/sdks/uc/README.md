@@ -29,21 +29,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Uc.CreateUcContactAsync(
     connectionId: "string",
-    ucContact: new UcContact() {
-    Emails = new List<UcEmail>() {
-        new UcEmail() {
-            Email = "Dulce_Becker30@yahoo.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<UcTelephone>() {
-        new UcTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    ucContact: new UcContact() {});
 
 // handle response
 ```
@@ -119,9 +105,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListUcCallsRequest req = new ListUcCallsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Uc.ListUcCallsAsync(req);
@@ -159,9 +142,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListUcContactsRequest req = new ListUcContactsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Uc.ListUcContactsAsync(req);
@@ -200,21 +180,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Uc.PatchUcContactAsync(
     connectionId: "string",
     id: "string",
-    ucContact: new UcContact() {
-    Emails = new List<UcEmail>() {
-        new UcEmail() {
-            Email = "Norene_Boehm97@hotmail.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<UcTelephone>() {
-        new UcTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    ucContact: new UcContact() {});
 
 // handle response
 ```
@@ -287,21 +253,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Uc.UpdateUcContactAsync(
     connectionId: "string",
     id: "string",
-    ucContact: new UcContact() {
-    Emails = new List<UcEmail>() {
-        new UcEmail() {
-            Email = "Kianna.Witting90@gmail.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<UcTelephone>() {
-        new UcTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    ucContact: new UcContact() {});
 
 // handle response
 ```

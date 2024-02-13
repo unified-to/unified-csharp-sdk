@@ -28,17 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Group.CreateHrisGroupAsync(
     connectionId: "string",
-    hrisGroup: new HrisGroup() {
-    ManagerIds = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    UserIds = new List<string>() {
-        "string",
-    },
-});
+    hrisGroup: new HrisGroup() {});
 
 // handle response
 ```
@@ -114,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListHrisGroupsRequest req = new ListHrisGroupsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Group.ListHrisGroupsAsync(req);
@@ -155,17 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Group.PatchHrisGroupAsync(
     connectionId: "string",
     id: "string",
-    hrisGroup: new HrisGroup() {
-    ManagerIds = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    UserIds = new List<string>() {
-        "string",
-    },
-});
+    hrisGroup: new HrisGroup() {});
 
 // handle response
 ```
@@ -238,17 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Group.UpdateHrisGroupAsync(
     connectionId: "string",
     id: "string",
-    hrisGroup: new HrisGroup() {
-    ManagerIds = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    UserIds = new List<string>() {
-        "string",
-    },
-});
+    hrisGroup: new HrisGroup() {});
 
 // handle response
 ```

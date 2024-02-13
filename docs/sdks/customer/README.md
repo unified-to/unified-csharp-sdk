@@ -28,24 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Customer.CreateTicketingCustomerAsync(
     connectionId: "string",
-    ticketingCustomer: new TicketingCustomer() {
-    Emails = new List<TicketingEmail>() {
-        new TicketingEmail() {
-            Email = "Guadalupe78@yahoo.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Telephones = new List<TicketingTelephone>() {
-        new TicketingTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    ticketingCustomer: new TicketingCustomer() {});
 
 // handle response
 ```
@@ -121,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListTicketingCustomersRequest req = new ListTicketingCustomersRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Customer.ListTicketingCustomersAsync(req);
@@ -162,24 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Customer.PatchTicketingCustomerAsync(
     connectionId: "string",
     id: "string",
-    ticketingCustomer: new TicketingCustomer() {
-    Emails = new List<TicketingEmail>() {
-        new TicketingEmail() {
-            Email = "Raymundo93@hotmail.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Telephones = new List<TicketingTelephone>() {
-        new TicketingTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    ticketingCustomer: new TicketingCustomer() {});
 
 // handle response
 ```
@@ -252,24 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Customer.UpdateTicketingCustomerAsync(
     connectionId: "string",
     id: "string",
-    ticketingCustomer: new TicketingCustomer() {
-    Emails = new List<TicketingEmail>() {
-        new TicketingEmail() {
-            Email = "Mohamed.Friesen@hotmail.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Telephones = new List<TicketingTelephone>() {
-        new TicketingTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    ticketingCustomer: new TicketingCustomer() {});
 
 // handle response
 ```

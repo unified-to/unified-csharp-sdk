@@ -31,32 +31,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.CreateCrmCompanyAsync(
     connectionId: "string",
-    crmCompany: new CrmCompany() {
-    Address = new PropertyCrmCompanyAddress() {},
-    DealIds = new List<string>() {
-        "string",
-    },
-    Emails = new List<CrmEmail>() {
-        new CrmEmail() {},
-    },
-    LinkUrls = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Telephones = new List<CrmTelephone>() {
-        new CrmTelephone() {
-            Telephone = "string",
-        },
-    },
-    Websites = new List<string>() {
-        "string",
-    },
-});
+    crmCompany: new CrmCompany() {});
 
 // handle response
 ```
@@ -172,9 +147,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAtsCompaniesRequest req = new ListAtsCompaniesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Company.ListAtsCompaniesAsync(req);
@@ -212,9 +184,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListCrmCompaniesRequest req = new ListCrmCompaniesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Company.ListCrmCompaniesAsync(req);
@@ -290,32 +259,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Company.PatchCrmCompanyAsync(
     connectionId: "string",
     id: "string",
-    crmCompany: new CrmCompany() {
-    Address = new PropertyCrmCompanyAddress() {},
-    DealIds = new List<string>() {
-        "string",
-    },
-    Emails = new List<CrmEmail>() {
-        new CrmEmail() {},
-    },
-    LinkUrls = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Telephones = new List<CrmTelephone>() {
-        new CrmTelephone() {
-            Telephone = "string",
-        },
-    },
-    Websites = new List<string>() {
-        "string",
-    },
-});
+    crmCompany: new CrmCompany() {});
 
 // handle response
 ```
@@ -388,32 +332,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Company.UpdateCrmCompanyAsync(
     connectionId: "string",
     id: "string",
-    crmCompany: new CrmCompany() {
-    Address = new PropertyCrmCompanyAddress() {},
-    DealIds = new List<string>() {
-        "string",
-    },
-    Emails = new List<CrmEmail>() {
-        new CrmEmail() {},
-    },
-    LinkUrls = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Telephones = new List<CrmTelephone>() {
-        new CrmTelephone() {
-            Telephone = "string",
-        },
-    },
-    Websites = new List<string>() {
-        "string",
-    },
-});
+    crmCompany: new CrmCompany() {});
 
 // handle response
 ```

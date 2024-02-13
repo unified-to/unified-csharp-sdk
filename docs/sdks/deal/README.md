@@ -28,14 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Deal.CreateCrmDealAsync(
     connectionId: "string",
-    crmDeal: new CrmDeal() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-});
+    crmDeal: new CrmDeal() {});
 
 // handle response
 ```
@@ -111,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListCrmDealsRequest req = new ListCrmDealsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Deal.ListCrmDealsAsync(req);
@@ -152,14 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Deal.PatchCrmDealAsync(
     connectionId: "string",
     id: "string",
-    crmDeal: new CrmDeal() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-});
+    crmDeal: new CrmDeal() {});
 
 // handle response
 ```
@@ -232,14 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Deal.UpdateCrmDealAsync(
     connectionId: "string",
     id: "string",
-    crmDeal: new CrmDeal() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-});
+    crmDeal: new CrmDeal() {});
 
 // handle response
 ```

@@ -29,6 +29,10 @@ namespace UnifiedTo.Models.Components
         AccountingTaxrate,
         [JsonProperty("accounting_organization")]
         AccountingOrganization,
+        [JsonProperty("accounting_payout")]
+        AccountingPayout,
+        [JsonProperty("accounting_refund")]
+        AccountingRefund,
         [JsonProperty("commerce_item")]
         CommerceItem,
         [JsonProperty("commerce_collection")]

@@ -29,45 +29,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Item.CreateCommerceItemAsync(
     connectionId: "string",
     commerceItem: new CommerceItem() {
-    Media = new List<CommerceItemMedia>() {
-        new CommerceItemMedia() {
-            Url = "http://loud-minister.name",
-        },
-    },
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Variants = new List<CommerceItemVariant>() {
-        new CommerceItemVariant() {
-            Media = new List<CommerceItemMedia>() {
-                new CommerceItemMedia() {
-                    Url = "http://other-external.info",
-                },
-            },
-            Name = "string",
-            Options = new List<CommerceItemOption>() {
-                new CommerceItemOption() {
-                    Id = "<ID>",
-                    Name = "string",
-                    Values = new List<string>() {
-                        "string",
-                    },
-                },
-            },
-            Prices = new List<CommerceItemPrice>() {
-                new CommerceItemPrice() {
-                    Price = 3330.74D,
-                },
-            },
-            Tags = new List<string>() {
-                "string",
-            },
-        },
-    },
 });
 
 // handle response
@@ -144,9 +106,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListCommerceItemsRequest req = new ListCommerceItemsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Item.ListCommerceItemsAsync(req);
@@ -186,45 +145,7 @@ var res = await sdk.Item.PatchCommerceItemAsync(
     connectionId: "string",
     id: "string",
     commerceItem: new CommerceItem() {
-    Media = new List<CommerceItemMedia>() {
-        new CommerceItemMedia() {
-            Url = "http://frank-galley.biz",
-        },
-    },
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Variants = new List<CommerceItemVariant>() {
-        new CommerceItemVariant() {
-            Media = new List<CommerceItemMedia>() {
-                new CommerceItemMedia() {
-                    Url = "http://irresponsible-reason.biz",
-                },
-            },
-            Name = "string",
-            Options = new List<CommerceItemOption>() {
-                new CommerceItemOption() {
-                    Id = "<ID>",
-                    Name = "string",
-                    Values = new List<string>() {
-                        "string",
-                    },
-                },
-            },
-            Prices = new List<CommerceItemPrice>() {
-                new CommerceItemPrice() {
-                    Price = 4506.62D,
-                },
-            },
-            Tags = new List<string>() {
-                "string",
-            },
-        },
-    },
 });
 
 // handle response
@@ -299,45 +220,7 @@ var res = await sdk.Item.UpdateCommerceItemAsync(
     connectionId: "string",
     id: "string",
     commerceItem: new CommerceItem() {
-    Media = new List<CommerceItemMedia>() {
-        new CommerceItemMedia() {
-            Url = "https://aggressive-major-league.org",
-        },
-    },
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Variants = new List<CommerceItemVariant>() {
-        new CommerceItemVariant() {
-            Media = new List<CommerceItemMedia>() {
-                new CommerceItemMedia() {
-                    Url = "https://reasonable-cast.biz",
-                },
-            },
-            Name = "string",
-            Options = new List<CommerceItemOption>() {
-                new CommerceItemOption() {
-                    Id = "<ID>",
-                    Name = "string",
-                    Values = new List<string>() {
-                        "string",
-                    },
-                },
-            },
-            Prices = new List<CommerceItemPrice>() {
-                new CommerceItemPrice() {
-                    Price = 8467.25D,
-                },
-            },
-            Tags = new List<string>() {
-                "string",
-            },
-        },
-    },
 });
 
 // handle response

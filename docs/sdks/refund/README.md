@@ -64,9 +64,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingRefundsRequest req = new ListAccountingRefundsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Refund.ListAccountingRefundsAsync(req);

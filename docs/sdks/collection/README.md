@@ -30,21 +30,7 @@ var res = await sdk.Collection.CreateCommerceCollectionAsync(
     connectionId: "string",
     commerceCollection: new CommerceCollection() {
     Id = "<ID>",
-    ItemIds = new List<string>() {
-        "string",
-    },
-    Media = new List<CommerceItemMedia>() {
-        new CommerceItemMedia() {
-            Url = "http://uneven-mattress.name",
-        },
-    },
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
 });
 
 // handle response
@@ -121,9 +107,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListCommerceCollectionsRequest req = new ListCommerceCollectionsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Collection.ListCommerceCollectionsAsync(req);
@@ -164,21 +147,7 @@ var res = await sdk.Collection.PatchCommerceCollectionAsync(
     id: "string",
     commerceCollection: new CommerceCollection() {
     Id = "<ID>",
-    ItemIds = new List<string>() {
-        "string",
-    },
-    Media = new List<CommerceItemMedia>() {
-        new CommerceItemMedia() {
-            Url = "http://personal-sorrow.com",
-        },
-    },
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
 });
 
 // handle response
@@ -254,21 +223,7 @@ var res = await sdk.Collection.UpdateCommerceCollectionAsync(
     id: "string",
     commerceCollection: new CommerceCollection() {
     Id = "<ID>",
-    ItemIds = new List<string>() {
-        "string",
-    },
-    Media = new List<CommerceItemMedia>() {
-        new CommerceItemMedia() {
-            Url = "https://stupid-entity.org",
-        },
-    },
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
 });
 
 // handle response

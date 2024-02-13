@@ -28,31 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Job.CreateAtsJobAsync(
     connectionId: "string",
-    atsJob: new AtsJob() {
-    Addresses = new List<AtsAddress>() {
-        new AtsAddress() {},
-    },
-    Compensation = new List<AtsCompensation>() {
-        new AtsCompensation() {
-            Type = AtsCompensationType.Salary,
-        },
-    },
-    Departments = new List<string>() {
-        "string",
-    },
-    HiringManagerIds = new List<string>() {
-        "string",
-    },
-    PublicJobUrls = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    RecruiterIds = new List<string>() {
-        "string",
-    },
-});
+    atsJob: new AtsJob() {});
 
 // handle response
 ```
@@ -128,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAtsJobsRequest req = new ListAtsJobsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Job.ListAtsJobsAsync(req);
@@ -169,31 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Job.PatchAtsJobAsync(
     connectionId: "string",
     id: "string",
-    atsJob: new AtsJob() {
-    Addresses = new List<AtsAddress>() {
-        new AtsAddress() {},
-    },
-    Compensation = new List<AtsCompensation>() {
-        new AtsCompensation() {
-            Type = AtsCompensationType.Bonus,
-        },
-    },
-    Departments = new List<string>() {
-        "string",
-    },
-    HiringManagerIds = new List<string>() {
-        "string",
-    },
-    PublicJobUrls = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    RecruiterIds = new List<string>() {
-        "string",
-    },
-});
+    atsJob: new AtsJob() {});
 
 // handle response
 ```
@@ -266,31 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Job.UpdateAtsJobAsync(
     connectionId: "string",
     id: "string",
-    atsJob: new AtsJob() {
-    Addresses = new List<AtsAddress>() {
-        new AtsAddress() {},
-    },
-    Compensation = new List<AtsCompensation>() {
-        new AtsCompensation() {
-            Type = AtsCompensationType.Equity,
-        },
-    },
-    Departments = new List<string>() {
-        "string",
-    },
-    HiringManagerIds = new List<string>() {
-        "string",
-    },
-    PublicJobUrls = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    RecruiterIds = new List<string>() {
-        "string",
-    },
-});
+    atsJob: new AtsJob() {});
 
 // handle response
 ```

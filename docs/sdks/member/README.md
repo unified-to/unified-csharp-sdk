@@ -28,22 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Member.CreateMartechMemberAsync(
     connectionId: "string",
-    marketingMember: new MarketingMember() {
-    Emails = new List<MarketingEmail>() {
-        new MarketingEmail() {
-            Email = "Eldridge.Marvin@gmail.com",
-        },
-    },
-    ListIds = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-});
+    marketingMember: new MarketingMember() {});
 
 // handle response
 ```
@@ -119,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListMartechMembersRequest req = new ListMartechMembersRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Member.ListMartechMembersAsync(req);
@@ -160,22 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Member.PatchMartechMemberAsync(
     connectionId: "string",
     id: "string",
-    marketingMember: new MarketingMember() {
-    Emails = new List<MarketingEmail>() {
-        new MarketingEmail() {
-            Email = "Shana_Boyle@yahoo.com",
-        },
-    },
-    ListIds = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-});
+    marketingMember: new MarketingMember() {});
 
 // handle response
 ```
@@ -248,22 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Member.UpdateMartechMemberAsync(
     connectionId: "string",
     id: "string",
-    marketingMember: new MarketingMember() {
-    Emails = new List<MarketingEmail>() {
-        new MarketingEmail() {
-            Email = "Antonette.Kerluke@hotmail.com",
-        },
-    },
-    ListIds = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-});
+    marketingMember: new MarketingMember() {});
 
 // handle response
 ```

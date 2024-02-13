@@ -28,20 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Lead.CreateCrmLeadAsync(
     connectionId: "string",
-    crmLead: new CrmLead() {
-    Address = new PropertyCrmLeadAddress() {},
-    Emails = new List<CrmEmail>() {
-        new CrmEmail() {},
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<CrmTelephone>() {
-        new CrmTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    crmLead: new CrmLead() {});
 
 // handle response
 ```
@@ -117,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListCrmLeadsRequest req = new ListCrmLeadsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Lead.ListCrmLeadsAsync(req);
@@ -158,20 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Lead.PatchCrmLeadAsync(
     connectionId: "string",
     id: "string",
-    crmLead: new CrmLead() {
-    Address = new PropertyCrmLeadAddress() {},
-    Emails = new List<CrmEmail>() {
-        new CrmEmail() {},
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<CrmTelephone>() {
-        new CrmTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    crmLead: new CrmLead() {});
 
 // handle response
 ```
@@ -244,20 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Lead.UpdateCrmLeadAsync(
     connectionId: "string",
     id: "string",
-    crmLead: new CrmLead() {
-    Address = new PropertyCrmLeadAddress() {},
-    Emails = new List<CrmEmail>() {
-        new CrmEmail() {},
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<CrmTelephone>() {
-        new CrmTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    crmLead: new CrmLead() {});
 
 // handle response
 ```

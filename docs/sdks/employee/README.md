@@ -28,22 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Employee.CreateHrisEmployeeAsync(
     connectionId: "string",
-    hrisEmployee: new HrisEmployee() {
-    Address = new PropertyHrisEmployeeAddress() {},
-    Emails = new List<HrisEmail>() {
-        new HrisEmail() {
-            Email = "Adriel_Hansen@hotmail.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<HrisTelephone>() {
-        new HrisTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    hrisEmployee: new HrisEmployee() {});
 
 // handle response
 ```
@@ -119,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListHrisEmployeesRequest req = new ListHrisEmployeesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Employee.ListHrisEmployeesAsync(req);
@@ -160,22 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Employee.PatchHrisEmployeeAsync(
     connectionId: "string",
     id: "string",
-    hrisEmployee: new HrisEmployee() {
-    Address = new PropertyHrisEmployeeAddress() {},
-    Emails = new List<HrisEmail>() {
-        new HrisEmail() {
-            Email = "Zetta.Cassin@yahoo.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<HrisTelephone>() {
-        new HrisTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    hrisEmployee: new HrisEmployee() {});
 
 // handle response
 ```
@@ -248,22 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Employee.UpdateHrisEmployeeAsync(
     connectionId: "string",
     id: "string",
-    hrisEmployee: new HrisEmployee() {
-    Address = new PropertyHrisEmployeeAddress() {},
-    Emails = new List<HrisEmail>() {
-        new HrisEmail() {
-            Email = "Abbie_Aufderhar@gmail.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<HrisTelephone>() {
-        new HrisTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    hrisEmployee: new HrisEmployee() {});
 
 // handle response
 ```

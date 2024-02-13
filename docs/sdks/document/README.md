@@ -28,11 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Document.CreateAtsDocumentAsync(
     connectionId: "string",
-    atsDocument: new AtsDocument() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    atsDocument: new AtsDocument() {});
 
 // handle response
 ```
@@ -108,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAtsDocumentsRequest req = new ListAtsDocumentsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Document.ListAtsDocumentsAsync(req);
@@ -149,11 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Document.PatchAtsDocumentAsync(
     connectionId: "string",
     id: "string",
-    atsDocument: new AtsDocument() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    atsDocument: new AtsDocument() {});
 
 // handle response
 ```
@@ -226,11 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Document.UpdateAtsDocumentAsync(
     connectionId: "string",
     id: "string",
-    atsDocument: new AtsDocument() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    atsDocument: new AtsDocument() {});
 
 // handle response
 ```

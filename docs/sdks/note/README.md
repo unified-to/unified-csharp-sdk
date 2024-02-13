@@ -28,11 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Note.CreateTicketingNoteAsync(
     connectionId: "string",
-    ticketingNote: new TicketingNote() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    ticketingNote: new TicketingNote() {});
 
 // handle response
 ```
@@ -108,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListTicketingNotesRequest req = new ListTicketingNotesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Note.ListTicketingNotesAsync(req);
@@ -149,11 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Note.PatchTicketingNoteAsync(
     connectionId: "string",
     id: "string",
-    ticketingNote: new TicketingNote() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    ticketingNote: new TicketingNote() {});
 
 // handle response
 ```
@@ -226,11 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Note.UpdateTicketingNoteAsync(
     connectionId: "string",
     id: "string",
-    ticketingNote: new TicketingNote() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    ticketingNote: new TicketingNote() {});
 
 // handle response
 ```

@@ -28,11 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.CreateAccountingPaymentAsync(
     connectionId: "string",
-    accountingPayment: new AccountingPayment() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    accountingPayment: new AccountingPayment() {});
 
 // handle response
 ```
@@ -108,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingPaymentsRequest req = new ListAccountingPaymentsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Payment.ListAccountingPaymentsAsync(req);
@@ -149,11 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Payment.PatchAccountingPaymentAsync(
     connectionId: "string",
     id: "string",
-    accountingPayment: new AccountingPayment() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    accountingPayment: new AccountingPayment() {});
 
 // handle response
 ```
@@ -226,11 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Payment.UpdateAccountingPaymentAsync(
     connectionId: "string",
     id: "string",
-    accountingPayment: new AccountingPayment() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    accountingPayment: new AccountingPayment() {});
 
 // handle response
 ```

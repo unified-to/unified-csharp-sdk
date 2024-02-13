@@ -34,11 +34,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Martech.CreateMartechListAsync(
     connectionId: "string",
-    marketingList: new MarketingList() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    marketingList: new MarketingList() {});
 
 // handle response
 ```
@@ -74,22 +70,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Martech.CreateMartechMemberAsync(
     connectionId: "string",
-    marketingMember: new MarketingMember() {
-    Emails = new List<MarketingEmail>() {
-        new MarketingEmail() {
-            Email = "Eldridge.Marvin@gmail.com",
-        },
-    },
-    ListIds = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-});
+    marketingMember: new MarketingMember() {});
 
 // handle response
 ```
@@ -205,9 +186,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListMartechListsRequest req = new ListMartechListsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Martech.ListMartechListsAsync(req);
@@ -245,9 +223,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListMartechMembersRequest req = new ListMartechMembersRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Martech.ListMartechMembersAsync(req);
@@ -286,11 +261,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Martech.PatchMartechListAsync(
     connectionId: "string",
     id: "string",
-    marketingList: new MarketingList() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    marketingList: new MarketingList() {});
 
 // handle response
 ```
@@ -328,22 +299,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Martech.PatchMartechMemberAsync(
     connectionId: "string",
     id: "string",
-    marketingMember: new MarketingMember() {
-    Emails = new List<MarketingEmail>() {
-        new MarketingEmail() {
-            Email = "Shana_Boyle@yahoo.com",
-        },
-    },
-    ListIds = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-});
+    marketingMember: new MarketingMember() {});
 
 // handle response
 ```
@@ -451,11 +407,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Martech.UpdateMartechListAsync(
     connectionId: "string",
     id: "string",
-    marketingList: new MarketingList() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    marketingList: new MarketingList() {});
 
 // handle response
 ```
@@ -493,22 +445,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Martech.UpdateMartechMemberAsync(
     connectionId: "string",
     id: "string",
-    marketingMember: new MarketingMember() {
-    Emails = new List<MarketingEmail>() {
-        new MarketingEmail() {
-            Email = "Antonette.Kerluke@hotmail.com",
-        },
-    },
-    ListIds = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-});
+    marketingMember: new MarketingMember() {});
 
 // handle response
 ```

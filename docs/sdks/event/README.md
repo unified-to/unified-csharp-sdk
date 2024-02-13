@@ -28,38 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Event.CreateCrmEventAsync(
     connectionId: "string",
-    crmEvent: new CrmEvent() {
-    Call = new PropertyCrmEventCall() {},
-    CompanyIds = new List<string>() {
-        "string",
-    },
-    ContactIds = new List<string>() {
-        "string",
-    },
-    DealIds = new List<string>() {
-        "string",
-    },
-    Email = new PropertyCrmEventEmail() {
-        AttachmentFileIds = new List<string>() {
-            "string",
-        },
-        Cc = new List<string>() {
-            "string",
-        },
-        To = new List<string>() {
-            "string",
-        },
-    },
-    LeadIds = new List<string>() {
-        "string",
-    },
-    Meeting = new PropertyCrmEventMeeting() {},
-    Note = new PropertyCrmEventNote() {},
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Task = new PropertyCrmEventTask() {},
-});
+    crmEvent: new CrmEvent() {});
 
 // handle response
 ```
@@ -135,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListCrmEventsRequest req = new ListCrmEventsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Event.ListCrmEventsAsync(req);
@@ -176,38 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Event.PatchCrmEventAsync(
     connectionId: "string",
     id: "string",
-    crmEvent: new CrmEvent() {
-    Call = new PropertyCrmEventCall() {},
-    CompanyIds = new List<string>() {
-        "string",
-    },
-    ContactIds = new List<string>() {
-        "string",
-    },
-    DealIds = new List<string>() {
-        "string",
-    },
-    Email = new PropertyCrmEventEmail() {
-        AttachmentFileIds = new List<string>() {
-            "string",
-        },
-        Cc = new List<string>() {
-            "string",
-        },
-        To = new List<string>() {
-            "string",
-        },
-    },
-    LeadIds = new List<string>() {
-        "string",
-    },
-    Meeting = new PropertyCrmEventMeeting() {},
-    Note = new PropertyCrmEventNote() {},
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Task = new PropertyCrmEventTask() {},
-});
+    crmEvent: new CrmEvent() {});
 
 // handle response
 ```
@@ -280,38 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Event.UpdateCrmEventAsync(
     connectionId: "string",
     id: "string",
-    crmEvent: new CrmEvent() {
-    Call = new PropertyCrmEventCall() {},
-    CompanyIds = new List<string>() {
-        "string",
-    },
-    ContactIds = new List<string>() {
-        "string",
-    },
-    DealIds = new List<string>() {
-        "string",
-    },
-    Email = new PropertyCrmEventEmail() {
-        AttachmentFileIds = new List<string>() {
-            "string",
-        },
-        Cc = new List<string>() {
-            "string",
-        },
-        To = new List<string>() {
-            "string",
-        },
-    },
-    LeadIds = new List<string>() {
-        "string",
-    },
-    Meeting = new PropertyCrmEventMeeting() {},
-    Note = new PropertyCrmEventNote() {},
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Task = new PropertyCrmEventTask() {},
-});
+    crmEvent: new CrmEvent() {});
 
 // handle response
 ```

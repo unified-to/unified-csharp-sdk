@@ -28,11 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.List.CreateMartechListAsync(
     connectionId: "string",
-    marketingList: new MarketingList() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    marketingList: new MarketingList() {});
 
 // handle response
 ```
@@ -108,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListMartechListsRequest req = new ListMartechListsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.List.ListMartechListsAsync(req);
@@ -149,11 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.List.PatchMartechListAsync(
     connectionId: "string",
     id: "string",
-    marketingList: new MarketingList() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    marketingList: new MarketingList() {});
 
 // handle response
 ```
@@ -226,11 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.List.UpdateMartechListAsync(
     connectionId: "string",
     id: "string",
-    marketingList: new MarketingList() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    marketingList: new MarketingList() {});
 
 // handle response
 ```

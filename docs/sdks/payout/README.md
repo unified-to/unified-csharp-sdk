@@ -64,9 +64,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingPayoutsRequest req = new ListAccountingPayoutsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Payout.ListAccountingPayoutsAsync(req);

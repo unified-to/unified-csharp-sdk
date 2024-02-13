@@ -31,14 +31,7 @@ var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
     ConnectionId = "string",
     Event = Models.Components.Event.Created,
     HookUrl = "string",
-    Interval = 188.12D,
-    Meta = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    ObjectType = ObjectType.AtsScorecard,
-    Runs = new List<string>() {
-        "string",
-    },
+    ObjectType = ObjectType.AccountingAccount,
 },
     includeAll: false);
 

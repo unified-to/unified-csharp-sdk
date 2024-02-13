@@ -23,9 +23,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAtsApplicationstatusesRequest req = new ListAtsApplicationstatusesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Applicationstatus.ListAtsApplicationstatusesAsync(req);

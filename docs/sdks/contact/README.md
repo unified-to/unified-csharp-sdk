@@ -40,23 +40,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.CreateAccountingContactAsync(
     connectionId: "string",
-    accountingContact: new AccountingContact() {
-    BillingAddress = new PropertyAccountingContactBillingAddress() {},
-    Emails = new List<AccountingEmail>() {
-        new AccountingEmail() {
-            Email = "Mac36@gmail.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    ShippingAddress = new PropertyAccountingContactShippingAddress() {},
-    Telephones = new List<AccountingTelephone>() {
-        new AccountingTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    accountingContact: new AccountingContact() {});
 
 // handle response
 ```
@@ -92,26 +76,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.CreateCrmContactAsync(
     connectionId: "string",
-    crmContact: new CrmContact() {
-    Address = new PropertyCrmContactAddress() {},
-    CompanyIds = new List<string>() {
-        "string",
-    },
-    DealIds = new List<string>() {
-        "string",
-    },
-    Emails = new List<CrmEmail>() {
-        new CrmEmail() {},
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<CrmTelephone>() {
-        new CrmTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    crmContact: new CrmContact() {});
 
 // handle response
 ```
@@ -147,21 +112,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.CreateUcContactAsync(
     connectionId: "string",
-    ucContact: new UcContact() {
-    Emails = new List<UcEmail>() {
-        new UcEmail() {
-            Email = "Dulce_Becker30@yahoo.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<UcTelephone>() {
-        new UcTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    ucContact: new UcContact() {});
 
 // handle response
 ```
@@ -317,9 +268,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingContactsRequest req = new ListAccountingContactsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Contact.ListAccountingContactsAsync(req);
@@ -357,9 +305,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListCrmContactsRequest req = new ListCrmContactsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Contact.ListCrmContactsAsync(req);
@@ -397,9 +342,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListUcContactsRequest req = new ListUcContactsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Contact.ListUcContactsAsync(req);
@@ -438,23 +380,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Contact.PatchAccountingContactAsync(
     connectionId: "string",
     id: "string",
-    accountingContact: new AccountingContact() {
-    BillingAddress = new PropertyAccountingContactBillingAddress() {},
-    Emails = new List<AccountingEmail>() {
-        new AccountingEmail() {
-            Email = "Sylvester.Kuhic@yahoo.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    ShippingAddress = new PropertyAccountingContactShippingAddress() {},
-    Telephones = new List<AccountingTelephone>() {
-        new AccountingTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    accountingContact: new AccountingContact() {});
 
 // handle response
 ```
@@ -492,26 +418,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Contact.PatchCrmContactAsync(
     connectionId: "string",
     id: "string",
-    crmContact: new CrmContact() {
-    Address = new PropertyCrmContactAddress() {},
-    CompanyIds = new List<string>() {
-        "string",
-    },
-    DealIds = new List<string>() {
-        "string",
-    },
-    Emails = new List<CrmEmail>() {
-        new CrmEmail() {},
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<CrmTelephone>() {
-        new CrmTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    crmContact: new CrmContact() {});
 
 // handle response
 ```
@@ -549,21 +456,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Contact.PatchUcContactAsync(
     connectionId: "string",
     id: "string",
-    ucContact: new UcContact() {
-    Emails = new List<UcEmail>() {
-        new UcEmail() {
-            Email = "Norene_Boehm97@hotmail.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<UcTelephone>() {
-        new UcTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    ucContact: new UcContact() {});
 
 // handle response
 ```
@@ -706,23 +599,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Contact.UpdateAccountingContactAsync(
     connectionId: "string",
     id: "string",
-    accountingContact: new AccountingContact() {
-    BillingAddress = new PropertyAccountingContactBillingAddress() {},
-    Emails = new List<AccountingEmail>() {
-        new AccountingEmail() {
-            Email = "Kaci_Hane@hotmail.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    ShippingAddress = new PropertyAccountingContactShippingAddress() {},
-    Telephones = new List<AccountingTelephone>() {
-        new AccountingTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    accountingContact: new AccountingContact() {});
 
 // handle response
 ```
@@ -760,26 +637,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Contact.UpdateCrmContactAsync(
     connectionId: "string",
     id: "string",
-    crmContact: new CrmContact() {
-    Address = new PropertyCrmContactAddress() {},
-    CompanyIds = new List<string>() {
-        "string",
-    },
-    DealIds = new List<string>() {
-        "string",
-    },
-    Emails = new List<CrmEmail>() {
-        new CrmEmail() {},
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<CrmTelephone>() {
-        new CrmTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    crmContact: new CrmContact() {});
 
 // handle response
 ```
@@ -817,21 +675,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Contact.UpdateUcContactAsync(
     connectionId: "string",
     id: "string",
-    ucContact: new UcContact() {
-    Emails = new List<UcEmail>() {
-        new UcEmail() {
-            Email = "Kianna.Witting90@gmail.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<UcTelephone>() {
-        new UcTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    ucContact: new UcContact() {});
 
 // handle response
 ```

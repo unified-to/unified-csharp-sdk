@@ -28,28 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Candidate.CreateAtsCandidateAsync(
     connectionId: "string",
-    atsCandidate: new AtsCandidate() {
-    Address = new PropertyAtsCandidateAddress() {},
-    Emails = new List<AtsEmail>() {
-        new AtsEmail() {
-            Email = "Robin_Feeney@hotmail.com",
-        },
-    },
-    LinkUrls = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Telephones = new List<AtsTelephone>() {
-        new AtsTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    atsCandidate: new AtsCandidate() {});
 
 // handle response
 ```
@@ -125,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAtsCandidatesRequest req = new ListAtsCandidatesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Candidate.ListAtsCandidatesAsync(req);
@@ -166,28 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Candidate.PatchAtsCandidateAsync(
     connectionId: "string",
     id: "string",
-    atsCandidate: new AtsCandidate() {
-    Address = new PropertyAtsCandidateAddress() {},
-    Emails = new List<AtsEmail>() {
-        new AtsEmail() {
-            Email = "Tracy.Collins13@gmail.com",
-        },
-    },
-    LinkUrls = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Telephones = new List<AtsTelephone>() {
-        new AtsTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    atsCandidate: new AtsCandidate() {});
 
 // handle response
 ```
@@ -260,28 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Candidate.UpdateAtsCandidateAsync(
     connectionId: "string",
     id: "string",
-    atsCandidate: new AtsCandidate() {
-    Address = new PropertyAtsCandidateAddress() {},
-    Emails = new List<AtsEmail>() {
-        new AtsEmail() {
-            Email = "Gaetano86@hotmail.com",
-        },
-    },
-    LinkUrls = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Telephones = new List<AtsTelephone>() {
-        new AtsTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    atsCandidate: new AtsCandidate() {});
 
 // handle response
 ```

@@ -28,18 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.File.CreateStorageFileAsync(
     connectionId: "string",
-    storageFile: new StorageFile() {
-    Permissions = new List<StoragePermission>() {
-        new StoragePermission() {
-            Roles = new List<PropertyStoragePermissionRoles>() {
-                PropertyStoragePermissionRoles.Write,
-            },
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    storageFile: new StorageFile() {});
 
 // handle response
 ```
@@ -115,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListStorageFilesRequest req = new ListStorageFilesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.File.ListStorageFilesAsync(req);
@@ -156,18 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.File.PatchStorageFileAsync(
     connectionId: "string",
     id: "string",
-    storageFile: new StorageFile() {
-    Permissions = new List<StoragePermission>() {
-        new StoragePermission() {
-            Roles = new List<PropertyStoragePermissionRoles>() {
-                PropertyStoragePermissionRoles.Owner,
-            },
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    storageFile: new StorageFile() {});
 
 // handle response
 ```
@@ -240,18 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.File.UpdateStorageFileAsync(
     connectionId: "string",
     id: "string",
-    storageFile: new StorageFile() {
-    Permissions = new List<StoragePermission>() {
-        new StoragePermission() {
-            Roles = new List<PropertyStoragePermissionRoles>() {
-                PropertyStoragePermissionRoles.Write,
-            },
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    storageFile: new StorageFile() {});
 
 // handle response
 ```

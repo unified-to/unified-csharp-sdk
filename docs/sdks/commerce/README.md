@@ -48,21 +48,7 @@ var res = await sdk.Commerce.CreateCommerceCollectionAsync(
     connectionId: "string",
     commerceCollection: new CommerceCollection() {
     Id = "<ID>",
-    ItemIds = new List<string>() {
-        "string",
-    },
-    Media = new List<CommerceItemMedia>() {
-        new CommerceItemMedia() {
-            Url = "http://uneven-mattress.name",
-        },
-    },
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
 });
 
 // handle response
@@ -101,9 +87,6 @@ var res = await sdk.Commerce.CreateCommerceInventoryAsync(
     connectionId: "string",
     commerceInventory: new CommerceInventory() {
     Available = 5165.08D,
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -141,45 +124,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Commerce.CreateCommerceItemAsync(
     connectionId: "string",
     commerceItem: new CommerceItem() {
-    Media = new List<CommerceItemMedia>() {
-        new CommerceItemMedia() {
-            Url = "http://loud-minister.name",
-        },
-    },
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Variants = new List<CommerceItemVariant>() {
-        new CommerceItemVariant() {
-            Media = new List<CommerceItemMedia>() {
-                new CommerceItemMedia() {
-                    Url = "http://other-external.info",
-                },
-            },
-            Name = "string",
-            Options = new List<CommerceItemOption>() {
-                new CommerceItemOption() {
-                    Id = "<ID>",
-                    Name = "string",
-                    Values = new List<string>() {
-                        "string",
-                    },
-                },
-            },
-            Prices = new List<CommerceItemPrice>() {
-                new CommerceItemPrice() {
-                    Price = 3330.74D,
-                },
-            },
-            Tags = new List<string>() {
-                "string",
-            },
-        },
-    },
 });
 
 // handle response
@@ -217,11 +162,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Commerce.CreateCommerceLocationAsync(
     connectionId: "string",
     commerceLocation: new CommerceLocation() {
-    Address = new PropertyCommerceLocationAddress() {},
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -418,9 +359,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListCommerceCollectionsRequest req = new ListCommerceCollectionsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Commerce.ListCommerceCollectionsAsync(req);
@@ -458,9 +396,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListCommerceInventoriesRequest req = new ListCommerceInventoriesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Commerce.ListCommerceInventoriesAsync(req);
@@ -498,9 +433,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListCommerceItemsRequest req = new ListCommerceItemsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Commerce.ListCommerceItemsAsync(req);
@@ -538,9 +470,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListCommerceLocationsRequest req = new ListCommerceLocationsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Commerce.ListCommerceLocationsAsync(req);
@@ -581,21 +510,7 @@ var res = await sdk.Commerce.PatchCommerceCollectionAsync(
     id: "string",
     commerceCollection: new CommerceCollection() {
     Id = "<ID>",
-    ItemIds = new List<string>() {
-        "string",
-    },
-    Media = new List<CommerceItemMedia>() {
-        new CommerceItemMedia() {
-            Url = "http://personal-sorrow.com",
-        },
-    },
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
 });
 
 // handle response
@@ -636,9 +551,6 @@ var res = await sdk.Commerce.PatchCommerceInventoryAsync(
     id: "string",
     commerceInventory: new CommerceInventory() {
     Available = 615.23D,
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -678,45 +590,7 @@ var res = await sdk.Commerce.PatchCommerceItemAsync(
     connectionId: "string",
     id: "string",
     commerceItem: new CommerceItem() {
-    Media = new List<CommerceItemMedia>() {
-        new CommerceItemMedia() {
-            Url = "http://frank-galley.biz",
-        },
-    },
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Variants = new List<CommerceItemVariant>() {
-        new CommerceItemVariant() {
-            Media = new List<CommerceItemMedia>() {
-                new CommerceItemMedia() {
-                    Url = "http://irresponsible-reason.biz",
-                },
-            },
-            Name = "string",
-            Options = new List<CommerceItemOption>() {
-                new CommerceItemOption() {
-                    Id = "<ID>",
-                    Name = "string",
-                    Values = new List<string>() {
-                        "string",
-                    },
-                },
-            },
-            Prices = new List<CommerceItemPrice>() {
-                new CommerceItemPrice() {
-                    Price = 4506.62D,
-                },
-            },
-            Tags = new List<string>() {
-                "string",
-            },
-        },
-    },
 });
 
 // handle response
@@ -756,11 +630,7 @@ var res = await sdk.Commerce.PatchCommerceLocationAsync(
     connectionId: "string",
     id: "string",
     commerceLocation: new CommerceLocation() {
-    Address = new PropertyCommerceLocationAddress() {},
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -941,21 +811,7 @@ var res = await sdk.Commerce.UpdateCommerceCollectionAsync(
     id: "string",
     commerceCollection: new CommerceCollection() {
     Id = "<ID>",
-    ItemIds = new List<string>() {
-        "string",
-    },
-    Media = new List<CommerceItemMedia>() {
-        new CommerceItemMedia() {
-            Url = "https://stupid-entity.org",
-        },
-    },
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
 });
 
 // handle response
@@ -996,9 +852,6 @@ var res = await sdk.Commerce.UpdateCommerceInventoryAsync(
     id: "string",
     commerceInventory: new CommerceInventory() {
     Available = 9360.02D,
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -1038,45 +891,7 @@ var res = await sdk.Commerce.UpdateCommerceItemAsync(
     connectionId: "string",
     id: "string",
     commerceItem: new CommerceItem() {
-    Media = new List<CommerceItemMedia>() {
-        new CommerceItemMedia() {
-            Url = "https://aggressive-major-league.org",
-        },
-    },
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Variants = new List<CommerceItemVariant>() {
-        new CommerceItemVariant() {
-            Media = new List<CommerceItemMedia>() {
-                new CommerceItemMedia() {
-                    Url = "https://reasonable-cast.biz",
-                },
-            },
-            Name = "string",
-            Options = new List<CommerceItemOption>() {
-                new CommerceItemOption() {
-                    Id = "<ID>",
-                    Name = "string",
-                    Values = new List<string>() {
-                        "string",
-                    },
-                },
-            },
-            Prices = new List<CommerceItemPrice>() {
-                new CommerceItemPrice() {
-                    Price = 8467.25D,
-                },
-            },
-            Tags = new List<string>() {
-                "string",
-            },
-        },
-    },
 });
 
 // handle response
@@ -1116,11 +931,7 @@ var res = await sdk.Commerce.UpdateCommerceLocationAsync(
     connectionId: "string",
     id: "string",
     commerceLocation: new CommerceLocation() {
-    Address = new PropertyCommerceLocationAddress() {},
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response

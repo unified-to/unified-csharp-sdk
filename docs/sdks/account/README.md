@@ -30,9 +30,6 @@ var res = await sdk.Account.CreateAccountingAccountAsync(
     connectionId: "string",
     accountingAccount: new AccountingAccount() {
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -109,9 +106,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingAccountsRequest req = new ListAccountingAccountsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Account.ListAccountingAccountsAsync(req);
@@ -152,9 +146,6 @@ var res = await sdk.Account.PatchAccountingAccountAsync(
     id: "string",
     accountingAccount: new AccountingAccount() {
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -230,9 +221,6 @@ var res = await sdk.Account.UpdateAccountingAccountAsync(
     id: "string",
     accountingAccount: new AccountingAccount() {
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response

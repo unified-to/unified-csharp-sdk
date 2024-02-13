@@ -30,9 +30,6 @@ var res = await sdk.Inventory.CreateCommerceInventoryAsync(
     connectionId: "string",
     commerceInventory: new CommerceInventory() {
     Available = 5165.08D,
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -109,9 +106,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListCommerceInventoriesRequest req = new ListCommerceInventoriesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Inventory.ListCommerceInventoriesAsync(req);
@@ -152,9 +146,6 @@ var res = await sdk.Inventory.PatchCommerceInventoryAsync(
     id: "string",
     commerceInventory: new CommerceInventory() {
     Available = 615.23D,
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -230,9 +221,6 @@ var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
     id: "string",
     commerceInventory: new CommerceInventory() {
     Available = 9360.02D,
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response

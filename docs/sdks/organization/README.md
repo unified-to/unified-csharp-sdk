@@ -64,9 +64,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingOrganizationsRequest req = new ListAccountingOrganizationsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Organization.ListAccountingOrganizationsAsync(req);

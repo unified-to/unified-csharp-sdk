@@ -30,15 +30,6 @@ var res = await sdk.Transaction.CreateAccountingTransactionAsync(
     connectionId: "string",
     accountingTransaction: new AccountingTransaction() {
     Id = "<ID>",
-    Lineitems = new List<AccountingTransactionLineitem>() {
-        new AccountingTransactionLineitem() {
-            AccountId = "string",
-            TotalAmount = 4969.62D,
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -115,9 +106,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingTransactionsRequest req = new ListAccountingTransactionsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Transaction.ListAccountingTransactionsAsync(req);
@@ -158,15 +146,6 @@ var res = await sdk.Transaction.PatchAccountingTransactionAsync(
     id: "string",
     accountingTransaction: new AccountingTransaction() {
     Id = "<ID>",
-    Lineitems = new List<AccountingTransactionLineitem>() {
-        new AccountingTransactionLineitem() {
-            AccountId = "string",
-            TotalAmount = 5633.69D,
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -242,15 +221,6 @@ var res = await sdk.Transaction.UpdateAccountingTransactionAsync(
     id: "string",
     accountingTransaction: new AccountingTransaction() {
     Id = "<ID>",
-    Lineitems = new List<AccountingTransactionLineitem>() {
-        new AccountingTransactionLineitem() {
-            AccountId = "string",
-            TotalAmount = 6498.37D,
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response

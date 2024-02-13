@@ -24,9 +24,6 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "string",
     accountingAccount: new AccountingAccount() {
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -697,9 +694,6 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "string",
     accountingAccount: new AccountingAccount() {
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response

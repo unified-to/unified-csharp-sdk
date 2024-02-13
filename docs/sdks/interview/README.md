@@ -28,14 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Interview.CreateAtsInterviewAsync(
     connectionId: "string",
-    atsInterview: new AtsInterview() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    UserIds = new List<string>() {
-        "string",
-    },
-});
+    atsInterview: new AtsInterview() {});
 
 // handle response
 ```
@@ -111,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAtsInterviewsRequest req = new ListAtsInterviewsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Interview.ListAtsInterviewsAsync(req);
@@ -152,14 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Interview.PatchAtsInterviewAsync(
     connectionId: "string",
     id: "string",
-    atsInterview: new AtsInterview() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    UserIds = new List<string>() {
-        "string",
-    },
-});
+    atsInterview: new AtsInterview() {});
 
 // handle response
 ```
@@ -232,14 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Interview.UpdateAtsInterviewAsync(
     connectionId: "string",
     id: "string",
-    atsInterview: new AtsInterview() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    UserIds = new List<string>() {
-        "string",
-    },
-});
+    atsInterview: new AtsInterview() {});
 
 // handle response
 ```

@@ -25,9 +25,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 GetUnifiedIntegrationAuthRequest req = new GetUnifiedIntegrationAuthRequest() {
     IntegrationType = "string",
-    Scopes = new List<Scopes>() {
-        Scopes.HrisEmployeeWrite,
-    },
     WorkspaceId = "string",
 };
 
@@ -65,9 +62,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListUnifiedIntegrationWorkspacesRequest req = new ListUnifiedIntegrationWorkspacesRequest() {
-    Categories = new List<QueryParamCategories>() {
-        QueryParamCategories.Accounting,
-    },
     WorkspaceId = "string",
 };
 
@@ -104,11 +98,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-ListUnifiedIntegrationsRequest req = new ListUnifiedIntegrationsRequest() {
-    Categories = new List<ListUnifiedIntegrationsQueryParamCategories>() {
-        ListUnifiedIntegrationsQueryParamCategories.Crm,
-    },
-};
+ListUnifiedIntegrationsRequest req = new ListUnifiedIntegrationsRequest() {};
 
 var res = await sdk.Integration.ListUnifiedIntegrationsAsync(req);
 

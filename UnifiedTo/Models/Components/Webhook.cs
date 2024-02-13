@@ -48,7 +48,7 @@ namespace UnifiedTo.Models.Components
         public string? IntegrationType { get; set; }
 
         [JsonProperty("interval")]
-        public double Interval { get; set; } = default!;
+        public double? Interval { get; set; }
 
         [JsonProperty("is_healthy")]
         public bool? IsHealthy { get; set; }

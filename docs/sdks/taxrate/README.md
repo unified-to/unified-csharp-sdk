@@ -31,9 +31,6 @@ var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
     accountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 1719.1D,
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -110,9 +107,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingTaxratesRequest req = new ListAccountingTaxratesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Taxrate.ListAccountingTaxratesAsync(req);
@@ -154,9 +148,6 @@ var res = await sdk.Taxrate.PatchAccountingTaxrateAsync(
     accountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 5991.47D,
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -233,9 +224,6 @@ var res = await sdk.Taxrate.UpdateAccountingTaxrateAsync(
     accountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 3382.78D,
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response

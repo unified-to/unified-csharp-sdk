@@ -61,11 +61,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsApplicationAsync(
     connectionId: "string",
-    atsApplication: new AtsApplication() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    atsApplication: new AtsApplication() {});
 
 // handle response
 ```
@@ -101,28 +97,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsCandidateAsync(
     connectionId: "string",
-    atsCandidate: new AtsCandidate() {
-    Address = new PropertyAtsCandidateAddress() {},
-    Emails = new List<AtsEmail>() {
-        new AtsEmail() {
-            Email = "Robin_Feeney@hotmail.com",
-        },
-    },
-    LinkUrls = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Telephones = new List<AtsTelephone>() {
-        new AtsTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    atsCandidate: new AtsCandidate() {});
 
 // handle response
 ```
@@ -158,11 +133,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsDocumentAsync(
     connectionId: "string",
-    atsDocument: new AtsDocument() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    atsDocument: new AtsDocument() {});
 
 // handle response
 ```
@@ -198,14 +169,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsInterviewAsync(
     connectionId: "string",
-    atsInterview: new AtsInterview() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    UserIds = new List<string>() {
-        "string",
-    },
-});
+    atsInterview: new AtsInterview() {});
 
 // handle response
 ```
@@ -241,31 +205,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsJobAsync(
     connectionId: "string",
-    atsJob: new AtsJob() {
-    Addresses = new List<AtsAddress>() {
-        new AtsAddress() {},
-    },
-    Compensation = new List<AtsCompensation>() {
-        new AtsCompensation() {
-            Type = AtsCompensationType.Salary,
-        },
-    },
-    Departments = new List<string>() {
-        "string",
-    },
-    HiringManagerIds = new List<string>() {
-        "string",
-    },
-    PublicJobUrls = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    RecruiterIds = new List<string>() {
-        "string",
-    },
-});
+    atsJob: new AtsJob() {});
 
 // handle response
 ```
@@ -301,16 +241,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsScorecardAsync(
     connectionId: "string",
-    atsScorecard: new AtsScorecard() {
-    Questions = new List<AtsScorecardQuestion>() {
-        new AtsScorecardQuestion() {
-            Text = "string",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    atsScorecard: new AtsScorecard() {});
 
 // handle response
 ```
@@ -626,9 +557,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAtsApplicationsRequest req = new ListAtsApplicationsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Ats.ListAtsApplicationsAsync(req);
@@ -666,9 +594,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAtsApplicationstatusesRequest req = new ListAtsApplicationstatusesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Ats.ListAtsApplicationstatusesAsync(req);
@@ -706,9 +631,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAtsCandidatesRequest req = new ListAtsCandidatesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Ats.ListAtsCandidatesAsync(req);
@@ -746,9 +668,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAtsCompaniesRequest req = new ListAtsCompaniesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Ats.ListAtsCompaniesAsync(req);
@@ -786,9 +705,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAtsDocumentsRequest req = new ListAtsDocumentsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Ats.ListAtsDocumentsAsync(req);
@@ -826,9 +742,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAtsInterviewsRequest req = new ListAtsInterviewsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Ats.ListAtsInterviewsAsync(req);
@@ -866,9 +779,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAtsJobsRequest req = new ListAtsJobsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Ats.ListAtsJobsAsync(req);
@@ -906,9 +816,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAtsScorecardsRequest req = new ListAtsScorecardsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Ats.ListAtsScorecardsAsync(req);
@@ -947,11 +854,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.PatchAtsApplicationAsync(
     connectionId: "string",
     id: "string",
-    atsApplication: new AtsApplication() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    atsApplication: new AtsApplication() {});
 
 // handle response
 ```
@@ -989,28 +892,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.PatchAtsCandidateAsync(
     connectionId: "string",
     id: "string",
-    atsCandidate: new AtsCandidate() {
-    Address = new PropertyAtsCandidateAddress() {},
-    Emails = new List<AtsEmail>() {
-        new AtsEmail() {
-            Email = "Tracy.Collins13@gmail.com",
-        },
-    },
-    LinkUrls = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Telephones = new List<AtsTelephone>() {
-        new AtsTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    atsCandidate: new AtsCandidate() {});
 
 // handle response
 ```
@@ -1048,11 +930,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.PatchAtsDocumentAsync(
     connectionId: "string",
     id: "string",
-    atsDocument: new AtsDocument() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    atsDocument: new AtsDocument() {});
 
 // handle response
 ```
@@ -1090,14 +968,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.PatchAtsInterviewAsync(
     connectionId: "string",
     id: "string",
-    atsInterview: new AtsInterview() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    UserIds = new List<string>() {
-        "string",
-    },
-});
+    atsInterview: new AtsInterview() {});
 
 // handle response
 ```
@@ -1135,31 +1006,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.PatchAtsJobAsync(
     connectionId: "string",
     id: "string",
-    atsJob: new AtsJob() {
-    Addresses = new List<AtsAddress>() {
-        new AtsAddress() {},
-    },
-    Compensation = new List<AtsCompensation>() {
-        new AtsCompensation() {
-            Type = AtsCompensationType.Bonus,
-        },
-    },
-    Departments = new List<string>() {
-        "string",
-    },
-    HiringManagerIds = new List<string>() {
-        "string",
-    },
-    PublicJobUrls = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    RecruiterIds = new List<string>() {
-        "string",
-    },
-});
+    atsJob: new AtsJob() {});
 
 // handle response
 ```
@@ -1197,16 +1044,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.PatchAtsScorecardAsync(
     connectionId: "string",
     id: "string",
-    atsScorecard: new AtsScorecard() {
-    Questions = new List<AtsScorecardQuestion>() {
-        new AtsScorecardQuestion() {
-            Text = "string",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    atsScorecard: new AtsScorecard() {});
 
 // handle response
 ```
@@ -1454,11 +1292,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.UpdateAtsApplicationAsync(
     connectionId: "string",
     id: "string",
-    atsApplication: new AtsApplication() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    atsApplication: new AtsApplication() {});
 
 // handle response
 ```
@@ -1496,28 +1330,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.UpdateAtsCandidateAsync(
     connectionId: "string",
     id: "string",
-    atsCandidate: new AtsCandidate() {
-    Address = new PropertyAtsCandidateAddress() {},
-    Emails = new List<AtsEmail>() {
-        new AtsEmail() {
-            Email = "Gaetano86@hotmail.com",
-        },
-    },
-    LinkUrls = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Tags = new List<string>() {
-        "string",
-    },
-    Telephones = new List<AtsTelephone>() {
-        new AtsTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    atsCandidate: new AtsCandidate() {});
 
 // handle response
 ```
@@ -1555,11 +1368,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.UpdateAtsDocumentAsync(
     connectionId: "string",
     id: "string",
-    atsDocument: new AtsDocument() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    atsDocument: new AtsDocument() {});
 
 // handle response
 ```
@@ -1597,14 +1406,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.UpdateAtsInterviewAsync(
     connectionId: "string",
     id: "string",
-    atsInterview: new AtsInterview() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    UserIds = new List<string>() {
-        "string",
-    },
-});
+    atsInterview: new AtsInterview() {});
 
 // handle response
 ```
@@ -1642,31 +1444,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.UpdateAtsJobAsync(
     connectionId: "string",
     id: "string",
-    atsJob: new AtsJob() {
-    Addresses = new List<AtsAddress>() {
-        new AtsAddress() {},
-    },
-    Compensation = new List<AtsCompensation>() {
-        new AtsCompensation() {
-            Type = AtsCompensationType.Equity,
-        },
-    },
-    Departments = new List<string>() {
-        "string",
-    },
-    HiringManagerIds = new List<string>() {
-        "string",
-    },
-    PublicJobUrls = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    RecruiterIds = new List<string>() {
-        "string",
-    },
-});
+    atsJob: new AtsJob() {});
 
 // handle response
 ```
@@ -1704,16 +1482,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.UpdateAtsScorecardAsync(
     connectionId: "string",
     id: "string",
-    atsScorecard: new AtsScorecard() {
-    Questions = new List<AtsScorecardQuestion>() {
-        new AtsScorecardQuestion() {
-            Text = "string",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    atsScorecard: new AtsScorecard() {});
 
 // handle response
 ```

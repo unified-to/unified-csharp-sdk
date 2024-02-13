@@ -34,22 +34,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisEmployeeAsync(
     connectionId: "string",
-    hrisEmployee: new HrisEmployee() {
-    Address = new PropertyHrisEmployeeAddress() {},
-    Emails = new List<HrisEmail>() {
-        new HrisEmail() {
-            Email = "Adriel_Hansen@hotmail.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<HrisTelephone>() {
-        new HrisTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    hrisEmployee: new HrisEmployee() {});
 
 // handle response
 ```
@@ -85,17 +70,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisGroupAsync(
     connectionId: "string",
-    hrisGroup: new HrisGroup() {
-    ManagerIds = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    UserIds = new List<string>() {
-        "string",
-    },
-});
+    hrisGroup: new HrisGroup() {});
 
 // handle response
 ```
@@ -211,9 +186,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListHrisEmployeesRequest req = new ListHrisEmployeesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Hris.ListHrisEmployeesAsync(req);
@@ -251,9 +223,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListHrisGroupsRequest req = new ListHrisGroupsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Hris.ListHrisGroupsAsync(req);
@@ -292,22 +261,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.PatchHrisEmployeeAsync(
     connectionId: "string",
     id: "string",
-    hrisEmployee: new HrisEmployee() {
-    Address = new PropertyHrisEmployeeAddress() {},
-    Emails = new List<HrisEmail>() {
-        new HrisEmail() {
-            Email = "Zetta.Cassin@yahoo.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<HrisTelephone>() {
-        new HrisTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    hrisEmployee: new HrisEmployee() {});
 
 // handle response
 ```
@@ -345,17 +299,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.PatchHrisGroupAsync(
     connectionId: "string",
     id: "string",
-    hrisGroup: new HrisGroup() {
-    ManagerIds = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    UserIds = new List<string>() {
-        "string",
-    },
-});
+    hrisGroup: new HrisGroup() {});
 
 // handle response
 ```
@@ -463,22 +407,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.UpdateHrisEmployeeAsync(
     connectionId: "string",
     id: "string",
-    hrisEmployee: new HrisEmployee() {
-    Address = new PropertyHrisEmployeeAddress() {},
-    Emails = new List<HrisEmail>() {
-        new HrisEmail() {
-            Email = "Abbie_Aufderhar@gmail.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    Telephones = new List<HrisTelephone>() {
-        new HrisTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    hrisEmployee: new HrisEmployee() {});
 
 // handle response
 ```
@@ -516,17 +445,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.UpdateHrisGroupAsync(
     connectionId: "string",
     id: "string",
-    hrisGroup: new HrisGroup() {
-    ManagerIds = new List<string>() {
-        "string",
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    UserIds = new List<string>() {
-        "string",
-    },
-});
+    hrisGroup: new HrisGroup() {});
 
 // handle response
 ```

@@ -28,16 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Invoice.CreateAccountingInvoiceAsync(
     connectionId: "string",
-    accountingInvoice: new AccountingInvoice() {
-    Lineitems = new List<AccountingLineitem>() {
-        new AccountingLineitem() {
-            TotalAmount = 6736.06D,
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    accountingInvoice: new AccountingInvoice() {});
 
 // handle response
 ```
@@ -113,9 +104,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingInvoicesRequest req = new ListAccountingInvoicesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Invoice.ListAccountingInvoicesAsync(req);
@@ -154,16 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Invoice.PatchAccountingInvoiceAsync(
     connectionId: "string",
     id: "string",
-    accountingInvoice: new AccountingInvoice() {
-    Lineitems = new List<AccountingLineitem>() {
-        new AccountingLineitem() {
-            TotalAmount = 7374.1D,
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    accountingInvoice: new AccountingInvoice() {});
 
 // handle response
 ```
@@ -236,16 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Invoice.UpdateAccountingInvoiceAsync(
     connectionId: "string",
     id: "string",
-    accountingInvoice: new AccountingInvoice() {
-    Lineitems = new List<AccountingLineitem>() {
-        new AccountingLineitem() {
-            TotalAmount = 6974.28D,
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    accountingInvoice: new AccountingInvoice() {});
 
 // handle response
 ```

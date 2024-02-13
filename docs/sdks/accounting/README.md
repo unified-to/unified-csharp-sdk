@@ -66,9 +66,6 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "string",
     accountingAccount: new AccountingAccount() {
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -105,23 +102,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingContactAsync(
     connectionId: "string",
-    accountingContact: new AccountingContact() {
-    BillingAddress = new PropertyAccountingContactBillingAddress() {},
-    Emails = new List<AccountingEmail>() {
-        new AccountingEmail() {
-            Email = "Mac36@gmail.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    ShippingAddress = new PropertyAccountingContactShippingAddress() {},
-    Telephones = new List<AccountingTelephone>() {
-        new AccountingTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    accountingContact: new AccountingContact() {});
 
 // handle response
 ```
@@ -157,16 +138,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
     connectionId: "string",
-    accountingInvoice: new AccountingInvoice() {
-    Lineitems = new List<AccountingLineitem>() {
-        new AccountingLineitem() {
-            TotalAmount = 6736.06D,
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    accountingInvoice: new AccountingInvoice() {});
 
 // handle response
 ```
@@ -202,11 +174,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingPaymentAsync(
     connectionId: "string",
-    accountingPayment: new AccountingPayment() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    accountingPayment: new AccountingPayment() {});
 
 // handle response
 ```
@@ -245,9 +213,6 @@ var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
     accountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 1719.1D,
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -286,15 +251,6 @@ var res = await sdk.Accounting.CreateAccountingTransactionAsync(
     connectionId: "string",
     accountingTransaction: new AccountingTransaction() {
     Id = "<ID>",
-    Lineitems = new List<AccountingTransactionLineitem>() {
-        new AccountingTransactionLineitem() {
-            AccountId = "string",
-            TotalAmount = 4969.62D,
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -691,9 +647,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingAccountsRequest req = new ListAccountingAccountsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Accounting.ListAccountingAccountsAsync(req);
@@ -731,9 +684,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingContactsRequest req = new ListAccountingContactsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Accounting.ListAccountingContactsAsync(req);
@@ -771,9 +721,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingInvoicesRequest req = new ListAccountingInvoicesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Accounting.ListAccountingInvoicesAsync(req);
@@ -811,9 +758,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingOrganizationsRequest req = new ListAccountingOrganizationsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Accounting.ListAccountingOrganizationsAsync(req);
@@ -851,9 +795,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingPaymentsRequest req = new ListAccountingPaymentsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Accounting.ListAccountingPaymentsAsync(req);
@@ -891,9 +832,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingPayoutsRequest req = new ListAccountingPayoutsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Accounting.ListAccountingPayoutsAsync(req);
@@ -931,9 +869,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingRefundsRequest req = new ListAccountingRefundsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Accounting.ListAccountingRefundsAsync(req);
@@ -971,9 +906,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingTaxratesRequest req = new ListAccountingTaxratesRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Accounting.ListAccountingTaxratesAsync(req);
@@ -1011,9 +943,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 ListAccountingTransactionsRequest req = new ListAccountingTransactionsRequest() {
     ConnectionId = "string",
-    Fields = new List<string>() {
-        "string",
-    },
 };
 
 var res = await sdk.Accounting.ListAccountingTransactionsAsync(req);
@@ -1054,9 +983,6 @@ var res = await sdk.Accounting.PatchAccountingAccountAsync(
     id: "string",
     accountingAccount: new AccountingAccount() {
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -1095,23 +1021,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.PatchAccountingContactAsync(
     connectionId: "string",
     id: "string",
-    accountingContact: new AccountingContact() {
-    BillingAddress = new PropertyAccountingContactBillingAddress() {},
-    Emails = new List<AccountingEmail>() {
-        new AccountingEmail() {
-            Email = "Sylvester.Kuhic@yahoo.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    ShippingAddress = new PropertyAccountingContactShippingAddress() {},
-    Telephones = new List<AccountingTelephone>() {
-        new AccountingTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    accountingContact: new AccountingContact() {});
 
 // handle response
 ```
@@ -1149,16 +1059,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.PatchAccountingInvoiceAsync(
     connectionId: "string",
     id: "string",
-    accountingInvoice: new AccountingInvoice() {
-    Lineitems = new List<AccountingLineitem>() {
-        new AccountingLineitem() {
-            TotalAmount = 7374.1D,
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    accountingInvoice: new AccountingInvoice() {});
 
 // handle response
 ```
@@ -1196,11 +1097,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.PatchAccountingPaymentAsync(
     connectionId: "string",
     id: "string",
-    accountingPayment: new AccountingPayment() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    accountingPayment: new AccountingPayment() {});
 
 // handle response
 ```
@@ -1241,9 +1138,6 @@ var res = await sdk.Accounting.PatchAccountingTaxrateAsync(
     accountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 5991.47D,
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -1284,15 +1178,6 @@ var res = await sdk.Accounting.PatchAccountingTransactionAsync(
     id: "string",
     accountingTransaction: new AccountingTransaction() {
     Id = "<ID>",
-    Lineitems = new List<AccountingTransactionLineitem>() {
-        new AccountingTransactionLineitem() {
-            AccountId = "string",
-            TotalAmount = 5633.69D,
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -1543,9 +1428,6 @@ var res = await sdk.Accounting.UpdateAccountingAccountAsync(
     id: "string",
     accountingAccount: new AccountingAccount() {
     Name = "string",
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -1584,23 +1466,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.UpdateAccountingContactAsync(
     connectionId: "string",
     id: "string",
-    accountingContact: new AccountingContact() {
-    BillingAddress = new PropertyAccountingContactBillingAddress() {},
-    Emails = new List<AccountingEmail>() {
-        new AccountingEmail() {
-            Email = "Kaci_Hane@hotmail.com",
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-    ShippingAddress = new PropertyAccountingContactShippingAddress() {},
-    Telephones = new List<AccountingTelephone>() {
-        new AccountingTelephone() {
-            Telephone = "string",
-        },
-    },
-});
+    accountingContact: new AccountingContact() {});
 
 // handle response
 ```
@@ -1638,16 +1504,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(
     connectionId: "string",
     id: "string",
-    accountingInvoice: new AccountingInvoice() {
-    Lineitems = new List<AccountingLineitem>() {
-        new AccountingLineitem() {
-            TotalAmount = 6974.28D,
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    accountingInvoice: new AccountingInvoice() {});
 
 // handle response
 ```
@@ -1685,11 +1542,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.UpdateAccountingPaymentAsync(
     connectionId: "string",
     id: "string",
-    accountingPayment: new AccountingPayment() {
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
-});
+    accountingPayment: new AccountingPayment() {});
 
 // handle response
 ```
@@ -1730,9 +1583,6 @@ var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(
     accountingTaxrate: new AccountingTaxrate() {
     Name = "string",
     Rate = 3382.78D,
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
@@ -1773,15 +1623,6 @@ var res = await sdk.Accounting.UpdateAccountingTransactionAsync(
     id: "string",
     accountingTransaction: new AccountingTransaction() {
     Id = "<ID>",
-    Lineitems = new List<AccountingTransactionLineitem>() {
-        new AccountingTransactionLineitem() {
-            AccountId = "string",
-            TotalAmount = 6498.37D,
-        },
-    },
-    Raw = new Dictionary<string, object>() {
-        { "key", "string" },
-    },
 });
 
 // handle response
