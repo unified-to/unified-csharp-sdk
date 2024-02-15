@@ -29,6 +29,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonProperty("date_of_birth")]
+        public DateTime? DateOfBirth { get; set; }
+
         [JsonProperty("emails")]
         public List<AtsEmail>? Emails { get; set; }
 
