@@ -45,10 +45,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.CreateCommerceCollectionAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     commerceCollection: new CommerceCollection() {
-    Id = "<ID>",
-    Name = "string",
+    Id = "<id>",
+    Name = "<value>",
 });
 
 // handle response
@@ -84,7 +84,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.CreateCommerceInventoryAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     commerceInventory: new CommerceInventory() {
     Available = 5165.08D,
 });
@@ -122,9 +122,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.CreateCommerceItemAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     commerceItem: new CommerceItem() {
-    Name = "string",
+    Name = "<value>",
 });
 
 // handle response
@@ -160,9 +160,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.CreateCommerceLocationAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     commerceLocation: new CommerceLocation() {
-    Name = "string",
+    Name = "<value>",
 });
 
 // handle response
@@ -198,10 +198,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.GetCommerceCollectionAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -238,10 +238,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.GetCommerceInventoryAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -278,10 +278,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.GetCommerceItemAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -318,10 +318,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.GetCommerceLocationAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -358,7 +358,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListCommerceCollectionsRequest req = new ListCommerceCollectionsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Commerce.ListCommerceCollectionsAsync(req);
@@ -395,7 +395,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListCommerceInventoriesRequest req = new ListCommerceInventoriesRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Commerce.ListCommerceInventoriesAsync(req);
@@ -432,7 +432,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListCommerceItemsRequest req = new ListCommerceItemsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Commerce.ListCommerceItemsAsync(req);
@@ -469,7 +469,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListCommerceLocationsRequest req = new ListCommerceLocationsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Commerce.ListCommerceLocationsAsync(req);
@@ -506,11 +506,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.PatchCommerceCollectionAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     commerceCollection: new CommerceCollection() {
-    Id = "<ID>",
-    Name = "string",
+    Id = "<id>",
+    Name = "<value>",
 });
 
 // handle response
@@ -547,8 +547,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.PatchCommerceInventoryAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     commerceInventory: new CommerceInventory() {
     Available = 615.23D,
 });
@@ -587,10 +587,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.PatchCommerceItemAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     commerceItem: new CommerceItem() {
-    Name = "string",
+    Name = "<value>",
 });
 
 // handle response
@@ -627,10 +627,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.PatchCommerceLocationAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     commerceLocation: new CommerceLocation() {
-    Name = "string",
+    Name = "<value>",
 });
 
 // handle response
@@ -666,8 +666,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.RemoveCommerceCollectionAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -701,8 +701,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.RemoveCommerceInventoryAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -736,8 +736,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.RemoveCommerceItemAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -771,8 +771,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.RemoveCommerceLocationAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -807,11 +807,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.UpdateCommerceCollectionAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     commerceCollection: new CommerceCollection() {
-    Id = "<ID>",
-    Name = "string",
+    Id = "<id>",
+    Name = "<value>",
 });
 
 // handle response
@@ -848,8 +848,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.UpdateCommerceInventoryAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     commerceInventory: new CommerceInventory() {
     Available = 9360.02D,
 });
@@ -888,10 +888,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.UpdateCommerceItemAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     commerceItem: new CommerceItem() {
-    Name = "string",
+    Name = "<value>",
 });
 
 // handle response
@@ -928,10 +928,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Commerce.UpdateCommerceLocationAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     commerceLocation: new CommerceLocation() {
-    Name = "string",
+    Name = "<value>",
 });
 
 // handle response

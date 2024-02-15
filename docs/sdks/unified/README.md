@@ -41,7 +41,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Commerce,
     },
-    IntegrationType = "string",
+    IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
         PropertyConnectionPermissions.AtsApplicationstatusRead,
     },
@@ -82,9 +82,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Unified.CreateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
     Event = Models.Components.Event.Created,
-    HookUrl = "string",
+    HookUrl = "<value>",
     ObjectType = ObjectType.AccountingAccount,
 },
     includeAll: false);
@@ -120,7 +120,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Unified.GetUnifiedApicallAsync(id: "string");
+var res = await sdk.Unified.GetUnifiedApicallAsync(id: "<value>");
 
 // handle response
 ```
@@ -152,7 +152,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Unified.GetUnifiedConnectionAsync(id: "string");
+var res = await sdk.Unified.GetUnifiedConnectionAsync(id: "<value>");
 
 // handle response
 ```
@@ -186,8 +186,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 GetUnifiedIntegrationAuthRequest req = new GetUnifiedIntegrationAuthRequest() {
-    IntegrationType = "string",
-    WorkspaceId = "string",
+    IntegrationType = "<value>",
+    WorkspaceId = "<value>",
 };
 
 var res = await sdk.Unified.GetUnifiedIntegrationAuthAsync(req);
@@ -222,7 +222,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Unified.GetUnifiedWebhookAsync(id: "string");
+var res = await sdk.Unified.GetUnifiedWebhookAsync(id: "<value>");
 
 // handle response
 ```
@@ -325,7 +325,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListUnifiedIntegrationWorkspacesRequest req = new ListUnifiedIntegrationWorkspacesRequest() {
-    WorkspaceId = "string",
+    WorkspaceId = "<value>",
 };
 
 var res = await sdk.Unified.ListUnifiedIntegrationWorkspacesAsync(req);
@@ -465,12 +465,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Unified.PatchUnifiedConnectionAsync(
-    id: "string",
+    id: "<value>",
     connection: new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Ticketing,
     },
-    IntegrationType = "string",
+    IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
         PropertyConnectionPermissions.CrmLeadWrite,
     },
@@ -507,7 +507,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Unified.PatchUnifiedWebhookTriggerAsync(id: "string");
+var res = await sdk.Unified.PatchUnifiedWebhookTriggerAsync(id: "<value>");
 
 // handle response
 ```
@@ -539,7 +539,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Unified.RemoveUnifiedConnectionAsync(id: "string");
+var res = await sdk.Unified.RemoveUnifiedConnectionAsync(id: "<value>");
 
 // handle response
 ```
@@ -571,7 +571,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Unified.RemoveUnifiedWebhookAsync(id: "string");
+var res = await sdk.Unified.RemoveUnifiedWebhookAsync(id: "<value>");
 
 // handle response
 ```
@@ -605,12 +605,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
-    id: "string",
+    id: "<value>",
     connection: new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Accounting,
     },
-    IntegrationType = "string",
+    IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
         PropertyConnectionPermissions.AtsJobWrite,
     },
@@ -647,7 +647,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Unified.UpdateUnifiedWebhookTriggerAsync(id: "string");
+var res = await sdk.Unified.UpdateUnifiedWebhookTriggerAsync(id: "<value>");
 
 // handle response
 ```

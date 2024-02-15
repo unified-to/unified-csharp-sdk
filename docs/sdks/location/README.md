@@ -27,9 +27,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Location.CreateCommerceLocationAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     commerceLocation: new CommerceLocation() {
-    Name = "string",
+    Name = "<value>",
 });
 
 // handle response
@@ -65,10 +65,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Location.GetCommerceLocationAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -105,7 +105,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListCommerceLocationsRequest req = new ListCommerceLocationsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Location.ListCommerceLocationsAsync(req);
@@ -142,10 +142,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Location.PatchCommerceLocationAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     commerceLocation: new CommerceLocation() {
-    Name = "string",
+    Name = "<value>",
 });
 
 // handle response
@@ -181,8 +181,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Location.RemoveCommerceLocationAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -217,10 +217,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Location.UpdateCommerceLocationAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     commerceLocation: new CommerceLocation() {
-    Name = "string",
+    Name = "<value>",
 });
 
 // handle response

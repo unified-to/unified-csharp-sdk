@@ -27,7 +27,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Job.CreateAtsJobAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     atsJob: new AtsJob() {});
 
 // handle response
@@ -63,10 +63,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Job.GetAtsJobAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -103,7 +103,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAtsJobsRequest req = new ListAtsJobsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Job.ListAtsJobsAsync(req);
@@ -140,8 +140,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Job.PatchAtsJobAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     atsJob: new AtsJob() {});
 
 // handle response
@@ -177,8 +177,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Job.RemoveAtsJobAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -213,8 +213,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Job.UpdateAtsJobAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     atsJob: new AtsJob() {});
 
 // handle response

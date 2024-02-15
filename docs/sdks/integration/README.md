@@ -24,8 +24,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 GetUnifiedIntegrationAuthRequest req = new GetUnifiedIntegrationAuthRequest() {
-    IntegrationType = "string",
-    WorkspaceId = "string",
+    IntegrationType = "<value>",
+    WorkspaceId = "<value>",
 };
 
 var res = await sdk.Integration.GetUnifiedIntegrationAuthAsync(req);
@@ -62,7 +62,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListUnifiedIntegrationWorkspacesRequest req = new ListUnifiedIntegrationWorkspacesRequest() {
-    WorkspaceId = "string",
+    WorkspaceId = "<value>",
 };
 
 var res = await sdk.Integration.ListUnifiedIntegrationWorkspacesAsync(req);

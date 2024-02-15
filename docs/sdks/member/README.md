@@ -27,7 +27,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Member.CreateMartechMemberAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     marketingMember: new MarketingMember() {});
 
 // handle response
@@ -63,10 +63,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Member.GetMartechMemberAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -103,7 +103,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListMartechMembersRequest req = new ListMartechMembersRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Member.ListMartechMembersAsync(req);
@@ -140,8 +140,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Member.PatchMartechMemberAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     marketingMember: new MarketingMember() {});
 
 // handle response
@@ -177,8 +177,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Member.RemoveMartechMemberAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -213,8 +213,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Member.UpdateMartechMemberAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     marketingMember: new MarketingMember() {});
 
 // handle response

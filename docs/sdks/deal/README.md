@@ -27,7 +27,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Deal.CreateCrmDealAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     crmDeal: new CrmDeal() {});
 
 // handle response
@@ -63,10 +63,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Deal.GetCrmDealAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -103,7 +103,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListCrmDealsRequest req = new ListCrmDealsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Deal.ListCrmDealsAsync(req);
@@ -140,8 +140,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Deal.PatchCrmDealAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     crmDeal: new CrmDeal() {});
 
 // handle response
@@ -177,8 +177,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Deal.RemoveCrmDealAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -213,8 +213,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Deal.UpdateCrmDealAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     crmDeal: new CrmDeal() {});
 
 // handle response

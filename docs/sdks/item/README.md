@@ -27,9 +27,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Item.CreateCommerceItemAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     commerceItem: new CommerceItem() {
-    Name = "string",
+    Name = "<value>",
 });
 
 // handle response
@@ -65,10 +65,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Item.GetCommerceItemAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -105,7 +105,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListCommerceItemsRequest req = new ListCommerceItemsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Item.ListCommerceItemsAsync(req);
@@ -142,10 +142,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Item.PatchCommerceItemAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     commerceItem: new CommerceItem() {
-    Name = "string",
+    Name = "<value>",
 });
 
 // handle response
@@ -181,8 +181,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Item.RemoveCommerceItemAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -217,10 +217,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Item.UpdateCommerceItemAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     commerceItem: new CommerceItem() {
-    Name = "string",
+    Name = "<value>",
 });
 
 // handle response

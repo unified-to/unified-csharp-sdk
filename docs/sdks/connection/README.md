@@ -29,7 +29,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Commerce,
     },
-    IntegrationType = "string",
+    IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
         PropertyConnectionPermissions.AtsApplicationstatusRead,
     },
@@ -67,7 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Connection.GetUnifiedConnectionAsync(id: "string");
+var res = await sdk.Connection.GetUnifiedConnectionAsync(id: "<value>");
 
 // handle response
 ```
@@ -136,12 +136,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Connection.PatchUnifiedConnectionAsync(
-    id: "string",
+    id: "<value>",
     connection: new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Ticketing,
     },
-    IntegrationType = "string",
+    IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
         PropertyConnectionPermissions.CrmLeadWrite,
     },
@@ -178,7 +178,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Connection.RemoveUnifiedConnectionAsync(id: "string");
+var res = await sdk.Connection.RemoveUnifiedConnectionAsync(id: "<value>");
 
 // handle response
 ```
@@ -212,12 +212,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
-    id: "string",
+    id: "<value>",
     connection: new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Accounting,
     },
-    IntegrationType = "string",
+    IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
         PropertyConnectionPermissions.AtsJobWrite,
     },

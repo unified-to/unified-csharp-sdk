@@ -28,9 +28,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
     Event = Models.Components.Event.Created,
-    HookUrl = "string",
+    HookUrl = "<value>",
     ObjectType = ObjectType.AccountingAccount,
 },
     includeAll: false);
@@ -66,7 +66,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Webhook.GetUnifiedWebhookAsync(id: "string");
+var res = await sdk.Webhook.GetUnifiedWebhookAsync(id: "<value>");
 
 // handle response
 ```
@@ -132,7 +132,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Webhook.PatchUnifiedWebhookTriggerAsync(id: "string");
+var res = await sdk.Webhook.PatchUnifiedWebhookTriggerAsync(id: "<value>");
 
 // handle response
 ```
@@ -164,7 +164,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Webhook.RemoveUnifiedWebhookAsync(id: "string");
+var res = await sdk.Webhook.RemoveUnifiedWebhookAsync(id: "<value>");
 
 // handle response
 ```
@@ -196,7 +196,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Webhook.UpdateUnifiedWebhookTriggerAsync(id: "string");
+var res = await sdk.Webhook.UpdateUnifiedWebhookTriggerAsync(id: "<value>");
 
 // handle response
 ```

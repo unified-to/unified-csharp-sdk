@@ -60,7 +60,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.CreateAtsApplicationAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     atsApplication: new AtsApplication() {});
 
 // handle response
@@ -96,7 +96,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.CreateAtsCandidateAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     atsCandidate: new AtsCandidate() {});
 
 // handle response
@@ -132,7 +132,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.CreateAtsDocumentAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     atsDocument: new AtsDocument() {});
 
 // handle response
@@ -168,7 +168,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.CreateAtsInterviewAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     atsInterview: new AtsInterview() {});
 
 // handle response
@@ -204,7 +204,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.CreateAtsJobAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     atsJob: new AtsJob() {});
 
 // handle response
@@ -240,7 +240,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.CreateAtsScorecardAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     atsScorecard: new AtsScorecard() {});
 
 // handle response
@@ -276,10 +276,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.GetAtsApplicationAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -316,10 +316,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.GetAtsCandidateAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -356,10 +356,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.GetAtsCompanyAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -396,10 +396,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.GetAtsDocumentAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -436,10 +436,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.GetAtsInterviewAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -476,10 +476,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.GetAtsJobAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -516,10 +516,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.GetAtsScorecardAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -556,7 +556,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAtsApplicationsRequest req = new ListAtsApplicationsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Ats.ListAtsApplicationsAsync(req);
@@ -593,7 +593,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAtsApplicationstatusesRequest req = new ListAtsApplicationstatusesRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Ats.ListAtsApplicationstatusesAsync(req);
@@ -630,7 +630,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAtsCandidatesRequest req = new ListAtsCandidatesRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Ats.ListAtsCandidatesAsync(req);
@@ -667,7 +667,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAtsCompaniesRequest req = new ListAtsCompaniesRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Ats.ListAtsCompaniesAsync(req);
@@ -704,7 +704,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAtsDocumentsRequest req = new ListAtsDocumentsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Ats.ListAtsDocumentsAsync(req);
@@ -741,7 +741,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAtsInterviewsRequest req = new ListAtsInterviewsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Ats.ListAtsInterviewsAsync(req);
@@ -778,7 +778,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAtsJobsRequest req = new ListAtsJobsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Ats.ListAtsJobsAsync(req);
@@ -815,7 +815,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAtsScorecardsRequest req = new ListAtsScorecardsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Ats.ListAtsScorecardsAsync(req);
@@ -852,8 +852,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.PatchAtsApplicationAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     atsApplication: new AtsApplication() {});
 
 // handle response
@@ -890,8 +890,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.PatchAtsCandidateAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     atsCandidate: new AtsCandidate() {});
 
 // handle response
@@ -928,8 +928,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.PatchAtsDocumentAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     atsDocument: new AtsDocument() {});
 
 // handle response
@@ -966,8 +966,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.PatchAtsInterviewAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     atsInterview: new AtsInterview() {});
 
 // handle response
@@ -1004,8 +1004,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.PatchAtsJobAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     atsJob: new AtsJob() {});
 
 // handle response
@@ -1042,8 +1042,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.PatchAtsScorecardAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     atsScorecard: new AtsScorecard() {});
 
 // handle response
@@ -1079,8 +1079,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.RemoveAtsApplicationAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -1114,8 +1114,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.RemoveAtsCandidateAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -1149,8 +1149,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.RemoveAtsDocumentAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -1184,8 +1184,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.RemoveAtsInterviewAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -1219,8 +1219,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.RemoveAtsJobAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -1254,8 +1254,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.RemoveAtsScorecardAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -1290,8 +1290,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.UpdateAtsApplicationAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     atsApplication: new AtsApplication() {});
 
 // handle response
@@ -1328,8 +1328,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.UpdateAtsCandidateAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     atsCandidate: new AtsCandidate() {});
 
 // handle response
@@ -1366,8 +1366,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.UpdateAtsDocumentAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     atsDocument: new AtsDocument() {});
 
 // handle response
@@ -1404,8 +1404,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.UpdateAtsInterviewAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     atsInterview: new AtsInterview() {});
 
 // handle response
@@ -1442,8 +1442,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.UpdateAtsJobAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     atsJob: new AtsJob() {});
 
 // handle response
@@ -1480,8 +1480,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Ats.UpdateAtsScorecardAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     atsScorecard: new AtsScorecard() {});
 
 // handle response

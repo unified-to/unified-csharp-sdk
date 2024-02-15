@@ -22,7 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListUcCallsRequest req = new ListUcCallsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Call.ListUcCallsAsync(req);

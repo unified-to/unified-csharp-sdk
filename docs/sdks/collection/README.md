@@ -27,10 +27,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Collection.CreateCommerceCollectionAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     commerceCollection: new CommerceCollection() {
-    Id = "<ID>",
-    Name = "string",
+    Id = "<id>",
+    Name = "<value>",
 });
 
 // handle response
@@ -66,10 +66,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Collection.GetCommerceCollectionAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -106,7 +106,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListCommerceCollectionsRequest req = new ListCommerceCollectionsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Collection.ListCommerceCollectionsAsync(req);
@@ -143,11 +143,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Collection.PatchCommerceCollectionAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     commerceCollection: new CommerceCollection() {
-    Id = "<ID>",
-    Name = "string",
+    Id = "<id>",
+    Name = "<value>",
 });
 
 // handle response
@@ -183,8 +183,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Collection.RemoveCommerceCollectionAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -219,11 +219,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Collection.UpdateCommerceCollectionAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     commerceCollection: new CommerceCollection() {
-    Id = "<ID>",
-    Name = "string",
+    Id = "<id>",
+    Name = "<value>",
 });
 
 // handle response

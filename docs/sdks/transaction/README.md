@@ -27,9 +27,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Transaction.CreateAccountingTransactionAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     accountingTransaction: new AccountingTransaction() {
-    Id = "<ID>",
+    Id = "<id>",
 });
 
 // handle response
@@ -65,10 +65,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Transaction.GetAccountingTransactionAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -105,7 +105,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAccountingTransactionsRequest req = new ListAccountingTransactionsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Transaction.ListAccountingTransactionsAsync(req);
@@ -142,10 +142,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Transaction.PatchAccountingTransactionAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingTransaction: new AccountingTransaction() {
-    Id = "<ID>",
+    Id = "<id>",
 });
 
 // handle response
@@ -181,8 +181,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Transaction.RemoveAccountingTransactionAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -217,10 +217,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Transaction.UpdateAccountingTransactionAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingTransaction: new AccountingTransaction() {
-    Id = "<ID>",
+    Id = "<id>",
 });
 
 // handle response

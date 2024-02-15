@@ -28,7 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Uc.CreateUcContactAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     ucContact: new UcContact() {});
 
 // handle response
@@ -64,10 +64,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Uc.GetUcContactAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -104,7 +104,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListUcCallsRequest req = new ListUcCallsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Uc.ListUcCallsAsync(req);
@@ -141,7 +141,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListUcContactsRequest req = new ListUcContactsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Uc.ListUcContactsAsync(req);
@@ -178,8 +178,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Uc.PatchUcContactAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     ucContact: new UcContact() {});
 
 // handle response
@@ -215,8 +215,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Uc.RemoveUcContactAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -251,8 +251,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Uc.UpdateUcContactAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     ucContact: new UcContact() {});
 
 // handle response

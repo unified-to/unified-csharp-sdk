@@ -27,9 +27,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     accountingTaxrate: new AccountingTaxrate() {
-    Name = "string",
+    Name = "<value>",
     Rate = 1719.1D,
 });
 
@@ -66,10 +66,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Taxrate.GetAccountingTaxrateAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -106,7 +106,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAccountingTaxratesRequest req = new ListAccountingTaxratesRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Taxrate.ListAccountingTaxratesAsync(req);
@@ -143,10 +143,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Taxrate.PatchAccountingTaxrateAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingTaxrate: new AccountingTaxrate() {
-    Name = "string",
+    Name = "<value>",
     Rate = 5991.47D,
 });
 
@@ -183,8 +183,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Taxrate.RemoveAccountingTaxrateAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -219,10 +219,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Taxrate.UpdateAccountingTaxrateAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingTaxrate: new AccountingTaxrate() {
-    Name = "string",
+    Name = "<value>",
     Rate = 3382.78D,
 });
 

@@ -63,9 +63,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     accountingAccount: new AccountingAccount() {
-    Name = "string",
+    Name = "<value>",
 });
 
 // handle response
@@ -101,7 +101,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.CreateAccountingContactAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     accountingContact: new AccountingContact() {});
 
 // handle response
@@ -137,7 +137,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     accountingInvoice: new AccountingInvoice() {});
 
 // handle response
@@ -173,7 +173,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.CreateAccountingPaymentAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     accountingPayment: new AccountingPayment() {});
 
 // handle response
@@ -209,9 +209,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     accountingTaxrate: new AccountingTaxrate() {
-    Name = "string",
+    Name = "<value>",
     Rate = 1719.1D,
 });
 
@@ -248,9 +248,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.CreateAccountingTransactionAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     accountingTransaction: new AccountingTransaction() {
-    Id = "<ID>",
+    Id = "<id>",
 });
 
 // handle response
@@ -286,10 +286,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.GetAccountingAccountAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -326,10 +326,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.GetAccountingContactAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -366,10 +366,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.GetAccountingInvoiceAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -406,10 +406,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.GetAccountingOrganizationAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -446,10 +446,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.GetAccountingPaymentAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -486,10 +486,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.GetAccountingPayoutAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -526,10 +526,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.GetAccountingRefundAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -566,10 +566,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.GetAccountingTaxrateAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -606,10 +606,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.GetAccountingTransactionAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -646,7 +646,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAccountingAccountsRequest req = new ListAccountingAccountsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Accounting.ListAccountingAccountsAsync(req);
@@ -683,7 +683,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAccountingContactsRequest req = new ListAccountingContactsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Accounting.ListAccountingContactsAsync(req);
@@ -720,7 +720,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAccountingInvoicesRequest req = new ListAccountingInvoicesRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Accounting.ListAccountingInvoicesAsync(req);
@@ -757,7 +757,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAccountingOrganizationsRequest req = new ListAccountingOrganizationsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Accounting.ListAccountingOrganizationsAsync(req);
@@ -794,7 +794,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAccountingPaymentsRequest req = new ListAccountingPaymentsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Accounting.ListAccountingPaymentsAsync(req);
@@ -831,7 +831,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAccountingPayoutsRequest req = new ListAccountingPayoutsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Accounting.ListAccountingPayoutsAsync(req);
@@ -868,7 +868,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAccountingRefundsRequest req = new ListAccountingRefundsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Accounting.ListAccountingRefundsAsync(req);
@@ -905,7 +905,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAccountingTaxratesRequest req = new ListAccountingTaxratesRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Accounting.ListAccountingTaxratesAsync(req);
@@ -942,7 +942,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAccountingTransactionsRequest req = new ListAccountingTransactionsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Accounting.ListAccountingTransactionsAsync(req);
@@ -979,10 +979,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.PatchAccountingAccountAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingAccount: new AccountingAccount() {
-    Name = "string",
+    Name = "<value>",
 });
 
 // handle response
@@ -1019,8 +1019,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.PatchAccountingContactAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingContact: new AccountingContact() {});
 
 // handle response
@@ -1057,8 +1057,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.PatchAccountingInvoiceAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingInvoice: new AccountingInvoice() {});
 
 // handle response
@@ -1095,8 +1095,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.PatchAccountingPaymentAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingPayment: new AccountingPayment() {});
 
 // handle response
@@ -1133,10 +1133,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.PatchAccountingTaxrateAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingTaxrate: new AccountingTaxrate() {
-    Name = "string",
+    Name = "<value>",
     Rate = 5991.47D,
 });
 
@@ -1174,10 +1174,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.PatchAccountingTransactionAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingTransaction: new AccountingTransaction() {
-    Id = "<ID>",
+    Id = "<id>",
 });
 
 // handle response
@@ -1213,8 +1213,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.RemoveAccountingAccountAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -1248,8 +1248,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.RemoveAccountingContactAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -1283,8 +1283,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.RemoveAccountingInvoiceAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -1318,8 +1318,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.RemoveAccountingPaymentAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -1353,8 +1353,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.RemoveAccountingTaxrateAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -1388,8 +1388,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.RemoveAccountingTransactionAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -1424,10 +1424,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.UpdateAccountingAccountAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingAccount: new AccountingAccount() {
-    Name = "string",
+    Name = "<value>",
 });
 
 // handle response
@@ -1464,8 +1464,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.UpdateAccountingContactAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingContact: new AccountingContact() {});
 
 // handle response
@@ -1502,8 +1502,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingInvoice: new AccountingInvoice() {});
 
 // handle response
@@ -1540,8 +1540,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.UpdateAccountingPaymentAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingPayment: new AccountingPayment() {});
 
 // handle response
@@ -1578,10 +1578,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingTaxrate: new AccountingTaxrate() {
-    Name = "string",
+    Name = "<value>",
     Rate = 3382.78D,
 });
 
@@ -1619,10 +1619,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.UpdateAccountingTransactionAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingTransaction: new AccountingTransaction() {
-    Id = "<ID>",
+    Id = "<id>",
 });
 
 // handle response

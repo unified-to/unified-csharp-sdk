@@ -21,7 +21,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListEnrichPeopleRequest req = new ListEnrichPeopleRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Person.ListEnrichPeopleAsync(req);

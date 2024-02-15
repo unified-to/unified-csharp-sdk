@@ -27,7 +27,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Inventory.CreateCommerceInventoryAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     commerceInventory: new CommerceInventory() {
     Available = 5165.08D,
 });
@@ -65,10 +65,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Inventory.GetCommerceInventoryAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -105,7 +105,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListCommerceInventoriesRequest req = new ListCommerceInventoriesRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Inventory.ListCommerceInventoriesAsync(req);
@@ -142,8 +142,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Inventory.PatchCommerceInventoryAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     commerceInventory: new CommerceInventory() {
     Available = 615.23D,
 });
@@ -181,8 +181,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Inventory.RemoveCommerceInventoryAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -217,8 +217,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     commerceInventory: new CommerceInventory() {
     Available = 9360.02D,
 });

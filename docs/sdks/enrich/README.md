@@ -22,9 +22,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Enrich.ListEnrichCompaniesAsync(
-    connectionId: "string",
-    domain: "string",
-    name: "string");
+    connectionId: "<value>",
+    domain: "<value>",
+    name: "<value>");
 
 // handle response
 ```
@@ -59,7 +59,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListEnrichPeopleRequest req = new ListEnrichPeopleRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Enrich.ListEnrichPeopleAsync(req);

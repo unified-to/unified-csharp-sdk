@@ -10,9 +10,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     accountingAccount: new AccountingAccount() {
-    Name = "string",
+    Name = "<value>",
 });
 
 // handle response

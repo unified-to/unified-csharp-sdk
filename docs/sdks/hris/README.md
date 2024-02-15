@@ -33,7 +33,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Hris.CreateHrisEmployeeAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     hrisEmployee: new HrisEmployee() {});
 
 // handle response
@@ -69,7 +69,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Hris.CreateHrisGroupAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     hrisGroup: new HrisGroup() {});
 
 // handle response
@@ -105,10 +105,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Hris.GetHrisEmployeeAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -145,10 +145,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Hris.GetHrisGroupAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -185,7 +185,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListHrisEmployeesRequest req = new ListHrisEmployeesRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Hris.ListHrisEmployeesAsync(req);
@@ -222,7 +222,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListHrisGroupsRequest req = new ListHrisGroupsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Hris.ListHrisGroupsAsync(req);
@@ -259,8 +259,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Hris.PatchHrisEmployeeAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     hrisEmployee: new HrisEmployee() {});
 
 // handle response
@@ -297,8 +297,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Hris.PatchHrisGroupAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     hrisGroup: new HrisGroup() {});
 
 // handle response
@@ -334,8 +334,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Hris.RemoveHrisEmployeeAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -369,8 +369,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Hris.RemoveHrisGroupAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -405,8 +405,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Hris.UpdateHrisEmployeeAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     hrisEmployee: new HrisEmployee() {});
 
 // handle response
@@ -443,8 +443,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Hris.UpdateHrisGroupAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     hrisGroup: new HrisGroup() {});
 
 // handle response

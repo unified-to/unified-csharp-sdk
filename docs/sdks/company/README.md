@@ -30,7 +30,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Company.CreateCrmCompanyAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     crmCompany: new CrmCompany() {});
 
 // handle response
@@ -66,10 +66,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Company.GetAtsCompanyAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -106,10 +106,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Company.GetCrmCompanyAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -146,7 +146,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAtsCompaniesRequest req = new ListAtsCompaniesRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Company.ListAtsCompaniesAsync(req);
@@ -183,7 +183,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListCrmCompaniesRequest req = new ListCrmCompaniesRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Company.ListCrmCompaniesAsync(req);
@@ -219,9 +219,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Company.ListEnrichCompaniesAsync(
-    connectionId: "string",
-    domain: "string",
-    name: "string");
+    connectionId: "<value>",
+    domain: "<value>",
+    name: "<value>");
 
 // handle response
 ```
@@ -257,8 +257,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Company.PatchCrmCompanyAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     crmCompany: new CrmCompany() {});
 
 // handle response
@@ -294,8 +294,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Company.RemoveCrmCompanyAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -330,8 +330,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Company.UpdateCrmCompanyAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     crmCompany: new CrmCompany() {});
 
 // handle response

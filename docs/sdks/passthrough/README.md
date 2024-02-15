@@ -26,10 +26,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Passthrough.CreatePassthroughAsync(
-    connectionId: "string",
-    path: "string",
+    connectionId: "<value>",
+    path: "<value>",
     requestBody: new Dictionary<string, object>() {
-    { "key", "string" },
+    { "key", "<value>" },
 });
 
 // handle response
@@ -65,8 +65,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Passthrough.ListPassthroughsAsync(
-    connectionId: "string",
-    path: "string");
+    connectionId: "<value>",
+    path: "<value>");
 
 // handle response
 ```
@@ -101,10 +101,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Passthrough.PatchPassthroughAsync(
-    connectionId: "string",
-    path: "string",
+    connectionId: "<value>",
+    path: "<value>",
     requestBody: new Dictionary<string, object>() {
-    { "key", "string" },
+    { "key", "<value>" },
 });
 
 // handle response
@@ -140,8 +140,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Passthrough.RemovePassthroughAsync(
-    connectionId: "string",
-    path: "string");
+    connectionId: "<value>",
+    path: "<value>");
 
 // handle response
 ```
@@ -176,10 +176,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Passthrough.UpdatePassthroughAsync(
-    connectionId: "string",
-    path: "string",
+    connectionId: "<value>",
+    path: "<value>",
     requestBody: new Dictionary<string, object>() {
-    { "key", "string" },
+    { "key", "<value>" },
 });
 
 // handle response

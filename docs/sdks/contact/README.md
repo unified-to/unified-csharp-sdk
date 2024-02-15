@@ -39,7 +39,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Contact.CreateAccountingContactAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     accountingContact: new AccountingContact() {});
 
 // handle response
@@ -75,7 +75,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Contact.CreateCrmContactAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     crmContact: new CrmContact() {});
 
 // handle response
@@ -111,7 +111,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Contact.CreateUcContactAsync(
-    connectionId: "string",
+    connectionId: "<value>",
     ucContact: new UcContact() {});
 
 // handle response
@@ -147,10 +147,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Contact.GetAccountingContactAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -187,10 +187,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Contact.GetCrmContactAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -227,10 +227,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Contact.GetUcContactAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -267,7 +267,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAccountingContactsRequest req = new ListAccountingContactsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Contact.ListAccountingContactsAsync(req);
@@ -304,7 +304,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListCrmContactsRequest req = new ListCrmContactsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Contact.ListCrmContactsAsync(req);
@@ -341,7 +341,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListUcContactsRequest req = new ListUcContactsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Contact.ListUcContactsAsync(req);
@@ -378,8 +378,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Contact.PatchAccountingContactAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingContact: new AccountingContact() {});
 
 // handle response
@@ -416,8 +416,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Contact.PatchCrmContactAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     crmContact: new CrmContact() {});
 
 // handle response
@@ -454,8 +454,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Contact.PatchUcContactAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     ucContact: new UcContact() {});
 
 // handle response
@@ -491,8 +491,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Contact.RemoveAccountingContactAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -526,8 +526,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Contact.RemoveCrmContactAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -561,8 +561,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Contact.RemoveUcContactAsync(
-    connectionId: "string",
-    id: "string");
+    connectionId: "<value>",
+    id: "<value>");
 
 // handle response
 ```
@@ -597,8 +597,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Contact.UpdateAccountingContactAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     accountingContact: new AccountingContact() {});
 
 // handle response
@@ -635,8 +635,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Contact.UpdateCrmContactAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     crmContact: new CrmContact() {});
 
 // handle response
@@ -673,8 +673,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Contact.UpdateUcContactAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     ucContact: new UcContact() {});
 
 // handle response

@@ -23,10 +23,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Payout.GetAccountingPayoutAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -63,7 +63,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAccountingPayoutsRequest req = new ListAccountingPayoutsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Payout.ListAccountingPayoutsAsync(req);

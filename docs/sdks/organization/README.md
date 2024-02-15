@@ -23,10 +23,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 var res = await sdk.Organization.GetAccountingOrganizationAsync(
-    connectionId: "string",
-    id: "string",
+    connectionId: "<value>",
+    id: "<value>",
     fields: new List<string>() {
-    "string",
+    "<value>",
 });
 
 // handle response
@@ -63,7 +63,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 ListAccountingOrganizationsRequest req = new ListAccountingOrganizationsRequest() {
-    ConnectionId = "string",
+    ConnectionId = "<value>",
 };
 
 var res = await sdk.Organization.ListAccountingOrganizationsAsync(req);

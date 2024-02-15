@@ -21,8 +21,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
     });
 
 GetUnifiedIntegrationLoginRequest req = new GetUnifiedIntegrationLoginRequest() {
-    IntegrationType = "string",
-    WorkspaceId = "string",
+    IntegrationType = "<value>",
+    WorkspaceId = "<value>",
 };
 
 var res = await sdk.Login.GetUnifiedIntegrationLoginAsync(req);
