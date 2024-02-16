@@ -17,6 +17,9 @@ namespace UnifiedTo.Models.Components
     public class AtsApplication
     {
 
+        [JsonProperty("answers")]
+        public List<AtsApplicationAnswer>? Answers { get; set; }
+
         [JsonProperty("applied_at")]
         public DateTime? AppliedAt { get; set; }
 

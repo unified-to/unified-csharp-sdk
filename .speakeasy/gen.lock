@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 5c191fdb16f8d76a3eb09c714f56170d
+  docChecksum: 119b9584a5fe294470614e38361fae09
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.258.0
-  releaseVersion: 0.9.7
-  configChecksum: f1cd9c89d8fc81fa15792c8cc927103d
+  generationVersion: 2.259.1
+  releaseVersion: 0.9.8
+  configChecksum: 80811aec7c1ba906f86aa4039855d653
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -570,6 +570,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/UcEmail.cs
   - UnifiedTo/Models/Components/AtsApplicationStatus.cs
   - UnifiedTo/Models/Components/AtsApplication.cs
+  - UnifiedTo/Models/Components/AtsApplicationAnswer.cs
   - UnifiedTo/Models/Components/Origin.cs
   - UnifiedTo/Models/Components/AtsCandidate.cs
   - UnifiedTo/Models/Components/AtsTelephoneType.cs
@@ -584,6 +585,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/EmploymentType.cs
   - UnifiedTo/Models/Components/AtsJobStatus.cs
   - UnifiedTo/Models/Components/AtsJob.cs
+  - UnifiedTo/Models/Components/AtsJobQuestionType.cs
+  - UnifiedTo/Models/Components/AtsJobQuestion.cs
   - UnifiedTo/Models/Components/Frequency.cs
   - UnifiedTo/Models/Components/AtsCompensationType.cs
   - UnifiedTo/Models/Components/AtsCompensation.cs
@@ -1165,6 +1168,7 @@ generatedFiles:
   - docs/Models/Components/UcEmail.md
   - docs/Models/Components/AtsApplicationStatus.md
   - docs/Models/Components/AtsApplication.md
+  - docs/Models/Components/AtsApplicationAnswer.md
   - docs/Models/Components/Origin.md
   - docs/Models/Components/AtsCandidate.md
   - docs/Models/Components/AtsTelephoneType.md
@@ -1179,6 +1183,8 @@ generatedFiles:
   - docs/Models/Components/EmploymentType.md
   - docs/Models/Components/AtsJobStatus.md
   - docs/Models/Components/AtsJob.md
+  - docs/Models/Components/AtsJobQuestionType.md
+  - docs/Models/Components/AtsJobQuestion.md
   - docs/Models/Components/Frequency.md
   - docs/Models/Components/AtsCompensationType.md
   - docs/Models/Components/AtsCompensation.md
