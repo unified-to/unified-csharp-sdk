@@ -26,6 +26,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("download_url")]
         public string? DownloadUrl { get; set; }
 
+        [JsonProperty("hash")]
+        public string? Hash { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
