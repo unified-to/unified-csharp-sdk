@@ -19,6 +19,8 @@ namespace UnifiedTo.Models.Components
         Updated,
         [JsonProperty("created")]
         Created,
+        [JsonProperty("deleted")]
+        Deleted,
     }
 
     public static class PropertyIntegrationSupportWebhookEventsExtension
