@@ -2,7 +2,7 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <PackageId>UnifiedTo</PackageId>
-    <Version>0.9.11</Version>
+    <Version>0.10.0</Version>
     <Authors>Unified API Inc.</Authors>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>

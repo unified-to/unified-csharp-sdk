@@ -4,15 +4,15 @@ management:
   docChecksum: f2f697f71f5c4e346d8c8597d080e506
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.263.3
-  releaseVersion: 0.9.11
-  configChecksum: be9eb4609ab28d7139582c7c8dfe70f5
+  generationVersion: 2.268.0
+  releaseVersion: 0.10.0
+  configChecksum: 7c78933e2d42618371a68c9fd6c280e4
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
 features:
   csharp:
-    core: 3.3.2
+    core: 3.4.1
     flattening: 2.81.1
     globalSecurity: 2.83.1
     globalServerURLs: 2.82.2
@@ -72,6 +72,7 @@ generatedFiles:
   - UnifiedTo/Issue.cs
   - UnifiedTo/Webhook.cs
   - UnifiedTo/UnifiedToSDK.cs
+  - global.json
   - UnifiedTo/Utils/BigIntSerializer.cs
   - UnifiedTo/Utils/DecimalSerializer.cs
   - UnifiedTo/Utils/EnumSerializer.cs
