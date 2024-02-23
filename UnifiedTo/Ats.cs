@@ -24,6 +24,11 @@ namespace UnifiedTo
     {
 
         /// <summary>
+        /// Create an activity
+        /// </summary>
+        Task<CreateAtsActivityResponse> CreateAtsActivityAsync(string connectionId, AtsActivity? atsActivity = null);
+
+        /// <summary>
         /// Create an application
         /// </summary>
         Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(string connectionId, AtsApplication? atsApplication = null);
@@ -52,6 +57,11 @@ namespace UnifiedTo
         /// Create a scorecard
         /// </summary>
         Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(string connectionId, AtsScorecard? atsScorecard = null);
+
+        /// <summary>
+        /// Retrieve an activity
+        /// </summary>
+        Task<GetAtsActivityResponse> GetAtsActivityAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve an application
@@ -87,6 +97,11 @@ namespace UnifiedTo
         /// Retrieve a scorecard
         /// </summary>
         Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<string>? fields = null);
+
+        /// <summary>
+        /// List all activities
+        /// </summary>
+        Task<ListAtsActivitiesResponse> ListAtsActivitiesAsync(ListAtsActivitiesRequest request);
 
         /// <summary>
         /// List all applications
@@ -129,6 +144,11 @@ namespace UnifiedTo
         Task<ListAtsScorecardsResponse> ListAtsScorecardsAsync(ListAtsScorecardsRequest request);
 
         /// <summary>
+        /// Update an activity
+        /// </summary>
+        Task<PatchAtsActivityResponse> PatchAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null);
+
+        /// <summary>
         /// Update an application
         /// </summary>
         Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null);
@@ -159,6 +179,11 @@ namespace UnifiedTo
         Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null);
 
         /// <summary>
+        /// Remove an activity
+        /// </summary>
+        Task<RemoveAtsActivityResponse> RemoveAtsActivityAsync(string connectionId, string id);
+
+        /// <summary>
         /// Remove an application
         /// </summary>
         Task<RemoveAtsApplicationResponse> RemoveAtsApplicationAsync(string connectionId, string id);
@@ -187,6 +212,11 @@ namespace UnifiedTo
         /// Remove a scorecard
         /// </summary>
         Task<RemoveAtsScorecardResponse> RemoveAtsScorecardAsync(string connectionId, string id);
+
+        /// <summary>
+        /// Update an activity
+        /// </summary>
+        Task<UpdateAtsActivityResponse> UpdateAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null);
 
         /// <summary>
         /// Update an application
@@ -223,10 +253,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.1";
+        private const string _sdkVersion = "0.10.2";
         private const string _sdkGenVersion = "2.269.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.1 2.269.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.10.2 2.269.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private Func<Security>? _securitySource;
@@ -238,6 +268,56 @@ namespace UnifiedTo
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
+        
+
+        public async Task<CreateAtsActivityResponse> CreateAtsActivityAsync(string connectionId, AtsActivity? atsActivity = null)
+        {
+            var request = new CreateAtsActivityRequest()
+            {
+                ConnectionId = connectionId,
+                AtsActivity = atsActivity,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsActivity", "json", false, true);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+
+            var response = new CreateAtsActivityResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AtsActivity = JsonConvert.DeserializeObject<AtsActivity>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+
+                return response;
+            }
+            return response;
+        }
+
         
 
         public async Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(string connectionId, AtsApplication? atsApplication = null)
@@ -531,6 +611,51 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.AtsScorecard = JsonConvert.DeserializeObject<AtsScorecard>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+
+                return response;
+            }
+            return response;
+        }
+
+        
+
+        public async Task<GetAtsActivityResponse> GetAtsActivityAsync(string connectionId, string id, List<string>? fields = null)
+        {
+            var request = new GetAtsActivityRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                Fields = fields,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity/{id}", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+
+            var response = new GetAtsActivityResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AtsActivity = JsonConvert.DeserializeObject<AtsActivity>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
 
                 return response;
@@ -855,6 +980,45 @@ namespace UnifiedTo
 
         
 
+        public async Task<ListAtsActivitiesResponse> ListAtsActivitiesAsync(ListAtsActivitiesRequest request)
+        {
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+
+            var response = new ListAtsActivitiesResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AtsActivities = JsonConvert.DeserializeObject<List<AtsActivity>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+
+                return response;
+            }
+            return response;
+        }
+
+        
+
         public async Task<ListAtsApplicationsResponse> ListAtsApplicationsAsync(ListAtsApplicationsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
@@ -1158,6 +1322,57 @@ namespace UnifiedTo
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
                     response.AtsScorecards = JsonConvert.DeserializeObject<List<AtsScorecard>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+
+                return response;
+            }
+            return response;
+        }
+
+        
+
+        public async Task<PatchAtsActivityResponse> PatchAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null)
+        {
+            var request = new PatchAtsActivityRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                AtsActivity = atsActivity,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity/{id}", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsActivity", "json", false, true);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+
+            var response = new PatchAtsActivityResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AtsActivity = JsonConvert.DeserializeObject<AtsActivity>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
 
                 return response;
@@ -1473,6 +1688,40 @@ namespace UnifiedTo
 
         
 
+        public async Task<RemoveAtsActivityResponse> RemoveAtsActivityAsync(string connectionId, string id)
+        {
+            var request = new RemoveAtsActivityRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity/{id}", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+
+            var response = new RemoveAtsActivityResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            throw new InvalidOperationException("API returned unexpected status code or content type");
+        }
+
+        
+
         public async Task<RemoveAtsApplicationResponse> RemoveAtsApplicationAsync(string connectionId, string id)
         {
             var request = new RemoveAtsApplicationRequest()
@@ -1673,6 +1922,57 @@ namespace UnifiedTo
                 RawResponse = httpResponse
             };
             throw new InvalidOperationException("API returned unexpected status code or content type");
+        }
+
+        
+
+        public async Task<UpdateAtsActivityResponse> UpdateAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null)
+        {
+            var request = new UpdateAtsActivityRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                AtsActivity = atsActivity,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity/{id}", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsActivity", "json", false, true);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+
+            var response = new UpdateAtsActivityResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+
+            if((response.StatusCode == 200))
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {
+                    response.AtsActivity = JsonConvert.DeserializeObject<AtsActivity>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                }
+
+                return response;
+            }
+            return response;
         }
 
         

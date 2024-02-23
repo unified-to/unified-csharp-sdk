@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 540edc51c35db4343817668bdfafdaa0
+  docChecksum: 7bd6e19ec36f960e56c7d65cda36a422
   docVersion: "1.0"
   speakeasyVersion: internal
   generationVersion: 2.269.0
-  releaseVersion: 0.10.1
-  configChecksum: fa557d6fb7f26de27fd59160198af990
+  releaseVersion: 0.10.2
+  configChecksum: cde5856f921ad398c88e220e4f7df5ad
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -28,6 +28,7 @@ generatedFiles:
   - UnifiedTo/Taxrate.cs
   - UnifiedTo/Transaction.cs
   - UnifiedTo/Ats.cs
+  - UnifiedTo/Activity.cs
   - UnifiedTo/Application.cs
   - UnifiedTo/Applicationstatus.cs
   - UnifiedTo/Candidate.cs
@@ -195,6 +196,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateCrmContactResponse.cs
   - UnifiedTo/Models/Requests/UpdateUcContactRequest.cs
   - UnifiedTo/Models/Requests/UpdateUcContactResponse.cs
+  - UnifiedTo/Models/Requests/CreateAtsActivityRequest.cs
+  - UnifiedTo/Models/Requests/CreateAtsActivityResponse.cs
   - UnifiedTo/Models/Requests/CreateAtsApplicationRequest.cs
   - UnifiedTo/Models/Requests/CreateAtsApplicationResponse.cs
   - UnifiedTo/Models/Requests/CreateAtsCandidateRequest.cs
@@ -207,6 +210,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateAtsJobResponse.cs
   - UnifiedTo/Models/Requests/CreateAtsScorecardRequest.cs
   - UnifiedTo/Models/Requests/CreateAtsScorecardResponse.cs
+  - UnifiedTo/Models/Requests/GetAtsActivityRequest.cs
+  - UnifiedTo/Models/Requests/GetAtsActivityResponse.cs
   - UnifiedTo/Models/Requests/GetAtsApplicationRequest.cs
   - UnifiedTo/Models/Requests/GetAtsApplicationResponse.cs
   - UnifiedTo/Models/Requests/GetAtsCandidateRequest.cs
@@ -221,6 +226,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetAtsJobResponse.cs
   - UnifiedTo/Models/Requests/GetAtsScorecardRequest.cs
   - UnifiedTo/Models/Requests/GetAtsScorecardResponse.cs
+  - UnifiedTo/Models/Requests/ListAtsActivitiesRequest.cs
+  - UnifiedTo/Models/Requests/ListAtsActivitiesResponse.cs
   - UnifiedTo/Models/Requests/ListAtsApplicationsRequest.cs
   - UnifiedTo/Models/Requests/ListAtsApplicationsResponse.cs
   - UnifiedTo/Models/Requests/ListAtsApplicationstatusesRequest.cs
@@ -237,6 +244,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListAtsJobsResponse.cs
   - UnifiedTo/Models/Requests/ListAtsScorecardsRequest.cs
   - UnifiedTo/Models/Requests/ListAtsScorecardsResponse.cs
+  - UnifiedTo/Models/Requests/PatchAtsActivityRequest.cs
+  - UnifiedTo/Models/Requests/PatchAtsActivityResponse.cs
   - UnifiedTo/Models/Requests/PatchAtsApplicationRequest.cs
   - UnifiedTo/Models/Requests/PatchAtsApplicationResponse.cs
   - UnifiedTo/Models/Requests/PatchAtsCandidateRequest.cs
@@ -249,6 +258,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchAtsJobResponse.cs
   - UnifiedTo/Models/Requests/PatchAtsScorecardRequest.cs
   - UnifiedTo/Models/Requests/PatchAtsScorecardResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAtsActivityRequest.cs
+  - UnifiedTo/Models/Requests/RemoveAtsActivityResponse.cs
   - UnifiedTo/Models/Requests/RemoveAtsApplicationRequest.cs
   - UnifiedTo/Models/Requests/RemoveAtsApplicationResponse.cs
   - UnifiedTo/Models/Requests/RemoveAtsCandidateRequest.cs
@@ -261,6 +272,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveAtsJobResponse.cs
   - UnifiedTo/Models/Requests/RemoveAtsScorecardRequest.cs
   - UnifiedTo/Models/Requests/RemoveAtsScorecardResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAtsActivityRequest.cs
+  - UnifiedTo/Models/Requests/UpdateAtsActivityResponse.cs
   - UnifiedTo/Models/Requests/UpdateAtsApplicationRequest.cs
   - UnifiedTo/Models/Requests/UpdateAtsApplicationResponse.cs
   - UnifiedTo/Models/Requests/UpdateAtsCandidateRequest.cs
@@ -569,6 +582,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/UcTelephone.cs
   - UnifiedTo/Models/Components/UcEmailType.cs
   - UnifiedTo/Models/Components/UcEmail.cs
+  - UnifiedTo/Models/Components/AtsActivityType.cs
+  - UnifiedTo/Models/Components/AtsActivity.cs
   - UnifiedTo/Models/Components/AtsApplicationStatus.cs
   - UnifiedTo/Models/Components/AtsApplication.cs
   - UnifiedTo/Models/Components/AtsApplicationAnswer.cs
@@ -793,6 +808,8 @@ generatedFiles:
   - docs/Models/Requests/UpdateCrmContactResponse.md
   - docs/Models/Requests/UpdateUcContactRequest.md
   - docs/Models/Requests/UpdateUcContactResponse.md
+  - docs/Models/Requests/CreateAtsActivityRequest.md
+  - docs/Models/Requests/CreateAtsActivityResponse.md
   - docs/Models/Requests/CreateAtsApplicationRequest.md
   - docs/Models/Requests/CreateAtsApplicationResponse.md
   - docs/Models/Requests/CreateAtsCandidateRequest.md
@@ -805,6 +822,8 @@ generatedFiles:
   - docs/Models/Requests/CreateAtsJobResponse.md
   - docs/Models/Requests/CreateAtsScorecardRequest.md
   - docs/Models/Requests/CreateAtsScorecardResponse.md
+  - docs/Models/Requests/GetAtsActivityRequest.md
+  - docs/Models/Requests/GetAtsActivityResponse.md
   - docs/Models/Requests/GetAtsApplicationRequest.md
   - docs/Models/Requests/GetAtsApplicationResponse.md
   - docs/Models/Requests/GetAtsCandidateRequest.md
@@ -819,6 +838,8 @@ generatedFiles:
   - docs/Models/Requests/GetAtsJobResponse.md
   - docs/Models/Requests/GetAtsScorecardRequest.md
   - docs/Models/Requests/GetAtsScorecardResponse.md
+  - docs/Models/Requests/ListAtsActivitiesRequest.md
+  - docs/Models/Requests/ListAtsActivitiesResponse.md
   - docs/Models/Requests/ListAtsApplicationsRequest.md
   - docs/Models/Requests/ListAtsApplicationsResponse.md
   - docs/Models/Requests/ListAtsApplicationstatusesRequest.md
@@ -835,6 +856,8 @@ generatedFiles:
   - docs/Models/Requests/ListAtsJobsResponse.md
   - docs/Models/Requests/ListAtsScorecardsRequest.md
   - docs/Models/Requests/ListAtsScorecardsResponse.md
+  - docs/Models/Requests/PatchAtsActivityRequest.md
+  - docs/Models/Requests/PatchAtsActivityResponse.md
   - docs/Models/Requests/PatchAtsApplicationRequest.md
   - docs/Models/Requests/PatchAtsApplicationResponse.md
   - docs/Models/Requests/PatchAtsCandidateRequest.md
@@ -847,6 +870,8 @@ generatedFiles:
   - docs/Models/Requests/PatchAtsJobResponse.md
   - docs/Models/Requests/PatchAtsScorecardRequest.md
   - docs/Models/Requests/PatchAtsScorecardResponse.md
+  - docs/Models/Requests/RemoveAtsActivityRequest.md
+  - docs/Models/Requests/RemoveAtsActivityResponse.md
   - docs/Models/Requests/RemoveAtsApplicationRequest.md
   - docs/Models/Requests/RemoveAtsApplicationResponse.md
   - docs/Models/Requests/RemoveAtsCandidateRequest.md
@@ -859,6 +884,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveAtsJobResponse.md
   - docs/Models/Requests/RemoveAtsScorecardRequest.md
   - docs/Models/Requests/RemoveAtsScorecardResponse.md
+  - docs/Models/Requests/UpdateAtsActivityRequest.md
+  - docs/Models/Requests/UpdateAtsActivityResponse.md
   - docs/Models/Requests/UpdateAtsApplicationRequest.md
   - docs/Models/Requests/UpdateAtsApplicationResponse.md
   - docs/Models/Requests/UpdateAtsCandidateRequest.md
@@ -1167,6 +1194,8 @@ generatedFiles:
   - docs/Models/Components/UcTelephone.md
   - docs/Models/Components/UcEmailType.md
   - docs/Models/Components/UcEmail.md
+  - docs/Models/Components/AtsActivityType.md
+  - docs/Models/Components/AtsActivity.md
   - docs/Models/Components/AtsApplicationStatus.md
   - docs/Models/Components/AtsApplication.md
   - docs/Models/Components/AtsApplicationAnswer.md
@@ -1295,6 +1324,7 @@ generatedFiles:
   - docs/sdks/taxrate/README.md
   - docs/sdks/transaction/README.md
   - docs/sdks/ats/README.md
+  - docs/sdks/activity/README.md
   - docs/sdks/application/README.md
   - docs/sdks/applicationstatus/README.md
   - docs/sdks/candidate/README.md

@@ -63,10 +63,10 @@ namespace UnifiedTo.Models.Requests
         CommerceLocationRead,
         [JsonProperty("commerce_location_write")]
         CommerceLocationWrite,
-        [JsonProperty("ats_scorecard_read")]
-        AtsScorecardRead,
-        [JsonProperty("ats_scorecard_write")]
-        AtsScorecardWrite,
+        [JsonProperty("ats_activity_read")]
+        AtsActivityRead,
+        [JsonProperty("ats_activity_write")]
+        AtsActivityWrite,
         [JsonProperty("ats_application_read")]
         AtsApplicationRead,
         [JsonProperty("ats_application_write")]
@@ -91,6 +91,10 @@ namespace UnifiedTo.Models.Requests
         AtsDocumentRead,
         [JsonProperty("ats_document_write")]
         AtsDocumentWrite,
+        [JsonProperty("ats_scorecard_read")]
+        AtsScorecardRead,
+        [JsonProperty("ats_scorecard_write")]
+        AtsScorecardWrite,
         [JsonProperty("crm_company_read")]
         CrmCompanyRead,
         [JsonProperty("crm_company_write")]

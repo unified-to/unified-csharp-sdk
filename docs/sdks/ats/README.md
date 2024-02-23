@@ -3,12 +3,14 @@
 
 ### Available Operations
 
+* [CreateAtsActivity](#createatsactivity) - Create an activity
 * [CreateAtsApplication](#createatsapplication) - Create an application
 * [CreateAtsCandidate](#createatscandidate) - Create a candidate
 * [CreateAtsDocument](#createatsdocument) - Create a document
 * [CreateAtsInterview](#createatsinterview) - Create a interview
 * [CreateAtsJob](#createatsjob) - Create a job
 * [CreateAtsScorecard](#createatsscorecard) - Create a scorecard
+* [GetAtsActivity](#getatsactivity) - Retrieve an activity
 * [GetAtsApplication](#getatsapplication) - Retrieve an application
 * [GetAtsCandidate](#getatscandidate) - Retrieve a candidate
 * [GetAtsCompany](#getatscompany) - Retrieve a company
@@ -16,6 +18,7 @@
 * [GetAtsInterview](#getatsinterview) - Retrieve a interview
 * [GetAtsJob](#getatsjob) - Retrieve a job
 * [GetAtsScorecard](#getatsscorecard) - Retrieve a scorecard
+* [ListAtsActivities](#listatsactivities) - List all activities
 * [ListAtsApplications](#listatsapplications) - List all applications
 * [ListAtsApplicationstatuses](#listatsapplicationstatuses) - List all application statuses
 * [ListAtsCandidates](#listatscandidates) - List all candidates
@@ -24,24 +27,65 @@
 * [ListAtsInterviews](#listatsinterviews) - List all interviews
 * [ListAtsJobs](#listatsjobs) - List all jobs
 * [ListAtsScorecards](#listatsscorecards) - List all scorecards
+* [PatchAtsActivity](#patchatsactivity) - Update an activity
 * [PatchAtsApplication](#patchatsapplication) - Update an application
 * [PatchAtsCandidate](#patchatscandidate) - Update a candidate
 * [PatchAtsDocument](#patchatsdocument) - Update a document
 * [PatchAtsInterview](#patchatsinterview) - Update a interview
 * [PatchAtsJob](#patchatsjob) - Update a job
 * [PatchAtsScorecard](#patchatsscorecard) - Update a scorecard
+* [RemoveAtsActivity](#removeatsactivity) - Remove an activity
 * [RemoveAtsApplication](#removeatsapplication) - Remove an application
 * [RemoveAtsCandidate](#removeatscandidate) - Remove a candidate
 * [RemoveAtsDocument](#removeatsdocument) - Remove a document
 * [RemoveAtsInterview](#removeatsinterview) - Remove a interview
 * [RemoveAtsJob](#removeatsjob) - Remove a job
 * [RemoveAtsScorecard](#removeatsscorecard) - Remove a scorecard
+* [UpdateAtsActivity](#updateatsactivity) - Update an activity
 * [UpdateAtsApplication](#updateatsapplication) - Update an application
 * [UpdateAtsCandidate](#updateatscandidate) - Update a candidate
 * [UpdateAtsDocument](#updateatsdocument) - Update a document
 * [UpdateAtsInterview](#updateatsinterview) - Update a interview
 * [UpdateAtsJob](#updateatsjob) - Update a job
 * [UpdateAtsScorecard](#updateatsscorecard) - Update a scorecard
+
+## CreateAtsActivity
+
+Create an activity
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Ats.CreateAtsActivityAsync(
+    connectionId: "<value>",
+    atsActivity: new AtsActivity() {
+    Title = "<value>",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
+| `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
+
+
+### Response
+
+**[CreateAtsActivityResponse](../../Models/Requests/CreateAtsActivityResponse.md)**
+
 
 ## CreateAtsApplication
 
@@ -257,6 +301,46 @@ var res = await sdk.Ats.CreateAtsScorecardAsync(
 ### Response
 
 **[CreateAtsScorecardResponse](../../Models/Requests/CreateAtsScorecardResponse.md)**
+
+
+## GetAtsActivity
+
+Retrieve an activity
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Ats.GetAtsActivityAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    fields: new List<string>() {
+    "<value>",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Activity               |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetAtsActivityResponse](../../Models/Requests/GetAtsActivityResponse.md)**
 
 
 ## GetAtsApplication
@@ -537,6 +621,43 @@ var res = await sdk.Ats.GetAtsScorecardAsync(
 ### Response
 
 **[GetAtsScorecardResponse](../../Models/Requests/GetAtsScorecardResponse.md)**
+
+
+## ListAtsActivities
+
+List all activities
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListAtsActivitiesRequest req = new ListAtsActivitiesRequest() {
+    ConnectionId = "<value>",
+};
+
+var res = await sdk.Ats.ListAtsActivitiesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListAtsActivitiesRequest](../../Models/Requests/ListAtsActivitiesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+
+### Response
+
+**[ListAtsActivitiesResponse](../../Models/Requests/ListAtsActivitiesResponse.md)**
 
 
 ## ListAtsApplications
@@ -835,6 +956,46 @@ var res = await sdk.Ats.ListAtsScorecardsAsync(req);
 **[ListAtsScorecardsResponse](../../Models/Requests/ListAtsScorecardsResponse.md)**
 
 
+## PatchAtsActivity
+
+Update an activity
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Ats.PatchAtsActivityAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    atsActivity: new AtsActivity() {
+    Title = "<value>",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
+| `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Activity                                    |
+| `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
+
+
+### Response
+
+**[PatchAtsActivityResponse](../../Models/Requests/PatchAtsActivityResponse.md)**
+
+
 ## PatchAtsApplication
 
 Update an application
@@ -1063,6 +1224,41 @@ var res = await sdk.Ats.PatchAtsScorecardAsync(
 **[PatchAtsScorecardResponse](../../Models/Requests/PatchAtsScorecardResponse.md)**
 
 
+## RemoveAtsActivity
+
+Remove an activity
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Ats.RemoveAtsActivityAsync(
+    connectionId: "<value>",
+    id: "<value>");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Activity   |
+
+
+### Response
+
+**[RemoveAtsActivityResponse](../../Models/Requests/RemoveAtsActivityResponse.md)**
+
+
 ## RemoveAtsApplication
 
 Remove an application
@@ -1271,6 +1467,46 @@ var res = await sdk.Ats.RemoveAtsScorecardAsync(
 ### Response
 
 **[RemoveAtsScorecardResponse](../../Models/Requests/RemoveAtsScorecardResponse.md)**
+
+
+## UpdateAtsActivity
+
+Update an activity
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Ats.UpdateAtsActivityAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    atsActivity: new AtsActivity() {
+    Title = "<value>",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
+| `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Activity                                    |
+| `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
+
+
+### Response
+
+**[UpdateAtsActivityResponse](../../Models/Requests/UpdateAtsActivityResponse.md)**
 
 
 ## UpdateAtsApplication

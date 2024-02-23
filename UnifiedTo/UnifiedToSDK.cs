@@ -36,6 +36,7 @@ namespace UnifiedTo
         public ITaxrate Taxrate { get; }
         public ITransaction Transaction { get; }
         public IAts Ats { get; }
+        public IActivity Activity { get; }
         public IApplication Application { get; }
         public IApplicationstatus Applicationstatus { get; }
         public ICandidate Candidate { get; }
@@ -110,10 +111,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.1";
+        private const string _sdkVersion = "0.10.2";
         private const string _sdkGenVersion = "2.269.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.1 2.269.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.10.2 2.269.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _defaultClient;
@@ -129,6 +130,7 @@ namespace UnifiedTo
         public ITaxrate Taxrate { get; private set; }
         public ITransaction Transaction { get; private set; }
         public IAts Ats { get; private set; }
+        public IActivity Activity { get; private set; }
         public IApplication Application { get; private set; }
         public IApplicationstatus Applicationstatus { get; private set; }
         public ICandidate Candidate { get; private set; }
@@ -217,6 +219,7 @@ namespace UnifiedTo
             Taxrate = new Taxrate(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Transaction = new Transaction(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Ats = new Ats(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Activity = new Activity(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Application = new Application(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Applicationstatus = new Applicationstatus(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Candidate = new Candidate(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);

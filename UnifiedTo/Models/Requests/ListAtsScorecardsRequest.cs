@@ -48,7 +48,7 @@ namespace UnifiedTo.Models.Requests
         public string? InterviewId { get; set; }
 
         /// <summary>
-        /// The job ID
+        /// The job ID to filter results
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=job_id")]
         public string? JobId { get; set; }
