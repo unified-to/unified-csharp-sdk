@@ -44,6 +44,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("consumer_secret")]
         public string? ConsumerSecret { get; set; }
 
+        [JsonProperty("dev_api_key")]
+        public string? DevApiKey { get; set; }
+
         [JsonProperty("emails")]
         public List<string>? Emails { get; set; }
 
