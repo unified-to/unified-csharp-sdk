@@ -26,56 +26,54 @@ namespace UnifiedTo
         /// <summary>
         /// Create an application
         /// </summary>
-        Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(string connectionId, AtsApplication? atsApplication = null);
+        Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(CreateAtsApplicationSecurity security, string connectionId, AtsApplication? atsApplication = null);
 
         /// <summary>
         /// Retrieve an application
         /// </summary>
-        Task<GetAtsApplicationResponse> GetAtsApplicationAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsApplicationResponse> GetAtsApplicationAsync(GetAtsApplicationSecurity security, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all applications
         /// </summary>
-        Task<ListAtsApplicationsResponse> ListAtsApplicationsAsync(ListAtsApplicationsRequest request);
+        Task<ListAtsApplicationsResponse> ListAtsApplicationsAsync(ListAtsApplicationsSecurity security, ListAtsApplicationsRequest request);
 
         /// <summary>
         /// Update an application
         /// </summary>
-        Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null);
+        Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(PatchAtsApplicationSecurity security, string connectionId, string id, AtsApplication? atsApplication = null);
 
         /// <summary>
         /// Remove an application
         /// </summary>
-        Task<RemoveAtsApplicationResponse> RemoveAtsApplicationAsync(string connectionId, string id);
+        Task<RemoveAtsApplicationResponse> RemoveAtsApplicationAsync(RemoveAtsApplicationSecurity security, string connectionId, string id);
 
         /// <summary>
         /// Update an application
         /// </summary>
-        Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null);
+        Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(UpdateAtsApplicationSecurity security, string connectionId, string id, AtsApplication? atsApplication = null);
     }
 
     public class Application: IApplication
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.2";
-        private const string _sdkGenVersion = "2.269.0";
+        private const string _sdkVersion = "0.11.0";
+        private const string _sdkGenVersion = "2.272.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.2 2.269.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.11.0 2.272.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
-        private Func<Security>? _securitySource;
 
-        public Application(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
+        public Application(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
-            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(string connectionId, AtsApplication? atsApplication = null)
+        public async Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(CreateAtsApplicationSecurity security, string connectionId, AtsApplication? atsApplication = null)
         {
             var request = new CreateAtsApplicationRequest()
             {
@@ -94,11 +92,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -125,7 +119,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetAtsApplicationResponse> GetAtsApplicationAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsApplicationResponse> GetAtsApplicationAsync(GetAtsApplicationSecurity security, string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetAtsApplicationRequest()
             {
@@ -139,11 +133,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -170,7 +160,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListAtsApplicationsResponse> ListAtsApplicationsAsync(ListAtsApplicationsRequest request)
+        public async Task<ListAtsApplicationsResponse> ListAtsApplicationsAsync(ListAtsApplicationsSecurity security, ListAtsApplicationsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application", request);
@@ -178,11 +168,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -209,7 +195,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null)
+        public async Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(PatchAtsApplicationSecurity security, string connectionId, string id, AtsApplication? atsApplication = null)
         {
             var request = new PatchAtsApplicationRequest()
             {
@@ -229,11 +215,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -260,7 +242,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveAtsApplicationResponse> RemoveAtsApplicationAsync(string connectionId, string id)
+        public async Task<RemoveAtsApplicationResponse> RemoveAtsApplicationAsync(RemoveAtsApplicationSecurity security, string connectionId, string id)
         {
             var request = new RemoveAtsApplicationRequest()
             {
@@ -273,11 +255,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -294,7 +272,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null)
+        public async Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(UpdateAtsApplicationSecurity security, string connectionId, string id, AtsApplication? atsApplication = null)
         {
             var request = new UpdateAtsApplicationRequest()
             {
@@ -314,11 +292,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 

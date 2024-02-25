@@ -18,15 +18,16 @@ Create an item
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Item.CreateCommerceItemAsync(
+    security: new CreateCommerceItemSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     commerceItem: new CommerceItem() {
     Name = "<value>",
@@ -37,10 +38,11 @@ var res = await sdk.Item.CreateCommerceItemAsync(
 
 ### Parameters
 
-| Parameter                                               | Type                                                    | Required                                                | Description                                             |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
-| `CommerceItem`                                          | [CommerceItem](../../Models/Components/CommerceItem.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                  | [UnifiedTo.Models.Requests.CreateCommerceItemSecurity](../../Models/Requests/CreateCommerceItemSecurity.md) | :heavy_check_mark:                                                                                          | The security requirements to use for the request.                                                           |
+| `ConnectionId`                                                                                              | *string*                                                                                                    | :heavy_check_mark:                                                                                          | ID of the connection                                                                                        |
+| `CommerceItem`                                                                                              | [CommerceItem](../../Models/Components/CommerceItem.md)                                                     | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |
 
 
 ### Response
@@ -56,15 +58,15 @@ Retrieve an item
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Item.GetCommerceItemAsync(
+    security: new GetCommerceItemSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -76,11 +78,12 @@ var res = await sdk.Item.GetCommerceItemAsync(
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Item                   |
-| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+| Parameter                                                                                             | Type                                                                                                  | Required                                                                                              | Description                                                                                           |
+| ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| `security`                                                                                            | [UnifiedTo.Models.Requests.GetCommerceItemSecurity](../../Models/Requests/GetCommerceItemSecurity.md) | :heavy_check_mark:                                                                                    | The security requirements to use for the request.                                                     |
+| `ConnectionId`                                                                                        | *string*                                                                                              | :heavy_check_mark:                                                                                    | ID of the connection                                                                                  |
+| `Id`                                                                                                  | *string*                                                                                              | :heavy_check_mark:                                                                                    | ID of the Item                                                                                        |
+| `Fields`                                                                                              | List<*string*>                                                                                        | :heavy_minus_sign:                                                                                    | Comma-delimited fields to return                                                                      |
 
 
 ### Response
@@ -96,28 +99,30 @@ List all items
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 ListCommerceItemsRequest req = new ListCommerceItemsRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Item.ListCommerceItemsAsync(req);
+var res = await sdk.Item.ListCommerceItemsAsync(
+    security: new ListCommerceItemsSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
+    req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `request`                                                                     | [ListCommerceItemsRequest](../../Models/Requests/ListCommerceItemsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                 | [ListCommerceItemsRequest](../../Models/Requests/ListCommerceItemsRequest.md)                             | :heavy_check_mark:                                                                                        | The request object to use for the request.                                                                |
+| `security`                                                                                                | [UnifiedTo.Models.Requests.ListCommerceItemsSecurity](../../Models/Requests/ListCommerceItemsSecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
 
 
 ### Response
@@ -133,15 +138,16 @@ Update an item
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Item.PatchCommerceItemAsync(
+    security: new PatchCommerceItemSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     commerceItem: new CommerceItem() {
@@ -153,11 +159,12 @@ var res = await sdk.Item.PatchCommerceItemAsync(
 
 ### Parameters
 
-| Parameter                                               | Type                                                    | Required                                                | Description                                             |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
-| `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Item                                          |
-| `CommerceItem`                                          | [CommerceItem](../../Models/Components/CommerceItem.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                | [UnifiedTo.Models.Requests.PatchCommerceItemSecurity](../../Models/Requests/PatchCommerceItemSecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
+| `ConnectionId`                                                                                            | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the connection                                                                                      |
+| `Id`                                                                                                      | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the Item                                                                                            |
+| `CommerceItem`                                                                                            | [CommerceItem](../../Models/Components/CommerceItem.md)                                                   | :heavy_minus_sign:                                                                                        | N/A                                                                                                       |
 
 
 ### Response
@@ -173,14 +180,14 @@ Remove an item
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Item.RemoveCommerceItemAsync(
+    security: new RemoveCommerceItemSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>");
 
@@ -189,10 +196,11 @@ var res = await sdk.Item.RemoveCommerceItemAsync(
 
 ### Parameters
 
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Item       |
+| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                  | [UnifiedTo.Models.Requests.RemoveCommerceItemSecurity](../../Models/Requests/RemoveCommerceItemSecurity.md) | :heavy_check_mark:                                                                                          | The security requirements to use for the request.                                                           |
+| `ConnectionId`                                                                                              | *string*                                                                                                    | :heavy_check_mark:                                                                                          | ID of the connection                                                                                        |
+| `Id`                                                                                                        | *string*                                                                                                    | :heavy_check_mark:                                                                                          | ID of the Item                                                                                              |
 
 
 ### Response
@@ -208,15 +216,16 @@ Update an item
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Item.UpdateCommerceItemAsync(
+    security: new UpdateCommerceItemSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     commerceItem: new CommerceItem() {
@@ -228,11 +237,12 @@ var res = await sdk.Item.UpdateCommerceItemAsync(
 
 ### Parameters
 
-| Parameter                                               | Type                                                    | Required                                                | Description                                             |
-| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
-| `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Item                                          |
-| `CommerceItem`                                          | [CommerceItem](../../Models/Components/CommerceItem.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                  | [UnifiedTo.Models.Requests.UpdateCommerceItemSecurity](../../Models/Requests/UpdateCommerceItemSecurity.md) | :heavy_check_mark:                                                                                          | The security requirements to use for the request.                                                           |
+| `ConnectionId`                                                                                              | *string*                                                                                                    | :heavy_check_mark:                                                                                          | ID of the connection                                                                                        |
+| `Id`                                                                                                        | *string*                                                                                                    | :heavy_check_mark:                                                                                          | ID of the Item                                                                                              |
+| `CommerceItem`                                                                                              | [CommerceItem](../../Models/Components/CommerceItem.md)                                                     | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |
 
 
 ### Response

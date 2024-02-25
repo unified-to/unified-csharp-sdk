@@ -26,36 +26,34 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve an organization
         /// </summary>
-        Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(GetAccountingOrganizationSecurity security, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all organizations
         /// </summary>
-        Task<ListAccountingOrganizationsResponse> ListAccountingOrganizationsAsync(ListAccountingOrganizationsRequest request);
+        Task<ListAccountingOrganizationsResponse> ListAccountingOrganizationsAsync(ListAccountingOrganizationsSecurity security, ListAccountingOrganizationsRequest request);
     }
 
     public class Organization: IOrganization
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.2";
-        private const string _sdkGenVersion = "2.269.0";
+        private const string _sdkVersion = "0.11.0";
+        private const string _sdkGenVersion = "2.272.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.2 2.269.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.11.0 2.272.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
-        private Func<Security>? _securitySource;
 
-        public Organization(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
+        public Organization(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
-            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(GetAccountingOrganizationSecurity security, string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetAccountingOrganizationRequest()
             {
@@ -69,11 +67,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -100,7 +94,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListAccountingOrganizationsResponse> ListAccountingOrganizationsAsync(ListAccountingOrganizationsRequest request)
+        public async Task<ListAccountingOrganizationsResponse> ListAccountingOrganizationsAsync(ListAccountingOrganizationsSecurity security, ListAccountingOrganizationsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/organization", request);
@@ -108,11 +102,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 

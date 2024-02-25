@@ -16,7 +16,6 @@ namespace UnifiedTo
     using System.Net.Http;
     using System.Threading.Tasks;
     using System;
-    using UnifiedTo.Models.Components;
     using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
 
@@ -26,51 +25,49 @@ namespace UnifiedTo
         /// <summary>
         /// Passthrough POST
         /// </summary>
-        Task<CreatePassthroughResponse> CreatePassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null);
+        Task<CreatePassthroughResponse> CreatePassthroughAsync(CreatePassthroughSecurity security, string connectionId, string path, Dictionary<string, object>? requestBody = null);
 
         /// <summary>
         /// Passthrough GET
         /// </summary>
-        Task<ListPassthroughsResponse> ListPassthroughsAsync(string connectionId, string path);
+        Task<ListPassthroughsResponse> ListPassthroughsAsync(ListPassthroughsSecurity security, string connectionId, string path);
 
         /// <summary>
         /// Passthrough PUT
         /// </summary>
-        Task<PatchPassthroughResponse> PatchPassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null);
+        Task<PatchPassthroughResponse> PatchPassthroughAsync(PatchPassthroughSecurity security, string connectionId, string path, Dictionary<string, object>? requestBody = null);
 
         /// <summary>
         /// Passthrough DELETE
         /// </summary>
-        Task<RemovePassthroughResponse> RemovePassthroughAsync(string connectionId, string path);
+        Task<RemovePassthroughResponse> RemovePassthroughAsync(RemovePassthroughSecurity security, string connectionId, string path);
 
         /// <summary>
         /// Passthrough PUT
         /// </summary>
-        Task<UpdatePassthroughResponse> UpdatePassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null);
+        Task<UpdatePassthroughResponse> UpdatePassthroughAsync(UpdatePassthroughSecurity security, string connectionId, string path, Dictionary<string, object>? requestBody = null);
     }
 
     public class Passthrough: IPassthrough
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.2";
-        private const string _sdkGenVersion = "2.269.0";
+        private const string _sdkVersion = "0.11.0";
+        private const string _sdkGenVersion = "2.272.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.2 2.269.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.11.0 2.272.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
-        private Func<Security>? _securitySource;
 
-        public Passthrough(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
+        public Passthrough(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
-            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreatePassthroughResponse> CreatePassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null)
+        public async Task<CreatePassthroughResponse> CreatePassthroughAsync(CreatePassthroughSecurity security, string connectionId, string path, Dictionary<string, object>? requestBody = null)
         {
             var request = new CreatePassthroughRequest()
             {
@@ -90,11 +87,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -121,7 +114,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListPassthroughsResponse> ListPassthroughsAsync(string connectionId, string path)
+        public async Task<ListPassthroughsResponse> ListPassthroughsAsync(ListPassthroughsSecurity security, string connectionId, string path)
         {
             var request = new ListPassthroughsRequest()
             {
@@ -134,11 +127,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -165,7 +154,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchPassthroughResponse> PatchPassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null)
+        public async Task<PatchPassthroughResponse> PatchPassthroughAsync(PatchPassthroughSecurity security, string connectionId, string path, Dictionary<string, object>? requestBody = null)
         {
             var request = new PatchPassthroughRequest()
             {
@@ -185,11 +174,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -216,7 +201,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemovePassthroughResponse> RemovePassthroughAsync(string connectionId, string path)
+        public async Task<RemovePassthroughResponse> RemovePassthroughAsync(RemovePassthroughSecurity security, string connectionId, string path)
         {
             var request = new RemovePassthroughRequest()
             {
@@ -229,11 +214,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -260,7 +241,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdatePassthroughResponse> UpdatePassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null)
+        public async Task<UpdatePassthroughResponse> UpdatePassthroughAsync(UpdatePassthroughSecurity security, string connectionId, string path, Dictionary<string, object>? requestBody = null)
         {
             var request = new UpdatePassthroughRequest()
             {
@@ -280,11 +261,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 

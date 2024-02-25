@@ -14,15 +14,15 @@ Retrieve a payout
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Payout.GetAccountingPayoutAsync(
+    security: new GetAccountingPayoutSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -34,11 +34,12 @@ var res = await sdk.Payout.GetAccountingPayoutAsync(
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Payout                 |
-| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                    | [UnifiedTo.Models.Requests.GetAccountingPayoutSecurity](../../Models/Requests/GetAccountingPayoutSecurity.md) | :heavy_check_mark:                                                                                            | The security requirements to use for the request.                                                             |
+| `ConnectionId`                                                                                                | *string*                                                                                                      | :heavy_check_mark:                                                                                            | ID of the connection                                                                                          |
+| `Id`                                                                                                          | *string*                                                                                                      | :heavy_check_mark:                                                                                            | ID of the Payout                                                                                              |
+| `Fields`                                                                                                      | List<*string*>                                                                                                | :heavy_minus_sign:                                                                                            | Comma-delimited fields to return                                                                              |
 
 
 ### Response
@@ -54,28 +55,30 @@ List all payouts
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 ListAccountingPayoutsRequest req = new ListAccountingPayoutsRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Payout.ListAccountingPayoutsAsync(req);
+var res = await sdk.Payout.ListAccountingPayoutsAsync(
+    security: new ListAccountingPayoutsSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
+    req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListAccountingPayoutsRequest](../../Models/Requests/ListAccountingPayoutsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                         | [ListAccountingPayoutsRequest](../../Models/Requests/ListAccountingPayoutsRequest.md)                             | :heavy_check_mark:                                                                                                | The request object to use for the request.                                                                        |
+| `security`                                                                                                        | [UnifiedTo.Models.Requests.ListAccountingPayoutsSecurity](../../Models/Requests/ListAccountingPayoutsSecurity.md) | :heavy_check_mark:                                                                                                | The security requirements to use for the request.                                                                 |
 
 
 ### Response

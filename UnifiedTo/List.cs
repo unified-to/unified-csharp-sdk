@@ -26,56 +26,54 @@ namespace UnifiedTo
         /// <summary>
         /// Create a list
         /// </summary>
-        Task<CreateMartechListResponse> CreateMartechListAsync(string connectionId, MarketingList? marketingList = null);
+        Task<CreateMartechListResponse> CreateMartechListAsync(CreateMartechListSecurity security, string connectionId, MarketingList? marketingList = null);
 
         /// <summary>
         /// Retrieve a list
         /// </summary>
-        Task<GetMartechListResponse> GetMartechListAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetMartechListResponse> GetMartechListAsync(GetMartechListSecurity security, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all lists
         /// </summary>
-        Task<ListMartechListsResponse> ListMartechListsAsync(ListMartechListsRequest request);
+        Task<ListMartechListsResponse> ListMartechListsAsync(ListMartechListsSecurity security, ListMartechListsRequest request);
 
         /// <summary>
         /// Update a list
         /// </summary>
-        Task<PatchMartechListResponse> PatchMartechListAsync(string connectionId, string id, MarketingList? marketingList = null);
+        Task<PatchMartechListResponse> PatchMartechListAsync(PatchMartechListSecurity security, string connectionId, string id, MarketingList? marketingList = null);
 
         /// <summary>
         /// Remove a list
         /// </summary>
-        Task<RemoveMartechListResponse> RemoveMartechListAsync(string connectionId, string id);
+        Task<RemoveMartechListResponse> RemoveMartechListAsync(RemoveMartechListSecurity security, string connectionId, string id);
 
         /// <summary>
         /// Update a list
         /// </summary>
-        Task<UpdateMartechListResponse> UpdateMartechListAsync(string connectionId, string id, MarketingList? marketingList = null);
+        Task<UpdateMartechListResponse> UpdateMartechListAsync(UpdateMartechListSecurity security, string connectionId, string id, MarketingList? marketingList = null);
     }
 
     public class List: IList
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.2";
-        private const string _sdkGenVersion = "2.269.0";
+        private const string _sdkVersion = "0.11.0";
+        private const string _sdkGenVersion = "2.272.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.2 2.269.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.11.0 2.272.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
-        private Func<Security>? _securitySource;
 
-        public List(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
+        public List(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
-            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateMartechListResponse> CreateMartechListAsync(string connectionId, MarketingList? marketingList = null)
+        public async Task<CreateMartechListResponse> CreateMartechListAsync(CreateMartechListSecurity security, string connectionId, MarketingList? marketingList = null)
         {
             var request = new CreateMartechListRequest()
             {
@@ -94,11 +92,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -125,7 +119,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetMartechListResponse> GetMartechListAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetMartechListResponse> GetMartechListAsync(GetMartechListSecurity security, string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetMartechListRequest()
             {
@@ -139,11 +133,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -170,7 +160,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListMartechListsResponse> ListMartechListsAsync(ListMartechListsRequest request)
+        public async Task<ListMartechListsResponse> ListMartechListsAsync(ListMartechListsSecurity security, ListMartechListsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/martech/{connection_id}/list", request);
@@ -178,11 +168,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -209,7 +195,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchMartechListResponse> PatchMartechListAsync(string connectionId, string id, MarketingList? marketingList = null)
+        public async Task<PatchMartechListResponse> PatchMartechListAsync(PatchMartechListSecurity security, string connectionId, string id, MarketingList? marketingList = null)
         {
             var request = new PatchMartechListRequest()
             {
@@ -229,11 +215,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -260,7 +242,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveMartechListResponse> RemoveMartechListAsync(string connectionId, string id)
+        public async Task<RemoveMartechListResponse> RemoveMartechListAsync(RemoveMartechListSecurity security, string connectionId, string id)
         {
             var request = new RemoveMartechListRequest()
             {
@@ -273,11 +255,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -294,7 +272,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateMartechListResponse> UpdateMartechListAsync(string connectionId, string id, MarketingList? marketingList = null)
+        public async Task<UpdateMartechListResponse> UpdateMartechListAsync(UpdateMartechListSecurity security, string connectionId, string id, MarketingList? marketingList = null)
         {
             var request = new UpdateMartechListRequest()
             {
@@ -314,11 +292,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 

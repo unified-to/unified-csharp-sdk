@@ -20,10 +20,9 @@ Create connection
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
@@ -35,16 +34,21 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
 };
 
-var res = await sdk.Connection.CreateUnifiedConnectionAsync(req);
+var res = await sdk.Connection.CreateUnifiedConnectionAsync(
+    security: new CreateUnifiedConnectionSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
+    req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| `request`                                                             | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
+| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                             | [Models.Components.Connection](../../Models/Components/Connection.md)                                                 | :heavy_check_mark:                                                                                                    | The request object to use for the request.                                                                            |
+| `security`                                                                                                            | [UnifiedTo.Models.Requests.CreateUnifiedConnectionSecurity](../../Models/Requests/CreateUnifiedConnectionSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
 
 
 ### Response
@@ -60,23 +64,25 @@ Retrieve connection
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
-var res = await sdk.Connection.GetUnifiedConnectionAsync(id: "<value>");
+var res = await sdk.Connection.GetUnifiedConnectionAsync(
+    security: new GetUnifiedConnectionSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
+    id: "<value>");
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Connection |
+| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                      | [UnifiedTo.Models.Requests.GetUnifiedConnectionSecurity](../../Models/Requests/GetUnifiedConnectionSecurity.md) | :heavy_check_mark:                                                                                              | The security requirements to use for the request.                                                               |
+| `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Connection                                                                                            |
 
 
 ### Response
@@ -92,26 +98,28 @@ List all connections
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 ListUnifiedConnectionsRequest req = new ListUnifiedConnectionsRequest() {};
 
-var res = await sdk.Connection.ListUnifiedConnectionsAsync(req);
+var res = await sdk.Connection.ListUnifiedConnectionsAsync(
+    security: new ListUnifiedConnectionsSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
+    req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [ListUnifiedConnectionsRequest](../../Models/Requests/ListUnifiedConnectionsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                           | [ListUnifiedConnectionsRequest](../../Models/Requests/ListUnifiedConnectionsRequest.md)                             | :heavy_check_mark:                                                                                                  | The request object to use for the request.                                                                          |
+| `security`                                                                                                          | [UnifiedTo.Models.Requests.ListUnifiedConnectionsSecurity](../../Models/Requests/ListUnifiedConnectionsSecurity.md) | :heavy_check_mark:                                                                                                  | The security requirements to use for the request.                                                                   |
 
 
 ### Response
@@ -127,15 +135,16 @@ Update connection
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Connection.PatchUnifiedConnectionAsync(
+    security: new PatchUnifiedConnectionSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     id: "<value>",
     connection: new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
@@ -152,10 +161,11 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(
 
 ### Parameters
 
-| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| `Id`                                                                  | *string*                                                              | :heavy_check_mark:                                                    | ID of the Connection                                                  |
-| `Connection`                                                          | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_minus_sign:                                                    | A connection represents a specific authentication of an integration.  |
+| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                          | [UnifiedTo.Models.Requests.PatchUnifiedConnectionSecurity](../../Models/Requests/PatchUnifiedConnectionSecurity.md) | :heavy_check_mark:                                                                                                  | The security requirements to use for the request.                                                                   |
+| `Id`                                                                                                                | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the Connection                                                                                                |
+| `Connection`                                                                                                        | [Models.Components.Connection](../../Models/Components/Connection.md)                                               | :heavy_minus_sign:                                                                                                  | A connection represents a specific authentication of an integration.                                                |
 
 
 ### Response
@@ -171,23 +181,25 @@ Remove connection
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
-var res = await sdk.Connection.RemoveUnifiedConnectionAsync(id: "<value>");
+var res = await sdk.Connection.RemoveUnifiedConnectionAsync(
+    security: new RemoveUnifiedConnectionSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
+    id: "<value>");
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Connection |
+| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                            | [UnifiedTo.Models.Requests.RemoveUnifiedConnectionSecurity](../../Models/Requests/RemoveUnifiedConnectionSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
+| `Id`                                                                                                                  | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the Connection                                                                                                  |
 
 
 ### Response
@@ -203,15 +215,16 @@ Update connection
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
+    security: new UpdateUnifiedConnectionSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     id: "<value>",
     connection: new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
@@ -228,10 +241,11 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
 
 ### Parameters
 
-| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
-| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| `Id`                                                                  | *string*                                                              | :heavy_check_mark:                                                    | ID of the Connection                                                  |
-| `Connection`                                                          | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_minus_sign:                                                    | A connection represents a specific authentication of an integration.  |
+| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                            | [UnifiedTo.Models.Requests.UpdateUnifiedConnectionSecurity](../../Models/Requests/UpdateUnifiedConnectionSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
+| `Id`                                                                                                                  | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the Connection                                                                                                  |
+| `Connection`                                                                                                          | [Models.Components.Connection](../../Models/Components/Connection.md)                                                 | :heavy_minus_sign:                                                                                                    | A connection represents a specific authentication of an integration.                                                  |
 
 
 ### Response

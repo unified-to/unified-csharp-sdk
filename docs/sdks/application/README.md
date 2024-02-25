@@ -18,15 +18,16 @@ Create an application
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Application.CreateAtsApplicationAsync(
+    security: new CreateAtsApplicationSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     atsApplication: new AtsApplication() {});
 
@@ -35,10 +36,11 @@ var res = await sdk.Application.CreateAtsApplicationAsync(
 
 ### Parameters
 
-| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
-| `AtsApplication`                                            | [AtsApplication](../../Models/Components/AtsApplication.md) | :heavy_minus_sign:                                          | N/A                                                         |
+| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                      | [UnifiedTo.Models.Requests.CreateAtsApplicationSecurity](../../Models/Requests/CreateAtsApplicationSecurity.md) | :heavy_check_mark:                                                                                              | The security requirements to use for the request.                                                               |
+| `ConnectionId`                                                                                                  | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the connection                                                                                            |
+| `AtsApplication`                                                                                                | [AtsApplication](../../Models/Components/AtsApplication.md)                                                     | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |
 
 
 ### Response
@@ -54,15 +56,15 @@ Retrieve an application
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Application.GetAtsApplicationAsync(
+    security: new GetAtsApplicationSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -74,11 +76,12 @@ var res = await sdk.Application.GetAtsApplicationAsync(
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Application            |
-| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                | [UnifiedTo.Models.Requests.GetAtsApplicationSecurity](../../Models/Requests/GetAtsApplicationSecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
+| `ConnectionId`                                                                                            | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the connection                                                                                      |
+| `Id`                                                                                                      | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the Application                                                                                     |
+| `Fields`                                                                                                  | List<*string*>                                                                                            | :heavy_minus_sign:                                                                                        | Comma-delimited fields to return                                                                          |
 
 
 ### Response
@@ -94,28 +97,30 @@ List all applications
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 ListAtsApplicationsRequest req = new ListAtsApplicationsRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Application.ListAtsApplicationsAsync(req);
+var res = await sdk.Application.ListAtsApplicationsAsync(
+    security: new ListAtsApplicationsSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
+    req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
-| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| `request`                                                                         | [ListAtsApplicationsRequest](../../Models/Requests/ListAtsApplicationsRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                     | [ListAtsApplicationsRequest](../../Models/Requests/ListAtsApplicationsRequest.md)                             | :heavy_check_mark:                                                                                            | The request object to use for the request.                                                                    |
+| `security`                                                                                                    | [UnifiedTo.Models.Requests.ListAtsApplicationsSecurity](../../Models/Requests/ListAtsApplicationsSecurity.md) | :heavy_check_mark:                                                                                            | The security requirements to use for the request.                                                             |
 
 
 ### Response
@@ -131,15 +136,16 @@ Update an application
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Application.PatchAtsApplicationAsync(
+    security: new PatchAtsApplicationSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     atsApplication: new AtsApplication() {});
@@ -149,11 +155,12 @@ var res = await sdk.Application.PatchAtsApplicationAsync(
 
 ### Parameters
 
-| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
-| `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Application                                       |
-| `AtsApplication`                                            | [AtsApplication](../../Models/Components/AtsApplication.md) | :heavy_minus_sign:                                          | N/A                                                         |
+| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                    | [UnifiedTo.Models.Requests.PatchAtsApplicationSecurity](../../Models/Requests/PatchAtsApplicationSecurity.md) | :heavy_check_mark:                                                                                            | The security requirements to use for the request.                                                             |
+| `ConnectionId`                                                                                                | *string*                                                                                                      | :heavy_check_mark:                                                                                            | ID of the connection                                                                                          |
+| `Id`                                                                                                          | *string*                                                                                                      | :heavy_check_mark:                                                                                            | ID of the Application                                                                                         |
+| `AtsApplication`                                                                                              | [AtsApplication](../../Models/Components/AtsApplication.md)                                                   | :heavy_minus_sign:                                                                                            | N/A                                                                                                           |
 
 
 ### Response
@@ -169,14 +176,14 @@ Remove an application
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Application.RemoveAtsApplicationAsync(
+    security: new RemoveAtsApplicationSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>");
 
@@ -185,10 +192,11 @@ var res = await sdk.Application.RemoveAtsApplicationAsync(
 
 ### Parameters
 
-| Parameter             | Type                  | Required              | Description           |
-| --------------------- | --------------------- | --------------------- | --------------------- |
-| `ConnectionId`        | *string*              | :heavy_check_mark:    | ID of the connection  |
-| `Id`                  | *string*              | :heavy_check_mark:    | ID of the Application |
+| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                      | [UnifiedTo.Models.Requests.RemoveAtsApplicationSecurity](../../Models/Requests/RemoveAtsApplicationSecurity.md) | :heavy_check_mark:                                                                                              | The security requirements to use for the request.                                                               |
+| `ConnectionId`                                                                                                  | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the connection                                                                                            |
+| `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Application                                                                                           |
 
 
 ### Response
@@ -204,15 +212,16 @@ Update an application
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Application.UpdateAtsApplicationAsync(
+    security: new UpdateAtsApplicationSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     atsApplication: new AtsApplication() {});
@@ -222,11 +231,12 @@ var res = await sdk.Application.UpdateAtsApplicationAsync(
 
 ### Parameters
 
-| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
-| `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Application                                       |
-| `AtsApplication`                                            | [AtsApplication](../../Models/Components/AtsApplication.md) | :heavy_minus_sign:                                          | N/A                                                         |
+| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                      | [UnifiedTo.Models.Requests.UpdateAtsApplicationSecurity](../../Models/Requests/UpdateAtsApplicationSecurity.md) | :heavy_check_mark:                                                                                              | The security requirements to use for the request.                                                               |
+| `ConnectionId`                                                                                                  | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the connection                                                                                            |
+| `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Application                                                                                           |
+| `AtsApplication`                                                                                                | [AtsApplication](../../Models/Components/AtsApplication.md)                                                     | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |
 
 
 ### Response

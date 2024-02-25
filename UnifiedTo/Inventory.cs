@@ -26,56 +26,54 @@ namespace UnifiedTo
         /// <summary>
         /// Create an inventory
         /// </summary>
-        Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(string connectionId, CommerceInventory? commerceInventory = null);
+        Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(CreateCommerceInventorySecurity security, string connectionId, CommerceInventory? commerceInventory = null);
 
         /// <summary>
         /// Retrieve an inventory
         /// </summary>
-        Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(GetCommerceInventorySecurity security, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all inventories
         /// </summary>
-        Task<ListCommerceInventoriesResponse> ListCommerceInventoriesAsync(ListCommerceInventoriesRequest request);
+        Task<ListCommerceInventoriesResponse> ListCommerceInventoriesAsync(ListCommerceInventoriesSecurity security, ListCommerceInventoriesRequest request);
 
         /// <summary>
         /// Update an inventory
         /// </summary>
-        Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null);
+        Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(PatchCommerceInventorySecurity security, string connectionId, string id, CommerceInventory? commerceInventory = null);
 
         /// <summary>
         /// Remove an inventory
         /// </summary>
-        Task<RemoveCommerceInventoryResponse> RemoveCommerceInventoryAsync(string connectionId, string id);
+        Task<RemoveCommerceInventoryResponse> RemoveCommerceInventoryAsync(RemoveCommerceInventorySecurity security, string connectionId, string id);
 
         /// <summary>
         /// Update an inventory
         /// </summary>
-        Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null);
+        Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(UpdateCommerceInventorySecurity security, string connectionId, string id, CommerceInventory? commerceInventory = null);
     }
 
     public class Inventory: IInventory
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.2";
-        private const string _sdkGenVersion = "2.269.0";
+        private const string _sdkVersion = "0.11.0";
+        private const string _sdkGenVersion = "2.272.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.2 2.269.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.11.0 2.272.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
-        private Func<Security>? _securitySource;
 
-        public Inventory(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
+        public Inventory(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
-            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(string connectionId, CommerceInventory? commerceInventory = null)
+        public async Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(CreateCommerceInventorySecurity security, string connectionId, CommerceInventory? commerceInventory = null)
         {
             var request = new CreateCommerceInventoryRequest()
             {
@@ -94,11 +92,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -125,7 +119,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(GetCommerceInventorySecurity security, string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetCommerceInventoryRequest()
             {
@@ -139,11 +133,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -170,7 +160,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListCommerceInventoriesResponse> ListCommerceInventoriesAsync(ListCommerceInventoriesRequest request)
+        public async Task<ListCommerceInventoriesResponse> ListCommerceInventoriesAsync(ListCommerceInventoriesSecurity security, ListCommerceInventoriesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/inventory", request);
@@ -178,11 +168,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -209,7 +195,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null)
+        public async Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(PatchCommerceInventorySecurity security, string connectionId, string id, CommerceInventory? commerceInventory = null)
         {
             var request = new PatchCommerceInventoryRequest()
             {
@@ -229,11 +215,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -260,7 +242,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveCommerceInventoryResponse> RemoveCommerceInventoryAsync(string connectionId, string id)
+        public async Task<RemoveCommerceInventoryResponse> RemoveCommerceInventoryAsync(RemoveCommerceInventorySecurity security, string connectionId, string id)
         {
             var request = new RemoveCommerceInventoryRequest()
             {
@@ -273,11 +255,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -294,7 +272,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null)
+        public async Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(UpdateCommerceInventorySecurity security, string connectionId, string id, CommerceInventory? commerceInventory = null)
         {
             var request = new UpdateCommerceInventoryRequest()
             {
@@ -314,11 +292,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 

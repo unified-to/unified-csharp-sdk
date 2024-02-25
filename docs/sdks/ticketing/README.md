@@ -30,15 +30,16 @@ Create a customer
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Ticketing.CreateTicketingCustomerAsync(
+    security: new CreateTicketingCustomerSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     ticketingCustomer: new TicketingCustomer() {});
 
@@ -47,10 +48,11 @@ var res = await sdk.Ticketing.CreateTicketingCustomerAsync(
 
 ### Parameters
 
-| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
-| `TicketingCustomer`                                               | [TicketingCustomer](../../Models/Components/TicketingCustomer.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                            | [UnifiedTo.Models.Requests.CreateTicketingCustomerSecurity](../../Models/Requests/CreateTicketingCustomerSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
+| `ConnectionId`                                                                                                        | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the connection                                                                                                  |
+| `TicketingCustomer`                                                                                                   | [TicketingCustomer](../../Models/Components/TicketingCustomer.md)                                                     | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |
 
 
 ### Response
@@ -66,15 +68,16 @@ Create a note
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Ticketing.CreateTicketingNoteAsync(
+    security: new CreateTicketingNoteSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     ticketingNote: new TicketingNote() {});
 
@@ -83,10 +86,11 @@ var res = await sdk.Ticketing.CreateTicketingNoteAsync(
 
 ### Parameters
 
-| Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
-| `TicketingNote`                                           | [TicketingNote](../../Models/Components/TicketingNote.md) | :heavy_minus_sign:                                        | N/A                                                       |
+| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                    | [UnifiedTo.Models.Requests.CreateTicketingNoteSecurity](../../Models/Requests/CreateTicketingNoteSecurity.md) | :heavy_check_mark:                                                                                            | The security requirements to use for the request.                                                             |
+| `ConnectionId`                                                                                                | *string*                                                                                                      | :heavy_check_mark:                                                                                            | ID of the connection                                                                                          |
+| `TicketingNote`                                                                                               | [TicketingNote](../../Models/Components/TicketingNote.md)                                                     | :heavy_minus_sign:                                                                                            | N/A                                                                                                           |
 
 
 ### Response
@@ -102,15 +106,16 @@ Create a ticket
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Ticketing.CreateTicketingTicketAsync(
+    security: new CreateTicketingTicketSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     ticketingTicket: new TicketingTicket() {});
 
@@ -119,10 +124,11 @@ var res = await sdk.Ticketing.CreateTicketingTicketAsync(
 
 ### Parameters
 
-| Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
-| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
-| `TicketingTicket`                                             | [TicketingTicket](../../Models/Components/TicketingTicket.md) | :heavy_minus_sign:                                            | N/A                                                           |
+| Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                        | [UnifiedTo.Models.Requests.CreateTicketingTicketSecurity](../../Models/Requests/CreateTicketingTicketSecurity.md) | :heavy_check_mark:                                                                                                | The security requirements to use for the request.                                                                 |
+| `ConnectionId`                                                                                                    | *string*                                                                                                          | :heavy_check_mark:                                                                                                | ID of the connection                                                                                              |
+| `TicketingTicket`                                                                                                 | [TicketingTicket](../../Models/Components/TicketingTicket.md)                                                     | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |
 
 
 ### Response
@@ -138,15 +144,15 @@ Retrieve a customer
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Ticketing.GetTicketingCustomerAsync(
+    security: new GetTicketingCustomerSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -158,11 +164,12 @@ var res = await sdk.Ticketing.GetTicketingCustomerAsync(
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Customer               |
-| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                      | [UnifiedTo.Models.Requests.GetTicketingCustomerSecurity](../../Models/Requests/GetTicketingCustomerSecurity.md) | :heavy_check_mark:                                                                                              | The security requirements to use for the request.                                                               |
+| `ConnectionId`                                                                                                  | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the connection                                                                                            |
+| `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Customer                                                                                              |
+| `Fields`                                                                                                        | List<*string*>                                                                                                  | :heavy_minus_sign:                                                                                              | Comma-delimited fields to return                                                                                |
 
 
 ### Response
@@ -178,15 +185,15 @@ Retrieve a note
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Ticketing.GetTicketingNoteAsync(
+    security: new GetTicketingNoteSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -198,11 +205,12 @@ var res = await sdk.Ticketing.GetTicketingNoteAsync(
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Note                   |
-| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                              | [UnifiedTo.Models.Requests.GetTicketingNoteSecurity](../../Models/Requests/GetTicketingNoteSecurity.md) | :heavy_check_mark:                                                                                      | The security requirements to use for the request.                                                       |
+| `ConnectionId`                                                                                          | *string*                                                                                                | :heavy_check_mark:                                                                                      | ID of the connection                                                                                    |
+| `Id`                                                                                                    | *string*                                                                                                | :heavy_check_mark:                                                                                      | ID of the Note                                                                                          |
+| `Fields`                                                                                                | List<*string*>                                                                                          | :heavy_minus_sign:                                                                                      | Comma-delimited fields to return                                                                        |
 
 
 ### Response
@@ -218,15 +226,15 @@ Retrieve a ticket
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Ticketing.GetTicketingTicketAsync(
+    security: new GetTicketingTicketSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -238,11 +246,12 @@ var res = await sdk.Ticketing.GetTicketingTicketAsync(
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Ticket                 |
-| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                  | [UnifiedTo.Models.Requests.GetTicketingTicketSecurity](../../Models/Requests/GetTicketingTicketSecurity.md) | :heavy_check_mark:                                                                                          | The security requirements to use for the request.                                                           |
+| `ConnectionId`                                                                                              | *string*                                                                                                    | :heavy_check_mark:                                                                                          | ID of the connection                                                                                        |
+| `Id`                                                                                                        | *string*                                                                                                    | :heavy_check_mark:                                                                                          | ID of the Ticket                                                                                            |
+| `Fields`                                                                                                    | List<*string*>                                                                                              | :heavy_minus_sign:                                                                                          | Comma-delimited fields to return                                                                            |
 
 
 ### Response
@@ -258,28 +267,30 @@ List all customers
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 ListTicketingCustomersRequest req = new ListTicketingCustomersRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Ticketing.ListTicketingCustomersAsync(req);
+var res = await sdk.Ticketing.ListTicketingCustomersAsync(
+    security: new ListTicketingCustomersSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
+    req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
-| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| `request`                                                                               | [ListTicketingCustomersRequest](../../Models/Requests/ListTicketingCustomersRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                           | [ListTicketingCustomersRequest](../../Models/Requests/ListTicketingCustomersRequest.md)                             | :heavy_check_mark:                                                                                                  | The request object to use for the request.                                                                          |
+| `security`                                                                                                          | [UnifiedTo.Models.Requests.ListTicketingCustomersSecurity](../../Models/Requests/ListTicketingCustomersSecurity.md) | :heavy_check_mark:                                                                                                  | The security requirements to use for the request.                                                                   |
 
 
 ### Response
@@ -295,28 +306,30 @@ List all notes
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 ListTicketingNotesRequest req = new ListTicketingNotesRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Ticketing.ListTicketingNotesAsync(req);
+var res = await sdk.Ticketing.ListTicketingNotesAsync(
+    security: new ListTicketingNotesSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
+    req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| `request`                                                                       | [ListTicketingNotesRequest](../../Models/Requests/ListTicketingNotesRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                   | [ListTicketingNotesRequest](../../Models/Requests/ListTicketingNotesRequest.md)                             | :heavy_check_mark:                                                                                          | The request object to use for the request.                                                                  |
+| `security`                                                                                                  | [UnifiedTo.Models.Requests.ListTicketingNotesSecurity](../../Models/Requests/ListTicketingNotesSecurity.md) | :heavy_check_mark:                                                                                          | The security requirements to use for the request.                                                           |
 
 
 ### Response
@@ -332,28 +345,30 @@ List all tickets
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 ListTicketingTicketsRequest req = new ListTicketingTicketsRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Ticketing.ListTicketingTicketsAsync(req);
+var res = await sdk.Ticketing.ListTicketingTicketsAsync(
+    security: new ListTicketingTicketsSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
+    req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
-| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `request`                                                                           | [ListTicketingTicketsRequest](../../Models/Requests/ListTicketingTicketsRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                       | [ListTicketingTicketsRequest](../../Models/Requests/ListTicketingTicketsRequest.md)                             | :heavy_check_mark:                                                                                              | The request object to use for the request.                                                                      |
+| `security`                                                                                                      | [UnifiedTo.Models.Requests.ListTicketingTicketsSecurity](../../Models/Requests/ListTicketingTicketsSecurity.md) | :heavy_check_mark:                                                                                              | The security requirements to use for the request.                                                               |
 
 
 ### Response
@@ -369,15 +384,16 @@ Update a customer
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Ticketing.PatchTicketingCustomerAsync(
+    security: new PatchTicketingCustomerSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     ticketingCustomer: new TicketingCustomer() {});
@@ -387,11 +403,12 @@ var res = await sdk.Ticketing.PatchTicketingCustomerAsync(
 
 ### Parameters
 
-| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
-| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Customer                                                |
-| `TicketingCustomer`                                               | [TicketingCustomer](../../Models/Components/TicketingCustomer.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                          | [UnifiedTo.Models.Requests.PatchTicketingCustomerSecurity](../../Models/Requests/PatchTicketingCustomerSecurity.md) | :heavy_check_mark:                                                                                                  | The security requirements to use for the request.                                                                   |
+| `ConnectionId`                                                                                                      | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the connection                                                                                                |
+| `Id`                                                                                                                | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the Customer                                                                                                  |
+| `TicketingCustomer`                                                                                                 | [TicketingCustomer](../../Models/Components/TicketingCustomer.md)                                                   | :heavy_minus_sign:                                                                                                  | N/A                                                                                                                 |
 
 
 ### Response
@@ -407,15 +424,16 @@ Update a note
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Ticketing.PatchTicketingNoteAsync(
+    security: new PatchTicketingNoteSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     ticketingNote: new TicketingNote() {});
@@ -425,11 +443,12 @@ var res = await sdk.Ticketing.PatchTicketingNoteAsync(
 
 ### Parameters
 
-| Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
-| `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the Note                                            |
-| `TicketingNote`                                           | [TicketingNote](../../Models/Components/TicketingNote.md) | :heavy_minus_sign:                                        | N/A                                                       |
+| Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                  | [UnifiedTo.Models.Requests.PatchTicketingNoteSecurity](../../Models/Requests/PatchTicketingNoteSecurity.md) | :heavy_check_mark:                                                                                          | The security requirements to use for the request.                                                           |
+| `ConnectionId`                                                                                              | *string*                                                                                                    | :heavy_check_mark:                                                                                          | ID of the connection                                                                                        |
+| `Id`                                                                                                        | *string*                                                                                                    | :heavy_check_mark:                                                                                          | ID of the Note                                                                                              |
+| `TicketingNote`                                                                                             | [TicketingNote](../../Models/Components/TicketingNote.md)                                                   | :heavy_minus_sign:                                                                                          | N/A                                                                                                         |
 
 
 ### Response
@@ -445,15 +464,16 @@ Update a ticket
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Ticketing.PatchTicketingTicketAsync(
+    security: new PatchTicketingTicketSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     ticketingTicket: new TicketingTicket() {});
@@ -463,11 +483,12 @@ var res = await sdk.Ticketing.PatchTicketingTicketAsync(
 
 ### Parameters
 
-| Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
-| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
-| `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Ticket                                              |
-| `TicketingTicket`                                             | [TicketingTicket](../../Models/Components/TicketingTicket.md) | :heavy_minus_sign:                                            | N/A                                                           |
+| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                      | [UnifiedTo.Models.Requests.PatchTicketingTicketSecurity](../../Models/Requests/PatchTicketingTicketSecurity.md) | :heavy_check_mark:                                                                                              | The security requirements to use for the request.                                                               |
+| `ConnectionId`                                                                                                  | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the connection                                                                                            |
+| `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Ticket                                                                                                |
+| `TicketingTicket`                                                                                               | [TicketingTicket](../../Models/Components/TicketingTicket.md)                                                   | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |
 
 
 ### Response
@@ -483,14 +504,14 @@ Remove a customer
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Ticketing.RemoveTicketingCustomerAsync(
+    security: new RemoveTicketingCustomerSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>");
 
@@ -499,10 +520,11 @@ var res = await sdk.Ticketing.RemoveTicketingCustomerAsync(
 
 ### Parameters
 
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Customer   |
+| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                            | [UnifiedTo.Models.Requests.RemoveTicketingCustomerSecurity](../../Models/Requests/RemoveTicketingCustomerSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
+| `ConnectionId`                                                                                                        | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the connection                                                                                                  |
+| `Id`                                                                                                                  | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the Customer                                                                                                    |
 
 
 ### Response
@@ -518,14 +540,14 @@ Remove a note
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Ticketing.RemoveTicketingNoteAsync(
+    security: new RemoveTicketingNoteSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>");
 
@@ -534,10 +556,11 @@ var res = await sdk.Ticketing.RemoveTicketingNoteAsync(
 
 ### Parameters
 
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Note       |
+| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                    | [UnifiedTo.Models.Requests.RemoveTicketingNoteSecurity](../../Models/Requests/RemoveTicketingNoteSecurity.md) | :heavy_check_mark:                                                                                            | The security requirements to use for the request.                                                             |
+| `ConnectionId`                                                                                                | *string*                                                                                                      | :heavy_check_mark:                                                                                            | ID of the connection                                                                                          |
+| `Id`                                                                                                          | *string*                                                                                                      | :heavy_check_mark:                                                                                            | ID of the Note                                                                                                |
 
 
 ### Response
@@ -553,14 +576,14 @@ Remove a ticket
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Ticketing.RemoveTicketingTicketAsync(
+    security: new RemoveTicketingTicketSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>");
 
@@ -569,10 +592,11 @@ var res = await sdk.Ticketing.RemoveTicketingTicketAsync(
 
 ### Parameters
 
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Ticket     |
+| Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                        | [UnifiedTo.Models.Requests.RemoveTicketingTicketSecurity](../../Models/Requests/RemoveTicketingTicketSecurity.md) | :heavy_check_mark:                                                                                                | The security requirements to use for the request.                                                                 |
+| `ConnectionId`                                                                                                    | *string*                                                                                                          | :heavy_check_mark:                                                                                                | ID of the connection                                                                                              |
+| `Id`                                                                                                              | *string*                                                                                                          | :heavy_check_mark:                                                                                                | ID of the Ticket                                                                                                  |
 
 
 ### Response
@@ -588,15 +612,16 @@ Update a customer
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Ticketing.UpdateTicketingCustomerAsync(
+    security: new UpdateTicketingCustomerSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     ticketingCustomer: new TicketingCustomer() {});
@@ -606,11 +631,12 @@ var res = await sdk.Ticketing.UpdateTicketingCustomerAsync(
 
 ### Parameters
 
-| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
-| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Customer                                                |
-| `TicketingCustomer`                                               | [TicketingCustomer](../../Models/Components/TicketingCustomer.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                            | [UnifiedTo.Models.Requests.UpdateTicketingCustomerSecurity](../../Models/Requests/UpdateTicketingCustomerSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
+| `ConnectionId`                                                                                                        | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the connection                                                                                                  |
+| `Id`                                                                                                                  | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the Customer                                                                                                    |
+| `TicketingCustomer`                                                                                                   | [TicketingCustomer](../../Models/Components/TicketingCustomer.md)                                                     | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |
 
 
 ### Response
@@ -626,15 +652,16 @@ Update a note
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Ticketing.UpdateTicketingNoteAsync(
+    security: new UpdateTicketingNoteSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     ticketingNote: new TicketingNote() {});
@@ -644,11 +671,12 @@ var res = await sdk.Ticketing.UpdateTicketingNoteAsync(
 
 ### Parameters
 
-| Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
-| --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
-| `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
-| `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the Note                                            |
-| `TicketingNote`                                           | [TicketingNote](../../Models/Components/TicketingNote.md) | :heavy_minus_sign:                                        | N/A                                                       |
+| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                    | [UnifiedTo.Models.Requests.UpdateTicketingNoteSecurity](../../Models/Requests/UpdateTicketingNoteSecurity.md) | :heavy_check_mark:                                                                                            | The security requirements to use for the request.                                                             |
+| `ConnectionId`                                                                                                | *string*                                                                                                      | :heavy_check_mark:                                                                                            | ID of the connection                                                                                          |
+| `Id`                                                                                                          | *string*                                                                                                      | :heavy_check_mark:                                                                                            | ID of the Note                                                                                                |
+| `TicketingNote`                                                                                               | [TicketingNote](../../Models/Components/TicketingNote.md)                                                     | :heavy_minus_sign:                                                                                            | N/A                                                                                                           |
 
 
 ### Response
@@ -664,15 +692,16 @@ Update a ticket
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Ticketing.UpdateTicketingTicketAsync(
+    security: new UpdateTicketingTicketSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     ticketingTicket: new TicketingTicket() {});
@@ -682,11 +711,12 @@ var res = await sdk.Ticketing.UpdateTicketingTicketAsync(
 
 ### Parameters
 
-| Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
-| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
-| `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
-| `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Ticket                                              |
-| `TicketingTicket`                                             | [TicketingTicket](../../Models/Components/TicketingTicket.md) | :heavy_minus_sign:                                            | N/A                                                           |
+| Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                        | [UnifiedTo.Models.Requests.UpdateTicketingTicketSecurity](../../Models/Requests/UpdateTicketingTicketSecurity.md) | :heavy_check_mark:                                                                                                | The security requirements to use for the request.                                                                 |
+| `ConnectionId`                                                                                                    | *string*                                                                                                          | :heavy_check_mark:                                                                                                | ID of the connection                                                                                              |
+| `Id`                                                                                                              | *string*                                                                                                          | :heavy_check_mark:                                                                                                | ID of the Ticket                                                                                                  |
+| `TicketingTicket`                                                                                                 | [TicketingTicket](../../Models/Components/TicketingTicket.md)                                                     | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |
 
 
 ### Response

@@ -26,61 +26,59 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateUcContactResponse> CreateUcContactAsync(string connectionId, UcContact? ucContact = null);
+        Task<CreateUcContactResponse> CreateUcContactAsync(CreateUcContactSecurity security, string connectionId, UcContact? ucContact = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetUcContactResponse> GetUcContactAsync(GetUcContactSecurity security, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all calls
         /// </summary>
-        Task<ListUcCallsResponse> ListUcCallsAsync(ListUcCallsRequest request);
+        Task<ListUcCallsResponse> ListUcCallsAsync(ListUcCallsSecurity security, ListUcCallsRequest request);
 
         /// <summary>
         /// List all contacts
         /// </summary>
-        Task<ListUcContactsResponse> ListUcContactsAsync(ListUcContactsRequest request);
+        Task<ListUcContactsResponse> ListUcContactsAsync(ListUcContactsSecurity security, ListUcContactsRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchUcContactResponse> PatchUcContactAsync(string connectionId, string id, UcContact? ucContact = null);
+        Task<PatchUcContactResponse> PatchUcContactAsync(PatchUcContactSecurity security, string connectionId, string id, UcContact? ucContact = null);
 
         /// <summary>
         /// Remove a contact
         /// </summary>
-        Task<RemoveUcContactResponse> RemoveUcContactAsync(string connectionId, string id);
+        Task<RemoveUcContactResponse> RemoveUcContactAsync(RemoveUcContactSecurity security, string connectionId, string id);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateUcContactResponse> UpdateUcContactAsync(string connectionId, string id, UcContact? ucContact = null);
+        Task<UpdateUcContactResponse> UpdateUcContactAsync(UpdateUcContactSecurity security, string connectionId, string id, UcContact? ucContact = null);
     }
 
     public class Uc: IUc
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.2";
-        private const string _sdkGenVersion = "2.269.0";
+        private const string _sdkVersion = "0.11.0";
+        private const string _sdkGenVersion = "2.272.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.2 2.269.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.11.0 2.272.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
-        private Func<Security>? _securitySource;
 
-        public Uc(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
+        public Uc(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
-            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateUcContactResponse> CreateUcContactAsync(string connectionId, UcContact? ucContact = null)
+        public async Task<CreateUcContactResponse> CreateUcContactAsync(CreateUcContactSecurity security, string connectionId, UcContact? ucContact = null)
         {
             var request = new CreateUcContactRequest()
             {
@@ -99,11 +97,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -130,7 +124,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetUcContactResponse> GetUcContactAsync(GetUcContactSecurity security, string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetUcContactRequest()
             {
@@ -144,11 +138,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -175,7 +165,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListUcCallsResponse> ListUcCallsAsync(ListUcCallsRequest request)
+        public async Task<ListUcCallsResponse> ListUcCallsAsync(ListUcCallsSecurity security, ListUcCallsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/call", request);
@@ -183,11 +173,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -214,7 +200,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListUcContactsResponse> ListUcContactsAsync(ListUcContactsRequest request)
+        public async Task<ListUcContactsResponse> ListUcContactsAsync(ListUcContactsSecurity security, ListUcContactsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/contact", request);
@@ -222,11 +208,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -253,7 +235,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchUcContactResponse> PatchUcContactAsync(string connectionId, string id, UcContact? ucContact = null)
+        public async Task<PatchUcContactResponse> PatchUcContactAsync(PatchUcContactSecurity security, string connectionId, string id, UcContact? ucContact = null)
         {
             var request = new PatchUcContactRequest()
             {
@@ -273,11 +255,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -304,7 +282,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveUcContactResponse> RemoveUcContactAsync(string connectionId, string id)
+        public async Task<RemoveUcContactResponse> RemoveUcContactAsync(RemoveUcContactSecurity security, string connectionId, string id)
         {
             var request = new RemoveUcContactRequest()
             {
@@ -317,11 +295,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -338,7 +312,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateUcContactResponse> UpdateUcContactAsync(string connectionId, string id, UcContact? ucContact = null)
+        public async Task<UpdateUcContactResponse> UpdateUcContactAsync(UpdateUcContactSecurity security, string connectionId, string id, UcContact? ucContact = null)
         {
             var request = new UpdateUcContactRequest()
             {
@@ -358,11 +332,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 

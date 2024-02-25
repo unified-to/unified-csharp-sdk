@@ -26,56 +26,54 @@ namespace UnifiedTo
         /// <summary>
         /// Create a payment
         /// </summary>
-        Task<CreateAccountingPaymentResponse> CreateAccountingPaymentAsync(string connectionId, AccountingPayment? accountingPayment = null);
+        Task<CreateAccountingPaymentResponse> CreateAccountingPaymentAsync(CreateAccountingPaymentSecurity security, string connectionId, AccountingPayment? accountingPayment = null);
 
         /// <summary>
         /// Retrieve a payment
         /// </summary>
-        Task<GetAccountingPaymentResponse> GetAccountingPaymentAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingPaymentResponse> GetAccountingPaymentAsync(GetAccountingPaymentSecurity security, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all payments
         /// </summary>
-        Task<ListAccountingPaymentsResponse> ListAccountingPaymentsAsync(ListAccountingPaymentsRequest request);
+        Task<ListAccountingPaymentsResponse> ListAccountingPaymentsAsync(ListAccountingPaymentsSecurity security, ListAccountingPaymentsRequest request);
 
         /// <summary>
         /// Update a payment
         /// </summary>
-        Task<PatchAccountingPaymentResponse> PatchAccountingPaymentAsync(string connectionId, string id, AccountingPayment? accountingPayment = null);
+        Task<PatchAccountingPaymentResponse> PatchAccountingPaymentAsync(PatchAccountingPaymentSecurity security, string connectionId, string id, AccountingPayment? accountingPayment = null);
 
         /// <summary>
         /// Remove a payment
         /// </summary>
-        Task<RemoveAccountingPaymentResponse> RemoveAccountingPaymentAsync(string connectionId, string id);
+        Task<RemoveAccountingPaymentResponse> RemoveAccountingPaymentAsync(RemoveAccountingPaymentSecurity security, string connectionId, string id);
 
         /// <summary>
         /// Update a payment
         /// </summary>
-        Task<UpdateAccountingPaymentResponse> UpdateAccountingPaymentAsync(string connectionId, string id, AccountingPayment? accountingPayment = null);
+        Task<UpdateAccountingPaymentResponse> UpdateAccountingPaymentAsync(UpdateAccountingPaymentSecurity security, string connectionId, string id, AccountingPayment? accountingPayment = null);
     }
 
     public class Payment: IPayment
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.2";
-        private const string _sdkGenVersion = "2.269.0";
+        private const string _sdkVersion = "0.11.0";
+        private const string _sdkGenVersion = "2.272.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.2 2.269.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.11.0 2.272.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
-        private Func<Security>? _securitySource;
 
-        public Payment(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
+        public Payment(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
-            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateAccountingPaymentResponse> CreateAccountingPaymentAsync(string connectionId, AccountingPayment? accountingPayment = null)
+        public async Task<CreateAccountingPaymentResponse> CreateAccountingPaymentAsync(CreateAccountingPaymentSecurity security, string connectionId, AccountingPayment? accountingPayment = null)
         {
             var request = new CreateAccountingPaymentRequest()
             {
@@ -94,11 +92,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -125,7 +119,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetAccountingPaymentResponse> GetAccountingPaymentAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingPaymentResponse> GetAccountingPaymentAsync(GetAccountingPaymentSecurity security, string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetAccountingPaymentRequest()
             {
@@ -139,11 +133,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -170,7 +160,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListAccountingPaymentsResponse> ListAccountingPaymentsAsync(ListAccountingPaymentsRequest request)
+        public async Task<ListAccountingPaymentsResponse> ListAccountingPaymentsAsync(ListAccountingPaymentsSecurity security, ListAccountingPaymentsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/payment", request);
@@ -178,11 +168,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -209,7 +195,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchAccountingPaymentResponse> PatchAccountingPaymentAsync(string connectionId, string id, AccountingPayment? accountingPayment = null)
+        public async Task<PatchAccountingPaymentResponse> PatchAccountingPaymentAsync(PatchAccountingPaymentSecurity security, string connectionId, string id, AccountingPayment? accountingPayment = null)
         {
             var request = new PatchAccountingPaymentRequest()
             {
@@ -229,11 +215,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -260,7 +242,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveAccountingPaymentResponse> RemoveAccountingPaymentAsync(string connectionId, string id)
+        public async Task<RemoveAccountingPaymentResponse> RemoveAccountingPaymentAsync(RemoveAccountingPaymentSecurity security, string connectionId, string id)
         {
             var request = new RemoveAccountingPaymentRequest()
             {
@@ -273,11 +255,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -294,7 +272,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateAccountingPaymentResponse> UpdateAccountingPaymentAsync(string connectionId, string id, AccountingPayment? accountingPayment = null)
+        public async Task<UpdateAccountingPaymentResponse> UpdateAccountingPaymentAsync(UpdateAccountingPaymentSecurity security, string connectionId, string id, AccountingPayment? accountingPayment = null)
         {
             var request = new UpdateAccountingPaymentRequest()
             {
@@ -314,11 +292,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 

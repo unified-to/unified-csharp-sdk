@@ -15,7 +15,6 @@ namespace UnifiedTo
     using System.Net.Http;
     using System.Threading.Tasks;
     using System;
-    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
 
 
@@ -111,14 +110,13 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.2";
-        private const string _sdkGenVersion = "2.269.0";
+        private const string _sdkVersion = "0.11.0";
+        private const string _sdkGenVersion = "2.272.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.2 2.269.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.11.0 2.272.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _defaultClient;
-        private Func<Security>? _securitySource;
         public IAccounting Accounting { get; private set; }
         public IAccount Account { get; private set; }
         public IContact Contact { get; private set; }
@@ -175,7 +173,7 @@ namespace UnifiedTo
         public IIssue Issue { get; private set; }
         public IWebhook Webhook { get; private set; }
 
-        public UnifiedToSDK(Security? security = null, Func<Security>? securitySource = null, int? serverIndex = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, ISpeakeasyHttpClient? client = null)
+        public UnifiedToSDK(int? serverIndex = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, ISpeakeasyHttpClient? client = null)
         {
             if (serverIndex != null)
             {
@@ -193,76 +191,67 @@ namespace UnifiedTo
 
             _defaultClient = new SpeakeasyHttpClient(client);
 
-            if(securitySource != null)
-            {
-                _securitySource = securitySource;
-            }
-            else if(security != null)
-            {
-                _securitySource = () => security;
-            }
-
             SDKConfiguration = new SDKConfig()
             {
                 serverIndex = _serverIndex,
                 serverUrl = _serverUrl
             };
 
-            Accounting = new Accounting(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Account = new Account(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Contact = new Contact(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Invoice = new Invoice(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Organization = new Organization(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Payment = new Payment(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Payout = new Payout(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Refund = new Refund(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Taxrate = new Taxrate(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Transaction = new Transaction(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Ats = new Ats(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Activity = new Activity(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Application = new Application(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Applicationstatus = new Applicationstatus(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Candidate = new Candidate(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Company = new Company(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Document = new Document(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Interview = new Interview(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Job = new Job(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Scorecard = new Scorecard(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Commerce = new Commerce(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Collection = new Collection(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Inventory = new Inventory(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Item = new Item(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Location = new Location(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Crm = new Crm(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Deal = new Deal(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Event = new Event(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Lead = new Lead(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Pipeline = new Pipeline(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Enrich = new Enrich(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Person = new Person(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Hris = new Hris(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Employee = new Employee(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Group = new Group(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Martech = new Martech(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            List = new List(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Member = new Member(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Passthrough = new Passthrough(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Storage = new Storage(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            File = new File(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Ticketing = new Ticketing(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Customer = new Customer(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Note = new Note(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Ticket = new Ticket(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Uc = new Uc(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Call = new Call(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Unified = new Unified(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Apicall = new Apicall(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Connection = new Connection(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Integration = new Integration(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Auth = new Auth(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Login = new Login(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Issue = new Issue(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
-            Webhook = new Webhook(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Accounting = new Accounting(_defaultClient, _serverUrl, SDKConfiguration);
+            Account = new Account(_defaultClient, _serverUrl, SDKConfiguration);
+            Contact = new Contact(_defaultClient, _serverUrl, SDKConfiguration);
+            Invoice = new Invoice(_defaultClient, _serverUrl, SDKConfiguration);
+            Organization = new Organization(_defaultClient, _serverUrl, SDKConfiguration);
+            Payment = new Payment(_defaultClient, _serverUrl, SDKConfiguration);
+            Payout = new Payout(_defaultClient, _serverUrl, SDKConfiguration);
+            Refund = new Refund(_defaultClient, _serverUrl, SDKConfiguration);
+            Taxrate = new Taxrate(_defaultClient, _serverUrl, SDKConfiguration);
+            Transaction = new Transaction(_defaultClient, _serverUrl, SDKConfiguration);
+            Ats = new Ats(_defaultClient, _serverUrl, SDKConfiguration);
+            Activity = new Activity(_defaultClient, _serverUrl, SDKConfiguration);
+            Application = new Application(_defaultClient, _serverUrl, SDKConfiguration);
+            Applicationstatus = new Applicationstatus(_defaultClient, _serverUrl, SDKConfiguration);
+            Candidate = new Candidate(_defaultClient, _serverUrl, SDKConfiguration);
+            Company = new Company(_defaultClient, _serverUrl, SDKConfiguration);
+            Document = new Document(_defaultClient, _serverUrl, SDKConfiguration);
+            Interview = new Interview(_defaultClient, _serverUrl, SDKConfiguration);
+            Job = new Job(_defaultClient, _serverUrl, SDKConfiguration);
+            Scorecard = new Scorecard(_defaultClient, _serverUrl, SDKConfiguration);
+            Commerce = new Commerce(_defaultClient, _serverUrl, SDKConfiguration);
+            Collection = new Collection(_defaultClient, _serverUrl, SDKConfiguration);
+            Inventory = new Inventory(_defaultClient, _serverUrl, SDKConfiguration);
+            Item = new Item(_defaultClient, _serverUrl, SDKConfiguration);
+            Location = new Location(_defaultClient, _serverUrl, SDKConfiguration);
+            Crm = new Crm(_defaultClient, _serverUrl, SDKConfiguration);
+            Deal = new Deal(_defaultClient, _serverUrl, SDKConfiguration);
+            Event = new Event(_defaultClient, _serverUrl, SDKConfiguration);
+            Lead = new Lead(_defaultClient, _serverUrl, SDKConfiguration);
+            Pipeline = new Pipeline(_defaultClient, _serverUrl, SDKConfiguration);
+            Enrich = new Enrich(_defaultClient, _serverUrl, SDKConfiguration);
+            Person = new Person(_defaultClient, _serverUrl, SDKConfiguration);
+            Hris = new Hris(_defaultClient, _serverUrl, SDKConfiguration);
+            Employee = new Employee(_defaultClient, _serverUrl, SDKConfiguration);
+            Group = new Group(_defaultClient, _serverUrl, SDKConfiguration);
+            Martech = new Martech(_defaultClient, _serverUrl, SDKConfiguration);
+            List = new List(_defaultClient, _serverUrl, SDKConfiguration);
+            Member = new Member(_defaultClient, _serverUrl, SDKConfiguration);
+            Passthrough = new Passthrough(_defaultClient, _serverUrl, SDKConfiguration);
+            Storage = new Storage(_defaultClient, _serverUrl, SDKConfiguration);
+            File = new File(_defaultClient, _serverUrl, SDKConfiguration);
+            Ticketing = new Ticketing(_defaultClient, _serverUrl, SDKConfiguration);
+            Customer = new Customer(_defaultClient, _serverUrl, SDKConfiguration);
+            Note = new Note(_defaultClient, _serverUrl, SDKConfiguration);
+            Ticket = new Ticket(_defaultClient, _serverUrl, SDKConfiguration);
+            Uc = new Uc(_defaultClient, _serverUrl, SDKConfiguration);
+            Call = new Call(_defaultClient, _serverUrl, SDKConfiguration);
+            Unified = new Unified(_defaultClient, _serverUrl, SDKConfiguration);
+            Apicall = new Apicall(_defaultClient, _serverUrl, SDKConfiguration);
+            Connection = new Connection(_defaultClient, _serverUrl, SDKConfiguration);
+            Integration = new Integration(_defaultClient, _serverUrl, SDKConfiguration);
+            Auth = new Auth(_defaultClient, _serverUrl, SDKConfiguration);
+            Login = new Login(_defaultClient, _serverUrl, SDKConfiguration);
+            Issue = new Issue(_defaultClient, _serverUrl, SDKConfiguration);
+            Webhook = new Webhook(_defaultClient, _serverUrl, SDKConfiguration);
         }
     }
 }

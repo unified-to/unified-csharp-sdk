@@ -18,15 +18,16 @@ Create a file
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Storage.CreateStorageFileAsync(
+    security: new CreateStorageFileSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     storageFile: new StorageFile() {});
 
@@ -35,10 +36,11 @@ var res = await sdk.Storage.CreateStorageFileAsync(
 
 ### Parameters
 
-| Parameter                                             | Type                                                  | Required                                              | Description                                           |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
-| `StorageFile`                                         | [StorageFile](../../Models/Components/StorageFile.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                | [UnifiedTo.Models.Requests.CreateStorageFileSecurity](../../Models/Requests/CreateStorageFileSecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
+| `ConnectionId`                                                                                            | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the connection                                                                                      |
+| `StorageFile`                                                                                             | [StorageFile](../../Models/Components/StorageFile.md)                                                     | :heavy_minus_sign:                                                                                        | N/A                                                                                                       |
 
 
 ### Response
@@ -54,15 +56,15 @@ Retrieve a file
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Storage.GetStorageFileAsync(
+    security: new GetStorageFileSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -74,11 +76,12 @@ var res = await sdk.Storage.GetStorageFileAsync(
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the File                   |
-| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
+| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `security`                                                                                          | [UnifiedTo.Models.Requests.GetStorageFileSecurity](../../Models/Requests/GetStorageFileSecurity.md) | :heavy_check_mark:                                                                                  | The security requirements to use for the request.                                                   |
+| `ConnectionId`                                                                                      | *string*                                                                                            | :heavy_check_mark:                                                                                  | ID of the connection                                                                                |
+| `Id`                                                                                                | *string*                                                                                            | :heavy_check_mark:                                                                                  | ID of the File                                                                                      |
+| `Fields`                                                                                            | List<*string*>                                                                                      | :heavy_minus_sign:                                                                                  | Comma-delimited fields to return                                                                    |
 
 
 ### Response
@@ -94,28 +97,30 @@ List all files
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 ListStorageFilesRequest req = new ListStorageFilesRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Storage.ListStorageFilesAsync(req);
+var res = await sdk.Storage.ListStorageFilesAsync(
+    security: new ListStorageFilesSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
+    req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
-| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `request`                                                                   | [ListStorageFilesRequest](../../Models/Requests/ListStorageFilesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                               | [ListStorageFilesRequest](../../Models/Requests/ListStorageFilesRequest.md)                             | :heavy_check_mark:                                                                                      | The request object to use for the request.                                                              |
+| `security`                                                                                              | [UnifiedTo.Models.Requests.ListStorageFilesSecurity](../../Models/Requests/ListStorageFilesSecurity.md) | :heavy_check_mark:                                                                                      | The security requirements to use for the request.                                                       |
 
 
 ### Response
@@ -131,15 +136,16 @@ Update a file
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Storage.PatchStorageFileAsync(
+    security: new PatchStorageFileSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     storageFile: new StorageFile() {});
@@ -149,11 +155,12 @@ var res = await sdk.Storage.PatchStorageFileAsync(
 
 ### Parameters
 
-| Parameter                                             | Type                                                  | Required                                              | Description                                           |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
-| `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the File                                        |
-| `StorageFile`                                         | [StorageFile](../../Models/Components/StorageFile.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                              | [UnifiedTo.Models.Requests.PatchStorageFileSecurity](../../Models/Requests/PatchStorageFileSecurity.md) | :heavy_check_mark:                                                                                      | The security requirements to use for the request.                                                       |
+| `ConnectionId`                                                                                          | *string*                                                                                                | :heavy_check_mark:                                                                                      | ID of the connection                                                                                    |
+| `Id`                                                                                                    | *string*                                                                                                | :heavy_check_mark:                                                                                      | ID of the File                                                                                          |
+| `StorageFile`                                                                                           | [StorageFile](../../Models/Components/StorageFile.md)                                                   | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
 
 
 ### Response
@@ -169,14 +176,14 @@ Remove a file
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Storage.RemoveStorageFileAsync(
+    security: new RemoveStorageFileSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>");
 
@@ -185,10 +192,11 @@ var res = await sdk.Storage.RemoveStorageFileAsync(
 
 ### Parameters
 
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the File       |
+| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                | [UnifiedTo.Models.Requests.RemoveStorageFileSecurity](../../Models/Requests/RemoveStorageFileSecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
+| `ConnectionId`                                                                                            | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the connection                                                                                      |
+| `Id`                                                                                                      | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the File                                                                                            |
 
 
 ### Response
@@ -204,15 +212,16 @@ Update a file
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Storage.UpdateStorageFileAsync(
+    security: new UpdateStorageFileSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     storageFile: new StorageFile() {});
@@ -222,11 +231,12 @@ var res = await sdk.Storage.UpdateStorageFileAsync(
 
 ### Parameters
 
-| Parameter                                             | Type                                                  | Required                                              | Description                                           |
-| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
-| `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the File                                        |
-| `StorageFile`                                         | [StorageFile](../../Models/Components/StorageFile.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                | [UnifiedTo.Models.Requests.UpdateStorageFileSecurity](../../Models/Requests/UpdateStorageFileSecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
+| `ConnectionId`                                                                                            | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the connection                                                                                      |
+| `Id`                                                                                                      | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the File                                                                                            |
+| `StorageFile`                                                                                             | [StorageFile](../../Models/Components/StorageFile.md)                                                     | :heavy_minus_sign:                                                                                        | N/A                                                                                                       |
 
 
 ### Response

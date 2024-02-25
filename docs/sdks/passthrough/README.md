@@ -17,15 +17,15 @@ Passthrough POST
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Passthrough.CreatePassthroughAsync(
+    security: new CreatePassthroughSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     path: "<value>",
     requestBody: new Dictionary<string, object>() {
@@ -37,11 +37,12 @@ var res = await sdk.Passthrough.CreatePassthroughAsync(
 
 ### Parameters
 
-| Parameter                    | Type                         | Required                     | Description                  |
-| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
-| `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
-| `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
-| `RequestBody`                | Dictionary<String, *object*> | :heavy_minus_sign:           | integration-specific payload |
+| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                | [UnifiedTo.Models.Requests.CreatePassthroughSecurity](../../Models/Requests/CreatePassthroughSecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
+| `ConnectionId`                                                                                            | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the connection                                                                                      |
+| `Path`                                                                                                    | *string*                                                                                                  | :heavy_check_mark:                                                                                        | N/A                                                                                                       |
+| `RequestBody`                                                                                             | Dictionary<String, *object*>                                                                              | :heavy_minus_sign:                                                                                        | integration-specific payload                                                                              |
 
 
 ### Response
@@ -57,14 +58,14 @@ Passthrough GET
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Passthrough.ListPassthroughsAsync(
+    security: new ListPassthroughsSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     path: "<value>");
 
@@ -73,10 +74,11 @@ var res = await sdk.Passthrough.ListPassthroughsAsync(
 
 ### Parameters
 
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Path`               | *string*             | :heavy_check_mark:   | N/A                  |
+| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                              | [UnifiedTo.Models.Requests.ListPassthroughsSecurity](../../Models/Requests/ListPassthroughsSecurity.md) | :heavy_check_mark:                                                                                      | The security requirements to use for the request.                                                       |
+| `ConnectionId`                                                                                          | *string*                                                                                                | :heavy_check_mark:                                                                                      | ID of the connection                                                                                    |
+| `Path`                                                                                                  | *string*                                                                                                | :heavy_check_mark:                                                                                      | N/A                                                                                                     |
 
 
 ### Response
@@ -92,15 +94,15 @@ Passthrough PUT
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Passthrough.PatchPassthroughAsync(
+    security: new PatchPassthroughSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     path: "<value>",
     requestBody: new Dictionary<string, object>() {
@@ -112,11 +114,12 @@ var res = await sdk.Passthrough.PatchPassthroughAsync(
 
 ### Parameters
 
-| Parameter                    | Type                         | Required                     | Description                  |
-| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
-| `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
-| `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
-| `RequestBody`                | Dictionary<String, *object*> | :heavy_minus_sign:           | integration-specific payload |
+| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                              | [UnifiedTo.Models.Requests.PatchPassthroughSecurity](../../Models/Requests/PatchPassthroughSecurity.md) | :heavy_check_mark:                                                                                      | The security requirements to use for the request.                                                       |
+| `ConnectionId`                                                                                          | *string*                                                                                                | :heavy_check_mark:                                                                                      | ID of the connection                                                                                    |
+| `Path`                                                                                                  | *string*                                                                                                | :heavy_check_mark:                                                                                      | N/A                                                                                                     |
+| `RequestBody`                                                                                           | Dictionary<String, *object*>                                                                            | :heavy_minus_sign:                                                                                      | integration-specific payload                                                                            |
 
 
 ### Response
@@ -132,14 +135,14 @@ Passthrough DELETE
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Passthrough.RemovePassthroughAsync(
+    security: new RemovePassthroughSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     path: "<value>");
 
@@ -148,10 +151,11 @@ var res = await sdk.Passthrough.RemovePassthroughAsync(
 
 ### Parameters
 
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Path`               | *string*             | :heavy_check_mark:   | N/A                  |
+| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                | [UnifiedTo.Models.Requests.RemovePassthroughSecurity](../../Models/Requests/RemovePassthroughSecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
+| `ConnectionId`                                                                                            | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the connection                                                                                      |
+| `Path`                                                                                                    | *string*                                                                                                  | :heavy_check_mark:                                                                                        | N/A                                                                                                       |
 
 
 ### Response
@@ -167,15 +171,15 @@ Passthrough PUT
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Passthrough.UpdatePassthroughAsync(
+    security: new UpdatePassthroughSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     path: "<value>",
     requestBody: new Dictionary<string, object>() {
@@ -187,11 +191,12 @@ var res = await sdk.Passthrough.UpdatePassthroughAsync(
 
 ### Parameters
 
-| Parameter                    | Type                         | Required                     | Description                  |
-| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
-| `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
-| `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
-| `RequestBody`                | Dictionary<String, *object*> | :heavy_minus_sign:           | integration-specific payload |
+| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
+| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                | [UnifiedTo.Models.Requests.UpdatePassthroughSecurity](../../Models/Requests/UpdatePassthroughSecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
+| `ConnectionId`                                                                                            | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the connection                                                                                      |
+| `Path`                                                                                                    | *string*                                                                                                  | :heavy_check_mark:                                                                                        | N/A                                                                                                       |
+| `RequestBody`                                                                                             | Dictionary<String, *object*>                                                                              | :heavy_minus_sign:                                                                                        | integration-specific payload                                                                              |
 
 
 ### Response

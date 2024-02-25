@@ -26,56 +26,54 @@ namespace UnifiedTo
         /// <summary>
         /// Create a file
         /// </summary>
-        Task<CreateStorageFileResponse> CreateStorageFileAsync(string connectionId, StorageFile? storageFile = null);
+        Task<CreateStorageFileResponse> CreateStorageFileAsync(CreateStorageFileSecurity security, string connectionId, StorageFile? storageFile = null);
 
         /// <summary>
         /// Retrieve a file
         /// </summary>
-        Task<GetStorageFileResponse> GetStorageFileAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetStorageFileResponse> GetStorageFileAsync(GetStorageFileSecurity security, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all files
         /// </summary>
-        Task<ListStorageFilesResponse> ListStorageFilesAsync(ListStorageFilesRequest request);
+        Task<ListStorageFilesResponse> ListStorageFilesAsync(ListStorageFilesSecurity security, ListStorageFilesRequest request);
 
         /// <summary>
         /// Update a file
         /// </summary>
-        Task<PatchStorageFileResponse> PatchStorageFileAsync(string connectionId, string id, StorageFile? storageFile = null);
+        Task<PatchStorageFileResponse> PatchStorageFileAsync(PatchStorageFileSecurity security, string connectionId, string id, StorageFile? storageFile = null);
 
         /// <summary>
         /// Remove a file
         /// </summary>
-        Task<RemoveStorageFileResponse> RemoveStorageFileAsync(string connectionId, string id);
+        Task<RemoveStorageFileResponse> RemoveStorageFileAsync(RemoveStorageFileSecurity security, string connectionId, string id);
 
         /// <summary>
         /// Update a file
         /// </summary>
-        Task<UpdateStorageFileResponse> UpdateStorageFileAsync(string connectionId, string id, StorageFile? storageFile = null);
+        Task<UpdateStorageFileResponse> UpdateStorageFileAsync(UpdateStorageFileSecurity security, string connectionId, string id, StorageFile? storageFile = null);
     }
 
     public class Storage: IStorage
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.2";
-        private const string _sdkGenVersion = "2.269.0";
+        private const string _sdkVersion = "0.11.0";
+        private const string _sdkGenVersion = "2.272.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.2 2.269.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.11.0 2.272.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
-        private Func<Security>? _securitySource;
 
-        public Storage(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
+        public Storage(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
-            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateStorageFileResponse> CreateStorageFileAsync(string connectionId, StorageFile? storageFile = null)
+        public async Task<CreateStorageFileResponse> CreateStorageFileAsync(CreateStorageFileSecurity security, string connectionId, StorageFile? storageFile = null)
         {
             var request = new CreateStorageFileRequest()
             {
@@ -94,11 +92,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -125,7 +119,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetStorageFileResponse> GetStorageFileAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetStorageFileResponse> GetStorageFileAsync(GetStorageFileSecurity security, string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetStorageFileRequest()
             {
@@ -139,11 +133,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -170,7 +160,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListStorageFilesResponse> ListStorageFilesAsync(ListStorageFilesRequest request)
+        public async Task<ListStorageFilesResponse> ListStorageFilesAsync(ListStorageFilesSecurity security, ListStorageFilesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/storage/{connection_id}/file", request);
@@ -178,11 +168,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -209,7 +195,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchStorageFileResponse> PatchStorageFileAsync(string connectionId, string id, StorageFile? storageFile = null)
+        public async Task<PatchStorageFileResponse> PatchStorageFileAsync(PatchStorageFileSecurity security, string connectionId, string id, StorageFile? storageFile = null)
         {
             var request = new PatchStorageFileRequest()
             {
@@ -229,11 +215,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -260,7 +242,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveStorageFileResponse> RemoveStorageFileAsync(string connectionId, string id)
+        public async Task<RemoveStorageFileResponse> RemoveStorageFileAsync(RemoveStorageFileSecurity security, string connectionId, string id)
         {
             var request = new RemoveStorageFileRequest()
             {
@@ -273,11 +255,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -294,7 +272,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateStorageFileResponse> UpdateStorageFileAsync(string connectionId, string id, StorageFile? storageFile = null)
+        public async Task<UpdateStorageFileResponse> UpdateStorageFileAsync(UpdateStorageFileSecurity security, string connectionId, string id, StorageFile? storageFile = null)
         {
             var request = new UpdateStorageFileRequest()
             {
@@ -314,11 +292,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 

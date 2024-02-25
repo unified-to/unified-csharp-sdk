@@ -12,15 +12,16 @@ dotnet add package UnifiedTo
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
+    security: new CreateAccountingAccountSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     accountingAccount: new AccountingAccount() {
     Name = "<value>",
@@ -682,38 +683,6 @@ The default server can also be overridden globally by passing a URL to the `serv
 dotnet add package UnifiedTo
 ```
 <!-- End SDK Installation [installation] -->
-
-<!-- Start Authentication [security] -->
-## Authentication
-
-### Per-Client Security Schemes
-
-This SDK supports the following security scheme globally:
-
-| Name    | Type    | Scheme  |
-| ------- | ------- | ------- |
-| `Jwt`   | apiKey  | API key |
-
-You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
-
-var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    connectionId: "<value>",
-    accountingAccount: new AccountingAccount() {
-    Name = "<value>",
-});
-
-// handle response
-```
-<!-- End Authentication [security] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 

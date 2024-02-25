@@ -1,21 +1,22 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 7bd6e19ec36f960e56c7d65cda36a422
+  docChecksum: 933f1fadb58fda6f0fe4bf144990d66c
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.269.0
-  releaseVersion: 0.10.2
-  configChecksum: cde5856f921ad398c88e220e4f7df5ad
+  generationVersion: 2.272.4
+  releaseVersion: 0.11.0
+  configChecksum: 3bddd3e7f288b608e0f63e2eeb07d5ae
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
 features:
   csharp:
-    core: 3.4.1
+    core: 3.4.3
     flattening: 2.81.1
-    globalSecurity: 2.83.1
+    globalSecurity: 2.83.2
     globalServerURLs: 2.82.2
+    methodSecurity: 2.82.1
 generatedFiles:
   - UnifiedTo/Accounting.cs
   - UnifiedTo/Account.cs
@@ -88,461 +89,686 @@ generatedFiles:
   - UnifiedTo/Utils/Utilities.cs
   - UnifiedTo/UnifiedTo.csproj
   - UnifiedTo.sln
+  - UnifiedTo/Models/Requests/CreateAccountingAccountSecurity.cs
   - UnifiedTo/Models/Requests/CreateAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingAccountResponse.cs
+  - UnifiedTo/Models/Requests/CreateAccountingContactSecurity.cs
   - UnifiedTo/Models/Requests/CreateAccountingContactRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingContactResponse.cs
+  - UnifiedTo/Models/Requests/CreateAccountingInvoiceSecurity.cs
   - UnifiedTo/Models/Requests/CreateAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingInvoiceResponse.cs
+  - UnifiedTo/Models/Requests/CreateAccountingPaymentSecurity.cs
   - UnifiedTo/Models/Requests/CreateAccountingPaymentRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingPaymentResponse.cs
+  - UnifiedTo/Models/Requests/CreateAccountingTaxrateSecurity.cs
   - UnifiedTo/Models/Requests/CreateAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingTaxrateResponse.cs
+  - UnifiedTo/Models/Requests/CreateAccountingTransactionSecurity.cs
   - UnifiedTo/Models/Requests/CreateAccountingTransactionRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingTransactionResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingAccountSecurity.cs
   - UnifiedTo/Models/Requests/GetAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingAccountResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingContactSecurity.cs
   - UnifiedTo/Models/Requests/GetAccountingContactRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingContactResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingInvoiceSecurity.cs
   - UnifiedTo/Models/Requests/GetAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingInvoiceResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingOrganizationSecurity.cs
   - UnifiedTo/Models/Requests/GetAccountingOrganizationRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingOrganizationResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingPaymentSecurity.cs
   - UnifiedTo/Models/Requests/GetAccountingPaymentRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingPaymentResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingPayoutSecurity.cs
   - UnifiedTo/Models/Requests/GetAccountingPayoutRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingPayoutResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingRefundSecurity.cs
   - UnifiedTo/Models/Requests/GetAccountingRefundRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingRefundResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingTaxrateSecurity.cs
   - UnifiedTo/Models/Requests/GetAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingTaxrateResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingTransactionSecurity.cs
   - UnifiedTo/Models/Requests/GetAccountingTransactionRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingTransactionResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingAccountsSecurity.cs
   - UnifiedTo/Models/Requests/ListAccountingAccountsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingAccountsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingContactsSecurity.cs
   - UnifiedTo/Models/Requests/ListAccountingContactsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingContactsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingInvoicesSecurity.cs
   - UnifiedTo/Models/Requests/ListAccountingInvoicesRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingInvoicesResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingOrganizationsSecurity.cs
   - UnifiedTo/Models/Requests/ListAccountingOrganizationsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingOrganizationsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingPaymentsSecurity.cs
   - UnifiedTo/Models/Requests/ListAccountingPaymentsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingPaymentsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingPayoutsSecurity.cs
   - UnifiedTo/Models/Requests/ListAccountingPayoutsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingPayoutsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingRefundsSecurity.cs
   - UnifiedTo/Models/Requests/ListAccountingRefundsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingRefundsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingTaxratesSecurity.cs
   - UnifiedTo/Models/Requests/ListAccountingTaxratesRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingTaxratesResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingTransactionsSecurity.cs
   - UnifiedTo/Models/Requests/ListAccountingTransactionsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingTransactionsResponse.cs
+  - UnifiedTo/Models/Requests/PatchAccountingAccountSecurity.cs
   - UnifiedTo/Models/Requests/PatchAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingAccountResponse.cs
+  - UnifiedTo/Models/Requests/PatchAccountingContactSecurity.cs
   - UnifiedTo/Models/Requests/PatchAccountingContactRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingContactResponse.cs
+  - UnifiedTo/Models/Requests/PatchAccountingInvoiceSecurity.cs
   - UnifiedTo/Models/Requests/PatchAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingInvoiceResponse.cs
+  - UnifiedTo/Models/Requests/PatchAccountingPaymentSecurity.cs
   - UnifiedTo/Models/Requests/PatchAccountingPaymentRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingPaymentResponse.cs
+  - UnifiedTo/Models/Requests/PatchAccountingTaxrateSecurity.cs
   - UnifiedTo/Models/Requests/PatchAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingTaxrateResponse.cs
+  - UnifiedTo/Models/Requests/PatchAccountingTransactionSecurity.cs
   - UnifiedTo/Models/Requests/PatchAccountingTransactionRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingTransactionResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingAccountSecurity.cs
   - UnifiedTo/Models/Requests/RemoveAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingAccountResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingContactSecurity.cs
   - UnifiedTo/Models/Requests/RemoveAccountingContactRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingContactResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingInvoiceSecurity.cs
   - UnifiedTo/Models/Requests/RemoveAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingInvoiceResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingPaymentSecurity.cs
   - UnifiedTo/Models/Requests/RemoveAccountingPaymentRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingPaymentResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingTaxrateSecurity.cs
   - UnifiedTo/Models/Requests/RemoveAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingTaxrateResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingTransactionSecurity.cs
   - UnifiedTo/Models/Requests/RemoveAccountingTransactionRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingTransactionResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingAccountSecurity.cs
   - UnifiedTo/Models/Requests/UpdateAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingAccountResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingContactSecurity.cs
   - UnifiedTo/Models/Requests/UpdateAccountingContactRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingContactResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingInvoiceSecurity.cs
   - UnifiedTo/Models/Requests/UpdateAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingInvoiceResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingPaymentSecurity.cs
   - UnifiedTo/Models/Requests/UpdateAccountingPaymentRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingPaymentResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingTaxrateSecurity.cs
   - UnifiedTo/Models/Requests/UpdateAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingTaxrateResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingTransactionSecurity.cs
   - UnifiedTo/Models/Requests/UpdateAccountingTransactionRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingTransactionResponse.cs
+  - UnifiedTo/Models/Requests/CreateCrmContactSecurity.cs
   - UnifiedTo/Models/Requests/CreateCrmContactRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmContactResponse.cs
+  - UnifiedTo/Models/Requests/CreateUcContactSecurity.cs
   - UnifiedTo/Models/Requests/CreateUcContactRequest.cs
   - UnifiedTo/Models/Requests/CreateUcContactResponse.cs
+  - UnifiedTo/Models/Requests/GetCrmContactSecurity.cs
   - UnifiedTo/Models/Requests/GetCrmContactRequest.cs
   - UnifiedTo/Models/Requests/GetCrmContactResponse.cs
+  - UnifiedTo/Models/Requests/GetUcContactSecurity.cs
   - UnifiedTo/Models/Requests/GetUcContactRequest.cs
   - UnifiedTo/Models/Requests/GetUcContactResponse.cs
+  - UnifiedTo/Models/Requests/ListCrmContactsSecurity.cs
   - UnifiedTo/Models/Requests/ListCrmContactsRequest.cs
   - UnifiedTo/Models/Requests/ListCrmContactsResponse.cs
+  - UnifiedTo/Models/Requests/ListUcContactsSecurity.cs
   - UnifiedTo/Models/Requests/ListUcContactsRequest.cs
   - UnifiedTo/Models/Requests/ListUcContactsResponse.cs
+  - UnifiedTo/Models/Requests/PatchCrmContactSecurity.cs
   - UnifiedTo/Models/Requests/PatchCrmContactRequest.cs
   - UnifiedTo/Models/Requests/PatchCrmContactResponse.cs
+  - UnifiedTo/Models/Requests/PatchUcContactSecurity.cs
   - UnifiedTo/Models/Requests/PatchUcContactRequest.cs
   - UnifiedTo/Models/Requests/PatchUcContactResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCrmContactSecurity.cs
   - UnifiedTo/Models/Requests/RemoveCrmContactRequest.cs
   - UnifiedTo/Models/Requests/RemoveCrmContactResponse.cs
+  - UnifiedTo/Models/Requests/RemoveUcContactSecurity.cs
   - UnifiedTo/Models/Requests/RemoveUcContactRequest.cs
   - UnifiedTo/Models/Requests/RemoveUcContactResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCrmContactSecurity.cs
   - UnifiedTo/Models/Requests/UpdateCrmContactRequest.cs
   - UnifiedTo/Models/Requests/UpdateCrmContactResponse.cs
+  - UnifiedTo/Models/Requests/UpdateUcContactSecurity.cs
   - UnifiedTo/Models/Requests/UpdateUcContactRequest.cs
   - UnifiedTo/Models/Requests/UpdateUcContactResponse.cs
+  - UnifiedTo/Models/Requests/CreateAtsActivitySecurity.cs
   - UnifiedTo/Models/Requests/CreateAtsActivityRequest.cs
   - UnifiedTo/Models/Requests/CreateAtsActivityResponse.cs
+  - UnifiedTo/Models/Requests/CreateAtsApplicationSecurity.cs
   - UnifiedTo/Models/Requests/CreateAtsApplicationRequest.cs
   - UnifiedTo/Models/Requests/CreateAtsApplicationResponse.cs
+  - UnifiedTo/Models/Requests/CreateAtsCandidateSecurity.cs
   - UnifiedTo/Models/Requests/CreateAtsCandidateRequest.cs
   - UnifiedTo/Models/Requests/CreateAtsCandidateResponse.cs
+  - UnifiedTo/Models/Requests/CreateAtsDocumentSecurity.cs
   - UnifiedTo/Models/Requests/CreateAtsDocumentRequest.cs
   - UnifiedTo/Models/Requests/CreateAtsDocumentResponse.cs
+  - UnifiedTo/Models/Requests/CreateAtsInterviewSecurity.cs
   - UnifiedTo/Models/Requests/CreateAtsInterviewRequest.cs
   - UnifiedTo/Models/Requests/CreateAtsInterviewResponse.cs
+  - UnifiedTo/Models/Requests/CreateAtsJobSecurity.cs
   - UnifiedTo/Models/Requests/CreateAtsJobRequest.cs
   - UnifiedTo/Models/Requests/CreateAtsJobResponse.cs
+  - UnifiedTo/Models/Requests/CreateAtsScorecardSecurity.cs
   - UnifiedTo/Models/Requests/CreateAtsScorecardRequest.cs
   - UnifiedTo/Models/Requests/CreateAtsScorecardResponse.cs
+  - UnifiedTo/Models/Requests/GetAtsActivitySecurity.cs
   - UnifiedTo/Models/Requests/GetAtsActivityRequest.cs
   - UnifiedTo/Models/Requests/GetAtsActivityResponse.cs
+  - UnifiedTo/Models/Requests/GetAtsApplicationSecurity.cs
   - UnifiedTo/Models/Requests/GetAtsApplicationRequest.cs
   - UnifiedTo/Models/Requests/GetAtsApplicationResponse.cs
+  - UnifiedTo/Models/Requests/GetAtsCandidateSecurity.cs
   - UnifiedTo/Models/Requests/GetAtsCandidateRequest.cs
   - UnifiedTo/Models/Requests/GetAtsCandidateResponse.cs
+  - UnifiedTo/Models/Requests/GetAtsCompanySecurity.cs
   - UnifiedTo/Models/Requests/GetAtsCompanyRequest.cs
   - UnifiedTo/Models/Requests/GetAtsCompanyResponse.cs
+  - UnifiedTo/Models/Requests/GetAtsDocumentSecurity.cs
   - UnifiedTo/Models/Requests/GetAtsDocumentRequest.cs
   - UnifiedTo/Models/Requests/GetAtsDocumentResponse.cs
+  - UnifiedTo/Models/Requests/GetAtsInterviewSecurity.cs
   - UnifiedTo/Models/Requests/GetAtsInterviewRequest.cs
   - UnifiedTo/Models/Requests/GetAtsInterviewResponse.cs
+  - UnifiedTo/Models/Requests/GetAtsJobSecurity.cs
   - UnifiedTo/Models/Requests/GetAtsJobRequest.cs
   - UnifiedTo/Models/Requests/GetAtsJobResponse.cs
+  - UnifiedTo/Models/Requests/GetAtsScorecardSecurity.cs
   - UnifiedTo/Models/Requests/GetAtsScorecardRequest.cs
   - UnifiedTo/Models/Requests/GetAtsScorecardResponse.cs
+  - UnifiedTo/Models/Requests/ListAtsActivitiesSecurity.cs
   - UnifiedTo/Models/Requests/ListAtsActivitiesRequest.cs
   - UnifiedTo/Models/Requests/ListAtsActivitiesResponse.cs
+  - UnifiedTo/Models/Requests/ListAtsApplicationsSecurity.cs
   - UnifiedTo/Models/Requests/ListAtsApplicationsRequest.cs
   - UnifiedTo/Models/Requests/ListAtsApplicationsResponse.cs
+  - UnifiedTo/Models/Requests/ListAtsApplicationstatusesSecurity.cs
   - UnifiedTo/Models/Requests/ListAtsApplicationstatusesRequest.cs
   - UnifiedTo/Models/Requests/ListAtsApplicationstatusesResponse.cs
+  - UnifiedTo/Models/Requests/ListAtsCandidatesSecurity.cs
   - UnifiedTo/Models/Requests/ListAtsCandidatesRequest.cs
   - UnifiedTo/Models/Requests/ListAtsCandidatesResponse.cs
+  - UnifiedTo/Models/Requests/ListAtsCompaniesSecurity.cs
   - UnifiedTo/Models/Requests/ListAtsCompaniesRequest.cs
   - UnifiedTo/Models/Requests/ListAtsCompaniesResponse.cs
+  - UnifiedTo/Models/Requests/ListAtsDocumentsSecurity.cs
   - UnifiedTo/Models/Requests/ListAtsDocumentsRequest.cs
   - UnifiedTo/Models/Requests/ListAtsDocumentsResponse.cs
+  - UnifiedTo/Models/Requests/ListAtsInterviewsSecurity.cs
   - UnifiedTo/Models/Requests/ListAtsInterviewsRequest.cs
   - UnifiedTo/Models/Requests/ListAtsInterviewsResponse.cs
+  - UnifiedTo/Models/Requests/ListAtsJobsSecurity.cs
   - UnifiedTo/Models/Requests/ListAtsJobsRequest.cs
   - UnifiedTo/Models/Requests/ListAtsJobsResponse.cs
+  - UnifiedTo/Models/Requests/ListAtsScorecardsSecurity.cs
   - UnifiedTo/Models/Requests/ListAtsScorecardsRequest.cs
   - UnifiedTo/Models/Requests/ListAtsScorecardsResponse.cs
+  - UnifiedTo/Models/Requests/PatchAtsActivitySecurity.cs
   - UnifiedTo/Models/Requests/PatchAtsActivityRequest.cs
   - UnifiedTo/Models/Requests/PatchAtsActivityResponse.cs
+  - UnifiedTo/Models/Requests/PatchAtsApplicationSecurity.cs
   - UnifiedTo/Models/Requests/PatchAtsApplicationRequest.cs
   - UnifiedTo/Models/Requests/PatchAtsApplicationResponse.cs
+  - UnifiedTo/Models/Requests/PatchAtsCandidateSecurity.cs
   - UnifiedTo/Models/Requests/PatchAtsCandidateRequest.cs
   - UnifiedTo/Models/Requests/PatchAtsCandidateResponse.cs
+  - UnifiedTo/Models/Requests/PatchAtsDocumentSecurity.cs
   - UnifiedTo/Models/Requests/PatchAtsDocumentRequest.cs
   - UnifiedTo/Models/Requests/PatchAtsDocumentResponse.cs
+  - UnifiedTo/Models/Requests/PatchAtsInterviewSecurity.cs
   - UnifiedTo/Models/Requests/PatchAtsInterviewRequest.cs
   - UnifiedTo/Models/Requests/PatchAtsInterviewResponse.cs
+  - UnifiedTo/Models/Requests/PatchAtsJobSecurity.cs
   - UnifiedTo/Models/Requests/PatchAtsJobRequest.cs
   - UnifiedTo/Models/Requests/PatchAtsJobResponse.cs
+  - UnifiedTo/Models/Requests/PatchAtsScorecardSecurity.cs
   - UnifiedTo/Models/Requests/PatchAtsScorecardRequest.cs
   - UnifiedTo/Models/Requests/PatchAtsScorecardResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAtsActivitySecurity.cs
   - UnifiedTo/Models/Requests/RemoveAtsActivityRequest.cs
   - UnifiedTo/Models/Requests/RemoveAtsActivityResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAtsApplicationSecurity.cs
   - UnifiedTo/Models/Requests/RemoveAtsApplicationRequest.cs
   - UnifiedTo/Models/Requests/RemoveAtsApplicationResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAtsCandidateSecurity.cs
   - UnifiedTo/Models/Requests/RemoveAtsCandidateRequest.cs
   - UnifiedTo/Models/Requests/RemoveAtsCandidateResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAtsDocumentSecurity.cs
   - UnifiedTo/Models/Requests/RemoveAtsDocumentRequest.cs
   - UnifiedTo/Models/Requests/RemoveAtsDocumentResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAtsInterviewSecurity.cs
   - UnifiedTo/Models/Requests/RemoveAtsInterviewRequest.cs
   - UnifiedTo/Models/Requests/RemoveAtsInterviewResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAtsJobSecurity.cs
   - UnifiedTo/Models/Requests/RemoveAtsJobRequest.cs
   - UnifiedTo/Models/Requests/RemoveAtsJobResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAtsScorecardSecurity.cs
   - UnifiedTo/Models/Requests/RemoveAtsScorecardRequest.cs
   - UnifiedTo/Models/Requests/RemoveAtsScorecardResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAtsActivitySecurity.cs
   - UnifiedTo/Models/Requests/UpdateAtsActivityRequest.cs
   - UnifiedTo/Models/Requests/UpdateAtsActivityResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAtsApplicationSecurity.cs
   - UnifiedTo/Models/Requests/UpdateAtsApplicationRequest.cs
   - UnifiedTo/Models/Requests/UpdateAtsApplicationResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAtsCandidateSecurity.cs
   - UnifiedTo/Models/Requests/UpdateAtsCandidateRequest.cs
   - UnifiedTo/Models/Requests/UpdateAtsCandidateResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAtsDocumentSecurity.cs
   - UnifiedTo/Models/Requests/UpdateAtsDocumentRequest.cs
   - UnifiedTo/Models/Requests/UpdateAtsDocumentResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAtsInterviewSecurity.cs
   - UnifiedTo/Models/Requests/UpdateAtsInterviewRequest.cs
   - UnifiedTo/Models/Requests/UpdateAtsInterviewResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAtsJobSecurity.cs
   - UnifiedTo/Models/Requests/UpdateAtsJobRequest.cs
   - UnifiedTo/Models/Requests/UpdateAtsJobResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAtsScorecardSecurity.cs
   - UnifiedTo/Models/Requests/UpdateAtsScorecardRequest.cs
   - UnifiedTo/Models/Requests/UpdateAtsScorecardResponse.cs
+  - UnifiedTo/Models/Requests/CreateCrmCompanySecurity.cs
   - UnifiedTo/Models/Requests/CreateCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmCompanyResponse.cs
+  - UnifiedTo/Models/Requests/GetCrmCompanySecurity.cs
   - UnifiedTo/Models/Requests/GetCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/GetCrmCompanyResponse.cs
+  - UnifiedTo/Models/Requests/ListCrmCompaniesSecurity.cs
   - UnifiedTo/Models/Requests/ListCrmCompaniesRequest.cs
   - UnifiedTo/Models/Requests/ListCrmCompaniesResponse.cs
+  - UnifiedTo/Models/Requests/ListEnrichCompaniesSecurity.cs
   - UnifiedTo/Models/Requests/ListEnrichCompaniesRequest.cs
   - UnifiedTo/Models/Requests/ListEnrichCompaniesResponse.cs
+  - UnifiedTo/Models/Requests/PatchCrmCompanySecurity.cs
   - UnifiedTo/Models/Requests/PatchCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/PatchCrmCompanyResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCrmCompanySecurity.cs
   - UnifiedTo/Models/Requests/RemoveCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/RemoveCrmCompanyResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCrmCompanySecurity.cs
   - UnifiedTo/Models/Requests/UpdateCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/UpdateCrmCompanyResponse.cs
+  - UnifiedTo/Models/Requests/CreateCommerceCollectionSecurity.cs
   - UnifiedTo/Models/Requests/CreateCommerceCollectionRequest.cs
   - UnifiedTo/Models/Requests/CreateCommerceCollectionResponse.cs
+  - UnifiedTo/Models/Requests/CreateCommerceInventorySecurity.cs
   - UnifiedTo/Models/Requests/CreateCommerceInventoryRequest.cs
   - UnifiedTo/Models/Requests/CreateCommerceInventoryResponse.cs
+  - UnifiedTo/Models/Requests/CreateCommerceItemSecurity.cs
   - UnifiedTo/Models/Requests/CreateCommerceItemRequest.cs
   - UnifiedTo/Models/Requests/CreateCommerceItemResponse.cs
+  - UnifiedTo/Models/Requests/CreateCommerceLocationSecurity.cs
   - UnifiedTo/Models/Requests/CreateCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/CreateCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/GetCommerceCollectionSecurity.cs
   - UnifiedTo/Models/Requests/GetCommerceCollectionRequest.cs
   - UnifiedTo/Models/Requests/GetCommerceCollectionResponse.cs
+  - UnifiedTo/Models/Requests/GetCommerceInventorySecurity.cs
   - UnifiedTo/Models/Requests/GetCommerceInventoryRequest.cs
   - UnifiedTo/Models/Requests/GetCommerceInventoryResponse.cs
+  - UnifiedTo/Models/Requests/GetCommerceItemSecurity.cs
   - UnifiedTo/Models/Requests/GetCommerceItemRequest.cs
   - UnifiedTo/Models/Requests/GetCommerceItemResponse.cs
+  - UnifiedTo/Models/Requests/GetCommerceLocationSecurity.cs
   - UnifiedTo/Models/Requests/GetCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/GetCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/ListCommerceCollectionsSecurity.cs
   - UnifiedTo/Models/Requests/ListCommerceCollectionsRequest.cs
   - UnifiedTo/Models/Requests/ListCommerceCollectionsResponse.cs
+  - UnifiedTo/Models/Requests/ListCommerceInventoriesSecurity.cs
   - UnifiedTo/Models/Requests/ListCommerceInventoriesRequest.cs
   - UnifiedTo/Models/Requests/ListCommerceInventoriesResponse.cs
+  - UnifiedTo/Models/Requests/ListCommerceItemsSecurity.cs
   - UnifiedTo/Models/Requests/ListCommerceItemsRequest.cs
   - UnifiedTo/Models/Requests/ListCommerceItemsResponse.cs
+  - UnifiedTo/Models/Requests/ListCommerceLocationsSecurity.cs
   - UnifiedTo/Models/Requests/ListCommerceLocationsRequest.cs
   - UnifiedTo/Models/Requests/ListCommerceLocationsResponse.cs
+  - UnifiedTo/Models/Requests/PatchCommerceCollectionSecurity.cs
   - UnifiedTo/Models/Requests/PatchCommerceCollectionRequest.cs
   - UnifiedTo/Models/Requests/PatchCommerceCollectionResponse.cs
+  - UnifiedTo/Models/Requests/PatchCommerceInventorySecurity.cs
   - UnifiedTo/Models/Requests/PatchCommerceInventoryRequest.cs
   - UnifiedTo/Models/Requests/PatchCommerceInventoryResponse.cs
+  - UnifiedTo/Models/Requests/PatchCommerceItemSecurity.cs
   - UnifiedTo/Models/Requests/PatchCommerceItemRequest.cs
   - UnifiedTo/Models/Requests/PatchCommerceItemResponse.cs
+  - UnifiedTo/Models/Requests/PatchCommerceLocationSecurity.cs
   - UnifiedTo/Models/Requests/PatchCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/PatchCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceCollectionSecurity.cs
   - UnifiedTo/Models/Requests/RemoveCommerceCollectionRequest.cs
   - UnifiedTo/Models/Requests/RemoveCommerceCollectionResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceInventorySecurity.cs
   - UnifiedTo/Models/Requests/RemoveCommerceInventoryRequest.cs
   - UnifiedTo/Models/Requests/RemoveCommerceInventoryResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceItemSecurity.cs
   - UnifiedTo/Models/Requests/RemoveCommerceItemRequest.cs
   - UnifiedTo/Models/Requests/RemoveCommerceItemResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceLocationSecurity.cs
   - UnifiedTo/Models/Requests/RemoveCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/RemoveCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceCollectionSecurity.cs
   - UnifiedTo/Models/Requests/UpdateCommerceCollectionRequest.cs
   - UnifiedTo/Models/Requests/UpdateCommerceCollectionResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceInventorySecurity.cs
   - UnifiedTo/Models/Requests/UpdateCommerceInventoryRequest.cs
   - UnifiedTo/Models/Requests/UpdateCommerceInventoryResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceItemSecurity.cs
   - UnifiedTo/Models/Requests/UpdateCommerceItemRequest.cs
   - UnifiedTo/Models/Requests/UpdateCommerceItemResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceLocationSecurity.cs
   - UnifiedTo/Models/Requests/UpdateCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/UpdateCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/CreateCrmDealSecurity.cs
   - UnifiedTo/Models/Requests/CreateCrmDealRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmDealResponse.cs
+  - UnifiedTo/Models/Requests/CreateCrmEventSecurity.cs
   - UnifiedTo/Models/Requests/CreateCrmEventRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmEventResponse.cs
+  - UnifiedTo/Models/Requests/CreateCrmLeadSecurity.cs
   - UnifiedTo/Models/Requests/CreateCrmLeadRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmLeadResponse.cs
+  - UnifiedTo/Models/Requests/CreateCrmPipelineSecurity.cs
   - UnifiedTo/Models/Requests/CreateCrmPipelineRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmPipelineResponse.cs
+  - UnifiedTo/Models/Requests/GetCrmDealSecurity.cs
   - UnifiedTo/Models/Requests/GetCrmDealRequest.cs
   - UnifiedTo/Models/Requests/GetCrmDealResponse.cs
+  - UnifiedTo/Models/Requests/GetCrmEventSecurity.cs
   - UnifiedTo/Models/Requests/GetCrmEventRequest.cs
   - UnifiedTo/Models/Requests/GetCrmEventResponse.cs
+  - UnifiedTo/Models/Requests/GetCrmLeadSecurity.cs
   - UnifiedTo/Models/Requests/GetCrmLeadRequest.cs
   - UnifiedTo/Models/Requests/GetCrmLeadResponse.cs
+  - UnifiedTo/Models/Requests/GetCrmPipelineSecurity.cs
   - UnifiedTo/Models/Requests/GetCrmPipelineRequest.cs
   - UnifiedTo/Models/Requests/GetCrmPipelineResponse.cs
+  - UnifiedTo/Models/Requests/ListCrmDealsSecurity.cs
   - UnifiedTo/Models/Requests/ListCrmDealsRequest.cs
   - UnifiedTo/Models/Requests/ListCrmDealsResponse.cs
+  - UnifiedTo/Models/Requests/ListCrmEventsSecurity.cs
   - UnifiedTo/Models/Requests/ListCrmEventsRequest.cs
   - UnifiedTo/Models/Requests/ListCrmEventsResponse.cs
+  - UnifiedTo/Models/Requests/ListCrmLeadsSecurity.cs
   - UnifiedTo/Models/Requests/ListCrmLeadsRequest.cs
   - UnifiedTo/Models/Requests/ListCrmLeadsResponse.cs
+  - UnifiedTo/Models/Requests/ListCrmPipelinesSecurity.cs
   - UnifiedTo/Models/Requests/ListCrmPipelinesRequest.cs
   - UnifiedTo/Models/Requests/ListCrmPipelinesResponse.cs
+  - UnifiedTo/Models/Requests/PatchCrmDealSecurity.cs
   - UnifiedTo/Models/Requests/PatchCrmDealRequest.cs
   - UnifiedTo/Models/Requests/PatchCrmDealResponse.cs
+  - UnifiedTo/Models/Requests/PatchCrmEventSecurity.cs
   - UnifiedTo/Models/Requests/PatchCrmEventRequest.cs
   - UnifiedTo/Models/Requests/PatchCrmEventResponse.cs
+  - UnifiedTo/Models/Requests/PatchCrmLeadSecurity.cs
   - UnifiedTo/Models/Requests/PatchCrmLeadRequest.cs
   - UnifiedTo/Models/Requests/PatchCrmLeadResponse.cs
+  - UnifiedTo/Models/Requests/PatchCrmPipelineSecurity.cs
   - UnifiedTo/Models/Requests/PatchCrmPipelineRequest.cs
   - UnifiedTo/Models/Requests/PatchCrmPipelineResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCrmDealSecurity.cs
   - UnifiedTo/Models/Requests/RemoveCrmDealRequest.cs
   - UnifiedTo/Models/Requests/RemoveCrmDealResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCrmEventSecurity.cs
   - UnifiedTo/Models/Requests/RemoveCrmEventRequest.cs
   - UnifiedTo/Models/Requests/RemoveCrmEventResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCrmLeadSecurity.cs
   - UnifiedTo/Models/Requests/RemoveCrmLeadRequest.cs
   - UnifiedTo/Models/Requests/RemoveCrmLeadResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCrmPipelineSecurity.cs
   - UnifiedTo/Models/Requests/RemoveCrmPipelineRequest.cs
   - UnifiedTo/Models/Requests/RemoveCrmPipelineResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCrmDealSecurity.cs
   - UnifiedTo/Models/Requests/UpdateCrmDealRequest.cs
   - UnifiedTo/Models/Requests/UpdateCrmDealResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCrmEventSecurity.cs
   - UnifiedTo/Models/Requests/UpdateCrmEventRequest.cs
   - UnifiedTo/Models/Requests/UpdateCrmEventResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCrmLeadSecurity.cs
   - UnifiedTo/Models/Requests/UpdateCrmLeadRequest.cs
   - UnifiedTo/Models/Requests/UpdateCrmLeadResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCrmPipelineSecurity.cs
   - UnifiedTo/Models/Requests/UpdateCrmPipelineRequest.cs
   - UnifiedTo/Models/Requests/UpdateCrmPipelineResponse.cs
+  - UnifiedTo/Models/Requests/ListEnrichPeopleSecurity.cs
   - UnifiedTo/Models/Requests/ListEnrichPeopleRequest.cs
   - UnifiedTo/Models/Requests/ListEnrichPeopleResponse.cs
+  - UnifiedTo/Models/Requests/CreateHrisEmployeeSecurity.cs
   - UnifiedTo/Models/Requests/CreateHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/CreateHrisEmployeeResponse.cs
+  - UnifiedTo/Models/Requests/CreateHrisGroupSecurity.cs
   - UnifiedTo/Models/Requests/CreateHrisGroupRequest.cs
   - UnifiedTo/Models/Requests/CreateHrisGroupResponse.cs
+  - UnifiedTo/Models/Requests/GetHrisEmployeeSecurity.cs
   - UnifiedTo/Models/Requests/GetHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/GetHrisEmployeeResponse.cs
+  - UnifiedTo/Models/Requests/GetHrisGroupSecurity.cs
   - UnifiedTo/Models/Requests/GetHrisGroupRequest.cs
   - UnifiedTo/Models/Requests/GetHrisGroupResponse.cs
+  - UnifiedTo/Models/Requests/ListHrisEmployeesSecurity.cs
   - UnifiedTo/Models/Requests/ListHrisEmployeesRequest.cs
   - UnifiedTo/Models/Requests/ListHrisEmployeesResponse.cs
+  - UnifiedTo/Models/Requests/ListHrisGroupsSecurity.cs
   - UnifiedTo/Models/Requests/ListHrisGroupsRequest.cs
   - UnifiedTo/Models/Requests/ListHrisGroupsResponse.cs
+  - UnifiedTo/Models/Requests/PatchHrisEmployeeSecurity.cs
   - UnifiedTo/Models/Requests/PatchHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/PatchHrisEmployeeResponse.cs
+  - UnifiedTo/Models/Requests/PatchHrisGroupSecurity.cs
   - UnifiedTo/Models/Requests/PatchHrisGroupRequest.cs
   - UnifiedTo/Models/Requests/PatchHrisGroupResponse.cs
+  - UnifiedTo/Models/Requests/RemoveHrisEmployeeSecurity.cs
   - UnifiedTo/Models/Requests/RemoveHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/RemoveHrisEmployeeResponse.cs
+  - UnifiedTo/Models/Requests/RemoveHrisGroupSecurity.cs
   - UnifiedTo/Models/Requests/RemoveHrisGroupRequest.cs
   - UnifiedTo/Models/Requests/RemoveHrisGroupResponse.cs
+  - UnifiedTo/Models/Requests/UpdateHrisEmployeeSecurity.cs
   - UnifiedTo/Models/Requests/UpdateHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/UpdateHrisEmployeeResponse.cs
+  - UnifiedTo/Models/Requests/UpdateHrisGroupSecurity.cs
   - UnifiedTo/Models/Requests/UpdateHrisGroupRequest.cs
   - UnifiedTo/Models/Requests/UpdateHrisGroupResponse.cs
+  - UnifiedTo/Models/Requests/CreateMartechListSecurity.cs
   - UnifiedTo/Models/Requests/CreateMartechListRequest.cs
   - UnifiedTo/Models/Requests/CreateMartechListResponse.cs
+  - UnifiedTo/Models/Requests/CreateMartechMemberSecurity.cs
   - UnifiedTo/Models/Requests/CreateMartechMemberRequest.cs
   - UnifiedTo/Models/Requests/CreateMartechMemberResponse.cs
+  - UnifiedTo/Models/Requests/GetMartechListSecurity.cs
   - UnifiedTo/Models/Requests/GetMartechListRequest.cs
   - UnifiedTo/Models/Requests/GetMartechListResponse.cs
+  - UnifiedTo/Models/Requests/GetMartechMemberSecurity.cs
   - UnifiedTo/Models/Requests/GetMartechMemberRequest.cs
   - UnifiedTo/Models/Requests/GetMartechMemberResponse.cs
+  - UnifiedTo/Models/Requests/ListMartechListsSecurity.cs
   - UnifiedTo/Models/Requests/ListMartechListsRequest.cs
   - UnifiedTo/Models/Requests/ListMartechListsResponse.cs
+  - UnifiedTo/Models/Requests/ListMartechMembersSecurity.cs
   - UnifiedTo/Models/Requests/ListMartechMembersRequest.cs
   - UnifiedTo/Models/Requests/ListMartechMembersResponse.cs
+  - UnifiedTo/Models/Requests/PatchMartechListSecurity.cs
   - UnifiedTo/Models/Requests/PatchMartechListRequest.cs
   - UnifiedTo/Models/Requests/PatchMartechListResponse.cs
+  - UnifiedTo/Models/Requests/PatchMartechMemberSecurity.cs
   - UnifiedTo/Models/Requests/PatchMartechMemberRequest.cs
   - UnifiedTo/Models/Requests/PatchMartechMemberResponse.cs
+  - UnifiedTo/Models/Requests/RemoveMartechListSecurity.cs
   - UnifiedTo/Models/Requests/RemoveMartechListRequest.cs
   - UnifiedTo/Models/Requests/RemoveMartechListResponse.cs
+  - UnifiedTo/Models/Requests/RemoveMartechMemberSecurity.cs
   - UnifiedTo/Models/Requests/RemoveMartechMemberRequest.cs
   - UnifiedTo/Models/Requests/RemoveMartechMemberResponse.cs
+  - UnifiedTo/Models/Requests/UpdateMartechListSecurity.cs
   - UnifiedTo/Models/Requests/UpdateMartechListRequest.cs
   - UnifiedTo/Models/Requests/UpdateMartechListResponse.cs
+  - UnifiedTo/Models/Requests/UpdateMartechMemberSecurity.cs
   - UnifiedTo/Models/Requests/UpdateMartechMemberRequest.cs
   - UnifiedTo/Models/Requests/UpdateMartechMemberResponse.cs
+  - UnifiedTo/Models/Requests/CreatePassthroughSecurity.cs
   - UnifiedTo/Models/Requests/CreatePassthroughRequest.cs
   - UnifiedTo/Models/Requests/CreatePassthroughResponse.cs
+  - UnifiedTo/Models/Requests/ListPassthroughsSecurity.cs
   - UnifiedTo/Models/Requests/ListPassthroughsRequest.cs
   - UnifiedTo/Models/Requests/ListPassthroughsResponse.cs
+  - UnifiedTo/Models/Requests/PatchPassthroughSecurity.cs
   - UnifiedTo/Models/Requests/PatchPassthroughRequest.cs
   - UnifiedTo/Models/Requests/PatchPassthroughResponse.cs
+  - UnifiedTo/Models/Requests/RemovePassthroughSecurity.cs
   - UnifiedTo/Models/Requests/RemovePassthroughRequest.cs
   - UnifiedTo/Models/Requests/RemovePassthroughResponse.cs
+  - UnifiedTo/Models/Requests/UpdatePassthroughSecurity.cs
   - UnifiedTo/Models/Requests/UpdatePassthroughRequest.cs
   - UnifiedTo/Models/Requests/UpdatePassthroughResponse.cs
+  - UnifiedTo/Models/Requests/CreateStorageFileSecurity.cs
   - UnifiedTo/Models/Requests/CreateStorageFileRequest.cs
   - UnifiedTo/Models/Requests/CreateStorageFileResponse.cs
+  - UnifiedTo/Models/Requests/GetStorageFileSecurity.cs
   - UnifiedTo/Models/Requests/GetStorageFileRequest.cs
   - UnifiedTo/Models/Requests/GetStorageFileResponse.cs
+  - UnifiedTo/Models/Requests/ListStorageFilesSecurity.cs
   - UnifiedTo/Models/Requests/ListStorageFilesRequest.cs
   - UnifiedTo/Models/Requests/ListStorageFilesResponse.cs
+  - UnifiedTo/Models/Requests/PatchStorageFileSecurity.cs
   - UnifiedTo/Models/Requests/PatchStorageFileRequest.cs
   - UnifiedTo/Models/Requests/PatchStorageFileResponse.cs
+  - UnifiedTo/Models/Requests/RemoveStorageFileSecurity.cs
   - UnifiedTo/Models/Requests/RemoveStorageFileRequest.cs
   - UnifiedTo/Models/Requests/RemoveStorageFileResponse.cs
+  - UnifiedTo/Models/Requests/UpdateStorageFileSecurity.cs
   - UnifiedTo/Models/Requests/UpdateStorageFileRequest.cs
   - UnifiedTo/Models/Requests/UpdateStorageFileResponse.cs
+  - UnifiedTo/Models/Requests/CreateTicketingCustomerSecurity.cs
   - UnifiedTo/Models/Requests/CreateTicketingCustomerRequest.cs
   - UnifiedTo/Models/Requests/CreateTicketingCustomerResponse.cs
+  - UnifiedTo/Models/Requests/CreateTicketingNoteSecurity.cs
   - UnifiedTo/Models/Requests/CreateTicketingNoteRequest.cs
   - UnifiedTo/Models/Requests/CreateTicketingNoteResponse.cs
+  - UnifiedTo/Models/Requests/CreateTicketingTicketSecurity.cs
   - UnifiedTo/Models/Requests/CreateTicketingTicketRequest.cs
   - UnifiedTo/Models/Requests/CreateTicketingTicketResponse.cs
+  - UnifiedTo/Models/Requests/GetTicketingCustomerSecurity.cs
   - UnifiedTo/Models/Requests/GetTicketingCustomerRequest.cs
   - UnifiedTo/Models/Requests/GetTicketingCustomerResponse.cs
+  - UnifiedTo/Models/Requests/GetTicketingNoteSecurity.cs
   - UnifiedTo/Models/Requests/GetTicketingNoteRequest.cs
   - UnifiedTo/Models/Requests/GetTicketingNoteResponse.cs
+  - UnifiedTo/Models/Requests/GetTicketingTicketSecurity.cs
   - UnifiedTo/Models/Requests/GetTicketingTicketRequest.cs
   - UnifiedTo/Models/Requests/GetTicketingTicketResponse.cs
+  - UnifiedTo/Models/Requests/ListTicketingCustomersSecurity.cs
   - UnifiedTo/Models/Requests/ListTicketingCustomersRequest.cs
   - UnifiedTo/Models/Requests/ListTicketingCustomersResponse.cs
+  - UnifiedTo/Models/Requests/ListTicketingNotesSecurity.cs
   - UnifiedTo/Models/Requests/ListTicketingNotesRequest.cs
   - UnifiedTo/Models/Requests/ListTicketingNotesResponse.cs
+  - UnifiedTo/Models/Requests/ListTicketingTicketsSecurity.cs
   - UnifiedTo/Models/Requests/ListTicketingTicketsRequest.cs
   - UnifiedTo/Models/Requests/ListTicketingTicketsResponse.cs
+  - UnifiedTo/Models/Requests/PatchTicketingCustomerSecurity.cs
   - UnifiedTo/Models/Requests/PatchTicketingCustomerRequest.cs
   - UnifiedTo/Models/Requests/PatchTicketingCustomerResponse.cs
+  - UnifiedTo/Models/Requests/PatchTicketingNoteSecurity.cs
   - UnifiedTo/Models/Requests/PatchTicketingNoteRequest.cs
   - UnifiedTo/Models/Requests/PatchTicketingNoteResponse.cs
+  - UnifiedTo/Models/Requests/PatchTicketingTicketSecurity.cs
   - UnifiedTo/Models/Requests/PatchTicketingTicketRequest.cs
   - UnifiedTo/Models/Requests/PatchTicketingTicketResponse.cs
+  - UnifiedTo/Models/Requests/RemoveTicketingCustomerSecurity.cs
   - UnifiedTo/Models/Requests/RemoveTicketingCustomerRequest.cs
   - UnifiedTo/Models/Requests/RemoveTicketingCustomerResponse.cs
+  - UnifiedTo/Models/Requests/RemoveTicketingNoteSecurity.cs
   - UnifiedTo/Models/Requests/RemoveTicketingNoteRequest.cs
   - UnifiedTo/Models/Requests/RemoveTicketingNoteResponse.cs
+  - UnifiedTo/Models/Requests/RemoveTicketingTicketSecurity.cs
   - UnifiedTo/Models/Requests/RemoveTicketingTicketRequest.cs
   - UnifiedTo/Models/Requests/RemoveTicketingTicketResponse.cs
+  - UnifiedTo/Models/Requests/UpdateTicketingCustomerSecurity.cs
   - UnifiedTo/Models/Requests/UpdateTicketingCustomerRequest.cs
   - UnifiedTo/Models/Requests/UpdateTicketingCustomerResponse.cs
+  - UnifiedTo/Models/Requests/UpdateTicketingNoteSecurity.cs
   - UnifiedTo/Models/Requests/UpdateTicketingNoteRequest.cs
   - UnifiedTo/Models/Requests/UpdateTicketingNoteResponse.cs
+  - UnifiedTo/Models/Requests/UpdateTicketingTicketSecurity.cs
   - UnifiedTo/Models/Requests/UpdateTicketingTicketRequest.cs
   - UnifiedTo/Models/Requests/UpdateTicketingTicketResponse.cs
+  - UnifiedTo/Models/Requests/ListUcCallsSecurity.cs
   - UnifiedTo/Models/Requests/ListUcCallsRequest.cs
   - UnifiedTo/Models/Requests/ListUcCallsResponse.cs
+  - UnifiedTo/Models/Requests/CreateUnifiedConnectionSecurity.cs
   - UnifiedTo/Models/Requests/CreateUnifiedConnectionResponse.cs
+  - UnifiedTo/Models/Requests/CreateUnifiedWebhookSecurity.cs
   - UnifiedTo/Models/Requests/CreateUnifiedWebhookRequest.cs
   - UnifiedTo/Models/Requests/CreateUnifiedWebhookResponse.cs
+  - UnifiedTo/Models/Requests/GetUnifiedApicallSecurity.cs
   - UnifiedTo/Models/Requests/GetUnifiedApicallRequest.cs
   - UnifiedTo/Models/Requests/GetUnifiedApicallResponse.cs
+  - UnifiedTo/Models/Requests/GetUnifiedConnectionSecurity.cs
   - UnifiedTo/Models/Requests/GetUnifiedConnectionRequest.cs
   - UnifiedTo/Models/Requests/GetUnifiedConnectionResponse.cs
   - UnifiedTo/Models/Requests/Scopes.cs
   - UnifiedTo/Models/Requests/GetUnifiedIntegrationAuthRequest.cs
   - UnifiedTo/Models/Requests/GetUnifiedIntegrationAuthResponse.cs
+  - UnifiedTo/Models/Requests/GetUnifiedWebhookSecurity.cs
   - UnifiedTo/Models/Requests/GetUnifiedWebhookRequest.cs
   - UnifiedTo/Models/Requests/GetUnifiedWebhookResponse.cs
+  - UnifiedTo/Models/Requests/ListUnifiedApicallsSecurity.cs
   - UnifiedTo/Models/Requests/ListUnifiedApicallsRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedApicallsResponse.cs
+  - UnifiedTo/Models/Requests/ListUnifiedConnectionsSecurity.cs
   - UnifiedTo/Models/Requests/Categories.cs
   - UnifiedTo/Models/Requests/ListUnifiedConnectionsRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedConnectionsResponse.cs
   - UnifiedTo/Models/Requests/QueryParamCategories.cs
   - UnifiedTo/Models/Requests/ListUnifiedIntegrationWorkspacesRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedIntegrationWorkspacesResponse.cs
+  - UnifiedTo/Models/Requests/ListUnifiedIntegrationsSecurity.cs
   - UnifiedTo/Models/Requests/ListUnifiedIntegrationsQueryParamCategories.cs
   - UnifiedTo/Models/Requests/ListUnifiedIntegrationsRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedIntegrationsResponse.cs
+  - UnifiedTo/Models/Requests/ListUnifiedIssuesSecurity.cs
   - UnifiedTo/Models/Requests/ListUnifiedIssuesRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedIssuesResponse.cs
+  - UnifiedTo/Models/Requests/ListUnifiedWebhooksSecurity.cs
   - UnifiedTo/Models/Requests/ListUnifiedWebhooksRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedWebhooksResponse.cs
+  - UnifiedTo/Models/Requests/PatchUnifiedConnectionSecurity.cs
   - UnifiedTo/Models/Requests/PatchUnifiedConnectionRequest.cs
   - UnifiedTo/Models/Requests/PatchUnifiedConnectionResponse.cs
+  - UnifiedTo/Models/Requests/PatchUnifiedWebhookTriggerSecurity.cs
   - UnifiedTo/Models/Requests/PatchUnifiedWebhookTriggerRequest.cs
   - UnifiedTo/Models/Requests/PatchUnifiedWebhookTriggerResponse.cs
+  - UnifiedTo/Models/Requests/RemoveUnifiedConnectionSecurity.cs
   - UnifiedTo/Models/Requests/RemoveUnifiedConnectionRequest.cs
   - UnifiedTo/Models/Requests/RemoveUnifiedConnectionResponse.cs
+  - UnifiedTo/Models/Requests/RemoveUnifiedWebhookSecurity.cs
   - UnifiedTo/Models/Requests/RemoveUnifiedWebhookRequest.cs
   - UnifiedTo/Models/Requests/RemoveUnifiedWebhookResponse.cs
+  - UnifiedTo/Models/Requests/UpdateUnifiedConnectionSecurity.cs
   - UnifiedTo/Models/Requests/UpdateUnifiedConnectionRequest.cs
   - UnifiedTo/Models/Requests/UpdateUnifiedConnectionResponse.cs
+  - UnifiedTo/Models/Requests/UpdateUnifiedWebhookTriggerSecurity.cs
   - UnifiedTo/Models/Requests/UpdateUnifiedWebhookTriggerRequest.cs
   - UnifiedTo/Models/Requests/UpdateUnifiedWebhookTriggerResponse.cs
   - UnifiedTo/Models/Requests/GetUnifiedIntegrationLoginRequest.cs
@@ -699,462 +925,686 @@ generatedFiles:
   - UnifiedTo/Models/Components/IssueStatus.cs
   - UnifiedTo/Models/Components/IssueType.cs
   - UnifiedTo/Models/Components/Issue.cs
-  - UnifiedTo/Models/Components/Security.cs
+  - docs/Models/Requests/CreateAccountingAccountSecurity.md
   - docs/Models/Requests/CreateAccountingAccountRequest.md
   - docs/Models/Requests/CreateAccountingAccountResponse.md
+  - docs/Models/Requests/CreateAccountingContactSecurity.md
   - docs/Models/Requests/CreateAccountingContactRequest.md
   - docs/Models/Requests/CreateAccountingContactResponse.md
+  - docs/Models/Requests/CreateAccountingInvoiceSecurity.md
   - docs/Models/Requests/CreateAccountingInvoiceRequest.md
   - docs/Models/Requests/CreateAccountingInvoiceResponse.md
+  - docs/Models/Requests/CreateAccountingPaymentSecurity.md
   - docs/Models/Requests/CreateAccountingPaymentRequest.md
   - docs/Models/Requests/CreateAccountingPaymentResponse.md
+  - docs/Models/Requests/CreateAccountingTaxrateSecurity.md
   - docs/Models/Requests/CreateAccountingTaxrateRequest.md
   - docs/Models/Requests/CreateAccountingTaxrateResponse.md
+  - docs/Models/Requests/CreateAccountingTransactionSecurity.md
   - docs/Models/Requests/CreateAccountingTransactionRequest.md
   - docs/Models/Requests/CreateAccountingTransactionResponse.md
+  - docs/Models/Requests/GetAccountingAccountSecurity.md
   - docs/Models/Requests/GetAccountingAccountRequest.md
   - docs/Models/Requests/GetAccountingAccountResponse.md
+  - docs/Models/Requests/GetAccountingContactSecurity.md
   - docs/Models/Requests/GetAccountingContactRequest.md
   - docs/Models/Requests/GetAccountingContactResponse.md
+  - docs/Models/Requests/GetAccountingInvoiceSecurity.md
   - docs/Models/Requests/GetAccountingInvoiceRequest.md
   - docs/Models/Requests/GetAccountingInvoiceResponse.md
+  - docs/Models/Requests/GetAccountingOrganizationSecurity.md
   - docs/Models/Requests/GetAccountingOrganizationRequest.md
   - docs/Models/Requests/GetAccountingOrganizationResponse.md
+  - docs/Models/Requests/GetAccountingPaymentSecurity.md
   - docs/Models/Requests/GetAccountingPaymentRequest.md
   - docs/Models/Requests/GetAccountingPaymentResponse.md
+  - docs/Models/Requests/GetAccountingPayoutSecurity.md
   - docs/Models/Requests/GetAccountingPayoutRequest.md
   - docs/Models/Requests/GetAccountingPayoutResponse.md
+  - docs/Models/Requests/GetAccountingRefundSecurity.md
   - docs/Models/Requests/GetAccountingRefundRequest.md
   - docs/Models/Requests/GetAccountingRefundResponse.md
+  - docs/Models/Requests/GetAccountingTaxrateSecurity.md
   - docs/Models/Requests/GetAccountingTaxrateRequest.md
   - docs/Models/Requests/GetAccountingTaxrateResponse.md
+  - docs/Models/Requests/GetAccountingTransactionSecurity.md
   - docs/Models/Requests/GetAccountingTransactionRequest.md
   - docs/Models/Requests/GetAccountingTransactionResponse.md
+  - docs/Models/Requests/ListAccountingAccountsSecurity.md
   - docs/Models/Requests/ListAccountingAccountsRequest.md
   - docs/Models/Requests/ListAccountingAccountsResponse.md
+  - docs/Models/Requests/ListAccountingContactsSecurity.md
   - docs/Models/Requests/ListAccountingContactsRequest.md
   - docs/Models/Requests/ListAccountingContactsResponse.md
+  - docs/Models/Requests/ListAccountingInvoicesSecurity.md
   - docs/Models/Requests/ListAccountingInvoicesRequest.md
   - docs/Models/Requests/ListAccountingInvoicesResponse.md
+  - docs/Models/Requests/ListAccountingOrganizationsSecurity.md
   - docs/Models/Requests/ListAccountingOrganizationsRequest.md
   - docs/Models/Requests/ListAccountingOrganizationsResponse.md
+  - docs/Models/Requests/ListAccountingPaymentsSecurity.md
   - docs/Models/Requests/ListAccountingPaymentsRequest.md
   - docs/Models/Requests/ListAccountingPaymentsResponse.md
+  - docs/Models/Requests/ListAccountingPayoutsSecurity.md
   - docs/Models/Requests/ListAccountingPayoutsRequest.md
   - docs/Models/Requests/ListAccountingPayoutsResponse.md
+  - docs/Models/Requests/ListAccountingRefundsSecurity.md
   - docs/Models/Requests/ListAccountingRefundsRequest.md
   - docs/Models/Requests/ListAccountingRefundsResponse.md
+  - docs/Models/Requests/ListAccountingTaxratesSecurity.md
   - docs/Models/Requests/ListAccountingTaxratesRequest.md
   - docs/Models/Requests/ListAccountingTaxratesResponse.md
+  - docs/Models/Requests/ListAccountingTransactionsSecurity.md
   - docs/Models/Requests/ListAccountingTransactionsRequest.md
   - docs/Models/Requests/ListAccountingTransactionsResponse.md
+  - docs/Models/Requests/PatchAccountingAccountSecurity.md
   - docs/Models/Requests/PatchAccountingAccountRequest.md
   - docs/Models/Requests/PatchAccountingAccountResponse.md
+  - docs/Models/Requests/PatchAccountingContactSecurity.md
   - docs/Models/Requests/PatchAccountingContactRequest.md
   - docs/Models/Requests/PatchAccountingContactResponse.md
+  - docs/Models/Requests/PatchAccountingInvoiceSecurity.md
   - docs/Models/Requests/PatchAccountingInvoiceRequest.md
   - docs/Models/Requests/PatchAccountingInvoiceResponse.md
+  - docs/Models/Requests/PatchAccountingPaymentSecurity.md
   - docs/Models/Requests/PatchAccountingPaymentRequest.md
   - docs/Models/Requests/PatchAccountingPaymentResponse.md
+  - docs/Models/Requests/PatchAccountingTaxrateSecurity.md
   - docs/Models/Requests/PatchAccountingTaxrateRequest.md
   - docs/Models/Requests/PatchAccountingTaxrateResponse.md
+  - docs/Models/Requests/PatchAccountingTransactionSecurity.md
   - docs/Models/Requests/PatchAccountingTransactionRequest.md
   - docs/Models/Requests/PatchAccountingTransactionResponse.md
+  - docs/Models/Requests/RemoveAccountingAccountSecurity.md
   - docs/Models/Requests/RemoveAccountingAccountRequest.md
   - docs/Models/Requests/RemoveAccountingAccountResponse.md
+  - docs/Models/Requests/RemoveAccountingContactSecurity.md
   - docs/Models/Requests/RemoveAccountingContactRequest.md
   - docs/Models/Requests/RemoveAccountingContactResponse.md
+  - docs/Models/Requests/RemoveAccountingInvoiceSecurity.md
   - docs/Models/Requests/RemoveAccountingInvoiceRequest.md
   - docs/Models/Requests/RemoveAccountingInvoiceResponse.md
+  - docs/Models/Requests/RemoveAccountingPaymentSecurity.md
   - docs/Models/Requests/RemoveAccountingPaymentRequest.md
   - docs/Models/Requests/RemoveAccountingPaymentResponse.md
+  - docs/Models/Requests/RemoveAccountingTaxrateSecurity.md
   - docs/Models/Requests/RemoveAccountingTaxrateRequest.md
   - docs/Models/Requests/RemoveAccountingTaxrateResponse.md
+  - docs/Models/Requests/RemoveAccountingTransactionSecurity.md
   - docs/Models/Requests/RemoveAccountingTransactionRequest.md
   - docs/Models/Requests/RemoveAccountingTransactionResponse.md
+  - docs/Models/Requests/UpdateAccountingAccountSecurity.md
   - docs/Models/Requests/UpdateAccountingAccountRequest.md
   - docs/Models/Requests/UpdateAccountingAccountResponse.md
+  - docs/Models/Requests/UpdateAccountingContactSecurity.md
   - docs/Models/Requests/UpdateAccountingContactRequest.md
   - docs/Models/Requests/UpdateAccountingContactResponse.md
+  - docs/Models/Requests/UpdateAccountingInvoiceSecurity.md
   - docs/Models/Requests/UpdateAccountingInvoiceRequest.md
   - docs/Models/Requests/UpdateAccountingInvoiceResponse.md
+  - docs/Models/Requests/UpdateAccountingPaymentSecurity.md
   - docs/Models/Requests/UpdateAccountingPaymentRequest.md
   - docs/Models/Requests/UpdateAccountingPaymentResponse.md
+  - docs/Models/Requests/UpdateAccountingTaxrateSecurity.md
   - docs/Models/Requests/UpdateAccountingTaxrateRequest.md
   - docs/Models/Requests/UpdateAccountingTaxrateResponse.md
+  - docs/Models/Requests/UpdateAccountingTransactionSecurity.md
   - docs/Models/Requests/UpdateAccountingTransactionRequest.md
   - docs/Models/Requests/UpdateAccountingTransactionResponse.md
+  - docs/Models/Requests/CreateCrmContactSecurity.md
   - docs/Models/Requests/CreateCrmContactRequest.md
   - docs/Models/Requests/CreateCrmContactResponse.md
+  - docs/Models/Requests/CreateUcContactSecurity.md
   - docs/Models/Requests/CreateUcContactRequest.md
   - docs/Models/Requests/CreateUcContactResponse.md
+  - docs/Models/Requests/GetCrmContactSecurity.md
   - docs/Models/Requests/GetCrmContactRequest.md
   - docs/Models/Requests/GetCrmContactResponse.md
+  - docs/Models/Requests/GetUcContactSecurity.md
   - docs/Models/Requests/GetUcContactRequest.md
   - docs/Models/Requests/GetUcContactResponse.md
+  - docs/Models/Requests/ListCrmContactsSecurity.md
   - docs/Models/Requests/ListCrmContactsRequest.md
   - docs/Models/Requests/ListCrmContactsResponse.md
+  - docs/Models/Requests/ListUcContactsSecurity.md
   - docs/Models/Requests/ListUcContactsRequest.md
   - docs/Models/Requests/ListUcContactsResponse.md
+  - docs/Models/Requests/PatchCrmContactSecurity.md
   - docs/Models/Requests/PatchCrmContactRequest.md
   - docs/Models/Requests/PatchCrmContactResponse.md
+  - docs/Models/Requests/PatchUcContactSecurity.md
   - docs/Models/Requests/PatchUcContactRequest.md
   - docs/Models/Requests/PatchUcContactResponse.md
+  - docs/Models/Requests/RemoveCrmContactSecurity.md
   - docs/Models/Requests/RemoveCrmContactRequest.md
   - docs/Models/Requests/RemoveCrmContactResponse.md
+  - docs/Models/Requests/RemoveUcContactSecurity.md
   - docs/Models/Requests/RemoveUcContactRequest.md
   - docs/Models/Requests/RemoveUcContactResponse.md
+  - docs/Models/Requests/UpdateCrmContactSecurity.md
   - docs/Models/Requests/UpdateCrmContactRequest.md
   - docs/Models/Requests/UpdateCrmContactResponse.md
+  - docs/Models/Requests/UpdateUcContactSecurity.md
   - docs/Models/Requests/UpdateUcContactRequest.md
   - docs/Models/Requests/UpdateUcContactResponse.md
+  - docs/Models/Requests/CreateAtsActivitySecurity.md
   - docs/Models/Requests/CreateAtsActivityRequest.md
   - docs/Models/Requests/CreateAtsActivityResponse.md
+  - docs/Models/Requests/CreateAtsApplicationSecurity.md
   - docs/Models/Requests/CreateAtsApplicationRequest.md
   - docs/Models/Requests/CreateAtsApplicationResponse.md
+  - docs/Models/Requests/CreateAtsCandidateSecurity.md
   - docs/Models/Requests/CreateAtsCandidateRequest.md
   - docs/Models/Requests/CreateAtsCandidateResponse.md
+  - docs/Models/Requests/CreateAtsDocumentSecurity.md
   - docs/Models/Requests/CreateAtsDocumentRequest.md
   - docs/Models/Requests/CreateAtsDocumentResponse.md
+  - docs/Models/Requests/CreateAtsInterviewSecurity.md
   - docs/Models/Requests/CreateAtsInterviewRequest.md
   - docs/Models/Requests/CreateAtsInterviewResponse.md
+  - docs/Models/Requests/CreateAtsJobSecurity.md
   - docs/Models/Requests/CreateAtsJobRequest.md
   - docs/Models/Requests/CreateAtsJobResponse.md
+  - docs/Models/Requests/CreateAtsScorecardSecurity.md
   - docs/Models/Requests/CreateAtsScorecardRequest.md
   - docs/Models/Requests/CreateAtsScorecardResponse.md
+  - docs/Models/Requests/GetAtsActivitySecurity.md
   - docs/Models/Requests/GetAtsActivityRequest.md
   - docs/Models/Requests/GetAtsActivityResponse.md
+  - docs/Models/Requests/GetAtsApplicationSecurity.md
   - docs/Models/Requests/GetAtsApplicationRequest.md
   - docs/Models/Requests/GetAtsApplicationResponse.md
+  - docs/Models/Requests/GetAtsCandidateSecurity.md
   - docs/Models/Requests/GetAtsCandidateRequest.md
   - docs/Models/Requests/GetAtsCandidateResponse.md
+  - docs/Models/Requests/GetAtsCompanySecurity.md
   - docs/Models/Requests/GetAtsCompanyRequest.md
   - docs/Models/Requests/GetAtsCompanyResponse.md
+  - docs/Models/Requests/GetAtsDocumentSecurity.md
   - docs/Models/Requests/GetAtsDocumentRequest.md
   - docs/Models/Requests/GetAtsDocumentResponse.md
+  - docs/Models/Requests/GetAtsInterviewSecurity.md
   - docs/Models/Requests/GetAtsInterviewRequest.md
   - docs/Models/Requests/GetAtsInterviewResponse.md
+  - docs/Models/Requests/GetAtsJobSecurity.md
   - docs/Models/Requests/GetAtsJobRequest.md
   - docs/Models/Requests/GetAtsJobResponse.md
+  - docs/Models/Requests/GetAtsScorecardSecurity.md
   - docs/Models/Requests/GetAtsScorecardRequest.md
   - docs/Models/Requests/GetAtsScorecardResponse.md
+  - docs/Models/Requests/ListAtsActivitiesSecurity.md
   - docs/Models/Requests/ListAtsActivitiesRequest.md
   - docs/Models/Requests/ListAtsActivitiesResponse.md
+  - docs/Models/Requests/ListAtsApplicationsSecurity.md
   - docs/Models/Requests/ListAtsApplicationsRequest.md
   - docs/Models/Requests/ListAtsApplicationsResponse.md
+  - docs/Models/Requests/ListAtsApplicationstatusesSecurity.md
   - docs/Models/Requests/ListAtsApplicationstatusesRequest.md
   - docs/Models/Requests/ListAtsApplicationstatusesResponse.md
+  - docs/Models/Requests/ListAtsCandidatesSecurity.md
   - docs/Models/Requests/ListAtsCandidatesRequest.md
   - docs/Models/Requests/ListAtsCandidatesResponse.md
+  - docs/Models/Requests/ListAtsCompaniesSecurity.md
   - docs/Models/Requests/ListAtsCompaniesRequest.md
   - docs/Models/Requests/ListAtsCompaniesResponse.md
+  - docs/Models/Requests/ListAtsDocumentsSecurity.md
   - docs/Models/Requests/ListAtsDocumentsRequest.md
   - docs/Models/Requests/ListAtsDocumentsResponse.md
+  - docs/Models/Requests/ListAtsInterviewsSecurity.md
   - docs/Models/Requests/ListAtsInterviewsRequest.md
   - docs/Models/Requests/ListAtsInterviewsResponse.md
+  - docs/Models/Requests/ListAtsJobsSecurity.md
   - docs/Models/Requests/ListAtsJobsRequest.md
   - docs/Models/Requests/ListAtsJobsResponse.md
+  - docs/Models/Requests/ListAtsScorecardsSecurity.md
   - docs/Models/Requests/ListAtsScorecardsRequest.md
   - docs/Models/Requests/ListAtsScorecardsResponse.md
+  - docs/Models/Requests/PatchAtsActivitySecurity.md
   - docs/Models/Requests/PatchAtsActivityRequest.md
   - docs/Models/Requests/PatchAtsActivityResponse.md
+  - docs/Models/Requests/PatchAtsApplicationSecurity.md
   - docs/Models/Requests/PatchAtsApplicationRequest.md
   - docs/Models/Requests/PatchAtsApplicationResponse.md
+  - docs/Models/Requests/PatchAtsCandidateSecurity.md
   - docs/Models/Requests/PatchAtsCandidateRequest.md
   - docs/Models/Requests/PatchAtsCandidateResponse.md
+  - docs/Models/Requests/PatchAtsDocumentSecurity.md
   - docs/Models/Requests/PatchAtsDocumentRequest.md
   - docs/Models/Requests/PatchAtsDocumentResponse.md
+  - docs/Models/Requests/PatchAtsInterviewSecurity.md
   - docs/Models/Requests/PatchAtsInterviewRequest.md
   - docs/Models/Requests/PatchAtsInterviewResponse.md
+  - docs/Models/Requests/PatchAtsJobSecurity.md
   - docs/Models/Requests/PatchAtsJobRequest.md
   - docs/Models/Requests/PatchAtsJobResponse.md
+  - docs/Models/Requests/PatchAtsScorecardSecurity.md
   - docs/Models/Requests/PatchAtsScorecardRequest.md
   - docs/Models/Requests/PatchAtsScorecardResponse.md
+  - docs/Models/Requests/RemoveAtsActivitySecurity.md
   - docs/Models/Requests/RemoveAtsActivityRequest.md
   - docs/Models/Requests/RemoveAtsActivityResponse.md
+  - docs/Models/Requests/RemoveAtsApplicationSecurity.md
   - docs/Models/Requests/RemoveAtsApplicationRequest.md
   - docs/Models/Requests/RemoveAtsApplicationResponse.md
+  - docs/Models/Requests/RemoveAtsCandidateSecurity.md
   - docs/Models/Requests/RemoveAtsCandidateRequest.md
   - docs/Models/Requests/RemoveAtsCandidateResponse.md
+  - docs/Models/Requests/RemoveAtsDocumentSecurity.md
   - docs/Models/Requests/RemoveAtsDocumentRequest.md
   - docs/Models/Requests/RemoveAtsDocumentResponse.md
+  - docs/Models/Requests/RemoveAtsInterviewSecurity.md
   - docs/Models/Requests/RemoveAtsInterviewRequest.md
   - docs/Models/Requests/RemoveAtsInterviewResponse.md
+  - docs/Models/Requests/RemoveAtsJobSecurity.md
   - docs/Models/Requests/RemoveAtsJobRequest.md
   - docs/Models/Requests/RemoveAtsJobResponse.md
+  - docs/Models/Requests/RemoveAtsScorecardSecurity.md
   - docs/Models/Requests/RemoveAtsScorecardRequest.md
   - docs/Models/Requests/RemoveAtsScorecardResponse.md
+  - docs/Models/Requests/UpdateAtsActivitySecurity.md
   - docs/Models/Requests/UpdateAtsActivityRequest.md
   - docs/Models/Requests/UpdateAtsActivityResponse.md
+  - docs/Models/Requests/UpdateAtsApplicationSecurity.md
   - docs/Models/Requests/UpdateAtsApplicationRequest.md
   - docs/Models/Requests/UpdateAtsApplicationResponse.md
+  - docs/Models/Requests/UpdateAtsCandidateSecurity.md
   - docs/Models/Requests/UpdateAtsCandidateRequest.md
   - docs/Models/Requests/UpdateAtsCandidateResponse.md
+  - docs/Models/Requests/UpdateAtsDocumentSecurity.md
   - docs/Models/Requests/UpdateAtsDocumentRequest.md
   - docs/Models/Requests/UpdateAtsDocumentResponse.md
+  - docs/Models/Requests/UpdateAtsInterviewSecurity.md
   - docs/Models/Requests/UpdateAtsInterviewRequest.md
   - docs/Models/Requests/UpdateAtsInterviewResponse.md
+  - docs/Models/Requests/UpdateAtsJobSecurity.md
   - docs/Models/Requests/UpdateAtsJobRequest.md
   - docs/Models/Requests/UpdateAtsJobResponse.md
+  - docs/Models/Requests/UpdateAtsScorecardSecurity.md
   - docs/Models/Requests/UpdateAtsScorecardRequest.md
   - docs/Models/Requests/UpdateAtsScorecardResponse.md
+  - docs/Models/Requests/CreateCrmCompanySecurity.md
   - docs/Models/Requests/CreateCrmCompanyRequest.md
   - docs/Models/Requests/CreateCrmCompanyResponse.md
+  - docs/Models/Requests/GetCrmCompanySecurity.md
   - docs/Models/Requests/GetCrmCompanyRequest.md
   - docs/Models/Requests/GetCrmCompanyResponse.md
+  - docs/Models/Requests/ListCrmCompaniesSecurity.md
   - docs/Models/Requests/ListCrmCompaniesRequest.md
   - docs/Models/Requests/ListCrmCompaniesResponse.md
+  - docs/Models/Requests/ListEnrichCompaniesSecurity.md
   - docs/Models/Requests/ListEnrichCompaniesRequest.md
   - docs/Models/Requests/ListEnrichCompaniesResponse.md
+  - docs/Models/Requests/PatchCrmCompanySecurity.md
   - docs/Models/Requests/PatchCrmCompanyRequest.md
   - docs/Models/Requests/PatchCrmCompanyResponse.md
+  - docs/Models/Requests/RemoveCrmCompanySecurity.md
   - docs/Models/Requests/RemoveCrmCompanyRequest.md
   - docs/Models/Requests/RemoveCrmCompanyResponse.md
+  - docs/Models/Requests/UpdateCrmCompanySecurity.md
   - docs/Models/Requests/UpdateCrmCompanyRequest.md
   - docs/Models/Requests/UpdateCrmCompanyResponse.md
+  - docs/Models/Requests/CreateCommerceCollectionSecurity.md
   - docs/Models/Requests/CreateCommerceCollectionRequest.md
   - docs/Models/Requests/CreateCommerceCollectionResponse.md
+  - docs/Models/Requests/CreateCommerceInventorySecurity.md
   - docs/Models/Requests/CreateCommerceInventoryRequest.md
   - docs/Models/Requests/CreateCommerceInventoryResponse.md
+  - docs/Models/Requests/CreateCommerceItemSecurity.md
   - docs/Models/Requests/CreateCommerceItemRequest.md
   - docs/Models/Requests/CreateCommerceItemResponse.md
+  - docs/Models/Requests/CreateCommerceLocationSecurity.md
   - docs/Models/Requests/CreateCommerceLocationRequest.md
   - docs/Models/Requests/CreateCommerceLocationResponse.md
+  - docs/Models/Requests/GetCommerceCollectionSecurity.md
   - docs/Models/Requests/GetCommerceCollectionRequest.md
   - docs/Models/Requests/GetCommerceCollectionResponse.md
+  - docs/Models/Requests/GetCommerceInventorySecurity.md
   - docs/Models/Requests/GetCommerceInventoryRequest.md
   - docs/Models/Requests/GetCommerceInventoryResponse.md
+  - docs/Models/Requests/GetCommerceItemSecurity.md
   - docs/Models/Requests/GetCommerceItemRequest.md
   - docs/Models/Requests/GetCommerceItemResponse.md
+  - docs/Models/Requests/GetCommerceLocationSecurity.md
   - docs/Models/Requests/GetCommerceLocationRequest.md
   - docs/Models/Requests/GetCommerceLocationResponse.md
+  - docs/Models/Requests/ListCommerceCollectionsSecurity.md
   - docs/Models/Requests/ListCommerceCollectionsRequest.md
   - docs/Models/Requests/ListCommerceCollectionsResponse.md
+  - docs/Models/Requests/ListCommerceInventoriesSecurity.md
   - docs/Models/Requests/ListCommerceInventoriesRequest.md
   - docs/Models/Requests/ListCommerceInventoriesResponse.md
+  - docs/Models/Requests/ListCommerceItemsSecurity.md
   - docs/Models/Requests/ListCommerceItemsRequest.md
   - docs/Models/Requests/ListCommerceItemsResponse.md
+  - docs/Models/Requests/ListCommerceLocationsSecurity.md
   - docs/Models/Requests/ListCommerceLocationsRequest.md
   - docs/Models/Requests/ListCommerceLocationsResponse.md
+  - docs/Models/Requests/PatchCommerceCollectionSecurity.md
   - docs/Models/Requests/PatchCommerceCollectionRequest.md
   - docs/Models/Requests/PatchCommerceCollectionResponse.md
+  - docs/Models/Requests/PatchCommerceInventorySecurity.md
   - docs/Models/Requests/PatchCommerceInventoryRequest.md
   - docs/Models/Requests/PatchCommerceInventoryResponse.md
+  - docs/Models/Requests/PatchCommerceItemSecurity.md
   - docs/Models/Requests/PatchCommerceItemRequest.md
   - docs/Models/Requests/PatchCommerceItemResponse.md
+  - docs/Models/Requests/PatchCommerceLocationSecurity.md
   - docs/Models/Requests/PatchCommerceLocationRequest.md
   - docs/Models/Requests/PatchCommerceLocationResponse.md
+  - docs/Models/Requests/RemoveCommerceCollectionSecurity.md
   - docs/Models/Requests/RemoveCommerceCollectionRequest.md
   - docs/Models/Requests/RemoveCommerceCollectionResponse.md
+  - docs/Models/Requests/RemoveCommerceInventorySecurity.md
   - docs/Models/Requests/RemoveCommerceInventoryRequest.md
   - docs/Models/Requests/RemoveCommerceInventoryResponse.md
+  - docs/Models/Requests/RemoveCommerceItemSecurity.md
   - docs/Models/Requests/RemoveCommerceItemRequest.md
   - docs/Models/Requests/RemoveCommerceItemResponse.md
+  - docs/Models/Requests/RemoveCommerceLocationSecurity.md
   - docs/Models/Requests/RemoveCommerceLocationRequest.md
   - docs/Models/Requests/RemoveCommerceLocationResponse.md
+  - docs/Models/Requests/UpdateCommerceCollectionSecurity.md
   - docs/Models/Requests/UpdateCommerceCollectionRequest.md
   - docs/Models/Requests/UpdateCommerceCollectionResponse.md
+  - docs/Models/Requests/UpdateCommerceInventorySecurity.md
   - docs/Models/Requests/UpdateCommerceInventoryRequest.md
   - docs/Models/Requests/UpdateCommerceInventoryResponse.md
+  - docs/Models/Requests/UpdateCommerceItemSecurity.md
   - docs/Models/Requests/UpdateCommerceItemRequest.md
   - docs/Models/Requests/UpdateCommerceItemResponse.md
+  - docs/Models/Requests/UpdateCommerceLocationSecurity.md
   - docs/Models/Requests/UpdateCommerceLocationRequest.md
   - docs/Models/Requests/UpdateCommerceLocationResponse.md
+  - docs/Models/Requests/CreateCrmDealSecurity.md
   - docs/Models/Requests/CreateCrmDealRequest.md
   - docs/Models/Requests/CreateCrmDealResponse.md
+  - docs/Models/Requests/CreateCrmEventSecurity.md
   - docs/Models/Requests/CreateCrmEventRequest.md
   - docs/Models/Requests/CreateCrmEventResponse.md
+  - docs/Models/Requests/CreateCrmLeadSecurity.md
   - docs/Models/Requests/CreateCrmLeadRequest.md
   - docs/Models/Requests/CreateCrmLeadResponse.md
+  - docs/Models/Requests/CreateCrmPipelineSecurity.md
   - docs/Models/Requests/CreateCrmPipelineRequest.md
   - docs/Models/Requests/CreateCrmPipelineResponse.md
+  - docs/Models/Requests/GetCrmDealSecurity.md
   - docs/Models/Requests/GetCrmDealRequest.md
   - docs/Models/Requests/GetCrmDealResponse.md
+  - docs/Models/Requests/GetCrmEventSecurity.md
   - docs/Models/Requests/GetCrmEventRequest.md
   - docs/Models/Requests/GetCrmEventResponse.md
+  - docs/Models/Requests/GetCrmLeadSecurity.md
   - docs/Models/Requests/GetCrmLeadRequest.md
   - docs/Models/Requests/GetCrmLeadResponse.md
+  - docs/Models/Requests/GetCrmPipelineSecurity.md
   - docs/Models/Requests/GetCrmPipelineRequest.md
   - docs/Models/Requests/GetCrmPipelineResponse.md
+  - docs/Models/Requests/ListCrmDealsSecurity.md
   - docs/Models/Requests/ListCrmDealsRequest.md
   - docs/Models/Requests/ListCrmDealsResponse.md
+  - docs/Models/Requests/ListCrmEventsSecurity.md
   - docs/Models/Requests/ListCrmEventsRequest.md
   - docs/Models/Requests/ListCrmEventsResponse.md
+  - docs/Models/Requests/ListCrmLeadsSecurity.md
   - docs/Models/Requests/ListCrmLeadsRequest.md
   - docs/Models/Requests/ListCrmLeadsResponse.md
+  - docs/Models/Requests/ListCrmPipelinesSecurity.md
   - docs/Models/Requests/ListCrmPipelinesRequest.md
   - docs/Models/Requests/ListCrmPipelinesResponse.md
+  - docs/Models/Requests/PatchCrmDealSecurity.md
   - docs/Models/Requests/PatchCrmDealRequest.md
   - docs/Models/Requests/PatchCrmDealResponse.md
+  - docs/Models/Requests/PatchCrmEventSecurity.md
   - docs/Models/Requests/PatchCrmEventRequest.md
   - docs/Models/Requests/PatchCrmEventResponse.md
+  - docs/Models/Requests/PatchCrmLeadSecurity.md
   - docs/Models/Requests/PatchCrmLeadRequest.md
   - docs/Models/Requests/PatchCrmLeadResponse.md
+  - docs/Models/Requests/PatchCrmPipelineSecurity.md
   - docs/Models/Requests/PatchCrmPipelineRequest.md
   - docs/Models/Requests/PatchCrmPipelineResponse.md
+  - docs/Models/Requests/RemoveCrmDealSecurity.md
   - docs/Models/Requests/RemoveCrmDealRequest.md
   - docs/Models/Requests/RemoveCrmDealResponse.md
+  - docs/Models/Requests/RemoveCrmEventSecurity.md
   - docs/Models/Requests/RemoveCrmEventRequest.md
   - docs/Models/Requests/RemoveCrmEventResponse.md
+  - docs/Models/Requests/RemoveCrmLeadSecurity.md
   - docs/Models/Requests/RemoveCrmLeadRequest.md
   - docs/Models/Requests/RemoveCrmLeadResponse.md
+  - docs/Models/Requests/RemoveCrmPipelineSecurity.md
   - docs/Models/Requests/RemoveCrmPipelineRequest.md
   - docs/Models/Requests/RemoveCrmPipelineResponse.md
+  - docs/Models/Requests/UpdateCrmDealSecurity.md
   - docs/Models/Requests/UpdateCrmDealRequest.md
   - docs/Models/Requests/UpdateCrmDealResponse.md
+  - docs/Models/Requests/UpdateCrmEventSecurity.md
   - docs/Models/Requests/UpdateCrmEventRequest.md
   - docs/Models/Requests/UpdateCrmEventResponse.md
+  - docs/Models/Requests/UpdateCrmLeadSecurity.md
   - docs/Models/Requests/UpdateCrmLeadRequest.md
   - docs/Models/Requests/UpdateCrmLeadResponse.md
+  - docs/Models/Requests/UpdateCrmPipelineSecurity.md
   - docs/Models/Requests/UpdateCrmPipelineRequest.md
   - docs/Models/Requests/UpdateCrmPipelineResponse.md
+  - docs/Models/Requests/ListEnrichPeopleSecurity.md
   - docs/Models/Requests/ListEnrichPeopleRequest.md
   - docs/Models/Requests/ListEnrichPeopleResponse.md
+  - docs/Models/Requests/CreateHrisEmployeeSecurity.md
   - docs/Models/Requests/CreateHrisEmployeeRequest.md
   - docs/Models/Requests/CreateHrisEmployeeResponse.md
+  - docs/Models/Requests/CreateHrisGroupSecurity.md
   - docs/Models/Requests/CreateHrisGroupRequest.md
   - docs/Models/Requests/CreateHrisGroupResponse.md
+  - docs/Models/Requests/GetHrisEmployeeSecurity.md
   - docs/Models/Requests/GetHrisEmployeeRequest.md
   - docs/Models/Requests/GetHrisEmployeeResponse.md
+  - docs/Models/Requests/GetHrisGroupSecurity.md
   - docs/Models/Requests/GetHrisGroupRequest.md
   - docs/Models/Requests/GetHrisGroupResponse.md
+  - docs/Models/Requests/ListHrisEmployeesSecurity.md
   - docs/Models/Requests/ListHrisEmployeesRequest.md
   - docs/Models/Requests/ListHrisEmployeesResponse.md
+  - docs/Models/Requests/ListHrisGroupsSecurity.md
   - docs/Models/Requests/ListHrisGroupsRequest.md
   - docs/Models/Requests/ListHrisGroupsResponse.md
+  - docs/Models/Requests/PatchHrisEmployeeSecurity.md
   - docs/Models/Requests/PatchHrisEmployeeRequest.md
   - docs/Models/Requests/PatchHrisEmployeeResponse.md
+  - docs/Models/Requests/PatchHrisGroupSecurity.md
   - docs/Models/Requests/PatchHrisGroupRequest.md
   - docs/Models/Requests/PatchHrisGroupResponse.md
+  - docs/Models/Requests/RemoveHrisEmployeeSecurity.md
   - docs/Models/Requests/RemoveHrisEmployeeRequest.md
   - docs/Models/Requests/RemoveHrisEmployeeResponse.md
+  - docs/Models/Requests/RemoveHrisGroupSecurity.md
   - docs/Models/Requests/RemoveHrisGroupRequest.md
   - docs/Models/Requests/RemoveHrisGroupResponse.md
+  - docs/Models/Requests/UpdateHrisEmployeeSecurity.md
   - docs/Models/Requests/UpdateHrisEmployeeRequest.md
   - docs/Models/Requests/UpdateHrisEmployeeResponse.md
+  - docs/Models/Requests/UpdateHrisGroupSecurity.md
   - docs/Models/Requests/UpdateHrisGroupRequest.md
   - docs/Models/Requests/UpdateHrisGroupResponse.md
+  - docs/Models/Requests/CreateMartechListSecurity.md
   - docs/Models/Requests/CreateMartechListRequest.md
   - docs/Models/Requests/CreateMartechListResponse.md
+  - docs/Models/Requests/CreateMartechMemberSecurity.md
   - docs/Models/Requests/CreateMartechMemberRequest.md
   - docs/Models/Requests/CreateMartechMemberResponse.md
+  - docs/Models/Requests/GetMartechListSecurity.md
   - docs/Models/Requests/GetMartechListRequest.md
   - docs/Models/Requests/GetMartechListResponse.md
+  - docs/Models/Requests/GetMartechMemberSecurity.md
   - docs/Models/Requests/GetMartechMemberRequest.md
   - docs/Models/Requests/GetMartechMemberResponse.md
+  - docs/Models/Requests/ListMartechListsSecurity.md
   - docs/Models/Requests/ListMartechListsRequest.md
   - docs/Models/Requests/ListMartechListsResponse.md
+  - docs/Models/Requests/ListMartechMembersSecurity.md
   - docs/Models/Requests/ListMartechMembersRequest.md
   - docs/Models/Requests/ListMartechMembersResponse.md
+  - docs/Models/Requests/PatchMartechListSecurity.md
   - docs/Models/Requests/PatchMartechListRequest.md
   - docs/Models/Requests/PatchMartechListResponse.md
+  - docs/Models/Requests/PatchMartechMemberSecurity.md
   - docs/Models/Requests/PatchMartechMemberRequest.md
   - docs/Models/Requests/PatchMartechMemberResponse.md
+  - docs/Models/Requests/RemoveMartechListSecurity.md
   - docs/Models/Requests/RemoveMartechListRequest.md
   - docs/Models/Requests/RemoveMartechListResponse.md
+  - docs/Models/Requests/RemoveMartechMemberSecurity.md
   - docs/Models/Requests/RemoveMartechMemberRequest.md
   - docs/Models/Requests/RemoveMartechMemberResponse.md
+  - docs/Models/Requests/UpdateMartechListSecurity.md
   - docs/Models/Requests/UpdateMartechListRequest.md
   - docs/Models/Requests/UpdateMartechListResponse.md
+  - docs/Models/Requests/UpdateMartechMemberSecurity.md
   - docs/Models/Requests/UpdateMartechMemberRequest.md
   - docs/Models/Requests/UpdateMartechMemberResponse.md
+  - docs/Models/Requests/CreatePassthroughSecurity.md
   - docs/Models/Requests/CreatePassthroughRequest.md
   - docs/Models/Requests/CreatePassthroughResponse.md
+  - docs/Models/Requests/ListPassthroughsSecurity.md
   - docs/Models/Requests/ListPassthroughsRequest.md
   - docs/Models/Requests/ListPassthroughsResponse.md
+  - docs/Models/Requests/PatchPassthroughSecurity.md
   - docs/Models/Requests/PatchPassthroughRequest.md
   - docs/Models/Requests/PatchPassthroughResponse.md
+  - docs/Models/Requests/RemovePassthroughSecurity.md
   - docs/Models/Requests/RemovePassthroughRequest.md
   - docs/Models/Requests/RemovePassthroughResponse.md
+  - docs/Models/Requests/UpdatePassthroughSecurity.md
   - docs/Models/Requests/UpdatePassthroughRequest.md
   - docs/Models/Requests/UpdatePassthroughResponse.md
+  - docs/Models/Requests/CreateStorageFileSecurity.md
   - docs/Models/Requests/CreateStorageFileRequest.md
   - docs/Models/Requests/CreateStorageFileResponse.md
+  - docs/Models/Requests/GetStorageFileSecurity.md
   - docs/Models/Requests/GetStorageFileRequest.md
   - docs/Models/Requests/GetStorageFileResponse.md
+  - docs/Models/Requests/ListStorageFilesSecurity.md
   - docs/Models/Requests/ListStorageFilesRequest.md
   - docs/Models/Requests/ListStorageFilesResponse.md
+  - docs/Models/Requests/PatchStorageFileSecurity.md
   - docs/Models/Requests/PatchStorageFileRequest.md
   - docs/Models/Requests/PatchStorageFileResponse.md
+  - docs/Models/Requests/RemoveStorageFileSecurity.md
   - docs/Models/Requests/RemoveStorageFileRequest.md
   - docs/Models/Requests/RemoveStorageFileResponse.md
+  - docs/Models/Requests/UpdateStorageFileSecurity.md
   - docs/Models/Requests/UpdateStorageFileRequest.md
   - docs/Models/Requests/UpdateStorageFileResponse.md
+  - docs/Models/Requests/CreateTicketingCustomerSecurity.md
   - docs/Models/Requests/CreateTicketingCustomerRequest.md
   - docs/Models/Requests/CreateTicketingCustomerResponse.md
+  - docs/Models/Requests/CreateTicketingNoteSecurity.md
   - docs/Models/Requests/CreateTicketingNoteRequest.md
   - docs/Models/Requests/CreateTicketingNoteResponse.md
+  - docs/Models/Requests/CreateTicketingTicketSecurity.md
   - docs/Models/Requests/CreateTicketingTicketRequest.md
   - docs/Models/Requests/CreateTicketingTicketResponse.md
+  - docs/Models/Requests/GetTicketingCustomerSecurity.md
   - docs/Models/Requests/GetTicketingCustomerRequest.md
   - docs/Models/Requests/GetTicketingCustomerResponse.md
+  - docs/Models/Requests/GetTicketingNoteSecurity.md
   - docs/Models/Requests/GetTicketingNoteRequest.md
   - docs/Models/Requests/GetTicketingNoteResponse.md
+  - docs/Models/Requests/GetTicketingTicketSecurity.md
   - docs/Models/Requests/GetTicketingTicketRequest.md
   - docs/Models/Requests/GetTicketingTicketResponse.md
+  - docs/Models/Requests/ListTicketingCustomersSecurity.md
   - docs/Models/Requests/ListTicketingCustomersRequest.md
   - docs/Models/Requests/ListTicketingCustomersResponse.md
+  - docs/Models/Requests/ListTicketingNotesSecurity.md
   - docs/Models/Requests/ListTicketingNotesRequest.md
   - docs/Models/Requests/ListTicketingNotesResponse.md
+  - docs/Models/Requests/ListTicketingTicketsSecurity.md
   - docs/Models/Requests/ListTicketingTicketsRequest.md
   - docs/Models/Requests/ListTicketingTicketsResponse.md
+  - docs/Models/Requests/PatchTicketingCustomerSecurity.md
   - docs/Models/Requests/PatchTicketingCustomerRequest.md
   - docs/Models/Requests/PatchTicketingCustomerResponse.md
+  - docs/Models/Requests/PatchTicketingNoteSecurity.md
   - docs/Models/Requests/PatchTicketingNoteRequest.md
   - docs/Models/Requests/PatchTicketingNoteResponse.md
+  - docs/Models/Requests/PatchTicketingTicketSecurity.md
   - docs/Models/Requests/PatchTicketingTicketRequest.md
   - docs/Models/Requests/PatchTicketingTicketResponse.md
+  - docs/Models/Requests/RemoveTicketingCustomerSecurity.md
   - docs/Models/Requests/RemoveTicketingCustomerRequest.md
   - docs/Models/Requests/RemoveTicketingCustomerResponse.md
+  - docs/Models/Requests/RemoveTicketingNoteSecurity.md
   - docs/Models/Requests/RemoveTicketingNoteRequest.md
   - docs/Models/Requests/RemoveTicketingNoteResponse.md
+  - docs/Models/Requests/RemoveTicketingTicketSecurity.md
   - docs/Models/Requests/RemoveTicketingTicketRequest.md
   - docs/Models/Requests/RemoveTicketingTicketResponse.md
+  - docs/Models/Requests/UpdateTicketingCustomerSecurity.md
   - docs/Models/Requests/UpdateTicketingCustomerRequest.md
   - docs/Models/Requests/UpdateTicketingCustomerResponse.md
+  - docs/Models/Requests/UpdateTicketingNoteSecurity.md
   - docs/Models/Requests/UpdateTicketingNoteRequest.md
   - docs/Models/Requests/UpdateTicketingNoteResponse.md
+  - docs/Models/Requests/UpdateTicketingTicketSecurity.md
   - docs/Models/Requests/UpdateTicketingTicketRequest.md
   - docs/Models/Requests/UpdateTicketingTicketResponse.md
+  - docs/Models/Requests/ListUcCallsSecurity.md
   - docs/Models/Requests/ListUcCallsRequest.md
   - docs/Models/Requests/ListUcCallsResponse.md
+  - docs/Models/Requests/CreateUnifiedConnectionSecurity.md
   - docs/Models/Requests/CreateUnifiedConnectionResponse.md
+  - docs/Models/Requests/CreateUnifiedWebhookSecurity.md
   - docs/Models/Requests/CreateUnifiedWebhookRequest.md
   - docs/Models/Requests/CreateUnifiedWebhookResponse.md
+  - docs/Models/Requests/GetUnifiedApicallSecurity.md
   - docs/Models/Requests/GetUnifiedApicallRequest.md
   - docs/Models/Requests/GetUnifiedApicallResponse.md
+  - docs/Models/Requests/GetUnifiedConnectionSecurity.md
   - docs/Models/Requests/GetUnifiedConnectionRequest.md
   - docs/Models/Requests/GetUnifiedConnectionResponse.md
   - docs/Models/Requests/Scopes.md
   - docs/Models/Requests/GetUnifiedIntegrationAuthRequest.md
   - docs/Models/Requests/GetUnifiedIntegrationAuthResponse.md
+  - docs/Models/Requests/GetUnifiedWebhookSecurity.md
   - docs/Models/Requests/GetUnifiedWebhookRequest.md
   - docs/Models/Requests/GetUnifiedWebhookResponse.md
+  - docs/Models/Requests/ListUnifiedApicallsSecurity.md
   - docs/Models/Requests/ListUnifiedApicallsRequest.md
   - docs/Models/Requests/ListUnifiedApicallsResponse.md
+  - docs/Models/Requests/ListUnifiedConnectionsSecurity.md
   - docs/Models/Requests/Categories.md
   - docs/Models/Requests/ListUnifiedConnectionsRequest.md
   - docs/Models/Requests/ListUnifiedConnectionsResponse.md
   - docs/Models/Requests/QueryParamCategories.md
   - docs/Models/Requests/ListUnifiedIntegrationWorkspacesRequest.md
   - docs/Models/Requests/ListUnifiedIntegrationWorkspacesResponse.md
+  - docs/Models/Requests/ListUnifiedIntegrationsSecurity.md
   - docs/Models/Requests/ListUnifiedIntegrationsQueryParamCategories.md
   - docs/Models/Requests/ListUnifiedIntegrationsRequest.md
   - docs/Models/Requests/ListUnifiedIntegrationsResponse.md
+  - docs/Models/Requests/ListUnifiedIssuesSecurity.md
   - docs/Models/Requests/ListUnifiedIssuesRequest.md
   - docs/Models/Requests/ListUnifiedIssuesResponse.md
+  - docs/Models/Requests/ListUnifiedWebhooksSecurity.md
   - docs/Models/Requests/ListUnifiedWebhooksRequest.md
   - docs/Models/Requests/ListUnifiedWebhooksResponse.md
+  - docs/Models/Requests/PatchUnifiedConnectionSecurity.md
   - docs/Models/Requests/PatchUnifiedConnectionRequest.md
   - docs/Models/Requests/PatchUnifiedConnectionResponse.md
+  - docs/Models/Requests/PatchUnifiedWebhookTriggerSecurity.md
   - docs/Models/Requests/PatchUnifiedWebhookTriggerRequest.md
   - docs/Models/Requests/PatchUnifiedWebhookTriggerResponse.md
+  - docs/Models/Requests/RemoveUnifiedConnectionSecurity.md
   - docs/Models/Requests/RemoveUnifiedConnectionRequest.md
   - docs/Models/Requests/RemoveUnifiedConnectionResponse.md
+  - docs/Models/Requests/RemoveUnifiedWebhookSecurity.md
   - docs/Models/Requests/RemoveUnifiedWebhookRequest.md
   - docs/Models/Requests/RemoveUnifiedWebhookResponse.md
+  - docs/Models/Requests/UpdateUnifiedConnectionSecurity.md
   - docs/Models/Requests/UpdateUnifiedConnectionRequest.md
   - docs/Models/Requests/UpdateUnifiedConnectionResponse.md
+  - docs/Models/Requests/UpdateUnifiedWebhookTriggerSecurity.md
   - docs/Models/Requests/UpdateUnifiedWebhookTriggerRequest.md
   - docs/Models/Requests/UpdateUnifiedWebhookTriggerResponse.md
   - docs/Models/Requests/GetUnifiedIntegrationLoginRequest.md
@@ -1311,7 +1761,6 @@ generatedFiles:
   - docs/Models/Components/IssueStatus.md
   - docs/Models/Components/IssueType.md
   - docs/Models/Components/Issue.md
-  - docs/Models/Components/Security.md
   - docs/sdks/unifiedto/README.md
   - docs/sdks/accounting/README.md
   - docs/sdks/account/README.md

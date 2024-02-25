@@ -26,56 +26,54 @@ namespace UnifiedTo
         /// <summary>
         /// Create a lead
         /// </summary>
-        Task<CreateCrmLeadResponse> CreateCrmLeadAsync(string connectionId, CrmLead? crmLead = null);
+        Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CreateCrmLeadSecurity security, string connectionId, CrmLead? crmLead = null);
 
         /// <summary>
         /// Retrieve a lead
         /// </summary>
-        Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCrmLeadResponse> GetCrmLeadAsync(GetCrmLeadSecurity security, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all leads
         /// </summary>
-        Task<ListCrmLeadsResponse> ListCrmLeadsAsync(ListCrmLeadsRequest request);
+        Task<ListCrmLeadsResponse> ListCrmLeadsAsync(ListCrmLeadsSecurity security, ListCrmLeadsRequest request);
 
         /// <summary>
         /// Update a lead
         /// </summary>
-        Task<PatchCrmLeadResponse> PatchCrmLeadAsync(string connectionId, string id, CrmLead? crmLead = null);
+        Task<PatchCrmLeadResponse> PatchCrmLeadAsync(PatchCrmLeadSecurity security, string connectionId, string id, CrmLead? crmLead = null);
 
         /// <summary>
         /// Remove a lead
         /// </summary>
-        Task<RemoveCrmLeadResponse> RemoveCrmLeadAsync(string connectionId, string id);
+        Task<RemoveCrmLeadResponse> RemoveCrmLeadAsync(RemoveCrmLeadSecurity security, string connectionId, string id);
 
         /// <summary>
         /// Update a lead
         /// </summary>
-        Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(string connectionId, string id, CrmLead? crmLead = null);
+        Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(UpdateCrmLeadSecurity security, string connectionId, string id, CrmLead? crmLead = null);
     }
 
     public class Lead: ILead
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.2";
-        private const string _sdkGenVersion = "2.269.0";
+        private const string _sdkVersion = "0.11.0";
+        private const string _sdkGenVersion = "2.272.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.2 2.269.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.11.0 2.272.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
-        private Func<Security>? _securitySource;
 
-        public Lead(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
+        public Lead(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
-            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateCrmLeadResponse> CreateCrmLeadAsync(string connectionId, CrmLead? crmLead = null)
+        public async Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CreateCrmLeadSecurity security, string connectionId, CrmLead? crmLead = null)
         {
             var request = new CreateCrmLeadRequest()
             {
@@ -94,11 +92,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -125,7 +119,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCrmLeadResponse> GetCrmLeadAsync(GetCrmLeadSecurity security, string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetCrmLeadRequest()
             {
@@ -139,11 +133,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -170,7 +160,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListCrmLeadsResponse> ListCrmLeadsAsync(ListCrmLeadsRequest request)
+        public async Task<ListCrmLeadsResponse> ListCrmLeadsAsync(ListCrmLeadsSecurity security, ListCrmLeadsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead", request);
@@ -178,11 +168,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -209,7 +195,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchCrmLeadResponse> PatchCrmLeadAsync(string connectionId, string id, CrmLead? crmLead = null)
+        public async Task<PatchCrmLeadResponse> PatchCrmLeadAsync(PatchCrmLeadSecurity security, string connectionId, string id, CrmLead? crmLead = null)
         {
             var request = new PatchCrmLeadRequest()
             {
@@ -229,11 +215,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -260,7 +242,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveCrmLeadResponse> RemoveCrmLeadAsync(string connectionId, string id)
+        public async Task<RemoveCrmLeadResponse> RemoveCrmLeadAsync(RemoveCrmLeadSecurity security, string connectionId, string id)
         {
             var request = new RemoveCrmLeadRequest()
             {
@@ -273,11 +255,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -294,7 +272,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(string connectionId, string id, CrmLead? crmLead = null)
+        public async Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(UpdateCrmLeadSecurity security, string connectionId, string id, CrmLead? crmLead = null)
         {
             var request = new UpdateCrmLeadRequest()
             {
@@ -314,11 +292,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 

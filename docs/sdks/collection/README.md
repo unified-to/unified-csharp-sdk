@@ -18,15 +18,16 @@ Create a collection
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Collection.CreateCommerceCollectionAsync(
+    security: new CreateCommerceCollectionSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     commerceCollection: new CommerceCollection() {
     Id = "<id>",
@@ -38,10 +39,11 @@ var res = await sdk.Collection.CreateCommerceCollectionAsync(
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `ConnectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
-| `CommerceCollection`                                                | [CommerceCollection](../../Models/Components/CommerceCollection.md) | :heavy_minus_sign:                                                  | A collection of items/products/services                             |
+| Parameter                                                                                                               | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                              | [UnifiedTo.Models.Requests.CreateCommerceCollectionSecurity](../../Models/Requests/CreateCommerceCollectionSecurity.md) | :heavy_check_mark:                                                                                                      | The security requirements to use for the request.                                                                       |
+| `ConnectionId`                                                                                                          | *string*                                                                                                                | :heavy_check_mark:                                                                                                      | ID of the connection                                                                                                    |
+| `CommerceCollection`                                                                                                    | [CommerceCollection](../../Models/Components/CommerceCollection.md)                                                     | :heavy_minus_sign:                                                                                                      | A collection of items/products/services                                                                                 |
 
 
 ### Response
@@ -57,15 +59,15 @@ Retrieve a collection
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Collection.GetCommerceCollectionAsync(
+    security: new GetCommerceCollectionSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -77,11 +79,12 @@ var res = await sdk.Collection.GetCommerceCollectionAsync(
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Collection             |
-| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+| Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                        | [UnifiedTo.Models.Requests.GetCommerceCollectionSecurity](../../Models/Requests/GetCommerceCollectionSecurity.md) | :heavy_check_mark:                                                                                                | The security requirements to use for the request.                                                                 |
+| `ConnectionId`                                                                                                    | *string*                                                                                                          | :heavy_check_mark:                                                                                                | ID of the connection                                                                                              |
+| `Id`                                                                                                              | *string*                                                                                                          | :heavy_check_mark:                                                                                                | ID of the Collection                                                                                              |
+| `Fields`                                                                                                          | List<*string*>                                                                                                    | :heavy_minus_sign:                                                                                                | Comma-delimited fields to return                                                                                  |
 
 
 ### Response
@@ -97,28 +100,30 @@ List all collections
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 ListCommerceCollectionsRequest req = new ListCommerceCollectionsRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Collection.ListCommerceCollectionsAsync(req);
+var res = await sdk.Collection.ListCommerceCollectionsAsync(
+    security: new ListCommerceCollectionsSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
+    req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
-| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `request`                                                                                 | [ListCommerceCollectionsRequest](../../Models/Requests/ListCommerceCollectionsRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                             | [ListCommerceCollectionsRequest](../../Models/Requests/ListCommerceCollectionsRequest.md)                             | :heavy_check_mark:                                                                                                    | The request object to use for the request.                                                                            |
+| `security`                                                                                                            | [UnifiedTo.Models.Requests.ListCommerceCollectionsSecurity](../../Models/Requests/ListCommerceCollectionsSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
 
 
 ### Response
@@ -134,15 +139,16 @@ Update a collection
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Collection.PatchCommerceCollectionAsync(
+    security: new PatchCommerceCollectionSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     commerceCollection: new CommerceCollection() {
@@ -155,11 +161,12 @@ var res = await sdk.Collection.PatchCommerceCollectionAsync(
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `ConnectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
-| `Id`                                                                | *string*                                                            | :heavy_check_mark:                                                  | ID of the Collection                                                |
-| `CommerceCollection`                                                | [CommerceCollection](../../Models/Components/CommerceCollection.md) | :heavy_minus_sign:                                                  | A collection of items/products/services                             |
+| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                            | [UnifiedTo.Models.Requests.PatchCommerceCollectionSecurity](../../Models/Requests/PatchCommerceCollectionSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
+| `ConnectionId`                                                                                                        | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the connection                                                                                                  |
+| `Id`                                                                                                                  | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the Collection                                                                                                  |
+| `CommerceCollection`                                                                                                  | [CommerceCollection](../../Models/Components/CommerceCollection.md)                                                   | :heavy_minus_sign:                                                                                                    | A collection of items/products/services                                                                               |
 
 
 ### Response
@@ -175,14 +182,14 @@ Remove a collection
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Collection.RemoveCommerceCollectionAsync(
+    security: new RemoveCommerceCollectionSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>");
 
@@ -191,10 +198,11 @@ var res = await sdk.Collection.RemoveCommerceCollectionAsync(
 
 ### Parameters
 
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Collection |
+| Parameter                                                                                                               | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                              | [UnifiedTo.Models.Requests.RemoveCommerceCollectionSecurity](../../Models/Requests/RemoveCommerceCollectionSecurity.md) | :heavy_check_mark:                                                                                                      | The security requirements to use for the request.                                                                       |
+| `ConnectionId`                                                                                                          | *string*                                                                                                                | :heavy_check_mark:                                                                                                      | ID of the connection                                                                                                    |
+| `Id`                                                                                                                    | *string*                                                                                                                | :heavy_check_mark:                                                                                                      | ID of the Collection                                                                                                    |
 
 
 ### Response
@@ -210,15 +218,16 @@ Update a collection
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+var sdk = new UnifiedToSDK();
 
 var res = await sdk.Collection.UpdateCommerceCollectionAsync(
+    security: new UpdateCommerceCollectionSecurity() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+},
     connectionId: "<value>",
     id: "<value>",
     commerceCollection: new CommerceCollection() {
@@ -231,11 +240,12 @@ var res = await sdk.Collection.UpdateCommerceCollectionAsync(
 
 ### Parameters
 
-| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| `ConnectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
-| `Id`                                                                | *string*                                                            | :heavy_check_mark:                                                  | ID of the Collection                                                |
-| `CommerceCollection`                                                | [CommerceCollection](../../Models/Components/CommerceCollection.md) | :heavy_minus_sign:                                                  | A collection of items/products/services                             |
+| Parameter                                                                                                               | Type                                                                                                                    | Required                                                                                                                | Description                                                                                                             |
+| ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `security`                                                                                                              | [UnifiedTo.Models.Requests.UpdateCommerceCollectionSecurity](../../Models/Requests/UpdateCommerceCollectionSecurity.md) | :heavy_check_mark:                                                                                                      | The security requirements to use for the request.                                                                       |
+| `ConnectionId`                                                                                                          | *string*                                                                                                                | :heavy_check_mark:                                                                                                      | ID of the connection                                                                                                    |
+| `Id`                                                                                                                    | *string*                                                                                                                | :heavy_check_mark:                                                                                                      | ID of the Collection                                                                                                    |
+| `CommerceCollection`                                                                                                    | [CommerceCollection](../../Models/Components/CommerceCollection.md)                                                     | :heavy_minus_sign:                                                                                                      | A collection of items/products/services                                                                                 |
 
 
 ### Response

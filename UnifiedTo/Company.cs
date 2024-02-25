@@ -26,71 +26,69 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(string connectionId, CrmCompany? crmCompany = null);
+        Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CreateCrmCompanySecurity security, string connectionId, CrmCompany? crmCompany = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsCompanyResponse> GetAtsCompanyAsync(GetAtsCompanySecurity security, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCrmCompanyResponse> GetCrmCompanyAsync(GetCrmCompanySecurity security, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all companies
         /// </summary>
-        Task<ListAtsCompaniesResponse> ListAtsCompaniesAsync(ListAtsCompaniesRequest request);
+        Task<ListAtsCompaniesResponse> ListAtsCompaniesAsync(ListAtsCompaniesSecurity security, ListAtsCompaniesRequest request);
 
         /// <summary>
         /// List all companies
         /// </summary>
-        Task<ListCrmCompaniesResponse> ListCrmCompaniesAsync(ListCrmCompaniesRequest request);
+        Task<ListCrmCompaniesResponse> ListCrmCompaniesAsync(ListCrmCompaniesSecurity security, ListCrmCompaniesRequest request);
 
         /// <summary>
         /// Retrieve enrichment information for a company
         /// </summary>
-        Task<ListEnrichCompaniesResponse> ListEnrichCompaniesAsync(string connectionId, string? domain = null, string? name = null);
+        Task<ListEnrichCompaniesResponse> ListEnrichCompaniesAsync(ListEnrichCompaniesSecurity security, string connectionId, string? domain = null, string? name = null);
 
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null);
+        Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(PatchCrmCompanySecurity security, string connectionId, string id, CrmCompany? crmCompany = null);
 
         /// <summary>
         /// Remove a company
         /// </summary>
-        Task<RemoveCrmCompanyResponse> RemoveCrmCompanyAsync(string connectionId, string id);
+        Task<RemoveCrmCompanyResponse> RemoveCrmCompanyAsync(RemoveCrmCompanySecurity security, string connectionId, string id);
 
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null);
+        Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(UpdateCrmCompanySecurity security, string connectionId, string id, CrmCompany? crmCompany = null);
     }
 
     public class Company: ICompany
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.2";
-        private const string _sdkGenVersion = "2.269.0";
+        private const string _sdkVersion = "0.11.0";
+        private const string _sdkGenVersion = "2.272.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.2 2.269.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.11.0 2.272.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
-        private Func<Security>? _securitySource;
 
-        public Company(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
+        public Company(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
-            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(string connectionId, CrmCompany? crmCompany = null)
+        public async Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CreateCrmCompanySecurity security, string connectionId, CrmCompany? crmCompany = null)
         {
             var request = new CreateCrmCompanyRequest()
             {
@@ -109,11 +107,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -140,7 +134,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsCompanyResponse> GetAtsCompanyAsync(GetAtsCompanySecurity security, string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetAtsCompanyRequest()
             {
@@ -154,11 +148,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -185,7 +175,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCrmCompanyResponse> GetCrmCompanyAsync(GetCrmCompanySecurity security, string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetCrmCompanyRequest()
             {
@@ -199,11 +189,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -230,7 +216,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListAtsCompaniesResponse> ListAtsCompaniesAsync(ListAtsCompaniesRequest request)
+        public async Task<ListAtsCompaniesResponse> ListAtsCompaniesAsync(ListAtsCompaniesSecurity security, ListAtsCompaniesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/company", request);
@@ -238,11 +224,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -269,7 +251,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListCrmCompaniesResponse> ListCrmCompaniesAsync(ListCrmCompaniesRequest request)
+        public async Task<ListCrmCompaniesResponse> ListCrmCompaniesAsync(ListCrmCompaniesSecurity security, ListCrmCompaniesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company", request);
@@ -277,11 +259,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -308,7 +286,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListEnrichCompaniesResponse> ListEnrichCompaniesAsync(string connectionId, string? domain = null, string? name = null)
+        public async Task<ListEnrichCompaniesResponse> ListEnrichCompaniesAsync(ListEnrichCompaniesSecurity security, string connectionId, string? domain = null, string? name = null)
         {
             var request = new ListEnrichCompaniesRequest()
             {
@@ -322,11 +300,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -353,7 +327,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null)
+        public async Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(PatchCrmCompanySecurity security, string connectionId, string id, CrmCompany? crmCompany = null)
         {
             var request = new PatchCrmCompanyRequest()
             {
@@ -373,11 +347,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -404,7 +374,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveCrmCompanyResponse> RemoveCrmCompanyAsync(string connectionId, string id)
+        public async Task<RemoveCrmCompanyResponse> RemoveCrmCompanyAsync(RemoveCrmCompanySecurity security, string connectionId, string id)
         {
             var request = new RemoveCrmCompanyRequest()
             {
@@ -417,11 +387,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -438,7 +404,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null)
+        public async Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(UpdateCrmCompanySecurity security, string connectionId, string id, CrmCompany? crmCompany = null)
         {
             var request = new UpdateCrmCompanyRequest()
             {
@@ -458,11 +424,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 

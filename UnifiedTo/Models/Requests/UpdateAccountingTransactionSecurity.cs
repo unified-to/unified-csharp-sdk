@@ -8,14 +8,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 #nullable enable
-namespace UnifiedTo.Models.Components
+namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Utils;
     
-    public class Security
+    public class UpdateAccountingTransactionSecurity
     {
 
         [SpeakeasyMetadata("security:scheme=true,type=apiKey,subType=header,name=authorization")]
-        public string? Jwt { get; set; }
+        public string Jwt { get; set; } = default!;
     }
 }

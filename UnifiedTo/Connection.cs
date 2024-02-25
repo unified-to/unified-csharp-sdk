@@ -26,56 +26,54 @@ namespace UnifiedTo
         /// <summary>
         /// Create connection
         /// </summary>
-        Task<CreateUnifiedConnectionResponse> CreateUnifiedConnectionAsync(Models.Components.Connection? request = null);
+        Task<CreateUnifiedConnectionResponse> CreateUnifiedConnectionAsync(CreateUnifiedConnectionSecurity security, Models.Components.Connection? request = null);
 
         /// <summary>
         /// Retrieve connection
         /// </summary>
-        Task<GetUnifiedConnectionResponse> GetUnifiedConnectionAsync(string id);
+        Task<GetUnifiedConnectionResponse> GetUnifiedConnectionAsync(GetUnifiedConnectionSecurity security, string id);
 
         /// <summary>
         /// List all connections
         /// </summary>
-        Task<ListUnifiedConnectionsResponse> ListUnifiedConnectionsAsync(ListUnifiedConnectionsRequest request);
+        Task<ListUnifiedConnectionsResponse> ListUnifiedConnectionsAsync(ListUnifiedConnectionsSecurity security, ListUnifiedConnectionsRequest request);
 
         /// <summary>
         /// Update connection
         /// </summary>
-        Task<PatchUnifiedConnectionResponse> PatchUnifiedConnectionAsync(string id, Models.Components.Connection? connection = null);
+        Task<PatchUnifiedConnectionResponse> PatchUnifiedConnectionAsync(PatchUnifiedConnectionSecurity security, string id, Models.Components.Connection? connection = null);
 
         /// <summary>
         /// Remove connection
         /// </summary>
-        Task<RemoveUnifiedConnectionResponse> RemoveUnifiedConnectionAsync(string id);
+        Task<RemoveUnifiedConnectionResponse> RemoveUnifiedConnectionAsync(RemoveUnifiedConnectionSecurity security, string id);
 
         /// <summary>
         /// Update connection
         /// </summary>
-        Task<UpdateUnifiedConnectionResponse> UpdateUnifiedConnectionAsync(string id, Models.Components.Connection? connection = null);
+        Task<UpdateUnifiedConnectionResponse> UpdateUnifiedConnectionAsync(UpdateUnifiedConnectionSecurity security, string id, Models.Components.Connection? connection = null);
     }
 
     public class Connection: IConnection
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.10.2";
-        private const string _sdkGenVersion = "2.269.0";
+        private const string _sdkVersion = "0.11.0";
+        private const string _sdkGenVersion = "2.272.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.10.2 2.269.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.11.0 2.272.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
-        private Func<Security>? _securitySource;
 
-        public Connection(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
+        public Connection(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
-            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateUnifiedConnectionResponse> CreateUnifiedConnectionAsync(Models.Components.Connection? request = null)
+        public async Task<CreateUnifiedConnectionResponse> CreateUnifiedConnectionAsync(CreateUnifiedConnectionSecurity security, Models.Components.Connection? request = null)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
 
@@ -90,11 +88,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -121,7 +115,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetUnifiedConnectionResponse> GetUnifiedConnectionAsync(string id)
+        public async Task<GetUnifiedConnectionResponse> GetUnifiedConnectionAsync(GetUnifiedConnectionSecurity security, string id)
         {
             var request = new GetUnifiedConnectionRequest()
             {
@@ -133,11 +127,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -164,7 +154,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListUnifiedConnectionsResponse> ListUnifiedConnectionsAsync(ListUnifiedConnectionsRequest request)
+        public async Task<ListUnifiedConnectionsResponse> ListUnifiedConnectionsAsync(ListUnifiedConnectionsSecurity security, ListUnifiedConnectionsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/unified/connection", request);
@@ -172,11 +162,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -203,7 +189,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchUnifiedConnectionResponse> PatchUnifiedConnectionAsync(string id, Models.Components.Connection? connection = null)
+        public async Task<PatchUnifiedConnectionResponse> PatchUnifiedConnectionAsync(PatchUnifiedConnectionSecurity security, string id, Models.Components.Connection? connection = null)
         {
             var request = new PatchUnifiedConnectionRequest()
             {
@@ -222,11 +208,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -253,7 +235,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveUnifiedConnectionResponse> RemoveUnifiedConnectionAsync(string id)
+        public async Task<RemoveUnifiedConnectionResponse> RemoveUnifiedConnectionAsync(RemoveUnifiedConnectionSecurity security, string id)
         {
             var request = new RemoveUnifiedConnectionRequest()
             {
@@ -265,11 +247,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -286,7 +264,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateUnifiedConnectionResponse> UpdateUnifiedConnectionAsync(string id, Models.Components.Connection? connection = null)
+        public async Task<UpdateUnifiedConnectionResponse> UpdateUnifiedConnectionAsync(UpdateUnifiedConnectionSecurity security, string id, Models.Components.Connection? connection = null)
         {
             var request = new UpdateUnifiedConnectionRequest()
             {
@@ -305,11 +283,7 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
-            if (_securitySource != null)
-            {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
-            }
+            var client = SecuritySerializer.Apply(_defaultClient, () => security);
 
             var httpResponse = await client.SendAsync(httpRequest);
 
