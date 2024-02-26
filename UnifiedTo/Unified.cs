@@ -32,7 +32,7 @@ namespace UnifiedTo
         /// Create webhook subscription
         /// 
         /// <remarks>
-        /// The data payload received by your server is described at https://docs.unified.to/unified/overview.  The `interval` field can be set as low as 15 minutes for paid accounts, and 60 minutes for free accounts.
+        /// The data payload received by your server is described at https://docs.unified.to/unified/overview. The `interval` field can be set as low as 1 minute for paid accounts, and 60 minutes for free accounts.
         /// </remarks>
         /// </summary>
         Task<CreateUnifiedWebhookResponse> CreateUnifiedWebhookAsync(CreateUnifiedWebhookSecurity security, Models.Components.Webhook? webhook = null, bool? includeAll = null);
@@ -130,10 +130,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.11.0";
+        private const string _sdkVersion = "0.11.1";
         private const string _sdkGenVersion = "2.272.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.11.0 2.272.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.11.1 2.272.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
 
