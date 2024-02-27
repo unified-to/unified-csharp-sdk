@@ -18,16 +18,15 @@ Create a location
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Location.CreateCommerceLocationAsync(
-    security: new CreateCommerceLocationSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     commerceLocation: new CommerceLocation() {
     Name = "<value>",
@@ -38,11 +37,10 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
 
 ### Parameters
 
-| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                          | [UnifiedTo.Models.Requests.CreateCommerceLocationSecurity](../../Models/Requests/CreateCommerceLocationSecurity.md) | :heavy_check_mark:                                                                                                  | The security requirements to use for the request.                                                                   |
-| `ConnectionId`                                                                                                      | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the connection                                                                                                |
-| `CommerceLocation`                                                                                                  | [CommerceLocation](../../Models/Components/CommerceLocation.md)                                                     | :heavy_minus_sign:                                                                                                  | N/A                                                                                                                 |
+| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
+| `CommerceLocation`                                              | [CommerceLocation](../../Models/Components/CommerceLocation.md) | :heavy_minus_sign:                                              | N/A                                                             |
 
 
 ### Response
@@ -58,15 +56,15 @@ Retrieve a location
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Location.GetCommerceLocationAsync(
-    security: new GetCommerceLocationSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -78,12 +76,11 @@ var res = await sdk.Location.GetCommerceLocationAsync(
 
 ### Parameters
 
-| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
-| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                    | [UnifiedTo.Models.Requests.GetCommerceLocationSecurity](../../Models/Requests/GetCommerceLocationSecurity.md) | :heavy_check_mark:                                                                                            | The security requirements to use for the request.                                                             |
-| `ConnectionId`                                                                                                | *string*                                                                                                      | :heavy_check_mark:                                                                                            | ID of the connection                                                                                          |
-| `Id`                                                                                                          | *string*                                                                                                      | :heavy_check_mark:                                                                                            | ID of the Location                                                                                            |
-| `Fields`                                                                                                      | List<*string*>                                                                                                | :heavy_minus_sign:                                                                                            | Comma-delimited fields to return                                                                              |
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Location               |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
 
 ### Response
@@ -99,30 +96,28 @@ List all locations
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 ListCommerceLocationsRequest req = new ListCommerceLocationsRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Location.ListCommerceLocationsAsync(
-    security: new ListCommerceLocationsSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    req);
+var res = await sdk.Location.ListCommerceLocationsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
-| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                         | [ListCommerceLocationsRequest](../../Models/Requests/ListCommerceLocationsRequest.md)                             | :heavy_check_mark:                                                                                                | The request object to use for the request.                                                                        |
-| `security`                                                                                                        | [UnifiedTo.Models.Requests.ListCommerceLocationsSecurity](../../Models/Requests/ListCommerceLocationsSecurity.md) | :heavy_check_mark:                                                                                                | The security requirements to use for the request.                                                                 |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListCommerceLocationsRequest](../../Models/Requests/ListCommerceLocationsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 
 ### Response
@@ -138,16 +133,15 @@ Update a location
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Location.PatchCommerceLocationAsync(
-    security: new PatchCommerceLocationSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     commerceLocation: new CommerceLocation() {
@@ -159,12 +153,11 @@ var res = await sdk.Location.PatchCommerceLocationAsync(
 
 ### Parameters
 
-| Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
-| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                        | [UnifiedTo.Models.Requests.PatchCommerceLocationSecurity](../../Models/Requests/PatchCommerceLocationSecurity.md) | :heavy_check_mark:                                                                                                | The security requirements to use for the request.                                                                 |
-| `ConnectionId`                                                                                                    | *string*                                                                                                          | :heavy_check_mark:                                                                                                | ID of the connection                                                                                              |
-| `Id`                                                                                                              | *string*                                                                                                          | :heavy_check_mark:                                                                                                | ID of the Location                                                                                                |
-| `CommerceLocation`                                                                                                | [CommerceLocation](../../Models/Components/CommerceLocation.md)                                                   | :heavy_minus_sign:                                                                                                | N/A                                                                                                               |
+| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
+| `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Location                                              |
+| `CommerceLocation`                                              | [CommerceLocation](../../Models/Components/CommerceLocation.md) | :heavy_minus_sign:                                              | N/A                                                             |
 
 
 ### Response
@@ -180,14 +173,14 @@ Remove a location
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Location.RemoveCommerceLocationAsync(
-    security: new RemoveCommerceLocationSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>");
 
@@ -196,11 +189,10 @@ var res = await sdk.Location.RemoveCommerceLocationAsync(
 
 ### Parameters
 
-| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                          | [UnifiedTo.Models.Requests.RemoveCommerceLocationSecurity](../../Models/Requests/RemoveCommerceLocationSecurity.md) | :heavy_check_mark:                                                                                                  | The security requirements to use for the request.                                                                   |
-| `ConnectionId`                                                                                                      | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the connection                                                                                                |
-| `Id`                                                                                                                | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the Location                                                                                                  |
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Location   |
 
 
 ### Response
@@ -216,16 +208,15 @@ Update a location
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Location.UpdateCommerceLocationAsync(
-    security: new UpdateCommerceLocationSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     commerceLocation: new CommerceLocation() {
@@ -237,12 +228,11 @@ var res = await sdk.Location.UpdateCommerceLocationAsync(
 
 ### Parameters
 
-| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                          | [UnifiedTo.Models.Requests.UpdateCommerceLocationSecurity](../../Models/Requests/UpdateCommerceLocationSecurity.md) | :heavy_check_mark:                                                                                                  | The security requirements to use for the request.                                                                   |
-| `ConnectionId`                                                                                                      | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the connection                                                                                                |
-| `Id`                                                                                                                | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the Location                                                                                                  |
-| `CommerceLocation`                                                                                                  | [CommerceLocation](../../Models/Components/CommerceLocation.md)                                                     | :heavy_minus_sign:                                                                                                  | N/A                                                                                                                 |
+| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
+| `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Location                                              |
+| `CommerceLocation`                                              | [CommerceLocation](../../Models/Components/CommerceLocation.md) | :heavy_minus_sign:                                              | N/A                                                             |
 
 
 ### Response

@@ -1,0 +1,15 @@
+# PaymentPayout
+
+
+## Fields
+
+| Field                                                                 | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `CreatedAt`                                                           | *string*                                                              | :heavy_minus_sign:                                                    | N/A                                                                   |
+| `Currency`                                                            | *string*                                                              | :heavy_minus_sign:                                                    | N/A                                                                   |
+| `Id`                                                                  | *string*                                                              | :heavy_minus_sign:                                                    | N/A                                                                   |
+| `Notes`                                                               | *string*                                                              | :heavy_minus_sign:                                                    | N/A                                                                   |
+| `Raw`                                                                 | Dictionary<String, *object*>                                          | :heavy_minus_sign:                                                    | N/A                                                                   |
+| `Status`                                                              | [PaymentPayoutStatus](../../Models/Components/PaymentPayoutStatus.md) | :heavy_minus_sign:                                                    | N/A                                                                   |
+| `TotalAmount`                                                         | *double*                                                              | :heavy_check_mark:                                                    | N/A                                                                   |
+| `UpdatedAt`                                                           | *string*                                                              | :heavy_minus_sign:                                                    | N/A                                                                   |

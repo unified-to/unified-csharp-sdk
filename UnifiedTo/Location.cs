@@ -26,54 +26,56 @@ namespace UnifiedTo
         /// <summary>
         /// Create a location
         /// </summary>
-        Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(CreateCommerceLocationSecurity security, string connectionId, CommerceLocation? commerceLocation = null);
+        Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(string connectionId, CommerceLocation? commerceLocation = null);
 
         /// <summary>
         /// Retrieve a location
         /// </summary>
-        Task<GetCommerceLocationResponse> GetCommerceLocationAsync(GetCommerceLocationSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetCommerceLocationResponse> GetCommerceLocationAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all locations
         /// </summary>
-        Task<ListCommerceLocationsResponse> ListCommerceLocationsAsync(ListCommerceLocationsSecurity security, ListCommerceLocationsRequest request);
+        Task<ListCommerceLocationsResponse> ListCommerceLocationsAsync(ListCommerceLocationsRequest request);
 
         /// <summary>
         /// Update a location
         /// </summary>
-        Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(PatchCommerceLocationSecurity security, string connectionId, string id, CommerceLocation? commerceLocation = null);
+        Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null);
 
         /// <summary>
         /// Remove a location
         /// </summary>
-        Task<RemoveCommerceLocationResponse> RemoveCommerceLocationAsync(RemoveCommerceLocationSecurity security, string connectionId, string id);
+        Task<RemoveCommerceLocationResponse> RemoveCommerceLocationAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a location
         /// </summary>
-        Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(UpdateCommerceLocationSecurity security, string connectionId, string id, CommerceLocation? commerceLocation = null);
+        Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null);
     }
 
     public class Location: ILocation
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.11.1";
-        private const string _sdkGenVersion = "2.272.4";
+        private const string _sdkVersion = "0.12.0";
+        private const string _sdkGenVersion = "2.272.7";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.11.1 2.272.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.0 2.272.7 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
+        private Func<Security>? _securitySource;
 
-        public Location(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
+        public Location(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(CreateCommerceLocationSecurity security, string connectionId, CommerceLocation? commerceLocation = null)
+        public async Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(string connectionId, CommerceLocation? commerceLocation = null)
         {
             var request = new CreateCommerceLocationRequest()
             {
@@ -92,7 +94,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -119,7 +125,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetCommerceLocationResponse> GetCommerceLocationAsync(GetCommerceLocationSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCommerceLocationResponse> GetCommerceLocationAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetCommerceLocationRequest()
             {
@@ -133,7 +139,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -160,7 +170,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListCommerceLocationsResponse> ListCommerceLocationsAsync(ListCommerceLocationsSecurity security, ListCommerceLocationsRequest request)
+        public async Task<ListCommerceLocationsResponse> ListCommerceLocationsAsync(ListCommerceLocationsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/location", request);
@@ -168,7 +178,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -195,7 +209,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(PatchCommerceLocationSecurity security, string connectionId, string id, CommerceLocation? commerceLocation = null)
+        public async Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null)
         {
             var request = new PatchCommerceLocationRequest()
             {
@@ -215,7 +229,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -242,7 +260,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveCommerceLocationResponse> RemoveCommerceLocationAsync(RemoveCommerceLocationSecurity security, string connectionId, string id)
+        public async Task<RemoveCommerceLocationResponse> RemoveCommerceLocationAsync(string connectionId, string id)
         {
             var request = new RemoveCommerceLocationRequest()
             {
@@ -255,7 +273,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -272,7 +294,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(UpdateCommerceLocationSecurity security, string connectionId, string id, CommerceLocation? commerceLocation = null)
+        public async Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null)
         {
             var request = new UpdateCommerceLocationRequest()
             {
@@ -292,7 +314,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 

@@ -23,16 +23,18 @@ namespace UnifiedTo.Models.Components
         AccountingContact,
         [JsonProperty("accounting_invoice")]
         AccountingInvoice,
-        [JsonProperty("accounting_payment")]
-        AccountingPayment,
         [JsonProperty("accounting_taxrate")]
         AccountingTaxrate,
         [JsonProperty("accounting_organization")]
         AccountingOrganization,
-        [JsonProperty("accounting_payout")]
-        AccountingPayout,
-        [JsonProperty("accounting_refund")]
-        AccountingRefund,
+        [JsonProperty("payment_payment")]
+        PaymentPayment,
+        [JsonProperty("payment_link")]
+        PaymentLink,
+        [JsonProperty("payment_payout")]
+        PaymentPayout,
+        [JsonProperty("payment_refund")]
+        PaymentRefund,
         [JsonProperty("commerce_item")]
         CommerceItem,
         [JsonProperty("commerce_collection")]

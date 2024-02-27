@@ -18,16 +18,15 @@ Create an inventory
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Inventory.CreateCommerceInventoryAsync(
-    security: new CreateCommerceInventorySecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     commerceInventory: new CommerceInventory() {
     Available = 5165.08D,
@@ -38,11 +37,10 @@ var res = await sdk.Inventory.CreateCommerceInventoryAsync(
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.CreateCommerceInventorySecurity](../../Models/Requests/CreateCommerceInventorySecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
-| `ConnectionId`                                                                                                        | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the connection                                                                                                  |
-| `CommerceInventory`                                                                                                   | [CommerceInventory](../../Models/Components/CommerceInventory.md)                                                     | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response
@@ -58,15 +56,15 @@ Retrieve an inventory
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Inventory.GetCommerceInventoryAsync(
-    security: new GetCommerceInventorySecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -78,12 +76,11 @@ var res = await sdk.Inventory.GetCommerceInventoryAsync(
 
 ### Parameters
 
-| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                      | [UnifiedTo.Models.Requests.GetCommerceInventorySecurity](../../Models/Requests/GetCommerceInventorySecurity.md) | :heavy_check_mark:                                                                                              | The security requirements to use for the request.                                                               |
-| `ConnectionId`                                                                                                  | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the connection                                                                                            |
-| `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Inventory                                                                                             |
-| `Fields`                                                                                                        | List<*string*>                                                                                                  | :heavy_minus_sign:                                                                                              | Comma-delimited fields to return                                                                                |
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Inventory              |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
 
 ### Response
@@ -99,30 +96,28 @@ List all inventories
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 ListCommerceInventoriesRequest req = new ListCommerceInventoriesRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Inventory.ListCommerceInventoriesAsync(
-    security: new ListCommerceInventoriesSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    req);
+var res = await sdk.Inventory.ListCommerceInventoriesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                             | [ListCommerceInventoriesRequest](../../Models/Requests/ListCommerceInventoriesRequest.md)                             | :heavy_check_mark:                                                                                                    | The request object to use for the request.                                                                            |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.ListCommerceInventoriesSecurity](../../Models/Requests/ListCommerceInventoriesSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [ListCommerceInventoriesRequest](../../Models/Requests/ListCommerceInventoriesRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 
 ### Response
@@ -138,16 +133,15 @@ Update an inventory
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Inventory.PatchCommerceInventoryAsync(
-    security: new PatchCommerceInventorySecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     commerceInventory: new CommerceInventory() {
@@ -159,12 +153,11 @@ var res = await sdk.Inventory.PatchCommerceInventoryAsync(
 
 ### Parameters
 
-| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                          | [UnifiedTo.Models.Requests.PatchCommerceInventorySecurity](../../Models/Requests/PatchCommerceInventorySecurity.md) | :heavy_check_mark:                                                                                                  | The security requirements to use for the request.                                                                   |
-| `ConnectionId`                                                                                                      | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the connection                                                                                                |
-| `Id`                                                                                                                | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the Inventory                                                                                                 |
-| `CommerceInventory`                                                                                                 | [CommerceInventory](../../Models/Components/CommerceInventory.md)                                                   | :heavy_minus_sign:                                                                                                  | N/A                                                                                                                 |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Inventory                                               |
+| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response
@@ -180,14 +173,14 @@ Remove an inventory
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Inventory.RemoveCommerceInventoryAsync(
-    security: new RemoveCommerceInventorySecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>");
 
@@ -196,11 +189,10 @@ var res = await sdk.Inventory.RemoveCommerceInventoryAsync(
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.RemoveCommerceInventorySecurity](../../Models/Requests/RemoveCommerceInventorySecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
-| `ConnectionId`                                                                                                        | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the connection                                                                                                  |
-| `Id`                                                                                                                  | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the Inventory                                                                                                   |
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Inventory  |
 
 
 ### Response
@@ -216,16 +208,15 @@ Update an inventory
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
-    security: new UpdateCommerceInventorySecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     commerceInventory: new CommerceInventory() {
@@ -237,12 +228,11 @@ var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.UpdateCommerceInventorySecurity](../../Models/Requests/UpdateCommerceInventorySecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
-| `ConnectionId`                                                                                                        | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the connection                                                                                                  |
-| `Id`                                                                                                                  | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the Inventory                                                                                                   |
-| `CommerceInventory`                                                                                                   | [CommerceInventory](../../Models/Components/CommerceInventory.md)                                                     | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Inventory                                               |
+| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response

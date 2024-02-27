@@ -18,16 +18,15 @@ Create a invoice
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Invoice.CreateAccountingInvoiceAsync(
-    security: new CreateAccountingInvoiceSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     accountingInvoice: new AccountingInvoice() {});
 
@@ -36,11 +35,10 @@ var res = await sdk.Invoice.CreateAccountingInvoiceAsync(
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.CreateAccountingInvoiceSecurity](../../Models/Requests/CreateAccountingInvoiceSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
-| `ConnectionId`                                                                                                        | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the connection                                                                                                  |
-| `AccountingInvoice`                                                                                                   | [AccountingInvoice](../../Models/Components/AccountingInvoice.md)                                                     | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `AccountingInvoice`                                               | [AccountingInvoice](../../Models/Components/AccountingInvoice.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response
@@ -56,15 +54,15 @@ Retrieve a invoice
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Invoice.GetAccountingInvoiceAsync(
-    security: new GetAccountingInvoiceSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -76,12 +74,11 @@ var res = await sdk.Invoice.GetAccountingInvoiceAsync(
 
 ### Parameters
 
-| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                      | [UnifiedTo.Models.Requests.GetAccountingInvoiceSecurity](../../Models/Requests/GetAccountingInvoiceSecurity.md) | :heavy_check_mark:                                                                                              | The security requirements to use for the request.                                                               |
-| `ConnectionId`                                                                                                  | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the connection                                                                                            |
-| `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Invoice                                                                                               |
-| `Fields`                                                                                                        | List<*string*>                                                                                                  | :heavy_minus_sign:                                                                                              | Comma-delimited fields to return                                                                                |
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Invoice                |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
 
 ### Response
@@ -97,30 +94,28 @@ List all invoices
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 ListAccountingInvoicesRequest req = new ListAccountingInvoicesRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Invoice.ListAccountingInvoicesAsync(
-    security: new ListAccountingInvoicesSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    req);
+var res = await sdk.Invoice.ListAccountingInvoicesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                           | [ListAccountingInvoicesRequest](../../Models/Requests/ListAccountingInvoicesRequest.md)                             | :heavy_check_mark:                                                                                                  | The request object to use for the request.                                                                          |
-| `security`                                                                                                          | [UnifiedTo.Models.Requests.ListAccountingInvoicesSecurity](../../Models/Requests/ListAccountingInvoicesSecurity.md) | :heavy_check_mark:                                                                                                  | The security requirements to use for the request.                                                                   |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListAccountingInvoicesRequest](../../Models/Requests/ListAccountingInvoicesRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 
 ### Response
@@ -136,16 +131,15 @@ Update a invoice
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Invoice.PatchAccountingInvoiceAsync(
-    security: new PatchAccountingInvoiceSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     accountingInvoice: new AccountingInvoice() {});
@@ -155,12 +149,11 @@ var res = await sdk.Invoice.PatchAccountingInvoiceAsync(
 
 ### Parameters
 
-| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                          | [UnifiedTo.Models.Requests.PatchAccountingInvoiceSecurity](../../Models/Requests/PatchAccountingInvoiceSecurity.md) | :heavy_check_mark:                                                                                                  | The security requirements to use for the request.                                                                   |
-| `ConnectionId`                                                                                                      | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the connection                                                                                                |
-| `Id`                                                                                                                | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the Invoice                                                                                                   |
-| `AccountingInvoice`                                                                                                 | [AccountingInvoice](../../Models/Components/AccountingInvoice.md)                                                   | :heavy_minus_sign:                                                                                                  | N/A                                                                                                                 |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Invoice                                                 |
+| `AccountingInvoice`                                               | [AccountingInvoice](../../Models/Components/AccountingInvoice.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response
@@ -176,14 +169,14 @@ Remove a invoice
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Invoice.RemoveAccountingInvoiceAsync(
-    security: new RemoveAccountingInvoiceSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>");
 
@@ -192,11 +185,10 @@ var res = await sdk.Invoice.RemoveAccountingInvoiceAsync(
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.RemoveAccountingInvoiceSecurity](../../Models/Requests/RemoveAccountingInvoiceSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
-| `ConnectionId`                                                                                                        | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the connection                                                                                                  |
-| `Id`                                                                                                                  | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the Invoice                                                                                                     |
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Invoice    |
 
 
 ### Response
@@ -212,16 +204,15 @@ Update a invoice
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Invoice.UpdateAccountingInvoiceAsync(
-    security: new UpdateAccountingInvoiceSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     accountingInvoice: new AccountingInvoice() {});
@@ -231,12 +222,11 @@ var res = await sdk.Invoice.UpdateAccountingInvoiceAsync(
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.UpdateAccountingInvoiceSecurity](../../Models/Requests/UpdateAccountingInvoiceSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
-| `ConnectionId`                                                                                                        | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the connection                                                                                                  |
-| `Id`                                                                                                                  | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the Invoice                                                                                                     |
-| `AccountingInvoice`                                                                                                   | [AccountingInvoice](../../Models/Components/AccountingInvoice.md)                                                     | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Invoice                                                 |
+| `AccountingInvoice`                                               | [AccountingInvoice](../../Models/Components/AccountingInvoice.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response

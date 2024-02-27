@@ -18,16 +18,15 @@ Create a pipeline
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Pipeline.CreateCrmPipelineAsync(
-    security: new CreateCrmPipelineSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     crmPipeline: new CrmPipeline() {});
 
@@ -36,11 +35,10 @@ var res = await sdk.Pipeline.CreateCrmPipelineAsync(
 
 ### Parameters
 
-| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                | [UnifiedTo.Models.Requests.CreateCrmPipelineSecurity](../../Models/Requests/CreateCrmPipelineSecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
-| `ConnectionId`                                                                                            | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the connection                                                                                      |
-| `CrmPipeline`                                                                                             | [CrmPipeline](../../Models/Components/CrmPipeline.md)                                                     | :heavy_minus_sign:                                                                                        | N/A                                                                                                       |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
+| `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
 
 ### Response
@@ -56,15 +54,15 @@ Retrieve a pipeline
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Pipeline.GetCrmPipelineAsync(
-    security: new GetCrmPipelineSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -76,12 +74,11 @@ var res = await sdk.Pipeline.GetCrmPipelineAsync(
 
 ### Parameters
 
-| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `security`                                                                                          | [UnifiedTo.Models.Requests.GetCrmPipelineSecurity](../../Models/Requests/GetCrmPipelineSecurity.md) | :heavy_check_mark:                                                                                  | The security requirements to use for the request.                                                   |
-| `ConnectionId`                                                                                      | *string*                                                                                            | :heavy_check_mark:                                                                                  | ID of the connection                                                                                |
-| `Id`                                                                                                | *string*                                                                                            | :heavy_check_mark:                                                                                  | ID of the Pipeline                                                                                  |
-| `Fields`                                                                                            | List<*string*>                                                                                      | :heavy_minus_sign:                                                                                  | Comma-delimited fields to return                                                                    |
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Pipeline               |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
 
 ### Response
@@ -97,30 +94,28 @@ List all pipelines
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 ListCrmPipelinesRequest req = new ListCrmPipelinesRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Pipeline.ListCrmPipelinesAsync(
-    security: new ListCrmPipelinesSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    req);
+var res = await sdk.Pipeline.ListCrmPipelinesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
-| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                               | [ListCrmPipelinesRequest](../../Models/Requests/ListCrmPipelinesRequest.md)                             | :heavy_check_mark:                                                                                      | The request object to use for the request.                                                              |
-| `security`                                                                                              | [UnifiedTo.Models.Requests.ListCrmPipelinesSecurity](../../Models/Requests/ListCrmPipelinesSecurity.md) | :heavy_check_mark:                                                                                      | The security requirements to use for the request.                                                       |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListCrmPipelinesRequest](../../Models/Requests/ListCrmPipelinesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 
 ### Response
@@ -136,16 +131,15 @@ Update a pipeline
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Pipeline.PatchCrmPipelineAsync(
-    security: new PatchCrmPipelineSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     crmPipeline: new CrmPipeline() {});
@@ -155,12 +149,11 @@ var res = await sdk.Pipeline.PatchCrmPipelineAsync(
 
 ### Parameters
 
-| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
-| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                              | [UnifiedTo.Models.Requests.PatchCrmPipelineSecurity](../../Models/Requests/PatchCrmPipelineSecurity.md) | :heavy_check_mark:                                                                                      | The security requirements to use for the request.                                                       |
-| `ConnectionId`                                                                                          | *string*                                                                                                | :heavy_check_mark:                                                                                      | ID of the connection                                                                                    |
-| `Id`                                                                                                    | *string*                                                                                                | :heavy_check_mark:                                                                                      | ID of the Pipeline                                                                                      |
-| `CrmPipeline`                                                                                           | [CrmPipeline](../../Models/Components/CrmPipeline.md)                                                   | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
+| `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Pipeline                                    |
+| `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
 
 ### Response
@@ -176,14 +169,14 @@ Remove a pipeline
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Pipeline.RemoveCrmPipelineAsync(
-    security: new RemoveCrmPipelineSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>");
 
@@ -192,11 +185,10 @@ var res = await sdk.Pipeline.RemoveCrmPipelineAsync(
 
 ### Parameters
 
-| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                | [UnifiedTo.Models.Requests.RemoveCrmPipelineSecurity](../../Models/Requests/RemoveCrmPipelineSecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
-| `ConnectionId`                                                                                            | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the connection                                                                                      |
-| `Id`                                                                                                      | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the Pipeline                                                                                        |
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Pipeline   |
 
 
 ### Response
@@ -212,16 +204,15 @@ Update a pipeline
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Pipeline.UpdateCrmPipelineAsync(
-    security: new UpdateCrmPipelineSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     crmPipeline: new CrmPipeline() {});
@@ -231,12 +222,11 @@ var res = await sdk.Pipeline.UpdateCrmPipelineAsync(
 
 ### Parameters
 
-| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                | [UnifiedTo.Models.Requests.UpdateCrmPipelineSecurity](../../Models/Requests/UpdateCrmPipelineSecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
-| `ConnectionId`                                                                                            | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the connection                                                                                      |
-| `Id`                                                                                                      | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the Pipeline                                                                                        |
-| `CrmPipeline`                                                                                             | [CrmPipeline](../../Models/Components/CrmPipeline.md)                                                     | :heavy_minus_sign:                                                                                        | N/A                                                                                                       |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
+| `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Pipeline                                    |
+| `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
 
 ### Response

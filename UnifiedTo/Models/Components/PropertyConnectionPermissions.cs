@@ -33,20 +33,24 @@ namespace UnifiedTo.Models.Components
         AccountingContactRead,
         [JsonProperty("accounting_contact_write")]
         AccountingContactWrite,
-        [JsonProperty("accounting_payment_read")]
-        AccountingPaymentRead,
-        [JsonProperty("accounting_payment_write")]
-        AccountingPaymentWrite,
         [JsonProperty("accounting_taxrate_read")]
         AccountingTaxrateRead,
         [JsonProperty("accounting_taxrate_write")]
         AccountingTaxrateWrite,
         [JsonProperty("accounting_organization_read")]
         AccountingOrganizationRead,
-        [JsonProperty("accounting_payout_read")]
-        AccountingPayoutRead,
-        [JsonProperty("accounting_refund_read")]
-        AccountingRefundRead,
+        [JsonProperty("payment_payment_read")]
+        PaymentPaymentRead,
+        [JsonProperty("payment_payment_write")]
+        PaymentPaymentWrite,
+        [JsonProperty("payment_payout_read")]
+        PaymentPayoutRead,
+        [JsonProperty("payment_refund_read")]
+        PaymentRefundRead,
+        [JsonProperty("payment_link_read")]
+        PaymentLinkRead,
+        [JsonProperty("payment_link_write")]
+        PaymentLinkWrite,
         [JsonProperty("commerce_item_read")]
         CommerceItemRead,
         [JsonProperty("commerce_item_write")]

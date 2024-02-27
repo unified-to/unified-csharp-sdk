@@ -18,16 +18,15 @@ Create a taxrate
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
-    security: new CreateAccountingTaxrateSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     accountingTaxrate: new AccountingTaxrate() {
     Name = "<value>",
@@ -39,11 +38,10 @@ var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.CreateAccountingTaxrateSecurity](../../Models/Requests/CreateAccountingTaxrateSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
-| `ConnectionId`                                                                                                        | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the connection                                                                                                  |
-| `AccountingTaxrate`                                                                                                   | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md)                                                     | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `AccountingTaxrate`                                               | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response
@@ -59,15 +57,15 @@ Retrieve a taxrate
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Taxrate.GetAccountingTaxrateAsync(
-    security: new GetAccountingTaxrateSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -79,12 +77,11 @@ var res = await sdk.Taxrate.GetAccountingTaxrateAsync(
 
 ### Parameters
 
-| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                      | [UnifiedTo.Models.Requests.GetAccountingTaxrateSecurity](../../Models/Requests/GetAccountingTaxrateSecurity.md) | :heavy_check_mark:                                                                                              | The security requirements to use for the request.                                                               |
-| `ConnectionId`                                                                                                  | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the connection                                                                                            |
-| `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Taxrate                                                                                               |
-| `Fields`                                                                                                        | List<*string*>                                                                                                  | :heavy_minus_sign:                                                                                              | Comma-delimited fields to return                                                                                |
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Taxrate                |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
 
 ### Response
@@ -100,30 +97,28 @@ List all taxrates
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 ListAccountingTaxratesRequest req = new ListAccountingTaxratesRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Taxrate.ListAccountingTaxratesAsync(
-    security: new ListAccountingTaxratesSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    req);
+var res = await sdk.Taxrate.ListAccountingTaxratesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                           | [ListAccountingTaxratesRequest](../../Models/Requests/ListAccountingTaxratesRequest.md)                             | :heavy_check_mark:                                                                                                  | The request object to use for the request.                                                                          |
-| `security`                                                                                                          | [UnifiedTo.Models.Requests.ListAccountingTaxratesSecurity](../../Models/Requests/ListAccountingTaxratesSecurity.md) | :heavy_check_mark:                                                                                                  | The security requirements to use for the request.                                                                   |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListAccountingTaxratesRequest](../../Models/Requests/ListAccountingTaxratesRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 
 ### Response
@@ -139,16 +134,15 @@ Update a taxrate
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Taxrate.PatchAccountingTaxrateAsync(
-    security: new PatchAccountingTaxrateSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     accountingTaxrate: new AccountingTaxrate() {
@@ -161,12 +155,11 @@ var res = await sdk.Taxrate.PatchAccountingTaxrateAsync(
 
 ### Parameters
 
-| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                          | [UnifiedTo.Models.Requests.PatchAccountingTaxrateSecurity](../../Models/Requests/PatchAccountingTaxrateSecurity.md) | :heavy_check_mark:                                                                                                  | The security requirements to use for the request.                                                                   |
-| `ConnectionId`                                                                                                      | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the connection                                                                                                |
-| `Id`                                                                                                                | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the Taxrate                                                                                                   |
-| `AccountingTaxrate`                                                                                                 | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md)                                                   | :heavy_minus_sign:                                                                                                  | N/A                                                                                                                 |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Taxrate                                                 |
+| `AccountingTaxrate`                                               | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response
@@ -182,14 +175,14 @@ Remove a taxrate
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Taxrate.RemoveAccountingTaxrateAsync(
-    security: new RemoveAccountingTaxrateSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>");
 
@@ -198,11 +191,10 @@ var res = await sdk.Taxrate.RemoveAccountingTaxrateAsync(
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.RemoveAccountingTaxrateSecurity](../../Models/Requests/RemoveAccountingTaxrateSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
-| `ConnectionId`                                                                                                        | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the connection                                                                                                  |
-| `Id`                                                                                                                  | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the Taxrate                                                                                                     |
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Taxrate    |
 
 
 ### Response
@@ -218,16 +210,15 @@ Update a taxrate
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Taxrate.UpdateAccountingTaxrateAsync(
-    security: new UpdateAccountingTaxrateSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     accountingTaxrate: new AccountingTaxrate() {
@@ -240,12 +231,11 @@ var res = await sdk.Taxrate.UpdateAccountingTaxrateAsync(
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.UpdateAccountingTaxrateSecurity](../../Models/Requests/UpdateAccountingTaxrateSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
-| `ConnectionId`                                                                                                        | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the connection                                                                                                  |
-| `Id`                                                                                                                  | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the Taxrate                                                                                                     |
-| `AccountingTaxrate`                                                                                                   | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md)                                                     | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
+| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Taxrate                                                 |
+| `AccountingTaxrate`                                               | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
 
 ### Response

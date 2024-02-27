@@ -26,54 +26,56 @@ namespace UnifiedTo
         /// <summary>
         /// Create a scorecard
         /// </summary>
-        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(CreateAtsScorecardSecurity security, string connectionId, AtsScorecard? atsScorecard = null);
+        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(string connectionId, AtsScorecard? atsScorecard = null);
 
         /// <summary>
         /// Retrieve a scorecard
         /// </summary>
-        Task<GetAtsScorecardResponse> GetAtsScorecardAsync(GetAtsScorecardSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all scorecards
         /// </summary>
-        Task<ListAtsScorecardsResponse> ListAtsScorecardsAsync(ListAtsScorecardsSecurity security, ListAtsScorecardsRequest request);
+        Task<ListAtsScorecardsResponse> ListAtsScorecardsAsync(ListAtsScorecardsRequest request);
 
         /// <summary>
         /// Update a scorecard
         /// </summary>
-        Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(PatchAtsScorecardSecurity security, string connectionId, string id, AtsScorecard? atsScorecard = null);
+        Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null);
 
         /// <summary>
         /// Remove a scorecard
         /// </summary>
-        Task<RemoveAtsScorecardResponse> RemoveAtsScorecardAsync(RemoveAtsScorecardSecurity security, string connectionId, string id);
+        Task<RemoveAtsScorecardResponse> RemoveAtsScorecardAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a scorecard
         /// </summary>
-        Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(UpdateAtsScorecardSecurity security, string connectionId, string id, AtsScorecard? atsScorecard = null);
+        Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null);
     }
 
     public class Scorecard: IScorecard
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.11.1";
-        private const string _sdkGenVersion = "2.272.4";
+        private const string _sdkVersion = "0.12.0";
+        private const string _sdkGenVersion = "2.272.7";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.11.1 2.272.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.0 2.272.7 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
+        private Func<Security>? _securitySource;
 
-        public Scorecard(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
+        public Scorecard(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(CreateAtsScorecardSecurity security, string connectionId, AtsScorecard? atsScorecard = null)
+        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(string connectionId, AtsScorecard? atsScorecard = null)
         {
             var request = new CreateAtsScorecardRequest()
             {
@@ -92,7 +94,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -119,7 +125,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetAtsScorecardResponse> GetAtsScorecardAsync(GetAtsScorecardSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetAtsScorecardRequest()
             {
@@ -133,7 +139,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -160,7 +170,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListAtsScorecardsResponse> ListAtsScorecardsAsync(ListAtsScorecardsSecurity security, ListAtsScorecardsRequest request)
+        public async Task<ListAtsScorecardsResponse> ListAtsScorecardsAsync(ListAtsScorecardsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard", request);
@@ -168,7 +178,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -195,7 +209,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(PatchAtsScorecardSecurity security, string connectionId, string id, AtsScorecard? atsScorecard = null)
+        public async Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null)
         {
             var request = new PatchAtsScorecardRequest()
             {
@@ -215,7 +229,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -242,7 +260,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveAtsScorecardResponse> RemoveAtsScorecardAsync(RemoveAtsScorecardSecurity security, string connectionId, string id)
+        public async Task<RemoveAtsScorecardResponse> RemoveAtsScorecardAsync(string connectionId, string id)
         {
             var request = new RemoveAtsScorecardRequest()
             {
@@ -255,7 +273,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -272,7 +294,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(UpdateAtsScorecardSecurity security, string connectionId, string id, AtsScorecard? atsScorecard = null)
+        public async Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null)
         {
             var request = new UpdateAtsScorecardRequest()
             {
@@ -292,7 +314,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 

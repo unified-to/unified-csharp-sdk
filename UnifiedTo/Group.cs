@@ -26,54 +26,56 @@ namespace UnifiedTo
         /// <summary>
         /// Create a group
         /// </summary>
-        Task<CreateHrisGroupResponse> CreateHrisGroupAsync(CreateHrisGroupSecurity security, string connectionId, HrisGroup? hrisGroup = null);
+        Task<CreateHrisGroupResponse> CreateHrisGroupAsync(string connectionId, HrisGroup? hrisGroup = null);
 
         /// <summary>
         /// Retrieve a group
         /// </summary>
-        Task<GetHrisGroupResponse> GetHrisGroupAsync(GetHrisGroupSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all groups
         /// </summary>
-        Task<ListHrisGroupsResponse> ListHrisGroupsAsync(ListHrisGroupsSecurity security, ListHrisGroupsRequest request);
+        Task<ListHrisGroupsResponse> ListHrisGroupsAsync(ListHrisGroupsRequest request);
 
         /// <summary>
         /// Update a group
         /// </summary>
-        Task<PatchHrisGroupResponse> PatchHrisGroupAsync(PatchHrisGroupSecurity security, string connectionId, string id, HrisGroup? hrisGroup = null);
+        Task<PatchHrisGroupResponse> PatchHrisGroupAsync(string connectionId, string id, HrisGroup? hrisGroup = null);
 
         /// <summary>
         /// Remove a group
         /// </summary>
-        Task<RemoveHrisGroupResponse> RemoveHrisGroupAsync(RemoveHrisGroupSecurity security, string connectionId, string id);
+        Task<RemoveHrisGroupResponse> RemoveHrisGroupAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a group
         /// </summary>
-        Task<UpdateHrisGroupResponse> UpdateHrisGroupAsync(UpdateHrisGroupSecurity security, string connectionId, string id, HrisGroup? hrisGroup = null);
+        Task<UpdateHrisGroupResponse> UpdateHrisGroupAsync(string connectionId, string id, HrisGroup? hrisGroup = null);
     }
 
     public class Group: IGroup
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.11.1";
-        private const string _sdkGenVersion = "2.272.4";
+        private const string _sdkVersion = "0.12.0";
+        private const string _sdkGenVersion = "2.272.7";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.11.1 2.272.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.0 2.272.7 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
+        private Func<Security>? _securitySource;
 
-        public Group(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
+        public Group(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateHrisGroupResponse> CreateHrisGroupAsync(CreateHrisGroupSecurity security, string connectionId, HrisGroup? hrisGroup = null)
+        public async Task<CreateHrisGroupResponse> CreateHrisGroupAsync(string connectionId, HrisGroup? hrisGroup = null)
         {
             var request = new CreateHrisGroupRequest()
             {
@@ -92,7 +94,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -119,7 +125,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetHrisGroupResponse> GetHrisGroupAsync(GetHrisGroupSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetHrisGroupRequest()
             {
@@ -133,7 +139,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -160,7 +170,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListHrisGroupsResponse> ListHrisGroupsAsync(ListHrisGroupsSecurity security, ListHrisGroupsRequest request)
+        public async Task<ListHrisGroupsResponse> ListHrisGroupsAsync(ListHrisGroupsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/group", request);
@@ -168,7 +178,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -195,7 +209,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchHrisGroupResponse> PatchHrisGroupAsync(PatchHrisGroupSecurity security, string connectionId, string id, HrisGroup? hrisGroup = null)
+        public async Task<PatchHrisGroupResponse> PatchHrisGroupAsync(string connectionId, string id, HrisGroup? hrisGroup = null)
         {
             var request = new PatchHrisGroupRequest()
             {
@@ -215,7 +229,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -242,7 +260,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveHrisGroupResponse> RemoveHrisGroupAsync(RemoveHrisGroupSecurity security, string connectionId, string id)
+        public async Task<RemoveHrisGroupResponse> RemoveHrisGroupAsync(string connectionId, string id)
         {
             var request = new RemoveHrisGroupRequest()
             {
@@ -255,7 +273,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -272,7 +294,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateHrisGroupResponse> UpdateHrisGroupAsync(UpdateHrisGroupSecurity security, string connectionId, string id, HrisGroup? hrisGroup = null)
+        public async Task<UpdateHrisGroupResponse> UpdateHrisGroupAsync(string connectionId, string id, HrisGroup? hrisGroup = null)
         {
             var request = new UpdateHrisGroupRequest()
             {
@@ -292,7 +314,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 

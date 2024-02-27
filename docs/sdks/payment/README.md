@@ -3,14 +3,68 @@
 
 ### Available Operations
 
-* [CreateAccountingPayment](#createaccountingpayment) - Create a payment
-* [GetAccountingPayment](#getaccountingpayment) - Retrieve a payment
-* [ListAccountingPayments](#listaccountingpayments) - List all payments
-* [PatchAccountingPayment](#patchaccountingpayment) - Update a payment
-* [RemoveAccountingPayment](#removeaccountingpayment) - Remove a payment
-* [UpdateAccountingPayment](#updateaccountingpayment) - Update a payment
+* [CreatePaymentLink](#createpaymentlink) - Create a payment link
+* [CreatePaymentPayment](#createpaymentpayment) - Create a payment
+* [GetPaymentLink](#getpaymentlink) - Retrieve a payment link
+* [GetPaymentPayment](#getpaymentpayment) - Retrieve a payment
+* [GetPaymentPayout](#getpaymentpayout) - Retrieve a payout
+* [GetPaymentRefund](#getpaymentrefund) - Retrieve a refund
+* [ListPaymentLinks](#listpaymentlinks) - List all payment links
+* [ListPaymentPayments](#listpaymentpayments) - List all payments
+* [ListPaymentPayouts](#listpaymentpayouts) - List all payouts
+* [ListPaymentRefunds](#listpaymentrefunds) - List all refunds
+* [PatchPaymentLink](#patchpaymentlink) - Update a payment link
+* [PatchPaymentPayment](#patchpaymentpayment) - Update a payment
+* [RemovePaymentLink](#removepaymentlink) - Remove a payment link
+* [RemovePaymentPayment](#removepaymentpayment) - Remove a payment
+* [UpdatePaymentLink](#updatepaymentlink) - Update a payment link
+* [UpdatePaymentPayment](#updatepaymentpayment) - Update a payment
 
-## CreateAccountingPayment
+## CreatePaymentLink
+
+Create a payment link
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Payment.CreatePaymentLinkAsync(
+    connectionId: "<value>",
+    paymentLink: new PaymentLink() {
+    IsActive = false,
+    Lineitems = new List<PaymenntLinkLineitem>() {
+        new PaymenntLinkLineitem() {
+            TotalAmount = 8711.36D,
+        },
+    },
+    Url = "https://athletic-unemployment.org",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
+| `PaymentLink`                                         | [PaymentLink](../../Models/Components/PaymentLink.md) | :heavy_minus_sign:                                    | N/A                                                   |
+
+
+### Response
+
+**[CreatePaymentLinkResponse](../../Models/Requests/CreatePaymentLinkResponse.md)**
+
+
+## CreatePaymentPayment
 
 Create a payment
 
@@ -18,53 +72,51 @@ Create a payment
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
-var res = await sdk.Payment.CreateAccountingPaymentAsync(
-    security: new CreateAccountingPaymentSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
+var res = await sdk.Payment.CreatePaymentPaymentAsync(
     connectionId: "<value>",
-    accountingPayment: new AccountingPayment() {});
+    paymentPayment: new PaymentPayment() {});
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.CreateAccountingPaymentSecurity](../../Models/Requests/CreateAccountingPaymentSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
-| `ConnectionId`                                                                                                        | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the connection                                                                                                  |
-| `AccountingPayment`                                                                                                   | [AccountingPayment](../../Models/Components/AccountingPayment.md)                                                     | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |
+| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
+| `PaymentPayment`                                            | [PaymentPayment](../../Models/Components/PaymentPayment.md) | :heavy_minus_sign:                                          | N/A                                                         |
 
 
 ### Response
 
-**[CreateAccountingPaymentResponse](../../Models/Requests/CreateAccountingPaymentResponse.md)**
+**[CreatePaymentPaymentResponse](../../Models/Requests/CreatePaymentPaymentResponse.md)**
 
 
-## GetAccountingPayment
+## GetPaymentLink
 
-Retrieve a payment
+Retrieve a payment link
 
 ### Example Usage
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
-var res = await sdk.Payment.GetAccountingPaymentAsync(
-    security: new GetAccountingPaymentSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
+var res = await sdk.Payment.GetPaymentLinkAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -76,20 +128,176 @@ var res = await sdk.Payment.GetAccountingPaymentAsync(
 
 ### Parameters
 
-| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                      | [UnifiedTo.Models.Requests.GetAccountingPaymentSecurity](../../Models/Requests/GetAccountingPaymentSecurity.md) | :heavy_check_mark:                                                                                              | The security requirements to use for the request.                                                               |
-| `ConnectionId`                                                                                                  | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the connection                                                                                            |
-| `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Payment                                                                                               |
-| `Fields`                                                                                                        | List<*string*>                                                                                                  | :heavy_minus_sign:                                                                                              | Comma-delimited fields to return                                                                                |
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Link                   |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
 
 ### Response
 
-**[GetAccountingPaymentResponse](../../Models/Requests/GetAccountingPaymentResponse.md)**
+**[GetPaymentLinkResponse](../../Models/Requests/GetPaymentLinkResponse.md)**
 
 
-## ListAccountingPayments
+## GetPaymentPayment
+
+Retrieve a payment
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Payment.GetPaymentPaymentAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    fields: new List<string>() {
+    "<value>",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Payment                |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetPaymentPaymentResponse](../../Models/Requests/GetPaymentPaymentResponse.md)**
+
+
+## GetPaymentPayout
+
+Retrieve a payout
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Payment.GetPaymentPayoutAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    fields: new List<string>() {
+    "<value>",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Payout                 |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetPaymentPayoutResponse](../../Models/Requests/GetPaymentPayoutResponse.md)**
+
+
+## GetPaymentRefund
+
+Retrieve a refund
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Payment.GetPaymentRefundAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    fields: new List<string>() {
+    "<value>",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Refund                 |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetPaymentRefundResponse](../../Models/Requests/GetPaymentRefundResponse.md)**
+
+
+## ListPaymentLinks
+
+List all payment links
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListPaymentLinksRequest req = new ListPaymentLinksRequest() {
+    ConnectionId = "<value>",
+};
+
+var res = await sdk.Payment.ListPaymentLinksAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListPaymentLinksRequest](../../Models/Requests/ListPaymentLinksRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+
+
+### Response
+
+**[ListPaymentLinksResponse](../../Models/Requests/ListPaymentLinksResponse.md)**
+
+
+## ListPaymentPayments
 
 List all payments
 
@@ -97,38 +305,156 @@ List all payments
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
-ListAccountingPaymentsRequest req = new ListAccountingPaymentsRequest() {
+ListPaymentPaymentsRequest req = new ListPaymentPaymentsRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Payment.ListAccountingPaymentsAsync(
-    security: new ListAccountingPaymentsSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    req);
+var res = await sdk.Payment.ListPaymentPaymentsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                           | [ListAccountingPaymentsRequest](../../Models/Requests/ListAccountingPaymentsRequest.md)                             | :heavy_check_mark:                                                                                                  | The request object to use for the request.                                                                          |
-| `security`                                                                                                          | [UnifiedTo.Models.Requests.ListAccountingPaymentsSecurity](../../Models/Requests/ListAccountingPaymentsSecurity.md) | :heavy_check_mark:                                                                                                  | The security requirements to use for the request.                                                                   |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListPaymentPaymentsRequest](../../Models/Requests/ListPaymentPaymentsRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 
 ### Response
 
-**[ListAccountingPaymentsResponse](../../Models/Requests/ListAccountingPaymentsResponse.md)**
+**[ListPaymentPaymentsResponse](../../Models/Requests/ListPaymentPaymentsResponse.md)**
 
 
-## PatchAccountingPayment
+## ListPaymentPayouts
+
+List all payouts
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListPaymentPayoutsRequest req = new ListPaymentPayoutsRequest() {
+    ConnectionId = "<value>",
+};
+
+var res = await sdk.Payment.ListPaymentPayoutsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListPaymentPayoutsRequest](../../Models/Requests/ListPaymentPayoutsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+
+
+### Response
+
+**[ListPaymentPayoutsResponse](../../Models/Requests/ListPaymentPayoutsResponse.md)**
+
+
+## ListPaymentRefunds
+
+List all refunds
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListPaymentRefundsRequest req = new ListPaymentRefundsRequest() {
+    ConnectionId = "<value>",
+};
+
+var res = await sdk.Payment.ListPaymentRefundsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListPaymentRefundsRequest](../../Models/Requests/ListPaymentRefundsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+
+
+### Response
+
+**[ListPaymentRefundsResponse](../../Models/Requests/ListPaymentRefundsResponse.md)**
+
+
+## PatchPaymentLink
+
+Update a payment link
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Payment.PatchPaymentLinkAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    paymentLink: new PaymentLink() {
+    IsActive = false,
+    Lineitems = new List<PaymenntLinkLineitem>() {
+        new PaymenntLinkLineitem() {
+            TotalAmount = 2219.73D,
+        },
+    },
+    Url = "http://vicious-rank.info",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
+| `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Link                                        |
+| `PaymentLink`                                         | [PaymentLink](../../Models/Components/PaymentLink.md) | :heavy_minus_sign:                                    | N/A                                                   |
+
+
+### Response
+
+**[PatchPaymentLinkResponse](../../Models/Requests/PatchPaymentLinkResponse.md)**
+
+
+## PatchPaymentPayment
 
 Update a payment
 
@@ -136,54 +462,52 @@ Update a payment
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
-var res = await sdk.Payment.PatchAccountingPaymentAsync(
-    security: new PatchAccountingPaymentSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
+var res = await sdk.Payment.PatchPaymentPaymentAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingPayment: new AccountingPayment() {});
+    paymentPayment: new PaymentPayment() {});
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                          | [UnifiedTo.Models.Requests.PatchAccountingPaymentSecurity](../../Models/Requests/PatchAccountingPaymentSecurity.md) | :heavy_check_mark:                                                                                                  | The security requirements to use for the request.                                                                   |
-| `ConnectionId`                                                                                                      | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the connection                                                                                                |
-| `Id`                                                                                                                | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the Payment                                                                                                   |
-| `AccountingPayment`                                                                                                 | [AccountingPayment](../../Models/Components/AccountingPayment.md)                                                   | :heavy_minus_sign:                                                                                                  | N/A                                                                                                                 |
+| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
+| `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Payment                                           |
+| `PaymentPayment`                                            | [PaymentPayment](../../Models/Components/PaymentPayment.md) | :heavy_minus_sign:                                          | N/A                                                         |
 
 
 ### Response
 
-**[PatchAccountingPaymentResponse](../../Models/Requests/PatchAccountingPaymentResponse.md)**
+**[PatchPaymentPaymentResponse](../../Models/Requests/PatchPaymentPaymentResponse.md)**
 
 
-## RemoveAccountingPayment
+## RemovePaymentLink
 
-Remove a payment
+Remove a payment link
 
 ### Example Usage
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
-var res = await sdk.Payment.RemoveAccountingPaymentAsync(
-    security: new RemoveAccountingPaymentSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
+var res = await sdk.Payment.RemovePaymentLinkAsync(
     connectionId: "<value>",
     id: "<value>");
 
@@ -192,19 +516,99 @@ var res = await sdk.Payment.RemoveAccountingPaymentAsync(
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.RemoveAccountingPaymentSecurity](../../Models/Requests/RemoveAccountingPaymentSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
-| `ConnectionId`                                                                                                        | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the connection                                                                                                  |
-| `Id`                                                                                                                  | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the Payment                                                                                                     |
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Link       |
 
 
 ### Response
 
-**[RemoveAccountingPaymentResponse](../../Models/Requests/RemoveAccountingPaymentResponse.md)**
+**[RemovePaymentLinkResponse](../../Models/Requests/RemovePaymentLinkResponse.md)**
 
 
-## UpdateAccountingPayment
+## RemovePaymentPayment
+
+Remove a payment
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Payment.RemovePaymentPaymentAsync(
+    connectionId: "<value>",
+    id: "<value>");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Payment    |
+
+
+### Response
+
+**[RemovePaymentPaymentResponse](../../Models/Requests/RemovePaymentPaymentResponse.md)**
+
+
+## UpdatePaymentLink
+
+Update a payment link
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Payment.UpdatePaymentLinkAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    paymentLink: new PaymentLink() {
+    IsActive = false,
+    Lineitems = new List<PaymenntLinkLineitem>() {
+        new PaymenntLinkLineitem() {
+            TotalAmount = 6147.65D,
+        },
+    },
+    Url = "http://flawed-publication.org",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
+| `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Link                                        |
+| `PaymentLink`                                         | [PaymentLink](../../Models/Components/PaymentLink.md) | :heavy_minus_sign:                                    | N/A                                                   |
+
+
+### Response
+
+**[UpdatePaymentLinkResponse](../../Models/Requests/UpdatePaymentLinkResponse.md)**
+
+
+## UpdatePaymentPayment
 
 Update a payment
 
@@ -212,34 +616,32 @@ Update a payment
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
-var res = await sdk.Payment.UpdateAccountingPaymentAsync(
-    security: new UpdateAccountingPaymentSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
+var res = await sdk.Payment.UpdatePaymentPaymentAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingPayment: new AccountingPayment() {});
+    paymentPayment: new PaymentPayment() {});
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.UpdateAccountingPaymentSecurity](../../Models/Requests/UpdateAccountingPaymentSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
-| `ConnectionId`                                                                                                        | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the connection                                                                                                  |
-| `Id`                                                                                                                  | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the Payment                                                                                                     |
-| `AccountingPayment`                                                                                                   | [AccountingPayment](../../Models/Components/AccountingPayment.md)                                                     | :heavy_minus_sign:                                                                                                    | N/A                                                                                                                   |
+| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
+| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
+| `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Payment                                           |
+| `PaymentPayment`                                            | [PaymentPayment](../../Models/Components/PaymentPayment.md) | :heavy_minus_sign:                                          | N/A                                                         |
 
 
 ### Response
 
-**[UpdateAccountingPaymentResponse](../../Models/Requests/UpdateAccountingPaymentResponse.md)**
+**[UpdatePaymentPaymentResponse](../../Models/Requests/UpdatePaymentPaymentResponse.md)**
 

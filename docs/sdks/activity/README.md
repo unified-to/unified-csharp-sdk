@@ -18,16 +18,15 @@ Create an activity
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Activity.CreateAtsActivityAsync(
-    security: new CreateAtsActivitySecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     atsActivity: new AtsActivity() {
     Title = "<value>",
@@ -38,11 +37,10 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
 
 ### Parameters
 
-| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                | [UnifiedTo.Models.Requests.CreateAtsActivitySecurity](../../Models/Requests/CreateAtsActivitySecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
-| `ConnectionId`                                                                                            | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the connection                                                                                      |
-| `AtsActivity`                                                                                             | [AtsActivity](../../Models/Components/AtsActivity.md)                                                     | :heavy_minus_sign:                                                                                        | N/A                                                                                                       |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
+| `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
 
 ### Response
@@ -58,15 +56,15 @@ Retrieve an activity
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Activity.GetAtsActivityAsync(
-    security: new GetAtsActivitySecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -78,12 +76,11 @@ var res = await sdk.Activity.GetAtsActivityAsync(
 
 ### Parameters
 
-| Parameter                                                                                           | Type                                                                                                | Required                                                                                            | Description                                                                                         |
-| --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `security`                                                                                          | [UnifiedTo.Models.Requests.GetAtsActivitySecurity](../../Models/Requests/GetAtsActivitySecurity.md) | :heavy_check_mark:                                                                                  | The security requirements to use for the request.                                                   |
-| `ConnectionId`                                                                                      | *string*                                                                                            | :heavy_check_mark:                                                                                  | ID of the connection                                                                                |
-| `Id`                                                                                                | *string*                                                                                            | :heavy_check_mark:                                                                                  | ID of the Activity                                                                                  |
-| `Fields`                                                                                            | List<*string*>                                                                                      | :heavy_minus_sign:                                                                                  | Comma-delimited fields to return                                                                    |
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Activity               |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
 
 ### Response
@@ -99,30 +96,28 @@ List all activities
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 ListAtsActivitiesRequest req = new ListAtsActivitiesRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Activity.ListAtsActivitiesAsync(
-    security: new ListAtsActivitiesSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    req);
+var res = await sdk.Activity.ListAtsActivitiesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                 | [ListAtsActivitiesRequest](../../Models/Requests/ListAtsActivitiesRequest.md)                             | :heavy_check_mark:                                                                                        | The request object to use for the request.                                                                |
-| `security`                                                                                                | [UnifiedTo.Models.Requests.ListAtsActivitiesSecurity](../../Models/Requests/ListAtsActivitiesSecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListAtsActivitiesRequest](../../Models/Requests/ListAtsActivitiesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 
 ### Response
@@ -138,16 +133,15 @@ Update an activity
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Activity.PatchAtsActivityAsync(
-    security: new PatchAtsActivitySecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     atsActivity: new AtsActivity() {
@@ -159,12 +153,11 @@ var res = await sdk.Activity.PatchAtsActivityAsync(
 
 ### Parameters
 
-| Parameter                                                                                               | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
-| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                              | [UnifiedTo.Models.Requests.PatchAtsActivitySecurity](../../Models/Requests/PatchAtsActivitySecurity.md) | :heavy_check_mark:                                                                                      | The security requirements to use for the request.                                                       |
-| `ConnectionId`                                                                                          | *string*                                                                                                | :heavy_check_mark:                                                                                      | ID of the connection                                                                                    |
-| `Id`                                                                                                    | *string*                                                                                                | :heavy_check_mark:                                                                                      | ID of the Activity                                                                                      |
-| `AtsActivity`                                                                                           | [AtsActivity](../../Models/Components/AtsActivity.md)                                                   | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
+| `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Activity                                    |
+| `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
 
 ### Response
@@ -180,14 +173,14 @@ Remove an activity
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Activity.RemoveAtsActivityAsync(
-    security: new RemoveAtsActivitySecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>");
 
@@ -196,11 +189,10 @@ var res = await sdk.Activity.RemoveAtsActivityAsync(
 
 ### Parameters
 
-| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                | [UnifiedTo.Models.Requests.RemoveAtsActivitySecurity](../../Models/Requests/RemoveAtsActivitySecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
-| `ConnectionId`                                                                                            | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the connection                                                                                      |
-| `Id`                                                                                                      | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the Activity                                                                                        |
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Activity   |
 
 
 ### Response
@@ -216,16 +208,15 @@ Update an activity
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Activity.UpdateAtsActivityAsync(
-    security: new UpdateAtsActivitySecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     atsActivity: new AtsActivity() {
@@ -237,12 +228,11 @@ var res = await sdk.Activity.UpdateAtsActivityAsync(
 
 ### Parameters
 
-| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                | [UnifiedTo.Models.Requests.UpdateAtsActivitySecurity](../../Models/Requests/UpdateAtsActivitySecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
-| `ConnectionId`                                                                                            | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the connection                                                                                      |
-| `Id`                                                                                                      | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the Activity                                                                                        |
-| `AtsActivity`                                                                                             | [AtsActivity](../../Models/Components/AtsActivity.md)                                                     | :heavy_minus_sign:                                                                                        | N/A                                                                                                       |
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
+| `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Activity                                    |
+| `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
 
 ### Response

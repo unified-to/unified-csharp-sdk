@@ -26,54 +26,56 @@ namespace UnifiedTo
         /// <summary>
         /// Create a job
         /// </summary>
-        Task<CreateAtsJobResponse> CreateAtsJobAsync(CreateAtsJobSecurity security, string connectionId, AtsJob? atsJob = null);
+        Task<CreateAtsJobResponse> CreateAtsJobAsync(string connectionId, AtsJob? atsJob = null);
 
         /// <summary>
         /// Retrieve a job
         /// </summary>
-        Task<GetAtsJobResponse> GetAtsJobAsync(GetAtsJobSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all jobs
         /// </summary>
-        Task<ListAtsJobsResponse> ListAtsJobsAsync(ListAtsJobsSecurity security, ListAtsJobsRequest request);
+        Task<ListAtsJobsResponse> ListAtsJobsAsync(ListAtsJobsRequest request);
 
         /// <summary>
         /// Update a job
         /// </summary>
-        Task<PatchAtsJobResponse> PatchAtsJobAsync(PatchAtsJobSecurity security, string connectionId, string id, AtsJob? atsJob = null);
+        Task<PatchAtsJobResponse> PatchAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null);
 
         /// <summary>
         /// Remove a job
         /// </summary>
-        Task<RemoveAtsJobResponse> RemoveAtsJobAsync(RemoveAtsJobSecurity security, string connectionId, string id);
+        Task<RemoveAtsJobResponse> RemoveAtsJobAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a job
         /// </summary>
-        Task<UpdateAtsJobResponse> UpdateAtsJobAsync(UpdateAtsJobSecurity security, string connectionId, string id, AtsJob? atsJob = null);
+        Task<UpdateAtsJobResponse> UpdateAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null);
     }
 
     public class Job: IJob
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.11.1";
-        private const string _sdkGenVersion = "2.272.4";
+        private const string _sdkVersion = "0.12.0";
+        private const string _sdkGenVersion = "2.272.7";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.11.1 2.272.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.0 2.272.7 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
+        private Func<Security>? _securitySource;
 
-        public Job(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
+        public Job(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateAtsJobResponse> CreateAtsJobAsync(CreateAtsJobSecurity security, string connectionId, AtsJob? atsJob = null)
+        public async Task<CreateAtsJobResponse> CreateAtsJobAsync(string connectionId, AtsJob? atsJob = null)
         {
             var request = new CreateAtsJobRequest()
             {
@@ -92,7 +94,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -119,7 +125,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetAtsJobResponse> GetAtsJobAsync(GetAtsJobSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetAtsJobRequest()
             {
@@ -133,7 +139,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -160,7 +170,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListAtsJobsResponse> ListAtsJobsAsync(ListAtsJobsSecurity security, ListAtsJobsRequest request)
+        public async Task<ListAtsJobsResponse> ListAtsJobsAsync(ListAtsJobsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job", request);
@@ -168,7 +178,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -195,7 +209,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchAtsJobResponse> PatchAtsJobAsync(PatchAtsJobSecurity security, string connectionId, string id, AtsJob? atsJob = null)
+        public async Task<PatchAtsJobResponse> PatchAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null)
         {
             var request = new PatchAtsJobRequest()
             {
@@ -215,7 +229,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -242,7 +260,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveAtsJobResponse> RemoveAtsJobAsync(RemoveAtsJobSecurity security, string connectionId, string id)
+        public async Task<RemoveAtsJobResponse> RemoveAtsJobAsync(string connectionId, string id)
         {
             var request = new RemoveAtsJobRequest()
             {
@@ -255,7 +273,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -272,7 +294,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateAtsJobResponse> UpdateAtsJobAsync(UpdateAtsJobSecurity security, string connectionId, string id, AtsJob? atsJob = null)
+        public async Task<UpdateAtsJobResponse> UpdateAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null)
         {
             var request = new UpdateAtsJobRequest()
             {
@@ -292,7 +314,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 

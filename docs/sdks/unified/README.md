@@ -32,9 +32,10 @@ Create connection
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using System.Collections.Generic;
-using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
@@ -42,25 +43,20 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.AtsCandidateRead,
+        PropertyConnectionPermissions.AtsApplicationstatusRead,
     },
 };
 
-var res = await sdk.Unified.CreateUnifiedConnectionAsync(
-    security: new CreateUnifiedConnectionSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    req);
+var res = await sdk.Unified.CreateUnifiedConnectionAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                             | [Models.Components.Connection](../../Models/Components/Connection.md)                                                 | :heavy_check_mark:                                                                                                    | The request object to use for the request.                                                                            |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.CreateUnifiedConnectionSecurity](../../Models/Requests/CreateUnifiedConnectionSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
 
 
 ### Response
@@ -76,16 +72,15 @@ The data payload received by your server is described at https://docs.unified.to
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Unified.CreateUnifiedWebhookAsync(
-    security: new CreateUnifiedWebhookSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     webhook: new Models.Components.Webhook() {
     ConnectionId = "<value>",
     Event = Models.Components.Event.Created,
@@ -99,11 +94,10 @@ var res = await sdk.Unified.CreateUnifiedWebhookAsync(
 
 ### Parameters
 
-| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                      | [UnifiedTo.Models.Requests.CreateUnifiedWebhookSecurity](../../Models/Requests/CreateUnifiedWebhookSecurity.md) | :heavy_check_mark:                                                                                              | The security requirements to use for the request.                                                               |
-| `Webhook`                                                                                                       | [Models.Components.Webhook](../../Models/Components/Webhook.md)                                                 | :heavy_minus_sign:                                                                                              | N/A                                                                                                             |
-| `IncludeAll`                                                                                                    | *bool*                                                                                                          | :heavy_minus_sign:                                                                                              | When set, all of the existing data will sent back to your server.                                               |
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `Webhook`                                                         | [Models.Components.Webhook](../../Models/Components/Webhook.md)   | :heavy_minus_sign:                                                | N/A                                                               |
+| `IncludeAll`                                                      | *bool*                                                            | :heavy_minus_sign:                                                | When set, all of the existing data will sent back to your server. |
 
 
 ### Response
@@ -119,25 +113,23 @@ Retrieve specific API Call by its ID
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
-var res = await sdk.Unified.GetUnifiedApicallAsync(
-    security: new GetUnifiedApicallSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    id: "<value>");
+var res = await sdk.Unified.GetUnifiedApicallAsync(id: "<value>");
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                | [UnifiedTo.Models.Requests.GetUnifiedApicallSecurity](../../Models/Requests/GetUnifiedApicallSecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
-| `Id`                                                                                                      | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the Apicall                                                                                         |
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `Id`               | *string*           | :heavy_check_mark: | ID of the Apicall  |
 
 
 ### Response
@@ -153,25 +145,23 @@ Retrieve connection
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
-var res = await sdk.Unified.GetUnifiedConnectionAsync(
-    security: new GetUnifiedConnectionSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    id: "<value>");
+var res = await sdk.Unified.GetUnifiedConnectionAsync(id: "<value>");
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                      | [UnifiedTo.Models.Requests.GetUnifiedConnectionSecurity](../../Models/Requests/GetUnifiedConnectionSecurity.md) | :heavy_check_mark:                                                                                              | The security requirements to use for the request.                                                               |
-| `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Connection                                                                                            |
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Connection |
 
 
 ### Response
@@ -187,10 +177,13 @@ Returns an authorization URL for the specified integration.  Once a successful a
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 GetUnifiedIntegrationAuthRequest req = new GetUnifiedIntegrationAuthRequest() {
     IntegrationType = "<value>",
@@ -222,25 +215,23 @@ Retrieve webhook by its ID
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
-var res = await sdk.Unified.GetUnifiedWebhookAsync(
-    security: new GetUnifiedWebhookSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    id: "<value>");
+var res = await sdk.Unified.GetUnifiedWebhookAsync(id: "<value>");
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                | [UnifiedTo.Models.Requests.GetUnifiedWebhookSecurity](../../Models/Requests/GetUnifiedWebhookSecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
-| `Id`                                                                                                      | *string*                                                                                                  | :heavy_check_mark:                                                                                        | ID of the Webhook                                                                                         |
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `Id`               | *string*           | :heavy_check_mark: | ID of the Webhook  |
 
 
 ### Response
@@ -256,27 +247,25 @@ Returns API Calls
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 ListUnifiedApicallsRequest req = new ListUnifiedApicallsRequest() {};
 
-var res = await sdk.Unified.ListUnifiedApicallsAsync(
-    security: new ListUnifiedApicallsSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    req);
+var res = await sdk.Unified.ListUnifiedApicallsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
-| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                     | [ListUnifiedApicallsRequest](../../Models/Requests/ListUnifiedApicallsRequest.md)                             | :heavy_check_mark:                                                                                            | The request object to use for the request.                                                                    |
-| `security`                                                                                                    | [UnifiedTo.Models.Requests.ListUnifiedApicallsSecurity](../../Models/Requests/ListUnifiedApicallsSecurity.md) | :heavy_check_mark:                                                                                            | The security requirements to use for the request.                                                             |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListUnifiedApicallsRequest](../../Models/Requests/ListUnifiedApicallsRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 
 ### Response
@@ -292,28 +281,26 @@ List all connections
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 ListUnifiedConnectionsRequest req = new ListUnifiedConnectionsRequest() {};
 
-var res = await sdk.Unified.ListUnifiedConnectionsAsync(
-    security: new ListUnifiedConnectionsSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    req);
+var res = await sdk.Unified.ListUnifiedConnectionsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                           | [ListUnifiedConnectionsRequest](../../Models/Requests/ListUnifiedConnectionsRequest.md)                             | :heavy_check_mark:                                                                                                  | The request object to use for the request.                                                                          |
-| `security`                                                                                                          | [UnifiedTo.Models.Requests.ListUnifiedConnectionsSecurity](../../Models/Requests/ListUnifiedConnectionsSecurity.md) | :heavy_check_mark:                                                                                                  | The security requirements to use for the request.                                                                   |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListUnifiedConnectionsRequest](../../Models/Requests/ListUnifiedConnectionsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 
 ### Response
@@ -329,10 +316,13 @@ No authentication required as this is to be used by front-end interface
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 ListUnifiedIntegrationWorkspacesRequest req = new ListUnifiedIntegrationWorkspacesRequest() {
     WorkspaceId = "<value>",
@@ -363,28 +353,26 @@ Returns all integrations
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 ListUnifiedIntegrationsRequest req = new ListUnifiedIntegrationsRequest() {};
 
-var res = await sdk.Unified.ListUnifiedIntegrationsAsync(
-    security: new ListUnifiedIntegrationsSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    req);
+var res = await sdk.Unified.ListUnifiedIntegrationsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                             | [ListUnifiedIntegrationsRequest](../../Models/Requests/ListUnifiedIntegrationsRequest.md)                             | :heavy_check_mark:                                                                                                    | The request object to use for the request.                                                                            |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.ListUnifiedIntegrationsSecurity](../../Models/Requests/ListUnifiedIntegrationsSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [ListUnifiedIntegrationsRequest](../../Models/Requests/ListUnifiedIntegrationsRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 
 ### Response
@@ -400,27 +388,25 @@ List support issues
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 ListUnifiedIssuesRequest req = new ListUnifiedIssuesRequest() {};
 
-var res = await sdk.Unified.ListUnifiedIssuesAsync(
-    security: new ListUnifiedIssuesSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    req);
+var res = await sdk.Unified.ListUnifiedIssuesAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                 | Type                                                                                                      | Required                                                                                                  | Description                                                                                               |
-| --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                 | [ListUnifiedIssuesRequest](../../Models/Requests/ListUnifiedIssuesRequest.md)                             | :heavy_check_mark:                                                                                        | The request object to use for the request.                                                                |
-| `security`                                                                                                | [UnifiedTo.Models.Requests.ListUnifiedIssuesSecurity](../../Models/Requests/ListUnifiedIssuesSecurity.md) | :heavy_check_mark:                                                                                        | The security requirements to use for the request.                                                         |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListUnifiedIssuesRequest](../../Models/Requests/ListUnifiedIssuesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 
 ### Response
@@ -436,27 +422,25 @@ Returns all registered webhooks
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 ListUnifiedWebhooksRequest req = new ListUnifiedWebhooksRequest() {};
 
-var res = await sdk.Unified.ListUnifiedWebhooksAsync(
-    security: new ListUnifiedWebhooksSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    req);
+var res = await sdk.Unified.ListUnifiedWebhooksAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
-| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                     | [ListUnifiedWebhooksRequest](../../Models/Requests/ListUnifiedWebhooksRequest.md)                             | :heavy_check_mark:                                                                                            | The request object to use for the request.                                                                    |
-| `security`                                                                                                    | [UnifiedTo.Models.Requests.ListUnifiedWebhooksSecurity](../../Models/Requests/ListUnifiedWebhooksSecurity.md) | :heavy_check_mark:                                                                                            | The security requirements to use for the request.                                                             |
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListUnifiedWebhooksRequest](../../Models/Requests/ListUnifiedWebhooksRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
 
 ### Response
@@ -472,24 +456,23 @@ Update connection
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Unified.PatchUnifiedConnectionAsync(
-    security: new PatchUnifiedConnectionSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     id: "<value>",
     connection: new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
-        PropertyConnectionCategories.Ticketing,
+        PropertyConnectionCategories.Uc,
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.CrmLeadWrite,
+        PropertyConnectionPermissions.CrmLeadRead,
     },
 });
 
@@ -498,11 +481,10 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(
 
 ### Parameters
 
-| Parameter                                                                                                           | Type                                                                                                                | Required                                                                                                            | Description                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                          | [UnifiedTo.Models.Requests.PatchUnifiedConnectionSecurity](../../Models/Requests/PatchUnifiedConnectionSecurity.md) | :heavy_check_mark:                                                                                                  | The security requirements to use for the request.                                                                   |
-| `Id`                                                                                                                | *string*                                                                                                            | :heavy_check_mark:                                                                                                  | ID of the Connection                                                                                                |
-| `Connection`                                                                                                        | [Models.Components.Connection](../../Models/Components/Connection.md)                                               | :heavy_minus_sign:                                                                                                  | A connection represents a specific authentication of an integration.                                                |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `Id`                                                                  | *string*                                                              | :heavy_check_mark:                                                    | ID of the Connection                                                  |
+| `Connection`                                                          | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_minus_sign:                                                    | A connection represents a specific authentication of an integration.  |
 
 
 ### Response
@@ -518,25 +500,23 @@ Trigger webhook
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
-var res = await sdk.Unified.PatchUnifiedWebhookTriggerAsync(
-    security: new PatchUnifiedWebhookTriggerSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    id: "<value>");
+var res = await sdk.Unified.PatchUnifiedWebhookTriggerAsync(id: "<value>");
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                   | Type                                                                                                                        | Required                                                                                                                    | Description                                                                                                                 |
-| --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                                  | [UnifiedTo.Models.Requests.PatchUnifiedWebhookTriggerSecurity](../../Models/Requests/PatchUnifiedWebhookTriggerSecurity.md) | :heavy_check_mark:                                                                                                          | The security requirements to use for the request.                                                                           |
-| `Id`                                                                                                                        | *string*                                                                                                                    | :heavy_check_mark:                                                                                                          | ID of the Webhook                                                                                                           |
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `Id`               | *string*           | :heavy_check_mark: | ID of the Webhook  |
 
 
 ### Response
@@ -552,25 +532,23 @@ Remove connection
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
-var res = await sdk.Unified.RemoveUnifiedConnectionAsync(
-    security: new RemoveUnifiedConnectionSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    id: "<value>");
+var res = await sdk.Unified.RemoveUnifiedConnectionAsync(id: "<value>");
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.RemoveUnifiedConnectionSecurity](../../Models/Requests/RemoveUnifiedConnectionSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
-| `Id`                                                                                                                  | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the Connection                                                                                                  |
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Connection |
 
 
 ### Response
@@ -586,25 +564,23 @@ Remove webhook subscription
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
-var res = await sdk.Unified.RemoveUnifiedWebhookAsync(
-    security: new RemoveUnifiedWebhookSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    id: "<value>");
+var res = await sdk.Unified.RemoveUnifiedWebhookAsync(id: "<value>");
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                      | [UnifiedTo.Models.Requests.RemoveUnifiedWebhookSecurity](../../Models/Requests/RemoveUnifiedWebhookSecurity.md) | :heavy_check_mark:                                                                                              | The security requirements to use for the request.                                                               |
-| `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Webhook                                                                                               |
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `Id`               | *string*           | :heavy_check_mark: | ID of the Webhook  |
 
 
 ### Response
@@ -620,24 +596,23 @@ Update connection
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
-    security: new UpdateUnifiedConnectionSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     id: "<value>",
     connection: new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
-        PropertyConnectionCategories.Accounting,
+        PropertyConnectionCategories.Storage,
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.AtsCompanyRead,
+        PropertyConnectionPermissions.AtsJobWrite,
     },
 });
 
@@ -646,11 +621,10 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
 
 ### Parameters
 
-| Parameter                                                                                                             | Type                                                                                                                  | Required                                                                                                              | Description                                                                                                           |
-| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                            | [UnifiedTo.Models.Requests.UpdateUnifiedConnectionSecurity](../../Models/Requests/UpdateUnifiedConnectionSecurity.md) | :heavy_check_mark:                                                                                                    | The security requirements to use for the request.                                                                     |
-| `Id`                                                                                                                  | *string*                                                                                                              | :heavy_check_mark:                                                                                                    | ID of the Connection                                                                                                  |
-| `Connection`                                                                                                          | [Models.Components.Connection](../../Models/Components/Connection.md)                                                 | :heavy_minus_sign:                                                                                                    | A connection represents a specific authentication of an integration.                                                  |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `Id`                                                                  | *string*                                                              | :heavy_check_mark:                                                    | ID of the Connection                                                  |
+| `Connection`                                                          | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_minus_sign:                                                    | A connection represents a specific authentication of an integration.  |
 
 
 ### Response
@@ -666,25 +640,23 @@ Trigger webhook
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
-var res = await sdk.Unified.UpdateUnifiedWebhookTriggerAsync(
-    security: new UpdateUnifiedWebhookTriggerSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    id: "<value>");
+var res = await sdk.Unified.UpdateUnifiedWebhookTriggerAsync(id: "<value>");
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                                     | Type                                                                                                                          | Required                                                                                                                      | Description                                                                                                                   |
-| ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                                    | [UnifiedTo.Models.Requests.UpdateUnifiedWebhookTriggerSecurity](../../Models/Requests/UpdateUnifiedWebhookTriggerSecurity.md) | :heavy_check_mark:                                                                                                            | The security requirements to use for the request.                                                                             |
-| `Id`                                                                                                                          | *string*                                                                                                                      | :heavy_check_mark:                                                                                                            | ID of the Webhook                                                                                                             |
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `Id`               | *string*           | :heavy_check_mark: | ID of the Webhook  |
 
 
 ### Response

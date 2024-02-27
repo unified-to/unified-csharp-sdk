@@ -26,54 +26,56 @@ namespace UnifiedTo
         /// <summary>
         /// Create a note
         /// </summary>
-        Task<CreateTicketingNoteResponse> CreateTicketingNoteAsync(CreateTicketingNoteSecurity security, string connectionId, TicketingNote? ticketingNote = null);
+        Task<CreateTicketingNoteResponse> CreateTicketingNoteAsync(string connectionId, TicketingNote? ticketingNote = null);
 
         /// <summary>
         /// Retrieve a note
         /// </summary>
-        Task<GetTicketingNoteResponse> GetTicketingNoteAsync(GetTicketingNoteSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetTicketingNoteResponse> GetTicketingNoteAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all notes
         /// </summary>
-        Task<ListTicketingNotesResponse> ListTicketingNotesAsync(ListTicketingNotesSecurity security, ListTicketingNotesRequest request);
+        Task<ListTicketingNotesResponse> ListTicketingNotesAsync(ListTicketingNotesRequest request);
 
         /// <summary>
         /// Update a note
         /// </summary>
-        Task<PatchTicketingNoteResponse> PatchTicketingNoteAsync(PatchTicketingNoteSecurity security, string connectionId, string id, TicketingNote? ticketingNote = null);
+        Task<PatchTicketingNoteResponse> PatchTicketingNoteAsync(string connectionId, string id, TicketingNote? ticketingNote = null);
 
         /// <summary>
         /// Remove a note
         /// </summary>
-        Task<RemoveTicketingNoteResponse> RemoveTicketingNoteAsync(RemoveTicketingNoteSecurity security, string connectionId, string id);
+        Task<RemoveTicketingNoteResponse> RemoveTicketingNoteAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a note
         /// </summary>
-        Task<UpdateTicketingNoteResponse> UpdateTicketingNoteAsync(UpdateTicketingNoteSecurity security, string connectionId, string id, TicketingNote? ticketingNote = null);
+        Task<UpdateTicketingNoteResponse> UpdateTicketingNoteAsync(string connectionId, string id, TicketingNote? ticketingNote = null);
     }
 
     public class Note: INote
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.11.1";
-        private const string _sdkGenVersion = "2.272.4";
+        private const string _sdkVersion = "0.12.0";
+        private const string _sdkGenVersion = "2.272.7";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.11.1 2.272.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.0 2.272.7 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
+        private Func<Security>? _securitySource;
 
-        public Note(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
+        public Note(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateTicketingNoteResponse> CreateTicketingNoteAsync(CreateTicketingNoteSecurity security, string connectionId, TicketingNote? ticketingNote = null)
+        public async Task<CreateTicketingNoteResponse> CreateTicketingNoteAsync(string connectionId, TicketingNote? ticketingNote = null)
         {
             var request = new CreateTicketingNoteRequest()
             {
@@ -92,7 +94,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -119,7 +125,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetTicketingNoteResponse> GetTicketingNoteAsync(GetTicketingNoteSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetTicketingNoteResponse> GetTicketingNoteAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetTicketingNoteRequest()
             {
@@ -133,7 +139,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -160,7 +170,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListTicketingNotesResponse> ListTicketingNotesAsync(ListTicketingNotesSecurity security, ListTicketingNotesRequest request)
+        public async Task<ListTicketingNotesResponse> ListTicketingNotesAsync(ListTicketingNotesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/ticketing/{connection_id}/note", request);
@@ -168,7 +178,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -195,7 +209,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchTicketingNoteResponse> PatchTicketingNoteAsync(PatchTicketingNoteSecurity security, string connectionId, string id, TicketingNote? ticketingNote = null)
+        public async Task<PatchTicketingNoteResponse> PatchTicketingNoteAsync(string connectionId, string id, TicketingNote? ticketingNote = null)
         {
             var request = new PatchTicketingNoteRequest()
             {
@@ -215,7 +229,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -242,7 +260,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveTicketingNoteResponse> RemoveTicketingNoteAsync(RemoveTicketingNoteSecurity security, string connectionId, string id)
+        public async Task<RemoveTicketingNoteResponse> RemoveTicketingNoteAsync(string connectionId, string id)
         {
             var request = new RemoveTicketingNoteRequest()
             {
@@ -255,7 +273,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -272,7 +294,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateTicketingNoteResponse> UpdateTicketingNoteAsync(UpdateTicketingNoteSecurity security, string connectionId, string id, TicketingNote? ticketingNote = null)
+        public async Task<UpdateTicketingNoteResponse> UpdateTicketingNoteAsync(string connectionId, string id, TicketingNote? ticketingNote = null)
         {
             var request = new UpdateTicketingNoteRequest()
             {
@@ -292,7 +314,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 

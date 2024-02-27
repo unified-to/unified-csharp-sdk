@@ -26,54 +26,56 @@ namespace UnifiedTo
         /// <summary>
         /// Create a event
         /// </summary>
-        Task<CreateCrmEventResponse> CreateCrmEventAsync(CreateCrmEventSecurity security, string connectionId, CrmEvent? crmEvent = null);
+        Task<CreateCrmEventResponse> CreateCrmEventAsync(string connectionId, CrmEvent? crmEvent = null);
 
         /// <summary>
         /// Retrieve a event
         /// </summary>
-        Task<GetCrmEventResponse> GetCrmEventAsync(GetCrmEventSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all events
         /// </summary>
-        Task<ListCrmEventsResponse> ListCrmEventsAsync(ListCrmEventsSecurity security, ListCrmEventsRequest request);
+        Task<ListCrmEventsResponse> ListCrmEventsAsync(ListCrmEventsRequest request);
 
         /// <summary>
         /// Update a event
         /// </summary>
-        Task<PatchCrmEventResponse> PatchCrmEventAsync(PatchCrmEventSecurity security, string connectionId, string id, CrmEvent? crmEvent = null);
+        Task<PatchCrmEventResponse> PatchCrmEventAsync(string connectionId, string id, CrmEvent? crmEvent = null);
 
         /// <summary>
         /// Remove a event
         /// </summary>
-        Task<RemoveCrmEventResponse> RemoveCrmEventAsync(RemoveCrmEventSecurity security, string connectionId, string id);
+        Task<RemoveCrmEventResponse> RemoveCrmEventAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a event
         /// </summary>
-        Task<UpdateCrmEventResponse> UpdateCrmEventAsync(UpdateCrmEventSecurity security, string connectionId, string id, CrmEvent? crmEvent = null);
+        Task<UpdateCrmEventResponse> UpdateCrmEventAsync(string connectionId, string id, CrmEvent? crmEvent = null);
     }
 
     public class Event: IEvent
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.11.1";
-        private const string _sdkGenVersion = "2.272.4";
+        private const string _sdkVersion = "0.12.0";
+        private const string _sdkGenVersion = "2.272.7";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.11.1 2.272.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.0 2.272.7 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
+        private Func<Security>? _securitySource;
 
-        public Event(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
+        public Event(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateCrmEventResponse> CreateCrmEventAsync(CreateCrmEventSecurity security, string connectionId, CrmEvent? crmEvent = null)
+        public async Task<CreateCrmEventResponse> CreateCrmEventAsync(string connectionId, CrmEvent? crmEvent = null)
         {
             var request = new CreateCrmEventRequest()
             {
@@ -92,7 +94,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -119,7 +125,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetCrmEventResponse> GetCrmEventAsync(GetCrmEventSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetCrmEventRequest()
             {
@@ -133,7 +139,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -160,7 +170,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListCrmEventsResponse> ListCrmEventsAsync(ListCrmEventsSecurity security, ListCrmEventsRequest request)
+        public async Task<ListCrmEventsResponse> ListCrmEventsAsync(ListCrmEventsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/event", request);
@@ -168,7 +178,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -195,7 +209,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchCrmEventResponse> PatchCrmEventAsync(PatchCrmEventSecurity security, string connectionId, string id, CrmEvent? crmEvent = null)
+        public async Task<PatchCrmEventResponse> PatchCrmEventAsync(string connectionId, string id, CrmEvent? crmEvent = null)
         {
             var request = new PatchCrmEventRequest()
             {
@@ -215,7 +229,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -242,7 +260,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveCrmEventResponse> RemoveCrmEventAsync(RemoveCrmEventSecurity security, string connectionId, string id)
+        public async Task<RemoveCrmEventResponse> RemoveCrmEventAsync(string connectionId, string id)
         {
             var request = new RemoveCrmEventRequest()
             {
@@ -255,7 +273,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -272,7 +294,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateCrmEventResponse> UpdateCrmEventAsync(UpdateCrmEventSecurity security, string connectionId, string id, CrmEvent? crmEvent = null)
+        public async Task<UpdateCrmEventResponse> UpdateCrmEventAsync(string connectionId, string id, CrmEvent? crmEvent = null)
         {
             var request = new UpdateCrmEventRequest()
             {
@@ -292,7 +314,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 

@@ -26,54 +26,56 @@ namespace UnifiedTo
         /// <summary>
         /// Create a pipeline
         /// </summary>
-        Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CreateCrmPipelineSecurity security, string connectionId, CrmPipeline? crmPipeline = null);
+        Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(string connectionId, CrmPipeline? crmPipeline = null);
 
         /// <summary>
         /// Retrieve a pipeline
         /// </summary>
-        Task<GetCrmPipelineResponse> GetCrmPipelineAsync(GetCrmPipelineSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all pipelines
         /// </summary>
-        Task<ListCrmPipelinesResponse> ListCrmPipelinesAsync(ListCrmPipelinesSecurity security, ListCrmPipelinesRequest request);
+        Task<ListCrmPipelinesResponse> ListCrmPipelinesAsync(ListCrmPipelinesRequest request);
 
         /// <summary>
         /// Update a pipeline
         /// </summary>
-        Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(PatchCrmPipelineSecurity security, string connectionId, string id, CrmPipeline? crmPipeline = null);
+        Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(string connectionId, string id, CrmPipeline? crmPipeline = null);
 
         /// <summary>
         /// Remove a pipeline
         /// </summary>
-        Task<RemoveCrmPipelineResponse> RemoveCrmPipelineAsync(RemoveCrmPipelineSecurity security, string connectionId, string id);
+        Task<RemoveCrmPipelineResponse> RemoveCrmPipelineAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a pipeline
         /// </summary>
-        Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(UpdateCrmPipelineSecurity security, string connectionId, string id, CrmPipeline? crmPipeline = null);
+        Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(string connectionId, string id, CrmPipeline? crmPipeline = null);
     }
 
     public class Pipeline: IPipeline
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.11.1";
-        private const string _sdkGenVersion = "2.272.4";
+        private const string _sdkVersion = "0.12.0";
+        private const string _sdkGenVersion = "2.272.7";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.11.1 2.272.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.0 2.272.7 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
+        private Func<Security>? _securitySource;
 
-        public Pipeline(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
+        public Pipeline(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CreateCrmPipelineSecurity security, string connectionId, CrmPipeline? crmPipeline = null)
+        public async Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(string connectionId, CrmPipeline? crmPipeline = null)
         {
             var request = new CreateCrmPipelineRequest()
             {
@@ -92,7 +94,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -119,7 +125,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetCrmPipelineResponse> GetCrmPipelineAsync(GetCrmPipelineSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetCrmPipelineRequest()
             {
@@ -133,7 +139,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -160,7 +170,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListCrmPipelinesResponse> ListCrmPipelinesAsync(ListCrmPipelinesSecurity security, ListCrmPipelinesRequest request)
+        public async Task<ListCrmPipelinesResponse> ListCrmPipelinesAsync(ListCrmPipelinesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline", request);
@@ -168,7 +178,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -195,7 +209,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(PatchCrmPipelineSecurity security, string connectionId, string id, CrmPipeline? crmPipeline = null)
+        public async Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(string connectionId, string id, CrmPipeline? crmPipeline = null)
         {
             var request = new PatchCrmPipelineRequest()
             {
@@ -215,7 +229,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -242,7 +260,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveCrmPipelineResponse> RemoveCrmPipelineAsync(RemoveCrmPipelineSecurity security, string connectionId, string id)
+        public async Task<RemoveCrmPipelineResponse> RemoveCrmPipelineAsync(string connectionId, string id)
         {
             var request = new RemoveCrmPipelineRequest()
             {
@@ -255,7 +273,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -272,7 +294,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(UpdateCrmPipelineSecurity security, string connectionId, string id, CrmPipeline? crmPipeline = null)
+        public async Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(string connectionId, string id, CrmPipeline? crmPipeline = null)
         {
             var request = new UpdateCrmPipelineRequest()
             {
@@ -292,7 +314,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 

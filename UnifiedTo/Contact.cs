@@ -26,114 +26,116 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(CreateAccountingContactSecurity security, string connectionId, AccountingContact? accountingContact = null);
+        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(string connectionId, AccountingContact? accountingContact = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateCrmContactResponse> CreateCrmContactAsync(CreateCrmContactSecurity security, string connectionId, CrmContact? crmContact = null);
+        Task<CreateCrmContactResponse> CreateCrmContactAsync(string connectionId, CrmContact? crmContact = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateUcContactResponse> CreateUcContactAsync(CreateUcContactSecurity security, string connectionId, UcContact? ucContact = null);
+        Task<CreateUcContactResponse> CreateUcContactAsync(string connectionId, UcContact? ucContact = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetAccountingContactResponse> GetAccountingContactAsync(GetAccountingContactSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetCrmContactResponse> GetCrmContactAsync(GetCrmContactSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetUcContactResponse> GetUcContactAsync(GetUcContactSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all contacts
         /// </summary>
-        Task<ListAccountingContactsResponse> ListAccountingContactsAsync(ListAccountingContactsSecurity security, ListAccountingContactsRequest request);
+        Task<ListAccountingContactsResponse> ListAccountingContactsAsync(ListAccountingContactsRequest request);
 
         /// <summary>
         /// List all contacts
         /// </summary>
-        Task<ListCrmContactsResponse> ListCrmContactsAsync(ListCrmContactsSecurity security, ListCrmContactsRequest request);
+        Task<ListCrmContactsResponse> ListCrmContactsAsync(ListCrmContactsRequest request);
 
         /// <summary>
         /// List all contacts
         /// </summary>
-        Task<ListUcContactsResponse> ListUcContactsAsync(ListUcContactsSecurity security, ListUcContactsRequest request);
+        Task<ListUcContactsResponse> ListUcContactsAsync(ListUcContactsRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchAccountingContactResponse> PatchAccountingContactAsync(PatchAccountingContactSecurity security, string connectionId, string id, AccountingContact? accountingContact = null);
+        Task<PatchAccountingContactResponse> PatchAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchCrmContactResponse> PatchCrmContactAsync(PatchCrmContactSecurity security, string connectionId, string id, CrmContact? crmContact = null);
+        Task<PatchCrmContactResponse> PatchCrmContactAsync(string connectionId, string id, CrmContact? crmContact = null);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchUcContactResponse> PatchUcContactAsync(PatchUcContactSecurity security, string connectionId, string id, UcContact? ucContact = null);
+        Task<PatchUcContactResponse> PatchUcContactAsync(string connectionId, string id, UcContact? ucContact = null);
 
         /// <summary>
         /// Remove a contact
         /// </summary>
-        Task<RemoveAccountingContactResponse> RemoveAccountingContactAsync(RemoveAccountingContactSecurity security, string connectionId, string id);
+        Task<RemoveAccountingContactResponse> RemoveAccountingContactAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a contact
         /// </summary>
-        Task<RemoveCrmContactResponse> RemoveCrmContactAsync(RemoveCrmContactSecurity security, string connectionId, string id);
+        Task<RemoveCrmContactResponse> RemoveCrmContactAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a contact
         /// </summary>
-        Task<RemoveUcContactResponse> RemoveUcContactAsync(RemoveUcContactSecurity security, string connectionId, string id);
+        Task<RemoveUcContactResponse> RemoveUcContactAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(UpdateAccountingContactSecurity security, string connectionId, string id, AccountingContact? accountingContact = null);
+        Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateCrmContactResponse> UpdateCrmContactAsync(UpdateCrmContactSecurity security, string connectionId, string id, CrmContact? crmContact = null);
+        Task<UpdateCrmContactResponse> UpdateCrmContactAsync(string connectionId, string id, CrmContact? crmContact = null);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateUcContactResponse> UpdateUcContactAsync(UpdateUcContactSecurity security, string connectionId, string id, UcContact? ucContact = null);
+        Task<UpdateUcContactResponse> UpdateUcContactAsync(string connectionId, string id, UcContact? ucContact = null);
     }
 
     public class Contact: IContact
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.11.1";
-        private const string _sdkGenVersion = "2.272.4";
+        private const string _sdkVersion = "0.12.0";
+        private const string _sdkGenVersion = "2.272.7";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.11.1 2.272.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.0 2.272.7 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
+        private Func<Security>? _securitySource;
 
-        public Contact(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
+        public Contact(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(CreateAccountingContactSecurity security, string connectionId, AccountingContact? accountingContact = null)
+        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(string connectionId, AccountingContact? accountingContact = null)
         {
             var request = new CreateAccountingContactRequest()
             {
@@ -152,7 +154,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -179,7 +185,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<CreateCrmContactResponse> CreateCrmContactAsync(CreateCrmContactSecurity security, string connectionId, CrmContact? crmContact = null)
+        public async Task<CreateCrmContactResponse> CreateCrmContactAsync(string connectionId, CrmContact? crmContact = null)
         {
             var request = new CreateCrmContactRequest()
             {
@@ -198,7 +204,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -225,7 +235,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<CreateUcContactResponse> CreateUcContactAsync(CreateUcContactSecurity security, string connectionId, UcContact? ucContact = null)
+        public async Task<CreateUcContactResponse> CreateUcContactAsync(string connectionId, UcContact? ucContact = null)
         {
             var request = new CreateUcContactRequest()
             {
@@ -244,7 +254,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -271,7 +285,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetAccountingContactResponse> GetAccountingContactAsync(GetAccountingContactSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetAccountingContactRequest()
             {
@@ -285,7 +299,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -312,7 +330,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetCrmContactResponse> GetCrmContactAsync(GetCrmContactSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetCrmContactRequest()
             {
@@ -326,7 +344,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -353,7 +375,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetUcContactResponse> GetUcContactAsync(GetUcContactSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetUcContactRequest()
             {
@@ -367,7 +389,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -394,7 +420,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListAccountingContactsResponse> ListAccountingContactsAsync(ListAccountingContactsSecurity security, ListAccountingContactsRequest request)
+        public async Task<ListAccountingContactsResponse> ListAccountingContactsAsync(ListAccountingContactsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact", request);
@@ -402,7 +428,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -429,7 +459,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListCrmContactsResponse> ListCrmContactsAsync(ListCrmContactsSecurity security, ListCrmContactsRequest request)
+        public async Task<ListCrmContactsResponse> ListCrmContactsAsync(ListCrmContactsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact", request);
@@ -437,7 +467,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -464,7 +498,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListUcContactsResponse> ListUcContactsAsync(ListUcContactsSecurity security, ListUcContactsRequest request)
+        public async Task<ListUcContactsResponse> ListUcContactsAsync(ListUcContactsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/contact", request);
@@ -472,7 +506,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -499,7 +537,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchAccountingContactResponse> PatchAccountingContactAsync(PatchAccountingContactSecurity security, string connectionId, string id, AccountingContact? accountingContact = null)
+        public async Task<PatchAccountingContactResponse> PatchAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null)
         {
             var request = new PatchAccountingContactRequest()
             {
@@ -519,7 +557,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -546,7 +588,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchCrmContactResponse> PatchCrmContactAsync(PatchCrmContactSecurity security, string connectionId, string id, CrmContact? crmContact = null)
+        public async Task<PatchCrmContactResponse> PatchCrmContactAsync(string connectionId, string id, CrmContact? crmContact = null)
         {
             var request = new PatchCrmContactRequest()
             {
@@ -566,7 +608,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -593,7 +639,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchUcContactResponse> PatchUcContactAsync(PatchUcContactSecurity security, string connectionId, string id, UcContact? ucContact = null)
+        public async Task<PatchUcContactResponse> PatchUcContactAsync(string connectionId, string id, UcContact? ucContact = null)
         {
             var request = new PatchUcContactRequest()
             {
@@ -613,7 +659,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -640,7 +690,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveAccountingContactResponse> RemoveAccountingContactAsync(RemoveAccountingContactSecurity security, string connectionId, string id)
+        public async Task<RemoveAccountingContactResponse> RemoveAccountingContactAsync(string connectionId, string id)
         {
             var request = new RemoveAccountingContactRequest()
             {
@@ -653,7 +703,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -670,7 +724,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveCrmContactResponse> RemoveCrmContactAsync(RemoveCrmContactSecurity security, string connectionId, string id)
+        public async Task<RemoveCrmContactResponse> RemoveCrmContactAsync(string connectionId, string id)
         {
             var request = new RemoveCrmContactRequest()
             {
@@ -683,7 +737,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -700,7 +758,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveUcContactResponse> RemoveUcContactAsync(RemoveUcContactSecurity security, string connectionId, string id)
+        public async Task<RemoveUcContactResponse> RemoveUcContactAsync(string connectionId, string id)
         {
             var request = new RemoveUcContactRequest()
             {
@@ -713,7 +771,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -730,7 +792,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(UpdateAccountingContactSecurity security, string connectionId, string id, AccountingContact? accountingContact = null)
+        public async Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null)
         {
             var request = new UpdateAccountingContactRequest()
             {
@@ -750,7 +812,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -777,7 +843,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateCrmContactResponse> UpdateCrmContactAsync(UpdateCrmContactSecurity security, string connectionId, string id, CrmContact? crmContact = null)
+        public async Task<UpdateCrmContactResponse> UpdateCrmContactAsync(string connectionId, string id, CrmContact? crmContact = null)
         {
             var request = new UpdateCrmContactRequest()
             {
@@ -797,7 +863,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -824,7 +894,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateUcContactResponse> UpdateUcContactAsync(UpdateUcContactSecurity security, string connectionId, string id, UcContact? ucContact = null)
+        public async Task<UpdateUcContactResponse> UpdateUcContactAsync(string connectionId, string id, UcContact? ucContact = null)
         {
             var request = new UpdateUcContactRequest()
             {
@@ -844,7 +914,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 

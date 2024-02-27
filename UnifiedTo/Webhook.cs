@@ -30,54 +30,56 @@ namespace UnifiedTo
         /// The data payload received by your server is described at https://docs.unified.to/unified/overview. The `interval` field can be set as low as 1 minute for paid accounts, and 60 minutes for free accounts.
         /// </remarks>
         /// </summary>
-        Task<CreateUnifiedWebhookResponse> CreateUnifiedWebhookAsync(CreateUnifiedWebhookSecurity security, Models.Components.Webhook? webhook = null, bool? includeAll = null);
+        Task<CreateUnifiedWebhookResponse> CreateUnifiedWebhookAsync(Models.Components.Webhook? webhook = null, bool? includeAll = null);
 
         /// <summary>
         /// Retrieve webhook by its ID
         /// </summary>
-        Task<GetUnifiedWebhookResponse> GetUnifiedWebhookAsync(GetUnifiedWebhookSecurity security, string id);
+        Task<GetUnifiedWebhookResponse> GetUnifiedWebhookAsync(string id);
 
         /// <summary>
         /// Returns all registered webhooks
         /// </summary>
-        Task<ListUnifiedWebhooksResponse> ListUnifiedWebhooksAsync(ListUnifiedWebhooksSecurity security, ListUnifiedWebhooksRequest request);
+        Task<ListUnifiedWebhooksResponse> ListUnifiedWebhooksAsync(ListUnifiedWebhooksRequest request);
 
         /// <summary>
         /// Trigger webhook
         /// </summary>
-        Task<PatchUnifiedWebhookTriggerResponse> PatchUnifiedWebhookTriggerAsync(PatchUnifiedWebhookTriggerSecurity security, string id);
+        Task<PatchUnifiedWebhookTriggerResponse> PatchUnifiedWebhookTriggerAsync(string id);
 
         /// <summary>
         /// Remove webhook subscription
         /// </summary>
-        Task<RemoveUnifiedWebhookResponse> RemoveUnifiedWebhookAsync(RemoveUnifiedWebhookSecurity security, string id);
+        Task<RemoveUnifiedWebhookResponse> RemoveUnifiedWebhookAsync(string id);
 
         /// <summary>
         /// Trigger webhook
         /// </summary>
-        Task<UpdateUnifiedWebhookTriggerResponse> UpdateUnifiedWebhookTriggerAsync(UpdateUnifiedWebhookTriggerSecurity security, string id);
+        Task<UpdateUnifiedWebhookTriggerResponse> UpdateUnifiedWebhookTriggerAsync(string id);
     }
 
     public class Webhook: IWebhook
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.11.1";
-        private const string _sdkGenVersion = "2.272.4";
+        private const string _sdkVersion = "0.12.0";
+        private const string _sdkGenVersion = "2.272.7";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.11.1 2.272.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.0 2.272.7 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
+        private Func<Security>? _securitySource;
 
-        public Webhook(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
+        public Webhook(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateUnifiedWebhookResponse> CreateUnifiedWebhookAsync(CreateUnifiedWebhookSecurity security, Models.Components.Webhook? webhook = null, bool? includeAll = null)
+        public async Task<CreateUnifiedWebhookResponse> CreateUnifiedWebhookAsync(Models.Components.Webhook? webhook = null, bool? includeAll = null)
         {
             var request = new CreateUnifiedWebhookRequest()
             {
@@ -96,7 +98,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -123,7 +129,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetUnifiedWebhookResponse> GetUnifiedWebhookAsync(GetUnifiedWebhookSecurity security, string id)
+        public async Task<GetUnifiedWebhookResponse> GetUnifiedWebhookAsync(string id)
         {
             var request = new GetUnifiedWebhookRequest()
             {
@@ -135,7 +141,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -162,7 +172,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListUnifiedWebhooksResponse> ListUnifiedWebhooksAsync(ListUnifiedWebhooksSecurity security, ListUnifiedWebhooksRequest request)
+        public async Task<ListUnifiedWebhooksResponse> ListUnifiedWebhooksAsync(ListUnifiedWebhooksRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/unified/webhook", request);
@@ -170,7 +180,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -197,7 +211,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchUnifiedWebhookTriggerResponse> PatchUnifiedWebhookTriggerAsync(PatchUnifiedWebhookTriggerSecurity security, string id)
+        public async Task<PatchUnifiedWebhookTriggerResponse> PatchUnifiedWebhookTriggerAsync(string id)
         {
             var request = new PatchUnifiedWebhookTriggerRequest()
             {
@@ -209,7 +223,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -226,7 +244,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveUnifiedWebhookResponse> RemoveUnifiedWebhookAsync(RemoveUnifiedWebhookSecurity security, string id)
+        public async Task<RemoveUnifiedWebhookResponse> RemoveUnifiedWebhookAsync(string id)
         {
             var request = new RemoveUnifiedWebhookRequest()
             {
@@ -238,7 +256,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -255,7 +277,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateUnifiedWebhookTriggerResponse> UpdateUnifiedWebhookTriggerAsync(UpdateUnifiedWebhookTriggerSecurity security, string id)
+        public async Task<UpdateUnifiedWebhookTriggerResponse> UpdateUnifiedWebhookTriggerAsync(string id)
         {
             var request = new UpdateUnifiedWebhookTriggerRequest()
             {
@@ -267,7 +289,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 

@@ -39,6 +39,8 @@ namespace UnifiedTo.Models.Requests
         Storage,
         [JsonProperty("commerce")]
         Commerce,
+        [JsonProperty("payment")]
+        Payment,
     }
 
     public static class CategoriesExtension

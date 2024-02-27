@@ -26,54 +26,60 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a refund
         /// </summary>
-        Task<GetAccountingRefundResponse> GetAccountingRefundAsync(GetAccountingRefundSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetPaymentRefundResponse> GetPaymentRefundAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all refunds
         /// </summary>
-        Task<ListAccountingRefundsResponse> ListAccountingRefundsAsync(ListAccountingRefundsSecurity security, ListAccountingRefundsRequest request);
+        Task<ListPaymentRefundsResponse> ListPaymentRefundsAsync(ListPaymentRefundsRequest request);
     }
 
     public class Refund: IRefund
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.11.1";
-        private const string _sdkGenVersion = "2.272.4";
+        private const string _sdkVersion = "0.12.0";
+        private const string _sdkGenVersion = "2.272.7";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.11.1 2.272.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.0 2.272.7 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
+        private Func<Security>? _securitySource;
 
-        public Refund(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
+        public Refund(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<GetAccountingRefundResponse> GetAccountingRefundAsync(GetAccountingRefundSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetPaymentRefundResponse> GetPaymentRefundAsync(string connectionId, string id, List<string>? fields = null)
         {
-            var request = new GetAccountingRefundRequest()
+            var request = new GetPaymentRefundRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/refund/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/refund/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
 
-            var response = new GetAccountingRefundResponse
+            var response = new GetPaymentRefundResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -84,7 +90,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.AccountingRefund = JsonConvert.DeserializeObject<AccountingRefund>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.PaymentRefund = JsonConvert.DeserializeObject<PaymentRefund>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
 
                 return response;
@@ -94,21 +100,25 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListAccountingRefundsResponse> ListAccountingRefundsAsync(ListAccountingRefundsSecurity security, ListAccountingRefundsRequest request)
+        public async Task<ListPaymentRefundsResponse> ListPaymentRefundsAsync(ListPaymentRefundsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/refund", request);
+            var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/refund", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
 
-            var response = new ListAccountingRefundsResponse
+            var response = new ListPaymentRefundsResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -119,7 +129,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.AccountingRefunds = JsonConvert.DeserializeObject<List<AccountingRefund>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.PaymentRefunds = JsonConvert.DeserializeObject<List<PaymentRefund>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
 
                 return response;

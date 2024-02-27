@@ -26,54 +26,60 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a payout
         /// </summary>
-        Task<GetAccountingPayoutResponse> GetAccountingPayoutAsync(GetAccountingPayoutSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetPaymentPayoutResponse> GetPaymentPayoutAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all payouts
         /// </summary>
-        Task<ListAccountingPayoutsResponse> ListAccountingPayoutsAsync(ListAccountingPayoutsSecurity security, ListAccountingPayoutsRequest request);
+        Task<ListPaymentPayoutsResponse> ListPaymentPayoutsAsync(ListPaymentPayoutsRequest request);
     }
 
     public class Payout: IPayout
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.11.1";
-        private const string _sdkGenVersion = "2.272.4";
+        private const string _sdkVersion = "0.12.0";
+        private const string _sdkGenVersion = "2.272.7";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.11.1 2.272.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.0 2.272.7 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
+        private Func<Security>? _securitySource;
 
-        public Payout(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
+        public Payout(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<GetAccountingPayoutResponse> GetAccountingPayoutAsync(GetAccountingPayoutSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetPaymentPayoutResponse> GetPaymentPayoutAsync(string connectionId, string id, List<string>? fields = null)
         {
-            var request = new GetAccountingPayoutRequest()
+            var request = new GetPaymentPayoutRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/payout/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/payout/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
 
-            var response = new GetAccountingPayoutResponse
+            var response = new GetPaymentPayoutResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -84,7 +90,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.AccountingPayout = JsonConvert.DeserializeObject<AccountingPayout>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.PaymentPayout = JsonConvert.DeserializeObject<PaymentPayout>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
 
                 return response;
@@ -94,21 +100,25 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListAccountingPayoutsResponse> ListAccountingPayoutsAsync(ListAccountingPayoutsSecurity security, ListAccountingPayoutsRequest request)
+        public async Task<ListPaymentPayoutsResponse> ListPaymentPayoutsAsync(ListPaymentPayoutsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/payout", request);
+            var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/payout", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
 
-            var response = new ListAccountingPayoutsResponse
+            var response = new ListPaymentPayoutsResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
@@ -119,7 +129,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
                 {
-                    response.AccountingPayouts = JsonConvert.DeserializeObject<List<AccountingPayout>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+                    response.PaymentPayouts = JsonConvert.DeserializeObject<List<PaymentPayout>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
                 }
 
                 return response;

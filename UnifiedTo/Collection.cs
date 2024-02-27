@@ -26,54 +26,56 @@ namespace UnifiedTo
         /// <summary>
         /// Create a collection
         /// </summary>
-        Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(CreateCommerceCollectionSecurity security, string connectionId, CommerceCollection? commerceCollection = null);
+        Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(string connectionId, CommerceCollection? commerceCollection = null);
 
         /// <summary>
         /// Retrieve a collection
         /// </summary>
-        Task<GetCommerceCollectionResponse> GetCommerceCollectionAsync(GetCommerceCollectionSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetCommerceCollectionResponse> GetCommerceCollectionAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all collections
         /// </summary>
-        Task<ListCommerceCollectionsResponse> ListCommerceCollectionsAsync(ListCommerceCollectionsSecurity security, ListCommerceCollectionsRequest request);
+        Task<ListCommerceCollectionsResponse> ListCommerceCollectionsAsync(ListCommerceCollectionsRequest request);
 
         /// <summary>
         /// Update a collection
         /// </summary>
-        Task<PatchCommerceCollectionResponse> PatchCommerceCollectionAsync(PatchCommerceCollectionSecurity security, string connectionId, string id, CommerceCollection? commerceCollection = null);
+        Task<PatchCommerceCollectionResponse> PatchCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null);
 
         /// <summary>
         /// Remove a collection
         /// </summary>
-        Task<RemoveCommerceCollectionResponse> RemoveCommerceCollectionAsync(RemoveCommerceCollectionSecurity security, string connectionId, string id);
+        Task<RemoveCommerceCollectionResponse> RemoveCommerceCollectionAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a collection
         /// </summary>
-        Task<UpdateCommerceCollectionResponse> UpdateCommerceCollectionAsync(UpdateCommerceCollectionSecurity security, string connectionId, string id, CommerceCollection? commerceCollection = null);
+        Task<UpdateCommerceCollectionResponse> UpdateCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null);
     }
 
     public class Collection: ICollection
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.11.1";
-        private const string _sdkGenVersion = "2.272.4";
+        private const string _sdkVersion = "0.12.0";
+        private const string _sdkGenVersion = "2.272.7";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.11.1 2.272.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.0 2.272.7 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
+        private Func<Security>? _securitySource;
 
-        public Collection(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
+        public Collection(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(CreateCommerceCollectionSecurity security, string connectionId, CommerceCollection? commerceCollection = null)
+        public async Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(string connectionId, CommerceCollection? commerceCollection = null)
         {
             var request = new CreateCommerceCollectionRequest()
             {
@@ -92,7 +94,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -119,7 +125,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetCommerceCollectionResponse> GetCommerceCollectionAsync(GetCommerceCollectionSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCommerceCollectionResponse> GetCommerceCollectionAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetCommerceCollectionRequest()
             {
@@ -133,7 +139,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -160,7 +170,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListCommerceCollectionsResponse> ListCommerceCollectionsAsync(ListCommerceCollectionsSecurity security, ListCommerceCollectionsRequest request)
+        public async Task<ListCommerceCollectionsResponse> ListCommerceCollectionsAsync(ListCommerceCollectionsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/collection", request);
@@ -168,7 +178,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -195,7 +209,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchCommerceCollectionResponse> PatchCommerceCollectionAsync(PatchCommerceCollectionSecurity security, string connectionId, string id, CommerceCollection? commerceCollection = null)
+        public async Task<PatchCommerceCollectionResponse> PatchCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null)
         {
             var request = new PatchCommerceCollectionRequest()
             {
@@ -215,7 +229,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -242,7 +260,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveCommerceCollectionResponse> RemoveCommerceCollectionAsync(RemoveCommerceCollectionSecurity security, string connectionId, string id)
+        public async Task<RemoveCommerceCollectionResponse> RemoveCommerceCollectionAsync(string connectionId, string id)
         {
             var request = new RemoveCommerceCollectionRequest()
             {
@@ -255,7 +273,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -272,7 +294,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateCommerceCollectionResponse> UpdateCommerceCollectionAsync(UpdateCommerceCollectionSecurity security, string connectionId, string id, CommerceCollection? commerceCollection = null)
+        public async Task<UpdateCommerceCollectionResponse> UpdateCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null)
         {
             var request = new UpdateCommerceCollectionRequest()
             {
@@ -292,7 +314,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 

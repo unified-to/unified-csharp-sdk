@@ -26,54 +26,56 @@ namespace UnifiedTo
         /// <summary>
         /// Create a document
         /// </summary>
-        Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(CreateAtsDocumentSecurity security, string connectionId, AtsDocument? atsDocument = null);
+        Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(string connectionId, AtsDocument? atsDocument = null);
 
         /// <summary>
         /// Retrieve a document
         /// </summary>
-        Task<GetAtsDocumentResponse> GetAtsDocumentAsync(GetAtsDocumentSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsDocumentResponse> GetAtsDocumentAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all documents
         /// </summary>
-        Task<ListAtsDocumentsResponse> ListAtsDocumentsAsync(ListAtsDocumentsSecurity security, ListAtsDocumentsRequest request);
+        Task<ListAtsDocumentsResponse> ListAtsDocumentsAsync(ListAtsDocumentsRequest request);
 
         /// <summary>
         /// Update a document
         /// </summary>
-        Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(PatchAtsDocumentSecurity security, string connectionId, string id, AtsDocument? atsDocument = null);
+        Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null);
 
         /// <summary>
         /// Remove a document
         /// </summary>
-        Task<RemoveAtsDocumentResponse> RemoveAtsDocumentAsync(RemoveAtsDocumentSecurity security, string connectionId, string id);
+        Task<RemoveAtsDocumentResponse> RemoveAtsDocumentAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a document
         /// </summary>
-        Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(UpdateAtsDocumentSecurity security, string connectionId, string id, AtsDocument? atsDocument = null);
+        Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null);
     }
 
     public class Document: IDocument
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.11.1";
-        private const string _sdkGenVersion = "2.272.4";
+        private const string _sdkVersion = "0.12.0";
+        private const string _sdkGenVersion = "2.272.7";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.11.1 2.272.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.0 2.272.7 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
+        private Func<Security>? _securitySource;
 
-        public Document(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
+        public Document(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(CreateAtsDocumentSecurity security, string connectionId, AtsDocument? atsDocument = null)
+        public async Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(string connectionId, AtsDocument? atsDocument = null)
         {
             var request = new CreateAtsDocumentRequest()
             {
@@ -92,7 +94,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -119,7 +125,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetAtsDocumentResponse> GetAtsDocumentAsync(GetAtsDocumentSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsDocumentResponse> GetAtsDocumentAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetAtsDocumentRequest()
             {
@@ -133,7 +139,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -160,7 +170,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListAtsDocumentsResponse> ListAtsDocumentsAsync(ListAtsDocumentsSecurity security, ListAtsDocumentsRequest request)
+        public async Task<ListAtsDocumentsResponse> ListAtsDocumentsAsync(ListAtsDocumentsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document", request);
@@ -168,7 +178,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -195,7 +209,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(PatchAtsDocumentSecurity security, string connectionId, string id, AtsDocument? atsDocument = null)
+        public async Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null)
         {
             var request = new PatchAtsDocumentRequest()
             {
@@ -215,7 +229,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -242,7 +260,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveAtsDocumentResponse> RemoveAtsDocumentAsync(RemoveAtsDocumentSecurity security, string connectionId, string id)
+        public async Task<RemoveAtsDocumentResponse> RemoveAtsDocumentAsync(string connectionId, string id)
         {
             var request = new RemoveAtsDocumentRequest()
             {
@@ -255,7 +273,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -272,7 +294,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(UpdateAtsDocumentSecurity security, string connectionId, string id, AtsDocument? atsDocument = null)
+        public async Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null)
         {
             var request = new UpdateAtsDocumentRequest()
             {
@@ -292,7 +314,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 

@@ -39,6 +39,8 @@ namespace UnifiedTo.Models.Components
         Storage,
         [JsonProperty("commerce")]
         Commerce,
+        [JsonProperty("payment")]
+        Payment,
     }
 
     public static class PropertyConnectionCategoriesExtension

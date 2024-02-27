@@ -26,144 +26,146 @@ namespace UnifiedTo
         /// <summary>
         /// Create a collection
         /// </summary>
-        Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(CreateCommerceCollectionSecurity security, string connectionId, CommerceCollection? commerceCollection = null);
+        Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(string connectionId, CommerceCollection? commerceCollection = null);
 
         /// <summary>
         /// Create an inventory
         /// </summary>
-        Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(CreateCommerceInventorySecurity security, string connectionId, CommerceInventory? commerceInventory = null);
+        Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(string connectionId, CommerceInventory? commerceInventory = null);
 
         /// <summary>
         /// Create an item
         /// </summary>
-        Task<CreateCommerceItemResponse> CreateCommerceItemAsync(CreateCommerceItemSecurity security, string connectionId, CommerceItem? commerceItem = null);
+        Task<CreateCommerceItemResponse> CreateCommerceItemAsync(string connectionId, CommerceItem? commerceItem = null);
 
         /// <summary>
         /// Create a location
         /// </summary>
-        Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(CreateCommerceLocationSecurity security, string connectionId, CommerceLocation? commerceLocation = null);
+        Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(string connectionId, CommerceLocation? commerceLocation = null);
 
         /// <summary>
         /// Retrieve a collection
         /// </summary>
-        Task<GetCommerceCollectionResponse> GetCommerceCollectionAsync(GetCommerceCollectionSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetCommerceCollectionResponse> GetCommerceCollectionAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve an inventory
         /// </summary>
-        Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(GetCommerceInventorySecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve an item
         /// </summary>
-        Task<GetCommerceItemResponse> GetCommerceItemAsync(GetCommerceItemSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a location
         /// </summary>
-        Task<GetCommerceLocationResponse> GetCommerceLocationAsync(GetCommerceLocationSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetCommerceLocationResponse> GetCommerceLocationAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all collections
         /// </summary>
-        Task<ListCommerceCollectionsResponse> ListCommerceCollectionsAsync(ListCommerceCollectionsSecurity security, ListCommerceCollectionsRequest request);
+        Task<ListCommerceCollectionsResponse> ListCommerceCollectionsAsync(ListCommerceCollectionsRequest request);
 
         /// <summary>
         /// List all inventories
         /// </summary>
-        Task<ListCommerceInventoriesResponse> ListCommerceInventoriesAsync(ListCommerceInventoriesSecurity security, ListCommerceInventoriesRequest request);
+        Task<ListCommerceInventoriesResponse> ListCommerceInventoriesAsync(ListCommerceInventoriesRequest request);
 
         /// <summary>
         /// List all items
         /// </summary>
-        Task<ListCommerceItemsResponse> ListCommerceItemsAsync(ListCommerceItemsSecurity security, ListCommerceItemsRequest request);
+        Task<ListCommerceItemsResponse> ListCommerceItemsAsync(ListCommerceItemsRequest request);
 
         /// <summary>
         /// List all locations
         /// </summary>
-        Task<ListCommerceLocationsResponse> ListCommerceLocationsAsync(ListCommerceLocationsSecurity security, ListCommerceLocationsRequest request);
+        Task<ListCommerceLocationsResponse> ListCommerceLocationsAsync(ListCommerceLocationsRequest request);
 
         /// <summary>
         /// Update a collection
         /// </summary>
-        Task<PatchCommerceCollectionResponse> PatchCommerceCollectionAsync(PatchCommerceCollectionSecurity security, string connectionId, string id, CommerceCollection? commerceCollection = null);
+        Task<PatchCommerceCollectionResponse> PatchCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null);
 
         /// <summary>
         /// Update an inventory
         /// </summary>
-        Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(PatchCommerceInventorySecurity security, string connectionId, string id, CommerceInventory? commerceInventory = null);
+        Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null);
 
         /// <summary>
         /// Update an item
         /// </summary>
-        Task<PatchCommerceItemResponse> PatchCommerceItemAsync(PatchCommerceItemSecurity security, string connectionId, string id, CommerceItem? commerceItem = null);
+        Task<PatchCommerceItemResponse> PatchCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null);
 
         /// <summary>
         /// Update a location
         /// </summary>
-        Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(PatchCommerceLocationSecurity security, string connectionId, string id, CommerceLocation? commerceLocation = null);
+        Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null);
 
         /// <summary>
         /// Remove a collection
         /// </summary>
-        Task<RemoveCommerceCollectionResponse> RemoveCommerceCollectionAsync(RemoveCommerceCollectionSecurity security, string connectionId, string id);
+        Task<RemoveCommerceCollectionResponse> RemoveCommerceCollectionAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove an inventory
         /// </summary>
-        Task<RemoveCommerceInventoryResponse> RemoveCommerceInventoryAsync(RemoveCommerceInventorySecurity security, string connectionId, string id);
+        Task<RemoveCommerceInventoryResponse> RemoveCommerceInventoryAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove an item
         /// </summary>
-        Task<RemoveCommerceItemResponse> RemoveCommerceItemAsync(RemoveCommerceItemSecurity security, string connectionId, string id);
+        Task<RemoveCommerceItemResponse> RemoveCommerceItemAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a location
         /// </summary>
-        Task<RemoveCommerceLocationResponse> RemoveCommerceLocationAsync(RemoveCommerceLocationSecurity security, string connectionId, string id);
+        Task<RemoveCommerceLocationResponse> RemoveCommerceLocationAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a collection
         /// </summary>
-        Task<UpdateCommerceCollectionResponse> UpdateCommerceCollectionAsync(UpdateCommerceCollectionSecurity security, string connectionId, string id, CommerceCollection? commerceCollection = null);
+        Task<UpdateCommerceCollectionResponse> UpdateCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null);
 
         /// <summary>
         /// Update an inventory
         /// </summary>
-        Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(UpdateCommerceInventorySecurity security, string connectionId, string id, CommerceInventory? commerceInventory = null);
+        Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null);
 
         /// <summary>
         /// Update an item
         /// </summary>
-        Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(UpdateCommerceItemSecurity security, string connectionId, string id, CommerceItem? commerceItem = null);
+        Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null);
 
         /// <summary>
         /// Update a location
         /// </summary>
-        Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(UpdateCommerceLocationSecurity security, string connectionId, string id, CommerceLocation? commerceLocation = null);
+        Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null);
     }
 
     public class Commerce: ICommerce
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.11.1";
-        private const string _sdkGenVersion = "2.272.4";
+        private const string _sdkVersion = "0.12.0";
+        private const string _sdkGenVersion = "2.272.7";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.11.1 2.272.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.0 2.272.7 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
+        private Func<Security>? _securitySource;
 
-        public Commerce(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
+        public Commerce(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(CreateCommerceCollectionSecurity security, string connectionId, CommerceCollection? commerceCollection = null)
+        public async Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(string connectionId, CommerceCollection? commerceCollection = null)
         {
             var request = new CreateCommerceCollectionRequest()
             {
@@ -182,7 +184,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -209,7 +215,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(CreateCommerceInventorySecurity security, string connectionId, CommerceInventory? commerceInventory = null)
+        public async Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(string connectionId, CommerceInventory? commerceInventory = null)
         {
             var request = new CreateCommerceInventoryRequest()
             {
@@ -228,7 +234,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -255,7 +265,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<CreateCommerceItemResponse> CreateCommerceItemAsync(CreateCommerceItemSecurity security, string connectionId, CommerceItem? commerceItem = null)
+        public async Task<CreateCommerceItemResponse> CreateCommerceItemAsync(string connectionId, CommerceItem? commerceItem = null)
         {
             var request = new CreateCommerceItemRequest()
             {
@@ -274,7 +284,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -301,7 +315,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(CreateCommerceLocationSecurity security, string connectionId, CommerceLocation? commerceLocation = null)
+        public async Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(string connectionId, CommerceLocation? commerceLocation = null)
         {
             var request = new CreateCommerceLocationRequest()
             {
@@ -320,7 +334,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -347,7 +365,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetCommerceCollectionResponse> GetCommerceCollectionAsync(GetCommerceCollectionSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCommerceCollectionResponse> GetCommerceCollectionAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetCommerceCollectionRequest()
             {
@@ -361,7 +379,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -388,7 +410,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(GetCommerceInventorySecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetCommerceInventoryRequest()
             {
@@ -402,7 +424,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -429,7 +455,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetCommerceItemResponse> GetCommerceItemAsync(GetCommerceItemSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetCommerceItemRequest()
             {
@@ -443,7 +469,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -470,7 +500,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetCommerceLocationResponse> GetCommerceLocationAsync(GetCommerceLocationSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCommerceLocationResponse> GetCommerceLocationAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetCommerceLocationRequest()
             {
@@ -484,7 +514,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -511,7 +545,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListCommerceCollectionsResponse> ListCommerceCollectionsAsync(ListCommerceCollectionsSecurity security, ListCommerceCollectionsRequest request)
+        public async Task<ListCommerceCollectionsResponse> ListCommerceCollectionsAsync(ListCommerceCollectionsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/collection", request);
@@ -519,7 +553,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -546,7 +584,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListCommerceInventoriesResponse> ListCommerceInventoriesAsync(ListCommerceInventoriesSecurity security, ListCommerceInventoriesRequest request)
+        public async Task<ListCommerceInventoriesResponse> ListCommerceInventoriesAsync(ListCommerceInventoriesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/inventory", request);
@@ -554,7 +592,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -581,7 +623,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListCommerceItemsResponse> ListCommerceItemsAsync(ListCommerceItemsSecurity security, ListCommerceItemsRequest request)
+        public async Task<ListCommerceItemsResponse> ListCommerceItemsAsync(ListCommerceItemsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item", request);
@@ -589,7 +631,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -616,7 +662,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListCommerceLocationsResponse> ListCommerceLocationsAsync(ListCommerceLocationsSecurity security, ListCommerceLocationsRequest request)
+        public async Task<ListCommerceLocationsResponse> ListCommerceLocationsAsync(ListCommerceLocationsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/location", request);
@@ -624,7 +670,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -651,7 +701,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchCommerceCollectionResponse> PatchCommerceCollectionAsync(PatchCommerceCollectionSecurity security, string connectionId, string id, CommerceCollection? commerceCollection = null)
+        public async Task<PatchCommerceCollectionResponse> PatchCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null)
         {
             var request = new PatchCommerceCollectionRequest()
             {
@@ -671,7 +721,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -698,7 +752,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(PatchCommerceInventorySecurity security, string connectionId, string id, CommerceInventory? commerceInventory = null)
+        public async Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null)
         {
             var request = new PatchCommerceInventoryRequest()
             {
@@ -718,7 +772,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -745,7 +803,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchCommerceItemResponse> PatchCommerceItemAsync(PatchCommerceItemSecurity security, string connectionId, string id, CommerceItem? commerceItem = null)
+        public async Task<PatchCommerceItemResponse> PatchCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null)
         {
             var request = new PatchCommerceItemRequest()
             {
@@ -765,7 +823,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -792,7 +854,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(PatchCommerceLocationSecurity security, string connectionId, string id, CommerceLocation? commerceLocation = null)
+        public async Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null)
         {
             var request = new PatchCommerceLocationRequest()
             {
@@ -812,7 +874,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -839,7 +905,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveCommerceCollectionResponse> RemoveCommerceCollectionAsync(RemoveCommerceCollectionSecurity security, string connectionId, string id)
+        public async Task<RemoveCommerceCollectionResponse> RemoveCommerceCollectionAsync(string connectionId, string id)
         {
             var request = new RemoveCommerceCollectionRequest()
             {
@@ -852,7 +918,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -869,7 +939,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveCommerceInventoryResponse> RemoveCommerceInventoryAsync(RemoveCommerceInventorySecurity security, string connectionId, string id)
+        public async Task<RemoveCommerceInventoryResponse> RemoveCommerceInventoryAsync(string connectionId, string id)
         {
             var request = new RemoveCommerceInventoryRequest()
             {
@@ -882,7 +952,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -899,7 +973,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveCommerceItemResponse> RemoveCommerceItemAsync(RemoveCommerceItemSecurity security, string connectionId, string id)
+        public async Task<RemoveCommerceItemResponse> RemoveCommerceItemAsync(string connectionId, string id)
         {
             var request = new RemoveCommerceItemRequest()
             {
@@ -912,7 +986,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -929,7 +1007,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveCommerceLocationResponse> RemoveCommerceLocationAsync(RemoveCommerceLocationSecurity security, string connectionId, string id)
+        public async Task<RemoveCommerceLocationResponse> RemoveCommerceLocationAsync(string connectionId, string id)
         {
             var request = new RemoveCommerceLocationRequest()
             {
@@ -942,7 +1020,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -959,7 +1041,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateCommerceCollectionResponse> UpdateCommerceCollectionAsync(UpdateCommerceCollectionSecurity security, string connectionId, string id, CommerceCollection? commerceCollection = null)
+        public async Task<UpdateCommerceCollectionResponse> UpdateCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null)
         {
             var request = new UpdateCommerceCollectionRequest()
             {
@@ -979,7 +1061,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1006,7 +1092,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(UpdateCommerceInventorySecurity security, string connectionId, string id, CommerceInventory? commerceInventory = null)
+        public async Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null)
         {
             var request = new UpdateCommerceInventoryRequest()
             {
@@ -1026,7 +1112,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1053,7 +1143,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(UpdateCommerceItemSecurity security, string connectionId, string id, CommerceItem? commerceItem = null)
+        public async Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null)
         {
             var request = new UpdateCommerceItemRequest()
             {
@@ -1073,7 +1163,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1100,7 +1194,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(UpdateCommerceLocationSecurity security, string connectionId, string id, CommerceLocation? commerceLocation = null)
+        public async Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null)
         {
             var request = new UpdateCommerceLocationRequest()
             {
@@ -1120,7 +1214,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 

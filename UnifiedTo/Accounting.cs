@@ -26,234 +26,186 @@ namespace UnifiedTo
         /// <summary>
         /// Create an account
         /// </summary>
-        Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(CreateAccountingAccountSecurity security, string connectionId, AccountingAccount? accountingAccount = null);
+        Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(string connectionId, AccountingAccount? accountingAccount = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(CreateAccountingContactSecurity security, string connectionId, AccountingContact? accountingContact = null);
+        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(string connectionId, AccountingContact? accountingContact = null);
 
         /// <summary>
         /// Create a invoice
         /// </summary>
-        Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(CreateAccountingInvoiceSecurity security, string connectionId, AccountingInvoice? accountingInvoice = null);
-
-        /// <summary>
-        /// Create a payment
-        /// </summary>
-        Task<CreateAccountingPaymentResponse> CreateAccountingPaymentAsync(CreateAccountingPaymentSecurity security, string connectionId, AccountingPayment? accountingPayment = null);
+        Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(string connectionId, AccountingInvoice? accountingInvoice = null);
 
         /// <summary>
         /// Create a taxrate
         /// </summary>
-        Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(CreateAccountingTaxrateSecurity security, string connectionId, AccountingTaxrate? accountingTaxrate = null);
+        Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(string connectionId, AccountingTaxrate? accountingTaxrate = null);
 
         /// <summary>
         /// Create a transaction
         /// </summary>
-        Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(CreateAccountingTransactionSecurity security, string connectionId, AccountingTransaction? accountingTransaction = null);
+        Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(string connectionId, AccountingTransaction? accountingTransaction = null);
 
         /// <summary>
         /// Retrieve an account
         /// </summary>
-        Task<GetAccountingAccountResponse> GetAccountingAccountAsync(GetAccountingAccountSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingAccountResponse> GetAccountingAccountAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetAccountingContactResponse> GetAccountingContactAsync(GetAccountingContactSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a invoice
         /// </summary>
-        Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(GetAccountingInvoiceSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve an organization
         /// </summary>
-        Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(GetAccountingOrganizationSecurity security, string connectionId, string id, List<string>? fields = null);
-
-        /// <summary>
-        /// Retrieve a payment
-        /// </summary>
-        Task<GetAccountingPaymentResponse> GetAccountingPaymentAsync(GetAccountingPaymentSecurity security, string connectionId, string id, List<string>? fields = null);
-
-        /// <summary>
-        /// Retrieve a payout
-        /// </summary>
-        Task<GetAccountingPayoutResponse> GetAccountingPayoutAsync(GetAccountingPayoutSecurity security, string connectionId, string id, List<string>? fields = null);
-
-        /// <summary>
-        /// Retrieve a refund
-        /// </summary>
-        Task<GetAccountingRefundResponse> GetAccountingRefundAsync(GetAccountingRefundSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a taxrate
         /// </summary>
-        Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(GetAccountingTaxrateSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a transaction
         /// </summary>
-        Task<GetAccountingTransactionResponse> GetAccountingTransactionAsync(GetAccountingTransactionSecurity security, string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingTransactionResponse> GetAccountingTransactionAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all accounts
         /// </summary>
-        Task<ListAccountingAccountsResponse> ListAccountingAccountsAsync(ListAccountingAccountsSecurity security, ListAccountingAccountsRequest request);
+        Task<ListAccountingAccountsResponse> ListAccountingAccountsAsync(ListAccountingAccountsRequest request);
 
         /// <summary>
         /// List all contacts
         /// </summary>
-        Task<ListAccountingContactsResponse> ListAccountingContactsAsync(ListAccountingContactsSecurity security, ListAccountingContactsRequest request);
+        Task<ListAccountingContactsResponse> ListAccountingContactsAsync(ListAccountingContactsRequest request);
 
         /// <summary>
         /// List all invoices
         /// </summary>
-        Task<ListAccountingInvoicesResponse> ListAccountingInvoicesAsync(ListAccountingInvoicesSecurity security, ListAccountingInvoicesRequest request);
+        Task<ListAccountingInvoicesResponse> ListAccountingInvoicesAsync(ListAccountingInvoicesRequest request);
 
         /// <summary>
         /// List all organizations
         /// </summary>
-        Task<ListAccountingOrganizationsResponse> ListAccountingOrganizationsAsync(ListAccountingOrganizationsSecurity security, ListAccountingOrganizationsRequest request);
-
-        /// <summary>
-        /// List all payments
-        /// </summary>
-        Task<ListAccountingPaymentsResponse> ListAccountingPaymentsAsync(ListAccountingPaymentsSecurity security, ListAccountingPaymentsRequest request);
-
-        /// <summary>
-        /// List all payouts
-        /// </summary>
-        Task<ListAccountingPayoutsResponse> ListAccountingPayoutsAsync(ListAccountingPayoutsSecurity security, ListAccountingPayoutsRequest request);
-
-        /// <summary>
-        /// List all refunds
-        /// </summary>
-        Task<ListAccountingRefundsResponse> ListAccountingRefundsAsync(ListAccountingRefundsSecurity security, ListAccountingRefundsRequest request);
+        Task<ListAccountingOrganizationsResponse> ListAccountingOrganizationsAsync(ListAccountingOrganizationsRequest request);
 
         /// <summary>
         /// List all taxrates
         /// </summary>
-        Task<ListAccountingTaxratesResponse> ListAccountingTaxratesAsync(ListAccountingTaxratesSecurity security, ListAccountingTaxratesRequest request);
+        Task<ListAccountingTaxratesResponse> ListAccountingTaxratesAsync(ListAccountingTaxratesRequest request);
 
         /// <summary>
         /// List all transactions
         /// </summary>
-        Task<ListAccountingTransactionsResponse> ListAccountingTransactionsAsync(ListAccountingTransactionsSecurity security, ListAccountingTransactionsRequest request);
+        Task<ListAccountingTransactionsResponse> ListAccountingTransactionsAsync(ListAccountingTransactionsRequest request);
 
         /// <summary>
         /// Update an account
         /// </summary>
-        Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(PatchAccountingAccountSecurity security, string connectionId, string id, AccountingAccount? accountingAccount = null);
+        Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchAccountingContactResponse> PatchAccountingContactAsync(PatchAccountingContactSecurity security, string connectionId, string id, AccountingContact? accountingContact = null);
+        Task<PatchAccountingContactResponse> PatchAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null);
 
         /// <summary>
         /// Update a invoice
         /// </summary>
-        Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(PatchAccountingInvoiceSecurity security, string connectionId, string id, AccountingInvoice? accountingInvoice = null);
-
-        /// <summary>
-        /// Update a payment
-        /// </summary>
-        Task<PatchAccountingPaymentResponse> PatchAccountingPaymentAsync(PatchAccountingPaymentSecurity security, string connectionId, string id, AccountingPayment? accountingPayment = null);
+        Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null);
 
         /// <summary>
         /// Update a taxrate
         /// </summary>
-        Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(PatchAccountingTaxrateSecurity security, string connectionId, string id, AccountingTaxrate? accountingTaxrate = null);
+        Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null);
 
         /// <summary>
         /// Update a transaction
         /// </summary>
-        Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(PatchAccountingTransactionSecurity security, string connectionId, string id, AccountingTransaction? accountingTransaction = null);
+        Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null);
 
         /// <summary>
         /// Remove an account
         /// </summary>
-        Task<RemoveAccountingAccountResponse> RemoveAccountingAccountAsync(RemoveAccountingAccountSecurity security, string connectionId, string id);
+        Task<RemoveAccountingAccountResponse> RemoveAccountingAccountAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a contact
         /// </summary>
-        Task<RemoveAccountingContactResponse> RemoveAccountingContactAsync(RemoveAccountingContactSecurity security, string connectionId, string id);
+        Task<RemoveAccountingContactResponse> RemoveAccountingContactAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a invoice
         /// </summary>
-        Task<RemoveAccountingInvoiceResponse> RemoveAccountingInvoiceAsync(RemoveAccountingInvoiceSecurity security, string connectionId, string id);
-
-        /// <summary>
-        /// Remove a payment
-        /// </summary>
-        Task<RemoveAccountingPaymentResponse> RemoveAccountingPaymentAsync(RemoveAccountingPaymentSecurity security, string connectionId, string id);
+        Task<RemoveAccountingInvoiceResponse> RemoveAccountingInvoiceAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a taxrate
         /// </summary>
-        Task<RemoveAccountingTaxrateResponse> RemoveAccountingTaxrateAsync(RemoveAccountingTaxrateSecurity security, string connectionId, string id);
+        Task<RemoveAccountingTaxrateResponse> RemoveAccountingTaxrateAsync(string connectionId, string id);
 
         /// <summary>
         /// Remove a transaction
         /// </summary>
-        Task<RemoveAccountingTransactionResponse> RemoveAccountingTransactionAsync(RemoveAccountingTransactionSecurity security, string connectionId, string id);
+        Task<RemoveAccountingTransactionResponse> RemoveAccountingTransactionAsync(string connectionId, string id);
 
         /// <summary>
         /// Update an account
         /// </summary>
-        Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(UpdateAccountingAccountSecurity security, string connectionId, string id, AccountingAccount? accountingAccount = null);
+        Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(UpdateAccountingContactSecurity security, string connectionId, string id, AccountingContact? accountingContact = null);
+        Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null);
 
         /// <summary>
         /// Update a invoice
         /// </summary>
-        Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(UpdateAccountingInvoiceSecurity security, string connectionId, string id, AccountingInvoice? accountingInvoice = null);
-
-        /// <summary>
-        /// Update a payment
-        /// </summary>
-        Task<UpdateAccountingPaymentResponse> UpdateAccountingPaymentAsync(UpdateAccountingPaymentSecurity security, string connectionId, string id, AccountingPayment? accountingPayment = null);
+        Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null);
 
         /// <summary>
         /// Update a taxrate
         /// </summary>
-        Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(UpdateAccountingTaxrateSecurity security, string connectionId, string id, AccountingTaxrate? accountingTaxrate = null);
+        Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null);
 
         /// <summary>
         /// Update a transaction
         /// </summary>
-        Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(UpdateAccountingTransactionSecurity security, string connectionId, string id, AccountingTransaction? accountingTransaction = null);
+        Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null);
     }
 
     public class Accounting: IAccounting
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.11.1";
-        private const string _sdkGenVersion = "2.272.4";
+        private const string _sdkVersion = "0.12.0";
+        private const string _sdkGenVersion = "2.272.7";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.11.1 2.272.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.0 2.272.7 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
+        private Func<Security>? _securitySource;
 
-        public Accounting(ISpeakeasyHttpClient defaultClient, string serverUrl, SDKConfig config)
+        public Accounting(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
             _defaultClient = defaultClient;
+            _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
         
 
-        public async Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(CreateAccountingAccountSecurity security, string connectionId, AccountingAccount? accountingAccount = null)
+        public async Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(string connectionId, AccountingAccount? accountingAccount = null)
         {
             var request = new CreateAccountingAccountRequest()
             {
@@ -272,7 +224,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -299,7 +255,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(CreateAccountingContactSecurity security, string connectionId, AccountingContact? accountingContact = null)
+        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(string connectionId, AccountingContact? accountingContact = null)
         {
             var request = new CreateAccountingContactRequest()
             {
@@ -318,7 +274,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -345,7 +305,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(CreateAccountingInvoiceSecurity security, string connectionId, AccountingInvoice? accountingInvoice = null)
+        public async Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(string connectionId, AccountingInvoice? accountingInvoice = null)
         {
             var request = new CreateAccountingInvoiceRequest()
             {
@@ -364,7 +324,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -391,53 +355,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<CreateAccountingPaymentResponse> CreateAccountingPaymentAsync(CreateAccountingPaymentSecurity security, string connectionId, AccountingPayment? accountingPayment = null)
-        {
-            var request = new CreateAccountingPaymentRequest()
-            {
-                ConnectionId = connectionId,
-                AccountingPayment = accountingPayment,
-            };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/payment", request);
-
-            var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingPayment", "json", false, true);
-            if (serializedBody != null)
-            {
-                httpRequest.Content = serializedBody;
-            }
-
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
-
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-
-            var response = new CreateAccountingPaymentResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.AccountingPayment = JsonConvert.DeserializeObject<AccountingPayment>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-
-                return response;
-            }
-            return response;
-        }
-
-        
-
-        public async Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(CreateAccountingTaxrateSecurity security, string connectionId, AccountingTaxrate? accountingTaxrate = null)
+        public async Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(string connectionId, AccountingTaxrate? accountingTaxrate = null)
         {
             var request = new CreateAccountingTaxrateRequest()
             {
@@ -456,7 +374,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -483,7 +405,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(CreateAccountingTransactionSecurity security, string connectionId, AccountingTransaction? accountingTransaction = null)
+        public async Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(string connectionId, AccountingTransaction? accountingTransaction = null)
         {
             var request = new CreateAccountingTransactionRequest()
             {
@@ -502,7 +424,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -529,7 +455,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetAccountingAccountResponse> GetAccountingAccountAsync(GetAccountingAccountSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingAccountResponse> GetAccountingAccountAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetAccountingAccountRequest()
             {
@@ -543,7 +469,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -570,7 +500,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetAccountingContactResponse> GetAccountingContactAsync(GetAccountingContactSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetAccountingContactRequest()
             {
@@ -584,7 +514,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -611,7 +545,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(GetAccountingInvoiceSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetAccountingInvoiceRequest()
             {
@@ -625,7 +559,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -652,7 +590,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(GetAccountingOrganizationSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetAccountingOrganizationRequest()
             {
@@ -666,7 +604,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -693,130 +635,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetAccountingPaymentResponse> GetAccountingPaymentAsync(GetAccountingPaymentSecurity security, string connectionId, string id, List<string>? fields = null)
-        {
-            var request = new GetAccountingPaymentRequest()
-            {
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/payment/{id}", request);
-
-            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
-
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-
-            var response = new GetAccountingPaymentResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.AccountingPayment = JsonConvert.DeserializeObject<AccountingPayment>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-
-                return response;
-            }
-            return response;
-        }
-
-        
-
-        public async Task<GetAccountingPayoutResponse> GetAccountingPayoutAsync(GetAccountingPayoutSecurity security, string connectionId, string id, List<string>? fields = null)
-        {
-            var request = new GetAccountingPayoutRequest()
-            {
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/payout/{id}", request);
-
-            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
-
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-
-            var response = new GetAccountingPayoutResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.AccountingPayout = JsonConvert.DeserializeObject<AccountingPayout>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-
-                return response;
-            }
-            return response;
-        }
-
-        
-
-        public async Task<GetAccountingRefundResponse> GetAccountingRefundAsync(GetAccountingRefundSecurity security, string connectionId, string id, List<string>? fields = null)
-        {
-            var request = new GetAccountingRefundRequest()
-            {
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/refund/{id}", request);
-
-            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
-
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-
-            var response = new GetAccountingRefundResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.AccountingRefund = JsonConvert.DeserializeObject<AccountingRefund>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-
-                return response;
-            }
-            return response;
-        }
-
-        
-
-        public async Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(GetAccountingTaxrateSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetAccountingTaxrateRequest()
             {
@@ -830,7 +649,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -857,7 +680,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<GetAccountingTransactionResponse> GetAccountingTransactionAsync(GetAccountingTransactionSecurity security, string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingTransactionResponse> GetAccountingTransactionAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetAccountingTransactionRequest()
             {
@@ -871,7 +694,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -898,7 +725,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListAccountingAccountsResponse> ListAccountingAccountsAsync(ListAccountingAccountsSecurity security, ListAccountingAccountsRequest request)
+        public async Task<ListAccountingAccountsResponse> ListAccountingAccountsAsync(ListAccountingAccountsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account", request);
@@ -906,7 +733,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -933,7 +764,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListAccountingContactsResponse> ListAccountingContactsAsync(ListAccountingContactsSecurity security, ListAccountingContactsRequest request)
+        public async Task<ListAccountingContactsResponse> ListAccountingContactsAsync(ListAccountingContactsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact", request);
@@ -941,7 +772,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -968,7 +803,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListAccountingInvoicesResponse> ListAccountingInvoicesAsync(ListAccountingInvoicesSecurity security, ListAccountingInvoicesRequest request)
+        public async Task<ListAccountingInvoicesResponse> ListAccountingInvoicesAsync(ListAccountingInvoicesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice", request);
@@ -976,7 +811,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1003,7 +842,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListAccountingOrganizationsResponse> ListAccountingOrganizationsAsync(ListAccountingOrganizationsSecurity security, ListAccountingOrganizationsRequest request)
+        public async Task<ListAccountingOrganizationsResponse> ListAccountingOrganizationsAsync(ListAccountingOrganizationsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/organization", request);
@@ -1011,7 +850,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1038,112 +881,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListAccountingPaymentsResponse> ListAccountingPaymentsAsync(ListAccountingPaymentsSecurity security, ListAccountingPaymentsRequest request)
-        {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/payment", request);
-
-            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
-
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-
-            var response = new ListAccountingPaymentsResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.AccountingPayments = JsonConvert.DeserializeObject<List<AccountingPayment>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-
-                return response;
-            }
-            return response;
-        }
-
-        
-
-        public async Task<ListAccountingPayoutsResponse> ListAccountingPayoutsAsync(ListAccountingPayoutsSecurity security, ListAccountingPayoutsRequest request)
-        {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/payout", request);
-
-            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
-
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-
-            var response = new ListAccountingPayoutsResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.AccountingPayouts = JsonConvert.DeserializeObject<List<AccountingPayout>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-
-                return response;
-            }
-            return response;
-        }
-
-        
-
-        public async Task<ListAccountingRefundsResponse> ListAccountingRefundsAsync(ListAccountingRefundsSecurity security, ListAccountingRefundsRequest request)
-        {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/refund", request);
-
-            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
-
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-
-            var response = new ListAccountingRefundsResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.AccountingRefunds = JsonConvert.DeserializeObject<List<AccountingRefund>>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-
-                return response;
-            }
-            return response;
-        }
-
-        
-
-        public async Task<ListAccountingTaxratesResponse> ListAccountingTaxratesAsync(ListAccountingTaxratesSecurity security, ListAccountingTaxratesRequest request)
+        public async Task<ListAccountingTaxratesResponse> ListAccountingTaxratesAsync(ListAccountingTaxratesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate", request);
@@ -1151,7 +889,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1178,7 +920,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<ListAccountingTransactionsResponse> ListAccountingTransactionsAsync(ListAccountingTransactionsSecurity security, ListAccountingTransactionsRequest request)
+        public async Task<ListAccountingTransactionsResponse> ListAccountingTransactionsAsync(ListAccountingTransactionsRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/transaction", request);
@@ -1186,7 +928,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1213,7 +959,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(PatchAccountingAccountSecurity security, string connectionId, string id, AccountingAccount? accountingAccount = null)
+        public async Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null)
         {
             var request = new PatchAccountingAccountRequest()
             {
@@ -1233,7 +979,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1260,7 +1010,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchAccountingContactResponse> PatchAccountingContactAsync(PatchAccountingContactSecurity security, string connectionId, string id, AccountingContact? accountingContact = null)
+        public async Task<PatchAccountingContactResponse> PatchAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null)
         {
             var request = new PatchAccountingContactRequest()
             {
@@ -1280,7 +1030,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1307,7 +1061,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(PatchAccountingInvoiceSecurity security, string connectionId, string id, AccountingInvoice? accountingInvoice = null)
+        public async Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null)
         {
             var request = new PatchAccountingInvoiceRequest()
             {
@@ -1327,7 +1081,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1354,54 +1112,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchAccountingPaymentResponse> PatchAccountingPaymentAsync(PatchAccountingPaymentSecurity security, string connectionId, string id, AccountingPayment? accountingPayment = null)
-        {
-            var request = new PatchAccountingPaymentRequest()
-            {
-                ConnectionId = connectionId,
-                Id = id,
-                AccountingPayment = accountingPayment,
-            };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/payment/{id}", request);
-
-            var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingPayment", "json", false, true);
-            if (serializedBody != null)
-            {
-                httpRequest.Content = serializedBody;
-            }
-
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
-
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-
-            var response = new PatchAccountingPaymentResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.AccountingPayment = JsonConvert.DeserializeObject<AccountingPayment>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-
-                return response;
-            }
-            return response;
-        }
-
-        
-
-        public async Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(PatchAccountingTaxrateSecurity security, string connectionId, string id, AccountingTaxrate? accountingTaxrate = null)
+        public async Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null)
         {
             var request = new PatchAccountingTaxrateRequest()
             {
@@ -1421,7 +1132,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1448,7 +1163,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(PatchAccountingTransactionSecurity security, string connectionId, string id, AccountingTransaction? accountingTransaction = null)
+        public async Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null)
         {
             var request = new PatchAccountingTransactionRequest()
             {
@@ -1468,7 +1183,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1495,7 +1214,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveAccountingAccountResponse> RemoveAccountingAccountAsync(RemoveAccountingAccountSecurity security, string connectionId, string id)
+        public async Task<RemoveAccountingAccountResponse> RemoveAccountingAccountAsync(string connectionId, string id)
         {
             var request = new RemoveAccountingAccountRequest()
             {
@@ -1508,7 +1227,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1525,7 +1248,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveAccountingContactResponse> RemoveAccountingContactAsync(RemoveAccountingContactSecurity security, string connectionId, string id)
+        public async Task<RemoveAccountingContactResponse> RemoveAccountingContactAsync(string connectionId, string id)
         {
             var request = new RemoveAccountingContactRequest()
             {
@@ -1538,7 +1261,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1555,7 +1282,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveAccountingInvoiceResponse> RemoveAccountingInvoiceAsync(RemoveAccountingInvoiceSecurity security, string connectionId, string id)
+        public async Task<RemoveAccountingInvoiceResponse> RemoveAccountingInvoiceAsync(string connectionId, string id)
         {
             var request = new RemoveAccountingInvoiceRequest()
             {
@@ -1568,7 +1295,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1585,37 +1316,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveAccountingPaymentResponse> RemoveAccountingPaymentAsync(RemoveAccountingPaymentSecurity security, string connectionId, string id)
-        {
-            var request = new RemoveAccountingPaymentRequest()
-            {
-                ConnectionId = connectionId,
-                Id = id,
-            };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/payment/{id}", request);
-
-            var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
-
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-
-            var response = new RemoveAccountingPaymentResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
-        }
-
-        
-
-        public async Task<RemoveAccountingTaxrateResponse> RemoveAccountingTaxrateAsync(RemoveAccountingTaxrateSecurity security, string connectionId, string id)
+        public async Task<RemoveAccountingTaxrateResponse> RemoveAccountingTaxrateAsync(string connectionId, string id)
         {
             var request = new RemoveAccountingTaxrateRequest()
             {
@@ -1628,7 +1329,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1645,7 +1350,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<RemoveAccountingTransactionResponse> RemoveAccountingTransactionAsync(RemoveAccountingTransactionSecurity security, string connectionId, string id)
+        public async Task<RemoveAccountingTransactionResponse> RemoveAccountingTransactionAsync(string connectionId, string id)
         {
             var request = new RemoveAccountingTransactionRequest()
             {
@@ -1658,7 +1363,11 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1675,7 +1384,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(UpdateAccountingAccountSecurity security, string connectionId, string id, AccountingAccount? accountingAccount = null)
+        public async Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null)
         {
             var request = new UpdateAccountingAccountRequest()
             {
@@ -1695,7 +1404,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1722,7 +1435,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(UpdateAccountingContactSecurity security, string connectionId, string id, AccountingContact? accountingContact = null)
+        public async Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null)
         {
             var request = new UpdateAccountingContactRequest()
             {
@@ -1742,7 +1455,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1769,7 +1486,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(UpdateAccountingInvoiceSecurity security, string connectionId, string id, AccountingInvoice? accountingInvoice = null)
+        public async Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null)
         {
             var request = new UpdateAccountingInvoiceRequest()
             {
@@ -1789,7 +1506,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1816,54 +1537,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateAccountingPaymentResponse> UpdateAccountingPaymentAsync(UpdateAccountingPaymentSecurity security, string connectionId, string id, AccountingPayment? accountingPayment = null)
-        {
-            var request = new UpdateAccountingPaymentRequest()
-            {
-                ConnectionId = connectionId,
-                Id = id,
-                AccountingPayment = accountingPayment,
-            };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
-            var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/payment/{id}", request);
-
-            var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
-            httpRequest.Headers.Add("user-agent", _userAgent);
-
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingPayment", "json", false, true);
-            if (serializedBody != null)
-            {
-                httpRequest.Content = serializedBody;
-            }
-
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
-
-            var httpResponse = await client.SendAsync(httpRequest);
-
-            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-
-            var response = new UpdateAccountingPaymentResponse
-            {
-                StatusCode = (int)httpResponse.StatusCode,
-                ContentType = contentType,
-                RawResponse = httpResponse
-            };
-
-            if((response.StatusCode == 200))
-            {
-                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
-                {
-                    response.AccountingPayment = JsonConvert.DeserializeObject<AccountingPayment>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
-                }
-
-                return response;
-            }
-            return response;
-        }
-
-        
-
-        public async Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(UpdateAccountingTaxrateSecurity security, string connectionId, string id, AccountingTaxrate? accountingTaxrate = null)
+        public async Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null)
         {
             var request = new UpdateAccountingTaxrateRequest()
             {
@@ -1883,7 +1557,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 
@@ -1910,7 +1588,7 @@ namespace UnifiedTo
 
         
 
-        public async Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(UpdateAccountingTransactionSecurity security, string connectionId, string id, AccountingTransaction? accountingTransaction = null)
+        public async Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null)
         {
             var request = new UpdateAccountingTransactionRequest()
             {
@@ -1930,7 +1608,11 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = SecuritySerializer.Apply(_defaultClient, () => security);
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
 
             var httpResponse = await client.SendAsync(httpRequest);
 

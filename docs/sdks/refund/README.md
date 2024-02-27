@@ -3,10 +3,10 @@
 
 ### Available Operations
 
-* [GetAccountingRefund](#getaccountingrefund) - Retrieve a refund
-* [ListAccountingRefunds](#listaccountingrefunds) - List all refunds
+* [GetPaymentRefund](#getpaymentrefund) - Retrieve a refund
+* [ListPaymentRefunds](#listpaymentrefunds) - List all refunds
 
-## GetAccountingRefund
+## GetPaymentRefund
 
 Retrieve a refund
 
@@ -14,15 +14,15 @@ Retrieve a refund
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
-var res = await sdk.Refund.GetAccountingRefundAsync(
-    security: new GetAccountingRefundSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
+var res = await sdk.Refund.GetPaymentRefundAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -34,20 +34,19 @@ var res = await sdk.Refund.GetAccountingRefundAsync(
 
 ### Parameters
 
-| Parameter                                                                                                     | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
-| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `security`                                                                                                    | [UnifiedTo.Models.Requests.GetAccountingRefundSecurity](../../Models/Requests/GetAccountingRefundSecurity.md) | :heavy_check_mark:                                                                                            | The security requirements to use for the request.                                                             |
-| `ConnectionId`                                                                                                | *string*                                                                                                      | :heavy_check_mark:                                                                                            | ID of the connection                                                                                          |
-| `Id`                                                                                                          | *string*                                                                                                      | :heavy_check_mark:                                                                                            | ID of the Refund                                                                                              |
-| `Fields`                                                                                                      | List<*string*>                                                                                                | :heavy_minus_sign:                                                                                            | Comma-delimited fields to return                                                                              |
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Refund                 |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
 
 ### Response
 
-**[GetAccountingRefundResponse](../../Models/Requests/GetAccountingRefundResponse.md)**
+**[GetPaymentRefundResponse](../../Models/Requests/GetPaymentRefundResponse.md)**
 
 
-## ListAccountingRefunds
+## ListPaymentRefunds
 
 List all refunds
 
@@ -55,33 +54,31 @@ List all refunds
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
-ListAccountingRefundsRequest req = new ListAccountingRefundsRequest() {
+ListPaymentRefundsRequest req = new ListPaymentRefundsRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Refund.ListAccountingRefundsAsync(
-    security: new ListAccountingRefundsSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    req);
+var res = await sdk.Refund.ListPaymentRefundsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                                         | Type                                                                                                              | Required                                                                                                          | Description                                                                                                       |
-| ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `request`                                                                                                         | [ListAccountingRefundsRequest](../../Models/Requests/ListAccountingRefundsRequest.md)                             | :heavy_check_mark:                                                                                                | The request object to use for the request.                                                                        |
-| `security`                                                                                                        | [UnifiedTo.Models.Requests.ListAccountingRefundsSecurity](../../Models/Requests/ListAccountingRefundsSecurity.md) | :heavy_check_mark:                                                                                                | The security requirements to use for the request.                                                                 |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListPaymentRefundsRequest](../../Models/Requests/ListPaymentRefundsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 
 ### Response
 
-**[ListAccountingRefundsResponse](../../Models/Requests/ListAccountingRefundsResponse.md)**
+**[ListPaymentRefundsResponse](../../Models/Requests/ListPaymentRefundsResponse.md)**
 

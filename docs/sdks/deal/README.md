@@ -18,16 +18,15 @@ Create a deal
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Deal.CreateCrmDealAsync(
-    security: new CreateCrmDealSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     crmDeal: new CrmDeal() {});
 
@@ -36,11 +35,10 @@ var res = await sdk.Deal.CreateCrmDealAsync(
 
 ### Parameters
 
-| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `security`                                                                                        | [UnifiedTo.Models.Requests.CreateCrmDealSecurity](../../Models/Requests/CreateCrmDealSecurity.md) | :heavy_check_mark:                                                                                | The security requirements to use for the request.                                                 |
-| `ConnectionId`                                                                                    | *string*                                                                                          | :heavy_check_mark:                                                                                | ID of the connection                                                                              |
-| `CrmDeal`                                                                                         | [CrmDeal](../../Models/Components/CrmDeal.md)                                                     | :heavy_minus_sign:                                                                                | A deal represents an opportunity with companies and/or contacts                                   |
+| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
+| `CrmDeal`                                                       | [CrmDeal](../../Models/Components/CrmDeal.md)                   | :heavy_minus_sign:                                              | A deal represents an opportunity with companies and/or contacts |
 
 
 ### Response
@@ -56,15 +54,15 @@ Retrieve a deal
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Deal.GetCrmDealAsync(
-    security: new GetCrmDealSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
@@ -76,12 +74,11 @@ var res = await sdk.Deal.GetCrmDealAsync(
 
 ### Parameters
 
-| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| `security`                                                                                  | [UnifiedTo.Models.Requests.GetCrmDealSecurity](../../Models/Requests/GetCrmDealSecurity.md) | :heavy_check_mark:                                                                          | The security requirements to use for the request.                                           |
-| `ConnectionId`                                                                              | *string*                                                                                    | :heavy_check_mark:                                                                          | ID of the connection                                                                        |
-| `Id`                                                                                        | *string*                                                                                    | :heavy_check_mark:                                                                          | ID of the Deal                                                                              |
-| `Fields`                                                                                    | List<*string*>                                                                              | :heavy_minus_sign:                                                                          | Comma-delimited fields to return                                                            |
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Deal                   |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
 
 ### Response
@@ -97,30 +94,28 @@ List all deals
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 ListCrmDealsRequest req = new ListCrmDealsRequest() {
     ConnectionId = "<value>",
 };
 
-var res = await sdk.Deal.ListCrmDealsAsync(
-    security: new ListCrmDealsSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
-    req);
+var res = await sdk.Deal.ListCrmDealsAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `request`                                                                                       | [ListCrmDealsRequest](../../Models/Requests/ListCrmDealsRequest.md)                             | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
-| `security`                                                                                      | [UnifiedTo.Models.Requests.ListCrmDealsSecurity](../../Models/Requests/ListCrmDealsSecurity.md) | :heavy_check_mark:                                                                              | The security requirements to use for the request.                                               |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [ListCrmDealsRequest](../../Models/Requests/ListCrmDealsRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 
 
 ### Response
@@ -136,16 +131,15 @@ Update a deal
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Deal.PatchCrmDealAsync(
-    security: new PatchCrmDealSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     crmDeal: new CrmDeal() {});
@@ -155,12 +149,11 @@ var res = await sdk.Deal.PatchCrmDealAsync(
 
 ### Parameters
 
-| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
-| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `security`                                                                                      | [UnifiedTo.Models.Requests.PatchCrmDealSecurity](../../Models/Requests/PatchCrmDealSecurity.md) | :heavy_check_mark:                                                                              | The security requirements to use for the request.                                               |
-| `ConnectionId`                                                                                  | *string*                                                                                        | :heavy_check_mark:                                                                              | ID of the connection                                                                            |
-| `Id`                                                                                            | *string*                                                                                        | :heavy_check_mark:                                                                              | ID of the Deal                                                                                  |
-| `CrmDeal`                                                                                       | [CrmDeal](../../Models/Components/CrmDeal.md)                                                   | :heavy_minus_sign:                                                                              | A deal represents an opportunity with companies and/or contacts                                 |
+| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
+| `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Deal                                                  |
+| `CrmDeal`                                                       | [CrmDeal](../../Models/Components/CrmDeal.md)                   | :heavy_minus_sign:                                              | A deal represents an opportunity with companies and/or contacts |
 
 
 ### Response
@@ -176,14 +169,14 @@ Remove a deal
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Deal.RemoveCrmDealAsync(
-    security: new RemoveCrmDealSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>");
 
@@ -192,11 +185,10 @@ var res = await sdk.Deal.RemoveCrmDealAsync(
 
 ### Parameters
 
-| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `security`                                                                                        | [UnifiedTo.Models.Requests.RemoveCrmDealSecurity](../../Models/Requests/RemoveCrmDealSecurity.md) | :heavy_check_mark:                                                                                | The security requirements to use for the request.                                                 |
-| `ConnectionId`                                                                                    | *string*                                                                                          | :heavy_check_mark:                                                                                | ID of the connection                                                                              |
-| `Id`                                                                                              | *string*                                                                                          | :heavy_check_mark:                                                                                | ID of the Deal                                                                                    |
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Deal       |
 
 
 ### Response
@@ -212,16 +204,15 @@ Update a deal
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
 
-var sdk = new UnifiedToSDK();
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
 
 var res = await sdk.Deal.UpdateCrmDealAsync(
-    security: new UpdateCrmDealSecurity() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-},
     connectionId: "<value>",
     id: "<value>",
     crmDeal: new CrmDeal() {});
@@ -231,12 +222,11 @@ var res = await sdk.Deal.UpdateCrmDealAsync(
 
 ### Parameters
 
-| Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
-| ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| `security`                                                                                        | [UnifiedTo.Models.Requests.UpdateCrmDealSecurity](../../Models/Requests/UpdateCrmDealSecurity.md) | :heavy_check_mark:                                                                                | The security requirements to use for the request.                                                 |
-| `ConnectionId`                                                                                    | *string*                                                                                          | :heavy_check_mark:                                                                                | ID of the connection                                                                              |
-| `Id`                                                                                              | *string*                                                                                          | :heavy_check_mark:                                                                                | ID of the Deal                                                                                    |
-| `CrmDeal`                                                                                         | [CrmDeal](../../Models/Components/CrmDeal.md)                                                     | :heavy_minus_sign:                                                                                | A deal represents an opportunity with companies and/or contacts                                   |
+| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
+| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
+| `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Deal                                                  |
+| `CrmDeal`                                                       | [CrmDeal](../../Models/Components/CrmDeal.md)                   | :heavy_minus_sign:                                              | A deal represents an opportunity with companies and/or contacts |
 
 
 ### Response
