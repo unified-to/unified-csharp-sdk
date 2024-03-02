@@ -56,6 +56,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("paid_at")]
         public DateTime? PaidAt { get; set; }
 
+        [JsonProperty("payment_collection_method")]
+        public PaymentCollectionMethod? PaymentCollectionMethod { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

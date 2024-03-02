@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 48060151324f197510525fbcfe544edc
+  docChecksum: 0793d7d9d65b0d606620076f43596338
   docVersion: "1.0"
   speakeasyVersion: internal
-  generationVersion: 2.272.7
-  releaseVersion: 0.12.1
-  configChecksum: c318ee7fd7ca73fed6c8050ce7304119
+  generationVersion: 2.277.0
+  releaseVersion: 0.12.2
+  configChecksum: 2ce532ce5292d9a18070dd12aed19f2f
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -571,6 +571,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingEmailType.cs
   - UnifiedTo/Models/Components/AccountingEmail.cs
   - UnifiedTo/Models/Components/PropertyAccountingContactBillingAddress.cs
+  - UnifiedTo/Models/Components/PaymentCollectionMethod.cs
   - UnifiedTo/Models/Components/AccountingInvoiceStatus.cs
   - UnifiedTo/Models/Components/AccountingInvoice.cs
   - UnifiedTo/Models/Components/AccountingLineitem.cs
@@ -702,14 +703,16 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyConnectionAuth.cs
   - UnifiedTo/Models/Components/Event.cs
   - UnifiedTo/Models/Components/ObjectType.cs
-  - UnifiedTo/Models/Components/WebhookWebhookType.cs
+  - UnifiedTo/Models/Components/WebhookType.cs
   - UnifiedTo/Models/Components/Webhook.cs
   - UnifiedTo/Models/Components/ApiCallType.cs
   - UnifiedTo/Models/Components/ApiCall.cs
   - UnifiedTo/Models/Components/Integration.cs
-  - UnifiedTo/Models/Components/WebhookType.cs
   - UnifiedTo/Models/Components/IntegrationSupport.cs
   - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEvents.cs
+  - UnifiedTo/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsUpdated.cs
+  - UnifiedTo/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsDeleted.cs
+  - UnifiedTo/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsCreated.cs
   - UnifiedTo/Models/Components/PropertyIntegrationCategories.cs
   - UnifiedTo/Models/Components/IssueStatus.cs
   - UnifiedTo/Models/Components/IssueType.cs
@@ -1197,6 +1200,7 @@ generatedFiles:
   - docs/Models/Components/AccountingEmailType.md
   - docs/Models/Components/AccountingEmail.md
   - docs/Models/Components/PropertyAccountingContactBillingAddress.md
+  - docs/Models/Components/PaymentCollectionMethod.md
   - docs/Models/Components/AccountingInvoiceStatus.md
   - docs/Models/Components/AccountingInvoice.md
   - docs/Models/Components/AccountingLineitem.md
@@ -1328,14 +1332,16 @@ generatedFiles:
   - docs/Models/Components/PropertyConnectionAuth.md
   - docs/Models/Components/Event.md
   - docs/Models/Components/ObjectType.md
-  - docs/Models/Components/WebhookWebhookType.md
+  - docs/Models/Components/WebhookType.md
   - docs/Models/Components/Webhook.md
   - docs/Models/Components/ApiCallType.md
   - docs/Models/Components/ApiCall.md
   - docs/Models/Components/Integration.md
-  - docs/Models/Components/WebhookType.md
   - docs/Models/Components/IntegrationSupport.md
   - docs/Models/Components/PropertyIntegrationSupportWebhookEvents.md
+  - docs/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsUpdated.md
+  - docs/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsDeleted.md
+  - docs/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsCreated.md
   - docs/Models/Components/PropertyIntegrationCategories.md
   - docs/Models/Components/IssueStatus.md
   - docs/Models/Components/IssueType.md

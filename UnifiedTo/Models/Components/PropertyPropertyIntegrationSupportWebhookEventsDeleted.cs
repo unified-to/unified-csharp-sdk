@@ -13,26 +13,24 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     
-    public enum WebhookWebhookType
+    public enum PropertyPropertyIntegrationSupportWebhookEventsDeleted
     {
         [JsonProperty("virtual")]
         Virtual,
-        [JsonProperty("none")]
-        None,
         [JsonProperty("native")]
         Native,
     }
 
-    public static class WebhookWebhookTypeExtension
+    public static class PropertyPropertyIntegrationSupportWebhookEventsDeletedExtension
     {
-        public static string Value(this WebhookWebhookType value)
+        public static string Value(this PropertyPropertyIntegrationSupportWebhookEventsDeleted value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static WebhookWebhookType ToEnum(this string value)
+        public static PropertyPropertyIntegrationSupportWebhookEventsDeleted ToEnum(this string value)
         {
-            foreach(var field in typeof(WebhookWebhookType).GetFields())
+            foreach(var field in typeof(PropertyPropertyIntegrationSupportWebhookEventsDeleted).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -45,14 +43,14 @@ namespace UnifiedTo.Models.Components
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is WebhookWebhookType)
+                    if (enumVal is PropertyPropertyIntegrationSupportWebhookEventsDeleted)
                     {
-                        return (WebhookWebhookType)enumVal;
+                        return (PropertyPropertyIntegrationSupportWebhookEventsDeleted)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum WebhookWebhookType");
+            throw new Exception($"Unknown value {value} for enum PropertyPropertyIntegrationSupportWebhookEventsDeleted");
         }
     }
 

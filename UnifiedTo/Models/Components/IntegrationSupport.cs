@@ -107,9 +107,6 @@ namespace UnifiedTo.Models.Components
         public bool? SearchTwitter { get; set; }
 
         [JsonProperty("webhook_events")]
-        public List<PropertyIntegrationSupportWebhookEvents>? WebhookEvents { get; set; }
-
-        [JsonProperty("webhook_type")]
-        public WebhookType? WebhookType { get; set; }
+        public PropertyIntegrationSupportWebhookEvents? WebhookEvents { get; set; }
     }
 }

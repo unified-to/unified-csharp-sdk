@@ -72,7 +72,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? UpdatedAt { get; set; }
 
         [JsonProperty("webhook_type")]
-        public WebhookWebhookType? WebhookType { get; set; }
+        public WebhookType? WebhookType { get; set; }
 
         [JsonProperty("workspace_id")]
         public string? WorkspaceId { get; set; }

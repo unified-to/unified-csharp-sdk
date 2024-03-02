@@ -13,7 +13,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     
-    public enum WebhookType
+    public enum PropertyPropertyIntegrationSupportWebhookEventsUpdated
     {
         [JsonProperty("virtual")]
         Virtual,
@@ -21,16 +21,16 @@ namespace UnifiedTo.Models.Components
         Native,
     }
 
-    public static class WebhookTypeExtension
+    public static class PropertyPropertyIntegrationSupportWebhookEventsUpdatedExtension
     {
-        public static string Value(this WebhookType value)
+        public static string Value(this PropertyPropertyIntegrationSupportWebhookEventsUpdated value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static WebhookType ToEnum(this string value)
+        public static PropertyPropertyIntegrationSupportWebhookEventsUpdated ToEnum(this string value)
         {
-            foreach(var field in typeof(WebhookType).GetFields())
+            foreach(var field in typeof(PropertyPropertyIntegrationSupportWebhookEventsUpdated).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -43,14 +43,14 @@ namespace UnifiedTo.Models.Components
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is WebhookType)
+                    if (enumVal is PropertyPropertyIntegrationSupportWebhookEventsUpdated)
                     {
-                        return (WebhookType)enumVal;
+                        return (PropertyPropertyIntegrationSupportWebhookEventsUpdated)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum WebhookType");
+            throw new Exception($"Unknown value {value} for enum PropertyPropertyIntegrationSupportWebhookEventsUpdated");
         }
     }
 
