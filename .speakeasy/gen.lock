@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 0793d7d9d65b0d606620076f43596338
+  docChecksum: 1982f00b1c8ae9709c4c51c2b473ab66
   docVersion: "1.0"
   speakeasyVersion: internal
   generationVersion: 2.277.0
-  releaseVersion: 0.12.2
-  configChecksum: 2ce532ce5292d9a18070dd12aed19f2f
+  releaseVersion: 0.12.3
+  configChecksum: fbd9160abbb523627aef43e4d1144eae
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -568,6 +568,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingTelephoneType.cs
   - UnifiedTo/Models/Components/AccountingTelephone.cs
   - UnifiedTo/Models/Components/PropertyAccountingContactShippingAddress.cs
+  - UnifiedTo/Models/Components/AccountingContactPaymentMethodType.cs
+  - UnifiedTo/Models/Components/AccountingContactPaymentMethod.cs
   - UnifiedTo/Models/Components/AccountingEmailType.cs
   - UnifiedTo/Models/Components/AccountingEmail.cs
   - UnifiedTo/Models/Components/PropertyAccountingContactBillingAddress.cs
@@ -1197,6 +1199,8 @@ generatedFiles:
   - docs/Models/Components/AccountingTelephoneType.md
   - docs/Models/Components/AccountingTelephone.md
   - docs/Models/Components/PropertyAccountingContactShippingAddress.md
+  - docs/Models/Components/AccountingContactPaymentMethodType.md
+  - docs/Models/Components/AccountingContactPaymentMethod.md
   - docs/Models/Components/AccountingEmailType.md
   - docs/Models/Components/AccountingEmail.md
   - docs/Models/Components/PropertyAccountingContactBillingAddress.md

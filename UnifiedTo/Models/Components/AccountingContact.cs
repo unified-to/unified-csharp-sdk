@@ -44,6 +44,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        [JsonProperty("payment_methods")]
+        public List<AccountingContactPaymentMethod>? PaymentMethods { get; set; }
+
         [JsonProperty("portal_url")]
         public string? PortalUrl { get; set; }
 
