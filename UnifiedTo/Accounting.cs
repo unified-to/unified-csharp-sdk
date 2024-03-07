@@ -188,10 +188,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.12.3";
-        private const string _sdkGenVersion = "2.277.0";
+        private const string _sdkVersion = "0.12.4";
+        private const string _sdkGenVersion = "2.279.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.12.3 2.277.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.4 2.279.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private Func<Security>? _securitySource;
@@ -203,7 +203,6 @@ namespace UnifiedTo
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
-        
 
         public async Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(string connectionId, AccountingAccount? accountingAccount = null)
         {
@@ -253,7 +252,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(string connectionId, AccountingContact? accountingContact = null)
         {
@@ -303,7 +301,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(string connectionId, AccountingInvoice? accountingInvoice = null)
         {
@@ -353,7 +350,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(string connectionId, AccountingTaxrate? accountingTaxrate = null)
         {
@@ -403,7 +399,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(string connectionId, AccountingTransaction? accountingTransaction = null)
         {
@@ -453,7 +448,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetAccountingAccountResponse> GetAccountingAccountAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -498,7 +492,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -543,7 +536,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -588,7 +580,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -633,7 +624,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -678,7 +668,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetAccountingTransactionResponse> GetAccountingTransactionAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -723,7 +712,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListAccountingAccountsResponse> ListAccountingAccountsAsync(ListAccountingAccountsRequest request)
         {
@@ -762,7 +750,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListAccountingContactsResponse> ListAccountingContactsAsync(ListAccountingContactsRequest request)
         {
@@ -801,7 +788,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListAccountingInvoicesResponse> ListAccountingInvoicesAsync(ListAccountingInvoicesRequest request)
         {
@@ -840,7 +826,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListAccountingOrganizationsResponse> ListAccountingOrganizationsAsync(ListAccountingOrganizationsRequest request)
         {
@@ -879,7 +864,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListAccountingTaxratesResponse> ListAccountingTaxratesAsync(ListAccountingTaxratesRequest request)
         {
@@ -918,7 +902,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListAccountingTransactionsResponse> ListAccountingTransactionsAsync(ListAccountingTransactionsRequest request)
         {
@@ -957,7 +940,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null)
         {
@@ -1008,7 +990,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchAccountingContactResponse> PatchAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null)
         {
@@ -1059,7 +1040,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null)
         {
@@ -1110,7 +1090,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null)
         {
@@ -1161,7 +1140,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null)
         {
@@ -1212,7 +1190,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<RemoveAccountingAccountResponse> RemoveAccountingAccountAsync(string connectionId, string id)
         {
@@ -1243,10 +1220,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveAccountingContactResponse> RemoveAccountingContactAsync(string connectionId, string id)
         {
@@ -1277,10 +1254,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveAccountingInvoiceResponse> RemoveAccountingInvoiceAsync(string connectionId, string id)
         {
@@ -1311,10 +1288,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveAccountingTaxrateResponse> RemoveAccountingTaxrateAsync(string connectionId, string id)
         {
@@ -1345,10 +1322,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveAccountingTransactionResponse> RemoveAccountingTransactionAsync(string connectionId, string id)
         {
@@ -1379,10 +1356,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null)
         {
@@ -1433,7 +1410,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null)
         {
@@ -1484,7 +1460,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null)
         {
@@ -1535,7 +1510,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null)
         {
@@ -1586,7 +1560,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null)
         {
@@ -1637,6 +1610,5 @@ namespace UnifiedTo
             return response;
         }
 
-        
     }
 }

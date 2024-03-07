@@ -148,10 +148,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.12.3";
-        private const string _sdkGenVersion = "2.277.0";
+        private const string _sdkVersion = "0.12.4";
+        private const string _sdkGenVersion = "2.279.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.12.3 2.277.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.4 2.279.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private Func<Security>? _securitySource;
@@ -163,7 +163,6 @@ namespace UnifiedTo
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
-        
 
         public async Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(string connectionId, CommerceCollection? commerceCollection = null)
         {
@@ -213,7 +212,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(string connectionId, CommerceInventory? commerceInventory = null)
         {
@@ -263,7 +261,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateCommerceItemResponse> CreateCommerceItemAsync(string connectionId, CommerceItem? commerceItem = null)
         {
@@ -313,7 +310,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(string connectionId, CommerceLocation? commerceLocation = null)
         {
@@ -363,7 +359,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetCommerceCollectionResponse> GetCommerceCollectionAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -408,7 +403,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -453,7 +447,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -498,7 +491,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetCommerceLocationResponse> GetCommerceLocationAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -543,7 +535,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListCommerceCollectionsResponse> ListCommerceCollectionsAsync(ListCommerceCollectionsRequest request)
         {
@@ -582,7 +573,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListCommerceInventoriesResponse> ListCommerceInventoriesAsync(ListCommerceInventoriesRequest request)
         {
@@ -621,7 +611,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListCommerceItemsResponse> ListCommerceItemsAsync(ListCommerceItemsRequest request)
         {
@@ -660,7 +649,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListCommerceLocationsResponse> ListCommerceLocationsAsync(ListCommerceLocationsRequest request)
         {
@@ -699,7 +687,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchCommerceCollectionResponse> PatchCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null)
         {
@@ -750,7 +737,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null)
         {
@@ -801,7 +787,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchCommerceItemResponse> PatchCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null)
         {
@@ -852,7 +837,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null)
         {
@@ -903,7 +887,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<RemoveCommerceCollectionResponse> RemoveCommerceCollectionAsync(string connectionId, string id)
         {
@@ -934,10 +917,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveCommerceInventoryResponse> RemoveCommerceInventoryAsync(string connectionId, string id)
         {
@@ -968,10 +951,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveCommerceItemResponse> RemoveCommerceItemAsync(string connectionId, string id)
         {
@@ -1002,10 +985,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveCommerceLocationResponse> RemoveCommerceLocationAsync(string connectionId, string id)
         {
@@ -1036,10 +1019,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<UpdateCommerceCollectionResponse> UpdateCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null)
         {
@@ -1090,7 +1073,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null)
         {
@@ -1141,7 +1123,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null)
         {
@@ -1192,7 +1173,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null)
         {
@@ -1243,6 +1223,5 @@ namespace UnifiedTo
             return response;
         }
 
-        
     }
 }

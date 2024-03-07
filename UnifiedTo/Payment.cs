@@ -108,10 +108,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.12.3";
-        private const string _sdkGenVersion = "2.277.0";
+        private const string _sdkVersion = "0.12.4";
+        private const string _sdkGenVersion = "2.279.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.12.3 2.277.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.4 2.279.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private Func<Security>? _securitySource;
@@ -123,7 +123,6 @@ namespace UnifiedTo
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
-        
 
         public async Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(string connectionId, PaymentLink? paymentLink = null)
         {
@@ -173,7 +172,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreatePaymentPaymentResponse> CreatePaymentPaymentAsync(string connectionId, PaymentPayment? paymentPayment = null)
         {
@@ -223,7 +221,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -268,7 +265,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetPaymentPaymentResponse> GetPaymentPaymentAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -313,7 +309,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetPaymentPayoutResponse> GetPaymentPayoutAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -358,7 +353,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetPaymentRefundResponse> GetPaymentRefundAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -403,7 +397,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListPaymentLinksResponse> ListPaymentLinksAsync(ListPaymentLinksRequest request)
         {
@@ -442,7 +435,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListPaymentPaymentsResponse> ListPaymentPaymentsAsync(ListPaymentPaymentsRequest request)
         {
@@ -481,7 +473,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListPaymentPayoutsResponse> ListPaymentPayoutsAsync(ListPaymentPayoutsRequest request)
         {
@@ -520,7 +511,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListPaymentRefundsResponse> ListPaymentRefundsAsync(ListPaymentRefundsRequest request)
         {
@@ -559,7 +549,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(string connectionId, string id, PaymentLink? paymentLink = null)
         {
@@ -610,7 +599,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchPaymentPaymentResponse> PatchPaymentPaymentAsync(string connectionId, string id, PaymentPayment? paymentPayment = null)
         {
@@ -661,7 +649,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<RemovePaymentLinkResponse> RemovePaymentLinkAsync(string connectionId, string id)
         {
@@ -692,10 +679,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemovePaymentPaymentResponse> RemovePaymentPaymentAsync(string connectionId, string id)
         {
@@ -726,10 +713,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(string connectionId, string id, PaymentLink? paymentLink = null)
         {
@@ -780,7 +767,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdatePaymentPaymentResponse> UpdatePaymentPaymentAsync(string connectionId, string id, PaymentPayment? paymentPayment = null)
         {
@@ -831,6 +817,5 @@ namespace UnifiedTo
             return response;
         }
 
-        
     }
 }

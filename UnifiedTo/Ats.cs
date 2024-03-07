@@ -253,10 +253,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.12.3";
-        private const string _sdkGenVersion = "2.277.0";
+        private const string _sdkVersion = "0.12.4";
+        private const string _sdkGenVersion = "2.279.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.12.3 2.277.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.4 2.279.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private Func<Security>? _securitySource;
@@ -268,7 +268,6 @@ namespace UnifiedTo
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
-        
 
         public async Task<CreateAtsActivityResponse> CreateAtsActivityAsync(string connectionId, AtsActivity? atsActivity = null)
         {
@@ -318,7 +317,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(string connectionId, AtsApplication? atsApplication = null)
         {
@@ -368,7 +366,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(string connectionId, AtsCandidate? atsCandidate = null)
         {
@@ -418,7 +415,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(string connectionId, AtsDocument? atsDocument = null)
         {
@@ -468,7 +464,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(string connectionId, AtsInterview? atsInterview = null)
         {
@@ -518,7 +513,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateAtsJobResponse> CreateAtsJobAsync(string connectionId, AtsJob? atsJob = null)
         {
@@ -568,7 +562,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(string connectionId, AtsScorecard? atsScorecard = null)
         {
@@ -618,7 +611,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetAtsActivityResponse> GetAtsActivityAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -663,7 +655,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetAtsApplicationResponse> GetAtsApplicationAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -708,7 +699,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetAtsCandidateResponse> GetAtsCandidateAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -753,7 +743,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -798,7 +787,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetAtsDocumentResponse> GetAtsDocumentAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -843,7 +831,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -888,7 +875,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -933,7 +919,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -978,7 +963,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListAtsActivitiesResponse> ListAtsActivitiesAsync(ListAtsActivitiesRequest request)
         {
@@ -1017,7 +1001,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListAtsApplicationsResponse> ListAtsApplicationsAsync(ListAtsApplicationsRequest request)
         {
@@ -1056,7 +1039,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListAtsApplicationstatusesResponse> ListAtsApplicationstatusesAsync(ListAtsApplicationstatusesRequest request)
         {
@@ -1095,7 +1077,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListAtsCandidatesResponse> ListAtsCandidatesAsync(ListAtsCandidatesRequest request)
         {
@@ -1134,7 +1115,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListAtsCompaniesResponse> ListAtsCompaniesAsync(ListAtsCompaniesRequest request)
         {
@@ -1173,7 +1153,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListAtsDocumentsResponse> ListAtsDocumentsAsync(ListAtsDocumentsRequest request)
         {
@@ -1212,7 +1191,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListAtsInterviewsResponse> ListAtsInterviewsAsync(ListAtsInterviewsRequest request)
         {
@@ -1251,7 +1229,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListAtsJobsResponse> ListAtsJobsAsync(ListAtsJobsRequest request)
         {
@@ -1290,7 +1267,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListAtsScorecardsResponse> ListAtsScorecardsAsync(ListAtsScorecardsRequest request)
         {
@@ -1329,7 +1305,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchAtsActivityResponse> PatchAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null)
         {
@@ -1380,7 +1355,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null)
         {
@@ -1431,7 +1405,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(string connectionId, string id, AtsCandidate? atsCandidate = null)
         {
@@ -1482,7 +1455,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null)
         {
@@ -1533,7 +1505,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null)
         {
@@ -1584,7 +1555,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchAtsJobResponse> PatchAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null)
         {
@@ -1635,7 +1605,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null)
         {
@@ -1686,7 +1655,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<RemoveAtsActivityResponse> RemoveAtsActivityAsync(string connectionId, string id)
         {
@@ -1717,10 +1685,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveAtsApplicationResponse> RemoveAtsApplicationAsync(string connectionId, string id)
         {
@@ -1751,10 +1719,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveAtsCandidateResponse> RemoveAtsCandidateAsync(string connectionId, string id)
         {
@@ -1785,10 +1753,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveAtsDocumentResponse> RemoveAtsDocumentAsync(string connectionId, string id)
         {
@@ -1819,10 +1787,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveAtsInterviewResponse> RemoveAtsInterviewAsync(string connectionId, string id)
         {
@@ -1853,10 +1821,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveAtsJobResponse> RemoveAtsJobAsync(string connectionId, string id)
         {
@@ -1887,10 +1855,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveAtsScorecardResponse> RemoveAtsScorecardAsync(string connectionId, string id)
         {
@@ -1921,10 +1889,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<UpdateAtsActivityResponse> UpdateAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null)
         {
@@ -1975,7 +1943,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null)
         {
@@ -2026,7 +1993,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(string connectionId, string id, AtsCandidate? atsCandidate = null)
         {
@@ -2077,7 +2043,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null)
         {
@@ -2128,7 +2093,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null)
         {
@@ -2179,7 +2143,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateAtsJobResponse> UpdateAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null)
         {
@@ -2230,7 +2193,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null)
         {
@@ -2281,6 +2243,5 @@ namespace UnifiedTo
             return response;
         }
 
-        
     }
 }

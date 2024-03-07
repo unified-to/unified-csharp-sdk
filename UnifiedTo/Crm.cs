@@ -208,10 +208,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.12.3";
-        private const string _sdkGenVersion = "2.277.0";
+        private const string _sdkVersion = "0.12.4";
+        private const string _sdkGenVersion = "2.279.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.12.3 2.277.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.4 2.279.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private Func<Security>? _securitySource;
@@ -223,7 +223,6 @@ namespace UnifiedTo
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
-        
 
         public async Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(string connectionId, CrmCompany? crmCompany = null)
         {
@@ -273,7 +272,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateCrmContactResponse> CreateCrmContactAsync(string connectionId, CrmContact? crmContact = null)
         {
@@ -323,7 +321,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateCrmDealResponse> CreateCrmDealAsync(string connectionId, CrmDeal? crmDeal = null)
         {
@@ -373,7 +370,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateCrmEventResponse> CreateCrmEventAsync(string connectionId, CrmEvent? crmEvent = null)
         {
@@ -423,7 +419,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateCrmLeadResponse> CreateCrmLeadAsync(string connectionId, CrmLead? crmLead = null)
         {
@@ -473,7 +468,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(string connectionId, CrmPipeline? crmPipeline = null)
         {
@@ -523,7 +517,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -568,7 +561,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -613,7 +605,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetCrmDealResponse> GetCrmDealAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -658,7 +649,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -703,7 +693,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -748,7 +737,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<string>? fields = null)
         {
@@ -793,7 +781,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListCrmCompaniesResponse> ListCrmCompaniesAsync(ListCrmCompaniesRequest request)
         {
@@ -832,7 +819,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListCrmContactsResponse> ListCrmContactsAsync(ListCrmContactsRequest request)
         {
@@ -871,7 +857,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListCrmDealsResponse> ListCrmDealsAsync(ListCrmDealsRequest request)
         {
@@ -910,7 +895,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListCrmEventsResponse> ListCrmEventsAsync(ListCrmEventsRequest request)
         {
@@ -949,7 +933,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListCrmLeadsResponse> ListCrmLeadsAsync(ListCrmLeadsRequest request)
         {
@@ -988,7 +971,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListCrmPipelinesResponse> ListCrmPipelinesAsync(ListCrmPipelinesRequest request)
         {
@@ -1027,7 +1009,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null)
         {
@@ -1078,7 +1059,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchCrmContactResponse> PatchCrmContactAsync(string connectionId, string id, CrmContact? crmContact = null)
         {
@@ -1129,7 +1109,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchCrmDealResponse> PatchCrmDealAsync(string connectionId, string id, CrmDeal? crmDeal = null)
         {
@@ -1180,7 +1159,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchCrmEventResponse> PatchCrmEventAsync(string connectionId, string id, CrmEvent? crmEvent = null)
         {
@@ -1231,7 +1209,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchCrmLeadResponse> PatchCrmLeadAsync(string connectionId, string id, CrmLead? crmLead = null)
         {
@@ -1282,7 +1259,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(string connectionId, string id, CrmPipeline? crmPipeline = null)
         {
@@ -1333,7 +1309,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<RemoveCrmCompanyResponse> RemoveCrmCompanyAsync(string connectionId, string id)
         {
@@ -1364,10 +1339,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveCrmContactResponse> RemoveCrmContactAsync(string connectionId, string id)
         {
@@ -1398,10 +1373,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveCrmDealResponse> RemoveCrmDealAsync(string connectionId, string id)
         {
@@ -1432,10 +1407,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveCrmEventResponse> RemoveCrmEventAsync(string connectionId, string id)
         {
@@ -1466,10 +1441,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveCrmLeadResponse> RemoveCrmLeadAsync(string connectionId, string id)
         {
@@ -1500,10 +1475,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<RemoveCrmPipelineResponse> RemoveCrmPipelineAsync(string connectionId, string id)
         {
@@ -1534,10 +1509,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null)
         {
@@ -1588,7 +1563,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateCrmContactResponse> UpdateCrmContactAsync(string connectionId, string id, CrmContact? crmContact = null)
         {
@@ -1639,7 +1613,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateCrmDealResponse> UpdateCrmDealAsync(string connectionId, string id, CrmDeal? crmDeal = null)
         {
@@ -1690,7 +1663,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateCrmEventResponse> UpdateCrmEventAsync(string connectionId, string id, CrmEvent? crmEvent = null)
         {
@@ -1741,7 +1713,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(string connectionId, string id, CrmLead? crmLead = null)
         {
@@ -1792,7 +1763,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(string connectionId, string id, CrmPipeline? crmPipeline = null)
         {
@@ -1843,6 +1813,5 @@ namespace UnifiedTo
             return response;
         }
 
-        
     }
 }

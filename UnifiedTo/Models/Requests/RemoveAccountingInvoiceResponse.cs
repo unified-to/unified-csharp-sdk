@@ -34,6 +34,6 @@ namespace UnifiedTo.Models.Requests
         /// <summary>
         /// Successful
         /// </summary>
-        public string? Res { get; set; }
+        public string? String { get; set; }
     }
 }

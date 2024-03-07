@@ -58,10 +58,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.12.3";
-        private const string _sdkGenVersion = "2.277.0";
+        private const string _sdkVersion = "0.12.4";
+        private const string _sdkGenVersion = "2.279.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.12.3 2.277.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.12.4 2.279.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private Func<Security>? _securitySource;
@@ -73,7 +73,6 @@ namespace UnifiedTo
             _serverUrl = serverUrl;
             SDKConfiguration = config;
         }
-        
 
         public async Task<CreateUnifiedConnectionResponse> CreateUnifiedConnectionAsync(Models.Components.Connection? request = null)
         {
@@ -119,7 +118,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<GetUnifiedConnectionResponse> GetUnifiedConnectionAsync(string id)
         {
@@ -162,7 +160,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<ListUnifiedConnectionsResponse> ListUnifiedConnectionsAsync(ListUnifiedConnectionsRequest request)
         {
@@ -201,7 +198,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<PatchUnifiedConnectionResponse> PatchUnifiedConnectionAsync(string id, Models.Components.Connection? connection = null)
         {
@@ -251,7 +247,6 @@ namespace UnifiedTo
             return response;
         }
 
-        
 
         public async Task<RemoveUnifiedConnectionResponse> RemoveUnifiedConnectionAsync(string id)
         {
@@ -281,10 +276,10 @@ namespace UnifiedTo
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-            throw new InvalidOperationException("API returned unexpected status code or content type");
+                    response.String = JsonConvert.DeserializeObject<string>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumSerializer() }});
+            return response;
         }
 
-        
 
         public async Task<UpdateUnifiedConnectionResponse> UpdateUnifiedConnectionAsync(string id, Models.Components.Connection? connection = null)
         {
@@ -334,6 +329,5 @@ namespace UnifiedTo
             return response;
         }
 
-        
     }
 }
