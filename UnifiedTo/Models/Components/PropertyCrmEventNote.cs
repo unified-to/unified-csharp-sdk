@@ -20,5 +20,8 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("description")]
         public string? Description { get; set; }
+
+        [JsonProperty("title")]
+        public string? Title { get; set; }
     }
 }
