@@ -13,6 +13,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using System;
+    using UnifiedTo.Models.Components;
     
     public class AtsScorecard
     {

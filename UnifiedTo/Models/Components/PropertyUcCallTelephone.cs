@@ -11,6 +11,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using UnifiedTo.Models.Components;
     
     /// <summary>
     /// The telephone number called

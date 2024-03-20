@@ -13,6 +13,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using System;
+    using UnifiedTo.Models.Components;
     
     /// <summary>
     /// A webhook is used to POST new/updated information to your server.

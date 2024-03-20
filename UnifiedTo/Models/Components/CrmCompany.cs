@@ -13,6 +13,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using System;
+    using UnifiedTo.Models.Components;
     
     /// <summary>
     /// A company represents an organization that optionally is associated with a deal and/or contacts

@@ -40,6 +40,7 @@ namespace UnifiedTo.Utils
             {
                 new IsoDateTimeSerializer(),
                 new EnumSerializer(),
+                new FlexibleObjectDeserializer()
             };
         }
 

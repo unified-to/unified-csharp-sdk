@@ -13,6 +13,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using System;
+    using UnifiedTo.Models.Components;
     
     /// <summary>
     /// An event represents an event, activity, or engagement and is always associated with a deal, contact, or company

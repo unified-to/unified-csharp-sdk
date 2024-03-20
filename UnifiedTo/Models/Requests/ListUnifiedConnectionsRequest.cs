@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Requests
 {
     using System.Collections.Generic;
     using System;
+    using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
     
     public class ListUnifiedConnectionsRequest
