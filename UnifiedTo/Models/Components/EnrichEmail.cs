@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("email")]
         public string Email { get; set; } = default!;
 
+        [JsonProperty("is_verified")]
+        public bool? IsVerified { get; set; }
+
         [JsonProperty("type")]
         public EnrichEmailType? Type { get; set; }
     }
