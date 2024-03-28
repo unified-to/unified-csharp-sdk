@@ -13,8 +13,9 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 csharp:
-  version: 0.12.7
+  version: 0.13.0
   author: Unified API Inc.
+  company: ""
   dotnetVersion: net6.0
   flattenGlobalSecurity: false
   imports:
@@ -29,6 +30,7 @@ csharp:
   maxMethodParams: 4
   outputModelSuffix: output
   packageName: UnifiedTo
+  product: ""
 ruby:
   version: 0.0.1
   author: Unified API Inc

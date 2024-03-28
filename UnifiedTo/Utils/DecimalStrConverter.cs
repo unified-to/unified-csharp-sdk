@@ -13,8 +13,9 @@ namespace UnifiedTo.Utils
     using System;
     using System.Globalization;
     using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
 
-    internal class DecimalSerializer : JsonConverter
+    internal class DecimalStrConverter : JsonConverter
     {
         public override bool CanConvert(Type objectType)
         {
@@ -26,8 +27,6 @@ namespace UnifiedTo.Utils
 
             return objectType == typeof(Decimal);
         }
-
-        public override bool CanRead => true;
 
         public override object? ReadJson(
             JsonReader reader,
@@ -41,7 +40,11 @@ namespace UnifiedTo.Utils
                 return null;
             }
 
-            return Decimal.Parse(reader.Value.ToString()!);
+            try {
+                return Decimal.Parse(reader.Value.ToString()!);
+            } catch (System.FormatException ex) {
+                throw new Newtonsoft.Json.JsonSerializationException("Could not parse Decimal", ex);
+            }
         }
 
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)

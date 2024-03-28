@@ -3,16 +3,16 @@ id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
   docChecksum: b5ccecd8b5925543c5229bd68d6cacb3
   docVersion: "1.0"
-  speakeasyVersion: 1.221.0
-  generationVersion: 2.287.0
-  releaseVersion: 0.12.7
-  configChecksum: c8979cafdcdd074a727529e8d4941a80
+  speakeasyVersion: 1.228.1
+  generationVersion: 2.292.0
+  releaseVersion: 0.13.0
+  configChecksum: e12e979646d7a1de6d6a84d1c392046f
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
 features:
   csharp:
-    core: 3.4.3
+    core: 3.5.0
     flattening: 2.81.1
     globalSecurity: 2.83.4
     globalServerURLs: 2.82.3
@@ -75,9 +75,11 @@ generatedFiles:
   - UnifiedTo/Webhook.cs
   - UnifiedTo/UnifiedToSDK.cs
   - global.json
-  - UnifiedTo/Utils/BigIntSerializer.cs
-  - UnifiedTo/Utils/DecimalSerializer.cs
-  - UnifiedTo/Utils/EnumSerializer.cs
+  - UnifiedTo.sln
+  - UnifiedTo/Utils/AnyDeserializer.cs
+  - UnifiedTo/Utils/BigIntStrConverter.cs
+  - UnifiedTo/Utils/DecimalStrConverter.cs
+  - UnifiedTo/Utils/EnumConverter.cs
   - UnifiedTo/Utils/FlexibleObjectDeserializer.cs
   - UnifiedTo/Utils/HeaderSerializer.cs
   - UnifiedTo/Utils/IsoDateTimeSerializer.cs
@@ -88,7 +90,6 @@ generatedFiles:
   - UnifiedTo/Utils/URLBuilder.cs
   - UnifiedTo/Utils/Utilities.cs
   - UnifiedTo/UnifiedTo.csproj
-  - UnifiedTo.sln
   - UnifiedTo/Models/Requests/CreateAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingAccountResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingContactRequest.cs
