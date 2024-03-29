@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: b5ccecd8b5925543c5229bd68d6cacb3
+  docChecksum: 9969df7d3e03cdc2a49e94cb47ce90ff
   docVersion: "1.0"
   speakeasyVersion: 1.228.1
   generationVersion: 2.292.0
-  releaseVersion: 0.13.0
-  configChecksum: e12e979646d7a1de6d6a84d1c392046f
+  releaseVersion: 0.13.1
+  configChecksum: d932e1f3160bceb959f8541e3e8aba6d
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -679,7 +679,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/MarketingEmailType.cs
   - UnifiedTo/Models/Components/MarketingEmail.cs
   - UnifiedTo/Models/Components/PaymentLink.cs
-  - UnifiedTo/Models/Components/PaymenntLinkLineitem.cs
+  - UnifiedTo/Models/Components/PaymentLinkLineitem.cs
   - UnifiedTo/Models/Components/PaymentPayment.cs
   - UnifiedTo/Models/Components/PaymentPayoutStatus.cs
   - UnifiedTo/Models/Components/PaymentPayout.cs
@@ -1310,7 +1310,7 @@ generatedFiles:
   - docs/Models/Components/MarketingEmailType.md
   - docs/Models/Components/MarketingEmail.md
   - docs/Models/Components/PaymentLink.md
-  - docs/Models/Components/PaymenntLinkLineitem.md
+  - docs/Models/Components/PaymentLinkLineitem.md
   - docs/Models/Components/PaymentPayment.md
   - docs/Models/Components/PaymentPayoutStatus.md
   - docs/Models/Components/PaymentPayout.md

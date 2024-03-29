@@ -13,7 +13,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     
-    public class PaymenntLinkLineitem
+    public class PaymentLinkLineitem
     {
 
         [JsonProperty("account_id")]

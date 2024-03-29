@@ -39,13 +39,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Payment.CreatePaymentLinkAsync(
     connectionId: "<value>",
     paymentLink: new PaymentLink() {
-    IsActive = false,
-    Lineitems = new List<PaymenntLinkLineitem>() {
-        new PaymenntLinkLineitem() {
-            TotalAmount = 8711.36D,
+    Amount = 8711.36D,
+    Lineitems = new List<PaymentLinkLineitem>() {
+        new PaymentLinkLineitem() {
+            TotalAmount = 7885.08D,
         },
     },
-    Url = "https://athletic-unemployment.org",
 });
 
 // handle response
@@ -428,13 +427,12 @@ var res = await sdk.Payment.PatchPaymentLinkAsync(
     connectionId: "<value>",
     id: "<value>",
     paymentLink: new PaymentLink() {
-    IsActive = false,
-    Lineitems = new List<PaymenntLinkLineitem>() {
-        new PaymenntLinkLineitem() {
-            TotalAmount = 2219.73D,
+    Amount = 2219.73D,
+    Lineitems = new List<PaymentLinkLineitem>() {
+        new PaymentLinkLineitem() {
+            TotalAmount = 4605.59D,
         },
     },
-    Url = "http://vicious-rank.info",
 });
 
 // handle response
@@ -582,13 +580,12 @@ var res = await sdk.Payment.UpdatePaymentLinkAsync(
     connectionId: "<value>",
     id: "<value>",
     paymentLink: new PaymentLink() {
-    IsActive = false,
-    Lineitems = new List<PaymenntLinkLineitem>() {
-        new PaymenntLinkLineitem() {
-            TotalAmount = 6147.65D,
+    Amount = 6147.65D,
+    Lineitems = new List<PaymentLinkLineitem>() {
+        new PaymentLinkLineitem() {
+            TotalAmount = 4437.28D,
         },
     },
-    Url = "http://flawed-publication.org",
 });
 
 // handle response
