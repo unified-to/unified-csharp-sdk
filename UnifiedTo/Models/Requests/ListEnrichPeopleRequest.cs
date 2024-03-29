@@ -16,6 +16,12 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
+        /// The name of the company the person is associated with.  Not valid by itself.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=company_name")]
+        public string? CompanyName { get; set; }
+
+        /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
