@@ -11,11 +11,13 @@
 namespace UnifiedTo
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using System.Net.Http.Headers;
     using System.Net.Http;
     using System.Threading.Tasks;
     using System;
     using UnifiedTo.Models.Components;
+    using UnifiedTo.Models.Errors;
     using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
 
@@ -37,10 +39,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.13.2";
-        private const string _sdkGenVersion = "2.292.0";
+        private const string _sdkVersion = "0.14.0";
+        private const string _sdkGenVersion = "2.295.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.13.2 2.292.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.14.0 2.295.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private Func<Security>? _securitySource;
@@ -76,22 +78,33 @@ namespace UnifiedTo
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-
             var response = new ListEnrichCompaniesResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-
-            if((response.StatusCode == 200))
+            if (response.StatusCode == 200)
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {                    
+                    var obj = ResponseBodyDeserializer.Deserialize<EnrichCompany>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    response.EnrichCompany = obj;
+                }
+                else
                 {
-                    response.EnrichCompany = JsonConvert.DeserializeObject<EnrichCompany>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumConverter(), new AnyDeserializer() }});
+                throw new SDKException("API error occurred", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
                 }
 
-                return response;
+            }
+            else if (response.StatusCode >= 400 && response.StatusCode < 500 || response.StatusCode >= 500 && response.StatusCode < 600)
+            {
+                throw new SDKException("API error occurred", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+
+            }
+            else
+            {
+                throw new SDKException("unknown status code received", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
             return response;
         }
@@ -114,22 +127,33 @@ namespace UnifiedTo
             var httpResponse = await client.SendAsync(httpRequest);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
-
             var response = new ListEnrichPeopleResponse
             {
                 StatusCode = (int)httpResponse.StatusCode,
                 ContentType = contentType,
                 RawResponse = httpResponse
             };
-
-            if((response.StatusCode == 200))
+            if (response.StatusCode == 200)
             {
                 if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {                    
+                    var obj = ResponseBodyDeserializer.Deserialize<EnrichPerson>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    response.EnrichPerson = obj;
+                }
+                else
                 {
-                    response.EnrichPerson = JsonConvert.DeserializeObject<EnrichPerson>(await httpResponse.Content.ReadAsStringAsync(), new JsonSerializerSettings(){ NullValueHandling = NullValueHandling.Ignore, Converters = new JsonConverter[] { new FlexibleObjectDeserializer(), new EnumConverter(), new AnyDeserializer() }});
+                throw new SDKException("API error occurred", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
                 }
 
-                return response;
+            }
+            else if (response.StatusCode >= 400 && response.StatusCode < 500 || response.StatusCode >= 500 && response.StatusCode < 600)
+            {
+                throw new SDKException("API error occurred", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+
+            }
+            else
+            {
+                throw new SDKException("unknown status code received", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
             return response;
         }

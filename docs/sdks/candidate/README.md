@@ -44,7 +44,11 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(
 ### Response
 
 **[CreateAtsCandidateResponse](../../Models/Requests/CreateAtsCandidateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAtsCandidate
 
@@ -84,7 +88,11 @@ var res = await sdk.Candidate.GetAtsCandidateAsync(
 ### Response
 
 **[GetAtsCandidateResponse](../../Models/Requests/GetAtsCandidateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsCandidates
 
@@ -121,7 +129,11 @@ var res = await sdk.Candidate.ListAtsCandidatesAsync(req);
 ### Response
 
 **[ListAtsCandidatesResponse](../../Models/Requests/ListAtsCandidatesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAtsCandidate
 
@@ -159,7 +171,11 @@ var res = await sdk.Candidate.PatchAtsCandidateAsync(
 ### Response
 
 **[PatchAtsCandidateResponse](../../Models/Requests/PatchAtsCandidateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAtsCandidate
 
@@ -194,7 +210,11 @@ var res = await sdk.Candidate.RemoveAtsCandidateAsync(
 ### Response
 
 **[RemoveAtsCandidateResponse](../../Models/Requests/RemoveAtsCandidateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAtsCandidate
 
@@ -232,4 +252,8 @@ var res = await sdk.Candidate.UpdateAtsCandidateAsync(
 ### Response
 
 **[UpdateAtsCandidateResponse](../../Models/Requests/UpdateAtsCandidateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

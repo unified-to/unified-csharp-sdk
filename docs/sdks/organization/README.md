@@ -44,7 +44,11 @@ var res = await sdk.Organization.GetAccountingOrganizationAsync(
 ### Response
 
 **[GetAccountingOrganizationResponse](../../Models/Requests/GetAccountingOrganizationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAccountingOrganizations
 
@@ -81,4 +85,8 @@ var res = await sdk.Organization.ListAccountingOrganizationsAsync(req);
 ### Response
 
 **[ListAccountingOrganizationsResponse](../../Models/Requests/ListAccountingOrganizationsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

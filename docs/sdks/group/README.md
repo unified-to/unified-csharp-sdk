@@ -44,7 +44,11 @@ var res = await sdk.Group.CreateHrisGroupAsync(
 ### Response
 
 **[CreateHrisGroupResponse](../../Models/Requests/CreateHrisGroupResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetHrisGroup
 
@@ -84,7 +88,11 @@ var res = await sdk.Group.GetHrisGroupAsync(
 ### Response
 
 **[GetHrisGroupResponse](../../Models/Requests/GetHrisGroupResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListHrisGroups
 
@@ -121,7 +129,11 @@ var res = await sdk.Group.ListHrisGroupsAsync(req);
 ### Response
 
 **[ListHrisGroupsResponse](../../Models/Requests/ListHrisGroupsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchHrisGroup
 
@@ -159,7 +171,11 @@ var res = await sdk.Group.PatchHrisGroupAsync(
 ### Response
 
 **[PatchHrisGroupResponse](../../Models/Requests/PatchHrisGroupResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveHrisGroup
 
@@ -194,7 +210,11 @@ var res = await sdk.Group.RemoveHrisGroupAsync(
 ### Response
 
 **[RemoveHrisGroupResponse](../../Models/Requests/RemoveHrisGroupResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateHrisGroup
 
@@ -232,4 +252,8 @@ var res = await sdk.Group.UpdateHrisGroupAsync(
 ### Response
 
 **[UpdateHrisGroupResponse](../../Models/Requests/UpdateHrisGroupResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

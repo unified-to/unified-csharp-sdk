@@ -61,7 +61,11 @@ var res = await sdk.Payment.CreatePaymentLinkAsync(
 ### Response
 
 **[CreatePaymentLinkResponse](../../Models/Requests/CreatePaymentLinkResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreatePaymentPayment
 
@@ -97,7 +101,11 @@ var res = await sdk.Payment.CreatePaymentPaymentAsync(
 ### Response
 
 **[CreatePaymentPaymentResponse](../../Models/Requests/CreatePaymentPaymentResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetPaymentLink
 
@@ -137,7 +145,11 @@ var res = await sdk.Payment.GetPaymentLinkAsync(
 ### Response
 
 **[GetPaymentLinkResponse](../../Models/Requests/GetPaymentLinkResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetPaymentPayment
 
@@ -177,7 +189,11 @@ var res = await sdk.Payment.GetPaymentPaymentAsync(
 ### Response
 
 **[GetPaymentPaymentResponse](../../Models/Requests/GetPaymentPaymentResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetPaymentPayout
 
@@ -217,7 +233,11 @@ var res = await sdk.Payment.GetPaymentPayoutAsync(
 ### Response
 
 **[GetPaymentPayoutResponse](../../Models/Requests/GetPaymentPayoutResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetPaymentRefund
 
@@ -257,7 +277,11 @@ var res = await sdk.Payment.GetPaymentRefundAsync(
 ### Response
 
 **[GetPaymentRefundResponse](../../Models/Requests/GetPaymentRefundResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListPaymentLinks
 
@@ -294,7 +318,11 @@ var res = await sdk.Payment.ListPaymentLinksAsync(req);
 ### Response
 
 **[ListPaymentLinksResponse](../../Models/Requests/ListPaymentLinksResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListPaymentPayments
 
@@ -331,7 +359,11 @@ var res = await sdk.Payment.ListPaymentPaymentsAsync(req);
 ### Response
 
 **[ListPaymentPaymentsResponse](../../Models/Requests/ListPaymentPaymentsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListPaymentPayouts
 
@@ -368,7 +400,11 @@ var res = await sdk.Payment.ListPaymentPayoutsAsync(req);
 ### Response
 
 **[ListPaymentPayoutsResponse](../../Models/Requests/ListPaymentPayoutsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListPaymentRefunds
 
@@ -405,7 +441,11 @@ var res = await sdk.Payment.ListPaymentRefundsAsync(req);
 ### Response
 
 **[ListPaymentRefundsResponse](../../Models/Requests/ListPaymentRefundsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchPaymentLink
 
@@ -450,7 +490,11 @@ var res = await sdk.Payment.PatchPaymentLinkAsync(
 ### Response
 
 **[PatchPaymentLinkResponse](../../Models/Requests/PatchPaymentLinkResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchPaymentPayment
 
@@ -488,7 +532,11 @@ var res = await sdk.Payment.PatchPaymentPaymentAsync(
 ### Response
 
 **[PatchPaymentPaymentResponse](../../Models/Requests/PatchPaymentPaymentResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemovePaymentLink
 
@@ -523,7 +571,11 @@ var res = await sdk.Payment.RemovePaymentLinkAsync(
 ### Response
 
 **[RemovePaymentLinkResponse](../../Models/Requests/RemovePaymentLinkResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemovePaymentPayment
 
@@ -558,7 +610,11 @@ var res = await sdk.Payment.RemovePaymentPaymentAsync(
 ### Response
 
 **[RemovePaymentPaymentResponse](../../Models/Requests/RemovePaymentPaymentResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdatePaymentLink
 
@@ -603,7 +659,11 @@ var res = await sdk.Payment.UpdatePaymentLinkAsync(
 ### Response
 
 **[UpdatePaymentLinkResponse](../../Models/Requests/UpdatePaymentLinkResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdatePaymentPayment
 
@@ -641,4 +701,8 @@ var res = await sdk.Payment.UpdatePaymentPaymentAsync(
 ### Response
 
 **[UpdatePaymentPaymentResponse](../../Models/Requests/UpdatePaymentPaymentResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

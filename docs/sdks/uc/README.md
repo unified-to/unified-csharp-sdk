@@ -45,7 +45,11 @@ var res = await sdk.Uc.CreateUcContactAsync(
 ### Response
 
 **[CreateUcContactResponse](../../Models/Requests/CreateUcContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetUcContact
 
@@ -85,7 +89,11 @@ var res = await sdk.Uc.GetUcContactAsync(
 ### Response
 
 **[GetUcContactResponse](../../Models/Requests/GetUcContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListUcCalls
 
@@ -122,7 +130,11 @@ var res = await sdk.Uc.ListUcCallsAsync(req);
 ### Response
 
 **[ListUcCallsResponse](../../Models/Requests/ListUcCallsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListUcContacts
 
@@ -159,7 +171,11 @@ var res = await sdk.Uc.ListUcContactsAsync(req);
 ### Response
 
 **[ListUcContactsResponse](../../Models/Requests/ListUcContactsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchUcContact
 
@@ -197,7 +213,11 @@ var res = await sdk.Uc.PatchUcContactAsync(
 ### Response
 
 **[PatchUcContactResponse](../../Models/Requests/PatchUcContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveUcContact
 
@@ -232,7 +252,11 @@ var res = await sdk.Uc.RemoveUcContactAsync(
 ### Response
 
 **[RemoveUcContactResponse](../../Models/Requests/RemoveUcContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateUcContact
 
@@ -270,4 +294,8 @@ var res = await sdk.Uc.UpdateUcContactAsync(
 ### Response
 
 **[UpdateUcContactResponse](../../Models/Requests/UpdateUcContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

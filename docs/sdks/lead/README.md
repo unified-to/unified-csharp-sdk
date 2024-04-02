@@ -44,7 +44,11 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
 ### Response
 
 **[CreateCrmLeadResponse](../../Models/Requests/CreateCrmLeadResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetCrmLead
 
@@ -84,7 +88,11 @@ var res = await sdk.Lead.GetCrmLeadAsync(
 ### Response
 
 **[GetCrmLeadResponse](../../Models/Requests/GetCrmLeadResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListCrmLeads
 
@@ -121,7 +129,11 @@ var res = await sdk.Lead.ListCrmLeadsAsync(req);
 ### Response
 
 **[ListCrmLeadsResponse](../../Models/Requests/ListCrmLeadsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchCrmLead
 
@@ -159,7 +171,11 @@ var res = await sdk.Lead.PatchCrmLeadAsync(
 ### Response
 
 **[PatchCrmLeadResponse](../../Models/Requests/PatchCrmLeadResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveCrmLead
 
@@ -194,7 +210,11 @@ var res = await sdk.Lead.RemoveCrmLeadAsync(
 ### Response
 
 **[RemoveCrmLeadResponse](../../Models/Requests/RemoveCrmLeadResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateCrmLead
 
@@ -232,4 +252,8 @@ var res = await sdk.Lead.UpdateCrmLeadAsync(
 ### Response
 
 **[UpdateCrmLeadResponse](../../Models/Requests/UpdateCrmLeadResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

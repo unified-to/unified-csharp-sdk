@@ -46,7 +46,11 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
 ### Response
 
 **[CreateCommerceLocationResponse](../../Models/Requests/CreateCommerceLocationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetCommerceLocation
 
@@ -86,7 +90,11 @@ var res = await sdk.Location.GetCommerceLocationAsync(
 ### Response
 
 **[GetCommerceLocationResponse](../../Models/Requests/GetCommerceLocationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListCommerceLocations
 
@@ -123,7 +131,11 @@ var res = await sdk.Location.ListCommerceLocationsAsync(req);
 ### Response
 
 **[ListCommerceLocationsResponse](../../Models/Requests/ListCommerceLocationsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchCommerceLocation
 
@@ -163,7 +175,11 @@ var res = await sdk.Location.PatchCommerceLocationAsync(
 ### Response
 
 **[PatchCommerceLocationResponse](../../Models/Requests/PatchCommerceLocationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveCommerceLocation
 
@@ -198,7 +214,11 @@ var res = await sdk.Location.RemoveCommerceLocationAsync(
 ### Response
 
 **[RemoveCommerceLocationResponse](../../Models/Requests/RemoveCommerceLocationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateCommerceLocation
 
@@ -238,4 +258,8 @@ var res = await sdk.Location.UpdateCommerceLocationAsync(
 ### Response
 
 **[UpdateCommerceLocationResponse](../../Models/Requests/UpdateCommerceLocationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

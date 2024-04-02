@@ -44,7 +44,11 @@ var res = await sdk.Pipeline.CreateCrmPipelineAsync(
 ### Response
 
 **[CreateCrmPipelineResponse](../../Models/Requests/CreateCrmPipelineResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetCrmPipeline
 
@@ -84,7 +88,11 @@ var res = await sdk.Pipeline.GetCrmPipelineAsync(
 ### Response
 
 **[GetCrmPipelineResponse](../../Models/Requests/GetCrmPipelineResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListCrmPipelines
 
@@ -121,7 +129,11 @@ var res = await sdk.Pipeline.ListCrmPipelinesAsync(req);
 ### Response
 
 **[ListCrmPipelinesResponse](../../Models/Requests/ListCrmPipelinesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchCrmPipeline
 
@@ -159,7 +171,11 @@ var res = await sdk.Pipeline.PatchCrmPipelineAsync(
 ### Response
 
 **[PatchCrmPipelineResponse](../../Models/Requests/PatchCrmPipelineResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveCrmPipeline
 
@@ -194,7 +210,11 @@ var res = await sdk.Pipeline.RemoveCrmPipelineAsync(
 ### Response
 
 **[RemoveCrmPipelineResponse](../../Models/Requests/RemoveCrmPipelineResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateCrmPipeline
 
@@ -232,4 +252,8 @@ var res = await sdk.Pipeline.UpdateCrmPipelineAsync(
 ### Response
 
 **[UpdateCrmPipelineResponse](../../Models/Requests/UpdateCrmPipelineResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

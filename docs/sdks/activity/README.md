@@ -46,7 +46,11 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
 ### Response
 
 **[CreateAtsActivityResponse](../../Models/Requests/CreateAtsActivityResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAtsActivity
 
@@ -86,7 +90,11 @@ var res = await sdk.Activity.GetAtsActivityAsync(
 ### Response
 
 **[GetAtsActivityResponse](../../Models/Requests/GetAtsActivityResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsActivities
 
@@ -123,7 +131,11 @@ var res = await sdk.Activity.ListAtsActivitiesAsync(req);
 ### Response
 
 **[ListAtsActivitiesResponse](../../Models/Requests/ListAtsActivitiesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAtsActivity
 
@@ -163,7 +175,11 @@ var res = await sdk.Activity.PatchAtsActivityAsync(
 ### Response
 
 **[PatchAtsActivityResponse](../../Models/Requests/PatchAtsActivityResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAtsActivity
 
@@ -198,7 +214,11 @@ var res = await sdk.Activity.RemoveAtsActivityAsync(
 ### Response
 
 **[RemoveAtsActivityResponse](../../Models/Requests/RemoveAtsActivityResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAtsActivity
 
@@ -238,4 +258,8 @@ var res = await sdk.Activity.UpdateAtsActivityAsync(
 ### Response
 
 **[UpdateAtsActivityResponse](../../Models/Requests/UpdateAtsActivityResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

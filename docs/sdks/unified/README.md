@@ -62,7 +62,11 @@ var res = await sdk.Unified.CreateUnifiedConnectionAsync(req);
 ### Response
 
 **[CreateUnifiedConnectionResponse](../../Models/Requests/CreateUnifiedConnectionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreateUnifiedWebhook
 
@@ -103,7 +107,11 @@ var res = await sdk.Unified.CreateUnifiedWebhookAsync(
 ### Response
 
 **[CreateUnifiedWebhookResponse](../../Models/Requests/CreateUnifiedWebhookResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetUnifiedApicall
 
@@ -135,7 +143,11 @@ var res = await sdk.Unified.GetUnifiedApicallAsync(id: "<value>");
 ### Response
 
 **[GetUnifiedApicallResponse](../../Models/Requests/GetUnifiedApicallResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetUnifiedConnection
 
@@ -167,7 +179,11 @@ var res = await sdk.Unified.GetUnifiedConnectionAsync(id: "<value>");
 ### Response
 
 **[GetUnifiedConnectionResponse](../../Models/Requests/GetUnifiedConnectionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetUnifiedIntegrationAuth
 
@@ -205,7 +221,11 @@ var res = await sdk.Unified.GetUnifiedIntegrationAuthAsync(req);
 ### Response
 
 **[GetUnifiedIntegrationAuthResponse](../../Models/Requests/GetUnifiedIntegrationAuthResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetUnifiedWebhook
 
@@ -237,7 +257,11 @@ var res = await sdk.Unified.GetUnifiedWebhookAsync(id: "<value>");
 ### Response
 
 **[GetUnifiedWebhookResponse](../../Models/Requests/GetUnifiedWebhookResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListUnifiedApicalls
 
@@ -271,7 +295,11 @@ var res = await sdk.Unified.ListUnifiedApicallsAsync(req);
 ### Response
 
 **[ListUnifiedApicallsResponse](../../Models/Requests/ListUnifiedApicallsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListUnifiedConnections
 
@@ -306,7 +334,11 @@ var res = await sdk.Unified.ListUnifiedConnectionsAsync(req);
 ### Response
 
 **[ListUnifiedConnectionsResponse](../../Models/Requests/ListUnifiedConnectionsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListUnifiedIntegrationWorkspaces
 
@@ -343,7 +375,11 @@ var res = await sdk.Unified.ListUnifiedIntegrationWorkspacesAsync(req);
 ### Response
 
 **[ListUnifiedIntegrationWorkspacesResponse](../../Models/Requests/ListUnifiedIntegrationWorkspacesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListUnifiedIntegrations
 
@@ -378,7 +414,11 @@ var res = await sdk.Unified.ListUnifiedIntegrationsAsync(req);
 ### Response
 
 **[ListUnifiedIntegrationsResponse](../../Models/Requests/ListUnifiedIntegrationsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListUnifiedIssues
 
@@ -412,7 +452,11 @@ var res = await sdk.Unified.ListUnifiedIssuesAsync(req);
 ### Response
 
 **[ListUnifiedIssuesResponse](../../Models/Requests/ListUnifiedIssuesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListUnifiedWebhooks
 
@@ -446,7 +490,11 @@ var res = await sdk.Unified.ListUnifiedWebhooksAsync(req);
 ### Response
 
 **[ListUnifiedWebhooksResponse](../../Models/Requests/ListUnifiedWebhooksResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchUnifiedConnection
 
@@ -490,7 +538,11 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(
 ### Response
 
 **[PatchUnifiedConnectionResponse](../../Models/Requests/PatchUnifiedConnectionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchUnifiedWebhookTrigger
 
@@ -522,7 +574,11 @@ var res = await sdk.Unified.PatchUnifiedWebhookTriggerAsync(id: "<value>");
 ### Response
 
 **[PatchUnifiedWebhookTriggerResponse](../../Models/Requests/PatchUnifiedWebhookTriggerResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveUnifiedConnection
 
@@ -554,7 +610,11 @@ var res = await sdk.Unified.RemoveUnifiedConnectionAsync(id: "<value>");
 ### Response
 
 **[RemoveUnifiedConnectionResponse](../../Models/Requests/RemoveUnifiedConnectionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveUnifiedWebhook
 
@@ -586,7 +646,11 @@ var res = await sdk.Unified.RemoveUnifiedWebhookAsync(id: "<value>");
 ### Response
 
 **[RemoveUnifiedWebhookResponse](../../Models/Requests/RemoveUnifiedWebhookResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateUnifiedConnection
 
@@ -630,7 +694,11 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
 ### Response
 
 **[UpdateUnifiedConnectionResponse](../../Models/Requests/UpdateUnifiedConnectionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateUnifiedWebhookTrigger
 
@@ -662,4 +730,8 @@ var res = await sdk.Unified.UpdateUnifiedWebhookTriggerAsync(id: "<value>");
 ### Response
 
 **[UpdateUnifiedWebhookTriggerResponse](../../Models/Requests/UpdateUnifiedWebhookTriggerResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

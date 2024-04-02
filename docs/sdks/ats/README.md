@@ -85,7 +85,11 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
 ### Response
 
 **[CreateAtsActivityResponse](../../Models/Requests/CreateAtsActivityResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreateAtsApplication
 
@@ -121,7 +125,11 @@ var res = await sdk.Ats.CreateAtsApplicationAsync(
 ### Response
 
 **[CreateAtsApplicationResponse](../../Models/Requests/CreateAtsApplicationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreateAtsCandidate
 
@@ -157,7 +165,11 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
 ### Response
 
 **[CreateAtsCandidateResponse](../../Models/Requests/CreateAtsCandidateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreateAtsDocument
 
@@ -193,7 +205,11 @@ var res = await sdk.Ats.CreateAtsDocumentAsync(
 ### Response
 
 **[CreateAtsDocumentResponse](../../Models/Requests/CreateAtsDocumentResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreateAtsInterview
 
@@ -229,7 +245,11 @@ var res = await sdk.Ats.CreateAtsInterviewAsync(
 ### Response
 
 **[CreateAtsInterviewResponse](../../Models/Requests/CreateAtsInterviewResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreateAtsJob
 
@@ -265,7 +285,11 @@ var res = await sdk.Ats.CreateAtsJobAsync(
 ### Response
 
 **[CreateAtsJobResponse](../../Models/Requests/CreateAtsJobResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreateAtsScorecard
 
@@ -301,7 +325,11 @@ var res = await sdk.Ats.CreateAtsScorecardAsync(
 ### Response
 
 **[CreateAtsScorecardResponse](../../Models/Requests/CreateAtsScorecardResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAtsActivity
 
@@ -341,7 +369,11 @@ var res = await sdk.Ats.GetAtsActivityAsync(
 ### Response
 
 **[GetAtsActivityResponse](../../Models/Requests/GetAtsActivityResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAtsApplication
 
@@ -381,7 +413,11 @@ var res = await sdk.Ats.GetAtsApplicationAsync(
 ### Response
 
 **[GetAtsApplicationResponse](../../Models/Requests/GetAtsApplicationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAtsCandidate
 
@@ -421,7 +457,11 @@ var res = await sdk.Ats.GetAtsCandidateAsync(
 ### Response
 
 **[GetAtsCandidateResponse](../../Models/Requests/GetAtsCandidateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAtsCompany
 
@@ -461,7 +501,11 @@ var res = await sdk.Ats.GetAtsCompanyAsync(
 ### Response
 
 **[GetAtsCompanyResponse](../../Models/Requests/GetAtsCompanyResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAtsDocument
 
@@ -501,7 +545,11 @@ var res = await sdk.Ats.GetAtsDocumentAsync(
 ### Response
 
 **[GetAtsDocumentResponse](../../Models/Requests/GetAtsDocumentResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAtsInterview
 
@@ -541,7 +589,11 @@ var res = await sdk.Ats.GetAtsInterviewAsync(
 ### Response
 
 **[GetAtsInterviewResponse](../../Models/Requests/GetAtsInterviewResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAtsJob
 
@@ -581,7 +633,11 @@ var res = await sdk.Ats.GetAtsJobAsync(
 ### Response
 
 **[GetAtsJobResponse](../../Models/Requests/GetAtsJobResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAtsScorecard
 
@@ -621,7 +677,11 @@ var res = await sdk.Ats.GetAtsScorecardAsync(
 ### Response
 
 **[GetAtsScorecardResponse](../../Models/Requests/GetAtsScorecardResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsActivities
 
@@ -658,7 +718,11 @@ var res = await sdk.Ats.ListAtsActivitiesAsync(req);
 ### Response
 
 **[ListAtsActivitiesResponse](../../Models/Requests/ListAtsActivitiesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsApplications
 
@@ -695,7 +759,11 @@ var res = await sdk.Ats.ListAtsApplicationsAsync(req);
 ### Response
 
 **[ListAtsApplicationsResponse](../../Models/Requests/ListAtsApplicationsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsApplicationstatuses
 
@@ -732,7 +800,11 @@ var res = await sdk.Ats.ListAtsApplicationstatusesAsync(req);
 ### Response
 
 **[ListAtsApplicationstatusesResponse](../../Models/Requests/ListAtsApplicationstatusesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsCandidates
 
@@ -769,7 +841,11 @@ var res = await sdk.Ats.ListAtsCandidatesAsync(req);
 ### Response
 
 **[ListAtsCandidatesResponse](../../Models/Requests/ListAtsCandidatesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsCompanies
 
@@ -806,7 +882,11 @@ var res = await sdk.Ats.ListAtsCompaniesAsync(req);
 ### Response
 
 **[ListAtsCompaniesResponse](../../Models/Requests/ListAtsCompaniesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsDocuments
 
@@ -843,7 +923,11 @@ var res = await sdk.Ats.ListAtsDocumentsAsync(req);
 ### Response
 
 **[ListAtsDocumentsResponse](../../Models/Requests/ListAtsDocumentsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsInterviews
 
@@ -880,7 +964,11 @@ var res = await sdk.Ats.ListAtsInterviewsAsync(req);
 ### Response
 
 **[ListAtsInterviewsResponse](../../Models/Requests/ListAtsInterviewsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsJobs
 
@@ -917,7 +1005,11 @@ var res = await sdk.Ats.ListAtsJobsAsync(req);
 ### Response
 
 **[ListAtsJobsResponse](../../Models/Requests/ListAtsJobsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsScorecards
 
@@ -954,7 +1046,11 @@ var res = await sdk.Ats.ListAtsScorecardsAsync(req);
 ### Response
 
 **[ListAtsScorecardsResponse](../../Models/Requests/ListAtsScorecardsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAtsActivity
 
@@ -994,7 +1090,11 @@ var res = await sdk.Ats.PatchAtsActivityAsync(
 ### Response
 
 **[PatchAtsActivityResponse](../../Models/Requests/PatchAtsActivityResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAtsApplication
 
@@ -1032,7 +1132,11 @@ var res = await sdk.Ats.PatchAtsApplicationAsync(
 ### Response
 
 **[PatchAtsApplicationResponse](../../Models/Requests/PatchAtsApplicationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAtsCandidate
 
@@ -1070,7 +1174,11 @@ var res = await sdk.Ats.PatchAtsCandidateAsync(
 ### Response
 
 **[PatchAtsCandidateResponse](../../Models/Requests/PatchAtsCandidateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAtsDocument
 
@@ -1108,7 +1216,11 @@ var res = await sdk.Ats.PatchAtsDocumentAsync(
 ### Response
 
 **[PatchAtsDocumentResponse](../../Models/Requests/PatchAtsDocumentResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAtsInterview
 
@@ -1146,7 +1258,11 @@ var res = await sdk.Ats.PatchAtsInterviewAsync(
 ### Response
 
 **[PatchAtsInterviewResponse](../../Models/Requests/PatchAtsInterviewResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAtsJob
 
@@ -1184,7 +1300,11 @@ var res = await sdk.Ats.PatchAtsJobAsync(
 ### Response
 
 **[PatchAtsJobResponse](../../Models/Requests/PatchAtsJobResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAtsScorecard
 
@@ -1222,7 +1342,11 @@ var res = await sdk.Ats.PatchAtsScorecardAsync(
 ### Response
 
 **[PatchAtsScorecardResponse](../../Models/Requests/PatchAtsScorecardResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAtsActivity
 
@@ -1257,7 +1381,11 @@ var res = await sdk.Ats.RemoveAtsActivityAsync(
 ### Response
 
 **[RemoveAtsActivityResponse](../../Models/Requests/RemoveAtsActivityResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAtsApplication
 
@@ -1292,7 +1420,11 @@ var res = await sdk.Ats.RemoveAtsApplicationAsync(
 ### Response
 
 **[RemoveAtsApplicationResponse](../../Models/Requests/RemoveAtsApplicationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAtsCandidate
 
@@ -1327,7 +1459,11 @@ var res = await sdk.Ats.RemoveAtsCandidateAsync(
 ### Response
 
 **[RemoveAtsCandidateResponse](../../Models/Requests/RemoveAtsCandidateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAtsDocument
 
@@ -1362,7 +1498,11 @@ var res = await sdk.Ats.RemoveAtsDocumentAsync(
 ### Response
 
 **[RemoveAtsDocumentResponse](../../Models/Requests/RemoveAtsDocumentResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAtsInterview
 
@@ -1397,7 +1537,11 @@ var res = await sdk.Ats.RemoveAtsInterviewAsync(
 ### Response
 
 **[RemoveAtsInterviewResponse](../../Models/Requests/RemoveAtsInterviewResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAtsJob
 
@@ -1432,7 +1576,11 @@ var res = await sdk.Ats.RemoveAtsJobAsync(
 ### Response
 
 **[RemoveAtsJobResponse](../../Models/Requests/RemoveAtsJobResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAtsScorecard
 
@@ -1467,7 +1615,11 @@ var res = await sdk.Ats.RemoveAtsScorecardAsync(
 ### Response
 
 **[RemoveAtsScorecardResponse](../../Models/Requests/RemoveAtsScorecardResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAtsActivity
 
@@ -1507,7 +1659,11 @@ var res = await sdk.Ats.UpdateAtsActivityAsync(
 ### Response
 
 **[UpdateAtsActivityResponse](../../Models/Requests/UpdateAtsActivityResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAtsApplication
 
@@ -1545,7 +1701,11 @@ var res = await sdk.Ats.UpdateAtsApplicationAsync(
 ### Response
 
 **[UpdateAtsApplicationResponse](../../Models/Requests/UpdateAtsApplicationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAtsCandidate
 
@@ -1583,7 +1743,11 @@ var res = await sdk.Ats.UpdateAtsCandidateAsync(
 ### Response
 
 **[UpdateAtsCandidateResponse](../../Models/Requests/UpdateAtsCandidateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAtsDocument
 
@@ -1621,7 +1785,11 @@ var res = await sdk.Ats.UpdateAtsDocumentAsync(
 ### Response
 
 **[UpdateAtsDocumentResponse](../../Models/Requests/UpdateAtsDocumentResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAtsInterview
 
@@ -1659,7 +1827,11 @@ var res = await sdk.Ats.UpdateAtsInterviewAsync(
 ### Response
 
 **[UpdateAtsInterviewResponse](../../Models/Requests/UpdateAtsInterviewResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAtsJob
 
@@ -1697,7 +1869,11 @@ var res = await sdk.Ats.UpdateAtsJobAsync(
 ### Response
 
 **[UpdateAtsJobResponse](../../Models/Requests/UpdateAtsJobResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAtsScorecard
 
@@ -1735,4 +1911,8 @@ var res = await sdk.Ats.UpdateAtsScorecardAsync(
 ### Response
 
 **[UpdateAtsScorecardResponse](../../Models/Requests/UpdateAtsScorecardResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

@@ -40,4 +40,8 @@ var res = await sdk.Call.ListUcCallsAsync(req);
 ### Response
 
 **[ListUcCallsResponse](../../Models/Requests/ListUcCallsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

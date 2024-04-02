@@ -44,7 +44,11 @@ var res = await sdk.Note.CreateTicketingNoteAsync(
 ### Response
 
 **[CreateTicketingNoteResponse](../../Models/Requests/CreateTicketingNoteResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetTicketingNote
 
@@ -84,7 +88,11 @@ var res = await sdk.Note.GetTicketingNoteAsync(
 ### Response
 
 **[GetTicketingNoteResponse](../../Models/Requests/GetTicketingNoteResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListTicketingNotes
 
@@ -121,7 +129,11 @@ var res = await sdk.Note.ListTicketingNotesAsync(req);
 ### Response
 
 **[ListTicketingNotesResponse](../../Models/Requests/ListTicketingNotesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchTicketingNote
 
@@ -159,7 +171,11 @@ var res = await sdk.Note.PatchTicketingNoteAsync(
 ### Response
 
 **[PatchTicketingNoteResponse](../../Models/Requests/PatchTicketingNoteResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveTicketingNote
 
@@ -194,7 +210,11 @@ var res = await sdk.Note.RemoveTicketingNoteAsync(
 ### Response
 
 **[RemoveTicketingNoteResponse](../../Models/Requests/RemoveTicketingNoteResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateTicketingNote
 
@@ -232,4 +252,8 @@ var res = await sdk.Note.UpdateTicketingNoteAsync(
 ### Response
 
 **[UpdateTicketingNoteResponse](../../Models/Requests/UpdateTicketingNoteResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

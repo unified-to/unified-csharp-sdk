@@ -44,7 +44,11 @@ var res = await sdk.Application.CreateAtsApplicationAsync(
 ### Response
 
 **[CreateAtsApplicationResponse](../../Models/Requests/CreateAtsApplicationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAtsApplication
 
@@ -84,7 +88,11 @@ var res = await sdk.Application.GetAtsApplicationAsync(
 ### Response
 
 **[GetAtsApplicationResponse](../../Models/Requests/GetAtsApplicationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsApplications
 
@@ -121,7 +129,11 @@ var res = await sdk.Application.ListAtsApplicationsAsync(req);
 ### Response
 
 **[ListAtsApplicationsResponse](../../Models/Requests/ListAtsApplicationsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAtsApplication
 
@@ -159,7 +171,11 @@ var res = await sdk.Application.PatchAtsApplicationAsync(
 ### Response
 
 **[PatchAtsApplicationResponse](../../Models/Requests/PatchAtsApplicationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAtsApplication
 
@@ -194,7 +210,11 @@ var res = await sdk.Application.RemoveAtsApplicationAsync(
 ### Response
 
 **[RemoveAtsApplicationResponse](../../Models/Requests/RemoveAtsApplicationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAtsApplication
 
@@ -232,4 +252,8 @@ var res = await sdk.Application.UpdateAtsApplicationAsync(
 ### Response
 
 **[UpdateAtsApplicationResponse](../../Models/Requests/UpdateAtsApplicationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

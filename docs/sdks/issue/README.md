@@ -37,4 +37,8 @@ var res = await sdk.Issue.ListUnifiedIssuesAsync(req);
 ### Response
 
 **[ListUnifiedIssuesResponse](../../Models/Requests/ListUnifiedIssuesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

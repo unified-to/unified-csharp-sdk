@@ -44,7 +44,11 @@ var res = await sdk.Payout.GetPaymentPayoutAsync(
 ### Response
 
 **[GetPaymentPayoutResponse](../../Models/Requests/GetPaymentPayoutResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListPaymentPayouts
 
@@ -81,4 +85,8 @@ var res = await sdk.Payout.ListPaymentPayoutsAsync(req);
 ### Response
 
 **[ListPaymentPayoutsResponse](../../Models/Requests/ListPaymentPayoutsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

@@ -42,7 +42,11 @@ var res = await sdk.Auth.GetUnifiedIntegrationAuthAsync(req);
 ### Response
 
 **[GetUnifiedIntegrationAuthResponse](../../Models/Requests/GetUnifiedIntegrationAuthResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetUnifiedIntegrationLogin
 
@@ -79,4 +83,8 @@ var res = await sdk.Auth.GetUnifiedIntegrationLoginAsync(req);
 ### Response
 
 **[GetUnifiedIntegrationLoginResponse](../../Models/Requests/GetUnifiedIntegrationLoginResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

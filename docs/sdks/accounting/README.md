@@ -72,7 +72,11 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 ### Response
 
 **[CreateAccountingAccountResponse](../../Models/Requests/CreateAccountingAccountResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreateAccountingContact
 
@@ -108,7 +112,11 @@ var res = await sdk.Accounting.CreateAccountingContactAsync(
 ### Response
 
 **[CreateAccountingContactResponse](../../Models/Requests/CreateAccountingContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreateAccountingInvoice
 
@@ -144,7 +152,11 @@ var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
 ### Response
 
 **[CreateAccountingInvoiceResponse](../../Models/Requests/CreateAccountingInvoiceResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreateAccountingTaxrate
 
@@ -183,7 +195,11 @@ var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
 ### Response
 
 **[CreateAccountingTaxrateResponse](../../Models/Requests/CreateAccountingTaxrateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreateAccountingTransaction
 
@@ -221,7 +237,11 @@ var res = await sdk.Accounting.CreateAccountingTransactionAsync(
 ### Response
 
 **[CreateAccountingTransactionResponse](../../Models/Requests/CreateAccountingTransactionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAccountingAccount
 
@@ -261,7 +281,11 @@ var res = await sdk.Accounting.GetAccountingAccountAsync(
 ### Response
 
 **[GetAccountingAccountResponse](../../Models/Requests/GetAccountingAccountResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAccountingContact
 
@@ -301,7 +325,11 @@ var res = await sdk.Accounting.GetAccountingContactAsync(
 ### Response
 
 **[GetAccountingContactResponse](../../Models/Requests/GetAccountingContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAccountingInvoice
 
@@ -341,7 +369,11 @@ var res = await sdk.Accounting.GetAccountingInvoiceAsync(
 ### Response
 
 **[GetAccountingInvoiceResponse](../../Models/Requests/GetAccountingInvoiceResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAccountingOrganization
 
@@ -381,7 +413,11 @@ var res = await sdk.Accounting.GetAccountingOrganizationAsync(
 ### Response
 
 **[GetAccountingOrganizationResponse](../../Models/Requests/GetAccountingOrganizationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAccountingTaxrate
 
@@ -421,7 +457,11 @@ var res = await sdk.Accounting.GetAccountingTaxrateAsync(
 ### Response
 
 **[GetAccountingTaxrateResponse](../../Models/Requests/GetAccountingTaxrateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAccountingTransaction
 
@@ -461,7 +501,11 @@ var res = await sdk.Accounting.GetAccountingTransactionAsync(
 ### Response
 
 **[GetAccountingTransactionResponse](../../Models/Requests/GetAccountingTransactionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAccountingAccounts
 
@@ -498,7 +542,11 @@ var res = await sdk.Accounting.ListAccountingAccountsAsync(req);
 ### Response
 
 **[ListAccountingAccountsResponse](../../Models/Requests/ListAccountingAccountsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAccountingContacts
 
@@ -535,7 +583,11 @@ var res = await sdk.Accounting.ListAccountingContactsAsync(req);
 ### Response
 
 **[ListAccountingContactsResponse](../../Models/Requests/ListAccountingContactsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAccountingInvoices
 
@@ -572,7 +624,11 @@ var res = await sdk.Accounting.ListAccountingInvoicesAsync(req);
 ### Response
 
 **[ListAccountingInvoicesResponse](../../Models/Requests/ListAccountingInvoicesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAccountingOrganizations
 
@@ -609,7 +665,11 @@ var res = await sdk.Accounting.ListAccountingOrganizationsAsync(req);
 ### Response
 
 **[ListAccountingOrganizationsResponse](../../Models/Requests/ListAccountingOrganizationsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAccountingTaxrates
 
@@ -646,7 +706,11 @@ var res = await sdk.Accounting.ListAccountingTaxratesAsync(req);
 ### Response
 
 **[ListAccountingTaxratesResponse](../../Models/Requests/ListAccountingTaxratesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAccountingTransactions
 
@@ -683,7 +747,11 @@ var res = await sdk.Accounting.ListAccountingTransactionsAsync(req);
 ### Response
 
 **[ListAccountingTransactionsResponse](../../Models/Requests/ListAccountingTransactionsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAccountingAccount
 
@@ -723,7 +791,11 @@ var res = await sdk.Accounting.PatchAccountingAccountAsync(
 ### Response
 
 **[PatchAccountingAccountResponse](../../Models/Requests/PatchAccountingAccountResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAccountingContact
 
@@ -761,7 +833,11 @@ var res = await sdk.Accounting.PatchAccountingContactAsync(
 ### Response
 
 **[PatchAccountingContactResponse](../../Models/Requests/PatchAccountingContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAccountingInvoice
 
@@ -799,7 +875,11 @@ var res = await sdk.Accounting.PatchAccountingInvoiceAsync(
 ### Response
 
 **[PatchAccountingInvoiceResponse](../../Models/Requests/PatchAccountingInvoiceResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAccountingTaxrate
 
@@ -840,7 +920,11 @@ var res = await sdk.Accounting.PatchAccountingTaxrateAsync(
 ### Response
 
 **[PatchAccountingTaxrateResponse](../../Models/Requests/PatchAccountingTaxrateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAccountingTransaction
 
@@ -880,7 +964,11 @@ var res = await sdk.Accounting.PatchAccountingTransactionAsync(
 ### Response
 
 **[PatchAccountingTransactionResponse](../../Models/Requests/PatchAccountingTransactionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAccountingAccount
 
@@ -915,7 +1003,11 @@ var res = await sdk.Accounting.RemoveAccountingAccountAsync(
 ### Response
 
 **[RemoveAccountingAccountResponse](../../Models/Requests/RemoveAccountingAccountResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAccountingContact
 
@@ -950,7 +1042,11 @@ var res = await sdk.Accounting.RemoveAccountingContactAsync(
 ### Response
 
 **[RemoveAccountingContactResponse](../../Models/Requests/RemoveAccountingContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAccountingInvoice
 
@@ -985,7 +1081,11 @@ var res = await sdk.Accounting.RemoveAccountingInvoiceAsync(
 ### Response
 
 **[RemoveAccountingInvoiceResponse](../../Models/Requests/RemoveAccountingInvoiceResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAccountingTaxrate
 
@@ -1020,7 +1120,11 @@ var res = await sdk.Accounting.RemoveAccountingTaxrateAsync(
 ### Response
 
 **[RemoveAccountingTaxrateResponse](../../Models/Requests/RemoveAccountingTaxrateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAccountingTransaction
 
@@ -1055,7 +1159,11 @@ var res = await sdk.Accounting.RemoveAccountingTransactionAsync(
 ### Response
 
 **[RemoveAccountingTransactionResponse](../../Models/Requests/RemoveAccountingTransactionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAccountingAccount
 
@@ -1095,7 +1203,11 @@ var res = await sdk.Accounting.UpdateAccountingAccountAsync(
 ### Response
 
 **[UpdateAccountingAccountResponse](../../Models/Requests/UpdateAccountingAccountResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAccountingContact
 
@@ -1133,7 +1245,11 @@ var res = await sdk.Accounting.UpdateAccountingContactAsync(
 ### Response
 
 **[UpdateAccountingContactResponse](../../Models/Requests/UpdateAccountingContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAccountingInvoice
 
@@ -1171,7 +1287,11 @@ var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(
 ### Response
 
 **[UpdateAccountingInvoiceResponse](../../Models/Requests/UpdateAccountingInvoiceResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAccountingTaxrate
 
@@ -1212,7 +1332,11 @@ var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(
 ### Response
 
 **[UpdateAccountingTaxrateResponse](../../Models/Requests/UpdateAccountingTaxrateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAccountingTransaction
 
@@ -1252,4 +1376,8 @@ var res = await sdk.Accounting.UpdateAccountingTransactionAsync(
 ### Response
 
 **[UpdateAccountingTransactionResponse](../../Models/Requests/UpdateAccountingTransactionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

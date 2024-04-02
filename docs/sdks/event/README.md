@@ -44,7 +44,11 @@ var res = await sdk.Event.CreateCrmEventAsync(
 ### Response
 
 **[CreateCrmEventResponse](../../Models/Requests/CreateCrmEventResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetCrmEvent
 
@@ -84,7 +88,11 @@ var res = await sdk.Event.GetCrmEventAsync(
 ### Response
 
 **[GetCrmEventResponse](../../Models/Requests/GetCrmEventResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListCrmEvents
 
@@ -121,7 +129,11 @@ var res = await sdk.Event.ListCrmEventsAsync(req);
 ### Response
 
 **[ListCrmEventsResponse](../../Models/Requests/ListCrmEventsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchCrmEvent
 
@@ -159,7 +171,11 @@ var res = await sdk.Event.PatchCrmEventAsync(
 ### Response
 
 **[PatchCrmEventResponse](../../Models/Requests/PatchCrmEventResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveCrmEvent
 
@@ -194,7 +210,11 @@ var res = await sdk.Event.RemoveCrmEventAsync(
 ### Response
 
 **[RemoveCrmEventResponse](../../Models/Requests/RemoveCrmEventResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateCrmEvent
 
@@ -232,4 +252,8 @@ var res = await sdk.Event.UpdateCrmEventAsync(
 ### Response
 
 **[UpdateCrmEventResponse](../../Models/Requests/UpdateCrmEventResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

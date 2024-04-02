@@ -41,7 +41,11 @@ var res = await sdk.Enrich.ListEnrichCompaniesAsync(
 ### Response
 
 **[ListEnrichCompaniesResponse](../../Models/Requests/ListEnrichCompaniesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListEnrichPeople
 
@@ -77,4 +81,8 @@ var res = await sdk.Enrich.ListEnrichPeopleAsync(req);
 ### Response
 
 **[ListEnrichPeopleResponse](../../Models/Requests/ListEnrichPeopleResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

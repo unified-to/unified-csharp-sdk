@@ -44,7 +44,11 @@ var res = await sdk.Document.CreateAtsDocumentAsync(
 ### Response
 
 **[CreateAtsDocumentResponse](../../Models/Requests/CreateAtsDocumentResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAtsDocument
 
@@ -84,7 +88,11 @@ var res = await sdk.Document.GetAtsDocumentAsync(
 ### Response
 
 **[GetAtsDocumentResponse](../../Models/Requests/GetAtsDocumentResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsDocuments
 
@@ -121,7 +129,11 @@ var res = await sdk.Document.ListAtsDocumentsAsync(req);
 ### Response
 
 **[ListAtsDocumentsResponse](../../Models/Requests/ListAtsDocumentsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAtsDocument
 
@@ -159,7 +171,11 @@ var res = await sdk.Document.PatchAtsDocumentAsync(
 ### Response
 
 **[PatchAtsDocumentResponse](../../Models/Requests/PatchAtsDocumentResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAtsDocument
 
@@ -194,7 +210,11 @@ var res = await sdk.Document.RemoveAtsDocumentAsync(
 ### Response
 
 **[RemoveAtsDocumentResponse](../../Models/Requests/RemoveAtsDocumentResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAtsDocument
 
@@ -232,4 +252,8 @@ var res = await sdk.Document.UpdateAtsDocumentAsync(
 ### Response
 
 **[UpdateAtsDocumentResponse](../../Models/Requests/UpdateAtsDocumentResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

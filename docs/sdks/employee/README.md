@@ -44,7 +44,11 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
 ### Response
 
 **[CreateHrisEmployeeResponse](../../Models/Requests/CreateHrisEmployeeResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetHrisEmployee
 
@@ -84,7 +88,11 @@ var res = await sdk.Employee.GetHrisEmployeeAsync(
 ### Response
 
 **[GetHrisEmployeeResponse](../../Models/Requests/GetHrisEmployeeResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListHrisEmployees
 
@@ -121,7 +129,11 @@ var res = await sdk.Employee.ListHrisEmployeesAsync(req);
 ### Response
 
 **[ListHrisEmployeesResponse](../../Models/Requests/ListHrisEmployeesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchHrisEmployee
 
@@ -159,7 +171,11 @@ var res = await sdk.Employee.PatchHrisEmployeeAsync(
 ### Response
 
 **[PatchHrisEmployeeResponse](../../Models/Requests/PatchHrisEmployeeResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveHrisEmployee
 
@@ -194,7 +210,11 @@ var res = await sdk.Employee.RemoveHrisEmployeeAsync(
 ### Response
 
 **[RemoveHrisEmployeeResponse](../../Models/Requests/RemoveHrisEmployeeResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateHrisEmployee
 
@@ -232,4 +252,8 @@ var res = await sdk.Employee.UpdateHrisEmployeeAsync(
 ### Response
 
 **[UpdateHrisEmployeeResponse](../../Models/Requests/UpdateHrisEmployeeResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

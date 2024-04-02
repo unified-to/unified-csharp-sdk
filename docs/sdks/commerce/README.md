@@ -65,7 +65,11 @@ var res = await sdk.Commerce.CreateCommerceCollectionAsync(
 ### Response
 
 **[CreateCommerceCollectionResponse](../../Models/Requests/CreateCommerceCollectionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreateCommerceInventory
 
@@ -103,7 +107,11 @@ var res = await sdk.Commerce.CreateCommerceInventoryAsync(
 ### Response
 
 **[CreateCommerceInventoryResponse](../../Models/Requests/CreateCommerceInventoryResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreateCommerceItem
 
@@ -141,7 +149,11 @@ var res = await sdk.Commerce.CreateCommerceItemAsync(
 ### Response
 
 **[CreateCommerceItemResponse](../../Models/Requests/CreateCommerceItemResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreateCommerceLocation
 
@@ -179,7 +191,11 @@ var res = await sdk.Commerce.CreateCommerceLocationAsync(
 ### Response
 
 **[CreateCommerceLocationResponse](../../Models/Requests/CreateCommerceLocationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetCommerceCollection
 
@@ -219,7 +235,11 @@ var res = await sdk.Commerce.GetCommerceCollectionAsync(
 ### Response
 
 **[GetCommerceCollectionResponse](../../Models/Requests/GetCommerceCollectionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetCommerceInventory
 
@@ -259,7 +279,11 @@ var res = await sdk.Commerce.GetCommerceInventoryAsync(
 ### Response
 
 **[GetCommerceInventoryResponse](../../Models/Requests/GetCommerceInventoryResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetCommerceItem
 
@@ -299,7 +323,11 @@ var res = await sdk.Commerce.GetCommerceItemAsync(
 ### Response
 
 **[GetCommerceItemResponse](../../Models/Requests/GetCommerceItemResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetCommerceLocation
 
@@ -339,7 +367,11 @@ var res = await sdk.Commerce.GetCommerceLocationAsync(
 ### Response
 
 **[GetCommerceLocationResponse](../../Models/Requests/GetCommerceLocationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListCommerceCollections
 
@@ -376,7 +408,11 @@ var res = await sdk.Commerce.ListCommerceCollectionsAsync(req);
 ### Response
 
 **[ListCommerceCollectionsResponse](../../Models/Requests/ListCommerceCollectionsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListCommerceInventories
 
@@ -413,7 +449,11 @@ var res = await sdk.Commerce.ListCommerceInventoriesAsync(req);
 ### Response
 
 **[ListCommerceInventoriesResponse](../../Models/Requests/ListCommerceInventoriesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListCommerceItems
 
@@ -450,7 +490,11 @@ var res = await sdk.Commerce.ListCommerceItemsAsync(req);
 ### Response
 
 **[ListCommerceItemsResponse](../../Models/Requests/ListCommerceItemsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListCommerceLocations
 
@@ -487,7 +531,11 @@ var res = await sdk.Commerce.ListCommerceLocationsAsync(req);
 ### Response
 
 **[ListCommerceLocationsResponse](../../Models/Requests/ListCommerceLocationsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchCommerceCollection
 
@@ -528,7 +576,11 @@ var res = await sdk.Commerce.PatchCommerceCollectionAsync(
 ### Response
 
 **[PatchCommerceCollectionResponse](../../Models/Requests/PatchCommerceCollectionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchCommerceInventory
 
@@ -568,7 +620,11 @@ var res = await sdk.Commerce.PatchCommerceInventoryAsync(
 ### Response
 
 **[PatchCommerceInventoryResponse](../../Models/Requests/PatchCommerceInventoryResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchCommerceItem
 
@@ -608,7 +664,11 @@ var res = await sdk.Commerce.PatchCommerceItemAsync(
 ### Response
 
 **[PatchCommerceItemResponse](../../Models/Requests/PatchCommerceItemResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchCommerceLocation
 
@@ -648,7 +708,11 @@ var res = await sdk.Commerce.PatchCommerceLocationAsync(
 ### Response
 
 **[PatchCommerceLocationResponse](../../Models/Requests/PatchCommerceLocationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveCommerceCollection
 
@@ -683,7 +747,11 @@ var res = await sdk.Commerce.RemoveCommerceCollectionAsync(
 ### Response
 
 **[RemoveCommerceCollectionResponse](../../Models/Requests/RemoveCommerceCollectionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveCommerceInventory
 
@@ -718,7 +786,11 @@ var res = await sdk.Commerce.RemoveCommerceInventoryAsync(
 ### Response
 
 **[RemoveCommerceInventoryResponse](../../Models/Requests/RemoveCommerceInventoryResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveCommerceItem
 
@@ -753,7 +825,11 @@ var res = await sdk.Commerce.RemoveCommerceItemAsync(
 ### Response
 
 **[RemoveCommerceItemResponse](../../Models/Requests/RemoveCommerceItemResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveCommerceLocation
 
@@ -788,7 +864,11 @@ var res = await sdk.Commerce.RemoveCommerceLocationAsync(
 ### Response
 
 **[RemoveCommerceLocationResponse](../../Models/Requests/RemoveCommerceLocationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateCommerceCollection
 
@@ -829,7 +909,11 @@ var res = await sdk.Commerce.UpdateCommerceCollectionAsync(
 ### Response
 
 **[UpdateCommerceCollectionResponse](../../Models/Requests/UpdateCommerceCollectionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateCommerceInventory
 
@@ -869,7 +953,11 @@ var res = await sdk.Commerce.UpdateCommerceInventoryAsync(
 ### Response
 
 **[UpdateCommerceInventoryResponse](../../Models/Requests/UpdateCommerceInventoryResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateCommerceItem
 
@@ -909,7 +997,11 @@ var res = await sdk.Commerce.UpdateCommerceItemAsync(
 ### Response
 
 **[UpdateCommerceItemResponse](../../Models/Requests/UpdateCommerceItemResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateCommerceLocation
 
@@ -949,4 +1041,8 @@ var res = await sdk.Commerce.UpdateCommerceLocationAsync(
 ### Response
 
 **[UpdateCommerceLocationResponse](../../Models/Requests/UpdateCommerceLocationResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

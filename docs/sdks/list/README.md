@@ -44,7 +44,11 @@ var res = await sdk.List.CreateMartechListAsync(
 ### Response
 
 **[CreateMartechListResponse](../../Models/Requests/CreateMartechListResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetMartechList
 
@@ -84,7 +88,11 @@ var res = await sdk.List.GetMartechListAsync(
 ### Response
 
 **[GetMartechListResponse](../../Models/Requests/GetMartechListResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListMartechLists
 
@@ -121,7 +129,11 @@ var res = await sdk.List.ListMartechListsAsync(req);
 ### Response
 
 **[ListMartechListsResponse](../../Models/Requests/ListMartechListsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchMartechList
 
@@ -159,7 +171,11 @@ var res = await sdk.List.PatchMartechListAsync(
 ### Response
 
 **[PatchMartechListResponse](../../Models/Requests/PatchMartechListResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveMartechList
 
@@ -194,7 +210,11 @@ var res = await sdk.List.RemoveMartechListAsync(
 ### Response
 
 **[RemoveMartechListResponse](../../Models/Requests/RemoveMartechListResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateMartechList
 
@@ -232,4 +252,8 @@ var res = await sdk.List.UpdateMartechListAsync(
 ### Response
 
 **[UpdateMartechListResponse](../../Models/Requests/UpdateMartechListResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

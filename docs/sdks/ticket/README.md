@@ -44,7 +44,11 @@ var res = await sdk.Ticket.CreateTicketingTicketAsync(
 ### Response
 
 **[CreateTicketingTicketResponse](../../Models/Requests/CreateTicketingTicketResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetTicketingTicket
 
@@ -84,7 +88,11 @@ var res = await sdk.Ticket.GetTicketingTicketAsync(
 ### Response
 
 **[GetTicketingTicketResponse](../../Models/Requests/GetTicketingTicketResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListTicketingTickets
 
@@ -121,7 +129,11 @@ var res = await sdk.Ticket.ListTicketingTicketsAsync(req);
 ### Response
 
 **[ListTicketingTicketsResponse](../../Models/Requests/ListTicketingTicketsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchTicketingTicket
 
@@ -159,7 +171,11 @@ var res = await sdk.Ticket.PatchTicketingTicketAsync(
 ### Response
 
 **[PatchTicketingTicketResponse](../../Models/Requests/PatchTicketingTicketResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveTicketingTicket
 
@@ -194,7 +210,11 @@ var res = await sdk.Ticket.RemoveTicketingTicketAsync(
 ### Response
 
 **[RemoveTicketingTicketResponse](../../Models/Requests/RemoveTicketingTicketResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateTicketingTicket
 
@@ -232,4 +252,8 @@ var res = await sdk.Ticket.UpdateTicketingTicketAsync(
 ### Response
 
 **[UpdateTicketingTicketResponse](../../Models/Requests/UpdateTicketingTicketResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

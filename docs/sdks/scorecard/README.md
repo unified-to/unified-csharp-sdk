@@ -44,7 +44,11 @@ var res = await sdk.Scorecard.CreateAtsScorecardAsync(
 ### Response
 
 **[CreateAtsScorecardResponse](../../Models/Requests/CreateAtsScorecardResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAtsScorecard
 
@@ -84,7 +88,11 @@ var res = await sdk.Scorecard.GetAtsScorecardAsync(
 ### Response
 
 **[GetAtsScorecardResponse](../../Models/Requests/GetAtsScorecardResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsScorecards
 
@@ -121,7 +129,11 @@ var res = await sdk.Scorecard.ListAtsScorecardsAsync(req);
 ### Response
 
 **[ListAtsScorecardsResponse](../../Models/Requests/ListAtsScorecardsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAtsScorecard
 
@@ -159,7 +171,11 @@ var res = await sdk.Scorecard.PatchAtsScorecardAsync(
 ### Response
 
 **[PatchAtsScorecardResponse](../../Models/Requests/PatchAtsScorecardResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAtsScorecard
 
@@ -194,7 +210,11 @@ var res = await sdk.Scorecard.RemoveAtsScorecardAsync(
 ### Response
 
 **[RemoveAtsScorecardResponse](../../Models/Requests/RemoveAtsScorecardResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAtsScorecard
 
@@ -232,4 +252,8 @@ var res = await sdk.Scorecard.UpdateAtsScorecardAsync(
 ### Response
 
 **[UpdateAtsScorecardResponse](../../Models/Requests/UpdateAtsScorecardResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

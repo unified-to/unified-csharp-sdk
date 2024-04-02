@@ -36,7 +36,11 @@ var res = await sdk.Apicall.GetUnifiedApicallAsync(id: "<value>");
 ### Response
 
 **[GetUnifiedApicallResponse](../../Models/Requests/GetUnifiedApicallResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListUnifiedApicalls
 
@@ -70,4 +74,8 @@ var res = await sdk.Apicall.ListUnifiedApicallsAsync(req);
 ### Response
 
 **[ListUnifiedApicallsResponse](../../Models/Requests/ListUnifiedApicallsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

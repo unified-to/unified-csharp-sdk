@@ -44,7 +44,11 @@ var res = await sdk.File.CreateStorageFileAsync(
 ### Response
 
 **[CreateStorageFileResponse](../../Models/Requests/CreateStorageFileResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetStorageFile
 
@@ -84,7 +88,11 @@ var res = await sdk.File.GetStorageFileAsync(
 ### Response
 
 **[GetStorageFileResponse](../../Models/Requests/GetStorageFileResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListStorageFiles
 
@@ -121,7 +129,11 @@ var res = await sdk.File.ListStorageFilesAsync(req);
 ### Response
 
 **[ListStorageFilesResponse](../../Models/Requests/ListStorageFilesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchStorageFile
 
@@ -159,7 +171,11 @@ var res = await sdk.File.PatchStorageFileAsync(
 ### Response
 
 **[PatchStorageFileResponse](../../Models/Requests/PatchStorageFileResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveStorageFile
 
@@ -194,7 +210,11 @@ var res = await sdk.File.RemoveStorageFileAsync(
 ### Response
 
 **[RemoveStorageFileResponse](../../Models/Requests/RemoveStorageFileResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateStorageFile
 
@@ -232,4 +252,8 @@ var res = await sdk.File.UpdateStorageFileAsync(
 ### Response
 
 **[UpdateStorageFileResponse](../../Models/Requests/UpdateStorageFileResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

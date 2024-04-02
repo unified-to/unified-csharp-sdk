@@ -16,6 +16,7 @@ namespace UnifiedTo
     using System.Threading.Tasks;
     using System;
     using UnifiedTo.Models.Components;
+    using UnifiedTo.Models.Errors;
     using UnifiedTo.Utils;
 
     /// <summary>
@@ -112,10 +113,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.13.2";
-        private const string _sdkGenVersion = "2.292.0";
+        private const string _sdkVersion = "0.14.0";
+        private const string _sdkGenVersion = "2.295.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.13.2 2.292.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.14.0 2.295.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _defaultClient;

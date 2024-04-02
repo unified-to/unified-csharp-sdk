@@ -47,7 +47,11 @@ var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
 ### Response
 
 **[CreateAccountingTaxrateResponse](../../Models/Requests/CreateAccountingTaxrateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAccountingTaxrate
 
@@ -87,7 +91,11 @@ var res = await sdk.Taxrate.GetAccountingTaxrateAsync(
 ### Response
 
 **[GetAccountingTaxrateResponse](../../Models/Requests/GetAccountingTaxrateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAccountingTaxrates
 
@@ -124,7 +132,11 @@ var res = await sdk.Taxrate.ListAccountingTaxratesAsync(req);
 ### Response
 
 **[ListAccountingTaxratesResponse](../../Models/Requests/ListAccountingTaxratesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAccountingTaxrate
 
@@ -165,7 +177,11 @@ var res = await sdk.Taxrate.PatchAccountingTaxrateAsync(
 ### Response
 
 **[PatchAccountingTaxrateResponse](../../Models/Requests/PatchAccountingTaxrateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAccountingTaxrate
 
@@ -200,7 +216,11 @@ var res = await sdk.Taxrate.RemoveAccountingTaxrateAsync(
 ### Response
 
 **[RemoveAccountingTaxrateResponse](../../Models/Requests/RemoveAccountingTaxrateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAccountingTaxrate
 
@@ -241,4 +261,8 @@ var res = await sdk.Taxrate.UpdateAccountingTaxrateAsync(
 ### Response
 
 **[UpdateAccountingTaxrateResponse](../../Models/Requests/UpdateAccountingTaxrateResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

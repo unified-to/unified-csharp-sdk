@@ -44,7 +44,11 @@ var res = await sdk.Interview.CreateAtsInterviewAsync(
 ### Response
 
 **[CreateAtsInterviewResponse](../../Models/Requests/CreateAtsInterviewResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAtsInterview
 
@@ -84,7 +88,11 @@ var res = await sdk.Interview.GetAtsInterviewAsync(
 ### Response
 
 **[GetAtsInterviewResponse](../../Models/Requests/GetAtsInterviewResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsInterviews
 
@@ -121,7 +129,11 @@ var res = await sdk.Interview.ListAtsInterviewsAsync(req);
 ### Response
 
 **[ListAtsInterviewsResponse](../../Models/Requests/ListAtsInterviewsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAtsInterview
 
@@ -159,7 +171,11 @@ var res = await sdk.Interview.PatchAtsInterviewAsync(
 ### Response
 
 **[PatchAtsInterviewResponse](../../Models/Requests/PatchAtsInterviewResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAtsInterview
 
@@ -194,7 +210,11 @@ var res = await sdk.Interview.RemoveAtsInterviewAsync(
 ### Response
 
 **[RemoveAtsInterviewResponse](../../Models/Requests/RemoveAtsInterviewResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAtsInterview
 
@@ -232,4 +252,8 @@ var res = await sdk.Interview.UpdateAtsInterviewAsync(
 ### Response
 
 **[UpdateAtsInterviewResponse](../../Models/Requests/UpdateAtsInterviewResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

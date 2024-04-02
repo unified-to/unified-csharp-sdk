@@ -44,7 +44,11 @@ var res = await sdk.Job.CreateAtsJobAsync(
 ### Response
 
 **[CreateAtsJobResponse](../../Models/Requests/CreateAtsJobResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAtsJob
 
@@ -84,7 +88,11 @@ var res = await sdk.Job.GetAtsJobAsync(
 ### Response
 
 **[GetAtsJobResponse](../../Models/Requests/GetAtsJobResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsJobs
 
@@ -121,7 +129,11 @@ var res = await sdk.Job.ListAtsJobsAsync(req);
 ### Response
 
 **[ListAtsJobsResponse](../../Models/Requests/ListAtsJobsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAtsJob
 
@@ -159,7 +171,11 @@ var res = await sdk.Job.PatchAtsJobAsync(
 ### Response
 
 **[PatchAtsJobResponse](../../Models/Requests/PatchAtsJobResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAtsJob
 
@@ -194,7 +210,11 @@ var res = await sdk.Job.RemoveAtsJobAsync(
 ### Response
 
 **[RemoveAtsJobResponse](../../Models/Requests/RemoveAtsJobResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAtsJob
 
@@ -232,4 +252,8 @@ var res = await sdk.Job.UpdateAtsJobAsync(
 ### Response
 
 **[UpdateAtsJobResponse](../../Models/Requests/UpdateAtsJobResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

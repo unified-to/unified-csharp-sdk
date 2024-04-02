@@ -44,7 +44,11 @@ var res = await sdk.Deal.CreateCrmDealAsync(
 ### Response
 
 **[CreateCrmDealResponse](../../Models/Requests/CreateCrmDealResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetCrmDeal
 
@@ -84,7 +88,11 @@ var res = await sdk.Deal.GetCrmDealAsync(
 ### Response
 
 **[GetCrmDealResponse](../../Models/Requests/GetCrmDealResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListCrmDeals
 
@@ -121,7 +129,11 @@ var res = await sdk.Deal.ListCrmDealsAsync(req);
 ### Response
 
 **[ListCrmDealsResponse](../../Models/Requests/ListCrmDealsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchCrmDeal
 
@@ -159,7 +171,11 @@ var res = await sdk.Deal.PatchCrmDealAsync(
 ### Response
 
 **[PatchCrmDealResponse](../../Models/Requests/PatchCrmDealResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveCrmDeal
 
@@ -194,7 +210,11 @@ var res = await sdk.Deal.RemoveCrmDealAsync(
 ### Response
 
 **[RemoveCrmDealResponse](../../Models/Requests/RemoveCrmDealResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateCrmDeal
 
@@ -232,4 +252,8 @@ var res = await sdk.Deal.UpdateCrmDealAsync(
 ### Response
 
 **[UpdateCrmDealResponse](../../Models/Requests/UpdateCrmDealResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

@@ -47,7 +47,11 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
 ### Response
 
 **[CreateCrmCompanyResponse](../../Models/Requests/CreateCrmCompanyResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAtsCompany
 
@@ -87,7 +91,11 @@ var res = await sdk.Company.GetAtsCompanyAsync(
 ### Response
 
 **[GetAtsCompanyResponse](../../Models/Requests/GetAtsCompanyResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetCrmCompany
 
@@ -127,7 +135,11 @@ var res = await sdk.Company.GetCrmCompanyAsync(
 ### Response
 
 **[GetCrmCompanyResponse](../../Models/Requests/GetCrmCompanyResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAtsCompanies
 
@@ -164,7 +176,11 @@ var res = await sdk.Company.ListAtsCompaniesAsync(req);
 ### Response
 
 **[ListAtsCompaniesResponse](../../Models/Requests/ListAtsCompaniesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListCrmCompanies
 
@@ -201,7 +217,11 @@ var res = await sdk.Company.ListCrmCompaniesAsync(req);
 ### Response
 
 **[ListCrmCompaniesResponse](../../Models/Requests/ListCrmCompaniesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListEnrichCompanies
 
@@ -238,7 +258,11 @@ var res = await sdk.Company.ListEnrichCompaniesAsync(
 ### Response
 
 **[ListEnrichCompaniesResponse](../../Models/Requests/ListEnrichCompaniesResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchCrmCompany
 
@@ -276,7 +300,11 @@ var res = await sdk.Company.PatchCrmCompanyAsync(
 ### Response
 
 **[PatchCrmCompanyResponse](../../Models/Requests/PatchCrmCompanyResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveCrmCompany
 
@@ -311,7 +339,11 @@ var res = await sdk.Company.RemoveCrmCompanyAsync(
 ### Response
 
 **[RemoveCrmCompanyResponse](../../Models/Requests/RemoveCrmCompanyResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateCrmCompany
 
@@ -349,4 +381,8 @@ var res = await sdk.Company.UpdateCrmCompanyAsync(
 ### Response
 
 **[UpdateCrmCompanyResponse](../../Models/Requests/UpdateCrmCompanyResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

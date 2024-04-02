@@ -44,7 +44,11 @@ var res = await sdk.Member.CreateMartechMemberAsync(
 ### Response
 
 **[CreateMartechMemberResponse](../../Models/Requests/CreateMartechMemberResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetMartechMember
 
@@ -84,7 +88,11 @@ var res = await sdk.Member.GetMartechMemberAsync(
 ### Response
 
 **[GetMartechMemberResponse](../../Models/Requests/GetMartechMemberResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListMartechMembers
 
@@ -121,7 +129,11 @@ var res = await sdk.Member.ListMartechMembersAsync(req);
 ### Response
 
 **[ListMartechMembersResponse](../../Models/Requests/ListMartechMembersResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchMartechMember
 
@@ -159,7 +171,11 @@ var res = await sdk.Member.PatchMartechMemberAsync(
 ### Response
 
 **[PatchMartechMemberResponse](../../Models/Requests/PatchMartechMemberResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveMartechMember
 
@@ -194,7 +210,11 @@ var res = await sdk.Member.RemoveMartechMemberAsync(
 ### Response
 
 **[RemoveMartechMemberResponse](../../Models/Requests/RemoveMartechMemberResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateMartechMember
 
@@ -232,4 +252,8 @@ var res = await sdk.Member.UpdateMartechMemberAsync(
 ### Response
 
 **[UpdateMartechMemberResponse](../../Models/Requests/UpdateMartechMemberResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

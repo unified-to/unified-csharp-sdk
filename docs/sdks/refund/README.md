@@ -44,7 +44,11 @@ var res = await sdk.Refund.GetPaymentRefundAsync(
 ### Response
 
 **[GetPaymentRefundResponse](../../Models/Requests/GetPaymentRefundResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListPaymentRefunds
 
@@ -81,4 +85,8 @@ var res = await sdk.Refund.ListPaymentRefundsAsync(req);
 ### Response
 
 **[ListPaymentRefundsResponse](../../Models/Requests/ListPaymentRefundsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

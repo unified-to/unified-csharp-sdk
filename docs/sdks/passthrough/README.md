@@ -47,7 +47,11 @@ var res = await sdk.Passthrough.CreatePassthroughAsync(
 ### Response
 
 **[CreatePassthroughResponse](../../Models/Requests/CreatePassthroughResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListPassthroughs
 
@@ -82,7 +86,11 @@ var res = await sdk.Passthrough.ListPassthroughsAsync(
 ### Response
 
 **[ListPassthroughsResponse](../../Models/Requests/ListPassthroughsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchPassthrough
 
@@ -122,7 +130,11 @@ var res = await sdk.Passthrough.PatchPassthroughAsync(
 ### Response
 
 **[PatchPassthroughResponse](../../Models/Requests/PatchPassthroughResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemovePassthrough
 
@@ -157,7 +169,11 @@ var res = await sdk.Passthrough.RemovePassthroughAsync(
 ### Response
 
 **[RemovePassthroughResponse](../../Models/Requests/RemovePassthroughResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdatePassthrough
 
@@ -197,4 +213,8 @@ var res = await sdk.Passthrough.UpdatePassthroughAsync(
 ### Response
 
 **[UpdatePassthroughResponse](../../Models/Requests/UpdatePassthroughResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

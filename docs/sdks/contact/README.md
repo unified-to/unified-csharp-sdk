@@ -56,7 +56,11 @@ var res = await sdk.Contact.CreateAccountingContactAsync(
 ### Response
 
 **[CreateAccountingContactResponse](../../Models/Requests/CreateAccountingContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreateCrmContact
 
@@ -92,7 +96,11 @@ var res = await sdk.Contact.CreateCrmContactAsync(
 ### Response
 
 **[CreateCrmContactResponse](../../Models/Requests/CreateCrmContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## CreateUcContact
 
@@ -128,7 +136,11 @@ var res = await sdk.Contact.CreateUcContactAsync(
 ### Response
 
 **[CreateUcContactResponse](../../Models/Requests/CreateUcContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetAccountingContact
 
@@ -168,7 +180,11 @@ var res = await sdk.Contact.GetAccountingContactAsync(
 ### Response
 
 **[GetAccountingContactResponse](../../Models/Requests/GetAccountingContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetCrmContact
 
@@ -208,7 +224,11 @@ var res = await sdk.Contact.GetCrmContactAsync(
 ### Response
 
 **[GetCrmContactResponse](../../Models/Requests/GetCrmContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetUcContact
 
@@ -248,7 +268,11 @@ var res = await sdk.Contact.GetUcContactAsync(
 ### Response
 
 **[GetUcContactResponse](../../Models/Requests/GetUcContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListAccountingContacts
 
@@ -285,7 +309,11 @@ var res = await sdk.Contact.ListAccountingContactsAsync(req);
 ### Response
 
 **[ListAccountingContactsResponse](../../Models/Requests/ListAccountingContactsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListCrmContacts
 
@@ -322,7 +350,11 @@ var res = await sdk.Contact.ListCrmContactsAsync(req);
 ### Response
 
 **[ListCrmContactsResponse](../../Models/Requests/ListCrmContactsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListUcContacts
 
@@ -359,7 +391,11 @@ var res = await sdk.Contact.ListUcContactsAsync(req);
 ### Response
 
 **[ListUcContactsResponse](../../Models/Requests/ListUcContactsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchAccountingContact
 
@@ -397,7 +433,11 @@ var res = await sdk.Contact.PatchAccountingContactAsync(
 ### Response
 
 **[PatchAccountingContactResponse](../../Models/Requests/PatchAccountingContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchCrmContact
 
@@ -435,7 +475,11 @@ var res = await sdk.Contact.PatchCrmContactAsync(
 ### Response
 
 **[PatchCrmContactResponse](../../Models/Requests/PatchCrmContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchUcContact
 
@@ -473,7 +517,11 @@ var res = await sdk.Contact.PatchUcContactAsync(
 ### Response
 
 **[PatchUcContactResponse](../../Models/Requests/PatchUcContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveAccountingContact
 
@@ -508,7 +556,11 @@ var res = await sdk.Contact.RemoveAccountingContactAsync(
 ### Response
 
 **[RemoveAccountingContactResponse](../../Models/Requests/RemoveAccountingContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveCrmContact
 
@@ -543,7 +595,11 @@ var res = await sdk.Contact.RemoveCrmContactAsync(
 ### Response
 
 **[RemoveCrmContactResponse](../../Models/Requests/RemoveCrmContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveUcContact
 
@@ -578,7 +634,11 @@ var res = await sdk.Contact.RemoveUcContactAsync(
 ### Response
 
 **[RemoveUcContactResponse](../../Models/Requests/RemoveUcContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateAccountingContact
 
@@ -616,7 +676,11 @@ var res = await sdk.Contact.UpdateAccountingContactAsync(
 ### Response
 
 **[UpdateAccountingContactResponse](../../Models/Requests/UpdateAccountingContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateCrmContact
 
@@ -654,7 +718,11 @@ var res = await sdk.Contact.UpdateCrmContactAsync(
 ### Response
 
 **[UpdateCrmContactResponse](../../Models/Requests/UpdateCrmContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateUcContact
 
@@ -692,4 +760,8 @@ var res = await sdk.Contact.UpdateUcContactAsync(
 ### Response
 
 **[UpdateUcContactResponse](../../Models/Requests/UpdateUcContactResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |

@@ -50,7 +50,11 @@ var res = await sdk.Connection.CreateUnifiedConnectionAsync(req);
 ### Response
 
 **[CreateUnifiedConnectionResponse](../../Models/Requests/CreateUnifiedConnectionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## GetUnifiedConnection
 
@@ -82,7 +86,11 @@ var res = await sdk.Connection.GetUnifiedConnectionAsync(id: "<value>");
 ### Response
 
 **[GetUnifiedConnectionResponse](../../Models/Requests/GetUnifiedConnectionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## ListUnifiedConnections
 
@@ -117,7 +125,11 @@ var res = await sdk.Connection.ListUnifiedConnectionsAsync(req);
 ### Response
 
 **[ListUnifiedConnectionsResponse](../../Models/Requests/ListUnifiedConnectionsResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## PatchUnifiedConnection
 
@@ -161,7 +173,11 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(
 ### Response
 
 **[PatchUnifiedConnectionResponse](../../Models/Requests/PatchUnifiedConnectionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## RemoveUnifiedConnection
 
@@ -193,7 +209,11 @@ var res = await sdk.Connection.RemoveUnifiedConnectionAsync(id: "<value>");
 ### Response
 
 **[RemoveUnifiedConnectionResponse](../../Models/Requests/RemoveUnifiedConnectionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 ## UpdateUnifiedConnection
 
@@ -237,4 +257,8 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
 ### Response
 
 **[UpdateUnifiedConnectionResponse](../../Models/Requests/UpdateUnifiedConnectionResponse.md)**
+### Errors
 
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
