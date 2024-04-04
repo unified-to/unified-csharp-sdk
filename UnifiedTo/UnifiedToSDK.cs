@@ -56,6 +56,8 @@ namespace UnifiedTo
         public IHris Hris { get; }
         public IEmployee Employee { get; }
         public IGroup Group { get; }
+        public IPayslip Payslip { get; }
+        public ITimeoff Timeoff { get; }
         public IMartech Martech { get; }
         public IList List { get; }
         public IMember Member { get; }
@@ -113,10 +115,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.14.0";
-        private const string _sdkGenVersion = "2.295.1";
+        private const string _sdkVersion = "0.14.1";
+        private const string _sdkGenVersion = "2.298.2";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.14.0 2.295.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.14.1 2.298.2 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _defaultClient;
@@ -153,6 +155,8 @@ namespace UnifiedTo
         public IHris Hris { get; private set; }
         public IEmployee Employee { get; private set; }
         public IGroup Group { get; private set; }
+        public IPayslip Payslip { get; private set; }
+        public ITimeoff Timeoff { get; private set; }
         public IMartech Martech { get; private set; }
         public IList List { get; private set; }
         public IMember Member { get; private set; }
@@ -247,6 +251,8 @@ namespace UnifiedTo
             Hris = new Hris(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Employee = new Employee(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Group = new Group(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Payslip = new Payslip(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Timeoff = new Timeoff(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Martech = new Martech(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             List = new List(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
             Member = new Member(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);

@@ -151,6 +151,14 @@ namespace UnifiedTo.Models.Components
         HrisGroupRead,
         [JsonProperty("hris_group_write")]
         HrisGroupWrite,
+        [JsonProperty("hris_payslip_read")]
+        HrisPayslipRead,
+        [JsonProperty("hris_payslip_write")]
+        HrisPayslipWrite,
+        [JsonProperty("hris_timeoff_read")]
+        HrisTimeoffRead,
+        [JsonProperty("hris_timeoff_write")]
+        HrisTimeoffWrite,
         [JsonProperty("uc_call_read")]
         UcCallRead,
         [JsonProperty("storage_file_read")]

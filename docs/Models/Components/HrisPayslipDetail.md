@@ -1,0 +1,13 @@
+# HrisPayslipDetail
+
+
+## Fields
+
+| Field                                                                     | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `Amount`                                                                  | *double*                                                                  | :heavy_check_mark:                                                        | N/A                                                                       |
+| `CompanyAmount`                                                           | *double*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Description`                                                             | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `EmployeeAmount`                                                          | *double*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Name`                                                                    | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Type`                                                                    | [HrisPayslipDetailType](../../Models/Components/HrisPayslipDetailType.md) | :heavy_minus_sign:                                                        | N/A                                                                       |

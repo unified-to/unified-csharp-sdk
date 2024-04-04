@@ -45,6 +45,16 @@ namespace UnifiedTo
         Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
+        /// Retrieve a payslip
+        /// </summary>
+        Task<GetHrisPayslipResponse> GetHrisPayslipAsync(string connectionId, string id, List<string>? fields = null);
+
+        /// <summary>
+        /// Retrieve a timeoff
+        /// </summary>
+        Task<GetHrisTimeoffResponse> GetHrisTimeoffAsync(string connectionId, string id, List<string>? fields = null);
+
+        /// <summary>
         /// List all employees
         /// </summary>
         Task<ListHrisEmployeesResponse> ListHrisEmployeesAsync(ListHrisEmployeesRequest request);
@@ -53,6 +63,16 @@ namespace UnifiedTo
         /// List all groups
         /// </summary>
         Task<ListHrisGroupsResponse> ListHrisGroupsAsync(ListHrisGroupsRequest request);
+
+        /// <summary>
+        /// List all payslip
+        /// </summary>
+        Task<ListHrisPayslipsResponse> ListHrisPayslipsAsync(ListHrisPayslipsRequest request);
+
+        /// <summary>
+        /// List all timeoffs
+        /// </summary>
+        Task<ListHrisTimeoffsResponse> ListHrisTimeoffsAsync(ListHrisTimeoffsRequest request);
 
         /// <summary>
         /// Update an employee
@@ -89,10 +109,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.14.0";
-        private const string _sdkGenVersion = "2.295.1";
+        private const string _sdkVersion = "0.14.1";
+        private const string _sdkGenVersion = "2.298.2";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.14.0 2.295.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.14.1 2.298.2 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private Func<Security>? _securitySource;
@@ -335,6 +355,116 @@ namespace UnifiedTo
         }
 
 
+        public async Task<GetHrisPayslipResponse> GetHrisPayslipAsync(string connectionId, string id, List<string>? fields = null)
+        {
+            var request = new GetHrisPayslipRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                Fields = fields,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/payslip/{id}", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            var response = new GetHrisPayslipResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            if (response.StatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {                    
+                    var obj = ResponseBodyDeserializer.Deserialize<HrisPayslip>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    response.HrisPayslip = obj;
+                }
+                else
+                {
+                throw new SDKException("API error occurred", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                }
+
+            }
+            else if (response.StatusCode >= 400 && response.StatusCode < 500 || response.StatusCode >= 500 && response.StatusCode < 600)
+            {
+                throw new SDKException("API error occurred", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+
+            }
+            else
+            {
+                throw new SDKException("unknown status code received", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            return response;
+        }
+
+
+        public async Task<GetHrisTimeoffResponse> GetHrisTimeoffAsync(string connectionId, string id, List<string>? fields = null)
+        {
+            var request = new GetHrisTimeoffRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                Fields = fields,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/timeoff/{id}", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            var response = new GetHrisTimeoffResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            if (response.StatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {                    
+                    var obj = ResponseBodyDeserializer.Deserialize<HrisTimeoff>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    response.HrisTimeoff = obj;
+                }
+                else
+                {
+                throw new SDKException("API error occurred", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                }
+
+            }
+            else if (response.StatusCode >= 400 && response.StatusCode < 500 || response.StatusCode >= 500 && response.StatusCode < 600)
+            {
+                throw new SDKException("API error occurred", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+
+            }
+            else
+            {
+                throw new SDKException("unknown status code received", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            return response;
+        }
+
+
         public async Task<ListHrisEmployeesResponse> ListHrisEmployeesAsync(ListHrisEmployeesRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
@@ -413,6 +543,104 @@ namespace UnifiedTo
                 {                    
                     var obj = ResponseBodyDeserializer.Deserialize<List<HrisGroup>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     response.HrisGroups = obj;
+                }
+                else
+                {
+                throw new SDKException("API error occurred", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                }
+
+            }
+            else if (response.StatusCode >= 400 && response.StatusCode < 500 || response.StatusCode >= 500 && response.StatusCode < 600)
+            {
+                throw new SDKException("API error occurred", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+
+            }
+            else
+            {
+                throw new SDKException("unknown status code received", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            return response;
+        }
+
+
+        public async Task<ListHrisPayslipsResponse> ListHrisPayslipsAsync(ListHrisPayslipsRequest request)
+        {
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/payslip", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            var response = new ListHrisPayslipsResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            if (response.StatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {                    
+                    var obj = ResponseBodyDeserializer.Deserialize<List<HrisPayslip>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    response.HrisPayslips = obj;
+                }
+                else
+                {
+                throw new SDKException("API error occurred", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                }
+
+            }
+            else if (response.StatusCode >= 400 && response.StatusCode < 500 || response.StatusCode >= 500 && response.StatusCode < 600)
+            {
+                throw new SDKException("API error occurred", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+
+            }
+            else
+            {
+                throw new SDKException("unknown status code received", (int)httpResponse.StatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            return response;
+        }
+
+
+        public async Task<ListHrisTimeoffsResponse> ListHrisTimeoffsAsync(ListHrisTimeoffsRequest request)
+        {
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/timeoff", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            var client = _defaultClient;
+            if (_securitySource != null)
+            {
+                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+            }
+
+            var httpResponse = await client.SendAsync(httpRequest);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            var response = new ListHrisTimeoffsResponse
+            {
+                StatusCode = (int)httpResponse.StatusCode,
+                ContentType = contentType,
+                RawResponse = httpResponse
+            };
+            if (response.StatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json",response.ContentType))
+                {                    
+                    var obj = ResponseBodyDeserializer.Deserialize<List<HrisTimeoff>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    response.HrisTimeoffs = obj;
                 }
                 else
                 {

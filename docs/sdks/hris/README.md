@@ -7,8 +7,12 @@
 * [CreateHrisGroup](#createhrisgroup) - Create a group
 * [GetHrisEmployee](#gethrisemployee) - Retrieve an employee
 * [GetHrisGroup](#gethrisgroup) - Retrieve a group
+* [GetHrisPayslip](#gethrispayslip) - Retrieve a payslip
+* [GetHrisTimeoff](#gethristimeoff) - Retrieve a timeoff
 * [ListHrisEmployees](#listhrisemployees) - List all employees
 * [ListHrisGroups](#listhrisgroups) - List all groups
+* [ListHrisPayslips](#listhrispayslips) - List all payslip
+* [ListHrisTimeoffs](#listhristimeoffs) - List all timeoffs
 * [PatchHrisEmployee](#patchhrisemployee) - Update an employee
 * [PatchHrisGroup](#patchhrisgroup) - Update a group
 * [RemoveHrisEmployee](#removehrisemployee) - Remove an employee
@@ -184,6 +188,94 @@ var res = await sdk.Hris.GetHrisGroupAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
+## GetHrisPayslip
+
+Retrieve a payslip
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Hris.GetHrisPayslipAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    fields: new List<string>() {
+    "<value>",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Payslip                |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetHrisPayslipResponse](../../Models/Requests/GetHrisPayslipResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+## GetHrisTimeoff
+
+Retrieve a timeoff
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Hris.GetHrisTimeoffAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    fields: new List<string>() {
+    "<value>",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Timeoff                |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetHrisTimeoffResponse](../../Models/Requests/GetHrisTimeoffResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 ## ListHrisEmployees
 
 List all employees
@@ -260,6 +352,88 @@ var res = await sdk.Hris.ListHrisGroupsAsync(req);
 ### Response
 
 **[ListHrisGroupsResponse](../../Models/Requests/ListHrisGroupsResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+## ListHrisPayslips
+
+List all payslip
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListHrisPayslipsRequest req = new ListHrisPayslipsRequest() {
+    ConnectionId = "<value>",
+};
+
+var res = await sdk.Hris.ListHrisPayslipsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListHrisPayslipsRequest](../../Models/Requests/ListHrisPayslipsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+
+
+### Response
+
+**[ListHrisPayslipsResponse](../../Models/Requests/ListHrisPayslipsResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+## ListHrisTimeoffs
+
+List all timeoffs
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListHrisTimeoffsRequest req = new ListHrisTimeoffsRequest() {
+    ConnectionId = "<value>",
+};
+
+var res = await sdk.Hris.ListHrisTimeoffsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListHrisTimeoffsRequest](../../Models/Requests/ListHrisTimeoffsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+
+
+### Response
+
+**[ListHrisTimeoffsResponse](../../Models/Requests/ListHrisTimeoffsResponse.md)**
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

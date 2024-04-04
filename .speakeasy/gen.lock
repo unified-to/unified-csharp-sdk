@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: c0feefab18e1757955e61afa41102a4c
+  docChecksum: 2d9519a9ae45cc997b9772dfea3b96f5
   docVersion: "1.0"
-  speakeasyVersion: 1.231.1
-  generationVersion: 2.295.1
-  releaseVersion: 0.14.0
-  configChecksum: 9e37e0f60c326d6e0dcba11d791b3457
+  speakeasyVersion: 1.235.2
+  generationVersion: 2.298.2
+  releaseVersion: 0.14.1
+  configChecksum: bc5782e078fad20426d5b52eb0fdf030
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -49,6 +49,8 @@ generatedFiles:
   - UnifiedTo/Hris.cs
   - UnifiedTo/Employee.cs
   - UnifiedTo/Group.cs
+  - UnifiedTo/Payslip.cs
+  - UnifiedTo/Timeoff.cs
   - UnifiedTo/Martech.cs
   - UnifiedTo/List.cs
   - UnifiedTo/Member.cs
@@ -390,10 +392,18 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetHrisEmployeeResponse.cs
   - UnifiedTo/Models/Requests/GetHrisGroupRequest.cs
   - UnifiedTo/Models/Requests/GetHrisGroupResponse.cs
+  - UnifiedTo/Models/Requests/GetHrisPayslipRequest.cs
+  - UnifiedTo/Models/Requests/GetHrisPayslipResponse.cs
+  - UnifiedTo/Models/Requests/GetHrisTimeoffRequest.cs
+  - UnifiedTo/Models/Requests/GetHrisTimeoffResponse.cs
   - UnifiedTo/Models/Requests/ListHrisEmployeesRequest.cs
   - UnifiedTo/Models/Requests/ListHrisEmployeesResponse.cs
   - UnifiedTo/Models/Requests/ListHrisGroupsRequest.cs
   - UnifiedTo/Models/Requests/ListHrisGroupsResponse.cs
+  - UnifiedTo/Models/Requests/ListHrisPayslipsRequest.cs
+  - UnifiedTo/Models/Requests/ListHrisPayslipsResponse.cs
+  - UnifiedTo/Models/Requests/ListHrisTimeoffsRequest.cs
+  - UnifiedTo/Models/Requests/ListHrisTimeoffsResponse.cs
   - UnifiedTo/Models/Requests/PatchHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/PatchHrisEmployeeResponse.cs
   - UnifiedTo/Models/Requests/PatchHrisGroupRequest.cs
@@ -676,6 +686,13 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyHrisEmployeeAddress.cs
   - UnifiedTo/Models/Components/HrisGroupType.cs
   - UnifiedTo/Models/Components/HrisGroup.cs
+  - UnifiedTo/Models/Components/PaymentType.cs
+  - UnifiedTo/Models/Components/HrisPayslip.cs
+  - UnifiedTo/Models/Components/HrisPayslipDetailType.cs
+  - UnifiedTo/Models/Components/HrisPayslipDetail.cs
+  - UnifiedTo/Models/Components/HrisTimeoffStatus.cs
+  - UnifiedTo/Models/Components/HrisTimeoffType.cs
+  - UnifiedTo/Models/Components/HrisTimeoff.cs
   - UnifiedTo/Models/Components/MarketingList.cs
   - UnifiedTo/Models/Components/MarketingMember.cs
   - UnifiedTo/Models/Components/MarketingEmailType.cs
@@ -1021,10 +1038,18 @@ generatedFiles:
   - docs/Models/Requests/GetHrisEmployeeResponse.md
   - docs/Models/Requests/GetHrisGroupRequest.md
   - docs/Models/Requests/GetHrisGroupResponse.md
+  - docs/Models/Requests/GetHrisPayslipRequest.md
+  - docs/Models/Requests/GetHrisPayslipResponse.md
+  - docs/Models/Requests/GetHrisTimeoffRequest.md
+  - docs/Models/Requests/GetHrisTimeoffResponse.md
   - docs/Models/Requests/ListHrisEmployeesRequest.md
   - docs/Models/Requests/ListHrisEmployeesResponse.md
   - docs/Models/Requests/ListHrisGroupsRequest.md
   - docs/Models/Requests/ListHrisGroupsResponse.md
+  - docs/Models/Requests/ListHrisPayslipsRequest.md
+  - docs/Models/Requests/ListHrisPayslipsResponse.md
+  - docs/Models/Requests/ListHrisTimeoffsRequest.md
+  - docs/Models/Requests/ListHrisTimeoffsResponse.md
   - docs/Models/Requests/PatchHrisEmployeeRequest.md
   - docs/Models/Requests/PatchHrisEmployeeResponse.md
   - docs/Models/Requests/PatchHrisGroupRequest.md
@@ -1307,6 +1332,13 @@ generatedFiles:
   - docs/Models/Components/PropertyHrisEmployeeAddress.md
   - docs/Models/Components/HrisGroupType.md
   - docs/Models/Components/HrisGroup.md
+  - docs/Models/Components/PaymentType.md
+  - docs/Models/Components/HrisPayslip.md
+  - docs/Models/Components/HrisPayslipDetailType.md
+  - docs/Models/Components/HrisPayslipDetail.md
+  - docs/Models/Components/HrisTimeoffStatus.md
+  - docs/Models/Components/HrisTimeoffType.md
+  - docs/Models/Components/HrisTimeoff.md
   - docs/Models/Components/MarketingList.md
   - docs/Models/Components/MarketingMember.md
   - docs/Models/Components/MarketingEmailType.md
@@ -1387,6 +1419,8 @@ generatedFiles:
   - docs/sdks/hris/README.md
   - docs/sdks/employee/README.md
   - docs/sdks/group/README.md
+  - docs/sdks/payslip/README.md
+  - docs/sdks/timeoff/README.md
   - docs/sdks/martech/README.md
   - docs/sdks/list/README.md
   - docs/sdks/member/README.md

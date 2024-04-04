@@ -31,7 +31,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.AtsApplicationstatusRead,
+        PropertyConnectionPermissions.AtsCandidateWrite,
     },
 };
 
@@ -155,7 +155,7 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.CrmLeadRead,
+        PropertyConnectionPermissions.CrmPipelineWrite,
     },
 });
 
@@ -239,7 +239,7 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.AtsJobWrite,
+        PropertyConnectionPermissions.AtsDocumentRead,
     },
 });
 
