@@ -13,6 +13,7 @@ namespace UnifiedTo.Models.Requests
     using System.Net.Http;
     using System;
     using UnifiedTo.Models.Components;
+    using UnifiedTo.Utils;
     
     public class CreateUnifiedWebhookResponse
     {

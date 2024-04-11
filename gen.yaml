@@ -13,10 +13,11 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 csharp:
-  version: 0.14.1
+  version: 0.15.0
   author: Unified API Inc.
   clientServerStatusCodesAsErrors: true
   company: ""
+  disableNamespacePascalCasingApr2024: false
   dotnetVersion: net6.0
   flattenGlobalSecurity: false
   imports:
@@ -32,6 +33,7 @@ csharp:
   outputModelSuffix: output
   packageName: UnifiedTo
   product: ""
+  responseFormat: envelope
 ruby:
   version: 0.0.1
   author: Unified API Inc

@@ -6,13 +6,13 @@
 * [CreateCrmCompany](#createcrmcompany) - Create a company
 * [CreateCrmContact](#createcrmcontact) - Create a contact
 * [CreateCrmDeal](#createcrmdeal) - Create a deal
-* [CreateCrmEvent](#createcrmevent) - Create a event
+* [CreateCrmEvent](#createcrmevent) - Create an event
 * [CreateCrmLead](#createcrmlead) - Create a lead
 * [CreateCrmPipeline](#createcrmpipeline) - Create a pipeline
 * [GetCrmCompany](#getcrmcompany) - Retrieve a company
 * [GetCrmContact](#getcrmcontact) - Retrieve a contact
 * [GetCrmDeal](#getcrmdeal) - Retrieve a deal
-* [GetCrmEvent](#getcrmevent) - Retrieve a event
+* [GetCrmEvent](#getcrmevent) - Retrieve an event
 * [GetCrmLead](#getcrmlead) - Retrieve a lead
 * [GetCrmPipeline](#getcrmpipeline) - Retrieve a pipeline
 * [ListCrmCompanies](#listcrmcompanies) - List all companies
@@ -24,19 +24,19 @@
 * [PatchCrmCompany](#patchcrmcompany) - Update a company
 * [PatchCrmContact](#patchcrmcontact) - Update a contact
 * [PatchCrmDeal](#patchcrmdeal) - Update a deal
-* [PatchCrmEvent](#patchcrmevent) - Update a event
+* [PatchCrmEvent](#patchcrmevent) - Update an event
 * [PatchCrmLead](#patchcrmlead) - Update a lead
 * [PatchCrmPipeline](#patchcrmpipeline) - Update a pipeline
 * [RemoveCrmCompany](#removecrmcompany) - Remove a company
 * [RemoveCrmContact](#removecrmcontact) - Remove a contact
 * [RemoveCrmDeal](#removecrmdeal) - Remove a deal
-* [RemoveCrmEvent](#removecrmevent) - Remove a event
+* [RemoveCrmEvent](#removecrmevent) - Remove an event
 * [RemoveCrmLead](#removecrmlead) - Remove a lead
 * [RemoveCrmPipeline](#removecrmpipeline) - Remove a pipeline
 * [UpdateCrmCompany](#updatecrmcompany) - Update a company
 * [UpdateCrmContact](#updatecrmcontact) - Update a contact
 * [UpdateCrmDeal](#updatecrmdeal) - Update a deal
-* [UpdateCrmEvent](#updatecrmevent) - Update a event
+* [UpdateCrmEvent](#updatecrmevent) - Update an event
 * [UpdateCrmLead](#updatecrmlead) - Update a lead
 * [UpdateCrmPipeline](#updatecrmpipeline) - Update a pipeline
 
@@ -162,7 +162,7 @@ var res = await sdk.Crm.CreateCrmDealAsync(
 
 ## CreateCrmEvent
 
-Create a event
+Create an event
 
 ### Example Usage
 
@@ -414,7 +414,7 @@ var res = await sdk.Crm.GetCrmDealAsync(
 
 ## GetCrmEvent
 
-Retrieve a event
+Retrieve an event
 
 ### Example Usage
 
@@ -918,7 +918,7 @@ var res = await sdk.Crm.PatchCrmDealAsync(
 
 ## PatchCrmEvent
 
-Update a event
+Update an event
 
 ### Example Usage
 
@@ -1161,7 +1161,7 @@ var res = await sdk.Crm.RemoveCrmDealAsync(
 
 ## RemoveCrmEvent
 
-Remove a event
+Remove an event
 
 ### Example Usage
 
@@ -1404,7 +1404,7 @@ var res = await sdk.Crm.UpdateCrmDealAsync(
 
 ## UpdateCrmEvent
 
-Update a event
+Update an event
 
 ### Example Usage
 

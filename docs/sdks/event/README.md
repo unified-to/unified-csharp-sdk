@@ -3,16 +3,16 @@
 
 ### Available Operations
 
-* [CreateCrmEvent](#createcrmevent) - Create a event
-* [GetCrmEvent](#getcrmevent) - Retrieve a event
+* [CreateCrmEvent](#createcrmevent) - Create an event
+* [GetCrmEvent](#getcrmevent) - Retrieve an event
 * [ListCrmEvents](#listcrmevents) - List all events
-* [PatchCrmEvent](#patchcrmevent) - Update a event
-* [RemoveCrmEvent](#removecrmevent) - Remove a event
-* [UpdateCrmEvent](#updatecrmevent) - Update a event
+* [PatchCrmEvent](#patchcrmevent) - Update an event
+* [RemoveCrmEvent](#removecrmevent) - Remove an event
+* [UpdateCrmEvent](#updatecrmevent) - Update an event
 
 ## CreateCrmEvent
 
-Create a event
+Create an event
 
 ### Example Usage
 
@@ -52,7 +52,7 @@ var res = await sdk.Event.CreateCrmEventAsync(
 
 ## GetCrmEvent
 
-Retrieve a event
+Retrieve an event
 
 ### Example Usage
 
@@ -137,7 +137,7 @@ var res = await sdk.Event.ListCrmEventsAsync(req);
 
 ## PatchCrmEvent
 
-Update a event
+Update an event
 
 ### Example Usage
 
@@ -179,7 +179,7 @@ var res = await sdk.Event.PatchCrmEventAsync(
 
 ## RemoveCrmEvent
 
-Remove a event
+Remove an event
 
 ### Example Usage
 
@@ -218,7 +218,7 @@ var res = await sdk.Event.RemoveCrmEventAsync(
 
 ## UpdateCrmEvent
 
-Update a event
+Update an event
 
 ### Example Usage
 

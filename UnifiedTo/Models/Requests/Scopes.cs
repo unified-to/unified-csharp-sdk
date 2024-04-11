@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Requests
 {
     using Newtonsoft.Json;
     using System;
+    using UnifiedTo.Utils;
     
     public enum Scopes
     {

@@ -4,7 +4,7 @@
 ### Available Operations
 
 * [GetHrisPayslip](#gethrispayslip) - Retrieve a payslip
-* [ListHrisPayslips](#listhrispayslips) - List all payslip
+* [ListHrisPayslips](#listhrispayslips) - List all payslips
 
 ## GetHrisPayslip
 
@@ -52,7 +52,7 @@ var res = await sdk.Payslip.GetHrisPayslipAsync(
 
 ## ListHrisPayslips
 
-List all payslip
+List all payslips
 
 ### Example Usage
 

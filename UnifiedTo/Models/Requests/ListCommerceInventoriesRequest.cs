@@ -29,18 +29,12 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<string>? Fields { get; set; }
 
-        /// <summary>
-        /// The item/product ID to filter results
-        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=item_id")]
         public string? ItemId { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }
 
-        /// <summary>
-        /// The location ID to filter results
-        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=location_id")]
         public string? LocationId { get; set; }
 

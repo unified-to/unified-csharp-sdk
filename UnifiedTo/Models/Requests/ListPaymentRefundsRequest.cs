@@ -38,9 +38,6 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=order")]
         public string? Order { get; set; }
 
-        /// <summary>
-        /// The payment ID to filter results
-        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=payment_id")]
         public string? PaymentId { get; set; }
 

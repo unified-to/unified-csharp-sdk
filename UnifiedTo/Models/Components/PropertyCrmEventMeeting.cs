@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using UnifiedTo.Utils;
     
     /// <summary>
     /// The meeting object, when type = meeting

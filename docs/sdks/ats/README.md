@@ -7,7 +7,7 @@
 * [CreateAtsApplication](#createatsapplication) - Create an application
 * [CreateAtsCandidate](#createatscandidate) - Create a candidate
 * [CreateAtsDocument](#createatsdocument) - Create a document
-* [CreateAtsInterview](#createatsinterview) - Create a interview
+* [CreateAtsInterview](#createatsinterview) - Create an interview
 * [CreateAtsJob](#createatsjob) - Create a job
 * [CreateAtsScorecard](#createatsscorecard) - Create a scorecard
 * [GetAtsActivity](#getatsactivity) - Retrieve an activity
@@ -15,12 +15,12 @@
 * [GetAtsCandidate](#getatscandidate) - Retrieve a candidate
 * [GetAtsCompany](#getatscompany) - Retrieve a company
 * [GetAtsDocument](#getatsdocument) - Retrieve a document
-* [GetAtsInterview](#getatsinterview) - Retrieve a interview
+* [GetAtsInterview](#getatsinterview) - Retrieve an interview
 * [GetAtsJob](#getatsjob) - Retrieve a job
 * [GetAtsScorecard](#getatsscorecard) - Retrieve a scorecard
 * [ListAtsActivities](#listatsactivities) - List all activities
 * [ListAtsApplications](#listatsapplications) - List all applications
-* [ListAtsApplicationstatuses](#listatsapplicationstatuses) - List all application statuses
+* [ListAtsApplicationstatuses](#listatsapplicationstatuses) - List all applicationstatuses
 * [ListAtsCandidates](#listatscandidates) - List all candidates
 * [ListAtsCompanies](#listatscompanies) - List all companies
 * [ListAtsDocuments](#listatsdocuments) - List all documents
@@ -31,21 +31,21 @@
 * [PatchAtsApplication](#patchatsapplication) - Update an application
 * [PatchAtsCandidate](#patchatscandidate) - Update a candidate
 * [PatchAtsDocument](#patchatsdocument) - Update a document
-* [PatchAtsInterview](#patchatsinterview) - Update a interview
+* [PatchAtsInterview](#patchatsinterview) - Update an interview
 * [PatchAtsJob](#patchatsjob) - Update a job
 * [PatchAtsScorecard](#patchatsscorecard) - Update a scorecard
 * [RemoveAtsActivity](#removeatsactivity) - Remove an activity
 * [RemoveAtsApplication](#removeatsapplication) - Remove an application
 * [RemoveAtsCandidate](#removeatscandidate) - Remove a candidate
 * [RemoveAtsDocument](#removeatsdocument) - Remove a document
-* [RemoveAtsInterview](#removeatsinterview) - Remove a interview
+* [RemoveAtsInterview](#removeatsinterview) - Remove an interview
 * [RemoveAtsJob](#removeatsjob) - Remove a job
 * [RemoveAtsScorecard](#removeatsscorecard) - Remove a scorecard
 * [UpdateAtsActivity](#updateatsactivity) - Update an activity
 * [UpdateAtsApplication](#updateatsapplication) - Update an application
 * [UpdateAtsCandidate](#updateatscandidate) - Update a candidate
 * [UpdateAtsDocument](#updateatsdocument) - Update a document
-* [UpdateAtsInterview](#updateatsinterview) - Update a interview
+* [UpdateAtsInterview](#updateatsinterview) - Update an interview
 * [UpdateAtsJob](#updateatsjob) - Update a job
 * [UpdateAtsScorecard](#updateatsscorecard) - Update a scorecard
 
@@ -213,7 +213,7 @@ var res = await sdk.Ats.CreateAtsDocumentAsync(
 
 ## CreateAtsInterview
 
-Create a interview
+Create an interview
 
 ### Example Usage
 
@@ -553,7 +553,7 @@ var res = await sdk.Ats.GetAtsDocumentAsync(
 
 ## GetAtsInterview
 
-Retrieve a interview
+Retrieve an interview
 
 ### Example Usage
 
@@ -767,7 +767,7 @@ var res = await sdk.Ats.ListAtsApplicationsAsync(req);
 
 ## ListAtsApplicationstatuses
 
-List all application statuses
+List all applicationstatuses
 
 ### Example Usage
 
@@ -1224,7 +1224,7 @@ var res = await sdk.Ats.PatchAtsDocumentAsync(
 
 ## PatchAtsInterview
 
-Update a interview
+Update an interview
 
 ### Example Usage
 
@@ -1506,7 +1506,7 @@ var res = await sdk.Ats.RemoveAtsDocumentAsync(
 
 ## RemoveAtsInterview
 
-Remove a interview
+Remove an interview
 
 ### Example Usage
 
@@ -1793,7 +1793,7 @@ var res = await sdk.Ats.UpdateAtsDocumentAsync(
 
 ## UpdateAtsInterview
 
-Update a interview
+Update an interview
 
 ### Example Usage
 

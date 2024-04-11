@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Requests
 {
     using System.Net.Http;
     using System;
+    using UnifiedTo.Utils;
     
     public class RemoveCommerceInventoryResponse
     {

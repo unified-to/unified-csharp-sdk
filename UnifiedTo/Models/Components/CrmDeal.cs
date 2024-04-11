@@ -13,6 +13,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using System;
+    using UnifiedTo.Utils;
     
     /// <summary>
     /// A deal represents an opportunity with companies and/or contacts

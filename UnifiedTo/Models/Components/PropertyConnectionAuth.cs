@@ -13,6 +13,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using System;
+    using UnifiedTo.Utils;
     
     /// <summary>
     /// An authentication object that represents a specific authorized user&apos;s connection to an integration.

@@ -13,6 +13,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
+    using UnifiedTo.Utils;
     
     public class IntegrationSupport
     {
@@ -28,6 +29,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_candidate_id")]
         public bool? ListCandidateId { get; set; }
+
+        [JsonProperty("list_collection_id")]
+        public bool? ListCollectionId { get; set; }
 
         [JsonProperty("list_company_id")]
         public bool? ListCompanyId { get; set; }
@@ -47,6 +51,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_invoice_id")]
         public bool? ListInvoiceId { get; set; }
 
+        [JsonProperty("list_item_id")]
+        public bool? ListItemId { get; set; }
+
         [JsonProperty("list_job_id")]
         public bool? ListJobId { get; set; }
 
@@ -55,6 +62,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_list_id")]
         public bool? ListListId { get; set; }
+
+        [JsonProperty("list_location_id")]
+        public bool? ListLocationId { get; set; }
 
         [JsonProperty("list_offset")]
         public bool? ListOffset { get; set; }

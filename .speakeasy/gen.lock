@@ -1,21 +1,22 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 2d9519a9ae45cc997b9772dfea3b96f5
+  docChecksum: 6ea72e2ae09810203a78542e954e2f02
   docVersion: "1.0"
-  speakeasyVersion: 1.235.2
-  generationVersion: 2.298.2
-  releaseVersion: 0.14.1
-  configChecksum: bc5782e078fad20426d5b52eb0fdf030
+  speakeasyVersion: 1.250.0
+  generationVersion: 2.304.1
+  releaseVersion: 0.15.0
+  configChecksum: d3b232a61bd2122b00cefda84b309ee8
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
 features:
   csharp:
-    core: 3.6.0
+    core: 3.7.0
     flattening: 2.81.1
     globalSecurity: 2.83.4
     globalServerURLs: 2.82.3
+    responseFormat: 0.0.1
 generatedFiles:
   - UnifiedTo/Accounting.cs
   - UnifiedTo/Account.cs
@@ -644,6 +645,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/EnrichTelephoneType.cs
   - UnifiedTo/Models/Components/EnrichTelephone.cs
   - UnifiedTo/Models/Components/PropertyEnrichCompanyAddress.cs
+  - UnifiedTo/Models/Components/CommerceCollectionType.cs
   - UnifiedTo/Models/Components/CommerceCollection.cs
   - UnifiedTo/Models/Components/CommerceItemMediaType.cs
   - UnifiedTo/Models/Components/CommerceItemMedia.cs
@@ -1290,6 +1292,7 @@ generatedFiles:
   - docs/Models/Components/EnrichTelephoneType.md
   - docs/Models/Components/EnrichTelephone.md
   - docs/Models/Components/PropertyEnrichCompanyAddress.md
+  - docs/Models/Components/CommerceCollectionType.md
   - docs/Models/Components/CommerceCollection.md
   - docs/Models/Components/CommerceItemMediaType.md
   - docs/Models/Components/CommerceItemMedia.md

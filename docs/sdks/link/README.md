@@ -3,16 +3,16 @@
 
 ### Available Operations
 
-* [CreatePaymentLink](#createpaymentlink) - Create a payment link
-* [GetPaymentLink](#getpaymentlink) - Retrieve a payment link
-* [ListPaymentLinks](#listpaymentlinks) - List all payment links
-* [PatchPaymentLink](#patchpaymentlink) - Update a payment link
-* [RemovePaymentLink](#removepaymentlink) - Remove a payment link
-* [UpdatePaymentLink](#updatepaymentlink) - Update a payment link
+* [CreatePaymentLink](#createpaymentlink) - Create a link
+* [GetPaymentLink](#getpaymentlink) - Retrieve a link
+* [ListPaymentLinks](#listpaymentlinks) - List all links
+* [PatchPaymentLink](#patchpaymentlink) - Update a link
+* [RemovePaymentLink](#removepaymentlink) - Remove a link
+* [UpdatePaymentLink](#updatepaymentlink) - Update a link
 
 ## CreatePaymentLink
 
-Create a payment link
+Create a link
 
 ### Example Usage
 
@@ -59,7 +59,7 @@ var res = await sdk.Link.CreatePaymentLinkAsync(
 
 ## GetPaymentLink
 
-Retrieve a payment link
+Retrieve a link
 
 ### Example Usage
 
@@ -103,7 +103,7 @@ var res = await sdk.Link.GetPaymentLinkAsync(
 
 ## ListPaymentLinks
 
-List all payment links
+List all links
 
 ### Example Usage
 
@@ -144,7 +144,7 @@ var res = await sdk.Link.ListPaymentLinksAsync(req);
 
 ## PatchPaymentLink
 
-Update a payment link
+Update a link
 
 ### Example Usage
 
@@ -193,7 +193,7 @@ var res = await sdk.Link.PatchPaymentLinkAsync(
 
 ## RemovePaymentLink
 
-Remove a payment link
+Remove a link
 
 ### Example Usage
 
@@ -232,7 +232,7 @@ var res = await sdk.Link.RemovePaymentLinkAsync(
 
 ## UpdatePaymentLink
 
-Update a payment link
+Update a link
 
 ### Example Usage
 

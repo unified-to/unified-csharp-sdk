@@ -12,7 +12,7 @@
 * [PatchMartechList](#patchmartechlist) - Update a list
 * [PatchMartechMember](#patchmartechmember) - Update a member
 * [RemoveMartechList](#removemartechlist) - Remove a list
-* [RemoveMartechMember](#removemartechmember) - Remove member
+* [RemoveMartechMember](#removemartechmember) - Remove a member
 * [UpdateMartechList](#updatemartechlist) - Update a list
 * [UpdateMartechMember](#updatemartechmember) - Update a member
 
@@ -391,7 +391,7 @@ var res = await sdk.Martech.RemoveMartechListAsync(
 
 ## RemoveMartechMember
 
-Remove member
+Remove a member
 
 ### Example Usage
 

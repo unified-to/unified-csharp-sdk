@@ -3,16 +3,16 @@
 
 ### Available Operations
 
-* [CreateAtsInterview](#createatsinterview) - Create a interview
-* [GetAtsInterview](#getatsinterview) - Retrieve a interview
+* [CreateAtsInterview](#createatsinterview) - Create an interview
+* [GetAtsInterview](#getatsinterview) - Retrieve an interview
 * [ListAtsInterviews](#listatsinterviews) - List all interviews
-* [PatchAtsInterview](#patchatsinterview) - Update a interview
-* [RemoveAtsInterview](#removeatsinterview) - Remove a interview
-* [UpdateAtsInterview](#updateatsinterview) - Update a interview
+* [PatchAtsInterview](#patchatsinterview) - Update an interview
+* [RemoveAtsInterview](#removeatsinterview) - Remove an interview
+* [UpdateAtsInterview](#updateatsinterview) - Update an interview
 
 ## CreateAtsInterview
 
-Create a interview
+Create an interview
 
 ### Example Usage
 
@@ -52,7 +52,7 @@ var res = await sdk.Interview.CreateAtsInterviewAsync(
 
 ## GetAtsInterview
 
-Retrieve a interview
+Retrieve an interview
 
 ### Example Usage
 
@@ -137,7 +137,7 @@ var res = await sdk.Interview.ListAtsInterviewsAsync(req);
 
 ## PatchAtsInterview
 
-Update a interview
+Update an interview
 
 ### Example Usage
 
@@ -179,7 +179,7 @@ var res = await sdk.Interview.PatchAtsInterviewAsync(
 
 ## RemoveAtsInterview
 
-Remove a interview
+Remove an interview
 
 ### Example Usage
 
@@ -218,7 +218,7 @@ var res = await sdk.Interview.RemoveAtsInterviewAsync(
 
 ## UpdateAtsInterview
 
-Update a interview
+Update an interview
 
 ### Example Usage
 

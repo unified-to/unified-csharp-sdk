@@ -17,9 +17,6 @@ namespace UnifiedTo.Models.Requests
     public class ListAtsDocumentsRequest
     {
 
-        /// <summary>
-        /// The application ID to filter results
-        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=application_id")]
         public string? ApplicationId { get; set; }
 

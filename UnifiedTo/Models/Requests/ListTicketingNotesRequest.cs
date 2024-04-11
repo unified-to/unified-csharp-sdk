@@ -47,9 +47,6 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")]
         public string? Sort { get; set; }
 
-        /// <summary>
-        /// Usually required
-        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=ticket_id")]
         public string? TicketId { get; set; }
 

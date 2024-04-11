@@ -14,6 +14,7 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using System;
     using UnifiedTo.Models.Components;
+    using UnifiedTo.Utils;
     
     /// <summary>
     /// A company represents an organization that optionally is associated with a deal and/or contacts

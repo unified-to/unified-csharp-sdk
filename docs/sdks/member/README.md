@@ -7,7 +7,7 @@
 * [GetMartechMember](#getmartechmember) - Retrieve a member
 * [ListMartechMembers](#listmartechmembers) - List all members
 * [PatchMartechMember](#patchmartechmember) - Update a member
-* [RemoveMartechMember](#removemartechmember) - Remove member
+* [RemoveMartechMember](#removemartechmember) - Remove a member
 * [UpdateMartechMember](#updatemartechmember) - Update a member
 
 ## CreateMartechMember
@@ -179,7 +179,7 @@ var res = await sdk.Member.PatchMartechMemberAsync(
 
 ## RemoveMartechMember
 
-Remove member
+Remove a member
 
 ### Example Usage
 

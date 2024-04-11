@@ -14,6 +14,7 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using System;
     using UnifiedTo.Models.Components;
+    using UnifiedTo.Utils;
     
     /// <summary>
     /// A collection of items/products/services
@@ -39,9 +40,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_visible")]
         public bool? IsVisible { get; set; }
 
-        [JsonProperty("item_ids")]
-        public List<string>? ItemIds { get; set; }
-
         [JsonProperty("media")]
         public List<CommerceItemMedia>? Media { get; set; }
 
@@ -59,6 +57,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }
+
+        [JsonProperty("type")]
+        public CommerceCollectionType? Type { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

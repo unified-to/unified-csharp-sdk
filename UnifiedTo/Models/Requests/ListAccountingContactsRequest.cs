@@ -47,9 +47,6 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")]
         public string? Sort { get; set; }
 
-        /// <summary>
-        /// The type of contact to filter results
-        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=type")]
         public string? Type { get; set; }
 

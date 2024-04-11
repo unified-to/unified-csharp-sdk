@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using UnifiedTo.Models.Components;
+    using UnifiedTo.Utils;
     
     public class AccountingEmail
     {

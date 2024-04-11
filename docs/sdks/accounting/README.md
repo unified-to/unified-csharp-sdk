@@ -5,12 +5,12 @@
 
 * [CreateAccountingAccount](#createaccountingaccount) - Create an account
 * [CreateAccountingContact](#createaccountingcontact) - Create a contact
-* [CreateAccountingInvoice](#createaccountinginvoice) - Create a invoice
+* [CreateAccountingInvoice](#createaccountinginvoice) - Create an invoice
 * [CreateAccountingTaxrate](#createaccountingtaxrate) - Create a taxrate
 * [CreateAccountingTransaction](#createaccountingtransaction) - Create a transaction
 * [GetAccountingAccount](#getaccountingaccount) - Retrieve an account
 * [GetAccountingContact](#getaccountingcontact) - Retrieve a contact
-* [GetAccountingInvoice](#getaccountinginvoice) - Retrieve a invoice
+* [GetAccountingInvoice](#getaccountinginvoice) - Retrieve an invoice
 * [GetAccountingOrganization](#getaccountingorganization) - Retrieve an organization
 * [GetAccountingTaxrate](#getaccountingtaxrate) - Retrieve a taxrate
 * [GetAccountingTransaction](#getaccountingtransaction) - Retrieve a transaction
@@ -22,17 +22,17 @@
 * [ListAccountingTransactions](#listaccountingtransactions) - List all transactions
 * [PatchAccountingAccount](#patchaccountingaccount) - Update an account
 * [PatchAccountingContact](#patchaccountingcontact) - Update a contact
-* [PatchAccountingInvoice](#patchaccountinginvoice) - Update a invoice
+* [PatchAccountingInvoice](#patchaccountinginvoice) - Update an invoice
 * [PatchAccountingTaxrate](#patchaccountingtaxrate) - Update a taxrate
 * [PatchAccountingTransaction](#patchaccountingtransaction) - Update a transaction
 * [RemoveAccountingAccount](#removeaccountingaccount) - Remove an account
 * [RemoveAccountingContact](#removeaccountingcontact) - Remove a contact
-* [RemoveAccountingInvoice](#removeaccountinginvoice) - Remove a invoice
+* [RemoveAccountingInvoice](#removeaccountinginvoice) - Remove an invoice
 * [RemoveAccountingTaxrate](#removeaccountingtaxrate) - Remove a taxrate
 * [RemoveAccountingTransaction](#removeaccountingtransaction) - Remove a transaction
 * [UpdateAccountingAccount](#updateaccountingaccount) - Update an account
 * [UpdateAccountingContact](#updateaccountingcontact) - Update a contact
-* [UpdateAccountingInvoice](#updateaccountinginvoice) - Update a invoice
+* [UpdateAccountingInvoice](#updateaccountinginvoice) - Update an invoice
 * [UpdateAccountingTaxrate](#updateaccountingtaxrate) - Update a taxrate
 * [UpdateAccountingTransaction](#updateaccountingtransaction) - Update a transaction
 
@@ -120,7 +120,7 @@ var res = await sdk.Accounting.CreateAccountingContactAsync(
 
 ## CreateAccountingInvoice
 
-Create a invoice
+Create an invoice
 
 ### Example Usage
 
@@ -333,7 +333,7 @@ var res = await sdk.Accounting.GetAccountingContactAsync(
 
 ## GetAccountingInvoice
 
-Retrieve a invoice
+Retrieve an invoice
 
 ### Example Usage
 
@@ -841,7 +841,7 @@ var res = await sdk.Accounting.PatchAccountingContactAsync(
 
 ## PatchAccountingInvoice
 
-Update a invoice
+Update an invoice
 
 ### Example Usage
 
@@ -1050,7 +1050,7 @@ var res = await sdk.Accounting.RemoveAccountingContactAsync(
 
 ## RemoveAccountingInvoice
 
-Remove a invoice
+Remove an invoice
 
 ### Example Usage
 
@@ -1253,7 +1253,7 @@ var res = await sdk.Accounting.UpdateAccountingContactAsync(
 
 ## UpdateAccountingInvoice
 
-Update a invoice
+Update an invoice
 
 ### Example Usage
 

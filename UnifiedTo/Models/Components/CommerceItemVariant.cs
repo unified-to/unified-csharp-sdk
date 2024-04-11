@@ -14,6 +14,7 @@ namespace UnifiedTo.Models.Components
     using System.Collections.Generic;
     using System;
     using UnifiedTo.Models.Components;
+    using UnifiedTo.Utils;
     
     public class CommerceItemVariant
     {

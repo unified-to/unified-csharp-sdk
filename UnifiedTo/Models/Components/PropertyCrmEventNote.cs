@@ -11,6 +11,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using UnifiedTo.Utils;
     
     /// <summary>
     /// The note object, when type = note

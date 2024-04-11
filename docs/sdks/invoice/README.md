@@ -3,16 +3,16 @@
 
 ### Available Operations
 
-* [CreateAccountingInvoice](#createaccountinginvoice) - Create a invoice
-* [GetAccountingInvoice](#getaccountinginvoice) - Retrieve a invoice
+* [CreateAccountingInvoice](#createaccountinginvoice) - Create an invoice
+* [GetAccountingInvoice](#getaccountinginvoice) - Retrieve an invoice
 * [ListAccountingInvoices](#listaccountinginvoices) - List all invoices
-* [PatchAccountingInvoice](#patchaccountinginvoice) - Update a invoice
-* [RemoveAccountingInvoice](#removeaccountinginvoice) - Remove a invoice
-* [UpdateAccountingInvoice](#updateaccountinginvoice) - Update a invoice
+* [PatchAccountingInvoice](#patchaccountinginvoice) - Update an invoice
+* [RemoveAccountingInvoice](#removeaccountinginvoice) - Remove an invoice
+* [UpdateAccountingInvoice](#updateaccountinginvoice) - Update an invoice
 
 ## CreateAccountingInvoice
 
-Create a invoice
+Create an invoice
 
 ### Example Usage
 
@@ -52,7 +52,7 @@ var res = await sdk.Invoice.CreateAccountingInvoiceAsync(
 
 ## GetAccountingInvoice
 
-Retrieve a invoice
+Retrieve an invoice
 
 ### Example Usage
 
@@ -137,7 +137,7 @@ var res = await sdk.Invoice.ListAccountingInvoicesAsync(req);
 
 ## PatchAccountingInvoice
 
-Update a invoice
+Update an invoice
 
 ### Example Usage
 
@@ -179,7 +179,7 @@ var res = await sdk.Invoice.PatchAccountingInvoiceAsync(
 
 ## RemoveAccountingInvoice
 
-Remove a invoice
+Remove an invoice
 
 ### Example Usage
 
@@ -218,7 +218,7 @@ var res = await sdk.Invoice.RemoveAccountingInvoiceAsync(
 
 ## UpdateAccountingInvoice
 
-Update a invoice
+Update an invoice
 
 ### Example Usage
 

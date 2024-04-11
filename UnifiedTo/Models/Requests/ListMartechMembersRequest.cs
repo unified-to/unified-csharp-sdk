@@ -32,9 +32,6 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }
 
-        /// <summary>
-        /// Usually required
-        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=list_id")]
         public string? ListId { get; set; }
 
