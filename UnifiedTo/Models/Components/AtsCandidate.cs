@@ -37,8 +37,8 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("emails")]
         public List<AtsEmail>? Emails { get; set; }
 
-        [JsonProperty("external_id")]
-        public string? ExternalId { get; set; }
+        [JsonProperty("external_identifier")]
+        public string? ExternalIdentifier { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
@@ -75,5 +75,8 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
+
+        [JsonProperty("user_id")]
+        public string? UserId { get; set; }
     }
 }
