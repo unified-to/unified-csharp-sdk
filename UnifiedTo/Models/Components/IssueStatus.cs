@@ -16,16 +16,18 @@ namespace UnifiedTo.Models.Components
     
     public enum IssueStatus
     {
-        [JsonProperty("ON_HOLD")]
-        OnHold,
+        [JsonProperty("COMPLETED")]
+        Completed,
         [JsonProperty("NEW")]
         New,
+        [JsonProperty("ROADMAP")]
+        Roadmap,
         [JsonProperty("IN_PROGRESS")]
         InProgress,
+        [JsonProperty("ON_HOLD")]
+        OnHold,
         [JsonProperty("VALIDATING")]
         Validating,
-        [JsonProperty("COMPLETE")]
-        Complete,
         [JsonProperty("REJECTED")]
         Rejected,
     }

@@ -90,6 +90,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_ticket_id")]
         public bool? ListTicketId { get; set; }
 
+        [JsonProperty("list_type")]
+        public bool? ListType { get; set; }
+
         [JsonProperty("list_updated_gte")]
         public bool? ListUpdatedGte { get; set; }
 
