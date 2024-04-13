@@ -14,6 +14,7 @@
 * [ListUnifiedIntegrationWorkspaces](#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
 * [ListUnifiedIntegrations](#listunifiedintegrations) - Returns all integrations
 * [ListUnifiedIssues](#listunifiedissues) - List support issues
+* [ListUnifiedSupports](#listunifiedsupports) - Get support info
 * [ListUnifiedWebhooks](#listunifiedwebhooks) - Returns all registered webhooks
 * [PatchUnifiedConnection](#patchunifiedconnection) - Update connection
 * [PatchUnifiedWebhookTrigger](#patchunifiedwebhooktrigger) - Trigger webhook
@@ -452,6 +453,35 @@ var res = await sdk.Unified.ListUnifiedIssuesAsync(req);
 ### Response
 
 **[ListUnifiedIssuesResponse](../../Models/Requests/ListUnifiedIssuesResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+## ListUnifiedSupports
+
+Get support info
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Unified.ListUnifiedSupportsAsync();
+
+// handle response
+```
+
+
+### Response
+
+**[ListUnifiedSupportsResponse](../../Models/Requests/ListUnifiedSupportsResponse.md)**
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

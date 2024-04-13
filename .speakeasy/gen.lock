@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: b49207a22215a71078d123979c29d05c
+  docChecksum: befc5e4546349064e32bd6f1b8d5d55b
   docVersion: "1.0"
   speakeasyVersion: 1.252.0
   generationVersion: 2.306.0
-  releaseVersion: 0.15.2
-  configChecksum: d27cc57b29b127c1c1524729b8f3d116
+  releaseVersion: 0.15.3
+  configChecksum: bc77ba9186e6475441bc6d9bd9ba9a7c
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -558,6 +558,7 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListUnifiedIntegrationsResponse.cs
   - UnifiedTo/Models/Requests/ListUnifiedIssuesRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedIssuesResponse.cs
+  - UnifiedTo/Models/Requests/ListUnifiedSupportsResponse.cs
   - UnifiedTo/Models/Requests/ListUnifiedWebhooksRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedWebhooksResponse.cs
   - UnifiedTo/Models/Requests/PatchUnifiedConnectionRequest.cs
@@ -723,6 +724,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyUcCallTelephone.cs
   - UnifiedTo/Models/Components/Connection.cs
   - UnifiedTo/Models/Components/PropertyConnectionPermissions.cs
+  - UnifiedTo/Models/Components/Undefined.cs
   - UnifiedTo/Models/Components/PropertyConnectionCategories.cs
   - UnifiedTo/Models/Components/PropertyConnectionAuth.cs
   - UnifiedTo/Models/Components/Event.cs
@@ -1205,6 +1207,7 @@ generatedFiles:
   - docs/Models/Requests/ListUnifiedIntegrationsResponse.md
   - docs/Models/Requests/ListUnifiedIssuesRequest.md
   - docs/Models/Requests/ListUnifiedIssuesResponse.md
+  - docs/Models/Requests/ListUnifiedSupportsResponse.md
   - docs/Models/Requests/ListUnifiedWebhooksRequest.md
   - docs/Models/Requests/ListUnifiedWebhooksResponse.md
   - docs/Models/Requests/PatchUnifiedConnectionRequest.md
@@ -1370,6 +1373,7 @@ generatedFiles:
   - docs/Models/Components/PropertyUcCallTelephone.md
   - docs/Models/Components/Connection.md
   - docs/Models/Components/PropertyConnectionPermissions.md
+  - docs/Models/Components/Undefined.md
   - docs/Models/Components/PropertyConnectionCategories.md
   - docs/Models/Components/PropertyConnectionAuth.md
   - docs/Models/Components/Event.md
