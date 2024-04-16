@@ -22,6 +22,14 @@ namespace UnifiedTo.Models.Components
         Voided,
         [JsonProperty("AUTHORIZED")]
         Authorized,
+        [JsonProperty("PAID")]
+        Paid,
+        [JsonProperty("PARTIALLY_PAID")]
+        PartiallyPaid,
+        [JsonProperty("PARTIALLY_REFUNDED")]
+        PartiallyRefunded,
+        [JsonProperty("REFUNDED")]
+        Refunded,
     }
 
     public static class AccountingInvoiceStatusExtension
