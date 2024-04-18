@@ -40,11 +40,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
-        PropertyConnectionCategories.Commerce,
+        UnifiedTo.Models.Components.PropertyConnectionCategories.Commerce,
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.AtsCandidateWrite,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.AtsCandidateWrite,
     },
 };
 
@@ -88,9 +88,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Unified.CreateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
     ConnectionId = "<value>",
-    Event = Models.Components.Event.Created,
+    Event = UnifiedTo.Models.Components.Event.Created,
     HookUrl = "<value>",
-    ObjectType = ObjectType.AccountingAccount,
+    ObjectType = UnifiedTo.Models.Components.ObjectType.AccountingAccount,
 },
     includeAll: false);
 
@@ -546,11 +546,11 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(
     id: "<value>",
     connection: new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
-        PropertyConnectionCategories.Uc,
+        UnifiedTo.Models.Components.PropertyConnectionCategories.Uc,
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.CrmPipelineWrite,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmPipelineWrite,
     },
 });
 
@@ -702,11 +702,11 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
     id: "<value>",
     connection: new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
-        PropertyConnectionCategories.Storage,
+        UnifiedTo.Models.Components.PropertyConnectionCategories.Storage,
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.AtsDocumentRead,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.AtsDocumentRead,
     },
 });
 

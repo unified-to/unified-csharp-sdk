@@ -29,9 +29,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
     ConnectionId = "<value>",
-    Event = Models.Components.Event.Created,
+    Event = UnifiedTo.Models.Components.Event.Created,
     HookUrl = "<value>",
-    ObjectType = ObjectType.AccountingAccount,
+    ObjectType = UnifiedTo.Models.Components.ObjectType.AccountingAccount,
 },
     includeAll: false);
 

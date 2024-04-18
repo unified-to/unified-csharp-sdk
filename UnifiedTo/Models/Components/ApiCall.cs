@@ -25,7 +25,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("environment")]
-        public string? Environment { get; set; }
+        public string? Environment { get; set; } = "Production";
 
         [JsonProperty("error")]
         public string? Error { get; set; }

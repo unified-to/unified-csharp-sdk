@@ -44,7 +44,7 @@ namespace UnifiedTo.Models.Components
         public List<Undefined>? CursorsCache { get; set; }
 
         [JsonProperty("environment")]
-        public string? Environment { get; set; }
+        public string? Environment { get; set; } = "Production";
 
         [JsonProperty("external_xref")]
         public string? ExternalXref { get; set; }

@@ -26,7 +26,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("currency")]
-        public string? Currency { get; set; }
+        public string? Currency { get; set; } = "USD";
 
         [JsonProperty("emails")]
         public List<AccountingEmail>? Emails { get; set; }
