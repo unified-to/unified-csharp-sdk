@@ -111,8 +111,8 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("search_email")]
         public bool? SearchEmail { get; set; }
 
-        [JsonProperty("search_linkedin_url")]
-        public bool? SearchLinkedinUrl { get; set; }
+        [JsonProperty("search_linkedinurl")]
+        public bool? SearchLinkedinurl { get; set; }
 
         [JsonProperty("search_name")]
         public bool? SearchName { get; set; }
