@@ -40,6 +40,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("fields")]
         public string? Fields { get; set; }
 
+        [JsonProperty("filters")]
+        public Dictionary<string, string>? Filters { get; set; }
+
         [JsonProperty("hook_url")]
         public string HookUrl { get; set; } = default!;
 
