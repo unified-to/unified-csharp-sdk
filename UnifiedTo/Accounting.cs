@@ -16,6 +16,7 @@ namespace UnifiedTo
     using System.Net.Http;
     using System.Threading.Tasks;
     using System;
+    using UnifiedTo.Hooks;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Models.Errors;
     using UnifiedTo.Models.Requests;
@@ -189,10 +190,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.17.0";
-        private const string _sdkGenVersion = "2.314.0";
+        private const string _sdkVersion = "0.17.1";
+        private const string _sdkGenVersion = "2.317.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.17.0 2.314.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.17.1 2.317.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private Func<Security>? _securitySource;
@@ -212,7 +213,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 AccountingAccount = accountingAccount,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -224,13 +225,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createAccountingAccount", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -270,7 +301,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 AccountingContact = accountingContact,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -282,13 +313,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createAccountingContact", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -328,7 +389,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 AccountingInvoice = accountingInvoice,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -340,13 +401,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createAccountingInvoice", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -386,7 +477,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 AccountingTaxrate = accountingTaxrate,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -398,13 +489,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createAccountingTaxrate", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -444,7 +565,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 AccountingTransaction = accountingTransaction,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/transaction", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -456,13 +577,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createAccountingTransaction", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -503,19 +654,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getAccountingAccount", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -556,19 +737,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getAccountingContact", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -609,19 +820,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getAccountingInvoice", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -662,19 +903,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/organization/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getAccountingOrganization", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -715,19 +986,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getAccountingTaxrate", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -768,19 +1069,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/transaction/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getAccountingTransaction", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -815,19 +1146,49 @@ namespace UnifiedTo
 
         public async Task<ListAccountingAccountsResponse> ListAccountingAccountsAsync(ListAccountingAccountsRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listAccountingAccounts", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -862,19 +1223,49 @@ namespace UnifiedTo
 
         public async Task<ListAccountingContactsResponse> ListAccountingContactsAsync(ListAccountingContactsRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listAccountingContacts", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -909,19 +1300,49 @@ namespace UnifiedTo
 
         public async Task<ListAccountingInvoicesResponse> ListAccountingInvoicesAsync(ListAccountingInvoicesRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listAccountingInvoices", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -956,19 +1377,49 @@ namespace UnifiedTo
 
         public async Task<ListAccountingOrganizationsResponse> ListAccountingOrganizationsAsync(ListAccountingOrganizationsRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/organization", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listAccountingOrganizations", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1003,19 +1454,49 @@ namespace UnifiedTo
 
         public async Task<ListAccountingTaxratesResponse> ListAccountingTaxratesAsync(ListAccountingTaxratesRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listAccountingTaxrates", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1050,19 +1531,49 @@ namespace UnifiedTo
 
         public async Task<ListAccountingTransactionsResponse> ListAccountingTransactionsAsync(ListAccountingTransactionsRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/transaction", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listAccountingTransactions", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1103,7 +1614,7 @@ namespace UnifiedTo
                 Id = id,
                 AccountingAccount = accountingAccount,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1115,13 +1626,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchAccountingAccount", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1162,7 +1703,7 @@ namespace UnifiedTo
                 Id = id,
                 AccountingContact = accountingContact,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1174,13 +1715,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchAccountingContact", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1221,7 +1792,7 @@ namespace UnifiedTo
                 Id = id,
                 AccountingInvoice = accountingInvoice,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1233,13 +1804,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchAccountingInvoice", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1280,7 +1881,7 @@ namespace UnifiedTo
                 Id = id,
                 AccountingTaxrate = accountingTaxrate,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1292,13 +1893,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchAccountingTaxrate", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1339,7 +1970,7 @@ namespace UnifiedTo
                 Id = id,
                 AccountingTransaction = accountingTransaction,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/transaction/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1351,13 +1982,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchAccountingTransaction", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1397,19 +2058,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeAccountingAccount", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1454,19 +2145,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeAccountingContact", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1511,19 +2232,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeAccountingInvoice", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1568,19 +2319,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeAccountingTaxrate", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1625,19 +2406,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/transaction/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeAccountingTransaction", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1683,7 +2494,7 @@ namespace UnifiedTo
                 Id = id,
                 AccountingAccount = accountingAccount,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -1695,13 +2506,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateAccountingAccount", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1742,7 +2583,7 @@ namespace UnifiedTo
                 Id = id,
                 AccountingContact = accountingContact,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -1754,13 +2595,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateAccountingContact", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1801,7 +2672,7 @@ namespace UnifiedTo
                 Id = id,
                 AccountingInvoice = accountingInvoice,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -1813,13 +2684,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateAccountingInvoice", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1860,7 +2761,7 @@ namespace UnifiedTo
                 Id = id,
                 AccountingTaxrate = accountingTaxrate,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -1872,13 +2773,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateAccountingTaxrate", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1919,7 +2850,7 @@ namespace UnifiedTo
                 Id = id,
                 AccountingTransaction = accountingTransaction,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/transaction/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -1931,13 +2862,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateAccountingTransaction", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;

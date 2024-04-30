@@ -16,6 +16,7 @@ namespace UnifiedTo
     using System.Net.Http;
     using System.Threading.Tasks;
     using System;
+    using UnifiedTo.Hooks;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Models.Errors;
     using UnifiedTo.Models.Requests;
@@ -209,10 +210,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.17.0";
-        private const string _sdkGenVersion = "2.314.0";
+        private const string _sdkVersion = "0.17.1";
+        private const string _sdkGenVersion = "2.317.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.17.0 2.314.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.17.1 2.317.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private Func<Security>? _securitySource;
@@ -232,7 +233,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 CrmCompany = crmCompany,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -244,13 +245,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createCrmCompany", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -290,7 +321,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 CrmContact = crmContact,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -302,13 +333,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createCrmContact", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -348,7 +409,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 CrmDeal = crmDeal,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -360,13 +421,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createCrmDeal", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -406,7 +497,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 CrmEvent = crmEvent,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/event", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -418,13 +509,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createCrmEvent", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -464,7 +585,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 CrmLead = crmLead,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -476,13 +597,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createCrmLead", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -522,7 +673,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 CrmPipeline = crmPipeline,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -534,13 +685,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createCrmPipeline", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -581,19 +762,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getCrmCompany", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -634,19 +845,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getCrmContact", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -687,19 +928,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getCrmDeal", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -740,19 +1011,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/event/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getCrmEvent", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -793,19 +1094,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getCrmLead", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -846,19 +1177,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getCrmPipeline", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -893,19 +1254,49 @@ namespace UnifiedTo
 
         public async Task<ListCrmCompaniesResponse> ListCrmCompaniesAsync(ListCrmCompaniesRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listCrmCompanies", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -940,19 +1331,49 @@ namespace UnifiedTo
 
         public async Task<ListCrmContactsResponse> ListCrmContactsAsync(ListCrmContactsRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listCrmContacts", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -987,19 +1408,49 @@ namespace UnifiedTo
 
         public async Task<ListCrmDealsResponse> ListCrmDealsAsync(ListCrmDealsRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listCrmDeals", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1034,19 +1485,49 @@ namespace UnifiedTo
 
         public async Task<ListCrmEventsResponse> ListCrmEventsAsync(ListCrmEventsRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/event", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listCrmEvents", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1081,19 +1562,49 @@ namespace UnifiedTo
 
         public async Task<ListCrmLeadsResponse> ListCrmLeadsAsync(ListCrmLeadsRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listCrmLeads", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1128,19 +1639,49 @@ namespace UnifiedTo
 
         public async Task<ListCrmPipelinesResponse> ListCrmPipelinesAsync(ListCrmPipelinesRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listCrmPipelines", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1181,7 +1722,7 @@ namespace UnifiedTo
                 Id = id,
                 CrmCompany = crmCompany,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1193,13 +1734,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchCrmCompany", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1240,7 +1811,7 @@ namespace UnifiedTo
                 Id = id,
                 CrmContact = crmContact,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1252,13 +1823,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchCrmContact", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1299,7 +1900,7 @@ namespace UnifiedTo
                 Id = id,
                 CrmDeal = crmDeal,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1311,13 +1912,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchCrmDeal", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1358,7 +1989,7 @@ namespace UnifiedTo
                 Id = id,
                 CrmEvent = crmEvent,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/event/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1370,13 +2001,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchCrmEvent", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1417,7 +2078,7 @@ namespace UnifiedTo
                 Id = id,
                 CrmLead = crmLead,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1429,13 +2090,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchCrmLead", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1476,7 +2167,7 @@ namespace UnifiedTo
                 Id = id,
                 CrmPipeline = crmPipeline,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1488,13 +2179,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchCrmPipeline", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1534,19 +2255,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeCrmCompany", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1591,19 +2342,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeCrmContact", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1648,19 +2429,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeCrmDeal", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1705,19 +2516,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/event/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeCrmEvent", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1762,19 +2603,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeCrmLead", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1819,19 +2690,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeCrmPipeline", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1877,7 +2778,7 @@ namespace UnifiedTo
                 Id = id,
                 CrmCompany = crmCompany,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -1889,13 +2790,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateCrmCompany", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1936,7 +2867,7 @@ namespace UnifiedTo
                 Id = id,
                 CrmContact = crmContact,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -1948,13 +2879,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateCrmContact", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1995,7 +2956,7 @@ namespace UnifiedTo
                 Id = id,
                 CrmDeal = crmDeal,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -2007,13 +2968,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateCrmDeal", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -2054,7 +3045,7 @@ namespace UnifiedTo
                 Id = id,
                 CrmEvent = crmEvent,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/event/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -2066,13 +3057,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateCrmEvent", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -2113,7 +3134,7 @@ namespace UnifiedTo
                 Id = id,
                 CrmLead = crmLead,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -2125,13 +3146,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateCrmLead", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -2172,7 +3223,7 @@ namespace UnifiedTo
                 Id = id,
                 CrmPipeline = crmPipeline,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -2184,13 +3235,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateCrmPipeline", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;

@@ -16,6 +16,7 @@ namespace UnifiedTo
     using System.Net.Http;
     using System.Threading.Tasks;
     using System;
+    using UnifiedTo.Hooks;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Models.Errors;
     using UnifiedTo.Models.Requests;
@@ -254,10 +255,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.17.0";
-        private const string _sdkGenVersion = "2.314.0";
+        private const string _sdkVersion = "0.17.1";
+        private const string _sdkGenVersion = "2.317.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.17.0 2.314.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.17.1 2.317.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private Func<Security>? _securitySource;
@@ -277,7 +278,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 AtsActivity = atsActivity,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -289,13 +290,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createAtsActivity", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -335,7 +366,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 AtsApplication = atsApplication,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -347,13 +378,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createAtsApplication", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -393,7 +454,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 AtsCandidate = atsCandidate,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -405,13 +466,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createAtsCandidate", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -451,7 +542,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 AtsDocument = atsDocument,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -463,13 +554,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createAtsDocument", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -509,7 +630,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 AtsInterview = atsInterview,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -521,13 +642,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createAtsInterview", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -567,7 +718,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 AtsJob = atsJob,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -579,13 +730,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createAtsJob", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -625,7 +806,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 AtsScorecard = atsScorecard,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -637,13 +818,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createAtsScorecard", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -684,19 +895,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getAtsActivity", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -737,19 +978,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getAtsApplication", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -790,19 +1061,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getAtsCandidate", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -843,19 +1144,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/company/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getAtsCompany", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -896,19 +1227,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getAtsDocument", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -949,19 +1310,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getAtsInterview", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1002,19 +1393,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getAtsJob", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1055,19 +1476,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getAtsScorecard", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1102,19 +1553,49 @@ namespace UnifiedTo
 
         public async Task<ListAtsActivitiesResponse> ListAtsActivitiesAsync(ListAtsActivitiesRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listAtsActivities", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1149,19 +1630,49 @@ namespace UnifiedTo
 
         public async Task<ListAtsApplicationsResponse> ListAtsApplicationsAsync(ListAtsApplicationsRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listAtsApplications", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1196,19 +1707,49 @@ namespace UnifiedTo
 
         public async Task<ListAtsApplicationstatusesResponse> ListAtsApplicationstatusesAsync(ListAtsApplicationstatusesRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/applicationstatus", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listAtsApplicationstatuses", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1243,19 +1784,49 @@ namespace UnifiedTo
 
         public async Task<ListAtsCandidatesResponse> ListAtsCandidatesAsync(ListAtsCandidatesRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listAtsCandidates", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1290,19 +1861,49 @@ namespace UnifiedTo
 
         public async Task<ListAtsCompaniesResponse> ListAtsCompaniesAsync(ListAtsCompaniesRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/company", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listAtsCompanies", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1337,19 +1938,49 @@ namespace UnifiedTo
 
         public async Task<ListAtsDocumentsResponse> ListAtsDocumentsAsync(ListAtsDocumentsRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listAtsDocuments", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1384,19 +2015,49 @@ namespace UnifiedTo
 
         public async Task<ListAtsInterviewsResponse> ListAtsInterviewsAsync(ListAtsInterviewsRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listAtsInterviews", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1431,19 +2092,49 @@ namespace UnifiedTo
 
         public async Task<ListAtsJobsResponse> ListAtsJobsAsync(ListAtsJobsRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listAtsJobs", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1478,19 +2169,49 @@ namespace UnifiedTo
 
         public async Task<ListAtsScorecardsResponse> ListAtsScorecardsAsync(ListAtsScorecardsRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listAtsScorecards", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1531,7 +2252,7 @@ namespace UnifiedTo
                 Id = id,
                 AtsActivity = atsActivity,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1543,13 +2264,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchAtsActivity", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1590,7 +2341,7 @@ namespace UnifiedTo
                 Id = id,
                 AtsApplication = atsApplication,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1602,13 +2353,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchAtsApplication", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1649,7 +2430,7 @@ namespace UnifiedTo
                 Id = id,
                 AtsCandidate = atsCandidate,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1661,13 +2442,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchAtsCandidate", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1708,7 +2519,7 @@ namespace UnifiedTo
                 Id = id,
                 AtsDocument = atsDocument,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1720,13 +2531,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchAtsDocument", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1767,7 +2608,7 @@ namespace UnifiedTo
                 Id = id,
                 AtsInterview = atsInterview,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1779,13 +2620,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchAtsInterview", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1826,7 +2697,7 @@ namespace UnifiedTo
                 Id = id,
                 AtsJob = atsJob,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1838,13 +2709,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchAtsJob", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1885,7 +2786,7 @@ namespace UnifiedTo
                 Id = id,
                 AtsScorecard = atsScorecard,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -1897,13 +2798,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchAtsScorecard", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1943,19 +2874,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeAtsActivity", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -2000,19 +2961,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeAtsApplication", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -2057,19 +3048,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeAtsCandidate", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -2114,19 +3135,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeAtsDocument", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -2171,19 +3222,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeAtsInterview", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -2228,19 +3309,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeAtsJob", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -2285,19 +3396,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeAtsScorecard", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -2343,7 +3484,7 @@ namespace UnifiedTo
                 Id = id,
                 AtsActivity = atsActivity,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -2355,13 +3496,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateAtsActivity", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -2402,7 +3573,7 @@ namespace UnifiedTo
                 Id = id,
                 AtsApplication = atsApplication,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -2414,13 +3585,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateAtsApplication", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -2461,7 +3662,7 @@ namespace UnifiedTo
                 Id = id,
                 AtsCandidate = atsCandidate,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -2473,13 +3674,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateAtsCandidate", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -2520,7 +3751,7 @@ namespace UnifiedTo
                 Id = id,
                 AtsDocument = atsDocument,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -2532,13 +3763,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateAtsDocument", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -2579,7 +3840,7 @@ namespace UnifiedTo
                 Id = id,
                 AtsInterview = atsInterview,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -2591,13 +3852,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateAtsInterview", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -2638,7 +3929,7 @@ namespace UnifiedTo
                 Id = id,
                 AtsJob = atsJob,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -2650,13 +3941,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateAtsJob", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -2697,7 +4018,7 @@ namespace UnifiedTo
                 Id = id,
                 AtsScorecard = atsScorecard,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -2709,13 +4030,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateAtsScorecard", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;

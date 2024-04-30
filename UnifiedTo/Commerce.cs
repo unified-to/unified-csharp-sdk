@@ -16,6 +16,7 @@ namespace UnifiedTo
     using System.Net.Http;
     using System.Threading.Tasks;
     using System;
+    using UnifiedTo.Hooks;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Models.Errors;
     using UnifiedTo.Models.Requests;
@@ -149,10 +150,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.17.0";
-        private const string _sdkGenVersion = "2.314.0";
+        private const string _sdkVersion = "0.17.1";
+        private const string _sdkGenVersion = "2.317.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.17.0 2.314.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.17.1 2.317.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private Func<Security>? _securitySource;
@@ -172,7 +173,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 CommerceCollection = commerceCollection,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/collection", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -184,13 +185,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createCommerceCollection", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -230,7 +261,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 CommerceInventory = commerceInventory,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/inventory", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -242,13 +273,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createCommerceInventory", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -288,7 +349,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 CommerceItem = commerceItem,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -300,13 +361,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createCommerceItem", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -346,7 +437,7 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 CommerceLocation = commerceLocation,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/location", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
@@ -358,13 +449,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("createCommerceLocation", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -405,19 +526,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/collection/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getCommerceCollection", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -458,19 +609,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/inventory/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getCommerceInventory", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -511,19 +692,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getCommerceItem", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -564,19 +775,49 @@ namespace UnifiedTo
                 Id = id,
                 Fields = fields,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/location/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("getCommerceLocation", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -611,19 +852,49 @@ namespace UnifiedTo
 
         public async Task<ListCommerceCollectionsResponse> ListCommerceCollectionsAsync(ListCommerceCollectionsRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/collection", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listCommerceCollections", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -658,19 +929,49 @@ namespace UnifiedTo
 
         public async Task<ListCommerceInventoriesResponse> ListCommerceInventoriesAsync(ListCommerceInventoriesRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/inventory", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listCommerceInventories", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -705,19 +1006,49 @@ namespace UnifiedTo
 
         public async Task<ListCommerceItemsResponse> ListCommerceItemsAsync(ListCommerceItemsRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listCommerceItems", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -752,19 +1083,49 @@ namespace UnifiedTo
 
         public async Task<ListCommerceLocationsResponse> ListCommerceLocationsAsync(ListCommerceLocationsRequest request)
         {
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/location", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("listCommerceLocations", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -805,7 +1166,7 @@ namespace UnifiedTo
                 Id = id,
                 CommerceCollection = commerceCollection,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/collection/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -817,13 +1178,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchCommerceCollection", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -864,7 +1255,7 @@ namespace UnifiedTo
                 Id = id,
                 CommerceInventory = commerceInventory,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/inventory/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -876,13 +1267,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchCommerceInventory", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -923,7 +1344,7 @@ namespace UnifiedTo
                 Id = id,
                 CommerceItem = commerceItem,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -935,13 +1356,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchCommerceItem", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -982,7 +1433,7 @@ namespace UnifiedTo
                 Id = id,
                 CommerceLocation = commerceLocation,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/location/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
@@ -994,13 +1445,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("patchCommerceLocation", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1040,19 +1521,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/collection/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeCommerceCollection", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1097,19 +1608,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/inventory/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeCommerceInventory", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1154,19 +1695,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeCommerceItem", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1211,19 +1782,49 @@ namespace UnifiedTo
                 ConnectionId = connectionId,
                 Id = id,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/location/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("removeCommerceLocation", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1269,7 +1870,7 @@ namespace UnifiedTo
                 Id = id,
                 CommerceCollection = commerceCollection,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/collection/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -1281,13 +1882,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateCommerceCollection", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1328,7 +1959,7 @@ namespace UnifiedTo
                 Id = id,
                 CommerceInventory = commerceInventory,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/inventory/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -1340,13 +1971,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateCommerceInventory", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1387,7 +2048,7 @@ namespace UnifiedTo
                 Id = id,
                 CommerceItem = commerceItem,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -1399,13 +2060,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateCommerceItem", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -1446,7 +2137,7 @@ namespace UnifiedTo
                 Id = id,
                 CommerceLocation = commerceLocation,
             };
-            string baseUrl = this.SDKConfiguration.GetTemplatedServerDetails();
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/location/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
@@ -1458,13 +2149,43 @@ namespace UnifiedTo
                 httpRequest.Content = serializedBody;
             }
 
-            var client = _defaultClient;
             if (_securitySource != null)
             {
-                client = SecuritySerializer.Apply(_defaultClient, _securitySource);
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var httpResponse = await client.SendAsync(httpRequest);
+            var hookCtx = new HookContext("updateCommerceLocation", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;

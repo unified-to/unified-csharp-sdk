@@ -3,10 +3,10 @@ id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
   docChecksum: fa589021db4663f2ad26cc32352a343e
   docVersion: "1.0"
-  speakeasyVersion: 1.274.1
-  generationVersion: 2.314.0
-  releaseVersion: 0.17.0
-  configChecksum: 8d1c11b2e3d778e4f2c047fd17d155ca
+  speakeasyVersion: 1.277.0
+  generationVersion: 2.317.0
+  releaseVersion: 0.17.1
+  configChecksum: 238f383569794296de225e34c0ae1903
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -17,7 +17,7 @@ features:
     flattening: 2.81.1
     globalSecurity: 2.83.4
     globalServerURLs: 2.82.3
-    responseFormat: 0.0.1
+    responseFormat: 0.0.2
 generatedFiles:
   - UnifiedTo/Accounting.cs
   - UnifiedTo/Account.cs
@@ -89,7 +89,7 @@ generatedFiles:
   - UnifiedTo/Utils/IsoDateTimeSerializer.cs
   - UnifiedTo/Utils/RequestBodySerializer.cs
   - UnifiedTo/Utils/ResponseBodyDeserializer.cs
-  - UnifiedTo/Utils/SecuritySerializer.cs
+  - UnifiedTo/Utils/SecurityMetadata.cs
   - UnifiedTo/Utils/SpeakeasyHttpClient.cs
   - UnifiedTo/Utils/SpeakeasyMetadata.cs
   - UnifiedTo/Utils/URLBuilder.cs
@@ -1455,3 +1455,5 @@ generatedFiles:
   - docs/sdks/webhook/README.md
   - USAGE.md
   - .gitattributes
+  - UnifiedTo/Hooks/SDKHooks.cs
+  - UnifiedTo/Hooks/HookTypes.cs
