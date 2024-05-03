@@ -42,6 +42,8 @@ namespace UnifiedTo.Models.Components
         Commerce,
         [JsonProperty("payment")]
         Payment,
+        [JsonProperty("genai")]
+        Genai,
     }
 
     public static class PropertyConnectionCategoriesExtension

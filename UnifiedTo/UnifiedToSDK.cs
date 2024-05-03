@@ -54,6 +54,9 @@ namespace UnifiedTo
         public IPipeline Pipeline { get; }
         public IEnrich Enrich { get; }
         public IPerson Person { get; }
+        public IGenai Genai { get; }
+        public IModel Model { get; }
+        public IPrompt Prompt { get; }
         public IHris Hris { get; }
         public IEmployee Employee { get; }
         public IGroup Group { get; }
@@ -128,10 +131,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.17.2";
+        private const string _sdkVersion = "0.17.3";
         private const string _sdkGenVersion = "2.319.10";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.17.2 2.319.10 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.17.3 2.319.10 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _defaultClient;
@@ -165,6 +168,9 @@ namespace UnifiedTo
         public IPipeline Pipeline { get; private set; }
         public IEnrich Enrich { get; private set; }
         public IPerson Person { get; private set; }
+        public IGenai Genai { get; private set; }
+        public IModel Model { get; private set; }
+        public IPrompt Prompt { get; private set; }
         public IHris Hris { get; private set; }
         public IEmployee Employee { get; private set; }
         public IGroup Group { get; private set; }
@@ -320,6 +326,15 @@ namespace UnifiedTo
 
 
             Person = new Person(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Genai = new Genai(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Model = new Model(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Prompt = new Prompt(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
 
 
             Hris = new Hris(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);

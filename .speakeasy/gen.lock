@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: fa589021db4663f2ad26cc32352a343e
+  docChecksum: e7d06a9f72eccefa7c7d5ca65b619e24
   docVersion: "1.0"
   speakeasyVersion: 1.277.8
   generationVersion: 2.319.10
-  releaseVersion: 0.17.2
-  configChecksum: cd87df03ca63c9efde5e67cf992647cd
+  releaseVersion: 0.17.3
+  configChecksum: 1299be4e9f5aec3a6ed80496372cb05b
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -48,6 +48,9 @@ generatedFiles:
   - UnifiedTo/Pipeline.cs
   - UnifiedTo/Enrich.cs
   - UnifiedTo/Person.cs
+  - UnifiedTo/Genai.cs
+  - UnifiedTo/Model.cs
+  - UnifiedTo/Prompt.cs
   - UnifiedTo/Hris.cs
   - UnifiedTo/Employee.cs
   - UnifiedTo/Group.cs
@@ -386,6 +389,10 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateCrmPipelineResponse.cs
   - UnifiedTo/Models/Requests/ListEnrichPeopleRequest.cs
   - UnifiedTo/Models/Requests/ListEnrichPeopleResponse.cs
+  - UnifiedTo/Models/Requests/CreateGenaiPromptRequest.cs
+  - UnifiedTo/Models/Requests/CreateGenaiPromptResponse.cs
+  - UnifiedTo/Models/Requests/ListGenaiModelsRequest.cs
+  - UnifiedTo/Models/Requests/ListGenaiModelsResponse.cs
   - UnifiedTo/Models/Requests/CreateHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/CreateHrisEmployeeResponse.cs
   - UnifiedTo/Models/Requests/CreateHrisGroupRequest.cs
@@ -678,6 +685,10 @@ generatedFiles:
   - UnifiedTo/Models/Components/EnrichEmailType.cs
   - UnifiedTo/Models/Components/EnrichEmail.cs
   - UnifiedTo/Models/Components/PropertyEnrichPersonAddress.cs
+  - UnifiedTo/Models/Components/GenaiPrompt.cs
+  - UnifiedTo/Models/Components/Role.cs
+  - UnifiedTo/Models/Components/GenaiContent.cs
+  - UnifiedTo/Models/Components/GenaiModel.cs
   - UnifiedTo/Models/Components/EmploymentStatus.cs
   - UnifiedTo/Models/Components/HrisEmployeeEmploymentType.cs
   - UnifiedTo/Models/Components/HrisEmployeeGender.cs
@@ -1035,6 +1046,10 @@ generatedFiles:
   - docs/Models/Requests/UpdateCrmPipelineResponse.md
   - docs/Models/Requests/ListEnrichPeopleRequest.md
   - docs/Models/Requests/ListEnrichPeopleResponse.md
+  - docs/Models/Requests/CreateGenaiPromptRequest.md
+  - docs/Models/Requests/CreateGenaiPromptResponse.md
+  - docs/Models/Requests/ListGenaiModelsRequest.md
+  - docs/Models/Requests/ListGenaiModelsResponse.md
   - docs/Models/Requests/CreateHrisEmployeeRequest.md
   - docs/Models/Requests/CreateHrisEmployeeResponse.md
   - docs/Models/Requests/CreateHrisGroupRequest.md
@@ -1327,6 +1342,10 @@ generatedFiles:
   - docs/Models/Components/EnrichEmailType.md
   - docs/Models/Components/EnrichEmail.md
   - docs/Models/Components/PropertyEnrichPersonAddress.md
+  - docs/Models/Components/GenaiPrompt.md
+  - docs/Models/Components/Role.md
+  - docs/Models/Components/GenaiContent.md
+  - docs/Models/Components/GenaiModel.md
   - docs/Models/Components/EmploymentStatus.md
   - docs/Models/Components/HrisEmployeeEmploymentType.md
   - docs/Models/Components/HrisEmployeeGender.md
@@ -1424,6 +1443,9 @@ generatedFiles:
   - docs/sdks/pipeline/README.md
   - docs/sdks/enrich/README.md
   - docs/sdks/person/README.md
+  - docs/sdks/genai/README.md
+  - docs/sdks/model/README.md
+  - docs/sdks/prompt/README.md
   - docs/sdks/hris/README.md
   - docs/sdks/employee/README.md
   - docs/sdks/group/README.md

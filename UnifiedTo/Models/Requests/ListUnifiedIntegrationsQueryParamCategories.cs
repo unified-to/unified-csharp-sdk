@@ -42,6 +42,8 @@ namespace UnifiedTo.Models.Requests
         Commerce,
         [JsonProperty("payment")]
         Payment,
+        [JsonProperty("genai")]
+        Genai,
     }
 
     public static class ListUnifiedIntegrationsQueryParamCategoriesExtension

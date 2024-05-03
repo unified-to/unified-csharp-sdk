@@ -168,6 +168,12 @@ namespace UnifiedTo.Models.Components
         StorageFileWrite,
         [JsonProperty("webhook")]
         Webhook,
+        [JsonProperty("genai_model_read")]
+        GenaiModelRead,
+        [JsonProperty("genai_prompt_read")]
+        GenaiPromptRead,
+        [JsonProperty("genai_prompt_write")]
+        GenaiPromptWrite,
     }
 
     public static class PropertyConnectionPermissionsExtension

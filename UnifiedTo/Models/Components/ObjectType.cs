@@ -104,6 +104,10 @@ namespace UnifiedTo.Models.Components
         EnrichCompany,
         [JsonProperty("storage_file")]
         StorageFile,
+        [JsonProperty("genai_model")]
+        GenaiModel,
+        [JsonProperty("genai_prompt")]
+        GenaiPrompt,
     }
 
     public static class ObjectTypeExtension
