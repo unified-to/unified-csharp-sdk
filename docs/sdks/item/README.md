@@ -28,9 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Item.CreateCommerceItemAsync(
     connectionId: "<value>",
-    commerceItem: new CommerceItem() {
-    Name = "<value>",
-});
+    commerceItem: new CommerceItem() {});
 
 // handle response
 ```
@@ -156,9 +154,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Item.PatchCommerceItemAsync(
     connectionId: "<value>",
     id: "<value>",
-    commerceItem: new CommerceItem() {
-    Name = "<value>",
-});
+    commerceItem: new CommerceItem() {});
 
 // handle response
 ```
@@ -239,9 +235,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Item.UpdateCommerceItemAsync(
     connectionId: "<value>",
     id: "<value>",
-    commerceItem: new CommerceItem() {
-    Name = "<value>",
-});
+    commerceItem: new CommerceItem() {});
 
 // handle response
 ```

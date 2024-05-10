@@ -23,6 +23,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("height")]
         public double? Height { get; set; }
 
+        [JsonProperty("id")]
+        public string? Id { get; set; }
+
         [JsonProperty("position")]
         public double? Position { get; set; }
 

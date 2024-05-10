@@ -38,7 +38,7 @@ namespace UnifiedTo.Models.Components
         public List<CommerceItemMedia>? Media { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
 
         [JsonProperty("public_description")]
         public string? PublicDescription { get; set; }

@@ -131,9 +131,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.CreateCommerceItemAsync(
     connectionId: "<value>",
-    commerceItem: new CommerceItem() {
-    Name = "<value>",
-});
+    commerceItem: new CommerceItem() {});
 
 // handle response
 ```
@@ -645,9 +643,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Commerce.PatchCommerceItemAsync(
     connectionId: "<value>",
     id: "<value>",
-    commerceItem: new CommerceItem() {
-    Name = "<value>",
-});
+    commerceItem: new CommerceItem() {});
 
 // handle response
 ```
@@ -978,9 +974,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Commerce.UpdateCommerceItemAsync(
     connectionId: "<value>",
     id: "<value>",
-    commerceItem: new CommerceItem() {
-    Name = "<value>",
-});
+    commerceItem: new CommerceItem() {});
 
 // handle response
 ```
