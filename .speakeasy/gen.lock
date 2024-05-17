@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 902b970f6ea17ef9a8dfd2f897ee1bcf
+  docChecksum: cac851e827962125d308fa3642856814
   docVersion: "1.0"
-  speakeasyVersion: 1.285.4
-  generationVersion: 2.326.3
-  releaseVersion: 0.18.0
-  configChecksum: 6728cb6053a867847c0912939511ad67
+  speakeasyVersion: 1.293.0
+  generationVersion: 2.332.4
+  releaseVersion: 0.18.1
+  configChecksum: 228275174f096662ed13b1e32daab60d
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -96,6 +96,9 @@ generatedFiles:
   - UnifiedTo/Utils/IsoDateTimeSerializer.cs
   - UnifiedTo/Utils/RequestBodySerializer.cs
   - UnifiedTo/Utils/ResponseBodyDeserializer.cs
+  - UnifiedTo/Utils/Retries/BackoffStrategy.cs
+  - UnifiedTo/Utils/Retries/Retries.cs
+  - UnifiedTo/Utils/Retries/RetryConfig.cs
   - UnifiedTo/Utils/SecurityMetadata.cs
   - UnifiedTo/Utils/SpeakeasyHttpClient.cs
   - UnifiedTo/Utils/SpeakeasyMetadata.cs

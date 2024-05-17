@@ -29,8 +29,8 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<string>? Fields { get; set; }
 
-        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=item_id")]
-        public string? ItemId { get; set; }
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=item_variant_id")]
+        public string? ItemVariantId { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }

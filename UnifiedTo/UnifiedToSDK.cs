@@ -18,6 +18,7 @@ namespace UnifiedTo
     using UnifiedTo.Hooks;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Models.Errors;
+    using UnifiedTo.Utils.Retries;
     using UnifiedTo.Utils;
 
     /// <summary>
@@ -100,7 +101,8 @@ namespace UnifiedTo
 
         public string ServerUrl = "";
         public int ServerIndex = 0;
-        public SDKHooks hooks = new SDKHooks();
+        public SDKHooks Hooks = new SDKHooks();
+        public RetryConfig? RetryConfig = null;
 
         public string GetTemplatedServerUrl()
         {
@@ -114,7 +116,7 @@ namespace UnifiedTo
         public ISpeakeasyHttpClient InitHooks(ISpeakeasyHttpClient client)
         {
             string preHooksUrl = GetTemplatedServerUrl();
-            var (postHooksUrl, postHooksClient) = this.hooks.SDKInit(preHooksUrl, client);
+            var (postHooksUrl, postHooksClient) = this.Hooks.SDKInit(preHooksUrl, client);
             if (preHooksUrl != postHooksUrl)
             {
                 this.ServerUrl = postHooksUrl;
@@ -131,10 +133,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.18.0";
-        private const string _sdkGenVersion = "2.326.3";
+        private const string _sdkVersion = "0.18.1";
+        private const string _sdkGenVersion = "2.332.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.18.0 2.326.3 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.18.1 2.332.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _defaultClient;
@@ -201,7 +203,7 @@ namespace UnifiedTo
         public IIssue Issue { get; private set; }
         public IWebhook Webhook { get; private set; }
 
-        public UnifiedToSDK(Security? security = null, Func<Security>? securitySource = null, int? serverIndex = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, ISpeakeasyHttpClient? client = null)
+        public UnifiedToSDK(Security? security = null, Func<Security>? securitySource = null, int? serverIndex = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, ISpeakeasyHttpClient? client = null, RetryConfig? retryConfig = null)
         {
             if (serverIndex != null)
             {
@@ -235,7 +237,8 @@ namespace UnifiedTo
             SDKConfiguration = new SDKConfig()
             {
                 ServerIndex = _serverIndex,
-                ServerUrl = _serverUrl
+                ServerUrl = _serverUrl,
+                RetryConfig = retryConfig
             };
 
             _defaultClient = SDKConfiguration.InitHooks(_defaultClient);

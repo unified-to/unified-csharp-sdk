@@ -20,6 +20,7 @@ namespace UnifiedTo
     using UnifiedTo.Models.Components;
     using UnifiedTo.Models.Errors;
     using UnifiedTo.Models.Requests;
+    using UnifiedTo.Utils.Retries;
     using UnifiedTo.Utils;
 
     public interface IWebhook
@@ -64,10 +65,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.18.0";
-        private const string _sdkGenVersion = "2.326.3";
+        private const string _sdkVersion = "0.18.1";
+        private const string _sdkGenVersion = "2.332.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.18.0 2.326.3 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.18.1 2.332.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _defaultClient;
         private Func<Security>? _securitySource;
@@ -106,7 +107,8 @@ namespace UnifiedTo
 
             var hookCtx = new HookContext("createUnifiedWebhook", null, _securitySource);
 
-            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
             HttpResponseMessage httpResponse;
             try
             {
@@ -115,7 +117,7 @@ namespace UnifiedTo
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
-                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
                     {
                         httpResponse = _httpResponse;
@@ -124,7 +126,7 @@ namespace UnifiedTo
             }
             catch (Exception error)
             {
-                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -135,7 +137,7 @@ namespace UnifiedTo
                 }
             }
 
-            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -187,7 +189,8 @@ namespace UnifiedTo
 
             var hookCtx = new HookContext("getUnifiedWebhook", null, _securitySource);
 
-            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
             HttpResponseMessage httpResponse;
             try
             {
@@ -196,7 +199,7 @@ namespace UnifiedTo
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
-                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
                     {
                         httpResponse = _httpResponse;
@@ -205,7 +208,7 @@ namespace UnifiedTo
             }
             catch (Exception error)
             {
-                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -216,7 +219,7 @@ namespace UnifiedTo
                 }
             }
 
-            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -264,7 +267,8 @@ namespace UnifiedTo
 
             var hookCtx = new HookContext("listUnifiedWebhooks", null, _securitySource);
 
-            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
             HttpResponseMessage httpResponse;
             try
             {
@@ -273,7 +277,7 @@ namespace UnifiedTo
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
-                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
                     {
                         httpResponse = _httpResponse;
@@ -282,7 +286,7 @@ namespace UnifiedTo
             }
             catch (Exception error)
             {
-                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -293,7 +297,7 @@ namespace UnifiedTo
                 }
             }
 
-            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -345,7 +349,8 @@ namespace UnifiedTo
 
             var hookCtx = new HookContext("patchUnifiedWebhookTrigger", null, _securitySource);
 
-            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
             HttpResponseMessage httpResponse;
             try
             {
@@ -354,7 +359,7 @@ namespace UnifiedTo
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
-                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
                     {
                         httpResponse = _httpResponse;
@@ -363,7 +368,7 @@ namespace UnifiedTo
             }
             catch (Exception error)
             {
-                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -374,7 +379,7 @@ namespace UnifiedTo
                 }
             }
 
-            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -431,7 +436,8 @@ namespace UnifiedTo
 
             var hookCtx = new HookContext("removeUnifiedWebhook", null, _securitySource);
 
-            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
             HttpResponseMessage httpResponse;
             try
             {
@@ -440,7 +446,7 @@ namespace UnifiedTo
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
-                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
                     {
                         httpResponse = _httpResponse;
@@ -449,7 +455,7 @@ namespace UnifiedTo
             }
             catch (Exception error)
             {
-                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -460,7 +466,7 @@ namespace UnifiedTo
                 }
             }
 
-            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
@@ -517,7 +523,8 @@ namespace UnifiedTo
 
             var hookCtx = new HookContext("updateUnifiedWebhookTrigger", null, _securitySource);
 
-            httpRequest = await this.SDKConfiguration.hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
             HttpResponseMessage httpResponse;
             try
             {
@@ -526,7 +533,7 @@ namespace UnifiedTo
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
                 {
-                    var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
                     if (_httpResponse != null)
                     {
                         httpResponse = _httpResponse;
@@ -535,7 +542,7 @@ namespace UnifiedTo
             }
             catch (Exception error)
             {
-                var _httpResponse = await this.SDKConfiguration.hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
                 if (_httpResponse != null)
                 {
                     httpResponse = _httpResponse;
@@ -546,7 +553,7 @@ namespace UnifiedTo
                 }
             }
 
-            httpResponse = await this.SDKConfiguration.hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
