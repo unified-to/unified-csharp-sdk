@@ -41,7 +41,10 @@ namespace UnifiedTo.Models.Components
         public bool? IsPayable { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
+
+        [JsonProperty("parent_account_id")]
+        public string? ParentAccountId { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }

@@ -54,9 +54,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "<value>",
-    accountingAccount: new AccountingAccount() {
-    Name = "<value>",
-});
+    accountingAccount: new AccountingAccount() {});
 
 // handle response
 ```
@@ -176,10 +174,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
     connectionId: "<value>",
-    accountingTaxrate: new AccountingTaxrate() {
-    Name = "<value>",
-    Rate = 1719.1D,
-});
+    accountingTaxrate: new AccountingTaxrate() {});
 
 // handle response
 ```
@@ -219,9 +214,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingTransactionAsync(
     connectionId: "<value>",
-    accountingTransaction: new AccountingTransaction() {
-    Id = "<id>",
-});
+    accountingTransaction: new AccountingTransaction() {});
 
 // handle response
 ```
@@ -772,9 +765,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.PatchAccountingAccountAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingAccount: new AccountingAccount() {
-    Name = "<value>",
-});
+    accountingAccount: new AccountingAccount() {});
 
 // handle response
 ```
@@ -900,10 +891,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.PatchAccountingTaxrateAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingTaxrate: new AccountingTaxrate() {
-    Name = "<value>",
-    Rate = 5991.47D,
-});
+    accountingTaxrate: new AccountingTaxrate() {});
 
 // handle response
 ```
@@ -945,9 +933,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.PatchAccountingTransactionAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingTransaction: new AccountingTransaction() {
-    Id = "<id>",
-});
+    accountingTransaction: new AccountingTransaction() {});
 
 // handle response
 ```
@@ -1184,9 +1170,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.UpdateAccountingAccountAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingAccount: new AccountingAccount() {
-    Name = "<value>",
-});
+    accountingAccount: new AccountingAccount() {});
 
 // handle response
 ```
@@ -1312,10 +1296,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingTaxrate: new AccountingTaxrate() {
-    Name = "<value>",
-    Rate = 3382.78D,
-});
+    accountingTaxrate: new AccountingTaxrate() {});
 
 // handle response
 ```
@@ -1357,9 +1338,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.UpdateAccountingTransactionAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingTransaction: new AccountingTransaction() {
-    Id = "<id>",
-});
+    accountingTransaction: new AccountingTransaction() {});
 
 // handle response
 ```

@@ -18,7 +18,7 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("email")]
-        public string Email { get; set; } = default!;
+        public string? Email { get; set; }
 
         [JsonProperty("type")]
         public AccountingEmailType? Type { get; set; }

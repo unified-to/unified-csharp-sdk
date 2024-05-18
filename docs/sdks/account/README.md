@@ -28,9 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Account.CreateAccountingAccountAsync(
     connectionId: "<value>",
-    accountingAccount: new AccountingAccount() {
-    Name = "<value>",
-});
+    accountingAccount: new AccountingAccount() {});
 
 // handle response
 ```
@@ -156,9 +154,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Account.PatchAccountingAccountAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingAccount: new AccountingAccount() {
-    Name = "<value>",
-});
+    accountingAccount: new AccountingAccount() {});
 
 // handle response
 ```
@@ -239,9 +235,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Account.UpdateAccountingAccountAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingAccount: new AccountingAccount() {
-    Name = "<value>",
-});
+    accountingAccount: new AccountingAccount() {});
 
 // handle response
 ```

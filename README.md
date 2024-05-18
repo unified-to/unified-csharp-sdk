@@ -22,9 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "<value>",
-    accountingAccount: new AccountingAccount() {
-    Name = "<value>",
-});
+    accountingAccount: new AccountingAccount() {});
 
 // handle response
 ```
@@ -743,9 +741,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "<value>",
-    accountingAccount: new AccountingAccount() {
-    Name = "<value>",
-});
+    accountingAccount: new AccountingAccount() {});
 
 // handle response
 ```
@@ -778,9 +774,7 @@ try
 {
     var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "<value>",
-    accountingAccount: new AccountingAccount() {
-    Name = "<value>",
-});
+    accountingAccount: new AccountingAccount() {});
     // handle response
 }
 catch (Exception ex)

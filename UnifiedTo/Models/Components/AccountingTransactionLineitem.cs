@@ -17,7 +17,7 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("account_id")]
-        public string AccountId { get; set; } = default!;
+        public string? AccountId { get; set; }
 
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
@@ -38,6 +38,6 @@ namespace UnifiedTo.Models.Components
         public double? TaxAmount { get; set; }
 
         [JsonProperty("total_amount")]
-        public double TotalAmount { get; set; } = default!;
+        public double? TotalAmount { get; set; }
     }
 }

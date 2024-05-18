@@ -31,10 +31,10 @@ namespace UnifiedTo.Models.Components
         public bool? IsActive { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
 
         [JsonProperty("rate")]
-        public double Rate { get; set; } = default!;
+        public double? Rate { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }

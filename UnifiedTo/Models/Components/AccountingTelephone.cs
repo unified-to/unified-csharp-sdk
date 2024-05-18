@@ -18,7 +18,7 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("telephone")]
-        public string Telephone { get; set; } = default!;
+        public string? Telephone { get; set; }
 
         [JsonProperty("type")]
         public AccountingTelephoneType? Type { get; set; }

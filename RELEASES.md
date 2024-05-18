@@ -881,3 +881,13 @@ Based on:
 - [csharp v0.18.1] .
 ### Releases
 - [NuGet v0.18.1] https://www.nuget.org/packages/UnifiedTo/0.18.1 - .
+
+## 2024-05-18 00:02:54
+### Changes
+Based on:
+- OpenAPI Doc 1.0 
+- Speakeasy CLI 1.293.1 (2.333.3) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.18.2] .
+### Releases
+- [NuGet v0.18.2] https://www.nuget.org/packages/UnifiedTo/0.18.2 - .
