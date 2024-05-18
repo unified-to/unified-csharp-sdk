@@ -21,6 +21,6 @@ namespace UnifiedTo.Models.Components
         public string? Name { get; set; }
 
         [JsonProperty("type")]
-        public AccountingContactPaymentMethodType Type { get; set; } = default!;
+        public AccountingContactPaymentMethodType? Type { get; set; }
     }
 }

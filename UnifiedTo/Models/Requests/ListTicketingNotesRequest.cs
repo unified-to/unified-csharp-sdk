@@ -23,6 +23,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=customer_id")]
+        public string? CustomerId { get; set; }
+
         /// <summary>
         /// Comma-delimited fields to return
         /// </summary>
