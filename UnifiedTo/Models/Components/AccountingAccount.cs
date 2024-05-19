@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
+    /// <summary>
+    /// Chart of accounts
+    /// </summary>
     public class AccountingAccount
     {
 

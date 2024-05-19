@@ -30,8 +30,6 @@ namespace UnifiedTo.Models.Components
         Other,
         [JsonProperty("PAYPAL")]
         Paypal,
-        [JsonProperty("")]
-        Unknown,
     }
 
     public static class AccountingContactPaymentMethodTypeExtension

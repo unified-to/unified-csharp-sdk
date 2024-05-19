@@ -28,6 +28,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;
 
+        /// <summary>
+        /// Chart of accounts
+        /// </summary>
         [SpeakeasyMetadata("request:mediaType=application/json")]
         public AccountingAccount? AccountingAccount { get; set; }
     }

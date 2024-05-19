@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
+        /// <summary>
+        /// Chart of accounts
+        /// </summary>
         [SpeakeasyMetadata("request:mediaType=application/json")]
         public AccountingAccount? AccountingAccount { get; set; }
     }

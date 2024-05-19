@@ -64,7 +64,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
-| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | Chart of accounts                                                 |
 
 
 ### Response
@@ -776,7 +776,7 @@ var res = await sdk.Accounting.PatchAccountingAccountAsync(
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Account                                                 |
-| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | Chart of accounts                                                 |
 
 
 ### Response
@@ -1181,7 +1181,7 @@ var res = await sdk.Accounting.UpdateAccountingAccountAsync(
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Account                                                 |
-| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | Chart of accounts                                                 |
 
 
 ### Response
