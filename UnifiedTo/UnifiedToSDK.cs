@@ -63,9 +63,15 @@ namespace UnifiedTo
         public IGroup Group { get; }
         public IPayslip Payslip { get; }
         public ITimeoff Timeoff { get; }
+        public IKms Kms { get; }
+        public IPage Page { get; }
+        public ISpace Space { get; }
         public IMartech Martech { get; }
         public IList List { get; }
         public IMember Member { get; }
+        public IMessaging Messaging { get; }
+        public IChannel Channel { get; }
+        public IMessage Message { get; }
         public IPassthrough Passthrough { get; }
         public IPayment Payment { get; }
         public ILink Link { get; }
@@ -133,10 +139,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.18.4";
+        private const string _sdkVersion = "0.18.5";
         private const string _sdkGenVersion = "2.333.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.18.4 2.333.3 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.18.5 2.333.3 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _defaultClient;
@@ -178,9 +184,15 @@ namespace UnifiedTo
         public IGroup Group { get; private set; }
         public IPayslip Payslip { get; private set; }
         public ITimeoff Timeoff { get; private set; }
+        public IKms Kms { get; private set; }
+        public IPage Page { get; private set; }
+        public ISpace Space { get; private set; }
         public IMartech Martech { get; private set; }
         public IList List { get; private set; }
         public IMember Member { get; private set; }
+        public IMessaging Messaging { get; private set; }
+        public IChannel Channel { get; private set; }
+        public IMessage Message { get; private set; }
         public IPassthrough Passthrough { get; private set; }
         public IPayment Payment { get; private set; }
         public ILink Link { get; private set; }
@@ -355,6 +367,15 @@ namespace UnifiedTo
             Timeoff = new Timeoff(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
 
 
+            Kms = new Kms(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Page = new Page(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Space = new Space(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+
+
             Martech = new Martech(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
 
 
@@ -362,6 +383,15 @@ namespace UnifiedTo
 
 
             Member = new Member(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Messaging = new Messaging(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Channel = new Channel(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Message = new Message(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
 
 
             Passthrough = new Passthrough(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);

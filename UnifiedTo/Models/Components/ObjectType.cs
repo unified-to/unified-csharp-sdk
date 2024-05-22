@@ -108,6 +108,14 @@ namespace UnifiedTo.Models.Components
         GenaiModel,
         [JsonProperty("genai_prompt")]
         GenaiPrompt,
+        [JsonProperty("messaging_message")]
+        MessagingMessage,
+        [JsonProperty("messaging_channel")]
+        MessagingChannel,
+        [JsonProperty("kms_space")]
+        KmsSpace,
+        [JsonProperty("kms_page")]
+        KmsPage,
     }
 
     public static class ObjectTypeExtension

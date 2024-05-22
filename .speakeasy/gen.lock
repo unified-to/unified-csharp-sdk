@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: e504248c88a06ddf4269b16d158025db
+  docChecksum: 06471d8199180f3f0c4d0f6efbb9b3a0
   docVersion: "1.0"
-  speakeasyVersion: 1.293.1
+  speakeasyVersion: 1.295.0
   generationVersion: 2.333.3
-  releaseVersion: 0.18.4
-  configChecksum: db4131d2ab76dd9f73f838f493b9608f
+  releaseVersion: 0.18.5
+  configChecksum: 3c1cfd4a3f6130877a77f3c06875f5a6
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -60,9 +60,15 @@ generatedFiles:
   - UnifiedTo/Group.cs
   - UnifiedTo/Payslip.cs
   - UnifiedTo/Timeoff.cs
+  - UnifiedTo/Kms.cs
+  - UnifiedTo/Page.cs
+  - UnifiedTo/Space.cs
   - UnifiedTo/Martech.cs
   - UnifiedTo/List.cs
   - UnifiedTo/Member.cs
+  - UnifiedTo/Messaging.cs
+  - UnifiedTo/Channel.cs
+  - UnifiedTo/Message.cs
   - UnifiedTo/Passthrough.cs
   - UnifiedTo/Payment.cs
   - UnifiedTo/Link.cs
@@ -432,6 +438,30 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateHrisEmployeeResponse.cs
   - UnifiedTo/Models/Requests/UpdateHrisGroupRequest.cs
   - UnifiedTo/Models/Requests/UpdateHrisGroupResponse.cs
+  - UnifiedTo/Models/Requests/CreateKmsPageRequest.cs
+  - UnifiedTo/Models/Requests/CreateKmsPageResponse.cs
+  - UnifiedTo/Models/Requests/CreateKmsSpaceRequest.cs
+  - UnifiedTo/Models/Requests/CreateKmsSpaceResponse.cs
+  - UnifiedTo/Models/Requests/GetKmsPageRequest.cs
+  - UnifiedTo/Models/Requests/GetKmsPageResponse.cs
+  - UnifiedTo/Models/Requests/GetKmsSpaceRequest.cs
+  - UnifiedTo/Models/Requests/GetKmsSpaceResponse.cs
+  - UnifiedTo/Models/Requests/ListKmsPagesRequest.cs
+  - UnifiedTo/Models/Requests/ListKmsPagesResponse.cs
+  - UnifiedTo/Models/Requests/ListKmsSpacesRequest.cs
+  - UnifiedTo/Models/Requests/ListKmsSpacesResponse.cs
+  - UnifiedTo/Models/Requests/PatchKmsPageRequest.cs
+  - UnifiedTo/Models/Requests/PatchKmsPageResponse.cs
+  - UnifiedTo/Models/Requests/PatchKmsSpaceRequest.cs
+  - UnifiedTo/Models/Requests/PatchKmsSpaceResponse.cs
+  - UnifiedTo/Models/Requests/RemoveKmsPageRequest.cs
+  - UnifiedTo/Models/Requests/RemoveKmsPageResponse.cs
+  - UnifiedTo/Models/Requests/RemoveKmsSpaceRequest.cs
+  - UnifiedTo/Models/Requests/RemoveKmsSpaceResponse.cs
+  - UnifiedTo/Models/Requests/UpdateKmsPageRequest.cs
+  - UnifiedTo/Models/Requests/UpdateKmsPageResponse.cs
+  - UnifiedTo/Models/Requests/UpdateKmsSpaceRequest.cs
+  - UnifiedTo/Models/Requests/UpdateKmsSpaceResponse.cs
   - UnifiedTo/Models/Requests/CreateMartechListRequest.cs
   - UnifiedTo/Models/Requests/CreateMartechListResponse.cs
   - UnifiedTo/Models/Requests/CreateMartechMemberRequest.cs
@@ -456,6 +486,22 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateMartechListResponse.cs
   - UnifiedTo/Models/Requests/UpdateMartechMemberRequest.cs
   - UnifiedTo/Models/Requests/UpdateMartechMemberResponse.cs
+  - UnifiedTo/Models/Requests/CreateMessagingMessageRequest.cs
+  - UnifiedTo/Models/Requests/CreateMessagingMessageResponse.cs
+  - UnifiedTo/Models/Requests/GetMessagingChannelRequest.cs
+  - UnifiedTo/Models/Requests/GetMessagingChannelResponse.cs
+  - UnifiedTo/Models/Requests/GetMessagingMessageRequest.cs
+  - UnifiedTo/Models/Requests/GetMessagingMessageResponse.cs
+  - UnifiedTo/Models/Requests/ListMessagingChannelsRequest.cs
+  - UnifiedTo/Models/Requests/ListMessagingChannelsResponse.cs
+  - UnifiedTo/Models/Requests/ListMessagingMessagesRequest.cs
+  - UnifiedTo/Models/Requests/ListMessagingMessagesResponse.cs
+  - UnifiedTo/Models/Requests/PatchMessagingMessageRequest.cs
+  - UnifiedTo/Models/Requests/PatchMessagingMessageResponse.cs
+  - UnifiedTo/Models/Requests/RemoveMessagingMessageRequest.cs
+  - UnifiedTo/Models/Requests/RemoveMessagingMessageResponse.cs
+  - UnifiedTo/Models/Requests/UpdateMessagingMessageRequest.cs
+  - UnifiedTo/Models/Requests/UpdateMessagingMessageResponse.cs
   - UnifiedTo/Models/Requests/CreatePassthroughRequest.cs
   - UnifiedTo/Models/Requests/CreatePassthroughResponse.cs
   - UnifiedTo/Models/Requests/ListPassthroughsRequest.cs
@@ -715,10 +761,17 @@ generatedFiles:
   - UnifiedTo/Models/Components/HrisTimeoffStatus.cs
   - UnifiedTo/Models/Components/HrisTimeoffType.cs
   - UnifiedTo/Models/Components/HrisTimeoff.cs
+  - UnifiedTo/Models/Components/KmsPageType.cs
+  - UnifiedTo/Models/Components/KmsPage.cs
+  - UnifiedTo/Models/Components/KmsSpace.cs
   - UnifiedTo/Models/Components/MarketingList.cs
   - UnifiedTo/Models/Components/MarketingMember.cs
   - UnifiedTo/Models/Components/MarketingEmailType.cs
   - UnifiedTo/Models/Components/MarketingEmail.cs
+  - UnifiedTo/Models/Components/MessagingMessage.cs
+  - UnifiedTo/Models/Components/MessagingMember.cs
+  - UnifiedTo/Models/Components/PropertyMessagingMessageAuthorMember.cs
+  - UnifiedTo/Models/Components/MessagingChannel.cs
   - UnifiedTo/Models/Components/PaymentLink.cs
   - UnifiedTo/Models/Components/PaymentLinkLineitem.cs
   - UnifiedTo/Models/Components/PaymentPayment.cs
@@ -1089,6 +1142,30 @@ generatedFiles:
   - docs/Models/Requests/UpdateHrisEmployeeResponse.md
   - docs/Models/Requests/UpdateHrisGroupRequest.md
   - docs/Models/Requests/UpdateHrisGroupResponse.md
+  - docs/Models/Requests/CreateKmsPageRequest.md
+  - docs/Models/Requests/CreateKmsPageResponse.md
+  - docs/Models/Requests/CreateKmsSpaceRequest.md
+  - docs/Models/Requests/CreateKmsSpaceResponse.md
+  - docs/Models/Requests/GetKmsPageRequest.md
+  - docs/Models/Requests/GetKmsPageResponse.md
+  - docs/Models/Requests/GetKmsSpaceRequest.md
+  - docs/Models/Requests/GetKmsSpaceResponse.md
+  - docs/Models/Requests/ListKmsPagesRequest.md
+  - docs/Models/Requests/ListKmsPagesResponse.md
+  - docs/Models/Requests/ListKmsSpacesRequest.md
+  - docs/Models/Requests/ListKmsSpacesResponse.md
+  - docs/Models/Requests/PatchKmsPageRequest.md
+  - docs/Models/Requests/PatchKmsPageResponse.md
+  - docs/Models/Requests/PatchKmsSpaceRequest.md
+  - docs/Models/Requests/PatchKmsSpaceResponse.md
+  - docs/Models/Requests/RemoveKmsPageRequest.md
+  - docs/Models/Requests/RemoveKmsPageResponse.md
+  - docs/Models/Requests/RemoveKmsSpaceRequest.md
+  - docs/Models/Requests/RemoveKmsSpaceResponse.md
+  - docs/Models/Requests/UpdateKmsPageRequest.md
+  - docs/Models/Requests/UpdateKmsPageResponse.md
+  - docs/Models/Requests/UpdateKmsSpaceRequest.md
+  - docs/Models/Requests/UpdateKmsSpaceResponse.md
   - docs/Models/Requests/CreateMartechListRequest.md
   - docs/Models/Requests/CreateMartechListResponse.md
   - docs/Models/Requests/CreateMartechMemberRequest.md
@@ -1113,6 +1190,22 @@ generatedFiles:
   - docs/Models/Requests/UpdateMartechListResponse.md
   - docs/Models/Requests/UpdateMartechMemberRequest.md
   - docs/Models/Requests/UpdateMartechMemberResponse.md
+  - docs/Models/Requests/CreateMessagingMessageRequest.md
+  - docs/Models/Requests/CreateMessagingMessageResponse.md
+  - docs/Models/Requests/GetMessagingChannelRequest.md
+  - docs/Models/Requests/GetMessagingChannelResponse.md
+  - docs/Models/Requests/GetMessagingMessageRequest.md
+  - docs/Models/Requests/GetMessagingMessageResponse.md
+  - docs/Models/Requests/ListMessagingChannelsRequest.md
+  - docs/Models/Requests/ListMessagingChannelsResponse.md
+  - docs/Models/Requests/ListMessagingMessagesRequest.md
+  - docs/Models/Requests/ListMessagingMessagesResponse.md
+  - docs/Models/Requests/PatchMessagingMessageRequest.md
+  - docs/Models/Requests/PatchMessagingMessageResponse.md
+  - docs/Models/Requests/RemoveMessagingMessageRequest.md
+  - docs/Models/Requests/RemoveMessagingMessageResponse.md
+  - docs/Models/Requests/UpdateMessagingMessageRequest.md
+  - docs/Models/Requests/UpdateMessagingMessageResponse.md
   - docs/Models/Requests/CreatePassthroughRequest.md
   - docs/Models/Requests/CreatePassthroughResponse.md
   - docs/Models/Requests/ListPassthroughsRequest.md
@@ -1372,10 +1465,17 @@ generatedFiles:
   - docs/Models/Components/HrisTimeoffStatus.md
   - docs/Models/Components/HrisTimeoffType.md
   - docs/Models/Components/HrisTimeoff.md
+  - docs/Models/Components/KmsPageType.md
+  - docs/Models/Components/KmsPage.md
+  - docs/Models/Components/KmsSpace.md
   - docs/Models/Components/MarketingList.md
   - docs/Models/Components/MarketingMember.md
   - docs/Models/Components/MarketingEmailType.md
   - docs/Models/Components/MarketingEmail.md
+  - docs/Models/Components/MessagingMessage.md
+  - docs/Models/Components/MessagingMember.md
+  - docs/Models/Components/PropertyMessagingMessageAuthorMember.md
+  - docs/Models/Components/MessagingChannel.md
   - docs/Models/Components/PaymentLink.md
   - docs/Models/Components/PaymentLinkLineitem.md
   - docs/Models/Components/PaymentPayment.md
@@ -1458,9 +1558,15 @@ generatedFiles:
   - docs/sdks/group/README.md
   - docs/sdks/payslip/README.md
   - docs/sdks/timeoff/README.md
+  - docs/sdks/kms/README.md
+  - docs/sdks/page/README.md
+  - docs/sdks/space/README.md
   - docs/sdks/martech/README.md
   - docs/sdks/list/README.md
   - docs/sdks/member/README.md
+  - docs/sdks/messaging/README.md
+  - docs/sdks/channel/README.md
+  - docs/sdks/message/README.md
   - docs/sdks/passthrough/README.md
   - docs/sdks/payment/README.md
   - docs/sdks/link/README.md

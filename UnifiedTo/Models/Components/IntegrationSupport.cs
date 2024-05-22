@@ -30,6 +30,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_candidate_id")]
         public bool? ListCandidateId { get; set; }
 
+        [JsonProperty("list_channel_id")]
+        public bool? ListChannelId { get; set; }
+
         [JsonProperty("list_collection_id")]
         public bool? ListCollectionId { get; set; }
 
@@ -86,6 +89,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_sort_by_updated_at")]
         public bool? ListSortByUpdatedAt { get; set; }
+
+        [JsonProperty("list_space_id")]
+        public bool? ListSpaceId { get; set; }
 
         [JsonProperty("list_ticket_id")]
         public bool? ListTicketId { get; set; }

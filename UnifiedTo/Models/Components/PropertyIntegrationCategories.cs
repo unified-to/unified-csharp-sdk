@@ -44,6 +44,10 @@ namespace UnifiedTo.Models.Components
         Payment,
         [JsonProperty("genai")]
         Genai,
+        [JsonProperty("messaging")]
+        Messaging,
+        [JsonProperty("kms")]
+        Kms,
     }
 
     public static class PropertyIntegrationCategoriesExtension

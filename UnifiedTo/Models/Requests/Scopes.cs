@@ -174,6 +174,24 @@ namespace UnifiedTo.Models.Requests
         GenaiPromptRead,
         [JsonProperty("genai_prompt_write")]
         GenaiPromptWrite,
+        [JsonProperty("messaging_message_read")]
+        MessagingMessageRead,
+        [JsonProperty("messaging_message_write")]
+        MessagingMessageWrite,
+        [JsonProperty("messaging_channel_read")]
+        MessagingChannelRead,
+        [JsonProperty("kms_space_read")]
+        KmsSpaceRead,
+        [JsonProperty("kms_space_write")]
+        KmsSpaceWrite,
+        [JsonProperty("kms_page_read")]
+        KmsPageRead,
+        [JsonProperty("kms_page_write")]
+        KmsPageWrite,
+        [JsonProperty("kms_comment_read")]
+        KmsCommentRead,
+        [JsonProperty("kms_comment_write")]
+        KmsCommentWrite,
     }
 
     public static class ScopesExtension

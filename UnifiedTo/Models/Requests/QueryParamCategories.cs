@@ -44,6 +44,10 @@ namespace UnifiedTo.Models.Requests
         Payment,
         [JsonProperty("genai")]
         Genai,
+        [JsonProperty("messaging")]
+        Messaging,
+        [JsonProperty("kms")]
+        Kms,
     }
 
     public static class QueryParamCategoriesExtension
