@@ -113,6 +113,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("outbound_fields")]
         public Dictionary<string, object>? OutboundFields { get; set; }
 
+        /// <summary>
+        /// objects that we map from in the integration
+        /// </summary>
+        [JsonProperty("raw_objects")]
+        public List<string>? RawObjects { get; set; }
+
         [JsonProperty("search_domain")]
         public bool? SearchDomain { get; set; }
 
