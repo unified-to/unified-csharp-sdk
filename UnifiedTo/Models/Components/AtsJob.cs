@@ -57,6 +57,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("number_of_openings")]
         public double? NumberOfOpenings { get; set; }
 
+        /// <summary>
+        /// URLs for pages containing public listings for the job
+        /// </summary>
         [JsonProperty("public_job_urls")]
         public List<string>? PublicJobUrls { get; set; }
 

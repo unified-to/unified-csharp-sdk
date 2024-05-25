@@ -46,7 +46,7 @@ namespace UnifiedTo.Models.Components
         public string? ImageUrl { get; set; }
 
         /// <summary>
-        /// a list of social media links associated with the candidate. eg. LinkedIn URL
+        /// URLs for web pages containing additional material about the candidate (LinkedIn, other social media, articles, etc.)
         /// </summary>
         [JsonProperty("link_urls")]
         public List<string>? LinkUrls { get; set; }

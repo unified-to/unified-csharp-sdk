@@ -48,6 +48,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("parent_account_id")]
         public string? ParentAccountId { get; set; }
 
+        /// <summary>
+        /// The original data from the integration&apos;s API
+        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

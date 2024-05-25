@@ -21,6 +21,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("billing_address")]
         public PropertyAccountingContactBillingAddress? BillingAddress { get; set; }
 
+        [JsonProperty("company_name")]
+        public string? CompanyName { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -32,6 +35,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("id")]
         public string? Id { get; set; }
+
+        [JsonProperty("identification")]
+        public string? Identification { get; set; }
 
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
