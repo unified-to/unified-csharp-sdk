@@ -37,6 +37,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=order")]
         public string? Order { get; set; }
 
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=parent_id")]
+        public string? ParentId { get; set; }
+
         /// <summary>
         /// Query string to search. eg. email address or name
         /// </summary>
