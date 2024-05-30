@@ -210,17 +210,17 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.1";
-        private const string _sdkGenVersion = "2.338.1";
+        private const string _sdkVersion = "0.19.2";
+        private const string _sdkGenVersion = "2.338.5";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.1 2.338.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.2 2.338.5 1.0 UnifiedTo";
         private string _serverUrl = "";
-        private ISpeakeasyHttpClient _defaultClient;
+        private ISpeakeasyHttpClient _client;
         private Func<Security>? _securitySource;
 
-        public Crm(ISpeakeasyHttpClient defaultClient, Func<Security>? securitySource, string serverUrl, SDKConfig config)
+        public Crm(ISpeakeasyHttpClient client, Func<Security>? securitySource, string serverUrl, SDKConfig config)
         {
-            _defaultClient = defaultClient;
+            _client = client;
             _securitySource = securitySource;
             _serverUrl = serverUrl;
             SDKConfiguration = config;
@@ -257,7 +257,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -346,7 +346,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -435,7 +435,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -524,7 +524,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -613,7 +613,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -702,7 +702,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -786,7 +786,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -870,7 +870,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -954,7 +954,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -1038,7 +1038,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -1122,7 +1122,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -1206,7 +1206,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -1284,7 +1284,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -1362,7 +1362,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -1440,7 +1440,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -1518,7 +1518,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -1596,7 +1596,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -1674,7 +1674,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -1764,7 +1764,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -1854,7 +1854,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -1944,7 +1944,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -2034,7 +2034,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -2124,7 +2124,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -2214,7 +2214,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -2297,7 +2297,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -2385,7 +2385,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -2473,7 +2473,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -2561,7 +2561,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -2649,7 +2649,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -2737,7 +2737,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -2832,7 +2832,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -2922,7 +2922,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -3012,7 +3012,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -3102,7 +3102,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -3192,7 +3192,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
@@ -3282,7 +3282,7 @@ namespace UnifiedTo
             HttpResponseMessage httpResponse;
             try
             {
-                httpResponse = await _defaultClient.SendAsync(httpRequest);
+                httpResponse = await _client.SendAsync(httpRequest);
                 int _statusCode = (int)httpResponse.StatusCode;
 
                 if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)

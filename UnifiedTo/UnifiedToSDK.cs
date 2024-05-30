@@ -138,13 +138,13 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.1";
-        private const string _sdkGenVersion = "2.338.1";
+        private const string _sdkVersion = "0.19.2";
+        private const string _sdkGenVersion = "2.338.5";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.1 2.338.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.2 2.338.5 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
-        private ISpeakeasyHttpClient _defaultClient;
+        private ISpeakeasyHttpClient _client;
         private Func<Security>? _securitySource;
         public IAccounting Accounting { get; private set; }
         public IAccount Account { get; private set; }
@@ -234,7 +234,7 @@ namespace UnifiedTo
                 _serverUrl = serverUrl;
             }
 
-            _defaultClient = new SpeakeasyHttpClient(client);
+            _client = client ?? new SpeakeasyHttpClient();
 
             if(securitySource != null)
             {
@@ -252,208 +252,208 @@ namespace UnifiedTo
                 RetryConfig = retryConfig
             };
 
-            _defaultClient = SDKConfiguration.InitHooks(_defaultClient);
+            _client = SDKConfiguration.InitHooks(_client);
 
 
-            Accounting = new Accounting(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Accounting = new Accounting(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Account = new Account(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Account = new Account(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Contact = new Contact(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Contact = new Contact(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Invoice = new Invoice(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Invoice = new Invoice(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Organization = new Organization(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Organization = new Organization(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Taxrate = new Taxrate(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Taxrate = new Taxrate(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Transaction = new Transaction(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Transaction = new Transaction(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Ats = new Ats(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Ats = new Ats(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Activity = new Activity(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Activity = new Activity(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Application = new Application(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Application = new Application(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Applicationstatus = new Applicationstatus(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Applicationstatus = new Applicationstatus(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Candidate = new Candidate(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Candidate = new Candidate(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Company = new Company(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Company = new Company(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Document = new Document(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Document = new Document(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Interview = new Interview(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Interview = new Interview(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Job = new Job(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Job = new Job(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Scorecard = new Scorecard(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Scorecard = new Scorecard(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Commerce = new Commerce(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Commerce = new Commerce(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Collection = new Collection(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Collection = new Collection(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Inventory = new Inventory(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Inventory = new Inventory(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Item = new Item(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Item = new Item(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Location = new Location(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Location = new Location(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Crm = new Crm(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Crm = new Crm(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Deal = new Deal(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Deal = new Deal(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Event = new Event(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Event = new Event(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Lead = new Lead(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Lead = new Lead(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Pipeline = new Pipeline(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Pipeline = new Pipeline(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Enrich = new Enrich(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Enrich = new Enrich(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Person = new Person(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Person = new Person(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Genai = new Genai(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Genai = new Genai(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Model = new Model(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Model = new Model(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Prompt = new Prompt(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Prompt = new Prompt(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Hris = new Hris(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Hris = new Hris(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Employee = new Employee(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Employee = new Employee(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Group = new Group(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Group = new Group(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Payslip = new Payslip(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Payslip = new Payslip(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Timeoff = new Timeoff(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Timeoff = new Timeoff(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Kms = new Kms(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Kms = new Kms(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Page = new Page(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Page = new Page(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Space = new Space(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Space = new Space(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Martech = new Martech(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Martech = new Martech(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            List = new List(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            List = new List(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Member = new Member(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Member = new Member(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Messaging = new Messaging(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Messaging = new Messaging(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Channel = new Channel(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Channel = new Channel(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Message = new Message(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Message = new Message(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Passthrough = new Passthrough(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Passthrough = new Passthrough(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Payment = new Payment(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Payment = new Payment(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Link = new Link(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Link = new Link(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Payout = new Payout(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Payout = new Payout(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Refund = new Refund(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Refund = new Refund(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Storage = new Storage(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Storage = new Storage(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            File = new File(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            File = new File(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Ticketing = new Ticketing(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Ticketing = new Ticketing(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Customer = new Customer(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Customer = new Customer(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Note = new Note(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Note = new Note(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Ticket = new Ticket(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Ticket = new Ticket(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Uc = new Uc(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Uc = new Uc(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Call = new Call(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Call = new Call(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Unified = new Unified(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Unified = new Unified(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Apicall = new Apicall(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Apicall = new Apicall(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Connection = new Connection(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Connection = new Connection(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Integration = new Integration(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Integration = new Integration(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Auth = new Auth(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Auth = new Auth(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Login = new Login(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Login = new Login(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Issue = new Issue(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Issue = new Issue(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Webhook = new Webhook(_defaultClient, _securitySource, _serverUrl, SDKConfiguration);
+            Webhook = new Webhook(_client, _securitySource, _serverUrl, SDKConfiguration);
         }
     }
 }
