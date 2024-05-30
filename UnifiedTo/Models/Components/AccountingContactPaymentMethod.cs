@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     public class AccountingContactPaymentMethod
     {
 
+        [JsonProperty("default")]
+        public bool? Default { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
