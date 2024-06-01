@@ -29,6 +29,6 @@ namespace UnifiedTo.Models.Components
         public double? Min { get; set; }
 
         [JsonProperty("type")]
-        public AtsCompensationType Type { get; set; } = default!;
+        public AtsCompensationType? Type { get; set; }
     }
 }
