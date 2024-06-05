@@ -17,95 +17,98 @@ namespace UnifiedTo.Models.Components
     public class IntegrationSupport
     {
 
+        [JsonProperty("from_webhook")]
+        public FromWebhook? FromWebhook { get; set; }
+
         [JsonProperty("inbound_fields")]
         public Dictionary<string, object>? InboundFields { get; set; }
 
         [JsonProperty("list_account_id")]
-        public bool? ListAccountId { get; set; }
+        public ListAccountId? ListAccountId { get; set; }
 
         [JsonProperty("list_application_id")]
-        public bool? ListApplicationId { get; set; }
+        public ListApplicationId? ListApplicationId { get; set; }
 
         [JsonProperty("list_candidate_id")]
-        public bool? ListCandidateId { get; set; }
+        public ListCandidateId? ListCandidateId { get; set; }
 
         [JsonProperty("list_channel_id")]
-        public bool? ListChannelId { get; set; }
+        public ListChannelId? ListChannelId { get; set; }
 
         [JsonProperty("list_collection_id")]
-        public bool? ListCollectionId { get; set; }
+        public ListCollectionId? ListCollectionId { get; set; }
 
         [JsonProperty("list_company_id")]
-        public bool? ListCompanyId { get; set; }
+        public ListCompanyId? ListCompanyId { get; set; }
 
         [JsonProperty("list_contact_id")]
-        public bool? ListContactId { get; set; }
+        public ListContactId? ListContactId { get; set; }
 
         [JsonProperty("list_customer_id")]
-        public bool? ListCustomerId { get; set; }
+        public ListCustomerId? ListCustomerId { get; set; }
 
         [JsonProperty("list_deal_id")]
-        public bool? ListDealId { get; set; }
+        public ListDealId? ListDealId { get; set; }
 
         [JsonProperty("list_interview_id")]
-        public bool? ListInterviewId { get; set; }
+        public ListInterviewId? ListInterviewId { get; set; }
 
         [JsonProperty("list_invoice_id")]
-        public bool? ListInvoiceId { get; set; }
+        public ListInvoiceId? ListInvoiceId { get; set; }
 
         [JsonProperty("list_item_id")]
-        public bool? ListItemId { get; set; }
+        public ListItemId? ListItemId { get; set; }
 
         [JsonProperty("list_job_id")]
-        public bool? ListJobId { get; set; }
+        public ListJobId? ListJobId { get; set; }
 
         [JsonProperty("list_limit")]
-        public bool? ListLimit { get; set; }
+        public ListLimit? ListLimit { get; set; }
 
         [JsonProperty("list_link_id")]
-        public bool? ListLinkId { get; set; }
+        public ListLinkId? ListLinkId { get; set; }
 
         [JsonProperty("list_list_id")]
-        public bool? ListListId { get; set; }
+        public ListListId? ListListId { get; set; }
 
         [JsonProperty("list_location_id")]
-        public bool? ListLocationId { get; set; }
+        public ListLocationId? ListLocationId { get; set; }
 
         [JsonProperty("list_offset")]
-        public bool? ListOffset { get; set; }
+        public ListOffset? ListOffset { get; set; }
 
         [JsonProperty("list_order")]
-        public bool? ListOrder { get; set; }
+        public ListOrder? ListOrder { get; set; }
 
         [JsonProperty("list_parent_id")]
-        public bool? ListParentId { get; set; }
+        public ListParentId? ListParentId { get; set; }
 
         [JsonProperty("list_query")]
-        public bool? ListQuery { get; set; }
+        public ListQuery? ListQuery { get; set; }
 
         [JsonProperty("list_sort_by_created_at")]
-        public bool? ListSortByCreatedAt { get; set; }
+        public ListSortByCreatedAt? ListSortByCreatedAt { get; set; }
 
         [JsonProperty("list_sort_by_name")]
-        public bool? ListSortByName { get; set; }
+        public ListSortByName? ListSortByName { get; set; }
 
         [JsonProperty("list_sort_by_updated_at")]
-        public bool? ListSortByUpdatedAt { get; set; }
+        public ListSortByUpdatedAt? ListSortByUpdatedAt { get; set; }
 
         [JsonProperty("list_space_id")]
-        public bool? ListSpaceId { get; set; }
+        public ListSpaceId? ListSpaceId { get; set; }
 
         [JsonProperty("list_ticket_id")]
-        public bool? ListTicketId { get; set; }
+        public ListTicketId? ListTicketId { get; set; }
 
         [JsonProperty("list_type")]
-        public bool? ListType { get; set; }
+        public ListType? ListType { get; set; }
 
         [JsonProperty("list_updated_gte")]
-        public bool? ListUpdatedGte { get; set; }
+        public ListUpdatedGte? ListUpdatedGte { get; set; }
 
         [JsonProperty("list_user_id")]
-        public bool? ListUserId { get; set; }
+        public ListUserId? ListUserId { get; set; }
 
         [JsonProperty("methods")]
         public Dictionary<string, bool>? Methods { get; set; }
@@ -120,19 +123,19 @@ namespace UnifiedTo.Models.Components
         public List<string>? RawObjects { get; set; }
 
         [JsonProperty("search_domain")]
-        public bool? SearchDomain { get; set; }
+        public SearchDomain? SearchDomain { get; set; }
 
         [JsonProperty("search_email")]
-        public bool? SearchEmail { get; set; }
+        public SearchEmail? SearchEmail { get; set; }
 
         [JsonProperty("search_linkedinurl")]
-        public bool? SearchLinkedinurl { get; set; }
+        public SearchLinkedinurl? SearchLinkedinurl { get; set; }
 
         [JsonProperty("search_name")]
-        public bool? SearchName { get; set; }
+        public SearchName? SearchName { get; set; }
 
         [JsonProperty("search_twitter")]
-        public bool? SearchTwitter { get; set; }
+        public SearchTwitter? SearchTwitter { get; set; }
 
         [JsonProperty("webhook_events")]
         public PropertyIntegrationSupportWebhookEvents? WebhookEvents { get; set; }

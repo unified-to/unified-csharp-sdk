@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 74c64e97761c01481c293203e99f2a2f
+  docChecksum: 9a5990618c970a819b6235d1b48f2259
   docVersion: "1.0"
-  speakeasyVersion: 1.299.6
+  speakeasyVersion: 1.299.7
   generationVersion: 2.338.12
-  releaseVersion: 0.19.5
-  configChecksum: 40debe8de6d60de62da0e3b91910c113
+  releaseVersion: 0.19.6
+  configChecksum: 50a768c9acb0cbd8447aca7705c704dd
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -806,6 +806,41 @@ generatedFiles:
   - UnifiedTo/Models/Components/ApiCallType.cs
   - UnifiedTo/Models/Components/ApiCall.cs
   - UnifiedTo/Models/Components/Integration.cs
+  - UnifiedTo/Models/Components/FromWebhook.cs
+  - UnifiedTo/Models/Components/ListAccountId.cs
+  - UnifiedTo/Models/Components/ListApplicationId.cs
+  - UnifiedTo/Models/Components/ListCandidateId.cs
+  - UnifiedTo/Models/Components/ListChannelId.cs
+  - UnifiedTo/Models/Components/ListCollectionId.cs
+  - UnifiedTo/Models/Components/ListCompanyId.cs
+  - UnifiedTo/Models/Components/ListContactId.cs
+  - UnifiedTo/Models/Components/ListCustomerId.cs
+  - UnifiedTo/Models/Components/ListDealId.cs
+  - UnifiedTo/Models/Components/ListInterviewId.cs
+  - UnifiedTo/Models/Components/ListInvoiceId.cs
+  - UnifiedTo/Models/Components/ListItemId.cs
+  - UnifiedTo/Models/Components/ListJobId.cs
+  - UnifiedTo/Models/Components/ListLimit.cs
+  - UnifiedTo/Models/Components/ListLinkId.cs
+  - UnifiedTo/Models/Components/ListListId.cs
+  - UnifiedTo/Models/Components/ListLocationId.cs
+  - UnifiedTo/Models/Components/ListOffset.cs
+  - UnifiedTo/Models/Components/ListOrder.cs
+  - UnifiedTo/Models/Components/ListParentId.cs
+  - UnifiedTo/Models/Components/ListQuery.cs
+  - UnifiedTo/Models/Components/ListSortByCreatedAt.cs
+  - UnifiedTo/Models/Components/ListSortByName.cs
+  - UnifiedTo/Models/Components/ListSortByUpdatedAt.cs
+  - UnifiedTo/Models/Components/ListSpaceId.cs
+  - UnifiedTo/Models/Components/ListTicketId.cs
+  - UnifiedTo/Models/Components/ListType.cs
+  - UnifiedTo/Models/Components/ListUpdatedGte.cs
+  - UnifiedTo/Models/Components/ListUserId.cs
+  - UnifiedTo/Models/Components/SearchDomain.cs
+  - UnifiedTo/Models/Components/SearchEmail.cs
+  - UnifiedTo/Models/Components/SearchLinkedinurl.cs
+  - UnifiedTo/Models/Components/SearchName.cs
+  - UnifiedTo/Models/Components/SearchTwitter.cs
   - UnifiedTo/Models/Components/IntegrationSupport.cs
   - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEvents.cs
   - UnifiedTo/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsUpdated.cs
@@ -1510,6 +1545,41 @@ generatedFiles:
   - docs/Models/Components/ApiCallType.md
   - docs/Models/Components/ApiCall.md
   - docs/Models/Components/Integration.md
+  - docs/Models/Components/FromWebhook.md
+  - docs/Models/Components/ListAccountId.md
+  - docs/Models/Components/ListApplicationId.md
+  - docs/Models/Components/ListCandidateId.md
+  - docs/Models/Components/ListChannelId.md
+  - docs/Models/Components/ListCollectionId.md
+  - docs/Models/Components/ListCompanyId.md
+  - docs/Models/Components/ListContactId.md
+  - docs/Models/Components/ListCustomerId.md
+  - docs/Models/Components/ListDealId.md
+  - docs/Models/Components/ListInterviewId.md
+  - docs/Models/Components/ListInvoiceId.md
+  - docs/Models/Components/ListItemId.md
+  - docs/Models/Components/ListJobId.md
+  - docs/Models/Components/ListLimit.md
+  - docs/Models/Components/ListLinkId.md
+  - docs/Models/Components/ListListId.md
+  - docs/Models/Components/ListLocationId.md
+  - docs/Models/Components/ListOffset.md
+  - docs/Models/Components/ListOrder.md
+  - docs/Models/Components/ListParentId.md
+  - docs/Models/Components/ListQuery.md
+  - docs/Models/Components/ListSortByCreatedAt.md
+  - docs/Models/Components/ListSortByName.md
+  - docs/Models/Components/ListSortByUpdatedAt.md
+  - docs/Models/Components/ListSpaceId.md
+  - docs/Models/Components/ListTicketId.md
+  - docs/Models/Components/ListType.md
+  - docs/Models/Components/ListUpdatedGte.md
+  - docs/Models/Components/ListUserId.md
+  - docs/Models/Components/SearchDomain.md
+  - docs/Models/Components/SearchEmail.md
+  - docs/Models/Components/SearchLinkedinurl.md
+  - docs/Models/Components/SearchName.md
+  - docs/Models/Components/SearchTwitter.md
   - docs/Models/Components/IntegrationSupport.md
   - docs/Models/Components/PropertyIntegrationSupportWebhookEvents.md
   - docs/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsUpdated.md
