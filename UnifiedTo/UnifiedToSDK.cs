@@ -78,6 +78,8 @@ namespace UnifiedTo
         public IRefund Refund { get; }
         public IStorage Storage { get; }
         public IFile File { get; }
+        public ITask Task { get; }
+        public IProject Project { get; }
         public ITicketing Ticketing { get; }
         public ICustomer Customer { get; }
         public INote Note { get; }
@@ -138,10 +140,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.6";
-        private const string _sdkGenVersion = "2.338.12";
+        private const string _sdkVersion = "0.19.7";
+        private const string _sdkGenVersion = "2.339.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.6 2.338.12 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.7 2.339.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _client;
@@ -199,6 +201,8 @@ namespace UnifiedTo
         public IRefund Refund { get; private set; }
         public IStorage Storage { get; private set; }
         public IFile File { get; private set; }
+        public ITask Task { get; private set; }
+        public IProject Project { get; private set; }
         public ITicketing Ticketing { get; private set; }
         public ICustomer Customer { get; private set; }
         public INote Note { get; private set; }
@@ -412,6 +416,12 @@ namespace UnifiedTo
 
 
             File = new File(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Task = new Task(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Project = new Project(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
             Ticketing = new Ticketing(_client, _securitySource, _serverUrl, SDKConfiguration);

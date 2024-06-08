@@ -15,9 +15,9 @@ namespace UnifiedTo.Models.Components
     
     public enum Role
     {
-        [JsonProperty("system")]
+        [JsonProperty("SYSTEM")]
         System,
-        [JsonProperty("user")]
+        [JsonProperty("USER")]
         User,
     }
 

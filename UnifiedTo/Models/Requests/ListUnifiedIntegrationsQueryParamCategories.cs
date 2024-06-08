@@ -47,6 +47,8 @@ namespace UnifiedTo.Models.Requests
         Messaging,
         [JsonProperty("kms")]
         Kms,
+        [JsonProperty("task")]
+        Task,
     }
 
     public static class ListUnifiedIntegrationsQueryParamCategoriesExtension

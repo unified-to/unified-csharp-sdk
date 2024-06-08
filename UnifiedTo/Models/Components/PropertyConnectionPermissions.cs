@@ -191,6 +191,14 @@ namespace UnifiedTo.Models.Components
         KmsCommentRead,
         [JsonProperty("kms_comment_write")]
         KmsCommentWrite,
+        [JsonProperty("task_project_read")]
+        TaskProjectRead,
+        [JsonProperty("task_project_write")]
+        TaskProjectWrite,
+        [JsonProperty("task_task_read")]
+        TaskTaskRead,
+        [JsonProperty("task_task_write")]
+        TaskTaskWrite,
     }
 
     public static class PropertyConnectionPermissionsExtension

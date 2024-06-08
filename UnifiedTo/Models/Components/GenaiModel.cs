@@ -10,6 +10,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using UnifiedTo.Utils;
     
     public class GenaiModel
@@ -29,6 +30,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("name")]
         public string? Name { get; set; }
+
+        [JsonProperty("raw")]
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("web_url")]
         public string? WebUrl { get; set; }

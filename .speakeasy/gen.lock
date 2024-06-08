@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 9a5990618c970a819b6235d1b48f2259
+  docChecksum: 34d8e45448aaadab7271416cea77fcaf
   docVersion: "1.0"
-  speakeasyVersion: 1.299.7
-  generationVersion: 2.338.12
-  releaseVersion: 0.19.6
-  configChecksum: 50a768c9acb0cbd8447aca7705c704dd
+  speakeasyVersion: 1.300.1
+  generationVersion: 2.339.1
+  releaseVersion: 0.19.7
+  configChecksum: 92faa4ca8527a277d66d6d076ac4f7fd
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -14,7 +14,7 @@ features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.9.3
+    core: 3.9.4
     flattening: 2.81.2
     globalSecurity: 2.83.4
     globalSecurityCallbacks: 0.1.0
@@ -76,6 +76,8 @@ generatedFiles:
   - UnifiedTo/Refund.cs
   - UnifiedTo/Storage.cs
   - UnifiedTo/File.cs
+  - UnifiedTo/Task.cs
+  - UnifiedTo/Project.cs
   - UnifiedTo/Ticketing.cs
   - UnifiedTo/Customer.cs
   - UnifiedTo/Note.cs
@@ -556,6 +558,30 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveStorageFileResponse.cs
   - UnifiedTo/Models/Requests/UpdateStorageFileRequest.cs
   - UnifiedTo/Models/Requests/UpdateStorageFileResponse.cs
+  - UnifiedTo/Models/Requests/CreateTaskProjectRequest.cs
+  - UnifiedTo/Models/Requests/CreateTaskProjectResponse.cs
+  - UnifiedTo/Models/Requests/CreateTaskTaskRequest.cs
+  - UnifiedTo/Models/Requests/CreateTaskTaskResponse.cs
+  - UnifiedTo/Models/Requests/GetTaskProjectRequest.cs
+  - UnifiedTo/Models/Requests/GetTaskProjectResponse.cs
+  - UnifiedTo/Models/Requests/GetTaskTaskRequest.cs
+  - UnifiedTo/Models/Requests/GetTaskTaskResponse.cs
+  - UnifiedTo/Models/Requests/ListTaskProjectsRequest.cs
+  - UnifiedTo/Models/Requests/ListTaskProjectsResponse.cs
+  - UnifiedTo/Models/Requests/ListTaskTasksRequest.cs
+  - UnifiedTo/Models/Requests/ListTaskTasksResponse.cs
+  - UnifiedTo/Models/Requests/PatchTaskProjectRequest.cs
+  - UnifiedTo/Models/Requests/PatchTaskProjectResponse.cs
+  - UnifiedTo/Models/Requests/PatchTaskTaskRequest.cs
+  - UnifiedTo/Models/Requests/PatchTaskTaskResponse.cs
+  - UnifiedTo/Models/Requests/RemoveTaskProjectRequest.cs
+  - UnifiedTo/Models/Requests/RemoveTaskProjectResponse.cs
+  - UnifiedTo/Models/Requests/RemoveTaskTaskRequest.cs
+  - UnifiedTo/Models/Requests/RemoveTaskTaskResponse.cs
+  - UnifiedTo/Models/Requests/UpdateTaskProjectRequest.cs
+  - UnifiedTo/Models/Requests/UpdateTaskProjectResponse.cs
+  - UnifiedTo/Models/Requests/UpdateTaskTaskRequest.cs
+  - UnifiedTo/Models/Requests/UpdateTaskTaskResponse.cs
   - UnifiedTo/Models/Requests/CreateTicketingCustomerRequest.cs
   - UnifiedTo/Models/Requests/CreateTicketingCustomerResponse.cs
   - UnifiedTo/Models/Requests/CreateTicketingNoteRequest.cs
@@ -732,6 +758,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/CrmLead.cs
   - UnifiedTo/Models/Components/PropertyCrmLeadAddress.cs
   - UnifiedTo/Models/Components/CrmPipeline.cs
+  - UnifiedTo/Models/Components/CrmStage.cs
   - UnifiedTo/Models/Components/Gender.cs
   - UnifiedTo/Models/Components/EnrichPerson.cs
   - UnifiedTo/Models/Components/EnrichPersonWorkHistory.cs
@@ -783,6 +810,9 @@ generatedFiles:
   - UnifiedTo/Models/Components/StorageFile.cs
   - UnifiedTo/Models/Components/StoragePermission.cs
   - UnifiedTo/Models/Components/PropertyStoragePermissionRoles.cs
+  - UnifiedTo/Models/Components/TaskProject.cs
+  - UnifiedTo/Models/Components/TaskTaskStatus.cs
+  - UnifiedTo/Models/Components/TaskTask.cs
   - UnifiedTo/Models/Components/TicketingCustomer.cs
   - UnifiedTo/Models/Components/TicketingTelephoneType.cs
   - UnifiedTo/Models/Components/TicketingTelephone.cs
@@ -827,6 +857,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListOffset.cs
   - UnifiedTo/Models/Components/ListOrder.cs
   - UnifiedTo/Models/Components/ListParentId.cs
+  - UnifiedTo/Models/Components/ListProjectId.cs
   - UnifiedTo/Models/Components/ListQuery.cs
   - UnifiedTo/Models/Components/ListSortByCreatedAt.cs
   - UnifiedTo/Models/Components/ListSortByName.cs
@@ -1295,6 +1326,30 @@ generatedFiles:
   - docs/Models/Requests/RemoveStorageFileResponse.md
   - docs/Models/Requests/UpdateStorageFileRequest.md
   - docs/Models/Requests/UpdateStorageFileResponse.md
+  - docs/Models/Requests/CreateTaskProjectRequest.md
+  - docs/Models/Requests/CreateTaskProjectResponse.md
+  - docs/Models/Requests/CreateTaskTaskRequest.md
+  - docs/Models/Requests/CreateTaskTaskResponse.md
+  - docs/Models/Requests/GetTaskProjectRequest.md
+  - docs/Models/Requests/GetTaskProjectResponse.md
+  - docs/Models/Requests/GetTaskTaskRequest.md
+  - docs/Models/Requests/GetTaskTaskResponse.md
+  - docs/Models/Requests/ListTaskProjectsRequest.md
+  - docs/Models/Requests/ListTaskProjectsResponse.md
+  - docs/Models/Requests/ListTaskTasksRequest.md
+  - docs/Models/Requests/ListTaskTasksResponse.md
+  - docs/Models/Requests/PatchTaskProjectRequest.md
+  - docs/Models/Requests/PatchTaskProjectResponse.md
+  - docs/Models/Requests/PatchTaskTaskRequest.md
+  - docs/Models/Requests/PatchTaskTaskResponse.md
+  - docs/Models/Requests/RemoveTaskProjectRequest.md
+  - docs/Models/Requests/RemoveTaskProjectResponse.md
+  - docs/Models/Requests/RemoveTaskTaskRequest.md
+  - docs/Models/Requests/RemoveTaskTaskResponse.md
+  - docs/Models/Requests/UpdateTaskProjectRequest.md
+  - docs/Models/Requests/UpdateTaskProjectResponse.md
+  - docs/Models/Requests/UpdateTaskTaskRequest.md
+  - docs/Models/Requests/UpdateTaskTaskResponse.md
   - docs/Models/Requests/CreateTicketingCustomerRequest.md
   - docs/Models/Requests/CreateTicketingCustomerResponse.md
   - docs/Models/Requests/CreateTicketingNoteRequest.md
@@ -1471,6 +1526,7 @@ generatedFiles:
   - docs/Models/Components/CrmLead.md
   - docs/Models/Components/PropertyCrmLeadAddress.md
   - docs/Models/Components/CrmPipeline.md
+  - docs/Models/Components/CrmStage.md
   - docs/Models/Components/Gender.md
   - docs/Models/Components/EnrichPerson.md
   - docs/Models/Components/EnrichPersonWorkHistory.md
@@ -1522,6 +1578,9 @@ generatedFiles:
   - docs/Models/Components/StorageFile.md
   - docs/Models/Components/StoragePermission.md
   - docs/Models/Components/PropertyStoragePermissionRoles.md
+  - docs/Models/Components/TaskProject.md
+  - docs/Models/Components/TaskTaskStatus.md
+  - docs/Models/Components/TaskTask.md
   - docs/Models/Components/TicketingCustomer.md
   - docs/Models/Components/TicketingTelephoneType.md
   - docs/Models/Components/TicketingTelephone.md
@@ -1566,6 +1625,7 @@ generatedFiles:
   - docs/Models/Components/ListOffset.md
   - docs/Models/Components/ListOrder.md
   - docs/Models/Components/ListParentId.md
+  - docs/Models/Components/ListProjectId.md
   - docs/Models/Components/ListQuery.md
   - docs/Models/Components/ListSortByCreatedAt.md
   - docs/Models/Components/ListSortByName.md
@@ -1644,6 +1704,8 @@ generatedFiles:
   - docs/sdks/refund/README.md
   - docs/sdks/storage/README.md
   - docs/sdks/file/README.md
+  - docs/sdks/task/README.md
+  - docs/sdks/project/README.md
   - docs/sdks/ticketing/README.md
   - docs/sdks/customer/README.md
   - docs/sdks/note/README.md

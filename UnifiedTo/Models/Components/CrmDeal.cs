@@ -44,6 +44,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("pipeline")]
         public string? Pipeline { get; set; }
 
+        [JsonProperty("pipeline_id")]
+        public string? PipelineId { get; set; }
+
         [JsonProperty("probability")]
         public double? Probability { get; set; }
 
@@ -58,6 +61,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("stage")]
         public string? Stage { get; set; }
+
+        [JsonProperty("stage_id")]
+        public string? StageId { get; set; }
 
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }

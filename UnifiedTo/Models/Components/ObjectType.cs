@@ -115,6 +115,10 @@ namespace UnifiedTo.Models.Components
         KmsSpace,
         [JsonProperty("kms_page")]
         KmsPage,
+        [JsonProperty("task_project")]
+        TaskProject,
+        [JsonProperty("task_task")]
+        TaskTask,
     }
 
     public static class ObjectTypeExtension

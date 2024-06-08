@@ -83,6 +83,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_parent_id")]
         public ListParentId? ListParentId { get; set; }
 
+        [JsonProperty("list_project_id")]
+        public ListProjectId? ListProjectId { get; set; }
+
         [JsonProperty("list_query")]
         public ListQuery? ListQuery { get; set; }
 
