@@ -21,6 +21,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyHrisEmployeeAddress? Address { get; set; }
 
+        [JsonProperty("company_id")]
+        public string? CompanyId { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 

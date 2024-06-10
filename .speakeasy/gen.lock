@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 34d8e45448aaadab7271416cea77fcaf
+  docChecksum: b5e06f8290f506984cde8a37b4ebd06e
   docVersion: "1.0"
   speakeasyVersion: 1.300.1
   generationVersion: 2.339.1
-  releaseVersion: 0.19.7
-  configChecksum: 92faa4ca8527a277d66d6d076ac4f7fd
+  releaseVersion: 0.19.8
+  configChecksum: de6f067e467e1bf5484987e46066c4ef
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -294,18 +294,30 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateAtsScorecardResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmCompanyResponse.cs
+  - UnifiedTo/Models/Requests/CreateHrisCompanyRequest.cs
+  - UnifiedTo/Models/Requests/CreateHrisCompanyResponse.cs
   - UnifiedTo/Models/Requests/GetCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/GetCrmCompanyResponse.cs
+  - UnifiedTo/Models/Requests/GetHrisCompanyRequest.cs
+  - UnifiedTo/Models/Requests/GetHrisCompanyResponse.cs
   - UnifiedTo/Models/Requests/ListCrmCompaniesRequest.cs
   - UnifiedTo/Models/Requests/ListCrmCompaniesResponse.cs
   - UnifiedTo/Models/Requests/ListEnrichCompaniesRequest.cs
   - UnifiedTo/Models/Requests/ListEnrichCompaniesResponse.cs
+  - UnifiedTo/Models/Requests/ListHrisCompaniesRequest.cs
+  - UnifiedTo/Models/Requests/ListHrisCompaniesResponse.cs
   - UnifiedTo/Models/Requests/PatchCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/PatchCrmCompanyResponse.cs
+  - UnifiedTo/Models/Requests/PatchHrisCompanyRequest.cs
+  - UnifiedTo/Models/Requests/PatchHrisCompanyResponse.cs
   - UnifiedTo/Models/Requests/RemoveCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/RemoveCrmCompanyResponse.cs
+  - UnifiedTo/Models/Requests/RemoveHrisCompanyRequest.cs
+  - UnifiedTo/Models/Requests/RemoveHrisCompanyResponse.cs
   - UnifiedTo/Models/Requests/UpdateCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/UpdateCrmCompanyResponse.cs
+  - UnifiedTo/Models/Requests/UpdateHrisCompanyRequest.cs
+  - UnifiedTo/Models/Requests/UpdateHrisCompanyResponse.cs
   - UnifiedTo/Models/Requests/CreateCommerceCollectionRequest.cs
   - UnifiedTo/Models/Requests/CreateCommerceCollectionResponse.cs
   - UnifiedTo/Models/Requests/CreateCommerceInventoryRequest.cs
@@ -729,6 +741,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/AtsStatus.cs
   - UnifiedTo/Models/Components/CrmCompany.cs
   - UnifiedTo/Models/Components/PropertyCrmCompanyAddress.cs
+  - UnifiedTo/Models/Components/HrisCompany.cs
+  - UnifiedTo/Models/Components/PropertyHrisCompanyAddress.cs
   - UnifiedTo/Models/Components/EnrichCompany.cs
   - UnifiedTo/Models/Components/EnrichTelephoneType.cs
   - UnifiedTo/Models/Components/EnrichTelephone.cs
@@ -1062,18 +1076,30 @@ generatedFiles:
   - docs/Models/Requests/UpdateAtsScorecardResponse.md
   - docs/Models/Requests/CreateCrmCompanyRequest.md
   - docs/Models/Requests/CreateCrmCompanyResponse.md
+  - docs/Models/Requests/CreateHrisCompanyRequest.md
+  - docs/Models/Requests/CreateHrisCompanyResponse.md
   - docs/Models/Requests/GetCrmCompanyRequest.md
   - docs/Models/Requests/GetCrmCompanyResponse.md
+  - docs/Models/Requests/GetHrisCompanyRequest.md
+  - docs/Models/Requests/GetHrisCompanyResponse.md
   - docs/Models/Requests/ListCrmCompaniesRequest.md
   - docs/Models/Requests/ListCrmCompaniesResponse.md
   - docs/Models/Requests/ListEnrichCompaniesRequest.md
   - docs/Models/Requests/ListEnrichCompaniesResponse.md
+  - docs/Models/Requests/ListHrisCompaniesRequest.md
+  - docs/Models/Requests/ListHrisCompaniesResponse.md
   - docs/Models/Requests/PatchCrmCompanyRequest.md
   - docs/Models/Requests/PatchCrmCompanyResponse.md
+  - docs/Models/Requests/PatchHrisCompanyRequest.md
+  - docs/Models/Requests/PatchHrisCompanyResponse.md
   - docs/Models/Requests/RemoveCrmCompanyRequest.md
   - docs/Models/Requests/RemoveCrmCompanyResponse.md
+  - docs/Models/Requests/RemoveHrisCompanyRequest.md
+  - docs/Models/Requests/RemoveHrisCompanyResponse.md
   - docs/Models/Requests/UpdateCrmCompanyRequest.md
   - docs/Models/Requests/UpdateCrmCompanyResponse.md
+  - docs/Models/Requests/UpdateHrisCompanyRequest.md
+  - docs/Models/Requests/UpdateHrisCompanyResponse.md
   - docs/Models/Requests/CreateCommerceCollectionRequest.md
   - docs/Models/Requests/CreateCommerceCollectionResponse.md
   - docs/Models/Requests/CreateCommerceInventoryRequest.md
@@ -1497,6 +1523,8 @@ generatedFiles:
   - docs/Models/Components/AtsStatus.md
   - docs/Models/Components/CrmCompany.md
   - docs/Models/Components/PropertyCrmCompanyAddress.md
+  - docs/Models/Components/HrisCompany.md
+  - docs/Models/Components/PropertyHrisCompanyAddress.md
   - docs/Models/Components/EnrichCompany.md
   - docs/Models/Components/EnrichTelephoneType.md
   - docs/Models/Components/EnrichTelephone.md

@@ -4,14 +4,20 @@
 ### Available Operations
 
 * [CreateCrmCompany](#createcrmcompany) - Create a company
+* [CreateHrisCompany](#createhriscompany) - Create a company
 * [GetAtsCompany](#getatscompany) - Retrieve a company
 * [GetCrmCompany](#getcrmcompany) - Retrieve a company
+* [GetHrisCompany](#gethriscompany) - Retrieve a company
 * [ListAtsCompanies](#listatscompanies) - List all companies
 * [ListCrmCompanies](#listcrmcompanies) - List all companies
 * [ListEnrichCompanies](#listenrichcompanies) - Retrieve enrichment information for a company
+* [ListHrisCompanies](#listhriscompanies) - List all companies
 * [PatchCrmCompany](#patchcrmcompany) - Update a company
+* [PatchHrisCompany](#patchhriscompany) - Update a company
 * [RemoveCrmCompany](#removecrmcompany) - Remove a company
+* [RemoveHrisCompany](#removehriscompany) - Remove a company
 * [UpdateCrmCompany](#updatecrmcompany) - Update a company
+* [UpdateHrisCompany](#updatehriscompany) - Update a company
 
 ## CreateCrmCompany
 
@@ -47,6 +53,46 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
 ### Response
 
 **[CreateCrmCompanyResponse](../../Models/Requests/CreateCrmCompanyResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+## CreateHrisCompany
+
+Create a company
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Company.CreateHrisCompanyAsync(
+    connectionId: "<value>",
+    hrisCompany: new HrisCompany() {});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
+| `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
+
+
+### Response
+
+**[CreateHrisCompanyResponse](../../Models/Requests/CreateHrisCompanyResponse.md)**
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
@@ -135,6 +181,50 @@ var res = await sdk.Company.GetCrmCompanyAsync(
 ### Response
 
 **[GetCrmCompanyResponse](../../Models/Requests/GetCrmCompanyResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+## GetHrisCompany
+
+Retrieve a company
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Company.GetHrisCompanyAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    fields: new List<string>() {
+    "<value>",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Company                |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetHrisCompanyResponse](../../Models/Requests/GetHrisCompanyResponse.md)**
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
@@ -264,6 +354,47 @@ var res = await sdk.Company.ListEnrichCompaniesAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
+## ListHrisCompanies
+
+List all companies
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListHrisCompaniesRequest req = new ListHrisCompaniesRequest() {
+    ConnectionId = "<value>",
+};
+
+var res = await sdk.Company.ListHrisCompaniesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListHrisCompaniesRequest](../../Models/Requests/ListHrisCompaniesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+
+### Response
+
+**[ListHrisCompaniesResponse](../../Models/Requests/ListHrisCompaniesResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 ## PatchCrmCompany
 
 Update a company
@@ -300,6 +431,48 @@ var res = await sdk.Company.PatchCrmCompanyAsync(
 ### Response
 
 **[PatchCrmCompanyResponse](../../Models/Requests/PatchCrmCompanyResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+## PatchHrisCompany
+
+Update a company
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Company.PatchHrisCompanyAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    hrisCompany: new HrisCompany() {});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
+| `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Company                                     |
+| `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
+
+
+### Response
+
+**[PatchHrisCompanyResponse](../../Models/Requests/PatchHrisCompanyResponse.md)**
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
@@ -345,6 +518,45 @@ var res = await sdk.Company.RemoveCrmCompanyAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
+## RemoveHrisCompany
+
+Remove a company
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Company.RemoveHrisCompanyAsync(
+    connectionId: "<value>",
+    id: "<value>");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Company    |
+
+
+### Response
+
+**[RemoveHrisCompanyResponse](../../Models/Requests/RemoveHrisCompanyResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 ## UpdateCrmCompany
 
 Update a company
@@ -381,6 +593,48 @@ var res = await sdk.Company.UpdateCrmCompanyAsync(
 ### Response
 
 **[UpdateCrmCompanyResponse](../../Models/Requests/UpdateCrmCompanyResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+## UpdateHrisCompany
+
+Update a company
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Company.UpdateHrisCompanyAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    hrisCompany: new HrisCompany() {});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                             | Type                                                  | Required                                              | Description                                           |
+| ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
+| `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Company                                     |
+| `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
+
+
+### Response
+
+**[UpdateHrisCompanyResponse](../../Models/Requests/UpdateHrisCompanyResponse.md)**
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

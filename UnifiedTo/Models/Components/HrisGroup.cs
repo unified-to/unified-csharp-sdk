@@ -18,6 +18,9 @@ namespace UnifiedTo.Models.Components
     public class HrisGroup
     {
 
+        [JsonProperty("company_id")]
+        public string? CompanyId { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 

@@ -155,7 +155,7 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.HrisEmployeeRead,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.HrisGroupRead,
     },
 });
 
@@ -239,7 +239,7 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmDealRead,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmDealWrite,
     },
 });
 

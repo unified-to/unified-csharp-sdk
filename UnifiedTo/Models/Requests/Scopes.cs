@@ -159,6 +159,10 @@ namespace UnifiedTo.Models.Requests
         HrisTimeoffRead,
         [JsonProperty("hris_timeoff_write")]
         HrisTimeoffWrite,
+        [JsonProperty("hris_company_read")]
+        HrisCompanyRead,
+        [JsonProperty("hris_company_write")]
+        HrisCompanyWrite,
         [JsonProperty("uc_call_read")]
         UcCallRead,
         [JsonProperty("storage_file_read")]
