@@ -29,6 +29,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        [JsonProperty("priority")]
+        public Priority? Priority { get; set; }
+
         [JsonProperty("status")]
         public PropertyCrmEventTaskStatus? Status { get; set; }
     }

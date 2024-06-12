@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: b5e06f8290f506984cde8a37b4ebd06e
+  docChecksum: f0fea8601a16d51b9c2316f7dec21d35
   docVersion: "1.0"
-  speakeasyVersion: 1.300.1
-  generationVersion: 2.339.1
-  releaseVersion: 0.19.8
-  configChecksum: de6f067e467e1bf5484987e46066c4ef
+  speakeasyVersion: 1.305.0
+  generationVersion: 2.340.3
+  releaseVersion: 0.19.9
+  configChecksum: 8d8332abdcdb0aebf5cd3ae5fb4e29c4
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -14,7 +14,7 @@ features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.9.4
+    core: 3.9.5
     flattening: 2.81.2
     globalSecurity: 2.83.4
     globalSecurityCallbacks: 0.1.0
@@ -763,6 +763,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/CrmDeal.cs
   - UnifiedTo/Models/Components/CrmEventType.cs
   - UnifiedTo/Models/Components/CrmEvent.cs
+  - UnifiedTo/Models/Components/Priority.cs
   - UnifiedTo/Models/Components/PropertyCrmEventTaskStatus.cs
   - UnifiedTo/Models/Components/PropertyCrmEventTask.cs
   - UnifiedTo/Models/Components/PropertyCrmEventNote.cs
@@ -1545,6 +1546,7 @@ generatedFiles:
   - docs/Models/Components/CrmDeal.md
   - docs/Models/Components/CrmEventType.md
   - docs/Models/Components/CrmEvent.md
+  - docs/Models/Components/Priority.md
   - docs/Models/Components/PropertyCrmEventTaskStatus.md
   - docs/Models/Components/PropertyCrmEventTask.md
   - docs/Models/Components/PropertyCrmEventNote.md
