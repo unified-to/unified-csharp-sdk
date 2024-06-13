@@ -12,7 +12,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
     
-    public class AccountingTransactionLineitem
+    public class AccountingJournalLineitem
     {
 
         [JsonProperty("account_id")]

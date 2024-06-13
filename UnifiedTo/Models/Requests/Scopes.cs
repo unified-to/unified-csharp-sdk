@@ -25,6 +25,10 @@ namespace UnifiedTo.Models.Requests
         AccountingTransactionRead,
         [JsonProperty("accounting_transaction_write")]
         AccountingTransactionWrite,
+        [JsonProperty("accounting_journal_read")]
+        AccountingJournalRead,
+        [JsonProperty("accounting_journal_write")]
+        AccountingJournalWrite,
         [JsonProperty("accounting_invoice_read")]
         AccountingInvoiceRead,
         [JsonProperty("accounting_invoice_write")]

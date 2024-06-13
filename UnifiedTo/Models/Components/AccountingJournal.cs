@@ -14,7 +14,7 @@ namespace UnifiedTo.Models.Components
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class AccountingTransaction
+    public class AccountingJournal
     {
 
         [JsonProperty("created_at")]
@@ -33,7 +33,7 @@ namespace UnifiedTo.Models.Components
         /// new field name
         /// </summary>
         [JsonProperty("lineitems")]
-        public List<AccountingTransactionLineitem>? Lineitems { get; set; }
+        public List<AccountingJournalLineitem>? Lineitems { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }

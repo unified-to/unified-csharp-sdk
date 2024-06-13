@@ -9,10 +9,9 @@
 #nullable enable
 namespace UnifiedTo.Models.Requests
 {
-    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class CreateAccountingTransactionRequest
+    public class RemoveAccountingJournalRequest
     {
 
         /// <summary>
@@ -21,7 +20,10 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
-        [SpeakeasyMetadata("request:mediaType=application/json")]
-        public AccountingTransaction? AccountingTransaction { get; set; }
+        /// <summary>
+        /// ID of the Journal
+        /// </summary>
+        [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
+        public string Id { get; set; } = default!;
     }
 }

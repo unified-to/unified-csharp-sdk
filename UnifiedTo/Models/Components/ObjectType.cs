@@ -19,6 +19,8 @@ namespace UnifiedTo.Models.Components
         AccountingAccount,
         [JsonProperty("accounting_transaction")]
         AccountingTransaction,
+        [JsonProperty("accounting_journal")]
+        AccountingJournal,
         [JsonProperty("accounting_contact")]
         AccountingContact,
         [JsonProperty("accounting_invoice")]

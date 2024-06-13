@@ -14,13 +14,13 @@ namespace UnifiedTo.Models.Requests
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class PatchAccountingTransactionResponse
+    public class CreateAccountingJournalResponse
     {
 
         /// <summary>
         /// Successful
         /// </summary>
-        public AccountingTransaction? AccountingTransaction { get; set; }
+        public AccountingJournal? AccountingJournal { get; set; }
 
         /// <summary>
         /// HTTP response content type for this operation

@@ -12,7 +12,7 @@ namespace UnifiedTo.Models.Requests
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class UpdateAccountingTransactionRequest
+    public class UpdateAccountingJournalRequest
     {
 
         /// <summary>
@@ -22,12 +22,12 @@ namespace UnifiedTo.Models.Requests
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
-        /// ID of the Transaction
+        /// ID of the Journal
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;
 
         [SpeakeasyMetadata("request:mediaType=application/json")]
-        public AccountingTransaction? AccountingTransaction { get; set; }
+        public AccountingJournal? AccountingJournal { get; set; }
     }
 }

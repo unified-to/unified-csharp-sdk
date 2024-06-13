@@ -31,7 +31,7 @@ var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
     ConnectionId = "<value>",
     Event = UnifiedTo.Models.Components.Event.Created,
     HookUrl = "<value>",
-    ObjectType = UnifiedTo.Models.Components.ObjectType.AccountingAccount,
+    ObjectType = UnifiedTo.Models.Components.ObjectType.AccountingTransaction,
 },
     includeAll: false);
 

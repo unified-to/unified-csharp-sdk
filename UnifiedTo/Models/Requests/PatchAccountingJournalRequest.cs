@@ -9,10 +9,10 @@
 #nullable enable
 namespace UnifiedTo.Models.Requests
 {
-    using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class GetAccountingTransactionRequest
+    public class PatchAccountingJournalRequest
     {
 
         /// <summary>
@@ -22,15 +22,12 @@ namespace UnifiedTo.Models.Requests
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
-        /// ID of the Transaction
+        /// ID of the Journal
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;
 
-        /// <summary>
-        /// Comma-delimited fields to return
-        /// </summary>
-        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
-        public List<string>? Fields { get; set; }
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public AccountingJournal? AccountingJournal { get; set; }
     }
 }

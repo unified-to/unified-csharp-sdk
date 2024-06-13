@@ -11,16 +11,10 @@ namespace UnifiedTo.Models.Requests
 {
     using System.Net.Http;
     using System;
-    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class CreateAccountingTransactionResponse
+    public class RemoveAccountingJournalResponse
     {
-
-        /// <summary>
-        /// Successful
-        /// </summary>
-        public AccountingTransaction? AccountingTransaction { get; set; }
 
         /// <summary>
         /// HTTP response content type for this operation
@@ -36,5 +30,10 @@ namespace UnifiedTo.Models.Requests
         /// Raw HTTP response; suitable for custom response parsing
         /// </summary>
         public HttpResponseMessage RawResponse { get; set; } = default!;
+
+        /// <summary>
+        /// Successful
+        /// </summary>
+        public string? String { get; set; }
     }
 }

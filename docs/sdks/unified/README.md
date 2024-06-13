@@ -44,7 +44,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.AtsDocumentWrite,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.AtsDocumentRead,
     },
 };
 
@@ -90,7 +90,7 @@ var res = await sdk.Unified.CreateUnifiedWebhookAsync(
     ConnectionId = "<value>",
     Event = UnifiedTo.Models.Components.Event.Created,
     HookUrl = "<value>",
-    ObjectType = UnifiedTo.Models.Components.ObjectType.AccountingAccount,
+    ObjectType = UnifiedTo.Models.Components.ObjectType.AccountingTransaction,
 },
     includeAll: false);
 
@@ -550,7 +550,7 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.HrisGroupRead,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.HrisEmployeeWrite,
     },
 });
 
@@ -706,7 +706,7 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmDealWrite,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmDealRead,
     },
 });
 

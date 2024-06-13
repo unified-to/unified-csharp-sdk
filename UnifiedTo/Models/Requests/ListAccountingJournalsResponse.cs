@@ -15,13 +15,13 @@ namespace UnifiedTo.Models.Requests
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class ListAccountingTransactionsResponse
+    public class ListAccountingJournalsResponse
     {
 
         /// <summary>
         /// Successful
         /// </summary>
-        public List<AccountingTransaction>? AccountingTransactions { get; set; }
+        public List<AccountingJournal>? AccountingJournals { get; set; }
 
         /// <summary>
         /// HTTP response content type for this operation

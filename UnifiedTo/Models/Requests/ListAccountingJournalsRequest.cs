@@ -13,7 +13,7 @@ namespace UnifiedTo.Models.Requests
     using System;
     using UnifiedTo.Utils;
     
-    public class ListAccountingTransactionsRequest
+    public class ListAccountingJournalsRequest
     {
 
         /// <summary>
