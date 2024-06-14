@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 5644d053fad87c74eb97f4e8f727fa1d
+  docChecksum: beb5ec210d7103d860c8cfde440f2674
   docVersion: "1.0"
-  speakeasyVersion: 1.306.0
-  generationVersion: 2.340.3
-  releaseVersion: 0.19.10
-  configChecksum: e1a418d5df95e7261431cb38cd3873b6
+  speakeasyVersion: 1.307.2
+  generationVersion: 2.342.2
+  releaseVersion: 0.19.11
+  configChecksum: d9dfef0f66a2b8dafed5daaddd7f64b4
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -14,7 +14,7 @@ features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.9.5
+    core: 3.9.6
     flattening: 2.81.2
     globalSecurity: 2.83.4
     globalSecurityCallbacks: 0.1.0
@@ -30,6 +30,7 @@ generatedFiles:
   - UnifiedTo/Journal.cs
   - UnifiedTo/Organization.cs
   - UnifiedTo/Taxrate.cs
+  - UnifiedTo/Transaction.cs
   - UnifiedTo/Ats.cs
   - UnifiedTo/Activity.cs
   - UnifiedTo/Application.cs
@@ -124,6 +125,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateAccountingJournalResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingTaxrateResponse.cs
+  - UnifiedTo/Models/Requests/CreateAccountingTransactionRequest.cs
+  - UnifiedTo/Models/Requests/CreateAccountingTransactionResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingAccountResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingContactRequest.cs
@@ -136,6 +139,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetAccountingOrganizationResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingTaxrateResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingTransactionRequest.cs
+  - UnifiedTo/Models/Requests/GetAccountingTransactionResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingAccountsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingAccountsResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingContactsRequest.cs
@@ -148,6 +153,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListAccountingOrganizationsResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingTaxratesRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingTaxratesResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingTransactionsRequest.cs
+  - UnifiedTo/Models/Requests/ListAccountingTransactionsResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingAccountResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingContactRequest.cs
@@ -158,6 +165,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchAccountingJournalResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingTaxrateResponse.cs
+  - UnifiedTo/Models/Requests/PatchAccountingTransactionRequest.cs
+  - UnifiedTo/Models/Requests/PatchAccountingTransactionResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingAccountResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingContactRequest.cs
@@ -168,6 +177,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveAccountingJournalResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingTaxrateResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingTransactionRequest.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingTransactionResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingAccountResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingContactRequest.cs
@@ -178,6 +189,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateAccountingJournalResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingTaxrateResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingTransactionRequest.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingTransactionResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmContactRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmContactResponse.cs
   - UnifiedTo/Models/Requests/CreateUcContactRequest.cs
@@ -694,6 +707,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingJournal.cs
   - UnifiedTo/Models/Components/AccountingJournalLineitem.cs
   - UnifiedTo/Models/Components/AccountingTaxrate.cs
+  - UnifiedTo/Models/Components/AccountingTransaction.cs
   - UnifiedTo/Models/Components/AccountingOrganization.cs
   - UnifiedTo/Models/Components/PropertyAccountingOrganizationAddress.cs
   - UnifiedTo/Models/Components/CrmContact.cs
@@ -907,6 +921,8 @@ generatedFiles:
   - docs/Models/Requests/CreateAccountingJournalResponse.md
   - docs/Models/Requests/CreateAccountingTaxrateRequest.md
   - docs/Models/Requests/CreateAccountingTaxrateResponse.md
+  - docs/Models/Requests/CreateAccountingTransactionRequest.md
+  - docs/Models/Requests/CreateAccountingTransactionResponse.md
   - docs/Models/Requests/GetAccountingAccountRequest.md
   - docs/Models/Requests/GetAccountingAccountResponse.md
   - docs/Models/Requests/GetAccountingContactRequest.md
@@ -919,6 +935,8 @@ generatedFiles:
   - docs/Models/Requests/GetAccountingOrganizationResponse.md
   - docs/Models/Requests/GetAccountingTaxrateRequest.md
   - docs/Models/Requests/GetAccountingTaxrateResponse.md
+  - docs/Models/Requests/GetAccountingTransactionRequest.md
+  - docs/Models/Requests/GetAccountingTransactionResponse.md
   - docs/Models/Requests/ListAccountingAccountsRequest.md
   - docs/Models/Requests/ListAccountingAccountsResponse.md
   - docs/Models/Requests/ListAccountingContactsRequest.md
@@ -931,6 +949,8 @@ generatedFiles:
   - docs/Models/Requests/ListAccountingOrganizationsResponse.md
   - docs/Models/Requests/ListAccountingTaxratesRequest.md
   - docs/Models/Requests/ListAccountingTaxratesResponse.md
+  - docs/Models/Requests/ListAccountingTransactionsRequest.md
+  - docs/Models/Requests/ListAccountingTransactionsResponse.md
   - docs/Models/Requests/PatchAccountingAccountRequest.md
   - docs/Models/Requests/PatchAccountingAccountResponse.md
   - docs/Models/Requests/PatchAccountingContactRequest.md
@@ -941,6 +961,8 @@ generatedFiles:
   - docs/Models/Requests/PatchAccountingJournalResponse.md
   - docs/Models/Requests/PatchAccountingTaxrateRequest.md
   - docs/Models/Requests/PatchAccountingTaxrateResponse.md
+  - docs/Models/Requests/PatchAccountingTransactionRequest.md
+  - docs/Models/Requests/PatchAccountingTransactionResponse.md
   - docs/Models/Requests/RemoveAccountingAccountRequest.md
   - docs/Models/Requests/RemoveAccountingAccountResponse.md
   - docs/Models/Requests/RemoveAccountingContactRequest.md
@@ -951,6 +973,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveAccountingJournalResponse.md
   - docs/Models/Requests/RemoveAccountingTaxrateRequest.md
   - docs/Models/Requests/RemoveAccountingTaxrateResponse.md
+  - docs/Models/Requests/RemoveAccountingTransactionRequest.md
+  - docs/Models/Requests/RemoveAccountingTransactionResponse.md
   - docs/Models/Requests/UpdateAccountingAccountRequest.md
   - docs/Models/Requests/UpdateAccountingAccountResponse.md
   - docs/Models/Requests/UpdateAccountingContactRequest.md
@@ -961,6 +985,8 @@ generatedFiles:
   - docs/Models/Requests/UpdateAccountingJournalResponse.md
   - docs/Models/Requests/UpdateAccountingTaxrateRequest.md
   - docs/Models/Requests/UpdateAccountingTaxrateResponse.md
+  - docs/Models/Requests/UpdateAccountingTransactionRequest.md
+  - docs/Models/Requests/UpdateAccountingTransactionResponse.md
   - docs/Models/Requests/CreateCrmContactRequest.md
   - docs/Models/Requests/CreateCrmContactResponse.md
   - docs/Models/Requests/CreateUcContactRequest.md
@@ -1477,6 +1503,7 @@ generatedFiles:
   - docs/Models/Components/AccountingJournal.md
   - docs/Models/Components/AccountingJournalLineitem.md
   - docs/Models/Components/AccountingTaxrate.md
+  - docs/Models/Components/AccountingTransaction.md
   - docs/Models/Components/AccountingOrganization.md
   - docs/Models/Components/PropertyAccountingOrganizationAddress.md
   - docs/Models/Components/CrmContact.md
@@ -1688,6 +1715,7 @@ generatedFiles:
   - docs/sdks/journal/README.md
   - docs/sdks/organization/README.md
   - docs/sdks/taxrate/README.md
+  - docs/sdks/transaction/README.md
   - docs/sdks/ats/README.md
   - docs/sdks/activity/README.md
   - docs/sdks/application/README.md

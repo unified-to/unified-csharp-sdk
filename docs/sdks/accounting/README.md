@@ -8,33 +8,39 @@
 * [CreateAccountingInvoice](#createaccountinginvoice) - Create an invoice
 * [CreateAccountingJournal](#createaccountingjournal) - Create a journal
 * [CreateAccountingTaxrate](#createaccountingtaxrate) - Create a taxrate
+* [CreateAccountingTransaction](#createaccountingtransaction) - Create a transaction
 * [GetAccountingAccount](#getaccountingaccount) - Retrieve an account
 * [GetAccountingContact](#getaccountingcontact) - Retrieve a contact
 * [GetAccountingInvoice](#getaccountinginvoice) - Retrieve an invoice
 * [GetAccountingJournal](#getaccountingjournal) - Retrieve a journal
 * [GetAccountingOrganization](#getaccountingorganization) - Retrieve an organization
 * [GetAccountingTaxrate](#getaccountingtaxrate) - Retrieve a taxrate
+* [GetAccountingTransaction](#getaccountingtransaction) - Retrieve a transaction
 * [ListAccountingAccounts](#listaccountingaccounts) - List all accounts
 * [ListAccountingContacts](#listaccountingcontacts) - List all contacts
 * [ListAccountingInvoices](#listaccountinginvoices) - List all invoices
 * [ListAccountingJournals](#listaccountingjournals) - List all journals
 * [ListAccountingOrganizations](#listaccountingorganizations) - List all organizations
 * [ListAccountingTaxrates](#listaccountingtaxrates) - List all taxrates
+* [ListAccountingTransactions](#listaccountingtransactions) - List all transactions
 * [PatchAccountingAccount](#patchaccountingaccount) - Update an account
 * [PatchAccountingContact](#patchaccountingcontact) - Update a contact
 * [PatchAccountingInvoice](#patchaccountinginvoice) - Update an invoice
 * [PatchAccountingJournal](#patchaccountingjournal) - Update a journal
 * [PatchAccountingTaxrate](#patchaccountingtaxrate) - Update a taxrate
+* [PatchAccountingTransaction](#patchaccountingtransaction) - Update a transaction
 * [RemoveAccountingAccount](#removeaccountingaccount) - Remove an account
 * [RemoveAccountingContact](#removeaccountingcontact) - Remove a contact
 * [RemoveAccountingInvoice](#removeaccountinginvoice) - Remove an invoice
 * [RemoveAccountingJournal](#removeaccountingjournal) - Remove a journal
 * [RemoveAccountingTaxrate](#removeaccountingtaxrate) - Remove a taxrate
+* [RemoveAccountingTransaction](#removeaccountingtransaction) - Remove a transaction
 * [UpdateAccountingAccount](#updateaccountingaccount) - Update an account
 * [UpdateAccountingContact](#updateaccountingcontact) - Update a contact
 * [UpdateAccountingInvoice](#updateaccountinginvoice) - Update an invoice
 * [UpdateAccountingJournal](#updateaccountingjournal) - Update a journal
 * [UpdateAccountingTaxrate](#updateaccountingtaxrate) - Update a taxrate
+* [UpdateAccountingTransaction](#updateaccountingtransaction) - Update a transaction
 
 ## CreateAccountingAccount
 
@@ -230,6 +236,48 @@ var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
 ### Response
 
 **[CreateAccountingTaxrateResponse](../../Models/Requests/CreateAccountingTaxrateResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+## CreateAccountingTransaction
+
+Create a transaction
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Accounting.CreateAccountingTransactionAsync(
+    connectionId: "<value>",
+    accountingTransaction: new AccountingTransaction() {
+    TotalAmount = 4969.62D,
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `ConnectionId`                                                            | *string*                                                                  | :heavy_check_mark:                                                        | ID of the connection                                                      |
+| `AccountingTransaction`                                                   | [AccountingTransaction](../../Models/Components/AccountingTransaction.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
+
+
+### Response
+
+**[CreateAccountingTransactionResponse](../../Models/Requests/CreateAccountingTransactionResponse.md)**
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
@@ -500,6 +548,50 @@ var res = await sdk.Accounting.GetAccountingTaxrateAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
+## GetAccountingTransaction
+
+Retrieve a transaction
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Accounting.GetAccountingTransactionAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    fields: new List<string>() {
+    "<value>",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Transaction            |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetAccountingTransactionResponse](../../Models/Requests/GetAccountingTransactionResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 ## ListAccountingAccounts
 
 List all accounts
@@ -746,6 +838,47 @@ var res = await sdk.Accounting.ListAccountingTaxratesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
+## ListAccountingTransactions
+
+List all transactions
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListAccountingTransactionsRequest req = new ListAccountingTransactionsRequest() {
+    ConnectionId = "<value>",
+};
+
+var res = await sdk.Accounting.ListAccountingTransactionsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [ListAccountingTransactionsRequest](../../Models/Requests/ListAccountingTransactionsRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+
+
+### Response
+
+**[ListAccountingTransactionsResponse](../../Models/Requests/ListAccountingTransactionsResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 ## PatchAccountingAccount
 
 Update an account
@@ -956,6 +1089,50 @@ var res = await sdk.Accounting.PatchAccountingTaxrateAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
+## PatchAccountingTransaction
+
+Update a transaction
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Accounting.PatchAccountingTransactionAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    accountingTransaction: new AccountingTransaction() {
+    TotalAmount = 5633.69D,
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `ConnectionId`                                                            | *string*                                                                  | :heavy_check_mark:                                                        | ID of the connection                                                      |
+| `Id`                                                                      | *string*                                                                  | :heavy_check_mark:                                                        | ID of the Transaction                                                     |
+| `AccountingTransaction`                                                   | [AccountingTransaction](../../Models/Components/AccountingTransaction.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
+
+
+### Response
+
+**[PatchAccountingTransactionResponse](../../Models/Requests/PatchAccountingTransactionResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 ## RemoveAccountingAccount
 
 Remove an account
@@ -1145,6 +1322,45 @@ var res = await sdk.Accounting.RemoveAccountingTaxrateAsync(
 ### Response
 
 **[RemoveAccountingTaxrateResponse](../../Models/Requests/RemoveAccountingTaxrateResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+## RemoveAccountingTransaction
+
+Remove a transaction
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Accounting.RemoveAccountingTransactionAsync(
+    connectionId: "<value>",
+    id: "<value>");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter             | Type                  | Required              | Description           |
+| --------------------- | --------------------- | --------------------- | --------------------- |
+| `ConnectionId`        | *string*              | :heavy_check_mark:    | ID of the connection  |
+| `Id`                  | *string*              | :heavy_check_mark:    | ID of the Transaction |
+
+
+### Response
+
+**[RemoveAccountingTransactionResponse](../../Models/Requests/RemoveAccountingTransactionResponse.md)**
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
@@ -1355,6 +1571,50 @@ var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(
 ### Response
 
 **[UpdateAccountingTaxrateResponse](../../Models/Requests/UpdateAccountingTaxrateResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+## UpdateAccountingTransaction
+
+Update a transaction
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Accounting.UpdateAccountingTransactionAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    accountingTransaction: new AccountingTransaction() {
+    TotalAmount = 6498.37D,
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `ConnectionId`                                                            | *string*                                                                  | :heavy_check_mark:                                                        | ID of the connection                                                      |
+| `Id`                                                                      | *string*                                                                  | :heavy_check_mark:                                                        | ID of the Transaction                                                     |
+| `AccountingTransaction`                                                   | [AccountingTransaction](../../Models/Components/AccountingTransaction.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
+
+
+### Response
+
+**[UpdateAccountingTransactionResponse](../../Models/Requests/UpdateAccountingTransactionResponse.md)**
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

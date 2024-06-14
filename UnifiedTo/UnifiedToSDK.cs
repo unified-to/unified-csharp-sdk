@@ -32,6 +32,7 @@ namespace UnifiedTo
         public IJournal Journal { get; }
         public IOrganization Organization { get; }
         public ITaxrate Taxrate { get; }
+        public ITransaction Transaction { get; }
         public IAts Ats { get; }
         public IActivity Activity { get; }
         public IApplication Application { get; }
@@ -140,10 +141,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.10";
-        private const string _sdkGenVersion = "2.340.3";
+        private const string _sdkVersion = "0.19.11";
+        private const string _sdkGenVersion = "2.342.2";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.10 2.340.3 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.11 2.342.2 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _client;
@@ -155,6 +156,7 @@ namespace UnifiedTo
         public IJournal Journal { get; private set; }
         public IOrganization Organization { get; private set; }
         public ITaxrate Taxrate { get; private set; }
+        public ITransaction Transaction { get; private set; }
         public IAts Ats { get; private set; }
         public IActivity Activity { get; private set; }
         public IApplication Application { get; private set; }
@@ -278,6 +280,9 @@ namespace UnifiedTo
 
 
             Taxrate = new Taxrate(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Transaction = new Transaction(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
             Ats = new Ats(_client, _securitySource, _serverUrl, SDKConfiguration);
