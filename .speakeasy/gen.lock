@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 19d11dea43c8b402d46b5c7d6dea7b51
+  docChecksum: 6a7b53212dd7097ba515bad5f2f5e1f1
   docVersion: "1.0"
   speakeasyVersion: 1.308.1
   generationVersion: 2.342.6
-  releaseVersion: 0.19.12
-  configChecksum: e1aa846be092272224cde5ed1184ec6c
+  releaseVersion: 0.19.13
+  configChecksum: 1edef72c80c5e6a64bf83194728f19bb
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -878,6 +878,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListInterviewId.cs
   - UnifiedTo/Models/Components/ListInvoiceId.cs
   - UnifiedTo/Models/Components/ListItemId.cs
+  - UnifiedTo/Models/Components/ListItemVariantId.cs
   - UnifiedTo/Models/Components/ListJobId.cs
   - UnifiedTo/Models/Components/ListLimit.cs
   - UnifiedTo/Models/Components/ListLinkId.cs
@@ -1674,6 +1675,7 @@ generatedFiles:
   - docs/Models/Components/ListInterviewId.md
   - docs/Models/Components/ListInvoiceId.md
   - docs/Models/Components/ListItemId.md
+  - docs/Models/Components/ListItemVariantId.md
   - docs/Models/Components/ListJobId.md
   - docs/Models/Components/ListLimit.md
   - docs/Models/Components/ListLinkId.md

@@ -59,6 +59,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_item_id")]
         public ListItemId? ListItemId { get; set; }
 
+        [JsonProperty("list_item_variant_id")]
+        public ListItemVariantId? ListItemVariantId { get; set; }
+
         [JsonProperty("list_job_id")]
         public ListJobId? ListJobId { get; set; }
 
