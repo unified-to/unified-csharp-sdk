@@ -45,6 +45,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 
+        [JsonProperty("parent_id")]
+        public string? ParentId { get; set; }
+
         [JsonProperty("public_description")]
         public string? PublicDescription { get; set; }
 

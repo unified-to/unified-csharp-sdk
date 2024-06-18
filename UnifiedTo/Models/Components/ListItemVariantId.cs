@@ -15,6 +15,8 @@ namespace UnifiedTo.Models.Components
     
     public enum ListItemVariantId
     {
+        [JsonProperty("supported-required")]
+        SupportedRequired,
         [JsonProperty("supported")]
         Supported,
         [JsonProperty("not-supported")]

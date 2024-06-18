@@ -39,6 +39,8 @@ namespace UnifiedTo.Models.Components
         Hired,
         [JsonProperty("REJECTED")]
         Rejected,
+        [JsonProperty("DECLINED")]
+        Declined,
         [JsonProperty("WITHDRAWN")]
         Withdrawn,
     }

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 6a7b53212dd7097ba515bad5f2f5e1f1
+  docChecksum: 12bd5dc97c380cf90f5da947a18986ee
   docVersion: "1.0"
   speakeasyVersion: 1.308.1
   generationVersion: 2.342.6
-  releaseVersion: 0.19.13
-  configChecksum: 1edef72c80c5e6a64bf83194728f19bb
+  releaseVersion: 0.19.14
+  configChecksum: 3dff8027ead354293b6e3ee14b042c9c
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
