@@ -48,6 +48,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        [JsonProperty("slug")]
+        public string? Slug { get; set; }
+
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }
 
