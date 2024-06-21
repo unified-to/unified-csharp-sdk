@@ -819,10 +819,16 @@ The default server can also be overridden globally by passing a URL to the `serv
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
-### Nuget
+### NuGet
 
 ```bash
 dotnet add package UnifiedTo
+```
+
+### Locally
+
+```bash
+dotnet add reference path/to/UnifiedTo.csproj
 ```
 <!-- End SDK Installation [installation] -->
 

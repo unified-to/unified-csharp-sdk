@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 9dc47bb9cc43069852042216274978a9
+  docChecksum: fc1188a2db372bfe9795cefed41fedb9
   docVersion: "1.0"
-  speakeasyVersion: 1.308.2
-  generationVersion: 2.342.6
-  releaseVersion: 0.19.15
-  configChecksum: cb7de6790f20d49637723fe58b90cfa7
+  speakeasyVersion: 1.313.0
+  generationVersion: 2.347.8
+  releaseVersion: 0.19.16
+  configChecksum: b44c9af306f4b27ae120face12e61adb
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -14,7 +14,7 @@ features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.9.6
+    core: 3.9.7
     flattening: 2.81.2
     globalSecurity: 2.83.4
     globalSecurityCallbacks: 0.1.0
@@ -1780,6 +1780,7 @@ generatedFiles:
   - docs/sdks/login/README.md
   - docs/sdks/issue/README.md
   - docs/sdks/webhook/README.md
+  - NUGET.md
   - USAGE.md
   - .gitattributes
   - UnifiedTo/Hooks/SDKHooks.cs
