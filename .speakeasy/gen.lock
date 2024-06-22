@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: fc1188a2db372bfe9795cefed41fedb9
+  docChecksum: 8cd5f0b8f9ac7da8e963b9b8716b4f9a
   docVersion: "1.0"
-  speakeasyVersion: 1.313.0
-  generationVersion: 2.347.8
-  releaseVersion: 0.19.16
-  configChecksum: b44c9af306f4b27ae120face12e61adb
+  speakeasyVersion: 1.314.2
+  generationVersion: 2.349.6
+  releaseVersion: 0.19.17
+  configChecksum: dde8b870010236c4eef82c471a4524a7
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -14,7 +14,7 @@ features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.9.7
+    core: 3.9.8
     flattening: 2.81.2
     globalSecurity: 2.83.4
     globalSecurityCallbacks: 0.1.0
@@ -670,7 +670,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListUnifiedIntegrationsResponse.cs
   - UnifiedTo/Models/Requests/ListUnifiedIssuesRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedIssuesResponse.cs
-  - UnifiedTo/Models/Requests/ListUnifiedSupportsResponse.cs
   - UnifiedTo/Models/Requests/ListUnifiedWebhooksRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedWebhooksResponse.cs
   - UnifiedTo/Models/Requests/PatchUnifiedConnectionRequest.cs
@@ -855,7 +854,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyUcCallTelephone.cs
   - UnifiedTo/Models/Components/Connection.cs
   - UnifiedTo/Models/Components/PropertyConnectionPermissions.cs
-  - UnifiedTo/Models/Components/Undefined.cs
   - UnifiedTo/Models/Components/PropertyConnectionCategories.cs
   - UnifiedTo/Models/Components/PropertyConnectionAuth.cs
   - UnifiedTo/Models/Components/Event.cs
@@ -1467,7 +1465,6 @@ generatedFiles:
   - docs/Models/Requests/ListUnifiedIntegrationsResponse.md
   - docs/Models/Requests/ListUnifiedIssuesRequest.md
   - docs/Models/Requests/ListUnifiedIssuesResponse.md
-  - docs/Models/Requests/ListUnifiedSupportsResponse.md
   - docs/Models/Requests/ListUnifiedWebhooksRequest.md
   - docs/Models/Requests/ListUnifiedWebhooksResponse.md
   - docs/Models/Requests/PatchUnifiedConnectionRequest.md
@@ -1652,7 +1649,6 @@ generatedFiles:
   - docs/Models/Components/PropertyUcCallTelephone.md
   - docs/Models/Components/Connection.md
   - docs/Models/Components/PropertyConnectionPermissions.md
-  - docs/Models/Components/Undefined.md
   - docs/Models/Components/PropertyConnectionCategories.md
   - docs/Models/Components/PropertyConnectionAuth.md
   - docs/Models/Components/Event.md

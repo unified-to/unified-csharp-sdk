@@ -2,20 +2,20 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <PackageId>UnifiedTo</PackageId>
-    <Version>0.19.16</Version>
+    <Version>0.19.17</Version>
     <Authors>Unified API Inc.</Authors>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>1591</NoWarn>
     <RepositoryUrl>https://github.com/unified-to/unified-csharp-sdk</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\NUGET.md" Pack="true" PackagePath="\README.md"/>
-    <None Include="..\LICENSE.md" Pack="true" PackagePath="\LICENSE.txt"/>
+    <None Include="..\NUGET.md" Pack="true" PackagePath="README.md"/>
+    <None Include="..\LICENSE.md" Pack="true" PackagePath="\"/>
     <None Include="..\docs\**\*" Pack="true" PackagePath="\docs"  CopyToOutputDirectory="PreserveNewest"/>
 
     <PackageReference Include="newtonsoft.json" Version="13.0.3" />
