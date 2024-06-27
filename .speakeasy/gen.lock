@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 8cd5f0b8f9ac7da8e963b9b8716b4f9a
+  docChecksum: d30cc8ed3fe26eee9d880fe9074cfb0b
   docVersion: "1.0"
-  speakeasyVersion: 1.314.2
-  generationVersion: 2.349.6
-  releaseVersion: 0.19.17
-  configChecksum: dde8b870010236c4eef82c471a4524a7
+  speakeasyVersion: 1.321.0
+  generationVersion: 2.354.2
+  releaseVersion: 0.19.18
+  configChecksum: 262cdf7b12e032cccdc744ff43308950
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -907,7 +907,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsCreated.cs
   - UnifiedTo/Models/Components/PropertyIntegrationCategories.cs
   - UnifiedTo/Models/Components/IssueStatus.cs
-  - UnifiedTo/Models/Components/IssueType.cs
   - UnifiedTo/Models/Components/Issue.cs
   - UnifiedTo/Models/Components/Security.cs
   - docs/Models/Requests/CreateAccountingAccountRequest.md
@@ -1702,7 +1701,6 @@ generatedFiles:
   - docs/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsCreated.md
   - docs/Models/Components/PropertyIntegrationCategories.md
   - docs/Models/Components/IssueStatus.md
-  - docs/Models/Components/IssueType.md
   - docs/Models/Components/Issue.md
   - docs/Models/Components/Security.md
   - docs/sdks/unifiedto/README.md

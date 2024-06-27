@@ -10,6 +10,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
@@ -28,11 +29,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("status")]
         public IssueStatus Status { get; set; } = default!;
 
+        [JsonProperty("ticket_ref")]
+        public string TicketRef { get; set; } = default!;
+
         [JsonProperty("title")]
         public string Title { get; set; } = default!;
 
         [JsonProperty("type")]
-        public IssueType Type { get; set; } = default!;
+        public List<string>? Type { get; set; }
 
         [JsonProperty("updated_at")]
         public string? UpdatedAt { get; set; }
