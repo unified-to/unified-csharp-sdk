@@ -18,7 +18,7 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("author_member")]
-        public PropertyMessagingMessageAuthorMember AuthorMember { get; set; } = default!;
+        public PropertyMessagingMessageAuthorMember? AuthorMember { get; set; }
 
         [JsonProperty("channel_id")]
         public string? ChannelId { get; set; }
@@ -40,6 +40,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("message")]
         public string Message { get; set; } = default!;
+
+        [JsonProperty("message_html")]
+        public string? MessageHtml { get; set; }
 
         [JsonProperty("parent_message_id")]
         public string? ParentMessageId { get; set; }

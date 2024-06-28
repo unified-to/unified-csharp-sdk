@@ -29,7 +29,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Message.CreateMessagingMessageAsync(
     connectionId: "<value>",
     messagingMessage: new MessagingMessage() {
-    AuthorMember = new PropertyMessagingMessageAuthorMember() {},
     Message = "<value>",
 });
 
@@ -158,7 +157,6 @@ var res = await sdk.Message.PatchMessagingMessageAsync(
     connectionId: "<value>",
     id: "<value>",
     messagingMessage: new MessagingMessage() {
-    AuthorMember = new PropertyMessagingMessageAuthorMember() {},
     Message = "<value>",
 });
 
@@ -242,7 +240,6 @@ var res = await sdk.Message.UpdateMessagingMessageAsync(
     connectionId: "<value>",
     id: "<value>",
     messagingMessage: new MessagingMessage() {
-    AuthorMember = new PropertyMessagingMessageAuthorMember() {},
     Message = "<value>",
 });
 
