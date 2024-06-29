@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: bdc716c1ec699c0df9357438a35e33f6
+  docChecksum: 47c3e061b14a46be0740453c7c5f67d6
   docVersion: "1.0"
-  speakeasyVersion: 1.322.1
+  speakeasyVersion: 1.322.3
   generationVersion: 2.354.2
-  releaseVersion: 0.19.19
-  configChecksum: 002d825496c37d4606a2f8b7a9944fd5
+  releaseVersion: 0.19.20
+  configChecksum: d183547bbe2e834ddb772efbc59ea02b
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -826,6 +826,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/MessagingMessage.cs
   - UnifiedTo/Models/Components/MessagingMember.cs
   - UnifiedTo/Models/Components/PropertyMessagingMessageAuthorMember.cs
+  - UnifiedTo/Models/Components/MessagingAttachment.cs
   - UnifiedTo/Models/Components/MessagingChannel.cs
   - UnifiedTo/Models/Components/PaymentLink.cs
   - UnifiedTo/Models/Components/PaymentLinkLineitem.cs
@@ -1620,6 +1621,7 @@ generatedFiles:
   - docs/Models/Components/MessagingMessage.md
   - docs/Models/Components/MessagingMember.md
   - docs/Models/Components/PropertyMessagingMessageAuthorMember.md
+  - docs/Models/Components/MessagingAttachment.md
   - docs/Models/Components/MessagingChannel.md
   - docs/Models/Components/PaymentLink.md
   - docs/Models/Components/PaymentLinkLineitem.md

@@ -17,6 +17,9 @@ namespace UnifiedTo.Models.Components
     public class MessagingMessage
     {
 
+        [JsonProperty("attachments")]
+        public List<MessagingAttachment>? Attachments { get; set; }
+
         [JsonProperty("author_member")]
         public PropertyMessagingMessageAuthorMember? AuthorMember { get; set; }
 
@@ -39,7 +42,7 @@ namespace UnifiedTo.Models.Components
         public List<MessagingMember>? MentionedMembers { get; set; }
 
         [JsonProperty("message")]
-        public string Message { get; set; } = default!;
+        public string? Message { get; set; }
 
         [JsonProperty("message_html")]
         public string? MessageHtml { get; set; }
