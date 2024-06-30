@@ -9,25 +9,9 @@
 #nullable enable
 namespace UnifiedTo.Models.Components
 {
-    using Newtonsoft.Json;
     using UnifiedTo.Utils;
     
-    public class MessagingAttachment
+    public class HrisCompensation
     {
-
-        [JsonProperty("content_type")]
-        public string? ContentType { get; set; }
-
-        [JsonProperty("download_url")]
-        public string? DownloadUrl { get; set; }
-
-        [JsonProperty("filename")]
-        public string? Filename { get; set; }
-
-        [JsonProperty("message_id")]
-        public string? MessageId { get; set; }
-
-        [JsonProperty("size")]
-        public double? Size { get; set; }
     }
 }

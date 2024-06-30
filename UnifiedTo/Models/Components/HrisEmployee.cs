@@ -21,8 +21,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyHrisEmployeeAddress? Address { get; set; }
 
+        [JsonProperty("bio")]
+        public string? Bio { get; set; }
+
         [JsonProperty("company_id")]
         public string? CompanyId { get; set; }
+
+        [JsonProperty("compensation")]
+        public List<HrisCompensation>? Compensation { get; set; }
 
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
@@ -44,6 +50,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("employee_number")]
         public string? EmployeeNumber { get; set; }
+
+        [JsonProperty("employee_roles")]
+        public List<PropertyHrisEmployeeEmployeeRoles>? EmployeeRoles { get; set; }
 
         [JsonProperty("employment_status")]
         public EmploymentStatus? EmploymentStatus { get; set; }
@@ -78,8 +87,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        [JsonProperty("pronouns")]
+        public string? Pronouns { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
+
+        [JsonProperty("salutation")]
+        public string? Salutation { get; set; }
+
+        [JsonProperty("ssn_sin")]
+        public string? SsnSin { get; set; }
 
         [JsonProperty("telephones")]
         public List<HrisTelephone>? Telephones { get; set; }

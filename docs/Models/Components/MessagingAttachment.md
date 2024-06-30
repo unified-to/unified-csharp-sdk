@@ -3,5 +3,10 @@
 
 ## Fields
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+| Field              | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `ContentType`      | *string*           | :heavy_minus_sign: | N/A                |
+| `DownloadUrl`      | *string*           | :heavy_minus_sign: | N/A                |
+| `Filename`         | *string*           | :heavy_minus_sign: | N/A                |
+| `MessageId`        | *string*           | :heavy_minus_sign: | N/A                |
+| `Size`             | *double*           | :heavy_minus_sign: | N/A                |
