@@ -60,6 +60,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        [JsonProperty("url")]
+        public string? Url { get; set; }
+
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
     }
