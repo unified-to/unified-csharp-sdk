@@ -3,5 +3,9 @@
 
 ## Fields
 
-| Field       | Type        | Required    | Description |
-| ----------- | ----------- | ----------- | ----------- |
+| Field                                                                             | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `Amount`                                                                          | *double*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Currency`                                                                        | *string*                                                                          | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Frequency`                                                                       | [HrisCompensationFrequency](../../Models/Components/HrisCompensationFrequency.md) | :heavy_minus_sign:                                                                | N/A                                                                               |
+| `Type`                                                                            | [HrisCompensationType](../../Models/Components/HrisCompensationType.md)           | :heavy_minus_sign:                                                                | N/A                                                                               |

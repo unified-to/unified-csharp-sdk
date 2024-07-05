@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 1c9d25d2726d323697b110e342adfad9
+  docChecksum: 9e3d4190c54f7a4d24ccbf1101f05382
   docVersion: "1.0"
-  speakeasyVersion: 1.326.0
-  generationVersion: 2.359.0
-  releaseVersion: 0.19.22
-  configChecksum: 55e040a9efc52b7bc02a3d36266902e4
+  speakeasyVersion: 1.326.3
+  generationVersion: 2.359.6
+  releaseVersion: 0.19.23
+  configChecksum: 9af1eccc4d0ba4441b5c87543534173e
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -807,6 +807,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyHrisEmployeeEmployeeRoles.cs
   - UnifiedTo/Models/Components/HrisEmailType.cs
   - UnifiedTo/Models/Components/HrisEmail.cs
+  - UnifiedTo/Models/Components/HrisCompensationFrequency.cs
+  - UnifiedTo/Models/Components/HrisCompensationType.cs
   - UnifiedTo/Models/Components/HrisCompensation.cs
   - UnifiedTo/Models/Components/PropertyHrisEmployeeAddress.cs
   - UnifiedTo/Models/Components/HrisGroupType.cs
@@ -1604,6 +1606,8 @@ generatedFiles:
   - docs/Models/Components/PropertyHrisEmployeeEmployeeRoles.md
   - docs/Models/Components/HrisEmailType.md
   - docs/Models/Components/HrisEmail.md
+  - docs/Models/Components/HrisCompensationFrequency.md
+  - docs/Models/Components/HrisCompensationType.md
   - docs/Models/Components/HrisCompensation.md
   - docs/Models/Components/PropertyHrisEmployeeAddress.md
   - docs/Models/Components/HrisGroupType.md

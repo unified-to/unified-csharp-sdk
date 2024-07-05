@@ -9,9 +9,23 @@
 #nullable enable
 namespace UnifiedTo.Models.Components
 {
+    using Newtonsoft.Json;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
     public class HrisCompensation
     {
+
+        [JsonProperty("amount")]
+        public double? Amount { get; set; }
+
+        [JsonProperty("currency")]
+        public string? Currency { get; set; }
+
+        [JsonProperty("frequency")]
+        public HrisCompensationFrequency? Frequency { get; set; }
+
+        [JsonProperty("type")]
+        public HrisCompensationType? Type { get; set; }
     }
 }
