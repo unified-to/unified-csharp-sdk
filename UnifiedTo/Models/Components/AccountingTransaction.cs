@@ -60,7 +60,7 @@ namespace UnifiedTo.Models.Components
         public double? TaxAmount { get; set; }
 
         [JsonProperty("total_amount")]
-        public double TotalAmount { get; set; } = default!;
+        public double? TotalAmount { get; set; }
 
         [JsonProperty("type")]
         public string? Type { get; set; }

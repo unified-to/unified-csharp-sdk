@@ -28,9 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Transaction.CreateAccountingTransactionAsync(
     connectionId: "<value>",
-    accountingTransaction: new AccountingTransaction() {
-    TotalAmount = 4969.62D,
-});
+    accountingTransaction: new AccountingTransaction() {});
 
 // handle response
 ```
@@ -156,9 +154,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Transaction.PatchAccountingTransactionAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingTransaction: new AccountingTransaction() {
-    TotalAmount = 5633.69D,
-});
+    accountingTransaction: new AccountingTransaction() {});
 
 // handle response
 ```
@@ -239,9 +235,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Transaction.UpdateAccountingTransactionAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingTransaction: new AccountingTransaction() {
-    TotalAmount = 6498.37D,
-});
+    accountingTransaction: new AccountingTransaction() {});
 
 // handle response
 ```
