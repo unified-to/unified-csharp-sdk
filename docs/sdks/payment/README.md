@@ -38,14 +38,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.CreatePaymentLinkAsync(
     connectionId: "<value>",
-    paymentLink: new PaymentLink() {
-    Amount = 8711.36D,
-    Lineitems = new List<PaymentLinkLineitem>() {
-        new PaymentLinkLineitem() {
-            TotalAmount = 7885.08D,
-        },
-    },
-});
+    paymentLink: new PaymentLink() {});
 
 // handle response
 ```
@@ -466,14 +459,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Payment.PatchPaymentLinkAsync(
     connectionId: "<value>",
     id: "<value>",
-    paymentLink: new PaymentLink() {
-    Amount = 2219.73D,
-    Lineitems = new List<PaymentLinkLineitem>() {
-        new PaymentLinkLineitem() {
-            TotalAmount = 4605.59D,
-        },
-    },
-});
+    paymentLink: new PaymentLink() {});
 
 // handle response
 ```
@@ -635,14 +621,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Payment.UpdatePaymentLinkAsync(
     connectionId: "<value>",
     id: "<value>",
-    paymentLink: new PaymentLink() {
-    Amount = 6147.65D,
-    Lineitems = new List<PaymentLinkLineitem>() {
-        new PaymentLinkLineitem() {
-            TotalAmount = 4437.28D,
-        },
-    },
-});
+    paymentLink: new PaymentLink() {});
 
 // handle response
 ```

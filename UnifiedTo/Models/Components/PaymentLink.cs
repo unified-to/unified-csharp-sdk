@@ -19,7 +19,7 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("amount")]
-        public double Amount { get; set; } = default!;
+        public double? Amount { get; set; }
 
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
@@ -37,7 +37,7 @@ namespace UnifiedTo.Models.Components
         public bool? IsActive { get; set; }
 
         [JsonProperty("lineitems")]
-        public List<PaymentLinkLineitem> Lineitems { get; set; } = default!;
+        public List<PaymentLinkLineitem>? Lineitems { get; set; }
 
         [JsonProperty("payment_id")]
         public string? PaymentId { get; set; }
