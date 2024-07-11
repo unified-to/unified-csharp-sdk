@@ -30,8 +30,8 @@ Create a customer
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -70,8 +70,8 @@ Create a note
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -110,8 +110,8 @@ Create a ticket
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -150,9 +150,9 @@ Retrieve a customer
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -194,9 +194,9 @@ Retrieve a note
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -238,9 +238,9 @@ Retrieve a ticket
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -282,9 +282,9 @@ List all customers
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -323,9 +323,9 @@ List all notes
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -364,9 +364,9 @@ List all tickets
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -405,8 +405,8 @@ Update a customer
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -447,8 +447,8 @@ Update a note
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -489,8 +489,8 @@ Update a ticket
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -531,8 +531,8 @@ Remove a customer
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -570,8 +570,8 @@ Remove a note
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -609,8 +609,8 @@ Remove a ticket
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -648,8 +648,8 @@ Update a customer
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -690,8 +690,8 @@ Update a note
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -732,8 +732,8 @@ Update a ticket
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {

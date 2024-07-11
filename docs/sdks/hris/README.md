@@ -34,8 +34,8 @@ Create a company
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -74,8 +74,8 @@ Create an employee
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -114,8 +114,8 @@ Create a group
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -154,9 +154,9 @@ Retrieve a company
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -198,9 +198,9 @@ Retrieve an employee
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -242,9 +242,9 @@ Retrieve a group
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -286,9 +286,9 @@ Retrieve a payslip
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -330,9 +330,9 @@ Retrieve a timeoff
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -374,9 +374,9 @@ List all companies
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -415,9 +415,9 @@ List all employees
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -456,9 +456,9 @@ List all groups
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -497,9 +497,9 @@ List all payslips
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -538,9 +538,9 @@ List all timeoffs
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -579,8 +579,8 @@ Update a company
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -621,8 +621,8 @@ Update an employee
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -663,8 +663,8 @@ Update a group
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -705,8 +705,8 @@ Remove a company
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -744,8 +744,8 @@ Remove an employee
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -783,8 +783,8 @@ Remove a group
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -822,8 +822,8 @@ Update a company
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -864,8 +864,8 @@ Update an employee
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -906,8 +906,8 @@ Update a group
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {

@@ -28,8 +28,8 @@ Create a link
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -68,8 +68,8 @@ Create a payment
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -108,9 +108,9 @@ Retrieve a link
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -152,9 +152,9 @@ Retrieve a payment
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -196,9 +196,9 @@ Retrieve a payout
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -240,9 +240,9 @@ Retrieve a refund
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -284,9 +284,9 @@ List all links
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -325,9 +325,9 @@ List all payments
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -366,9 +366,9 @@ List all payouts
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -407,9 +407,9 @@ List all refunds
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -448,8 +448,8 @@ Update a link
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -490,8 +490,8 @@ Update a payment
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -532,8 +532,8 @@ Remove a link
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -571,8 +571,8 @@ Remove a payment
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -610,8 +610,8 @@ Update a link
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -652,8 +652,8 @@ Update a payment
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {

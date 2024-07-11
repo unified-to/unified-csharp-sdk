@@ -14,8 +14,8 @@ Retrieve enrichment information for a company
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
@@ -55,8 +55,8 @@ Retrieve enrichment information for a person
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",

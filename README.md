@@ -12,8 +12,8 @@ dotnet add package UnifiedTo
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -844,8 +844,8 @@ This SDK supports the following security scheme globally:
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -873,11 +873,11 @@ Handling errors in this SDK should largely match your expectations.  All operati
 
 ```csharp
 using UnifiedTo;
+using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using System.Collections.Generic;
 using System;
 using UnifiedTo.Models.Errors;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",

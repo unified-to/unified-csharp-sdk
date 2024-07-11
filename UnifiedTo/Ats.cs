@@ -255,10 +255,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.25";
-        private const string _sdkGenVersion = "2.361.10";
+        private const string _sdkVersion = "0.19.26";
+        private const string _sdkGenVersion = "2.365.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.25 2.361.10 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.26 2.365.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<Security>? _securitySource;
@@ -2959,7 +2959,7 @@ namespace UnifiedTo
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
                     RawResponse = httpResponse
-                };;
+                };
             }
             else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
             {
@@ -3047,7 +3047,7 @@ namespace UnifiedTo
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
                     RawResponse = httpResponse
-                };;
+                };
             }
             else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
             {
@@ -3135,7 +3135,7 @@ namespace UnifiedTo
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
                     RawResponse = httpResponse
-                };;
+                };
             }
             else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
             {
@@ -3223,7 +3223,7 @@ namespace UnifiedTo
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
                     RawResponse = httpResponse
-                };;
+                };
             }
             else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
             {
@@ -3311,7 +3311,7 @@ namespace UnifiedTo
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
                     RawResponse = httpResponse
-                };;
+                };
             }
             else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
             {
@@ -3399,7 +3399,7 @@ namespace UnifiedTo
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
                     RawResponse = httpResponse
-                };;
+                };
             }
             else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
             {
@@ -3487,7 +3487,7 @@ namespace UnifiedTo
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
                     RawResponse = httpResponse
-                };;
+                };
             }
             else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
             {

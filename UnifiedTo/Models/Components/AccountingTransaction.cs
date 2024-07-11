@@ -50,6 +50,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("reference")]
         public string? Reference { get; set; }
 
+        /// <summary>
+        /// This is a unified object that this transaction references
+        /// </summary>
+        [JsonProperty("reference_object")]
+        public Dictionary<string, object>? ReferenceObject { get; set; }
+
         [JsonProperty("split_account_id")]
         public string? SplitAccountId { get; set; }
 
