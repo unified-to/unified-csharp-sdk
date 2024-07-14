@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: b7d66c91464d8c38db3b3054c9cc94b2
+  docChecksum: 447f3fb120945ec501fc264fcc573697
   docVersion: "1.0"
-  speakeasyVersion: 1.331.0
-  generationVersion: 2.365.0
-  releaseVersion: 0.19.26
-  configChecksum: 563012aed30ae220f8ab939d29592899
+  speakeasyVersion: 1.335.0
+  generationVersion: 2.370.2
+  releaseVersion: 0.19.27
+  configChecksum: fca9e0a50d997528528103e46c7540f4
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -707,6 +707,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingJournalLineitem.cs
   - UnifiedTo/Models/Components/AccountingTaxrate.cs
   - UnifiedTo/Models/Components/AccountingTransaction.cs
+  - UnifiedTo/Models/Components/AccountingTransactionLineItem.cs
   - UnifiedTo/Models/Components/AccountingOrganization.cs
   - UnifiedTo/Models/Components/PropertyAccountingOrganizationAddress.cs
   - UnifiedTo/Models/Components/CrmContact.cs
@@ -1506,6 +1507,7 @@ generatedFiles:
   - docs/Models/Components/AccountingJournalLineitem.md
   - docs/Models/Components/AccountingTaxrate.md
   - docs/Models/Components/AccountingTransaction.md
+  - docs/Models/Components/AccountingTransactionLineItem.md
   - docs/Models/Components/AccountingOrganization.md
   - docs/Models/Components/PropertyAccountingOrganizationAddress.md
   - docs/Models/Components/CrmContact.md

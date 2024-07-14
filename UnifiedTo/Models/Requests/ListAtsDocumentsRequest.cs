@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=application_id")]
         public string? ApplicationId { get; set; }
 
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=candidate_id")]
+        public string? CandidateId { get; set; }
+
         /// <summary>
         /// ID of the connection
         /// </summary>

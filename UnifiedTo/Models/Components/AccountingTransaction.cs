@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using System;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
     public class AccountingTransaction
@@ -35,6 +36,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("lineitems")]
+        public List<AccountingTransactionLineItem>? Lineitems { get; set; }
+
         [JsonProperty("memo")]
         public string? Memo { get; set; }
 
@@ -49,12 +53,6 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("reference")]
         public string? Reference { get; set; }
-
-        /// <summary>
-        /// This is a unified object that this transaction references
-        /// </summary>
-        [JsonProperty("reference_object")]
-        public Dictionary<string, object>? ReferenceObject { get; set; }
 
         [JsonProperty("split_account_id")]
         public string? SplitAccountId { get; set; }
