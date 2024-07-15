@@ -74,9 +74,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Task.CreateTaskTaskAsync(
     connectionId: "<value>",
-    taskTask: new TaskTask() {
-    Name = "<value>",
-});
+    taskTask: new TaskTask() {});
 
 // handle response
 ```
@@ -329,9 +327,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Task.PatchTaskTaskAsync(
     connectionId: "<value>",
     id: "<value>",
-    taskTask: new TaskTask() {
-    Name = "<value>",
-});
+    taskTask: new TaskTask() {});
 
 // handle response
 ```
@@ -493,9 +489,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Task.UpdateTaskTaskAsync(
     connectionId: "<value>",
     id: "<value>",
-    taskTask: new TaskTask() {
-    Name = "<value>",
-});
+    taskTask: new TaskTask() {});
 
 // handle response
 ```
