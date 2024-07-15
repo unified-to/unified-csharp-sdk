@@ -21,6 +21,12 @@ namespace UnifiedTo.Models.Components
     public class Integration
     {
 
+        [JsonProperty("active_healthy_connections")]
+        public double? ActiveHealthyConnections { get; set; }
+
+        [JsonProperty("api")]
+        public Dictionary<string, object>? Api { get; set; }
+
         [JsonProperty("api_docs_url")]
         public string? ApiDocsUrl { get; set; }
 
@@ -39,8 +45,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public string? CreatedAt { get; set; }
 
+        [JsonProperty("description")]
+        public string? Description { get; set; }
+
         [JsonProperty("fa_icon")]
         public string? FaIcon { get; set; }
+
+        [JsonProperty("featured")]
+        public bool? Featured { get; set; }
 
         [JsonProperty("in_progress")]
         public bool InProgress { get; set; } = default!;
@@ -54,11 +66,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 
+        [JsonProperty("popularity")]
+        public double? Popularity { get; set; }
+
         [JsonProperty("rate_limit_description")]
         public string? RateLimitDescription { get; set; }
 
         [JsonProperty("support")]
-        public Dictionary<string, IntegrationSupport> Support { get; set; } = default!;
+        public Dictionary<string, IntegrationSupport>? Support { get; set; }
 
         [JsonProperty("tested_at")]
         public DateTime? TestedAt { get; set; }
