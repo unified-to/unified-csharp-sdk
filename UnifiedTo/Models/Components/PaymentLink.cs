@@ -36,6 +36,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        [JsonProperty("is_chargeable_now")]
+        public bool? IsChargeableNow { get; set; }
+
         [JsonProperty("lineitems")]
         public List<PaymentLinkLineitem>? Lineitems { get; set; }
 
