@@ -18,6 +18,9 @@ namespace UnifiedTo.Models.Components
     public class CommerceItem
     {
 
+        [JsonProperty("collection_ids")]
+        public List<string>? CollectionIds { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
