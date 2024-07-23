@@ -13,13 +13,14 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 csharp:
-  version: 0.19.31
+  version: 0.19.32
   additionalDependencies: []
   author: Unified API Inc.
   clientServerStatusCodesAsErrors: true
   company: ""
   disableNamespacePascalCasingApr2024: false
   dotnetVersion: net6.0
+  enableSourceLink: false
   flattenGlobalSecurity: false
   imports:
     option: openapi
@@ -29,10 +30,12 @@ csharp:
       operations: Models/Requests
       shared: Models/Components
       webhooks: Models/Webhooks
+  includeDebugSymbols: false
   inputModelSuffix: input
   maxMethodParams: 4
   outputModelSuffix: output
   packageName: UnifiedTo
+  packageTags: ""
   product: ""
   responseFormat: envelope
 ruby:
