@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: b51483e0ba5da702b0a6782d1c3502c1
+  docChecksum: 398329e502d5c762a74ed9d5f4600441
   docVersion: "1.0"
-  speakeasyVersion: 1.346.0
-  generationVersion: 2.379.3
-  releaseVersion: 0.19.33
-  configChecksum: be0795dddc9949b700889b78ea97f90b
+  speakeasyVersion: 1.346.3
+  generationVersion: 2.379.6
+  releaseVersion: 0.19.34
+  configChecksum: 6811af68369328d3f1d9969441676c70
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -670,6 +670,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListUnifiedIntegrationsResponse.cs
   - UnifiedTo/Models/Requests/ListUnifiedIssuesRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedIssuesResponse.cs
+  - UnifiedTo/Models/Requests/ConnectionId.cs
+  - UnifiedTo/Models/Requests/IntegrationType.cs
   - UnifiedTo/Models/Requests/ListUnifiedWebhooksRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedWebhooksResponse.cs
   - UnifiedTo/Models/Requests/PatchUnifiedConnectionRequest.cs
@@ -1470,6 +1472,8 @@ generatedFiles:
   - docs/Models/Requests/ListUnifiedIntegrationsResponse.md
   - docs/Models/Requests/ListUnifiedIssuesRequest.md
   - docs/Models/Requests/ListUnifiedIssuesResponse.md
+  - docs/Models/Requests/ConnectionId.md
+  - docs/Models/Requests/IntegrationType.md
   - docs/Models/Requests/ListUnifiedWebhooksRequest.md
   - docs/Models/Requests/ListUnifiedWebhooksResponse.md
   - docs/Models/Requests/PatchUnifiedConnectionRequest.md
