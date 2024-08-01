@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 939256dd6599a9b1968cce234d1549cc
+  docChecksum: e746fd806f5907d68d5ba126113c72ae
   docVersion: "1.0"
-  speakeasyVersion: 1.349.0
-  generationVersion: 2.382.0
-  releaseVersion: 0.19.35
-  configChecksum: 91950f79b3c1d158b4d2d816c073b094
+  speakeasyVersion: 1.349.2
+  generationVersion: 2.382.2
+  releaseVersion: 0.19.36
+  configChecksum: 15d513c7f3e767fe984cfaed0c80b5e3
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -379,6 +379,18 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateCommerceItemResponse.cs
   - UnifiedTo/Models/Requests/UpdateCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/UpdateCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/CreateHrisLocationRequest.cs
+  - UnifiedTo/Models/Requests/CreateHrisLocationResponse.cs
+  - UnifiedTo/Models/Requests/GetHrisLocationRequest.cs
+  - UnifiedTo/Models/Requests/GetHrisLocationResponse.cs
+  - UnifiedTo/Models/Requests/ListHrisLocationsRequest.cs
+  - UnifiedTo/Models/Requests/ListHrisLocationsResponse.cs
+  - UnifiedTo/Models/Requests/PatchHrisLocationRequest.cs
+  - UnifiedTo/Models/Requests/PatchHrisLocationResponse.cs
+  - UnifiedTo/Models/Requests/RemoveHrisLocationRequest.cs
+  - UnifiedTo/Models/Requests/RemoveHrisLocationResponse.cs
+  - UnifiedTo/Models/Requests/UpdateHrisLocationRequest.cs
+  - UnifiedTo/Models/Requests/UpdateHrisLocationResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmDealRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmDealResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmEventRequest.cs
@@ -776,6 +788,10 @@ generatedFiles:
   - UnifiedTo/Models/Components/CommerceItemOption.cs
   - UnifiedTo/Models/Components/CommerceLocation.cs
   - UnifiedTo/Models/Components/PropertyCommerceLocationAddress.cs
+  - UnifiedTo/Models/Components/HrisLocation.cs
+  - UnifiedTo/Models/Components/HrisTelephoneType.cs
+  - UnifiedTo/Models/Components/HrisTelephone.cs
+  - UnifiedTo/Models/Components/PropertyHrisLocationAddress.cs
   - UnifiedTo/Models/Components/CrmDeal.cs
   - UnifiedTo/Models/Components/CrmEventType.cs
   - UnifiedTo/Models/Components/CrmEvent.cs
@@ -805,8 +821,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/HrisEmployeeGender.cs
   - UnifiedTo/Models/Components/MaritalStatus.cs
   - UnifiedTo/Models/Components/HrisEmployee.cs
-  - UnifiedTo/Models/Components/HrisTelephoneType.cs
-  - UnifiedTo/Models/Components/HrisTelephone.cs
+  - UnifiedTo/Models/Components/HrisGroupType.cs
+  - UnifiedTo/Models/Components/HrisGroup.cs
   - UnifiedTo/Models/Components/PropertyHrisEmployeeEmployeeRoles.cs
   - UnifiedTo/Models/Components/HrisEmailType.cs
   - UnifiedTo/Models/Components/HrisEmail.cs
@@ -814,8 +830,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/HrisCompensationType.cs
   - UnifiedTo/Models/Components/HrisCompensation.cs
   - UnifiedTo/Models/Components/PropertyHrisEmployeeAddress.cs
-  - UnifiedTo/Models/Components/HrisGroupType.cs
-  - UnifiedTo/Models/Components/HrisGroup.cs
   - UnifiedTo/Models/Components/PaymentType.cs
   - UnifiedTo/Models/Components/HrisPayslip.cs
   - UnifiedTo/Models/Components/HrisPayslipDetailType.cs
@@ -1181,6 +1195,18 @@ generatedFiles:
   - docs/Models/Requests/UpdateCommerceItemResponse.md
   - docs/Models/Requests/UpdateCommerceLocationRequest.md
   - docs/Models/Requests/UpdateCommerceLocationResponse.md
+  - docs/Models/Requests/CreateHrisLocationRequest.md
+  - docs/Models/Requests/CreateHrisLocationResponse.md
+  - docs/Models/Requests/GetHrisLocationRequest.md
+  - docs/Models/Requests/GetHrisLocationResponse.md
+  - docs/Models/Requests/ListHrisLocationsRequest.md
+  - docs/Models/Requests/ListHrisLocationsResponse.md
+  - docs/Models/Requests/PatchHrisLocationRequest.md
+  - docs/Models/Requests/PatchHrisLocationResponse.md
+  - docs/Models/Requests/RemoveHrisLocationRequest.md
+  - docs/Models/Requests/RemoveHrisLocationResponse.md
+  - docs/Models/Requests/UpdateHrisLocationRequest.md
+  - docs/Models/Requests/UpdateHrisLocationResponse.md
   - docs/Models/Requests/CreateCrmDealRequest.md
   - docs/Models/Requests/CreateCrmDealResponse.md
   - docs/Models/Requests/CreateCrmEventRequest.md
@@ -1578,6 +1604,10 @@ generatedFiles:
   - docs/Models/Components/CommerceItemOption.md
   - docs/Models/Components/CommerceLocation.md
   - docs/Models/Components/PropertyCommerceLocationAddress.md
+  - docs/Models/Components/HrisLocation.md
+  - docs/Models/Components/HrisTelephoneType.md
+  - docs/Models/Components/HrisTelephone.md
+  - docs/Models/Components/PropertyHrisLocationAddress.md
   - docs/Models/Components/CrmDeal.md
   - docs/Models/Components/CrmEventType.md
   - docs/Models/Components/CrmEvent.md
@@ -1607,8 +1637,8 @@ generatedFiles:
   - docs/Models/Components/HrisEmployeeGender.md
   - docs/Models/Components/MaritalStatus.md
   - docs/Models/Components/HrisEmployee.md
-  - docs/Models/Components/HrisTelephoneType.md
-  - docs/Models/Components/HrisTelephone.md
+  - docs/Models/Components/HrisGroupType.md
+  - docs/Models/Components/HrisGroup.md
   - docs/Models/Components/PropertyHrisEmployeeEmployeeRoles.md
   - docs/Models/Components/HrisEmailType.md
   - docs/Models/Components/HrisEmail.md
@@ -1616,8 +1646,6 @@ generatedFiles:
   - docs/Models/Components/HrisCompensationType.md
   - docs/Models/Components/HrisCompensation.md
   - docs/Models/Components/PropertyHrisEmployeeAddress.md
-  - docs/Models/Components/HrisGroupType.md
-  - docs/Models/Components/HrisGroup.md
   - docs/Models/Components/PaymentType.md
   - docs/Models/Components/HrisPayslip.md
   - docs/Models/Components/HrisPayslipDetailType.md

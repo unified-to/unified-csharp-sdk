@@ -167,6 +167,10 @@ namespace UnifiedTo.Models.Requests
         HrisCompanyRead,
         [JsonProperty("hris_company_write")]
         HrisCompanyWrite,
+        [JsonProperty("hris_location_read")]
+        HrisLocationRead,
+        [JsonProperty("hris_location_write")]
+        HrisLocationWrite,
         [JsonProperty("uc_call_read")]
         UcCallRead,
         [JsonProperty("storage_file_read")]

@@ -63,6 +63,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("gender")]
         public HrisEmployeeGender? Gender { get; set; }
 
+        /// <summary>
+        /// Which groups/teams/units that this employee/user belongs to.  May not have all of the Group fields present, but should have id, name, or email.
+        /// </summary>
+        [JsonProperty("groups")]
+        public List<HrisGroup>? Groups { get; set; }
+
         [JsonProperty("hired_at")]
         public DateTime? HiredAt { get; set; }
 
@@ -77,6 +83,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("location")]
         public string? Location { get; set; }
+
+        [JsonProperty("locations")]
+        public List<HrisLocation>? Locations { get; set; }
 
         [JsonProperty("manager_id")]
         public string? ManagerId { get; set; }

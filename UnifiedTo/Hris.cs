@@ -41,6 +41,11 @@ namespace UnifiedTo
         Task<CreateHrisGroupResponse> CreateHrisGroupAsync(string connectionId, HrisGroup? hrisGroup = null);
 
         /// <summary>
+        /// Create a location
+        /// </summary>
+        Task<CreateHrisLocationResponse> CreateHrisLocationAsync(string connectionId, HrisLocation? hrisLocation = null);
+
+        /// <summary>
         /// Retrieve a company
         /// </summary>
         Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<string>? fields = null);
@@ -54,6 +59,11 @@ namespace UnifiedTo
         /// Retrieve a group
         /// </summary>
         Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<string>? fields = null);
+
+        /// <summary>
+        /// Retrieve a location
+        /// </summary>
+        Task<GetHrisLocationResponse> GetHrisLocationAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a payslip
@@ -81,6 +91,11 @@ namespace UnifiedTo
         Task<ListHrisGroupsResponse> ListHrisGroupsAsync(ListHrisGroupsRequest request);
 
         /// <summary>
+        /// List all locations
+        /// </summary>
+        Task<ListHrisLocationsResponse> ListHrisLocationsAsync(ListHrisLocationsRequest request);
+
+        /// <summary>
         /// List all payslips
         /// </summary>
         Task<ListHrisPayslipsResponse> ListHrisPayslipsAsync(ListHrisPayslipsRequest request);
@@ -106,6 +121,11 @@ namespace UnifiedTo
         Task<PatchHrisGroupResponse> PatchHrisGroupAsync(string connectionId, string id, HrisGroup? hrisGroup = null);
 
         /// <summary>
+        /// Update a location
+        /// </summary>
+        Task<PatchHrisLocationResponse> PatchHrisLocationAsync(string connectionId, string id, HrisLocation? hrisLocation = null);
+
+        /// <summary>
         /// Remove a company
         /// </summary>
         Task<RemoveHrisCompanyResponse> RemoveHrisCompanyAsync(string connectionId, string id);
@@ -121,6 +141,11 @@ namespace UnifiedTo
         Task<RemoveHrisGroupResponse> RemoveHrisGroupAsync(string connectionId, string id);
 
         /// <summary>
+        /// Remove a location
+        /// </summary>
+        Task<RemoveHrisLocationResponse> RemoveHrisLocationAsync(string connectionId, string id);
+
+        /// <summary>
         /// Update a company
         /// </summary>
         Task<UpdateHrisCompanyResponse> UpdateHrisCompanyAsync(string connectionId, string id, HrisCompany? hrisCompany = null);
@@ -134,16 +159,21 @@ namespace UnifiedTo
         /// Update a group
         /// </summary>
         Task<UpdateHrisGroupResponse> UpdateHrisGroupAsync(string connectionId, string id, HrisGroup? hrisGroup = null);
+
+        /// <summary>
+        /// Update a location
+        /// </summary>
+        Task<UpdateHrisLocationResponse> UpdateHrisLocationAsync(string connectionId, string id, HrisLocation? hrisLocation = null);
     }
 
     public class Hris: IHris
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.35";
-        private const string _sdkGenVersion = "2.382.0";
+        private const string _sdkVersion = "0.19.36";
+        private const string _sdkGenVersion = "2.382.2";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.35 2.382.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.36 2.382.2 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -423,6 +453,95 @@ namespace UnifiedTo
             }
         }
 
+        public async Task<CreateHrisLocationResponse> CreateHrisLocationAsync(string connectionId, HrisLocation? hrisLocation = null)
+        {
+            var request = new CreateHrisLocationRequest()
+            {
+                ConnectionId = connectionId,
+                HrisLocation = hrisLocation,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/location", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "HrisLocation", "json", false, true);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            if (_securitySource != null)
+            {
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext("createHrisLocation", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<HrisLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new CreateHrisLocationResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.HrisLocation = obj;
+                    return response;
+                }
+                else
+                {
+                    throw new SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                }
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
+            {
+                throw new SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+        }
+
         public async Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<string>? fields = null)
         {
             var request = new GetHrisCompanyRequest()
@@ -658,6 +777,90 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.HrisGroup = obj;
+                    return response;
+                }
+                else
+                {
+                    throw new SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                }
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
+            {
+                throw new SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+        }
+
+        public async Task<GetHrisLocationResponse> GetHrisLocationAsync(string connectionId, string id, List<string>? fields = null)
+        {
+            var request = new GetHrisLocationRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                Fields = fields,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/location/{id}", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            if (_securitySource != null)
+            {
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext("getHrisLocation", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<HrisLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new GetHrisLocationResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.HrisLocation = obj;
                     return response;
                 }
                 else
@@ -1060,6 +1263,84 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.HrisGroups = obj;
+                    return response;
+                }
+                else
+                {
+                    throw new SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                }
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
+            {
+                throw new SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+        }
+
+        public async Task<ListHrisLocationsResponse> ListHrisLocationsAsync(ListHrisLocationsRequest request)
+        {
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/location", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            if (_securitySource != null)
+            {
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext("listHrisLocations", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<List<HrisLocation>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new ListHrisLocationsResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.HrisLocations = obj;
                     return response;
                 }
                 else
@@ -1503,6 +1784,96 @@ namespace UnifiedTo
             }
         }
 
+        public async Task<PatchHrisLocationResponse> PatchHrisLocationAsync(string connectionId, string id, HrisLocation? hrisLocation = null)
+        {
+            var request = new PatchHrisLocationRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                HrisLocation = hrisLocation,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/location/{id}", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "HrisLocation", "json", false, true);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            if (_securitySource != null)
+            {
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext("patchHrisLocation", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<HrisLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new PatchHrisLocationResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.HrisLocation = obj;
+                    return response;
+                }
+                else
+                {
+                    throw new SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                }
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
+            {
+                throw new SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+        }
+
         public async Task<RemoveHrisCompanyResponse> RemoveHrisCompanyAsync(string connectionId, string id)
         {
             var request = new RemoveHrisCompanyRequest()
@@ -1725,6 +2096,85 @@ namespace UnifiedTo
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<string>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new RemoveHrisGroupResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.String = obj;
+                    return response;
+                }
+                else
+                {
+                    throw new SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                }
+            }
+        }
+
+        public async Task<RemoveHrisLocationResponse> RemoveHrisLocationAsync(string connectionId, string id)
+        {
+            var request = new RemoveHrisLocationRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/location/{id}", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            if (_securitySource != null)
+            {
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext("removeHrisLocation", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<string>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new RemoveHrisLocationResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
@@ -1993,6 +2443,96 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.HrisGroup = obj;
+                    return response;
+                }
+                else
+                {
+                    throw new SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                }
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
+            {
+                throw new SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+        }
+
+        public async Task<UpdateHrisLocationResponse> UpdateHrisLocationAsync(string connectionId, string id, HrisLocation? hrisLocation = null)
+        {
+            var request = new UpdateHrisLocationRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+                HrisLocation = hrisLocation,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/location/{id}", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "HrisLocation", "json", false, true);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            if (_securitySource != null)
+            {
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext("updateHrisLocation", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<HrisLocation>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new UpdateHrisLocationResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.HrisLocation = obj;
                     return response;
                 }
                 else

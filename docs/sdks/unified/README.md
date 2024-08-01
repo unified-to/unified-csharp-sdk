@@ -43,7 +43,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.AtsDocumentRead,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.AtsDocumentWrite,
     },
 };
 
@@ -523,7 +523,7 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.HrisEmployeeWrite,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.HrisGroupRead,
     },
 });
 
@@ -679,7 +679,7 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmDealRead,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmDealWrite,
     },
 });
 

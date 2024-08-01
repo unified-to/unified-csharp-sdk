@@ -6,25 +6,31 @@
 * [CreateHrisCompany](#createhriscompany) - Create a company
 * [CreateHrisEmployee](#createhrisemployee) - Create an employee
 * [CreateHrisGroup](#createhrisgroup) - Create a group
+* [CreateHrisLocation](#createhrislocation) - Create a location
 * [GetHrisCompany](#gethriscompany) - Retrieve a company
 * [GetHrisEmployee](#gethrisemployee) - Retrieve an employee
 * [GetHrisGroup](#gethrisgroup) - Retrieve a group
+* [GetHrisLocation](#gethrislocation) - Retrieve a location
 * [GetHrisPayslip](#gethrispayslip) - Retrieve a payslip
 * [GetHrisTimeoff](#gethristimeoff) - Retrieve a timeoff
 * [ListHrisCompanies](#listhriscompanies) - List all companies
 * [ListHrisEmployees](#listhrisemployees) - List all employees
 * [ListHrisGroups](#listhrisgroups) - List all groups
+* [ListHrisLocations](#listhrislocations) - List all locations
 * [ListHrisPayslips](#listhrispayslips) - List all payslips
 * [ListHrisTimeoffs](#listhristimeoffs) - List all timeoffs
 * [PatchHrisCompany](#patchhriscompany) - Update a company
 * [PatchHrisEmployee](#patchhrisemployee) - Update an employee
 * [PatchHrisGroup](#patchhrisgroup) - Update a group
+* [PatchHrisLocation](#patchhrislocation) - Update a location
 * [RemoveHrisCompany](#removehriscompany) - Remove a company
 * [RemoveHrisEmployee](#removehrisemployee) - Remove an employee
 * [RemoveHrisGroup](#removehrisgroup) - Remove a group
+* [RemoveHrisLocation](#removehrislocation) - Remove a location
 * [UpdateHrisCompany](#updatehriscompany) - Update a company
 * [UpdateHrisEmployee](#updatehrisemployee) - Update an employee
 * [UpdateHrisGroup](#updatehrisgroup) - Update a group
+* [UpdateHrisLocation](#updatehrislocation) - Update a location
 
 ## CreateHrisCompany
 
@@ -140,6 +146,46 @@ var res = await sdk.Hris.CreateHrisGroupAsync(
 ### Response
 
 **[CreateHrisGroupResponse](../../Models/Requests/CreateHrisGroupResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+## CreateHrisLocation
+
+Create a location
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Hris.CreateHrisLocationAsync(
+    connectionId: "<value>",
+    hrisLocation: new HrisLocation() {});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                               | Type                                                    | Required                                                | Description                                             |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
+| `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
+
+
+### Response
+
+**[CreateHrisLocationResponse](../../Models/Requests/CreateHrisLocationResponse.md)**
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
@@ -272,6 +318,50 @@ var res = await sdk.Hris.GetHrisGroupAsync(
 ### Response
 
 **[GetHrisGroupResponse](../../Models/Requests/GetHrisGroupResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+## GetHrisLocation
+
+Retrieve a location
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Hris.GetHrisLocationAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    fields: new List<string>() {
+    "<value>",
+});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Location               |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+
+### Response
+
+**[GetHrisLocationResponse](../../Models/Requests/GetHrisLocationResponse.md)**
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
@@ -489,6 +579,47 @@ var res = await sdk.Hris.ListHrisGroupsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
+## ListHrisLocations
+
+List all locations
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Requests;
+using System.Collections.Generic;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+ListHrisLocationsRequest req = new ListHrisLocationsRequest() {
+    ConnectionId = "<value>",
+};
+
+var res = await sdk.Hris.ListHrisLocationsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListHrisLocationsRequest](../../Models/Requests/ListHrisLocationsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
+
+
+### Response
+
+**[ListHrisLocationsResponse](../../Models/Requests/ListHrisLocationsResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 ## ListHrisPayslips
 
 List all payslips
@@ -697,6 +828,48 @@ var res = await sdk.Hris.PatchHrisGroupAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
+## PatchHrisLocation
+
+Update a location
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Hris.PatchHrisLocationAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    hrisLocation: new HrisLocation() {});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                               | Type                                                    | Required                                                | Description                                             |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
+| `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Location                                      |
+| `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
+
+
+### Response
+
+**[PatchHrisLocationResponse](../../Models/Requests/PatchHrisLocationResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 ## RemoveHrisCompany
 
 Remove a company
@@ -808,6 +981,45 @@ var res = await sdk.Hris.RemoveHrisGroupAsync(
 ### Response
 
 **[RemoveHrisGroupResponse](../../Models/Requests/RemoveHrisGroupResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+## RemoveHrisLocation
+
+Remove a location
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Hris.RemoveHrisLocationAsync(
+    connectionId: "<value>",
+    id: "<value>");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Location   |
+
+
+### Response
+
+**[RemoveHrisLocationResponse](../../Models/Requests/RemoveHrisLocationResponse.md)**
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
@@ -934,6 +1146,48 @@ var res = await sdk.Hris.UpdateHrisGroupAsync(
 ### Response
 
 **[UpdateHrisGroupResponse](../../Models/Requests/UpdateHrisGroupResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+## UpdateHrisLocation
+
+Update a location
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Hris.UpdateHrisLocationAsync(
+    connectionId: "<value>",
+    id: "<value>",
+    hrisLocation: new HrisLocation() {});
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                               | Type                                                    | Required                                                | Description                                             |
+| ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
+| `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Location                                      |
+| `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
+
+
+### Response
+
+**[UpdateHrisLocationResponse](../../Models/Requests/UpdateHrisLocationResponse.md)**
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
