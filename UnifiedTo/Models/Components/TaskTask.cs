@@ -36,6 +36,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("follower_user_ids")]
         public List<string>? FollowerUserIds { get; set; }
 
+        [JsonProperty("group_ids")]
+        public List<string>? GroupIds { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
