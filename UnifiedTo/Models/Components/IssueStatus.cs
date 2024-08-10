@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Components
         Validating,
         [JsonProperty("REJECTED")]
         Rejected,
+        [JsonProperty("UP_NEXT")]
+        UpNext,
     }
 
     public static class IssueStatusExtension

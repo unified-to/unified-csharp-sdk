@@ -23,8 +23,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("importance")]
+        public double? Importance { get; set; }
+
         [JsonProperty("resolution_time")]
         public double? ResolutionTime { get; set; }
+
+        [JsonProperty("size")]
+        public double? Size { get; set; }
 
         [JsonProperty("status")]
         public IssueStatus Status { get; set; } = default!;
