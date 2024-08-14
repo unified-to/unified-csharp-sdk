@@ -33,6 +33,8 @@ var res = await sdk.Transaction.CreateAccountingTransactionAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
@@ -75,6 +77,8 @@ var res = await sdk.Transaction.GetAccountingTransactionAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Transaction.ListAccountingTransactionsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
@@ -158,6 +164,8 @@ var res = await sdk.Transaction.PatchAccountingTransactionAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Transaction.RemoveAccountingTransactionAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter             | Type                  | Required              | Description           |
@@ -239,6 +249,8 @@ var res = await sdk.Transaction.UpdateAccountingTransactionAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

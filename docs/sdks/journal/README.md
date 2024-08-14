@@ -33,6 +33,8 @@ var res = await sdk.Journal.CreateAccountingJournalAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -75,6 +77,8 @@ var res = await sdk.Journal.GetAccountingJournalAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Journal.ListAccountingJournalsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
@@ -158,6 +164,8 @@ var res = await sdk.Journal.PatchAccountingJournalAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Journal.RemoveAccountingJournalAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Journal.UpdateAccountingJournalAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

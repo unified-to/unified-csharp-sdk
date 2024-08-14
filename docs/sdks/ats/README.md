@@ -74,6 +74,8 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -113,6 +115,8 @@ var res = await sdk.Ats.CreateAtsApplicationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -154,6 +158,8 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -193,6 +199,8 @@ var res = await sdk.Ats.CreateAtsDocumentAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -234,6 +242,8 @@ var res = await sdk.Ats.CreateAtsInterviewAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -274,6 +284,8 @@ var res = await sdk.Ats.CreateAtsJobAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                   | Type                                        | Required                                    | Description                                 |
@@ -313,6 +325,8 @@ var res = await sdk.Ats.CreateAtsScorecardAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -356,6 +370,8 @@ var res = await sdk.Ats.GetAtsActivityAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -401,6 +417,8 @@ var res = await sdk.Ats.GetAtsApplicationAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -444,6 +462,8 @@ var res = await sdk.Ats.GetAtsCandidateAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -489,6 +509,8 @@ var res = await sdk.Ats.GetAtsCompanyAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -532,6 +554,8 @@ var res = await sdk.Ats.GetAtsDocumentAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -577,6 +601,8 @@ var res = await sdk.Ats.GetAtsInterviewAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -620,6 +646,8 @@ var res = await sdk.Ats.GetAtsJobAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -665,6 +693,8 @@ var res = await sdk.Ats.GetAtsScorecardAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -708,6 +738,8 @@ var res = await sdk.Ats.ListAtsActivitiesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
@@ -748,6 +780,8 @@ var res = await sdk.Ats.ListAtsApplicationsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -790,6 +824,8 @@ var res = await sdk.Ats.ListAtsApplicationstatusesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
@@ -830,6 +866,8 @@ var res = await sdk.Ats.ListAtsCandidatesAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -872,6 +910,8 @@ var res = await sdk.Ats.ListAtsCompaniesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
@@ -912,6 +952,8 @@ var res = await sdk.Ats.ListAtsDocumentsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -954,6 +996,8 @@ var res = await sdk.Ats.ListAtsInterviewsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
@@ -995,6 +1039,8 @@ var res = await sdk.Ats.ListAtsJobsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -1035,6 +1081,8 @@ var res = await sdk.Ats.ListAtsScorecardsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1078,6 +1126,8 @@ var res = await sdk.Ats.PatchAtsActivityAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -1119,6 +1169,8 @@ var res = await sdk.Ats.PatchAtsApplicationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1162,6 +1214,8 @@ var res = await sdk.Ats.PatchAtsCandidateAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -1203,6 +1257,8 @@ var res = await sdk.Ats.PatchAtsDocumentAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1246,6 +1302,8 @@ var res = await sdk.Ats.PatchAtsInterviewAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -1287,6 +1345,8 @@ var res = await sdk.Ats.PatchAtsJobAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1330,6 +1390,8 @@ var res = await sdk.Ats.PatchAtsScorecardAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -1370,6 +1432,8 @@ var res = await sdk.Ats.RemoveAtsActivityAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1408,6 +1472,8 @@ var res = await sdk.Ats.RemoveAtsApplicationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1448,6 +1514,8 @@ var res = await sdk.Ats.RemoveAtsCandidateAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1486,6 +1554,8 @@ var res = await sdk.Ats.RemoveAtsDocumentAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1526,6 +1596,8 @@ var res = await sdk.Ats.RemoveAtsInterviewAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1565,6 +1637,8 @@ var res = await sdk.Ats.RemoveAtsJobAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1603,6 +1677,8 @@ var res = await sdk.Ats.RemoveAtsScorecardAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1647,6 +1723,8 @@ var res = await sdk.Ats.UpdateAtsActivityAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -1688,6 +1766,8 @@ var res = await sdk.Ats.UpdateAtsApplicationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1731,6 +1811,8 @@ var res = await sdk.Ats.UpdateAtsCandidateAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -1772,6 +1854,8 @@ var res = await sdk.Ats.UpdateAtsDocumentAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1815,6 +1899,8 @@ var res = await sdk.Ats.UpdateAtsInterviewAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -1857,6 +1943,8 @@ var res = await sdk.Ats.UpdateAtsJobAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                   | Type                                        | Required                                    | Description                                 |
@@ -1898,6 +1986,8 @@ var res = await sdk.Ats.UpdateAtsScorecardAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

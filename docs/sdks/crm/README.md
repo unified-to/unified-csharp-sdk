@@ -63,6 +63,8 @@ var res = await sdk.Crm.CreateCrmCompanyAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
@@ -102,6 +104,8 @@ var res = await sdk.Crm.CreateCrmContactAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -143,6 +147,8 @@ var res = await sdk.Crm.CreateCrmDealAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
@@ -182,6 +188,8 @@ var res = await sdk.Crm.CreateCrmEventAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -223,6 +231,8 @@ var res = await sdk.Crm.CreateCrmLeadAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
@@ -262,6 +272,8 @@ var res = await sdk.Crm.CreateCrmPipelineAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -305,6 +317,8 @@ var res = await sdk.Crm.GetCrmCompanyAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -350,6 +364,8 @@ var res = await sdk.Crm.GetCrmContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -393,6 +409,8 @@ var res = await sdk.Crm.GetCrmDealAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -438,6 +456,8 @@ var res = await sdk.Crm.GetCrmEventAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -481,6 +501,8 @@ var res = await sdk.Crm.GetCrmLeadAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -526,6 +548,8 @@ var res = await sdk.Crm.GetCrmPipelineAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -569,6 +593,8 @@ var res = await sdk.Crm.ListCrmCompaniesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
@@ -609,6 +635,8 @@ var res = await sdk.Crm.ListCrmContactsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -651,6 +679,8 @@ var res = await sdk.Crm.ListCrmDealsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -691,6 +721,8 @@ var res = await sdk.Crm.ListCrmEventsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -733,6 +765,8 @@ var res = await sdk.Crm.ListCrmLeadsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -774,6 +808,8 @@ var res = await sdk.Crm.ListCrmPipelinesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
@@ -813,6 +849,8 @@ var res = await sdk.Crm.PatchCrmCompanyAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -856,6 +894,8 @@ var res = await sdk.Crm.PatchCrmContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
@@ -897,6 +937,8 @@ var res = await sdk.Crm.PatchCrmDealAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -940,6 +982,8 @@ var res = await sdk.Crm.PatchCrmEventAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
@@ -981,6 +1025,8 @@ var res = await sdk.Crm.PatchCrmLeadAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1024,6 +1070,8 @@ var res = await sdk.Crm.PatchCrmPipelineAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -1064,6 +1112,8 @@ var res = await sdk.Crm.RemoveCrmCompanyAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1102,6 +1152,8 @@ var res = await sdk.Crm.RemoveCrmContactAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1142,6 +1194,8 @@ var res = await sdk.Crm.RemoveCrmDealAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1180,6 +1234,8 @@ var res = await sdk.Crm.RemoveCrmEventAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1220,6 +1276,8 @@ var res = await sdk.Crm.RemoveCrmLeadAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1258,6 +1316,8 @@ var res = await sdk.Crm.RemoveCrmPipelineAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1299,6 +1359,8 @@ var res = await sdk.Crm.UpdateCrmCompanyAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1342,6 +1404,8 @@ var res = await sdk.Crm.UpdateCrmContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
@@ -1383,6 +1447,8 @@ var res = await sdk.Crm.UpdateCrmDealAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1426,6 +1492,8 @@ var res = await sdk.Crm.UpdateCrmEventAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
@@ -1468,6 +1536,8 @@ var res = await sdk.Crm.UpdateCrmLeadAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
@@ -1509,6 +1579,8 @@ var res = await sdk.Crm.UpdateCrmPipelineAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

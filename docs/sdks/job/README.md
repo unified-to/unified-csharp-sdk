@@ -33,6 +33,8 @@ var res = await sdk.Job.CreateAtsJobAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                   | Type                                        | Required                                    | Description                                 |
@@ -75,6 +77,8 @@ var res = await sdk.Job.GetAtsJobAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Job.ListAtsJobsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -158,6 +164,8 @@ var res = await sdk.Job.PatchAtsJobAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Job.RemoveAtsJobAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Job.UpdateAtsJobAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

@@ -33,6 +33,8 @@ var res = await sdk.Item.CreateCommerceItemAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -75,6 +77,8 @@ var res = await sdk.Item.GetCommerceItemAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Item.ListCommerceItemsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
@@ -158,6 +164,8 @@ var res = await sdk.Item.PatchCommerceItemAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Item.RemoveCommerceItemAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Item.UpdateCommerceItemAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

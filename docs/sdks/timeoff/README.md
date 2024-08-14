@@ -32,6 +32,8 @@ var res = await sdk.Timeoff.GetHrisTimeoffAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -74,6 +76,8 @@ var res = await sdk.Timeoff.ListHrisTimeoffsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 

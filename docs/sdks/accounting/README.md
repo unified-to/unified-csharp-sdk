@@ -65,6 +65,8 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -104,6 +106,8 @@ var res = await sdk.Accounting.CreateAccountingContactAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -145,6 +149,8 @@ var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -184,6 +190,8 @@ var res = await sdk.Accounting.CreateAccountingJournalAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -225,6 +233,8 @@ var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -264,6 +274,8 @@ var res = await sdk.Accounting.CreateAccountingTransactionAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -307,6 +319,8 @@ var res = await sdk.Accounting.GetAccountingAccountAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -352,6 +366,8 @@ var res = await sdk.Accounting.GetAccountingContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -395,6 +411,8 @@ var res = await sdk.Accounting.GetAccountingInvoiceAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -440,6 +458,8 @@ var res = await sdk.Accounting.GetAccountingJournalAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -483,6 +503,8 @@ var res = await sdk.Accounting.GetAccountingOrganizationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -528,6 +550,8 @@ var res = await sdk.Accounting.GetAccountingTaxrateAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -572,6 +596,8 @@ var res = await sdk.Accounting.GetAccountingTransactionAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -615,6 +641,8 @@ var res = await sdk.Accounting.ListAccountingAccountsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
@@ -655,6 +683,8 @@ var res = await sdk.Accounting.ListAccountingContactsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -697,6 +727,8 @@ var res = await sdk.Accounting.ListAccountingInvoicesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
@@ -737,6 +769,8 @@ var res = await sdk.Accounting.ListAccountingJournalsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -779,6 +813,8 @@ var res = await sdk.Accounting.ListAccountingOrganizationsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
@@ -819,6 +855,8 @@ var res = await sdk.Accounting.ListAccountingTaxratesAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -861,6 +899,8 @@ var res = await sdk.Accounting.ListAccountingTransactionsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
@@ -900,6 +940,8 @@ var res = await sdk.Accounting.PatchAccountingAccountAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -943,6 +985,8 @@ var res = await sdk.Accounting.PatchAccountingContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -984,6 +1028,8 @@ var res = await sdk.Accounting.PatchAccountingInvoiceAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1027,6 +1073,8 @@ var res = await sdk.Accounting.PatchAccountingJournalAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -1068,6 +1116,8 @@ var res = await sdk.Accounting.PatchAccountingTaxrateAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1111,6 +1161,8 @@ var res = await sdk.Accounting.PatchAccountingTransactionAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
@@ -1151,6 +1203,8 @@ var res = await sdk.Accounting.RemoveAccountingAccountAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1189,6 +1243,8 @@ var res = await sdk.Accounting.RemoveAccountingContactAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1229,6 +1285,8 @@ var res = await sdk.Accounting.RemoveAccountingInvoiceAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1267,6 +1325,8 @@ var res = await sdk.Accounting.RemoveAccountingJournalAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1307,6 +1367,8 @@ var res = await sdk.Accounting.RemoveAccountingTaxrateAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1345,6 +1407,8 @@ var res = await sdk.Accounting.RemoveAccountingTransactionAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1386,6 +1450,8 @@ var res = await sdk.Accounting.UpdateAccountingAccountAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1429,6 +1495,8 @@ var res = await sdk.Accounting.UpdateAccountingContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -1470,6 +1538,8 @@ var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1513,6 +1583,8 @@ var res = await sdk.Accounting.UpdateAccountingJournalAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -1555,6 +1627,8 @@ var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -1596,6 +1670,8 @@ var res = await sdk.Accounting.UpdateAccountingTransactionAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

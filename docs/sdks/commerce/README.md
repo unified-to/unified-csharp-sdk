@@ -54,6 +54,8 @@ var res = await sdk.Commerce.CreateCommerceCollectionAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -96,6 +98,8 @@ var res = await sdk.Commerce.CreateCommerceInventoryAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -135,6 +139,8 @@ var res = await sdk.Commerce.CreateCommerceItemAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -178,6 +184,8 @@ var res = await sdk.Commerce.CreateCommerceLocationAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
@@ -220,6 +228,8 @@ var res = await sdk.Commerce.GetCommerceCollectionAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -265,6 +275,8 @@ var res = await sdk.Commerce.GetCommerceInventoryAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -308,6 +320,8 @@ var res = await sdk.Commerce.GetCommerceItemAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -353,6 +367,8 @@ var res = await sdk.Commerce.GetCommerceLocationAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -396,6 +412,8 @@ var res = await sdk.Commerce.ListCommerceCollectionsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
@@ -436,6 +454,8 @@ var res = await sdk.Commerce.ListCommerceInventoriesAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -478,6 +498,8 @@ var res = await sdk.Commerce.ListCommerceItemsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
@@ -518,6 +540,8 @@ var res = await sdk.Commerce.ListCommerceLocationsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -561,6 +585,8 @@ var res = await sdk.Commerce.PatchCommerceCollectionAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -606,6 +632,8 @@ var res = await sdk.Commerce.PatchCommerceInventoryAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -647,6 +675,8 @@ var res = await sdk.Commerce.PatchCommerceItemAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -692,6 +722,8 @@ var res = await sdk.Commerce.PatchCommerceLocationAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
@@ -732,6 +764,8 @@ var res = await sdk.Commerce.RemoveCommerceCollectionAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -770,6 +804,8 @@ var res = await sdk.Commerce.RemoveCommerceInventoryAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -810,6 +846,8 @@ var res = await sdk.Commerce.RemoveCommerceItemAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -848,6 +886,8 @@ var res = await sdk.Commerce.RemoveCommerceLocationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -893,6 +933,8 @@ var res = await sdk.Commerce.UpdateCommerceCollectionAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -937,6 +979,8 @@ var res = await sdk.Commerce.UpdateCommerceInventoryAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -978,6 +1022,8 @@ var res = await sdk.Commerce.UpdateCommerceItemAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1022,6 +1068,8 @@ var res = await sdk.Commerce.UpdateCommerceLocationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

@@ -39,6 +39,8 @@ var res = await sdk.Task.CreateTaskProjectAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -78,6 +80,8 @@ var res = await sdk.Task.CreateTaskTaskAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -121,6 +125,8 @@ var res = await sdk.Task.GetTaskProjectAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -166,6 +172,8 @@ var res = await sdk.Task.GetTaskTaskAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -209,6 +217,8 @@ var res = await sdk.Task.ListTaskProjectsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
@@ -250,6 +260,8 @@ var res = await sdk.Task.ListTaskTasksAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
@@ -289,6 +301,8 @@ var res = await sdk.Task.PatchTaskProjectAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -332,6 +346,8 @@ var res = await sdk.Task.PatchTaskTaskAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                       | Type                                            | Required                                        | Description                                     |
@@ -372,6 +388,8 @@ var res = await sdk.Task.RemoveTaskProjectAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -410,6 +428,8 @@ var res = await sdk.Task.RemoveTaskTaskAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -452,6 +472,8 @@ var res = await sdk.Task.UpdateTaskProjectAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -493,6 +515,8 @@ var res = await sdk.Task.UpdateTaskTaskAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

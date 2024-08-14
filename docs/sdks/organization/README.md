@@ -32,6 +32,8 @@ var res = await sdk.Organization.GetAccountingOrganizationAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -74,6 +76,8 @@ var res = await sdk.Organization.ListAccountingOrganizationsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 

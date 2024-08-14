@@ -29,6 +29,8 @@ var res = await sdk.Person.ListEnrichPeopleAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |

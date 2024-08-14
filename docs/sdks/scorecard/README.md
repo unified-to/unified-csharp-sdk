@@ -33,6 +33,8 @@ var res = await sdk.Scorecard.CreateAtsScorecardAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -75,6 +77,8 @@ var res = await sdk.Scorecard.GetAtsScorecardAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Scorecard.ListAtsScorecardsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
@@ -158,6 +164,8 @@ var res = await sdk.Scorecard.PatchAtsScorecardAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Scorecard.RemoveAtsScorecardAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Scorecard.UpdateAtsScorecardAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

@@ -33,6 +33,8 @@ var res = await sdk.Group.CreateHrisGroupAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
@@ -75,6 +77,8 @@ var res = await sdk.Group.GetHrisGroupAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Group.ListHrisGroupsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
@@ -158,6 +164,8 @@ var res = await sdk.Group.PatchHrisGroupAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Group.RemoveHrisGroupAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Group.UpdateHrisGroupAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

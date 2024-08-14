@@ -35,6 +35,8 @@ var res = await sdk.Passthrough.CreatePassthroughAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                    | Type                         | Required                     | Description                  |
@@ -74,6 +76,8 @@ var res = await sdk.Passthrough.ListPassthroughsAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -118,6 +122,8 @@ var res = await sdk.Passthrough.PatchPassthroughAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                    | Type                         | Required                     | Description                  |
@@ -157,6 +163,8 @@ var res = await sdk.Passthrough.RemovePassthroughAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -200,6 +208,8 @@ var res = await sdk.Passthrough.UpdatePassthroughAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

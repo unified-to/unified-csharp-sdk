@@ -29,6 +29,8 @@ var res = await sdk.Enrich.ListEnrichCompaniesAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                           | Type                                | Required                            | Description                         |
@@ -70,6 +72,8 @@ var res = await sdk.Enrich.ListEnrichPeopleAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 

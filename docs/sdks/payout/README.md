@@ -32,6 +32,8 @@ var res = await sdk.Payout.GetPaymentPayoutAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -74,6 +76,8 @@ var res = await sdk.Payout.ListPaymentPayoutsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 

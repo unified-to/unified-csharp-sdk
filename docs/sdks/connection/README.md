@@ -40,6 +40,8 @@ var res = await sdk.Connection.CreateUnifiedConnectionAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
@@ -75,6 +77,8 @@ var res = await sdk.Connection.GetUnifiedConnectionAsync(id: "<value>");
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -114,6 +118,8 @@ var res = await sdk.Connection.ListUnifiedConnectionsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -162,6 +168,8 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
@@ -198,6 +206,8 @@ var res = await sdk.Connection.RemoveUnifiedConnectionAsync(id: "<value>");
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -245,6 +255,8 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

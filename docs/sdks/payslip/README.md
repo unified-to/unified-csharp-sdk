@@ -32,6 +32,8 @@ var res = await sdk.Payslip.GetHrisPayslipAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -74,6 +76,8 @@ var res = await sdk.Payslip.ListHrisPayslipsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 

@@ -33,6 +33,8 @@ var res = await sdk.Candidate.CreateAtsCandidateAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -75,6 +77,8 @@ var res = await sdk.Candidate.GetAtsCandidateAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Candidate.ListAtsCandidatesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
@@ -158,6 +164,8 @@ var res = await sdk.Candidate.PatchAtsCandidateAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Candidate.RemoveAtsCandidateAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Candidate.UpdateAtsCandidateAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

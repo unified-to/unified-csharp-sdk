@@ -33,6 +33,8 @@ var res = await sdk.Pipeline.CreateCrmPipelineAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -75,6 +77,8 @@ var res = await sdk.Pipeline.GetCrmPipelineAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Pipeline.ListCrmPipelinesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
@@ -158,6 +164,8 @@ var res = await sdk.Pipeline.PatchCrmPipelineAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Pipeline.RemoveCrmPipelineAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Pipeline.UpdateCrmPipelineAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

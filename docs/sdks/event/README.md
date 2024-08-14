@@ -33,6 +33,8 @@ var res = await sdk.Event.CreateCrmEventAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
@@ -75,6 +77,8 @@ var res = await sdk.Event.GetCrmEventAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Event.ListCrmEventsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
@@ -158,6 +164,8 @@ var res = await sdk.Event.PatchCrmEventAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Event.RemoveCrmEventAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Event.UpdateCrmEventAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

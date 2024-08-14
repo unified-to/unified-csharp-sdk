@@ -33,6 +33,8 @@ var res = await sdk.Ticket.CreateTicketingTicketAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
@@ -75,6 +77,8 @@ var res = await sdk.Ticket.GetTicketingTicketAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Ticket.ListTicketingTicketsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
@@ -158,6 +164,8 @@ var res = await sdk.Ticket.PatchTicketingTicketAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Ticket.RemoveTicketingTicketAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Ticket.UpdateTicketingTicketAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

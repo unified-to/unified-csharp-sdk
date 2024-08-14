@@ -36,6 +36,8 @@ var res = await sdk.Collection.CreateCommerceCollectionAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -78,6 +80,8 @@ var res = await sdk.Collection.GetCommerceCollectionAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -122,6 +126,8 @@ var res = await sdk.Collection.ListCommerceCollectionsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
@@ -165,6 +171,8 @@ var res = await sdk.Collection.PatchCommerceCollectionAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -204,6 +212,8 @@ var res = await sdk.Collection.RemoveCommerceCollectionAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -248,6 +258,8 @@ var res = await sdk.Collection.UpdateCommerceCollectionAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

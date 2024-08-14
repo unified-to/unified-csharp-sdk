@@ -90,7 +90,7 @@ namespace UnifiedTo
         /// <summary>
         /// List support issues
         /// </summary>
-        Task<ListUnifiedIssuesResponse> ListUnifiedIssuesAsync(double? limit = null, double? offset = null, DateTime? updatedGte = null);
+        Task<ListUnifiedIssuesResponse> ListUnifiedIssuesAsync(ListUnifiedIssuesRequest request);
 
         /// <summary>
         /// Returns all registered webhooks
@@ -132,10 +132,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.38";
-        private const string _sdkGenVersion = "2.392.0";
+        private const string _sdkVersion = "0.19.39";
+        private const string _sdkGenVersion = "2.396.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.38 2.392.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.39 2.396.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -957,14 +957,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<ListUnifiedIssuesResponse> ListUnifiedIssuesAsync(double? limit = null, double? offset = null, DateTime? updatedGte = null)
+        public async Task<ListUnifiedIssuesResponse> ListUnifiedIssuesAsync(ListUnifiedIssuesRequest request)
         {
-            var request = new ListUnifiedIssuesRequest()
-            {
-                Limit = limit,
-                Offset = offset,
-                UpdatedGte = updatedGte,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/issue", request);
 

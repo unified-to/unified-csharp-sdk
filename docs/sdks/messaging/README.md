@@ -35,6 +35,8 @@ var res = await sdk.Messaging.CreateMessagingMessageAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
@@ -77,6 +79,8 @@ var res = await sdk.Messaging.GetMessagingChannelAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -122,6 +126,8 @@ var res = await sdk.Messaging.GetMessagingMessageAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -165,6 +171,8 @@ var res = await sdk.Messaging.ListMessagingChannelsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
@@ -206,6 +214,8 @@ var res = await sdk.Messaging.ListMessagingMessagesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
@@ -245,6 +255,8 @@ var res = await sdk.Messaging.PatchMessagingMessageAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -286,6 +298,8 @@ var res = await sdk.Messaging.RemoveMessagingMessageAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -326,6 +340,8 @@ var res = await sdk.Messaging.UpdateMessagingMessageAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

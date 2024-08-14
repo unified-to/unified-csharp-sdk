@@ -42,6 +42,8 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
@@ -81,6 +83,8 @@ var res = await sdk.Company.CreateHrisCompanyAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -124,6 +128,8 @@ var res = await sdk.Company.GetAtsCompanyAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -169,6 +175,8 @@ var res = await sdk.Company.GetCrmCompanyAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -213,6 +221,8 @@ var res = await sdk.Company.GetHrisCompanyAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -256,6 +266,8 @@ var res = await sdk.Company.ListAtsCompaniesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
@@ -297,6 +309,8 @@ var res = await sdk.Company.ListCrmCompaniesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
@@ -335,6 +349,8 @@ var res = await sdk.Company.ListEnrichCompaniesAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -379,6 +395,8 @@ var res = await sdk.Company.ListHrisCompaniesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
@@ -418,6 +436,8 @@ var res = await sdk.Company.PatchCrmCompanyAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -461,6 +481,8 @@ var res = await sdk.Company.PatchHrisCompanyAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -501,6 +523,8 @@ var res = await sdk.Company.RemoveCrmCompanyAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -539,6 +563,8 @@ var res = await sdk.Company.RemoveHrisCompanyAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -581,6 +607,8 @@ var res = await sdk.Company.UpdateCrmCompanyAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
@@ -622,6 +650,8 @@ var res = await sdk.Company.UpdateHrisCompanyAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

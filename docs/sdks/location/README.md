@@ -41,6 +41,8 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
@@ -80,6 +82,8 @@ var res = await sdk.Location.CreateHrisLocationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -123,6 +127,8 @@ var res = await sdk.Location.GetCommerceLocationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -168,6 +174,8 @@ var res = await sdk.Location.GetHrisLocationAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -211,6 +219,8 @@ var res = await sdk.Location.ListCommerceLocationsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
@@ -251,6 +261,8 @@ var res = await sdk.Location.ListHrisLocationsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -294,6 +306,8 @@ var res = await sdk.Location.PatchCommerceLocationAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
@@ -336,6 +350,8 @@ var res = await sdk.Location.PatchHrisLocationAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -376,6 +392,8 @@ var res = await sdk.Location.RemoveCommerceLocationAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -414,6 +432,8 @@ var res = await sdk.Location.RemoveHrisLocationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -458,6 +478,8 @@ var res = await sdk.Location.UpdateCommerceLocationAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
@@ -499,6 +521,8 @@ var res = await sdk.Location.UpdateHrisLocationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

@@ -34,6 +34,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=offset")]
         public double? Offset { get; set; }
 
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=order")]
+        public string? Order { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=parent_id")]
         public string? ParentId { get; set; }
 
@@ -42,6 +45,9 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=query")]
         public string? Query { get; set; }
+
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")]
+        public string? Sort { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=space_id")]
         public string? SpaceId { get; set; }

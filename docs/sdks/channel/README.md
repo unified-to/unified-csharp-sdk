@@ -32,6 +32,8 @@ var res = await sdk.Channel.GetMessagingChannelAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -74,6 +76,8 @@ var res = await sdk.Channel.ListMessagingChannelsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 

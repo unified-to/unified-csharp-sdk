@@ -33,6 +33,8 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -75,6 +77,8 @@ var res = await sdk.Employee.GetHrisEmployeeAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Employee.ListHrisEmployeesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
@@ -158,6 +164,8 @@ var res = await sdk.Employee.PatchHrisEmployeeAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Employee.RemoveHrisEmployeeAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Employee.UpdateHrisEmployeeAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

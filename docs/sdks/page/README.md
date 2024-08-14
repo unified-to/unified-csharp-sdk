@@ -39,6 +39,8 @@ var res = await sdk.Page.CreateKmsPageAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
@@ -82,6 +84,8 @@ var res = await sdk.Page.GetKmsPageAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -124,6 +128,8 @@ var res = await sdk.Page.ListKmsPagesAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -171,6 +177,8 @@ var res = await sdk.Page.PatchKmsPageAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
@@ -210,6 +218,8 @@ var res = await sdk.Page.RemoveKmsPageAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -257,6 +267,8 @@ var res = await sdk.Page.UpdateKmsPageAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

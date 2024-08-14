@@ -35,6 +35,8 @@ var res = await sdk.Inventory.CreateCommerceInventoryAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -77,6 +79,8 @@ var res = await sdk.Inventory.GetCommerceInventoryAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -121,6 +125,8 @@ var res = await sdk.Inventory.ListCommerceInventoriesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
@@ -163,6 +169,8 @@ var res = await sdk.Inventory.PatchCommerceInventoryAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -202,6 +210,8 @@ var res = await sdk.Inventory.RemoveCommerceInventoryAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -245,6 +255,8 @@ var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

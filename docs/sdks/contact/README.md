@@ -45,6 +45,8 @@ var res = await sdk.Contact.CreateAccountingContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -85,6 +87,8 @@ var res = await sdk.Contact.CreateCrmContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
@@ -124,6 +128,8 @@ var res = await sdk.Contact.CreateUcContactAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -167,6 +173,8 @@ var res = await sdk.Contact.GetAccountingContactAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -212,6 +220,8 @@ var res = await sdk.Contact.GetCrmContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -256,6 +266,8 @@ var res = await sdk.Contact.GetUcContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -299,6 +311,8 @@ var res = await sdk.Contact.ListAccountingContactsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
@@ -339,6 +353,8 @@ var res = await sdk.Contact.ListCrmContactsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -381,6 +397,8 @@ var res = await sdk.Contact.ListUcContactsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
@@ -420,6 +438,8 @@ var res = await sdk.Contact.PatchAccountingContactAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -463,6 +483,8 @@ var res = await sdk.Contact.PatchCrmContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
@@ -505,6 +527,8 @@ var res = await sdk.Contact.PatchUcContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
@@ -545,6 +569,8 @@ var res = await sdk.Contact.RemoveAccountingContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -584,6 +610,8 @@ var res = await sdk.Contact.RemoveCrmContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -622,6 +650,8 @@ var res = await sdk.Contact.RemoveUcContactAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -663,6 +693,8 @@ var res = await sdk.Contact.UpdateAccountingContactAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -706,6 +738,8 @@ var res = await sdk.Contact.UpdateCrmContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
@@ -747,6 +781,8 @@ var res = await sdk.Contact.UpdateUcContactAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

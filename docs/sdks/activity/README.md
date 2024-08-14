@@ -35,6 +35,8 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -77,6 +79,8 @@ var res = await sdk.Activity.GetAtsActivityAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -121,6 +125,8 @@ var res = await sdk.Activity.ListAtsActivitiesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
@@ -163,6 +169,8 @@ var res = await sdk.Activity.PatchAtsActivityAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -202,6 +210,8 @@ var res = await sdk.Activity.RemoveAtsActivityAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -245,6 +255,8 @@ var res = await sdk.Activity.UpdateAtsActivityAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

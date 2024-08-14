@@ -55,6 +55,8 @@ var res = await sdk.Hris.CreateHrisCompanyAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -94,6 +96,8 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -135,6 +139,8 @@ var res = await sdk.Hris.CreateHrisGroupAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
@@ -174,6 +180,8 @@ var res = await sdk.Hris.CreateHrisLocationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -217,6 +225,8 @@ var res = await sdk.Hris.GetHrisCompanyAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -262,6 +272,8 @@ var res = await sdk.Hris.GetHrisEmployeeAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -305,6 +317,8 @@ var res = await sdk.Hris.GetHrisGroupAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -350,6 +364,8 @@ var res = await sdk.Hris.GetHrisLocationAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -393,6 +409,8 @@ var res = await sdk.Hris.GetHrisPayslipAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -438,6 +456,8 @@ var res = await sdk.Hris.GetHrisTimeoffAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -481,6 +501,8 @@ var res = await sdk.Hris.ListHrisCompaniesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
@@ -521,6 +543,8 @@ var res = await sdk.Hris.ListHrisEmployeesAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -563,6 +587,8 @@ var res = await sdk.Hris.ListHrisGroupsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
@@ -603,6 +629,8 @@ var res = await sdk.Hris.ListHrisLocationsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -645,6 +673,8 @@ var res = await sdk.Hris.ListHrisPayslipsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
@@ -686,6 +716,8 @@ var res = await sdk.Hris.ListHrisTimeoffsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
@@ -725,6 +757,8 @@ var res = await sdk.Hris.PatchHrisCompanyAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -768,6 +802,8 @@ var res = await sdk.Hris.PatchHrisEmployeeAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -809,6 +845,8 @@ var res = await sdk.Hris.PatchHrisGroupAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -852,6 +890,8 @@ var res = await sdk.Hris.PatchHrisLocationAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -892,6 +932,8 @@ var res = await sdk.Hris.RemoveHrisCompanyAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -930,6 +972,8 @@ var res = await sdk.Hris.RemoveHrisEmployeeAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -970,6 +1014,8 @@ var res = await sdk.Hris.RemoveHrisGroupAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1008,6 +1054,8 @@ var res = await sdk.Hris.RemoveHrisLocationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1049,6 +1097,8 @@ var res = await sdk.Hris.UpdateHrisCompanyAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -1092,6 +1142,8 @@ var res = await sdk.Hris.UpdateHrisEmployeeAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -1134,6 +1186,8 @@ var res = await sdk.Hris.UpdateHrisGroupAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
@@ -1175,6 +1229,8 @@ var res = await sdk.Hris.UpdateHrisLocationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

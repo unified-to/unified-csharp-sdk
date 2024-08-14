@@ -26,6 +26,8 @@ var res = await sdk.Apicall.GetUnifiedApicallAsync(id: "<value>");
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -63,6 +65,8 @@ var res = await sdk.Apicall.ListUnifiedApicallsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 

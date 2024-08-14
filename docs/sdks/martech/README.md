@@ -39,6 +39,8 @@ var res = await sdk.Martech.CreateMartechListAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
@@ -78,6 +80,8 @@ var res = await sdk.Martech.CreateMartechMemberAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -121,6 +125,8 @@ var res = await sdk.Martech.GetMartechListAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -166,6 +172,8 @@ var res = await sdk.Martech.GetMartechMemberAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -209,6 +217,8 @@ var res = await sdk.Martech.ListMartechListsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
@@ -250,6 +260,8 @@ var res = await sdk.Martech.ListMartechMembersAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
@@ -289,6 +301,8 @@ var res = await sdk.Martech.PatchMartechListAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -332,6 +346,8 @@ var res = await sdk.Martech.PatchMartechMemberAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
@@ -372,6 +388,8 @@ var res = await sdk.Martech.RemoveMartechListAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -410,6 +428,8 @@ var res = await sdk.Martech.RemoveMartechMemberAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -452,6 +472,8 @@ var res = await sdk.Martech.UpdateMartechListAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
@@ -493,6 +515,8 @@ var res = await sdk.Martech.UpdateMartechMemberAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

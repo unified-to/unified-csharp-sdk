@@ -33,6 +33,8 @@ var res = await sdk.Document.CreateAtsDocumentAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -75,6 +77,8 @@ var res = await sdk.Document.GetAtsDocumentAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Document.ListAtsDocumentsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
@@ -158,6 +164,8 @@ var res = await sdk.Document.PatchAtsDocumentAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Document.RemoveAtsDocumentAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Document.UpdateAtsDocumentAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

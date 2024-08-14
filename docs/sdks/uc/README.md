@@ -34,6 +34,8 @@ var res = await sdk.Uc.CreateUcContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
@@ -76,6 +78,8 @@ var res = await sdk.Uc.GetUcContactAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -120,6 +124,8 @@ var res = await sdk.Uc.ListUcCallsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -161,6 +167,8 @@ var res = await sdk.Uc.ListUcContactsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
@@ -200,6 +208,8 @@ var res = await sdk.Uc.PatchUcContactAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -241,6 +251,8 @@ var res = await sdk.Uc.RemoveUcContactAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -281,6 +293,8 @@ var res = await sdk.Uc.UpdateUcContactAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

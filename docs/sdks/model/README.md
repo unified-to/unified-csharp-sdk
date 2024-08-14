@@ -30,6 +30,8 @@ var res = await sdk.Model.ListGenaiModelsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |

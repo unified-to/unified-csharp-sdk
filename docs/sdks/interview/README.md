@@ -33,6 +33,8 @@ var res = await sdk.Interview.CreateAtsInterviewAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -75,6 +77,8 @@ var res = await sdk.Interview.GetAtsInterviewAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Interview.ListAtsInterviewsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
@@ -158,6 +164,8 @@ var res = await sdk.Interview.PatchAtsInterviewAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Interview.RemoveAtsInterviewAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Interview.UpdateAtsInterviewAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

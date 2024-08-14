@@ -33,6 +33,8 @@ var res = await sdk.Account.CreateAccountingAccountAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -75,6 +77,8 @@ var res = await sdk.Account.GetAccountingAccountAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Account.ListAccountingAccountsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
@@ -158,6 +164,8 @@ var res = await sdk.Account.PatchAccountingAccountAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Account.RemoveAccountingAccountAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Account.UpdateAccountingAccountAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

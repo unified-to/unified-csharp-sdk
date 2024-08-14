@@ -32,6 +32,8 @@ var res = await sdk.Refund.GetPaymentRefundAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -74,6 +76,8 @@ var res = await sdk.Refund.ListPaymentRefundsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 

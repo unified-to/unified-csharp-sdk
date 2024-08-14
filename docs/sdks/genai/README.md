@@ -29,6 +29,8 @@ var res = await sdk.Genai.CreateGenaiPromptAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -70,6 +72,8 @@ var res = await sdk.Genai.ListGenaiModelsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 

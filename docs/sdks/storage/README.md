@@ -33,6 +33,8 @@ var res = await sdk.Storage.CreateStorageFileAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -75,6 +77,8 @@ var res = await sdk.Storage.GetStorageFileAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Storage.ListStorageFilesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
@@ -158,6 +164,8 @@ var res = await sdk.Storage.PatchStorageFileAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Storage.RemoveStorageFileAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Storage.UpdateStorageFileAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

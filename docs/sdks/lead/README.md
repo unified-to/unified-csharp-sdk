@@ -33,6 +33,8 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
@@ -75,6 +77,8 @@ var res = await sdk.Lead.GetCrmLeadAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Lead.ListCrmLeadsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -158,6 +164,8 @@ var res = await sdk.Lead.PatchCrmLeadAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Lead.RemoveCrmLeadAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Lead.UpdateCrmLeadAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

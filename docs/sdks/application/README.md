@@ -33,6 +33,8 @@ var res = await sdk.Application.CreateAtsApplicationAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
@@ -75,6 +77,8 @@ var res = await sdk.Application.GetAtsApplicationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Application.ListAtsApplicationsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
@@ -158,6 +164,8 @@ var res = await sdk.Application.PatchAtsApplicationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Application.RemoveAtsApplicationAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter             | Type                  | Required              | Description           |
@@ -239,6 +249,8 @@ var res = await sdk.Application.UpdateAtsApplicationAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

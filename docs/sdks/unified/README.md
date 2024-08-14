@@ -52,6 +52,8 @@ var res = await sdk.Unified.CreateUnifiedConnectionAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
@@ -96,6 +98,8 @@ var res = await sdk.Unified.CreateUnifiedWebhookAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -133,6 +137,8 @@ var res = await sdk.Unified.GetUnifiedApicallAsync(id: "<value>");
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -168,6 +174,8 @@ var res = await sdk.Unified.GetUnifiedConnectionAsync(id: "<value>");
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -211,6 +219,8 @@ var res = await sdk.Unified.GetUnifiedIntegrationAuthAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
@@ -246,6 +256,8 @@ var res = await sdk.Unified.GetUnifiedWebhookAsync(id: "<value>");
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -285,6 +297,8 @@ var res = await sdk.Unified.ListUnifiedApicallsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
@@ -323,6 +337,8 @@ var res = await sdk.Unified.ListUnifiedConnectionsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -365,6 +381,8 @@ var res = await sdk.Unified.ListUnifiedIntegrationWorkspacesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
@@ -404,6 +422,8 @@ var res = await sdk.Unified.ListUnifiedIntegrationsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
@@ -435,21 +455,20 @@ var sdk = new UnifiedToSDK(security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     });
 
-var res = await sdk.Unified.ListUnifiedIssuesAsync(
-    limit: 7069.08D,
-    offset: 7461.37D,
-    updatedGte: System.DateTime.Parse("2022-01-21T01:55:24.746Z"));
+ListUnifiedIssuesRequest req = new ListUnifiedIssuesRequest() {};
+
+var res = await sdk.Unified.ListUnifiedIssuesAsync(req);
 
 // handle response
 ```
 
+
+
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `Limit`                                                                               | *double*                                                                              | :heavy_minus_sign:                                                                    | N/A                                                                                   |
-| `Offset`                                                                              | *double*                                                                              | :heavy_minus_sign:                                                                    | N/A                                                                                   |
-| `UpdatedGte`                                                                          | [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0) | :heavy_minus_sign:                                                                    | Return only results whose updated date is equal or greater to this value              |
+| Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `request`                                                                     | [ListUnifiedIssuesRequest](../../Models/Requests/ListUnifiedIssuesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
 
 ### Response
@@ -482,6 +501,8 @@ var res = await sdk.Unified.ListUnifiedWebhooksAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -530,6 +551,8 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
@@ -567,6 +590,8 @@ var res = await sdk.Unified.PatchUnifiedWebhookTriggerAsync(id: "<value>");
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -603,6 +628,8 @@ var res = await sdk.Unified.RemoveUnifiedConnectionAsync(id: "<value>");
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -638,6 +665,8 @@ var res = await sdk.Unified.RemoveUnifiedWebhookAsync(id: "<value>");
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -686,6 +715,8 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
@@ -722,6 +753,8 @@ var res = await sdk.Unified.UpdateUnifiedWebhookTriggerAsync(id: "<value>");
 
 // handle response
 ```
+
+
 
 ### Parameters
 

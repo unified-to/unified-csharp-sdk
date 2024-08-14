@@ -38,6 +38,8 @@ var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -74,6 +76,8 @@ var res = await sdk.Webhook.GetUnifiedWebhookAsync(id: "<value>");
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -113,6 +117,8 @@ var res = await sdk.Webhook.ListUnifiedWebhooksAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
@@ -148,6 +154,8 @@ var res = await sdk.Webhook.PatchUnifiedWebhookTriggerAsync(id: "<value>");
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -185,6 +193,8 @@ var res = await sdk.Webhook.RemoveUnifiedWebhookAsync(id: "<value>");
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
@@ -220,6 +230,8 @@ var res = await sdk.Webhook.UpdateUnifiedWebhookTriggerAsync(id: "<value>");
 
 // handle response
 ```
+
+
 
 ### Parameters
 

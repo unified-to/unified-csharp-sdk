@@ -33,6 +33,8 @@ var res = await sdk.Integration.GetUnifiedIntegrationAuthAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
@@ -74,6 +76,8 @@ var res = await sdk.Integration.ListUnifiedIntegrationWorkspacesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
@@ -112,6 +116,8 @@ var res = await sdk.Integration.ListUnifiedIntegrationsAsync(req);
 
 // handle response
 ```
+
+
 
 ### Parameters
 

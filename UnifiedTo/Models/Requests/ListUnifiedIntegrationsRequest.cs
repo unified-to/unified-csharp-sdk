@@ -37,12 +37,6 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=offset")]
         public double? Offset { get; set; }
 
-        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=order")]
-        public string? Order { get; set; }
-
-        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")]
-        public string? Sort { get; set; }
-
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=summary")]
         public bool? Summary { get; set; }
 

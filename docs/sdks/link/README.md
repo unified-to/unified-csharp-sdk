@@ -33,6 +33,8 @@ var res = await sdk.Link.CreatePaymentLinkAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -75,6 +77,8 @@ var res = await sdk.Link.GetPaymentLinkAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Link.ListPaymentLinksAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
@@ -158,6 +164,8 @@ var res = await sdk.Link.PatchPaymentLinkAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Link.RemovePaymentLinkAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Link.UpdatePaymentLinkAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

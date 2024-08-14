@@ -33,6 +33,8 @@ var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -75,6 +77,8 @@ var res = await sdk.Taxrate.GetAccountingTaxrateAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Taxrate.ListAccountingTaxratesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
@@ -158,6 +164,8 @@ var res = await sdk.Taxrate.PatchAccountingTaxrateAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Taxrate.RemoveAccountingTaxrateAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Taxrate.UpdateAccountingTaxrateAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

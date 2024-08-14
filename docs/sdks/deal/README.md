@@ -33,6 +33,8 @@ var res = await sdk.Deal.CreateCrmDealAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
@@ -75,6 +77,8 @@ var res = await sdk.Deal.GetCrmDealAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Deal.ListCrmDealsAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -158,6 +164,8 @@ var res = await sdk.Deal.PatchCrmDealAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Deal.RemoveCrmDealAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Deal.UpdateCrmDealAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 

@@ -28,6 +28,8 @@ var res = await sdk.Prompt.CreateGenaiPromptAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |

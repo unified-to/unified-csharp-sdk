@@ -33,6 +33,8 @@ var res = await sdk.Note.CreateTicketingNoteAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
@@ -75,6 +77,8 @@ var res = await sdk.Note.GetTicketingNoteAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -119,6 +123,8 @@ var res = await sdk.Note.ListTicketingNotesAsync(req);
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
@@ -158,6 +164,8 @@ var res = await sdk.Note.PatchTicketingNoteAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
@@ -199,6 +207,8 @@ var res = await sdk.Note.RemoveTicketingNoteAsync(
 // handle response
 ```
 
+
+
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -239,6 +249,8 @@ var res = await sdk.Note.UpdateTicketingNoteAsync(
 
 // handle response
 ```
+
+
 
 ### Parameters
 
