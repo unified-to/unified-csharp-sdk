@@ -6,8 +6,10 @@
 * [CreateUnifiedWebhook](#createunifiedwebhook) - Create webhook subscription
 * [GetUnifiedWebhook](#getunifiedwebhook) - Retrieve webhook by its ID
 * [ListUnifiedWebhooks](#listunifiedwebhooks) - Returns all registered webhooks
+* [PatchUnifiedWebhook](#patchunifiedwebhook) - Update webhook subscription
 * [PatchUnifiedWebhookTrigger](#patchunifiedwebhooktrigger) - Trigger webhook
 * [RemoveUnifiedWebhook](#removeunifiedwebhook) - Remove webhook subscription
+* [UpdateUnifiedWebhook](#updateunifiedwebhook) - Update webhook subscription
 * [UpdateUnifiedWebhookTrigger](#updateunifiedwebhooktrigger) - Trigger webhook
 
 ## CreateUnifiedWebhook
@@ -135,6 +137,53 @@ var res = await sdk.Webhook.ListUnifiedWebhooksAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
+## PatchUnifiedWebhook
+
+Update webhook subscription
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
+    id: "<value>",
+    webhook: new Models.Components.Webhook() {
+    ConnectionId = "<value>",
+    Event = UnifiedTo.Models.Components.Event.Deleted,
+    HookUrl = "<value>",
+    ObjectType = UnifiedTo.Models.Components.ObjectType.Passthrough,
+});
+
+// handle response
+```
+
+
+
+### Parameters
+
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Webhook                                                 |
+| `Webhook`                                                         | [Models.Components.Webhook](../../Models/Components/Webhook.md)   | :heavy_minus_sign:                                                | A webhook is used to POST new/updated information to your server. |
+
+
+### Response
+
+**[PatchUnifiedWebhookResponse](../../Models/Requests/PatchUnifiedWebhookResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 ## PatchUnifiedWebhookTrigger
 
 Trigger webhook
@@ -205,6 +254,53 @@ var res = await sdk.Webhook.RemoveUnifiedWebhookAsync(id: "<value>");
 ### Response
 
 **[RemoveUnifiedWebhookResponse](../../Models/Requests/RemoveUnifiedWebhookResponse.md)**
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+## UpdateUnifiedWebhook
+
+Update webhook subscription
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    });
+
+var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
+    id: "<value>",
+    webhook: new Models.Components.Webhook() {
+    ConnectionId = "<value>",
+    Event = UnifiedTo.Models.Components.Event.Created,
+    HookUrl = "<value>",
+    ObjectType = UnifiedTo.Models.Components.ObjectType.HrisGroup,
+});
+
+// handle response
+```
+
+
+
+### Parameters
+
+| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Webhook                                                 |
+| `Webhook`                                                         | [Models.Components.Webhook](../../Models/Components/Webhook.md)   | :heavy_minus_sign:                                                | A webhook is used to POST new/updated information to your server. |
+
+
+### Response
+
+**[UpdateUnifiedWebhookResponse](../../Models/Requests/UpdateUnifiedWebhookResponse.md)**
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

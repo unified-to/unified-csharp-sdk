@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: afff9b10658068a6dd8be329a73e9f3e
+  docChecksum: 3b148f39dc467e6e4a130bd90db813be
   docVersion: "1.0"
-  speakeasyVersion: 1.366.0
-  generationVersion: 2.396.0
-  releaseVersion: 0.19.39
-  configChecksum: d593f04fe9a3521f7cd3a48e6483ba3a
+  speakeasyVersion: 1.374.2
+  generationVersion: 2.401.2
+  releaseVersion: 0.19.40
+  configChecksum: df43ed8321145507c93f6f10841a83ec
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -14,7 +14,7 @@ features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.9.13
+    core: 3.9.14
     flattening: 2.81.2
     globalSecurity: 2.83.6
     globalSecurityCallbacks: 0.1.0
@@ -688,6 +688,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListUnifiedWebhooksResponse.cs
   - UnifiedTo/Models/Requests/PatchUnifiedConnectionRequest.cs
   - UnifiedTo/Models/Requests/PatchUnifiedConnectionResponse.cs
+  - UnifiedTo/Models/Requests/PatchUnifiedWebhookRequest.cs
+  - UnifiedTo/Models/Requests/PatchUnifiedWebhookResponse.cs
   - UnifiedTo/Models/Requests/PatchUnifiedWebhookTriggerRequest.cs
   - UnifiedTo/Models/Requests/PatchUnifiedWebhookTriggerResponse.cs
   - UnifiedTo/Models/Requests/RemoveUnifiedConnectionRequest.cs
@@ -696,6 +698,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveUnifiedWebhookResponse.cs
   - UnifiedTo/Models/Requests/UpdateUnifiedConnectionRequest.cs
   - UnifiedTo/Models/Requests/UpdateUnifiedConnectionResponse.cs
+  - UnifiedTo/Models/Requests/UpdateUnifiedWebhookRequest.cs
+  - UnifiedTo/Models/Requests/UpdateUnifiedWebhookResponse.cs
   - UnifiedTo/Models/Requests/UpdateUnifiedWebhookTriggerRequest.cs
   - UnifiedTo/Models/Requests/UpdateUnifiedWebhookTriggerResponse.cs
   - UnifiedTo/Models/Requests/GetUnifiedIntegrationLoginRequest.cs
@@ -1504,6 +1508,8 @@ generatedFiles:
   - docs/Models/Requests/ListUnifiedWebhooksResponse.md
   - docs/Models/Requests/PatchUnifiedConnectionRequest.md
   - docs/Models/Requests/PatchUnifiedConnectionResponse.md
+  - docs/Models/Requests/PatchUnifiedWebhookRequest.md
+  - docs/Models/Requests/PatchUnifiedWebhookResponse.md
   - docs/Models/Requests/PatchUnifiedWebhookTriggerRequest.md
   - docs/Models/Requests/PatchUnifiedWebhookTriggerResponse.md
   - docs/Models/Requests/RemoveUnifiedConnectionRequest.md
@@ -1512,6 +1518,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveUnifiedWebhookResponse.md
   - docs/Models/Requests/UpdateUnifiedConnectionRequest.md
   - docs/Models/Requests/UpdateUnifiedConnectionResponse.md
+  - docs/Models/Requests/UpdateUnifiedWebhookRequest.md
+  - docs/Models/Requests/UpdateUnifiedWebhookResponse.md
   - docs/Models/Requests/UpdateUnifiedWebhookTriggerRequest.md
   - docs/Models/Requests/UpdateUnifiedWebhookTriggerResponse.md
   - docs/Models/Requests/GetUnifiedIntegrationLoginRequest.md
