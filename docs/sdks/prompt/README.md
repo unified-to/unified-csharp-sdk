@@ -1,6 +1,8 @@
 # Prompt
 (*Prompt*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateGenaiPrompt](#creategenaiprompt) - Create a prompt
@@ -28,8 +30,6 @@ var res = await sdk.Prompt.CreateGenaiPromptAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -37,10 +37,10 @@ var res = await sdk.Prompt.CreateGenaiPromptAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `GenaiPrompt`                                         | [GenaiPrompt](../../Models/Components/GenaiPrompt.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[CreateGenaiPromptResponse](../../Models/Requests/CreateGenaiPromptResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

@@ -1,6 +1,8 @@
 # Transaction
 (*Transaction*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateAccountingTransaction](#createaccountingtransaction) - Create a transaction
@@ -33,8 +35,6 @@ var res = await sdk.Transaction.CreateAccountingTransactionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
@@ -42,15 +42,16 @@ var res = await sdk.Transaction.CreateAccountingTransactionAsync(
 | `ConnectionId`                                                            | *string*                                                                  | :heavy_check_mark:                                                        | ID of the connection                                                      |
 | `AccountingTransaction`                                                   | [AccountingTransaction](../../Models/Components/AccountingTransaction.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
 
-
 ### Response
 
 **[CreateAccountingTransactionResponse](../../Models/Requests/CreateAccountingTransactionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAccountingTransaction
 
@@ -78,8 +79,6 @@ var res = await sdk.Transaction.GetAccountingTransactionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Transaction.GetAccountingTransactionAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Transaction            |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAccountingTransactionResponse](../../Models/Requests/GetAccountingTransactionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAccountingTransactions
 
@@ -123,23 +123,22 @@ var res = await sdk.Transaction.ListAccountingTransactionsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
 | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | `request`                                                                                       | [ListAccountingTransactionsRequest](../../Models/Requests/ListAccountingTransactionsRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
-
 ### Response
 
 **[ListAccountingTransactionsResponse](../../Models/Requests/ListAccountingTransactionsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAccountingTransaction
 
@@ -165,8 +164,6 @@ var res = await sdk.Transaction.PatchAccountingTransactionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
@@ -175,15 +172,16 @@ var res = await sdk.Transaction.PatchAccountingTransactionAsync(
 | `Id`                                                                      | *string*                                                                  | :heavy_check_mark:                                                        | ID of the Transaction                                                     |
 | `AccountingTransaction`                                                   | [AccountingTransaction](../../Models/Components/AccountingTransaction.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
 
-
 ### Response
 
 **[PatchAccountingTransactionResponse](../../Models/Requests/PatchAccountingTransactionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAccountingTransaction
 
@@ -207,8 +205,6 @@ var res = await sdk.Transaction.RemoveAccountingTransactionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter             | Type                  | Required              | Description           |
@@ -216,15 +212,16 @@ var res = await sdk.Transaction.RemoveAccountingTransactionAsync(
 | `ConnectionId`        | *string*              | :heavy_check_mark:    | ID of the connection  |
 | `Id`                  | *string*              | :heavy_check_mark:    | ID of the Transaction |
 
-
 ### Response
 
 **[RemoveAccountingTransactionResponse](../../Models/Requests/RemoveAccountingTransactionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAccountingTransaction
 
@@ -250,8 +247,6 @@ var res = await sdk.Transaction.UpdateAccountingTransactionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
@@ -260,10 +255,10 @@ var res = await sdk.Transaction.UpdateAccountingTransactionAsync(
 | `Id`                                                                      | *string*                                                                  | :heavy_check_mark:                                                        | ID of the Transaction                                                     |
 | `AccountingTransaction`                                                   | [AccountingTransaction](../../Models/Components/AccountingTransaction.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
 
-
 ### Response
 
 **[UpdateAccountingTransactionResponse](../../Models/Requests/UpdateAccountingTransactionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

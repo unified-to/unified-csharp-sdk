@@ -1,6 +1,8 @@
 # Space
 (*Space*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateKmsSpace](#createkmsspace) - Create a space
@@ -36,8 +38,6 @@ var res = await sdk.Space.CreateKmsSpaceAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                       | Type                                            | Required                                        | Description                                     |
@@ -45,15 +45,16 @@ var res = await sdk.Space.CreateKmsSpaceAsync(
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
 | `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_minus_sign:                              | N/A                                             |
 
-
 ### Response
 
 **[CreateKmsSpaceResponse](../../Models/Requests/CreateKmsSpaceResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetKmsSpace
 
@@ -81,8 +82,6 @@ var res = await sdk.Space.GetKmsSpaceAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -91,15 +90,16 @@ var res = await sdk.Space.GetKmsSpaceAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Space                  |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetKmsSpaceResponse](../../Models/Requests/GetKmsSpaceResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListKmsSpaces
 
@@ -126,23 +126,22 @@ var res = await sdk.Space.ListKmsSpacesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
 | `request`                                                             | [ListKmsSpacesRequest](../../Models/Requests/ListKmsSpacesRequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
 
-
 ### Response
 
 **[ListKmsSpacesResponse](../../Models/Requests/ListKmsSpacesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchKmsSpace
 
@@ -171,8 +170,6 @@ var res = await sdk.Space.PatchKmsSpaceAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                       | Type                                            | Required                                        | Description                                     |
@@ -181,15 +178,16 @@ var res = await sdk.Space.PatchKmsSpaceAsync(
 | `Id`                                            | *string*                                        | :heavy_check_mark:                              | ID of the Space                                 |
 | `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_minus_sign:                              | N/A                                             |
 
-
 ### Response
 
 **[PatchKmsSpaceResponse](../../Models/Requests/PatchKmsSpaceResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveKmsSpace
 
@@ -213,8 +211,6 @@ var res = await sdk.Space.RemoveKmsSpaceAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -222,15 +218,16 @@ var res = await sdk.Space.RemoveKmsSpaceAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Space      |
 
-
 ### Response
 
 **[RemoveKmsSpaceResponse](../../Models/Requests/RemoveKmsSpaceResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateKmsSpace
 
@@ -259,8 +256,6 @@ var res = await sdk.Space.UpdateKmsSpaceAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                       | Type                                            | Required                                        | Description                                     |
@@ -269,10 +264,10 @@ var res = await sdk.Space.UpdateKmsSpaceAsync(
 | `Id`                                            | *string*                                        | :heavy_check_mark:                              | ID of the Space                                 |
 | `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_minus_sign:                              | N/A                                             |
 
-
 ### Response
 
 **[UpdateKmsSpaceResponse](../../Models/Requests/UpdateKmsSpaceResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

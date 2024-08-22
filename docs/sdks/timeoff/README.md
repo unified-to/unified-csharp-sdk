@@ -1,6 +1,8 @@
 # Timeoff
 (*Timeoff*)
 
+## Overview
+
 ### Available Operations
 
 * [GetHrisTimeoff](#gethristimeoff) - Retrieve a timeoff
@@ -32,8 +34,6 @@ var res = await sdk.Timeoff.GetHrisTimeoffAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -42,15 +42,16 @@ var res = await sdk.Timeoff.GetHrisTimeoffAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Timeoff                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetHrisTimeoffResponse](../../Models/Requests/GetHrisTimeoffResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListHrisTimeoffs
 
@@ -77,18 +78,16 @@ var res = await sdk.Timeoff.ListHrisTimeoffsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListHrisTimeoffsRequest](../../Models/Requests/ListHrisTimeoffsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListHrisTimeoffsResponse](../../Models/Requests/ListHrisTimeoffsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

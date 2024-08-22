@@ -1,6 +1,8 @@
 # Project
 (*Project*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateTaskProject](#createtaskproject) - Create a project
@@ -33,8 +35,6 @@ var res = await sdk.Project.CreateTaskProjectAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -42,15 +42,16 @@ var res = await sdk.Project.CreateTaskProjectAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `TaskProject`                                         | [TaskProject](../../Models/Components/TaskProject.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[CreateTaskProjectResponse](../../Models/Requests/CreateTaskProjectResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetTaskProject
 
@@ -78,8 +79,6 @@ var res = await sdk.Project.GetTaskProjectAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Project.GetTaskProjectAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Project                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetTaskProjectResponse](../../Models/Requests/GetTaskProjectResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListTaskProjects
 
@@ -123,23 +123,22 @@ var res = await sdk.Project.ListTaskProjectsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListTaskProjectsRequest](../../Models/Requests/ListTaskProjectsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListTaskProjectsResponse](../../Models/Requests/ListTaskProjectsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchTaskProject
 
@@ -165,8 +164,6 @@ var res = await sdk.Project.PatchTaskProjectAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -175,15 +172,16 @@ var res = await sdk.Project.PatchTaskProjectAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Project                                     |
 | `TaskProject`                                         | [TaskProject](../../Models/Components/TaskProject.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[PatchTaskProjectResponse](../../Models/Requests/PatchTaskProjectResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveTaskProject
 
@@ -207,8 +205,6 @@ var res = await sdk.Project.RemoveTaskProjectAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Project.RemoveTaskProjectAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Project    |
 
-
 ### Response
 
 **[RemoveTaskProjectResponse](../../Models/Requests/RemoveTaskProjectResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateTaskProject
 
@@ -250,8 +247,6 @@ var res = await sdk.Project.UpdateTaskProjectAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -260,10 +255,10 @@ var res = await sdk.Project.UpdateTaskProjectAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Project                                     |
 | `TaskProject`                                         | [TaskProject](../../Models/Components/TaskProject.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[UpdateTaskProjectResponse](../../Models/Requests/UpdateTaskProjectResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

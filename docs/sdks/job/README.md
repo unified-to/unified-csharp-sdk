@@ -1,6 +1,8 @@
 # Job
 (*Job*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateAtsJob](#createatsjob) - Create a job
@@ -33,8 +35,6 @@ var res = await sdk.Job.CreateAtsJobAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                   | Type                                        | Required                                    | Description                                 |
@@ -42,15 +42,16 @@ var res = await sdk.Job.CreateAtsJobAsync(
 | `ConnectionId`                              | *string*                                    | :heavy_check_mark:                          | ID of the connection                        |
 | `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_minus_sign:                          | N/A                                         |
 
-
 ### Response
 
 **[CreateAtsJobResponse](../../Models/Requests/CreateAtsJobResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAtsJob
 
@@ -78,8 +79,6 @@ var res = await sdk.Job.GetAtsJobAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Job.GetAtsJobAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Job                    |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAtsJobResponse](../../Models/Requests/GetAtsJobResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAtsJobs
 
@@ -123,23 +123,22 @@ var res = await sdk.Job.ListAtsJobsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `request`                                                         | [ListAtsJobsRequest](../../Models/Requests/ListAtsJobsRequest.md) | :heavy_check_mark:                                                | The request object to use for the request.                        |
 
-
 ### Response
 
 **[ListAtsJobsResponse](../../Models/Requests/ListAtsJobsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAtsJob
 
@@ -165,8 +164,6 @@ var res = await sdk.Job.PatchAtsJobAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                   | Type                                        | Required                                    | Description                                 |
@@ -175,15 +172,16 @@ var res = await sdk.Job.PatchAtsJobAsync(
 | `Id`                                        | *string*                                    | :heavy_check_mark:                          | ID of the Job                               |
 | `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_minus_sign:                          | N/A                                         |
 
-
 ### Response
 
 **[PatchAtsJobResponse](../../Models/Requests/PatchAtsJobResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAtsJob
 
@@ -207,8 +205,6 @@ var res = await sdk.Job.RemoveAtsJobAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Job.RemoveAtsJobAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Job        |
 
-
 ### Response
 
 **[RemoveAtsJobResponse](../../Models/Requests/RemoveAtsJobResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAtsJob
 
@@ -250,8 +247,6 @@ var res = await sdk.Job.UpdateAtsJobAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                   | Type                                        | Required                                    | Description                                 |
@@ -260,10 +255,10 @@ var res = await sdk.Job.UpdateAtsJobAsync(
 | `Id`                                        | *string*                                    | :heavy_check_mark:                          | ID of the Job                               |
 | `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_minus_sign:                          | N/A                                         |
 
-
 ### Response
 
 **[UpdateAtsJobResponse](../../Models/Requests/UpdateAtsJobResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

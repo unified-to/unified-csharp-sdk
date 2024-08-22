@@ -1,6 +1,8 @@
 # Journal
 (*Journal*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateAccountingJournal](#createaccountingjournal) - Create a journal
@@ -33,8 +35,6 @@ var res = await sdk.Journal.CreateAccountingJournalAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -42,15 +42,16 @@ var res = await sdk.Journal.CreateAccountingJournalAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `AccountingJournal`                                               | [AccountingJournal](../../Models/Components/AccountingJournal.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[CreateAccountingJournalResponse](../../Models/Requests/CreateAccountingJournalResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAccountingJournal
 
@@ -78,8 +79,6 @@ var res = await sdk.Journal.GetAccountingJournalAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Journal.GetAccountingJournalAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Journal                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAccountingJournalResponse](../../Models/Requests/GetAccountingJournalResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAccountingJournals
 
@@ -123,23 +123,22 @@ var res = await sdk.Journal.ListAccountingJournalsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `request`                                                                               | [ListAccountingJournalsRequest](../../Models/Requests/ListAccountingJournalsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
-
 ### Response
 
 **[ListAccountingJournalsResponse](../../Models/Requests/ListAccountingJournalsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAccountingJournal
 
@@ -165,8 +164,6 @@ var res = await sdk.Journal.PatchAccountingJournalAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -175,15 +172,16 @@ var res = await sdk.Journal.PatchAccountingJournalAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Journal                                                 |
 | `AccountingJournal`                                               | [AccountingJournal](../../Models/Components/AccountingJournal.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[PatchAccountingJournalResponse](../../Models/Requests/PatchAccountingJournalResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAccountingJournal
 
@@ -207,8 +205,6 @@ var res = await sdk.Journal.RemoveAccountingJournalAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Journal.RemoveAccountingJournalAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Journal    |
 
-
 ### Response
 
 **[RemoveAccountingJournalResponse](../../Models/Requests/RemoveAccountingJournalResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAccountingJournal
 
@@ -250,8 +247,6 @@ var res = await sdk.Journal.UpdateAccountingJournalAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -260,10 +255,10 @@ var res = await sdk.Journal.UpdateAccountingJournalAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Journal                                                 |
 | `AccountingJournal`                                               | [AccountingJournal](../../Models/Components/AccountingJournal.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[UpdateAccountingJournalResponse](../../Models/Requests/UpdateAccountingJournalResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

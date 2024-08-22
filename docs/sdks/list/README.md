@@ -1,6 +1,8 @@
 # List
 (*List*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateMartechList](#createmartechlist) - Create a list
@@ -33,8 +35,6 @@ var res = await sdk.List.CreateMartechListAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
@@ -42,15 +42,16 @@ var res = await sdk.List.CreateMartechListAsync(
 | `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
 | `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_minus_sign:                                        | Mailing List                                              |
 
-
 ### Response
 
 **[CreateMartechListResponse](../../Models/Requests/CreateMartechListResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetMartechList
 
@@ -78,8 +79,6 @@ var res = await sdk.List.GetMartechListAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.List.GetMartechListAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the List                   |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetMartechListResponse](../../Models/Requests/GetMartechListResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListMartechLists
 
@@ -123,23 +123,22 @@ var res = await sdk.List.ListMartechListsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListMartechListsRequest](../../Models/Requests/ListMartechListsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListMartechListsResponse](../../Models/Requests/ListMartechListsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchMartechList
 
@@ -165,8 +164,6 @@ var res = await sdk.List.PatchMartechListAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
@@ -175,15 +172,16 @@ var res = await sdk.List.PatchMartechListAsync(
 | `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the List                                            |
 | `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_minus_sign:                                        | Mailing List                                              |
 
-
 ### Response
 
 **[PatchMartechListResponse](../../Models/Requests/PatchMartechListResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveMartechList
 
@@ -207,8 +205,6 @@ var res = await sdk.List.RemoveMartechListAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.List.RemoveMartechListAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the List       |
 
-
 ### Response
 
 **[RemoveMartechListResponse](../../Models/Requests/RemoveMartechListResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateMartechList
 
@@ -250,8 +247,6 @@ var res = await sdk.List.UpdateMartechListAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
@@ -260,10 +255,10 @@ var res = await sdk.List.UpdateMartechListAsync(
 | `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the List                                            |
 | `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_minus_sign:                                        | Mailing List                                              |
 
-
 ### Response
 
 **[UpdateMartechListResponse](../../Models/Requests/UpdateMartechListResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

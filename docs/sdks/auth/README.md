@@ -1,6 +1,8 @@
 # Auth
 (*Auth*)
 
+## Overview
+
 ### Available Operations
 
 * [GetUnifiedIntegrationAuth](#getunifiedintegrationauth) - Create connection indirectly
@@ -32,23 +34,22 @@ var res = await sdk.Auth.GetUnifiedIntegrationAuthAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `request`                                                                                     | [GetUnifiedIntegrationAuthRequest](../../Models/Requests/GetUnifiedIntegrationAuthRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
 
-
 ### Response
 
 **[GetUnifiedIntegrationAuthResponse](../../Models/Requests/GetUnifiedIntegrationAuthResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetUnifiedIntegrationLogin
 
@@ -75,18 +76,16 @@ var res = await sdk.Auth.GetUnifiedIntegrationLoginAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
 | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | `request`                                                                                       | [GetUnifiedIntegrationLoginRequest](../../Models/Requests/GetUnifiedIntegrationLoginRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
-
 ### Response
 
 **[GetUnifiedIntegrationLoginResponse](../../Models/Requests/GetUnifiedIntegrationLoginResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

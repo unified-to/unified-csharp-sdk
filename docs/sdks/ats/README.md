@@ -1,6 +1,8 @@
 # Ats
 (*Ats*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateAtsActivity](#createatsactivity) - Create an activity
@@ -74,8 +76,6 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -83,15 +83,16 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[CreateAtsActivityResponse](../../Models/Requests/CreateAtsActivityResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateAtsApplication
 
@@ -116,8 +117,6 @@ var res = await sdk.Ats.CreateAtsApplicationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
@@ -125,15 +124,16 @@ var res = await sdk.Ats.CreateAtsApplicationAsync(
 | `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
 | `AtsApplication`                                            | [AtsApplication](../../Models/Components/AtsApplication.md) | :heavy_minus_sign:                                          | N/A                                                         |
 
-
 ### Response
 
 **[CreateAtsApplicationResponse](../../Models/Requests/CreateAtsApplicationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateAtsCandidate
 
@@ -158,8 +158,6 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -167,15 +165,16 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `AtsCandidate`                                          | [AtsCandidate](../../Models/Components/AtsCandidate.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[CreateAtsCandidateResponse](../../Models/Requests/CreateAtsCandidateResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateAtsDocument
 
@@ -200,8 +199,6 @@ var res = await sdk.Ats.CreateAtsDocumentAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -209,15 +206,16 @@ var res = await sdk.Ats.CreateAtsDocumentAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `AtsDocument`                                         | [AtsDocument](../../Models/Components/AtsDocument.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[CreateAtsDocumentResponse](../../Models/Requests/CreateAtsDocumentResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateAtsInterview
 
@@ -242,8 +240,6 @@ var res = await sdk.Ats.CreateAtsInterviewAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -251,15 +247,16 @@ var res = await sdk.Ats.CreateAtsInterviewAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `AtsInterview`                                          | [AtsInterview](../../Models/Components/AtsInterview.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[CreateAtsInterviewResponse](../../Models/Requests/CreateAtsInterviewResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateAtsJob
 
@@ -284,8 +281,6 @@ var res = await sdk.Ats.CreateAtsJobAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                   | Type                                        | Required                                    | Description                                 |
@@ -293,15 +288,16 @@ var res = await sdk.Ats.CreateAtsJobAsync(
 | `ConnectionId`                              | *string*                                    | :heavy_check_mark:                          | ID of the connection                        |
 | `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_minus_sign:                          | N/A                                         |
 
-
 ### Response
 
 **[CreateAtsJobResponse](../../Models/Requests/CreateAtsJobResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateAtsScorecard
 
@@ -326,8 +322,6 @@ var res = await sdk.Ats.CreateAtsScorecardAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -335,15 +329,16 @@ var res = await sdk.Ats.CreateAtsScorecardAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `AtsScorecard`                                          | [AtsScorecard](../../Models/Components/AtsScorecard.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[CreateAtsScorecardResponse](../../Models/Requests/CreateAtsScorecardResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAtsActivity
 
@@ -371,8 +366,6 @@ var res = await sdk.Ats.GetAtsActivityAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -381,15 +374,16 @@ var res = await sdk.Ats.GetAtsActivityAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Activity               |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAtsActivityResponse](../../Models/Requests/GetAtsActivityResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAtsApplication
 
@@ -417,8 +411,6 @@ var res = await sdk.Ats.GetAtsApplicationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -427,15 +419,16 @@ var res = await sdk.Ats.GetAtsApplicationAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Application            |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAtsApplicationResponse](../../Models/Requests/GetAtsApplicationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAtsCandidate
 
@@ -463,8 +456,6 @@ var res = await sdk.Ats.GetAtsCandidateAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -473,15 +464,16 @@ var res = await sdk.Ats.GetAtsCandidateAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Candidate              |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAtsCandidateResponse](../../Models/Requests/GetAtsCandidateResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAtsCompany
 
@@ -509,8 +501,6 @@ var res = await sdk.Ats.GetAtsCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -519,15 +509,16 @@ var res = await sdk.Ats.GetAtsCompanyAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Company                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAtsCompanyResponse](../../Models/Requests/GetAtsCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAtsDocument
 
@@ -555,8 +546,6 @@ var res = await sdk.Ats.GetAtsDocumentAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -565,15 +554,16 @@ var res = await sdk.Ats.GetAtsDocumentAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Document               |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAtsDocumentResponse](../../Models/Requests/GetAtsDocumentResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAtsInterview
 
@@ -601,8 +591,6 @@ var res = await sdk.Ats.GetAtsInterviewAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -611,15 +599,16 @@ var res = await sdk.Ats.GetAtsInterviewAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Interview              |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAtsInterviewResponse](../../Models/Requests/GetAtsInterviewResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAtsJob
 
@@ -647,8 +636,6 @@ var res = await sdk.Ats.GetAtsJobAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -657,15 +644,16 @@ var res = await sdk.Ats.GetAtsJobAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Job                    |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAtsJobResponse](../../Models/Requests/GetAtsJobResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAtsScorecard
 
@@ -693,8 +681,6 @@ var res = await sdk.Ats.GetAtsScorecardAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -703,15 +689,16 @@ var res = await sdk.Ats.GetAtsScorecardAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Scorecard              |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAtsScorecardResponse](../../Models/Requests/GetAtsScorecardResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAtsActivities
 
@@ -738,23 +725,22 @@ var res = await sdk.Ats.ListAtsActivitiesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `request`                                                                     | [ListAtsActivitiesRequest](../../Models/Requests/ListAtsActivitiesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
-
 ### Response
 
 **[ListAtsActivitiesResponse](../../Models/Requests/ListAtsActivitiesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAtsApplications
 
@@ -781,23 +767,22 @@ var res = await sdk.Ats.ListAtsApplicationsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
 | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
 | `request`                                                                         | [ListAtsApplicationsRequest](../../Models/Requests/ListAtsApplicationsRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
-
 ### Response
 
 **[ListAtsApplicationsResponse](../../Models/Requests/ListAtsApplicationsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAtsApplicationstatuses
 
@@ -824,23 +809,22 @@ var res = await sdk.Ats.ListAtsApplicationstatusesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
 | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | `request`                                                                                       | [ListAtsApplicationstatusesRequest](../../Models/Requests/ListAtsApplicationstatusesRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
-
 ### Response
 
 **[ListAtsApplicationstatusesResponse](../../Models/Requests/ListAtsApplicationstatusesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAtsCandidates
 
@@ -867,23 +851,22 @@ var res = await sdk.Ats.ListAtsCandidatesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `request`                                                                     | [ListAtsCandidatesRequest](../../Models/Requests/ListAtsCandidatesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
-
 ### Response
 
 **[ListAtsCandidatesResponse](../../Models/Requests/ListAtsCandidatesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAtsCompanies
 
@@ -910,23 +893,22 @@ var res = await sdk.Ats.ListAtsCompaniesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListAtsCompaniesRequest](../../Models/Requests/ListAtsCompaniesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListAtsCompaniesResponse](../../Models/Requests/ListAtsCompaniesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAtsDocuments
 
@@ -953,23 +935,22 @@ var res = await sdk.Ats.ListAtsDocumentsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListAtsDocumentsRequest](../../Models/Requests/ListAtsDocumentsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListAtsDocumentsResponse](../../Models/Requests/ListAtsDocumentsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAtsInterviews
 
@@ -996,23 +977,22 @@ var res = await sdk.Ats.ListAtsInterviewsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `request`                                                                     | [ListAtsInterviewsRequest](../../Models/Requests/ListAtsInterviewsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
-
 ### Response
 
 **[ListAtsInterviewsResponse](../../Models/Requests/ListAtsInterviewsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAtsJobs
 
@@ -1039,23 +1019,22 @@ var res = await sdk.Ats.ListAtsJobsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `request`                                                         | [ListAtsJobsRequest](../../Models/Requests/ListAtsJobsRequest.md) | :heavy_check_mark:                                                | The request object to use for the request.                        |
 
-
 ### Response
 
 **[ListAtsJobsResponse](../../Models/Requests/ListAtsJobsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAtsScorecards
 
@@ -1082,23 +1061,22 @@ var res = await sdk.Ats.ListAtsScorecardsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `request`                                                                     | [ListAtsScorecardsRequest](../../Models/Requests/ListAtsScorecardsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
-
 ### Response
 
 **[ListAtsScorecardsResponse](../../Models/Requests/ListAtsScorecardsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAtsActivity
 
@@ -1126,8 +1104,6 @@ var res = await sdk.Ats.PatchAtsActivityAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -1136,15 +1112,16 @@ var res = await sdk.Ats.PatchAtsActivityAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Activity                                    |
 | `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[PatchAtsActivityResponse](../../Models/Requests/PatchAtsActivityResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAtsApplication
 
@@ -1170,8 +1147,6 @@ var res = await sdk.Ats.PatchAtsApplicationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
@@ -1180,15 +1155,16 @@ var res = await sdk.Ats.PatchAtsApplicationAsync(
 | `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Application                                       |
 | `AtsApplication`                                            | [AtsApplication](../../Models/Components/AtsApplication.md) | :heavy_minus_sign:                                          | N/A                                                         |
 
-
 ### Response
 
 **[PatchAtsApplicationResponse](../../Models/Requests/PatchAtsApplicationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAtsCandidate
 
@@ -1214,8 +1190,6 @@ var res = await sdk.Ats.PatchAtsCandidateAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -1224,15 +1198,16 @@ var res = await sdk.Ats.PatchAtsCandidateAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Candidate                                     |
 | `AtsCandidate`                                          | [AtsCandidate](../../Models/Components/AtsCandidate.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[PatchAtsCandidateResponse](../../Models/Requests/PatchAtsCandidateResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAtsDocument
 
@@ -1258,8 +1233,6 @@ var res = await sdk.Ats.PatchAtsDocumentAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -1268,15 +1241,16 @@ var res = await sdk.Ats.PatchAtsDocumentAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Document                                    |
 | `AtsDocument`                                         | [AtsDocument](../../Models/Components/AtsDocument.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[PatchAtsDocumentResponse](../../Models/Requests/PatchAtsDocumentResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAtsInterview
 
@@ -1302,8 +1276,6 @@ var res = await sdk.Ats.PatchAtsInterviewAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -1312,15 +1284,16 @@ var res = await sdk.Ats.PatchAtsInterviewAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Interview                                     |
 | `AtsInterview`                                          | [AtsInterview](../../Models/Components/AtsInterview.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[PatchAtsInterviewResponse](../../Models/Requests/PatchAtsInterviewResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAtsJob
 
@@ -1346,8 +1319,6 @@ var res = await sdk.Ats.PatchAtsJobAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                   | Type                                        | Required                                    | Description                                 |
@@ -1356,15 +1327,16 @@ var res = await sdk.Ats.PatchAtsJobAsync(
 | `Id`                                        | *string*                                    | :heavy_check_mark:                          | ID of the Job                               |
 | `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_minus_sign:                          | N/A                                         |
 
-
 ### Response
 
 **[PatchAtsJobResponse](../../Models/Requests/PatchAtsJobResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAtsScorecard
 
@@ -1390,8 +1362,6 @@ var res = await sdk.Ats.PatchAtsScorecardAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -1400,15 +1370,16 @@ var res = await sdk.Ats.PatchAtsScorecardAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Scorecard                                     |
 | `AtsScorecard`                                          | [AtsScorecard](../../Models/Components/AtsScorecard.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[PatchAtsScorecardResponse](../../Models/Requests/PatchAtsScorecardResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAtsActivity
 
@@ -1432,8 +1403,6 @@ var res = await sdk.Ats.RemoveAtsActivityAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1441,15 +1410,16 @@ var res = await sdk.Ats.RemoveAtsActivityAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Activity   |
 
-
 ### Response
 
 **[RemoveAtsActivityResponse](../../Models/Requests/RemoveAtsActivityResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAtsApplication
 
@@ -1473,8 +1443,6 @@ var res = await sdk.Ats.RemoveAtsApplicationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter             | Type                  | Required              | Description           |
@@ -1482,15 +1450,16 @@ var res = await sdk.Ats.RemoveAtsApplicationAsync(
 | `ConnectionId`        | *string*              | :heavy_check_mark:    | ID of the connection  |
 | `Id`                  | *string*              | :heavy_check_mark:    | ID of the Application |
 
-
 ### Response
 
 **[RemoveAtsApplicationResponse](../../Models/Requests/RemoveAtsApplicationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAtsCandidate
 
@@ -1514,8 +1483,6 @@ var res = await sdk.Ats.RemoveAtsCandidateAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1523,15 +1490,16 @@ var res = await sdk.Ats.RemoveAtsCandidateAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Candidate  |
 
-
 ### Response
 
 **[RemoveAtsCandidateResponse](../../Models/Requests/RemoveAtsCandidateResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAtsDocument
 
@@ -1555,8 +1523,6 @@ var res = await sdk.Ats.RemoveAtsDocumentAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1564,15 +1530,16 @@ var res = await sdk.Ats.RemoveAtsDocumentAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Document   |
 
-
 ### Response
 
 **[RemoveAtsDocumentResponse](../../Models/Requests/RemoveAtsDocumentResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAtsInterview
 
@@ -1596,8 +1563,6 @@ var res = await sdk.Ats.RemoveAtsInterviewAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1605,15 +1570,16 @@ var res = await sdk.Ats.RemoveAtsInterviewAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Interview  |
 
-
 ### Response
 
 **[RemoveAtsInterviewResponse](../../Models/Requests/RemoveAtsInterviewResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAtsJob
 
@@ -1637,8 +1603,6 @@ var res = await sdk.Ats.RemoveAtsJobAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1646,15 +1610,16 @@ var res = await sdk.Ats.RemoveAtsJobAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Job        |
 
-
 ### Response
 
 **[RemoveAtsJobResponse](../../Models/Requests/RemoveAtsJobResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAtsScorecard
 
@@ -1678,8 +1643,6 @@ var res = await sdk.Ats.RemoveAtsScorecardAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1687,15 +1650,16 @@ var res = await sdk.Ats.RemoveAtsScorecardAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Scorecard  |
 
-
 ### Response
 
 **[RemoveAtsScorecardResponse](../../Models/Requests/RemoveAtsScorecardResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAtsActivity
 
@@ -1723,8 +1687,6 @@ var res = await sdk.Ats.UpdateAtsActivityAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -1733,15 +1695,16 @@ var res = await sdk.Ats.UpdateAtsActivityAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Activity                                    |
 | `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[UpdateAtsActivityResponse](../../Models/Requests/UpdateAtsActivityResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAtsApplication
 
@@ -1767,8 +1730,6 @@ var res = await sdk.Ats.UpdateAtsApplicationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
@@ -1777,15 +1738,16 @@ var res = await sdk.Ats.UpdateAtsApplicationAsync(
 | `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Application                                       |
 | `AtsApplication`                                            | [AtsApplication](../../Models/Components/AtsApplication.md) | :heavy_minus_sign:                                          | N/A                                                         |
 
-
 ### Response
 
 **[UpdateAtsApplicationResponse](../../Models/Requests/UpdateAtsApplicationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAtsCandidate
 
@@ -1811,8 +1773,6 @@ var res = await sdk.Ats.UpdateAtsCandidateAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -1821,15 +1781,16 @@ var res = await sdk.Ats.UpdateAtsCandidateAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Candidate                                     |
 | `AtsCandidate`                                          | [AtsCandidate](../../Models/Components/AtsCandidate.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[UpdateAtsCandidateResponse](../../Models/Requests/UpdateAtsCandidateResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAtsDocument
 
@@ -1855,8 +1816,6 @@ var res = await sdk.Ats.UpdateAtsDocumentAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -1865,15 +1824,16 @@ var res = await sdk.Ats.UpdateAtsDocumentAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Document                                    |
 | `AtsDocument`                                         | [AtsDocument](../../Models/Components/AtsDocument.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[UpdateAtsDocumentResponse](../../Models/Requests/UpdateAtsDocumentResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAtsInterview
 
@@ -1899,8 +1859,6 @@ var res = await sdk.Ats.UpdateAtsInterviewAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -1909,15 +1867,16 @@ var res = await sdk.Ats.UpdateAtsInterviewAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Interview                                     |
 | `AtsInterview`                                          | [AtsInterview](../../Models/Components/AtsInterview.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[UpdateAtsInterviewResponse](../../Models/Requests/UpdateAtsInterviewResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAtsJob
 
@@ -1943,8 +1902,6 @@ var res = await sdk.Ats.UpdateAtsJobAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                   | Type                                        | Required                                    | Description                                 |
@@ -1953,15 +1910,16 @@ var res = await sdk.Ats.UpdateAtsJobAsync(
 | `Id`                                        | *string*                                    | :heavy_check_mark:                          | ID of the Job                               |
 | `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_minus_sign:                          | N/A                                         |
 
-
 ### Response
 
 **[UpdateAtsJobResponse](../../Models/Requests/UpdateAtsJobResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAtsScorecard
 
@@ -1987,8 +1945,6 @@ var res = await sdk.Ats.UpdateAtsScorecardAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -1997,10 +1953,10 @@ var res = await sdk.Ats.UpdateAtsScorecardAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Scorecard                                     |
 | `AtsScorecard`                                          | [AtsScorecard](../../Models/Components/AtsScorecard.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[UpdateAtsScorecardResponse](../../Models/Requests/UpdateAtsScorecardResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

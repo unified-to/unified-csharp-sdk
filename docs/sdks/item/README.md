@@ -1,6 +1,8 @@
 # Item
 (*Item*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateCommerceItem](#createcommerceitem) - Create an item
@@ -33,8 +35,6 @@ var res = await sdk.Item.CreateCommerceItemAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -42,15 +42,16 @@ var res = await sdk.Item.CreateCommerceItemAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `CommerceItem`                                          | [CommerceItem](../../Models/Components/CommerceItem.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[CreateCommerceItemResponse](../../Models/Requests/CreateCommerceItemResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetCommerceItem
 
@@ -78,8 +79,6 @@ var res = await sdk.Item.GetCommerceItemAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Item.GetCommerceItemAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Item                   |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetCommerceItemResponse](../../Models/Requests/GetCommerceItemResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListCommerceItems
 
@@ -123,23 +123,22 @@ var res = await sdk.Item.ListCommerceItemsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `request`                                                                     | [ListCommerceItemsRequest](../../Models/Requests/ListCommerceItemsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
-
 ### Response
 
 **[ListCommerceItemsResponse](../../Models/Requests/ListCommerceItemsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchCommerceItem
 
@@ -165,8 +164,6 @@ var res = await sdk.Item.PatchCommerceItemAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -175,15 +172,16 @@ var res = await sdk.Item.PatchCommerceItemAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Item                                          |
 | `CommerceItem`                                          | [CommerceItem](../../Models/Components/CommerceItem.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[PatchCommerceItemResponse](../../Models/Requests/PatchCommerceItemResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveCommerceItem
 
@@ -207,8 +205,6 @@ var res = await sdk.Item.RemoveCommerceItemAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Item.RemoveCommerceItemAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Item       |
 
-
 ### Response
 
 **[RemoveCommerceItemResponse](../../Models/Requests/RemoveCommerceItemResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateCommerceItem
 
@@ -250,8 +247,6 @@ var res = await sdk.Item.UpdateCommerceItemAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -260,10 +255,10 @@ var res = await sdk.Item.UpdateCommerceItemAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Item                                          |
 | `CommerceItem`                                          | [CommerceItem](../../Models/Components/CommerceItem.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[UpdateCommerceItemResponse](../../Models/Requests/UpdateCommerceItemResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

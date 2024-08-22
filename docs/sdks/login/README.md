@@ -1,6 +1,8 @@
 # Login
 (*Login*)
 
+## Overview
+
 ### Available Operations
 
 * [GetUnifiedIntegrationLogin](#getunifiedintegrationlogin) - Sign in a user
@@ -30,18 +32,16 @@ var res = await sdk.Login.GetUnifiedIntegrationLoginAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
 | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | `request`                                                                                       | [GetUnifiedIntegrationLoginRequest](../../Models/Requests/GetUnifiedIntegrationLoginRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
-
 ### Response
 
 **[GetUnifiedIntegrationLoginResponse](../../Models/Requests/GetUnifiedIntegrationLoginResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

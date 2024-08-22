@@ -13,7 +13,7 @@ namespace UnifiedTo.Models.Components
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class AtsEmail
+    public class PropertyAtsActivityFrom
     {
 
         [JsonProperty("email")]
@@ -23,6 +23,6 @@ namespace UnifiedTo.Models.Components
         public string? Name { get; set; }
 
         [JsonProperty("type")]
-        public AtsEmailType? Type { get; set; }
+        public PropertyAtsActivityFromType? Type { get; set; }
     }
 }

@@ -1,6 +1,8 @@
 # Integration
 (*Integration*)
 
+## Overview
+
 ### Available Operations
 
 * [GetUnifiedIntegrationAuth](#getunifiedintegrationauth) - Create connection indirectly
@@ -33,23 +35,22 @@ var res = await sdk.Integration.GetUnifiedIntegrationAuthAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `request`                                                                                     | [GetUnifiedIntegrationAuthRequest](../../Models/Requests/GetUnifiedIntegrationAuthRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
 
-
 ### Response
 
 **[GetUnifiedIntegrationAuthResponse](../../Models/Requests/GetUnifiedIntegrationAuthResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListUnifiedIntegrationWorkspaces
 
@@ -76,23 +77,22 @@ var res = await sdk.Integration.ListUnifiedIntegrationWorkspacesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                                   | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
 | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | `request`                                                                                                   | [ListUnifiedIntegrationWorkspacesRequest](../../Models/Requests/ListUnifiedIntegrationWorkspacesRequest.md) | :heavy_check_mark:                                                                                          | The request object to use for the request.                                                                  |
 
-
 ### Response
 
 **[ListUnifiedIntegrationWorkspacesResponse](../../Models/Requests/ListUnifiedIntegrationWorkspacesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListUnifiedIntegrations
 
@@ -117,18 +117,16 @@ var res = await sdk.Integration.ListUnifiedIntegrationsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | `request`                                                                                 | [ListUnifiedIntegrationsRequest](../../Models/Requests/ListUnifiedIntegrationsRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
-
 ### Response
 
 **[ListUnifiedIntegrationsResponse](../../Models/Requests/ListUnifiedIntegrationsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

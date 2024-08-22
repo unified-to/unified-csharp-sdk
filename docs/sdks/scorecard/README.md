@@ -1,6 +1,8 @@
 # Scorecard
 (*Scorecard*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateAtsScorecard](#createatsscorecard) - Create a scorecard
@@ -33,8 +35,6 @@ var res = await sdk.Scorecard.CreateAtsScorecardAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -42,15 +42,16 @@ var res = await sdk.Scorecard.CreateAtsScorecardAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `AtsScorecard`                                          | [AtsScorecard](../../Models/Components/AtsScorecard.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[CreateAtsScorecardResponse](../../Models/Requests/CreateAtsScorecardResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAtsScorecard
 
@@ -78,8 +79,6 @@ var res = await sdk.Scorecard.GetAtsScorecardAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Scorecard.GetAtsScorecardAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Scorecard              |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAtsScorecardResponse](../../Models/Requests/GetAtsScorecardResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAtsScorecards
 
@@ -123,23 +123,22 @@ var res = await sdk.Scorecard.ListAtsScorecardsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `request`                                                                     | [ListAtsScorecardsRequest](../../Models/Requests/ListAtsScorecardsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
-
 ### Response
 
 **[ListAtsScorecardsResponse](../../Models/Requests/ListAtsScorecardsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAtsScorecard
 
@@ -165,8 +164,6 @@ var res = await sdk.Scorecard.PatchAtsScorecardAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -175,15 +172,16 @@ var res = await sdk.Scorecard.PatchAtsScorecardAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Scorecard                                     |
 | `AtsScorecard`                                          | [AtsScorecard](../../Models/Components/AtsScorecard.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[PatchAtsScorecardResponse](../../Models/Requests/PatchAtsScorecardResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAtsScorecard
 
@@ -207,8 +205,6 @@ var res = await sdk.Scorecard.RemoveAtsScorecardAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Scorecard.RemoveAtsScorecardAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Scorecard  |
 
-
 ### Response
 
 **[RemoveAtsScorecardResponse](../../Models/Requests/RemoveAtsScorecardResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAtsScorecard
 
@@ -250,8 +247,6 @@ var res = await sdk.Scorecard.UpdateAtsScorecardAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -260,10 +255,10 @@ var res = await sdk.Scorecard.UpdateAtsScorecardAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Scorecard                                     |
 | `AtsScorecard`                                          | [AtsScorecard](../../Models/Components/AtsScorecard.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[UpdateAtsScorecardResponse](../../Models/Requests/UpdateAtsScorecardResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

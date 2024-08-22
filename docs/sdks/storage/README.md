@@ -1,6 +1,8 @@
 # Storage
 (*Storage*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateStorageFile](#createstoragefile) - Create a file
@@ -33,8 +35,6 @@ var res = await sdk.Storage.CreateStorageFileAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -42,15 +42,16 @@ var res = await sdk.Storage.CreateStorageFileAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `StorageFile`                                         | [StorageFile](../../Models/Components/StorageFile.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[CreateStorageFileResponse](../../Models/Requests/CreateStorageFileResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetStorageFile
 
@@ -78,8 +79,6 @@ var res = await sdk.Storage.GetStorageFileAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Storage.GetStorageFileAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the File                   |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetStorageFileResponse](../../Models/Requests/GetStorageFileResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListStorageFiles
 
@@ -123,23 +123,22 @@ var res = await sdk.Storage.ListStorageFilesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListStorageFilesRequest](../../Models/Requests/ListStorageFilesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListStorageFilesResponse](../../Models/Requests/ListStorageFilesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchStorageFile
 
@@ -165,8 +164,6 @@ var res = await sdk.Storage.PatchStorageFileAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -175,15 +172,16 @@ var res = await sdk.Storage.PatchStorageFileAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the File                                        |
 | `StorageFile`                                         | [StorageFile](../../Models/Components/StorageFile.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[PatchStorageFileResponse](../../Models/Requests/PatchStorageFileResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveStorageFile
 
@@ -207,8 +205,6 @@ var res = await sdk.Storage.RemoveStorageFileAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Storage.RemoveStorageFileAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the File       |
 
-
 ### Response
 
 **[RemoveStorageFileResponse](../../Models/Requests/RemoveStorageFileResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateStorageFile
 
@@ -250,8 +247,6 @@ var res = await sdk.Storage.UpdateStorageFileAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -260,10 +255,10 @@ var res = await sdk.Storage.UpdateStorageFileAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the File                                        |
 | `StorageFile`                                         | [StorageFile](../../Models/Components/StorageFile.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[UpdateStorageFileResponse](../../Models/Requests/UpdateStorageFileResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

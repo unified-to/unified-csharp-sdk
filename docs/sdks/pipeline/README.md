@@ -1,6 +1,8 @@
 # Pipeline
 (*Pipeline*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateCrmPipeline](#createcrmpipeline) - Create a pipeline
@@ -33,8 +35,6 @@ var res = await sdk.Pipeline.CreateCrmPipelineAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -42,15 +42,16 @@ var res = await sdk.Pipeline.CreateCrmPipelineAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[CreateCrmPipelineResponse](../../Models/Requests/CreateCrmPipelineResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetCrmPipeline
 
@@ -78,8 +79,6 @@ var res = await sdk.Pipeline.GetCrmPipelineAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Pipeline.GetCrmPipelineAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Pipeline               |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetCrmPipelineResponse](../../Models/Requests/GetCrmPipelineResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListCrmPipelines
 
@@ -123,23 +123,22 @@ var res = await sdk.Pipeline.ListCrmPipelinesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListCrmPipelinesRequest](../../Models/Requests/ListCrmPipelinesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListCrmPipelinesResponse](../../Models/Requests/ListCrmPipelinesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchCrmPipeline
 
@@ -165,8 +164,6 @@ var res = await sdk.Pipeline.PatchCrmPipelineAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -175,15 +172,16 @@ var res = await sdk.Pipeline.PatchCrmPipelineAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Pipeline                                    |
 | `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[PatchCrmPipelineResponse](../../Models/Requests/PatchCrmPipelineResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveCrmPipeline
 
@@ -207,8 +205,6 @@ var res = await sdk.Pipeline.RemoveCrmPipelineAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Pipeline.RemoveCrmPipelineAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Pipeline   |
 
-
 ### Response
 
 **[RemoveCrmPipelineResponse](../../Models/Requests/RemoveCrmPipelineResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateCrmPipeline
 
@@ -250,8 +247,6 @@ var res = await sdk.Pipeline.UpdateCrmPipelineAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -260,10 +255,10 @@ var res = await sdk.Pipeline.UpdateCrmPipelineAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Pipeline                                    |
 | `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[UpdateCrmPipelineResponse](../../Models/Requests/UpdateCrmPipelineResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

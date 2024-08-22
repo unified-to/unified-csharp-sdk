@@ -1,6 +1,8 @@
 # Crm
 (*Crm*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateCrmCompany](#createcrmcompany) - Create a company
@@ -63,8 +65,6 @@ var res = await sdk.Crm.CreateCrmCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
@@ -72,15 +72,16 @@ var res = await sdk.Crm.CreateCrmCompanyAsync(
 | `ConnectionId`                                                                                 | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the connection                                                                           |
 | `CrmCompany`                                                                                   | [CrmCompany](../../Models/Components/CrmCompany.md)                                            | :heavy_minus_sign:                                                                             | A company represents an organization that optionally is associated with a deal and/or contacts |
 
-
 ### Response
 
 **[CreateCrmCompanyResponse](../../Models/Requests/CreateCrmCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateCrmContact
 
@@ -105,8 +106,6 @@ var res = await sdk.Crm.CreateCrmContactAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
@@ -114,15 +113,16 @@ var res = await sdk.Crm.CreateCrmContactAsync(
 | `ConnectionId`                                                                           | *string*                                                                                 | :heavy_check_mark:                                                                       | ID of the connection                                                                     |
 | `CrmContact`                                                                             | [CrmContact](../../Models/Components/CrmContact.md)                                      | :heavy_minus_sign:                                                                       | A contact represents a person that optionally is associated with a deal and/or a company |
 
-
 ### Response
 
 **[CreateCrmContactResponse](../../Models/Requests/CreateCrmContactResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateCrmDeal
 
@@ -147,8 +147,6 @@ var res = await sdk.Crm.CreateCrmDealAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
@@ -156,15 +154,16 @@ var res = await sdk.Crm.CreateCrmDealAsync(
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `CrmDeal`                                                       | [CrmDeal](../../Models/Components/CrmDeal.md)                   | :heavy_minus_sign:                                              | A deal represents an opportunity with companies and/or contacts |
 
-
 ### Response
 
 **[CreateCrmDealResponse](../../Models/Requests/CreateCrmDealResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateCrmEvent
 
@@ -189,8 +188,6 @@ var res = await sdk.Crm.CreateCrmEventAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
@@ -198,15 +195,16 @@ var res = await sdk.Crm.CreateCrmEventAsync(
 | `ConnectionId`                                                                                                  | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the connection                                                                                            |
 | `CrmEvent`                                                                                                      | [CrmEvent](../../Models/Components/CrmEvent.md)                                                                 | :heavy_minus_sign:                                                                                              | An event represents an event, activity, or engagement and is always associated with a deal, contact, or company |
 
-
 ### Response
 
 **[CreateCrmEventResponse](../../Models/Requests/CreateCrmEventResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateCrmLead
 
@@ -231,8 +229,6 @@ var res = await sdk.Crm.CreateCrmLeadAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
@@ -240,15 +236,16 @@ var res = await sdk.Crm.CreateCrmLeadAsync(
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_minus_sign:                            | N/A                                           |
 
-
 ### Response
 
 **[CreateCrmLeadResponse](../../Models/Requests/CreateCrmLeadResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateCrmPipeline
 
@@ -273,8 +270,6 @@ var res = await sdk.Crm.CreateCrmPipelineAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -282,15 +277,16 @@ var res = await sdk.Crm.CreateCrmPipelineAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[CreateCrmPipelineResponse](../../Models/Requests/CreateCrmPipelineResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetCrmCompany
 
@@ -318,8 +314,6 @@ var res = await sdk.Crm.GetCrmCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -328,15 +322,16 @@ var res = await sdk.Crm.GetCrmCompanyAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Company                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetCrmCompanyResponse](../../Models/Requests/GetCrmCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetCrmContact
 
@@ -364,8 +359,6 @@ var res = await sdk.Crm.GetCrmContactAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -374,15 +367,16 @@ var res = await sdk.Crm.GetCrmContactAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Contact                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetCrmContactResponse](../../Models/Requests/GetCrmContactResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetCrmDeal
 
@@ -410,8 +404,6 @@ var res = await sdk.Crm.GetCrmDealAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -420,15 +412,16 @@ var res = await sdk.Crm.GetCrmDealAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Deal                   |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetCrmDealResponse](../../Models/Requests/GetCrmDealResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetCrmEvent
 
@@ -456,8 +449,6 @@ var res = await sdk.Crm.GetCrmEventAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -466,15 +457,16 @@ var res = await sdk.Crm.GetCrmEventAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Event                  |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetCrmEventResponse](../../Models/Requests/GetCrmEventResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetCrmLead
 
@@ -502,8 +494,6 @@ var res = await sdk.Crm.GetCrmLeadAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -512,15 +502,16 @@ var res = await sdk.Crm.GetCrmLeadAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Lead                   |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetCrmLeadResponse](../../Models/Requests/GetCrmLeadResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetCrmPipeline
 
@@ -548,8 +539,6 @@ var res = await sdk.Crm.GetCrmPipelineAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -558,15 +547,16 @@ var res = await sdk.Crm.GetCrmPipelineAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Pipeline               |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetCrmPipelineResponse](../../Models/Requests/GetCrmPipelineResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListCrmCompanies
 
@@ -593,23 +583,22 @@ var res = await sdk.Crm.ListCrmCompaniesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListCrmCompaniesRequest](../../Models/Requests/ListCrmCompaniesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListCrmCompaniesResponse](../../Models/Requests/ListCrmCompaniesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListCrmContacts
 
@@ -636,23 +625,22 @@ var res = await sdk.Crm.ListCrmContactsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | `request`                                                                 | [ListCrmContactsRequest](../../Models/Requests/ListCrmContactsRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
-
 ### Response
 
 **[ListCrmContactsResponse](../../Models/Requests/ListCrmContactsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListCrmDeals
 
@@ -679,23 +667,22 @@ var res = await sdk.Crm.ListCrmDealsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `request`                                                           | [ListCrmDealsRequest](../../Models/Requests/ListCrmDealsRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 
-
 ### Response
 
 **[ListCrmDealsResponse](../../Models/Requests/ListCrmDealsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListCrmEvents
 
@@ -722,23 +709,22 @@ var res = await sdk.Crm.ListCrmEventsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
 | `request`                                                             | [ListCrmEventsRequest](../../Models/Requests/ListCrmEventsRequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
 
-
 ### Response
 
 **[ListCrmEventsResponse](../../Models/Requests/ListCrmEventsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListCrmLeads
 
@@ -765,23 +751,22 @@ var res = await sdk.Crm.ListCrmLeadsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `request`                                                           | [ListCrmLeadsRequest](../../Models/Requests/ListCrmLeadsRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 
-
 ### Response
 
 **[ListCrmLeadsResponse](../../Models/Requests/ListCrmLeadsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListCrmPipelines
 
@@ -808,23 +793,22 @@ var res = await sdk.Crm.ListCrmPipelinesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListCrmPipelinesRequest](../../Models/Requests/ListCrmPipelinesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListCrmPipelinesResponse](../../Models/Requests/ListCrmPipelinesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchCrmCompany
 
@@ -850,8 +834,6 @@ var res = await sdk.Crm.PatchCrmCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
@@ -860,15 +842,16 @@ var res = await sdk.Crm.PatchCrmCompanyAsync(
 | `Id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the Company                                                                              |
 | `CrmCompany`                                                                                   | [CrmCompany](../../Models/Components/CrmCompany.md)                                            | :heavy_minus_sign:                                                                             | A company represents an organization that optionally is associated with a deal and/or contacts |
 
-
 ### Response
 
 **[PatchCrmCompanyResponse](../../Models/Requests/PatchCrmCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchCrmContact
 
@@ -894,8 +877,6 @@ var res = await sdk.Crm.PatchCrmContactAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
@@ -904,15 +885,16 @@ var res = await sdk.Crm.PatchCrmContactAsync(
 | `Id`                                                                                     | *string*                                                                                 | :heavy_check_mark:                                                                       | ID of the Contact                                                                        |
 | `CrmContact`                                                                             | [CrmContact](../../Models/Components/CrmContact.md)                                      | :heavy_minus_sign:                                                                       | A contact represents a person that optionally is associated with a deal and/or a company |
 
-
 ### Response
 
 **[PatchCrmContactResponse](../../Models/Requests/PatchCrmContactResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchCrmDeal
 
@@ -938,8 +920,6 @@ var res = await sdk.Crm.PatchCrmDealAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
@@ -948,15 +928,16 @@ var res = await sdk.Crm.PatchCrmDealAsync(
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Deal                                                  |
 | `CrmDeal`                                                       | [CrmDeal](../../Models/Components/CrmDeal.md)                   | :heavy_minus_sign:                                              | A deal represents an opportunity with companies and/or contacts |
 
-
 ### Response
 
 **[PatchCrmDealResponse](../../Models/Requests/PatchCrmDealResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchCrmEvent
 
@@ -982,8 +963,6 @@ var res = await sdk.Crm.PatchCrmEventAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
@@ -992,15 +971,16 @@ var res = await sdk.Crm.PatchCrmEventAsync(
 | `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Event                                                                                                 |
 | `CrmEvent`                                                                                                      | [CrmEvent](../../Models/Components/CrmEvent.md)                                                                 | :heavy_minus_sign:                                                                                              | An event represents an event, activity, or engagement and is always associated with a deal, contact, or company |
 
-
 ### Response
 
 **[PatchCrmEventResponse](../../Models/Requests/PatchCrmEventResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchCrmLead
 
@@ -1026,8 +1006,6 @@ var res = await sdk.Crm.PatchCrmLeadAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
@@ -1036,15 +1014,16 @@ var res = await sdk.Crm.PatchCrmLeadAsync(
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Lead                                |
 | `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_minus_sign:                            | N/A                                           |
 
-
 ### Response
 
 **[PatchCrmLeadResponse](../../Models/Requests/PatchCrmLeadResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchCrmPipeline
 
@@ -1070,8 +1049,6 @@ var res = await sdk.Crm.PatchCrmPipelineAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -1080,15 +1057,16 @@ var res = await sdk.Crm.PatchCrmPipelineAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Pipeline                                    |
 | `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[PatchCrmPipelineResponse](../../Models/Requests/PatchCrmPipelineResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveCrmCompany
 
@@ -1112,8 +1090,6 @@ var res = await sdk.Crm.RemoveCrmCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1121,15 +1097,16 @@ var res = await sdk.Crm.RemoveCrmCompanyAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Company    |
 
-
 ### Response
 
 **[RemoveCrmCompanyResponse](../../Models/Requests/RemoveCrmCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveCrmContact
 
@@ -1153,8 +1130,6 @@ var res = await sdk.Crm.RemoveCrmContactAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1162,15 +1137,16 @@ var res = await sdk.Crm.RemoveCrmContactAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Contact    |
 
-
 ### Response
 
 **[RemoveCrmContactResponse](../../Models/Requests/RemoveCrmContactResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveCrmDeal
 
@@ -1194,8 +1170,6 @@ var res = await sdk.Crm.RemoveCrmDealAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1203,15 +1177,16 @@ var res = await sdk.Crm.RemoveCrmDealAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Deal       |
 
-
 ### Response
 
 **[RemoveCrmDealResponse](../../Models/Requests/RemoveCrmDealResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveCrmEvent
 
@@ -1235,8 +1210,6 @@ var res = await sdk.Crm.RemoveCrmEventAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1244,15 +1217,16 @@ var res = await sdk.Crm.RemoveCrmEventAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Event      |
 
-
 ### Response
 
 **[RemoveCrmEventResponse](../../Models/Requests/RemoveCrmEventResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveCrmLead
 
@@ -1276,8 +1250,6 @@ var res = await sdk.Crm.RemoveCrmLeadAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1285,15 +1257,16 @@ var res = await sdk.Crm.RemoveCrmLeadAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Lead       |
 
-
 ### Response
 
 **[RemoveCrmLeadResponse](../../Models/Requests/RemoveCrmLeadResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveCrmPipeline
 
@@ -1317,8 +1290,6 @@ var res = await sdk.Crm.RemoveCrmPipelineAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1326,15 +1297,16 @@ var res = await sdk.Crm.RemoveCrmPipelineAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Pipeline   |
 
-
 ### Response
 
 **[RemoveCrmPipelineResponse](../../Models/Requests/RemoveCrmPipelineResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateCrmCompany
 
@@ -1360,8 +1332,6 @@ var res = await sdk.Crm.UpdateCrmCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
@@ -1370,15 +1340,16 @@ var res = await sdk.Crm.UpdateCrmCompanyAsync(
 | `Id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the Company                                                                              |
 | `CrmCompany`                                                                                   | [CrmCompany](../../Models/Components/CrmCompany.md)                                            | :heavy_minus_sign:                                                                             | A company represents an organization that optionally is associated with a deal and/or contacts |
 
-
 ### Response
 
 **[UpdateCrmCompanyResponse](../../Models/Requests/UpdateCrmCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateCrmContact
 
@@ -1404,8 +1375,6 @@ var res = await sdk.Crm.UpdateCrmContactAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
@@ -1414,15 +1383,16 @@ var res = await sdk.Crm.UpdateCrmContactAsync(
 | `Id`                                                                                     | *string*                                                                                 | :heavy_check_mark:                                                                       | ID of the Contact                                                                        |
 | `CrmContact`                                                                             | [CrmContact](../../Models/Components/CrmContact.md)                                      | :heavy_minus_sign:                                                                       | A contact represents a person that optionally is associated with a deal and/or a company |
 
-
 ### Response
 
 **[UpdateCrmContactResponse](../../Models/Requests/UpdateCrmContactResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateCrmDeal
 
@@ -1448,8 +1418,6 @@ var res = await sdk.Crm.UpdateCrmDealAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
@@ -1458,15 +1426,16 @@ var res = await sdk.Crm.UpdateCrmDealAsync(
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Deal                                                  |
 | `CrmDeal`                                                       | [CrmDeal](../../Models/Components/CrmDeal.md)                   | :heavy_minus_sign:                                              | A deal represents an opportunity with companies and/or contacts |
 
-
 ### Response
 
 **[UpdateCrmDealResponse](../../Models/Requests/UpdateCrmDealResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateCrmEvent
 
@@ -1492,8 +1461,6 @@ var res = await sdk.Crm.UpdateCrmEventAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
@@ -1502,15 +1469,16 @@ var res = await sdk.Crm.UpdateCrmEventAsync(
 | `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Event                                                                                                 |
 | `CrmEvent`                                                                                                      | [CrmEvent](../../Models/Components/CrmEvent.md)                                                                 | :heavy_minus_sign:                                                                                              | An event represents an event, activity, or engagement and is always associated with a deal, contact, or company |
 
-
 ### Response
 
 **[UpdateCrmEventResponse](../../Models/Requests/UpdateCrmEventResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateCrmLead
 
@@ -1536,8 +1504,6 @@ var res = await sdk.Crm.UpdateCrmLeadAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
@@ -1546,15 +1512,16 @@ var res = await sdk.Crm.UpdateCrmLeadAsync(
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Lead                                |
 | `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_minus_sign:                            | N/A                                           |
 
-
 ### Response
 
 **[UpdateCrmLeadResponse](../../Models/Requests/UpdateCrmLeadResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateCrmPipeline
 
@@ -1580,8 +1547,6 @@ var res = await sdk.Crm.UpdateCrmPipelineAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -1590,10 +1555,10 @@ var res = await sdk.Crm.UpdateCrmPipelineAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Pipeline                                    |
 | `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[UpdateCrmPipelineResponse](../../Models/Requests/UpdateCrmPipelineResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

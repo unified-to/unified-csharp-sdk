@@ -1,6 +1,8 @@
 # Refund
 (*Refund*)
 
+## Overview
+
 ### Available Operations
 
 * [GetPaymentRefund](#getpaymentrefund) - Retrieve a refund
@@ -32,8 +34,6 @@ var res = await sdk.Refund.GetPaymentRefundAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -42,15 +42,16 @@ var res = await sdk.Refund.GetPaymentRefundAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Refund                 |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetPaymentRefundResponse](../../Models/Requests/GetPaymentRefundResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListPaymentRefunds
 
@@ -77,18 +78,16 @@ var res = await sdk.Refund.ListPaymentRefundsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | `request`                                                                       | [ListPaymentRefundsRequest](../../Models/Requests/ListPaymentRefundsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
-
 ### Response
 
 **[ListPaymentRefundsResponse](../../Models/Requests/ListPaymentRefundsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

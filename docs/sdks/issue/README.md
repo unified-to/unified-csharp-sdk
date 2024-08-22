@@ -1,6 +1,8 @@
 # Issue
 (*Issue*)
 
+## Overview
+
 ### Available Operations
 
 * [ListUnifiedIssues](#listunifiedissues) - List support issues
@@ -27,18 +29,16 @@ var res = await sdk.Issue.ListUnifiedIssuesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `request`                                                                     | [ListUnifiedIssuesRequest](../../Models/Requests/ListUnifiedIssuesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
-
 ### Response
 
 **[ListUnifiedIssuesResponse](../../Models/Requests/ListUnifiedIssuesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

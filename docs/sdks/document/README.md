@@ -1,6 +1,8 @@
 # Document
 (*Document*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateAtsDocument](#createatsdocument) - Create a document
@@ -33,8 +35,6 @@ var res = await sdk.Document.CreateAtsDocumentAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -42,15 +42,16 @@ var res = await sdk.Document.CreateAtsDocumentAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `AtsDocument`                                         | [AtsDocument](../../Models/Components/AtsDocument.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[CreateAtsDocumentResponse](../../Models/Requests/CreateAtsDocumentResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAtsDocument
 
@@ -78,8 +79,6 @@ var res = await sdk.Document.GetAtsDocumentAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Document.GetAtsDocumentAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Document               |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAtsDocumentResponse](../../Models/Requests/GetAtsDocumentResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAtsDocuments
 
@@ -123,23 +123,22 @@ var res = await sdk.Document.ListAtsDocumentsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListAtsDocumentsRequest](../../Models/Requests/ListAtsDocumentsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListAtsDocumentsResponse](../../Models/Requests/ListAtsDocumentsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAtsDocument
 
@@ -165,8 +164,6 @@ var res = await sdk.Document.PatchAtsDocumentAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -175,15 +172,16 @@ var res = await sdk.Document.PatchAtsDocumentAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Document                                    |
 | `AtsDocument`                                         | [AtsDocument](../../Models/Components/AtsDocument.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[PatchAtsDocumentResponse](../../Models/Requests/PatchAtsDocumentResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAtsDocument
 
@@ -207,8 +205,6 @@ var res = await sdk.Document.RemoveAtsDocumentAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Document.RemoveAtsDocumentAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Document   |
 
-
 ### Response
 
 **[RemoveAtsDocumentResponse](../../Models/Requests/RemoveAtsDocumentResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAtsDocument
 
@@ -250,8 +247,6 @@ var res = await sdk.Document.UpdateAtsDocumentAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -260,10 +255,10 @@ var res = await sdk.Document.UpdateAtsDocumentAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Document                                    |
 | `AtsDocument`                                         | [AtsDocument](../../Models/Components/AtsDocument.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[UpdateAtsDocumentResponse](../../Models/Requests/UpdateAtsDocumentResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

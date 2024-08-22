@@ -1,6 +1,8 @@
 # Person
 (*Person*)
 
+## Overview
+
 ### Available Operations
 
 * [ListEnrichPeople](#listenrichpeople) - Retrieve enrichment information for a person
@@ -29,18 +31,16 @@ var res = await sdk.Person.ListEnrichPeopleAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListEnrichPeopleRequest](../../Models/Requests/ListEnrichPeopleRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListEnrichPeopleResponse](../../Models/Requests/ListEnrichPeopleResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

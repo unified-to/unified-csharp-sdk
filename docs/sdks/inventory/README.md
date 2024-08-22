@@ -1,6 +1,8 @@
 # Inventory
 (*Inventory*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateCommerceInventory](#createcommerceinventory) - Create an inventory
@@ -35,8 +37,6 @@ var res = await sdk.Inventory.CreateCommerceInventoryAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -44,15 +44,16 @@ var res = await sdk.Inventory.CreateCommerceInventoryAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[CreateCommerceInventoryResponse](../../Models/Requests/CreateCommerceInventoryResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetCommerceInventory
 
@@ -80,8 +81,6 @@ var res = await sdk.Inventory.GetCommerceInventoryAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -90,15 +89,16 @@ var res = await sdk.Inventory.GetCommerceInventoryAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Inventory              |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetCommerceInventoryResponse](../../Models/Requests/GetCommerceInventoryResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListCommerceInventories
 
@@ -125,23 +125,22 @@ var res = await sdk.Inventory.ListCommerceInventoriesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | `request`                                                                                 | [ListCommerceInventoriesRequest](../../Models/Requests/ListCommerceInventoriesRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
-
 ### Response
 
 **[ListCommerceInventoriesResponse](../../Models/Requests/ListCommerceInventoriesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchCommerceInventory
 
@@ -169,8 +168,6 @@ var res = await sdk.Inventory.PatchCommerceInventoryAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -179,15 +176,16 @@ var res = await sdk.Inventory.PatchCommerceInventoryAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Inventory                                               |
 | `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[PatchCommerceInventoryResponse](../../Models/Requests/PatchCommerceInventoryResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveCommerceInventory
 
@@ -211,8 +209,6 @@ var res = await sdk.Inventory.RemoveCommerceInventoryAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -220,15 +216,16 @@ var res = await sdk.Inventory.RemoveCommerceInventoryAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Inventory  |
 
-
 ### Response
 
 **[RemoveCommerceInventoryResponse](../../Models/Requests/RemoveCommerceInventoryResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateCommerceInventory
 
@@ -256,8 +253,6 @@ var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -266,10 +261,10 @@ var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Inventory                                               |
 | `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[UpdateCommerceInventoryResponse](../../Models/Requests/UpdateCommerceInventoryResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

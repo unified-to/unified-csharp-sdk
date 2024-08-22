@@ -1,6 +1,8 @@
 # Employee
 (*Employee*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateHrisEmployee](#createhrisemployee) - Create an employee
@@ -33,8 +35,6 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -42,15 +42,16 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `HrisEmployee`                                          | [HrisEmployee](../../Models/Components/HrisEmployee.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[CreateHrisEmployeeResponse](../../Models/Requests/CreateHrisEmployeeResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetHrisEmployee
 
@@ -78,8 +79,6 @@ var res = await sdk.Employee.GetHrisEmployeeAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Employee.GetHrisEmployeeAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Employee               |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetHrisEmployeeResponse](../../Models/Requests/GetHrisEmployeeResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListHrisEmployees
 
@@ -123,23 +123,22 @@ var res = await sdk.Employee.ListHrisEmployeesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `request`                                                                     | [ListHrisEmployeesRequest](../../Models/Requests/ListHrisEmployeesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
-
 ### Response
 
 **[ListHrisEmployeesResponse](../../Models/Requests/ListHrisEmployeesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchHrisEmployee
 
@@ -165,8 +164,6 @@ var res = await sdk.Employee.PatchHrisEmployeeAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -175,15 +172,16 @@ var res = await sdk.Employee.PatchHrisEmployeeAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Employee                                      |
 | `HrisEmployee`                                          | [HrisEmployee](../../Models/Components/HrisEmployee.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[PatchHrisEmployeeResponse](../../Models/Requests/PatchHrisEmployeeResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveHrisEmployee
 
@@ -207,8 +205,6 @@ var res = await sdk.Employee.RemoveHrisEmployeeAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Employee.RemoveHrisEmployeeAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Employee   |
 
-
 ### Response
 
 **[RemoveHrisEmployeeResponse](../../Models/Requests/RemoveHrisEmployeeResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateHrisEmployee
 
@@ -250,8 +247,6 @@ var res = await sdk.Employee.UpdateHrisEmployeeAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -260,10 +255,10 @@ var res = await sdk.Employee.UpdateHrisEmployeeAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Employee                                      |
 | `HrisEmployee`                                          | [HrisEmployee](../../Models/Components/HrisEmployee.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[UpdateHrisEmployeeResponse](../../Models/Requests/UpdateHrisEmployeeResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

@@ -1,6 +1,8 @@
 # Page
 (*Page*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateKmsPage](#createkmspage) - Create a page
@@ -39,8 +41,6 @@ var res = await sdk.Page.CreateKmsPageAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
@@ -48,15 +48,16 @@ var res = await sdk.Page.CreateKmsPageAsync(
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_minus_sign:                            | N/A                                           |
 
-
 ### Response
 
 **[CreateKmsPageResponse](../../Models/Requests/CreateKmsPageResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetKmsPage
 
@@ -84,8 +85,6 @@ var res = await sdk.Page.GetKmsPageAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -94,15 +93,16 @@ var res = await sdk.Page.GetKmsPageAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Page                   |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetKmsPageResponse](../../Models/Requests/GetKmsPageResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListKmsPages
 
@@ -129,23 +129,22 @@ var res = await sdk.Page.ListKmsPagesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `request`                                                           | [ListKmsPagesRequest](../../Models/Requests/ListKmsPagesRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 
-
 ### Response
 
 **[ListKmsPagesResponse](../../Models/Requests/ListKmsPagesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchKmsPage
 
@@ -177,8 +176,6 @@ var res = await sdk.Page.PatchKmsPageAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
@@ -187,15 +184,16 @@ var res = await sdk.Page.PatchKmsPageAsync(
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Page                                |
 | `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_minus_sign:                            | N/A                                           |
 
-
 ### Response
 
 **[PatchKmsPageResponse](../../Models/Requests/PatchKmsPageResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveKmsPage
 
@@ -219,8 +217,6 @@ var res = await sdk.Page.RemoveKmsPageAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -228,15 +224,16 @@ var res = await sdk.Page.RemoveKmsPageAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Page       |
 
-
 ### Response
 
 **[RemoveKmsPageResponse](../../Models/Requests/RemoveKmsPageResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateKmsPage
 
@@ -268,8 +265,6 @@ var res = await sdk.Page.UpdateKmsPageAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
@@ -278,10 +273,10 @@ var res = await sdk.Page.UpdateKmsPageAsync(
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Page                                |
 | `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_minus_sign:                            | N/A                                           |
 
-
 ### Response
 
 **[UpdateKmsPageResponse](../../Models/Requests/UpdateKmsPageResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

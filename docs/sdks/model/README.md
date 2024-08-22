@@ -1,6 +1,8 @@
 # Model
 (*Model*)
 
+## Overview
+
 ### Available Operations
 
 * [ListGenaiModels](#listgenaimodels) - List all models
@@ -30,18 +32,16 @@ var res = await sdk.Model.ListGenaiModelsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | `request`                                                                 | [ListGenaiModelsRequest](../../Models/Requests/ListGenaiModelsRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
-
 ### Response
 
 **[ListGenaiModelsResponse](../../Models/Requests/ListGenaiModelsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

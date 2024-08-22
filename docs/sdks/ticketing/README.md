@@ -1,6 +1,8 @@
 # Ticketing
 (*Ticketing*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateTicketingCustomer](#createticketingcustomer) - Create a customer
@@ -45,8 +47,6 @@ var res = await sdk.Ticketing.CreateTicketingCustomerAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -54,15 +54,16 @@ var res = await sdk.Ticketing.CreateTicketingCustomerAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `TicketingCustomer`                                               | [TicketingCustomer](../../Models/Components/TicketingCustomer.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[CreateTicketingCustomerResponse](../../Models/Requests/CreateTicketingCustomerResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateTicketingNote
 
@@ -87,8 +88,6 @@ var res = await sdk.Ticketing.CreateTicketingNoteAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
@@ -96,15 +95,16 @@ var res = await sdk.Ticketing.CreateTicketingNoteAsync(
 | `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
 | `TicketingNote`                                           | [TicketingNote](../../Models/Components/TicketingNote.md) | :heavy_minus_sign:                                        | N/A                                                       |
 
-
 ### Response
 
 **[CreateTicketingNoteResponse](../../Models/Requests/CreateTicketingNoteResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateTicketingTicket
 
@@ -129,8 +129,6 @@ var res = await sdk.Ticketing.CreateTicketingTicketAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
@@ -138,15 +136,16 @@ var res = await sdk.Ticketing.CreateTicketingTicketAsync(
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `TicketingTicket`                                             | [TicketingTicket](../../Models/Components/TicketingTicket.md) | :heavy_minus_sign:                                            | N/A                                                           |
 
-
 ### Response
 
 **[CreateTicketingTicketResponse](../../Models/Requests/CreateTicketingTicketResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetTicketingCustomer
 
@@ -174,8 +173,6 @@ var res = await sdk.Ticketing.GetTicketingCustomerAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -184,15 +181,16 @@ var res = await sdk.Ticketing.GetTicketingCustomerAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Customer               |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetTicketingCustomerResponse](../../Models/Requests/GetTicketingCustomerResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetTicketingNote
 
@@ -220,8 +218,6 @@ var res = await sdk.Ticketing.GetTicketingNoteAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -230,15 +226,16 @@ var res = await sdk.Ticketing.GetTicketingNoteAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Note                   |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetTicketingNoteResponse](../../Models/Requests/GetTicketingNoteResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetTicketingTicket
 
@@ -266,8 +263,6 @@ var res = await sdk.Ticketing.GetTicketingTicketAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -276,15 +271,16 @@ var res = await sdk.Ticketing.GetTicketingTicketAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Ticket                 |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetTicketingTicketResponse](../../Models/Requests/GetTicketingTicketResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListTicketingCustomers
 
@@ -311,23 +307,22 @@ var res = await sdk.Ticketing.ListTicketingCustomersAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `request`                                                                               | [ListTicketingCustomersRequest](../../Models/Requests/ListTicketingCustomersRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
-
 ### Response
 
 **[ListTicketingCustomersResponse](../../Models/Requests/ListTicketingCustomersResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListTicketingNotes
 
@@ -354,23 +349,22 @@ var res = await sdk.Ticketing.ListTicketingNotesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | `request`                                                                       | [ListTicketingNotesRequest](../../Models/Requests/ListTicketingNotesRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
-
 ### Response
 
 **[ListTicketingNotesResponse](../../Models/Requests/ListTicketingNotesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListTicketingTickets
 
@@ -397,23 +391,22 @@ var res = await sdk.Ticketing.ListTicketingTicketsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
 | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | `request`                                                                           | [ListTicketingTicketsRequest](../../Models/Requests/ListTicketingTicketsRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
-
 ### Response
 
 **[ListTicketingTicketsResponse](../../Models/Requests/ListTicketingTicketsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchTicketingCustomer
 
@@ -439,8 +432,6 @@ var res = await sdk.Ticketing.PatchTicketingCustomerAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -449,15 +440,16 @@ var res = await sdk.Ticketing.PatchTicketingCustomerAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Customer                                                |
 | `TicketingCustomer`                                               | [TicketingCustomer](../../Models/Components/TicketingCustomer.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[PatchTicketingCustomerResponse](../../Models/Requests/PatchTicketingCustomerResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchTicketingNote
 
@@ -483,8 +475,6 @@ var res = await sdk.Ticketing.PatchTicketingNoteAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
@@ -493,15 +483,16 @@ var res = await sdk.Ticketing.PatchTicketingNoteAsync(
 | `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the Note                                            |
 | `TicketingNote`                                           | [TicketingNote](../../Models/Components/TicketingNote.md) | :heavy_minus_sign:                                        | N/A                                                       |
 
-
 ### Response
 
 **[PatchTicketingNoteResponse](../../Models/Requests/PatchTicketingNoteResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchTicketingTicket
 
@@ -527,8 +518,6 @@ var res = await sdk.Ticketing.PatchTicketingTicketAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
@@ -537,15 +526,16 @@ var res = await sdk.Ticketing.PatchTicketingTicketAsync(
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Ticket                                              |
 | `TicketingTicket`                                             | [TicketingTicket](../../Models/Components/TicketingTicket.md) | :heavy_minus_sign:                                            | N/A                                                           |
 
-
 ### Response
 
 **[PatchTicketingTicketResponse](../../Models/Requests/PatchTicketingTicketResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveTicketingCustomer
 
@@ -569,8 +559,6 @@ var res = await sdk.Ticketing.RemoveTicketingCustomerAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -578,15 +566,16 @@ var res = await sdk.Ticketing.RemoveTicketingCustomerAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Customer   |
 
-
 ### Response
 
 **[RemoveTicketingCustomerResponse](../../Models/Requests/RemoveTicketingCustomerResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveTicketingNote
 
@@ -610,8 +599,6 @@ var res = await sdk.Ticketing.RemoveTicketingNoteAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -619,15 +606,16 @@ var res = await sdk.Ticketing.RemoveTicketingNoteAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Note       |
 
-
 ### Response
 
 **[RemoveTicketingNoteResponse](../../Models/Requests/RemoveTicketingNoteResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveTicketingTicket
 
@@ -651,8 +639,6 @@ var res = await sdk.Ticketing.RemoveTicketingTicketAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -660,15 +646,16 @@ var res = await sdk.Ticketing.RemoveTicketingTicketAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Ticket     |
 
-
 ### Response
 
 **[RemoveTicketingTicketResponse](../../Models/Requests/RemoveTicketingTicketResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateTicketingCustomer
 
@@ -694,8 +681,6 @@ var res = await sdk.Ticketing.UpdateTicketingCustomerAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -704,15 +689,16 @@ var res = await sdk.Ticketing.UpdateTicketingCustomerAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Customer                                                |
 | `TicketingCustomer`                                               | [TicketingCustomer](../../Models/Components/TicketingCustomer.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[UpdateTicketingCustomerResponse](../../Models/Requests/UpdateTicketingCustomerResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateTicketingNote
 
@@ -738,8 +724,6 @@ var res = await sdk.Ticketing.UpdateTicketingNoteAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
@@ -748,15 +732,16 @@ var res = await sdk.Ticketing.UpdateTicketingNoteAsync(
 | `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the Note                                            |
 | `TicketingNote`                                           | [TicketingNote](../../Models/Components/TicketingNote.md) | :heavy_minus_sign:                                        | N/A                                                       |
 
-
 ### Response
 
 **[UpdateTicketingNoteResponse](../../Models/Requests/UpdateTicketingNoteResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateTicketingTicket
 
@@ -782,8 +767,6 @@ var res = await sdk.Ticketing.UpdateTicketingTicketAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
@@ -792,10 +775,10 @@ var res = await sdk.Ticketing.UpdateTicketingTicketAsync(
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Ticket                                              |
 | `TicketingTicket`                                             | [TicketingTicket](../../Models/Components/TicketingTicket.md) | :heavy_minus_sign:                                            | N/A                                                           |
 
-
 ### Response
 
 **[UpdateTicketingTicketResponse](../../Models/Requests/UpdateTicketingTicketResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

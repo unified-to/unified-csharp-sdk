@@ -13,26 +13,26 @@ namespace UnifiedTo.Models.Components
     using System;
     using UnifiedTo.Utils;
     
-    public enum AtsActivityType
+    public enum PropertyAtsActivityFromType
     {
-        [JsonProperty("NOTE")]
-        Note,
-        [JsonProperty("TASK")]
-        Task,
-        [JsonProperty("EMAIL")]
-        Email,
+        [JsonProperty("WORK")]
+        Work,
+        [JsonProperty("HOME")]
+        Home,
+        [JsonProperty("OTHER")]
+        Other,
     }
 
-    public static class AtsActivityTypeExtension
+    public static class PropertyAtsActivityFromTypeExtension
     {
-        public static string Value(this AtsActivityType value)
+        public static string Value(this PropertyAtsActivityFromType value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static AtsActivityType ToEnum(this string value)
+        public static PropertyAtsActivityFromType ToEnum(this string value)
         {
-            foreach(var field in typeof(AtsActivityType).GetFields())
+            foreach(var field in typeof(PropertyAtsActivityFromType).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -45,14 +45,14 @@ namespace UnifiedTo.Models.Components
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is AtsActivityType)
+                    if (enumVal is PropertyAtsActivityFromType)
                     {
-                        return (AtsActivityType)enumVal;
+                        return (PropertyAtsActivityFromType)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum AtsActivityType");
+            throw new Exception($"Unknown value {value} for enum PropertyAtsActivityFromType");
         }
     }
 

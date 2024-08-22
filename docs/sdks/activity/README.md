@@ -1,6 +1,8 @@
 # Activity
 (*Activity*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateAtsActivity](#createatsactivity) - Create an activity
@@ -35,8 +37,6 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -44,15 +44,16 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[CreateAtsActivityResponse](../../Models/Requests/CreateAtsActivityResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAtsActivity
 
@@ -80,8 +81,6 @@ var res = await sdk.Activity.GetAtsActivityAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -90,15 +89,16 @@ var res = await sdk.Activity.GetAtsActivityAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Activity               |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAtsActivityResponse](../../Models/Requests/GetAtsActivityResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAtsActivities
 
@@ -125,23 +125,22 @@ var res = await sdk.Activity.ListAtsActivitiesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `request`                                                                     | [ListAtsActivitiesRequest](../../Models/Requests/ListAtsActivitiesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
-
 ### Response
 
 **[ListAtsActivitiesResponse](../../Models/Requests/ListAtsActivitiesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAtsActivity
 
@@ -169,8 +168,6 @@ var res = await sdk.Activity.PatchAtsActivityAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -179,15 +176,16 @@ var res = await sdk.Activity.PatchAtsActivityAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Activity                                    |
 | `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[PatchAtsActivityResponse](../../Models/Requests/PatchAtsActivityResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAtsActivity
 
@@ -211,8 +209,6 @@ var res = await sdk.Activity.RemoveAtsActivityAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -220,15 +216,16 @@ var res = await sdk.Activity.RemoveAtsActivityAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Activity   |
 
-
 ### Response
 
 **[RemoveAtsActivityResponse](../../Models/Requests/RemoveAtsActivityResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAtsActivity
 
@@ -256,8 +253,6 @@ var res = await sdk.Activity.UpdateAtsActivityAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -266,10 +261,10 @@ var res = await sdk.Activity.UpdateAtsActivityAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Activity                                    |
 | `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[UpdateAtsActivityResponse](../../Models/Requests/UpdateAtsActivityResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

@@ -1,6 +1,8 @@
 # Genai
 (*Genai*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateGenaiPrompt](#creategenaiprompt) - Create a prompt
@@ -29,8 +31,6 @@ var res = await sdk.Genai.CreateGenaiPromptAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -38,15 +38,16 @@ var res = await sdk.Genai.CreateGenaiPromptAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `GenaiPrompt`                                         | [GenaiPrompt](../../Models/Components/GenaiPrompt.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[CreateGenaiPromptResponse](../../Models/Requests/CreateGenaiPromptResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListGenaiModels
 
@@ -73,18 +74,16 @@ var res = await sdk.Genai.ListGenaiModelsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | `request`                                                                 | [ListGenaiModelsRequest](../../Models/Requests/ListGenaiModelsRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
-
 ### Response
 
 **[ListGenaiModelsResponse](../../Models/Requests/ListGenaiModelsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

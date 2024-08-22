@@ -1,6 +1,8 @@
 # Taxrate
 (*Taxrate*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateAccountingTaxrate](#createaccountingtaxrate) - Create a taxrate
@@ -33,8 +35,6 @@ var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -42,15 +42,16 @@ var res = await sdk.Taxrate.CreateAccountingTaxrateAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `AccountingTaxrate`                                               | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[CreateAccountingTaxrateResponse](../../Models/Requests/CreateAccountingTaxrateResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAccountingTaxrate
 
@@ -78,8 +79,6 @@ var res = await sdk.Taxrate.GetAccountingTaxrateAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Taxrate.GetAccountingTaxrateAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Taxrate                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAccountingTaxrateResponse](../../Models/Requests/GetAccountingTaxrateResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAccountingTaxrates
 
@@ -123,23 +123,22 @@ var res = await sdk.Taxrate.ListAccountingTaxratesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `request`                                                                               | [ListAccountingTaxratesRequest](../../Models/Requests/ListAccountingTaxratesRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
-
 ### Response
 
 **[ListAccountingTaxratesResponse](../../Models/Requests/ListAccountingTaxratesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAccountingTaxrate
 
@@ -165,8 +164,6 @@ var res = await sdk.Taxrate.PatchAccountingTaxrateAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -175,15 +172,16 @@ var res = await sdk.Taxrate.PatchAccountingTaxrateAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Taxrate                                                 |
 | `AccountingTaxrate`                                               | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[PatchAccountingTaxrateResponse](../../Models/Requests/PatchAccountingTaxrateResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAccountingTaxrate
 
@@ -207,8 +205,6 @@ var res = await sdk.Taxrate.RemoveAccountingTaxrateAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Taxrate.RemoveAccountingTaxrateAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Taxrate    |
 
-
 ### Response
 
 **[RemoveAccountingTaxrateResponse](../../Models/Requests/RemoveAccountingTaxrateResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAccountingTaxrate
 
@@ -250,8 +247,6 @@ var res = await sdk.Taxrate.UpdateAccountingTaxrateAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -260,10 +255,10 @@ var res = await sdk.Taxrate.UpdateAccountingTaxrateAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Taxrate                                                 |
 | `AccountingTaxrate`                                               | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[UpdateAccountingTaxrateResponse](../../Models/Requests/UpdateAccountingTaxrateResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

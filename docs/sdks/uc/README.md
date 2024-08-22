@@ -1,6 +1,8 @@
 # Uc
 (*Uc*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateUcContact](#createuccontact) - Create a contact
@@ -34,8 +36,6 @@ var res = await sdk.Uc.CreateUcContactAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
@@ -43,15 +43,16 @@ var res = await sdk.Uc.CreateUcContactAsync(
 | `ConnectionId`                                                          | *string*                                                                | :heavy_check_mark:                                                      | ID of the connection                                                    |
 | `UcContact`                                                             | [UcContact](../../Models/Components/UcContact.md)                       | :heavy_minus_sign:                                                      | A contact represents a person that optionally is associated with a call |
 
-
 ### Response
 
 **[CreateUcContactResponse](../../Models/Requests/CreateUcContactResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetUcContact
 
@@ -79,8 +80,6 @@ var res = await sdk.Uc.GetUcContactAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -89,15 +88,16 @@ var res = await sdk.Uc.GetUcContactAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Contact                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetUcContactResponse](../../Models/Requests/GetUcContactResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListUcCalls
 
@@ -124,23 +124,22 @@ var res = await sdk.Uc.ListUcCallsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `request`                                                         | [ListUcCallsRequest](../../Models/Requests/ListUcCallsRequest.md) | :heavy_check_mark:                                                | The request object to use for the request.                        |
 
-
 ### Response
 
 **[ListUcCallsResponse](../../Models/Requests/ListUcCallsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListUcContacts
 
@@ -167,23 +166,22 @@ var res = await sdk.Uc.ListUcContactsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
 | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | `request`                                                               | [ListUcContactsRequest](../../Models/Requests/ListUcContactsRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 
-
 ### Response
 
 **[ListUcContactsResponse](../../Models/Requests/ListUcContactsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchUcContact
 
@@ -209,8 +207,6 @@ var res = await sdk.Uc.PatchUcContactAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
@@ -219,15 +215,16 @@ var res = await sdk.Uc.PatchUcContactAsync(
 | `Id`                                                                    | *string*                                                                | :heavy_check_mark:                                                      | ID of the Contact                                                       |
 | `UcContact`                                                             | [UcContact](../../Models/Components/UcContact.md)                       | :heavy_minus_sign:                                                      | A contact represents a person that optionally is associated with a call |
 
-
 ### Response
 
 **[PatchUcContactResponse](../../Models/Requests/PatchUcContactResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveUcContact
 
@@ -251,8 +248,6 @@ var res = await sdk.Uc.RemoveUcContactAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -260,15 +255,16 @@ var res = await sdk.Uc.RemoveUcContactAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Contact    |
 
-
 ### Response
 
 **[RemoveUcContactResponse](../../Models/Requests/RemoveUcContactResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateUcContact
 
@@ -294,8 +290,6 @@ var res = await sdk.Uc.UpdateUcContactAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
@@ -304,10 +298,10 @@ var res = await sdk.Uc.UpdateUcContactAsync(
 | `Id`                                                                    | *string*                                                                | :heavy_check_mark:                                                      | ID of the Contact                                                       |
 | `UcContact`                                                             | [UcContact](../../Models/Components/UcContact.md)                       | :heavy_minus_sign:                                                      | A contact represents a person that optionally is associated with a call |
 
-
 ### Response
 
 **[UpdateUcContactResponse](../../Models/Requests/UpdateUcContactResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

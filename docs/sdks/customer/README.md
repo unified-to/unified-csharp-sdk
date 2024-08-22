@@ -1,6 +1,8 @@
 # Customer
 (*Customer*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateTicketingCustomer](#createticketingcustomer) - Create a customer
@@ -33,8 +35,6 @@ var res = await sdk.Customer.CreateTicketingCustomerAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -42,15 +42,16 @@ var res = await sdk.Customer.CreateTicketingCustomerAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `TicketingCustomer`                                               | [TicketingCustomer](../../Models/Components/TicketingCustomer.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[CreateTicketingCustomerResponse](../../Models/Requests/CreateTicketingCustomerResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetTicketingCustomer
 
@@ -78,8 +79,6 @@ var res = await sdk.Customer.GetTicketingCustomerAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Customer.GetTicketingCustomerAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Customer               |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetTicketingCustomerResponse](../../Models/Requests/GetTicketingCustomerResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListTicketingCustomers
 
@@ -123,23 +123,22 @@ var res = await sdk.Customer.ListTicketingCustomersAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `request`                                                                               | [ListTicketingCustomersRequest](../../Models/Requests/ListTicketingCustomersRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
-
 ### Response
 
 **[ListTicketingCustomersResponse](../../Models/Requests/ListTicketingCustomersResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchTicketingCustomer
 
@@ -165,8 +164,6 @@ var res = await sdk.Customer.PatchTicketingCustomerAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -175,15 +172,16 @@ var res = await sdk.Customer.PatchTicketingCustomerAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Customer                                                |
 | `TicketingCustomer`                                               | [TicketingCustomer](../../Models/Components/TicketingCustomer.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[PatchTicketingCustomerResponse](../../Models/Requests/PatchTicketingCustomerResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveTicketingCustomer
 
@@ -207,8 +205,6 @@ var res = await sdk.Customer.RemoveTicketingCustomerAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Customer.RemoveTicketingCustomerAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Customer   |
 
-
 ### Response
 
 **[RemoveTicketingCustomerResponse](../../Models/Requests/RemoveTicketingCustomerResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateTicketingCustomer
 
@@ -250,8 +247,6 @@ var res = await sdk.Customer.UpdateTicketingCustomerAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -260,10 +255,10 @@ var res = await sdk.Customer.UpdateTicketingCustomerAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Customer                                                |
 | `TicketingCustomer`                                               | [TicketingCustomer](../../Models/Components/TicketingCustomer.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[UpdateTicketingCustomerResponse](../../Models/Requests/UpdateTicketingCustomerResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

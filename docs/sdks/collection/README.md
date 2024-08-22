@@ -1,6 +1,8 @@
 # Collection
 (*Collection*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateCommerceCollection](#createcommercecollection) - Create a collection
@@ -36,8 +38,6 @@ var res = await sdk.Collection.CreateCommerceCollectionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -45,15 +45,16 @@ var res = await sdk.Collection.CreateCommerceCollectionAsync(
 | `ConnectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
 | `CommerceCollection`                                                | [CommerceCollection](../../Models/Components/CommerceCollection.md) | :heavy_minus_sign:                                                  | A collection of items/products/services                             |
 
-
 ### Response
 
 **[CreateCommerceCollectionResponse](../../Models/Requests/CreateCommerceCollectionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetCommerceCollection
 
@@ -81,8 +82,6 @@ var res = await sdk.Collection.GetCommerceCollectionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -91,15 +90,16 @@ var res = await sdk.Collection.GetCommerceCollectionAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Collection             |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetCommerceCollectionResponse](../../Models/Requests/GetCommerceCollectionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListCommerceCollections
 
@@ -126,23 +126,22 @@ var res = await sdk.Collection.ListCommerceCollectionsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | `request`                                                                                 | [ListCommerceCollectionsRequest](../../Models/Requests/ListCommerceCollectionsRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
-
 ### Response
 
 **[ListCommerceCollectionsResponse](../../Models/Requests/ListCommerceCollectionsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchCommerceCollection
 
@@ -171,8 +170,6 @@ var res = await sdk.Collection.PatchCommerceCollectionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -181,15 +178,16 @@ var res = await sdk.Collection.PatchCommerceCollectionAsync(
 | `Id`                                                                | *string*                                                            | :heavy_check_mark:                                                  | ID of the Collection                                                |
 | `CommerceCollection`                                                | [CommerceCollection](../../Models/Components/CommerceCollection.md) | :heavy_minus_sign:                                                  | A collection of items/products/services                             |
 
-
 ### Response
 
 **[PatchCommerceCollectionResponse](../../Models/Requests/PatchCommerceCollectionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveCommerceCollection
 
@@ -213,8 +211,6 @@ var res = await sdk.Collection.RemoveCommerceCollectionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -222,15 +218,16 @@ var res = await sdk.Collection.RemoveCommerceCollectionAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Collection |
 
-
 ### Response
 
 **[RemoveCommerceCollectionResponse](../../Models/Requests/RemoveCommerceCollectionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateCommerceCollection
 
@@ -259,8 +256,6 @@ var res = await sdk.Collection.UpdateCommerceCollectionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
@@ -269,10 +264,10 @@ var res = await sdk.Collection.UpdateCommerceCollectionAsync(
 | `Id`                                                                | *string*                                                            | :heavy_check_mark:                                                  | ID of the Collection                                                |
 | `CommerceCollection`                                                | [CommerceCollection](../../Models/Components/CommerceCollection.md) | :heavy_minus_sign:                                                  | A collection of items/products/services                             |
 
-
 ### Response
 
 **[UpdateCommerceCollectionResponse](../../Models/Requests/UpdateCommerceCollectionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

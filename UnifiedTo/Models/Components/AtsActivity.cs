@@ -21,8 +21,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("application_id")]
         public string? ApplicationId { get; set; }
 
+        [JsonProperty("bcc")]
+        public List<AtsEmail>? Bcc { get; set; }
+
         [JsonProperty("candidate_id")]
         public string? CandidateId { get; set; }
+
+        [JsonProperty("cc")]
+        public List<AtsEmail>? Cc { get; set; }
 
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
@@ -32,6 +38,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("document_id")]
         public string? DocumentId { get; set; }
+
+        [JsonProperty("from")]
+        public PropertyAtsActivityFrom? From { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
@@ -50,6 +59,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("title")]
         public string Title { get; set; } = default!;
+
+        [JsonProperty("to")]
+        public List<AtsEmail>? To { get; set; }
 
         [JsonProperty("type")]
         public AtsActivityType? Type { get; set; }

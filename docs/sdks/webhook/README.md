@@ -1,6 +1,8 @@
 # Webhook
 (*Webhook*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateUnifiedWebhook](#createunifiedwebhook) - Create webhook subscription
@@ -40,8 +42,6 @@ var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -49,15 +49,16 @@ var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
 | `Webhook`                                                         | [Models.Components.Webhook](../../Models/Components/Webhook.md)   | :heavy_minus_sign:                                                | N/A                                                               |
 | `IncludeAll`                                                      | *bool*                                                            | :heavy_minus_sign:                                                | When set, all of the existing data will sent back to your server. |
 
-
 ### Response
 
 **[CreateUnifiedWebhookResponse](../../Models/Requests/CreateUnifiedWebhookResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetUnifiedWebhook
 
@@ -79,23 +80,22 @@ var res = await sdk.Webhook.GetUnifiedWebhookAsync(id: "<value>");
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `Id`               | *string*           | :heavy_check_mark: | ID of the Webhook  |
 
-
 ### Response
 
 **[GetUnifiedWebhookResponse](../../Models/Requests/GetUnifiedWebhookResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListUnifiedWebhooks
 
@@ -119,23 +119,22 @@ var res = await sdk.Webhook.ListUnifiedWebhooksAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
 | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
 | `request`                                                                         | [ListUnifiedWebhooksRequest](../../Models/Requests/ListUnifiedWebhooksRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
 
-
 ### Response
 
 **[ListUnifiedWebhooksResponse](../../Models/Requests/ListUnifiedWebhooksResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchUnifiedWebhook
 
@@ -165,8 +164,6 @@ var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -174,15 +171,16 @@ var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Webhook                                                 |
 | `Webhook`                                                         | [Models.Components.Webhook](../../Models/Components/Webhook.md)   | :heavy_minus_sign:                                                | A webhook is used to POST new/updated information to your server. |
 
-
 ### Response
 
 **[PatchUnifiedWebhookResponse](../../Models/Requests/PatchUnifiedWebhookResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchUnifiedWebhookTrigger
 
@@ -204,23 +202,22 @@ var res = await sdk.Webhook.PatchUnifiedWebhookTriggerAsync(id: "<value>");
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `Id`               | *string*           | :heavy_check_mark: | ID of the Webhook  |
 
-
 ### Response
 
 **[PatchUnifiedWebhookTriggerResponse](../../Models/Requests/PatchUnifiedWebhookTriggerResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveUnifiedWebhook
 
@@ -242,23 +239,22 @@ var res = await sdk.Webhook.RemoveUnifiedWebhookAsync(id: "<value>");
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `Id`               | *string*           | :heavy_check_mark: | ID of the Webhook  |
 
-
 ### Response
 
 **[RemoveUnifiedWebhookResponse](../../Models/Requests/RemoveUnifiedWebhookResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateUnifiedWebhook
 
@@ -288,8 +284,6 @@ var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -297,15 +291,16 @@ var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Webhook                                                 |
 | `Webhook`                                                         | [Models.Components.Webhook](../../Models/Components/Webhook.md)   | :heavy_minus_sign:                                                | A webhook is used to POST new/updated information to your server. |
 
-
 ### Response
 
 **[UpdateUnifiedWebhookResponse](../../Models/Requests/UpdateUnifiedWebhookResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateUnifiedWebhookTrigger
 
@@ -327,18 +322,16 @@ var res = await sdk.Webhook.UpdateUnifiedWebhookTriggerAsync(id: "<value>");
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter          | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `Id`               | *string*           | :heavy_check_mark: | ID of the Webhook  |
 
-
 ### Response
 
 **[UpdateUnifiedWebhookTriggerResponse](../../Models/Requests/UpdateUnifiedWebhookTriggerResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

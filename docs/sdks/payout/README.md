@@ -1,6 +1,8 @@
 # Payout
 (*Payout*)
 
+## Overview
+
 ### Available Operations
 
 * [GetPaymentPayout](#getpaymentpayout) - Retrieve a payout
@@ -32,8 +34,6 @@ var res = await sdk.Payout.GetPaymentPayoutAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -42,15 +42,16 @@ var res = await sdk.Payout.GetPaymentPayoutAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Payout                 |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetPaymentPayoutResponse](../../Models/Requests/GetPaymentPayoutResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListPaymentPayouts
 
@@ -77,18 +78,16 @@ var res = await sdk.Payout.ListPaymentPayoutsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | `request`                                                                       | [ListPaymentPayoutsRequest](../../Models/Requests/ListPaymentPayoutsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
-
 ### Response
 
 **[ListPaymentPayoutsResponse](../../Models/Requests/ListPaymentPayoutsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

@@ -1,6 +1,8 @@
 # Accounting
 (*Accounting*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateAccountingAccount](#createaccountingaccount) - Create an account
@@ -65,8 +67,6 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -74,15 +74,16 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | Chart of accounts                                                 |
 
-
 ### Response
 
 **[CreateAccountingAccountResponse](../../Models/Requests/CreateAccountingAccountResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateAccountingContact
 
@@ -107,8 +108,6 @@ var res = await sdk.Accounting.CreateAccountingContactAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -116,15 +115,16 @@ var res = await sdk.Accounting.CreateAccountingContactAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `AccountingContact`                                               | [AccountingContact](../../Models/Components/AccountingContact.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[CreateAccountingContactResponse](../../Models/Requests/CreateAccountingContactResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateAccountingInvoice
 
@@ -149,8 +149,6 @@ var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -158,15 +156,16 @@ var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `AccountingInvoice`                                               | [AccountingInvoice](../../Models/Components/AccountingInvoice.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[CreateAccountingInvoiceResponse](../../Models/Requests/CreateAccountingInvoiceResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateAccountingJournal
 
@@ -191,8 +190,6 @@ var res = await sdk.Accounting.CreateAccountingJournalAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -200,15 +197,16 @@ var res = await sdk.Accounting.CreateAccountingJournalAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `AccountingJournal`                                               | [AccountingJournal](../../Models/Components/AccountingJournal.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[CreateAccountingJournalResponse](../../Models/Requests/CreateAccountingJournalResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateAccountingTaxrate
 
@@ -233,8 +231,6 @@ var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -242,15 +238,16 @@ var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `AccountingTaxrate`                                               | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[CreateAccountingTaxrateResponse](../../Models/Requests/CreateAccountingTaxrateResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateAccountingTransaction
 
@@ -275,8 +272,6 @@ var res = await sdk.Accounting.CreateAccountingTransactionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
@@ -284,15 +279,16 @@ var res = await sdk.Accounting.CreateAccountingTransactionAsync(
 | `ConnectionId`                                                            | *string*                                                                  | :heavy_check_mark:                                                        | ID of the connection                                                      |
 | `AccountingTransaction`                                                   | [AccountingTransaction](../../Models/Components/AccountingTransaction.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
 
-
 ### Response
 
 **[CreateAccountingTransactionResponse](../../Models/Requests/CreateAccountingTransactionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAccountingAccount
 
@@ -320,8 +316,6 @@ var res = await sdk.Accounting.GetAccountingAccountAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -330,15 +324,16 @@ var res = await sdk.Accounting.GetAccountingAccountAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Account                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAccountingAccountResponse](../../Models/Requests/GetAccountingAccountResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAccountingContact
 
@@ -366,8 +361,6 @@ var res = await sdk.Accounting.GetAccountingContactAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -376,15 +369,16 @@ var res = await sdk.Accounting.GetAccountingContactAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Contact                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAccountingContactResponse](../../Models/Requests/GetAccountingContactResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAccountingInvoice
 
@@ -412,8 +406,6 @@ var res = await sdk.Accounting.GetAccountingInvoiceAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -422,15 +414,16 @@ var res = await sdk.Accounting.GetAccountingInvoiceAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Invoice                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAccountingInvoiceResponse](../../Models/Requests/GetAccountingInvoiceResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAccountingJournal
 
@@ -458,8 +451,6 @@ var res = await sdk.Accounting.GetAccountingJournalAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -468,15 +459,16 @@ var res = await sdk.Accounting.GetAccountingJournalAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Journal                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAccountingJournalResponse](../../Models/Requests/GetAccountingJournalResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAccountingOrganization
 
@@ -504,8 +496,6 @@ var res = await sdk.Accounting.GetAccountingOrganizationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -514,15 +504,16 @@ var res = await sdk.Accounting.GetAccountingOrganizationAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Organization           |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAccountingOrganizationResponse](../../Models/Requests/GetAccountingOrganizationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAccountingTaxrate
 
@@ -550,8 +541,6 @@ var res = await sdk.Accounting.GetAccountingTaxrateAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -560,15 +549,16 @@ var res = await sdk.Accounting.GetAccountingTaxrateAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Taxrate                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAccountingTaxrateResponse](../../Models/Requests/GetAccountingTaxrateResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAccountingTransaction
 
@@ -596,8 +586,6 @@ var res = await sdk.Accounting.GetAccountingTransactionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -606,15 +594,16 @@ var res = await sdk.Accounting.GetAccountingTransactionAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Transaction            |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAccountingTransactionResponse](../../Models/Requests/GetAccountingTransactionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAccountingAccounts
 
@@ -641,23 +630,22 @@ var res = await sdk.Accounting.ListAccountingAccountsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `request`                                                                               | [ListAccountingAccountsRequest](../../Models/Requests/ListAccountingAccountsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
-
 ### Response
 
 **[ListAccountingAccountsResponse](../../Models/Requests/ListAccountingAccountsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAccountingContacts
 
@@ -684,23 +672,22 @@ var res = await sdk.Accounting.ListAccountingContactsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `request`                                                                               | [ListAccountingContactsRequest](../../Models/Requests/ListAccountingContactsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
-
 ### Response
 
 **[ListAccountingContactsResponse](../../Models/Requests/ListAccountingContactsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAccountingInvoices
 
@@ -727,23 +714,22 @@ var res = await sdk.Accounting.ListAccountingInvoicesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `request`                                                                               | [ListAccountingInvoicesRequest](../../Models/Requests/ListAccountingInvoicesRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
-
 ### Response
 
 **[ListAccountingInvoicesResponse](../../Models/Requests/ListAccountingInvoicesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAccountingJournals
 
@@ -770,23 +756,22 @@ var res = await sdk.Accounting.ListAccountingJournalsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `request`                                                                               | [ListAccountingJournalsRequest](../../Models/Requests/ListAccountingJournalsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
-
 ### Response
 
 **[ListAccountingJournalsResponse](../../Models/Requests/ListAccountingJournalsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAccountingOrganizations
 
@@ -813,23 +798,22 @@ var res = await sdk.Accounting.ListAccountingOrganizationsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
 | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | `request`                                                                                         | [ListAccountingOrganizationsRequest](../../Models/Requests/ListAccountingOrganizationsRequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
 
-
 ### Response
 
 **[ListAccountingOrganizationsResponse](../../Models/Requests/ListAccountingOrganizationsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAccountingTaxrates
 
@@ -856,23 +840,22 @@ var res = await sdk.Accounting.ListAccountingTaxratesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `request`                                                                               | [ListAccountingTaxratesRequest](../../Models/Requests/ListAccountingTaxratesRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
-
 ### Response
 
 **[ListAccountingTaxratesResponse](../../Models/Requests/ListAccountingTaxratesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAccountingTransactions
 
@@ -899,23 +882,22 @@ var res = await sdk.Accounting.ListAccountingTransactionsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
 | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | `request`                                                                                       | [ListAccountingTransactionsRequest](../../Models/Requests/ListAccountingTransactionsRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
 
-
 ### Response
 
 **[ListAccountingTransactionsResponse](../../Models/Requests/ListAccountingTransactionsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAccountingAccount
 
@@ -941,8 +923,6 @@ var res = await sdk.Accounting.PatchAccountingAccountAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -951,15 +931,16 @@ var res = await sdk.Accounting.PatchAccountingAccountAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Account                                                 |
 | `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | Chart of accounts                                                 |
 
-
 ### Response
 
 **[PatchAccountingAccountResponse](../../Models/Requests/PatchAccountingAccountResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAccountingContact
 
@@ -985,8 +966,6 @@ var res = await sdk.Accounting.PatchAccountingContactAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -995,15 +974,16 @@ var res = await sdk.Accounting.PatchAccountingContactAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Contact                                                 |
 | `AccountingContact`                                               | [AccountingContact](../../Models/Components/AccountingContact.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[PatchAccountingContactResponse](../../Models/Requests/PatchAccountingContactResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAccountingInvoice
 
@@ -1029,8 +1009,6 @@ var res = await sdk.Accounting.PatchAccountingInvoiceAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -1039,15 +1017,16 @@ var res = await sdk.Accounting.PatchAccountingInvoiceAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Invoice                                                 |
 | `AccountingInvoice`                                               | [AccountingInvoice](../../Models/Components/AccountingInvoice.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[PatchAccountingInvoiceResponse](../../Models/Requests/PatchAccountingInvoiceResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAccountingJournal
 
@@ -1073,8 +1052,6 @@ var res = await sdk.Accounting.PatchAccountingJournalAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -1083,15 +1060,16 @@ var res = await sdk.Accounting.PatchAccountingJournalAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Journal                                                 |
 | `AccountingJournal`                                               | [AccountingJournal](../../Models/Components/AccountingJournal.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[PatchAccountingJournalResponse](../../Models/Requests/PatchAccountingJournalResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAccountingTaxrate
 
@@ -1117,8 +1095,6 @@ var res = await sdk.Accounting.PatchAccountingTaxrateAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -1127,15 +1103,16 @@ var res = await sdk.Accounting.PatchAccountingTaxrateAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Taxrate                                                 |
 | `AccountingTaxrate`                                               | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[PatchAccountingTaxrateResponse](../../Models/Requests/PatchAccountingTaxrateResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAccountingTransaction
 
@@ -1161,8 +1138,6 @@ var res = await sdk.Accounting.PatchAccountingTransactionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
@@ -1171,15 +1146,16 @@ var res = await sdk.Accounting.PatchAccountingTransactionAsync(
 | `Id`                                                                      | *string*                                                                  | :heavy_check_mark:                                                        | ID of the Transaction                                                     |
 | `AccountingTransaction`                                                   | [AccountingTransaction](../../Models/Components/AccountingTransaction.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
 
-
 ### Response
 
 **[PatchAccountingTransactionResponse](../../Models/Requests/PatchAccountingTransactionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAccountingAccount
 
@@ -1203,8 +1179,6 @@ var res = await sdk.Accounting.RemoveAccountingAccountAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1212,15 +1186,16 @@ var res = await sdk.Accounting.RemoveAccountingAccountAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Account    |
 
-
 ### Response
 
 **[RemoveAccountingAccountResponse](../../Models/Requests/RemoveAccountingAccountResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAccountingContact
 
@@ -1244,8 +1219,6 @@ var res = await sdk.Accounting.RemoveAccountingContactAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1253,15 +1226,16 @@ var res = await sdk.Accounting.RemoveAccountingContactAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Contact    |
 
-
 ### Response
 
 **[RemoveAccountingContactResponse](../../Models/Requests/RemoveAccountingContactResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAccountingInvoice
 
@@ -1285,8 +1259,6 @@ var res = await sdk.Accounting.RemoveAccountingInvoiceAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1294,15 +1266,16 @@ var res = await sdk.Accounting.RemoveAccountingInvoiceAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Invoice    |
 
-
 ### Response
 
 **[RemoveAccountingInvoiceResponse](../../Models/Requests/RemoveAccountingInvoiceResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAccountingJournal
 
@@ -1326,8 +1299,6 @@ var res = await sdk.Accounting.RemoveAccountingJournalAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1335,15 +1306,16 @@ var res = await sdk.Accounting.RemoveAccountingJournalAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Journal    |
 
-
 ### Response
 
 **[RemoveAccountingJournalResponse](../../Models/Requests/RemoveAccountingJournalResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAccountingTaxrate
 
@@ -1367,8 +1339,6 @@ var res = await sdk.Accounting.RemoveAccountingTaxrateAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1376,15 +1346,16 @@ var res = await sdk.Accounting.RemoveAccountingTaxrateAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Taxrate    |
 
-
 ### Response
 
 **[RemoveAccountingTaxrateResponse](../../Models/Requests/RemoveAccountingTaxrateResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAccountingTransaction
 
@@ -1408,8 +1379,6 @@ var res = await sdk.Accounting.RemoveAccountingTransactionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter             | Type                  | Required              | Description           |
@@ -1417,15 +1386,16 @@ var res = await sdk.Accounting.RemoveAccountingTransactionAsync(
 | `ConnectionId`        | *string*              | :heavy_check_mark:    | ID of the connection  |
 | `Id`                  | *string*              | :heavy_check_mark:    | ID of the Transaction |
 
-
 ### Response
 
 **[RemoveAccountingTransactionResponse](../../Models/Requests/RemoveAccountingTransactionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAccountingAccount
 
@@ -1451,8 +1421,6 @@ var res = await sdk.Accounting.UpdateAccountingAccountAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -1461,15 +1429,16 @@ var res = await sdk.Accounting.UpdateAccountingAccountAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Account                                                 |
 | `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | Chart of accounts                                                 |
 
-
 ### Response
 
 **[UpdateAccountingAccountResponse](../../Models/Requests/UpdateAccountingAccountResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAccountingContact
 
@@ -1495,8 +1464,6 @@ var res = await sdk.Accounting.UpdateAccountingContactAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -1505,15 +1472,16 @@ var res = await sdk.Accounting.UpdateAccountingContactAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Contact                                                 |
 | `AccountingContact`                                               | [AccountingContact](../../Models/Components/AccountingContact.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[UpdateAccountingContactResponse](../../Models/Requests/UpdateAccountingContactResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAccountingInvoice
 
@@ -1539,8 +1507,6 @@ var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -1549,15 +1515,16 @@ var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Invoice                                                 |
 | `AccountingInvoice`                                               | [AccountingInvoice](../../Models/Components/AccountingInvoice.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[UpdateAccountingInvoiceResponse](../../Models/Requests/UpdateAccountingInvoiceResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAccountingJournal
 
@@ -1583,8 +1550,6 @@ var res = await sdk.Accounting.UpdateAccountingJournalAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -1593,15 +1558,16 @@ var res = await sdk.Accounting.UpdateAccountingJournalAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Journal                                                 |
 | `AccountingJournal`                                               | [AccountingJournal](../../Models/Components/AccountingJournal.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[UpdateAccountingJournalResponse](../../Models/Requests/UpdateAccountingJournalResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAccountingTaxrate
 
@@ -1627,8 +1593,6 @@ var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -1637,15 +1601,16 @@ var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Taxrate                                                 |
 | `AccountingTaxrate`                                               | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md) | :heavy_minus_sign:                                                | N/A                                                               |
 
-
 ### Response
 
 **[UpdateAccountingTaxrateResponse](../../Models/Requests/UpdateAccountingTaxrateResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAccountingTransaction
 
@@ -1671,8 +1636,6 @@ var res = await sdk.Accounting.UpdateAccountingTransactionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
@@ -1681,10 +1644,10 @@ var res = await sdk.Accounting.UpdateAccountingTransactionAsync(
 | `Id`                                                                      | *string*                                                                  | :heavy_check_mark:                                                        | ID of the Transaction                                                     |
 | `AccountingTransaction`                                                   | [AccountingTransaction](../../Models/Components/AccountingTransaction.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
 
-
 ### Response
 
 **[UpdateAccountingTransactionResponse](../../Models/Requests/UpdateAccountingTransactionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

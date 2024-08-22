@@ -1,6 +1,8 @@
 # Event
 (*Event*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateCrmEvent](#createcrmevent) - Create an event
@@ -33,8 +35,6 @@ var res = await sdk.Event.CreateCrmEventAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
@@ -42,15 +42,16 @@ var res = await sdk.Event.CreateCrmEventAsync(
 | `ConnectionId`                                                                                                  | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the connection                                                                                            |
 | `CrmEvent`                                                                                                      | [CrmEvent](../../Models/Components/CrmEvent.md)                                                                 | :heavy_minus_sign:                                                                                              | An event represents an event, activity, or engagement and is always associated with a deal, contact, or company |
 
-
 ### Response
 
 **[CreateCrmEventResponse](../../Models/Requests/CreateCrmEventResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetCrmEvent
 
@@ -78,8 +79,6 @@ var res = await sdk.Event.GetCrmEventAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Event.GetCrmEventAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Event                  |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetCrmEventResponse](../../Models/Requests/GetCrmEventResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListCrmEvents
 
@@ -123,23 +123,22 @@ var res = await sdk.Event.ListCrmEventsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
 | `request`                                                             | [ListCrmEventsRequest](../../Models/Requests/ListCrmEventsRequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
 
-
 ### Response
 
 **[ListCrmEventsResponse](../../Models/Requests/ListCrmEventsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchCrmEvent
 
@@ -165,8 +164,6 @@ var res = await sdk.Event.PatchCrmEventAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
@@ -175,15 +172,16 @@ var res = await sdk.Event.PatchCrmEventAsync(
 | `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Event                                                                                                 |
 | `CrmEvent`                                                                                                      | [CrmEvent](../../Models/Components/CrmEvent.md)                                                                 | :heavy_minus_sign:                                                                                              | An event represents an event, activity, or engagement and is always associated with a deal, contact, or company |
 
-
 ### Response
 
 **[PatchCrmEventResponse](../../Models/Requests/PatchCrmEventResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveCrmEvent
 
@@ -207,8 +205,6 @@ var res = await sdk.Event.RemoveCrmEventAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Event.RemoveCrmEventAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Event      |
 
-
 ### Response
 
 **[RemoveCrmEventResponse](../../Models/Requests/RemoveCrmEventResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateCrmEvent
 
@@ -250,8 +247,6 @@ var res = await sdk.Event.UpdateCrmEventAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
@@ -260,10 +255,10 @@ var res = await sdk.Event.UpdateCrmEventAsync(
 | `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Event                                                                                                 |
 | `CrmEvent`                                                                                                      | [CrmEvent](../../Models/Components/CrmEvent.md)                                                                 | :heavy_minus_sign:                                                                                              | An event represents an event, activity, or engagement and is always associated with a deal, contact, or company |
 
-
 ### Response
 
 **[UpdateCrmEventResponse](../../Models/Requests/UpdateCrmEventResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

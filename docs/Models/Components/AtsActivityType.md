@@ -3,7 +3,8 @@
 
 ## Values
 
-| Name   | Value  |
-| ------ | ------ |
-| `Note` | NOTE   |
-| `Task` | TASK   |
+| Name    | Value   |
+| ------- | ------- |
+| `Note`  | NOTE    |
+| `Task`  | TASK    |
+| `Email` | EMAIL   |

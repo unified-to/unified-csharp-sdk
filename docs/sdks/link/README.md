@@ -1,6 +1,8 @@
 # Link
 (*Link*)
 
+## Overview
+
 ### Available Operations
 
 * [CreatePaymentLink](#createpaymentlink) - Create a link
@@ -33,8 +35,6 @@ var res = await sdk.Link.CreatePaymentLinkAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -42,15 +42,16 @@ var res = await sdk.Link.CreatePaymentLinkAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `PaymentLink`                                         | [PaymentLink](../../Models/Components/PaymentLink.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[CreatePaymentLinkResponse](../../Models/Requests/CreatePaymentLinkResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetPaymentLink
 
@@ -78,8 +79,6 @@ var res = await sdk.Link.GetPaymentLinkAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Link.GetPaymentLinkAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Link                   |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetPaymentLinkResponse](../../Models/Requests/GetPaymentLinkResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListPaymentLinks
 
@@ -123,23 +123,22 @@ var res = await sdk.Link.ListPaymentLinksAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListPaymentLinksRequest](../../Models/Requests/ListPaymentLinksRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListPaymentLinksResponse](../../Models/Requests/ListPaymentLinksResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchPaymentLink
 
@@ -165,8 +164,6 @@ var res = await sdk.Link.PatchPaymentLinkAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -175,15 +172,16 @@ var res = await sdk.Link.PatchPaymentLinkAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Link                                        |
 | `PaymentLink`                                         | [PaymentLink](../../Models/Components/PaymentLink.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[PatchPaymentLinkResponse](../../Models/Requests/PatchPaymentLinkResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemovePaymentLink
 
@@ -207,8 +205,6 @@ var res = await sdk.Link.RemovePaymentLinkAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Link.RemovePaymentLinkAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Link       |
 
-
 ### Response
 
 **[RemovePaymentLinkResponse](../../Models/Requests/RemovePaymentLinkResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdatePaymentLink
 
@@ -250,8 +247,6 @@ var res = await sdk.Link.UpdatePaymentLinkAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -260,10 +255,10 @@ var res = await sdk.Link.UpdatePaymentLinkAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Link                                        |
 | `PaymentLink`                                         | [PaymentLink](../../Models/Components/PaymentLink.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[UpdatePaymentLinkResponse](../../Models/Requests/UpdatePaymentLinkResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

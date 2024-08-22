@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 9e259bd9564bc71739f81088a051aa42
+  docChecksum: c44c1ebe1392a35323492a0b69344f39
   docVersion: "1.0"
-  speakeasyVersion: 1.376.0
-  generationVersion: 2.402.5
-  releaseVersion: 0.19.41
-  configChecksum: 9add8cddda39c498af836d0b6a2dd36b
+  speakeasyVersion: 1.377.1
+  generationVersion: 2.404.1
+  releaseVersion: 0.19.42
+  configChecksum: 5edc81e16acda8ff1daae7c786cb9163
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -741,6 +741,10 @@ generatedFiles:
   - UnifiedTo/Models/Components/UcEmail.cs
   - UnifiedTo/Models/Components/AtsActivityType.cs
   - UnifiedTo/Models/Components/AtsActivity.cs
+  - UnifiedTo/Models/Components/AtsEmailType.cs
+  - UnifiedTo/Models/Components/AtsEmail.cs
+  - UnifiedTo/Models/Components/PropertyAtsActivityFromType.cs
+  - UnifiedTo/Models/Components/PropertyAtsActivityFrom.cs
   - UnifiedTo/Models/Components/AtsApplicationStatus.cs
   - UnifiedTo/Models/Components/AtsApplication.cs
   - UnifiedTo/Models/Components/AtsApplicationAnswer.cs
@@ -748,8 +752,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/AtsCandidate.cs
   - UnifiedTo/Models/Components/AtsTelephoneType.cs
   - UnifiedTo/Models/Components/AtsTelephone.cs
-  - UnifiedTo/Models/Components/AtsEmailType.cs
-  - UnifiedTo/Models/Components/AtsEmail.cs
   - UnifiedTo/Models/Components/PropertyAtsCandidateAddress.cs
   - UnifiedTo/Models/Components/AtsDocumentType.cs
   - UnifiedTo/Models/Components/AtsDocument.cs
@@ -1561,6 +1563,10 @@ generatedFiles:
   - docs/Models/Components/UcEmail.md
   - docs/Models/Components/AtsActivityType.md
   - docs/Models/Components/AtsActivity.md
+  - docs/Models/Components/AtsEmailType.md
+  - docs/Models/Components/AtsEmail.md
+  - docs/Models/Components/PropertyAtsActivityFromType.md
+  - docs/Models/Components/PropertyAtsActivityFrom.md
   - docs/Models/Components/AtsApplicationStatus.md
   - docs/Models/Components/AtsApplication.md
   - docs/Models/Components/AtsApplicationAnswer.md
@@ -1568,8 +1574,6 @@ generatedFiles:
   - docs/Models/Components/AtsCandidate.md
   - docs/Models/Components/AtsTelephoneType.md
   - docs/Models/Components/AtsTelephone.md
-  - docs/Models/Components/AtsEmailType.md
-  - docs/Models/Components/AtsEmail.md
   - docs/Models/Components/PropertyAtsCandidateAddress.md
   - docs/Models/Components/AtsDocumentType.md
   - docs/Models/Components/AtsDocument.md

@@ -1,6 +1,8 @@
 # Company
 (*Company*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateCrmCompany](#createcrmcompany) - Create a company
@@ -42,8 +44,6 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
@@ -51,15 +51,16 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
 | `ConnectionId`                                                                                 | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the connection                                                                           |
 | `CrmCompany`                                                                                   | [CrmCompany](../../Models/Components/CrmCompany.md)                                            | :heavy_minus_sign:                                                                             | A company represents an organization that optionally is associated with a deal and/or contacts |
 
-
 ### Response
 
 **[CreateCrmCompanyResponse](../../Models/Requests/CreateCrmCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateHrisCompany
 
@@ -84,8 +85,6 @@ var res = await sdk.Company.CreateHrisCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -93,15 +92,16 @@ var res = await sdk.Company.CreateHrisCompanyAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[CreateHrisCompanyResponse](../../Models/Requests/CreateHrisCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAtsCompany
 
@@ -129,8 +129,6 @@ var res = await sdk.Company.GetAtsCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -139,15 +137,16 @@ var res = await sdk.Company.GetAtsCompanyAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Company                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAtsCompanyResponse](../../Models/Requests/GetAtsCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetCrmCompany
 
@@ -175,8 +174,6 @@ var res = await sdk.Company.GetCrmCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -185,15 +182,16 @@ var res = await sdk.Company.GetCrmCompanyAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Company                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetCrmCompanyResponse](../../Models/Requests/GetCrmCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetHrisCompany
 
@@ -221,8 +219,6 @@ var res = await sdk.Company.GetHrisCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -231,15 +227,16 @@ var res = await sdk.Company.GetHrisCompanyAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Company                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetHrisCompanyResponse](../../Models/Requests/GetHrisCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAtsCompanies
 
@@ -266,23 +263,22 @@ var res = await sdk.Company.ListAtsCompaniesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListAtsCompaniesRequest](../../Models/Requests/ListAtsCompaniesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListAtsCompaniesResponse](../../Models/Requests/ListAtsCompaniesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListCrmCompanies
 
@@ -309,23 +305,22 @@ var res = await sdk.Company.ListCrmCompaniesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListCrmCompaniesRequest](../../Models/Requests/ListCrmCompaniesRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListCrmCompaniesResponse](../../Models/Requests/ListCrmCompaniesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListEnrichCompanies
 
@@ -350,8 +345,6 @@ var res = await sdk.Company.ListEnrichCompaniesAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                           | Type                                | Required                            | Description                         |
@@ -360,15 +353,16 @@ var res = await sdk.Company.ListEnrichCompaniesAsync(
 | `Domain`                            | *string*                            | :heavy_minus_sign:                  | The domain of the company to search |
 | `Name`                              | *string*                            | :heavy_minus_sign:                  | The name of the company to search   |
 
-
 ### Response
 
 **[ListEnrichCompaniesResponse](../../Models/Requests/ListEnrichCompaniesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListHrisCompanies
 
@@ -395,23 +389,22 @@ var res = await sdk.Company.ListHrisCompaniesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `request`                                                                     | [ListHrisCompaniesRequest](../../Models/Requests/ListHrisCompaniesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
-
 ### Response
 
 **[ListHrisCompaniesResponse](../../Models/Requests/ListHrisCompaniesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchCrmCompany
 
@@ -437,8 +430,6 @@ var res = await sdk.Company.PatchCrmCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
@@ -447,15 +438,16 @@ var res = await sdk.Company.PatchCrmCompanyAsync(
 | `Id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the Company                                                                              |
 | `CrmCompany`                                                                                   | [CrmCompany](../../Models/Components/CrmCompany.md)                                            | :heavy_minus_sign:                                                                             | A company represents an organization that optionally is associated with a deal and/or contacts |
 
-
 ### Response
 
 **[PatchCrmCompanyResponse](../../Models/Requests/PatchCrmCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchHrisCompany
 
@@ -481,8 +473,6 @@ var res = await sdk.Company.PatchHrisCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -491,15 +481,16 @@ var res = await sdk.Company.PatchHrisCompanyAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Company                                     |
 | `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[PatchHrisCompanyResponse](../../Models/Requests/PatchHrisCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveCrmCompany
 
@@ -523,8 +514,6 @@ var res = await sdk.Company.RemoveCrmCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -532,15 +521,16 @@ var res = await sdk.Company.RemoveCrmCompanyAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Company    |
 
-
 ### Response
 
 **[RemoveCrmCompanyResponse](../../Models/Requests/RemoveCrmCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveHrisCompany
 
@@ -564,8 +554,6 @@ var res = await sdk.Company.RemoveHrisCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -573,15 +561,16 @@ var res = await sdk.Company.RemoveHrisCompanyAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Company    |
 
-
 ### Response
 
 **[RemoveHrisCompanyResponse](../../Models/Requests/RemoveHrisCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateCrmCompany
 
@@ -607,8 +596,6 @@ var res = await sdk.Company.UpdateCrmCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
@@ -617,15 +604,16 @@ var res = await sdk.Company.UpdateCrmCompanyAsync(
 | `Id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the Company                                                                              |
 | `CrmCompany`                                                                                   | [CrmCompany](../../Models/Components/CrmCompany.md)                                            | :heavy_minus_sign:                                                                             | A company represents an organization that optionally is associated with a deal and/or contacts |
 
-
 ### Response
 
 **[UpdateCrmCompanyResponse](../../Models/Requests/UpdateCrmCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateHrisCompany
 
@@ -651,8 +639,6 @@ var res = await sdk.Company.UpdateHrisCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -661,10 +647,10 @@ var res = await sdk.Company.UpdateHrisCompanyAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Company                                     |
 | `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[UpdateHrisCompanyResponse](../../Models/Requests/UpdateHrisCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

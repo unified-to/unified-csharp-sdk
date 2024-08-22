@@ -1,6 +1,8 @@
 # Group
 (*Group*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateHrisGroup](#createhrisgroup) - Create a group
@@ -33,8 +35,6 @@ var res = await sdk.Group.CreateHrisGroupAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
@@ -42,15 +42,16 @@ var res = await sdk.Group.CreateHrisGroupAsync(
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
 | `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 
-
 ### Response
 
 **[CreateHrisGroupResponse](../../Models/Requests/CreateHrisGroupResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetHrisGroup
 
@@ -78,8 +79,6 @@ var res = await sdk.Group.GetHrisGroupAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Group.GetHrisGroupAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Group                  |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetHrisGroupResponse](../../Models/Requests/GetHrisGroupResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListHrisGroups
 
@@ -123,23 +123,22 @@ var res = await sdk.Group.ListHrisGroupsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
 | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | `request`                                                               | [ListHrisGroupsRequest](../../Models/Requests/ListHrisGroupsRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 
-
 ### Response
 
 **[ListHrisGroupsResponse](../../Models/Requests/ListHrisGroupsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchHrisGroup
 
@@ -165,8 +164,6 @@ var res = await sdk.Group.PatchHrisGroupAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
@@ -175,15 +172,16 @@ var res = await sdk.Group.PatchHrisGroupAsync(
 | `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Group                                   |
 | `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 
-
 ### Response
 
 **[PatchHrisGroupResponse](../../Models/Requests/PatchHrisGroupResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveHrisGroup
 
@@ -207,8 +205,6 @@ var res = await sdk.Group.RemoveHrisGroupAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Group.RemoveHrisGroupAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Group      |
 
-
 ### Response
 
 **[RemoveHrisGroupResponse](../../Models/Requests/RemoveHrisGroupResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateHrisGroup
 
@@ -250,8 +247,6 @@ var res = await sdk.Group.UpdateHrisGroupAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
@@ -260,10 +255,10 @@ var res = await sdk.Group.UpdateHrisGroupAsync(
 | `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Group                                   |
 | `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 
-
 ### Response
 
 **[UpdateHrisGroupResponse](../../Models/Requests/UpdateHrisGroupResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

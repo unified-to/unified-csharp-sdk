@@ -1,6 +1,8 @@
 # Lead
 (*Lead*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateCrmLead](#createcrmlead) - Create a lead
@@ -33,8 +35,6 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
@@ -42,15 +42,16 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_minus_sign:                            | N/A                                           |
 
-
 ### Response
 
 **[CreateCrmLeadResponse](../../Models/Requests/CreateCrmLeadResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetCrmLead
 
@@ -78,8 +79,6 @@ var res = await sdk.Lead.GetCrmLeadAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Lead.GetCrmLeadAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Lead                   |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetCrmLeadResponse](../../Models/Requests/GetCrmLeadResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListCrmLeads
 
@@ -123,23 +123,22 @@ var res = await sdk.Lead.ListCrmLeadsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `request`                                                           | [ListCrmLeadsRequest](../../Models/Requests/ListCrmLeadsRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 
-
 ### Response
 
 **[ListCrmLeadsResponse](../../Models/Requests/ListCrmLeadsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchCrmLead
 
@@ -165,8 +164,6 @@ var res = await sdk.Lead.PatchCrmLeadAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
@@ -175,15 +172,16 @@ var res = await sdk.Lead.PatchCrmLeadAsync(
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Lead                                |
 | `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_minus_sign:                            | N/A                                           |
 
-
 ### Response
 
 **[PatchCrmLeadResponse](../../Models/Requests/PatchCrmLeadResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveCrmLead
 
@@ -207,8 +205,6 @@ var res = await sdk.Lead.RemoveCrmLeadAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Lead.RemoveCrmLeadAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Lead       |
 
-
 ### Response
 
 **[RemoveCrmLeadResponse](../../Models/Requests/RemoveCrmLeadResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateCrmLead
 
@@ -250,8 +247,6 @@ var res = await sdk.Lead.UpdateCrmLeadAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
@@ -260,10 +255,10 @@ var res = await sdk.Lead.UpdateCrmLeadAsync(
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Lead                                |
 | `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_minus_sign:                            | N/A                                           |
 
-
 ### Response
 
 **[UpdateCrmLeadResponse](../../Models/Requests/UpdateCrmLeadResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

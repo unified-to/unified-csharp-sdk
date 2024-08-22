@@ -1,6 +1,8 @@
 # Ticket
 (*Ticket*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateTicketingTicket](#createticketingticket) - Create a ticket
@@ -33,8 +35,6 @@ var res = await sdk.Ticket.CreateTicketingTicketAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
@@ -42,15 +42,16 @@ var res = await sdk.Ticket.CreateTicketingTicketAsync(
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `TicketingTicket`                                             | [TicketingTicket](../../Models/Components/TicketingTicket.md) | :heavy_minus_sign:                                            | N/A                                                           |
 
-
 ### Response
 
 **[CreateTicketingTicketResponse](../../Models/Requests/CreateTicketingTicketResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetTicketingTicket
 
@@ -78,8 +79,6 @@ var res = await sdk.Ticket.GetTicketingTicketAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Ticket.GetTicketingTicketAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Ticket                 |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetTicketingTicketResponse](../../Models/Requests/GetTicketingTicketResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListTicketingTickets
 
@@ -123,23 +123,22 @@ var res = await sdk.Ticket.ListTicketingTicketsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
 | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | `request`                                                                           | [ListTicketingTicketsRequest](../../Models/Requests/ListTicketingTicketsRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
 
-
 ### Response
 
 **[ListTicketingTicketsResponse](../../Models/Requests/ListTicketingTicketsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchTicketingTicket
 
@@ -165,8 +164,6 @@ var res = await sdk.Ticket.PatchTicketingTicketAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
@@ -175,15 +172,16 @@ var res = await sdk.Ticket.PatchTicketingTicketAsync(
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Ticket                                              |
 | `TicketingTicket`                                             | [TicketingTicket](../../Models/Components/TicketingTicket.md) | :heavy_minus_sign:                                            | N/A                                                           |
 
-
 ### Response
 
 **[PatchTicketingTicketResponse](../../Models/Requests/PatchTicketingTicketResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveTicketingTicket
 
@@ -207,8 +205,6 @@ var res = await sdk.Ticket.RemoveTicketingTicketAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Ticket.RemoveTicketingTicketAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Ticket     |
 
-
 ### Response
 
 **[RemoveTicketingTicketResponse](../../Models/Requests/RemoveTicketingTicketResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateTicketingTicket
 
@@ -250,8 +247,6 @@ var res = await sdk.Ticket.UpdateTicketingTicketAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
@@ -260,10 +255,10 @@ var res = await sdk.Ticket.UpdateTicketingTicketAsync(
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Ticket                                              |
 | `TicketingTicket`                                             | [TicketingTicket](../../Models/Components/TicketingTicket.md) | :heavy_minus_sign:                                            | N/A                                                           |
 
-
 ### Response
 
 **[UpdateTicketingTicketResponse](../../Models/Requests/UpdateTicketingTicketResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

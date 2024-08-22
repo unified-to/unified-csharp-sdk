@@ -1,6 +1,8 @@
 # Interview
 (*Interview*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateAtsInterview](#createatsinterview) - Create an interview
@@ -33,8 +35,6 @@ var res = await sdk.Interview.CreateAtsInterviewAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -42,15 +42,16 @@ var res = await sdk.Interview.CreateAtsInterviewAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `AtsInterview`                                          | [AtsInterview](../../Models/Components/AtsInterview.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[CreateAtsInterviewResponse](../../Models/Requests/CreateAtsInterviewResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAtsInterview
 
@@ -78,8 +79,6 @@ var res = await sdk.Interview.GetAtsInterviewAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Interview.GetAtsInterviewAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Interview              |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAtsInterviewResponse](../../Models/Requests/GetAtsInterviewResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAtsInterviews
 
@@ -123,23 +123,22 @@ var res = await sdk.Interview.ListAtsInterviewsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `request`                                                                     | [ListAtsInterviewsRequest](../../Models/Requests/ListAtsInterviewsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
-
 ### Response
 
 **[ListAtsInterviewsResponse](../../Models/Requests/ListAtsInterviewsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAtsInterview
 
@@ -165,8 +164,6 @@ var res = await sdk.Interview.PatchAtsInterviewAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -175,15 +172,16 @@ var res = await sdk.Interview.PatchAtsInterviewAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Interview                                     |
 | `AtsInterview`                                          | [AtsInterview](../../Models/Components/AtsInterview.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[PatchAtsInterviewResponse](../../Models/Requests/PatchAtsInterviewResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAtsInterview
 
@@ -207,8 +205,6 @@ var res = await sdk.Interview.RemoveAtsInterviewAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Interview.RemoveAtsInterviewAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Interview  |
 
-
 ### Response
 
 **[RemoveAtsInterviewResponse](../../Models/Requests/RemoveAtsInterviewResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAtsInterview
 
@@ -250,8 +247,6 @@ var res = await sdk.Interview.UpdateAtsInterviewAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -260,10 +255,10 @@ var res = await sdk.Interview.UpdateAtsInterviewAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Interview                                     |
 | `AtsInterview`                                          | [AtsInterview](../../Models/Components/AtsInterview.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[UpdateAtsInterviewResponse](../../Models/Requests/UpdateAtsInterviewResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

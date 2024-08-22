@@ -1,6 +1,8 @@
 # Account
 (*Account*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateAccountingAccount](#createaccountingaccount) - Create an account
@@ -33,8 +35,6 @@ var res = await sdk.Account.CreateAccountingAccountAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -42,15 +42,16 @@ var res = await sdk.Account.CreateAccountingAccountAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | Chart of accounts                                                 |
 
-
 ### Response
 
 **[CreateAccountingAccountResponse](../../Models/Requests/CreateAccountingAccountResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetAccountingAccount
 
@@ -78,8 +79,6 @@ var res = await sdk.Account.GetAccountingAccountAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -88,15 +87,16 @@ var res = await sdk.Account.GetAccountingAccountAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Account                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAccountingAccountResponse](../../Models/Requests/GetAccountingAccountResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAccountingAccounts
 
@@ -123,23 +123,22 @@ var res = await sdk.Account.ListAccountingAccountsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `request`                                                                               | [ListAccountingAccountsRequest](../../Models/Requests/ListAccountingAccountsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
-
 ### Response
 
 **[ListAccountingAccountsResponse](../../Models/Requests/ListAccountingAccountsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchAccountingAccount
 
@@ -165,8 +164,6 @@ var res = await sdk.Account.PatchAccountingAccountAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -175,15 +172,16 @@ var res = await sdk.Account.PatchAccountingAccountAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Account                                                 |
 | `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | Chart of accounts                                                 |
 
-
 ### Response
 
 **[PatchAccountingAccountResponse](../../Models/Requests/PatchAccountingAccountResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveAccountingAccount
 
@@ -207,8 +205,6 @@ var res = await sdk.Account.RemoveAccountingAccountAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -216,15 +212,16 @@ var res = await sdk.Account.RemoveAccountingAccountAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Account    |
 
-
 ### Response
 
 **[RemoveAccountingAccountResponse](../../Models/Requests/RemoveAccountingAccountResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateAccountingAccount
 
@@ -250,8 +247,6 @@ var res = await sdk.Account.UpdateAccountingAccountAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
@@ -260,10 +255,10 @@ var res = await sdk.Account.UpdateAccountingAccountAsync(
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Account                                                 |
 | `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | Chart of accounts                                                 |
 
-
 ### Response
 
 **[UpdateAccountingAccountResponse](../../Models/Requests/UpdateAccountingAccountResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

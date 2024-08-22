@@ -1,6 +1,8 @@
 # Martech
 (*Martech*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateMartechList](#createmartechlist) - Create a list
@@ -39,8 +41,6 @@ var res = await sdk.Martech.CreateMartechListAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
@@ -48,15 +48,16 @@ var res = await sdk.Martech.CreateMartechListAsync(
 | `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
 | `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_minus_sign:                                        | Mailing List                                              |
 
-
 ### Response
 
 **[CreateMartechListResponse](../../Models/Requests/CreateMartechListResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateMartechMember
 
@@ -81,8 +82,6 @@ var res = await sdk.Martech.CreateMartechMemberAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
@@ -90,15 +89,16 @@ var res = await sdk.Martech.CreateMartechMemberAsync(
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `MarketingMember`                                             | [MarketingMember](../../Models/Components/MarketingMember.md) | :heavy_minus_sign:                                            | A member represents a person                                  |
 
-
 ### Response
 
 **[CreateMartechMemberResponse](../../Models/Requests/CreateMartechMemberResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetMartechList
 
@@ -126,8 +126,6 @@ var res = await sdk.Martech.GetMartechListAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -136,15 +134,16 @@ var res = await sdk.Martech.GetMartechListAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the List                   |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetMartechListResponse](../../Models/Requests/GetMartechListResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetMartechMember
 
@@ -172,8 +171,6 @@ var res = await sdk.Martech.GetMartechMemberAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -182,15 +179,16 @@ var res = await sdk.Martech.GetMartechMemberAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Member                 |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetMartechMemberResponse](../../Models/Requests/GetMartechMemberResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListMartechLists
 
@@ -217,23 +215,22 @@ var res = await sdk.Martech.ListMartechListsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListMartechListsRequest](../../Models/Requests/ListMartechListsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListMartechListsResponse](../../Models/Requests/ListMartechListsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListMartechMembers
 
@@ -260,23 +257,22 @@ var res = await sdk.Martech.ListMartechMembersAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | `request`                                                                       | [ListMartechMembersRequest](../../Models/Requests/ListMartechMembersRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
-
 ### Response
 
 **[ListMartechMembersResponse](../../Models/Requests/ListMartechMembersResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchMartechList
 
@@ -302,8 +298,6 @@ var res = await sdk.Martech.PatchMartechListAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
@@ -312,15 +306,16 @@ var res = await sdk.Martech.PatchMartechListAsync(
 | `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the List                                            |
 | `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_minus_sign:                                        | Mailing List                                              |
 
-
 ### Response
 
 **[PatchMartechListResponse](../../Models/Requests/PatchMartechListResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchMartechMember
 
@@ -346,8 +341,6 @@ var res = await sdk.Martech.PatchMartechMemberAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
@@ -356,15 +349,16 @@ var res = await sdk.Martech.PatchMartechMemberAsync(
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Member                                              |
 | `MarketingMember`                                             | [MarketingMember](../../Models/Components/MarketingMember.md) | :heavy_minus_sign:                                            | A member represents a person                                  |
 
-
 ### Response
 
 **[PatchMartechMemberResponse](../../Models/Requests/PatchMartechMemberResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveMartechList
 
@@ -388,8 +382,6 @@ var res = await sdk.Martech.RemoveMartechListAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -397,15 +389,16 @@ var res = await sdk.Martech.RemoveMartechListAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the List       |
 
-
 ### Response
 
 **[RemoveMartechListResponse](../../Models/Requests/RemoveMartechListResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveMartechMember
 
@@ -429,8 +422,6 @@ var res = await sdk.Martech.RemoveMartechMemberAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -438,15 +429,16 @@ var res = await sdk.Martech.RemoveMartechMemberAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Member     |
 
-
 ### Response
 
 **[RemoveMartechMemberResponse](../../Models/Requests/RemoveMartechMemberResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateMartechList
 
@@ -472,8 +464,6 @@ var res = await sdk.Martech.UpdateMartechListAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
@@ -482,15 +472,16 @@ var res = await sdk.Martech.UpdateMartechListAsync(
 | `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the List                                            |
 | `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_minus_sign:                                        | Mailing List                                              |
 
-
 ### Response
 
 **[UpdateMartechListResponse](../../Models/Requests/UpdateMartechListResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateMartechMember
 
@@ -516,8 +507,6 @@ var res = await sdk.Martech.UpdateMartechMemberAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
@@ -526,10 +515,10 @@ var res = await sdk.Martech.UpdateMartechMemberAsync(
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Member                                              |
 | `MarketingMember`                                             | [MarketingMember](../../Models/Components/MarketingMember.md) | :heavy_minus_sign:                                            | A member represents a person                                  |
 
-
 ### Response
 
 **[UpdateMartechMemberResponse](../../Models/Requests/UpdateMartechMemberResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

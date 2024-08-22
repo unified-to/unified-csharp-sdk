@@ -1,6 +1,8 @@
 # Channel
 (*Channel*)
 
+## Overview
+
 ### Available Operations
 
 * [GetMessagingChannel](#getmessagingchannel) - Retrieve a channel
@@ -32,8 +34,6 @@ var res = await sdk.Channel.GetMessagingChannelAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -42,15 +42,16 @@ var res = await sdk.Channel.GetMessagingChannelAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Channel                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetMessagingChannelResponse](../../Models/Requests/GetMessagingChannelResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListMessagingChannels
 
@@ -77,18 +78,16 @@ var res = await sdk.Channel.ListMessagingChannelsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | `request`                                                                             | [ListMessagingChannelsRequest](../../Models/Requests/ListMessagingChannelsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
-
 ### Response
 
 **[ListMessagingChannelsResponse](../../Models/Requests/ListMessagingChannelsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

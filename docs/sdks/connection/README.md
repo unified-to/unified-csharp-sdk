@@ -1,6 +1,8 @@
 # Connection
 (*Connection*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateUnifiedConnection](#createunifiedconnection) - Create connection
@@ -40,23 +42,22 @@ var res = await sdk.Connection.CreateUnifiedConnectionAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
 | `request`                                                             | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
 
-
 ### Response
 
 **[CreateUnifiedConnectionResponse](../../Models/Requests/CreateUnifiedConnectionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetUnifiedConnection
 
@@ -78,23 +79,22 @@ var res = await sdk.Connection.GetUnifiedConnectionAsync(id: "<value>");
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
 | -------------------- | -------------------- | -------------------- | -------------------- |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Connection |
 
-
 ### Response
 
 **[GetUnifiedConnectionResponse](../../Models/Requests/GetUnifiedConnectionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListUnifiedConnections
 
@@ -119,23 +119,22 @@ var res = await sdk.Connection.ListUnifiedConnectionsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `request`                                                                               | [ListUnifiedConnectionsRequest](../../Models/Requests/ListUnifiedConnectionsRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
-
 ### Response
 
 **[ListUnifiedConnectionsResponse](../../Models/Requests/ListUnifiedConnectionsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchUnifiedConnection
 
@@ -168,8 +167,6 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
@@ -177,15 +174,16 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(
 | `Id`                                                                  | *string*                                                              | :heavy_check_mark:                                                    | ID of the Connection                                                  |
 | `Connection`                                                          | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_minus_sign:                                                    | A connection represents a specific authentication of an integration.  |
 
-
 ### Response
 
 **[PatchUnifiedConnectionResponse](../../Models/Requests/PatchUnifiedConnectionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveUnifiedConnection
 
@@ -207,23 +205,22 @@ var res = await sdk.Connection.RemoveUnifiedConnectionAsync(id: "<value>");
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
 | -------------------- | -------------------- | -------------------- | -------------------- |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Connection |
 
-
 ### Response
 
 **[RemoveUnifiedConnectionResponse](../../Models/Requests/RemoveUnifiedConnectionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateUnifiedConnection
 
@@ -256,8 +253,6 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
@@ -265,10 +260,10 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
 | `Id`                                                                  | *string*                                                              | :heavy_check_mark:                                                    | ID of the Connection                                                  |
 | `Connection`                                                          | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_minus_sign:                                                    | A connection represents a specific authentication of an integration.  |
 
-
 ### Response
 
 **[UpdateUnifiedConnectionResponse](../../Models/Requests/UpdateUnifiedConnectionResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

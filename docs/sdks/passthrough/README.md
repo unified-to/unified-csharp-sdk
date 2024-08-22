@@ -1,6 +1,8 @@
 # Passthrough
 (*Passthrough*)
 
+## Overview
+
 ### Available Operations
 
 * [CreatePassthrough](#createpassthrough) - Passthrough POST
@@ -35,8 +37,6 @@ var res = await sdk.Passthrough.CreatePassthroughAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                    | Type                         | Required                     | Description                  |
@@ -45,15 +45,16 @@ var res = await sdk.Passthrough.CreatePassthroughAsync(
 | `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
 | `RequestBody`                | Dictionary<String, *object*> | :heavy_minus_sign:           | integration-specific payload |
 
-
 ### Response
 
 **[CreatePassthroughResponse](../../Models/Requests/CreatePassthroughResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListPassthroughs
 
@@ -77,8 +78,6 @@ var res = await sdk.Passthrough.ListPassthroughsAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -86,15 +85,16 @@ var res = await sdk.Passthrough.ListPassthroughsAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Path`               | *string*             | :heavy_check_mark:   | N/A                  |
 
-
 ### Response
 
 **[ListPassthroughsResponse](../../Models/Requests/ListPassthroughsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchPassthrough
 
@@ -122,8 +122,6 @@ var res = await sdk.Passthrough.PatchPassthroughAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                    | Type                         | Required                     | Description                  |
@@ -132,15 +130,16 @@ var res = await sdk.Passthrough.PatchPassthroughAsync(
 | `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
 | `RequestBody`                | Dictionary<String, *object*> | :heavy_minus_sign:           | integration-specific payload |
 
-
 ### Response
 
 **[PatchPassthroughResponse](../../Models/Requests/PatchPassthroughResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemovePassthrough
 
@@ -164,8 +163,6 @@ var res = await sdk.Passthrough.RemovePassthroughAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -173,15 +170,16 @@ var res = await sdk.Passthrough.RemovePassthroughAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Path`               | *string*             | :heavy_check_mark:   | N/A                  |
 
-
 ### Response
 
 **[RemovePassthroughResponse](../../Models/Requests/RemovePassthroughResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdatePassthrough
 
@@ -209,8 +207,6 @@ var res = await sdk.Passthrough.UpdatePassthroughAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                    | Type                         | Required                     | Description                  |
@@ -219,10 +215,10 @@ var res = await sdk.Passthrough.UpdatePassthroughAsync(
 | `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
 | `RequestBody`                | Dictionary<String, *object*> | :heavy_minus_sign:           | integration-specific payload |
 
-
 ### Response
 
 **[UpdatePassthroughResponse](../../Models/Requests/UpdatePassthroughResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

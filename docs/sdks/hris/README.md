@@ -1,6 +1,8 @@
 # Hris
 (*Hris*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateHrisCompany](#createhriscompany) - Create a company
@@ -55,8 +57,6 @@ var res = await sdk.Hris.CreateHrisCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -64,15 +64,16 @@ var res = await sdk.Hris.CreateHrisCompanyAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[CreateHrisCompanyResponse](../../Models/Requests/CreateHrisCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateHrisEmployee
 
@@ -97,8 +98,6 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -106,15 +105,16 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `HrisEmployee`                                          | [HrisEmployee](../../Models/Components/HrisEmployee.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[CreateHrisEmployeeResponse](../../Models/Requests/CreateHrisEmployeeResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateHrisGroup
 
@@ -139,8 +139,6 @@ var res = await sdk.Hris.CreateHrisGroupAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
@@ -148,15 +146,16 @@ var res = await sdk.Hris.CreateHrisGroupAsync(
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
 | `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 
-
 ### Response
 
 **[CreateHrisGroupResponse](../../Models/Requests/CreateHrisGroupResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateHrisLocation
 
@@ -181,8 +180,6 @@ var res = await sdk.Hris.CreateHrisLocationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -190,15 +187,16 @@ var res = await sdk.Hris.CreateHrisLocationAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[CreateHrisLocationResponse](../../Models/Requests/CreateHrisLocationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetHrisCompany
 
@@ -226,8 +224,6 @@ var res = await sdk.Hris.GetHrisCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -236,15 +232,16 @@ var res = await sdk.Hris.GetHrisCompanyAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Company                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetHrisCompanyResponse](../../Models/Requests/GetHrisCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetHrisEmployee
 
@@ -272,8 +269,6 @@ var res = await sdk.Hris.GetHrisEmployeeAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -282,15 +277,16 @@ var res = await sdk.Hris.GetHrisEmployeeAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Employee               |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetHrisEmployeeResponse](../../Models/Requests/GetHrisEmployeeResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetHrisGroup
 
@@ -318,8 +314,6 @@ var res = await sdk.Hris.GetHrisGroupAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -328,15 +322,16 @@ var res = await sdk.Hris.GetHrisGroupAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Group                  |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetHrisGroupResponse](../../Models/Requests/GetHrisGroupResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetHrisLocation
 
@@ -364,8 +359,6 @@ var res = await sdk.Hris.GetHrisLocationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -374,15 +367,16 @@ var res = await sdk.Hris.GetHrisLocationAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Location               |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetHrisLocationResponse](../../Models/Requests/GetHrisLocationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetHrisPayslip
 
@@ -410,8 +404,6 @@ var res = await sdk.Hris.GetHrisPayslipAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -420,15 +412,16 @@ var res = await sdk.Hris.GetHrisPayslipAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Payslip                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetHrisPayslipResponse](../../Models/Requests/GetHrisPayslipResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetHrisTimeoff
 
@@ -456,8 +449,6 @@ var res = await sdk.Hris.GetHrisTimeoffAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -466,15 +457,16 @@ var res = await sdk.Hris.GetHrisTimeoffAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Timeoff                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetHrisTimeoffResponse](../../Models/Requests/GetHrisTimeoffResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListHrisCompanies
 
@@ -501,23 +493,22 @@ var res = await sdk.Hris.ListHrisCompaniesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `request`                                                                     | [ListHrisCompaniesRequest](../../Models/Requests/ListHrisCompaniesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
-
 ### Response
 
 **[ListHrisCompaniesResponse](../../Models/Requests/ListHrisCompaniesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListHrisEmployees
 
@@ -544,23 +535,22 @@ var res = await sdk.Hris.ListHrisEmployeesAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `request`                                                                     | [ListHrisEmployeesRequest](../../Models/Requests/ListHrisEmployeesRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
-
 ### Response
 
 **[ListHrisEmployeesResponse](../../Models/Requests/ListHrisEmployeesResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListHrisGroups
 
@@ -587,23 +577,22 @@ var res = await sdk.Hris.ListHrisGroupsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
 | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | `request`                                                               | [ListHrisGroupsRequest](../../Models/Requests/ListHrisGroupsRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 
-
 ### Response
 
 **[ListHrisGroupsResponse](../../Models/Requests/ListHrisGroupsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListHrisLocations
 
@@ -630,23 +619,22 @@ var res = await sdk.Hris.ListHrisLocationsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `request`                                                                     | [ListHrisLocationsRequest](../../Models/Requests/ListHrisLocationsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
-
 ### Response
 
 **[ListHrisLocationsResponse](../../Models/Requests/ListHrisLocationsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListHrisPayslips
 
@@ -673,23 +661,22 @@ var res = await sdk.Hris.ListHrisPayslipsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListHrisPayslipsRequest](../../Models/Requests/ListHrisPayslipsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListHrisPayslipsResponse](../../Models/Requests/ListHrisPayslipsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListHrisTimeoffs
 
@@ -716,23 +703,22 @@ var res = await sdk.Hris.ListHrisTimeoffsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListHrisTimeoffsRequest](../../Models/Requests/ListHrisTimeoffsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListHrisTimeoffsResponse](../../Models/Requests/ListHrisTimeoffsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchHrisCompany
 
@@ -758,8 +744,6 @@ var res = await sdk.Hris.PatchHrisCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -768,15 +752,16 @@ var res = await sdk.Hris.PatchHrisCompanyAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Company                                     |
 | `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[PatchHrisCompanyResponse](../../Models/Requests/PatchHrisCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchHrisEmployee
 
@@ -802,8 +787,6 @@ var res = await sdk.Hris.PatchHrisEmployeeAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -812,15 +795,16 @@ var res = await sdk.Hris.PatchHrisEmployeeAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Employee                                      |
 | `HrisEmployee`                                          | [HrisEmployee](../../Models/Components/HrisEmployee.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[PatchHrisEmployeeResponse](../../Models/Requests/PatchHrisEmployeeResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchHrisGroup
 
@@ -846,8 +830,6 @@ var res = await sdk.Hris.PatchHrisGroupAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
@@ -856,15 +838,16 @@ var res = await sdk.Hris.PatchHrisGroupAsync(
 | `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Group                                   |
 | `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 
-
 ### Response
 
 **[PatchHrisGroupResponse](../../Models/Requests/PatchHrisGroupResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchHrisLocation
 
@@ -890,8 +873,6 @@ var res = await sdk.Hris.PatchHrisLocationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -900,15 +881,16 @@ var res = await sdk.Hris.PatchHrisLocationAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Location                                      |
 | `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[PatchHrisLocationResponse](../../Models/Requests/PatchHrisLocationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveHrisCompany
 
@@ -932,8 +914,6 @@ var res = await sdk.Hris.RemoveHrisCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -941,15 +921,16 @@ var res = await sdk.Hris.RemoveHrisCompanyAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Company    |
 
-
 ### Response
 
 **[RemoveHrisCompanyResponse](../../Models/Requests/RemoveHrisCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveHrisEmployee
 
@@ -973,8 +954,6 @@ var res = await sdk.Hris.RemoveHrisEmployeeAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -982,15 +961,16 @@ var res = await sdk.Hris.RemoveHrisEmployeeAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Employee   |
 
-
 ### Response
 
 **[RemoveHrisEmployeeResponse](../../Models/Requests/RemoveHrisEmployeeResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveHrisGroup
 
@@ -1014,8 +994,6 @@ var res = await sdk.Hris.RemoveHrisGroupAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1023,15 +1001,16 @@ var res = await sdk.Hris.RemoveHrisGroupAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Group      |
 
-
 ### Response
 
 **[RemoveHrisGroupResponse](../../Models/Requests/RemoveHrisGroupResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveHrisLocation
 
@@ -1055,8 +1034,6 @@ var res = await sdk.Hris.RemoveHrisLocationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -1064,15 +1041,16 @@ var res = await sdk.Hris.RemoveHrisLocationAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Location   |
 
-
 ### Response
 
 **[RemoveHrisLocationResponse](../../Models/Requests/RemoveHrisLocationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateHrisCompany
 
@@ -1098,8 +1076,6 @@ var res = await sdk.Hris.UpdateHrisCompanyAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
@@ -1108,15 +1084,16 @@ var res = await sdk.Hris.UpdateHrisCompanyAsync(
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Company                                     |
 | `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
 
-
 ### Response
 
 **[UpdateHrisCompanyResponse](../../Models/Requests/UpdateHrisCompanyResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateHrisEmployee
 
@@ -1142,8 +1119,6 @@ var res = await sdk.Hris.UpdateHrisEmployeeAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -1152,15 +1127,16 @@ var res = await sdk.Hris.UpdateHrisEmployeeAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Employee                                      |
 | `HrisEmployee`                                          | [HrisEmployee](../../Models/Components/HrisEmployee.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[UpdateHrisEmployeeResponse](../../Models/Requests/UpdateHrisEmployeeResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateHrisGroup
 
@@ -1186,8 +1162,6 @@ var res = await sdk.Hris.UpdateHrisGroupAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
@@ -1196,15 +1170,16 @@ var res = await sdk.Hris.UpdateHrisGroupAsync(
 | `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Group                                   |
 | `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 
-
 ### Response
 
 **[UpdateHrisGroupResponse](../../Models/Requests/UpdateHrisGroupResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateHrisLocation
 
@@ -1230,8 +1205,6 @@ var res = await sdk.Hris.UpdateHrisLocationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -1240,10 +1213,10 @@ var res = await sdk.Hris.UpdateHrisLocationAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Location                                      |
 | `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[UpdateHrisLocationResponse](../../Models/Requests/UpdateHrisLocationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

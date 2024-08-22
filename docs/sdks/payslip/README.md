@@ -1,6 +1,8 @@
 # Payslip
 (*Payslip*)
 
+## Overview
+
 ### Available Operations
 
 * [GetHrisPayslip](#gethrispayslip) - Retrieve a payslip
@@ -32,8 +34,6 @@ var res = await sdk.Payslip.GetHrisPayslipAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -42,15 +42,16 @@ var res = await sdk.Payslip.GetHrisPayslipAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Payslip                |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetHrisPayslipResponse](../../Models/Requests/GetHrisPayslipResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListHrisPayslips
 
@@ -77,18 +78,16 @@ var res = await sdk.Payslip.ListHrisPayslipsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
 | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | `request`                                                                   | [ListHrisPayslipsRequest](../../Models/Requests/ListHrisPayslipsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
-
 ### Response
 
 **[ListHrisPayslipsResponse](../../Models/Requests/ListHrisPayslipsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

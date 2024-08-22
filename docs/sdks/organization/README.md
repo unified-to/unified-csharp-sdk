@@ -1,6 +1,8 @@
 # Organization
 (*Organization*)
 
+## Overview
+
 ### Available Operations
 
 * [GetAccountingOrganization](#getaccountingorganization) - Retrieve an organization
@@ -32,8 +34,6 @@ var res = await sdk.Organization.GetAccountingOrganizationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -42,15 +42,16 @@ var res = await sdk.Organization.GetAccountingOrganizationAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Organization           |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetAccountingOrganizationResponse](../../Models/Requests/GetAccountingOrganizationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListAccountingOrganizations
 
@@ -77,18 +78,16 @@ var res = await sdk.Organization.ListAccountingOrganizationsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                                         | Type                                                                                              | Required                                                                                          | Description                                                                                       |
 | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | `request`                                                                                         | [ListAccountingOrganizationsRequest](../../Models/Requests/ListAccountingOrganizationsRequest.md) | :heavy_check_mark:                                                                                | The request object to use for the request.                                                        |
 
-
 ### Response
 
 **[ListAccountingOrganizationsResponse](../../Models/Requests/ListAccountingOrganizationsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

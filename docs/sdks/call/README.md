@@ -1,6 +1,8 @@
 # Call
 (*Call*)
 
+## Overview
+
 ### Available Operations
 
 * [ListUcCalls](#listuccalls) - List all calls
@@ -30,18 +32,16 @@ var res = await sdk.Call.ListUcCallsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `request`                                                         | [ListUcCallsRequest](../../Models/Requests/ListUcCallsRequest.md) | :heavy_check_mark:                                                | The request object to use for the request.                        |
 
-
 ### Response
 
 **[ListUcCallsResponse](../../Models/Requests/ListUcCallsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |

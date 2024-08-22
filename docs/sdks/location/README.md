@@ -1,6 +1,8 @@
 # Location
 (*Location*)
 
+## Overview
+
 ### Available Operations
 
 * [CreateCommerceLocation](#createcommercelocation) - Create a location
@@ -41,8 +43,6 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
@@ -50,15 +50,16 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `CommerceLocation`                                              | [CommerceLocation](../../Models/Components/CommerceLocation.md) | :heavy_minus_sign:                                              | N/A                                                             |
 
-
 ### Response
 
 **[CreateCommerceLocationResponse](../../Models/Requests/CreateCommerceLocationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## CreateHrisLocation
 
@@ -83,8 +84,6 @@ var res = await sdk.Location.CreateHrisLocationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -92,15 +91,16 @@ var res = await sdk.Location.CreateHrisLocationAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[CreateHrisLocationResponse](../../Models/Requests/CreateHrisLocationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetCommerceLocation
 
@@ -128,8 +128,6 @@ var res = await sdk.Location.GetCommerceLocationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -138,15 +136,16 @@ var res = await sdk.Location.GetCommerceLocationAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Location               |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetCommerceLocationResponse](../../Models/Requests/GetCommerceLocationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## GetHrisLocation
 
@@ -174,8 +173,6 @@ var res = await sdk.Location.GetHrisLocationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                        | Type                             | Required                         | Description                      |
@@ -184,15 +181,16 @@ var res = await sdk.Location.GetHrisLocationAsync(
 | `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Location               |
 | `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
 
-
 ### Response
 
 **[GetHrisLocationResponse](../../Models/Requests/GetHrisLocationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListCommerceLocations
 
@@ -219,23 +217,22 @@ var res = await sdk.Location.ListCommerceLocationsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | `request`                                                                             | [ListCommerceLocationsRequest](../../Models/Requests/ListCommerceLocationsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
-
 ### Response
 
 **[ListCommerceLocationsResponse](../../Models/Requests/ListCommerceLocationsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## ListHrisLocations
 
@@ -262,23 +259,22 @@ var res = await sdk.Location.ListHrisLocationsAsync(req);
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                                     | Type                                                                          | Required                                                                      | Description                                                                   |
 | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
 | `request`                                                                     | [ListHrisLocationsRequest](../../Models/Requests/ListHrisLocationsRequest.md) | :heavy_check_mark:                                                            | The request object to use for the request.                                    |
 
-
 ### Response
 
 **[ListHrisLocationsResponse](../../Models/Requests/ListHrisLocationsResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchCommerceLocation
 
@@ -306,8 +302,6 @@ var res = await sdk.Location.PatchCommerceLocationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
@@ -316,15 +310,16 @@ var res = await sdk.Location.PatchCommerceLocationAsync(
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Location                                              |
 | `CommerceLocation`                                              | [CommerceLocation](../../Models/Components/CommerceLocation.md) | :heavy_minus_sign:                                              | N/A                                                             |
 
-
 ### Response
 
 **[PatchCommerceLocationResponse](../../Models/Requests/PatchCommerceLocationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## PatchHrisLocation
 
@@ -350,8 +345,6 @@ var res = await sdk.Location.PatchHrisLocationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -360,15 +353,16 @@ var res = await sdk.Location.PatchHrisLocationAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Location                                      |
 | `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[PatchHrisLocationResponse](../../Models/Requests/PatchHrisLocationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveCommerceLocation
 
@@ -392,8 +386,6 @@ var res = await sdk.Location.RemoveCommerceLocationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -401,15 +393,16 @@ var res = await sdk.Location.RemoveCommerceLocationAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Location   |
 
-
 ### Response
 
 **[RemoveCommerceLocationResponse](../../Models/Requests/RemoveCommerceLocationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## RemoveHrisLocation
 
@@ -433,8 +426,6 @@ var res = await sdk.Location.RemoveHrisLocationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter            | Type                 | Required             | Description          |
@@ -442,15 +433,16 @@ var res = await sdk.Location.RemoveHrisLocationAsync(
 | `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
 | `Id`                 | *string*             | :heavy_check_mark:   | ID of the Location   |
 
-
 ### Response
 
 **[RemoveHrisLocationResponse](../../Models/Requests/RemoveHrisLocationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateCommerceLocation
 
@@ -478,8 +470,6 @@ var res = await sdk.Location.UpdateCommerceLocationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
@@ -488,15 +478,16 @@ var res = await sdk.Location.UpdateCommerceLocationAsync(
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Location                                              |
 | `CommerceLocation`                                              | [CommerceLocation](../../Models/Components/CommerceLocation.md) | :heavy_minus_sign:                                              | N/A                                                             |
 
-
 ### Response
 
 **[UpdateCommerceLocationResponse](../../Models/Requests/UpdateCommerceLocationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
 
 ## UpdateHrisLocation
 
@@ -522,8 +513,6 @@ var res = await sdk.Location.UpdateHrisLocationAsync(
 // handle response
 ```
 
-
-
 ### Parameters
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
@@ -532,10 +521,10 @@ var res = await sdk.Location.UpdateHrisLocationAsync(
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Location                                      |
 | `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
 
-
 ### Response
 
 **[UpdateHrisLocationResponse](../../Models/Requests/UpdateHrisLocationResponse.md)**
+
 ### Errors
 
 | Error Object                         | Status Code                          | Content Type                         |
