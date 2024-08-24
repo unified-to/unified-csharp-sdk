@@ -55,7 +55,7 @@ namespace UnifiedTo.Models.Components
         public bool? Featured { get; set; }
 
         [JsonProperty("in_progress")]
-        public bool InProgress { get; set; } = default!;
+        public bool? InProgress { get; set; }
 
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
