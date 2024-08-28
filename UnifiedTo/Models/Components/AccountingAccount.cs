@@ -58,7 +58,7 @@ namespace UnifiedTo.Models.Components
         public Status? Status { get; set; }
 
         [JsonProperty("type")]
-        public Type? Type { get; set; }
+        public Models.Components.Type? Type { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
