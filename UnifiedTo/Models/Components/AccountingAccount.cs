@@ -36,6 +36,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        [JsonProperty("group")]
+        public string? Group { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -54,8 +57,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        [JsonProperty("section")]
+        public string? Section { get; set; }
+
         [JsonProperty("status")]
         public Status? Status { get; set; }
+
+        [JsonProperty("subgroup")]
+        public string? Subgroup { get; set; }
+
+        [JsonProperty("subsection")]
+        public string? Subsection { get; set; }
 
         [JsonProperty("type")]
         public Models.Components.Type? Type { get; set; }
