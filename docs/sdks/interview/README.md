@@ -25,12 +25,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Interview.CreateAtsInterviewAsync(
     connectionId: "<value>",
-    atsInterview: new AtsInterview() {});
+    atsInterview: new AtsInterview() {}
+);
 
 // handle response
 ```
@@ -66,15 +67,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Interview.GetAtsInterviewAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -111,8 +113,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListAtsInterviewsRequest req = new ListAtsInterviewsRequest() {
     ConnectionId = "<value>",
@@ -153,13 +155,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Interview.PatchAtsInterviewAsync(
     connectionId: "<value>",
     id: "<value>",
-    atsInterview: new AtsInterview() {});
+    atsInterview: new AtsInterview() {}
+);
 
 // handle response
 ```
@@ -195,12 +198,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Interview.RemoveAtsInterviewAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -236,13 +240,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Interview.UpdateAtsInterviewAsync(
     connectionId: "<value>",
     id: "<value>",
-    atsInterview: new AtsInterview() {});
+    atsInterview: new AtsInterview() {}
+);
 
 // handle response
 ```

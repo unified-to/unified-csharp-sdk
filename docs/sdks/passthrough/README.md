@@ -24,15 +24,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Passthrough.CreatePassthroughAsync(
     connectionId: "<value>",
     path: "<value>",
     requestBody: new Dictionary<string, object>() {
-    { "key", "<value>" },
-});
+        { "key", "<value>" },
+    }
+);
 
 // handle response
 ```
@@ -68,12 +69,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Passthrough.ListPassthroughsAsync(
     connectionId: "<value>",
-    path: "<value>");
+    path: "<value>"
+);
 
 // handle response
 ```
@@ -109,15 +111,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Passthrough.PatchPassthroughAsync(
     connectionId: "<value>",
     path: "<value>",
     requestBody: new Dictionary<string, object>() {
-    { "key", "<value>" },
-});
+        { "key", "<value>" },
+    }
+);
 
 // handle response
 ```
@@ -153,12 +156,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Passthrough.RemovePassthroughAsync(
     connectionId: "<value>",
-    path: "<value>");
+    path: "<value>"
+);
 
 // handle response
 ```
@@ -194,15 +198,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Passthrough.UpdatePassthroughAsync(
     connectionId: "<value>",
     path: "<value>",
     requestBody: new Dictionary<string, object>() {
-    { "key", "<value>" },
-});
+        { "key", "<value>" },
+    }
+);
 
 // handle response
 ```

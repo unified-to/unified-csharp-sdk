@@ -35,12 +35,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Payment.CreatePaymentLinkAsync(
     connectionId: "<value>",
-    paymentLink: new PaymentLink() {});
+    paymentLink: new PaymentLink() {}
+);
 
 // handle response
 ```
@@ -76,12 +77,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Payment.CreatePaymentPaymentAsync(
     connectionId: "<value>",
-    paymentPayment: new PaymentPayment() {});
+    paymentPayment: new PaymentPayment() {}
+);
 
 // handle response
 ```
@@ -117,15 +119,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Payment.GetPaymentLinkAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -162,15 +165,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Payment.GetPaymentPaymentAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -207,15 +211,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Payment.GetPaymentPayoutAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -252,15 +257,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Payment.GetPaymentRefundAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -297,8 +303,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListPaymentLinksRequest req = new ListPaymentLinksRequest() {
     ConnectionId = "<value>",
@@ -339,8 +345,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListPaymentPaymentsRequest req = new ListPaymentPaymentsRequest() {
     ConnectionId = "<value>",
@@ -381,8 +387,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListPaymentPayoutsRequest req = new ListPaymentPayoutsRequest() {
     ConnectionId = "<value>",
@@ -423,8 +429,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListPaymentRefundsRequest req = new ListPaymentRefundsRequest() {
     ConnectionId = "<value>",
@@ -465,13 +471,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Payment.PatchPaymentLinkAsync(
     connectionId: "<value>",
     id: "<value>",
-    paymentLink: new PaymentLink() {});
+    paymentLink: new PaymentLink() {}
+);
 
 // handle response
 ```
@@ -508,13 +515,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Payment.PatchPaymentPaymentAsync(
     connectionId: "<value>",
     id: "<value>",
-    paymentPayment: new PaymentPayment() {});
+    paymentPayment: new PaymentPayment() {}
+);
 
 // handle response
 ```
@@ -550,12 +558,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Payment.RemovePaymentLinkAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -590,12 +599,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Payment.RemovePaymentPaymentAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -631,13 +641,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Payment.UpdatePaymentLinkAsync(
     connectionId: "<value>",
     id: "<value>",
-    paymentLink: new PaymentLink() {});
+    paymentLink: new PaymentLink() {}
+);
 
 // handle response
 ```
@@ -674,13 +685,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Payment.UpdatePaymentPaymentAsync(
     connectionId: "<value>",
     id: "<value>",
-    paymentPayment: new PaymentPayment() {});
+    paymentPayment: new PaymentPayment() {}
+);
 
 // handle response
 ```

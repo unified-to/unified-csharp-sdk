@@ -20,12 +20,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Prompt.CreateGenaiPromptAsync(
     connectionId: "<value>",
-    genaiPrompt: new GenaiPrompt() {});
+    genaiPrompt: new GenaiPrompt() {}
+);
 
 // handle response
 ```

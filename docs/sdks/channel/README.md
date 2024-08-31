@@ -21,15 +21,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Channel.GetMessagingChannelAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -66,8 +67,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListMessagingChannelsRequest req = new ListMessagingChannelsRequest() {
     ConnectionId = "<value>",

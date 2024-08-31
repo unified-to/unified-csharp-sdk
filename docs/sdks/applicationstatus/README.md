@@ -20,8 +20,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListAtsApplicationstatusesRequest req = new ListAtsApplicationstatusesRequest() {
     ConnectionId = "<value>",

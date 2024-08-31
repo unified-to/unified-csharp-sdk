@@ -57,12 +57,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "<value>",
-    accountingAccount: new AccountingAccount() {});
+    accountingAccount: new AccountingAccount() {}
+);
 
 // handle response
 ```
@@ -98,12 +99,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.CreateAccountingContactAsync(
     connectionId: "<value>",
-    accountingContact: new AccountingContact() {});
+    accountingContact: new AccountingContact() {}
+);
 
 // handle response
 ```
@@ -139,12 +141,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
     connectionId: "<value>",
-    accountingInvoice: new AccountingInvoice() {});
+    accountingInvoice: new AccountingInvoice() {}
+);
 
 // handle response
 ```
@@ -180,12 +183,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.CreateAccountingJournalAsync(
     connectionId: "<value>",
-    accountingJournal: new AccountingJournal() {});
+    accountingJournal: new AccountingJournal() {}
+);
 
 // handle response
 ```
@@ -221,12 +225,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
     connectionId: "<value>",
-    accountingTaxrate: new AccountingTaxrate() {});
+    accountingTaxrate: new AccountingTaxrate() {}
+);
 
 // handle response
 ```
@@ -262,12 +267,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.CreateAccountingTransactionAsync(
     connectionId: "<value>",
-    accountingTransaction: new AccountingTransaction() {});
+    accountingTransaction: new AccountingTransaction() {}
+);
 
 // handle response
 ```
@@ -303,15 +309,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.GetAccountingAccountAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -348,15 +355,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.GetAccountingContactAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -393,15 +401,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.GetAccountingInvoiceAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -438,15 +447,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.GetAccountingJournalAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -483,15 +493,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.GetAccountingOrganizationAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -528,15 +539,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.GetAccountingTaxrateAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -573,15 +585,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.GetAccountingTransactionAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -618,8 +631,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListAccountingAccountsRequest req = new ListAccountingAccountsRequest() {
     ConnectionId = "<value>",
@@ -660,8 +673,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListAccountingContactsRequest req = new ListAccountingContactsRequest() {
     ConnectionId = "<value>",
@@ -702,8 +715,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListAccountingInvoicesRequest req = new ListAccountingInvoicesRequest() {
     ConnectionId = "<value>",
@@ -744,8 +757,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListAccountingJournalsRequest req = new ListAccountingJournalsRequest() {
     ConnectionId = "<value>",
@@ -786,8 +799,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListAccountingOrganizationsRequest req = new ListAccountingOrganizationsRequest() {
     ConnectionId = "<value>",
@@ -828,8 +841,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListAccountingTaxratesRequest req = new ListAccountingTaxratesRequest() {
     ConnectionId = "<value>",
@@ -870,8 +883,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListAccountingTransactionsRequest req = new ListAccountingTransactionsRequest() {
     ConnectionId = "<value>",
@@ -912,13 +925,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.PatchAccountingAccountAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingAccount: new AccountingAccount() {});
+    accountingAccount: new AccountingAccount() {}
+);
 
 // handle response
 ```
@@ -955,13 +969,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.PatchAccountingContactAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingContact: new AccountingContact() {});
+    accountingContact: new AccountingContact() {}
+);
 
 // handle response
 ```
@@ -998,13 +1013,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.PatchAccountingInvoiceAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingInvoice: new AccountingInvoice() {});
+    accountingInvoice: new AccountingInvoice() {}
+);
 
 // handle response
 ```
@@ -1041,13 +1057,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.PatchAccountingJournalAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingJournal: new AccountingJournal() {});
+    accountingJournal: new AccountingJournal() {}
+);
 
 // handle response
 ```
@@ -1084,13 +1101,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.PatchAccountingTaxrateAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingTaxrate: new AccountingTaxrate() {});
+    accountingTaxrate: new AccountingTaxrate() {}
+);
 
 // handle response
 ```
@@ -1127,13 +1145,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.PatchAccountingTransactionAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingTransaction: new AccountingTransaction() {});
+    accountingTransaction: new AccountingTransaction() {}
+);
 
 // handle response
 ```
@@ -1169,12 +1188,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.RemoveAccountingAccountAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -1209,12 +1229,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.RemoveAccountingContactAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -1249,12 +1270,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.RemoveAccountingInvoiceAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -1289,12 +1311,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.RemoveAccountingJournalAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -1329,12 +1352,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.RemoveAccountingTaxrateAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -1369,12 +1393,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.RemoveAccountingTransactionAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -1410,13 +1435,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.UpdateAccountingAccountAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingAccount: new AccountingAccount() {});
+    accountingAccount: new AccountingAccount() {}
+);
 
 // handle response
 ```
@@ -1453,13 +1479,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.UpdateAccountingContactAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingContact: new AccountingContact() {});
+    accountingContact: new AccountingContact() {}
+);
 
 // handle response
 ```
@@ -1496,13 +1523,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingInvoice: new AccountingInvoice() {});
+    accountingInvoice: new AccountingInvoice() {}
+);
 
 // handle response
 ```
@@ -1539,13 +1567,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.UpdateAccountingJournalAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingJournal: new AccountingJournal() {});
+    accountingJournal: new AccountingJournal() {}
+);
 
 // handle response
 ```
@@ -1582,13 +1611,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingTaxrate: new AccountingTaxrate() {});
+    accountingTaxrate: new AccountingTaxrate() {}
+);
 
 // handle response
 ```
@@ -1625,13 +1655,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.UpdateAccountingTransactionAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingTransaction: new AccountingTransaction() {});
+    accountingTransaction: new AccountingTransaction() {}
+);
 
 // handle response
 ```

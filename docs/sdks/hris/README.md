@@ -47,12 +47,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.CreateHrisCompanyAsync(
     connectionId: "<value>",
-    hrisCompany: new HrisCompany() {});
+    hrisCompany: new HrisCompany() {}
+);
 
 // handle response
 ```
@@ -88,12 +89,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.CreateHrisEmployeeAsync(
     connectionId: "<value>",
-    hrisEmployee: new HrisEmployee() {});
+    hrisEmployee: new HrisEmployee() {}
+);
 
 // handle response
 ```
@@ -129,12 +131,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.CreateHrisGroupAsync(
     connectionId: "<value>",
-    hrisGroup: new HrisGroup() {});
+    hrisGroup: new HrisGroup() {}
+);
 
 // handle response
 ```
@@ -170,12 +173,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.CreateHrisLocationAsync(
     connectionId: "<value>",
-    hrisLocation: new HrisLocation() {});
+    hrisLocation: new HrisLocation() {}
+);
 
 // handle response
 ```
@@ -211,15 +215,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.GetHrisCompanyAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -256,15 +261,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.GetHrisEmployeeAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -301,15 +307,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.GetHrisGroupAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -346,15 +353,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.GetHrisLocationAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -391,15 +399,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.GetHrisPayslipAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -436,15 +445,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.GetHrisTimeoffAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -481,8 +491,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListHrisCompaniesRequest req = new ListHrisCompaniesRequest() {
     ConnectionId = "<value>",
@@ -523,8 +533,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListHrisEmployeesRequest req = new ListHrisEmployeesRequest() {
     ConnectionId = "<value>",
@@ -565,8 +575,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListHrisGroupsRequest req = new ListHrisGroupsRequest() {
     ConnectionId = "<value>",
@@ -607,8 +617,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListHrisLocationsRequest req = new ListHrisLocationsRequest() {
     ConnectionId = "<value>",
@@ -649,8 +659,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListHrisPayslipsRequest req = new ListHrisPayslipsRequest() {
     ConnectionId = "<value>",
@@ -691,8 +701,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListHrisTimeoffsRequest req = new ListHrisTimeoffsRequest() {
     ConnectionId = "<value>",
@@ -733,13 +743,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.PatchHrisCompanyAsync(
     connectionId: "<value>",
     id: "<value>",
-    hrisCompany: new HrisCompany() {});
+    hrisCompany: new HrisCompany() {}
+);
 
 // handle response
 ```
@@ -776,13 +787,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.PatchHrisEmployeeAsync(
     connectionId: "<value>",
     id: "<value>",
-    hrisEmployee: new HrisEmployee() {});
+    hrisEmployee: new HrisEmployee() {}
+);
 
 // handle response
 ```
@@ -819,13 +831,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.PatchHrisGroupAsync(
     connectionId: "<value>",
     id: "<value>",
-    hrisGroup: new HrisGroup() {});
+    hrisGroup: new HrisGroup() {}
+);
 
 // handle response
 ```
@@ -862,13 +875,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.PatchHrisLocationAsync(
     connectionId: "<value>",
     id: "<value>",
-    hrisLocation: new HrisLocation() {});
+    hrisLocation: new HrisLocation() {}
+);
 
 // handle response
 ```
@@ -904,12 +918,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.RemoveHrisCompanyAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -944,12 +959,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.RemoveHrisEmployeeAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -984,12 +1000,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.RemoveHrisGroupAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -1024,12 +1041,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.RemoveHrisLocationAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -1065,13 +1083,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.UpdateHrisCompanyAsync(
     connectionId: "<value>",
     id: "<value>",
-    hrisCompany: new HrisCompany() {});
+    hrisCompany: new HrisCompany() {}
+);
 
 // handle response
 ```
@@ -1108,13 +1127,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.UpdateHrisEmployeeAsync(
     connectionId: "<value>",
     id: "<value>",
-    hrisEmployee: new HrisEmployee() {});
+    hrisEmployee: new HrisEmployee() {}
+);
 
 // handle response
 ```
@@ -1151,13 +1171,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.UpdateHrisGroupAsync(
     connectionId: "<value>",
     id: "<value>",
-    hrisGroup: new HrisGroup() {});
+    hrisGroup: new HrisGroup() {}
+);
 
 // handle response
 ```
@@ -1194,13 +1215,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Hris.UpdateHrisLocationAsync(
     connectionId: "<value>",
     id: "<value>",
-    hrisLocation: new HrisLocation() {});
+    hrisLocation: new HrisLocation() {}
+);
 
 // handle response
 ```

@@ -43,15 +43,16 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.CreateCommerceCollectionAsync(
     connectionId: "<value>",
     commerceCollection: new CommerceCollection() {
-    Id = "<id>",
-    Name = "<value>",
-});
+        Id = "<id>",
+        Name = "<value>",
+    }
+);
 
 // handle response
 ```
@@ -87,14 +88,15 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.CreateCommerceInventoryAsync(
     connectionId: "<value>",
     commerceInventory: new CommerceInventory() {
-    Available = 5165.08D,
-});
+        Available = 5165.08D,
+    }
+);
 
 // handle response
 ```
@@ -130,12 +132,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.CreateCommerceItemAsync(
     connectionId: "<value>",
-    commerceItem: new CommerceItem() {});
+    commerceItem: new CommerceItem() {}
+);
 
 // handle response
 ```
@@ -171,14 +174,15 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.CreateCommerceLocationAsync(
     connectionId: "<value>",
     commerceLocation: new CommerceLocation() {
-    Name = "<value>",
-});
+        Name = "<value>",
+    }
+);
 
 // handle response
 ```
@@ -214,15 +218,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.GetCommerceCollectionAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -259,15 +264,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.GetCommerceInventoryAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -304,15 +310,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.GetCommerceItemAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -349,15 +356,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.GetCommerceLocationAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -394,8 +402,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListCommerceCollectionsRequest req = new ListCommerceCollectionsRequest() {
     ConnectionId = "<value>",
@@ -436,8 +444,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListCommerceInventoriesRequest req = new ListCommerceInventoriesRequest() {
     ConnectionId = "<value>",
@@ -478,8 +486,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListCommerceItemsRequest req = new ListCommerceItemsRequest() {
     ConnectionId = "<value>",
@@ -520,8 +528,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListCommerceLocationsRequest req = new ListCommerceLocationsRequest() {
     ConnectionId = "<value>",
@@ -562,16 +570,17 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.PatchCommerceCollectionAsync(
     connectionId: "<value>",
     id: "<value>",
     commerceCollection: new CommerceCollection() {
-    Id = "<id>",
-    Name = "<value>",
-});
+        Id = "<id>",
+        Name = "<value>",
+    }
+);
 
 // handle response
 ```
@@ -608,15 +617,16 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.PatchCommerceInventoryAsync(
     connectionId: "<value>",
     id: "<value>",
     commerceInventory: new CommerceInventory() {
-    Available = 615.23D,
-});
+        Available = 615.23D,
+    }
+);
 
 // handle response
 ```
@@ -653,13 +663,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.PatchCommerceItemAsync(
     connectionId: "<value>",
     id: "<value>",
-    commerceItem: new CommerceItem() {});
+    commerceItem: new CommerceItem() {}
+);
 
 // handle response
 ```
@@ -696,15 +707,16 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.PatchCommerceLocationAsync(
     connectionId: "<value>",
     id: "<value>",
     commerceLocation: new CommerceLocation() {
-    Name = "<value>",
-});
+        Name = "<value>",
+    }
+);
 
 // handle response
 ```
@@ -740,12 +752,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.RemoveCommerceCollectionAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -780,12 +793,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.RemoveCommerceInventoryAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -820,12 +834,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.RemoveCommerceItemAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -860,12 +875,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.RemoveCommerceLocationAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -901,16 +917,17 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.UpdateCommerceCollectionAsync(
     connectionId: "<value>",
     id: "<value>",
     commerceCollection: new CommerceCollection() {
-    Id = "<id>",
-    Name = "<value>",
-});
+        Id = "<id>",
+        Name = "<value>",
+    }
+);
 
 // handle response
 ```
@@ -947,15 +964,16 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.UpdateCommerceInventoryAsync(
     connectionId: "<value>",
     id: "<value>",
     commerceInventory: new CommerceInventory() {
-    Available = 9360.02D,
-});
+        Available = 9360.02D,
+    }
+);
 
 // handle response
 ```
@@ -992,13 +1010,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.UpdateCommerceItemAsync(
     connectionId: "<value>",
     id: "<value>",
-    commerceItem: new CommerceItem() {});
+    commerceItem: new CommerceItem() {}
+);
 
 // handle response
 ```
@@ -1035,15 +1054,16 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Commerce.UpdateCommerceLocationAsync(
     connectionId: "<value>",
     id: "<value>",
     commerceLocation: new CommerceLocation() {
-    Name = "<value>",
-});
+        Name = "<value>",
+    }
+);
 
 // handle response
 ```

@@ -25,12 +25,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Journal.CreateAccountingJournalAsync(
     connectionId: "<value>",
-    accountingJournal: new AccountingJournal() {});
+    accountingJournal: new AccountingJournal() {}
+);
 
 // handle response
 ```
@@ -66,15 +67,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Journal.GetAccountingJournalAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -111,8 +113,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListAccountingJournalsRequest req = new ListAccountingJournalsRequest() {
     ConnectionId = "<value>",
@@ -153,13 +155,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Journal.PatchAccountingJournalAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingJournal: new AccountingJournal() {});
+    accountingJournal: new AccountingJournal() {}
+);
 
 // handle response
 ```
@@ -195,12 +198,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Journal.RemoveAccountingJournalAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -236,13 +240,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Journal.UpdateAccountingJournalAsync(
     connectionId: "<value>",
     id: "<value>",
-    accountingJournal: new AccountingJournal() {});
+    accountingJournal: new AccountingJournal() {}
+);
 
 // handle response
 ```

@@ -25,15 +25,16 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Space.CreateKmsSpaceAsync(
     connectionId: "<value>",
     kmsSpace: new KmsSpace() {
-    Id = "<id>",
-    Name = "<value>",
-});
+        Id = "<id>",
+        Name = "<value>",
+    }
+);
 
 // handle response
 ```
@@ -69,15 +70,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Space.GetKmsSpaceAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -114,8 +116,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListKmsSpacesRequest req = new ListKmsSpacesRequest() {
     ConnectionId = "<value>",
@@ -156,16 +158,17 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Space.PatchKmsSpaceAsync(
     connectionId: "<value>",
     id: "<value>",
     kmsSpace: new KmsSpace() {
-    Id = "<id>",
-    Name = "<value>",
-});
+        Id = "<id>",
+        Name = "<value>",
+    }
+);
 
 // handle response
 ```
@@ -201,12 +204,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Space.RemoveKmsSpaceAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -242,16 +246,17 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Space.UpdateKmsSpaceAsync(
     connectionId: "<value>",
     id: "<value>",
     kmsSpace: new KmsSpace() {
-    Id = "<id>",
-    Name = "<value>",
-});
+        Id = "<id>",
+        Name = "<value>",
+    }
+);
 
 // handle response
 ```

@@ -20,13 +20,14 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Enrich.ListEnrichCompaniesAsync(
     connectionId: "<value>",
     domain: "<value>",
-    name: "<value>");
+    name: "<value>"
+);
 
 // handle response
 ```
@@ -62,8 +63,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListEnrichPeopleRequest req = new ListEnrichPeopleRequest() {
     ConnectionId = "<value>",

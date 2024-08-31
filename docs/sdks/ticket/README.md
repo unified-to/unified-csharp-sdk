@@ -25,12 +25,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Ticket.CreateTicketingTicketAsync(
     connectionId: "<value>",
-    ticketingTicket: new TicketingTicket() {});
+    ticketingTicket: new TicketingTicket() {}
+);
 
 // handle response
 ```
@@ -66,15 +67,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Ticket.GetTicketingTicketAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -111,8 +113,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListTicketingTicketsRequest req = new ListTicketingTicketsRequest() {
     ConnectionId = "<value>",
@@ -153,13 +155,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Ticket.PatchTicketingTicketAsync(
     connectionId: "<value>",
     id: "<value>",
-    ticketingTicket: new TicketingTicket() {});
+    ticketingTicket: new TicketingTicket() {}
+);
 
 // handle response
 ```
@@ -195,12 +198,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Ticket.RemoveTicketingTicketAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -236,13 +240,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Ticket.UpdateTicketingTicketAsync(
     connectionId: "<value>",
     id: "<value>",
-    ticketingTicket: new TicketingTicket() {});
+    ticketingTicket: new TicketingTicket() {}
+);
 
 // handle response
 ```

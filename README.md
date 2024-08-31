@@ -17,12 +17,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "<value>",
-    accountingAccount: new AccountingAccount() {});
+    accountingAccount: new AccountingAccount() {}
+);
 
 // handle response
 ```
@@ -830,19 +831,38 @@ You can override the default server globally by passing a server index to the `s
 The default server can also be overridden globally by passing a URL to the `serverUrl: str` optional parameter when initializing the SDK client instance. For example:
 <!-- End Server Selection [server] -->
 
+<!-- Start Summary [summary] -->
+## Summary
+
+Unified.to API: One API to Rule Them All
+<!-- End Summary [summary] -->
+
+<!-- Start Table of Contents [toc] -->
+## Table of Contents
+
+* [SDK Installation](#sdk-installation)
+* [SDK Example Usage](#sdk-example-usage)
+* [Available Resources and Operations](#available-resources-and-operations)
+* [Error Handling](#error-handling)
+* [Server Selection](#server-selection)
+* [Authentication](#authentication)
+<!-- End Table of Contents [toc] -->
+
 <!-- Start SDK Installation [installation] -->
 ## SDK Installation
 
 ### NuGet
 
+To add the [NuGet](https://www.nuget.org/) package to a .NET project:
 ```bash
 dotnet add package UnifiedTo
 ```
 
 ### Locally
 
+To add a reference to a local instance of the SDK in a .NET project:
 ```bash
-dotnet add reference path/to/UnifiedTo.csproj
+dotnet add reference UnifiedTo/UnifiedTo.csproj
 ```
 <!-- End SDK Installation [installation] -->
 
@@ -865,12 +885,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "<value>",
-    accountingAccount: new AccountingAccount() {});
+    accountingAccount: new AccountingAccount() {}
+);
 
 // handle response
 ```
@@ -896,25 +917,25 @@ using System;
 using UnifiedTo.Models.Errors;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 try
 {
     var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    connectionId: "<value>",
-    accountingAccount: new AccountingAccount() {});
+        connectionId: "<value>",
+        accountingAccount: new AccountingAccount() {}
+    );
+
     // handle response
 }
 catch (Exception ex)
 {
-    }
-    else if (ex is UnifiedTo.Models.Errors.SDKException)
+    if (ex is UnifiedTo.Models.Errors.SDKException)
     {
         // handle exception
     }
 }
-
 ```
 <!-- End Error Handling [errors] -->
 

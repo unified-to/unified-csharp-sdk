@@ -13,12 +13,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "<value>",
-    accountingAccount: new AccountingAccount() {});
+    accountingAccount: new AccountingAccount() {}
+);
 
 // handle response
 ```
@@ -44,25 +45,25 @@ using System;
 using UnifiedTo.Models.Errors;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 try
 {
     var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    connectionId: "<value>",
-    accountingAccount: new AccountingAccount() {});
+        connectionId: "<value>",
+        accountingAccount: new AccountingAccount() {}
+    );
+
     // handle response
 }
 catch (Exception ex)
 {
-    }
-    else if (ex is UnifiedTo.Models.Errors.SDKException)
+    if (ex is UnifiedTo.Models.Errors.SDKException)
     {
         // handle exception
     }
 }
-
 ```
 <!-- End Error Handling [errors] -->
 
@@ -105,12 +106,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "<value>",
-    accountingAccount: new AccountingAccount() {});
+    accountingAccount: new AccountingAccount() {}
+);
 
 // handle response
 ```

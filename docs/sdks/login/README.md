@@ -19,8 +19,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 GetUnifiedIntegrationLoginRequest req = new GetUnifiedIntegrationLoginRequest() {
     IntegrationType = "<value>",

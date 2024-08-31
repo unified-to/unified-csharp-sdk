@@ -24,8 +24,8 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
@@ -71,8 +71,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Connection.GetUnifiedConnectionAsync(id: "<value>");
 
@@ -109,8 +109,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListUnifiedConnectionsRequest req = new ListUnifiedConnectionsRequest() {};
 
@@ -149,20 +149,21 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Connection.PatchUnifiedConnectionAsync(
     id: "<value>",
     connection: new Models.Components.Connection() {
-    Categories = new List<PropertyConnectionCategories>() {
-        UnifiedTo.Models.Components.PropertyConnectionCategories.Commerce,
-    },
-    IntegrationType = "<value>",
-    Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.HrisGroupRead,
-    },
-});
+        Categories = new List<PropertyConnectionCategories>() {
+            UnifiedTo.Models.Components.PropertyConnectionCategories.Commerce,
+        },
+        IntegrationType = "<value>",
+        Permissions = new List<PropertyConnectionPermissions>() {
+            UnifiedTo.Models.Components.PropertyConnectionPermissions.HrisGroupRead,
+        },
+    }
+);
 
 // handle response
 ```
@@ -197,8 +198,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Connection.RemoveUnifiedConnectionAsync(id: "<value>");
 
@@ -235,20 +236,21 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
     id: "<value>",
     connection: new Models.Components.Connection() {
-    Categories = new List<PropertyConnectionCategories>() {
-        UnifiedTo.Models.Components.PropertyConnectionCategories.Genai,
-    },
-    IntegrationType = "<value>",
-    Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmDealWrite,
-    },
-});
+        Categories = new List<PropertyConnectionCategories>() {
+            UnifiedTo.Models.Components.PropertyConnectionCategories.Genai,
+        },
+        IntegrationType = "<value>",
+        Permissions = new List<PropertyConnectionPermissions>() {
+            UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmDealWrite,
+        },
+    }
+);
 
 // handle response
 ```

@@ -25,14 +25,15 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Inventory.CreateCommerceInventoryAsync(
     connectionId: "<value>",
     commerceInventory: new CommerceInventory() {
-    Available = 5165.08D,
-});
+        Available = 5165.08D,
+    }
+);
 
 // handle response
 ```
@@ -68,15 +69,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Inventory.GetCommerceInventoryAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -113,8 +115,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListCommerceInventoriesRequest req = new ListCommerceInventoriesRequest() {
     ConnectionId = "<value>",
@@ -155,15 +157,16 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Inventory.PatchCommerceInventoryAsync(
     connectionId: "<value>",
     id: "<value>",
     commerceInventory: new CommerceInventory() {
-    Available = 615.23D,
-});
+        Available = 615.23D,
+    }
+);
 
 // handle response
 ```
@@ -199,12 +202,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Inventory.RemoveCommerceInventoryAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -240,15 +244,16 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
     connectionId: "<value>",
     id: "<value>",
     commerceInventory: new CommerceInventory() {
-    Available = 9360.02D,
-});
+        Available = 9360.02D,
+    }
+);
 
 // handle response
 ```

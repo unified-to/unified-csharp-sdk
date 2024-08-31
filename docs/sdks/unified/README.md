@@ -38,8 +38,8 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
@@ -86,17 +86,18 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Unified.CreateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
-    ConnectionId = "<value>",
-    Event = UnifiedTo.Models.Components.Event.Created,
-    HookUrl = "<value>",
-    ObjectType = UnifiedTo.Models.Components.ObjectType.AccountingTransaction,
-},
-    includeAll: false);
+        ConnectionId = "<value>",
+        Event = UnifiedTo.Models.Components.Event.Created,
+        HookUrl = "<value>",
+        ObjectType = UnifiedTo.Models.Components.ObjectType.AccountingTransaction,
+    },
+    includeAll: false
+);
 
 // handle response
 ```
@@ -131,8 +132,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Unified.GetUnifiedApicallAsync(id: "<value>");
 
@@ -168,8 +169,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Unified.GetUnifiedConnectionAsync(id: "<value>");
 
@@ -206,8 +207,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 GetUnifiedIntegrationAuthRequest req = new GetUnifiedIntegrationAuthRequest() {
     IntegrationType = "<value>",
@@ -248,8 +249,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Unified.GetUnifiedWebhookAsync(id: "<value>");
 
@@ -285,8 +286,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListUnifiedApicallsRequest req = new ListUnifiedApicallsRequest() {};
 
@@ -325,8 +326,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListUnifiedConnectionsRequest req = new ListUnifiedConnectionsRequest() {};
 
@@ -365,8 +366,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListUnifiedIntegrationWorkspacesRequest req = new ListUnifiedIntegrationWorkspacesRequest() {
     WorkspaceId = "<value>",
@@ -407,8 +408,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListUnifiedIntegrationsRequest req = new ListUnifiedIntegrationsRequest() {};
 
@@ -446,8 +447,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListUnifiedIssuesRequest req = new ListUnifiedIssuesRequest() {};
 
@@ -485,8 +486,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListUnifiedWebhooksRequest req = new ListUnifiedWebhooksRequest() {};
 
@@ -525,20 +526,21 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Unified.PatchUnifiedConnectionAsync(
     id: "<value>",
     connection: new Models.Components.Connection() {
-    Categories = new List<PropertyConnectionCategories>() {
-        UnifiedTo.Models.Components.PropertyConnectionCategories.Commerce,
-    },
-    IntegrationType = "<value>",
-    Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.HrisGroupRead,
-    },
-});
+        Categories = new List<PropertyConnectionCategories>() {
+            UnifiedTo.Models.Components.PropertyConnectionCategories.Commerce,
+        },
+        IntegrationType = "<value>",
+        Permissions = new List<PropertyConnectionPermissions>() {
+            UnifiedTo.Models.Components.PropertyConnectionPermissions.HrisGroupRead,
+        },
+    }
+);
 
 // handle response
 ```
@@ -574,17 +576,18 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Unified.PatchUnifiedWebhookAsync(
     id: "<value>",
     webhook: new Models.Components.Webhook() {
-    ConnectionId = "<value>",
-    Event = UnifiedTo.Models.Components.Event.Deleted,
-    HookUrl = "<value>",
-    ObjectType = UnifiedTo.Models.Components.ObjectType.Passthrough,
-});
+        ConnectionId = "<value>",
+        Event = UnifiedTo.Models.Components.Event.Deleted,
+        HookUrl = "<value>",
+        ObjectType = UnifiedTo.Models.Components.ObjectType.Passthrough,
+    }
+);
 
 // handle response
 ```
@@ -619,8 +622,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Unified.PatchUnifiedWebhookTriggerAsync(id: "<value>");
 
@@ -656,8 +659,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Unified.RemoveUnifiedConnectionAsync(id: "<value>");
 
@@ -693,8 +696,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Unified.RemoveUnifiedWebhookAsync(id: "<value>");
 
@@ -731,20 +734,21 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
     id: "<value>",
     connection: new Models.Components.Connection() {
-    Categories = new List<PropertyConnectionCategories>() {
-        UnifiedTo.Models.Components.PropertyConnectionCategories.Genai,
-    },
-    IntegrationType = "<value>",
-    Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmDealWrite,
-    },
-});
+        Categories = new List<PropertyConnectionCategories>() {
+            UnifiedTo.Models.Components.PropertyConnectionCategories.Genai,
+        },
+        IntegrationType = "<value>",
+        Permissions = new List<PropertyConnectionPermissions>() {
+            UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmDealWrite,
+        },
+    }
+);
 
 // handle response
 ```
@@ -780,17 +784,18 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Unified.UpdateUnifiedWebhookAsync(
     id: "<value>",
     webhook: new Models.Components.Webhook() {
-    ConnectionId = "<value>",
-    Event = UnifiedTo.Models.Components.Event.Created,
-    HookUrl = "<value>",
-    ObjectType = UnifiedTo.Models.Components.ObjectType.HrisGroup,
-});
+        ConnectionId = "<value>",
+        Event = UnifiedTo.Models.Components.Event.Created,
+        HookUrl = "<value>",
+        ObjectType = UnifiedTo.Models.Components.ObjectType.HrisGroup,
+    }
+);
 
 // handle response
 ```
@@ -825,8 +830,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Unified.UpdateUnifiedWebhookTriggerAsync(id: "<value>");
 

@@ -60,6 +60,6 @@ namespace UnifiedTo.Models.Components
         public ApiCallType Type { get; set; } = default!;
 
         [JsonProperty("workspace_id")]
-        public string WorkspaceId { get; set; } = default!;
+        public string? WorkspaceId { get; set; }
     }
 }

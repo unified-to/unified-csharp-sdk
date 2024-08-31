@@ -31,14 +31,15 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Location.CreateCommerceLocationAsync(
     connectionId: "<value>",
     commerceLocation: new CommerceLocation() {
-    Name = "<value>",
-});
+        Name = "<value>",
+    }
+);
 
 // handle response
 ```
@@ -74,12 +75,13 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Location.CreateHrisLocationAsync(
     connectionId: "<value>",
-    hrisLocation: new HrisLocation() {});
+    hrisLocation: new HrisLocation() {}
+);
 
 // handle response
 ```
@@ -115,15 +117,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Location.GetCommerceLocationAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -160,15 +163,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Location.GetHrisLocationAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -205,8 +209,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListCommerceLocationsRequest req = new ListCommerceLocationsRequest() {
     ConnectionId = "<value>",
@@ -247,8 +251,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListHrisLocationsRequest req = new ListHrisLocationsRequest() {
     ConnectionId = "<value>",
@@ -289,15 +293,16 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Location.PatchCommerceLocationAsync(
     connectionId: "<value>",
     id: "<value>",
     commerceLocation: new CommerceLocation() {
-    Name = "<value>",
-});
+        Name = "<value>",
+    }
+);
 
 // handle response
 ```
@@ -334,13 +339,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Location.PatchHrisLocationAsync(
     connectionId: "<value>",
     id: "<value>",
-    hrisLocation: new HrisLocation() {});
+    hrisLocation: new HrisLocation() {}
+);
 
 // handle response
 ```
@@ -376,12 +382,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Location.RemoveCommerceLocationAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -416,12 +423,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Location.RemoveHrisLocationAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -457,15 +465,16 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Location.UpdateCommerceLocationAsync(
     connectionId: "<value>",
     id: "<value>",
     commerceLocation: new CommerceLocation() {
-    Name = "<value>",
-});
+        Name = "<value>",
+    }
+);
 
 // handle response
 ```
@@ -502,13 +511,14 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Location.UpdateHrisLocationAsync(
     connectionId: "<value>",
     id: "<value>",
-    hrisLocation: new HrisLocation() {});
+    hrisLocation: new HrisLocation() {}
+);
 
 // handle response
 ```

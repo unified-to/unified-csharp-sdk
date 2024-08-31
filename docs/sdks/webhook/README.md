@@ -27,17 +27,18 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
-    ConnectionId = "<value>",
-    Event = UnifiedTo.Models.Components.Event.Created,
-    HookUrl = "<value>",
-    ObjectType = UnifiedTo.Models.Components.ObjectType.AccountingTransaction,
-},
-    includeAll: false);
+        ConnectionId = "<value>",
+        Event = UnifiedTo.Models.Components.Event.Created,
+        HookUrl = "<value>",
+        ObjectType = UnifiedTo.Models.Components.ObjectType.AccountingTransaction,
+    },
+    includeAll: false
+);
 
 // handle response
 ```
@@ -72,8 +73,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Webhook.GetUnifiedWebhookAsync(id: "<value>");
 
@@ -109,8 +110,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListUnifiedWebhooksRequest req = new ListUnifiedWebhooksRequest() {};
 
@@ -149,17 +150,18 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
     id: "<value>",
     webhook: new Models.Components.Webhook() {
-    ConnectionId = "<value>",
-    Event = UnifiedTo.Models.Components.Event.Deleted,
-    HookUrl = "<value>",
-    ObjectType = UnifiedTo.Models.Components.ObjectType.Passthrough,
-});
+        ConnectionId = "<value>",
+        Event = UnifiedTo.Models.Components.Event.Deleted,
+        HookUrl = "<value>",
+        ObjectType = UnifiedTo.Models.Components.ObjectType.Passthrough,
+    }
+);
 
 // handle response
 ```
@@ -194,8 +196,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Webhook.PatchUnifiedWebhookTriggerAsync(id: "<value>");
 
@@ -231,8 +233,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Webhook.RemoveUnifiedWebhookAsync(id: "<value>");
 
@@ -269,17 +271,18 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
     id: "<value>",
     webhook: new Models.Components.Webhook() {
-    ConnectionId = "<value>",
-    Event = UnifiedTo.Models.Components.Event.Created,
-    HookUrl = "<value>",
-    ObjectType = UnifiedTo.Models.Components.ObjectType.HrisGroup,
-});
+        ConnectionId = "<value>",
+        Event = UnifiedTo.Models.Components.Event.Created,
+        HookUrl = "<value>",
+        ObjectType = UnifiedTo.Models.Components.ObjectType.HrisGroup,
+    }
+);
 
 // handle response
 ```
@@ -314,8 +317,8 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Webhook.UpdateUnifiedWebhookTriggerAsync(id: "<value>");
 

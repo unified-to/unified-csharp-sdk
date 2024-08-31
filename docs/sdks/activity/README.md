@@ -25,14 +25,15 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Activity.CreateAtsActivityAsync(
     connectionId: "<value>",
     atsActivity: new AtsActivity() {
-    Title = "<value>",
-});
+        Title = "<value>",
+    }
+);
 
 // handle response
 ```
@@ -68,15 +69,16 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Activity.GetAtsActivityAsync(
     connectionId: "<value>",
     id: "<value>",
     fields: new List<string>() {
-    "<value>",
-});
+        "<value>",
+    }
+);
 
 // handle response
 ```
@@ -113,8 +115,8 @@ using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 ListAtsActivitiesRequest req = new ListAtsActivitiesRequest() {
     ConnectionId = "<value>",
@@ -155,15 +157,16 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Activity.PatchAtsActivityAsync(
     connectionId: "<value>",
     id: "<value>",
     atsActivity: new AtsActivity() {
-    Title = "<value>",
-});
+        Title = "<value>",
+    }
+);
 
 // handle response
 ```
@@ -199,12 +202,13 @@ using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Activity.RemoveAtsActivityAsync(
     connectionId: "<value>",
-    id: "<value>");
+    id: "<value>"
+);
 
 // handle response
 ```
@@ -240,15 +244,16 @@ using UnifiedTo.Models.Components;
 using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
-        Jwt = "<YOUR_API_KEY_HERE>",
-    });
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
 
 var res = await sdk.Activity.UpdateAtsActivityAsync(
     connectionId: "<value>",
     id: "<value>",
     atsActivity: new AtsActivity() {
-    Title = "<value>",
-});
+        Title = "<value>",
+    }
+);
 
 // handle response
 ```

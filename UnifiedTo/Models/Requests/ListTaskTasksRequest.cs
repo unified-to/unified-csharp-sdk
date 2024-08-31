@@ -57,5 +57,8 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public DateTime? UpdatedGte { get; set; }
+
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=user_id")]
+        public string? UserId { get; set; }
     }
 }
