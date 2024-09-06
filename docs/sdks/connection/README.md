@@ -14,7 +14,7 @@
 
 ## CreateUnifiedConnection
 
-Create connection
+Used only to import existing customer credentials; use "Create connection indirectly" instead
 
 ### Example Usage
 
@@ -74,7 +74,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Connection.GetUnifiedConnectionAsync(id: "<value>");
+var res = await sdk.Connection.GetUnifiedConnectionAsync(id: "<id>");
 
 // handle response
 ```
@@ -153,7 +153,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Connection.PatchUnifiedConnectionAsync(
-    id: "<value>",
+    id: "<id>",
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
             UnifiedTo.Models.Components.PropertyConnectionCategories.Commerce,
@@ -201,7 +201,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Connection.RemoveUnifiedConnectionAsync(id: "<value>");
+var res = await sdk.Connection.RemoveUnifiedConnectionAsync(id: "<id>");
 
 // handle response
 ```
@@ -240,7 +240,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
-    id: "<value>",
+    id: "<id>",
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
             UnifiedTo.Models.Components.PropertyConnectionCategories.Genai,

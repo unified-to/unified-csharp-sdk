@@ -74,7 +74,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Activity.GetAtsActivityAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -162,7 +162,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Activity.PatchAtsActivityAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     atsActivity: new AtsActivity() {
         Title = "<value>",
     }
@@ -207,7 +207,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Activity.RemoveAtsActivityAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -249,7 +249,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Activity.UpdateAtsActivityAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     atsActivity: new AtsActivity() {
         Title = "<value>",
     }

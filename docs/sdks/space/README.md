@@ -75,7 +75,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Space.GetKmsSpaceAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -163,7 +163,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Space.PatchKmsSpaceAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     kmsSpace: new KmsSpace() {
         Id = "<id>",
         Name = "<value>",
@@ -209,7 +209,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Space.RemoveKmsSpaceAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -251,7 +251,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Space.UpdateKmsSpaceAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     kmsSpace: new KmsSpace() {
         Id = "<id>",
         Name = "<value>",

@@ -72,7 +72,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Project.GetTaskProjectAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Project.PatchTaskProjectAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     taskProject: new TaskProject() {}
 );
 
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Project.RemoveTaskProjectAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Project.UpdateTaskProjectAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     taskProject: new TaskProject() {}
 );
 

@@ -72,7 +72,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Scorecard.GetAtsScorecardAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Scorecard.PatchAtsScorecardAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     atsScorecard: new AtsScorecard() {}
 );
 
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Scorecard.RemoveAtsScorecardAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Scorecard.UpdateAtsScorecardAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     atsScorecard: new AtsScorecard() {}
 );
 

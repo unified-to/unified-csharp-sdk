@@ -72,7 +72,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Candidate.GetAtsCandidateAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Candidate.PatchAtsCandidateAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     atsCandidate: new AtsCandidate() {}
 );
 
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Candidate.RemoveAtsCandidateAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Candidate.UpdateAtsCandidateAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     atsCandidate: new AtsCandidate() {}
 );
 

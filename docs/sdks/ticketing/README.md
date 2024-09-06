@@ -168,7 +168,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.GetTicketingCustomerAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -214,7 +214,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.GetTicketingNoteAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -260,7 +260,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.GetTicketingTicketAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -432,7 +432,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.PatchTicketingCustomerAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     ticketingCustomer: new TicketingCustomer() {}
 );
 
@@ -476,7 +476,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.PatchTicketingNoteAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     ticketingNote: new TicketingNote() {}
 );
 
@@ -520,7 +520,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.PatchTicketingTicketAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     ticketingTicket: new TicketingTicket() {}
 );
 
@@ -563,7 +563,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.RemoveTicketingCustomerAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -604,7 +604,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.RemoveTicketingNoteAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -645,7 +645,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.RemoveTicketingTicketAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -687,7 +687,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.UpdateTicketingCustomerAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     ticketingCustomer: new TicketingCustomer() {}
 );
 
@@ -731,7 +731,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.UpdateTicketingNoteAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     ticketingNote: new TicketingNote() {}
 );
 
@@ -775,7 +775,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.UpdateTicketingTicketAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     ticketingTicket: new TicketingTicket() {}
 );
 

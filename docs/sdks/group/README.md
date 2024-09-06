@@ -72,7 +72,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Group.GetHrisGroupAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Group.PatchHrisGroupAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     hrisGroup: new HrisGroup() {}
 );
 
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Group.RemoveHrisGroupAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Group.UpdateHrisGroupAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     hrisGroup: new HrisGroup() {}
 );
 

@@ -27,6 +27,10 @@ namespace UnifiedTo
 
         /// <summary>
         /// Create connection
+        /// 
+        /// <remarks>
+        /// Used only to import existing customer credentials; use &quot;Create connection indirectly&quot; instead
+        /// </remarks>
         /// </summary>
         Task<CreateUnifiedConnectionResponse> CreateUnifiedConnectionAsync(Models.Components.Connection? request = null);
 
@@ -142,10 +146,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.46";
-        private const string _sdkGenVersion = "2.407.2";
+        private const string _sdkVersion = "0.19.47";
+        private const string _sdkGenVersion = "2.409.8";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.46 2.407.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.47 2.409.8 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;

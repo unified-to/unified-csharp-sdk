@@ -78,7 +78,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Page.GetKmsPageAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -166,7 +166,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Page.PatchKmsPageAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     kmsPage: new KmsPage() {
         DownloadUrl = "<value>",
         Id = "<id>",
@@ -215,7 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Page.RemoveKmsPageAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -257,7 +257,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Page.UpdateKmsPageAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     kmsPage: new KmsPage() {
         DownloadUrl = "<value>",
         Id = "<id>",

@@ -72,7 +72,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Item.GetCommerceItemAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Item.PatchCommerceItemAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     commerceItem: new CommerceItem() {}
 );
 
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Item.RemoveCommerceItemAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Item.UpdateCommerceItemAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     commerceItem: new CommerceItem() {}
 );
 

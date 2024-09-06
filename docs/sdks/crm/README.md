@@ -312,7 +312,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.GetCrmCompanyAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -358,7 +358,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.GetCrmContactAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -404,7 +404,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.GetCrmDealAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -450,7 +450,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.GetCrmEventAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -496,7 +496,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.GetCrmLeadAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -542,7 +542,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.GetCrmPipelineAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -840,7 +840,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.PatchCrmCompanyAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmCompany: new CrmCompany() {}
 );
 
@@ -884,7 +884,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.PatchCrmContactAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmContact: new CrmContact() {}
 );
 
@@ -928,7 +928,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.PatchCrmDealAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmDeal: new CrmDeal() {}
 );
 
@@ -972,7 +972,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.PatchCrmEventAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmEvent: new CrmEvent() {}
 );
 
@@ -1016,7 +1016,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.PatchCrmLeadAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmLead: new CrmLead() {}
 );
 
@@ -1060,7 +1060,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.PatchCrmPipelineAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmPipeline: new CrmPipeline() {}
 );
 
@@ -1103,7 +1103,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.RemoveCrmCompanyAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -1144,7 +1144,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.RemoveCrmContactAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -1185,7 +1185,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.RemoveCrmDealAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -1226,7 +1226,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.RemoveCrmEventAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -1267,7 +1267,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.RemoveCrmLeadAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -1308,7 +1308,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.RemoveCrmPipelineAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -1350,7 +1350,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.UpdateCrmCompanyAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmCompany: new CrmCompany() {}
 );
 
@@ -1394,7 +1394,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.UpdateCrmContactAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmContact: new CrmContact() {}
 );
 
@@ -1438,7 +1438,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.UpdateCrmDealAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmDeal: new CrmDeal() {}
 );
 
@@ -1482,7 +1482,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.UpdateCrmEventAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmEvent: new CrmEvent() {}
 );
 
@@ -1526,7 +1526,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.UpdateCrmLeadAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmLead: new CrmLead() {}
 );
 
@@ -1570,7 +1570,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.UpdateCrmPipelineAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmPipeline: new CrmPipeline() {}
 );
 

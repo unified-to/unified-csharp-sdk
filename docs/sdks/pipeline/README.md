@@ -72,7 +72,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Pipeline.GetCrmPipelineAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Pipeline.PatchCrmPipelineAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmPipeline: new CrmPipeline() {}
 );
 
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Pipeline.RemoveCrmPipelineAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Pipeline.UpdateCrmPipelineAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmPipeline: new CrmPipeline() {}
 );
 

@@ -29,7 +29,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.CreatePassthroughAsync(
     connectionId: "<value>",
-    path: "<value>",
+    path: "/etc/periodic",
     requestBody: new Dictionary<string, object>() {
         { "key", "<value>" },
     }
@@ -74,7 +74,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.ListPassthroughsAsync(
     connectionId: "<value>",
-    path: "<value>"
+    path: "/selinux"
 );
 
 // handle response
@@ -116,7 +116,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.PatchPassthroughAsync(
     connectionId: "<value>",
-    path: "<value>",
+    path: "/mnt",
     requestBody: new Dictionary<string, object>() {
         { "key", "<value>" },
     }
@@ -161,7 +161,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.RemovePassthroughAsync(
     connectionId: "<value>",
-    path: "<value>"
+    path: "/Applications"
 );
 
 // handle response
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.UpdatePassthroughAsync(
     connectionId: "<value>",
-    path: "<value>",
+    path: "/dev",
     requestBody: new Dictionary<string, object>() {
         { "key", "<value>" },
     }

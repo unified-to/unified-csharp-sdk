@@ -73,7 +73,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Uc.GetUcContactAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Uc.PatchUcContactAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     ucContact: new UcContact() {}
 );
 
@@ -246,7 +246,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Uc.RemoveUcContactAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -288,7 +288,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Uc.UpdateUcContactAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     ucContact: new UcContact() {}
 );
 

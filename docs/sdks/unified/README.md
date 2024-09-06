@@ -28,7 +28,7 @@
 
 ## CreateUnifiedConnection
 
-Create connection
+Used only to import existing customer credentials; use "Create connection indirectly" instead
 
 ### Example Usage
 
@@ -135,7 +135,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Unified.GetUnifiedApicallAsync(id: "<value>");
+var res = await sdk.Unified.GetUnifiedApicallAsync(id: "<id>");
 
 // handle response
 ```
@@ -172,7 +172,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Unified.GetUnifiedConnectionAsync(id: "<value>");
+var res = await sdk.Unified.GetUnifiedConnectionAsync(id: "<id>");
 
 // handle response
 ```
@@ -252,7 +252,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Unified.GetUnifiedWebhookAsync(id: "<value>");
+var res = await sdk.Unified.GetUnifiedWebhookAsync(id: "<id>");
 
 // handle response
 ```
@@ -530,7 +530,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Unified.PatchUnifiedConnectionAsync(
-    id: "<value>",
+    id: "<id>",
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
             UnifiedTo.Models.Components.PropertyConnectionCategories.Commerce,
@@ -580,7 +580,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Unified.PatchUnifiedWebhookAsync(
-    id: "<value>",
+    id: "<id>",
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<value>",
         Event = UnifiedTo.Models.Components.Event.Deleted,
@@ -625,7 +625,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Unified.PatchUnifiedWebhookTriggerAsync(id: "<value>");
+var res = await sdk.Unified.PatchUnifiedWebhookTriggerAsync(id: "<id>");
 
 // handle response
 ```
@@ -662,7 +662,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Unified.RemoveUnifiedConnectionAsync(id: "<value>");
+var res = await sdk.Unified.RemoveUnifiedConnectionAsync(id: "<id>");
 
 // handle response
 ```
@@ -699,7 +699,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Unified.RemoveUnifiedWebhookAsync(id: "<value>");
+var res = await sdk.Unified.RemoveUnifiedWebhookAsync(id: "<id>");
 
 // handle response
 ```
@@ -738,7 +738,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
-    id: "<value>",
+    id: "<id>",
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
             UnifiedTo.Models.Components.PropertyConnectionCategories.Genai,
@@ -788,7 +788,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Unified.UpdateUnifiedWebhookAsync(
-    id: "<value>",
+    id: "<id>",
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<value>",
         Event = UnifiedTo.Models.Components.Event.Created,
@@ -833,7 +833,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Unified.UpdateUnifiedWebhookTriggerAsync(id: "<value>");
+var res = await sdk.Unified.UpdateUnifiedWebhookTriggerAsync(id: "<id>");
 
 // handle response
 ```

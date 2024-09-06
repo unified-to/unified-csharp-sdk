@@ -74,7 +74,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Inventory.GetCommerceInventoryAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -162,7 +162,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Inventory.PatchCommerceInventoryAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     commerceInventory: new CommerceInventory() {
         Available = 615.23D,
     }
@@ -207,7 +207,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Inventory.RemoveCommerceInventoryAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -249,7 +249,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     commerceInventory: new CommerceInventory() {
         Available = 9360.02D,
     }

@@ -72,7 +72,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Journal.GetAccountingJournalAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Journal.PatchAccountingJournalAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     accountingJournal: new AccountingJournal() {}
 );
 
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Journal.RemoveAccountingJournalAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Journal.UpdateAccountingJournalAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     accountingJournal: new AccountingJournal() {}
 );
 

@@ -72,7 +72,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Invoice.GetAccountingInvoiceAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Invoice.PatchAccountingInvoiceAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     accountingInvoice: new AccountingInvoice() {}
 );
 
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Invoice.RemoveAccountingInvoiceAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Invoice.UpdateAccountingInvoiceAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     accountingInvoice: new AccountingInvoice() {}
 );
 

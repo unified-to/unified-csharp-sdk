@@ -72,7 +72,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.File.GetStorageFileAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.File.PatchStorageFileAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     storageFile: new StorageFile() {}
 );
 
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.File.RemoveStorageFileAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.File.UpdateStorageFileAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     storageFile: new StorageFile() {}
 );
 

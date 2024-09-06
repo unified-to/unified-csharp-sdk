@@ -124,7 +124,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.GetPaymentLinkAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -170,7 +170,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.GetPaymentPaymentAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -216,7 +216,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.GetPaymentPayoutAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -262,7 +262,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.GetPaymentRefundAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -476,7 +476,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.PatchPaymentLinkAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     paymentLink: new PaymentLink() {}
 );
 
@@ -520,7 +520,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.PatchPaymentPaymentAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     paymentPayment: new PaymentPayment() {}
 );
 
@@ -563,7 +563,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.RemovePaymentLinkAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -604,7 +604,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.RemovePaymentPaymentAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -646,7 +646,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.UpdatePaymentLinkAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     paymentLink: new PaymentLink() {}
 );
 
@@ -690,7 +690,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.UpdatePaymentPaymentAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     paymentPayment: new PaymentPayment() {}
 );
 

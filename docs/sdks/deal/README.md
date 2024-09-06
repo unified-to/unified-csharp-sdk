@@ -72,7 +72,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Deal.GetCrmDealAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Deal.PatchCrmDealAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmDeal: new CrmDeal() {}
 );
 
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Deal.RemoveCrmDealAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Deal.UpdateCrmDealAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmDeal: new CrmDeal() {}
 );
 

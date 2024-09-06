@@ -26,7 +26,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payout.GetPaymentPayoutAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }

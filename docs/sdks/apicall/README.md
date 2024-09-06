@@ -23,7 +23,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Apicall.GetUnifiedApicallAsync(id: "<value>");
+var res = await sdk.Apicall.GetUnifiedApicallAsync(id: "<id>");
 
 // handle response
 ```

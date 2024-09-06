@@ -220,7 +220,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.GetHrisCompanyAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -266,7 +266,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.GetHrisEmployeeAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -312,7 +312,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.GetHrisGroupAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -358,7 +358,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.GetHrisLocationAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -404,7 +404,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.GetHrisPayslipAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -450,7 +450,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.GetHrisTimeoffAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -748,7 +748,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.PatchHrisCompanyAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     hrisCompany: new HrisCompany() {}
 );
 
@@ -792,7 +792,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.PatchHrisEmployeeAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     hrisEmployee: new HrisEmployee() {}
 );
 
@@ -836,7 +836,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.PatchHrisGroupAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     hrisGroup: new HrisGroup() {}
 );
 
@@ -880,7 +880,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.PatchHrisLocationAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     hrisLocation: new HrisLocation() {}
 );
 
@@ -923,7 +923,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.RemoveHrisCompanyAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -964,7 +964,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.RemoveHrisEmployeeAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -1005,7 +1005,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.RemoveHrisGroupAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -1046,7 +1046,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.RemoveHrisLocationAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -1088,7 +1088,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.UpdateHrisCompanyAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     hrisCompany: new HrisCompany() {}
 );
 
@@ -1132,7 +1132,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.UpdateHrisEmployeeAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     hrisEmployee: new HrisEmployee() {}
 );
 
@@ -1176,7 +1176,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.UpdateHrisGroupAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     hrisGroup: new HrisGroup() {}
 );
 
@@ -1220,7 +1220,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.UpdateHrisLocationAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     hrisLocation: new HrisLocation() {}
 );
 

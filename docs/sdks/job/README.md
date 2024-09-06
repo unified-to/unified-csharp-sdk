@@ -72,7 +72,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Job.GetAtsJobAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Job.PatchAtsJobAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     atsJob: new AtsJob() {}
 );
 
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Job.RemoveAtsJobAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Job.UpdateAtsJobAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     atsJob: new AtsJob() {}
 );
 

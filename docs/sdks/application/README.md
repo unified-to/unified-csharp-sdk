@@ -72,7 +72,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Application.GetAtsApplicationAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Application.PatchAtsApplicationAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     atsApplication: new AtsApplication() {}
 );
 
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Application.RemoveAtsApplicationAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Application.UpdateAtsApplicationAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     atsApplication: new AtsApplication() {}
 );
 

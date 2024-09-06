@@ -223,7 +223,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.GetCommerceCollectionAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -269,7 +269,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.GetCommerceInventoryAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -315,7 +315,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.GetCommerceItemAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -361,7 +361,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.GetCommerceLocationAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -575,7 +575,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.PatchCommerceCollectionAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     commerceCollection: new CommerceCollection() {
         Id = "<id>",
         Name = "<value>",
@@ -622,7 +622,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.PatchCommerceInventoryAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     commerceInventory: new CommerceInventory() {
         Available = 615.23D,
     }
@@ -668,7 +668,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.PatchCommerceItemAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     commerceItem: new CommerceItem() {}
 );
 
@@ -712,7 +712,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.PatchCommerceLocationAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
     }
@@ -757,7 +757,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.RemoveCommerceCollectionAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -798,7 +798,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.RemoveCommerceInventoryAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -839,7 +839,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.RemoveCommerceItemAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -880,7 +880,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.RemoveCommerceLocationAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -922,7 +922,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.UpdateCommerceCollectionAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     commerceCollection: new CommerceCollection() {
         Id = "<id>",
         Name = "<value>",
@@ -969,7 +969,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.UpdateCommerceInventoryAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     commerceInventory: new CommerceInventory() {
         Available = 9360.02D,
     }
@@ -1015,7 +1015,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.UpdateCommerceItemAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     commerceItem: new CommerceItem() {}
 );
 
@@ -1059,7 +1059,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.UpdateCommerceLocationAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
     }

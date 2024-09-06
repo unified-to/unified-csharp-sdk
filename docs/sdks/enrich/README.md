@@ -25,7 +25,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Enrich.ListEnrichCompaniesAsync(
     connectionId: "<value>",
-    domain: "<value>",
+    domain: "dismal-cornmeal.org",
     name: "<value>"
 );
 

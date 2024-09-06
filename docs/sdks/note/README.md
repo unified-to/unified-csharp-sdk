@@ -72,7 +72,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Note.GetTicketingNoteAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Note.PatchTicketingNoteAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     ticketingNote: new TicketingNote() {}
 );
 
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Note.RemoveTicketingNoteAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Note.UpdateTicketingNoteAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     ticketingNote: new TicketingNote() {}
 );
 

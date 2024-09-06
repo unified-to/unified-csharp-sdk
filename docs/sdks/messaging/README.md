@@ -74,7 +74,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Messaging.GetMessagingChannelAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -120,7 +120,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Messaging.GetMessagingMessageAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -250,7 +250,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Messaging.PatchMessagingMessageAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     messagingMessage: new MessagingMessage() {}
 );
 
@@ -293,7 +293,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Messaging.RemoveMessagingMessageAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -335,7 +335,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Messaging.UpdateMessagingMessageAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     messagingMessage: new MessagingMessage() {}
 );
 

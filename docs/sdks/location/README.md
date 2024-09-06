@@ -122,7 +122,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Location.GetCommerceLocationAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -168,7 +168,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Location.GetHrisLocationAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -298,7 +298,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Location.PatchCommerceLocationAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
     }
@@ -344,7 +344,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Location.PatchHrisLocationAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     hrisLocation: new HrisLocation() {}
 );
 
@@ -387,7 +387,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Location.RemoveCommerceLocationAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -428,7 +428,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Location.RemoveHrisLocationAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -470,7 +470,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Location.UpdateCommerceLocationAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
     }
@@ -516,7 +516,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Location.UpdateHrisLocationAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     hrisLocation: new HrisLocation() {}
 );
 

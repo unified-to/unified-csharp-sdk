@@ -168,7 +168,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.GetAccountingContactAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -214,7 +214,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.GetCrmContactAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -260,7 +260,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.GetUcContactAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -432,7 +432,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.PatchAccountingContactAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     accountingContact: new AccountingContact() {}
 );
 
@@ -476,7 +476,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.PatchCrmContactAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmContact: new CrmContact() {}
 );
 
@@ -520,7 +520,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.PatchUcContactAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     ucContact: new UcContact() {}
 );
 
@@ -563,7 +563,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.RemoveAccountingContactAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -604,7 +604,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.RemoveCrmContactAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -645,7 +645,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.RemoveUcContactAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -687,7 +687,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.UpdateAccountingContactAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     accountingContact: new AccountingContact() {}
 );
 
@@ -731,7 +731,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.UpdateCrmContactAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmContact: new CrmContact() {}
 );
 
@@ -775,7 +775,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.UpdateUcContactAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     ucContact: new UcContact() {}
 );
 

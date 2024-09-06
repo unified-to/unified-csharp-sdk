@@ -123,7 +123,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.GetAtsCompanyAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -169,7 +169,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.GetCrmCompanyAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -215,7 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.GetHrisCompanyAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -344,7 +344,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.ListEnrichCompaniesAsync(
     connectionId: "<value>",
-    domain: "<value>",
+    domain: "dismal-cornmeal.org",
     name: "<value>"
 );
 
@@ -430,7 +430,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.PatchCrmCompanyAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmCompany: new CrmCompany() {}
 );
 
@@ -474,7 +474,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.PatchHrisCompanyAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     hrisCompany: new HrisCompany() {}
 );
 
@@ -517,7 +517,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.RemoveCrmCompanyAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -558,7 +558,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.RemoveHrisCompanyAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -600,7 +600,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.UpdateCrmCompanyAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     crmCompany: new CrmCompany() {}
 );
 
@@ -644,7 +644,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.UpdateHrisCompanyAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     hrisCompany: new HrisCompany() {}
 );
 

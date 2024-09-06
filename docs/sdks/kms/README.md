@@ -129,7 +129,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Kms.GetKmsPageAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -175,7 +175,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Kms.GetKmsSpaceAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -305,7 +305,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Kms.PatchKmsPageAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     kmsPage: new KmsPage() {
         DownloadUrl = "<value>",
         Id = "<id>",
@@ -355,7 +355,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Kms.PatchKmsSpaceAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     kmsSpace: new KmsSpace() {
         Id = "<id>",
         Name = "<value>",
@@ -401,7 +401,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Kms.RemoveKmsPageAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -442,7 +442,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Kms.RemoveKmsSpaceAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -484,7 +484,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Kms.UpdateKmsPageAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     kmsPage: new KmsPage() {
         DownloadUrl = "<value>",
         Id = "<id>",
@@ -534,7 +534,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Kms.UpdateKmsSpaceAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     kmsSpace: new KmsSpace() {
         Id = "<id>",
         Name = "<value>",

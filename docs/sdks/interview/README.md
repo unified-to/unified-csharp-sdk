@@ -72,7 +72,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Interview.GetAtsInterviewAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Interview.PatchAtsInterviewAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     atsInterview: new AtsInterview() {}
 );
 
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Interview.RemoveAtsInterviewAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Interview.UpdateAtsInterviewAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     atsInterview: new AtsInterview() {}
 );
 

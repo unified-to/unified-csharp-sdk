@@ -72,7 +72,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Member.GetMartechMemberAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Member.PatchMartechMemberAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     marketingMember: new MarketingMember() {}
 );
 
@@ -203,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Member.RemoveMartechMemberAsync(
     connectionId: "<value>",
-    id: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -245,7 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Member.UpdateMartechMemberAsync(
     connectionId: "<value>",
-    id: "<value>",
+    id: "<id>",
     marketingMember: new MarketingMember() {}
 );
 
