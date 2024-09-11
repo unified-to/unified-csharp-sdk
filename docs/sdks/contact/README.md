@@ -42,7 +42,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.CreateAccountingContactAsync(
     connectionId: "<value>",
-    accountingContact: new AccountingContact() {}
+    accountingContact: new AccountingContact() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -54,6 +57,7 @@ var res = await sdk.Contact.CreateAccountingContactAsync(
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `AccountingContact`                                               | [AccountingContact](../../Models/Components/AccountingContact.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -84,7 +88,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.CreateCrmContactAsync(
     connectionId: "<value>",
-    crmContact: new CrmContact() {}
+    crmContact: new CrmContact() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -96,6 +103,7 @@ var res = await sdk.Contact.CreateCrmContactAsync(
 | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | `ConnectionId`                                                                           | *string*                                                                                 | :heavy_check_mark:                                                                       | ID of the connection                                                                     |
 | `CrmContact`                                                                             | [CrmContact](../../Models/Components/CrmContact.md)                                      | :heavy_minus_sign:                                                                       | A contact represents a person that optionally is associated with a deal and/or a company |
+| `Fields`                                                                                 | List<*string*>                                                                           | :heavy_minus_sign:                                                                       | Comma-delimited fields to return                                                         |
 
 ### Response
 
@@ -126,7 +134,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Contact.CreateUcContactAsync(
     connectionId: "<value>",
-    ucContact: new UcContact() {}
+    ucContact: new UcContact() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -138,6 +149,7 @@ var res = await sdk.Contact.CreateUcContactAsync(
 | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
 | `ConnectionId`                                                          | *string*                                                                | :heavy_check_mark:                                                      | ID of the connection                                                    |
 | `UcContact`                                                             | [UcContact](../../Models/Components/UcContact.md)                       | :heavy_minus_sign:                                                      | A contact represents a person that optionally is associated with a call |
+| `Fields`                                                                | List<*string*>                                                          | :heavy_minus_sign:                                                      | Comma-delimited fields to return                                        |
 
 ### Response
 
@@ -433,7 +445,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Contact.PatchAccountingContactAsync(
     connectionId: "<value>",
     id: "<id>",
-    accountingContact: new AccountingContact() {}
+    accountingContact: new AccountingContact() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -446,6 +461,7 @@ var res = await sdk.Contact.PatchAccountingContactAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Contact                                                 |
 | `AccountingContact`                                               | [AccountingContact](../../Models/Components/AccountingContact.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -477,7 +493,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Contact.PatchCrmContactAsync(
     connectionId: "<value>",
     id: "<id>",
-    crmContact: new CrmContact() {}
+    crmContact: new CrmContact() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -490,6 +509,7 @@ var res = await sdk.Contact.PatchCrmContactAsync(
 | `ConnectionId`                                                                           | *string*                                                                                 | :heavy_check_mark:                                                                       | ID of the connection                                                                     |
 | `Id`                                                                                     | *string*                                                                                 | :heavy_check_mark:                                                                       | ID of the Contact                                                                        |
 | `CrmContact`                                                                             | [CrmContact](../../Models/Components/CrmContact.md)                                      | :heavy_minus_sign:                                                                       | A contact represents a person that optionally is associated with a deal and/or a company |
+| `Fields`                                                                                 | List<*string*>                                                                           | :heavy_minus_sign:                                                                       | Comma-delimited fields to return                                                         |
 
 ### Response
 
@@ -521,7 +541,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Contact.PatchUcContactAsync(
     connectionId: "<value>",
     id: "<id>",
-    ucContact: new UcContact() {}
+    ucContact: new UcContact() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -534,6 +557,7 @@ var res = await sdk.Contact.PatchUcContactAsync(
 | `ConnectionId`                                                          | *string*                                                                | :heavy_check_mark:                                                      | ID of the connection                                                    |
 | `Id`                                                                    | *string*                                                                | :heavy_check_mark:                                                      | ID of the Contact                                                       |
 | `UcContact`                                                             | [UcContact](../../Models/Components/UcContact.md)                       | :heavy_minus_sign:                                                      | A contact represents a person that optionally is associated with a call |
+| `Fields`                                                                | List<*string*>                                                          | :heavy_minus_sign:                                                      | Comma-delimited fields to return                                        |
 
 ### Response
 
@@ -688,7 +712,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Contact.UpdateAccountingContactAsync(
     connectionId: "<value>",
     id: "<id>",
-    accountingContact: new AccountingContact() {}
+    accountingContact: new AccountingContact() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -701,6 +728,7 @@ var res = await sdk.Contact.UpdateAccountingContactAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Contact                                                 |
 | `AccountingContact`                                               | [AccountingContact](../../Models/Components/AccountingContact.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -732,7 +760,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Contact.UpdateCrmContactAsync(
     connectionId: "<value>",
     id: "<id>",
-    crmContact: new CrmContact() {}
+    crmContact: new CrmContact() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -745,6 +776,7 @@ var res = await sdk.Contact.UpdateCrmContactAsync(
 | `ConnectionId`                                                                           | *string*                                                                                 | :heavy_check_mark:                                                                       | ID of the connection                                                                     |
 | `Id`                                                                                     | *string*                                                                                 | :heavy_check_mark:                                                                       | ID of the Contact                                                                        |
 | `CrmContact`                                                                             | [CrmContact](../../Models/Components/CrmContact.md)                                      | :heavy_minus_sign:                                                                       | A contact represents a person that optionally is associated with a deal and/or a company |
+| `Fields`                                                                                 | List<*string*>                                                                           | :heavy_minus_sign:                                                                       | Comma-delimited fields to return                                                         |
 
 ### Response
 
@@ -776,7 +808,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Contact.UpdateUcContactAsync(
     connectionId: "<value>",
     id: "<id>",
-    ucContact: new UcContact() {}
+    ucContact: new UcContact() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -789,6 +824,7 @@ var res = await sdk.Contact.UpdateUcContactAsync(
 | `ConnectionId`                                                          | *string*                                                                | :heavy_check_mark:                                                      | ID of the connection                                                    |
 | `Id`                                                                    | *string*                                                                | :heavy_check_mark:                                                      | ID of the Contact                                                       |
 | `UcContact`                                                             | [UcContact](../../Models/Components/UcContact.md)                       | :heavy_minus_sign:                                                      | A contact represents a person that optionally is associated with a call |
+| `Fields`                                                                | List<*string*>                                                          | :heavy_minus_sign:                                                      | Comma-delimited fields to return                                        |
 
 ### Response
 

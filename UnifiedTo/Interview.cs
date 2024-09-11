@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create an interview
         /// </summary>
-        Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(string connectionId, AtsInterview? atsInterview = null);
+        Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(string connectionId, AtsInterview? atsInterview = null, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve an interview
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update an interview
         /// </summary>
-        Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null);
+        Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null, List<string>? fields = null);
 
         /// <summary>
         /// Remove an interview
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update an interview
         /// </summary>
-        Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null);
+        Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null, List<string>? fields = null);
     }
 
     public class Interview: IInterview
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.47";
-        private const string _sdkGenVersion = "2.409.8";
+        private const string _sdkVersion = "0.19.48";
+        private const string _sdkGenVersion = "2.415.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.47 2.409.8 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.48 2.415.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,12 +76,13 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(string connectionId, AtsInterview? atsInterview = null)
+        public async Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(string connectionId, AtsInterview? atsInterview = null, List<string>? fields = null)
         {
             var request = new CreateAtsInterviewRequest()
             {
                 ConnectionId = connectionId,
                 AtsInterview = atsInterview,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview", request);
@@ -327,13 +328,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null)
+        public async Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null, List<string>? fields = null)
         {
             var request = new PatchAtsInterviewRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsInterview = atsInterview,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview/{id}", request);
@@ -486,13 +488,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null)
+        public async Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null, List<string>? fields = null)
         {
             var request = new UpdateAtsInterviewRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsInterview = atsInterview,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview/{id}", request);

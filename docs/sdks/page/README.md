@@ -36,6 +36,9 @@ var res = await sdk.Page.CreateKmsPageAsync(
         SpaceId = "<value>",
         Title = "<value>",
         Type = UnifiedTo.Models.Components.KmsPageType.Html,
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -48,6 +51,7 @@ var res = await sdk.Page.CreateKmsPageAsync(
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_minus_sign:                            | N/A                                           |
+| `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response
 
@@ -173,6 +177,9 @@ var res = await sdk.Page.PatchKmsPageAsync(
         SpaceId = "<value>",
         Title = "<value>",
         Type = UnifiedTo.Models.Components.KmsPageType.Text,
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -186,6 +193,7 @@ var res = await sdk.Page.PatchKmsPageAsync(
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Page                                |
 | `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_minus_sign:                            | N/A                                           |
+| `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response
 
@@ -264,6 +272,9 @@ var res = await sdk.Page.UpdateKmsPageAsync(
         SpaceId = "<value>",
         Title = "<value>",
         Type = UnifiedTo.Models.Components.KmsPageType.Text,
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -277,6 +288,7 @@ var res = await sdk.Page.UpdateKmsPageAsync(
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Page                                |
 | `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_minus_sign:                            | N/A                                           |
+| `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response
 

@@ -30,7 +30,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Document.CreateAtsDocumentAsync(
     connectionId: "<value>",
-    atsDocument: new AtsDocument() {}
+    atsDocument: new AtsDocument() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -42,6 +45,7 @@ var res = await sdk.Document.CreateAtsDocumentAsync(
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `AtsDocument`                                         | [AtsDocument](../../Models/Components/AtsDocument.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -161,7 +165,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Document.PatchAtsDocumentAsync(
     connectionId: "<value>",
     id: "<id>",
-    atsDocument: new AtsDocument() {}
+    atsDocument: new AtsDocument() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -174,6 +181,7 @@ var res = await sdk.Document.PatchAtsDocumentAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Document                                    |
 | `AtsDocument`                                         | [AtsDocument](../../Models/Components/AtsDocument.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -246,7 +254,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Document.UpdateAtsDocumentAsync(
     connectionId: "<value>",
     id: "<id>",
-    atsDocument: new AtsDocument() {}
+    atsDocument: new AtsDocument() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -259,6 +270,7 @@ var res = await sdk.Document.UpdateAtsDocumentAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Document                                    |
 | `AtsDocument`                                         | [AtsDocument](../../Models/Components/AtsDocument.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 

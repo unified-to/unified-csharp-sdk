@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a page
         /// </summary>
-        Task<CreateKmsPageResponse> CreateKmsPageAsync(string connectionId, KmsPage? kmsPage = null);
+        Task<CreateKmsPageResponse> CreateKmsPageAsync(string connectionId, KmsPage? kmsPage = null, List<string>? fields = null);
 
         /// <summary>
         /// Create a space
         /// </summary>
-        Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(string connectionId, KmsSpace? kmsSpace = null);
+        Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(string connectionId, KmsSpace? kmsSpace = null, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a page
@@ -58,12 +58,12 @@ namespace UnifiedTo
         /// <summary>
         /// Update a page
         /// </summary>
-        Task<PatchKmsPageResponse> PatchKmsPageAsync(string connectionId, string id, KmsPage? kmsPage = null);
+        Task<PatchKmsPageResponse> PatchKmsPageAsync(string connectionId, string id, KmsPage? kmsPage = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a space
         /// </summary>
-        Task<PatchKmsSpaceResponse> PatchKmsSpaceAsync(string connectionId, string id, KmsSpace? kmsSpace = null);
+        Task<PatchKmsSpaceResponse> PatchKmsSpaceAsync(string connectionId, string id, KmsSpace? kmsSpace = null, List<string>? fields = null);
 
         /// <summary>
         /// Remove a page
@@ -78,22 +78,22 @@ namespace UnifiedTo
         /// <summary>
         /// Update a page
         /// </summary>
-        Task<UpdateKmsPageResponse> UpdateKmsPageAsync(string connectionId, string id, KmsPage? kmsPage = null);
+        Task<UpdateKmsPageResponse> UpdateKmsPageAsync(string connectionId, string id, KmsPage? kmsPage = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a space
         /// </summary>
-        Task<UpdateKmsSpaceResponse> UpdateKmsSpaceAsync(string connectionId, string id, KmsSpace? kmsSpace = null);
+        Task<UpdateKmsSpaceResponse> UpdateKmsSpaceAsync(string connectionId, string id, KmsSpace? kmsSpace = null, List<string>? fields = null);
     }
 
     public class Kms: IKms
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.47";
-        private const string _sdkGenVersion = "2.409.8";
+        private const string _sdkVersion = "0.19.48";
+        private const string _sdkGenVersion = "2.415.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.47 2.409.8 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.48 2.415.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -106,12 +106,13 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateKmsPageResponse> CreateKmsPageAsync(string connectionId, KmsPage? kmsPage = null)
+        public async Task<CreateKmsPageResponse> CreateKmsPageAsync(string connectionId, KmsPage? kmsPage = null, List<string>? fields = null)
         {
             var request = new CreateKmsPageRequest()
             {
                 ConnectionId = connectionId,
                 KmsPage = kmsPage,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/page", request);
@@ -195,12 +196,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(string connectionId, KmsSpace? kmsSpace = null)
+        public async Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(string connectionId, KmsSpace? kmsSpace = null, List<string>? fields = null)
         {
             var request = new CreateKmsSpaceRequest()
             {
                 ConnectionId = connectionId,
                 KmsSpace = kmsSpace,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/space", request);
@@ -608,13 +610,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchKmsPageResponse> PatchKmsPageAsync(string connectionId, string id, KmsPage? kmsPage = null)
+        public async Task<PatchKmsPageResponse> PatchKmsPageAsync(string connectionId, string id, KmsPage? kmsPage = null, List<string>? fields = null)
         {
             var request = new PatchKmsPageRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 KmsPage = kmsPage,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/page/{id}", request);
@@ -698,13 +701,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchKmsSpaceResponse> PatchKmsSpaceAsync(string connectionId, string id, KmsSpace? kmsSpace = null)
+        public async Task<PatchKmsSpaceResponse> PatchKmsSpaceAsync(string connectionId, string id, KmsSpace? kmsSpace = null, List<string>? fields = null)
         {
             var request = new PatchKmsSpaceRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 KmsSpace = kmsSpace,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/space/{id}", request);
@@ -926,13 +930,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateKmsPageResponse> UpdateKmsPageAsync(string connectionId, string id, KmsPage? kmsPage = null)
+        public async Task<UpdateKmsPageResponse> UpdateKmsPageAsync(string connectionId, string id, KmsPage? kmsPage = null, List<string>? fields = null)
         {
             var request = new UpdateKmsPageRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 KmsPage = kmsPage,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/page/{id}", request);
@@ -1016,13 +1021,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateKmsSpaceResponse> UpdateKmsSpaceAsync(string connectionId, string id, KmsSpace? kmsSpace = null)
+        public async Task<UpdateKmsSpaceResponse> UpdateKmsSpaceAsync(string connectionId, string id, KmsSpace? kmsSpace = null, List<string>? fields = null)
         {
             var request = new UpdateKmsSpaceRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 KmsSpace = kmsSpace,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/space/{id}", request);

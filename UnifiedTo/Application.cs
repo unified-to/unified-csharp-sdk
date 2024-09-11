@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create an application
         /// </summary>
-        Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(string connectionId, AtsApplication? atsApplication = null);
+        Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(string connectionId, AtsApplication? atsApplication = null, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve an application
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update an application
         /// </summary>
-        Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null);
+        Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null, List<string>? fields = null);
 
         /// <summary>
         /// Remove an application
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update an application
         /// </summary>
-        Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null);
+        Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null, List<string>? fields = null);
     }
 
     public class Application: IApplication
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.47";
-        private const string _sdkGenVersion = "2.409.8";
+        private const string _sdkVersion = "0.19.48";
+        private const string _sdkGenVersion = "2.415.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.47 2.409.8 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.48 2.415.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,12 +76,13 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(string connectionId, AtsApplication? atsApplication = null)
+        public async Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(string connectionId, AtsApplication? atsApplication = null, List<string>? fields = null)
         {
             var request = new CreateAtsApplicationRequest()
             {
                 ConnectionId = connectionId,
                 AtsApplication = atsApplication,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application", request);
@@ -327,13 +328,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null)
+        public async Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null, List<string>? fields = null)
         {
             var request = new PatchAtsApplicationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsApplication = atsApplication,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application/{id}", request);
@@ -486,13 +488,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null)
+        public async Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null, List<string>? fields = null)
         {
             var request = new UpdateAtsApplicationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsApplication = atsApplication,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application/{id}", request);

@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create a scorecard
         /// </summary>
-        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(string connectionId, AtsScorecard? atsScorecard = null);
+        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(string connectionId, AtsScorecard? atsScorecard = null, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a scorecard
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a scorecard
         /// </summary>
-        Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null);
+        Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null, List<string>? fields = null);
 
         /// <summary>
         /// Remove a scorecard
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a scorecard
         /// </summary>
-        Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null);
+        Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null, List<string>? fields = null);
     }
 
     public class Scorecard: IScorecard
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.47";
-        private const string _sdkGenVersion = "2.409.8";
+        private const string _sdkVersion = "0.19.48";
+        private const string _sdkGenVersion = "2.415.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.47 2.409.8 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.48 2.415.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,12 +76,13 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(string connectionId, AtsScorecard? atsScorecard = null)
+        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(string connectionId, AtsScorecard? atsScorecard = null, List<string>? fields = null)
         {
             var request = new CreateAtsScorecardRequest()
             {
                 ConnectionId = connectionId,
                 AtsScorecard = atsScorecard,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard", request);
@@ -327,13 +328,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null)
+        public async Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null, List<string>? fields = null)
         {
             var request = new PatchAtsScorecardRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsScorecard = atsScorecard,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard/{id}", request);
@@ -486,13 +488,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null)
+        public async Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null, List<string>? fields = null)
         {
             var request = new UpdateAtsScorecardRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsScorecard = atsScorecard,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard/{id}", request);

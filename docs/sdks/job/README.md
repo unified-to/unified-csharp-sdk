@@ -30,7 +30,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Job.CreateAtsJobAsync(
     connectionId: "<value>",
-    atsJob: new AtsJob() {}
+    atsJob: new AtsJob() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -42,6 +45,7 @@ var res = await sdk.Job.CreateAtsJobAsync(
 | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
 | `ConnectionId`                              | *string*                                    | :heavy_check_mark:                          | ID of the connection                        |
 | `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_minus_sign:                          | N/A                                         |
+| `Fields`                                    | List<*string*>                              | :heavy_minus_sign:                          | Comma-delimited fields to return            |
 
 ### Response
 
@@ -161,7 +165,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Job.PatchAtsJobAsync(
     connectionId: "<value>",
     id: "<id>",
-    atsJob: new AtsJob() {}
+    atsJob: new AtsJob() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -174,6 +181,7 @@ var res = await sdk.Job.PatchAtsJobAsync(
 | `ConnectionId`                              | *string*                                    | :heavy_check_mark:                          | ID of the connection                        |
 | `Id`                                        | *string*                                    | :heavy_check_mark:                          | ID of the Job                               |
 | `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_minus_sign:                          | N/A                                         |
+| `Fields`                                    | List<*string*>                              | :heavy_minus_sign:                          | Comma-delimited fields to return            |
 
 ### Response
 
@@ -246,7 +254,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Job.UpdateAtsJobAsync(
     connectionId: "<value>",
     id: "<id>",
-    atsJob: new AtsJob() {}
+    atsJob: new AtsJob() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -259,6 +270,7 @@ var res = await sdk.Job.UpdateAtsJobAsync(
 | `ConnectionId`                              | *string*                                    | :heavy_check_mark:                          | ID of the connection                        |
 | `Id`                                        | *string*                                    | :heavy_check_mark:                          | ID of the Job                               |
 | `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_minus_sign:                          | N/A                                         |
+| `Fields`                                    | List<*string*>                              | :heavy_minus_sign:                          | Comma-delimited fields to return            |
 
 ### Response
 

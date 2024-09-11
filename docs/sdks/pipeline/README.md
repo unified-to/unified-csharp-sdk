@@ -30,7 +30,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Pipeline.CreateCrmPipelineAsync(
     connectionId: "<value>",
-    crmPipeline: new CrmPipeline() {}
+    crmPipeline: new CrmPipeline() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -42,6 +45,7 @@ var res = await sdk.Pipeline.CreateCrmPipelineAsync(
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -161,7 +165,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Pipeline.PatchCrmPipelineAsync(
     connectionId: "<value>",
     id: "<id>",
-    crmPipeline: new CrmPipeline() {}
+    crmPipeline: new CrmPipeline() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -174,6 +181,7 @@ var res = await sdk.Pipeline.PatchCrmPipelineAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Pipeline                                    |
 | `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -246,7 +254,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Pipeline.UpdateCrmPipelineAsync(
     connectionId: "<value>",
     id: "<id>",
-    crmPipeline: new CrmPipeline() {}
+    crmPipeline: new CrmPipeline() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -259,6 +270,7 @@ var res = await sdk.Pipeline.UpdateCrmPipelineAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Pipeline                                    |
 | `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 

@@ -62,7 +62,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "<value>",
-    accountingAccount: new AccountingAccount() {}
+    accountingAccount: new AccountingAccount() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -74,6 +77,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | Chart of accounts                                                 |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -104,7 +108,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingContactAsync(
     connectionId: "<value>",
-    accountingContact: new AccountingContact() {}
+    accountingContact: new AccountingContact() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -116,6 +123,7 @@ var res = await sdk.Accounting.CreateAccountingContactAsync(
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `AccountingContact`                                               | [AccountingContact](../../Models/Components/AccountingContact.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -146,7 +154,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
     connectionId: "<value>",
-    accountingInvoice: new AccountingInvoice() {}
+    accountingInvoice: new AccountingInvoice() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -158,6 +169,7 @@ var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `AccountingInvoice`                                               | [AccountingInvoice](../../Models/Components/AccountingInvoice.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -188,7 +200,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingJournalAsync(
     connectionId: "<value>",
-    accountingJournal: new AccountingJournal() {}
+    accountingJournal: new AccountingJournal() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -200,6 +215,7 @@ var res = await sdk.Accounting.CreateAccountingJournalAsync(
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `AccountingJournal`                                               | [AccountingJournal](../../Models/Components/AccountingJournal.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -230,7 +246,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
     connectionId: "<value>",
-    accountingTaxrate: new AccountingTaxrate() {}
+    accountingTaxrate: new AccountingTaxrate() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -242,6 +261,7 @@ var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `AccountingTaxrate`                                               | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -272,7 +292,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingTransactionAsync(
     connectionId: "<value>",
-    accountingTransaction: new AccountingTransaction() {}
+    accountingTransaction: new AccountingTransaction() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -284,6 +307,7 @@ var res = await sdk.Accounting.CreateAccountingTransactionAsync(
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | `ConnectionId`                                                            | *string*                                                                  | :heavy_check_mark:                                                        | ID of the connection                                                      |
 | `AccountingTransaction`                                                   | [AccountingTransaction](../../Models/Components/AccountingTransaction.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Fields`                                                                  | List<*string*>                                                            | :heavy_minus_sign:                                                        | Comma-delimited fields to return                                          |
 
 ### Response
 
@@ -931,7 +955,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.PatchAccountingAccountAsync(
     connectionId: "<value>",
     id: "<id>",
-    accountingAccount: new AccountingAccount() {}
+    accountingAccount: new AccountingAccount() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -944,6 +971,7 @@ var res = await sdk.Accounting.PatchAccountingAccountAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Account                                                 |
 | `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | Chart of accounts                                                 |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -975,7 +1003,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.PatchAccountingContactAsync(
     connectionId: "<value>",
     id: "<id>",
-    accountingContact: new AccountingContact() {}
+    accountingContact: new AccountingContact() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -988,6 +1019,7 @@ var res = await sdk.Accounting.PatchAccountingContactAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Contact                                                 |
 | `AccountingContact`                                               | [AccountingContact](../../Models/Components/AccountingContact.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -1019,7 +1051,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.PatchAccountingInvoiceAsync(
     connectionId: "<value>",
     id: "<id>",
-    accountingInvoice: new AccountingInvoice() {}
+    accountingInvoice: new AccountingInvoice() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1032,6 +1067,7 @@ var res = await sdk.Accounting.PatchAccountingInvoiceAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Invoice                                                 |
 | `AccountingInvoice`                                               | [AccountingInvoice](../../Models/Components/AccountingInvoice.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -1063,7 +1099,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.PatchAccountingJournalAsync(
     connectionId: "<value>",
     id: "<id>",
-    accountingJournal: new AccountingJournal() {}
+    accountingJournal: new AccountingJournal() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1076,6 +1115,7 @@ var res = await sdk.Accounting.PatchAccountingJournalAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Journal                                                 |
 | `AccountingJournal`                                               | [AccountingJournal](../../Models/Components/AccountingJournal.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -1107,7 +1147,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.PatchAccountingTaxrateAsync(
     connectionId: "<value>",
     id: "<id>",
-    accountingTaxrate: new AccountingTaxrate() {}
+    accountingTaxrate: new AccountingTaxrate() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1120,6 +1163,7 @@ var res = await sdk.Accounting.PatchAccountingTaxrateAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Taxrate                                                 |
 | `AccountingTaxrate`                                               | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -1151,7 +1195,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.PatchAccountingTransactionAsync(
     connectionId: "<value>",
     id: "<id>",
-    accountingTransaction: new AccountingTransaction() {}
+    accountingTransaction: new AccountingTransaction() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1164,6 +1211,7 @@ var res = await sdk.Accounting.PatchAccountingTransactionAsync(
 | `ConnectionId`                                                            | *string*                                                                  | :heavy_check_mark:                                                        | ID of the connection                                                      |
 | `Id`                                                                      | *string*                                                                  | :heavy_check_mark:                                                        | ID of the Transaction                                                     |
 | `AccountingTransaction`                                                   | [AccountingTransaction](../../Models/Components/AccountingTransaction.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Fields`                                                                  | List<*string*>                                                            | :heavy_minus_sign:                                                        | Comma-delimited fields to return                                          |
 
 ### Response
 
@@ -1441,7 +1489,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.UpdateAccountingAccountAsync(
     connectionId: "<value>",
     id: "<id>",
-    accountingAccount: new AccountingAccount() {}
+    accountingAccount: new AccountingAccount() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1454,6 +1505,7 @@ var res = await sdk.Accounting.UpdateAccountingAccountAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Account                                                 |
 | `AccountingAccount`                                               | [AccountingAccount](../../Models/Components/AccountingAccount.md) | :heavy_minus_sign:                                                | Chart of accounts                                                 |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -1485,7 +1537,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.UpdateAccountingContactAsync(
     connectionId: "<value>",
     id: "<id>",
-    accountingContact: new AccountingContact() {}
+    accountingContact: new AccountingContact() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1498,6 +1553,7 @@ var res = await sdk.Accounting.UpdateAccountingContactAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Contact                                                 |
 | `AccountingContact`                                               | [AccountingContact](../../Models/Components/AccountingContact.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -1529,7 +1585,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(
     connectionId: "<value>",
     id: "<id>",
-    accountingInvoice: new AccountingInvoice() {}
+    accountingInvoice: new AccountingInvoice() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1542,6 +1601,7 @@ var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Invoice                                                 |
 | `AccountingInvoice`                                               | [AccountingInvoice](../../Models/Components/AccountingInvoice.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -1573,7 +1633,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.UpdateAccountingJournalAsync(
     connectionId: "<value>",
     id: "<id>",
-    accountingJournal: new AccountingJournal() {}
+    accountingJournal: new AccountingJournal() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1586,6 +1649,7 @@ var res = await sdk.Accounting.UpdateAccountingJournalAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Journal                                                 |
 | `AccountingJournal`                                               | [AccountingJournal](../../Models/Components/AccountingJournal.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -1617,7 +1681,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(
     connectionId: "<value>",
     id: "<id>",
-    accountingTaxrate: new AccountingTaxrate() {}
+    accountingTaxrate: new AccountingTaxrate() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1630,6 +1697,7 @@ var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Taxrate                                                 |
 | `AccountingTaxrate`                                               | [AccountingTaxrate](../../Models/Components/AccountingTaxrate.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -1661,7 +1729,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Accounting.UpdateAccountingTransactionAsync(
     connectionId: "<value>",
     id: "<id>",
-    accountingTransaction: new AccountingTransaction() {}
+    accountingTransaction: new AccountingTransaction() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1674,6 +1745,7 @@ var res = await sdk.Accounting.UpdateAccountingTransactionAsync(
 | `ConnectionId`                                                            | *string*                                                                  | :heavy_check_mark:                                                        | ID of the connection                                                      |
 | `Id`                                                                      | *string*                                                                  | :heavy_check_mark:                                                        | ID of the Transaction                                                     |
 | `AccountingTransaction`                                                   | [AccountingTransaction](../../Models/Components/AccountingTransaction.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Fields`                                                                  | List<*string*>                                                            | :heavy_minus_sign:                                                        | Comma-delimited fields to return                                          |
 
 ### Response
 

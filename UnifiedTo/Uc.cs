@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateUcContactResponse> CreateUcContactAsync(string connectionId, UcContact? ucContact = null);
+        Task<CreateUcContactResponse> CreateUcContactAsync(string connectionId, UcContact? ucContact = null, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a contact
@@ -48,7 +48,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchUcContactResponse> PatchUcContactAsync(string connectionId, string id, UcContact? ucContact = null);
+        Task<PatchUcContactResponse> PatchUcContactAsync(string connectionId, string id, UcContact? ucContact = null, List<string>? fields = null);
 
         /// <summary>
         /// Remove a contact
@@ -58,17 +58,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateUcContactResponse> UpdateUcContactAsync(string connectionId, string id, UcContact? ucContact = null);
+        Task<UpdateUcContactResponse> UpdateUcContactAsync(string connectionId, string id, UcContact? ucContact = null, List<string>? fields = null);
     }
 
     public class Uc: IUc
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.47";
-        private const string _sdkGenVersion = "2.409.8";
+        private const string _sdkVersion = "0.19.48";
+        private const string _sdkGenVersion = "2.415.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.47 2.409.8 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.48 2.415.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -81,12 +81,13 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateUcContactResponse> CreateUcContactAsync(string connectionId, UcContact? ucContact = null)
+        public async Task<CreateUcContactResponse> CreateUcContactAsync(string connectionId, UcContact? ucContact = null, List<string>? fields = null)
         {
             var request = new CreateUcContactRequest()
             {
                 ConnectionId = connectionId,
                 UcContact = ucContact,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/contact", request);
@@ -410,13 +411,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchUcContactResponse> PatchUcContactAsync(string connectionId, string id, UcContact? ucContact = null)
+        public async Task<PatchUcContactResponse> PatchUcContactAsync(string connectionId, string id, UcContact? ucContact = null, List<string>? fields = null)
         {
             var request = new PatchUcContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 UcContact = ucContact,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/contact/{id}", request);
@@ -569,13 +571,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateUcContactResponse> UpdateUcContactAsync(string connectionId, string id, UcContact? ucContact = null)
+        public async Task<UpdateUcContactResponse> UpdateUcContactAsync(string connectionId, string id, UcContact? ucContact = null, List<string>? fields = null)
         {
             var request = new UpdateUcContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 UcContact = ucContact,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/contact/{id}", request);

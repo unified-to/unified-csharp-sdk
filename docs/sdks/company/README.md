@@ -39,7 +39,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.CreateCrmCompanyAsync(
     connectionId: "<value>",
-    crmCompany: new CrmCompany() {}
+    crmCompany: new CrmCompany() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -51,6 +54,7 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | `ConnectionId`                                                                                 | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the connection                                                                           |
 | `CrmCompany`                                                                                   | [CrmCompany](../../Models/Components/CrmCompany.md)                                            | :heavy_minus_sign:                                                                             | A company represents an organization that optionally is associated with a deal and/or contacts |
+| `Fields`                                                                                       | List<*string*>                                                                                 | :heavy_minus_sign:                                                                             | Comma-delimited fields to return                                                               |
 
 ### Response
 
@@ -81,7 +85,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.CreateHrisCompanyAsync(
     connectionId: "<value>",
-    hrisCompany: new HrisCompany() {}
+    hrisCompany: new HrisCompany() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -93,6 +100,7 @@ var res = await sdk.Company.CreateHrisCompanyAsync(
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -431,7 +439,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Company.PatchCrmCompanyAsync(
     connectionId: "<value>",
     id: "<id>",
-    crmCompany: new CrmCompany() {}
+    crmCompany: new CrmCompany() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -444,6 +455,7 @@ var res = await sdk.Company.PatchCrmCompanyAsync(
 | `ConnectionId`                                                                                 | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the connection                                                                           |
 | `Id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the Company                                                                              |
 | `CrmCompany`                                                                                   | [CrmCompany](../../Models/Components/CrmCompany.md)                                            | :heavy_minus_sign:                                                                             | A company represents an organization that optionally is associated with a deal and/or contacts |
+| `Fields`                                                                                       | List<*string*>                                                                                 | :heavy_minus_sign:                                                                             | Comma-delimited fields to return                                                               |
 
 ### Response
 
@@ -475,7 +487,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Company.PatchHrisCompanyAsync(
     connectionId: "<value>",
     id: "<id>",
-    hrisCompany: new HrisCompany() {}
+    hrisCompany: new HrisCompany() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -488,6 +503,7 @@ var res = await sdk.Company.PatchHrisCompanyAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Company                                     |
 | `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -601,7 +617,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Company.UpdateCrmCompanyAsync(
     connectionId: "<value>",
     id: "<id>",
-    crmCompany: new CrmCompany() {}
+    crmCompany: new CrmCompany() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -614,6 +633,7 @@ var res = await sdk.Company.UpdateCrmCompanyAsync(
 | `ConnectionId`                                                                                 | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the connection                                                                           |
 | `Id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the Company                                                                              |
 | `CrmCompany`                                                                                   | [CrmCompany](../../Models/Components/CrmCompany.md)                                            | :heavy_minus_sign:                                                                             | A company represents an organization that optionally is associated with a deal and/or contacts |
+| `Fields`                                                                                       | List<*string*>                                                                                 | :heavy_minus_sign:                                                                             | Comma-delimited fields to return                                                               |
 
 ### Response
 
@@ -645,7 +665,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Company.UpdateHrisCompanyAsync(
     connectionId: "<value>",
     id: "<id>",
-    hrisCompany: new HrisCompany() {}
+    hrisCompany: new HrisCompany() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -658,6 +681,7 @@ var res = await sdk.Company.UpdateHrisCompanyAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Company                                     |
 | `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 

@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create a project
         /// </summary>
-        Task<CreateTaskProjectResponse> CreateTaskProjectAsync(string connectionId, TaskProject? taskProject = null);
+        Task<CreateTaskProjectResponse> CreateTaskProjectAsync(string connectionId, TaskProject? taskProject = null, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a project
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project
         /// </summary>
-        Task<PatchTaskProjectResponse> PatchTaskProjectAsync(string connectionId, string id, TaskProject? taskProject = null);
+        Task<PatchTaskProjectResponse> PatchTaskProjectAsync(string connectionId, string id, TaskProject? taskProject = null, List<string>? fields = null);
 
         /// <summary>
         /// Remove a project
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a project
         /// </summary>
-        Task<UpdateTaskProjectResponse> UpdateTaskProjectAsync(string connectionId, string id, TaskProject? taskProject = null);
+        Task<UpdateTaskProjectResponse> UpdateTaskProjectAsync(string connectionId, string id, TaskProject? taskProject = null, List<string>? fields = null);
     }
 
     public class Project: IProject
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.47";
-        private const string _sdkGenVersion = "2.409.8";
+        private const string _sdkVersion = "0.19.48";
+        private const string _sdkGenVersion = "2.415.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.47 2.409.8 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.48 2.415.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,12 +76,13 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateTaskProjectResponse> CreateTaskProjectAsync(string connectionId, TaskProject? taskProject = null)
+        public async Task<CreateTaskProjectResponse> CreateTaskProjectAsync(string connectionId, TaskProject? taskProject = null, List<string>? fields = null)
         {
             var request = new CreateTaskProjectRequest()
             {
                 ConnectionId = connectionId,
                 TaskProject = taskProject,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/project", request);
@@ -327,13 +328,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchTaskProjectResponse> PatchTaskProjectAsync(string connectionId, string id, TaskProject? taskProject = null)
+        public async Task<PatchTaskProjectResponse> PatchTaskProjectAsync(string connectionId, string id, TaskProject? taskProject = null, List<string>? fields = null)
         {
             var request = new PatchTaskProjectRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 TaskProject = taskProject,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/project/{id}", request);
@@ -486,13 +488,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateTaskProjectResponse> UpdateTaskProjectAsync(string connectionId, string id, TaskProject? taskProject = null)
+        public async Task<UpdateTaskProjectResponse> UpdateTaskProjectAsync(string connectionId, string id, TaskProject? taskProject = null, List<string>? fields = null)
         {
             var request = new UpdateTaskProjectRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 TaskProject = taskProject,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/project/{id}", request);

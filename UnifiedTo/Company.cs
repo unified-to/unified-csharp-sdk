@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(string connectionId, CrmCompany? crmCompany = null);
+        Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(string connectionId, CrmCompany? crmCompany = null, List<string>? fields = null);
 
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(string connectionId, HrisCompany? hrisCompany = null);
+        Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(string connectionId, HrisCompany? hrisCompany = null, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a company
@@ -73,12 +73,12 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null);
+        Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<PatchHrisCompanyResponse> PatchHrisCompanyAsync(string connectionId, string id, HrisCompany? hrisCompany = null);
+        Task<PatchHrisCompanyResponse> PatchHrisCompanyAsync(string connectionId, string id, HrisCompany? hrisCompany = null, List<string>? fields = null);
 
         /// <summary>
         /// Remove a company
@@ -93,22 +93,22 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null);
+        Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<UpdateHrisCompanyResponse> UpdateHrisCompanyAsync(string connectionId, string id, HrisCompany? hrisCompany = null);
+        Task<UpdateHrisCompanyResponse> UpdateHrisCompanyAsync(string connectionId, string id, HrisCompany? hrisCompany = null, List<string>? fields = null);
     }
 
     public class Company: ICompany
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.47";
-        private const string _sdkGenVersion = "2.409.8";
+        private const string _sdkVersion = "0.19.48";
+        private const string _sdkGenVersion = "2.415.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.47 2.409.8 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.48 2.415.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -121,12 +121,13 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(string connectionId, CrmCompany? crmCompany = null)
+        public async Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(string connectionId, CrmCompany? crmCompany = null, List<string>? fields = null)
         {
             var request = new CreateCrmCompanyRequest()
             {
                 ConnectionId = connectionId,
                 CrmCompany = crmCompany,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company", request);
@@ -210,12 +211,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(string connectionId, HrisCompany? hrisCompany = null)
+        public async Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(string connectionId, HrisCompany? hrisCompany = null, List<string>? fields = null)
         {
             var request = new CreateHrisCompanyRequest()
             {
                 ConnectionId = connectionId,
                 HrisCompany = hrisCompany,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/company", request);
@@ -869,13 +871,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null)
+        public async Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null, List<string>? fields = null)
         {
             var request = new PatchCrmCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 CrmCompany = crmCompany,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company/{id}", request);
@@ -959,13 +962,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchHrisCompanyResponse> PatchHrisCompanyAsync(string connectionId, string id, HrisCompany? hrisCompany = null)
+        public async Task<PatchHrisCompanyResponse> PatchHrisCompanyAsync(string connectionId, string id, HrisCompany? hrisCompany = null, List<string>? fields = null)
         {
             var request = new PatchHrisCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 HrisCompany = hrisCompany,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/company/{id}", request);
@@ -1187,13 +1191,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null)
+        public async Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null, List<string>? fields = null)
         {
             var request = new UpdateCrmCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 CrmCompany = crmCompany,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company/{id}", request);
@@ -1277,13 +1282,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateHrisCompanyResponse> UpdateHrisCompanyAsync(string connectionId, string id, HrisCompany? hrisCompany = null)
+        public async Task<UpdateHrisCompanyResponse> UpdateHrisCompanyAsync(string connectionId, string id, HrisCompany? hrisCompany = null, List<string>? fields = null)
         {
             var request = new UpdateHrisCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 HrisCompany = hrisCompany,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/company/{id}", request);

@@ -30,7 +30,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Member.CreateMartechMemberAsync(
     connectionId: "<value>",
-    marketingMember: new MarketingMember() {}
+    marketingMember: new MarketingMember() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -42,6 +45,7 @@ var res = await sdk.Member.CreateMartechMemberAsync(
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `MarketingMember`                                             | [MarketingMember](../../Models/Components/MarketingMember.md) | :heavy_minus_sign:                                            | A member represents a person                                  |
+| `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response
 
@@ -161,7 +165,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Member.PatchMartechMemberAsync(
     connectionId: "<value>",
     id: "<id>",
-    marketingMember: new MarketingMember() {}
+    marketingMember: new MarketingMember() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -174,6 +181,7 @@ var res = await sdk.Member.PatchMartechMemberAsync(
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Member                                              |
 | `MarketingMember`                                             | [MarketingMember](../../Models/Components/MarketingMember.md) | :heavy_minus_sign:                                            | A member represents a person                                  |
+| `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response
 
@@ -246,7 +254,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Member.UpdateMartechMemberAsync(
     connectionId: "<value>",
     id: "<id>",
-    marketingMember: new MarketingMember() {}
+    marketingMember: new MarketingMember() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -259,6 +270,7 @@ var res = await sdk.Member.UpdateMartechMemberAsync(
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Member                                              |
 | `MarketingMember`                                             | [MarketingMember](../../Models/Components/MarketingMember.md) | :heavy_minus_sign:                                            | A member represents a person                                  |
+| `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response
 

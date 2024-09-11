@@ -30,7 +30,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Storage.CreateStorageFileAsync(
     connectionId: "<value>",
-    storageFile: new StorageFile() {}
+    storageFile: new StorageFile() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -42,6 +45,7 @@ var res = await sdk.Storage.CreateStorageFileAsync(
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `StorageFile`                                         | [StorageFile](../../Models/Components/StorageFile.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -161,7 +165,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Storage.PatchStorageFileAsync(
     connectionId: "<value>",
     id: "<id>",
-    storageFile: new StorageFile() {}
+    storageFile: new StorageFile() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -174,6 +181,7 @@ var res = await sdk.Storage.PatchStorageFileAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the File                                        |
 | `StorageFile`                                         | [StorageFile](../../Models/Components/StorageFile.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -246,7 +254,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Storage.UpdateStorageFileAsync(
     connectionId: "<value>",
     id: "<id>",
-    storageFile: new StorageFile() {}
+    storageFile: new StorageFile() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -259,6 +270,7 @@ var res = await sdk.Storage.UpdateStorageFileAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the File                                        |
 | `StorageFile`                                         | [StorageFile](../../Models/Components/StorageFile.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 

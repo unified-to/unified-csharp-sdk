@@ -28,37 +28,37 @@ namespace UnifiedTo
         /// <summary>
         /// Create an activity
         /// </summary>
-        Task<CreateAtsActivityResponse> CreateAtsActivityAsync(string connectionId, AtsActivity? atsActivity = null);
+        Task<CreateAtsActivityResponse> CreateAtsActivityAsync(string connectionId, AtsActivity? atsActivity = null, List<string>? fields = null);
 
         /// <summary>
         /// Create an application
         /// </summary>
-        Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(string connectionId, AtsApplication? atsApplication = null);
+        Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(string connectionId, AtsApplication? atsApplication = null, List<string>? fields = null);
 
         /// <summary>
         /// Create a candidate
         /// </summary>
-        Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(string connectionId, AtsCandidate? atsCandidate = null);
+        Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(string connectionId, AtsCandidate? atsCandidate = null, List<string>? fields = null);
 
         /// <summary>
         /// Create a document
         /// </summary>
-        Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(string connectionId, AtsDocument? atsDocument = null);
+        Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(string connectionId, AtsDocument? atsDocument = null, List<string>? fields = null);
 
         /// <summary>
         /// Create an interview
         /// </summary>
-        Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(string connectionId, AtsInterview? atsInterview = null);
+        Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(string connectionId, AtsInterview? atsInterview = null, List<string>? fields = null);
 
         /// <summary>
         /// Create a job
         /// </summary>
-        Task<CreateAtsJobResponse> CreateAtsJobAsync(string connectionId, AtsJob? atsJob = null);
+        Task<CreateAtsJobResponse> CreateAtsJobAsync(string connectionId, AtsJob? atsJob = null, List<string>? fields = null);
 
         /// <summary>
         /// Create a scorecard
         /// </summary>
-        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(string connectionId, AtsScorecard? atsScorecard = null);
+        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(string connectionId, AtsScorecard? atsScorecard = null, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve an activity
@@ -148,37 +148,37 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity
         /// </summary>
-        Task<PatchAtsActivityResponse> PatchAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null);
+        Task<PatchAtsActivityResponse> PatchAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null, List<string>? fields = null);
 
         /// <summary>
         /// Update an application
         /// </summary>
-        Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null);
+        Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a candidate
         /// </summary>
-        Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(string connectionId, string id, AtsCandidate? atsCandidate = null);
+        Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(string connectionId, string id, AtsCandidate? atsCandidate = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a document
         /// </summary>
-        Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null);
+        Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null, List<string>? fields = null);
 
         /// <summary>
         /// Update an interview
         /// </summary>
-        Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null);
+        Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a job
         /// </summary>
-        Task<PatchAtsJobResponse> PatchAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null);
+        Task<PatchAtsJobResponse> PatchAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a scorecard
         /// </summary>
-        Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null);
+        Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null, List<string>? fields = null);
 
         /// <summary>
         /// Remove an activity
@@ -218,47 +218,47 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity
         /// </summary>
-        Task<UpdateAtsActivityResponse> UpdateAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null);
+        Task<UpdateAtsActivityResponse> UpdateAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null, List<string>? fields = null);
 
         /// <summary>
         /// Update an application
         /// </summary>
-        Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null);
+        Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a candidate
         /// </summary>
-        Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(string connectionId, string id, AtsCandidate? atsCandidate = null);
+        Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(string connectionId, string id, AtsCandidate? atsCandidate = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a document
         /// </summary>
-        Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null);
+        Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null, List<string>? fields = null);
 
         /// <summary>
         /// Update an interview
         /// </summary>
-        Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null);
+        Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a job
         /// </summary>
-        Task<UpdateAtsJobResponse> UpdateAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null);
+        Task<UpdateAtsJobResponse> UpdateAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a scorecard
         /// </summary>
-        Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null);
+        Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null, List<string>? fields = null);
     }
 
     public class Ats: IAts
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.47";
-        private const string _sdkGenVersion = "2.409.8";
+        private const string _sdkVersion = "0.19.48";
+        private const string _sdkGenVersion = "2.415.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.47 2.409.8 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.48 2.415.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -271,12 +271,13 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsActivityResponse> CreateAtsActivityAsync(string connectionId, AtsActivity? atsActivity = null)
+        public async Task<CreateAtsActivityResponse> CreateAtsActivityAsync(string connectionId, AtsActivity? atsActivity = null, List<string>? fields = null)
         {
             var request = new CreateAtsActivityRequest()
             {
                 ConnectionId = connectionId,
                 AtsActivity = atsActivity,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity", request);
@@ -360,12 +361,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(string connectionId, AtsApplication? atsApplication = null)
+        public async Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(string connectionId, AtsApplication? atsApplication = null, List<string>? fields = null)
         {
             var request = new CreateAtsApplicationRequest()
             {
                 ConnectionId = connectionId,
                 AtsApplication = atsApplication,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application", request);
@@ -449,12 +451,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(string connectionId, AtsCandidate? atsCandidate = null)
+        public async Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(string connectionId, AtsCandidate? atsCandidate = null, List<string>? fields = null)
         {
             var request = new CreateAtsCandidateRequest()
             {
                 ConnectionId = connectionId,
                 AtsCandidate = atsCandidate,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate", request);
@@ -538,12 +541,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(string connectionId, AtsDocument? atsDocument = null)
+        public async Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(string connectionId, AtsDocument? atsDocument = null, List<string>? fields = null)
         {
             var request = new CreateAtsDocumentRequest()
             {
                 ConnectionId = connectionId,
                 AtsDocument = atsDocument,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document", request);
@@ -627,12 +631,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(string connectionId, AtsInterview? atsInterview = null)
+        public async Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(string connectionId, AtsInterview? atsInterview = null, List<string>? fields = null)
         {
             var request = new CreateAtsInterviewRequest()
             {
                 ConnectionId = connectionId,
                 AtsInterview = atsInterview,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview", request);
@@ -716,12 +721,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreateAtsJobResponse> CreateAtsJobAsync(string connectionId, AtsJob? atsJob = null)
+        public async Task<CreateAtsJobResponse> CreateAtsJobAsync(string connectionId, AtsJob? atsJob = null, List<string>? fields = null)
         {
             var request = new CreateAtsJobRequest()
             {
                 ConnectionId = connectionId,
                 AtsJob = atsJob,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job", request);
@@ -805,12 +811,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(string connectionId, AtsScorecard? atsScorecard = null)
+        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(string connectionId, AtsScorecard? atsScorecard = null, List<string>? fields = null)
         {
             var request = new CreateAtsScorecardRequest()
             {
                 ConnectionId = connectionId,
                 AtsScorecard = atsScorecard,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard", request);
@@ -2268,13 +2275,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchAtsActivityResponse> PatchAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null)
+        public async Task<PatchAtsActivityResponse> PatchAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null, List<string>? fields = null)
         {
             var request = new PatchAtsActivityRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsActivity = atsActivity,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity/{id}", request);
@@ -2358,13 +2366,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null)
+        public async Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null, List<string>? fields = null)
         {
             var request = new PatchAtsApplicationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsApplication = atsApplication,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application/{id}", request);
@@ -2448,13 +2457,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(string connectionId, string id, AtsCandidate? atsCandidate = null)
+        public async Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(string connectionId, string id, AtsCandidate? atsCandidate = null, List<string>? fields = null)
         {
             var request = new PatchAtsCandidateRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsCandidate = atsCandidate,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate/{id}", request);
@@ -2538,13 +2548,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null)
+        public async Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null, List<string>? fields = null)
         {
             var request = new PatchAtsDocumentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsDocument = atsDocument,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document/{id}", request);
@@ -2628,13 +2639,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null)
+        public async Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null, List<string>? fields = null)
         {
             var request = new PatchAtsInterviewRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsInterview = atsInterview,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview/{id}", request);
@@ -2718,13 +2730,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchAtsJobResponse> PatchAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null)
+        public async Task<PatchAtsJobResponse> PatchAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null, List<string>? fields = null)
         {
             var request = new PatchAtsJobRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsJob = atsJob,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job/{id}", request);
@@ -2808,13 +2821,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null)
+        public async Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null, List<string>? fields = null)
         {
             var request = new PatchAtsScorecardRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsScorecard = atsScorecard,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard/{id}", request);
@@ -3381,13 +3395,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsActivityResponse> UpdateAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null)
+        public async Task<UpdateAtsActivityResponse> UpdateAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null, List<string>? fields = null)
         {
             var request = new UpdateAtsActivityRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsActivity = atsActivity,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity/{id}", request);
@@ -3471,13 +3486,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null)
+        public async Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null, List<string>? fields = null)
         {
             var request = new UpdateAtsApplicationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsApplication = atsApplication,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application/{id}", request);
@@ -3561,13 +3577,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(string connectionId, string id, AtsCandidate? atsCandidate = null)
+        public async Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(string connectionId, string id, AtsCandidate? atsCandidate = null, List<string>? fields = null)
         {
             var request = new UpdateAtsCandidateRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsCandidate = atsCandidate,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate/{id}", request);
@@ -3651,13 +3668,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null)
+        public async Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null, List<string>? fields = null)
         {
             var request = new UpdateAtsDocumentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsDocument = atsDocument,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document/{id}", request);
@@ -3741,13 +3759,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null)
+        public async Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null, List<string>? fields = null)
         {
             var request = new UpdateAtsInterviewRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsInterview = atsInterview,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview/{id}", request);
@@ -3831,13 +3850,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsJobResponse> UpdateAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null)
+        public async Task<UpdateAtsJobResponse> UpdateAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null, List<string>? fields = null)
         {
             var request = new UpdateAtsJobRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsJob = atsJob,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job/{id}", request);
@@ -3921,13 +3941,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null)
+        public async Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null, List<string>? fields = null)
         {
             var request = new UpdateAtsScorecardRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AtsScorecard = atsScorecard,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard/{id}", request);

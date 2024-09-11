@@ -28,32 +28,32 @@ namespace UnifiedTo
         /// <summary>
         /// Create an account
         /// </summary>
-        Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(string connectionId, AccountingAccount? accountingAccount = null);
+        Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(string connectionId, AccountingAccount? accountingAccount = null, List<string>? fields = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(string connectionId, AccountingContact? accountingContact = null);
+        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(string connectionId, AccountingContact? accountingContact = null, List<string>? fields = null);
 
         /// <summary>
         /// Create an invoice
         /// </summary>
-        Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(string connectionId, AccountingInvoice? accountingInvoice = null);
+        Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(string connectionId, AccountingInvoice? accountingInvoice = null, List<string>? fields = null);
 
         /// <summary>
         /// Create a journal
         /// </summary>
-        Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(string connectionId, AccountingJournal? accountingJournal = null);
+        Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(string connectionId, AccountingJournal? accountingJournal = null, List<string>? fields = null);
 
         /// <summary>
         /// Create a taxrate
         /// </summary>
-        Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(string connectionId, AccountingTaxrate? accountingTaxrate = null);
+        Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(string connectionId, AccountingTaxrate? accountingTaxrate = null, List<string>? fields = null);
 
         /// <summary>
         /// Create a transaction
         /// </summary>
-        Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(string connectionId, AccountingTransaction? accountingTransaction = null);
+        Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(string connectionId, AccountingTransaction? accountingTransaction = null, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve an account
@@ -128,32 +128,32 @@ namespace UnifiedTo
         /// <summary>
         /// Update an account
         /// </summary>
-        Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null);
+        Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchAccountingContactResponse> PatchAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null);
+        Task<PatchAccountingContactResponse> PatchAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null, List<string>? fields = null);
 
         /// <summary>
         /// Update an invoice
         /// </summary>
-        Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null);
+        Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a journal
         /// </summary>
-        Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(string connectionId, string id, AccountingJournal? accountingJournal = null);
+        Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(string connectionId, string id, AccountingJournal? accountingJournal = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a taxrate
         /// </summary>
-        Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null);
+        Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a transaction
         /// </summary>
-        Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null);
+        Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null, List<string>? fields = null);
 
         /// <summary>
         /// Remove an account
@@ -188,42 +188,42 @@ namespace UnifiedTo
         /// <summary>
         /// Update an account
         /// </summary>
-        Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null);
+        Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null);
+        Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null, List<string>? fields = null);
 
         /// <summary>
         /// Update an invoice
         /// </summary>
-        Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null);
+        Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a journal
         /// </summary>
-        Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(string connectionId, string id, AccountingJournal? accountingJournal = null);
+        Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(string connectionId, string id, AccountingJournal? accountingJournal = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a taxrate
         /// </summary>
-        Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null);
+        Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a transaction
         /// </summary>
-        Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null);
+        Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null, List<string>? fields = null);
     }
 
     public class Accounting: IAccounting
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.47";
-        private const string _sdkGenVersion = "2.409.8";
+        private const string _sdkVersion = "0.19.48";
+        private const string _sdkGenVersion = "2.415.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.47 2.409.8 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.48 2.415.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -236,12 +236,13 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(string connectionId, AccountingAccount? accountingAccount = null)
+        public async Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(string connectionId, AccountingAccount? accountingAccount = null, List<string>? fields = null)
         {
             var request = new CreateAccountingAccountRequest()
             {
                 ConnectionId = connectionId,
                 AccountingAccount = accountingAccount,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account", request);
@@ -325,12 +326,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(string connectionId, AccountingContact? accountingContact = null)
+        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(string connectionId, AccountingContact? accountingContact = null, List<string>? fields = null)
         {
             var request = new CreateAccountingContactRequest()
             {
                 ConnectionId = connectionId,
                 AccountingContact = accountingContact,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact", request);
@@ -414,12 +416,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(string connectionId, AccountingInvoice? accountingInvoice = null)
+        public async Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(string connectionId, AccountingInvoice? accountingInvoice = null, List<string>? fields = null)
         {
             var request = new CreateAccountingInvoiceRequest()
             {
                 ConnectionId = connectionId,
                 AccountingInvoice = accountingInvoice,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice", request);
@@ -503,12 +506,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(string connectionId, AccountingJournal? accountingJournal = null)
+        public async Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(string connectionId, AccountingJournal? accountingJournal = null, List<string>? fields = null)
         {
             var request = new CreateAccountingJournalRequest()
             {
                 ConnectionId = connectionId,
                 AccountingJournal = accountingJournal,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/journal", request);
@@ -592,12 +596,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(string connectionId, AccountingTaxrate? accountingTaxrate = null)
+        public async Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(string connectionId, AccountingTaxrate? accountingTaxrate = null, List<string>? fields = null)
         {
             var request = new CreateAccountingTaxrateRequest()
             {
                 ConnectionId = connectionId,
                 AccountingTaxrate = accountingTaxrate,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate", request);
@@ -681,12 +686,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(string connectionId, AccountingTransaction? accountingTransaction = null)
+        public async Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(string connectionId, AccountingTransaction? accountingTransaction = null, List<string>? fields = null)
         {
             var request = new CreateAccountingTransactionRequest()
             {
                 ConnectionId = connectionId,
                 AccountingTransaction = accountingTransaction,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/transaction", request);
@@ -1904,13 +1910,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null)
+        public async Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null, List<string>? fields = null)
         {
             var request = new PatchAccountingAccountRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AccountingAccount = accountingAccount,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account/{id}", request);
@@ -1994,13 +2001,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchAccountingContactResponse> PatchAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null)
+        public async Task<PatchAccountingContactResponse> PatchAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null, List<string>? fields = null)
         {
             var request = new PatchAccountingContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AccountingContact = accountingContact,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
@@ -2084,13 +2092,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null)
+        public async Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null, List<string>? fields = null)
         {
             var request = new PatchAccountingInvoiceRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AccountingInvoice = accountingInvoice,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice/{id}", request);
@@ -2174,13 +2183,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(string connectionId, string id, AccountingJournal? accountingJournal = null)
+        public async Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(string connectionId, string id, AccountingJournal? accountingJournal = null, List<string>? fields = null)
         {
             var request = new PatchAccountingJournalRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AccountingJournal = accountingJournal,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/journal/{id}", request);
@@ -2264,13 +2274,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null)
+        public async Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null, List<string>? fields = null)
         {
             var request = new PatchAccountingTaxrateRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AccountingTaxrate = accountingTaxrate,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate/{id}", request);
@@ -2354,13 +2365,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null)
+        public async Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null, List<string>? fields = null)
         {
             var request = new PatchAccountingTransactionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AccountingTransaction = accountingTransaction,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/transaction/{id}", request);
@@ -2858,13 +2870,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null)
+        public async Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null, List<string>? fields = null)
         {
             var request = new UpdateAccountingAccountRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AccountingAccount = accountingAccount,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account/{id}", request);
@@ -2948,13 +2961,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null)
+        public async Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null, List<string>? fields = null)
         {
             var request = new UpdateAccountingContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AccountingContact = accountingContact,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
@@ -3038,13 +3052,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null)
+        public async Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null, List<string>? fields = null)
         {
             var request = new UpdateAccountingInvoiceRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AccountingInvoice = accountingInvoice,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice/{id}", request);
@@ -3128,13 +3143,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(string connectionId, string id, AccountingJournal? accountingJournal = null)
+        public async Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(string connectionId, string id, AccountingJournal? accountingJournal = null, List<string>? fields = null)
         {
             var request = new UpdateAccountingJournalRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AccountingJournal = accountingJournal,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/journal/{id}", request);
@@ -3218,13 +3234,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null)
+        public async Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null, List<string>? fields = null)
         {
             var request = new UpdateAccountingTaxrateRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AccountingTaxrate = accountingTaxrate,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate/{id}", request);
@@ -3308,13 +3325,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null)
+        public async Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null, List<string>? fields = null)
         {
             var request = new UpdateAccountingTransactionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 AccountingTransaction = accountingTransaction,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/transaction/{id}", request);

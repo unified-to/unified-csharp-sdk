@@ -52,7 +52,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisCompanyAsync(
     connectionId: "<value>",
-    hrisCompany: new HrisCompany() {}
+    hrisCompany: new HrisCompany() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -64,6 +67,7 @@ var res = await sdk.Hris.CreateHrisCompanyAsync(
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -94,7 +98,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisEmployeeAsync(
     connectionId: "<value>",
-    hrisEmployee: new HrisEmployee() {}
+    hrisEmployee: new HrisEmployee() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -106,6 +113,7 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
 | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `HrisEmployee`                                          | [HrisEmployee](../../Models/Components/HrisEmployee.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 
@@ -136,7 +144,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisGroupAsync(
     connectionId: "<value>",
-    hrisGroup: new HrisGroup() {}
+    hrisGroup: new HrisGroup() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -148,6 +159,7 @@ var res = await sdk.Hris.CreateHrisGroupAsync(
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
 | `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_minus_sign:                                | N/A                                               |
+| `Fields`                                          | List<*string*>                                    | :heavy_minus_sign:                                | Comma-delimited fields to return                  |
 
 ### Response
 
@@ -178,7 +190,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisLocationAsync(
     connectionId: "<value>",
-    hrisLocation: new HrisLocation() {}
+    hrisLocation: new HrisLocation() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -190,6 +205,7 @@ var res = await sdk.Hris.CreateHrisLocationAsync(
 | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 
@@ -749,7 +765,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.PatchHrisCompanyAsync(
     connectionId: "<value>",
     id: "<id>",
-    hrisCompany: new HrisCompany() {}
+    hrisCompany: new HrisCompany() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -762,6 +781,7 @@ var res = await sdk.Hris.PatchHrisCompanyAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Company                                     |
 | `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -793,7 +813,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.PatchHrisEmployeeAsync(
     connectionId: "<value>",
     id: "<id>",
-    hrisEmployee: new HrisEmployee() {}
+    hrisEmployee: new HrisEmployee() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -806,6 +829,7 @@ var res = await sdk.Hris.PatchHrisEmployeeAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Employee                                      |
 | `HrisEmployee`                                          | [HrisEmployee](../../Models/Components/HrisEmployee.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 
@@ -837,7 +861,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.PatchHrisGroupAsync(
     connectionId: "<value>",
     id: "<id>",
-    hrisGroup: new HrisGroup() {}
+    hrisGroup: new HrisGroup() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -850,6 +877,7 @@ var res = await sdk.Hris.PatchHrisGroupAsync(
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
 | `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Group                                   |
 | `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_minus_sign:                                | N/A                                               |
+| `Fields`                                          | List<*string*>                                    | :heavy_minus_sign:                                | Comma-delimited fields to return                  |
 
 ### Response
 
@@ -881,7 +909,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.PatchHrisLocationAsync(
     connectionId: "<value>",
     id: "<id>",
-    hrisLocation: new HrisLocation() {}
+    hrisLocation: new HrisLocation() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -894,6 +925,7 @@ var res = await sdk.Hris.PatchHrisLocationAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Location                                      |
 | `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 
@@ -1089,7 +1121,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.UpdateHrisCompanyAsync(
     connectionId: "<value>",
     id: "<id>",
-    hrisCompany: new HrisCompany() {}
+    hrisCompany: new HrisCompany() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1102,6 +1137,7 @@ var res = await sdk.Hris.UpdateHrisCompanyAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Company                                     |
 | `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -1133,7 +1169,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.UpdateHrisEmployeeAsync(
     connectionId: "<value>",
     id: "<id>",
-    hrisEmployee: new HrisEmployee() {}
+    hrisEmployee: new HrisEmployee() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1146,6 +1185,7 @@ var res = await sdk.Hris.UpdateHrisEmployeeAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Employee                                      |
 | `HrisEmployee`                                          | [HrisEmployee](../../Models/Components/HrisEmployee.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 
@@ -1177,7 +1217,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.UpdateHrisGroupAsync(
     connectionId: "<value>",
     id: "<id>",
-    hrisGroup: new HrisGroup() {}
+    hrisGroup: new HrisGroup() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1190,6 +1233,7 @@ var res = await sdk.Hris.UpdateHrisGroupAsync(
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
 | `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Group                                   |
 | `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_minus_sign:                                | N/A                                               |
+| `Fields`                                          | List<*string*>                                    | :heavy_minus_sign:                                | Comma-delimited fields to return                  |
 
 ### Response
 
@@ -1221,7 +1265,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.UpdateHrisLocationAsync(
     connectionId: "<value>",
     id: "<id>",
-    hrisLocation: new HrisLocation() {}
+    hrisLocation: new HrisLocation() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1234,6 +1281,7 @@ var res = await sdk.Hris.UpdateHrisLocationAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Location                                      |
 | `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 

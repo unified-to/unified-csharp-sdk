@@ -39,6 +39,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("job_id")]
         public string? JobId { get; set; }
 
+        [JsonProperty("offers")]
+        public List<AtsOffer>? Offers { get; set; }
+
         [JsonProperty("original_status")]
         public string? OriginalStatus { get; set; }
 

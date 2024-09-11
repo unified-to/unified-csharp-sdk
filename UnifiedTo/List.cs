@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create a list
         /// </summary>
-        Task<CreateMartechListResponse> CreateMartechListAsync(string connectionId, MarketingList? marketingList = null);
+        Task<CreateMartechListResponse> CreateMartechListAsync(string connectionId, MarketingList? marketingList = null, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a list
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a list
         /// </summary>
-        Task<PatchMartechListResponse> PatchMartechListAsync(string connectionId, string id, MarketingList? marketingList = null);
+        Task<PatchMartechListResponse> PatchMartechListAsync(string connectionId, string id, MarketingList? marketingList = null, List<string>? fields = null);
 
         /// <summary>
         /// Remove a list
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a list
         /// </summary>
-        Task<UpdateMartechListResponse> UpdateMartechListAsync(string connectionId, string id, MarketingList? marketingList = null);
+        Task<UpdateMartechListResponse> UpdateMartechListAsync(string connectionId, string id, MarketingList? marketingList = null, List<string>? fields = null);
     }
 
     public class List: IList
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.47";
-        private const string _sdkGenVersion = "2.409.8";
+        private const string _sdkVersion = "0.19.48";
+        private const string _sdkGenVersion = "2.415.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.47 2.409.8 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.48 2.415.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,12 +76,13 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateMartechListResponse> CreateMartechListAsync(string connectionId, MarketingList? marketingList = null)
+        public async Task<CreateMartechListResponse> CreateMartechListAsync(string connectionId, MarketingList? marketingList = null, List<string>? fields = null)
         {
             var request = new CreateMartechListRequest()
             {
                 ConnectionId = connectionId,
                 MarketingList = marketingList,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/martech/{connection_id}/list", request);
@@ -327,13 +328,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchMartechListResponse> PatchMartechListAsync(string connectionId, string id, MarketingList? marketingList = null)
+        public async Task<PatchMartechListResponse> PatchMartechListAsync(string connectionId, string id, MarketingList? marketingList = null, List<string>? fields = null)
         {
             var request = new PatchMartechListRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 MarketingList = marketingList,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/martech/{connection_id}/list/{id}", request);
@@ -486,13 +488,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateMartechListResponse> UpdateMartechListAsync(string connectionId, string id, MarketingList? marketingList = null)
+        public async Task<UpdateMartechListResponse> UpdateMartechListAsync(string connectionId, string id, MarketingList? marketingList = null, List<string>? fields = null)
         {
             var request = new UpdateMartechListRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 MarketingList = marketingList,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/martech/{connection_id}/list/{id}", request);

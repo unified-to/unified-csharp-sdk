@@ -38,6 +38,9 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
     connectionId: "<value>",
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -50,6 +53,7 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `CommerceLocation`                                              | [CommerceLocation](../../Models/Components/CommerceLocation.md) | :heavy_minus_sign:                                              | N/A                                                             |
+| `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
 
@@ -80,7 +84,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Location.CreateHrisLocationAsync(
     connectionId: "<value>",
-    hrisLocation: new HrisLocation() {}
+    hrisLocation: new HrisLocation() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -92,6 +99,7 @@ var res = await sdk.Location.CreateHrisLocationAsync(
 | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 
@@ -301,6 +309,9 @@ var res = await sdk.Location.PatchCommerceLocationAsync(
     id: "<id>",
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -314,6 +325,7 @@ var res = await sdk.Location.PatchCommerceLocationAsync(
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Location                                              |
 | `CommerceLocation`                                              | [CommerceLocation](../../Models/Components/CommerceLocation.md) | :heavy_minus_sign:                                              | N/A                                                             |
+| `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
 
@@ -345,7 +357,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Location.PatchHrisLocationAsync(
     connectionId: "<value>",
     id: "<id>",
-    hrisLocation: new HrisLocation() {}
+    hrisLocation: new HrisLocation() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -358,6 +373,7 @@ var res = await sdk.Location.PatchHrisLocationAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Location                                      |
 | `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 
@@ -473,6 +489,9 @@ var res = await sdk.Location.UpdateCommerceLocationAsync(
     id: "<id>",
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -486,6 +505,7 @@ var res = await sdk.Location.UpdateCommerceLocationAsync(
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Location                                              |
 | `CommerceLocation`                                              | [CommerceLocation](../../Models/Components/CommerceLocation.md) | :heavy_minus_sign:                                              | N/A                                                             |
+| `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
 
@@ -517,7 +537,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Location.UpdateHrisLocationAsync(
     connectionId: "<value>",
     id: "<id>",
-    hrisLocation: new HrisLocation() {}
+    hrisLocation: new HrisLocation() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -530,6 +553,7 @@ var res = await sdk.Location.UpdateHrisLocationAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Location                                      |
 | `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 

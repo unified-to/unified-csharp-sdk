@@ -33,6 +33,9 @@ var res = await sdk.Collection.CreateCommerceCollectionAsync(
     commerceCollection: new CommerceCollection() {
         Id = "<id>",
         Name = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -45,6 +48,7 @@ var res = await sdk.Collection.CreateCommerceCollectionAsync(
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | `ConnectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
 | `CommerceCollection`                                                | [CommerceCollection](../../Models/Components/CommerceCollection.md) | :heavy_minus_sign:                                                  | A collection of items/products/services                             |
+| `Fields`                                                            | List<*string*>                                                      | :heavy_minus_sign:                                                  | Comma-delimited fields to return                                    |
 
 ### Response
 
@@ -167,6 +171,9 @@ var res = await sdk.Collection.PatchCommerceCollectionAsync(
     commerceCollection: new CommerceCollection() {
         Id = "<id>",
         Name = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -180,6 +187,7 @@ var res = await sdk.Collection.PatchCommerceCollectionAsync(
 | `ConnectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
 | `Id`                                                                | *string*                                                            | :heavy_check_mark:                                                  | ID of the Collection                                                |
 | `CommerceCollection`                                                | [CommerceCollection](../../Models/Components/CommerceCollection.md) | :heavy_minus_sign:                                                  | A collection of items/products/services                             |
+| `Fields`                                                            | List<*string*>                                                      | :heavy_minus_sign:                                                  | Comma-delimited fields to return                                    |
 
 ### Response
 
@@ -255,6 +263,9 @@ var res = await sdk.Collection.UpdateCommerceCollectionAsync(
     commerceCollection: new CommerceCollection() {
         Id = "<id>",
         Name = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -268,6 +279,7 @@ var res = await sdk.Collection.UpdateCommerceCollectionAsync(
 | `ConnectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
 | `Id`                                                                | *string*                                                            | :heavy_check_mark:                                                  | ID of the Collection                                                |
 | `CommerceCollection`                                                | [CommerceCollection](../../Models/Components/CommerceCollection.md) | :heavy_minus_sign:                                                  | A collection of items/products/services                             |
+| `Fields`                                                            | List<*string*>                                                      | :heavy_minus_sign:                                                  | Comma-delimited fields to return                                    |
 
 ### Response
 

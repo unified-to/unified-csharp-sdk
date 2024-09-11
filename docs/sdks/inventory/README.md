@@ -32,6 +32,9 @@ var res = await sdk.Inventory.CreateCommerceInventoryAsync(
     connectionId: "<value>",
     commerceInventory: new CommerceInventory() {
         Available = 5165.08D,
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -44,6 +47,7 @@ var res = await sdk.Inventory.CreateCommerceInventoryAsync(
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -165,6 +169,9 @@ var res = await sdk.Inventory.PatchCommerceInventoryAsync(
     id: "<id>",
     commerceInventory: new CommerceInventory() {
         Available = 615.23D,
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -178,6 +185,7 @@ var res = await sdk.Inventory.PatchCommerceInventoryAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Inventory                                               |
 | `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -252,6 +260,9 @@ var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
     id: "<id>",
     commerceInventory: new CommerceInventory() {
         Available = 9360.02D,
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -265,6 +276,7 @@ var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Inventory                                               |
 | `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 

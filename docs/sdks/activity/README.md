@@ -32,6 +32,9 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
     connectionId: "<value>",
     atsActivity: new AtsActivity() {
         Title = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -44,6 +47,7 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -165,6 +169,9 @@ var res = await sdk.Activity.PatchAtsActivityAsync(
     id: "<id>",
     atsActivity: new AtsActivity() {
         Title = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -178,6 +185,7 @@ var res = await sdk.Activity.PatchAtsActivityAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Activity                                    |
 | `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -252,6 +260,9 @@ var res = await sdk.Activity.UpdateAtsActivityAsync(
     id: "<id>",
     atsActivity: new AtsActivity() {
         Title = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -265,6 +276,7 @@ var res = await sdk.Activity.UpdateAtsActivityAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Activity                                    |
 | `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 

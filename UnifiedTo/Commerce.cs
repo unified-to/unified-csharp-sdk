@@ -28,22 +28,22 @@ namespace UnifiedTo
         /// <summary>
         /// Create a collection
         /// </summary>
-        Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(string connectionId, CommerceCollection? commerceCollection = null);
+        Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(string connectionId, CommerceCollection? commerceCollection = null, List<string>? fields = null);
 
         /// <summary>
         /// Create an inventory
         /// </summary>
-        Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(string connectionId, CommerceInventory? commerceInventory = null);
+        Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(string connectionId, CommerceInventory? commerceInventory = null, List<string>? fields = null);
 
         /// <summary>
         /// Create an item
         /// </summary>
-        Task<CreateCommerceItemResponse> CreateCommerceItemAsync(string connectionId, CommerceItem? commerceItem = null);
+        Task<CreateCommerceItemResponse> CreateCommerceItemAsync(string connectionId, CommerceItem? commerceItem = null, List<string>? fields = null);
 
         /// <summary>
         /// Create a location
         /// </summary>
-        Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(string connectionId, CommerceLocation? commerceLocation = null);
+        Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(string connectionId, CommerceLocation? commerceLocation = null, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a collection
@@ -88,22 +88,22 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection
         /// </summary>
-        Task<PatchCommerceCollectionResponse> PatchCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null);
+        Task<PatchCommerceCollectionResponse> PatchCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null, List<string>? fields = null);
 
         /// <summary>
         /// Update an inventory
         /// </summary>
-        Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null);
+        Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null, List<string>? fields = null);
 
         /// <summary>
         /// Update an item
         /// </summary>
-        Task<PatchCommerceItemResponse> PatchCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null);
+        Task<PatchCommerceItemResponse> PatchCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a location
         /// </summary>
-        Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null);
+        Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null, List<string>? fields = null);
 
         /// <summary>
         /// Remove a collection
@@ -128,32 +128,32 @@ namespace UnifiedTo
         /// <summary>
         /// Update a collection
         /// </summary>
-        Task<UpdateCommerceCollectionResponse> UpdateCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null);
+        Task<UpdateCommerceCollectionResponse> UpdateCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null, List<string>? fields = null);
 
         /// <summary>
         /// Update an inventory
         /// </summary>
-        Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null);
+        Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null, List<string>? fields = null);
 
         /// <summary>
         /// Update an item
         /// </summary>
-        Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null);
+        Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null, List<string>? fields = null);
 
         /// <summary>
         /// Update a location
         /// </summary>
-        Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null);
+        Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null, List<string>? fields = null);
     }
 
     public class Commerce: ICommerce
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.47";
-        private const string _sdkGenVersion = "2.409.8";
+        private const string _sdkVersion = "0.19.48";
+        private const string _sdkGenVersion = "2.415.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.47 2.409.8 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.48 2.415.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -166,12 +166,13 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(string connectionId, CommerceCollection? commerceCollection = null)
+        public async Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(string connectionId, CommerceCollection? commerceCollection = null, List<string>? fields = null)
         {
             var request = new CreateCommerceCollectionRequest()
             {
                 ConnectionId = connectionId,
                 CommerceCollection = commerceCollection,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/collection", request);
@@ -255,12 +256,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(string connectionId, CommerceInventory? commerceInventory = null)
+        public async Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(string connectionId, CommerceInventory? commerceInventory = null, List<string>? fields = null)
         {
             var request = new CreateCommerceInventoryRequest()
             {
                 ConnectionId = connectionId,
                 CommerceInventory = commerceInventory,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/inventory", request);
@@ -344,12 +346,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreateCommerceItemResponse> CreateCommerceItemAsync(string connectionId, CommerceItem? commerceItem = null)
+        public async Task<CreateCommerceItemResponse> CreateCommerceItemAsync(string connectionId, CommerceItem? commerceItem = null, List<string>? fields = null)
         {
             var request = new CreateCommerceItemRequest()
             {
                 ConnectionId = connectionId,
                 CommerceItem = commerceItem,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item", request);
@@ -433,12 +436,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(string connectionId, CommerceLocation? commerceLocation = null)
+        public async Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(string connectionId, CommerceLocation? commerceLocation = null, List<string>? fields = null)
         {
             var request = new CreateCommerceLocationRequest()
             {
                 ConnectionId = connectionId,
                 CommerceLocation = commerceLocation,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/location", request);
@@ -1170,13 +1174,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchCommerceCollectionResponse> PatchCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null)
+        public async Task<PatchCommerceCollectionResponse> PatchCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null, List<string>? fields = null)
         {
             var request = new PatchCommerceCollectionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 CommerceCollection = commerceCollection,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/collection/{id}", request);
@@ -1260,13 +1265,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null)
+        public async Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null, List<string>? fields = null)
         {
             var request = new PatchCommerceInventoryRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 CommerceInventory = commerceInventory,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/inventory/{id}", request);
@@ -1350,13 +1356,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchCommerceItemResponse> PatchCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null)
+        public async Task<PatchCommerceItemResponse> PatchCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null, List<string>? fields = null)
         {
             var request = new PatchCommerceItemRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 CommerceItem = commerceItem,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item/{id}", request);
@@ -1440,13 +1447,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null)
+        public async Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null, List<string>? fields = null)
         {
             var request = new PatchCommerceLocationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 CommerceLocation = commerceLocation,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/location/{id}", request);
@@ -1806,13 +1814,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCommerceCollectionResponse> UpdateCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null)
+        public async Task<UpdateCommerceCollectionResponse> UpdateCommerceCollectionAsync(string connectionId, string id, CommerceCollection? commerceCollection = null, List<string>? fields = null)
         {
             var request = new UpdateCommerceCollectionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 CommerceCollection = commerceCollection,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/collection/{id}", request);
@@ -1896,13 +1905,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null)
+        public async Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(string connectionId, string id, CommerceInventory? commerceInventory = null, List<string>? fields = null)
         {
             var request = new UpdateCommerceInventoryRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 CommerceInventory = commerceInventory,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/inventory/{id}", request);
@@ -1986,13 +1996,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null)
+        public async Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null, List<string>? fields = null)
         {
             var request = new UpdateCommerceItemRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 CommerceItem = commerceItem,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/item/{id}", request);
@@ -2076,13 +2087,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null)
+        public async Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null, List<string>? fields = null)
         {
             var request = new UpdateCommerceLocationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 CommerceLocation = commerceLocation,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/location/{id}", request);

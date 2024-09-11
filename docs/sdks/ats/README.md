@@ -71,6 +71,9 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
     connectionId: "<value>",
     atsActivity: new AtsActivity() {
         Title = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -83,6 +86,7 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -113,7 +117,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsApplicationAsync(
     connectionId: "<value>",
-    atsApplication: new AtsApplication() {}
+    atsApplication: new AtsApplication() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -125,6 +132,7 @@ var res = await sdk.Ats.CreateAtsApplicationAsync(
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
 | `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
 | `AtsApplication`                                            | [AtsApplication](../../Models/Components/AtsApplication.md) | :heavy_minus_sign:                                          | N/A                                                         |
+| `Fields`                                                    | List<*string*>                                              | :heavy_minus_sign:                                          | Comma-delimited fields to return                            |
 
 ### Response
 
@@ -155,7 +163,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsCandidateAsync(
     connectionId: "<value>",
-    atsCandidate: new AtsCandidate() {}
+    atsCandidate: new AtsCandidate() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -167,6 +178,7 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
 | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `AtsCandidate`                                          | [AtsCandidate](../../Models/Components/AtsCandidate.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 
@@ -197,7 +209,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsDocumentAsync(
     connectionId: "<value>",
-    atsDocument: new AtsDocument() {}
+    atsDocument: new AtsDocument() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -209,6 +224,7 @@ var res = await sdk.Ats.CreateAtsDocumentAsync(
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `AtsDocument`                                         | [AtsDocument](../../Models/Components/AtsDocument.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -239,7 +255,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsInterviewAsync(
     connectionId: "<value>",
-    atsInterview: new AtsInterview() {}
+    atsInterview: new AtsInterview() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -251,6 +270,7 @@ var res = await sdk.Ats.CreateAtsInterviewAsync(
 | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `AtsInterview`                                          | [AtsInterview](../../Models/Components/AtsInterview.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 
@@ -281,7 +301,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsJobAsync(
     connectionId: "<value>",
-    atsJob: new AtsJob() {}
+    atsJob: new AtsJob() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -293,6 +316,7 @@ var res = await sdk.Ats.CreateAtsJobAsync(
 | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
 | `ConnectionId`                              | *string*                                    | :heavy_check_mark:                          | ID of the connection                        |
 | `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_minus_sign:                          | N/A                                         |
+| `Fields`                                    | List<*string*>                              | :heavy_minus_sign:                          | Comma-delimited fields to return            |
 
 ### Response
 
@@ -323,7 +347,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsScorecardAsync(
     connectionId: "<value>",
-    atsScorecard: new AtsScorecard() {}
+    atsScorecard: new AtsScorecard() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -335,6 +362,7 @@ var res = await sdk.Ats.CreateAtsScorecardAsync(
 | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `AtsScorecard`                                          | [AtsScorecard](../../Models/Components/AtsScorecard.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 
@@ -1114,6 +1142,9 @@ var res = await sdk.Ats.PatchAtsActivityAsync(
     id: "<id>",
     atsActivity: new AtsActivity() {
         Title = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -1127,6 +1158,7 @@ var res = await sdk.Ats.PatchAtsActivityAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Activity                                    |
 | `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -1158,7 +1190,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.PatchAtsApplicationAsync(
     connectionId: "<value>",
     id: "<id>",
-    atsApplication: new AtsApplication() {}
+    atsApplication: new AtsApplication() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1171,6 +1206,7 @@ var res = await sdk.Ats.PatchAtsApplicationAsync(
 | `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
 | `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Application                                       |
 | `AtsApplication`                                            | [AtsApplication](../../Models/Components/AtsApplication.md) | :heavy_minus_sign:                                          | N/A                                                         |
+| `Fields`                                                    | List<*string*>                                              | :heavy_minus_sign:                                          | Comma-delimited fields to return                            |
 
 ### Response
 
@@ -1202,7 +1238,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.PatchAtsCandidateAsync(
     connectionId: "<value>",
     id: "<id>",
-    atsCandidate: new AtsCandidate() {}
+    atsCandidate: new AtsCandidate() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1215,6 +1254,7 @@ var res = await sdk.Ats.PatchAtsCandidateAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Candidate                                     |
 | `AtsCandidate`                                          | [AtsCandidate](../../Models/Components/AtsCandidate.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 
@@ -1246,7 +1286,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.PatchAtsDocumentAsync(
     connectionId: "<value>",
     id: "<id>",
-    atsDocument: new AtsDocument() {}
+    atsDocument: new AtsDocument() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1259,6 +1302,7 @@ var res = await sdk.Ats.PatchAtsDocumentAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Document                                    |
 | `AtsDocument`                                         | [AtsDocument](../../Models/Components/AtsDocument.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -1290,7 +1334,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.PatchAtsInterviewAsync(
     connectionId: "<value>",
     id: "<id>",
-    atsInterview: new AtsInterview() {}
+    atsInterview: new AtsInterview() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1303,6 +1350,7 @@ var res = await sdk.Ats.PatchAtsInterviewAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Interview                                     |
 | `AtsInterview`                                          | [AtsInterview](../../Models/Components/AtsInterview.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 
@@ -1334,7 +1382,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.PatchAtsJobAsync(
     connectionId: "<value>",
     id: "<id>",
-    atsJob: new AtsJob() {}
+    atsJob: new AtsJob() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1347,6 +1398,7 @@ var res = await sdk.Ats.PatchAtsJobAsync(
 | `ConnectionId`                              | *string*                                    | :heavy_check_mark:                          | ID of the connection                        |
 | `Id`                                        | *string*                                    | :heavy_check_mark:                          | ID of the Job                               |
 | `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_minus_sign:                          | N/A                                         |
+| `Fields`                                    | List<*string*>                              | :heavy_minus_sign:                          | Comma-delimited fields to return            |
 
 ### Response
 
@@ -1378,7 +1430,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.PatchAtsScorecardAsync(
     connectionId: "<value>",
     id: "<id>",
-    atsScorecard: new AtsScorecard() {}
+    atsScorecard: new AtsScorecard() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1391,6 +1446,7 @@ var res = await sdk.Ats.PatchAtsScorecardAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Scorecard                                     |
 | `AtsScorecard`                                          | [AtsScorecard](../../Models/Components/AtsScorecard.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 
@@ -1711,6 +1767,9 @@ var res = await sdk.Ats.UpdateAtsActivityAsync(
     id: "<id>",
     atsActivity: new AtsActivity() {
         Title = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -1724,6 +1783,7 @@ var res = await sdk.Ats.UpdateAtsActivityAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Activity                                    |
 | `AtsActivity`                                         | [AtsActivity](../../Models/Components/AtsActivity.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -1755,7 +1815,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.UpdateAtsApplicationAsync(
     connectionId: "<value>",
     id: "<id>",
-    atsApplication: new AtsApplication() {}
+    atsApplication: new AtsApplication() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1768,6 +1831,7 @@ var res = await sdk.Ats.UpdateAtsApplicationAsync(
 | `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
 | `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Application                                       |
 | `AtsApplication`                                            | [AtsApplication](../../Models/Components/AtsApplication.md) | :heavy_minus_sign:                                          | N/A                                                         |
+| `Fields`                                                    | List<*string*>                                              | :heavy_minus_sign:                                          | Comma-delimited fields to return                            |
 
 ### Response
 
@@ -1799,7 +1863,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.UpdateAtsCandidateAsync(
     connectionId: "<value>",
     id: "<id>",
-    atsCandidate: new AtsCandidate() {}
+    atsCandidate: new AtsCandidate() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1812,6 +1879,7 @@ var res = await sdk.Ats.UpdateAtsCandidateAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Candidate                                     |
 | `AtsCandidate`                                          | [AtsCandidate](../../Models/Components/AtsCandidate.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 
@@ -1843,7 +1911,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.UpdateAtsDocumentAsync(
     connectionId: "<value>",
     id: "<id>",
-    atsDocument: new AtsDocument() {}
+    atsDocument: new AtsDocument() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1856,6 +1927,7 @@ var res = await sdk.Ats.UpdateAtsDocumentAsync(
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Document                                    |
 | `AtsDocument`                                         | [AtsDocument](../../Models/Components/AtsDocument.md) | :heavy_minus_sign:                                    | N/A                                                   |
+| `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
 
@@ -1887,7 +1959,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.UpdateAtsInterviewAsync(
     connectionId: "<value>",
     id: "<id>",
-    atsInterview: new AtsInterview() {}
+    atsInterview: new AtsInterview() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1900,6 +1975,7 @@ var res = await sdk.Ats.UpdateAtsInterviewAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Interview                                     |
 | `AtsInterview`                                          | [AtsInterview](../../Models/Components/AtsInterview.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 
@@ -1931,7 +2007,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.UpdateAtsJobAsync(
     connectionId: "<value>",
     id: "<id>",
-    atsJob: new AtsJob() {}
+    atsJob: new AtsJob() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1944,6 +2023,7 @@ var res = await sdk.Ats.UpdateAtsJobAsync(
 | `ConnectionId`                              | *string*                                    | :heavy_check_mark:                          | ID of the connection                        |
 | `Id`                                        | *string*                                    | :heavy_check_mark:                          | ID of the Job                               |
 | `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_minus_sign:                          | N/A                                         |
+| `Fields`                                    | List<*string*>                              | :heavy_minus_sign:                          | Comma-delimited fields to return            |
 
 ### Response
 
@@ -1975,7 +2055,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ats.UpdateAtsScorecardAsync(
     connectionId: "<value>",
     id: "<id>",
-    atsScorecard: new AtsScorecard() {}
+    atsScorecard: new AtsScorecard() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -1988,6 +2071,7 @@ var res = await sdk.Ats.UpdateAtsScorecardAsync(
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Scorecard                                     |
 | `AtsScorecard`                                          | [AtsScorecard](../../Models/Components/AtsScorecard.md) | :heavy_minus_sign:                                      | N/A                                                     |
+| `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
 

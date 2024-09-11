@@ -33,6 +33,9 @@ var res = await sdk.Space.CreateKmsSpaceAsync(
     kmsSpace: new KmsSpace() {
         Id = "<id>",
         Name = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -45,6 +48,7 @@ var res = await sdk.Space.CreateKmsSpaceAsync(
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
 | `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_minus_sign:                              | N/A                                             |
+| `Fields`                                        | List<*string*>                                  | :heavy_minus_sign:                              | Comma-delimited fields to return                |
 
 ### Response
 
@@ -167,6 +171,9 @@ var res = await sdk.Space.PatchKmsSpaceAsync(
     kmsSpace: new KmsSpace() {
         Id = "<id>",
         Name = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -180,6 +187,7 @@ var res = await sdk.Space.PatchKmsSpaceAsync(
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
 | `Id`                                            | *string*                                        | :heavy_check_mark:                              | ID of the Space                                 |
 | `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_minus_sign:                              | N/A                                             |
+| `Fields`                                        | List<*string*>                                  | :heavy_minus_sign:                              | Comma-delimited fields to return                |
 
 ### Response
 
@@ -255,6 +263,9 @@ var res = await sdk.Space.UpdateKmsSpaceAsync(
     kmsSpace: new KmsSpace() {
         Id = "<id>",
         Name = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -268,6 +279,7 @@ var res = await sdk.Space.UpdateKmsSpaceAsync(
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
 | `Id`                                            | *string*                                        | :heavy_check_mark:                              | ID of the Space                                 |
 | `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_minus_sign:                              | N/A                                             |
+| `Fields`                                        | List<*string*>                                  | :heavy_minus_sign:                              | Comma-delimited fields to return                |
 
 ### Response
 

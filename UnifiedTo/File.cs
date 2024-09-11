@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create a file
         /// </summary>
-        Task<CreateStorageFileResponse> CreateStorageFileAsync(string connectionId, StorageFile? storageFile = null);
+        Task<CreateStorageFileResponse> CreateStorageFileAsync(string connectionId, StorageFile? storageFile = null, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a file
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a file
         /// </summary>
-        Task<PatchStorageFileResponse> PatchStorageFileAsync(string connectionId, string id, StorageFile? storageFile = null);
+        Task<PatchStorageFileResponse> PatchStorageFileAsync(string connectionId, string id, StorageFile? storageFile = null, List<string>? fields = null);
 
         /// <summary>
         /// Remove a file
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a file
         /// </summary>
-        Task<UpdateStorageFileResponse> UpdateStorageFileAsync(string connectionId, string id, StorageFile? storageFile = null);
+        Task<UpdateStorageFileResponse> UpdateStorageFileAsync(string connectionId, string id, StorageFile? storageFile = null, List<string>? fields = null);
     }
 
     public class File: IFile
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.47";
-        private const string _sdkGenVersion = "2.409.8";
+        private const string _sdkVersion = "0.19.48";
+        private const string _sdkGenVersion = "2.415.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.47 2.409.8 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.48 2.415.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,12 +76,13 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateStorageFileResponse> CreateStorageFileAsync(string connectionId, StorageFile? storageFile = null)
+        public async Task<CreateStorageFileResponse> CreateStorageFileAsync(string connectionId, StorageFile? storageFile = null, List<string>? fields = null)
         {
             var request = new CreateStorageFileRequest()
             {
                 ConnectionId = connectionId,
                 StorageFile = storageFile,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/storage/{connection_id}/file", request);
@@ -327,13 +328,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchStorageFileResponse> PatchStorageFileAsync(string connectionId, string id, StorageFile? storageFile = null)
+        public async Task<PatchStorageFileResponse> PatchStorageFileAsync(string connectionId, string id, StorageFile? storageFile = null, List<string>? fields = null)
         {
             var request = new PatchStorageFileRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 StorageFile = storageFile,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/storage/{connection_id}/file/{id}", request);
@@ -486,13 +488,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateStorageFileResponse> UpdateStorageFileAsync(string connectionId, string id, StorageFile? storageFile = null)
+        public async Task<UpdateStorageFileResponse> UpdateStorageFileAsync(string connectionId, string id, StorageFile? storageFile = null, List<string>? fields = null)
         {
             var request = new UpdateStorageFileRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 StorageFile = storageFile,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/storage/{connection_id}/file/{id}", request);

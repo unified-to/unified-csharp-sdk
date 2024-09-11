@@ -42,6 +42,9 @@ var res = await sdk.Kms.CreateKmsPageAsync(
         SpaceId = "<value>",
         Title = "<value>",
         Type = UnifiedTo.Models.Components.KmsPageType.Html,
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -54,6 +57,7 @@ var res = await sdk.Kms.CreateKmsPageAsync(
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_minus_sign:                            | N/A                                           |
+| `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response
 
@@ -87,6 +91,9 @@ var res = await sdk.Kms.CreateKmsSpaceAsync(
     kmsSpace: new KmsSpace() {
         Id = "<id>",
         Name = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -99,6 +106,7 @@ var res = await sdk.Kms.CreateKmsSpaceAsync(
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
 | `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_minus_sign:                              | N/A                                             |
+| `Fields`                                        | List<*string*>                                  | :heavy_minus_sign:                              | Comma-delimited fields to return                |
 
 ### Response
 
@@ -312,6 +320,9 @@ var res = await sdk.Kms.PatchKmsPageAsync(
         SpaceId = "<value>",
         Title = "<value>",
         Type = UnifiedTo.Models.Components.KmsPageType.Text,
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -325,6 +336,7 @@ var res = await sdk.Kms.PatchKmsPageAsync(
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Page                                |
 | `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_minus_sign:                            | N/A                                           |
+| `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response
 
@@ -359,6 +371,9 @@ var res = await sdk.Kms.PatchKmsSpaceAsync(
     kmsSpace: new KmsSpace() {
         Id = "<id>",
         Name = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -372,6 +387,7 @@ var res = await sdk.Kms.PatchKmsSpaceAsync(
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
 | `Id`                                            | *string*                                        | :heavy_check_mark:                              | ID of the Space                                 |
 | `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_minus_sign:                              | N/A                                             |
+| `Fields`                                        | List<*string*>                                  | :heavy_minus_sign:                              | Comma-delimited fields to return                |
 
 ### Response
 
@@ -491,6 +507,9 @@ var res = await sdk.Kms.UpdateKmsPageAsync(
         SpaceId = "<value>",
         Title = "<value>",
         Type = UnifiedTo.Models.Components.KmsPageType.Text,
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -504,6 +523,7 @@ var res = await sdk.Kms.UpdateKmsPageAsync(
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Page                                |
 | `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_minus_sign:                            | N/A                                           |
+| `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response
 
@@ -538,6 +558,9 @@ var res = await sdk.Kms.UpdateKmsSpaceAsync(
     kmsSpace: new KmsSpace() {
         Id = "<id>",
         Name = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
     }
 );
 
@@ -551,6 +574,7 @@ var res = await sdk.Kms.UpdateKmsSpaceAsync(
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
 | `Id`                                            | *string*                                        | :heavy_check_mark:                              | ID of the Space                                 |
 | `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_minus_sign:                              | N/A                                             |
+| `Fields`                                        | List<*string*>                                  | :heavy_minus_sign:                              | Comma-delimited fields to return                |
 
 ### Response
 

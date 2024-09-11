@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create a member
         /// </summary>
-        Task<CreateMartechMemberResponse> CreateMartechMemberAsync(string connectionId, MarketingMember? marketingMember = null);
+        Task<CreateMartechMemberResponse> CreateMartechMemberAsync(string connectionId, MarketingMember? marketingMember = null, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a member
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a member
         /// </summary>
-        Task<PatchMartechMemberResponse> PatchMartechMemberAsync(string connectionId, string id, MarketingMember? marketingMember = null);
+        Task<PatchMartechMemberResponse> PatchMartechMemberAsync(string connectionId, string id, MarketingMember? marketingMember = null, List<string>? fields = null);
 
         /// <summary>
         /// Remove a member
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a member
         /// </summary>
-        Task<UpdateMartechMemberResponse> UpdateMartechMemberAsync(string connectionId, string id, MarketingMember? marketingMember = null);
+        Task<UpdateMartechMemberResponse> UpdateMartechMemberAsync(string connectionId, string id, MarketingMember? marketingMember = null, List<string>? fields = null);
     }
 
     public class Member: IMember
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.47";
-        private const string _sdkGenVersion = "2.409.8";
+        private const string _sdkVersion = "0.19.48";
+        private const string _sdkGenVersion = "2.415.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.47 2.409.8 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.48 2.415.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,12 +76,13 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateMartechMemberResponse> CreateMartechMemberAsync(string connectionId, MarketingMember? marketingMember = null)
+        public async Task<CreateMartechMemberResponse> CreateMartechMemberAsync(string connectionId, MarketingMember? marketingMember = null, List<string>? fields = null)
         {
             var request = new CreateMartechMemberRequest()
             {
                 ConnectionId = connectionId,
                 MarketingMember = marketingMember,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/martech/{connection_id}/member", request);
@@ -327,13 +328,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchMartechMemberResponse> PatchMartechMemberAsync(string connectionId, string id, MarketingMember? marketingMember = null)
+        public async Task<PatchMartechMemberResponse> PatchMartechMemberAsync(string connectionId, string id, MarketingMember? marketingMember = null, List<string>? fields = null)
         {
             var request = new PatchMartechMemberRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 MarketingMember = marketingMember,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/martech/{connection_id}/member/{id}", request);
@@ -486,13 +488,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateMartechMemberResponse> UpdateMartechMemberAsync(string connectionId, string id, MarketingMember? marketingMember = null)
+        public async Task<UpdateMartechMemberResponse> UpdateMartechMemberAsync(string connectionId, string id, MarketingMember? marketingMember = null, List<string>? fields = null)
         {
             var request = new UpdateMartechMemberRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 MarketingMember = marketingMember,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/martech/{connection_id}/member/{id}", request);

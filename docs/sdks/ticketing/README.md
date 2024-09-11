@@ -42,7 +42,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.CreateTicketingCustomerAsync(
     connectionId: "<value>",
-    ticketingCustomer: new TicketingCustomer() {}
+    ticketingCustomer: new TicketingCustomer() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -54,6 +57,7 @@ var res = await sdk.Ticketing.CreateTicketingCustomerAsync(
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `TicketingCustomer`                                               | [TicketingCustomer](../../Models/Components/TicketingCustomer.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -84,7 +88,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.CreateTicketingNoteAsync(
     connectionId: "<value>",
-    ticketingNote: new TicketingNote() {}
+    ticketingNote: new TicketingNote() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -96,6 +103,7 @@ var res = await sdk.Ticketing.CreateTicketingNoteAsync(
 | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
 | `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
 | `TicketingNote`                                           | [TicketingNote](../../Models/Components/TicketingNote.md) | :heavy_minus_sign:                                        | N/A                                                       |
+| `Fields`                                                  | List<*string*>                                            | :heavy_minus_sign:                                        | Comma-delimited fields to return                          |
 
 ### Response
 
@@ -126,7 +134,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.CreateTicketingTicketAsync(
     connectionId: "<value>",
-    ticketingTicket: new TicketingTicket() {}
+    ticketingTicket: new TicketingTicket() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -138,6 +149,7 @@ var res = await sdk.Ticketing.CreateTicketingTicketAsync(
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `TicketingTicket`                                             | [TicketingTicket](../../Models/Components/TicketingTicket.md) | :heavy_minus_sign:                                            | N/A                                                           |
+| `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response
 
@@ -433,7 +445,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ticketing.PatchTicketingCustomerAsync(
     connectionId: "<value>",
     id: "<id>",
-    ticketingCustomer: new TicketingCustomer() {}
+    ticketingCustomer: new TicketingCustomer() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -446,6 +461,7 @@ var res = await sdk.Ticketing.PatchTicketingCustomerAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Customer                                                |
 | `TicketingCustomer`                                               | [TicketingCustomer](../../Models/Components/TicketingCustomer.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -477,7 +493,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ticketing.PatchTicketingNoteAsync(
     connectionId: "<value>",
     id: "<id>",
-    ticketingNote: new TicketingNote() {}
+    ticketingNote: new TicketingNote() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -490,6 +509,7 @@ var res = await sdk.Ticketing.PatchTicketingNoteAsync(
 | `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
 | `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the Note                                            |
 | `TicketingNote`                                           | [TicketingNote](../../Models/Components/TicketingNote.md) | :heavy_minus_sign:                                        | N/A                                                       |
+| `Fields`                                                  | List<*string*>                                            | :heavy_minus_sign:                                        | Comma-delimited fields to return                          |
 
 ### Response
 
@@ -521,7 +541,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ticketing.PatchTicketingTicketAsync(
     connectionId: "<value>",
     id: "<id>",
-    ticketingTicket: new TicketingTicket() {}
+    ticketingTicket: new TicketingTicket() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -534,6 +557,7 @@ var res = await sdk.Ticketing.PatchTicketingTicketAsync(
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Ticket                                              |
 | `TicketingTicket`                                             | [TicketingTicket](../../Models/Components/TicketingTicket.md) | :heavy_minus_sign:                                            | N/A                                                           |
+| `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response
 
@@ -688,7 +712,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ticketing.UpdateTicketingCustomerAsync(
     connectionId: "<value>",
     id: "<id>",
-    ticketingCustomer: new TicketingCustomer() {}
+    ticketingCustomer: new TicketingCustomer() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -701,6 +728,7 @@ var res = await sdk.Ticketing.UpdateTicketingCustomerAsync(
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Customer                                                |
 | `TicketingCustomer`                                               | [TicketingCustomer](../../Models/Components/TicketingCustomer.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
 
@@ -732,7 +760,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ticketing.UpdateTicketingNoteAsync(
     connectionId: "<value>",
     id: "<id>",
-    ticketingNote: new TicketingNote() {}
+    ticketingNote: new TicketingNote() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -745,6 +776,7 @@ var res = await sdk.Ticketing.UpdateTicketingNoteAsync(
 | `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
 | `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the Note                                            |
 | `TicketingNote`                                           | [TicketingNote](../../Models/Components/TicketingNote.md) | :heavy_minus_sign:                                        | N/A                                                       |
+| `Fields`                                                  | List<*string*>                                            | :heavy_minus_sign:                                        | Comma-delimited fields to return                          |
 
 ### Response
 
@@ -776,7 +808,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Ticketing.UpdateTicketingTicketAsync(
     connectionId: "<value>",
     id: "<id>",
-    ticketingTicket: new TicketingTicket() {}
+    ticketingTicket: new TicketingTicket() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
@@ -789,6 +824,7 @@ var res = await sdk.Ticketing.UpdateTicketingTicketAsync(
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Ticket                                              |
 | `TicketingTicket`                                             | [TicketingTicket](../../Models/Components/TicketingTicket.md) | :heavy_minus_sign:                                            | N/A                                                           |
+| `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response
 

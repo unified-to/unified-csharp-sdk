@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create a message
         /// </summary>
-        Task<CreateMessagingMessageResponse> CreateMessagingMessageAsync(string connectionId, MessagingMessage? messagingMessage = null);
+        Task<CreateMessagingMessageResponse> CreateMessagingMessageAsync(string connectionId, MessagingMessage? messagingMessage = null, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a message
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a message
         /// </summary>
-        Task<PatchMessagingMessageResponse> PatchMessagingMessageAsync(string connectionId, string id, MessagingMessage? messagingMessage = null);
+        Task<PatchMessagingMessageResponse> PatchMessagingMessageAsync(string connectionId, string id, MessagingMessage? messagingMessage = null, List<string>? fields = null);
 
         /// <summary>
         /// Remove a message
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a message
         /// </summary>
-        Task<UpdateMessagingMessageResponse> UpdateMessagingMessageAsync(string connectionId, string id, MessagingMessage? messagingMessage = null);
+        Task<UpdateMessagingMessageResponse> UpdateMessagingMessageAsync(string connectionId, string id, MessagingMessage? messagingMessage = null, List<string>? fields = null);
     }
 
     public class Message: IMessage
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.47";
-        private const string _sdkGenVersion = "2.409.8";
+        private const string _sdkVersion = "0.19.48";
+        private const string _sdkGenVersion = "2.415.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.47 2.409.8 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.48 2.415.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,12 +76,13 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateMessagingMessageResponse> CreateMessagingMessageAsync(string connectionId, MessagingMessage? messagingMessage = null)
+        public async Task<CreateMessagingMessageResponse> CreateMessagingMessageAsync(string connectionId, MessagingMessage? messagingMessage = null, List<string>? fields = null)
         {
             var request = new CreateMessagingMessageRequest()
             {
                 ConnectionId = connectionId,
                 MessagingMessage = messagingMessage,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/messaging/{connection_id}/message", request);
@@ -327,13 +328,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchMessagingMessageResponse> PatchMessagingMessageAsync(string connectionId, string id, MessagingMessage? messagingMessage = null)
+        public async Task<PatchMessagingMessageResponse> PatchMessagingMessageAsync(string connectionId, string id, MessagingMessage? messagingMessage = null, List<string>? fields = null)
         {
             var request = new PatchMessagingMessageRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 MessagingMessage = messagingMessage,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/messaging/{connection_id}/message/{id}", request);
@@ -486,13 +488,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateMessagingMessageResponse> UpdateMessagingMessageAsync(string connectionId, string id, MessagingMessage? messagingMessage = null)
+        public async Task<UpdateMessagingMessageResponse> UpdateMessagingMessageAsync(string connectionId, string id, MessagingMessage? messagingMessage = null, List<string>? fields = null)
         {
             var request = new UpdateMessagingMessageRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 MessagingMessage = messagingMessage,
+                Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/messaging/{connection_id}/message/{id}", request);

@@ -9,6 +9,7 @@
 #nullable enable
 namespace UnifiedTo.Models.Requests
 {
+    using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
@@ -32,5 +33,11 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("request:mediaType=application/json")]
         public MarketingList? MarketingList { get; set; }
+
+        /// <summary>
+        /// Comma-delimited fields to return
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
+        public List<string>? Fields { get; set; }
     }
 }

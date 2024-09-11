@@ -11,7 +11,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "<value>",
-    accountingAccount: new AccountingAccount() {}
+    accountingAccount: new AccountingAccount() {},
+    fields: new List<string>() {
+        "<value>",
+    }
 );
 
 // handle response
