@@ -9,10 +9,9 @@
 #nullable enable
 namespace UnifiedTo.Models.Requests
 {
-    using System.Collections.Generic;
     using UnifiedTo.Utils;
     
-    public class CreatePassthroughRequest
+    public class CreatePassthroughRawRequest
     {
 
         /// <summary>
@@ -27,7 +26,7 @@ namespace UnifiedTo.Models.Requests
         /// <summary>
         /// integration-specific payload
         /// </summary>
-        [SpeakeasyMetadata("request:mediaType=application/json")]
-        public Dictionary<string, object>? RequestBody { get; set; }
+        [SpeakeasyMetadata("request:mediaType=text/plain")]
+        public byte[]? RequestBody { get; set; }
     }
 }

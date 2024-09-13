@@ -28,7 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Passthrough POST
         /// </summary>
-        Task<CreatePassthroughResponse> CreatePassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null);
+        Task<CreatePassthroughJsonResponse> CreatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null);
+
+        /// <summary>
+        /// Passthrough POST
+        /// </summary>
+        Task<CreatePassthroughRawResponse> CreatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null);
 
         /// <summary>
         /// Passthrough GET
@@ -38,7 +43,12 @@ namespace UnifiedTo
         /// <summary>
         /// Passthrough PUT
         /// </summary>
-        Task<PatchPassthroughResponse> PatchPassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null);
+        Task<PatchPassthroughJsonResponse> PatchPassthroughJsonAsync(string connectionId, string path, object? requestBody = null);
+
+        /// <summary>
+        /// Passthrough PUT
+        /// </summary>
+        Task<PatchPassthroughRawResponse> PatchPassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null);
 
         /// <summary>
         /// Passthrough DELETE
@@ -48,17 +58,22 @@ namespace UnifiedTo
         /// <summary>
         /// Passthrough PUT
         /// </summary>
-        Task<UpdatePassthroughResponse> UpdatePassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null);
+        Task<UpdatePassthroughJsonResponse> UpdatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null);
+
+        /// <summary>
+        /// Passthrough PUT
+        /// </summary>
+        Task<UpdatePassthroughRawResponse> UpdatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null);
     }
 
     public class Passthrough: IPassthrough
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.19.48";
-        private const string _sdkGenVersion = "2.415.0";
+        private const string _sdkVersion = "0.19.49";
+        private const string _sdkGenVersion = "2.415.6";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.19.48 2.415.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.19.49 2.415.6 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -71,9 +86,9 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreatePassthroughResponse> CreatePassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null)
+        public async Task<CreatePassthroughJsonResponse> CreatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null)
         {
-            var request = new CreatePassthroughRequest()
+            var request = new CreatePassthroughJsonRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
@@ -96,7 +111,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("createPassthrough", null, _securitySource);
+            var hookCtx = new HookContext("createPassthrough_json", null, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -132,18 +147,170 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
-            if(responseStatusCode >= 200 && responseStatusCode < 300)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
+            if(new List<int>{204, 205, 304}.Contains(responseStatusCode))
+            {                
+                return new CreatePassthroughJsonResponse()
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Dictionary<string, object>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreatePassthroughResponse()
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse
+                };
+            }
+            else if(responseStatusCode >= 200 && responseStatusCode < 300)
+            {
+                if(Utilities.IsContentTypeMatch("*/*", contentType))
+                {
+                    var response = new CreatePassthroughJsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Result = obj;
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new CreatePassthroughJsonResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.TwoXXApplicationJsonAny = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/plain", contentType))
+                {
+                    var response = new CreatePassthroughJsonResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.TwoXXTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else
+                {
+                    throw new SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                }
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
+            {
+                throw new SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+        }
+
+        public async Task<CreatePassthroughRawResponse> CreatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null)
+        {
+            var request = new CreatePassthroughRawRequest()
+            {
+                ConnectionId = connectionId,
+                Path = path,
+                RequestBody = requestBody,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "RequestBody", "raw", false, true);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            if (_securitySource != null)
+            {
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext("createPassthrough_raw", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(new List<int>{204, 205, 304}.Contains(responseStatusCode))
+            {                
+                return new CreatePassthroughRawResponse()
+                {
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse
+                };
+            }
+            else if(responseStatusCode >= 200 && responseStatusCode < 300)
+            {
+                if(Utilities.IsContentTypeMatch("*/*", contentType))
+                {
+                    var response = new CreatePassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new CreatePassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.TwoXXApplicationJsonAny = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/plain", contentType))
+                {
+                    var response = new CreatePassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.TwoXXTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
                 else
@@ -215,18 +382,49 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
-            if(responseStatusCode >= 200 && responseStatusCode < 300)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
+            if(new List<int>{204, 205, 304}.Contains(responseStatusCode))
+            {                
+                return new ListPassthroughsResponse()
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Dictionary<string, object>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse
+                };
+            }
+            else if(responseStatusCode >= 200 && responseStatusCode < 300)
+            {
+                if(Utilities.IsContentTypeMatch("*/*", contentType))
+                {
                     var response = new ListPassthroughsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Result = obj;
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new ListPassthroughsResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.TwoXXApplicationJsonAny = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/plain", contentType))
+                {
+                    var response = new ListPassthroughsResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.TwoXXTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
                 else
@@ -244,9 +442,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchPassthroughResponse> PatchPassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null)
+        public async Task<PatchPassthroughJsonResponse> PatchPassthroughJsonAsync(string connectionId, string path, object? requestBody = null)
         {
-            var request = new PatchPassthroughRequest()
+            var request = new PatchPassthroughJsonRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
@@ -269,7 +467,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("patchPassthrough", null, _securitySource);
+            var hookCtx = new HookContext("patchPassthrough_json", null, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -305,18 +503,170 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
-            if(responseStatusCode >= 200 && responseStatusCode < 300)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
+            if(new List<int>{204, 205, 304}.Contains(responseStatusCode))
+            {                
+                return new PatchPassthroughJsonResponse()
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Dictionary<string, object>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchPassthroughResponse()
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse
+                };
+            }
+            else if(responseStatusCode >= 200 && responseStatusCode < 300)
+            {
+                if(Utilities.IsContentTypeMatch("*/*", contentType))
+                {
+                    var response = new PatchPassthroughJsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Result = obj;
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new PatchPassthroughJsonResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.TwoXXApplicationJsonAny = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/plain", contentType))
+                {
+                    var response = new PatchPassthroughJsonResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.TwoXXTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else
+                {
+                    throw new SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                }
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
+            {
+                throw new SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+        }
+
+        public async Task<PatchPassthroughRawResponse> PatchPassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null)
+        {
+            var request = new PatchPassthroughRawRequest()
+            {
+                ConnectionId = connectionId,
+                Path = path,
+                RequestBody = requestBody,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "RequestBody", "raw", false, true);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            if (_securitySource != null)
+            {
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext("patchPassthrough_raw", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(new List<int>{204, 205, 304}.Contains(responseStatusCode))
+            {                
+                return new PatchPassthroughRawResponse()
+                {
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse
+                };
+            }
+            else if(responseStatusCode >= 200 && responseStatusCode < 300)
+            {
+                if(Utilities.IsContentTypeMatch("*/*", contentType))
+                {
+                    var response = new PatchPassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new PatchPassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.TwoXXApplicationJsonAny = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/plain", contentType))
+                {
+                    var response = new PatchPassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.TwoXXTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
                 else
@@ -388,18 +738,49 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
-            if(responseStatusCode >= 200 && responseStatusCode < 300)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
+            if(new List<int>{204, 205, 304}.Contains(responseStatusCode))
+            {                
+                return new RemovePassthroughResponse()
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Dictionary<string, object>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse
+                };
+            }
+            else if(responseStatusCode >= 200 && responseStatusCode < 300)
+            {
+                if(Utilities.IsContentTypeMatch("*/*", contentType))
+                {
                     var response = new RemovePassthroughResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Result = obj;
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new RemovePassthroughResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.TwoXXApplicationJsonAny = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/plain", contentType))
+                {
+                    var response = new RemovePassthroughResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.TwoXXTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
                 else
@@ -417,9 +798,9 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdatePassthroughResponse> UpdatePassthroughAsync(string connectionId, string path, Dictionary<string, object>? requestBody = null)
+        public async Task<UpdatePassthroughJsonResponse> UpdatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null)
         {
-            var request = new UpdatePassthroughRequest()
+            var request = new UpdatePassthroughJsonRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
@@ -442,7 +823,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("updatePassthrough", null, _securitySource);
+            var hookCtx = new HookContext("updatePassthrough_json", null, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -478,18 +859,170 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
-            if(responseStatusCode >= 200 && responseStatusCode < 300)
-            {
-                if(Utilities.IsContentTypeMatch("application/json", contentType))
+            if(new List<int>{204, 205, 304}.Contains(responseStatusCode))
+            {                
+                return new UpdatePassthroughJsonResponse()
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Dictionary<string, object>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdatePassthroughResponse()
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse
+                };
+            }
+            else if(responseStatusCode >= 200 && responseStatusCode < 300)
+            {
+                if(Utilities.IsContentTypeMatch("*/*", contentType))
+                {
+                    var response = new UpdatePassthroughJsonResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Result = obj;
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new UpdatePassthroughJsonResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.TwoXXApplicationJsonAny = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/plain", contentType))
+                {
+                    var response = new UpdatePassthroughJsonResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.TwoXXTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else
+                {
+                    throw new SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+                }
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
+            {
+                throw new SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+        }
+
+        public async Task<UpdatePassthroughRawResponse> UpdatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null)
+        {
+            var request = new UpdatePassthroughRawRequest()
+            {
+                ConnectionId = connectionId,
+                Path = path,
+                RequestBody = requestBody,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            var serializedBody = RequestBodySerializer.Serialize(request, "RequestBody", "raw", false, true);
+            if (serializedBody != null)
+            {
+                httpRequest.Content = serializedBody;
+            }
+
+            if (_securitySource != null)
+            {
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext("updatePassthrough_raw", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(new List<int>{204, 205, 304}.Contains(responseStatusCode))
+            {                
+                return new UpdatePassthroughRawResponse()
+                {
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse
+                };
+            }
+            else if(responseStatusCode >= 200 && responseStatusCode < 300)
+            {
+                if(Utilities.IsContentTypeMatch("*/*", contentType))
+                {
+                    var response = new UpdatePassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new UpdatePassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.TwoXXApplicationJsonAny = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/plain", contentType))
+                {
+                    var response = new UpdatePassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.TwoXXTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
                 else

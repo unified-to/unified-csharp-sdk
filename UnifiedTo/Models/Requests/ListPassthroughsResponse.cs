@@ -18,14 +18,23 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
-        /// HTTP response content type for this operation
+        /// Successful
         /// </summary>
-        public string? ContentType { get; set; } = default!;
+        public object? TwoXXApplicationJsonAny { get; set; }
 
         /// <summary>
         /// Successful
         /// </summary>
-        public Dictionary<string, object>? Result { get; set; }
+        public string? TwoXXTextPlainRes { get; set; }
+
+        public byte[]? Body { get; set; }
+
+        /// <summary>
+        /// HTTP response content type for this operation
+        /// </summary>
+        public string? ContentType { get; set; } = default!;
+
+        public Dictionary<string, List<string>> Headers { get; set; } = default!;
 
         /// <summary>
         /// HTTP response status code for this operation

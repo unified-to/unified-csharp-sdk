@@ -5,13 +5,16 @@
 
 ### Available Operations
 
-* [CreatePassthrough](#createpassthrough) - Passthrough POST
+* [CreatePassthroughJson](#createpassthroughjson) - Passthrough POST
+* [CreatePassthroughRaw](#createpassthroughraw) - Passthrough POST
 * [ListPassthroughs](#listpassthroughs) - Passthrough GET
-* [PatchPassthrough](#patchpassthrough) - Passthrough PUT
+* [PatchPassthroughJson](#patchpassthroughjson) - Passthrough PUT
+* [PatchPassthroughRaw](#patchpassthroughraw) - Passthrough PUT
 * [RemovePassthrough](#removepassthrough) - Passthrough DELETE
-* [UpdatePassthrough](#updatepassthrough) - Passthrough PUT
+* [UpdatePassthroughJson](#updatepassthroughjson) - Passthrough PUT
+* [UpdatePassthroughRaw](#updatepassthroughraw) - Passthrough PUT
 
-## CreatePassthrough
+## CreatePassthroughJson
 
 Passthrough POST
 
@@ -20,19 +23,16 @@ Passthrough POST
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Passthrough.CreatePassthroughAsync(
+var res = await sdk.Passthrough.CreatePassthroughJsonAsync(
     connectionId: "<value>",
-    path: "/etc/periodic",
-    requestBody: new Dictionary<string, object>() {
-        { "key", "<value>" },
-    }
+    path: "/opt/lib",
+    requestBody: "<value>"
 );
 
 // handle response
@@ -44,11 +44,54 @@ var res = await sdk.Passthrough.CreatePassthroughAsync(
 | ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
 | `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
 | `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
-| `RequestBody`                | Dictionary<String, *object*> | :heavy_minus_sign:           | integration-specific payload |
+| `RequestBody`                | *object*                     | :heavy_minus_sign:           | integration-specific payload |
 
 ### Response
 
-**[CreatePassthroughResponse](../../Models/Requests/CreatePassthroughResponse.md)**
+**[CreatePassthroughJsonResponse](../../Models/Requests/CreatePassthroughJsonResponse.md)**
+
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+
+## CreatePassthroughRaw
+
+Passthrough POST
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Passthrough.CreatePassthroughRawAsync(
+    connectionId: "<value>",
+    path: "/etc/namedb",
+    requestBody: System.Text.Encoding.UTF8.GetBytes("0x34ABa9b31D")
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                    | Type                         | Required                     | Description                  |
+| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
+| `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
+| `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
+| `RequestBody`                | *byte[]*                     | :heavy_minus_sign:           | integration-specific payload |
+
+### Response
+
+**[CreatePassthroughRawResponse](../../Models/Requests/CreatePassthroughRawResponse.md)**
 
 ### Errors
 
@@ -98,7 +141,7 @@ var res = await sdk.Passthrough.ListPassthroughsAsync(
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 
-## PatchPassthrough
+## PatchPassthroughJson
 
 Passthrough PUT
 
@@ -107,19 +150,16 @@ Passthrough PUT
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Passthrough.PatchPassthroughAsync(
+var res = await sdk.Passthrough.PatchPassthroughJsonAsync(
     connectionId: "<value>",
-    path: "/mnt",
-    requestBody: new Dictionary<string, object>() {
-        { "key", "<value>" },
-    }
+    path: "/home/user",
+    requestBody: "<value>"
 );
 
 // handle response
@@ -131,11 +171,54 @@ var res = await sdk.Passthrough.PatchPassthroughAsync(
 | ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
 | `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
 | `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
-| `RequestBody`                | Dictionary<String, *object*> | :heavy_minus_sign:           | integration-specific payload |
+| `RequestBody`                | *object*                     | :heavy_minus_sign:           | integration-specific payload |
 
 ### Response
 
-**[PatchPassthroughResponse](../../Models/Requests/PatchPassthroughResponse.md)**
+**[PatchPassthroughJsonResponse](../../Models/Requests/PatchPassthroughJsonResponse.md)**
+
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+
+## PatchPassthroughRaw
+
+Passthrough PUT
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Passthrough.PatchPassthroughRawAsync(
+    connectionId: "<value>",
+    path: "/etc/mail",
+    requestBody: System.Text.Encoding.UTF8.GetBytes("0x7CEb8f75C6")
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                    | Type                         | Required                     | Description                  |
+| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
+| `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
+| `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
+| `RequestBody`                | *byte[]*                     | :heavy_minus_sign:           | integration-specific payload |
+
+### Response
+
+**[PatchPassthroughRawResponse](../../Models/Requests/PatchPassthroughRawResponse.md)**
 
 ### Errors
 
@@ -185,7 +268,7 @@ var res = await sdk.Passthrough.RemovePassthroughAsync(
 | UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
 
 
-## UpdatePassthrough
+## UpdatePassthroughJson
 
 Passthrough PUT
 
@@ -194,19 +277,16 @@ Passthrough PUT
 ```csharp
 using UnifiedTo;
 using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Passthrough.UpdatePassthroughAsync(
+var res = await sdk.Passthrough.UpdatePassthroughJsonAsync(
     connectionId: "<value>",
-    path: "/dev",
-    requestBody: new Dictionary<string, object>() {
-        { "key", "<value>" },
-    }
+    path: "/etc/namedb",
+    requestBody: "<value>"
 );
 
 // handle response
@@ -218,11 +298,54 @@ var res = await sdk.Passthrough.UpdatePassthroughAsync(
 | ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
 | `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
 | `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
-| `RequestBody`                | Dictionary<String, *object*> | :heavy_minus_sign:           | integration-specific payload |
+| `RequestBody`                | *object*                     | :heavy_minus_sign:           | integration-specific payload |
 
 ### Response
 
-**[UpdatePassthroughResponse](../../Models/Requests/UpdatePassthroughResponse.md)**
+**[UpdatePassthroughJsonResponse](../../Models/Requests/UpdatePassthroughJsonResponse.md)**
+
+### Errors
+
+| Error Object                         | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+
+
+## UpdatePassthroughRaw
+
+Passthrough PUT
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Passthrough.UpdatePassthroughRawAsync(
+    connectionId: "<value>",
+    path: "/System",
+    requestBody: System.Text.Encoding.UTF8.GetBytes("0x5587B3b9f8")
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                    | Type                         | Required                     | Description                  |
+| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
+| `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
+| `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
+| `RequestBody`                | *byte[]*                     | :heavy_minus_sign:           | integration-specific payload |
+
+### Response
+
+**[UpdatePassthroughRawResponse](../../Models/Requests/UpdatePassthroughRawResponse.md)**
 
 ### Errors
 

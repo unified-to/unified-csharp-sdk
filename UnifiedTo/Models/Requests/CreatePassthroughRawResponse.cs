@@ -14,7 +14,7 @@ namespace UnifiedTo.Models.Requests
     using System;
     using UnifiedTo.Utils;
     
-    public class RemovePassthroughResponse
+    public class CreatePassthroughRawResponse
     {
 
         /// <summary>

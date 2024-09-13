@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: cf72c39f8e74a269aab0cb250423c99a
+  docChecksum: 0d6e24164cc3d7a1033d4f9883eb8f98
   docVersion: "1.0"
-  speakeasyVersion: 1.395.1
-  generationVersion: 2.415.0
-  releaseVersion: 0.19.48
-  configChecksum: 4aaf9d97901e373fdf349fdffed0bab2
+  speakeasyVersion: 1.396.6
+  generationVersion: 2.415.6
+  releaseVersion: 0.19.49
+  configChecksum: fdd9225452846a17be4528d40473497c
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -14,7 +14,7 @@ features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.9.17
+    core: 3.9.19
     flattening: 2.81.2
     globalSecurity: 2.83.6
     globalSecurityCallbacks: 0.1.0
@@ -380,8 +380,10 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateMartechMemberResponse.cs
   - UnifiedTo/Models/Requests/CreateMessagingMessageRequest.cs
   - UnifiedTo/Models/Requests/CreateMessagingMessageResponse.cs
-  - UnifiedTo/Models/Requests/CreatePassthroughRequest.cs
-  - UnifiedTo/Models/Requests/CreatePassthroughResponse.cs
+  - UnifiedTo/Models/Requests/CreatePassthroughJsonRequest.cs
+  - UnifiedTo/Models/Requests/CreatePassthroughJsonResponse.cs
+  - UnifiedTo/Models/Requests/CreatePassthroughRawRequest.cs
+  - UnifiedTo/Models/Requests/CreatePassthroughRawResponse.cs
   - UnifiedTo/Models/Requests/CreatePaymentLinkRequest.cs
   - UnifiedTo/Models/Requests/CreatePaymentLinkResponse.cs
   - UnifiedTo/Models/Requests/CreatePaymentPaymentRequest.cs
@@ -695,8 +697,10 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchMartechMemberResponse.cs
   - UnifiedTo/Models/Requests/PatchMessagingMessageRequest.cs
   - UnifiedTo/Models/Requests/PatchMessagingMessageResponse.cs
-  - UnifiedTo/Models/Requests/PatchPassthroughRequest.cs
-  - UnifiedTo/Models/Requests/PatchPassthroughResponse.cs
+  - UnifiedTo/Models/Requests/PatchPassthroughJsonRequest.cs
+  - UnifiedTo/Models/Requests/PatchPassthroughJsonResponse.cs
+  - UnifiedTo/Models/Requests/PatchPassthroughRawRequest.cs
+  - UnifiedTo/Models/Requests/PatchPassthroughRawResponse.cs
   - UnifiedTo/Models/Requests/PatchPaymentLinkRequest.cs
   - UnifiedTo/Models/Requests/PatchPaymentLinkResponse.cs
   - UnifiedTo/Models/Requests/PatchPaymentPaymentRequest.cs
@@ -875,8 +879,10 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateMartechMemberResponse.cs
   - UnifiedTo/Models/Requests/UpdateMessagingMessageRequest.cs
   - UnifiedTo/Models/Requests/UpdateMessagingMessageResponse.cs
-  - UnifiedTo/Models/Requests/UpdatePassthroughRequest.cs
-  - UnifiedTo/Models/Requests/UpdatePassthroughResponse.cs
+  - UnifiedTo/Models/Requests/UpdatePassthroughJsonRequest.cs
+  - UnifiedTo/Models/Requests/UpdatePassthroughJsonResponse.cs
+  - UnifiedTo/Models/Requests/UpdatePassthroughRawRequest.cs
+  - UnifiedTo/Models/Requests/UpdatePassthroughRawResponse.cs
   - UnifiedTo/Models/Requests/UpdatePaymentLinkRequest.cs
   - UnifiedTo/Models/Requests/UpdatePaymentLinkResponse.cs
   - UnifiedTo/Models/Requests/UpdatePaymentPaymentRequest.cs
@@ -1247,8 +1253,10 @@ generatedFiles:
   - docs/Models/Requests/CreateMartechMemberResponse.md
   - docs/Models/Requests/CreateMessagingMessageRequest.md
   - docs/Models/Requests/CreateMessagingMessageResponse.md
-  - docs/Models/Requests/CreatePassthroughRequest.md
-  - docs/Models/Requests/CreatePassthroughResponse.md
+  - docs/Models/Requests/CreatePassthroughJsonRequest.md
+  - docs/Models/Requests/CreatePassthroughJsonResponse.md
+  - docs/Models/Requests/CreatePassthroughRawRequest.md
+  - docs/Models/Requests/CreatePassthroughRawResponse.md
   - docs/Models/Requests/CreatePaymentLinkRequest.md
   - docs/Models/Requests/CreatePaymentLinkResponse.md
   - docs/Models/Requests/CreatePaymentPaymentRequest.md
@@ -1562,8 +1570,10 @@ generatedFiles:
   - docs/Models/Requests/PatchMartechMemberResponse.md
   - docs/Models/Requests/PatchMessagingMessageRequest.md
   - docs/Models/Requests/PatchMessagingMessageResponse.md
-  - docs/Models/Requests/PatchPassthroughRequest.md
-  - docs/Models/Requests/PatchPassthroughResponse.md
+  - docs/Models/Requests/PatchPassthroughJsonRequest.md
+  - docs/Models/Requests/PatchPassthroughJsonResponse.md
+  - docs/Models/Requests/PatchPassthroughRawRequest.md
+  - docs/Models/Requests/PatchPassthroughRawResponse.md
   - docs/Models/Requests/PatchPaymentLinkRequest.md
   - docs/Models/Requests/PatchPaymentLinkResponse.md
   - docs/Models/Requests/PatchPaymentPaymentRequest.md
@@ -1742,8 +1752,10 @@ generatedFiles:
   - docs/Models/Requests/UpdateMartechMemberResponse.md
   - docs/Models/Requests/UpdateMessagingMessageRequest.md
   - docs/Models/Requests/UpdateMessagingMessageResponse.md
-  - docs/Models/Requests/UpdatePassthroughRequest.md
-  - docs/Models/Requests/UpdatePassthroughResponse.md
+  - docs/Models/Requests/UpdatePassthroughJsonRequest.md
+  - docs/Models/Requests/UpdatePassthroughJsonResponse.md
+  - docs/Models/Requests/UpdatePassthroughRawRequest.md
+  - docs/Models/Requests/UpdatePassthroughRawResponse.md
   - docs/Models/Requests/UpdatePaymentLinkRequest.md
   - docs/Models/Requests/UpdatePaymentLinkResponse.md
   - docs/Models/Requests/UpdatePaymentPaymentRequest.md
@@ -3439,6 +3451,26 @@ examples:
       responses:
         2XX:
           application/json: {"key": "<value>"}
+    speakeasy-default-create-passthrough-json:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/opt/lib"
+      responses:
+        2XX:
+          '*/*': "0x3CbcA7c7be"
+          application/json: "<value>"
+          text/plain: "<value>"
+    speakeasy-default-create-passthrough-raw:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/etc/namedb"
+      responses:
+        2XX:
+          '*/*': "0x34ABa9b31D"
+          application/json: "<value>"
+          text/plain: "<value>"
   listPassthroughs:
     speakeasy-default-list-passthroughs:
       parameters:
@@ -3448,6 +3480,8 @@ examples:
       responses:
         2XX:
           application/json: {"key": "<value>"}
+          '*/*': "0xc838beeAd7"
+          text/plain: "<value>"
   patchPassthrough:
     speakeasy-default-patch-passthrough:
       parameters:
@@ -3457,6 +3491,26 @@ examples:
       responses:
         2XX:
           application/json: {"key": "<value>"}
+    speakeasy-default-patch-passthrough-json:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/home/user"
+      responses:
+        2XX:
+          '*/*': "0x4fb8209099"
+          application/json: "<value>"
+          text/plain: "<value>"
+    speakeasy-default-patch-passthrough-raw:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/etc/mail"
+      responses:
+        2XX:
+          '*/*': "0x7CEb8f75C6"
+          application/json: "<value>"
+          text/plain: "<value>"
   removePassthrough:
     speakeasy-default-remove-passthrough:
       parameters:
@@ -3466,6 +3520,8 @@ examples:
       responses:
         2XX:
           application/json: {}
+          '*/*': "0x0280cc8bc1"
+          text/plain: "<value>"
   updatePassthrough:
     speakeasy-default-update-passthrough:
       parameters:
@@ -3475,6 +3531,26 @@ examples:
       responses:
         2XX:
           application/json: {"key": "<value>", "key1": "<value>"}
+    speakeasy-default-update-passthrough-json:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/etc/namedb"
+      responses:
+        2XX:
+          '*/*': "0xDa7dcaB8ab"
+          application/json: "<value>"
+          text/plain: "<value>"
+    speakeasy-default-update-passthrough-raw:
+      parameters:
+        path:
+          connection_id: "<value>"
+          path: "/System"
+      responses:
+        2XX:
+          '*/*': "0x5587B3b9f8"
+          application/json: "<value>"
+          text/plain: "<value>"
   createPaymentLink:
     speakeasy-default-create-payment-link:
       parameters:

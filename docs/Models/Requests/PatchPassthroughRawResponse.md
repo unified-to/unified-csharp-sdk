@@ -1,4 +1,4 @@
-# ListPassthroughsResponse
+# PatchPassthroughRawResponse
 
 
 ## Fields
