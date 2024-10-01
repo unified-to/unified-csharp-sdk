@@ -29,10 +29,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Activity.CreateAtsActivityAsync(
-    connectionId: "<value>",
-    atsActivity: new AtsActivity() {
-        Title = "<value>",
-    },
+    connectionId: "<id>",
+    atsActivity: new AtsActivity() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -55,10 +53,9 @@ var res = await sdk.Activity.CreateAtsActivityAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAtsActivity
 
@@ -77,7 +74,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Activity.GetAtsActivityAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -101,10 +98,9 @@ var res = await sdk.Activity.GetAtsActivityAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAtsActivities
 
@@ -123,7 +119,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAtsActivitiesRequest req = new ListAtsActivitiesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Activity.ListAtsActivitiesAsync(req);
@@ -143,10 +139,9 @@ var res = await sdk.Activity.ListAtsActivitiesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchAtsActivity
 
@@ -165,11 +160,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Activity.PatchAtsActivityAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
-    atsActivity: new AtsActivity() {
-        Title = "<value>",
-    },
+    atsActivity: new AtsActivity() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -193,10 +186,9 @@ var res = await sdk.Activity.PatchAtsActivityAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveAtsActivity
 
@@ -214,7 +206,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Activity.RemoveAtsActivityAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -234,10 +226,9 @@ var res = await sdk.Activity.RemoveAtsActivityAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateAtsActivity
 
@@ -256,11 +247,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Activity.UpdateAtsActivityAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
-    atsActivity: new AtsActivity() {
-        Title = "<value>",
-    },
+    atsActivity: new AtsActivity() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -284,6 +273,6 @@ var res = await sdk.Activity.UpdateAtsActivityAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

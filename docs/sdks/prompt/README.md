@@ -24,7 +24,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Prompt.CreateGenaiPromptAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     genaiPrompt: new GenaiPrompt() {},
     fields: new List<string>() {
         "<value>",
@@ -48,6 +48,6 @@ var res = await sdk.Prompt.CreateGenaiPromptAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

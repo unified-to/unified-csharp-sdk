@@ -41,6 +41,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("ip_address")]
         public string? IpAddress { get; set; }
 
+        [JsonProperty("is_billable")]
+        public bool? IsBillable { get; set; }
+
         [JsonProperty("method")]
         public string Method { get; set; } = default!;
 
@@ -58,6 +61,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("type")]
         public ApiCallType Type { get; set; } = default!;
+
+        [JsonProperty("webhook_id")]
+        public string? WebhookId { get; set; }
 
         [JsonProperty("workspace_id")]
         public string? WorkspaceId { get; set; }

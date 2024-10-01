@@ -30,7 +30,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Uc.CreateUcContactAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     ucContact: new UcContact() {},
     fields: new List<string>() {
         "<value>",
@@ -54,10 +54,9 @@ var res = await sdk.Uc.CreateUcContactAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetUcContact
 
@@ -76,7 +75,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Uc.GetUcContactAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -100,10 +99,9 @@ var res = await sdk.Uc.GetUcContactAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListUcCalls
 
@@ -122,7 +120,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListUcCallsRequest req = new ListUcCallsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Uc.ListUcCallsAsync(req);
@@ -142,10 +140,9 @@ var res = await sdk.Uc.ListUcCallsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListUcContacts
 
@@ -164,7 +161,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListUcContactsRequest req = new ListUcContactsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Uc.ListUcContactsAsync(req);
@@ -184,10 +181,9 @@ var res = await sdk.Uc.ListUcContactsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchUcContact
 
@@ -206,7 +202,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Uc.PatchUcContactAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     ucContact: new UcContact() {},
     fields: new List<string>() {
@@ -232,10 +228,9 @@ var res = await sdk.Uc.PatchUcContactAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveUcContact
 
@@ -253,7 +248,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Uc.RemoveUcContactAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -273,10 +268,9 @@ var res = await sdk.Uc.RemoveUcContactAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateUcContact
 
@@ -295,7 +289,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Uc.UpdateUcContactAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     ucContact: new UcContact() {},
     fields: new List<string>() {
@@ -321,6 +315,6 @@ var res = await sdk.Uc.UpdateUcContactAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

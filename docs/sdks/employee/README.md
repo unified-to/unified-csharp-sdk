@@ -29,7 +29,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Employee.CreateHrisEmployeeAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     hrisEmployee: new HrisEmployee() {},
     fields: new List<string>() {
         "<value>",
@@ -53,10 +53,9 @@ var res = await sdk.Employee.CreateHrisEmployeeAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetHrisEmployee
 
@@ -75,7 +74,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Employee.GetHrisEmployeeAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -99,10 +98,9 @@ var res = await sdk.Employee.GetHrisEmployeeAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListHrisEmployees
 
@@ -121,7 +119,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListHrisEmployeesRequest req = new ListHrisEmployeesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Employee.ListHrisEmployeesAsync(req);
@@ -141,10 +139,9 @@ var res = await sdk.Employee.ListHrisEmployeesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchHrisEmployee
 
@@ -163,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Employee.PatchHrisEmployeeAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     hrisEmployee: new HrisEmployee() {},
     fields: new List<string>() {
@@ -189,10 +186,9 @@ var res = await sdk.Employee.PatchHrisEmployeeAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveHrisEmployee
 
@@ -210,7 +206,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Employee.RemoveHrisEmployeeAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -230,10 +226,9 @@ var res = await sdk.Employee.RemoveHrisEmployeeAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateHrisEmployee
 
@@ -252,7 +247,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Employee.UpdateHrisEmployeeAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     hrisEmployee: new HrisEmployee() {},
     fields: new List<string>() {
@@ -278,6 +273,6 @@ var res = await sdk.Employee.UpdateHrisEmployeeAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

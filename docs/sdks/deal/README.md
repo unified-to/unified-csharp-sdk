@@ -29,7 +29,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Deal.CreateCrmDealAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     crmDeal: new CrmDeal() {},
     fields: new List<string>() {
         "<value>",
@@ -53,10 +53,9 @@ var res = await sdk.Deal.CreateCrmDealAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetCrmDeal
 
@@ -75,7 +74,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Deal.GetCrmDealAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -99,10 +98,9 @@ var res = await sdk.Deal.GetCrmDealAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListCrmDeals
 
@@ -121,7 +119,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListCrmDealsRequest req = new ListCrmDealsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Deal.ListCrmDealsAsync(req);
@@ -141,10 +139,9 @@ var res = await sdk.Deal.ListCrmDealsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchCrmDeal
 
@@ -163,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Deal.PatchCrmDealAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     crmDeal: new CrmDeal() {},
     fields: new List<string>() {
@@ -189,10 +186,9 @@ var res = await sdk.Deal.PatchCrmDealAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveCrmDeal
 
@@ -210,7 +206,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Deal.RemoveCrmDealAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -230,10 +226,9 @@ var res = await sdk.Deal.RemoveCrmDealAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateCrmDeal
 
@@ -252,7 +247,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Deal.UpdateCrmDealAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     crmDeal: new CrmDeal() {},
     fields: new List<string>() {
@@ -278,6 +273,6 @@ var res = await sdk.Deal.UpdateCrmDealAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

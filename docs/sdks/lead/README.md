@@ -29,7 +29,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lead.CreateCrmLeadAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     crmLead: new CrmLead() {},
     fields: new List<string>() {
         "<value>",
@@ -53,10 +53,9 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetCrmLead
 
@@ -75,7 +74,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lead.GetCrmLeadAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -99,10 +98,9 @@ var res = await sdk.Lead.GetCrmLeadAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListCrmLeads
 
@@ -121,7 +119,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListCrmLeadsRequest req = new ListCrmLeadsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Lead.ListCrmLeadsAsync(req);
@@ -141,10 +139,9 @@ var res = await sdk.Lead.ListCrmLeadsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchCrmLead
 
@@ -163,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lead.PatchCrmLeadAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     crmLead: new CrmLead() {},
     fields: new List<string>() {
@@ -189,10 +186,9 @@ var res = await sdk.Lead.PatchCrmLeadAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveCrmLead
 
@@ -210,7 +206,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lead.RemoveCrmLeadAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -230,10 +226,9 @@ var res = await sdk.Lead.RemoveCrmLeadAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateCrmLead
 
@@ -252,7 +247,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lead.UpdateCrmLeadAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     crmLead: new CrmLead() {},
     fields: new List<string>() {
@@ -278,6 +273,6 @@ var res = await sdk.Lead.UpdateCrmLeadAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

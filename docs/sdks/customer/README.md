@@ -29,7 +29,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Customer.CreateTicketingCustomerAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     ticketingCustomer: new TicketingCustomer() {},
     fields: new List<string>() {
         "<value>",
@@ -53,10 +53,9 @@ var res = await sdk.Customer.CreateTicketingCustomerAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetTicketingCustomer
 
@@ -75,7 +74,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Customer.GetTicketingCustomerAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -99,10 +98,9 @@ var res = await sdk.Customer.GetTicketingCustomerAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListTicketingCustomers
 
@@ -121,7 +119,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListTicketingCustomersRequest req = new ListTicketingCustomersRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Customer.ListTicketingCustomersAsync(req);
@@ -141,10 +139,9 @@ var res = await sdk.Customer.ListTicketingCustomersAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchTicketingCustomer
 
@@ -163,7 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Customer.PatchTicketingCustomerAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     ticketingCustomer: new TicketingCustomer() {},
     fields: new List<string>() {
@@ -189,10 +186,9 @@ var res = await sdk.Customer.PatchTicketingCustomerAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveTicketingCustomer
 
@@ -210,7 +206,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Customer.RemoveTicketingCustomerAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -230,10 +226,9 @@ var res = await sdk.Customer.RemoveTicketingCustomerAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateTicketingCustomer
 
@@ -252,7 +247,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Customer.UpdateTicketingCustomerAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     ticketingCustomer: new TicketingCustomer() {},
     fields: new List<string>() {
@@ -278,6 +273,6 @@ var res = await sdk.Customer.UpdateTicketingCustomerAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

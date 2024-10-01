@@ -11,34 +11,27 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System.Collections.Generic;
-    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class CommerceItemMedia
+    public class CommerceMetadata
     {
 
-        [JsonProperty("alt")]
-        public string? Alt { get; set; }
-
-        [JsonProperty("height")]
-        public double? Height { get; set; }
+        [JsonProperty("extra_data")]
+        public Dictionary<string, object>? ExtraData { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
-        [JsonProperty("metadata")]
-        public List<CommerceMetadata>? Metadata { get; set; }
+        [JsonProperty("key")]
+        public string Key { get; set; } = default!;
 
-        [JsonProperty("position")]
-        public double? Position { get; set; }
+        [JsonProperty("namespace")]
+        public string? Namespace { get; set; }
 
         [JsonProperty("type")]
-        public CommerceItemMediaType? Type { get; set; }
+        public string? Type { get; set; }
 
-        [JsonProperty("url")]
-        public string Url { get; set; } = default!;
-
-        [JsonProperty("width")]
-        public double? Width { get; set; }
+        [JsonProperty("value")]
+        public Dictionary<string, object>? Value { get; set; }
     }
 }

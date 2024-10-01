@@ -39,7 +39,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Payment.CreatePaymentLinkAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     paymentLink: new PaymentLink() {},
     fields: new List<string>() {
         "<value>",
@@ -63,10 +63,9 @@ var res = await sdk.Payment.CreatePaymentLinkAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreatePaymentPayment
 
@@ -85,7 +84,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Payment.CreatePaymentPaymentAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     paymentPayment: new PaymentPayment() {},
     fields: new List<string>() {
         "<value>",
@@ -109,10 +108,9 @@ var res = await sdk.Payment.CreatePaymentPaymentAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetPaymentLink
 
@@ -131,7 +129,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Payment.GetPaymentLinkAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -155,10 +153,9 @@ var res = await sdk.Payment.GetPaymentLinkAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetPaymentPayment
 
@@ -177,7 +174,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Payment.GetPaymentPaymentAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -201,10 +198,9 @@ var res = await sdk.Payment.GetPaymentPaymentAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetPaymentPayout
 
@@ -223,7 +219,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Payment.GetPaymentPayoutAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -247,10 +243,9 @@ var res = await sdk.Payment.GetPaymentPayoutAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetPaymentRefund
 
@@ -269,7 +264,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Payment.GetPaymentRefundAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -293,10 +288,9 @@ var res = await sdk.Payment.GetPaymentRefundAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListPaymentLinks
 
@@ -315,7 +309,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListPaymentLinksRequest req = new ListPaymentLinksRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Payment.ListPaymentLinksAsync(req);
@@ -335,10 +329,9 @@ var res = await sdk.Payment.ListPaymentLinksAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListPaymentPayments
 
@@ -357,7 +350,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListPaymentPaymentsRequest req = new ListPaymentPaymentsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Payment.ListPaymentPaymentsAsync(req);
@@ -377,10 +370,9 @@ var res = await sdk.Payment.ListPaymentPaymentsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListPaymentPayouts
 
@@ -399,7 +391,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListPaymentPayoutsRequest req = new ListPaymentPayoutsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Payment.ListPaymentPayoutsAsync(req);
@@ -419,10 +411,9 @@ var res = await sdk.Payment.ListPaymentPayoutsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListPaymentRefunds
 
@@ -441,7 +432,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListPaymentRefundsRequest req = new ListPaymentRefundsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Payment.ListPaymentRefundsAsync(req);
@@ -461,10 +452,9 @@ var res = await sdk.Payment.ListPaymentRefundsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchPaymentLink
 
@@ -483,7 +473,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Payment.PatchPaymentLinkAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     paymentLink: new PaymentLink() {},
     fields: new List<string>() {
@@ -509,10 +499,9 @@ var res = await sdk.Payment.PatchPaymentLinkAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchPaymentPayment
 
@@ -531,7 +520,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Payment.PatchPaymentPaymentAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     paymentPayment: new PaymentPayment() {},
     fields: new List<string>() {
@@ -557,10 +546,9 @@ var res = await sdk.Payment.PatchPaymentPaymentAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemovePaymentLink
 
@@ -578,7 +566,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Payment.RemovePaymentLinkAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -598,10 +586,9 @@ var res = await sdk.Payment.RemovePaymentLinkAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemovePaymentPayment
 
@@ -619,7 +606,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Payment.RemovePaymentPaymentAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -639,10 +626,9 @@ var res = await sdk.Payment.RemovePaymentPaymentAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdatePaymentLink
 
@@ -661,7 +647,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Payment.UpdatePaymentLinkAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     paymentLink: new PaymentLink() {},
     fields: new List<string>() {
@@ -687,10 +673,9 @@ var res = await sdk.Payment.UpdatePaymentLinkAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdatePaymentPayment
 
@@ -709,7 +694,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Payment.UpdatePaymentPaymentAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     paymentPayment: new PaymentPayment() {},
     fields: new List<string>() {
@@ -735,6 +720,6 @@ var res = await sdk.Payment.UpdatePaymentPaymentAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

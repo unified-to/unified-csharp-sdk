@@ -29,11 +29,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Page.CreateKmsPageAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     kmsPage: new KmsPage() {
-        DownloadUrl = "<value>",
+        DownloadUrl = "https://bitter-adult.biz/",
         Id = "<id>",
-        SpaceId = "<value>",
+        SpaceId = "<id>",
         Title = "<value>",
         Type = UnifiedTo.Models.Components.KmsPageType.Html,
     },
@@ -59,10 +59,9 @@ var res = await sdk.Page.CreateKmsPageAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetKmsPage
 
@@ -81,7 +80,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Page.GetKmsPageAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -105,10 +104,9 @@ var res = await sdk.Page.GetKmsPageAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListKmsPages
 
@@ -127,7 +125,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListKmsPagesRequest req = new ListKmsPagesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Page.ListKmsPagesAsync(req);
@@ -147,10 +145,9 @@ var res = await sdk.Page.ListKmsPagesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchKmsPage
 
@@ -169,14 +166,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Page.PatchKmsPageAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     kmsPage: new KmsPage() {
-        DownloadUrl = "<value>",
+        DownloadUrl = "https://evil-tackle.info",
         Id = "<id>",
-        SpaceId = "<value>",
+        SpaceId = "<id>",
         Title = "<value>",
-        Type = UnifiedTo.Models.Components.KmsPageType.Text,
+        Type = UnifiedTo.Models.Components.KmsPageType.Markdown,
     },
     fields: new List<string>() {
         "<value>",
@@ -201,10 +198,9 @@ var res = await sdk.Page.PatchKmsPageAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveKmsPage
 
@@ -222,7 +218,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Page.RemoveKmsPageAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -242,10 +238,9 @@ var res = await sdk.Page.RemoveKmsPageAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateKmsPage
 
@@ -264,12 +259,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Page.UpdateKmsPageAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     kmsPage: new KmsPage() {
-        DownloadUrl = "<value>",
+        DownloadUrl = "https://salty-devil.com",
         Id = "<id>",
-        SpaceId = "<value>",
+        SpaceId = "<id>",
         Title = "<value>",
         Type = UnifiedTo.Models.Components.KmsPageType.Text,
     },
@@ -296,6 +291,6 @@ var res = await sdk.Page.UpdateKmsPageAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

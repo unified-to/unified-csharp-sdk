@@ -58,7 +58,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("title")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         [JsonProperty("to")]
         public List<AtsEmail>? To { get; set; }

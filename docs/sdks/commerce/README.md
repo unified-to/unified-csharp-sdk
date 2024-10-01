@@ -47,7 +47,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.CreateCommerceCollectionAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     commerceCollection: new CommerceCollection() {
         Id = "<id>",
         Name = "<value>",
@@ -74,10 +74,9 @@ var res = await sdk.Commerce.CreateCommerceCollectionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateCommerceInventory
 
@@ -96,7 +95,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.CreateCommerceInventoryAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     commerceInventory: new CommerceInventory() {
         Available = 5165.08D,
     },
@@ -122,10 +121,9 @@ var res = await sdk.Commerce.CreateCommerceInventoryAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateCommerceItem
 
@@ -144,7 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.CreateCommerceItemAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     commerceItem: new CommerceItem() {},
     fields: new List<string>() {
         "<value>",
@@ -168,10 +166,9 @@ var res = await sdk.Commerce.CreateCommerceItemAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateCommerceLocation
 
@@ -190,7 +187,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.CreateCommerceLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
     },
@@ -216,10 +213,9 @@ var res = await sdk.Commerce.CreateCommerceLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetCommerceCollection
 
@@ -238,7 +234,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.GetCommerceCollectionAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -262,10 +258,9 @@ var res = await sdk.Commerce.GetCommerceCollectionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetCommerceInventory
 
@@ -284,7 +279,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.GetCommerceInventoryAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -308,10 +303,9 @@ var res = await sdk.Commerce.GetCommerceInventoryAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetCommerceItem
 
@@ -330,7 +324,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.GetCommerceItemAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -354,10 +348,9 @@ var res = await sdk.Commerce.GetCommerceItemAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetCommerceLocation
 
@@ -376,7 +369,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.GetCommerceLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -400,10 +393,9 @@ var res = await sdk.Commerce.GetCommerceLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListCommerceCollections
 
@@ -422,7 +414,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListCommerceCollectionsRequest req = new ListCommerceCollectionsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Commerce.ListCommerceCollectionsAsync(req);
@@ -442,10 +434,9 @@ var res = await sdk.Commerce.ListCommerceCollectionsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListCommerceInventories
 
@@ -464,7 +455,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListCommerceInventoriesRequest req = new ListCommerceInventoriesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Commerce.ListCommerceInventoriesAsync(req);
@@ -484,10 +475,9 @@ var res = await sdk.Commerce.ListCommerceInventoriesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListCommerceItems
 
@@ -506,7 +496,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListCommerceItemsRequest req = new ListCommerceItemsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Commerce.ListCommerceItemsAsync(req);
@@ -526,10 +516,9 @@ var res = await sdk.Commerce.ListCommerceItemsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListCommerceLocations
 
@@ -548,7 +537,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListCommerceLocationsRequest req = new ListCommerceLocationsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Commerce.ListCommerceLocationsAsync(req);
@@ -568,10 +557,9 @@ var res = await sdk.Commerce.ListCommerceLocationsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchCommerceCollection
 
@@ -590,7 +578,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.PatchCommerceCollectionAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     commerceCollection: new CommerceCollection() {
         Id = "<id>",
@@ -619,10 +607,9 @@ var res = await sdk.Commerce.PatchCommerceCollectionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchCommerceInventory
 
@@ -641,7 +628,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.PatchCommerceInventoryAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     commerceInventory: new CommerceInventory() {
         Available = 615.23D,
@@ -669,10 +656,9 @@ var res = await sdk.Commerce.PatchCommerceInventoryAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchCommerceItem
 
@@ -691,7 +677,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.PatchCommerceItemAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     commerceItem: new CommerceItem() {},
     fields: new List<string>() {
@@ -717,10 +703,9 @@ var res = await sdk.Commerce.PatchCommerceItemAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchCommerceLocation
 
@@ -739,7 +724,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.PatchCommerceLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
@@ -767,10 +752,9 @@ var res = await sdk.Commerce.PatchCommerceLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveCommerceCollection
 
@@ -788,7 +772,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.RemoveCommerceCollectionAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -808,10 +792,9 @@ var res = await sdk.Commerce.RemoveCommerceCollectionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveCommerceInventory
 
@@ -829,7 +812,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.RemoveCommerceInventoryAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -849,10 +832,9 @@ var res = await sdk.Commerce.RemoveCommerceInventoryAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveCommerceItem
 
@@ -870,7 +852,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.RemoveCommerceItemAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -890,10 +872,9 @@ var res = await sdk.Commerce.RemoveCommerceItemAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveCommerceLocation
 
@@ -911,7 +892,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.RemoveCommerceLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -931,10 +912,9 @@ var res = await sdk.Commerce.RemoveCommerceLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateCommerceCollection
 
@@ -953,7 +933,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.UpdateCommerceCollectionAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     commerceCollection: new CommerceCollection() {
         Id = "<id>",
@@ -982,10 +962,9 @@ var res = await sdk.Commerce.UpdateCommerceCollectionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateCommerceInventory
 
@@ -1004,10 +983,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.UpdateCommerceInventoryAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     commerceInventory: new CommerceInventory() {
-        Available = 9360.02D,
+        Available = 9360.01D,
     },
     fields: new List<string>() {
         "<value>",
@@ -1032,10 +1011,9 @@ var res = await sdk.Commerce.UpdateCommerceInventoryAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateCommerceItem
 
@@ -1054,7 +1032,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.UpdateCommerceItemAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     commerceItem: new CommerceItem() {},
     fields: new List<string>() {
@@ -1080,10 +1058,9 @@ var res = await sdk.Commerce.UpdateCommerceItemAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateCommerceLocation
 
@@ -1102,7 +1079,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.UpdateCommerceLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
@@ -1130,6 +1107,6 @@ var res = await sdk.Commerce.UpdateCommerceLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

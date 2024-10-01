@@ -21,7 +21,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     accountingAccount: new AccountingAccount() {},
     fields: new List<string>() {
         "<value>",
@@ -901,7 +901,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     accountingAccount: new AccountingAccount() {},
     fields: new List<string>() {
         "<value>",
@@ -915,11 +915,22 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-Handling errors in this SDK should largely match your expectations.  All operations return a response object or thow an exception.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate type.
+Handling errors in this SDK should largely match your expectations. All operations return a response object or throw an exception.
 
-| Error Object                         | Status Code                          | Content Type                         |
+By default, an API error will raise a `UnifiedTo.Models.Errors.SDKException` exception, which has the following properties:
+
+| Property      | Type                  | Description           |
+|---------------|-----------------------|-----------------------|
+| `Message`     | *string*              | The error message     |
+| `StatusCode`  | *int*                 | The HTTP status code  |
+| `RawResponse` | *HttpResponseMessage* | The raw HTTP response |
+| `Body`        | *string*              | The response content  |
+
+When custom error responses are specified for an operation, the SDK may also throw their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `CreateAccountingAccountAsync` method throws the following exceptions:
+
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ### Example
 
@@ -938,7 +949,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 try
 {
     var res = await sdk.Accounting.CreateAccountingAccountAsync(
-        connectionId: "<value>",
+        connectionId: "<id>",
         accountingAccount: new AccountingAccount() {},
         fields: new List<string>() {
             "<value>",
@@ -951,7 +962,8 @@ catch (Exception ex)
 {
     if (ex is UnifiedTo.Models.Errors.SDKException)
     {
-        // handle exception
+        // Handle default exception
+        throw;
     }
 }
 ```

@@ -33,7 +33,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.AtsDocumentWrite,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.AtsScorecardRead,
     },
 };
 
@@ -54,10 +54,9 @@ var res = await sdk.Connection.CreateUnifiedConnectionAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetUnifiedConnection
 
@@ -91,10 +90,9 @@ var res = await sdk.Connection.GetUnifiedConnectionAsync(id: "<id>");
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListUnifiedConnections
 
@@ -131,10 +129,9 @@ var res = await sdk.Connection.ListUnifiedConnectionsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchUnifiedConnection
 
@@ -160,7 +157,7 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            UnifiedTo.Models.Components.PropertyConnectionPermissions.HrisGroupRead,
+            UnifiedTo.Models.Components.PropertyConnectionPermissions.TaskTaskWrite,
         },
     }
 );
@@ -181,10 +178,9 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveUnifiedConnection
 
@@ -218,10 +214,9 @@ var res = await sdk.Connection.RemoveUnifiedConnectionAsync(id: "<id>");
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateUnifiedConnection
 
@@ -247,7 +242,7 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmDealWrite,
+            UnifiedTo.Models.Components.PropertyConnectionPermissions.TaskTaskRead,
         },
     }
 );
@@ -268,6 +263,6 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

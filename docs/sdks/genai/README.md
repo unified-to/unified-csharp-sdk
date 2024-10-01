@@ -25,7 +25,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Genai.CreateGenaiPromptAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     genaiPrompt: new GenaiPrompt() {},
     fields: new List<string>() {
         "<value>",
@@ -49,10 +49,9 @@ var res = await sdk.Genai.CreateGenaiPromptAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListGenaiModels
 
@@ -71,7 +70,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListGenaiModelsRequest req = new ListGenaiModelsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Genai.ListGenaiModelsAsync(req);
@@ -91,6 +90,6 @@ var res = await sdk.Genai.ListGenaiModelsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

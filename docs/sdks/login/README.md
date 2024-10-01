@@ -24,7 +24,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 GetUnifiedIntegrationLoginRequest req = new GetUnifiedIntegrationLoginRequest() {
     IntegrationType = "<value>",
-    WorkspaceId = "<value>",
+    WorkspaceId = "<id>",
 };
 
 var res = await sdk.Login.GetUnifiedIntegrationLoginAsync(req);
@@ -44,6 +44,6 @@ var res = await sdk.Login.GetUnifiedIntegrationLoginAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

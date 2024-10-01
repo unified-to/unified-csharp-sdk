@@ -35,7 +35,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.CreateTaskProjectAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     taskProject: new TaskProject() {},
     fields: new List<string>() {
         "<value>",
@@ -59,10 +59,9 @@ var res = await sdk.Task.CreateTaskProjectAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateTaskTask
 
@@ -81,7 +80,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.CreateTaskTaskAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     taskTask: new TaskTask() {},
     fields: new List<string>() {
         "<value>",
@@ -105,10 +104,9 @@ var res = await sdk.Task.CreateTaskTaskAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetTaskProject
 
@@ -127,7 +125,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.GetTaskProjectAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -151,10 +149,9 @@ var res = await sdk.Task.GetTaskProjectAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetTaskTask
 
@@ -173,7 +170,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.GetTaskTaskAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -197,10 +194,9 @@ var res = await sdk.Task.GetTaskTaskAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListTaskProjects
 
@@ -219,7 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListTaskProjectsRequest req = new ListTaskProjectsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Task.ListTaskProjectsAsync(req);
@@ -239,10 +235,9 @@ var res = await sdk.Task.ListTaskProjectsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListTaskTasks
 
@@ -261,7 +256,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListTaskTasksRequest req = new ListTaskTasksRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Task.ListTaskTasksAsync(req);
@@ -281,10 +276,9 @@ var res = await sdk.Task.ListTaskTasksAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchTaskProject
 
@@ -303,7 +297,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.PatchTaskProjectAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     taskProject: new TaskProject() {},
     fields: new List<string>() {
@@ -329,10 +323,9 @@ var res = await sdk.Task.PatchTaskProjectAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchTaskTask
 
@@ -351,7 +344,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.PatchTaskTaskAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     taskTask: new TaskTask() {},
     fields: new List<string>() {
@@ -377,10 +370,9 @@ var res = await sdk.Task.PatchTaskTaskAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveTaskProject
 
@@ -398,7 +390,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.RemoveTaskProjectAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -418,10 +410,9 @@ var res = await sdk.Task.RemoveTaskProjectAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveTaskTask
 
@@ -439,7 +430,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.RemoveTaskTaskAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -459,10 +450,9 @@ var res = await sdk.Task.RemoveTaskTaskAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateTaskProject
 
@@ -481,7 +471,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.UpdateTaskProjectAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     taskProject: new TaskProject() {},
     fields: new List<string>() {
@@ -507,10 +497,9 @@ var res = await sdk.Task.UpdateTaskProjectAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateTaskTask
 
@@ -529,7 +518,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.UpdateTaskTaskAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     taskTask: new TaskTask() {},
     fields: new List<string>() {
@@ -555,6 +544,6 @@ var res = await sdk.Task.UpdateTaskTaskAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

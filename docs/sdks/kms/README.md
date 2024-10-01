@@ -35,11 +35,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.CreateKmsPageAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     kmsPage: new KmsPage() {
-        DownloadUrl = "<value>",
+        DownloadUrl = "https://bitter-adult.biz/",
         Id = "<id>",
-        SpaceId = "<value>",
+        SpaceId = "<id>",
         Title = "<value>",
         Type = UnifiedTo.Models.Components.KmsPageType.Html,
     },
@@ -65,10 +65,9 @@ var res = await sdk.Kms.CreateKmsPageAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateKmsSpace
 
@@ -87,7 +86,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.CreateKmsSpaceAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     kmsSpace: new KmsSpace() {
         Id = "<id>",
         Name = "<value>",
@@ -114,10 +113,9 @@ var res = await sdk.Kms.CreateKmsSpaceAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetKmsPage
 
@@ -136,7 +134,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.GetKmsPageAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -160,10 +158,9 @@ var res = await sdk.Kms.GetKmsPageAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetKmsSpace
 
@@ -182,7 +179,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.GetKmsSpaceAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -206,10 +203,9 @@ var res = await sdk.Kms.GetKmsSpaceAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListKmsPages
 
@@ -228,7 +224,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListKmsPagesRequest req = new ListKmsPagesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Kms.ListKmsPagesAsync(req);
@@ -248,10 +244,9 @@ var res = await sdk.Kms.ListKmsPagesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListKmsSpaces
 
@@ -270,7 +265,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListKmsSpacesRequest req = new ListKmsSpacesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Kms.ListKmsSpacesAsync(req);
@@ -290,10 +285,9 @@ var res = await sdk.Kms.ListKmsSpacesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchKmsPage
 
@@ -312,14 +306,14 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.PatchKmsPageAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     kmsPage: new KmsPage() {
-        DownloadUrl = "<value>",
+        DownloadUrl = "https://evil-tackle.info",
         Id = "<id>",
-        SpaceId = "<value>",
+        SpaceId = "<id>",
         Title = "<value>",
-        Type = UnifiedTo.Models.Components.KmsPageType.Text,
+        Type = UnifiedTo.Models.Components.KmsPageType.Markdown,
     },
     fields: new List<string>() {
         "<value>",
@@ -344,10 +338,9 @@ var res = await sdk.Kms.PatchKmsPageAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchKmsSpace
 
@@ -366,7 +359,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.PatchKmsSpaceAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     kmsSpace: new KmsSpace() {
         Id = "<id>",
@@ -395,10 +388,9 @@ var res = await sdk.Kms.PatchKmsSpaceAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveKmsPage
 
@@ -416,7 +408,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.RemoveKmsPageAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -436,10 +428,9 @@ var res = await sdk.Kms.RemoveKmsPageAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveKmsSpace
 
@@ -457,7 +448,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.RemoveKmsSpaceAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -477,10 +468,9 @@ var res = await sdk.Kms.RemoveKmsSpaceAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateKmsPage
 
@@ -499,12 +489,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.UpdateKmsPageAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     kmsPage: new KmsPage() {
-        DownloadUrl = "<value>",
+        DownloadUrl = "https://salty-devil.com",
         Id = "<id>",
-        SpaceId = "<value>",
+        SpaceId = "<id>",
         Title = "<value>",
         Type = UnifiedTo.Models.Components.KmsPageType.Text,
     },
@@ -531,10 +521,9 @@ var res = await sdk.Kms.UpdateKmsPageAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateKmsSpace
 
@@ -553,7 +542,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.UpdateKmsSpaceAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     kmsSpace: new KmsSpace() {
         Id = "<id>",
@@ -582,6 +571,6 @@ var res = await sdk.Kms.UpdateKmsSpaceAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

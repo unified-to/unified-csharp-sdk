@@ -35,7 +35,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Location.CreateCommerceLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
     },
@@ -61,10 +61,9 @@ var res = await sdk.Location.CreateCommerceLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateHrisLocation
 
@@ -83,7 +82,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Location.CreateHrisLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     hrisLocation: new HrisLocation() {},
     fields: new List<string>() {
         "<value>",
@@ -107,10 +106,9 @@ var res = await sdk.Location.CreateHrisLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetCommerceLocation
 
@@ -129,7 +127,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Location.GetCommerceLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -153,10 +151,9 @@ var res = await sdk.Location.GetCommerceLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetHrisLocation
 
@@ -175,7 +172,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Location.GetHrisLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -199,10 +196,9 @@ var res = await sdk.Location.GetHrisLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListCommerceLocations
 
@@ -221,7 +217,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListCommerceLocationsRequest req = new ListCommerceLocationsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Location.ListCommerceLocationsAsync(req);
@@ -241,10 +237,9 @@ var res = await sdk.Location.ListCommerceLocationsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListHrisLocations
 
@@ -263,7 +258,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListHrisLocationsRequest req = new ListHrisLocationsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Location.ListHrisLocationsAsync(req);
@@ -283,10 +278,9 @@ var res = await sdk.Location.ListHrisLocationsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchCommerceLocation
 
@@ -305,7 +299,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Location.PatchCommerceLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
@@ -333,10 +327,9 @@ var res = await sdk.Location.PatchCommerceLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchHrisLocation
 
@@ -355,7 +348,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Location.PatchHrisLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     hrisLocation: new HrisLocation() {},
     fields: new List<string>() {
@@ -381,10 +374,9 @@ var res = await sdk.Location.PatchHrisLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveCommerceLocation
 
@@ -402,7 +394,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Location.RemoveCommerceLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -422,10 +414,9 @@ var res = await sdk.Location.RemoveCommerceLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveHrisLocation
 
@@ -443,7 +434,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Location.RemoveHrisLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -463,10 +454,9 @@ var res = await sdk.Location.RemoveHrisLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateCommerceLocation
 
@@ -485,7 +475,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Location.UpdateCommerceLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
@@ -513,10 +503,9 @@ var res = await sdk.Location.UpdateCommerceLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateHrisLocation
 
@@ -535,7 +524,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Location.UpdateHrisLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     hrisLocation: new HrisLocation() {},
     fields: new List<string>() {
@@ -561,6 +550,6 @@ var res = await sdk.Location.UpdateHrisLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

@@ -32,10 +32,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
-        ConnectionId = "<value>",
+        ConnectionId = "<id>",
         Event = UnifiedTo.Models.Components.Event.Created,
-        HookUrl = "<value>",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.AccountingTransaction,
+        HookUrl = "https://blind-platypus.org/",
+        ObjectType = UnifiedTo.Models.Components.ObjectType.AtsScorecard,
     },
     includeAll: false
 );
@@ -56,10 +56,9 @@ var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetUnifiedWebhook
 
@@ -93,10 +92,9 @@ var res = await sdk.Webhook.GetUnifiedWebhookAsync(id: "<id>");
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListUnifiedWebhooks
 
@@ -132,10 +130,9 @@ var res = await sdk.Webhook.ListUnifiedWebhooksAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchUnifiedWebhook
 
@@ -156,10 +153,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
     id: "<id>",
     webhook: new Models.Components.Webhook() {
-        ConnectionId = "<value>",
+        ConnectionId = "<id>",
         Event = UnifiedTo.Models.Components.Event.Deleted,
-        HookUrl = "<value>",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.Passthrough,
+        HookUrl = "https://calculating-habit.name/",
+        ObjectType = UnifiedTo.Models.Components.ObjectType.CommerceItem,
     }
 );
 
@@ -179,10 +176,9 @@ var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchUnifiedWebhookTrigger
 
@@ -216,10 +212,9 @@ var res = await sdk.Webhook.PatchUnifiedWebhookTriggerAsync(id: "<id>");
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveUnifiedWebhook
 
@@ -253,10 +248,9 @@ var res = await sdk.Webhook.RemoveUnifiedWebhookAsync(id: "<id>");
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateUnifiedWebhook
 
@@ -277,10 +271,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
     id: "<id>",
     webhook: new Models.Components.Webhook() {
-        ConnectionId = "<value>",
+        ConnectionId = "<id>",
         Event = UnifiedTo.Models.Components.Event.Created,
-        HookUrl = "<value>",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.HrisGroup,
+        HookUrl = "https://glaring-postbox.info/",
+        ObjectType = UnifiedTo.Models.Components.ObjectType.GenaiModel,
     }
 );
 
@@ -300,10 +294,9 @@ var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateUnifiedWebhookTrigger
 
@@ -337,6 +330,6 @@ var res = await sdk.Webhook.UpdateUnifiedWebhookTriggerAsync(id: "<id>");
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

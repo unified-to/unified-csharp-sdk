@@ -30,7 +30,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Passthrough.CreatePassthroughJsonAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     path: "/opt/lib",
     requestBody: "<value>"
 );
@@ -52,10 +52,9 @@ var res = await sdk.Passthrough.CreatePassthroughJsonAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreatePassthroughRaw
 
@@ -73,9 +72,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Passthrough.CreatePassthroughRawAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     path: "/etc/namedb",
-    requestBody: System.Text.Encoding.UTF8.GetBytes("0x34ABa9b31D")
+    requestBody: System.Text.Encoding.UTF8.GetBytes("0x4B93D6214f")
 );
 
 // handle response
@@ -95,10 +94,9 @@ var res = await sdk.Passthrough.CreatePassthroughRawAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListPassthroughs
 
@@ -116,7 +114,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Passthrough.ListPassthroughsAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     path: "/selinux"
 );
 
@@ -136,10 +134,9 @@ var res = await sdk.Passthrough.ListPassthroughsAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchPassthroughJson
 
@@ -157,7 +154,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Passthrough.PatchPassthroughJsonAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     path: "/home/user",
     requestBody: "<value>"
 );
@@ -179,10 +176,9 @@ var res = await sdk.Passthrough.PatchPassthroughJsonAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchPassthroughRaw
 
@@ -200,9 +196,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Passthrough.PatchPassthroughRawAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     path: "/etc/mail",
-    requestBody: System.Text.Encoding.UTF8.GetBytes("0x7CEb8f75C6")
+    requestBody: System.Text.Encoding.UTF8.GetBytes("0xCbf5667DBd")
 );
 
 // handle response
@@ -222,10 +218,9 @@ var res = await sdk.Passthrough.PatchPassthroughRawAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemovePassthrough
 
@@ -243,7 +238,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Passthrough.RemovePassthroughAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     path: "/Applications"
 );
 
@@ -263,10 +258,9 @@ var res = await sdk.Passthrough.RemovePassthroughAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdatePassthroughJson
 
@@ -284,7 +278,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Passthrough.UpdatePassthroughJsonAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     path: "/etc/namedb",
     requestBody: "<value>"
 );
@@ -306,10 +300,9 @@ var res = await sdk.Passthrough.UpdatePassthroughJsonAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdatePassthroughRaw
 
@@ -327,9 +320,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Passthrough.UpdatePassthroughRawAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     path: "/System",
-    requestBody: System.Text.Encoding.UTF8.GetBytes("0x5587B3b9f8")
+    requestBody: System.Text.Encoding.UTF8.GetBytes("0x5739830F8E")
 );
 
 // handle response
@@ -349,6 +342,6 @@ var res = await sdk.Passthrough.UpdatePassthroughRawAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

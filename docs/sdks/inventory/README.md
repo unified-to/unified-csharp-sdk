@@ -29,7 +29,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Inventory.CreateCommerceInventoryAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     commerceInventory: new CommerceInventory() {
         Available = 5165.08D,
     },
@@ -55,10 +55,9 @@ var res = await sdk.Inventory.CreateCommerceInventoryAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetCommerceInventory
 
@@ -77,7 +76,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Inventory.GetCommerceInventoryAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -101,10 +100,9 @@ var res = await sdk.Inventory.GetCommerceInventoryAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListCommerceInventories
 
@@ -123,7 +121,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListCommerceInventoriesRequest req = new ListCommerceInventoriesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Inventory.ListCommerceInventoriesAsync(req);
@@ -143,10 +141,9 @@ var res = await sdk.Inventory.ListCommerceInventoriesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchCommerceInventory
 
@@ -165,7 +162,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Inventory.PatchCommerceInventoryAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     commerceInventory: new CommerceInventory() {
         Available = 615.23D,
@@ -193,10 +190,9 @@ var res = await sdk.Inventory.PatchCommerceInventoryAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveCommerceInventory
 
@@ -214,7 +210,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Inventory.RemoveCommerceInventoryAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -234,10 +230,9 @@ var res = await sdk.Inventory.RemoveCommerceInventoryAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateCommerceInventory
 
@@ -256,10 +251,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     commerceInventory: new CommerceInventory() {
-        Available = 9360.02D,
+        Available = 9360.01D,
     },
     fields: new List<string>() {
         "<value>",
@@ -284,6 +279,6 @@ var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

@@ -31,7 +31,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Messaging.CreateMessagingMessageAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     messagingMessage: new MessagingMessage() {},
     fields: new List<string>() {
         "<value>",
@@ -55,10 +55,9 @@ var res = await sdk.Messaging.CreateMessagingMessageAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetMessagingChannel
 
@@ -77,7 +76,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Messaging.GetMessagingChannelAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -101,10 +100,9 @@ var res = await sdk.Messaging.GetMessagingChannelAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetMessagingMessage
 
@@ -123,7 +121,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Messaging.GetMessagingMessageAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -147,10 +145,9 @@ var res = await sdk.Messaging.GetMessagingMessageAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListMessagingChannels
 
@@ -169,7 +166,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListMessagingChannelsRequest req = new ListMessagingChannelsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Messaging.ListMessagingChannelsAsync(req);
@@ -189,10 +186,9 @@ var res = await sdk.Messaging.ListMessagingChannelsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListMessagingMessages
 
@@ -211,7 +207,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListMessagingMessagesRequest req = new ListMessagingMessagesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Messaging.ListMessagingMessagesAsync(req);
@@ -231,10 +227,9 @@ var res = await sdk.Messaging.ListMessagingMessagesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchMessagingMessage
 
@@ -253,7 +248,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Messaging.PatchMessagingMessageAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     messagingMessage: new MessagingMessage() {},
     fields: new List<string>() {
@@ -279,10 +274,9 @@ var res = await sdk.Messaging.PatchMessagingMessageAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveMessagingMessage
 
@@ -300,7 +294,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Messaging.RemoveMessagingMessageAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -320,10 +314,9 @@ var res = await sdk.Messaging.RemoveMessagingMessageAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateMessagingMessage
 
@@ -342,7 +335,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Messaging.UpdateMessagingMessageAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     messagingMessage: new MessagingMessage() {},
     fields: new List<string>() {
@@ -368,6 +361,6 @@ var res = await sdk.Messaging.UpdateMessagingMessageAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

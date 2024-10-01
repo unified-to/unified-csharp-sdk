@@ -24,8 +24,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Enrich.ListEnrichCompaniesAsync(
-    connectionId: "<value>",
-    domain: "dismal-cornmeal.org",
+    connectionId: "<id>",
+    domain: "distinct-wheel.info",
     name: "<value>"
 );
 
@@ -46,10 +46,9 @@ var res = await sdk.Enrich.ListEnrichCompaniesAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListEnrichPeople
 
@@ -67,7 +66,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListEnrichPeopleRequest req = new ListEnrichPeopleRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Enrich.ListEnrichPeopleAsync(req);
@@ -87,6 +86,6 @@ var res = await sdk.Enrich.ListEnrichPeopleAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

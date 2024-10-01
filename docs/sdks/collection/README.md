@@ -29,7 +29,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Collection.CreateCommerceCollectionAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     commerceCollection: new CommerceCollection() {
         Id = "<id>",
         Name = "<value>",
@@ -56,10 +56,9 @@ var res = await sdk.Collection.CreateCommerceCollectionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetCommerceCollection
 
@@ -78,7 +77,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Collection.GetCommerceCollectionAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -102,10 +101,9 @@ var res = await sdk.Collection.GetCommerceCollectionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListCommerceCollections
 
@@ -124,7 +122,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListCommerceCollectionsRequest req = new ListCommerceCollectionsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Collection.ListCommerceCollectionsAsync(req);
@@ -144,10 +142,9 @@ var res = await sdk.Collection.ListCommerceCollectionsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchCommerceCollection
 
@@ -166,7 +163,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Collection.PatchCommerceCollectionAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     commerceCollection: new CommerceCollection() {
         Id = "<id>",
@@ -195,10 +192,9 @@ var res = await sdk.Collection.PatchCommerceCollectionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveCommerceCollection
 
@@ -216,7 +212,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Collection.RemoveCommerceCollectionAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -236,10 +232,9 @@ var res = await sdk.Collection.RemoveCommerceCollectionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateCommerceCollection
 
@@ -258,7 +253,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Collection.UpdateCommerceCollectionAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     commerceCollection: new CommerceCollection() {
         Id = "<id>",
@@ -287,6 +282,6 @@ var res = await sdk.Collection.UpdateCommerceCollectionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

@@ -51,7 +51,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.CreateHrisCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     hrisCompany: new HrisCompany() {},
     fields: new List<string>() {
         "<value>",
@@ -75,10 +75,9 @@ var res = await sdk.Hris.CreateHrisCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateHrisEmployee
 
@@ -97,7 +96,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.CreateHrisEmployeeAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     hrisEmployee: new HrisEmployee() {},
     fields: new List<string>() {
         "<value>",
@@ -121,10 +120,9 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateHrisGroup
 
@@ -143,7 +141,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.CreateHrisGroupAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     hrisGroup: new HrisGroup() {},
     fields: new List<string>() {
         "<value>",
@@ -167,10 +165,9 @@ var res = await sdk.Hris.CreateHrisGroupAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateHrisLocation
 
@@ -189,7 +186,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.CreateHrisLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     hrisLocation: new HrisLocation() {},
     fields: new List<string>() {
         "<value>",
@@ -213,10 +210,9 @@ var res = await sdk.Hris.CreateHrisLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetHrisCompany
 
@@ -235,7 +231,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.GetHrisCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -259,10 +255,9 @@ var res = await sdk.Hris.GetHrisCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetHrisEmployee
 
@@ -281,7 +276,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.GetHrisEmployeeAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -305,10 +300,9 @@ var res = await sdk.Hris.GetHrisEmployeeAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetHrisGroup
 
@@ -327,7 +321,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.GetHrisGroupAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -351,10 +345,9 @@ var res = await sdk.Hris.GetHrisGroupAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetHrisLocation
 
@@ -373,7 +366,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.GetHrisLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -397,10 +390,9 @@ var res = await sdk.Hris.GetHrisLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetHrisPayslip
 
@@ -419,7 +411,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.GetHrisPayslipAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -443,10 +435,9 @@ var res = await sdk.Hris.GetHrisPayslipAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetHrisTimeoff
 
@@ -465,7 +456,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.GetHrisTimeoffAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -489,10 +480,9 @@ var res = await sdk.Hris.GetHrisTimeoffAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListHrisCompanies
 
@@ -511,7 +501,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListHrisCompaniesRequest req = new ListHrisCompaniesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Hris.ListHrisCompaniesAsync(req);
@@ -531,10 +521,9 @@ var res = await sdk.Hris.ListHrisCompaniesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListHrisEmployees
 
@@ -553,7 +542,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListHrisEmployeesRequest req = new ListHrisEmployeesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Hris.ListHrisEmployeesAsync(req);
@@ -573,10 +562,9 @@ var res = await sdk.Hris.ListHrisEmployeesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListHrisGroups
 
@@ -595,7 +583,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListHrisGroupsRequest req = new ListHrisGroupsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Hris.ListHrisGroupsAsync(req);
@@ -615,10 +603,9 @@ var res = await sdk.Hris.ListHrisGroupsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListHrisLocations
 
@@ -637,7 +624,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListHrisLocationsRequest req = new ListHrisLocationsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Hris.ListHrisLocationsAsync(req);
@@ -657,10 +644,9 @@ var res = await sdk.Hris.ListHrisLocationsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListHrisPayslips
 
@@ -679,7 +665,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListHrisPayslipsRequest req = new ListHrisPayslipsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Hris.ListHrisPayslipsAsync(req);
@@ -699,10 +685,9 @@ var res = await sdk.Hris.ListHrisPayslipsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListHrisTimeoffs
 
@@ -721,7 +706,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListHrisTimeoffsRequest req = new ListHrisTimeoffsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Hris.ListHrisTimeoffsAsync(req);
@@ -741,10 +726,9 @@ var res = await sdk.Hris.ListHrisTimeoffsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchHrisCompany
 
@@ -763,7 +747,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.PatchHrisCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     hrisCompany: new HrisCompany() {},
     fields: new List<string>() {
@@ -789,10 +773,9 @@ var res = await sdk.Hris.PatchHrisCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchHrisEmployee
 
@@ -811,7 +794,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.PatchHrisEmployeeAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     hrisEmployee: new HrisEmployee() {},
     fields: new List<string>() {
@@ -837,10 +820,9 @@ var res = await sdk.Hris.PatchHrisEmployeeAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchHrisGroup
 
@@ -859,7 +841,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.PatchHrisGroupAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     hrisGroup: new HrisGroup() {},
     fields: new List<string>() {
@@ -885,10 +867,9 @@ var res = await sdk.Hris.PatchHrisGroupAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchHrisLocation
 
@@ -907,7 +888,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.PatchHrisLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     hrisLocation: new HrisLocation() {},
     fields: new List<string>() {
@@ -933,10 +914,9 @@ var res = await sdk.Hris.PatchHrisLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveHrisCompany
 
@@ -954,7 +934,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.RemoveHrisCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -974,10 +954,9 @@ var res = await sdk.Hris.RemoveHrisCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveHrisEmployee
 
@@ -995,7 +974,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.RemoveHrisEmployeeAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -1015,10 +994,9 @@ var res = await sdk.Hris.RemoveHrisEmployeeAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveHrisGroup
 
@@ -1036,7 +1014,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.RemoveHrisGroupAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -1056,10 +1034,9 @@ var res = await sdk.Hris.RemoveHrisGroupAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveHrisLocation
 
@@ -1077,7 +1054,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.RemoveHrisLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -1097,10 +1074,9 @@ var res = await sdk.Hris.RemoveHrisLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateHrisCompany
 
@@ -1119,7 +1095,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.UpdateHrisCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     hrisCompany: new HrisCompany() {},
     fields: new List<string>() {
@@ -1145,10 +1121,9 @@ var res = await sdk.Hris.UpdateHrisCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateHrisEmployee
 
@@ -1167,7 +1142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.UpdateHrisEmployeeAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     hrisEmployee: new HrisEmployee() {},
     fields: new List<string>() {
@@ -1193,10 +1168,9 @@ var res = await sdk.Hris.UpdateHrisEmployeeAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateHrisGroup
 
@@ -1215,7 +1189,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.UpdateHrisGroupAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     hrisGroup: new HrisGroup() {},
     fields: new List<string>() {
@@ -1241,10 +1215,9 @@ var res = await sdk.Hris.UpdateHrisGroupAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateHrisLocation
 
@@ -1263,7 +1236,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.UpdateHrisLocationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     hrisLocation: new HrisLocation() {},
     fields: new List<string>() {
@@ -1289,6 +1262,6 @@ var res = await sdk.Hris.UpdateHrisLocationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

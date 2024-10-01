@@ -38,7 +38,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Company.CreateCrmCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     crmCompany: new CrmCompany() {},
     fields: new List<string>() {
         "<value>",
@@ -62,10 +62,9 @@ var res = await sdk.Company.CreateCrmCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateHrisCompany
 
@@ -84,7 +83,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Company.CreateHrisCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     hrisCompany: new HrisCompany() {},
     fields: new List<string>() {
         "<value>",
@@ -108,10 +107,9 @@ var res = await sdk.Company.CreateHrisCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAtsCompany
 
@@ -130,7 +128,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Company.GetAtsCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -154,10 +152,9 @@ var res = await sdk.Company.GetAtsCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetCrmCompany
 
@@ -176,7 +173,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Company.GetCrmCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -200,10 +197,9 @@ var res = await sdk.Company.GetCrmCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetHrisCompany
 
@@ -222,7 +218,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Company.GetHrisCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -246,10 +242,9 @@ var res = await sdk.Company.GetHrisCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAtsCompanies
 
@@ -268,7 +263,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAtsCompaniesRequest req = new ListAtsCompaniesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Company.ListAtsCompaniesAsync(req);
@@ -288,10 +283,9 @@ var res = await sdk.Company.ListAtsCompaniesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListCrmCompanies
 
@@ -310,7 +304,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListCrmCompaniesRequest req = new ListCrmCompaniesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Company.ListCrmCompaniesAsync(req);
@@ -330,10 +324,9 @@ var res = await sdk.Company.ListCrmCompaniesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListEnrichCompanies
 
@@ -351,8 +344,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Company.ListEnrichCompaniesAsync(
-    connectionId: "<value>",
-    domain: "dismal-cornmeal.org",
+    connectionId: "<id>",
+    domain: "distinct-wheel.info",
     name: "<value>"
 );
 
@@ -373,10 +366,9 @@ var res = await sdk.Company.ListEnrichCompaniesAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListHrisCompanies
 
@@ -395,7 +387,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListHrisCompaniesRequest req = new ListHrisCompaniesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Company.ListHrisCompaniesAsync(req);
@@ -415,10 +407,9 @@ var res = await sdk.Company.ListHrisCompaniesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchCrmCompany
 
@@ -437,7 +428,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Company.PatchCrmCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     crmCompany: new CrmCompany() {},
     fields: new List<string>() {
@@ -463,10 +454,9 @@ var res = await sdk.Company.PatchCrmCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchHrisCompany
 
@@ -485,7 +475,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Company.PatchHrisCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     hrisCompany: new HrisCompany() {},
     fields: new List<string>() {
@@ -511,10 +501,9 @@ var res = await sdk.Company.PatchHrisCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveCrmCompany
 
@@ -532,7 +521,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Company.RemoveCrmCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -552,10 +541,9 @@ var res = await sdk.Company.RemoveCrmCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveHrisCompany
 
@@ -573,7 +561,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Company.RemoveHrisCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -593,10 +581,9 @@ var res = await sdk.Company.RemoveHrisCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateCrmCompany
 
@@ -615,7 +602,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Company.UpdateCrmCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     crmCompany: new CrmCompany() {},
     fields: new List<string>() {
@@ -641,10 +628,9 @@ var res = await sdk.Company.UpdateCrmCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateHrisCompany
 
@@ -663,7 +649,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Company.UpdateHrisCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     hrisCompany: new HrisCompany() {},
     fields: new List<string>() {
@@ -689,6 +675,6 @@ var res = await sdk.Company.UpdateHrisCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

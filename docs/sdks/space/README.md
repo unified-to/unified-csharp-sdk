@@ -29,7 +29,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Space.CreateKmsSpaceAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     kmsSpace: new KmsSpace() {
         Id = "<id>",
         Name = "<value>",
@@ -56,10 +56,9 @@ var res = await sdk.Space.CreateKmsSpaceAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetKmsSpace
 
@@ -78,7 +77,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Space.GetKmsSpaceAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -102,10 +101,9 @@ var res = await sdk.Space.GetKmsSpaceAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListKmsSpaces
 
@@ -124,7 +122,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListKmsSpacesRequest req = new ListKmsSpacesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Space.ListKmsSpacesAsync(req);
@@ -144,10 +142,9 @@ var res = await sdk.Space.ListKmsSpacesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchKmsSpace
 
@@ -166,7 +163,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Space.PatchKmsSpaceAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     kmsSpace: new KmsSpace() {
         Id = "<id>",
@@ -195,10 +192,9 @@ var res = await sdk.Space.PatchKmsSpaceAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveKmsSpace
 
@@ -216,7 +212,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Space.RemoveKmsSpaceAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -236,10 +232,9 @@ var res = await sdk.Space.RemoveKmsSpaceAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateKmsSpace
 
@@ -258,7 +253,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Space.UpdateKmsSpaceAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     kmsSpace: new KmsSpace() {
         Id = "<id>",
@@ -287,6 +282,6 @@ var res = await sdk.Space.UpdateKmsSpaceAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

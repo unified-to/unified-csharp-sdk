@@ -27,7 +27,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 GetUnifiedIntegrationAuthRequest req = new GetUnifiedIntegrationAuthRequest() {
     IntegrationType = "<value>",
-    WorkspaceId = "<value>",
+    WorkspaceId = "<id>",
 };
 
 var res = await sdk.Integration.GetUnifiedIntegrationAuthAsync(req);
@@ -47,10 +47,9 @@ var res = await sdk.Integration.GetUnifiedIntegrationAuthAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListUnifiedIntegrationWorkspaces
 
@@ -69,7 +68,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListUnifiedIntegrationWorkspacesRequest req = new ListUnifiedIntegrationWorkspacesRequest() {
-    WorkspaceId = "<value>",
+    WorkspaceId = "<id>",
 };
 
 var res = await sdk.Integration.ListUnifiedIntegrationWorkspacesAsync(req);
@@ -89,10 +88,9 @@ var res = await sdk.Integration.ListUnifiedIntegrationWorkspacesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListUnifiedIntegrations
 
@@ -129,6 +127,6 @@ var res = await sdk.Integration.ListUnifiedIntegrationsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

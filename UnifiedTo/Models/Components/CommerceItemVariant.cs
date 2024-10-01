@@ -48,6 +48,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("media")]
         public List<CommerceItemMedia>? Media { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<CommerceMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

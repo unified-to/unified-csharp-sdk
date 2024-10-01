@@ -68,10 +68,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.CreateAtsActivityAsync(
-    connectionId: "<value>",
-    atsActivity: new AtsActivity() {
-        Title = "<value>",
-    },
+    connectionId: "<id>",
+    atsActivity: new AtsActivity() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -94,10 +92,9 @@ var res = await sdk.Ats.CreateAtsActivityAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateAtsApplication
 
@@ -116,7 +113,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.CreateAtsApplicationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     atsApplication: new AtsApplication() {},
     fields: new List<string>() {
         "<value>",
@@ -140,10 +137,9 @@ var res = await sdk.Ats.CreateAtsApplicationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateAtsCandidate
 
@@ -162,7 +158,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.CreateAtsCandidateAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     atsCandidate: new AtsCandidate() {},
     fields: new List<string>() {
         "<value>",
@@ -186,10 +182,9 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateAtsDocument
 
@@ -208,7 +203,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.CreateAtsDocumentAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     atsDocument: new AtsDocument() {},
     fields: new List<string>() {
         "<value>",
@@ -232,10 +227,9 @@ var res = await sdk.Ats.CreateAtsDocumentAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateAtsInterview
 
@@ -254,7 +248,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.CreateAtsInterviewAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     atsInterview: new AtsInterview() {},
     fields: new List<string>() {
         "<value>",
@@ -278,10 +272,9 @@ var res = await sdk.Ats.CreateAtsInterviewAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateAtsJob
 
@@ -300,7 +293,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.CreateAtsJobAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     atsJob: new AtsJob() {},
     fields: new List<string>() {
         "<value>",
@@ -324,10 +317,9 @@ var res = await sdk.Ats.CreateAtsJobAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateAtsScorecard
 
@@ -346,7 +338,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.CreateAtsScorecardAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     atsScorecard: new AtsScorecard() {},
     fields: new List<string>() {
         "<value>",
@@ -370,10 +362,9 @@ var res = await sdk.Ats.CreateAtsScorecardAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAtsActivity
 
@@ -392,7 +383,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.GetAtsActivityAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -416,10 +407,9 @@ var res = await sdk.Ats.GetAtsActivityAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAtsApplication
 
@@ -438,7 +428,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.GetAtsApplicationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -462,10 +452,9 @@ var res = await sdk.Ats.GetAtsApplicationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAtsCandidate
 
@@ -484,7 +473,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.GetAtsCandidateAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -508,10 +497,9 @@ var res = await sdk.Ats.GetAtsCandidateAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAtsCompany
 
@@ -530,7 +518,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.GetAtsCompanyAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -554,10 +542,9 @@ var res = await sdk.Ats.GetAtsCompanyAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAtsDocument
 
@@ -576,7 +563,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.GetAtsDocumentAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -600,10 +587,9 @@ var res = await sdk.Ats.GetAtsDocumentAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAtsInterview
 
@@ -622,7 +608,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.GetAtsInterviewAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -646,10 +632,9 @@ var res = await sdk.Ats.GetAtsInterviewAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAtsJob
 
@@ -668,7 +653,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.GetAtsJobAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -692,10 +677,9 @@ var res = await sdk.Ats.GetAtsJobAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAtsScorecard
 
@@ -714,7 +698,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.GetAtsScorecardAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -738,10 +722,9 @@ var res = await sdk.Ats.GetAtsScorecardAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAtsActivities
 
@@ -760,7 +743,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAtsActivitiesRequest req = new ListAtsActivitiesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Ats.ListAtsActivitiesAsync(req);
@@ -780,10 +763,9 @@ var res = await sdk.Ats.ListAtsActivitiesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAtsApplications
 
@@ -802,7 +784,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAtsApplicationsRequest req = new ListAtsApplicationsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Ats.ListAtsApplicationsAsync(req);
@@ -822,10 +804,9 @@ var res = await sdk.Ats.ListAtsApplicationsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAtsApplicationstatuses
 
@@ -844,7 +825,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAtsApplicationstatusesRequest req = new ListAtsApplicationstatusesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Ats.ListAtsApplicationstatusesAsync(req);
@@ -864,10 +845,9 @@ var res = await sdk.Ats.ListAtsApplicationstatusesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAtsCandidates
 
@@ -886,7 +866,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAtsCandidatesRequest req = new ListAtsCandidatesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Ats.ListAtsCandidatesAsync(req);
@@ -906,10 +886,9 @@ var res = await sdk.Ats.ListAtsCandidatesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAtsCompanies
 
@@ -928,7 +907,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAtsCompaniesRequest req = new ListAtsCompaniesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Ats.ListAtsCompaniesAsync(req);
@@ -948,10 +927,9 @@ var res = await sdk.Ats.ListAtsCompaniesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAtsDocuments
 
@@ -970,7 +948,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAtsDocumentsRequest req = new ListAtsDocumentsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Ats.ListAtsDocumentsAsync(req);
@@ -990,10 +968,9 @@ var res = await sdk.Ats.ListAtsDocumentsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAtsInterviews
 
@@ -1012,7 +989,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAtsInterviewsRequest req = new ListAtsInterviewsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Ats.ListAtsInterviewsAsync(req);
@@ -1032,10 +1009,9 @@ var res = await sdk.Ats.ListAtsInterviewsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAtsJobs
 
@@ -1054,7 +1030,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAtsJobsRequest req = new ListAtsJobsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Ats.ListAtsJobsAsync(req);
@@ -1074,10 +1050,9 @@ var res = await sdk.Ats.ListAtsJobsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAtsScorecards
 
@@ -1096,7 +1071,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAtsScorecardsRequest req = new ListAtsScorecardsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Ats.ListAtsScorecardsAsync(req);
@@ -1116,10 +1091,9 @@ var res = await sdk.Ats.ListAtsScorecardsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchAtsActivity
 
@@ -1138,11 +1112,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.PatchAtsActivityAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
-    atsActivity: new AtsActivity() {
-        Title = "<value>",
-    },
+    atsActivity: new AtsActivity() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1166,10 +1138,9 @@ var res = await sdk.Ats.PatchAtsActivityAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchAtsApplication
 
@@ -1188,7 +1159,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.PatchAtsApplicationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     atsApplication: new AtsApplication() {},
     fields: new List<string>() {
@@ -1214,10 +1185,9 @@ var res = await sdk.Ats.PatchAtsApplicationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchAtsCandidate
 
@@ -1236,7 +1206,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.PatchAtsCandidateAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     atsCandidate: new AtsCandidate() {},
     fields: new List<string>() {
@@ -1262,10 +1232,9 @@ var res = await sdk.Ats.PatchAtsCandidateAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchAtsDocument
 
@@ -1284,7 +1253,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.PatchAtsDocumentAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     atsDocument: new AtsDocument() {},
     fields: new List<string>() {
@@ -1310,10 +1279,9 @@ var res = await sdk.Ats.PatchAtsDocumentAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchAtsInterview
 
@@ -1332,7 +1300,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.PatchAtsInterviewAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     atsInterview: new AtsInterview() {},
     fields: new List<string>() {
@@ -1358,10 +1326,9 @@ var res = await sdk.Ats.PatchAtsInterviewAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchAtsJob
 
@@ -1380,7 +1347,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.PatchAtsJobAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     atsJob: new AtsJob() {},
     fields: new List<string>() {
@@ -1406,10 +1373,9 @@ var res = await sdk.Ats.PatchAtsJobAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchAtsScorecard
 
@@ -1428,7 +1394,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.PatchAtsScorecardAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     atsScorecard: new AtsScorecard() {},
     fields: new List<string>() {
@@ -1454,10 +1420,9 @@ var res = await sdk.Ats.PatchAtsScorecardAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveAtsActivity
 
@@ -1475,7 +1440,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.RemoveAtsActivityAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -1495,10 +1460,9 @@ var res = await sdk.Ats.RemoveAtsActivityAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveAtsApplication
 
@@ -1516,7 +1480,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.RemoveAtsApplicationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -1536,10 +1500,9 @@ var res = await sdk.Ats.RemoveAtsApplicationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveAtsCandidate
 
@@ -1557,7 +1520,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.RemoveAtsCandidateAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -1577,10 +1540,9 @@ var res = await sdk.Ats.RemoveAtsCandidateAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveAtsDocument
 
@@ -1598,7 +1560,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.RemoveAtsDocumentAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -1618,10 +1580,9 @@ var res = await sdk.Ats.RemoveAtsDocumentAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveAtsInterview
 
@@ -1639,7 +1600,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.RemoveAtsInterviewAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -1659,10 +1620,9 @@ var res = await sdk.Ats.RemoveAtsInterviewAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveAtsJob
 
@@ -1680,7 +1640,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.RemoveAtsJobAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -1700,10 +1660,9 @@ var res = await sdk.Ats.RemoveAtsJobAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveAtsScorecard
 
@@ -1721,7 +1680,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.RemoveAtsScorecardAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -1741,10 +1700,9 @@ var res = await sdk.Ats.RemoveAtsScorecardAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateAtsActivity
 
@@ -1763,11 +1721,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.UpdateAtsActivityAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
-    atsActivity: new AtsActivity() {
-        Title = "<value>",
-    },
+    atsActivity: new AtsActivity() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1791,10 +1747,9 @@ var res = await sdk.Ats.UpdateAtsActivityAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateAtsApplication
 
@@ -1813,7 +1768,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.UpdateAtsApplicationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     atsApplication: new AtsApplication() {},
     fields: new List<string>() {
@@ -1839,10 +1794,9 @@ var res = await sdk.Ats.UpdateAtsApplicationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateAtsCandidate
 
@@ -1861,7 +1815,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.UpdateAtsCandidateAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     atsCandidate: new AtsCandidate() {},
     fields: new List<string>() {
@@ -1887,10 +1841,9 @@ var res = await sdk.Ats.UpdateAtsCandidateAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateAtsDocument
 
@@ -1909,7 +1862,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.UpdateAtsDocumentAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     atsDocument: new AtsDocument() {},
     fields: new List<string>() {
@@ -1935,10 +1888,9 @@ var res = await sdk.Ats.UpdateAtsDocumentAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateAtsInterview
 
@@ -1957,7 +1909,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.UpdateAtsInterviewAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     atsInterview: new AtsInterview() {},
     fields: new List<string>() {
@@ -1983,10 +1935,9 @@ var res = await sdk.Ats.UpdateAtsInterviewAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateAtsJob
 
@@ -2005,7 +1956,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.UpdateAtsJobAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     atsJob: new AtsJob() {},
     fields: new List<string>() {
@@ -2031,10 +1982,9 @@ var res = await sdk.Ats.UpdateAtsJobAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateAtsScorecard
 
@@ -2053,7 +2003,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Ats.UpdateAtsScorecardAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     atsScorecard: new AtsScorecard() {},
     fields: new List<string>() {
@@ -2079,6 +2029,6 @@ var res = await sdk.Ats.UpdateAtsScorecardAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

@@ -61,7 +61,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     accountingAccount: new AccountingAccount() {},
     fields: new List<string>() {
         "<value>",
@@ -85,10 +85,9 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateAccountingContact
 
@@ -107,7 +106,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingContactAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     accountingContact: new AccountingContact() {},
     fields: new List<string>() {
         "<value>",
@@ -131,10 +130,9 @@ var res = await sdk.Accounting.CreateAccountingContactAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateAccountingInvoice
 
@@ -153,7 +151,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     accountingInvoice: new AccountingInvoice() {},
     fields: new List<string>() {
         "<value>",
@@ -177,10 +175,9 @@ var res = await sdk.Accounting.CreateAccountingInvoiceAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateAccountingJournal
 
@@ -199,7 +196,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingJournalAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     accountingJournal: new AccountingJournal() {},
     fields: new List<string>() {
         "<value>",
@@ -223,10 +220,9 @@ var res = await sdk.Accounting.CreateAccountingJournalAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateAccountingTaxrate
 
@@ -245,7 +241,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     accountingTaxrate: new AccountingTaxrate() {},
     fields: new List<string>() {
         "<value>",
@@ -269,10 +265,9 @@ var res = await sdk.Accounting.CreateAccountingTaxrateAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateAccountingTransaction
 
@@ -291,7 +286,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingTransactionAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     accountingTransaction: new AccountingTransaction() {},
     fields: new List<string>() {
         "<value>",
@@ -315,10 +310,9 @@ var res = await sdk.Accounting.CreateAccountingTransactionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAccountingAccount
 
@@ -337,7 +331,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.GetAccountingAccountAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -361,10 +355,9 @@ var res = await sdk.Accounting.GetAccountingAccountAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAccountingContact
 
@@ -383,7 +376,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.GetAccountingContactAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -407,10 +400,9 @@ var res = await sdk.Accounting.GetAccountingContactAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAccountingInvoice
 
@@ -429,7 +421,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.GetAccountingInvoiceAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -453,10 +445,9 @@ var res = await sdk.Accounting.GetAccountingInvoiceAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAccountingJournal
 
@@ -475,7 +466,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.GetAccountingJournalAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -499,10 +490,9 @@ var res = await sdk.Accounting.GetAccountingJournalAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAccountingOrganization
 
@@ -521,7 +511,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.GetAccountingOrganizationAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -545,10 +535,9 @@ var res = await sdk.Accounting.GetAccountingOrganizationAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAccountingTaxrate
 
@@ -567,7 +556,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.GetAccountingTaxrateAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -591,10 +580,9 @@ var res = await sdk.Accounting.GetAccountingTaxrateAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## GetAccountingTransaction
 
@@ -613,7 +601,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.GetAccountingTransactionAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
         "<value>",
@@ -637,10 +625,9 @@ var res = await sdk.Accounting.GetAccountingTransactionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAccountingAccounts
 
@@ -659,7 +646,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAccountingAccountsRequest req = new ListAccountingAccountsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Accounting.ListAccountingAccountsAsync(req);
@@ -679,10 +666,9 @@ var res = await sdk.Accounting.ListAccountingAccountsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAccountingContacts
 
@@ -701,7 +687,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAccountingContactsRequest req = new ListAccountingContactsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Accounting.ListAccountingContactsAsync(req);
@@ -721,10 +707,9 @@ var res = await sdk.Accounting.ListAccountingContactsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAccountingInvoices
 
@@ -743,7 +728,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAccountingInvoicesRequest req = new ListAccountingInvoicesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Accounting.ListAccountingInvoicesAsync(req);
@@ -763,10 +748,9 @@ var res = await sdk.Accounting.ListAccountingInvoicesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAccountingJournals
 
@@ -785,7 +769,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAccountingJournalsRequest req = new ListAccountingJournalsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Accounting.ListAccountingJournalsAsync(req);
@@ -805,10 +789,9 @@ var res = await sdk.Accounting.ListAccountingJournalsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAccountingOrganizations
 
@@ -827,7 +810,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAccountingOrganizationsRequest req = new ListAccountingOrganizationsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Accounting.ListAccountingOrganizationsAsync(req);
@@ -847,10 +830,9 @@ var res = await sdk.Accounting.ListAccountingOrganizationsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAccountingTaxrates
 
@@ -869,7 +851,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAccountingTaxratesRequest req = new ListAccountingTaxratesRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Accounting.ListAccountingTaxratesAsync(req);
@@ -889,10 +871,9 @@ var res = await sdk.Accounting.ListAccountingTaxratesAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListAccountingTransactions
 
@@ -911,7 +892,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListAccountingTransactionsRequest req = new ListAccountingTransactionsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Accounting.ListAccountingTransactionsAsync(req);
@@ -931,10 +912,9 @@ var res = await sdk.Accounting.ListAccountingTransactionsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchAccountingAccount
 
@@ -953,7 +933,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.PatchAccountingAccountAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     accountingAccount: new AccountingAccount() {},
     fields: new List<string>() {
@@ -979,10 +959,9 @@ var res = await sdk.Accounting.PatchAccountingAccountAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchAccountingContact
 
@@ -1001,7 +980,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.PatchAccountingContactAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     accountingContact: new AccountingContact() {},
     fields: new List<string>() {
@@ -1027,10 +1006,9 @@ var res = await sdk.Accounting.PatchAccountingContactAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchAccountingInvoice
 
@@ -1049,7 +1027,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.PatchAccountingInvoiceAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     accountingInvoice: new AccountingInvoice() {},
     fields: new List<string>() {
@@ -1075,10 +1053,9 @@ var res = await sdk.Accounting.PatchAccountingInvoiceAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchAccountingJournal
 
@@ -1097,7 +1074,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.PatchAccountingJournalAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     accountingJournal: new AccountingJournal() {},
     fields: new List<string>() {
@@ -1123,10 +1100,9 @@ var res = await sdk.Accounting.PatchAccountingJournalAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchAccountingTaxrate
 
@@ -1145,7 +1121,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.PatchAccountingTaxrateAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     accountingTaxrate: new AccountingTaxrate() {},
     fields: new List<string>() {
@@ -1171,10 +1147,9 @@ var res = await sdk.Accounting.PatchAccountingTaxrateAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## PatchAccountingTransaction
 
@@ -1193,7 +1168,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.PatchAccountingTransactionAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     accountingTransaction: new AccountingTransaction() {},
     fields: new List<string>() {
@@ -1219,10 +1194,9 @@ var res = await sdk.Accounting.PatchAccountingTransactionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveAccountingAccount
 
@@ -1240,7 +1214,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.RemoveAccountingAccountAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -1260,10 +1234,9 @@ var res = await sdk.Accounting.RemoveAccountingAccountAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveAccountingContact
 
@@ -1281,7 +1254,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.RemoveAccountingContactAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -1301,10 +1274,9 @@ var res = await sdk.Accounting.RemoveAccountingContactAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveAccountingInvoice
 
@@ -1322,7 +1294,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.RemoveAccountingInvoiceAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -1342,10 +1314,9 @@ var res = await sdk.Accounting.RemoveAccountingInvoiceAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveAccountingJournal
 
@@ -1363,7 +1334,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.RemoveAccountingJournalAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -1383,10 +1354,9 @@ var res = await sdk.Accounting.RemoveAccountingJournalAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveAccountingTaxrate
 
@@ -1404,7 +1374,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.RemoveAccountingTaxrateAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -1424,10 +1394,9 @@ var res = await sdk.Accounting.RemoveAccountingTaxrateAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveAccountingTransaction
 
@@ -1445,7 +1414,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.RemoveAccountingTransactionAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>"
 );
 
@@ -1465,10 +1434,9 @@ var res = await sdk.Accounting.RemoveAccountingTransactionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateAccountingAccount
 
@@ -1487,7 +1455,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.UpdateAccountingAccountAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     accountingAccount: new AccountingAccount() {},
     fields: new List<string>() {
@@ -1513,10 +1481,9 @@ var res = await sdk.Accounting.UpdateAccountingAccountAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateAccountingContact
 
@@ -1535,7 +1502,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.UpdateAccountingContactAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     accountingContact: new AccountingContact() {},
     fields: new List<string>() {
@@ -1561,10 +1528,9 @@ var res = await sdk.Accounting.UpdateAccountingContactAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateAccountingInvoice
 
@@ -1583,7 +1549,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     accountingInvoice: new AccountingInvoice() {},
     fields: new List<string>() {
@@ -1609,10 +1575,9 @@ var res = await sdk.Accounting.UpdateAccountingInvoiceAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateAccountingJournal
 
@@ -1631,7 +1596,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.UpdateAccountingJournalAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     accountingJournal: new AccountingJournal() {},
     fields: new List<string>() {
@@ -1657,10 +1622,9 @@ var res = await sdk.Accounting.UpdateAccountingJournalAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateAccountingTaxrate
 
@@ -1679,7 +1643,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     accountingTaxrate: new AccountingTaxrate() {},
     fields: new List<string>() {
@@ -1705,10 +1669,9 @@ var res = await sdk.Accounting.UpdateAccountingTaxrateAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
-
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## UpdateAccountingTransaction
 
@@ -1727,7 +1690,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.UpdateAccountingTransactionAsync(
-    connectionId: "<value>",
+    connectionId: "<id>",
     id: "<id>",
     accountingTransaction: new AccountingTransaction() {},
     fields: new List<string>() {
@@ -1753,6 +1716,6 @@ var res = await sdk.Accounting.UpdateAccountingTransactionAsync(
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |

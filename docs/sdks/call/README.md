@@ -24,7 +24,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 ListUcCallsRequest req = new ListUcCallsRequest() {
-    ConnectionId = "<value>",
+    ConnectionId = "<id>",
 };
 
 var res = await sdk.Call.ListUcCallsAsync(req);
@@ -44,6 +44,6 @@ var res = await sdk.Call.ListUcCallsAsync(req);
 
 ### Errors
 
-| Error Object                         | Status Code                          | Content Type                         |
+| Error Type                           | Status Code                          | Content Type                         |
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4xx-5xx                              | */*                                  |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
