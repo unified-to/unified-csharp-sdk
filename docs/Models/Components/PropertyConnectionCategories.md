@@ -22,3 +22,4 @@
 | `Messaging`   | messaging     |
 | `Kms`         | kms           |
 | `Task`        | task          |
+| `Scim`        | scim          |

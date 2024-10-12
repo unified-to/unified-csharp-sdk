@@ -49,7 +49,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Commerce.CreateCommerceCollectionAsync(
     connectionId: "<id>",
     commerceCollection: new CommerceCollection() {
-        Id = "<id>",
         Name = "<value>",
     },
     fields: new List<string>() {
@@ -581,7 +580,6 @@ var res = await sdk.Commerce.PatchCommerceCollectionAsync(
     connectionId: "<id>",
     id: "<id>",
     commerceCollection: new CommerceCollection() {
-        Id = "<id>",
         Name = "<value>",
     },
     fields: new List<string>() {
@@ -936,7 +934,6 @@ var res = await sdk.Commerce.UpdateCommerceCollectionAsync(
     connectionId: "<id>",
     id: "<id>",
     commerceCollection: new CommerceCollection() {
-        Id = "<id>",
         Name = "<value>",
     },
     fields: new List<string>() {

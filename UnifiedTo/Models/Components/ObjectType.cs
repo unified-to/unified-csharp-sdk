@@ -125,6 +125,10 @@ namespace UnifiedTo.Models.Components
         TaskProject,
         [JsonProperty("task_task")]
         TaskTask,
+        [JsonProperty("scim_users")]
+        ScimUsers,
+        [JsonProperty("scim_groups")]
+        ScimGroups,
     }
 
     public static class ObjectTypeExtension

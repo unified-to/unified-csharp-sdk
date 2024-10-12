@@ -38,7 +38,6 @@ var res = await sdk.Kms.CreateKmsPageAsync(
     connectionId: "<id>",
     kmsPage: new KmsPage() {
         DownloadUrl = "https://bitter-adult.biz/",
-        Id = "<id>",
         SpaceId = "<id>",
         Title = "<value>",
         Type = UnifiedTo.Models.Components.KmsPageType.Html,
@@ -88,7 +87,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Kms.CreateKmsSpaceAsync(
     connectionId: "<id>",
     kmsSpace: new KmsSpace() {
-        Id = "<id>",
         Name = "<value>",
     },
     fields: new List<string>() {
@@ -310,7 +308,6 @@ var res = await sdk.Kms.PatchKmsPageAsync(
     id: "<id>",
     kmsPage: new KmsPage() {
         DownloadUrl = "https://evil-tackle.info",
-        Id = "<id>",
         SpaceId = "<id>",
         Title = "<value>",
         Type = UnifiedTo.Models.Components.KmsPageType.Markdown,
@@ -362,7 +359,6 @@ var res = await sdk.Kms.PatchKmsSpaceAsync(
     connectionId: "<id>",
     id: "<id>",
     kmsSpace: new KmsSpace() {
-        Id = "<id>",
         Name = "<value>",
     },
     fields: new List<string>() {
@@ -493,7 +489,6 @@ var res = await sdk.Kms.UpdateKmsPageAsync(
     id: "<id>",
     kmsPage: new KmsPage() {
         DownloadUrl = "https://salty-devil.com",
-        Id = "<id>",
         SpaceId = "<id>",
         Title = "<value>",
         Type = UnifiedTo.Models.Components.KmsPageType.Text,
@@ -545,7 +540,6 @@ var res = await sdk.Kms.UpdateKmsSpaceAsync(
     connectionId: "<id>",
     id: "<id>",
     kmsSpace: new KmsSpace() {
-        Id = "<id>",
         Name = "<value>",
     },
     fields: new List<string>() {

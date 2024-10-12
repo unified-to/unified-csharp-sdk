@@ -274,7 +274,7 @@ var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
         ConnectionId = "<id>",
         Event = UnifiedTo.Models.Components.Event.Created,
         HookUrl = "https://glaring-postbox.info/",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.GenaiModel,
+        ObjectType = UnifiedTo.Models.Components.ObjectType.MessagingMessage,
     }
 );
 

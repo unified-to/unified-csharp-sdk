@@ -49,6 +49,8 @@ namespace UnifiedTo.Models.Components
         Kms,
         [JsonProperty("task")]
         Task,
+        [JsonProperty("scim")]
+        Scim,
     }
 
     public static class PropertyIntegrationCategoriesExtension

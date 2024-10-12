@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 3c4e8a5e234e6444307aef536fd547bd
+  docChecksum: 2f8b1ad907e9f06fa5885ee0f6d0b4ad
   docVersion: "1.0"
-  speakeasyVersion: 1.405.6
-  generationVersion: 2.428.1
-  releaseVersion: 0.20.0
-  configChecksum: aecb1e723a1fd035b41161d373cd562f
+  speakeasyVersion: 1.418.1
+  generationVersion: 2.438.3
+  releaseVersion: 0.20.1
+  configChecksum: a3035306eec6baf8c172614edb40b960
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -92,6 +92,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingTelephone.cs
   - UnifiedTo/Models/Components/AccountingTelephoneType.cs
   - UnifiedTo/Models/Components/AccountingTransaction.cs
+  - UnifiedTo/Models/Components/AccountingTransactionContact.cs
   - UnifiedTo/Models/Components/AccountingTransactionLineItem.cs
   - UnifiedTo/Models/Components/ApiCall.cs
   - UnifiedTo/Models/Components/ApiCallType.cs
@@ -155,6 +156,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/EnrichPersonWorkHistory.cs
   - UnifiedTo/Models/Components/EnrichTelephone.cs
   - UnifiedTo/Models/Components/EnrichTelephoneType.cs
+  - UnifiedTo/Models/Components/Ethnicity.cs
   - UnifiedTo/Models/Components/Event.cs
   - UnifiedTo/Models/Components/Frequency.cs
   - UnifiedTo/Models/Components/FromWebhook.cs
@@ -162,6 +164,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/GenaiModel.cs
   - UnifiedTo/Models/Components/GenaiPrompt.cs
   - UnifiedTo/Models/Components/Gender.cs
+  - UnifiedTo/Models/Components/Group.cs
   - UnifiedTo/Models/Components/HrisCompany.cs
   - UnifiedTo/Models/Components/HrisCompensation.cs
   - UnifiedTo/Models/Components/HrisCompensationFrequency.cs
@@ -189,6 +192,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/KmsPage.cs
   - UnifiedTo/Models/Components/KmsPageType.cs
   - UnifiedTo/Models/Components/KmsSpace.cs
+  - UnifiedTo/Models/Components/Level.cs
   - UnifiedTo/Models/Components/ListAccountId.cs
   - UnifiedTo/Models/Components/ListApplicationId.cs
   - UnifiedTo/Models/Components/ListCandidateId.cs
@@ -231,6 +235,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/MessagingMember.cs
   - UnifiedTo/Models/Components/MessagingMessage.cs
   - UnifiedTo/Models/Components/ObjectType.cs
+  - UnifiedTo/Models/Components/Operation.cs
   - UnifiedTo/Models/Components/Origin.cs
   - UnifiedTo/Models/Components/PaymentCollectionMethod.cs
   - UnifiedTo/Models/Components/PaymentLink.cs
@@ -264,6 +269,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyCrmLeadAddress.cs
   - UnifiedTo/Models/Components/PropertyEnrichCompanyAddress.cs
   - UnifiedTo/Models/Components/PropertyEnrichPersonAddress.cs
+  - UnifiedTo/Models/Components/PropertyGroupMeta.cs
+  - UnifiedTo/Models/Components/PropertyGroupSchemas.cs
   - UnifiedTo/Models/Components/PropertyHrisCompanyAddress.cs
   - UnifiedTo/Models/Components/PropertyHrisEmployeeAddress.cs
   - UnifiedTo/Models/Components/PropertyHrisEmployeeEmployeeRoles.cs
@@ -274,10 +281,23 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsCreated.cs
   - UnifiedTo/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsDeleted.cs
   - UnifiedTo/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsUpdated.cs
+  - UnifiedTo/Models/Components/PropertyPropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager.cs
+  - UnifiedTo/Models/Components/PropertyPropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType.cs
   - UnifiedTo/Models/Components/PropertyStoragePermissionRoles.cs
   - UnifiedTo/Models/Components/PropertyUcCallTelephone.cs
   - UnifiedTo/Models/Components/PropertyUcCallTelephoneType.cs
+  - UnifiedTo/Models/Components/PropertyUserMeta.cs
+  - UnifiedTo/Models/Components/PropertyUserMetaResourceType.cs
+  - UnifiedTo/Models/Components/PropertyUserName.cs
+  - UnifiedTo/Models/Components/PropertyUserSchemas.cs
+  - UnifiedTo/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20User.cs
+  - UnifiedTo/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender.cs
+  - UnifiedTo/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User.cs
+  - UnifiedTo/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender.cs
+  - UnifiedTo/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionPeakon20User.cs
+  - UnifiedTo/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender.cs
   - UnifiedTo/Models/Components/Recommendation.cs
+  - UnifiedTo/Models/Components/ResourceType.cs
   - UnifiedTo/Models/Components/Role.cs
   - UnifiedTo/Models/Components/SearchDomain.cs
   - UnifiedTo/Models/Components/SearchEmail.cs
@@ -285,6 +305,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/SearchName.cs
   - UnifiedTo/Models/Components/SearchTwitter.cs
   - UnifiedTo/Models/Components/Security.cs
+  - UnifiedTo/Models/Components/SexualOrientation.cs
   - UnifiedTo/Models/Components/SizeUnit.cs
   - UnifiedTo/Models/Components/Status.cs
   - UnifiedTo/Models/Components/StorageFile.cs
@@ -309,6 +330,9 @@ generatedFiles:
   - UnifiedTo/Models/Components/UcEmailType.cs
   - UnifiedTo/Models/Components/UcTelephone.cs
   - UnifiedTo/Models/Components/UcTelephoneType.cs
+  - UnifiedTo/Models/Components/Undefined.cs
+  - UnifiedTo/Models/Components/UndefinedType.cs
+  - UnifiedTo/Models/Components/User.cs
   - UnifiedTo/Models/Components/Webhook.cs
   - UnifiedTo/Models/Components/WebhookType.cs
   - UnifiedTo/Models/Components/WeightUnit.cs
@@ -389,6 +413,10 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreatePaymentLinkResponse.cs
   - UnifiedTo/Models/Requests/CreatePaymentPaymentRequest.cs
   - UnifiedTo/Models/Requests/CreatePaymentPaymentResponse.cs
+  - UnifiedTo/Models/Requests/CreateScimGroupsRequest.cs
+  - UnifiedTo/Models/Requests/CreateScimGroupsResponse.cs
+  - UnifiedTo/Models/Requests/CreateScimUsersRequest.cs
+  - UnifiedTo/Models/Requests/CreateScimUsersResponse.cs
   - UnifiedTo/Models/Requests/CreateStorageFileRequest.cs
   - UnifiedTo/Models/Requests/CreateStorageFileResponse.cs
   - UnifiedTo/Models/Requests/CreateTaskProjectRequest.cs
@@ -488,6 +516,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetPaymentPayoutResponse.cs
   - UnifiedTo/Models/Requests/GetPaymentRefundRequest.cs
   - UnifiedTo/Models/Requests/GetPaymentRefundResponse.cs
+  - UnifiedTo/Models/Requests/GetScimUsersRequest.cs
+  - UnifiedTo/Models/Requests/GetScimUsersResponse.cs
   - UnifiedTo/Models/Requests/GetStorageFileRequest.cs
   - UnifiedTo/Models/Requests/GetStorageFileResponse.cs
   - UnifiedTo/Models/Requests/GetTaskProjectRequest.cs
@@ -605,6 +635,10 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListPaymentPayoutsResponse.cs
   - UnifiedTo/Models/Requests/ListPaymentRefundsRequest.cs
   - UnifiedTo/Models/Requests/ListPaymentRefundsResponse.cs
+  - UnifiedTo/Models/Requests/ListScimGroupsRequest.cs
+  - UnifiedTo/Models/Requests/ListScimGroupsResponse.cs
+  - UnifiedTo/Models/Requests/ListScimUsersRequest.cs
+  - UnifiedTo/Models/Requests/ListScimUsersResponse.cs
   - UnifiedTo/Models/Requests/ListStorageFilesRequest.cs
   - UnifiedTo/Models/Requests/ListStorageFilesResponse.cs
   - UnifiedTo/Models/Requests/ListTaskProjectsRequest.cs
@@ -706,6 +740,10 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchPaymentLinkResponse.cs
   - UnifiedTo/Models/Requests/PatchPaymentPaymentRequest.cs
   - UnifiedTo/Models/Requests/PatchPaymentPaymentResponse.cs
+  - UnifiedTo/Models/Requests/PatchScimGroupsRequest.cs
+  - UnifiedTo/Models/Requests/PatchScimGroupsResponse.cs
+  - UnifiedTo/Models/Requests/PatchScimUsersRequest.cs
+  - UnifiedTo/Models/Requests/PatchScimUsersResponse.cs
   - UnifiedTo/Models/Requests/PatchStorageFileRequest.cs
   - UnifiedTo/Models/Requests/PatchStorageFileResponse.cs
   - UnifiedTo/Models/Requests/PatchTaskProjectRequest.cs
@@ -797,6 +835,10 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemovePaymentLinkResponse.cs
   - UnifiedTo/Models/Requests/RemovePaymentPaymentRequest.cs
   - UnifiedTo/Models/Requests/RemovePaymentPaymentResponse.cs
+  - UnifiedTo/Models/Requests/RemoveScimGroupsRequest.cs
+  - UnifiedTo/Models/Requests/RemoveScimGroupsResponse.cs
+  - UnifiedTo/Models/Requests/RemoveScimUsersRequest.cs
+  - UnifiedTo/Models/Requests/RemoveScimUsersResponse.cs
   - UnifiedTo/Models/Requests/RemoveStorageFileRequest.cs
   - UnifiedTo/Models/Requests/RemoveStorageFileResponse.cs
   - UnifiedTo/Models/Requests/RemoveTaskProjectRequest.cs
@@ -888,6 +930,10 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdatePaymentLinkResponse.cs
   - UnifiedTo/Models/Requests/UpdatePaymentPaymentRequest.cs
   - UnifiedTo/Models/Requests/UpdatePaymentPaymentResponse.cs
+  - UnifiedTo/Models/Requests/UpdateScimGroupsRequest.cs
+  - UnifiedTo/Models/Requests/UpdateScimGroupsResponse.cs
+  - UnifiedTo/Models/Requests/UpdateScimUsersRequest.cs
+  - UnifiedTo/Models/Requests/UpdateScimUsersResponse.cs
   - UnifiedTo/Models/Requests/UpdateStorageFileRequest.cs
   - UnifiedTo/Models/Requests/UpdateStorageFileResponse.cs
   - UnifiedTo/Models/Requests/UpdateTaskProjectRequest.cs
@@ -920,6 +966,7 @@ generatedFiles:
   - UnifiedTo/Project.cs
   - UnifiedTo/Prompt.cs
   - UnifiedTo/Refund.cs
+  - UnifiedTo/Scim.cs
   - UnifiedTo/Scorecard.cs
   - UnifiedTo/Space.cs
   - UnifiedTo/Storage.cs
@@ -933,6 +980,7 @@ generatedFiles:
   - UnifiedTo/Unified.cs
   - UnifiedTo/UnifiedTo.csproj
   - UnifiedTo/UnifiedToSDK.cs
+  - UnifiedTo/User.cs
   - UnifiedTo/Utils/AnyDeserializer.cs
   - UnifiedTo/Utils/BigIntStrConverter.cs
   - UnifiedTo/Utils/DecimalStrConverter.cs
@@ -967,6 +1015,7 @@ generatedFiles:
   - docs/Models/Components/AccountingTelephone.md
   - docs/Models/Components/AccountingTelephoneType.md
   - docs/Models/Components/AccountingTransaction.md
+  - docs/Models/Components/AccountingTransactionContact.md
   - docs/Models/Components/AccountingTransactionLineItem.md
   - docs/Models/Components/ApiCall.md
   - docs/Models/Components/ApiCallType.md
@@ -1030,6 +1079,7 @@ generatedFiles:
   - docs/Models/Components/EnrichPersonWorkHistory.md
   - docs/Models/Components/EnrichTelephone.md
   - docs/Models/Components/EnrichTelephoneType.md
+  - docs/Models/Components/Ethnicity.md
   - docs/Models/Components/Event.md
   - docs/Models/Components/Frequency.md
   - docs/Models/Components/FromWebhook.md
@@ -1037,6 +1087,7 @@ generatedFiles:
   - docs/Models/Components/GenaiModel.md
   - docs/Models/Components/GenaiPrompt.md
   - docs/Models/Components/Gender.md
+  - docs/Models/Components/Group.md
   - docs/Models/Components/HrisCompany.md
   - docs/Models/Components/HrisCompensation.md
   - docs/Models/Components/HrisCompensationFrequency.md
@@ -1064,6 +1115,7 @@ generatedFiles:
   - docs/Models/Components/KmsPage.md
   - docs/Models/Components/KmsPageType.md
   - docs/Models/Components/KmsSpace.md
+  - docs/Models/Components/Level.md
   - docs/Models/Components/ListAccountId.md
   - docs/Models/Components/ListApplicationId.md
   - docs/Models/Components/ListCandidateId.md
@@ -1106,6 +1158,7 @@ generatedFiles:
   - docs/Models/Components/MessagingMember.md
   - docs/Models/Components/MessagingMessage.md
   - docs/Models/Components/ObjectType.md
+  - docs/Models/Components/Operation.md
   - docs/Models/Components/Origin.md
   - docs/Models/Components/PaymentCollectionMethod.md
   - docs/Models/Components/PaymentLink.md
@@ -1139,6 +1192,8 @@ generatedFiles:
   - docs/Models/Components/PropertyCrmLeadAddress.md
   - docs/Models/Components/PropertyEnrichCompanyAddress.md
   - docs/Models/Components/PropertyEnrichPersonAddress.md
+  - docs/Models/Components/PropertyGroupMeta.md
+  - docs/Models/Components/PropertyGroupSchemas.md
   - docs/Models/Components/PropertyHrisCompanyAddress.md
   - docs/Models/Components/PropertyHrisEmployeeAddress.md
   - docs/Models/Components/PropertyHrisEmployeeEmployeeRoles.md
@@ -1149,10 +1204,23 @@ generatedFiles:
   - docs/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsCreated.md
   - docs/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsDeleted.md
   - docs/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsUpdated.md
+  - docs/Models/Components/PropertyPropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager.md
+  - docs/Models/Components/PropertyPropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType.md
   - docs/Models/Components/PropertyStoragePermissionRoles.md
   - docs/Models/Components/PropertyUcCallTelephone.md
   - docs/Models/Components/PropertyUcCallTelephoneType.md
+  - docs/Models/Components/PropertyUserMeta.md
+  - docs/Models/Components/PropertyUserMetaResourceType.md
+  - docs/Models/Components/PropertyUserName.md
+  - docs/Models/Components/PropertyUserSchemas.md
+  - docs/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20User.md
+  - docs/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender.md
+  - docs/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User.md
+  - docs/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender.md
+  - docs/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionPeakon20User.md
+  - docs/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender.md
   - docs/Models/Components/Recommendation.md
+  - docs/Models/Components/ResourceType.md
   - docs/Models/Components/Role.md
   - docs/Models/Components/SearchDomain.md
   - docs/Models/Components/SearchEmail.md
@@ -1160,6 +1228,7 @@ generatedFiles:
   - docs/Models/Components/SearchName.md
   - docs/Models/Components/SearchTwitter.md
   - docs/Models/Components/Security.md
+  - docs/Models/Components/SexualOrientation.md
   - docs/Models/Components/SizeUnit.md
   - docs/Models/Components/Status.md
   - docs/Models/Components/StorageFile.md
@@ -1184,6 +1253,9 @@ generatedFiles:
   - docs/Models/Components/UcEmailType.md
   - docs/Models/Components/UcTelephone.md
   - docs/Models/Components/UcTelephoneType.md
+  - docs/Models/Components/Undefined.md
+  - docs/Models/Components/UndefinedType.md
+  - docs/Models/Components/User.md
   - docs/Models/Components/Webhook.md
   - docs/Models/Components/WebhookType.md
   - docs/Models/Components/WeightUnit.md
@@ -1263,6 +1335,10 @@ generatedFiles:
   - docs/Models/Requests/CreatePaymentLinkResponse.md
   - docs/Models/Requests/CreatePaymentPaymentRequest.md
   - docs/Models/Requests/CreatePaymentPaymentResponse.md
+  - docs/Models/Requests/CreateScimGroupsRequest.md
+  - docs/Models/Requests/CreateScimGroupsResponse.md
+  - docs/Models/Requests/CreateScimUsersRequest.md
+  - docs/Models/Requests/CreateScimUsersResponse.md
   - docs/Models/Requests/CreateStorageFileRequest.md
   - docs/Models/Requests/CreateStorageFileResponse.md
   - docs/Models/Requests/CreateTaskProjectRequest.md
@@ -1362,6 +1438,8 @@ generatedFiles:
   - docs/Models/Requests/GetPaymentPayoutResponse.md
   - docs/Models/Requests/GetPaymentRefundRequest.md
   - docs/Models/Requests/GetPaymentRefundResponse.md
+  - docs/Models/Requests/GetScimUsersRequest.md
+  - docs/Models/Requests/GetScimUsersResponse.md
   - docs/Models/Requests/GetStorageFileRequest.md
   - docs/Models/Requests/GetStorageFileResponse.md
   - docs/Models/Requests/GetTaskProjectRequest.md
@@ -1479,6 +1557,10 @@ generatedFiles:
   - docs/Models/Requests/ListPaymentPayoutsResponse.md
   - docs/Models/Requests/ListPaymentRefundsRequest.md
   - docs/Models/Requests/ListPaymentRefundsResponse.md
+  - docs/Models/Requests/ListScimGroupsRequest.md
+  - docs/Models/Requests/ListScimGroupsResponse.md
+  - docs/Models/Requests/ListScimUsersRequest.md
+  - docs/Models/Requests/ListScimUsersResponse.md
   - docs/Models/Requests/ListStorageFilesRequest.md
   - docs/Models/Requests/ListStorageFilesResponse.md
   - docs/Models/Requests/ListTaskProjectsRequest.md
@@ -1580,6 +1662,10 @@ generatedFiles:
   - docs/Models/Requests/PatchPaymentLinkResponse.md
   - docs/Models/Requests/PatchPaymentPaymentRequest.md
   - docs/Models/Requests/PatchPaymentPaymentResponse.md
+  - docs/Models/Requests/PatchScimGroupsRequest.md
+  - docs/Models/Requests/PatchScimGroupsResponse.md
+  - docs/Models/Requests/PatchScimUsersRequest.md
+  - docs/Models/Requests/PatchScimUsersResponse.md
   - docs/Models/Requests/PatchStorageFileRequest.md
   - docs/Models/Requests/PatchStorageFileResponse.md
   - docs/Models/Requests/PatchTaskProjectRequest.md
@@ -1671,6 +1757,10 @@ generatedFiles:
   - docs/Models/Requests/RemovePaymentLinkResponse.md
   - docs/Models/Requests/RemovePaymentPaymentRequest.md
   - docs/Models/Requests/RemovePaymentPaymentResponse.md
+  - docs/Models/Requests/RemoveScimGroupsRequest.md
+  - docs/Models/Requests/RemoveScimGroupsResponse.md
+  - docs/Models/Requests/RemoveScimUsersRequest.md
+  - docs/Models/Requests/RemoveScimUsersResponse.md
   - docs/Models/Requests/RemoveStorageFileRequest.md
   - docs/Models/Requests/RemoveStorageFileResponse.md
   - docs/Models/Requests/RemoveTaskProjectRequest.md
@@ -1762,6 +1852,10 @@ generatedFiles:
   - docs/Models/Requests/UpdatePaymentLinkResponse.md
   - docs/Models/Requests/UpdatePaymentPaymentRequest.md
   - docs/Models/Requests/UpdatePaymentPaymentResponse.md
+  - docs/Models/Requests/UpdateScimGroupsRequest.md
+  - docs/Models/Requests/UpdateScimGroupsResponse.md
+  - docs/Models/Requests/UpdateScimUsersRequest.md
+  - docs/Models/Requests/UpdateScimUsersResponse.md
   - docs/Models/Requests/UpdateStorageFileRequest.md
   - docs/Models/Requests/UpdateStorageFileResponse.md
   - docs/Models/Requests/UpdateTaskProjectRequest.md
@@ -1840,6 +1934,7 @@ generatedFiles:
   - docs/sdks/project/README.md
   - docs/sdks/prompt/README.md
   - docs/sdks/refund/README.md
+  - docs/sdks/scim/README.md
   - docs/sdks/scorecard/README.md
   - docs/sdks/space/README.md
   - docs/sdks/storage/README.md
@@ -1852,6 +1947,7 @@ generatedFiles:
   - docs/sdks/uc/README.md
   - docs/sdks/unified/README.md
   - docs/sdks/unifiedto/README.md
+  - docs/sdks/user/README.md
   - docs/sdks/webhook/README.md
   - global.json
 examples:
@@ -4076,3 +4172,68 @@ examples:
       responses:
         "200":
           text/plain: "<value>"
+  createScimGroups:
+    speakeasy-default-create-scim-groups:
+      parameters:
+        path:
+          connection_id: "<id>"
+  listScimGroups:
+    speakeasy-default-list-scim-groups:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  patchScimGroups:
+    speakeasy-default-patch-scim-groups:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeScimGroups:
+    speakeasy-default-remove-scim-groups:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateScimGroups:
+    speakeasy-default-update-scim-groups:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  createScimUsers:
+    speakeasy-default-create-scim-users:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  getScimUsers:
+    speakeasy-default-get-scim-users:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  listScimUsers:
+    speakeasy-default-list-scim-users:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  patchScimUsers:
+    speakeasy-default-patch-scim-users:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeScimUsers:
+    speakeasy-default-remove-scim-users:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateScimUsers:
+    speakeasy-default-update-scim-users:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"

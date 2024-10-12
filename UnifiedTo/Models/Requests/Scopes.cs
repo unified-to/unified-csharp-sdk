@@ -211,6 +211,14 @@ namespace UnifiedTo.Models.Requests
         TaskTaskRead,
         [JsonProperty("task_task_write")]
         TaskTaskWrite,
+        [JsonProperty("scim_users_read")]
+        ScimUsersRead,
+        [JsonProperty("scim_users_write")]
+        ScimUsersWrite,
+        [JsonProperty("scim_groups_read")]
+        ScimGroupsRead,
+        [JsonProperty("scim_groups_write")]
+        ScimGroupsWrite,
     }
 
     public static class ScopesExtension

@@ -43,11 +43,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
-        UnifiedTo.Models.Components.PropertyConnectionCategories.Kms,
+        UnifiedTo.Models.Components.PropertyConnectionCategories.Task,
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.AtsScorecardRead,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.AtsScorecardWrite,
     },
 };
 
@@ -525,7 +525,7 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            UnifiedTo.Models.Components.PropertyConnectionPermissions.TaskTaskWrite,
+            UnifiedTo.Models.Components.PropertyConnectionPermissions.ScimGroupsWrite,
         },
     }
 );
@@ -724,11 +724,11 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
     id: "<id>",
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
-            UnifiedTo.Models.Components.PropertyConnectionCategories.Genai,
+            UnifiedTo.Models.Components.PropertyConnectionCategories.Messaging,
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            UnifiedTo.Models.Components.PropertyConnectionPermissions.TaskTaskRead,
+            UnifiedTo.Models.Components.PropertyConnectionPermissions.ScimGroupsRead,
         },
     }
 );
@@ -775,7 +775,7 @@ var res = await sdk.Unified.UpdateUnifiedWebhookAsync(
         ConnectionId = "<id>",
         Event = UnifiedTo.Models.Components.Event.Created,
         HookUrl = "https://glaring-postbox.info/",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.GenaiModel,
+        ObjectType = UnifiedTo.Models.Components.ObjectType.MessagingMessage,
     }
 );
 

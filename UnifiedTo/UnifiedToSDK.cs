@@ -77,6 +77,8 @@ namespace UnifiedTo
         public ILink Link { get; }
         public IPayout Payout { get; }
         public IRefund Refund { get; }
+        public IScim Scim { get; }
+        public IUser User { get; }
         public IStorage Storage { get; }
         public IFile File { get; }
         public ITask Task { get; }
@@ -141,10 +143,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.20.0";
-        private const string _sdkGenVersion = "2.428.1";
+        private const string _sdkVersion = "0.20.1";
+        private const string _sdkGenVersion = "2.438.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.20.0 2.428.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.20.1 2.438.3 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _client;
@@ -201,6 +203,8 @@ namespace UnifiedTo
         public ILink Link { get; private set; }
         public IPayout Payout { get; private set; }
         public IRefund Refund { get; private set; }
+        public IScim Scim { get; private set; }
+        public IUser User { get; private set; }
         public IStorage Storage { get; private set; }
         public IFile File { get; private set; }
         public ITask Task { get; private set; }
@@ -415,6 +419,12 @@ namespace UnifiedTo
 
 
             Refund = new Refund(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Scim = new Scim(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            User = new User(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
             Storage = new Storage(_client, _securitySource, _serverUrl, SDKConfiguration);
