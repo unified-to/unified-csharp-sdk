@@ -18,6 +18,9 @@ namespace UnifiedTo.Models.Components
     public class CommerceItem
     {
 
+        [JsonProperty("account_id")]
+        public string? AccountId { get; set; }
+
         [JsonProperty("collection_ids")]
         public List<string>? CollectionIds { get; set; }
 
