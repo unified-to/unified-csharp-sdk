@@ -47,7 +47,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.AtsScorecardWrite,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.AtsScorecardRead,
     },
 };
 
@@ -572,7 +572,7 @@ var res = await sdk.Unified.PatchUnifiedWebhookAsync(
         ConnectionId = "<id>",
         Event = UnifiedTo.Models.Components.Event.Deleted,
         HookUrl = "https://calculating-habit.name/",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.CommerceItem,
+        ObjectType = UnifiedTo.Models.Components.ObjectType.PaymentRefund,
     }
 );
 

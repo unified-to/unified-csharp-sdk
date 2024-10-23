@@ -33,7 +33,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.AtsScorecardWrite,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.AtsScorecardRead,
     },
 };
 

@@ -43,6 +43,10 @@ namespace UnifiedTo.Models.Requests
         AccountingTaxrateWrite,
         [JsonProperty("accounting_organization_read")]
         AccountingOrganizationRead,
+        [JsonProperty("accounting_order_read")]
+        AccountingOrderRead,
+        [JsonProperty("accounting_order_write")]
+        AccountingOrderWrite,
         [JsonProperty("payment_payment_read")]
         PaymentPaymentRead,
         [JsonProperty("payment_payment_write")]

@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Components
         AccountingTaxrate,
         [JsonProperty("accounting_organization")]
         AccountingOrganization,
+        [JsonProperty("accounting_order")]
+        AccountingOrder,
         [JsonProperty("payment_payment")]
         PaymentPayment,
         [JsonProperty("payment_link")]

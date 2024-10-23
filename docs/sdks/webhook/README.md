@@ -156,7 +156,7 @@ var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
         ConnectionId = "<id>",
         Event = UnifiedTo.Models.Components.Event.Deleted,
         HookUrl = "https://calculating-habit.name/",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.CommerceItem,
+        ObjectType = UnifiedTo.Models.Components.ObjectType.PaymentRefund,
     }
 );
 

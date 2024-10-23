@@ -30,6 +30,7 @@ namespace UnifiedTo
         public IContact Contact { get; }
         public IInvoice Invoice { get; }
         public IJournal Journal { get; }
+        public IOrder Order { get; }
         public IOrganization Organization { get; }
         public ITaxrate Taxrate { get; }
         public ITransaction Transaction { get; }
@@ -143,10 +144,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.20.3";
-        private const string _sdkGenVersion = "2.438.3";
+        private const string _sdkVersion = "0.20.4";
+        private const string _sdkGenVersion = "2.438.15";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.20.3 2.438.3 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.20.4 2.438.15 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _client;
@@ -156,6 +157,7 @@ namespace UnifiedTo
         public IContact Contact { get; private set; }
         public IInvoice Invoice { get; private set; }
         public IJournal Journal { get; private set; }
+        public IOrder Order { get; private set; }
         public IOrganization Organization { get; private set; }
         public ITaxrate Taxrate { get; private set; }
         public ITransaction Transaction { get; private set; }
@@ -278,6 +280,9 @@ namespace UnifiedTo
 
 
             Journal = new Journal(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Order = new Order(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
             Organization = new Organization(_client, _securitySource, _serverUrl, SDKConfiguration);

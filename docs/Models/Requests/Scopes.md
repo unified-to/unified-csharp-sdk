@@ -19,6 +19,8 @@
 | `AccountingTaxrateRead`      | accounting_taxrate_read      |
 | `AccountingTaxrateWrite`     | accounting_taxrate_write     |
 | `AccountingOrganizationRead` | accounting_organization_read |
+| `AccountingOrderRead`        | accounting_order_read        |
+| `AccountingOrderWrite`       | accounting_order_write       |
 | `PaymentPaymentRead`         | payment_payment_read         |
 | `PaymentPaymentWrite`        | payment_payment_write        |
 | `PaymentPayoutRead`          | payment_payout_read          |

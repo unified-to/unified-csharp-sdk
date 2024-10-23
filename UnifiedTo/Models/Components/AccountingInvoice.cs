@@ -42,6 +42,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("invoice_at")]
+        public DateTime? InvoiceAt { get; set; }
+
         [JsonProperty("invoice_number")]
         public string? InvoiceNumber { get; set; }
 
@@ -80,6 +83,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
+
+        [JsonProperty("type")]
+        public AccountingInvoiceType? Type { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
