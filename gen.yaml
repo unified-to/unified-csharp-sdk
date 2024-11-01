@@ -13,7 +13,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 csharp:
-  version: 0.20.4
+  version: 0.21.0
   additionalDependencies: []
   author: Unified API Inc.
   clientServerStatusCodesAsErrors: true
@@ -22,6 +22,7 @@ csharp:
   dotnetVersion: net6.0
   enableSourceLink: false
   flattenGlobalSecurity: false
+  flatteningOrder: ""
   imports:
     option: openapi
     paths:
@@ -33,6 +34,7 @@ csharp:
   includeDebugSymbols: false
   inputModelSuffix: input
   maxMethodParams: 4
+  methodArguments: infer-optional-args
   outputModelSuffix: output
   packageName: UnifiedTo
   packageTags: ""
