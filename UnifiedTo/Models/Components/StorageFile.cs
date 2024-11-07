@@ -62,5 +62,8 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
+
+        [JsonProperty("version")]
+        public string? Version { get; set; }
     }
 }
