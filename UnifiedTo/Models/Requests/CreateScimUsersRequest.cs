@@ -16,7 +16,7 @@ namespace UnifiedTo.Models.Requests
     {
 
         [SpeakeasyMetadata("request:mediaType=application/json")]
-        public Models.Components.User? User { get; set; }
+        public ScimUser? ScimUser { get; set; }
 
         /// <summary>
         /// ID of the connection

@@ -35,7 +35,7 @@ var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
         ConnectionId = "<id>",
         Event = UnifiedTo.Models.Components.Event.Created,
         HookUrl = "https://blind-platypus.org/",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.AtsScorecard,
+        ObjectType = UnifiedTo.Models.Components.ObjectType.CrmContact,
     },
     includeAll: false
 );
@@ -156,7 +156,7 @@ var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
         ConnectionId = "<id>",
         Event = UnifiedTo.Models.Components.Event.Deleted,
         HookUrl = "https://calculating-habit.name/",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.PaymentRefund,
+        ObjectType = UnifiedTo.Models.Components.ObjectType.CommerceCollection,
     }
 );
 
@@ -274,7 +274,7 @@ var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
         ConnectionId = "<id>",
         Event = UnifiedTo.Models.Components.Event.Created,
         HookUrl = "https://glaring-postbox.info/",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.MessagingMessage,
+        ObjectType = UnifiedTo.Models.Components.ObjectType.ScimGroups,
     }
 );
 

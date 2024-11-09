@@ -8,6 +8,7 @@
 * [CreateHrisGroup](#createhrisgroup) - Create a group
 * [CreateScimGroups](#createscimgroups) - Create group
 * [GetHrisGroup](#gethrisgroup) - Retrieve a group
+* [GetScimGroups](#getscimgroups) - Get group
 * [ListHrisGroups](#listhrisgroups) - List all groups
 * [ListScimGroups](#listscimgroups) - List groups
 * [PatchHrisGroup](#patchhrisgroup) - Update a group
@@ -80,7 +81,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Group.CreateScimGroupsAsync(
     connectionId: "<id>",
-    groupP: new Models.Components.Group() {}
+    scimGroup: new ScimGroup() {
+        DisplayName = "Bert89",
+        Id = "<id>",
+    }
 );
 
 // handle response
@@ -88,10 +92,10 @@ var res = await sdk.Group.CreateScimGroupsAsync(
 
 ### Parameters
 
-| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
-| `Group`                                                     | [Models.Components.Group](../../Models/Components/Group.md) | :heavy_minus_sign:                                          | N/A                                                         |
+| Parameter                                         | Type                                              | Required                                          | Description                                       |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
+| `ScimGroup`                                       | [ScimGroup](../../Models/Components/ScimGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 
 ### Response
 
@@ -141,6 +145,46 @@ var res = await sdk.Group.GetHrisGroupAsync(
 ### Response
 
 **[GetHrisGroupResponse](../../Models/Requests/GetHrisGroupResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetScimGroups
+
+Get group
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Group.GetScimGroupsAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Group      |
+
+### Response
+
+**[GetScimGroupsResponse](../../Models/Requests/GetScimGroupsResponse.md)**
 
 ### Errors
 
@@ -295,7 +339,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Group.PatchScimGroupsAsync(
     connectionId: "<id>",
     id: "<id>",
-    groupP: new Models.Components.Group() {}
+    scimGroup: new ScimGroup() {
+        DisplayName = "Damon_Rutherford93",
+        Id = "<id>",
+    }
 );
 
 // handle response
@@ -303,11 +350,11 @@ var res = await sdk.Group.PatchScimGroupsAsync(
 
 ### Parameters
 
-| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
-| `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Group                                             |
-| `Group`                                                     | [Models.Components.Group](../../Models/Components/Group.md) | :heavy_minus_sign:                                          | N/A                                                         |
+| Parameter                                         | Type                                              | Required                                          | Description                                       |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
+| `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Group                                   |
+| `ScimGroup`                                       | [ScimGroup](../../Models/Components/ScimGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 
 ### Response
 
@@ -465,7 +512,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Group.UpdateScimGroupsAsync(
     connectionId: "<id>",
     id: "<id>",
-    groupP: new Models.Components.Group() {}
+    scimGroup: new ScimGroup() {
+        DisplayName = "Frederic.Reichel",
+        Id = "<id>",
+    }
 );
 
 // handle response
@@ -473,11 +523,11 @@ var res = await sdk.Group.UpdateScimGroupsAsync(
 
 ### Parameters
 
-| Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
-| ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
-| `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
-| `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Group                                             |
-| `Group`                                                     | [Models.Components.Group](../../Models/Components/Group.md) | :heavy_minus_sign:                                          | N/A                                                         |
+| Parameter                                         | Type                                              | Required                                          | Description                                       |
+| ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
+| `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Group                                   |
+| `ScimGroup`                                       | [ScimGroup](../../Models/Components/ScimGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 
 ### Response
 

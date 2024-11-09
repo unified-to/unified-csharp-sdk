@@ -43,11 +43,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
-        UnifiedTo.Models.Components.PropertyConnectionCategories.Task,
+        UnifiedTo.Models.Components.PropertyConnectionCategories.Lms,
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.AtsScorecardRead,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmEventRead,
     },
 };
 
@@ -93,7 +93,7 @@ var res = await sdk.Unified.CreateUnifiedWebhookAsync(
         ConnectionId = "<id>",
         Event = UnifiedTo.Models.Components.Event.Created,
         HookUrl = "https://blind-platypus.org/",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.AtsScorecard,
+        ObjectType = UnifiedTo.Models.Components.ObjectType.CrmContact,
     },
     includeAll: false
 );
@@ -521,11 +521,11 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(
     id: "<id>",
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
-            UnifiedTo.Models.Components.PropertyConnectionCategories.Commerce,
+            UnifiedTo.Models.Components.PropertyConnectionCategories.Genai,
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            UnifiedTo.Models.Components.PropertyConnectionPermissions.ScimGroupsWrite,
+            UnifiedTo.Models.Components.PropertyConnectionPermissions.RepoPullrequestWrite,
         },
     }
 );
@@ -572,7 +572,7 @@ var res = await sdk.Unified.PatchUnifiedWebhookAsync(
         ConnectionId = "<id>",
         Event = UnifiedTo.Models.Components.Event.Deleted,
         HookUrl = "https://calculating-habit.name/",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.PaymentRefund,
+        ObjectType = UnifiedTo.Models.Components.ObjectType.CommerceCollection,
     }
 );
 
@@ -724,11 +724,11 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
     id: "<id>",
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
-            UnifiedTo.Models.Components.PropertyConnectionCategories.Messaging,
+            UnifiedTo.Models.Components.PropertyConnectionCategories.Kms,
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            UnifiedTo.Models.Components.PropertyConnectionPermissions.ScimGroupsRead,
+            UnifiedTo.Models.Components.PropertyConnectionPermissions.RepoPullrequestRead,
         },
     }
 );
@@ -775,7 +775,7 @@ var res = await sdk.Unified.UpdateUnifiedWebhookAsync(
         ConnectionId = "<id>",
         Event = UnifiedTo.Models.Components.Event.Created,
         HookUrl = "https://glaring-postbox.info/",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.MessagingMessage,
+        ObjectType = UnifiedTo.Models.Components.ObjectType.ScimGroups,
     }
 );
 

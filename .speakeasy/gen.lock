@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 959e2ac257abb80b8937dce372ee1c82
+  docChecksum: b5c113c07df6378c9b107904984f614c
   docVersion: "1.0"
-  speakeasyVersion: 1.434.0
-  generationVersion: 2.452.0
-  releaseVersion: 0.21.1
-  configChecksum: 5703b66db532cae5c9b97b85bf7f4bd1
+  speakeasyVersion: 1.436.0
+  generationVersion: 2.455.2
+  releaseVersion: 0.21.2
+  configChecksum: 53e0c2bdd95bc22b541a4646067419c8
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -37,14 +37,18 @@ generatedFiles:
   - UnifiedTo/Applicationstatus.cs
   - UnifiedTo/Ats.cs
   - UnifiedTo/Auth.cs
+  - UnifiedTo/Branch.cs
   - UnifiedTo/Call.cs
   - UnifiedTo/Candidate.cs
   - UnifiedTo/Channel.cs
+  - UnifiedTo/Class.cs
   - UnifiedTo/Collection.cs
   - UnifiedTo/Commerce.cs
+  - UnifiedTo/Commit.cs
   - UnifiedTo/Company.cs
   - UnifiedTo/Connection.cs
   - UnifiedTo/Contact.cs
+  - UnifiedTo/Course.cs
   - UnifiedTo/Crm.cs
   - UnifiedTo/Customer.cs
   - UnifiedTo/Deal.cs
@@ -58,6 +62,7 @@ generatedFiles:
   - UnifiedTo/Hooks/HookTypes.cs
   - UnifiedTo/Hooks/SDKHooks.cs
   - UnifiedTo/Hris.cs
+  - UnifiedTo/Instructor.cs
   - UnifiedTo/Integration.cs
   - UnifiedTo/Interview.cs
   - UnifiedTo/Inventory.cs
@@ -70,6 +75,7 @@ generatedFiles:
   - UnifiedTo/Lead.cs
   - UnifiedTo/Link.cs
   - UnifiedTo/List.cs
+  - UnifiedTo/Lms.cs
   - UnifiedTo/Location.cs
   - UnifiedTo/Login.cs
   - UnifiedTo/Martech.cs
@@ -169,7 +175,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/GenaiModel.cs
   - UnifiedTo/Models/Components/GenaiPrompt.cs
   - UnifiedTo/Models/Components/Gender.cs
-  - UnifiedTo/Models/Components/Group.cs
   - UnifiedTo/Models/Components/HrisCompany.cs
   - UnifiedTo/Models/Components/HrisCompensation.cs
   - UnifiedTo/Models/Components/HrisCompensationFrequency.cs
@@ -197,16 +202,18 @@ generatedFiles:
   - UnifiedTo/Models/Components/KmsPage.cs
   - UnifiedTo/Models/Components/KmsPageType.cs
   - UnifiedTo/Models/Components/KmsSpace.cs
-  - UnifiedTo/Models/Components/Level.cs
   - UnifiedTo/Models/Components/ListAccountId.cs
   - UnifiedTo/Models/Components/ListApplicationId.cs
   - UnifiedTo/Models/Components/ListCandidateId.cs
   - UnifiedTo/Models/Components/ListChannelId.cs
+  - UnifiedTo/Models/Components/ListClassId.cs
   - UnifiedTo/Models/Components/ListCollectionId.cs
   - UnifiedTo/Models/Components/ListCompanyId.cs
   - UnifiedTo/Models/Components/ListContactId.cs
+  - UnifiedTo/Models/Components/ListCourseId.cs
   - UnifiedTo/Models/Components/ListCustomerId.cs
   - UnifiedTo/Models/Components/ListDealId.cs
+  - UnifiedTo/Models/Components/ListInstructorId.cs
   - UnifiedTo/Models/Components/ListInterviewId.cs
   - UnifiedTo/Models/Components/ListInvoiceId.cs
   - UnifiedTo/Models/Components/ListItemId.cs
@@ -226,10 +233,20 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListSortByName.cs
   - UnifiedTo/Models/Components/ListSortByUpdatedAt.cs
   - UnifiedTo/Models/Components/ListSpaceId.cs
+  - UnifiedTo/Models/Components/ListStudentId.cs
   - UnifiedTo/Models/Components/ListTicketId.cs
   - UnifiedTo/Models/Components/ListType.cs
   - UnifiedTo/Models/Components/ListUpdatedGte.cs
   - UnifiedTo/Models/Components/ListUserId.cs
+  - UnifiedTo/Models/Components/LmsClass.cs
+  - UnifiedTo/Models/Components/LmsCourse.cs
+  - UnifiedTo/Models/Components/LmsEmail.cs
+  - UnifiedTo/Models/Components/LmsInstructor.cs
+  - UnifiedTo/Models/Components/LmsMedia.cs
+  - UnifiedTo/Models/Components/LmsMediaType.cs
+  - UnifiedTo/Models/Components/LmsStudent.cs
+  - UnifiedTo/Models/Components/LmsTelephone.cs
+  - UnifiedTo/Models/Components/LmsTelephoneType.cs
   - UnifiedTo/Models/Components/MaritalStatus.cs
   - UnifiedTo/Models/Components/MarketingEmail.cs
   - UnifiedTo/Models/Components/MarketingEmailType.cs
@@ -276,36 +293,63 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyCrmLeadAddress.cs
   - UnifiedTo/Models/Components/PropertyEnrichCompanyAddress.cs
   - UnifiedTo/Models/Components/PropertyEnrichPersonAddress.cs
-  - UnifiedTo/Models/Components/PropertyGroupMeta.cs
-  - UnifiedTo/Models/Components/PropertyGroupSchemas.cs
   - UnifiedTo/Models/Components/PropertyHrisCompanyAddress.cs
   - UnifiedTo/Models/Components/PropertyHrisEmployeeAddress.cs
   - UnifiedTo/Models/Components/PropertyHrisEmployeeEmployeeRoles.cs
   - UnifiedTo/Models/Components/PropertyHrisLocationAddress.cs
   - UnifiedTo/Models/Components/PropertyIntegrationCategories.cs
   - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEvents.cs
+  - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEventsCreated.cs
+  - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEventsDeleted.cs
+  - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEventsUpdated.cs
+  - UnifiedTo/Models/Components/PropertyLmsStudentAddress.cs
   - UnifiedTo/Models/Components/PropertyMessagingMessageAuthorMember.cs
-  - UnifiedTo/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsCreated.cs
-  - UnifiedTo/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsDeleted.cs
-  - UnifiedTo/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsUpdated.cs
-  - UnifiedTo/Models/Components/PropertyPropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager.cs
-  - UnifiedTo/Models/Components/PropertyPropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType.cs
+  - UnifiedTo/Models/Components/PropertyScimGroupMeta.cs
+  - UnifiedTo/Models/Components/PropertyScimGroupSchemas.cs
+  - UnifiedTo/Models/Components/PropertyScimUserMeta.cs
+  - UnifiedTo/Models/Components/PropertyScimUserMetaResourceType.cs
+  - UnifiedTo/Models/Components/PropertyScimUserName.cs
+  - UnifiedTo/Models/Components/PropertyScimUserSchemas.cs
+  - UnifiedTo/Models/Components/PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User.cs
+  - UnifiedTo/Models/Components/PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender.cs
+  - UnifiedTo/Models/Components/PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager.cs
+  - UnifiedTo/Models/Components/PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType.cs
+  - UnifiedTo/Models/Components/PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User.cs
+  - UnifiedTo/Models/Components/PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender.cs
+  - UnifiedTo/Models/Components/PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User.cs
+  - UnifiedTo/Models/Components/PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender.cs
   - UnifiedTo/Models/Components/PropertyStoragePermissionRoles.cs
   - UnifiedTo/Models/Components/PropertyUcCallTelephone.cs
   - UnifiedTo/Models/Components/PropertyUcCallTelephoneType.cs
-  - UnifiedTo/Models/Components/PropertyUserMeta.cs
-  - UnifiedTo/Models/Components/PropertyUserMetaResourceType.cs
-  - UnifiedTo/Models/Components/PropertyUserName.cs
-  - UnifiedTo/Models/Components/PropertyUserSchemas.cs
-  - UnifiedTo/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20User.cs
-  - UnifiedTo/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender.cs
-  - UnifiedTo/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User.cs
-  - UnifiedTo/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender.cs
-  - UnifiedTo/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionPeakon20User.cs
-  - UnifiedTo/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender.cs
   - UnifiedTo/Models/Components/Recommendation.cs
+  - UnifiedTo/Models/Components/RepoBranch.cs
+  - UnifiedTo/Models/Components/RepoCommit.cs
+  - UnifiedTo/Models/Components/RepoOrganization.cs
+  - UnifiedTo/Models/Components/RepoPullrequest.cs
+  - UnifiedTo/Models/Components/RepoPullrequestStatus.cs
+  - UnifiedTo/Models/Components/RepoRepository.cs
   - UnifiedTo/Models/Components/ResourceType.cs
   - UnifiedTo/Models/Components/Role.cs
+  - UnifiedTo/Models/Components/ScimAddress.cs
+  - UnifiedTo/Models/Components/ScimAddressType.cs
+  - UnifiedTo/Models/Components/ScimEmail.cs
+  - UnifiedTo/Models/Components/ScimEmailType.cs
+  - UnifiedTo/Models/Components/ScimEntitlement.cs
+  - UnifiedTo/Models/Components/ScimGroup.cs
+  - UnifiedTo/Models/Components/ScimGroupMember.cs
+  - UnifiedTo/Models/Components/ScimGroupMemberType.cs
+  - UnifiedTo/Models/Components/ScimIms.cs
+  - UnifiedTo/Models/Components/ScimImsType.cs
+  - UnifiedTo/Models/Components/ScimManager.cs
+  - UnifiedTo/Models/Components/ScimManagerType.cs
+  - UnifiedTo/Models/Components/ScimPhoneNumber.cs
+  - UnifiedTo/Models/Components/ScimPhoneNumberType.cs
+  - UnifiedTo/Models/Components/ScimPhoto.cs
+  - UnifiedTo/Models/Components/ScimPhotoType.cs
+  - UnifiedTo/Models/Components/ScimRole.cs
+  - UnifiedTo/Models/Components/ScimUser.cs
+  - UnifiedTo/Models/Components/ScimUserGroups.cs
+  - UnifiedTo/Models/Components/ScimUserGroupsType.cs
   - UnifiedTo/Models/Components/SearchDomain.cs
   - UnifiedTo/Models/Components/SearchEmail.cs
   - UnifiedTo/Models/Components/SearchLinkedinurl.cs
@@ -337,9 +381,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/UcEmailType.cs
   - UnifiedTo/Models/Components/UcTelephone.cs
   - UnifiedTo/Models/Components/UcTelephoneType.cs
-  - UnifiedTo/Models/Components/Undefined.cs
-  - UnifiedTo/Models/Components/UndefinedType.cs
-  - UnifiedTo/Models/Components/User.cs
   - UnifiedTo/Models/Components/Webhook.cs
   - UnifiedTo/Models/Components/WebhookType.cs
   - UnifiedTo/Models/Components/WeightUnit.cs
@@ -408,6 +449,14 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateKmsPageResponse.cs
   - UnifiedTo/Models/Requests/CreateKmsSpaceRequest.cs
   - UnifiedTo/Models/Requests/CreateKmsSpaceResponse.cs
+  - UnifiedTo/Models/Requests/CreateLmsClassRequest.cs
+  - UnifiedTo/Models/Requests/CreateLmsClassResponse.cs
+  - UnifiedTo/Models/Requests/CreateLmsCourseRequest.cs
+  - UnifiedTo/Models/Requests/CreateLmsCourseResponse.cs
+  - UnifiedTo/Models/Requests/CreateLmsInstructorRequest.cs
+  - UnifiedTo/Models/Requests/CreateLmsInstructorResponse.cs
+  - UnifiedTo/Models/Requests/CreateLmsStudentRequest.cs
+  - UnifiedTo/Models/Requests/CreateLmsStudentResponse.cs
   - UnifiedTo/Models/Requests/CreateMartechListRequest.cs
   - UnifiedTo/Models/Requests/CreateMartechListResponse.cs
   - UnifiedTo/Models/Requests/CreateMartechMemberRequest.cs
@@ -422,6 +471,16 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreatePaymentLinkResponse.cs
   - UnifiedTo/Models/Requests/CreatePaymentPaymentRequest.cs
   - UnifiedTo/Models/Requests/CreatePaymentPaymentResponse.cs
+  - UnifiedTo/Models/Requests/CreateRepoBranchRequest.cs
+  - UnifiedTo/Models/Requests/CreateRepoBranchResponse.cs
+  - UnifiedTo/Models/Requests/CreateRepoCommitRequest.cs
+  - UnifiedTo/Models/Requests/CreateRepoCommitResponse.cs
+  - UnifiedTo/Models/Requests/CreateRepoOrganizationRequest.cs
+  - UnifiedTo/Models/Requests/CreateRepoOrganizationResponse.cs
+  - UnifiedTo/Models/Requests/CreateRepoPullrequestRequest.cs
+  - UnifiedTo/Models/Requests/CreateRepoPullrequestResponse.cs
+  - UnifiedTo/Models/Requests/CreateRepoRepositoryRequest.cs
+  - UnifiedTo/Models/Requests/CreateRepoRepositoryResponse.cs
   - UnifiedTo/Models/Requests/CreateScimGroupsRequest.cs
   - UnifiedTo/Models/Requests/CreateScimGroupsResponse.cs
   - UnifiedTo/Models/Requests/CreateScimUsersRequest.cs
@@ -511,6 +570,14 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetKmsPageResponse.cs
   - UnifiedTo/Models/Requests/GetKmsSpaceRequest.cs
   - UnifiedTo/Models/Requests/GetKmsSpaceResponse.cs
+  - UnifiedTo/Models/Requests/GetLmsClassRequest.cs
+  - UnifiedTo/Models/Requests/GetLmsClassResponse.cs
+  - UnifiedTo/Models/Requests/GetLmsCourseRequest.cs
+  - UnifiedTo/Models/Requests/GetLmsCourseResponse.cs
+  - UnifiedTo/Models/Requests/GetLmsInstructorRequest.cs
+  - UnifiedTo/Models/Requests/GetLmsInstructorResponse.cs
+  - UnifiedTo/Models/Requests/GetLmsStudentRequest.cs
+  - UnifiedTo/Models/Requests/GetLmsStudentResponse.cs
   - UnifiedTo/Models/Requests/GetMartechListRequest.cs
   - UnifiedTo/Models/Requests/GetMartechListResponse.cs
   - UnifiedTo/Models/Requests/GetMartechMemberRequest.cs
@@ -527,6 +594,18 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetPaymentPayoutResponse.cs
   - UnifiedTo/Models/Requests/GetPaymentRefundRequest.cs
   - UnifiedTo/Models/Requests/GetPaymentRefundResponse.cs
+  - UnifiedTo/Models/Requests/GetRepoBranchRequest.cs
+  - UnifiedTo/Models/Requests/GetRepoBranchResponse.cs
+  - UnifiedTo/Models/Requests/GetRepoCommitRequest.cs
+  - UnifiedTo/Models/Requests/GetRepoCommitResponse.cs
+  - UnifiedTo/Models/Requests/GetRepoOrganizationRequest.cs
+  - UnifiedTo/Models/Requests/GetRepoOrganizationResponse.cs
+  - UnifiedTo/Models/Requests/GetRepoPullrequestRequest.cs
+  - UnifiedTo/Models/Requests/GetRepoPullrequestResponse.cs
+  - UnifiedTo/Models/Requests/GetRepoRepositoryRequest.cs
+  - UnifiedTo/Models/Requests/GetRepoRepositoryResponse.cs
+  - UnifiedTo/Models/Requests/GetScimGroupsRequest.cs
+  - UnifiedTo/Models/Requests/GetScimGroupsResponse.cs
   - UnifiedTo/Models/Requests/GetScimUsersRequest.cs
   - UnifiedTo/Models/Requests/GetScimUsersResponse.cs
   - UnifiedTo/Models/Requests/GetStorageFileRequest.cs
@@ -630,6 +709,14 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListKmsPagesResponse.cs
   - UnifiedTo/Models/Requests/ListKmsSpacesRequest.cs
   - UnifiedTo/Models/Requests/ListKmsSpacesResponse.cs
+  - UnifiedTo/Models/Requests/ListLmsClassesRequest.cs
+  - UnifiedTo/Models/Requests/ListLmsClassesResponse.cs
+  - UnifiedTo/Models/Requests/ListLmsCoursesRequest.cs
+  - UnifiedTo/Models/Requests/ListLmsCoursesResponse.cs
+  - UnifiedTo/Models/Requests/ListLmsInstructorsRequest.cs
+  - UnifiedTo/Models/Requests/ListLmsInstructorsResponse.cs
+  - UnifiedTo/Models/Requests/ListLmsStudentsRequest.cs
+  - UnifiedTo/Models/Requests/ListLmsStudentsResponse.cs
   - UnifiedTo/Models/Requests/ListMartechListsRequest.cs
   - UnifiedTo/Models/Requests/ListMartechListsResponse.cs
   - UnifiedTo/Models/Requests/ListMartechMembersRequest.cs
@@ -648,6 +735,16 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListPaymentPayoutsResponse.cs
   - UnifiedTo/Models/Requests/ListPaymentRefundsRequest.cs
   - UnifiedTo/Models/Requests/ListPaymentRefundsResponse.cs
+  - UnifiedTo/Models/Requests/ListRepoBranchesRequest.cs
+  - UnifiedTo/Models/Requests/ListRepoBranchesResponse.cs
+  - UnifiedTo/Models/Requests/ListRepoCommitsRequest.cs
+  - UnifiedTo/Models/Requests/ListRepoCommitsResponse.cs
+  - UnifiedTo/Models/Requests/ListRepoOrganizationsRequest.cs
+  - UnifiedTo/Models/Requests/ListRepoOrganizationsResponse.cs
+  - UnifiedTo/Models/Requests/ListRepoPullrequestsRequest.cs
+  - UnifiedTo/Models/Requests/ListRepoPullrequestsResponse.cs
+  - UnifiedTo/Models/Requests/ListRepoRepositoriesRequest.cs
+  - UnifiedTo/Models/Requests/ListRepoRepositoriesResponse.cs
   - UnifiedTo/Models/Requests/ListScimGroupsRequest.cs
   - UnifiedTo/Models/Requests/ListScimGroupsResponse.cs
   - UnifiedTo/Models/Requests/ListScimUsersRequest.cs
@@ -741,6 +838,14 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchKmsPageResponse.cs
   - UnifiedTo/Models/Requests/PatchKmsSpaceRequest.cs
   - UnifiedTo/Models/Requests/PatchKmsSpaceResponse.cs
+  - UnifiedTo/Models/Requests/PatchLmsClassRequest.cs
+  - UnifiedTo/Models/Requests/PatchLmsClassResponse.cs
+  - UnifiedTo/Models/Requests/PatchLmsCourseRequest.cs
+  - UnifiedTo/Models/Requests/PatchLmsCourseResponse.cs
+  - UnifiedTo/Models/Requests/PatchLmsInstructorRequest.cs
+  - UnifiedTo/Models/Requests/PatchLmsInstructorResponse.cs
+  - UnifiedTo/Models/Requests/PatchLmsStudentRequest.cs
+  - UnifiedTo/Models/Requests/PatchLmsStudentResponse.cs
   - UnifiedTo/Models/Requests/PatchMartechListRequest.cs
   - UnifiedTo/Models/Requests/PatchMartechListResponse.cs
   - UnifiedTo/Models/Requests/PatchMartechMemberRequest.cs
@@ -755,6 +860,16 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchPaymentLinkResponse.cs
   - UnifiedTo/Models/Requests/PatchPaymentPaymentRequest.cs
   - UnifiedTo/Models/Requests/PatchPaymentPaymentResponse.cs
+  - UnifiedTo/Models/Requests/PatchRepoBranchRequest.cs
+  - UnifiedTo/Models/Requests/PatchRepoBranchResponse.cs
+  - UnifiedTo/Models/Requests/PatchRepoCommitRequest.cs
+  - UnifiedTo/Models/Requests/PatchRepoCommitResponse.cs
+  - UnifiedTo/Models/Requests/PatchRepoOrganizationRequest.cs
+  - UnifiedTo/Models/Requests/PatchRepoOrganizationResponse.cs
+  - UnifiedTo/Models/Requests/PatchRepoPullrequestRequest.cs
+  - UnifiedTo/Models/Requests/PatchRepoPullrequestResponse.cs
+  - UnifiedTo/Models/Requests/PatchRepoRepositoryRequest.cs
+  - UnifiedTo/Models/Requests/PatchRepoRepositoryResponse.cs
   - UnifiedTo/Models/Requests/PatchScimGroupsRequest.cs
   - UnifiedTo/Models/Requests/PatchScimGroupsResponse.cs
   - UnifiedTo/Models/Requests/PatchScimUsersRequest.cs
@@ -840,6 +955,14 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveKmsPageResponse.cs
   - UnifiedTo/Models/Requests/RemoveKmsSpaceRequest.cs
   - UnifiedTo/Models/Requests/RemoveKmsSpaceResponse.cs
+  - UnifiedTo/Models/Requests/RemoveLmsClassRequest.cs
+  - UnifiedTo/Models/Requests/RemoveLmsClassResponse.cs
+  - UnifiedTo/Models/Requests/RemoveLmsCourseRequest.cs
+  - UnifiedTo/Models/Requests/RemoveLmsCourseResponse.cs
+  - UnifiedTo/Models/Requests/RemoveLmsInstructorRequest.cs
+  - UnifiedTo/Models/Requests/RemoveLmsInstructorResponse.cs
+  - UnifiedTo/Models/Requests/RemoveLmsStudentRequest.cs
+  - UnifiedTo/Models/Requests/RemoveLmsStudentResponse.cs
   - UnifiedTo/Models/Requests/RemoveMartechListRequest.cs
   - UnifiedTo/Models/Requests/RemoveMartechListResponse.cs
   - UnifiedTo/Models/Requests/RemoveMartechMemberRequest.cs
@@ -852,6 +975,16 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemovePaymentLinkResponse.cs
   - UnifiedTo/Models/Requests/RemovePaymentPaymentRequest.cs
   - UnifiedTo/Models/Requests/RemovePaymentPaymentResponse.cs
+  - UnifiedTo/Models/Requests/RemoveRepoBranchRequest.cs
+  - UnifiedTo/Models/Requests/RemoveRepoBranchResponse.cs
+  - UnifiedTo/Models/Requests/RemoveRepoCommitRequest.cs
+  - UnifiedTo/Models/Requests/RemoveRepoCommitResponse.cs
+  - UnifiedTo/Models/Requests/RemoveRepoOrganizationRequest.cs
+  - UnifiedTo/Models/Requests/RemoveRepoOrganizationResponse.cs
+  - UnifiedTo/Models/Requests/RemoveRepoPullrequestRequest.cs
+  - UnifiedTo/Models/Requests/RemoveRepoPullrequestResponse.cs
+  - UnifiedTo/Models/Requests/RemoveRepoRepositoryRequest.cs
+  - UnifiedTo/Models/Requests/RemoveRepoRepositoryResponse.cs
   - UnifiedTo/Models/Requests/RemoveScimGroupsRequest.cs
   - UnifiedTo/Models/Requests/RemoveScimGroupsResponse.cs
   - UnifiedTo/Models/Requests/RemoveScimUsersRequest.cs
@@ -935,6 +1068,14 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateKmsPageResponse.cs
   - UnifiedTo/Models/Requests/UpdateKmsSpaceRequest.cs
   - UnifiedTo/Models/Requests/UpdateKmsSpaceResponse.cs
+  - UnifiedTo/Models/Requests/UpdateLmsClassRequest.cs
+  - UnifiedTo/Models/Requests/UpdateLmsClassResponse.cs
+  - UnifiedTo/Models/Requests/UpdateLmsCourseRequest.cs
+  - UnifiedTo/Models/Requests/UpdateLmsCourseResponse.cs
+  - UnifiedTo/Models/Requests/UpdateLmsInstructorRequest.cs
+  - UnifiedTo/Models/Requests/UpdateLmsInstructorResponse.cs
+  - UnifiedTo/Models/Requests/UpdateLmsStudentRequest.cs
+  - UnifiedTo/Models/Requests/UpdateLmsStudentResponse.cs
   - UnifiedTo/Models/Requests/UpdateMartechListRequest.cs
   - UnifiedTo/Models/Requests/UpdateMartechListResponse.cs
   - UnifiedTo/Models/Requests/UpdateMartechMemberRequest.cs
@@ -949,6 +1090,16 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdatePaymentLinkResponse.cs
   - UnifiedTo/Models/Requests/UpdatePaymentPaymentRequest.cs
   - UnifiedTo/Models/Requests/UpdatePaymentPaymentResponse.cs
+  - UnifiedTo/Models/Requests/UpdateRepoBranchRequest.cs
+  - UnifiedTo/Models/Requests/UpdateRepoBranchResponse.cs
+  - UnifiedTo/Models/Requests/UpdateRepoCommitRequest.cs
+  - UnifiedTo/Models/Requests/UpdateRepoCommitResponse.cs
+  - UnifiedTo/Models/Requests/UpdateRepoOrganizationRequest.cs
+  - UnifiedTo/Models/Requests/UpdateRepoOrganizationResponse.cs
+  - UnifiedTo/Models/Requests/UpdateRepoPullrequestRequest.cs
+  - UnifiedTo/Models/Requests/UpdateRepoPullrequestResponse.cs
+  - UnifiedTo/Models/Requests/UpdateRepoRepositoryRequest.cs
+  - UnifiedTo/Models/Requests/UpdateRepoRepositoryResponse.cs
   - UnifiedTo/Models/Requests/UpdateScimGroupsRequest.cs
   - UnifiedTo/Models/Requests/UpdateScimGroupsResponse.cs
   - UnifiedTo/Models/Requests/UpdateScimUsersRequest.cs
@@ -985,11 +1136,15 @@ generatedFiles:
   - UnifiedTo/Pipeline.cs
   - UnifiedTo/Project.cs
   - UnifiedTo/Prompt.cs
+  - UnifiedTo/Pullrequest.cs
   - UnifiedTo/Refund.cs
+  - UnifiedTo/Repo.cs
+  - UnifiedTo/Repository.cs
   - UnifiedTo/Scim.cs
   - UnifiedTo/Scorecard.cs
   - UnifiedTo/Space.cs
   - UnifiedTo/Storage.cs
+  - UnifiedTo/Student.cs
   - UnifiedTo/Task.cs
   - UnifiedTo/Taxrate.cs
   - UnifiedTo/Ticket.cs
@@ -1111,7 +1266,6 @@ generatedFiles:
   - docs/Models/Components/GenaiModel.md
   - docs/Models/Components/GenaiPrompt.md
   - docs/Models/Components/Gender.md
-  - docs/Models/Components/Group.md
   - docs/Models/Components/HrisCompany.md
   - docs/Models/Components/HrisCompensation.md
   - docs/Models/Components/HrisCompensationFrequency.md
@@ -1139,16 +1293,18 @@ generatedFiles:
   - docs/Models/Components/KmsPage.md
   - docs/Models/Components/KmsPageType.md
   - docs/Models/Components/KmsSpace.md
-  - docs/Models/Components/Level.md
   - docs/Models/Components/ListAccountId.md
   - docs/Models/Components/ListApplicationId.md
   - docs/Models/Components/ListCandidateId.md
   - docs/Models/Components/ListChannelId.md
+  - docs/Models/Components/ListClassId.md
   - docs/Models/Components/ListCollectionId.md
   - docs/Models/Components/ListCompanyId.md
   - docs/Models/Components/ListContactId.md
+  - docs/Models/Components/ListCourseId.md
   - docs/Models/Components/ListCustomerId.md
   - docs/Models/Components/ListDealId.md
+  - docs/Models/Components/ListInstructorId.md
   - docs/Models/Components/ListInterviewId.md
   - docs/Models/Components/ListInvoiceId.md
   - docs/Models/Components/ListItemId.md
@@ -1168,10 +1324,20 @@ generatedFiles:
   - docs/Models/Components/ListSortByName.md
   - docs/Models/Components/ListSortByUpdatedAt.md
   - docs/Models/Components/ListSpaceId.md
+  - docs/Models/Components/ListStudentId.md
   - docs/Models/Components/ListTicketId.md
   - docs/Models/Components/ListType.md
   - docs/Models/Components/ListUpdatedGte.md
   - docs/Models/Components/ListUserId.md
+  - docs/Models/Components/LmsClass.md
+  - docs/Models/Components/LmsCourse.md
+  - docs/Models/Components/LmsEmail.md
+  - docs/Models/Components/LmsInstructor.md
+  - docs/Models/Components/LmsMedia.md
+  - docs/Models/Components/LmsMediaType.md
+  - docs/Models/Components/LmsStudent.md
+  - docs/Models/Components/LmsTelephone.md
+  - docs/Models/Components/LmsTelephoneType.md
   - docs/Models/Components/MaritalStatus.md
   - docs/Models/Components/MarketingEmail.md
   - docs/Models/Components/MarketingEmailType.md
@@ -1218,36 +1384,63 @@ generatedFiles:
   - docs/Models/Components/PropertyCrmLeadAddress.md
   - docs/Models/Components/PropertyEnrichCompanyAddress.md
   - docs/Models/Components/PropertyEnrichPersonAddress.md
-  - docs/Models/Components/PropertyGroupMeta.md
-  - docs/Models/Components/PropertyGroupSchemas.md
   - docs/Models/Components/PropertyHrisCompanyAddress.md
   - docs/Models/Components/PropertyHrisEmployeeAddress.md
   - docs/Models/Components/PropertyHrisEmployeeEmployeeRoles.md
   - docs/Models/Components/PropertyHrisLocationAddress.md
   - docs/Models/Components/PropertyIntegrationCategories.md
   - docs/Models/Components/PropertyIntegrationSupportWebhookEvents.md
+  - docs/Models/Components/PropertyIntegrationSupportWebhookEventsCreated.md
+  - docs/Models/Components/PropertyIntegrationSupportWebhookEventsDeleted.md
+  - docs/Models/Components/PropertyIntegrationSupportWebhookEventsUpdated.md
+  - docs/Models/Components/PropertyLmsStudentAddress.md
   - docs/Models/Components/PropertyMessagingMessageAuthorMember.md
-  - docs/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsCreated.md
-  - docs/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsDeleted.md
-  - docs/Models/Components/PropertyPropertyIntegrationSupportWebhookEventsUpdated.md
-  - docs/Models/Components/PropertyPropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager.md
-  - docs/Models/Components/PropertyPropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType.md
+  - docs/Models/Components/PropertyScimGroupMeta.md
+  - docs/Models/Components/PropertyScimGroupSchemas.md
+  - docs/Models/Components/PropertyScimUserMeta.md
+  - docs/Models/Components/PropertyScimUserMetaResourceType.md
+  - docs/Models/Components/PropertyScimUserName.md
+  - docs/Models/Components/PropertyScimUserSchemas.md
+  - docs/Models/Components/PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20User.md
+  - docs/Models/Components/PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender.md
+  - docs/Models/Components/PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManager.md
+  - docs/Models/Components/PropertyScimUserUrnIetfParamsScimSchemasExtensionEnterprise20UserManagerType.md
+  - docs/Models/Components/PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User.md
+  - docs/Models/Components/PropertyScimUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender.md
+  - docs/Models/Components/PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20User.md
+  - docs/Models/Components/PropertyScimUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender.md
   - docs/Models/Components/PropertyStoragePermissionRoles.md
   - docs/Models/Components/PropertyUcCallTelephone.md
   - docs/Models/Components/PropertyUcCallTelephoneType.md
-  - docs/Models/Components/PropertyUserMeta.md
-  - docs/Models/Components/PropertyUserMetaResourceType.md
-  - docs/Models/Components/PropertyUserName.md
-  - docs/Models/Components/PropertyUserSchemas.md
-  - docs/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20User.md
-  - docs/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionEnterprise20UserGender.md
-  - docs/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10User.md
-  - docs/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionLatticeAttributes10UserGender.md
-  - docs/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionPeakon20User.md
-  - docs/Models/Components/PropertyUserUrnIetfParamsScimSchemasExtensionPeakon20UserGender.md
   - docs/Models/Components/Recommendation.md
+  - docs/Models/Components/RepoBranch.md
+  - docs/Models/Components/RepoCommit.md
+  - docs/Models/Components/RepoOrganization.md
+  - docs/Models/Components/RepoPullrequest.md
+  - docs/Models/Components/RepoPullrequestStatus.md
+  - docs/Models/Components/RepoRepository.md
   - docs/Models/Components/ResourceType.md
   - docs/Models/Components/Role.md
+  - docs/Models/Components/ScimAddress.md
+  - docs/Models/Components/ScimAddressType.md
+  - docs/Models/Components/ScimEmail.md
+  - docs/Models/Components/ScimEmailType.md
+  - docs/Models/Components/ScimEntitlement.md
+  - docs/Models/Components/ScimGroup.md
+  - docs/Models/Components/ScimGroupMember.md
+  - docs/Models/Components/ScimGroupMemberType.md
+  - docs/Models/Components/ScimIms.md
+  - docs/Models/Components/ScimImsType.md
+  - docs/Models/Components/ScimManager.md
+  - docs/Models/Components/ScimManagerType.md
+  - docs/Models/Components/ScimPhoneNumber.md
+  - docs/Models/Components/ScimPhoneNumberType.md
+  - docs/Models/Components/ScimPhoto.md
+  - docs/Models/Components/ScimPhotoType.md
+  - docs/Models/Components/ScimRole.md
+  - docs/Models/Components/ScimUser.md
+  - docs/Models/Components/ScimUserGroups.md
+  - docs/Models/Components/ScimUserGroupsType.md
   - docs/Models/Components/SearchDomain.md
   - docs/Models/Components/SearchEmail.md
   - docs/Models/Components/SearchLinkedinurl.md
@@ -1279,9 +1472,6 @@ generatedFiles:
   - docs/Models/Components/UcEmailType.md
   - docs/Models/Components/UcTelephone.md
   - docs/Models/Components/UcTelephoneType.md
-  - docs/Models/Components/Undefined.md
-  - docs/Models/Components/UndefinedType.md
-  - docs/Models/Components/User.md
   - docs/Models/Components/Webhook.md
   - docs/Models/Components/WebhookType.md
   - docs/Models/Components/WeightUnit.md
@@ -1349,6 +1539,14 @@ generatedFiles:
   - docs/Models/Requests/CreateKmsPageResponse.md
   - docs/Models/Requests/CreateKmsSpaceRequest.md
   - docs/Models/Requests/CreateKmsSpaceResponse.md
+  - docs/Models/Requests/CreateLmsClassRequest.md
+  - docs/Models/Requests/CreateLmsClassResponse.md
+  - docs/Models/Requests/CreateLmsCourseRequest.md
+  - docs/Models/Requests/CreateLmsCourseResponse.md
+  - docs/Models/Requests/CreateLmsInstructorRequest.md
+  - docs/Models/Requests/CreateLmsInstructorResponse.md
+  - docs/Models/Requests/CreateLmsStudentRequest.md
+  - docs/Models/Requests/CreateLmsStudentResponse.md
   - docs/Models/Requests/CreateMartechListRequest.md
   - docs/Models/Requests/CreateMartechListResponse.md
   - docs/Models/Requests/CreateMartechMemberRequest.md
@@ -1363,6 +1561,16 @@ generatedFiles:
   - docs/Models/Requests/CreatePaymentLinkResponse.md
   - docs/Models/Requests/CreatePaymentPaymentRequest.md
   - docs/Models/Requests/CreatePaymentPaymentResponse.md
+  - docs/Models/Requests/CreateRepoBranchRequest.md
+  - docs/Models/Requests/CreateRepoBranchResponse.md
+  - docs/Models/Requests/CreateRepoCommitRequest.md
+  - docs/Models/Requests/CreateRepoCommitResponse.md
+  - docs/Models/Requests/CreateRepoOrganizationRequest.md
+  - docs/Models/Requests/CreateRepoOrganizationResponse.md
+  - docs/Models/Requests/CreateRepoPullrequestRequest.md
+  - docs/Models/Requests/CreateRepoPullrequestResponse.md
+  - docs/Models/Requests/CreateRepoRepositoryRequest.md
+  - docs/Models/Requests/CreateRepoRepositoryResponse.md
   - docs/Models/Requests/CreateScimGroupsRequest.md
   - docs/Models/Requests/CreateScimGroupsResponse.md
   - docs/Models/Requests/CreateScimUsersRequest.md
@@ -1452,6 +1660,14 @@ generatedFiles:
   - docs/Models/Requests/GetKmsPageResponse.md
   - docs/Models/Requests/GetKmsSpaceRequest.md
   - docs/Models/Requests/GetKmsSpaceResponse.md
+  - docs/Models/Requests/GetLmsClassRequest.md
+  - docs/Models/Requests/GetLmsClassResponse.md
+  - docs/Models/Requests/GetLmsCourseRequest.md
+  - docs/Models/Requests/GetLmsCourseResponse.md
+  - docs/Models/Requests/GetLmsInstructorRequest.md
+  - docs/Models/Requests/GetLmsInstructorResponse.md
+  - docs/Models/Requests/GetLmsStudentRequest.md
+  - docs/Models/Requests/GetLmsStudentResponse.md
   - docs/Models/Requests/GetMartechListRequest.md
   - docs/Models/Requests/GetMartechListResponse.md
   - docs/Models/Requests/GetMartechMemberRequest.md
@@ -1468,6 +1684,18 @@ generatedFiles:
   - docs/Models/Requests/GetPaymentPayoutResponse.md
   - docs/Models/Requests/GetPaymentRefundRequest.md
   - docs/Models/Requests/GetPaymentRefundResponse.md
+  - docs/Models/Requests/GetRepoBranchRequest.md
+  - docs/Models/Requests/GetRepoBranchResponse.md
+  - docs/Models/Requests/GetRepoCommitRequest.md
+  - docs/Models/Requests/GetRepoCommitResponse.md
+  - docs/Models/Requests/GetRepoOrganizationRequest.md
+  - docs/Models/Requests/GetRepoOrganizationResponse.md
+  - docs/Models/Requests/GetRepoPullrequestRequest.md
+  - docs/Models/Requests/GetRepoPullrequestResponse.md
+  - docs/Models/Requests/GetRepoRepositoryRequest.md
+  - docs/Models/Requests/GetRepoRepositoryResponse.md
+  - docs/Models/Requests/GetScimGroupsRequest.md
+  - docs/Models/Requests/GetScimGroupsResponse.md
   - docs/Models/Requests/GetScimUsersRequest.md
   - docs/Models/Requests/GetScimUsersResponse.md
   - docs/Models/Requests/GetStorageFileRequest.md
@@ -1571,6 +1799,14 @@ generatedFiles:
   - docs/Models/Requests/ListKmsPagesResponse.md
   - docs/Models/Requests/ListKmsSpacesRequest.md
   - docs/Models/Requests/ListKmsSpacesResponse.md
+  - docs/Models/Requests/ListLmsClassesRequest.md
+  - docs/Models/Requests/ListLmsClassesResponse.md
+  - docs/Models/Requests/ListLmsCoursesRequest.md
+  - docs/Models/Requests/ListLmsCoursesResponse.md
+  - docs/Models/Requests/ListLmsInstructorsRequest.md
+  - docs/Models/Requests/ListLmsInstructorsResponse.md
+  - docs/Models/Requests/ListLmsStudentsRequest.md
+  - docs/Models/Requests/ListLmsStudentsResponse.md
   - docs/Models/Requests/ListMartechListsRequest.md
   - docs/Models/Requests/ListMartechListsResponse.md
   - docs/Models/Requests/ListMartechMembersRequest.md
@@ -1589,6 +1825,16 @@ generatedFiles:
   - docs/Models/Requests/ListPaymentPayoutsResponse.md
   - docs/Models/Requests/ListPaymentRefundsRequest.md
   - docs/Models/Requests/ListPaymentRefundsResponse.md
+  - docs/Models/Requests/ListRepoBranchesRequest.md
+  - docs/Models/Requests/ListRepoBranchesResponse.md
+  - docs/Models/Requests/ListRepoCommitsRequest.md
+  - docs/Models/Requests/ListRepoCommitsResponse.md
+  - docs/Models/Requests/ListRepoOrganizationsRequest.md
+  - docs/Models/Requests/ListRepoOrganizationsResponse.md
+  - docs/Models/Requests/ListRepoPullrequestsRequest.md
+  - docs/Models/Requests/ListRepoPullrequestsResponse.md
+  - docs/Models/Requests/ListRepoRepositoriesRequest.md
+  - docs/Models/Requests/ListRepoRepositoriesResponse.md
   - docs/Models/Requests/ListScimGroupsRequest.md
   - docs/Models/Requests/ListScimGroupsResponse.md
   - docs/Models/Requests/ListScimUsersRequest.md
@@ -1682,6 +1928,14 @@ generatedFiles:
   - docs/Models/Requests/PatchKmsPageResponse.md
   - docs/Models/Requests/PatchKmsSpaceRequest.md
   - docs/Models/Requests/PatchKmsSpaceResponse.md
+  - docs/Models/Requests/PatchLmsClassRequest.md
+  - docs/Models/Requests/PatchLmsClassResponse.md
+  - docs/Models/Requests/PatchLmsCourseRequest.md
+  - docs/Models/Requests/PatchLmsCourseResponse.md
+  - docs/Models/Requests/PatchLmsInstructorRequest.md
+  - docs/Models/Requests/PatchLmsInstructorResponse.md
+  - docs/Models/Requests/PatchLmsStudentRequest.md
+  - docs/Models/Requests/PatchLmsStudentResponse.md
   - docs/Models/Requests/PatchMartechListRequest.md
   - docs/Models/Requests/PatchMartechListResponse.md
   - docs/Models/Requests/PatchMartechMemberRequest.md
@@ -1696,6 +1950,16 @@ generatedFiles:
   - docs/Models/Requests/PatchPaymentLinkResponse.md
   - docs/Models/Requests/PatchPaymentPaymentRequest.md
   - docs/Models/Requests/PatchPaymentPaymentResponse.md
+  - docs/Models/Requests/PatchRepoBranchRequest.md
+  - docs/Models/Requests/PatchRepoBranchResponse.md
+  - docs/Models/Requests/PatchRepoCommitRequest.md
+  - docs/Models/Requests/PatchRepoCommitResponse.md
+  - docs/Models/Requests/PatchRepoOrganizationRequest.md
+  - docs/Models/Requests/PatchRepoOrganizationResponse.md
+  - docs/Models/Requests/PatchRepoPullrequestRequest.md
+  - docs/Models/Requests/PatchRepoPullrequestResponse.md
+  - docs/Models/Requests/PatchRepoRepositoryRequest.md
+  - docs/Models/Requests/PatchRepoRepositoryResponse.md
   - docs/Models/Requests/PatchScimGroupsRequest.md
   - docs/Models/Requests/PatchScimGroupsResponse.md
   - docs/Models/Requests/PatchScimUsersRequest.md
@@ -1781,6 +2045,14 @@ generatedFiles:
   - docs/Models/Requests/RemoveKmsPageResponse.md
   - docs/Models/Requests/RemoveKmsSpaceRequest.md
   - docs/Models/Requests/RemoveKmsSpaceResponse.md
+  - docs/Models/Requests/RemoveLmsClassRequest.md
+  - docs/Models/Requests/RemoveLmsClassResponse.md
+  - docs/Models/Requests/RemoveLmsCourseRequest.md
+  - docs/Models/Requests/RemoveLmsCourseResponse.md
+  - docs/Models/Requests/RemoveLmsInstructorRequest.md
+  - docs/Models/Requests/RemoveLmsInstructorResponse.md
+  - docs/Models/Requests/RemoveLmsStudentRequest.md
+  - docs/Models/Requests/RemoveLmsStudentResponse.md
   - docs/Models/Requests/RemoveMartechListRequest.md
   - docs/Models/Requests/RemoveMartechListResponse.md
   - docs/Models/Requests/RemoveMartechMemberRequest.md
@@ -1793,6 +2065,16 @@ generatedFiles:
   - docs/Models/Requests/RemovePaymentLinkResponse.md
   - docs/Models/Requests/RemovePaymentPaymentRequest.md
   - docs/Models/Requests/RemovePaymentPaymentResponse.md
+  - docs/Models/Requests/RemoveRepoBranchRequest.md
+  - docs/Models/Requests/RemoveRepoBranchResponse.md
+  - docs/Models/Requests/RemoveRepoCommitRequest.md
+  - docs/Models/Requests/RemoveRepoCommitResponse.md
+  - docs/Models/Requests/RemoveRepoOrganizationRequest.md
+  - docs/Models/Requests/RemoveRepoOrganizationResponse.md
+  - docs/Models/Requests/RemoveRepoPullrequestRequest.md
+  - docs/Models/Requests/RemoveRepoPullrequestResponse.md
+  - docs/Models/Requests/RemoveRepoRepositoryRequest.md
+  - docs/Models/Requests/RemoveRepoRepositoryResponse.md
   - docs/Models/Requests/RemoveScimGroupsRequest.md
   - docs/Models/Requests/RemoveScimGroupsResponse.md
   - docs/Models/Requests/RemoveScimUsersRequest.md
@@ -1876,6 +2158,14 @@ generatedFiles:
   - docs/Models/Requests/UpdateKmsPageResponse.md
   - docs/Models/Requests/UpdateKmsSpaceRequest.md
   - docs/Models/Requests/UpdateKmsSpaceResponse.md
+  - docs/Models/Requests/UpdateLmsClassRequest.md
+  - docs/Models/Requests/UpdateLmsClassResponse.md
+  - docs/Models/Requests/UpdateLmsCourseRequest.md
+  - docs/Models/Requests/UpdateLmsCourseResponse.md
+  - docs/Models/Requests/UpdateLmsInstructorRequest.md
+  - docs/Models/Requests/UpdateLmsInstructorResponse.md
+  - docs/Models/Requests/UpdateLmsStudentRequest.md
+  - docs/Models/Requests/UpdateLmsStudentResponse.md
   - docs/Models/Requests/UpdateMartechListRequest.md
   - docs/Models/Requests/UpdateMartechListResponse.md
   - docs/Models/Requests/UpdateMartechMemberRequest.md
@@ -1890,6 +2180,16 @@ generatedFiles:
   - docs/Models/Requests/UpdatePaymentLinkResponse.md
   - docs/Models/Requests/UpdatePaymentPaymentRequest.md
   - docs/Models/Requests/UpdatePaymentPaymentResponse.md
+  - docs/Models/Requests/UpdateRepoBranchRequest.md
+  - docs/Models/Requests/UpdateRepoBranchResponse.md
+  - docs/Models/Requests/UpdateRepoCommitRequest.md
+  - docs/Models/Requests/UpdateRepoCommitResponse.md
+  - docs/Models/Requests/UpdateRepoOrganizationRequest.md
+  - docs/Models/Requests/UpdateRepoOrganizationResponse.md
+  - docs/Models/Requests/UpdateRepoPullrequestRequest.md
+  - docs/Models/Requests/UpdateRepoPullrequestResponse.md
+  - docs/Models/Requests/UpdateRepoRepositoryRequest.md
+  - docs/Models/Requests/UpdateRepoRepositoryResponse.md
   - docs/Models/Requests/UpdateScimGroupsRequest.md
   - docs/Models/Requests/UpdateScimGroupsResponse.md
   - docs/Models/Requests/UpdateScimUsersRequest.md
@@ -1922,14 +2222,18 @@ generatedFiles:
   - docs/sdks/applicationstatus/README.md
   - docs/sdks/ats/README.md
   - docs/sdks/auth/README.md
+  - docs/sdks/branch/README.md
   - docs/sdks/call/README.md
   - docs/sdks/candidate/README.md
   - docs/sdks/channel/README.md
+  - docs/sdks/class/README.md
   - docs/sdks/collection/README.md
   - docs/sdks/commerce/README.md
+  - docs/sdks/commit/README.md
   - docs/sdks/company/README.md
   - docs/sdks/connection/README.md
   - docs/sdks/contact/README.md
+  - docs/sdks/course/README.md
   - docs/sdks/crm/README.md
   - docs/sdks/customer/README.md
   - docs/sdks/deal/README.md
@@ -1941,6 +2245,7 @@ generatedFiles:
   - docs/sdks/genai/README.md
   - docs/sdks/group/README.md
   - docs/sdks/hris/README.md
+  - docs/sdks/instructor/README.md
   - docs/sdks/integration/README.md
   - docs/sdks/interview/README.md
   - docs/sdks/inventory/README.md
@@ -1953,6 +2258,7 @@ generatedFiles:
   - docs/sdks/lead/README.md
   - docs/sdks/link/README.md
   - docs/sdks/list/README.md
+  - docs/sdks/lms/README.md
   - docs/sdks/location/README.md
   - docs/sdks/login/README.md
   - docs/sdks/martech/README.md
@@ -1972,11 +2278,15 @@ generatedFiles:
   - docs/sdks/pipeline/README.md
   - docs/sdks/project/README.md
   - docs/sdks/prompt/README.md
+  - docs/sdks/pullrequest/README.md
   - docs/sdks/refund/README.md
+  - docs/sdks/repo/README.md
+  - docs/sdks/repository/README.md
   - docs/sdks/scim/README.md
   - docs/sdks/scorecard/README.md
   - docs/sdks/space/README.md
   - docs/sdks/storage/README.md
+  - docs/sdks/student/README.md
   - docs/sdks/task/README.md
   - docs/sdks/taxrate/README.md
   - docs/sdks/ticket/README.md
@@ -4216,18 +4526,27 @@ examples:
       parameters:
         path:
           connection_id: "<id>"
+      responses:
+        "200":
+          application/json: {"displayName": "Bert89", "id": "<id>"}
   listScimGroups:
     speakeasy-default-list-scim-groups:
       parameters:
         path:
           connection_id: "<id>"
         query: {}
+      responses:
+        "200":
+          application/json: [{"displayName": "Anya_Mante96", "id": "<id>"}]
   patchScimGroups:
     speakeasy-default-patch-scim-groups:
       parameters:
         path:
           connection_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"displayName": "Damon_Rutherford93", "id": "<id>"}
   removeScimGroups:
     speakeasy-default-remove-scim-groups:
       parameters:
@@ -4240,6 +4559,9 @@ examples:
         path:
           connection_id: "<id>"
           id: "<id>"
+      responses:
+        "200":
+          application/json: {"displayName": "Frederic.Reichel", "id": "<id>"}
   createScimUsers:
     speakeasy-default-create-scim-users:
       parameters:
@@ -4315,3 +4637,453 @@ examples:
           connection_id: "<id>"
           id: "<id>"
         query: {}
+  createRepoOrganization:
+    speakeasy-default-create-repo-organization:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  getRepoOrganization:
+    speakeasy-default-get-repo-organization:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  listRepoOrganizations:
+    speakeasy-default-list-repo-organizations:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>"}]
+  patchRepoOrganization:
+    speakeasy-default-patch-repo-organization:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  removeRepoOrganization:
+    speakeasy-default-remove-repo-organization:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateRepoOrganization:
+    speakeasy-default-update-repo-organization:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  getScimGroups:
+    speakeasy-default-get-scim-groups:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"displayName": "Tressa10", "id": "<id>"}
+  createLmsClass:
+    speakeasy-default-create-lms-class:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"course_id": "<id>", "name": "<value>"}
+  createLmsCourse:
+    speakeasy-default-create-lms-course:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  createLmsInstructor:
+    speakeasy-default-create-lms-instructor:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  createLmsStudent:
+    speakeasy-default-create-lms-student:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  getLmsClass:
+    speakeasy-default-get-lms-class:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"course_id": "<id>", "name": "<value>"}
+  getLmsCourse:
+    speakeasy-default-get-lms-course:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  getLmsInstructor:
+    speakeasy-default-get-lms-instructor:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  getLmsStudent:
+    speakeasy-default-get-lms-student:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  listLmsClasses:
+    speakeasy-default-list-lms-classes:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{"course_id": "<id>", "name": "<value>"}, {"course_id": "<id>", "name": "<value>"}, {"course_id": "<id>", "name": "<value>"}]
+  listLmsCourses:
+    speakeasy-default-list-lms-courses:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>"}]
+  listLmsInstructors:
+    speakeasy-default-list-lms-instructors:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  listLmsStudents:
+    speakeasy-default-list-lms-students:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  patchLmsClass:
+    speakeasy-default-patch-lms-class:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"course_id": "<id>", "name": "<value>"}
+  patchLmsCourse:
+    speakeasy-default-patch-lms-course:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  patchLmsInstructor:
+    speakeasy-default-patch-lms-instructor:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  patchLmsStudent:
+    speakeasy-default-patch-lms-student:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  removeLmsClass:
+    speakeasy-default-remove-lms-class:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeLmsCourse:
+    speakeasy-default-remove-lms-course:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeLmsInstructor:
+    speakeasy-default-remove-lms-instructor:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeLmsStudent:
+    speakeasy-default-remove-lms-student:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateLmsClass:
+    speakeasy-default-update-lms-class:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"course_id": "<id>", "name": "<value>"}
+  updateLmsCourse:
+    speakeasy-default-update-lms-course:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  updateLmsInstructor:
+    speakeasy-default-update-lms-instructor:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  updateLmsStudent:
+    speakeasy-default-update-lms-student:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  createRepoBranch:
+    speakeasy-default-create-repo-branch:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "repo_id": "<id>"}
+  createRepoCommit:
+    speakeasy-default-create-repo-commit:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"repo_id": "<id>", "user_id": "<id>"}
+  createRepoPullrequest:
+    speakeasy-default-create-repo-pullrequest:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  createRepoRepository:
+    speakeasy-default-create-repo-repository:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  getRepoBranch:
+    speakeasy-default-get-repo-branch:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "repo_id": "<id>"}
+  getRepoCommit:
+    speakeasy-default-get-repo-commit:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"repo_id": "<id>", "user_id": "<id>"}
+  getRepoPullrequest:
+    speakeasy-default-get-repo-pullrequest:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  getRepoRepository:
+    speakeasy-default-get-repo-repository:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  listRepoBranches:
+    speakeasy-default-list-repo-branches:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>", "repo_id": "<id>"}, {"name": "<value>", "repo_id": "<id>"}]
+  listRepoCommits:
+    speakeasy-default-list-repo-commits:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{"repo_id": "<id>", "user_id": "<id>"}, {"repo_id": "<id>", "user_id": "<id>"}]
+  listRepoPullrequests:
+    speakeasy-default-list-repo-pullrequests:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  listRepoRepositories:
+    speakeasy-default-list-repo-repositories:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>"}]
+  patchRepoBranch:
+    speakeasy-default-patch-repo-branch:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "repo_id": "<id>"}
+  patchRepoCommit:
+    speakeasy-default-patch-repo-commit:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"repo_id": "<id>", "user_id": "<id>"}
+  patchRepoPullrequest:
+    speakeasy-default-patch-repo-pullrequest:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  patchRepoRepository:
+    speakeasy-default-patch-repo-repository:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  removeRepoBranch:
+    speakeasy-default-remove-repo-branch:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeRepoCommit:
+    speakeasy-default-remove-repo-commit:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeRepoPullrequest:
+    speakeasy-default-remove-repo-pullrequest:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeRepoRepository:
+    speakeasy-default-remove-repo-repository:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateRepoBranch:
+    speakeasy-default-update-repo-branch:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "repo_id": "<id>"}
+  updateRepoCommit:
+    speakeasy-default-update-repo-commit:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"repo_id": "<id>", "user_id": "<id>"}
+  updateRepoPullrequest:
+    speakeasy-default-update-repo-pullrequest:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  updateRepoRepository:
+    speakeasy-default-update-repo-repository:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}

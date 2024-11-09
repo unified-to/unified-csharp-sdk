@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update user
         /// </summary>
-        Task<PatchScimUsersResponse> PatchScimUsersAsync(string connectionId, string id, Models.Components.User? user = null);
+        Task<PatchScimUsersResponse> PatchScimUsersAsync(string connectionId, string id, ScimUser? scimUser = null);
 
         /// <summary>
         /// Delete user
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update user
         /// </summary>
-        Task<UpdateScimUsersResponse> UpdateScimUsersAsync(string connectionId, string id, Models.Components.User? user = null);
+        Task<UpdateScimUsersResponse> UpdateScimUsersAsync(string connectionId, string id, ScimUser? scimUser = null);
     }
 
     public class User: IUser
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.21.1";
-        private const string _sdkGenVersion = "2.452.0";
+        private const string _sdkVersion = "0.21.2";
+        private const string _sdkGenVersion = "2.455.2";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.21.1 2.452.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.21.2 2.455.2 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -84,7 +84,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "User", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "ScimUser", "json", false, true);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -135,14 +135,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Models.Components.User>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<ScimUser>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new CreateScimUsersResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.User = obj;
+                    response.ScimUser = obj;
                     return response;
                 }
 
@@ -214,14 +214,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Models.Components.User>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<ScimUser>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new GetScimUsersResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.User = obj;
+                    response.ScimUser = obj;
                     return response;
                 }
 
@@ -288,14 +288,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<List<Models.Components.User>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<List<ScimUser>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new ListScimUsersResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Users = obj;
+                    response.ScimUsers = obj;
                     return response;
                 }
 
@@ -309,13 +309,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchScimUsersResponse> PatchScimUsersAsync(string connectionId, string id, Models.Components.User? user = null)
+        public async Task<PatchScimUsersResponse> PatchScimUsersAsync(string connectionId, string id, ScimUser? scimUser = null)
         {
             var request = new PatchScimUsersRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
-                User = user,
+                ScimUser = scimUser,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/scim/{connection_id}/users/{id}", request);
@@ -323,7 +323,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "User", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "ScimUser", "json", false, true);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -374,14 +374,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Models.Components.User>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<ScimUser>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new PatchScimUsersResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.User = obj;
+                    response.ScimUser = obj;
                     return response;
                 }
 
@@ -464,13 +464,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateScimUsersResponse> UpdateScimUsersAsync(string connectionId, string id, Models.Components.User? user = null)
+        public async Task<UpdateScimUsersResponse> UpdateScimUsersAsync(string connectionId, string id, ScimUser? scimUser = null)
         {
             var request = new UpdateScimUsersRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
-                User = user,
+                ScimUser = scimUser,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/scim/{connection_id}/users/{id}", request);
@@ -478,7 +478,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "User", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "ScimUser", "json", false, true);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -529,14 +529,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Models.Components.User>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<ScimUser>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new UpdateScimUsersResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.User = obj;
+                    response.ScimUser = obj;
                     return response;
                 }
 

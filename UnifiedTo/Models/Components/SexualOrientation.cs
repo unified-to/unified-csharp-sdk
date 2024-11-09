@@ -20,9 +20,7 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("Heterosexual")]
         Heterosexual,
         [JsonProperty("Straight")]
-        StraightMixed,
-        [JsonProperty("straight")]
-        StraightLower,
+        Straight,
     }
 
     public static class SexualOrientationExtension

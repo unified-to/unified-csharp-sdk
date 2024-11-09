@@ -21,8 +21,6 @@ namespace UnifiedTo.Models.Components
         EastAsian,
         [JsonProperty("Middle Eastern")]
         MiddleEastern,
-        [JsonProperty("White")]
-        WhiteMixed,
         [JsonProperty("Black")]
         Black,
         [JsonProperty("Biracial (South Asian & Caucasian)")]
@@ -33,8 +31,8 @@ namespace UnifiedTo.Models.Components
         SouthAsian,
         [JsonProperty("Indian")]
         Indian,
-        [JsonProperty("white")]
-        WhiteLower,
+        [JsonProperty("White")]
+        White,
         [JsonProperty("Asian")]
         Asian,
     }

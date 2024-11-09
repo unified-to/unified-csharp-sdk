@@ -51,6 +51,10 @@ namespace UnifiedTo.Models.Requests
         Task,
         [JsonProperty("scim")]
         Scim,
+        [JsonProperty("lms")]
+        Lms,
+        [JsonProperty("repo")]
+        Repo,
     }
 
     public static class CategoriesExtension

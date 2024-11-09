@@ -25,7 +25,7 @@ namespace UnifiedTo.Models.Requests
         /// <summary>
         /// Successful
         /// </summary>
-        public Models.Components.Group? Group { get; set; }
+        public ScimGroup? ScimGroup { get; set; }
 
         /// <summary>
         /// HTTP response status code for this operation

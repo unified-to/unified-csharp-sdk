@@ -223,6 +223,42 @@ namespace UnifiedTo.Models.Components
         ScimGroupsRead,
         [JsonProperty("scim_groups_write")]
         ScimGroupsWrite,
+        [JsonProperty("lms_course_read")]
+        LmsCourseRead,
+        [JsonProperty("lms_course_write")]
+        LmsCourseWrite,
+        [JsonProperty("lms_class_read")]
+        LmsClassRead,
+        [JsonProperty("lms_class_write")]
+        LmsClassWrite,
+        [JsonProperty("lms_student_read")]
+        LmsStudentRead,
+        [JsonProperty("lms_student_write")]
+        LmsStudentWrite,
+        [JsonProperty("lms_instructor_read")]
+        LmsInstructorRead,
+        [JsonProperty("lms_instructor_write")]
+        LmsInstructorWrite,
+        [JsonProperty("repo_organization_read")]
+        RepoOrganizationRead,
+        [JsonProperty("repo_organization_write")]
+        RepoOrganizationWrite,
+        [JsonProperty("repo_repository_read")]
+        RepoRepositoryRead,
+        [JsonProperty("repo_repository_write")]
+        RepoRepositoryWrite,
+        [JsonProperty("repo_branch_read")]
+        RepoBranchRead,
+        [JsonProperty("repo_branch_write")]
+        RepoBranchWrite,
+        [JsonProperty("repo_commit_read")]
+        RepoCommitRead,
+        [JsonProperty("repo_commit_write")]
+        RepoCommitWrite,
+        [JsonProperty("repo_pullrequest_read")]
+        RepoPullrequestRead,
+        [JsonProperty("repo_pullrequest_write")]
+        RepoPullrequestWrite,
     }
 
     public static class PropertyConnectionPermissionsExtension

@@ -28,12 +28,17 @@ namespace UnifiedTo
         /// <summary>
         /// Create group
         /// </summary>
-        Task<CreateScimGroupsResponse> CreateScimGroupsAsync(string connectionId, Models.Components.Group? groupP = null);
+        Task<CreateScimGroupsResponse> CreateScimGroupsAsync(string connectionId, ScimGroup? scimGroup = null);
 
         /// <summary>
         /// Create user
         /// </summary>
         Task<CreateScimUsersResponse> CreateScimUsersAsync(CreateScimUsersRequest request);
+
+        /// <summary>
+        /// Get group
+        /// </summary>
+        Task<GetScimGroupsResponse> GetScimGroupsAsync(string connectionId, string id);
 
         /// <summary>
         /// Get user
@@ -53,12 +58,12 @@ namespace UnifiedTo
         /// <summary>
         /// Update group
         /// </summary>
-        Task<PatchScimGroupsResponse> PatchScimGroupsAsync(string connectionId, string id, Models.Components.Group? groupP = null);
+        Task<PatchScimGroupsResponse> PatchScimGroupsAsync(string connectionId, string id, ScimGroup? scimGroup = null);
 
         /// <summary>
         /// Update user
         /// </summary>
-        Task<PatchScimUsersResponse> PatchScimUsersAsync(string connectionId, string id, Models.Components.User? user = null);
+        Task<PatchScimUsersResponse> PatchScimUsersAsync(string connectionId, string id, ScimUser? scimUser = null);
 
         /// <summary>
         /// Delete group
@@ -73,22 +78,22 @@ namespace UnifiedTo
         /// <summary>
         /// Update group
         /// </summary>
-        Task<UpdateScimGroupsResponse> UpdateScimGroupsAsync(string connectionId, string id, Models.Components.Group? groupP = null);
+        Task<UpdateScimGroupsResponse> UpdateScimGroupsAsync(string connectionId, string id, ScimGroup? scimGroup = null);
 
         /// <summary>
         /// Update user
         /// </summary>
-        Task<UpdateScimUsersResponse> UpdateScimUsersAsync(string connectionId, string id, Models.Components.User? user = null);
+        Task<UpdateScimUsersResponse> UpdateScimUsersAsync(string connectionId, string id, ScimUser? scimUser = null);
     }
 
     public class Scim: IScim
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.21.1";
-        private const string _sdkGenVersion = "2.452.0";
+        private const string _sdkVersion = "0.21.2";
+        private const string _sdkGenVersion = "2.455.2";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.21.1 2.452.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.21.2 2.455.2 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -101,12 +106,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateScimGroupsResponse> CreateScimGroupsAsync(string connectionId, Models.Components.Group? groupP = null)
+        public async Task<CreateScimGroupsResponse> CreateScimGroupsAsync(string connectionId, ScimGroup? scimGroup = null)
         {
             var request = new CreateScimGroupsRequest()
             {
                 ConnectionId = connectionId,
-                Group = groupP,
+                ScimGroup = scimGroup,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/scim/{connection_id}/groups", request);
@@ -114,7 +119,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "Group", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "ScimGroup", "json", false, true);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -165,14 +170,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Models.Components.Group>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<ScimGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new CreateScimGroupsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Group = obj;
+                    response.ScimGroup = obj;
                     return response;
                 }
 
@@ -194,7 +199,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "User", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "ScimUser", "json", false, true);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -245,14 +250,93 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Models.Components.User>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<ScimUser>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new CreateScimUsersResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.User = obj;
+                    response.ScimUser = obj;
+                    return response;
+                }
+
+                throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+
+            throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+        }
+
+        public async Task<GetScimGroupsResponse> GetScimGroupsAsync(string connectionId, string id)
+        {
+            var request = new GetScimGroupsRequest()
+            {
+                ConnectionId = connectionId,
+                Id = id,
+            };
+            string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
+            var urlString = URLBuilder.Build(baseUrl, "/scim/{connection_id}/groups/{id}", request);
+
+            var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
+            httpRequest.Headers.Add("user-agent", _userAgent);
+
+            if (_securitySource != null)
+            {
+                httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
+            }
+
+            var hookCtx = new HookContext("getScimGroups", null, _securitySource);
+
+            httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
+
+            HttpResponseMessage httpResponse;
+            try
+            {
+                httpResponse = await _client.SendAsync(httpRequest);
+                int _statusCode = (int)httpResponse.StatusCode;
+
+                if (_statusCode >= 400 && _statusCode < 500 || _statusCode >= 500 && _statusCode < 600)
+                {
+                    var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), httpResponse, null);
+                    if (_httpResponse != null)
+                    {
+                        httpResponse = _httpResponse;
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                var _httpResponse = await this.SDKConfiguration.Hooks.AfterErrorAsync(new AfterErrorContext(hookCtx), null, error);
+                if (_httpResponse != null)
+                {
+                    httpResponse = _httpResponse;
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            httpResponse = await this.SDKConfiguration.Hooks.AfterSuccessAsync(new AfterSuccessContext(hookCtx), httpResponse);
+
+            var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
+            int responseStatusCode = (int)httpResponse.StatusCode;
+            if(responseStatusCode == 200)
+            {
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
+                {
+                    var obj = ResponseBodyDeserializer.Deserialize<ScimGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new GetScimGroupsResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.ScimGroup = obj;
                     return response;
                 }
 
@@ -324,14 +408,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Models.Components.User>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<ScimUser>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new GetScimUsersResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.User = obj;
+                    response.ScimUser = obj;
                     return response;
                 }
 
@@ -398,14 +482,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<List<Models.Components.Group>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<List<ScimGroup>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new ListScimGroupsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Groups = obj;
+                    response.ScimGroups = obj;
                     return response;
                 }
 
@@ -472,14 +556,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<List<Models.Components.User>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<List<ScimUser>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new ListScimUsersResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Users = obj;
+                    response.ScimUsers = obj;
                     return response;
                 }
 
@@ -493,13 +577,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchScimGroupsResponse> PatchScimGroupsAsync(string connectionId, string id, Models.Components.Group? groupP = null)
+        public async Task<PatchScimGroupsResponse> PatchScimGroupsAsync(string connectionId, string id, ScimGroup? scimGroup = null)
         {
             var request = new PatchScimGroupsRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
-                Group = groupP,
+                ScimGroup = scimGroup,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/scim/{connection_id}/groups/{id}", request);
@@ -507,7 +591,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "Group", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "ScimGroup", "json", false, true);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -558,14 +642,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Models.Components.Group>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<ScimGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new PatchScimGroupsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Group = obj;
+                    response.ScimGroup = obj;
                     return response;
                 }
 
@@ -579,13 +663,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchScimUsersResponse> PatchScimUsersAsync(string connectionId, string id, Models.Components.User? user = null)
+        public async Task<PatchScimUsersResponse> PatchScimUsersAsync(string connectionId, string id, ScimUser? scimUser = null)
         {
             var request = new PatchScimUsersRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
-                User = user,
+                ScimUser = scimUser,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/scim/{connection_id}/users/{id}", request);
@@ -593,7 +677,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "User", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "ScimUser", "json", false, true);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -644,14 +728,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Models.Components.User>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<ScimUser>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new PatchScimUsersResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.User = obj;
+                    response.ScimUser = obj;
                     return response;
                 }
 
@@ -803,13 +887,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateScimGroupsResponse> UpdateScimGroupsAsync(string connectionId, string id, Models.Components.Group? groupP = null)
+        public async Task<UpdateScimGroupsResponse> UpdateScimGroupsAsync(string connectionId, string id, ScimGroup? scimGroup = null)
         {
             var request = new UpdateScimGroupsRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
-                Group = groupP,
+                ScimGroup = scimGroup,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/scim/{connection_id}/groups/{id}", request);
@@ -817,7 +901,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "Group", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "ScimGroup", "json", false, true);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -868,14 +952,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Models.Components.Group>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<ScimGroup>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new UpdateScimGroupsResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Group = obj;
+                    response.ScimGroup = obj;
                     return response;
                 }
 
@@ -889,13 +973,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateScimUsersResponse> UpdateScimUsersAsync(string connectionId, string id, Models.Components.User? user = null)
+        public async Task<UpdateScimUsersResponse> UpdateScimUsersAsync(string connectionId, string id, ScimUser? scimUser = null)
         {
             var request = new UpdateScimUsersRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
-                User = user,
+                ScimUser = scimUser,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/scim/{connection_id}/users/{id}", request);
@@ -903,7 +987,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "User", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "ScimUser", "json", false, true);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -954,14 +1038,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Models.Components.User>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<ScimUser>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new UpdateScimUsersResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.User = obj;
+                    response.ScimUser = obj;
                     return response;
                 }
 

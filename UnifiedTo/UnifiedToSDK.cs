@@ -67,6 +67,11 @@ namespace UnifiedTo
         public IKms Kms { get; }
         public IPage Page { get; }
         public ISpace Space { get; }
+        public ILms Lms { get; }
+        public IClass Class { get; }
+        public ICourse Course { get; }
+        public IInstructor Instructor { get; }
+        public IStudent Student { get; }
         public IMartech Martech { get; }
         public IList List { get; }
         public IMember Member { get; }
@@ -78,6 +83,11 @@ namespace UnifiedTo
         public ILink Link { get; }
         public IPayout Payout { get; }
         public IRefund Refund { get; }
+        public IRepo Repo { get; }
+        public IBranch Branch { get; }
+        public ICommit Commit { get; }
+        public IPullrequest Pullrequest { get; }
+        public IRepository Repository { get; }
         public IScim Scim { get; }
         public IUser User { get; }
         public IStorage Storage { get; }
@@ -144,10 +154,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.21.1";
-        private const string _sdkGenVersion = "2.452.0";
+        private const string _sdkVersion = "0.21.2";
+        private const string _sdkGenVersion = "2.455.2";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.21.1 2.452.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.21.2 2.455.2 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _client;
@@ -194,6 +204,11 @@ namespace UnifiedTo
         public IKms Kms { get; private set; }
         public IPage Page { get; private set; }
         public ISpace Space { get; private set; }
+        public ILms Lms { get; private set; }
+        public IClass Class { get; private set; }
+        public ICourse Course { get; private set; }
+        public IInstructor Instructor { get; private set; }
+        public IStudent Student { get; private set; }
         public IMartech Martech { get; private set; }
         public IList List { get; private set; }
         public IMember Member { get; private set; }
@@ -205,6 +220,11 @@ namespace UnifiedTo
         public ILink Link { get; private set; }
         public IPayout Payout { get; private set; }
         public IRefund Refund { get; private set; }
+        public IRepo Repo { get; private set; }
+        public IBranch Branch { get; private set; }
+        public ICommit Commit { get; private set; }
+        public IPullrequest Pullrequest { get; private set; }
+        public IRepository Repository { get; private set; }
         public IScim Scim { get; private set; }
         public IUser User { get; private set; }
         public IStorage Storage { get; private set; }
@@ -393,6 +413,21 @@ namespace UnifiedTo
             Space = new Space(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
+            Lms = new Lms(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Class = new Class(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Course = new Course(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Instructor = new Instructor(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Student = new Student(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
             Martech = new Martech(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
@@ -424,6 +459,21 @@ namespace UnifiedTo
 
 
             Refund = new Refund(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Repo = new Repo(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Branch = new Branch(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Commit = new Commit(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Pullrequest = new Pullrequest(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Repository = new Repository(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
             Scim = new Scim(_client, _securitySource, _serverUrl, SDKConfiguration);

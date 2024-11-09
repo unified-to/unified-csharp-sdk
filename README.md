@@ -174,6 +174,15 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [GetUnifiedIntegrationAuth](docs/sdks/auth/README.md#getunifiedintegrationauth) - Create connection indirectly
 * [GetUnifiedIntegrationLogin](docs/sdks/auth/README.md#getunifiedintegrationlogin) - Sign in a user
 
+### [Branch](docs/sdks/branch/README.md)
+
+* [CreateRepoBranch](docs/sdks/branch/README.md#createrepobranch) - Create a branch
+* [GetRepoBranch](docs/sdks/branch/README.md#getrepobranch) - Retrieve a branch
+* [ListRepoBranches](docs/sdks/branch/README.md#listrepobranches) - List all branches
+* [PatchRepoBranch](docs/sdks/branch/README.md#patchrepobranch) - Update a branch
+* [RemoveRepoBranch](docs/sdks/branch/README.md#removerepobranch) - Remove a branch
+* [UpdateRepoBranch](docs/sdks/branch/README.md#updaterepobranch) - Update a branch
+
 ### [Call](docs/sdks/call/README.md)
 
 * [ListUcCalls](docs/sdks/call/README.md#listuccalls) - List all calls
@@ -191,6 +200,15 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 * [GetMessagingChannel](docs/sdks/channel/README.md#getmessagingchannel) - Retrieve a channel
 * [ListMessagingChannels](docs/sdks/channel/README.md#listmessagingchannels) - List all channels
+
+### [Class](docs/sdks/class/README.md)
+
+* [CreateLmsClass](docs/sdks/class/README.md#createlmsclass) - Create a class
+* [GetLmsClass](docs/sdks/class/README.md#getlmsclass) - Retrieve a class
+* [ListLmsClasses](docs/sdks/class/README.md#listlmsclasses) - List all classes
+* [PatchLmsClass](docs/sdks/class/README.md#patchlmsclass) - Update a class
+* [RemoveLmsClass](docs/sdks/class/README.md#removelmsclass) - Remove a class
+* [UpdateLmsClass](docs/sdks/class/README.md#updatelmsclass) - Update a class
 
 ### [Collection](docs/sdks/collection/README.md)
 
@@ -227,6 +245,15 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [UpdateCommerceInventory](docs/sdks/commerce/README.md#updatecommerceinventory) - Update an inventory
 * [UpdateCommerceItem](docs/sdks/commerce/README.md#updatecommerceitem) - Update an item
 * [UpdateCommerceLocation](docs/sdks/commerce/README.md#updatecommercelocation) - Update a location
+
+### [Commit](docs/sdks/commit/README.md)
+
+* [CreateRepoCommit](docs/sdks/commit/README.md#createrepocommit) - Create a commit
+* [GetRepoCommit](docs/sdks/commit/README.md#getrepocommit) - Retrieve a commit
+* [ListRepoCommits](docs/sdks/commit/README.md#listrepocommits) - List all commits
+* [PatchRepoCommit](docs/sdks/commit/README.md#patchrepocommit) - Update a commit
+* [RemoveRepoCommit](docs/sdks/commit/README.md#removerepocommit) - Remove a commit
+* [UpdateRepoCommit](docs/sdks/commit/README.md#updaterepocommit) - Update a commit
 
 ### [Company](docs/sdks/company/README.md)
 
@@ -275,6 +302,15 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [UpdateAccountingContact](docs/sdks/contact/README.md#updateaccountingcontact) - Update a contact
 * [UpdateCrmContact](docs/sdks/contact/README.md#updatecrmcontact) - Update a contact
 * [UpdateUcContact](docs/sdks/contact/README.md#updateuccontact) - Update a contact
+
+### [Course](docs/sdks/course/README.md)
+
+* [CreateLmsCourse](docs/sdks/course/README.md#createlmscourse) - Create a course
+* [GetLmsCourse](docs/sdks/course/README.md#getlmscourse) - Retrieve a course
+* [ListLmsCourses](docs/sdks/course/README.md#listlmscourses) - List all courses
+* [PatchLmsCourse](docs/sdks/course/README.md#patchlmscourse) - Update a course
+* [RemoveLmsCourse](docs/sdks/course/README.md#removelmscourse) - Remove a course
+* [UpdateLmsCourse](docs/sdks/course/README.md#updatelmscourse) - Update a course
 
 ### [Crm](docs/sdks/crm/README.md)
 
@@ -384,6 +420,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [CreateHrisGroup](docs/sdks/group/README.md#createhrisgroup) - Create a group
 * [CreateScimGroups](docs/sdks/group/README.md#createscimgroups) - Create group
 * [GetHrisGroup](docs/sdks/group/README.md#gethrisgroup) - Retrieve a group
+* [GetScimGroups](docs/sdks/group/README.md#getscimgroups) - Get group
 * [ListHrisGroups](docs/sdks/group/README.md#listhrisgroups) - List all groups
 * [ListScimGroups](docs/sdks/group/README.md#listscimgroups) - List groups
 * [PatchHrisGroup](docs/sdks/group/README.md#patchhrisgroup) - Update a group
@@ -423,6 +460,15 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [UpdateHrisEmployee](docs/sdks/hris/README.md#updatehrisemployee) - Update an employee
 * [UpdateHrisGroup](docs/sdks/hris/README.md#updatehrisgroup) - Update a group
 * [UpdateHrisLocation](docs/sdks/hris/README.md#updatehrislocation) - Update a location
+
+### [Instructor](docs/sdks/instructor/README.md)
+
+* [CreateLmsInstructor](docs/sdks/instructor/README.md#createlmsinstructor) - Create an instructor
+* [GetLmsInstructor](docs/sdks/instructor/README.md#getlmsinstructor) - Retrieve an instructor
+* [ListLmsInstructors](docs/sdks/instructor/README.md#listlmsinstructors) - List all instructors
+* [PatchLmsInstructor](docs/sdks/instructor/README.md#patchlmsinstructor) - Update an instructor
+* [RemoveLmsInstructor](docs/sdks/instructor/README.md#removelmsinstructor) - Remove an instructor
+* [UpdateLmsInstructor](docs/sdks/instructor/README.md#updatelmsinstructor) - Update an instructor
 
 ### [Integration](docs/sdks/integration/README.md)
 
@@ -530,6 +576,33 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [RemoveMartechList](docs/sdks/list/README.md#removemartechlist) - Remove a list
 * [UpdateMartechList](docs/sdks/list/README.md#updatemartechlist) - Update a list
 
+### [Lms](docs/sdks/lms/README.md)
+
+* [CreateLmsClass](docs/sdks/lms/README.md#createlmsclass) - Create a class
+* [CreateLmsCourse](docs/sdks/lms/README.md#createlmscourse) - Create a course
+* [CreateLmsInstructor](docs/sdks/lms/README.md#createlmsinstructor) - Create an instructor
+* [CreateLmsStudent](docs/sdks/lms/README.md#createlmsstudent) - Create a student
+* [GetLmsClass](docs/sdks/lms/README.md#getlmsclass) - Retrieve a class
+* [GetLmsCourse](docs/sdks/lms/README.md#getlmscourse) - Retrieve a course
+* [GetLmsInstructor](docs/sdks/lms/README.md#getlmsinstructor) - Retrieve an instructor
+* [GetLmsStudent](docs/sdks/lms/README.md#getlmsstudent) - Retrieve a student
+* [ListLmsClasses](docs/sdks/lms/README.md#listlmsclasses) - List all classes
+* [ListLmsCourses](docs/sdks/lms/README.md#listlmscourses) - List all courses
+* [ListLmsInstructors](docs/sdks/lms/README.md#listlmsinstructors) - List all instructors
+* [ListLmsStudents](docs/sdks/lms/README.md#listlmsstudents) - List all students
+* [PatchLmsClass](docs/sdks/lms/README.md#patchlmsclass) - Update a class
+* [PatchLmsCourse](docs/sdks/lms/README.md#patchlmscourse) - Update a course
+* [PatchLmsInstructor](docs/sdks/lms/README.md#patchlmsinstructor) - Update an instructor
+* [PatchLmsStudent](docs/sdks/lms/README.md#patchlmsstudent) - Update a student
+* [RemoveLmsClass](docs/sdks/lms/README.md#removelmsclass) - Remove a class
+* [RemoveLmsCourse](docs/sdks/lms/README.md#removelmscourse) - Remove a course
+* [RemoveLmsInstructor](docs/sdks/lms/README.md#removelmsinstructor) - Remove an instructor
+* [RemoveLmsStudent](docs/sdks/lms/README.md#removelmsstudent) - Remove a student
+* [UpdateLmsClass](docs/sdks/lms/README.md#updatelmsclass) - Update a class
+* [UpdateLmsCourse](docs/sdks/lms/README.md#updatelmscourse) - Update a course
+* [UpdateLmsInstructor](docs/sdks/lms/README.md#updatelmsinstructor) - Update an instructor
+* [UpdateLmsStudent](docs/sdks/lms/README.md#updatelmsstudent) - Update a student
+
 ### [Location](docs/sdks/location/README.md)
 
 * [CreateCommerceLocation](docs/sdks/location/README.md#createcommercelocation) - Create a location
@@ -617,8 +690,14 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 ### [Organization](docs/sdks/organization/README.md)
 
+* [CreateRepoOrganization](docs/sdks/organization/README.md#createrepoorganization) - Create an organization
 * [GetAccountingOrganization](docs/sdks/organization/README.md#getaccountingorganization) - Retrieve an organization
+* [GetRepoOrganization](docs/sdks/organization/README.md#getrepoorganization) - Retrieve an organization
 * [ListAccountingOrganizations](docs/sdks/organization/README.md#listaccountingorganizations) - List all organizations
+* [ListRepoOrganizations](docs/sdks/organization/README.md#listrepoorganizations) - List all organizations
+* [PatchRepoOrganization](docs/sdks/organization/README.md#patchrepoorganization) - Update an organization
+* [RemoveRepoOrganization](docs/sdks/organization/README.md#removerepoorganization) - Remove an organization
+* [UpdateRepoOrganization](docs/sdks/organization/README.md#updaterepoorganization) - Update an organization
 
 ### [Page](docs/sdks/page/README.md)
 
@@ -695,15 +774,67 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 * [CreateGenaiPrompt](docs/sdks/prompt/README.md#creategenaiprompt) - Create a prompt
 
+### [Pullrequest](docs/sdks/pullrequest/README.md)
+
+* [CreateRepoPullrequest](docs/sdks/pullrequest/README.md#createrepopullrequest) - Create a pullrequest
+* [GetRepoPullrequest](docs/sdks/pullrequest/README.md#getrepopullrequest) - Retrieve a pullrequest
+* [ListRepoPullrequests](docs/sdks/pullrequest/README.md#listrepopullrequests) - List all pullrequests
+* [PatchRepoPullrequest](docs/sdks/pullrequest/README.md#patchrepopullrequest) - Update a pullrequest
+* [RemoveRepoPullrequest](docs/sdks/pullrequest/README.md#removerepopullrequest) - Remove a pullrequest
+* [UpdateRepoPullrequest](docs/sdks/pullrequest/README.md#updaterepopullrequest) - Update a pullrequest
+
 ### [Refund](docs/sdks/refund/README.md)
 
 * [GetPaymentRefund](docs/sdks/refund/README.md#getpaymentrefund) - Retrieve a refund
 * [ListPaymentRefunds](docs/sdks/refund/README.md#listpaymentrefunds) - List all refunds
 
+### [Repo](docs/sdks/repo/README.md)
+
+* [CreateRepoBranch](docs/sdks/repo/README.md#createrepobranch) - Create a branch
+* [CreateRepoCommit](docs/sdks/repo/README.md#createrepocommit) - Create a commit
+* [CreateRepoOrganization](docs/sdks/repo/README.md#createrepoorganization) - Create an organization
+* [CreateRepoPullrequest](docs/sdks/repo/README.md#createrepopullrequest) - Create a pullrequest
+* [CreateRepoRepository](docs/sdks/repo/README.md#createreporepository) - Create a repository
+* [GetRepoBranch](docs/sdks/repo/README.md#getrepobranch) - Retrieve a branch
+* [GetRepoCommit](docs/sdks/repo/README.md#getrepocommit) - Retrieve a commit
+* [GetRepoOrganization](docs/sdks/repo/README.md#getrepoorganization) - Retrieve an organization
+* [GetRepoPullrequest](docs/sdks/repo/README.md#getrepopullrequest) - Retrieve a pullrequest
+* [GetRepoRepository](docs/sdks/repo/README.md#getreporepository) - Retrieve a repository
+* [ListRepoBranches](docs/sdks/repo/README.md#listrepobranches) - List all branches
+* [ListRepoCommits](docs/sdks/repo/README.md#listrepocommits) - List all commits
+* [ListRepoOrganizations](docs/sdks/repo/README.md#listrepoorganizations) - List all organizations
+* [ListRepoPullrequests](docs/sdks/repo/README.md#listrepopullrequests) - List all pullrequests
+* [ListRepoRepositories](docs/sdks/repo/README.md#listreporepositories) - List all repositories
+* [PatchRepoBranch](docs/sdks/repo/README.md#patchrepobranch) - Update a branch
+* [PatchRepoCommit](docs/sdks/repo/README.md#patchrepocommit) - Update a commit
+* [PatchRepoOrganization](docs/sdks/repo/README.md#patchrepoorganization) - Update an organization
+* [PatchRepoPullrequest](docs/sdks/repo/README.md#patchrepopullrequest) - Update a pullrequest
+* [PatchRepoRepository](docs/sdks/repo/README.md#patchreporepository) - Update a repository
+* [RemoveRepoBranch](docs/sdks/repo/README.md#removerepobranch) - Remove a branch
+* [RemoveRepoCommit](docs/sdks/repo/README.md#removerepocommit) - Remove a commit
+* [RemoveRepoOrganization](docs/sdks/repo/README.md#removerepoorganization) - Remove an organization
+* [RemoveRepoPullrequest](docs/sdks/repo/README.md#removerepopullrequest) - Remove a pullrequest
+* [RemoveRepoRepository](docs/sdks/repo/README.md#removereporepository) - Remove a repository
+* [UpdateRepoBranch](docs/sdks/repo/README.md#updaterepobranch) - Update a branch
+* [UpdateRepoCommit](docs/sdks/repo/README.md#updaterepocommit) - Update a commit
+* [UpdateRepoOrganization](docs/sdks/repo/README.md#updaterepoorganization) - Update an organization
+* [UpdateRepoPullrequest](docs/sdks/repo/README.md#updaterepopullrequest) - Update a pullrequest
+* [UpdateRepoRepository](docs/sdks/repo/README.md#updatereporepository) - Update a repository
+
+### [Repository](docs/sdks/repository/README.md)
+
+* [CreateRepoRepository](docs/sdks/repository/README.md#createreporepository) - Create a repository
+* [GetRepoRepository](docs/sdks/repository/README.md#getreporepository) - Retrieve a repository
+* [ListRepoRepositories](docs/sdks/repository/README.md#listreporepositories) - List all repositories
+* [PatchRepoRepository](docs/sdks/repository/README.md#patchreporepository) - Update a repository
+* [RemoveRepoRepository](docs/sdks/repository/README.md#removereporepository) - Remove a repository
+* [UpdateRepoRepository](docs/sdks/repository/README.md#updatereporepository) - Update a repository
+
 ### [Scim](docs/sdks/scim/README.md)
 
 * [CreateScimGroups](docs/sdks/scim/README.md#createscimgroups) - Create group
 * [CreateScimUsers](docs/sdks/scim/README.md#createscimusers) - Create user
+* [GetScimGroups](docs/sdks/scim/README.md#getscimgroups) - Get group
 * [GetScimUsers](docs/sdks/scim/README.md#getscimusers) - Get user
 * [ListScimGroups](docs/sdks/scim/README.md#listscimgroups) - List groups
 * [ListScimUsers](docs/sdks/scim/README.md#listscimusers) - List users
@@ -740,6 +871,15 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [PatchStorageFile](docs/sdks/storage/README.md#patchstoragefile) - Update a file
 * [RemoveStorageFile](docs/sdks/storage/README.md#removestoragefile) - Remove a file
 * [UpdateStorageFile](docs/sdks/storage/README.md#updatestoragefile) - Update a file
+
+### [Student](docs/sdks/student/README.md)
+
+* [CreateLmsStudent](docs/sdks/student/README.md#createlmsstudent) - Create a student
+* [GetLmsStudent](docs/sdks/student/README.md#getlmsstudent) - Retrieve a student
+* [ListLmsStudents](docs/sdks/student/README.md#listlmsstudents) - List all students
+* [PatchLmsStudent](docs/sdks/student/README.md#patchlmsstudent) - Update a student
+* [RemoveLmsStudent](docs/sdks/student/README.md#removelmsstudent) - Remove a student
+* [UpdateLmsStudent](docs/sdks/student/README.md#updatelmsstudent) - Update a student
 
 ### [Task](docs/sdks/task/README.md)
 
@@ -871,19 +1011,65 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 ### Select Server by Index
 
-You can override the default server globally by passing a server index to the `serverIndex: number` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+You can override the default server globally by passing a server index to the `serverIndex: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
 
-| # | Server | Variables |
-| - | ------ | --------- |
-| 0 | `https://api.unified.to` | None |
-| 1 | `https://api-eu.unified.to` | None |
+| #   | Server                      |
+| --- | --------------------------- |
+| 0   | `https://api.unified.to`    |
+| 1   | `https://api-eu.unified.to` |
 
+#### Example
 
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
+using System.Collections.Generic;
 
+var sdk = new UnifiedToSDK(
+    serverIndex: 1,
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    }
+);
+
+var res = await sdk.Accounting.CreateAccountingAccountAsync(
+    connectionId: "<id>",
+    accountingAccount: new AccountingAccount() {},
+    fields: new List<string>() {
+        "<value>",
+    }
+);
+
+// handle response
+```
 
 ### Override Server URL Per-Client
 
-The default server can also be overridden globally by passing a URL to the `serverUrl: str` optional parameter when initializing the SDK client instance. For example:
+The default server can also be overridden globally by passing a URL to the `serverUrl: string` optional parameter when initializing the SDK client instance. For example:
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(
+    serverUrl: "https://api.unified.to",
+    security: new Security() {
+        Jwt = "<YOUR_API_KEY_HERE>",
+    }
+);
+
+var res = await sdk.Accounting.CreateAccountingAccountAsync(
+    connectionId: "<id>",
+    accountingAccount: new AccountingAccount() {},
+    fields: new List<string>() {
+        "<value>",
+    }
+);
+
+// handle response
+```
 <!-- End Server Selection [server] -->
 
 <!-- Start Summary [summary] -->
@@ -928,9 +1114,9 @@ dotnet add reference UnifiedTo/UnifiedTo.csproj
 
 This SDK supports the following security scheme globally:
 
-| Name    | Type    | Scheme  |
-| ------- | ------- | ------- |
-| `Jwt`   | apiKey  | API key |
+| Name  | Type   | Scheme  |
+| ----- | ------ | ------- |
+| `Jwt` | apiKey | API key |
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
 ```csharp
@@ -971,9 +1157,9 @@ By default, an API error will raise a `UnifiedTo.Models.Errors.SDKException` exc
 
 When custom error responses are specified for an operation, the SDK may also throw their associated exceptions. You can refer to respective *Errors* tables in SDK docs for more details on possible exception types for each operation. For example, the `CreateAccountingAccountAsync` method throws the following exceptions:
 
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+| Error Type                           | Status Code | Content Type |
+| ------------------------------------ | ----------- | ------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX    | \*/\*        |
 
 ### Example
 

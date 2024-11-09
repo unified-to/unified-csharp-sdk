@@ -14,11 +14,12 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 csharp:
-  version: 0.21.1
+  version: 0.21.2
   additionalDependencies: []
   author: Unified API Inc.
   clientServerStatusCodesAsErrors: true
   company: ""
+  defaultErrorName: SDKException
   disableNamespacePascalCasingApr2024: false
   dotnetVersion: net6.0
   enableSourceLink: false

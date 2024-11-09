@@ -39,9 +39,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
-        [JsonProperty("cursors_cache")]
-        public List<Undefined>? CursorsCache { get; set; }
-
         [JsonProperty("environment")]
         public string? Environment { get; set; } = "Production";
 

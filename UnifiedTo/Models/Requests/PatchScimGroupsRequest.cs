@@ -28,6 +28,6 @@ namespace UnifiedTo.Models.Requests
         public string Id { get; set; } = default!;
 
         [SpeakeasyMetadata("request:mediaType=application/json")]
-        public Models.Components.Group? Group { get; set; }
+        public ScimGroup? ScimGroup { get; set; }
     }
 }

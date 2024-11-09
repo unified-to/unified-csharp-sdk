@@ -29,11 +29,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
-        UnifiedTo.Models.Components.PropertyConnectionCategories.Task,
+        UnifiedTo.Models.Components.PropertyConnectionCategories.Lms,
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.AtsScorecardRead,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmEventRead,
     },
 };
 
@@ -153,11 +153,11 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(
     id: "<id>",
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
-            UnifiedTo.Models.Components.PropertyConnectionCategories.Commerce,
+            UnifiedTo.Models.Components.PropertyConnectionCategories.Genai,
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            UnifiedTo.Models.Components.PropertyConnectionPermissions.ScimGroupsWrite,
+            UnifiedTo.Models.Components.PropertyConnectionPermissions.RepoPullrequestWrite,
         },
     }
 );
@@ -238,11 +238,11 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
     id: "<id>",
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
-            UnifiedTo.Models.Components.PropertyConnectionCategories.Messaging,
+            UnifiedTo.Models.Components.PropertyConnectionCategories.Kms,
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            UnifiedTo.Models.Components.PropertyConnectionPermissions.ScimGroupsRead,
+            UnifiedTo.Models.Components.PropertyConnectionPermissions.RepoPullrequestRead,
         },
     }
 );

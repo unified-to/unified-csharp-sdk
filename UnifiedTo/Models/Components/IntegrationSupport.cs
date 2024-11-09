@@ -35,6 +35,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_channel_id")]
         public ListChannelId? ListChannelId { get; set; }
 
+        [JsonProperty("list_class_id")]
+        public ListClassId? ListClassId { get; set; }
+
         [JsonProperty("list_collection_id")]
         public ListCollectionId? ListCollectionId { get; set; }
 
@@ -44,11 +47,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_contact_id")]
         public ListContactId? ListContactId { get; set; }
 
+        [JsonProperty("list_course_id")]
+        public ListCourseId? ListCourseId { get; set; }
+
         [JsonProperty("list_customer_id")]
         public ListCustomerId? ListCustomerId { get; set; }
 
         [JsonProperty("list_deal_id")]
         public ListDealId? ListDealId { get; set; }
+
+        [JsonProperty("list_instructor_id")]
+        public ListInstructorId? ListInstructorId { get; set; }
 
         [JsonProperty("list_interview_id")]
         public ListInterviewId? ListInterviewId { get; set; }
@@ -106,6 +115,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_space_id")]
         public ListSpaceId? ListSpaceId { get; set; }
+
+        [JsonProperty("list_student_id")]
+        public ListStudentId? ListStudentId { get; set; }
 
         [JsonProperty("list_ticket_id")]
         public ListTicketId? ListTicketId { get; set; }

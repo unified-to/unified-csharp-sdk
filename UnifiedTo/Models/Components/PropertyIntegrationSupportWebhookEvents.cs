@@ -18,12 +18,12 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("created")]
-        public List<PropertyPropertyIntegrationSupportWebhookEventsCreated>? Created { get; set; }
+        public List<PropertyIntegrationSupportWebhookEventsCreated>? Created { get; set; }
 
         [JsonProperty("deleted")]
-        public List<PropertyPropertyIntegrationSupportWebhookEventsDeleted>? Deleted { get; set; }
+        public List<PropertyIntegrationSupportWebhookEventsDeleted>? Deleted { get; set; }
 
         [JsonProperty("updated")]
-        public List<PropertyPropertyIntegrationSupportWebhookEventsUpdated>? Updated { get; set; }
+        public List<PropertyIntegrationSupportWebhookEventsUpdated>? Updated { get; set; }
     }
 }

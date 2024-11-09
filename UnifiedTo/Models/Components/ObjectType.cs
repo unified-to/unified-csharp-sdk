@@ -131,6 +131,24 @@ namespace UnifiedTo.Models.Components
         ScimUsers,
         [JsonProperty("scim_groups")]
         ScimGroups,
+        [JsonProperty("lms_course")]
+        LmsCourse,
+        [JsonProperty("lms_class")]
+        LmsClass,
+        [JsonProperty("lms_student")]
+        LmsStudent,
+        [JsonProperty("lms_instructor")]
+        LmsInstructor,
+        [JsonProperty("repo_organization")]
+        RepoOrganization,
+        [JsonProperty("repo_repository")]
+        RepoRepository,
+        [JsonProperty("repo_branch")]
+        RepoBranch,
+        [JsonProperty("repo_commit")]
+        RepoCommit,
+        [JsonProperty("repo_pullrequest")]
+        RepoPullrequest,
     }
 
     public static class ObjectTypeExtension
