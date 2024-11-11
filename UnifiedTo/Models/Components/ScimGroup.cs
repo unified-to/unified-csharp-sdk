@@ -27,7 +27,7 @@ namespace UnifiedTo.Models.Components
         public string? GroupType { get; set; }
 
         [JsonProperty("id")]
-        public string Id { get; set; } = default!;
+        public string? Id { get; set; }
 
         /// <summary>
         /// An array of members

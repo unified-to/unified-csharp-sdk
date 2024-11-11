@@ -83,7 +83,6 @@ var res = await sdk.Group.CreateScimGroupsAsync(
     connectionId: "<id>",
     scimGroup: new ScimGroup() {
         DisplayName = "Bert89",
-        Id = "<id>",
     }
 );
 
@@ -341,7 +340,6 @@ var res = await sdk.Group.PatchScimGroupsAsync(
     id: "<id>",
     scimGroup: new ScimGroup() {
         DisplayName = "Damon_Rutherford93",
-        Id = "<id>",
     }
 );
 
@@ -514,7 +512,6 @@ var res = await sdk.Group.UpdateScimGroupsAsync(
     id: "<id>",
     scimGroup: new ScimGroup() {
         DisplayName = "Frederic.Reichel",
-        Id = "<id>",
     }
 );
 
