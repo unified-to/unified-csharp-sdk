@@ -70,10 +70,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.21.3";
-        private const string _sdkGenVersion = "2.455.2";
+        private const string _sdkVersion = "0.21.4";
+        private const string _sdkGenVersion = "2.457.2";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.21.3 2.455.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.21.4 2.457.2 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -156,7 +156,11 @@ namespace UnifiedTo
                     RawResponse = httpResponse
                 };
             }
-            else if(responseStatusCode >= 200 && responseStatusCode < 300)
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
             {
                 if(Utilities.IsContentTypeMatch("*/*", contentType))
                 {
@@ -166,7 +170,7 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
                 else if(Utilities.IsContentTypeMatch("application/json", contentType))
@@ -178,7 +182,29 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.TwoXXApplicationJsonAny = obj;
+                    response.DefaultApplicationJsonAny = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/xml", contentType))
+                {
+                    var response = new CreatePassthroughJsonResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultApplicationXmlRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/csv", contentType))
+                {
+                    var response = new CreatePassthroughJsonResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultTextCsvRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
                 else if(Utilities.IsContentTypeMatch("text/plain", contentType))
@@ -189,18 +215,12 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.TwoXXTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
 
                 throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
-            {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
-            }
-
-            throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
         public async Task<CreatePassthroughRawResponse> CreatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null)
@@ -273,7 +293,11 @@ namespace UnifiedTo
                     RawResponse = httpResponse
                 };
             }
-            else if(responseStatusCode >= 200 && responseStatusCode < 300)
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
             {
                 if(Utilities.IsContentTypeMatch("*/*", contentType))
                 {
@@ -283,7 +307,7 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
                 else if(Utilities.IsContentTypeMatch("application/json", contentType))
@@ -295,7 +319,29 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.TwoXXApplicationJsonAny = obj;
+                    response.DefaultApplicationJsonAny = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/xml", contentType))
+                {
+                    var response = new CreatePassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultApplicationXmlRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/csv", contentType))
+                {
+                    var response = new CreatePassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultTextCsvRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
                 else if(Utilities.IsContentTypeMatch("text/plain", contentType))
@@ -306,18 +352,12 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.TwoXXTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
 
                 throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
-            {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
-            }
-
-            throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
         public async Task<ListPassthroughsResponse> ListPassthroughsAsync(string connectionId, string path)
@@ -383,7 +423,11 @@ namespace UnifiedTo
                     RawResponse = httpResponse
                 };
             }
-            else if(responseStatusCode >= 200 && responseStatusCode < 300)
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
             {
                 if(Utilities.IsContentTypeMatch("*/*", contentType))
                 {
@@ -393,7 +437,7 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
                 else if(Utilities.IsContentTypeMatch("application/json", contentType))
@@ -405,7 +449,29 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.TwoXXApplicationJsonAny = obj;
+                    response.DefaultApplicationJsonAny = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/xml", contentType))
+                {
+                    var response = new ListPassthroughsResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultApplicationXmlRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/csv", contentType))
+                {
+                    var response = new ListPassthroughsResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultTextCsvRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
                 else if(Utilities.IsContentTypeMatch("text/plain", contentType))
@@ -416,18 +482,12 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.TwoXXTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
 
                 throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
-            {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
-            }
-
-            throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
         public async Task<PatchPassthroughJsonResponse> PatchPassthroughJsonAsync(string connectionId, string path, object? requestBody = null)
@@ -500,7 +560,11 @@ namespace UnifiedTo
                     RawResponse = httpResponse
                 };
             }
-            else if(responseStatusCode >= 200 && responseStatusCode < 300)
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
             {
                 if(Utilities.IsContentTypeMatch("*/*", contentType))
                 {
@@ -510,7 +574,7 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
                 else if(Utilities.IsContentTypeMatch("application/json", contentType))
@@ -522,7 +586,29 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.TwoXXApplicationJsonAny = obj;
+                    response.DefaultApplicationJsonAny = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/xml", contentType))
+                {
+                    var response = new PatchPassthroughJsonResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultApplicationXmlRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/csv", contentType))
+                {
+                    var response = new PatchPassthroughJsonResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultTextCsvRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
                 else if(Utilities.IsContentTypeMatch("text/plain", contentType))
@@ -533,18 +619,12 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.TwoXXTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
 
                 throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
-            {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
-            }
-
-            throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
         public async Task<PatchPassthroughRawResponse> PatchPassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null)
@@ -617,7 +697,11 @@ namespace UnifiedTo
                     RawResponse = httpResponse
                 };
             }
-            else if(responseStatusCode >= 200 && responseStatusCode < 300)
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
             {
                 if(Utilities.IsContentTypeMatch("*/*", contentType))
                 {
@@ -627,7 +711,7 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
                 else if(Utilities.IsContentTypeMatch("application/json", contentType))
@@ -639,7 +723,29 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.TwoXXApplicationJsonAny = obj;
+                    response.DefaultApplicationJsonAny = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/xml", contentType))
+                {
+                    var response = new PatchPassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultApplicationXmlRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/csv", contentType))
+                {
+                    var response = new PatchPassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultTextCsvRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
                 else if(Utilities.IsContentTypeMatch("text/plain", contentType))
@@ -650,18 +756,12 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.TwoXXTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
 
                 throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
-            {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
-            }
-
-            throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
         public async Task<RemovePassthroughResponse> RemovePassthroughAsync(string connectionId, string path)
@@ -727,7 +827,11 @@ namespace UnifiedTo
                     RawResponse = httpResponse
                 };
             }
-            else if(responseStatusCode >= 200 && responseStatusCode < 300)
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
             {
                 if(Utilities.IsContentTypeMatch("*/*", contentType))
                 {
@@ -737,7 +841,7 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
                 else if(Utilities.IsContentTypeMatch("application/json", contentType))
@@ -749,7 +853,29 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.TwoXXApplicationJsonAny = obj;
+                    response.DefaultApplicationJsonAny = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/xml", contentType))
+                {
+                    var response = new RemovePassthroughResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultApplicationXmlRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/csv", contentType))
+                {
+                    var response = new RemovePassthroughResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultTextCsvRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
                 else if(Utilities.IsContentTypeMatch("text/plain", contentType))
@@ -760,18 +886,12 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.TwoXXTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
 
                 throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
-            {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
-            }
-
-            throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
         public async Task<UpdatePassthroughJsonResponse> UpdatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null)
@@ -844,7 +964,11 @@ namespace UnifiedTo
                     RawResponse = httpResponse
                 };
             }
-            else if(responseStatusCode >= 200 && responseStatusCode < 300)
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
             {
                 if(Utilities.IsContentTypeMatch("*/*", contentType))
                 {
@@ -854,7 +978,7 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
                 else if(Utilities.IsContentTypeMatch("application/json", contentType))
@@ -866,7 +990,29 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.TwoXXApplicationJsonAny = obj;
+                    response.DefaultApplicationJsonAny = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/xml", contentType))
+                {
+                    var response = new UpdatePassthroughJsonResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultApplicationXmlRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/csv", contentType))
+                {
+                    var response = new UpdatePassthroughJsonResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultTextCsvRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
                 else if(Utilities.IsContentTypeMatch("text/plain", contentType))
@@ -877,18 +1023,12 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.TwoXXTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
 
                 throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
-            {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
-            }
-
-            throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
         public async Task<UpdatePassthroughRawResponse> UpdatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null)
@@ -961,7 +1101,11 @@ namespace UnifiedTo
                     RawResponse = httpResponse
                 };
             }
-            else if(responseStatusCode >= 200 && responseStatusCode < 300)
+            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else
             {
                 if(Utilities.IsContentTypeMatch("*/*", contentType))
                 {
@@ -971,7 +1115,7 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.Body = await httpResponse.Content.ReadAsByteArrayAsync();
+                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
                 else if(Utilities.IsContentTypeMatch("application/json", contentType))
@@ -983,7 +1127,29 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.TwoXXApplicationJsonAny = obj;
+                    response.DefaultApplicationJsonAny = obj;
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("application/xml", contentType))
+                {
+                    var response = new UpdatePassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultApplicationXmlRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("text/csv", contentType))
+                {
+                    var response = new UpdatePassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultTextCsvRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
                 else if(Utilities.IsContentTypeMatch("text/plain", contentType))
@@ -994,18 +1160,12 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.TwoXXTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
                     return response;
                 }
 
                 throw new Models.Errors.SDKException("Unknown content type received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
-            {
-                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
-            }
-
-            throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
     }
 }

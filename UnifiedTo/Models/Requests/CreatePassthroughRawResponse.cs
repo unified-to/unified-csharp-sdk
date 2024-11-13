@@ -18,18 +18,6 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
-        /// Successful
-        /// </summary>
-        public object? TwoXXApplicationJsonAny { get; set; }
-
-        /// <summary>
-        /// Successful
-        /// </summary>
-        public string? TwoXXTextPlainRes { get; set; }
-
-        public byte[]? Body { get; set; }
-
-        /// <summary>
         /// HTTP response content type for this operation
         /// </summary>
         public string? ContentType { get; set; } = default!;
@@ -45,5 +33,30 @@ namespace UnifiedTo.Models.Requests
         /// Raw HTTP response; suitable for custom response parsing
         /// </summary>
         public HttpResponseMessage RawResponse { get; set; } = default!;
+
+        /// <summary>
+        /// Successful
+        /// </summary>
+        public byte[]? DefaultWildcardWildcardBytes { get; set; }
+
+        /// <summary>
+        /// Successful
+        /// </summary>
+        public object? DefaultApplicationJsonAny { get; set; }
+
+        /// <summary>
+        /// Successful
+        /// </summary>
+        public string? DefaultApplicationXmlRes { get; set; }
+
+        /// <summary>
+        /// Successful
+        /// </summary>
+        public string? DefaultTextCsvRes { get; set; }
+
+        /// <summary>
+        /// Successful
+        /// </summary>
+        public string? DefaultTextPlainRes { get; set; }
     }
 }

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 4fc2a67a150948bf04b688d76763ebd2
+  docChecksum: c742bd133ee67d6de3e53fb5420440fe
   docVersion: "1.0"
-  speakeasyVersion: 1.436.0
-  generationVersion: 2.455.2
-  releaseVersion: 0.21.3
-  configChecksum: 62e0eb901f2b93a94c3aff0b787f2b3f
+  speakeasyVersion: 1.438.1
+  generationVersion: 2.457.2
+  releaseVersion: 0.21.4
+  configChecksum: 328521f4c0edeaff14e75d66da6a02e8
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -3908,6 +3908,12 @@ examples:
           '*/*': "0x3CbcA7c7be"
           application/json: "<value>"
           text/plain: "<value>"
+        default:
+          '*/*': "0x9Cc77eCA3C"
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
+          text/plain: "<value>"
     speakeasy-default-create-passthrough-raw:
       parameters:
         path:
@@ -3917,6 +3923,12 @@ examples:
         2XX:
           '*/*': "0x34ABa9b31D"
           application/json: "<value>"
+          text/plain: "<value>"
+        default:
+          '*/*': "0x24B93D6214"
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
           text/plain: "<value>"
   listPassthroughs:
     speakeasy-default-list-passthroughs:
@@ -3928,6 +3940,12 @@ examples:
         2XX:
           application/json: {"key": "<value>"}
           '*/*': "0xc838beeAd7"
+          text/plain: "<value>"
+        default:
+          '*/*': "0xc3bedCFEfa"
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
           text/plain: "<value>"
   patchPassthrough:
     speakeasy-default-patch-passthrough:
@@ -3948,6 +3966,12 @@ examples:
           '*/*': "0x4fb8209099"
           application/json: "<value>"
           text/plain: "<value>"
+        default:
+          '*/*': "0x4f8009Cc8e"
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
+          text/plain: "<value>"
     speakeasy-default-patch-passthrough-raw:
       parameters:
         path:
@@ -3957,6 +3981,12 @@ examples:
         2XX:
           '*/*': "0x7CEb8f75C6"
           application/json: "<value>"
+          text/plain: "<value>"
+        default:
+          '*/*': "0x2Cbf5667DB"
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
           text/plain: "<value>"
   removePassthrough:
     speakeasy-default-remove-passthrough:
@@ -3968,6 +3998,12 @@ examples:
         2XX:
           application/json: {}
           '*/*': "0x0280cc8bc1"
+          text/plain: "<value>"
+        default:
+          '*/*': "0x08c8c65Dc6"
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
           text/plain: "<value>"
   updatePassthrough:
     speakeasy-default-update-passthrough:
@@ -3988,6 +4024,12 @@ examples:
           '*/*': "0xDa7dcaB8ab"
           application/json: "<value>"
           text/plain: "<value>"
+        default:
+          '*/*': "0x3ada8b9538"
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
+          text/plain: "<value>"
     speakeasy-default-update-passthrough-raw:
       parameters:
         path:
@@ -3997,6 +4039,12 @@ examples:
         2XX:
           '*/*': "0x5587B3b9f8"
           application/json: "<value>"
+          text/plain: "<value>"
+        default:
+          '*/*': "0xd5739830F8"
+          application/json: "<value>"
+          application/xml: "<value>"
+          text/csv: "<value>"
           text/plain: "<value>"
   createPaymentLink:
     speakeasy-default-create-payment-link:

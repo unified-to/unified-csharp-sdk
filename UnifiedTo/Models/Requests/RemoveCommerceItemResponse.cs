@@ -9,6 +9,7 @@
 #nullable enable
 namespace UnifiedTo.Models.Requests
 {
+    using System.Collections.Generic;
     using System.Net.Http;
     using System;
     using UnifiedTo.Utils;
@@ -20,6 +21,8 @@ namespace UnifiedTo.Models.Requests
         /// HTTP response content type for this operation
         /// </summary>
         public string? ContentType { get; set; } = default!;
+
+        public Dictionary<string, List<string>> Headers { get; set; } = default!;
 
         /// <summary>
         /// HTTP response status code for this operation

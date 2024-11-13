@@ -33,6 +33,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// The names of the departments/divisions that this job belongs to
+        /// </summary>
         [JsonProperty("departments")]
         public List<string>? Departments { get; set; }
 
