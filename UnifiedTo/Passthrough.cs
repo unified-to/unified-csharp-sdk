@@ -70,10 +70,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.21.4";
-        private const string _sdkGenVersion = "2.457.2";
+        private const string _sdkVersion = "0.21.5";
+        private const string _sdkGenVersion = "2.457.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.21.4 2.457.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.21.5 2.457.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -162,18 +162,7 @@ namespace UnifiedTo
             }
             else
             {
-                if(Utilities.IsContentTypeMatch("*/*", contentType))
-                {
-                    var response = new CreatePassthroughJsonResponse()
-                    {
-                        StatusCode = responseStatusCode,
-                        ContentType = contentType,
-                        RawResponse = httpResponse
-                    };
-                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
-                    return response;
-                }
-                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new CreatePassthroughJsonResponse()
@@ -216,6 +205,17 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("*/*", contentType))
+                {
+                    var response = new CreatePassthroughJsonResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 
@@ -299,18 +299,7 @@ namespace UnifiedTo
             }
             else
             {
-                if(Utilities.IsContentTypeMatch("*/*", contentType))
-                {
-                    var response = new CreatePassthroughRawResponse()
-                    {
-                        StatusCode = responseStatusCode,
-                        ContentType = contentType,
-                        RawResponse = httpResponse
-                    };
-                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
-                    return response;
-                }
-                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new CreatePassthroughRawResponse()
@@ -353,6 +342,17 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("*/*", contentType))
+                {
+                    var response = new CreatePassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 
@@ -429,18 +429,7 @@ namespace UnifiedTo
             }
             else
             {
-                if(Utilities.IsContentTypeMatch("*/*", contentType))
-                {
-                    var response = new ListPassthroughsResponse()
-                    {
-                        StatusCode = responseStatusCode,
-                        ContentType = contentType,
-                        RawResponse = httpResponse
-                    };
-                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
-                    return response;
-                }
-                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new ListPassthroughsResponse()
@@ -483,6 +472,17 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("*/*", contentType))
+                {
+                    var response = new ListPassthroughsResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 
@@ -566,18 +566,7 @@ namespace UnifiedTo
             }
             else
             {
-                if(Utilities.IsContentTypeMatch("*/*", contentType))
-                {
-                    var response = new PatchPassthroughJsonResponse()
-                    {
-                        StatusCode = responseStatusCode,
-                        ContentType = contentType,
-                        RawResponse = httpResponse
-                    };
-                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
-                    return response;
-                }
-                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new PatchPassthroughJsonResponse()
@@ -620,6 +609,17 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("*/*", contentType))
+                {
+                    var response = new PatchPassthroughJsonResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 
@@ -703,18 +703,7 @@ namespace UnifiedTo
             }
             else
             {
-                if(Utilities.IsContentTypeMatch("*/*", contentType))
-                {
-                    var response = new PatchPassthroughRawResponse()
-                    {
-                        StatusCode = responseStatusCode,
-                        ContentType = contentType,
-                        RawResponse = httpResponse
-                    };
-                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
-                    return response;
-                }
-                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new PatchPassthroughRawResponse()
@@ -757,6 +746,17 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("*/*", contentType))
+                {
+                    var response = new PatchPassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 
@@ -833,18 +833,7 @@ namespace UnifiedTo
             }
             else
             {
-                if(Utilities.IsContentTypeMatch("*/*", contentType))
-                {
-                    var response = new RemovePassthroughResponse()
-                    {
-                        StatusCode = responseStatusCode,
-                        ContentType = contentType,
-                        RawResponse = httpResponse
-                    };
-                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
-                    return response;
-                }
-                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new RemovePassthroughResponse()
@@ -887,6 +876,17 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("*/*", contentType))
+                {
+                    var response = new RemovePassthroughResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 
@@ -970,18 +970,7 @@ namespace UnifiedTo
             }
             else
             {
-                if(Utilities.IsContentTypeMatch("*/*", contentType))
-                {
-                    var response = new UpdatePassthroughJsonResponse()
-                    {
-                        StatusCode = responseStatusCode,
-                        ContentType = contentType,
-                        RawResponse = httpResponse
-                    };
-                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
-                    return response;
-                }
-                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new UpdatePassthroughJsonResponse()
@@ -1024,6 +1013,17 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("*/*", contentType))
+                {
+                    var response = new UpdatePassthroughJsonResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 
@@ -1107,18 +1107,7 @@ namespace UnifiedTo
             }
             else
             {
-                if(Utilities.IsContentTypeMatch("*/*", contentType))
-                {
-                    var response = new UpdatePassthroughRawResponse()
-                    {
-                        StatusCode = responseStatusCode,
-                        ContentType = contentType,
-                        RawResponse = httpResponse
-                    };
-                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
-                    return response;
-                }
-                else if(Utilities.IsContentTypeMatch("application/json", contentType))
+                if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
                     var obj = ResponseBodyDeserializer.Deserialize<object>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new UpdatePassthroughRawResponse()
@@ -1161,6 +1150,17 @@ namespace UnifiedTo
                         RawResponse = httpResponse
                     };
                     response.DefaultTextPlainRes = await httpResponse.Content.ReadAsStringAsync();
+                    return response;
+                }
+                else if(Utilities.IsContentTypeMatch("*/*", contentType))
+                {
+                    var response = new UpdatePassthroughRawResponse()
+                    {
+                        StatusCode = responseStatusCode,
+                        ContentType = contentType,
+                        RawResponse = httpResponse
+                    };
+                    response.DefaultWildcardWildcardBytes = await httpResponse.Content.ReadAsByteArrayAsync();
                     return response;
                 }
 

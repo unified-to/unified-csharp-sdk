@@ -26,6 +26,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("group_ids")]
         public List<string>? GroupIds { get; set; }
 
+        [JsonProperty("has_tasks")]
+        public bool? HasTasks { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
