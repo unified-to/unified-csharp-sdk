@@ -11,6 +11,7 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System.Collections.Generic;
+    using System;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
@@ -27,7 +28,7 @@ namespace UnifiedTo.Models.Components
         public string? ChannelId { get; set; }
 
         [JsonProperty("created_at")]
-        public string? CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("destination_members")]
         public List<MessagingMember>? DestinationMembers { get; set; }
@@ -60,7 +61,7 @@ namespace UnifiedTo.Models.Components
         public string? Subject { get; set; }
 
         [JsonProperty("updated_at")]
-        public string? UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         [JsonProperty("web_url")]
         public string? WebUrl { get; set; }
