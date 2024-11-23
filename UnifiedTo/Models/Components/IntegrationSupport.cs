@@ -134,6 +134,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("methods")]
         public Dictionary<string, bool>? Methods { get; set; }
 
+        [JsonProperty("native_webhook_parent_id")]
+        public NativeWebhookParentId? NativeWebhookParentId { get; set; }
+
+        [JsonProperty("native_webhook_project_id")]
+        public NativeWebhookProjectId? NativeWebhookProjectId { get; set; }
+
         [JsonProperty("outbound_fields")]
         public Dictionary<string, object>? OutboundFields { get; set; }
 
@@ -157,6 +163,36 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("search_twitter")]
         public SearchTwitter? SearchTwitter { get; set; }
+
+        [JsonProperty("virtual_webhook_channel_id")]
+        public VirtualWebhookChannelId? VirtualWebhookChannelId { get; set; }
+
+        [JsonProperty("virtual_webhook_company_id")]
+        public VirtualWebhookCompanyId? VirtualWebhookCompanyId { get; set; }
+
+        [JsonProperty("virtual_webhook_contact_id")]
+        public VirtualWebhookContactId? VirtualWebhookContactId { get; set; }
+
+        [JsonProperty("virtual_webhook_deal_id")]
+        public VirtualWebhookDealId? VirtualWebhookDealId { get; set; }
+
+        [JsonProperty("virtual_webhook_limit")]
+        public VirtualWebhookLimit? VirtualWebhookLimit { get; set; }
+
+        [JsonProperty("virtual_webhook_parent_id")]
+        public VirtualWebhookParentId? VirtualWebhookParentId { get; set; }
+
+        [JsonProperty("virtual_webhook_ticket_id")]
+        public VirtualWebhookTicketId? VirtualWebhookTicketId { get; set; }
+
+        [JsonProperty("virtual_webhook_type")]
+        public VirtualWebhookType? VirtualWebhookType { get; set; }
+
+        [JsonProperty("virtual_webhook_updated_gte")]
+        public VirtualWebhookUpdatedGte? VirtualWebhookUpdatedGte { get; set; }
+
+        [JsonProperty("virtual_webhook_user_id")]
+        public VirtualWebhookUserId? VirtualWebhookUserId { get; set; }
 
         [JsonProperty("webhook_events")]
         public PropertyIntegrationSupportWebhookEvents? WebhookEvents { get; set; }

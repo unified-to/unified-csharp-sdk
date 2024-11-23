@@ -35,6 +35,8 @@
 | `CommerceInventoryWrite`     | commerce_inventory_write     |
 | `CommerceLocationRead`       | commerce_location_read       |
 | `CommerceLocationWrite`      | commerce_location_write      |
+| `CommerceMetadataRead`       | commerce_metadata_read       |
+| `CommerceMetadataWrite`      | commerce_metadata_write      |
 | `AtsActivityRead`            | ats_activity_read            |
 | `AtsActivityWrite`           | ats_activity_write           |
 | `AtsApplicationRead`         | ats_application_read         |

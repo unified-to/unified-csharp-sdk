@@ -75,6 +75,10 @@ namespace UnifiedTo.Models.Requests
         CommerceLocationRead,
         [JsonProperty("commerce_location_write")]
         CommerceLocationWrite,
+        [JsonProperty("commerce_metadata_read")]
+        CommerceMetadataRead,
+        [JsonProperty("commerce_metadata_write")]
+        CommerceMetadataWrite,
         [JsonProperty("ats_activity_read")]
         AtsActivityRead,
         [JsonProperty("ats_activity_write")]

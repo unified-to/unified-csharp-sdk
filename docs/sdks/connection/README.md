@@ -33,7 +33,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmEventRead,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmDealWrite,
     },
 };
 

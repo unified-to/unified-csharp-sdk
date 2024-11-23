@@ -9,29 +9,9 @@
 #nullable enable
 namespace UnifiedTo.Models.Components
 {
-    using Newtonsoft.Json;
-    using System.Collections.Generic;
     using UnifiedTo.Utils;
     
     public class CommerceMetadata
     {
-
-        [JsonProperty("extra_data")]
-        public Dictionary<string, object>? ExtraData { get; set; }
-
-        [JsonProperty("id")]
-        public string? Id { get; set; }
-
-        [JsonProperty("key")]
-        public string Key { get; set; } = default!;
-
-        [JsonProperty("namespace")]
-        public string? Namespace { get; set; }
-
-        [JsonProperty("type")]
-        public string? Type { get; set; }
-
-        [JsonProperty("value")]
-        public Dictionary<string, object>? Value { get; set; }
     }
 }

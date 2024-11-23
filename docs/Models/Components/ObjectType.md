@@ -21,6 +21,7 @@
 | `CommerceCollection`     | commerce_collection      |
 | `CommerceInventory`      | commerce_inventory       |
 | `CommerceLocation`       | commerce_location        |
+| `CommerceMetadata`       | commerce_metadata        |
 | `AtsActivity`            | ats_activity             |
 | `AtsApplication`         | ats_application          |
 | `AtsApplicationstatus`   | ats_applicationstatus    |

@@ -49,6 +49,7 @@ namespace UnifiedTo
         public IInventory Inventory { get; }
         public IItem Item { get; }
         public ILocation Location { get; }
+        public IMetadata Metadata { get; }
         public ICrm Crm { get; }
         public IDeal Deal { get; }
         public IEvent Event { get; }
@@ -154,10 +155,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.21.6";
-        private const string _sdkGenVersion = "2.460.1";
+        private const string _sdkVersion = "0.21.7";
+        private const string _sdkGenVersion = "2.461.4";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.21.6 2.460.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.21.7 2.461.4 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _client;
@@ -186,6 +187,7 @@ namespace UnifiedTo
         public IInventory Inventory { get; private set; }
         public IItem Item { get; private set; }
         public ILocation Location { get; private set; }
+        public IMetadata Metadata { get; private set; }
         public ICrm Crm { get; private set; }
         public IDeal Deal { get; private set; }
         public IEvent Event { get; private set; }
@@ -357,6 +359,9 @@ namespace UnifiedTo
 
 
             Location = new Location(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Metadata = new Metadata(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
             Crm = new Crm(_client, _securitySource, _serverUrl, SDKConfiguration);

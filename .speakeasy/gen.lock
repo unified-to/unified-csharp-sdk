@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: dbb26a77c5273b6a4bfbeec2d8a7c22d
+  docChecksum: a69d016e113a8d9eb83404e95207c9eb
   docVersion: "1.0"
-  speakeasyVersion: 1.440.1
-  generationVersion: 2.460.1
-  releaseVersion: 0.21.6
-  configChecksum: 3a5a2a9f2cc47824bbe9b945a0845b7f
+  speakeasyVersion: 1.444.1
+  generationVersion: 2.461.4
+  releaseVersion: 0.21.7
+  configChecksum: f72adc99af1bae2c85f1c5bda19f90ce
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -82,6 +82,7 @@ generatedFiles:
   - UnifiedTo/Member.cs
   - UnifiedTo/Message.cs
   - UnifiedTo/Messaging.cs
+  - UnifiedTo/Metadata.cs
   - UnifiedTo/Model.cs
   - UnifiedTo/Models/Components/AccountingAccount.cs
   - UnifiedTo/Models/Components/AccountingContact.cs
@@ -140,6 +141,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/CommerceItem.cs
   - UnifiedTo/Models/Components/CommerceItemMedia.cs
   - UnifiedTo/Models/Components/CommerceItemMediaType.cs
+  - UnifiedTo/Models/Components/CommerceItemMetadata.cs
   - UnifiedTo/Models/Components/CommerceItemOption.cs
   - UnifiedTo/Models/Components/CommerceItemPrice.cs
   - UnifiedTo/Models/Components/CommerceItemVariant.cs
@@ -256,6 +258,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/MessagingChannel.cs
   - UnifiedTo/Models/Components/MessagingMember.cs
   - UnifiedTo/Models/Components/MessagingMessage.cs
+  - UnifiedTo/Models/Components/NativeWebhookParentId.cs
+  - UnifiedTo/Models/Components/NativeWebhookProjectId.cs
   - UnifiedTo/Models/Components/ObjectType.cs
   - UnifiedTo/Models/Components/Operation.cs
   - UnifiedTo/Models/Components/Origin.cs
@@ -381,6 +385,16 @@ generatedFiles:
   - UnifiedTo/Models/Components/UcEmailType.cs
   - UnifiedTo/Models/Components/UcTelephone.cs
   - UnifiedTo/Models/Components/UcTelephoneType.cs
+  - UnifiedTo/Models/Components/VirtualWebhookChannelId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookCompanyId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookContactId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookDealId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookLimit.cs
+  - UnifiedTo/Models/Components/VirtualWebhookParentId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookTicketId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookType.cs
+  - UnifiedTo/Models/Components/VirtualWebhookUpdatedGte.cs
+  - UnifiedTo/Models/Components/VirtualWebhookUserId.cs
   - UnifiedTo/Models/Components/Webhook.cs
   - UnifiedTo/Models/Components/WebhookType.cs
   - UnifiedTo/Models/Components/WeightUnit.cs
@@ -423,6 +437,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateCommerceItemResponse.cs
   - UnifiedTo/Models/Requests/CreateCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/CreateCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/CreateCommerceMetadataRequest.cs
+  - UnifiedTo/Models/Requests/CreateCommerceMetadataResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmContactRequest.cs
@@ -542,6 +558,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetCommerceItemResponse.cs
   - UnifiedTo/Models/Requests/GetCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/GetCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/GetCommerceMetadataRequest.cs
+  - UnifiedTo/Models/Requests/GetCommerceMetadataResponse.cs
   - UnifiedTo/Models/Requests/GetCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/GetCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/GetCrmContactRequest.cs
@@ -675,6 +693,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListCommerceItemsResponse.cs
   - UnifiedTo/Models/Requests/ListCommerceLocationsRequest.cs
   - UnifiedTo/Models/Requests/ListCommerceLocationsResponse.cs
+  - UnifiedTo/Models/Requests/ListCommerceMetadatasRequest.cs
+  - UnifiedTo/Models/Requests/ListCommerceMetadatasResponse.cs
   - UnifiedTo/Models/Requests/ListCrmCompaniesRequest.cs
   - UnifiedTo/Models/Requests/ListCrmCompaniesResponse.cs
   - UnifiedTo/Models/Requests/ListCrmContactsRequest.cs
@@ -814,6 +834,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchCommerceItemResponse.cs
   - UnifiedTo/Models/Requests/PatchCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/PatchCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/PatchCommerceMetadataRequest.cs
+  - UnifiedTo/Models/Requests/PatchCommerceMetadataResponse.cs
   - UnifiedTo/Models/Requests/PatchCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/PatchCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/PatchCrmContactRequest.cs
@@ -931,6 +953,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveCommerceItemResponse.cs
   - UnifiedTo/Models/Requests/RemoveCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/RemoveCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceMetadataRequest.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceMetadataResponse.cs
   - UnifiedTo/Models/Requests/RemoveCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/RemoveCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/RemoveCrmContactRequest.cs
@@ -1044,6 +1068,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateCommerceItemResponse.cs
   - UnifiedTo/Models/Requests/UpdateCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/UpdateCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceMetadataRequest.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceMetadataResponse.cs
   - UnifiedTo/Models/Requests/UpdateCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/UpdateCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/UpdateCrmContactRequest.cs
@@ -1231,6 +1257,7 @@ generatedFiles:
   - docs/Models/Components/CommerceItem.md
   - docs/Models/Components/CommerceItemMedia.md
   - docs/Models/Components/CommerceItemMediaType.md
+  - docs/Models/Components/CommerceItemMetadata.md
   - docs/Models/Components/CommerceItemOption.md
   - docs/Models/Components/CommerceItemPrice.md
   - docs/Models/Components/CommerceItemVariant.md
@@ -1347,6 +1374,8 @@ generatedFiles:
   - docs/Models/Components/MessagingChannel.md
   - docs/Models/Components/MessagingMember.md
   - docs/Models/Components/MessagingMessage.md
+  - docs/Models/Components/NativeWebhookParentId.md
+  - docs/Models/Components/NativeWebhookProjectId.md
   - docs/Models/Components/ObjectType.md
   - docs/Models/Components/Operation.md
   - docs/Models/Components/Origin.md
@@ -1472,6 +1501,16 @@ generatedFiles:
   - docs/Models/Components/UcEmailType.md
   - docs/Models/Components/UcTelephone.md
   - docs/Models/Components/UcTelephoneType.md
+  - docs/Models/Components/VirtualWebhookChannelId.md
+  - docs/Models/Components/VirtualWebhookCompanyId.md
+  - docs/Models/Components/VirtualWebhookContactId.md
+  - docs/Models/Components/VirtualWebhookDealId.md
+  - docs/Models/Components/VirtualWebhookLimit.md
+  - docs/Models/Components/VirtualWebhookParentId.md
+  - docs/Models/Components/VirtualWebhookTicketId.md
+  - docs/Models/Components/VirtualWebhookType.md
+  - docs/Models/Components/VirtualWebhookUpdatedGte.md
+  - docs/Models/Components/VirtualWebhookUserId.md
   - docs/Models/Components/Webhook.md
   - docs/Models/Components/WebhookType.md
   - docs/Models/Components/WeightUnit.md
@@ -1513,6 +1552,8 @@ generatedFiles:
   - docs/Models/Requests/CreateCommerceItemResponse.md
   - docs/Models/Requests/CreateCommerceLocationRequest.md
   - docs/Models/Requests/CreateCommerceLocationResponse.md
+  - docs/Models/Requests/CreateCommerceMetadataRequest.md
+  - docs/Models/Requests/CreateCommerceMetadataResponse.md
   - docs/Models/Requests/CreateCrmCompanyRequest.md
   - docs/Models/Requests/CreateCrmCompanyResponse.md
   - docs/Models/Requests/CreateCrmContactRequest.md
@@ -1632,6 +1673,8 @@ generatedFiles:
   - docs/Models/Requests/GetCommerceItemResponse.md
   - docs/Models/Requests/GetCommerceLocationRequest.md
   - docs/Models/Requests/GetCommerceLocationResponse.md
+  - docs/Models/Requests/GetCommerceMetadataRequest.md
+  - docs/Models/Requests/GetCommerceMetadataResponse.md
   - docs/Models/Requests/GetCrmCompanyRequest.md
   - docs/Models/Requests/GetCrmCompanyResponse.md
   - docs/Models/Requests/GetCrmContactRequest.md
@@ -1765,6 +1808,8 @@ generatedFiles:
   - docs/Models/Requests/ListCommerceItemsResponse.md
   - docs/Models/Requests/ListCommerceLocationsRequest.md
   - docs/Models/Requests/ListCommerceLocationsResponse.md
+  - docs/Models/Requests/ListCommerceMetadatasRequest.md
+  - docs/Models/Requests/ListCommerceMetadatasResponse.md
   - docs/Models/Requests/ListCrmCompaniesRequest.md
   - docs/Models/Requests/ListCrmCompaniesResponse.md
   - docs/Models/Requests/ListCrmContactsRequest.md
@@ -1904,6 +1949,8 @@ generatedFiles:
   - docs/Models/Requests/PatchCommerceItemResponse.md
   - docs/Models/Requests/PatchCommerceLocationRequest.md
   - docs/Models/Requests/PatchCommerceLocationResponse.md
+  - docs/Models/Requests/PatchCommerceMetadataRequest.md
+  - docs/Models/Requests/PatchCommerceMetadataResponse.md
   - docs/Models/Requests/PatchCrmCompanyRequest.md
   - docs/Models/Requests/PatchCrmCompanyResponse.md
   - docs/Models/Requests/PatchCrmContactRequest.md
@@ -2021,6 +2068,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveCommerceItemResponse.md
   - docs/Models/Requests/RemoveCommerceLocationRequest.md
   - docs/Models/Requests/RemoveCommerceLocationResponse.md
+  - docs/Models/Requests/RemoveCommerceMetadataRequest.md
+  - docs/Models/Requests/RemoveCommerceMetadataResponse.md
   - docs/Models/Requests/RemoveCrmCompanyRequest.md
   - docs/Models/Requests/RemoveCrmCompanyResponse.md
   - docs/Models/Requests/RemoveCrmContactRequest.md
@@ -2134,6 +2183,8 @@ generatedFiles:
   - docs/Models/Requests/UpdateCommerceItemResponse.md
   - docs/Models/Requests/UpdateCommerceLocationRequest.md
   - docs/Models/Requests/UpdateCommerceLocationResponse.md
+  - docs/Models/Requests/UpdateCommerceMetadataRequest.md
+  - docs/Models/Requests/UpdateCommerceMetadataResponse.md
   - docs/Models/Requests/UpdateCrmCompanyRequest.md
   - docs/Models/Requests/UpdateCrmCompanyResponse.md
   - docs/Models/Requests/UpdateCrmContactRequest.md
@@ -2265,6 +2316,7 @@ generatedFiles:
   - docs/sdks/member/README.md
   - docs/sdks/message/README.md
   - docs/sdks/messaging/README.md
+  - docs/sdks/metadata/README.md
   - docs/sdks/model/README.md
   - docs/sdks/note/README.md
   - docs/sdks/order/README.md
@@ -5135,3 +5187,45 @@ examples:
       responses:
         "200":
           application/json: {"name": "<value>"}
+  createCommerceMetadata:
+    speakeasy-default-create-commerce-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+  getCommerceMetadata:
+    speakeasy-default-get-commerce-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  listCommerceMetadatas:
+    speakeasy-default-list-commerce-metadatas:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: []
+  patchCommerceMetadata:
+    speakeasy-default-patch-commerce-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+  removeCommerceMetadata:
+    speakeasy-default-remove-commerce-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateCommerceMetadata:
+    speakeasy-default-update-commerce-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
