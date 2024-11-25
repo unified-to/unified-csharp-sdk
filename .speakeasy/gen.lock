@@ -3,10 +3,10 @@ id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
   docChecksum: a69d016e113a8d9eb83404e95207c9eb
   docVersion: "1.0"
-  speakeasyVersion: 1.444.1
+  speakeasyVersion: 1.445.2
   generationVersion: 2.461.4
-  releaseVersion: 0.21.7
-  configChecksum: f72adc99af1bae2c85f1c5bda19f90ce
+  releaseVersion: 0.21.8
+  configChecksum: a616363840334225f34f5251464b59de
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
