@@ -24,11 +24,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("download_url")]
         public string DownloadUrl { get; set; } = default!;
 
+        [JsonProperty("has_children")]
+        public bool? HasChildren { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
+
+        [JsonProperty("metadata")]
+        public List<KmsPageMetadata>? Metadata { get; set; }
 
         [JsonProperty("parent_page_id")]
         public string? ParentPageId { get; set; }

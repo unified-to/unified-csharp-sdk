@@ -155,10 +155,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.21.8";
-        private const string _sdkGenVersion = "2.461.4";
+        private const string _sdkVersion = "0.21.9";
+        private const string _sdkGenVersion = "2.471.2";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.21.8 2.461.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.21.9 2.471.2 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _client;
@@ -277,6 +277,10 @@ namespace UnifiedTo
             else if(security != null)
             {
                 _securitySource = () => security;
+            }
+            else
+            {
+                throw new Exception("security and securitySource cannot both be null");
             }
 
             SDKConfiguration = new SDKConfig()

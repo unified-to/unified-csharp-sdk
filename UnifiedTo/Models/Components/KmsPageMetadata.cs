@@ -9,12 +9,20 @@
 #nullable enable
 namespace UnifiedTo.Models.Components
 {
+    using Newtonsoft.Json;
+    using System.Collections.Generic;
     using UnifiedTo.Utils;
     
-    public class Security
+    public class KmsPageMetadata
     {
 
-        [SpeakeasyMetadata("security:scheme=true,type=apiKey,subType=header,name=authorization")]
-        public string Jwt { get; set; } = default!;
+        [JsonProperty("name")]
+        public string Name { get; set; } = default!;
+
+        [JsonProperty("type")]
+        public string? Type { get; set; }
+
+        [JsonProperty("value")]
+        public Dictionary<string, object>? Value { get; set; }
     }
 }

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: a69d016e113a8d9eb83404e95207c9eb
+  docChecksum: 3707cd341db19ec6652e51126ae52977
   docVersion: "1.0"
-  speakeasyVersion: 1.445.2
-  generationVersion: 2.461.4
-  releaseVersion: 0.21.8
-  configChecksum: a616363840334225f34f5251464b59de
+  speakeasyVersion: 1.451.3
+  generationVersion: 2.471.2
+  releaseVersion: 0.21.9
+  configChecksum: d70c0c210133f592e76dbb357c811f6b
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -14,7 +14,7 @@ features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.10.5
+    core: 3.10.6
     flattening: 2.81.3
     globalSecurity: 2.83.6
     globalSecurityCallbacks: 0.1.0
@@ -202,6 +202,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/Issue.cs
   - UnifiedTo/Models/Components/IssueStatus.cs
   - UnifiedTo/Models/Components/KmsPage.cs
+  - UnifiedTo/Models/Components/KmsPageMetadata.cs
   - UnifiedTo/Models/Components/KmsPageType.cs
   - UnifiedTo/Models/Components/KmsSpace.cs
   - UnifiedTo/Models/Components/ListAccountId.cs
@@ -1318,6 +1319,7 @@ generatedFiles:
   - docs/Models/Components/Issue.md
   - docs/Models/Components/IssueStatus.md
   - docs/Models/Components/KmsPage.md
+  - docs/Models/Components/KmsPageMetadata.md
   - docs/Models/Components/KmsPageType.md
   - docs/Models/Components/KmsSpace.md
   - docs/Models/Components/ListAccountId.md
@@ -5229,3 +5231,4 @@ examples:
           connection_id: "<id>"
           id: "<id>"
         query: {}
+generatedTests: {}

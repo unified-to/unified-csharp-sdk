@@ -14,3 +14,7 @@ targets:
         publish:
             nuget:
                 apiKey: $NUGET_API_KEY
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/unified/unified/my-source-csharp-code-samples
+            blocking: false

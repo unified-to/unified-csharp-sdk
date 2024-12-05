@@ -28,6 +28,40 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 ```
 <!-- End SDK Example Usage [usage] -->
 
+<!-- Start Authentication [security] -->
+## Authentication
+
+### Per-Client Security Schemes
+
+This SDK supports the following security scheme globally:
+
+| Name  | Type   | Scheme  |
+| ----- | ------ | ------- |
+| `Jwt` | apiKey | API key |
+
+You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Requests;
+using UnifiedTo.Models.Components;
+using System.Collections.Generic;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.CreateAccountingAccountAsync(
+    connectionId: "<id>",
+    accountingAccount: new AccountingAccount() {},
+    fields: new List<string>() {
+        "<value>",
+    }
+);
+
+// handle response
+```
+<!-- End Authentication [security] -->
+
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
@@ -150,39 +184,5 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 // handle response
 ```
 <!-- End Server Selection [server] -->
-
-<!-- Start Authentication [security] -->
-## Authentication
-
-### Per-Client Security Schemes
-
-This SDK supports the following security scheme globally:
-
-| Name  | Type   | Scheme  |
-| ----- | ------ | ------- |
-| `Jwt` | apiKey | API key |
-
-You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
-using System.Collections.Generic;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    connectionId: "<id>",
-    accountingAccount: new AccountingAccount() {},
-    fields: new List<string>() {
-        "<value>",
-    }
-);
-
-// handle response
-```
-<!-- End Authentication [security] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
