@@ -51,6 +51,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("link_urls")]
+        public List<string>? LinkUrls { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

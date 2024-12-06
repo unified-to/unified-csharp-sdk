@@ -45,6 +45,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        [JsonProperty("link_urls")]
+        public List<string>? LinkUrls { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 
