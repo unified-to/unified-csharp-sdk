@@ -10,17 +10,16 @@
 namespace UnifiedTo.Models.Requests
 {
     using System;
-    using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
     
     public class ListUnifiedWebhooksRequest
     {
 
         /// <summary>
-        /// A connection represents a specific authentication of an integration.
+        /// Filter the results to just this integration
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=connection_id")]
-        public ConnectionId? ConnectionId { get; set; }
+        public string? ConnectionId { get; set; }
 
         /// <summary>
         /// Return only results whose created date is equal or less to this value
@@ -32,10 +31,10 @@ namespace UnifiedTo.Models.Requests
         public string? Env { get; set; }
 
         /// <summary>
-        /// Informational object for supported integrations.
+        /// Filter the results to just this integration
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=integration_type")]
-        public IntegrationType? IntegrationType { get; set; }
+        public string? IntegrationType { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }

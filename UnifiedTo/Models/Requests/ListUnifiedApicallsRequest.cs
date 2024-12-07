@@ -16,7 +16,7 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
-        /// Filter the results to just this integration&apos;s API calls
+        /// Filter the results to just this integration
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=connection_id")]
         public string? ConnectionId { get; set; }
@@ -37,7 +37,7 @@ namespace UnifiedTo.Models.Requests
         public string? ExternalXref { get; set; }
 
         /// <summary>
-        /// Filter the results for connections with this integration
+        /// Filter the results to just this integration
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=integration_type")]
         public string? IntegrationType { get; set; }

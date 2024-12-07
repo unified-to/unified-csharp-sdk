@@ -49,6 +49,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=query")]
         public string? Query { get; set; }
 
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=root_id")]
+        public string? RootId { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")]
         public string? Sort { get; set; }
 

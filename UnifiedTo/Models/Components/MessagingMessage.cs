@@ -57,6 +57,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("reference")]
         public string? Reference { get; set; }
 
+        [JsonProperty("root_message_id")]
+        public string? RootMessageId { get; set; }
+
         [JsonProperty("subject")]
         public string? Subject { get; set; }
 

@@ -104,6 +104,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_raw_fields")]
         public ListRawFields? ListRawFields { get; set; }
 
+        [JsonProperty("list_root_id")]
+        public ListRootId? ListRootId { get; set; }
+
         [JsonProperty("list_sort_by_created_at")]
         public ListSortByCreatedAt? ListSortByCreatedAt { get; set; }
 
