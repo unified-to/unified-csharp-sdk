@@ -14,18 +14,18 @@ namespace UnifiedTo.Models.Requests
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class UpdateCommerceMetadataResponse
+    public class CreateMetadataMetadataResponse
     {
-
-        /// <summary>
-        /// Successful
-        /// </summary>
-        public CommerceMetadata? CommerceMetadata { get; set; }
 
         /// <summary>
         /// HTTP response content type for this operation
         /// </summary>
         public string? ContentType { get; set; } = default!;
+
+        /// <summary>
+        /// Successful
+        /// </summary>
+        public MetadataMetadata? MetadataMetadata { get; set; }
 
         /// <summary>
         /// HTTP response status code for this operation

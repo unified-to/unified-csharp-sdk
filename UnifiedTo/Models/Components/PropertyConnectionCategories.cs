@@ -55,6 +55,8 @@ namespace UnifiedTo.Models.Components
         Lms,
         [JsonProperty("repo")]
         Repo,
+        [JsonProperty("metadata")]
+        Metadata,
     }
 
     public static class PropertyConnectionCategoriesExtension

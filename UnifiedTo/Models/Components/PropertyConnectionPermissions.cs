@@ -75,10 +75,6 @@ namespace UnifiedTo.Models.Components
         CommerceLocationRead,
         [JsonProperty("commerce_location_write")]
         CommerceLocationWrite,
-        [JsonProperty("commerce_metadata_read")]
-        CommerceMetadataRead,
-        [JsonProperty("commerce_metadata_write")]
-        CommerceMetadataWrite,
         [JsonProperty("ats_activity_read")]
         AtsActivityRead,
         [JsonProperty("ats_activity_write")]
@@ -263,6 +259,10 @@ namespace UnifiedTo.Models.Components
         RepoPullrequestRead,
         [JsonProperty("repo_pullrequest_write")]
         RepoPullrequestWrite,
+        [JsonProperty("metadata_metadata_read")]
+        MetadataMetadataRead,
+        [JsonProperty("metadata_metadata_write")]
+        MetadataMetadataWrite,
     }
 
     public static class PropertyConnectionPermissionsExtension

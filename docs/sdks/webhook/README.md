@@ -35,7 +35,7 @@ var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
         ConnectionId = "<id>",
         Event = UnifiedTo.Models.Components.Event.Created,
         HookUrl = "https://blind-platypus.org/",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.CrmContact,
+        ObjectType = UnifiedTo.Models.Components.ObjectType.CrmDeal,
     },
     includeAll: false
 );
@@ -274,7 +274,7 @@ var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
         ConnectionId = "<id>",
         Event = UnifiedTo.Models.Components.Event.Created,
         HookUrl = "https://glaring-postbox.info/",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.ScimGroups,
+        ObjectType = UnifiedTo.Models.Components.ObjectType.LmsCourse,
     }
 );
 

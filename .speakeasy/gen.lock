@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 42f573170bad12dc387a71808ef7cd22
+  docChecksum: 41f6fed774011bab102d612247a8bfd9
   docVersion: "1.0"
-  speakeasyVersion: 1.453.1
-  generationVersion: 2.474.4
-  releaseVersion: 0.21.11
-  configChecksum: 292c24bdbf4ab6c60fbff4bb69f98ea0
+  speakeasyVersion: 1.453.10
+  generationVersion: 2.474.15
+  releaseVersion: 0.21.12
+  configChecksum: 9790e1590120798c8cbd910640db466c
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -14,7 +14,7 @@ features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.10.6
+    core: 3.10.7
     flattening: 2.81.3
     globalSecurity: 2.83.6
     globalSecurityCallbacks: 0.1.0
@@ -146,7 +146,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/CommerceItemPrice.cs
   - UnifiedTo/Models/Components/CommerceItemVariant.cs
   - UnifiedTo/Models/Components/CommerceLocation.cs
-  - UnifiedTo/Models/Components/CommerceMetadata.cs
   - UnifiedTo/Models/Components/Connection.cs
   - UnifiedTo/Models/Components/CrmCompany.cs
   - UnifiedTo/Models/Components/CrmContact.cs
@@ -260,6 +259,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/MessagingChannel.cs
   - UnifiedTo/Models/Components/MessagingMember.cs
   - UnifiedTo/Models/Components/MessagingMessage.cs
+  - UnifiedTo/Models/Components/MetadataMetadata.cs
   - UnifiedTo/Models/Components/NativeWebhookParentId.cs
   - UnifiedTo/Models/Components/NativeWebhookProjectId.cs
   - UnifiedTo/Models/Components/ObjectType.cs
@@ -438,8 +438,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateCommerceItemResponse.cs
   - UnifiedTo/Models/Requests/CreateCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/CreateCommerceLocationResponse.cs
-  - UnifiedTo/Models/Requests/CreateCommerceMetadataRequest.cs
-  - UnifiedTo/Models/Requests/CreateCommerceMetadataResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmContactRequest.cs
@@ -480,6 +478,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateMartechMemberResponse.cs
   - UnifiedTo/Models/Requests/CreateMessagingMessageRequest.cs
   - UnifiedTo/Models/Requests/CreateMessagingMessageResponse.cs
+  - UnifiedTo/Models/Requests/CreateMetadataMetadataRequest.cs
+  - UnifiedTo/Models/Requests/CreateMetadataMetadataResponse.cs
   - UnifiedTo/Models/Requests/CreatePassthroughJsonRequest.cs
   - UnifiedTo/Models/Requests/CreatePassthroughJsonResponse.cs
   - UnifiedTo/Models/Requests/CreatePassthroughRawRequest.cs
@@ -559,8 +559,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetCommerceItemResponse.cs
   - UnifiedTo/Models/Requests/GetCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/GetCommerceLocationResponse.cs
-  - UnifiedTo/Models/Requests/GetCommerceMetadataRequest.cs
-  - UnifiedTo/Models/Requests/GetCommerceMetadataResponse.cs
   - UnifiedTo/Models/Requests/GetCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/GetCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/GetCrmContactRequest.cs
@@ -605,6 +603,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetMessagingChannelResponse.cs
   - UnifiedTo/Models/Requests/GetMessagingMessageRequest.cs
   - UnifiedTo/Models/Requests/GetMessagingMessageResponse.cs
+  - UnifiedTo/Models/Requests/GetMetadataMetadataRequest.cs
+  - UnifiedTo/Models/Requests/GetMetadataMetadataResponse.cs
   - UnifiedTo/Models/Requests/GetPaymentLinkRequest.cs
   - UnifiedTo/Models/Requests/GetPaymentLinkResponse.cs
   - UnifiedTo/Models/Requests/GetPaymentPaymentRequest.cs
@@ -693,8 +693,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListCommerceItemsResponse.cs
   - UnifiedTo/Models/Requests/ListCommerceLocationsRequest.cs
   - UnifiedTo/Models/Requests/ListCommerceLocationsResponse.cs
-  - UnifiedTo/Models/Requests/ListCommerceMetadatasRequest.cs
-  - UnifiedTo/Models/Requests/ListCommerceMetadatasResponse.cs
   - UnifiedTo/Models/Requests/ListCrmCompaniesRequest.cs
   - UnifiedTo/Models/Requests/ListCrmCompaniesResponse.cs
   - UnifiedTo/Models/Requests/ListCrmContactsRequest.cs
@@ -745,6 +743,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListMessagingChannelsResponse.cs
   - UnifiedTo/Models/Requests/ListMessagingMessagesRequest.cs
   - UnifiedTo/Models/Requests/ListMessagingMessagesResponse.cs
+  - UnifiedTo/Models/Requests/ListMetadataMetadatasRequest.cs
+  - UnifiedTo/Models/Requests/ListMetadataMetadatasResponse.cs
   - UnifiedTo/Models/Requests/ListPassthroughsRequest.cs
   - UnifiedTo/Models/Requests/ListPassthroughsResponse.cs
   - UnifiedTo/Models/Requests/ListPaymentLinksRequest.cs
@@ -834,8 +834,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchCommerceItemResponse.cs
   - UnifiedTo/Models/Requests/PatchCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/PatchCommerceLocationResponse.cs
-  - UnifiedTo/Models/Requests/PatchCommerceMetadataRequest.cs
-  - UnifiedTo/Models/Requests/PatchCommerceMetadataResponse.cs
   - UnifiedTo/Models/Requests/PatchCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/PatchCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/PatchCrmContactRequest.cs
@@ -874,6 +872,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchMartechMemberResponse.cs
   - UnifiedTo/Models/Requests/PatchMessagingMessageRequest.cs
   - UnifiedTo/Models/Requests/PatchMessagingMessageResponse.cs
+  - UnifiedTo/Models/Requests/PatchMetadataMetadataRequest.cs
+  - UnifiedTo/Models/Requests/PatchMetadataMetadataResponse.cs
   - UnifiedTo/Models/Requests/PatchPassthroughJsonRequest.cs
   - UnifiedTo/Models/Requests/PatchPassthroughJsonResponse.cs
   - UnifiedTo/Models/Requests/PatchPassthroughRawRequest.cs
@@ -953,8 +953,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveCommerceItemResponse.cs
   - UnifiedTo/Models/Requests/RemoveCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/RemoveCommerceLocationResponse.cs
-  - UnifiedTo/Models/Requests/RemoveCommerceMetadataRequest.cs
-  - UnifiedTo/Models/Requests/RemoveCommerceMetadataResponse.cs
   - UnifiedTo/Models/Requests/RemoveCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/RemoveCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/RemoveCrmContactRequest.cs
@@ -993,6 +991,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveMartechMemberResponse.cs
   - UnifiedTo/Models/Requests/RemoveMessagingMessageRequest.cs
   - UnifiedTo/Models/Requests/RemoveMessagingMessageResponse.cs
+  - UnifiedTo/Models/Requests/RemoveMetadataMetadataRequest.cs
+  - UnifiedTo/Models/Requests/RemoveMetadataMetadataResponse.cs
   - UnifiedTo/Models/Requests/RemovePassthroughRequest.cs
   - UnifiedTo/Models/Requests/RemovePassthroughResponse.cs
   - UnifiedTo/Models/Requests/RemovePaymentLinkRequest.cs
@@ -1068,8 +1068,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateCommerceItemResponse.cs
   - UnifiedTo/Models/Requests/UpdateCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/UpdateCommerceLocationResponse.cs
-  - UnifiedTo/Models/Requests/UpdateCommerceMetadataRequest.cs
-  - UnifiedTo/Models/Requests/UpdateCommerceMetadataResponse.cs
   - UnifiedTo/Models/Requests/UpdateCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/UpdateCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/UpdateCrmContactRequest.cs
@@ -1108,6 +1106,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateMartechMemberResponse.cs
   - UnifiedTo/Models/Requests/UpdateMessagingMessageRequest.cs
   - UnifiedTo/Models/Requests/UpdateMessagingMessageResponse.cs
+  - UnifiedTo/Models/Requests/UpdateMetadataMetadataRequest.cs
+  - UnifiedTo/Models/Requests/UpdateMetadataMetadataResponse.cs
   - UnifiedTo/Models/Requests/UpdatePassthroughJsonRequest.cs
   - UnifiedTo/Models/Requests/UpdatePassthroughJsonResponse.cs
   - UnifiedTo/Models/Requests/UpdatePassthroughRawRequest.cs
@@ -1262,7 +1262,6 @@ generatedFiles:
   - docs/Models/Components/CommerceItemPrice.md
   - docs/Models/Components/CommerceItemVariant.md
   - docs/Models/Components/CommerceLocation.md
-  - docs/Models/Components/CommerceMetadata.md
   - docs/Models/Components/Connection.md
   - docs/Models/Components/CrmCompany.md
   - docs/Models/Components/CrmContact.md
@@ -1376,6 +1375,7 @@ generatedFiles:
   - docs/Models/Components/MessagingChannel.md
   - docs/Models/Components/MessagingMember.md
   - docs/Models/Components/MessagingMessage.md
+  - docs/Models/Components/MetadataMetadata.md
   - docs/Models/Components/NativeWebhookParentId.md
   - docs/Models/Components/NativeWebhookProjectId.md
   - docs/Models/Components/ObjectType.md
@@ -1553,8 +1553,6 @@ generatedFiles:
   - docs/Models/Requests/CreateCommerceItemResponse.md
   - docs/Models/Requests/CreateCommerceLocationRequest.md
   - docs/Models/Requests/CreateCommerceLocationResponse.md
-  - docs/Models/Requests/CreateCommerceMetadataRequest.md
-  - docs/Models/Requests/CreateCommerceMetadataResponse.md
   - docs/Models/Requests/CreateCrmCompanyRequest.md
   - docs/Models/Requests/CreateCrmCompanyResponse.md
   - docs/Models/Requests/CreateCrmContactRequest.md
@@ -1595,6 +1593,8 @@ generatedFiles:
   - docs/Models/Requests/CreateMartechMemberResponse.md
   - docs/Models/Requests/CreateMessagingMessageRequest.md
   - docs/Models/Requests/CreateMessagingMessageResponse.md
+  - docs/Models/Requests/CreateMetadataMetadataRequest.md
+  - docs/Models/Requests/CreateMetadataMetadataResponse.md
   - docs/Models/Requests/CreatePassthroughJsonRequest.md
   - docs/Models/Requests/CreatePassthroughJsonResponse.md
   - docs/Models/Requests/CreatePassthroughRawRequest.md
@@ -1674,8 +1674,6 @@ generatedFiles:
   - docs/Models/Requests/GetCommerceItemResponse.md
   - docs/Models/Requests/GetCommerceLocationRequest.md
   - docs/Models/Requests/GetCommerceLocationResponse.md
-  - docs/Models/Requests/GetCommerceMetadataRequest.md
-  - docs/Models/Requests/GetCommerceMetadataResponse.md
   - docs/Models/Requests/GetCrmCompanyRequest.md
   - docs/Models/Requests/GetCrmCompanyResponse.md
   - docs/Models/Requests/GetCrmContactRequest.md
@@ -1720,6 +1718,8 @@ generatedFiles:
   - docs/Models/Requests/GetMessagingChannelResponse.md
   - docs/Models/Requests/GetMessagingMessageRequest.md
   - docs/Models/Requests/GetMessagingMessageResponse.md
+  - docs/Models/Requests/GetMetadataMetadataRequest.md
+  - docs/Models/Requests/GetMetadataMetadataResponse.md
   - docs/Models/Requests/GetPaymentLinkRequest.md
   - docs/Models/Requests/GetPaymentLinkResponse.md
   - docs/Models/Requests/GetPaymentPaymentRequest.md
@@ -1808,8 +1808,6 @@ generatedFiles:
   - docs/Models/Requests/ListCommerceItemsResponse.md
   - docs/Models/Requests/ListCommerceLocationsRequest.md
   - docs/Models/Requests/ListCommerceLocationsResponse.md
-  - docs/Models/Requests/ListCommerceMetadatasRequest.md
-  - docs/Models/Requests/ListCommerceMetadatasResponse.md
   - docs/Models/Requests/ListCrmCompaniesRequest.md
   - docs/Models/Requests/ListCrmCompaniesResponse.md
   - docs/Models/Requests/ListCrmContactsRequest.md
@@ -1860,6 +1858,8 @@ generatedFiles:
   - docs/Models/Requests/ListMessagingChannelsResponse.md
   - docs/Models/Requests/ListMessagingMessagesRequest.md
   - docs/Models/Requests/ListMessagingMessagesResponse.md
+  - docs/Models/Requests/ListMetadataMetadatasRequest.md
+  - docs/Models/Requests/ListMetadataMetadatasResponse.md
   - docs/Models/Requests/ListPassthroughsRequest.md
   - docs/Models/Requests/ListPassthroughsResponse.md
   - docs/Models/Requests/ListPaymentLinksRequest.md
@@ -1949,8 +1949,6 @@ generatedFiles:
   - docs/Models/Requests/PatchCommerceItemResponse.md
   - docs/Models/Requests/PatchCommerceLocationRequest.md
   - docs/Models/Requests/PatchCommerceLocationResponse.md
-  - docs/Models/Requests/PatchCommerceMetadataRequest.md
-  - docs/Models/Requests/PatchCommerceMetadataResponse.md
   - docs/Models/Requests/PatchCrmCompanyRequest.md
   - docs/Models/Requests/PatchCrmCompanyResponse.md
   - docs/Models/Requests/PatchCrmContactRequest.md
@@ -1989,6 +1987,8 @@ generatedFiles:
   - docs/Models/Requests/PatchMartechMemberResponse.md
   - docs/Models/Requests/PatchMessagingMessageRequest.md
   - docs/Models/Requests/PatchMessagingMessageResponse.md
+  - docs/Models/Requests/PatchMetadataMetadataRequest.md
+  - docs/Models/Requests/PatchMetadataMetadataResponse.md
   - docs/Models/Requests/PatchPassthroughJsonRequest.md
   - docs/Models/Requests/PatchPassthroughJsonResponse.md
   - docs/Models/Requests/PatchPassthroughRawRequest.md
@@ -2068,8 +2068,6 @@ generatedFiles:
   - docs/Models/Requests/RemoveCommerceItemResponse.md
   - docs/Models/Requests/RemoveCommerceLocationRequest.md
   - docs/Models/Requests/RemoveCommerceLocationResponse.md
-  - docs/Models/Requests/RemoveCommerceMetadataRequest.md
-  - docs/Models/Requests/RemoveCommerceMetadataResponse.md
   - docs/Models/Requests/RemoveCrmCompanyRequest.md
   - docs/Models/Requests/RemoveCrmCompanyResponse.md
   - docs/Models/Requests/RemoveCrmContactRequest.md
@@ -2108,6 +2106,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveMartechMemberResponse.md
   - docs/Models/Requests/RemoveMessagingMessageRequest.md
   - docs/Models/Requests/RemoveMessagingMessageResponse.md
+  - docs/Models/Requests/RemoveMetadataMetadataRequest.md
+  - docs/Models/Requests/RemoveMetadataMetadataResponse.md
   - docs/Models/Requests/RemovePassthroughRequest.md
   - docs/Models/Requests/RemovePassthroughResponse.md
   - docs/Models/Requests/RemovePaymentLinkRequest.md
@@ -2183,8 +2183,6 @@ generatedFiles:
   - docs/Models/Requests/UpdateCommerceItemResponse.md
   - docs/Models/Requests/UpdateCommerceLocationRequest.md
   - docs/Models/Requests/UpdateCommerceLocationResponse.md
-  - docs/Models/Requests/UpdateCommerceMetadataRequest.md
-  - docs/Models/Requests/UpdateCommerceMetadataResponse.md
   - docs/Models/Requests/UpdateCrmCompanyRequest.md
   - docs/Models/Requests/UpdateCrmCompanyResponse.md
   - docs/Models/Requests/UpdateCrmContactRequest.md
@@ -2223,6 +2221,8 @@ generatedFiles:
   - docs/Models/Requests/UpdateMartechMemberResponse.md
   - docs/Models/Requests/UpdateMessagingMessageRequest.md
   - docs/Models/Requests/UpdateMessagingMessageResponse.md
+  - docs/Models/Requests/UpdateMetadataMetadataRequest.md
+  - docs/Models/Requests/UpdateMetadataMetadataResponse.md
   - docs/Models/Requests/UpdatePassthroughJsonRequest.md
   - docs/Models/Requests/UpdatePassthroughJsonResponse.md
   - docs/Models/Requests/UpdatePassthroughRawRequest.md
@@ -5229,4 +5229,58 @@ examples:
           connection_id: "<id>"
           id: "<id>"
         query: {}
+  createMetadataMetadata:
+    speakeasy-default-create-metadata-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "object_type": "<value>"}
+  getMetadataMetadata:
+    speakeasy-default-get-metadata-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "object_type": "<value>"}
+  listMetadataMetadatas:
+    speakeasy-default-list-metadata-metadatas:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: []
+  patchMetadataMetadata:
+    speakeasy-default-patch-metadata-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "object_type": "<value>"}
+  removeMetadataMetadata:
+    speakeasy-default-remove-metadata-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateMetadataMetadata:
+    speakeasy-default-update-metadata-metadata:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>", "object_type": "<value>"}
 generatedTests: {}

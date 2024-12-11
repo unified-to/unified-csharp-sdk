@@ -29,11 +29,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
-        UnifiedTo.Models.Components.PropertyConnectionCategories.Lms,
+        UnifiedTo.Models.Components.PropertyConnectionCategories.Repo,
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmDealWrite,
+        UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmEventWrite,
     },
 };
 
@@ -157,7 +157,7 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            UnifiedTo.Models.Components.PropertyConnectionPermissions.RepoPullrequestWrite,
+            UnifiedTo.Models.Components.PropertyConnectionPermissions.MetadataMetadataWrite,
         },
     }
 );
@@ -238,11 +238,11 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
     id: "<id>",
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
-            UnifiedTo.Models.Components.PropertyConnectionCategories.Kms,
+            UnifiedTo.Models.Components.PropertyConnectionCategories.Task,
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            UnifiedTo.Models.Components.PropertyConnectionPermissions.RepoPullrequestRead,
+            UnifiedTo.Models.Components.PropertyConnectionPermissions.MetadataMetadataRead,
         },
     }
 );

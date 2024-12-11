@@ -9,12 +9,12 @@
 #nullable enable
 namespace UnifiedTo.Models.Requests
 {
-    using System.Collections.Generic;
     using System.Net.Http;
     using System;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class RemoveCommerceMetadataResponse
+    public class UpdateMetadataMetadataResponse
     {
 
         /// <summary>
@@ -22,7 +22,10 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         public string? ContentType { get; set; } = default!;
 
-        public Dictionary<string, List<string>> Headers { get; set; } = default!;
+        /// <summary>
+        /// Successful
+        /// </summary>
+        public MetadataMetadata? MetadataMetadata { get; set; }
 
         /// <summary>
         /// HTTP response status code for this operation

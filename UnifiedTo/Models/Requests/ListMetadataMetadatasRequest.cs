@@ -13,7 +13,7 @@ namespace UnifiedTo.Models.Requests
     using System;
     using UnifiedTo.Utils;
     
-    public class ListCommerceMetadatasRequest
+    public class ListMetadataMetadatasRequest
     {
 
         /// <summary>
@@ -45,6 +45,9 @@ namespace UnifiedTo.Models.Requests
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")]
         public string? Sort { get; set; }
+
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=type")]
+        public string? Type { get; set; }
 
         /// <summary>
         /// Return only results whose updated date is equal or greater to this value

@@ -5,14 +5,14 @@
 
 ### Available Operations
 
-* [CreateCommerceMetadata](#createcommercemetadata) - Create a metadata
-* [GetCommerceMetadata](#getcommercemetadata) - Retrieve a metadata
-* [ListCommerceMetadatas](#listcommercemetadatas) - List all metadatas
-* [PatchCommerceMetadata](#patchcommercemetadata) - Update a metadata
-* [RemoveCommerceMetadata](#removecommercemetadata) - Remove a metadata
-* [UpdateCommerceMetadata](#updatecommercemetadata) - Update a metadata
+* [CreateMetadataMetadata](#createmetadatametadata) - Create a metadata
+* [GetMetadataMetadata](#getmetadatametadata) - Retrieve a metadata
+* [ListMetadataMetadatas](#listmetadatametadatas) - List all metadatas
+* [PatchMetadataMetadata](#patchmetadatametadata) - Update a metadata
+* [RemoveMetadataMetadata](#removemetadatametadata) - Remove a metadata
+* [UpdateMetadataMetadata](#updatemetadatametadata) - Update a metadata
 
-## CreateCommerceMetadata
+## CreateMetadataMetadata
 
 Create a metadata
 
@@ -28,9 +28,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Metadata.CreateCommerceMetadataAsync(
+var res = await sdk.Metadata.CreateMetadataMetadataAsync(
     connectionId: "<id>",
-    commerceMetadata: new CommerceMetadata() {},
+    metadataMetadata: new MetadataMetadata() {
+        Name = "<value>",
+        ObjectType = "<value>",
+    },
     fields: new List<string>() {
         "<value>",
     }
@@ -44,12 +47,12 @@ var res = await sdk.Metadata.CreateCommerceMetadataAsync(
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
-| `CommerceMetadata`                                              | [CommerceMetadata](../../Models/Components/CommerceMetadata.md) | :heavy_minus_sign:                                              | N/A                                                             |
+| `MetadataMetadata`                                              | [MetadataMetadata](../../Models/Components/MetadataMetadata.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
 
-**[CreateCommerceMetadataResponse](../../Models/Requests/CreateCommerceMetadataResponse.md)**
+**[CreateMetadataMetadataResponse](../../Models/Requests/CreateMetadataMetadataResponse.md)**
 
 ### Errors
 
@@ -57,7 +60,7 @@ var res = await sdk.Metadata.CreateCommerceMetadataAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## GetCommerceMetadata
+## GetMetadataMetadata
 
 Retrieve a metadata
 
@@ -73,7 +76,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Metadata.GetCommerceMetadataAsync(
+var res = await sdk.Metadata.GetMetadataMetadataAsync(
     connectionId: "<id>",
     id: "<id>",
     fields: new List<string>() {
@@ -94,7 +97,7 @@ var res = await sdk.Metadata.GetCommerceMetadataAsync(
 
 ### Response
 
-**[GetCommerceMetadataResponse](../../Models/Requests/GetCommerceMetadataResponse.md)**
+**[GetMetadataMetadataResponse](../../Models/Requests/GetMetadataMetadataResponse.md)**
 
 ### Errors
 
@@ -102,7 +105,7 @@ var res = await sdk.Metadata.GetCommerceMetadataAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListCommerceMetadatas
+## ListMetadataMetadatas
 
 List all metadatas
 
@@ -118,11 +121,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListCommerceMetadatasRequest req = new ListCommerceMetadatasRequest() {
+ListMetadataMetadatasRequest req = new ListMetadataMetadatasRequest() {
     ConnectionId = "<id>",
 };
 
-var res = await sdk.Metadata.ListCommerceMetadatasAsync(req);
+var res = await sdk.Metadata.ListMetadataMetadatasAsync(req);
 
 // handle response
 ```
@@ -131,11 +134,11 @@ var res = await sdk.Metadata.ListCommerceMetadatasAsync(req);
 
 | Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListCommerceMetadatasRequest](../../Models/Requests/ListCommerceMetadatasRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| `request`                                                                             | [ListMetadataMetadatasRequest](../../Models/Requests/ListMetadataMetadatasRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
-**[ListCommerceMetadatasResponse](../../Models/Requests/ListCommerceMetadatasResponse.md)**
+**[ListMetadataMetadatasResponse](../../Models/Requests/ListMetadataMetadatasResponse.md)**
 
 ### Errors
 
@@ -143,7 +146,7 @@ var res = await sdk.Metadata.ListCommerceMetadatasAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## PatchCommerceMetadata
+## PatchMetadataMetadata
 
 Update a metadata
 
@@ -159,10 +162,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Metadata.PatchCommerceMetadataAsync(
+var res = await sdk.Metadata.PatchMetadataMetadataAsync(
     connectionId: "<id>",
     id: "<id>",
-    commerceMetadata: new CommerceMetadata() {},
+    metadataMetadata: new MetadataMetadata() {
+        Name = "<value>",
+        ObjectType = "<value>",
+    },
     fields: new List<string>() {
         "<value>",
     }
@@ -177,12 +183,12 @@ var res = await sdk.Metadata.PatchCommerceMetadataAsync(
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Metadata                                              |
-| `CommerceMetadata`                                              | [CommerceMetadata](../../Models/Components/CommerceMetadata.md) | :heavy_minus_sign:                                              | N/A                                                             |
+| `MetadataMetadata`                                              | [MetadataMetadata](../../Models/Components/MetadataMetadata.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
 
-**[PatchCommerceMetadataResponse](../../Models/Requests/PatchCommerceMetadataResponse.md)**
+**[PatchMetadataMetadataResponse](../../Models/Requests/PatchMetadataMetadataResponse.md)**
 
 ### Errors
 
@@ -190,7 +196,7 @@ var res = await sdk.Metadata.PatchCommerceMetadataAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## RemoveCommerceMetadata
+## RemoveMetadataMetadata
 
 Remove a metadata
 
@@ -205,7 +211,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Metadata.RemoveCommerceMetadataAsync(
+var res = await sdk.Metadata.RemoveMetadataMetadataAsync(
     connectionId: "<id>",
     id: "<id>"
 );
@@ -222,7 +228,7 @@ var res = await sdk.Metadata.RemoveCommerceMetadataAsync(
 
 ### Response
 
-**[RemoveCommerceMetadataResponse](../../Models/Requests/RemoveCommerceMetadataResponse.md)**
+**[RemoveMetadataMetadataResponse](../../Models/Requests/RemoveMetadataMetadataResponse.md)**
 
 ### Errors
 
@@ -230,7 +236,7 @@ var res = await sdk.Metadata.RemoveCommerceMetadataAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## UpdateCommerceMetadata
+## UpdateMetadataMetadata
 
 Update a metadata
 
@@ -246,10 +252,13 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Metadata.UpdateCommerceMetadataAsync(
+var res = await sdk.Metadata.UpdateMetadataMetadataAsync(
     connectionId: "<id>",
     id: "<id>",
-    commerceMetadata: new CommerceMetadata() {},
+    metadataMetadata: new MetadataMetadata() {
+        Name = "<value>",
+        ObjectType = "<value>",
+    },
     fields: new List<string>() {
         "<value>",
     }
@@ -264,12 +273,12 @@ var res = await sdk.Metadata.UpdateCommerceMetadataAsync(
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Metadata                                              |
-| `CommerceMetadata`                                              | [CommerceMetadata](../../Models/Components/CommerceMetadata.md) | :heavy_minus_sign:                                              | N/A                                                             |
+| `MetadataMetadata`                                              | [MetadataMetadata](../../Models/Components/MetadataMetadata.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
 
-**[UpdateCommerceMetadataResponse](../../Models/Requests/UpdateCommerceMetadataResponse.md)**
+**[UpdateMetadataMetadataResponse](../../Models/Requests/UpdateMetadataMetadataResponse.md)**
 
 ### Errors
 

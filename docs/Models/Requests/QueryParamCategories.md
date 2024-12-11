@@ -25,3 +25,4 @@
 | `Scim`        | scim          |
 | `Lms`         | lms           |
 | `Repo`        | repo          |
+| `Metadata`    | metadata      |

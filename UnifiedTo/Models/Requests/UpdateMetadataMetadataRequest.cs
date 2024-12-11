@@ -13,7 +13,7 @@ namespace UnifiedTo.Models.Requests
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class CreateCommerceMetadataRequest
+    public class UpdateMetadataMetadataRequest
     {
 
         /// <summary>
@@ -22,8 +22,14 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
+        /// <summary>
+        /// ID of the Metadata
+        /// </summary>
+        [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
+        public string Id { get; set; } = default!;
+
         [SpeakeasyMetadata("request:mediaType=application/json")]
-        public CommerceMetadata? CommerceMetadata { get; set; }
+        public MetadataMetadata? MetadataMetadata { get; set; }
 
         /// <summary>
         /// Comma-delimited fields to return

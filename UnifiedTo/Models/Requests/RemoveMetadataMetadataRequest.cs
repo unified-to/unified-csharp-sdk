@@ -11,7 +11,7 @@ namespace UnifiedTo.Models.Requests
 {
     using UnifiedTo.Utils;
     
-    public class RemoveCommerceMetadataRequest
+    public class RemoveMetadataMetadataRequest
     {
 
         /// <summary>

@@ -49,7 +49,6 @@ namespace UnifiedTo
         public IInventory Inventory { get; }
         public IItem Item { get; }
         public ILocation Location { get; }
-        public IMetadata Metadata { get; }
         public ICrm Crm { get; }
         public IDeal Deal { get; }
         public IEvent Event { get; }
@@ -79,6 +78,7 @@ namespace UnifiedTo
         public IMessaging Messaging { get; }
         public IChannel Channel { get; }
         public IMessage Message { get; }
+        public IMetadata Metadata { get; }
         public IPassthrough Passthrough { get; }
         public IPayment Payment { get; }
         public ILink Link { get; }
@@ -155,10 +155,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.21.11";
-        private const string _sdkGenVersion = "2.474.4";
+        private const string _sdkVersion = "0.21.12";
+        private const string _sdkGenVersion = "2.474.15";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.21.11 2.474.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.21.12 2.474.15 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _client;
@@ -187,7 +187,6 @@ namespace UnifiedTo
         public IInventory Inventory { get; private set; }
         public IItem Item { get; private set; }
         public ILocation Location { get; private set; }
-        public IMetadata Metadata { get; private set; }
         public ICrm Crm { get; private set; }
         public IDeal Deal { get; private set; }
         public IEvent Event { get; private set; }
@@ -217,6 +216,7 @@ namespace UnifiedTo
         public IMessaging Messaging { get; private set; }
         public IChannel Channel { get; private set; }
         public IMessage Message { get; private set; }
+        public IMetadata Metadata { get; private set; }
         public IPassthrough Passthrough { get; private set; }
         public IPayment Payment { get; private set; }
         public ILink Link { get; private set; }
@@ -365,9 +365,6 @@ namespace UnifiedTo
             Location = new Location(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
-            Metadata = new Metadata(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
             Crm = new Crm(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
@@ -453,6 +450,9 @@ namespace UnifiedTo
 
 
             Message = new Message(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Metadata = new Metadata(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
             Passthrough = new Passthrough(_client, _securitySource, _serverUrl, SDKConfiguration);

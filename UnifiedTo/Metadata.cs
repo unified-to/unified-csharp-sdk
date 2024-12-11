@@ -28,42 +28,42 @@ namespace UnifiedTo
         /// <summary>
         /// Create a metadata
         /// </summary>
-        Task<CreateCommerceMetadataResponse> CreateCommerceMetadataAsync(string connectionId, CommerceMetadata? commerceMetadata = null, List<string>? fields = null);
+        Task<CreateMetadataMetadataResponse> CreateMetadataMetadataAsync(string connectionId, MetadataMetadata? metadataMetadata = null, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a metadata
         /// </summary>
-        Task<GetCommerceMetadataResponse> GetCommerceMetadataAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetMetadataMetadataResponse> GetMetadataMetadataAsync(string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// List all metadatas
         /// </summary>
-        Task<ListCommerceMetadatasResponse> ListCommerceMetadatasAsync(ListCommerceMetadatasRequest request);
+        Task<ListMetadataMetadatasResponse> ListMetadataMetadatasAsync(ListMetadataMetadatasRequest request);
 
         /// <summary>
         /// Update a metadata
         /// </summary>
-        Task<PatchCommerceMetadataResponse> PatchCommerceMetadataAsync(string connectionId, string id, CommerceMetadata? commerceMetadata = null, List<string>? fields = null);
+        Task<PatchMetadataMetadataResponse> PatchMetadataMetadataAsync(string connectionId, string id, MetadataMetadata? metadataMetadata = null, List<string>? fields = null);
 
         /// <summary>
         /// Remove a metadata
         /// </summary>
-        Task<RemoveCommerceMetadataResponse> RemoveCommerceMetadataAsync(string connectionId, string id);
+        Task<RemoveMetadataMetadataResponse> RemoveMetadataMetadataAsync(string connectionId, string id);
 
         /// <summary>
         /// Update a metadata
         /// </summary>
-        Task<UpdateCommerceMetadataResponse> UpdateCommerceMetadataAsync(string connectionId, string id, CommerceMetadata? commerceMetadata = null, List<string>? fields = null);
+        Task<UpdateMetadataMetadataResponse> UpdateMetadataMetadataAsync(string connectionId, string id, MetadataMetadata? metadataMetadata = null, List<string>? fields = null);
     }
 
     public class Metadata: IMetadata
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.21.11";
-        private const string _sdkGenVersion = "2.474.4";
+        private const string _sdkVersion = "0.21.12";
+        private const string _sdkGenVersion = "2.474.15";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.21.11 2.474.4 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.21.12 2.474.15 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,21 +76,21 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCommerceMetadataResponse> CreateCommerceMetadataAsync(string connectionId, CommerceMetadata? commerceMetadata = null, List<string>? fields = null)
+        public async Task<CreateMetadataMetadataResponse> CreateMetadataMetadataAsync(string connectionId, MetadataMetadata? metadataMetadata = null, List<string>? fields = null)
         {
-            var request = new CreateCommerceMetadataRequest()
+            var request = new CreateMetadataMetadataRequest()
             {
                 ConnectionId = connectionId,
-                CommerceMetadata = commerceMetadata,
+                MetadataMetadata = metadataMetadata,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/metadata", request);
+            var urlString = URLBuilder.Build(baseUrl, "/metadata/{connection_id}/metadata", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceMetadata", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "MetadataMetadata", "json", false, true);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -101,7 +101,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("createCommerceMetadata", null, _securitySource);
+            var hookCtx = new HookContext("createMetadataMetadata", null, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -141,14 +141,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<CommerceMetadata>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new CreateCommerceMetadataResponse()
+                    var obj = ResponseBodyDeserializer.Deserialize<MetadataMetadata>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new CreateMetadataMetadataResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.CommerceMetadata = obj;
+                    response.MetadataMetadata = obj;
                     return response;
                 }
 
@@ -162,16 +162,16 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCommerceMetadataResponse> GetCommerceMetadataAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetMetadataMetadataResponse> GetMetadataMetadataAsync(string connectionId, string id, List<string>? fields = null)
         {
-            var request = new GetCommerceMetadataRequest()
+            var request = new GetMetadataMetadataRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/metadata/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/metadata/{connection_id}/metadata/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
@@ -181,7 +181,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("getCommerceMetadata", null, _securitySource);
+            var hookCtx = new HookContext("getMetadataMetadata", null, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,14 +221,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<CommerceMetadata>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new GetCommerceMetadataResponse()
+                    var obj = ResponseBodyDeserializer.Deserialize<MetadataMetadata>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new GetMetadataMetadataResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.CommerceMetadata = obj;
+                    response.MetadataMetadata = obj;
                     return response;
                 }
 
@@ -242,10 +242,10 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<ListCommerceMetadatasResponse> ListCommerceMetadatasAsync(ListCommerceMetadatasRequest request)
+        public async Task<ListMetadataMetadatasResponse> ListMetadataMetadatasAsync(ListMetadataMetadatasRequest request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/metadata", request);
+            var urlString = URLBuilder.Build(baseUrl, "/metadata/{connection_id}/metadata", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Get, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
@@ -255,7 +255,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("listCommerceMetadatas", null, _securitySource);
+            var hookCtx = new HookContext("listMetadataMetadatas", null, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -295,14 +295,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<List<CommerceMetadata>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new ListCommerceMetadatasResponse()
+                    var obj = ResponseBodyDeserializer.Deserialize<List<MetadataMetadata>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new ListMetadataMetadatasResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.CommerceMetadatas = obj;
+                    response.MetadataMetadatas = obj;
                     return response;
                 }
 
@@ -316,22 +316,22 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCommerceMetadataResponse> PatchCommerceMetadataAsync(string connectionId, string id, CommerceMetadata? commerceMetadata = null, List<string>? fields = null)
+        public async Task<PatchMetadataMetadataResponse> PatchMetadataMetadataAsync(string connectionId, string id, MetadataMetadata? metadataMetadata = null, List<string>? fields = null)
         {
-            var request = new PatchCommerceMetadataRequest()
+            var request = new PatchMetadataMetadataRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
-                CommerceMetadata = commerceMetadata,
+                MetadataMetadata = metadataMetadata,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/metadata/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/metadata/{connection_id}/metadata/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceMetadata", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "MetadataMetadata", "json", false, true);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -342,7 +342,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("patchCommerceMetadata", null, _securitySource);
+            var hookCtx = new HookContext("patchMetadataMetadata", null, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -382,14 +382,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<CommerceMetadata>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new PatchCommerceMetadataResponse()
+                    var obj = ResponseBodyDeserializer.Deserialize<MetadataMetadata>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new PatchMetadataMetadataResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.CommerceMetadata = obj;
+                    response.MetadataMetadata = obj;
                     return response;
                 }
 
@@ -403,15 +403,15 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<RemoveCommerceMetadataResponse> RemoveCommerceMetadataAsync(string connectionId, string id)
+        public async Task<RemoveMetadataMetadataResponse> RemoveMetadataMetadataAsync(string connectionId, string id)
         {
-            var request = new RemoveCommerceMetadataRequest()
+            var request = new RemoveMetadataMetadataRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/metadata/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/metadata/{connection_id}/metadata/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Delete, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
@@ -421,7 +421,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("removeCommerceMetadata", null, _securitySource);
+            var hookCtx = new HookContext("removeMetadataMetadata", null, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -459,7 +459,7 @@ namespace UnifiedTo
             int responseStatusCode = (int)httpResponse.StatusCode;
             if(responseStatusCode == 200)
             {                
-                return new RemoveCommerceMetadataResponse()
+                return new RemoveMetadataMetadataResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -472,7 +472,7 @@ namespace UnifiedTo
             }
             else
             {                
-                return new RemoveCommerceMetadataResponse()
+                return new RemoveMetadataMetadataResponse()
                 {
                     StatusCode = responseStatusCode,
                     ContentType = contentType,
@@ -481,22 +481,22 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCommerceMetadataResponse> UpdateCommerceMetadataAsync(string connectionId, string id, CommerceMetadata? commerceMetadata = null, List<string>? fields = null)
+        public async Task<UpdateMetadataMetadataResponse> UpdateMetadataMetadataAsync(string connectionId, string id, MetadataMetadata? metadataMetadata = null, List<string>? fields = null)
         {
-            var request = new UpdateCommerceMetadataRequest()
+            var request = new UpdateMetadataMetadataRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
-                CommerceMetadata = commerceMetadata,
+                MetadataMetadata = metadataMetadata,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
-            var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/metadata/{id}", request);
+            var urlString = URLBuilder.Build(baseUrl, "/metadata/{connection_id}/metadata/{id}", request);
 
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceMetadata", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "MetadataMetadata", "json", false, true);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -507,7 +507,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("updateCommerceMetadata", null, _securitySource);
+            var hookCtx = new HookContext("updateMetadataMetadata", null, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -547,14 +547,14 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<CommerceMetadata>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
-                    var response = new UpdateCommerceMetadataResponse()
+                    var obj = ResponseBodyDeserializer.Deserialize<MetadataMetadata>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var response = new UpdateMetadataMetadataResponse()
                     {
                         StatusCode = responseStatusCode,
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.CommerceMetadata = obj;
+                    response.MetadataMetadata = obj;
                     return response;
                 }
 

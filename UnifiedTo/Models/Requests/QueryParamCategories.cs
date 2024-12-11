@@ -55,6 +55,8 @@ namespace UnifiedTo.Models.Requests
         Lms,
         [JsonProperty("repo")]
         Repo,
+        [JsonProperty("metadata")]
+        Metadata,
     }
 
     public static class QueryParamCategoriesExtension

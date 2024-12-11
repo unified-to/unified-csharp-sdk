@@ -10,27 +10,28 @@
 namespace UnifiedTo.Models.Requests
 {
     using System.Collections.Generic;
+    using System.Net.Http;
+    using System;
     using UnifiedTo.Utils;
     
-    public class GetCommerceMetadataRequest
+    public class RemoveMetadataMetadataResponse
     {
 
         /// <summary>
-        /// ID of the connection
+        /// HTTP response content type for this operation
         /// </summary>
-        [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
-        public string ConnectionId { get; set; } = default!;
+        public string? ContentType { get; set; } = default!;
+
+        public Dictionary<string, List<string>> Headers { get; set; } = default!;
 
         /// <summary>
-        /// ID of the Metadata
+        /// HTTP response status code for this operation
         /// </summary>
-        [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
-        public string Id { get; set; } = default!;
+        public int StatusCode { get; set; } = default!;
 
         /// <summary>
-        /// Comma-delimited fields to return
+        /// Raw HTTP response; suitable for custom response parsing
         /// </summary>
-        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
-        public List<string>? Fields { get; set; }
+        public HttpResponseMessage RawResponse { get; set; } = default!;
     }
 }
