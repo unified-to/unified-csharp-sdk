@@ -15,6 +15,9 @@ namespace UnifiedTo.Models.Components
     public class MessagingAttachment
     {
 
+        [JsonProperty("content_identifier")]
+        public string? ContentIdentifier { get; set; }
+
         [JsonProperty("content_type")]
         public string? ContentType { get; set; }
 
