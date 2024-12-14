@@ -92,6 +92,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_order")]
         public ListOrder? ListOrder { get; set; }
 
+        [JsonProperty("list_org_id")]
+        public ListOrgId? ListOrgId { get; set; }
+
         [JsonProperty("list_parent_id")]
         public ListParentId? ListParentId { get; set; }
 
@@ -103,6 +106,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_raw_fields")]
         public ListRawFields? ListRawFields { get; set; }
+
+        [JsonProperty("list_repo_id")]
+        public ListRepoId? ListRepoId { get; set; }
 
         [JsonProperty("list_root_id")]
         public ListRootId? ListRootId { get; set; }
@@ -178,6 +184,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_deal_id")]
         public VirtualWebhookDealId? VirtualWebhookDealId { get; set; }
+
+        [JsonProperty("virtual_webhook_job_id")]
+        public VirtualWebhookJobId? VirtualWebhookJobId { get; set; }
 
         [JsonProperty("virtual_webhook_limit")]
         public VirtualWebhookLimit? VirtualWebhookLimit { get; set; }
