@@ -24,6 +24,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyCrmCompanyAddress? Address { get; set; }
 
+        /// <summary>
+        /// An array of contact IDs associated with this company
+        /// </summary>
+        [JsonProperty("contact_ids")]
+        public List<string>? ContactIds { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
