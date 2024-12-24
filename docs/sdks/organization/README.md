@@ -21,10 +21,9 @@ Create an organization
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -68,9 +67,8 @@ Retrieve an organization
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -113,9 +111,8 @@ Retrieve an organization
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -159,9 +156,8 @@ List all organizations
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -200,9 +196,8 @@ List all organizations
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -240,10 +235,9 @@ Update an organization
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -290,7 +284,6 @@ Remove an organization
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -329,10 +322,9 @@ Update an organization
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",

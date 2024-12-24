@@ -49,10 +49,9 @@ Create a company
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -94,10 +93,9 @@ Create a contact
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -139,10 +137,9 @@ Create a deal
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -184,10 +181,9 @@ Create an event
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -229,10 +225,9 @@ Create a lead
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -274,10 +269,9 @@ Create a pipeline
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -319,9 +313,8 @@ Retrieve a company
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -364,9 +357,8 @@ Retrieve a contact
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -409,9 +401,8 @@ Retrieve a deal
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -454,9 +445,8 @@ Retrieve an event
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -499,9 +489,8 @@ Retrieve a lead
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -544,9 +533,8 @@ Retrieve a pipeline
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -590,9 +578,8 @@ List all companies
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -631,9 +618,8 @@ List all contacts
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -672,9 +658,8 @@ List all deals
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -713,9 +698,8 @@ List all events
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -754,9 +738,8 @@ List all leads
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -795,9 +778,8 @@ List all pipelines
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -835,10 +817,9 @@ Update a company
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -882,10 +863,9 @@ Update a contact
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -929,10 +909,9 @@ Update a deal
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -976,10 +955,9 @@ Update an event
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1023,10 +1001,9 @@ Update a lead
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1070,10 +1047,9 @@ Update a pipeline
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1118,7 +1094,6 @@ Remove a company
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -1158,7 +1133,6 @@ Remove a contact
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -1198,7 +1172,6 @@ Remove a deal
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -1238,7 +1211,6 @@ Remove an event
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -1278,7 +1250,6 @@ Remove a lead
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -1318,7 +1289,6 @@ Remove a pipeline
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -1357,10 +1327,9 @@ Update a company
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1404,10 +1373,9 @@ Update a contact
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1451,10 +1419,9 @@ Update a deal
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1498,10 +1465,9 @@ Update an event
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1545,10 +1511,9 @@ Update a lead
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1592,10 +1557,9 @@ Update a pipeline
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",

@@ -19,10 +19,9 @@ Create a page
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -34,7 +33,7 @@ var res = await sdk.Page.CreateKmsPageAsync(
         DownloadUrl = "https://bitter-adult.biz/",
         SpaceId = "<id>",
         Title = "<value>",
-        Type = UnifiedTo.Models.Components.KmsPageType.Html,
+        Type = KmsPageType.Html,
     },
     fields: new List<string>() {
         "<value>",
@@ -69,9 +68,8 @@ Retrieve a page
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -115,9 +113,8 @@ List all pages
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -155,10 +152,9 @@ Update a page
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -171,7 +167,7 @@ var res = await sdk.Page.PatchKmsPageAsync(
         DownloadUrl = "https://evil-tackle.info",
         SpaceId = "<id>",
         Title = "<value>",
-        Type = UnifiedTo.Models.Components.KmsPageType.Markdown,
+        Type = KmsPageType.Markdown,
     },
     fields: new List<string>() {
         "<value>",
@@ -208,7 +204,6 @@ Remove a page
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -247,10 +242,9 @@ Update a page
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -263,7 +257,7 @@ var res = await sdk.Page.UpdateKmsPageAsync(
         DownloadUrl = "https://salty-devil.com",
         SpaceId = "<id>",
         Title = "<value>",
-        Type = UnifiedTo.Models.Components.KmsPageType.Text,
+        Type = KmsPageType.Text,
     },
     fields: new List<string>() {
         "<value>",

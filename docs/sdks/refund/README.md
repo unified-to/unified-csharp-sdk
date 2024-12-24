@@ -15,9 +15,8 @@ Retrieve a refund
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -61,9 +60,8 @@ List all refunds
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",

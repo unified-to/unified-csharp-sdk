@@ -57,10 +57,9 @@ Create an account
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -102,10 +101,9 @@ Create a contact
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -147,10 +145,9 @@ Create an invoice
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -192,10 +189,9 @@ Create a journal
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -237,10 +233,9 @@ Create an order
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -282,10 +277,9 @@ Create a taxrate
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -327,10 +321,9 @@ Create a transaction
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -372,9 +365,8 @@ Retrieve an account
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -417,9 +409,8 @@ Retrieve a contact
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -462,9 +453,8 @@ Retrieve an invoice
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -507,9 +497,8 @@ Retrieve a journal
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -552,9 +541,8 @@ Retrieve an order
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -597,9 +585,8 @@ Retrieve an organization
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -642,9 +629,8 @@ Retrieve a taxrate
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -687,9 +673,8 @@ Retrieve a transaction
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using System.Collections.Generic;
+using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -733,9 +718,8 @@ List all accounts
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -774,9 +758,8 @@ List all contacts
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -815,9 +798,8 @@ List all invoices
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -856,9 +838,8 @@ List all journals
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -897,9 +878,8 @@ List all orders
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -938,9 +918,8 @@ List all organizations
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -979,9 +958,8 @@ List all taxrates
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1020,9 +998,8 @@ List all transactions
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1060,10 +1037,9 @@ Update an account
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1107,10 +1083,9 @@ Update a contact
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1154,10 +1129,9 @@ Update an invoice
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1201,10 +1175,9 @@ Update a journal
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1248,10 +1221,9 @@ Update an order
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1295,10 +1267,9 @@ Update a taxrate
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1342,10 +1313,9 @@ Update a transaction
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1390,7 +1360,6 @@ Remove an account
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -1430,7 +1399,6 @@ Remove a contact
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -1470,7 +1438,6 @@ Remove an invoice
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -1510,7 +1477,6 @@ Remove a journal
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -1550,7 +1516,6 @@ Remove an order
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -1590,7 +1555,6 @@ Remove a taxrate
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -1630,7 +1594,6 @@ Remove a transaction
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -1669,10 +1632,9 @@ Update an account
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1716,10 +1678,9 @@ Update a contact
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1763,10 +1724,9 @@ Update an invoice
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1810,10 +1770,9 @@ Update a journal
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1857,10 +1816,9 @@ Update an order
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1904,10 +1862,9 @@ Update a taxrate
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -1951,10 +1908,9 @@ Update a transaction
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",

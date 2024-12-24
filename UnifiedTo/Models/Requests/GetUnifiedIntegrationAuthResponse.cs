@@ -9,8 +9,8 @@
 #nullable enable
 namespace UnifiedTo.Models.Requests
 {
-    using System.Net.Http;
     using System;
+    using System.Net.Http;
     using UnifiedTo.Utils;
     
     public class GetUnifiedIntegrationAuthResponse

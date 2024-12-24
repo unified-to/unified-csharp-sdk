@@ -10,8 +10,8 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
-    using System.Collections.Generic;
     using System;
+    using System.Collections.Generic;
     using UnifiedTo.Utils;
     
     public class TaskProject

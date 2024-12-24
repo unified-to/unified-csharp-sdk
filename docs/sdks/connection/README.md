@@ -19,9 +19,9 @@ Used only to import existing customer credentials; use "Create connection indire
 ### Example Usage
 
 ```csharp
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
-using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -29,11 +29,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
-        UnifiedTo.Models.Components.PropertyConnectionCategories.Repo,
+        PropertyConnectionCategories.Repo,
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        UnifiedTo.Models.Components.PropertyConnectionPermissions.CrmEventWrite,
+        PropertyConnectionPermissions.CrmLeadRead,
     },
 };
 
@@ -66,7 +66,6 @@ Retrieve connection
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -102,9 +101,8 @@ List all connections
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using System.Collections.Generic;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -140,10 +138,9 @@ Update connection
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -153,11 +150,11 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(
     id: "<id>",
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
-            UnifiedTo.Models.Components.PropertyConnectionCategories.Genai,
+            PropertyConnectionCategories.Genai,
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            UnifiedTo.Models.Components.PropertyConnectionPermissions.MetadataMetadataWrite,
+            PropertyConnectionPermissions.MetadataMetadataWrite,
         },
     }
 );
@@ -190,7 +187,6 @@ Remove connection
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -225,10 +221,9 @@ Update connection
 ### Example Usage
 
 ```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Requests;
-using UnifiedTo.Models.Components;
 using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -238,11 +233,11 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
     id: "<id>",
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
-            UnifiedTo.Models.Components.PropertyConnectionCategories.Task,
+            PropertyConnectionCategories.Task,
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            UnifiedTo.Models.Components.PropertyConnectionPermissions.MetadataMetadataRead,
+            PropertyConnectionPermissions.MetadataMetadataRead,
         },
     }
 );

@@ -22,9 +22,7 @@ The data payload received by your server is described at https://docs.unified.to
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
-using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -33,9 +31,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
-        Event = UnifiedTo.Models.Components.Event.Created,
+        Event = Event.Created,
         HookUrl = "https://blind-platypus.org/",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.CrmDeal,
+        ObjectType = ObjectType.CrmDeal,
     },
     includeAll: false
 );
@@ -68,7 +66,6 @@ Retrieve webhook by its ID
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -104,8 +101,8 @@ Returns all registered webhooks
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -142,9 +139,7 @@ Update webhook subscription
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
-using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -154,9 +149,9 @@ var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
     id: "<id>",
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
-        Event = UnifiedTo.Models.Components.Event.Deleted,
+        Event = Event.Deleted,
         HookUrl = "https://calculating-habit.name/",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.CommerceCollection,
+        ObjectType = ObjectType.CommerceCollection,
     }
 );
 
@@ -188,7 +183,6 @@ Trigger webhook
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -224,7 +218,6 @@ Remove webhook subscription
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
@@ -260,9 +253,7 @@ Update webhook subscription
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
-using System.Collections.Generic;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
@@ -272,9 +263,9 @@ var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
     id: "<id>",
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
-        Event = UnifiedTo.Models.Components.Event.Created,
+        Event = Event.Created,
         HookUrl = "https://glaring-postbox.info/",
-        ObjectType = UnifiedTo.Models.Components.ObjectType.LmsCourse,
+        ObjectType = ObjectType.LmsCourse,
     }
 );
 
@@ -306,7 +297,6 @@ Trigger webhook
 
 ```csharp
 using UnifiedTo;
-using UnifiedTo.Models.Requests;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(security: new Security() {
