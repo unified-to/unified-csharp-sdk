@@ -25,6 +25,12 @@ namespace UnifiedTo.Models.Components
         Meeting,
         [JsonProperty("CALL")]
         Call,
+        [JsonProperty("MARKETING_EMAIL")]
+        MarketingEmail,
+        [JsonProperty("FORM")]
+        Form,
+        [JsonProperty("PAGE_VIEW")]
+        PageView,
     }
 
     public static class CrmEventTypeExtension

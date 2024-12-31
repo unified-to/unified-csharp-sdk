@@ -54,11 +54,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("email")]
         public PropertyCrmEventEmail? Email { get; set; }
 
+        [JsonProperty("form")]
+        public PropertyCrmEventForm? Form { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
         [JsonProperty("lead_ids")]
         public List<string>? LeadIds { get; set; }
+
+        [JsonProperty("marketing_email")]
+        public PropertyCrmEventMarketingEmail? MarketingEmail { get; set; }
 
         /// <summary>
         /// The meeting object, when type = meeting
@@ -71,6 +77,9 @@ namespace UnifiedTo.Models.Components
         /// </summary>
         [JsonProperty("note")]
         public PropertyCrmEventNote? Note { get; set; }
+
+        [JsonProperty("page_view")]
+        public PropertyCrmEventPageView? PageView { get; set; }
 
         /// <summary>
         /// The raw data returned by the integration for this event.

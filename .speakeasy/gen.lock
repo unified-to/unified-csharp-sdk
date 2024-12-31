@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 11363cbfd40306b24119fb60c9ea2fc5
+  docChecksum: 05ab7803e5b317202af3aacb4835f336
   docVersion: "1.0"
-  speakeasyVersion: 1.460.2
+  speakeasyVersion: 1.460.3
   generationVersion: 2.484.0
-  releaseVersion: 0.21.16
-  configChecksum: 41c0d4bf1faf25e2d845234985398bd1
+  releaseVersion: 0.21.17
+  configChecksum: e35113dc394867ebee4a686dfc116d03
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -153,6 +153,9 @@ generatedFiles:
   - UnifiedTo/Models/Components/CrmEmail.cs
   - UnifiedTo/Models/Components/CrmEmailType.cs
   - UnifiedTo/Models/Components/CrmEvent.cs
+  - UnifiedTo/Models/Components/CrmEventFormField.cs
+  - UnifiedTo/Models/Components/CrmEventFormFieldType.cs
+  - UnifiedTo/Models/Components/CrmEventFormOption.cs
   - UnifiedTo/Models/Components/CrmEventType.cs
   - UnifiedTo/Models/Components/CrmLead.cs
   - UnifiedTo/Models/Components/CrmPipeline.cs
@@ -294,8 +297,11 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyCrmContactAddress.cs
   - UnifiedTo/Models/Components/PropertyCrmEventCall.cs
   - UnifiedTo/Models/Components/PropertyCrmEventEmail.cs
+  - UnifiedTo/Models/Components/PropertyCrmEventForm.cs
+  - UnifiedTo/Models/Components/PropertyCrmEventMarketingEmail.cs
   - UnifiedTo/Models/Components/PropertyCrmEventMeeting.cs
   - UnifiedTo/Models/Components/PropertyCrmEventNote.cs
+  - UnifiedTo/Models/Components/PropertyCrmEventPageView.cs
   - UnifiedTo/Models/Components/PropertyCrmEventTask.cs
   - UnifiedTo/Models/Components/PropertyCrmEventTaskStatus.cs
   - UnifiedTo/Models/Components/PropertyCrmLeadAddress.cs
@@ -1272,6 +1278,9 @@ generatedFiles:
   - docs/Models/Components/CrmEmail.md
   - docs/Models/Components/CrmEmailType.md
   - docs/Models/Components/CrmEvent.md
+  - docs/Models/Components/CrmEventFormField.md
+  - docs/Models/Components/CrmEventFormFieldType.md
+  - docs/Models/Components/CrmEventFormOption.md
   - docs/Models/Components/CrmEventType.md
   - docs/Models/Components/CrmLead.md
   - docs/Models/Components/CrmPipeline.md
@@ -1413,8 +1422,11 @@ generatedFiles:
   - docs/Models/Components/PropertyCrmContactAddress.md
   - docs/Models/Components/PropertyCrmEventCall.md
   - docs/Models/Components/PropertyCrmEventEmail.md
+  - docs/Models/Components/PropertyCrmEventForm.md
+  - docs/Models/Components/PropertyCrmEventMarketingEmail.md
   - docs/Models/Components/PropertyCrmEventMeeting.md
   - docs/Models/Components/PropertyCrmEventNote.md
+  - docs/Models/Components/PropertyCrmEventPageView.md
   - docs/Models/Components/PropertyCrmEventTask.md
   - docs/Models/Components/PropertyCrmEventTaskStatus.md
   - docs/Models/Components/PropertyCrmLeadAddress.md
