@@ -5,8 +5,8 @@ management:
   docVersion: "1.0"
   speakeasyVersion: 1.460.3
   generationVersion: 2.484.0
-  releaseVersion: 0.21.18
-  configChecksum: 8a86fef869f2e431011c6b746f21a93e
+  releaseVersion: 0.21.19
+  configChecksum: bc7dc71a063735b9fb33e16e10da7eec
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
