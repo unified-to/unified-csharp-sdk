@@ -147,9 +147,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Repo.CreateRepoOrganizationAsync(
     connectionId: "<id>",
-    repoOrganization: new RepoOrganization() {
-        Name = "<value>",
-    },
+    repoOrganization: new RepoOrganization() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -802,9 +800,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Repo.PatchRepoOrganizationAsync(
     connectionId: "<id>",
     id: "<id>",
-    repoOrganization: new RepoOrganization() {
-        Name = "<value>",
-    },
+    repoOrganization: new RepoOrganization() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1237,9 +1233,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Repo.UpdateRepoOrganizationAsync(
     connectionId: "<id>",
     id: "<id>",
-    repoOrganization: new RepoOrganization() {
-        Name = "<value>",
-    },
+    repoOrganization: new RepoOrganization() {},
     fields: new List<string>() {
         "<value>",
     }

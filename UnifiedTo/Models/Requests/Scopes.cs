@@ -59,6 +59,10 @@ namespace UnifiedTo.Models.Requests
         PaymentLinkRead,
         [JsonProperty("payment_link_write")]
         PaymentLinkWrite,
+        [JsonProperty("payment_subscription_read")]
+        PaymentSubscriptionRead,
+        [JsonProperty("payment_subscription_write")]
+        PaymentSubscriptionWrite,
         [JsonProperty("commerce_item_read")]
         CommerceItemRead,
         [JsonProperty("commerce_item_write")]

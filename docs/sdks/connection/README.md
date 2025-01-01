@@ -33,7 +33,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.CrmLeadRead,
+        PropertyConnectionPermissions.CrmEventWrite,
     },
 };
 
@@ -237,7 +237,7 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            PropertyConnectionPermissions.MetadataMetadataRead,
+            PropertyConnectionPermissions.RepoPullrequestWrite,
         },
     }
 );

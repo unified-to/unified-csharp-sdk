@@ -33,7 +33,7 @@ var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
         ConnectionId = "<id>",
         Event = Event.Created,
         HookUrl = "https://blind-platypus.org/",
-        ObjectType = ObjectType.CrmDeal,
+        ObjectType = ObjectType.CrmContact,
     },
     includeAll: false
 );
@@ -151,7 +151,7 @@ var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
         ConnectionId = "<id>",
         Event = Event.Deleted,
         HookUrl = "https://calculating-habit.name/",
-        ObjectType = ObjectType.CommerceCollection,
+        ObjectType = ObjectType.CommerceItem,
     }
 );
 

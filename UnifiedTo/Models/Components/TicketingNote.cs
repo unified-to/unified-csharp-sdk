@@ -36,7 +36,7 @@ namespace UnifiedTo.Models.Components
         public string? TicketId { get; set; }
 
         [JsonProperty("updated_at")]
-        public string? UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         [JsonProperty("user_id")]
         public string? UserId { get; set; }

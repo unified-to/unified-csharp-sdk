@@ -39,6 +39,8 @@ namespace UnifiedTo.Models.Components
         PaymentPayout,
         [JsonProperty("payment_refund")]
         PaymentRefund,
+        [JsonProperty("payment_subscription")]
+        PaymentSubscription,
         [JsonProperty("commerce_item")]
         CommerceItem,
         [JsonProperty("commerce_collection")]

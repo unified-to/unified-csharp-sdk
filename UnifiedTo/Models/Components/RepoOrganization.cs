@@ -10,6 +10,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
     using UnifiedTo.Utils;
     
@@ -20,7 +21,7 @@ namespace UnifiedTo.Models.Components
         public string? AvatarUrl { get; set; }
 
         [JsonProperty("created_at")]
-        public string? CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
@@ -29,13 +30,13 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("updated_at")]
-        public string? UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         [JsonProperty("web_url")]
         public string? WebUrl { get; set; }

@@ -10,6 +10,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
@@ -18,7 +19,7 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("created_at")]
-        public string? CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("currency")]
         public string? Currency { get; set; }
@@ -48,6 +49,6 @@ namespace UnifiedTo.Models.Components
         public string? TaxrateId { get; set; }
 
         [JsonProperty("updated_at")]
-        public string? UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
     }
 }

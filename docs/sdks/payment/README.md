@@ -7,20 +7,26 @@
 
 * [CreatePaymentLink](#createpaymentlink) - Create a link
 * [CreatePaymentPayment](#createpaymentpayment) - Create a payment
+* [CreatePaymentSubscription](#createpaymentsubscription) - Create a subscription
 * [GetPaymentLink](#getpaymentlink) - Retrieve a link
 * [GetPaymentPayment](#getpaymentpayment) - Retrieve a payment
 * [GetPaymentPayout](#getpaymentpayout) - Retrieve a payout
 * [GetPaymentRefund](#getpaymentrefund) - Retrieve a refund
+* [GetPaymentSubscription](#getpaymentsubscription) - Retrieve a subscription
 * [ListPaymentLinks](#listpaymentlinks) - List all links
 * [ListPaymentPayments](#listpaymentpayments) - List all payments
 * [ListPaymentPayouts](#listpaymentpayouts) - List all payouts
 * [ListPaymentRefunds](#listpaymentrefunds) - List all refunds
+* [ListPaymentSubscriptions](#listpaymentsubscriptions) - List all subscriptions
 * [PatchPaymentLink](#patchpaymentlink) - Update a link
 * [PatchPaymentPayment](#patchpaymentpayment) - Update a payment
+* [PatchPaymentSubscription](#patchpaymentsubscription) - Update a subscription
 * [RemovePaymentLink](#removepaymentlink) - Remove a link
 * [RemovePaymentPayment](#removepaymentpayment) - Remove a payment
+* [RemovePaymentSubscription](#removepaymentsubscription) - Remove a subscription
 * [UpdatePaymentLink](#updatepaymentlink) - Update a link
 * [UpdatePaymentPayment](#updatepaymentpayment) - Update a payment
+* [UpdatePaymentSubscription](#updatepaymentsubscription) - Update a subscription
 
 ## CreatePaymentLink
 
@@ -103,6 +109,50 @@ var res = await sdk.Payment.CreatePaymentPaymentAsync(
 ### Response
 
 **[CreatePaymentPaymentResponse](../../Models/Requests/CreatePaymentPaymentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreatePaymentSubscription
+
+Create a subscription
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Payment.CreatePaymentSubscriptionAsync(
+    connectionId: "<id>",
+    paymentSubscription: new PaymentSubscription() {},
+    fields: new List<string>() {
+        "<value>",
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `ConnectionId`                                                        | *string*                                                              | :heavy_check_mark:                                                    | ID of the connection                                                  |
+| `PaymentSubscription`                                                 | [PaymentSubscription](../../Models/Components/PaymentSubscription.md) | :heavy_minus_sign:                                                    | N/A                                                                   |
+| `Fields`                                                              | List<*string*>                                                        | :heavy_minus_sign:                                                    | Comma-delimited fields to return                                      |
+
+### Response
+
+**[CreatePaymentSubscriptionResponse](../../Models/Requests/CreatePaymentSubscriptionResponse.md)**
 
 ### Errors
 
@@ -286,6 +336,50 @@ var res = await sdk.Payment.GetPaymentRefundAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetPaymentSubscription
+
+Retrieve a subscription
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Payment.GetPaymentSubscriptionAsync(
+    connectionId: "<id>",
+    id: "<id>",
+    fields: new List<string>() {
+        "<value>",
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Subscription           |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+### Response
+
+**[GetPaymentSubscriptionResponse](../../Models/Requests/GetPaymentSubscriptionResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListPaymentLinks
 
 List all links
@@ -446,6 +540,46 @@ var res = await sdk.Payment.ListPaymentRefundsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListPaymentSubscriptions
+
+List all subscriptions
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListPaymentSubscriptionsRequest req = new ListPaymentSubscriptionsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Payment.ListPaymentSubscriptionsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [ListPaymentSubscriptionsRequest](../../Models/Requests/ListPaymentSubscriptionsRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+
+### Response
+
+**[ListPaymentSubscriptionsResponse](../../Models/Requests/ListPaymentSubscriptionsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchPaymentLink
 
 Update a link
@@ -538,6 +672,52 @@ var res = await sdk.Payment.PatchPaymentPaymentAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchPaymentSubscription
+
+Update a subscription
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Payment.PatchPaymentSubscriptionAsync(
+    connectionId: "<id>",
+    id: "<id>",
+    paymentSubscription: new PaymentSubscription() {},
+    fields: new List<string>() {
+        "<value>",
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `ConnectionId`                                                        | *string*                                                              | :heavy_check_mark:                                                    | ID of the connection                                                  |
+| `Id`                                                                  | *string*                                                              | :heavy_check_mark:                                                    | ID of the Subscription                                                |
+| `PaymentSubscription`                                                 | [PaymentSubscription](../../Models/Components/PaymentSubscription.md) | :heavy_minus_sign:                                                    | N/A                                                                   |
+| `Fields`                                                              | List<*string*>                                                        | :heavy_minus_sign:                                                    | Comma-delimited fields to return                                      |
+
+### Response
+
+**[PatchPaymentSubscriptionResponse](../../Models/Requests/PatchPaymentSubscriptionResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## RemovePaymentLink
 
 Remove a link
@@ -609,6 +789,45 @@ var res = await sdk.Payment.RemovePaymentPaymentAsync(
 ### Response
 
 **[RemovePaymentPaymentResponse](../../Models/Requests/RemovePaymentPaymentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemovePaymentSubscription
+
+Remove a subscription
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Payment.RemovePaymentSubscriptionAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter              | Type                   | Required               | Description            |
+| ---------------------- | ---------------------- | ---------------------- | ---------------------- |
+| `ConnectionId`         | *string*               | :heavy_check_mark:     | ID of the connection   |
+| `Id`                   | *string*               | :heavy_check_mark:     | ID of the Subscription |
+
+### Response
+
+**[RemovePaymentSubscriptionResponse](../../Models/Requests/RemovePaymentSubscriptionResponse.md)**
 
 ### Errors
 
@@ -701,6 +920,52 @@ var res = await sdk.Payment.UpdatePaymentPaymentAsync(
 ### Response
 
 **[UpdatePaymentPaymentResponse](../../Models/Requests/UpdatePaymentPaymentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdatePaymentSubscription
+
+Update a subscription
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Payment.UpdatePaymentSubscriptionAsync(
+    connectionId: "<id>",
+    id: "<id>",
+    paymentSubscription: new PaymentSubscription() {},
+    fields: new List<string>() {
+        "<value>",
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `ConnectionId`                                                        | *string*                                                              | :heavy_check_mark:                                                    | ID of the connection                                                  |
+| `Id`                                                                  | *string*                                                              | :heavy_check_mark:                                                    | ID of the Subscription                                                |
+| `PaymentSubscription`                                                 | [PaymentSubscription](../../Models/Components/PaymentSubscription.md) | :heavy_minus_sign:                                                    | N/A                                                                   |
+| `Fields`                                                              | List<*string*>                                                        | :heavy_minus_sign:                                                    | Comma-delimited fields to return                                      |
+
+### Response
+
+**[UpdatePaymentSubscriptionResponse](../../Models/Requests/UpdatePaymentSubscriptionResponse.md)**
 
 ### Errors
 

@@ -40,7 +40,7 @@ namespace UnifiedTo.Models.Components
         public bool? IsChargeableNow { get; set; }
 
         [JsonProperty("lineitems")]
-        public List<PaymentLinkLineitem>? Lineitems { get; set; }
+        public List<PaymentLineitem>? Lineitems { get; set; }
 
         [JsonProperty("payment_id")]
         public string? PaymentId { get; set; }

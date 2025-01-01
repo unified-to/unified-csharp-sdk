@@ -84,6 +84,7 @@ namespace UnifiedTo
         public ILink Link { get; }
         public IPayout Payout { get; }
         public IRefund Refund { get; }
+        public ISubscription Subscription { get; }
         public IRepo Repo { get; }
         public IBranch Branch { get; }
         public ICommit Commit { get; }
@@ -155,10 +156,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.21.17";
+        private const string _sdkVersion = "0.21.18";
         private const string _sdkGenVersion = "2.484.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.21.17 2.484.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.21.18 2.484.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _client;
@@ -222,6 +223,7 @@ namespace UnifiedTo
         public ILink Link { get; private set; }
         public IPayout Payout { get; private set; }
         public IRefund Refund { get; private set; }
+        public ISubscription Subscription { get; private set; }
         public IRepo Repo { get; private set; }
         public IBranch Branch { get; private set; }
         public ICommit Commit { get; private set; }
@@ -468,6 +470,9 @@ namespace UnifiedTo
 
 
             Refund = new Refund(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Subscription = new Subscription(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
             Repo = new Repo(_client, _securitySource, _serverUrl, SDKConfiguration);

@@ -13,7 +13,7 @@ namespace UnifiedTo.Models.Components
     using System;
     using UnifiedTo.Utils;
     
-    public class PaymentLinkLineitem
+    public class PaymentLineitem
     {
 
         [JsonProperty("account_id")]
