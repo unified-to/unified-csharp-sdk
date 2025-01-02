@@ -1691,3 +1691,13 @@ Based on:
 - [csharp v0.21.19] .
 ### Releases
 - [NuGet v0.21.19] https://www.nuget.org/packages/UnifiedTo/0.21.19 - .
+
+## 2025-01-02 18:02:35
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.460.3 (2.484.0) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [csharp v0.21.20] .
+### Releases
+- [NuGet v0.21.20] https://www.nuget.org/packages/UnifiedTo/0.21.20 - .
