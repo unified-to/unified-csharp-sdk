@@ -95,6 +95,7 @@ namespace UnifiedTo
         public IStorage Storage { get; }
         public IFile File { get; }
         public ITask Task { get; }
+        public IComment Comment { get; }
         public IProject Project { get; }
         public ITicketing Ticketing { get; }
         public ICustomer Customer { get; }
@@ -156,10 +157,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.21.20";
+        private const string _sdkVersion = "0.21.21";
         private const string _sdkGenVersion = "2.484.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.21.20 2.484.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.21.21 2.484.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _client;
@@ -234,6 +235,7 @@ namespace UnifiedTo
         public IStorage Storage { get; private set; }
         public IFile File { get; private set; }
         public ITask Task { get; private set; }
+        public IComment Comment { get; private set; }
         public IProject Project { get; private set; }
         public ITicketing Ticketing { get; private set; }
         public ICustomer Customer { get; private set; }
@@ -503,6 +505,9 @@ namespace UnifiedTo
 
 
             Task = new Task(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Comment = new Comment(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
             Project = new Project(_client, _securitySource, _serverUrl, SDKConfiguration);

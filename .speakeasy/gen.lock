@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: d3ff121f2a7d483c6c660192f0d72464
+  docChecksum: 20714033389bb63e345a793caa0911b9
   docVersion: "1.0"
-  speakeasyVersion: 1.460.3
+  speakeasyVersion: 1.460.4
   generationVersion: 2.484.0
-  releaseVersion: 0.21.20
-  configChecksum: 42dfe6c09eff620acff09d89a2614df3
+  releaseVersion: 0.21.21
+  configChecksum: 4e5588573b99534cbdb15a158ece3a42
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -43,6 +43,7 @@ generatedFiles:
   - UnifiedTo/Channel.cs
   - UnifiedTo/Class.cs
   - UnifiedTo/Collection.cs
+  - UnifiedTo/Comment.cs
   - UnifiedTo/Commerce.cs
   - UnifiedTo/Commit.cs
   - UnifiedTo/Company.cs
@@ -379,6 +380,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/StorageFile.cs
   - UnifiedTo/Models/Components/StorageFileType.cs
   - UnifiedTo/Models/Components/StoragePermission.cs
+  - UnifiedTo/Models/Components/TaskComment.cs
   - UnifiedTo/Models/Components/TaskProject.cs
   - UnifiedTo/Models/Components/TaskTask.cs
   - UnifiedTo/Models/Components/TaskTaskStatus.cs
@@ -518,6 +520,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateScimUsersResponse.cs
   - UnifiedTo/Models/Requests/CreateStorageFileRequest.cs
   - UnifiedTo/Models/Requests/CreateStorageFileResponse.cs
+  - UnifiedTo/Models/Requests/CreateTaskCommentRequest.cs
+  - UnifiedTo/Models/Requests/CreateTaskCommentResponse.cs
   - UnifiedTo/Models/Requests/CreateTaskProjectRequest.cs
   - UnifiedTo/Models/Requests/CreateTaskProjectResponse.cs
   - UnifiedTo/Models/Requests/CreateTaskTaskRequest.cs
@@ -645,6 +649,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetScimUsersResponse.cs
   - UnifiedTo/Models/Requests/GetStorageFileRequest.cs
   - UnifiedTo/Models/Requests/GetStorageFileResponse.cs
+  - UnifiedTo/Models/Requests/GetTaskCommentRequest.cs
+  - UnifiedTo/Models/Requests/GetTaskCommentResponse.cs
   - UnifiedTo/Models/Requests/GetTaskProjectRequest.cs
   - UnifiedTo/Models/Requests/GetTaskProjectResponse.cs
   - UnifiedTo/Models/Requests/GetTaskTaskRequest.cs
@@ -789,6 +795,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListScimUsersResponse.cs
   - UnifiedTo/Models/Requests/ListStorageFilesRequest.cs
   - UnifiedTo/Models/Requests/ListStorageFilesResponse.cs
+  - UnifiedTo/Models/Requests/ListTaskCommentsRequest.cs
+  - UnifiedTo/Models/Requests/ListTaskCommentsResponse.cs
   - UnifiedTo/Models/Requests/ListTaskProjectsRequest.cs
   - UnifiedTo/Models/Requests/ListTaskProjectsResponse.cs
   - UnifiedTo/Models/Requests/ListTaskTasksRequest.cs
@@ -918,6 +926,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchScimUsersResponse.cs
   - UnifiedTo/Models/Requests/PatchStorageFileRequest.cs
   - UnifiedTo/Models/Requests/PatchStorageFileResponse.cs
+  - UnifiedTo/Models/Requests/PatchTaskCommentRequest.cs
+  - UnifiedTo/Models/Requests/PatchTaskCommentResponse.cs
   - UnifiedTo/Models/Requests/PatchTaskProjectRequest.cs
   - UnifiedTo/Models/Requests/PatchTaskProjectResponse.cs
   - UnifiedTo/Models/Requests/PatchTaskTaskRequest.cs
@@ -1037,6 +1047,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveScimUsersResponse.cs
   - UnifiedTo/Models/Requests/RemoveStorageFileRequest.cs
   - UnifiedTo/Models/Requests/RemoveStorageFileResponse.cs
+  - UnifiedTo/Models/Requests/RemoveTaskCommentRequest.cs
+  - UnifiedTo/Models/Requests/RemoveTaskCommentResponse.cs
   - UnifiedTo/Models/Requests/RemoveTaskProjectRequest.cs
   - UnifiedTo/Models/Requests/RemoveTaskProjectResponse.cs
   - UnifiedTo/Models/Requests/RemoveTaskTaskRequest.cs
@@ -1156,6 +1168,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateScimUsersResponse.cs
   - UnifiedTo/Models/Requests/UpdateStorageFileRequest.cs
   - UnifiedTo/Models/Requests/UpdateStorageFileResponse.cs
+  - UnifiedTo/Models/Requests/UpdateTaskCommentRequest.cs
+  - UnifiedTo/Models/Requests/UpdateTaskCommentResponse.cs
   - UnifiedTo/Models/Requests/UpdateTaskProjectRequest.cs
   - UnifiedTo/Models/Requests/UpdateTaskProjectResponse.cs
   - UnifiedTo/Models/Requests/UpdateTaskTaskRequest.cs
@@ -1520,6 +1534,7 @@ generatedFiles:
   - docs/Models/Components/StorageFile.md
   - docs/Models/Components/StorageFileType.md
   - docs/Models/Components/StoragePermission.md
+  - docs/Models/Components/TaskComment.md
   - docs/Models/Components/TaskProject.md
   - docs/Models/Components/TaskTask.md
   - docs/Models/Components/TaskTaskStatus.md
@@ -1658,6 +1673,8 @@ generatedFiles:
   - docs/Models/Requests/CreateScimUsersResponse.md
   - docs/Models/Requests/CreateStorageFileRequest.md
   - docs/Models/Requests/CreateStorageFileResponse.md
+  - docs/Models/Requests/CreateTaskCommentRequest.md
+  - docs/Models/Requests/CreateTaskCommentResponse.md
   - docs/Models/Requests/CreateTaskProjectRequest.md
   - docs/Models/Requests/CreateTaskProjectResponse.md
   - docs/Models/Requests/CreateTaskTaskRequest.md
@@ -1785,6 +1802,8 @@ generatedFiles:
   - docs/Models/Requests/GetScimUsersResponse.md
   - docs/Models/Requests/GetStorageFileRequest.md
   - docs/Models/Requests/GetStorageFileResponse.md
+  - docs/Models/Requests/GetTaskCommentRequest.md
+  - docs/Models/Requests/GetTaskCommentResponse.md
   - docs/Models/Requests/GetTaskProjectRequest.md
   - docs/Models/Requests/GetTaskProjectResponse.md
   - docs/Models/Requests/GetTaskTaskRequest.md
@@ -1929,6 +1948,8 @@ generatedFiles:
   - docs/Models/Requests/ListScimUsersResponse.md
   - docs/Models/Requests/ListStorageFilesRequest.md
   - docs/Models/Requests/ListStorageFilesResponse.md
+  - docs/Models/Requests/ListTaskCommentsRequest.md
+  - docs/Models/Requests/ListTaskCommentsResponse.md
   - docs/Models/Requests/ListTaskProjectsRequest.md
   - docs/Models/Requests/ListTaskProjectsResponse.md
   - docs/Models/Requests/ListTaskTasksRequest.md
@@ -2058,6 +2079,8 @@ generatedFiles:
   - docs/Models/Requests/PatchScimUsersResponse.md
   - docs/Models/Requests/PatchStorageFileRequest.md
   - docs/Models/Requests/PatchStorageFileResponse.md
+  - docs/Models/Requests/PatchTaskCommentRequest.md
+  - docs/Models/Requests/PatchTaskCommentResponse.md
   - docs/Models/Requests/PatchTaskProjectRequest.md
   - docs/Models/Requests/PatchTaskProjectResponse.md
   - docs/Models/Requests/PatchTaskTaskRequest.md
@@ -2177,6 +2200,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveScimUsersResponse.md
   - docs/Models/Requests/RemoveStorageFileRequest.md
   - docs/Models/Requests/RemoveStorageFileResponse.md
+  - docs/Models/Requests/RemoveTaskCommentRequest.md
+  - docs/Models/Requests/RemoveTaskCommentResponse.md
   - docs/Models/Requests/RemoveTaskProjectRequest.md
   - docs/Models/Requests/RemoveTaskProjectResponse.md
   - docs/Models/Requests/RemoveTaskTaskRequest.md
@@ -2296,6 +2321,8 @@ generatedFiles:
   - docs/Models/Requests/UpdateScimUsersResponse.md
   - docs/Models/Requests/UpdateStorageFileRequest.md
   - docs/Models/Requests/UpdateStorageFileResponse.md
+  - docs/Models/Requests/UpdateTaskCommentRequest.md
+  - docs/Models/Requests/UpdateTaskCommentResponse.md
   - docs/Models/Requests/UpdateTaskProjectRequest.md
   - docs/Models/Requests/UpdateTaskProjectResponse.md
   - docs/Models/Requests/UpdateTaskTaskRequest.md
@@ -2328,6 +2355,7 @@ generatedFiles:
   - docs/sdks/channel/README.md
   - docs/sdks/class/README.md
   - docs/sdks/collection/README.md
+  - docs/sdks/comment/README.md
   - docs/sdks/commerce/README.md
   - docs/sdks/commit/README.md
   - docs/sdks/company/README.md
@@ -5891,4 +5919,58 @@ examples:
       responses:
         "200":
           application/json: {}
+  createTaskComment:
+    speakeasy-default-create-task-comment:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"task_id": "<id>", "text": "<value>"}
+  getTaskComment:
+    speakeasy-default-get-task-comment:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"task_id": "<id>", "text": "<value>"}
+  listTaskComments:
+    speakeasy-default-list-task-comments:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: []
+  patchTaskComment:
+    speakeasy-default-patch-task-comment:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"task_id": "<id>", "text": "<value>"}
+  removeTaskComment:
+    speakeasy-default-remove-task-comment:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateTaskComment:
+    speakeasy-default-update-task-comment:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"task_id": "<id>", "text": "<value>"}
 generatedTests: {}

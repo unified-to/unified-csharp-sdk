@@ -47,7 +47,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.CrmEventWrite,
+        PropertyConnectionPermissions.CrmLeadRead,
     },
 };
 
@@ -91,7 +91,7 @@ var res = await sdk.Unified.CreateUnifiedWebhookAsync(
         ConnectionId = "<id>",
         Event = Event.Created,
         HookUrl = "https://blind-platypus.org/",
-        ObjectType = ObjectType.CrmContact,
+        ObjectType = ObjectType.CrmDeal,
     },
     includeAll: false
 );
@@ -560,7 +560,7 @@ var res = await sdk.Unified.PatchUnifiedWebhookAsync(
         ConnectionId = "<id>",
         Event = Event.Deleted,
         HookUrl = "https://calculating-habit.name/",
-        ObjectType = ObjectType.CommerceItem,
+        ObjectType = ObjectType.CommerceCollection,
     }
 );
 

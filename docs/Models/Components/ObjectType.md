@@ -62,6 +62,7 @@
 | `KmsPage`                | kms_page                 |
 | `TaskProject`            | task_project             |
 | `TaskTask`               | task_task                |
+| `TaskComment`            | task_comment             |
 | `ScimUsers`              | scim_users               |
 | `ScimGroups`             | scim_groups              |
 | `LmsCourse`              | lms_course               |

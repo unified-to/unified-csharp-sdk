@@ -21,6 +21,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("assigned_user_ids")]
         public List<string>? AssignedUserIds { get; set; }
 
+        /// <summary>
+        /// Array of attachment IDs retrieved from StorageFile.Get endpoint
+        /// </summary>
+        [JsonProperty("attachment_ids")]
+        public List<string>? AttachmentIds { get; set; }
+
         [JsonProperty("completed_at")]
         public DateTime? CompletedAt { get; set; }
 
