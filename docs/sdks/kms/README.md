@@ -37,7 +37,6 @@ var res = await sdk.Kms.CreateKmsPageAsync(
     connectionId: "<id>",
     kmsPage: new KmsPage() {
         DownloadUrl = "https://bitter-adult.biz/",
-        SpaceId = "<id>",
         Title = "<value>",
         Type = KmsPageType.Html,
     },
@@ -301,7 +300,6 @@ var res = await sdk.Kms.PatchKmsPageAsync(
     id: "<id>",
     kmsPage: new KmsPage() {
         DownloadUrl = "https://evil-tackle.info",
-        SpaceId = "<id>",
         Title = "<value>",
         Type = KmsPageType.Markdown,
     },
@@ -478,7 +476,6 @@ var res = await sdk.Kms.UpdateKmsPageAsync(
     id: "<id>",
     kmsPage: new KmsPage() {
         DownloadUrl = "https://salty-devil.com",
-        SpaceId = "<id>",
         Title = "<value>",
         Type = KmsPageType.Text,
     },

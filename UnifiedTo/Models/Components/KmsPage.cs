@@ -43,7 +43,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("space_id")]
-        public string SpaceId { get; set; } = default!;
+        public string? SpaceId { get; set; }
 
         [JsonProperty("title")]
         public string Title { get; set; } = default!;
