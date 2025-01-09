@@ -65,5 +65,8 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("version")]
         public string? Version { get; set; }
+
+        [JsonProperty("web_url")]
+        public string? WebUrl { get; set; }
     }
 }

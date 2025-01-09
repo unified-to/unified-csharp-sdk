@@ -20,6 +20,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("group_id")]
         public string? GroupId { get; set; }
 
+        [JsonProperty("is_hidden")]
+        public bool? IsHidden { get; set; }
+
+        [JsonProperty("is_public")]
+        public bool? IsPublic { get; set; }
+
         [JsonProperty("roles")]
         public List<PropertyStoragePermissionRoles> Roles { get; set; } = default!;
 
