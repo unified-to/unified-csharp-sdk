@@ -34,5 +34,8 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("temperature")]
         public double? Temperature { get; set; }
+
+        [JsonProperty("tokens_used")]
+        public double? TokensUsed { get; set; }
     }
 }

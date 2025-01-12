@@ -128,6 +128,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_student_id")]
         public ListStudentId? ListStudentId { get; set; }
 
+        [JsonProperty("list_task_id")]
+        public ListTaskId? ListTaskId { get; set; }
+
         [JsonProperty("list_ticket_id")]
         public ListTicketId? ListTicketId { get; set; }
 

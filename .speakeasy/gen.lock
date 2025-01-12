@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 3613acd1631dbba37d5cd8b1d0150cb1
+  docChecksum: d4d729a2453d8e64af714d75ba2fa32b
   docVersion: "1.0"
-  speakeasyVersion: 1.465.1
-  generationVersion: 2.488.4
-  releaseVersion: 0.22.0
-  configChecksum: d683569dba35703d0148a3b50e4b8e7e
+  speakeasyVersion: 1.468.2
+  generationVersion: 2.493.4
+  releaseVersion: 0.22.1
+  configChecksum: 45ea73cf24dc6bb466a341b7a5ba1bdc
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -25,7 +25,6 @@ features:
     sdkHooks: 0.1.0
 generatedFiles:
   - .gitattributes
-  - CONTRIBUTING.md
   - NUGET.md
   - USAGE.md
   - UnifiedTo.sln
@@ -244,6 +243,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListSortByUpdatedAt.cs
   - UnifiedTo/Models/Components/ListSpaceId.cs
   - UnifiedTo/Models/Components/ListStudentId.cs
+  - UnifiedTo/Models/Components/ListTaskId.cs
   - UnifiedTo/Models/Components/ListTicketId.cs
   - UnifiedTo/Models/Components/ListType.cs
   - UnifiedTo/Models/Components/ListUpdatedGte.cs
@@ -1398,6 +1398,7 @@ generatedFiles:
   - docs/Models/Components/ListSortByUpdatedAt.md
   - docs/Models/Components/ListSpaceId.md
   - docs/Models/Components/ListStudentId.md
+  - docs/Models/Components/ListTaskId.md
   - docs/Models/Components/ListTicketId.md
   - docs/Models/Components/ListType.md
   - docs/Models/Components/ListUpdatedGte.md
