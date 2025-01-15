@@ -27,6 +27,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("channel_id")]
         public string? ChannelId { get; set; }
 
+        /// <summary>
+        /// Represents the IDs of all channels to which the message is sent. Identifies the channels where the message is posted.
+        /// </summary>
+        [JsonProperty("channel_ids")]
+        public List<string>? ChannelIds { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 

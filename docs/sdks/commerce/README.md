@@ -961,7 +961,7 @@ var res = await sdk.Commerce.UpdateCommerceInventoryAsync(
     connectionId: "<id>",
     id: "<id>",
     commerceInventory: new CommerceInventory() {
-        Available = 9360.01D,
+        Available = 9360.02D,
     },
     fields: new List<string>() {
         "<value>",

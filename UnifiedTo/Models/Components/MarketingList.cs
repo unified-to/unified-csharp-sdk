@@ -21,10 +21,19 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("created_at")]
-        public string? CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
+
+        [JsonProperty("description")]
+        public string? Description { get; set; }
+
+        [JsonProperty("end_at")]
+        public DateTime? EndAt { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
+
+        [JsonProperty("is_active")]
+        public bool? IsActive { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }
@@ -35,7 +44,13 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        [JsonProperty("start_at")]
+        public DateTime? StartAt { get; set; }
+
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
+
+        [JsonProperty("user_id")]
+        public string? UserId { get; set; }
     }
 }
