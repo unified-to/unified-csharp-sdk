@@ -70,10 +70,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.2";
-        private const string _sdkGenVersion = "2.493.13";
+        private const string _sdkVersion = "0.22.3";
+        private const string _sdkGenVersion = "2.493.21";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.2 2.493.13 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.3 2.493.21 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -147,7 +147,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
-            if(new List<int>{204, 205, 304}.Contains(responseStatusCode))
+            if(new List<int>{204, 205}.Contains(responseStatusCode))
             {                
                 return new CreatePassthroughJsonResponse()
                 {
@@ -156,7 +156,20 @@ namespace UnifiedTo
                     RawResponse = httpResponse
                 };
             }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            else if(responseStatusCode == 304)
+            {                
+                return new CreatePassthroughJsonResponse()
+                {
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse
+                };
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
             {
                 throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
@@ -284,7 +297,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
-            if(new List<int>{204, 205, 304}.Contains(responseStatusCode))
+            if(new List<int>{204, 205}.Contains(responseStatusCode))
             {                
                 return new CreatePassthroughRawResponse()
                 {
@@ -293,7 +306,20 @@ namespace UnifiedTo
                     RawResponse = httpResponse
                 };
             }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            else if(responseStatusCode == 304)
+            {                
+                return new CreatePassthroughRawResponse()
+                {
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse
+                };
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
             {
                 throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
@@ -414,7 +440,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
-            if(new List<int>{204, 205, 304}.Contains(responseStatusCode))
+            if(new List<int>{204, 205}.Contains(responseStatusCode))
             {                
                 return new ListPassthroughsResponse()
                 {
@@ -423,7 +449,20 @@ namespace UnifiedTo
                     RawResponse = httpResponse
                 };
             }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            else if(responseStatusCode == 304)
+            {                
+                return new ListPassthroughsResponse()
+                {
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse
+                };
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
             {
                 throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
@@ -551,7 +590,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
-            if(new List<int>{204, 205, 304}.Contains(responseStatusCode))
+            if(new List<int>{204, 205}.Contains(responseStatusCode))
             {                
                 return new PatchPassthroughJsonResponse()
                 {
@@ -560,7 +599,20 @@ namespace UnifiedTo
                     RawResponse = httpResponse
                 };
             }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            else if(responseStatusCode == 304)
+            {                
+                return new PatchPassthroughJsonResponse()
+                {
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse
+                };
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
             {
                 throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
@@ -688,7 +740,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
-            if(new List<int>{204, 205, 304}.Contains(responseStatusCode))
+            if(new List<int>{204, 205}.Contains(responseStatusCode))
             {                
                 return new PatchPassthroughRawResponse()
                 {
@@ -697,7 +749,20 @@ namespace UnifiedTo
                     RawResponse = httpResponse
                 };
             }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            else if(responseStatusCode == 304)
+            {                
+                return new PatchPassthroughRawResponse()
+                {
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse
+                };
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
             {
                 throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
@@ -818,7 +883,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
-            if(new List<int>{204, 205, 304}.Contains(responseStatusCode))
+            if(new List<int>{204, 205}.Contains(responseStatusCode))
             {                
                 return new RemovePassthroughResponse()
                 {
@@ -827,7 +892,20 @@ namespace UnifiedTo
                     RawResponse = httpResponse
                 };
             }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            else if(responseStatusCode == 304)
+            {                
+                return new RemovePassthroughResponse()
+                {
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse
+                };
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
             {
                 throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
@@ -955,7 +1033,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
-            if(new List<int>{204, 205, 304}.Contains(responseStatusCode))
+            if(new List<int>{204, 205}.Contains(responseStatusCode))
             {                
                 return new UpdatePassthroughJsonResponse()
                 {
@@ -964,7 +1042,20 @@ namespace UnifiedTo
                     RawResponse = httpResponse
                 };
             }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            else if(responseStatusCode == 304)
+            {                
+                return new UpdatePassthroughJsonResponse()
+                {
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse
+                };
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
             {
                 throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }
@@ -1092,7 +1183,7 @@ namespace UnifiedTo
 
             var contentType = httpResponse.Content.Headers.ContentType?.MediaType;
             int responseStatusCode = (int)httpResponse.StatusCode;
-            if(new List<int>{204, 205, 304}.Contains(responseStatusCode))
+            if(new List<int>{204, 205}.Contains(responseStatusCode))
             {                
                 return new UpdatePassthroughRawResponse()
                 {
@@ -1101,7 +1192,20 @@ namespace UnifiedTo
                     RawResponse = httpResponse
                 };
             }
-            else if(responseStatusCode >= 400 && responseStatusCode < 500 || responseStatusCode >= 500 && responseStatusCode < 600)
+            else if(responseStatusCode == 304)
+            {                
+                return new UpdatePassthroughRawResponse()
+                {
+                    StatusCode = responseStatusCode,
+                    ContentType = contentType,
+                    RawResponse = httpResponse
+                };
+            }
+            else if(responseStatusCode >= 400 && responseStatusCode < 500)
+            {
+                throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
+            }
+            else if(responseStatusCode >= 500 && responseStatusCode < 600)
             {
                 throw new Models.Errors.SDKException("API error occurred", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
             }

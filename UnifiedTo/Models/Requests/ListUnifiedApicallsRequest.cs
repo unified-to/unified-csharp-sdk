@@ -42,6 +42,12 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=integration_type")]
         public string? IntegrationType { get; set; }
 
+        /// <summary>
+        /// Filter the results for only billable API Calls
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=is_billable")]
+        public bool? IsBillable { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }
 
@@ -55,9 +61,21 @@ namespace UnifiedTo.Models.Requests
         public string? Sort { get; set; }
 
         /// <summary>
+        /// Filter the results to just this type
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=type")]
+        public string? Type { get; set; }
+
+        /// <summary>
         /// Return only results whose updated date is equal or greater to this value
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public DateTime? UpdatedGte { get; set; }
+
+        /// <summary>
+        /// Filter the results to just this webhook
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=webhook_id")]
+        public string? WebhookId { get; set; }
     }
 }
