@@ -10,7 +10,6 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
-    using System.Collections.Generic;
     using UnifiedTo.Utils;
     
     public class KmsPageMetadata
@@ -23,6 +22,6 @@ namespace UnifiedTo.Models.Components
         public string? Type { get; set; }
 
         [JsonProperty("value")]
-        public Dictionary<string, object>? Value { get; set; }
+        public string? Value { get; set; }
     }
 }
