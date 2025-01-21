@@ -220,11 +220,17 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 ### [Comment](docs/sdks/comment/README.md)
 
+* [CreateKmsComment](docs/sdks/comment/README.md#createkmscomment) - Create a comment
 * [CreateTaskComment](docs/sdks/comment/README.md#createtaskcomment) - Create a comment
+* [GetKmsComment](docs/sdks/comment/README.md#getkmscomment) - Retrieve a comment
 * [GetTaskComment](docs/sdks/comment/README.md#gettaskcomment) - Retrieve a comment
+* [ListKmsComments](docs/sdks/comment/README.md#listkmscomments) - List all comments
 * [ListTaskComments](docs/sdks/comment/README.md#listtaskcomments) - List all comments
+* [PatchKmsComment](docs/sdks/comment/README.md#patchkmscomment) - Update a comment
 * [PatchTaskComment](docs/sdks/comment/README.md#patchtaskcomment) - Update a comment
+* [RemoveKmsComment](docs/sdks/comment/README.md#removekmscomment) - Remove a comment
 * [RemoveTaskComment](docs/sdks/comment/README.md#removetaskcomment) - Remove a comment
+* [UpdateKmsComment](docs/sdks/comment/README.md#updatekmscomment) - Update a comment
 * [UpdateTaskComment](docs/sdks/comment/README.md#updatetaskcomment) - Update a comment
 
 ### [Commerce](docs/sdks/commerce/README.md)
@@ -544,16 +550,22 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 ### [Kms](docs/sdks/kms/README.md)
 
+* [CreateKmsComment](docs/sdks/kms/README.md#createkmscomment) - Create a comment
 * [CreateKmsPage](docs/sdks/kms/README.md#createkmspage) - Create a page
 * [CreateKmsSpace](docs/sdks/kms/README.md#createkmsspace) - Create a space
+* [GetKmsComment](docs/sdks/kms/README.md#getkmscomment) - Retrieve a comment
 * [GetKmsPage](docs/sdks/kms/README.md#getkmspage) - Retrieve a page
 * [GetKmsSpace](docs/sdks/kms/README.md#getkmsspace) - Retrieve a space
+* [ListKmsComments](docs/sdks/kms/README.md#listkmscomments) - List all comments
 * [ListKmsPages](docs/sdks/kms/README.md#listkmspages) - List all pages
 * [ListKmsSpaces](docs/sdks/kms/README.md#listkmsspaces) - List all spaces
+* [PatchKmsComment](docs/sdks/kms/README.md#patchkmscomment) - Update a comment
 * [PatchKmsPage](docs/sdks/kms/README.md#patchkmspage) - Update a page
 * [PatchKmsSpace](docs/sdks/kms/README.md#patchkmsspace) - Update a space
+* [RemoveKmsComment](docs/sdks/kms/README.md#removekmscomment) - Remove a comment
 * [RemoveKmsPage](docs/sdks/kms/README.md#removekmspage) - Remove a page
 * [RemoveKmsSpace](docs/sdks/kms/README.md#removekmsspace) - Remove a space
+* [UpdateKmsComment](docs/sdks/kms/README.md#updatekmscomment) - Update a comment
 * [UpdateKmsPage](docs/sdks/kms/README.md#updatekmspage) - Update a page
 * [UpdateKmsSpace](docs/sdks/kms/README.md#updatekmsspace) - Update a space
 

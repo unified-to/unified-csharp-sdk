@@ -38,6 +38,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        /// <summary>
+        /// id values of the users/employees associated with this organization
+        /// </summary>
+        [JsonProperty("user_ids")]
+        public List<string>? UserIds { get; set; }
+
         [JsonProperty("web_url")]
         public string? WebUrl { get; set; }
     }

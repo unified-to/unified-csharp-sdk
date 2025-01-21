@@ -5,18 +5,70 @@
 
 ### Available Operations
 
+* [CreateKmsComment](#createkmscomment) - Create a comment
 * [CreateKmsPage](#createkmspage) - Create a page
 * [CreateKmsSpace](#createkmsspace) - Create a space
+* [GetKmsComment](#getkmscomment) - Retrieve a comment
 * [GetKmsPage](#getkmspage) - Retrieve a page
 * [GetKmsSpace](#getkmsspace) - Retrieve a space
+* [ListKmsComments](#listkmscomments) - List all comments
 * [ListKmsPages](#listkmspages) - List all pages
 * [ListKmsSpaces](#listkmsspaces) - List all spaces
+* [PatchKmsComment](#patchkmscomment) - Update a comment
 * [PatchKmsPage](#patchkmspage) - Update a page
 * [PatchKmsSpace](#patchkmsspace) - Update a space
+* [RemoveKmsComment](#removekmscomment) - Remove a comment
 * [RemoveKmsPage](#removekmspage) - Remove a page
 * [RemoveKmsSpace](#removekmsspace) - Remove a space
+* [UpdateKmsComment](#updatekmscomment) - Update a comment
 * [UpdateKmsPage](#updatekmspage) - Update a page
 * [UpdateKmsSpace](#updatekmsspace) - Update a space
+
+## CreateKmsComment
+
+Create a comment
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Kms.CreateKmsCommentAsync(
+    connectionId: "<id>",
+    kmsComment: new KmsComment() {
+        Content = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                           | Type                                                | Required                                            | Description                                         |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
+| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_minus_sign:                                  | N/A                                                 |
+| `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
+
+### Response
+
+**[CreateKmsCommentResponse](../../Models/Requests/CreateKmsCommentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateKmsPage
 
@@ -112,6 +164,50 @@ var res = await sdk.Kms.CreateKmsSpaceAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetKmsComment
+
+Retrieve a comment
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Kms.GetKmsCommentAsync(
+    connectionId: "<id>",
+    id: "<id>",
+    fields: new List<string>() {
+        "<value>",
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Comment                |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+### Response
+
+**[GetKmsCommentResponse](../../Models/Requests/GetKmsCommentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## GetKmsPage
 
 Retrieve a page
@@ -200,6 +296,46 @@ var res = await sdk.Kms.GetKmsSpaceAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListKmsComments
+
+List all comments
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListKmsCommentsRequest req = new ListKmsCommentsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Kms.ListKmsCommentsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [ListKmsCommentsRequest](../../Models/Requests/ListKmsCommentsRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+
+### Response
+
+**[ListKmsCommentsResponse](../../Models/Requests/ListKmsCommentsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListKmsPages
 
 List all pages
@@ -273,6 +409,54 @@ var res = await sdk.Kms.ListKmsSpacesAsync(req);
 ### Response
 
 **[ListKmsSpacesResponse](../../Models/Requests/ListKmsSpacesResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchKmsComment
+
+Update a comment
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Kms.PatchKmsCommentAsync(
+    connectionId: "<id>",
+    id: "<id>",
+    kmsComment: new KmsComment() {
+        Content = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                           | Type                                                | Required                                            | Description                                         |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
+| `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Comment                                   |
+| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_minus_sign:                                  | N/A                                                 |
+| `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
+
+### Response
+
+**[PatchKmsCommentResponse](../../Models/Requests/PatchKmsCommentResponse.md)**
 
 ### Errors
 
@@ -378,6 +562,45 @@ var res = await sdk.Kms.PatchKmsSpaceAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## RemoveKmsComment
+
+Remove a comment
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Kms.RemoveKmsCommentAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Comment    |
+
+### Response
+
+**[RemoveKmsCommentResponse](../../Models/Requests/RemoveKmsCommentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## RemoveKmsPage
 
 Remove a page
@@ -449,6 +672,54 @@ var res = await sdk.Kms.RemoveKmsSpaceAsync(
 ### Response
 
 **[RemoveKmsSpaceResponse](../../Models/Requests/RemoveKmsSpaceResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateKmsComment
+
+Update a comment
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Kms.UpdateKmsCommentAsync(
+    connectionId: "<id>",
+    id: "<id>",
+    kmsComment: new KmsComment() {
+        Content = "<value>",
+    },
+    fields: new List<string>() {
+        "<value>",
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                           | Type                                                | Required                                            | Description                                         |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
+| `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Comment                                   |
+| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_minus_sign:                                  | N/A                                                 |
+| `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
+
+### Response
+
+**[UpdateKmsCommentResponse](../../Models/Requests/UpdateKmsCommentResponse.md)**
 
 ### Errors
 

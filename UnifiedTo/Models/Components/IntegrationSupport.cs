@@ -95,6 +95,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_org_id")]
         public ListOrgId? ListOrgId { get; set; }
 
+        [JsonProperty("list_page_id")]
+        public ListPageId? ListPageId { get; set; }
+
         [JsonProperty("list_parent_id")]
         public ListParentId? ListParentId { get; set; }
 
@@ -175,6 +178,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("search_twitter")]
         public SearchTwitter? SearchTwitter { get; set; }
+
+        [JsonProperty("slow_fields")]
+        public List<string>? SlowFields { get; set; }
 
         [JsonProperty("virtual_webhook_channel_id")]
         public VirtualWebhookChannelId? VirtualWebhookChannelId { get; set; }

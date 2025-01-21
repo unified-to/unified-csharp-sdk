@@ -60,6 +60,7 @@
 | `MessagingChannel`       | messaging_channel        |
 | `KmsSpace`               | kms_space                |
 | `KmsPage`                | kms_page                 |
+| `KmsComment`             | kms_comment              |
 | `TaskProject`            | task_project             |
 | `TaskTask`               | task_task                |
 | `TaskComment`            | task_comment             |

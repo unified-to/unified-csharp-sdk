@@ -65,6 +65,7 @@ namespace UnifiedTo
         public IPayslip Payslip { get; }
         public ITimeoff Timeoff { get; }
         public IKms Kms { get; }
+        public IComment Comment { get; }
         public IPage Page { get; }
         public ISpace Space { get; }
         public ILms Lms { get; }
@@ -95,7 +96,6 @@ namespace UnifiedTo
         public IStorage Storage { get; }
         public IFile File { get; }
         public ITask Task { get; }
-        public IComment Comment { get; }
         public IProject Project { get; }
         public ITicketing Ticketing { get; }
         public ICustomer Customer { get; }
@@ -157,10 +157,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.4";
-        private const string _sdkGenVersion = "2.493.21";
+        private const string _sdkVersion = "0.22.5";
+        private const string _sdkGenVersion = "2.493.32";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.4 2.493.21 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.5 2.493.32 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _client;
@@ -205,6 +205,7 @@ namespace UnifiedTo
         public IPayslip Payslip { get; private set; }
         public ITimeoff Timeoff { get; private set; }
         public IKms Kms { get; private set; }
+        public IComment Comment { get; private set; }
         public IPage Page { get; private set; }
         public ISpace Space { get; private set; }
         public ILms Lms { get; private set; }
@@ -235,7 +236,6 @@ namespace UnifiedTo
         public IStorage Storage { get; private set; }
         public IFile File { get; private set; }
         public ITask Task { get; private set; }
-        public IComment Comment { get; private set; }
         public IProject Project { get; private set; }
         public ITicketing Ticketing { get; private set; }
         public ICustomer Customer { get; private set; }
@@ -417,6 +417,9 @@ namespace UnifiedTo
             Kms = new Kms(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
+            Comment = new Comment(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
             Page = new Page(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
@@ -505,9 +508,6 @@ namespace UnifiedTo
 
 
             Task = new Task(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Comment = new Comment(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
             Project = new Project(_client, _securitySource, _serverUrl, SDKConfiguration);

@@ -125,6 +125,8 @@ namespace UnifiedTo.Models.Components
         KmsSpace,
         [JsonProperty("kms_page")]
         KmsPage,
+        [JsonProperty("kms_comment")]
+        KmsComment,
         [JsonProperty("task_project")]
         TaskProject,
         [JsonProperty("task_task")]
