@@ -22,7 +22,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("download_url")]
-        public string DownloadUrl { get; set; } = default!;
+        public string? DownloadUrl { get; set; }
 
         [JsonProperty("has_children")]
         public bool? HasChildren { get; set; }

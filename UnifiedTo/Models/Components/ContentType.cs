@@ -21,6 +21,8 @@ namespace UnifiedTo.Models.Components
         Markdown,
         [JsonProperty("TEXT")]
         Text,
+        [JsonProperty("OTHER")]
+        Other,
     }
 
     public static class ContentTypeExtension

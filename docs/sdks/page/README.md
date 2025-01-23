@@ -30,7 +30,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Page.CreateKmsPageAsync(
     connectionId: "<id>",
     kmsPage: new KmsPage() {
-        DownloadUrl = "https://bitter-adult.biz/",
         Title = "<value>",
         Type = KmsPageType.Html,
     },
@@ -163,9 +162,8 @@ var res = await sdk.Page.PatchKmsPageAsync(
     connectionId: "<id>",
     id: "<id>",
     kmsPage: new KmsPage() {
-        DownloadUrl = "https://evil-tackle.info",
         Title = "<value>",
-        Type = KmsPageType.Markdown,
+        Type = KmsPageType.Text,
     },
     fields: new List<string>() {
         "<value>",
@@ -252,9 +250,8 @@ var res = await sdk.Page.UpdateKmsPageAsync(
     connectionId: "<id>",
     id: "<id>",
     kmsPage: new KmsPage() {
-        DownloadUrl = "https://salty-devil.com",
         Title = "<value>",
-        Type = KmsPageType.Text,
+        Type = KmsPageType.Other,
     },
     fields: new List<string>() {
         "<value>",
