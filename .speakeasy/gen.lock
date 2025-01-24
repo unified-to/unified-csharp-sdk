@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 201637bb4fc843138eba316a282cdc6d
+  docChecksum: 0348382e89126471fa3b06fe46a31486
   docVersion: "1.0"
-  speakeasyVersion: 1.470.1
-  generationVersion: 2.493.34
-  releaseVersion: 0.22.6
-  configChecksum: 6961938f5aabfcc8b0ee236c43d45cb9
+  speakeasyVersion: 1.474.0
+  generationVersion: 2.495.0
+  releaseVersion: 0.22.7
+  configChecksum: c5ceb04dd26df2a688752ee7e3a260ac
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -241,7 +241,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListQuery.cs
   - UnifiedTo/Models/Components/ListRawFields.cs
   - UnifiedTo/Models/Components/ListRepoId.cs
-  - UnifiedTo/Models/Components/ListRootId.cs
   - UnifiedTo/Models/Components/ListSortByCreatedAt.cs
   - UnifiedTo/Models/Components/ListSortByName.cs
   - UnifiedTo/Models/Components/ListSortByUpdatedAt.cs
@@ -1412,7 +1411,6 @@ generatedFiles:
   - docs/Models/Components/ListQuery.md
   - docs/Models/Components/ListRawFields.md
   - docs/Models/Components/ListRepoId.md
-  - docs/Models/Components/ListRootId.md
   - docs/Models/Components/ListSortByCreatedAt.md
   - docs/Models/Components/ListSortByName.md
   - docs/Models/Components/ListSortByUpdatedAt.md

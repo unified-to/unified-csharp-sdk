@@ -113,9 +113,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_repo_id")]
         public ListRepoId? ListRepoId { get; set; }
 
-        [JsonProperty("list_root_id")]
-        public ListRootId? ListRootId { get; set; }
-
         [JsonProperty("list_sort_by_created_at")]
         public ListSortByCreatedAt? ListSortByCreatedAt { get; set; }
 
