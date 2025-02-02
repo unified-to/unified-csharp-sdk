@@ -10,14 +10,14 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
-    using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
     public class CommerceItemMetadata
     {
 
         [JsonProperty("extra_data")]
-        public Dictionary<string, object>? ExtraData { get; set; }
+        public ExtraData? ExtraData { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
@@ -32,6 +32,6 @@ namespace UnifiedTo.Models.Components
         public string? Type { get; set; }
 
         [JsonProperty("value")]
-        public Dictionary<string, object>? Value { get; set; }
+        public Value? Value { get; set; }
     }
 }

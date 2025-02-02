@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 0348382e89126471fa3b06fe46a31486
+  docChecksum: 00e71c38f182c4bad7a19b0c7bb3e211
   docVersion: "1.0"
-  speakeasyVersion: 1.474.0
-  generationVersion: 2.495.0
-  releaseVersion: 0.22.7
-  configChecksum: c5ceb04dd26df2a688752ee7e3a260ac
+  speakeasyVersion: 1.481.1
+  generationVersion: 2.500.5
+  releaseVersion: 0.22.8
+  configChecksum: e4412bcb85cedbeb5ee994e5ba95c3c8
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -14,7 +14,7 @@ features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.10.11
+    core: 3.10.13
     flattening: 2.81.3
     globalSecurity: 2.83.6
     globalSecurityCallbacks: 0.1.0
@@ -138,14 +138,17 @@ generatedFiles:
   - UnifiedTo/Models/Components/CommerceCollection.cs
   - UnifiedTo/Models/Components/CommerceCollectionType.cs
   - UnifiedTo/Models/Components/CommerceInventory.cs
+  - UnifiedTo/Models/Components/CommerceInventoryRaw.cs
   - UnifiedTo/Models/Components/CommerceItem.cs
   - UnifiedTo/Models/Components/CommerceItemMedia.cs
   - UnifiedTo/Models/Components/CommerceItemMediaType.cs
   - UnifiedTo/Models/Components/CommerceItemMetadata.cs
   - UnifiedTo/Models/Components/CommerceItemOption.cs
   - UnifiedTo/Models/Components/CommerceItemPrice.cs
+  - UnifiedTo/Models/Components/CommerceItemRaw.cs
   - UnifiedTo/Models/Components/CommerceItemVariant.cs
   - UnifiedTo/Models/Components/CommerceLocation.cs
+  - UnifiedTo/Models/Components/CommerceLocationRaw.cs
   - UnifiedTo/Models/Components/Connection.cs
   - UnifiedTo/Models/Components/ContentType.cs
   - UnifiedTo/Models/Components/CrmCompany.cs
@@ -174,6 +177,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/EnrichTelephoneType.cs
   - UnifiedTo/Models/Components/Ethnicity.cs
   - UnifiedTo/Models/Components/Event.cs
+  - UnifiedTo/Models/Components/ExtraData.cs
   - UnifiedTo/Models/Components/Frequency.cs
   - UnifiedTo/Models/Components/FromWebhook.cs
   - UnifiedTo/Models/Components/GenaiContent.cs
@@ -342,6 +346,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyStoragePermissionRoles.cs
   - UnifiedTo/Models/Components/PropertyUcCallTelephone.cs
   - UnifiedTo/Models/Components/PropertyUcCallTelephoneType.cs
+  - UnifiedTo/Models/Components/Raw.cs
   - UnifiedTo/Models/Components/Recommendation.cs
   - UnifiedTo/Models/Components/RepoBranch.cs
   - UnifiedTo/Models/Components/RepoCommit.cs
@@ -403,6 +408,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/UcEmailType.cs
   - UnifiedTo/Models/Components/UcTelephone.cs
   - UnifiedTo/Models/Components/UcTelephoneType.cs
+  - UnifiedTo/Models/Components/Value.cs
   - UnifiedTo/Models/Components/VirtualWebhookChannelId.cs
   - UnifiedTo/Models/Components/VirtualWebhookCompanyId.cs
   - UnifiedTo/Models/Components/VirtualWebhookContactId.cs
@@ -1308,14 +1314,17 @@ generatedFiles:
   - docs/Models/Components/CommerceCollection.md
   - docs/Models/Components/CommerceCollectionType.md
   - docs/Models/Components/CommerceInventory.md
+  - docs/Models/Components/CommerceInventoryRaw.md
   - docs/Models/Components/CommerceItem.md
   - docs/Models/Components/CommerceItemMedia.md
   - docs/Models/Components/CommerceItemMediaType.md
   - docs/Models/Components/CommerceItemMetadata.md
   - docs/Models/Components/CommerceItemOption.md
   - docs/Models/Components/CommerceItemPrice.md
+  - docs/Models/Components/CommerceItemRaw.md
   - docs/Models/Components/CommerceItemVariant.md
   - docs/Models/Components/CommerceLocation.md
+  - docs/Models/Components/CommerceLocationRaw.md
   - docs/Models/Components/Connection.md
   - docs/Models/Components/ContentType.md
   - docs/Models/Components/CrmCompany.md
@@ -1344,6 +1353,7 @@ generatedFiles:
   - docs/Models/Components/EnrichTelephoneType.md
   - docs/Models/Components/Ethnicity.md
   - docs/Models/Components/Event.md
+  - docs/Models/Components/ExtraData.md
   - docs/Models/Components/Frequency.md
   - docs/Models/Components/FromWebhook.md
   - docs/Models/Components/GenaiContent.md
@@ -1512,6 +1522,7 @@ generatedFiles:
   - docs/Models/Components/PropertyStoragePermissionRoles.md
   - docs/Models/Components/PropertyUcCallTelephone.md
   - docs/Models/Components/PropertyUcCallTelephoneType.md
+  - docs/Models/Components/Raw.md
   - docs/Models/Components/Recommendation.md
   - docs/Models/Components/RepoBranch.md
   - docs/Models/Components/RepoCommit.md
@@ -1573,6 +1584,7 @@ generatedFiles:
   - docs/Models/Components/UcEmailType.md
   - docs/Models/Components/UcTelephone.md
   - docs/Models/Components/UcTelephoneType.md
+  - docs/Models/Components/Value.md
   - docs/Models/Components/VirtualWebhookChannelId.md
   - docs/Models/Components/VirtualWebhookCompanyId.md
   - docs/Models/Components/VirtualWebhookContactId.md

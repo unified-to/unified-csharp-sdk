@@ -11,7 +11,7 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
-    using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
     public class CommerceInventory
@@ -36,7 +36,7 @@ namespace UnifiedTo.Models.Components
         public string? LocationId { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public CommerceInventoryRaw? Raw { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
