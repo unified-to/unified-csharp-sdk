@@ -45,6 +45,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
         PropertyConnectionCategories.Repo,
     },
+    IntegrationName = "<value>",
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
         PropertyConnectionPermissions.CrmLeadRead,
@@ -513,6 +514,7 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(
         Categories = new List<PropertyConnectionCategories>() {
             PropertyConnectionCategories.Genai,
         },
+        IntegrationName = "<value>",
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
             PropertyConnectionPermissions.MetadataMetadataWrite,
@@ -710,6 +712,7 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
         Categories = new List<PropertyConnectionCategories>() {
             PropertyConnectionCategories.Task,
         },
+        IntegrationName = "<value>",
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
             PropertyConnectionPermissions.RepoPullrequestWrite,

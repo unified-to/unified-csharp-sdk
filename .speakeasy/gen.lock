@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 00e71c38f182c4bad7a19b0c7bb3e211
+  docChecksum: 075b9cea2675db23b5f8cea829ebb57f
   docVersion: "1.0"
-  speakeasyVersion: 1.481.1
-  generationVersion: 2.500.5
-  releaseVersion: 0.22.8
-  configChecksum: e4412bcb85cedbeb5ee994e5ba95c3c8
+  speakeasyVersion: 1.484.1
+  generationVersion: 2.503.2
+  releaseVersion: 0.22.9
+  configChecksum: ffcf488e432703ab67941f6b9770d2e5
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -245,6 +245,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListQuery.cs
   - UnifiedTo/Models/Components/ListRawFields.cs
   - UnifiedTo/Models/Components/ListRepoId.cs
+  - UnifiedTo/Models/Components/ListRootId.cs
   - UnifiedTo/Models/Components/ListSortByCreatedAt.cs
   - UnifiedTo/Models/Components/ListSortByName.cs
   - UnifiedTo/Models/Components/ListSortByUpdatedAt.cs
@@ -273,6 +274,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/MessagingChannel.cs
   - UnifiedTo/Models/Components/MessagingMember.cs
   - UnifiedTo/Models/Components/MessagingMessage.cs
+  - UnifiedTo/Models/Components/Meta.cs
   - UnifiedTo/Models/Components/MetadataMetadata.cs
   - UnifiedTo/Models/Components/NativeWebhookParentId.cs
   - UnifiedTo/Models/Components/NativeWebhookProjectId.cs
@@ -302,6 +304,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyAtsCompanyAddress.cs
   - UnifiedTo/Models/Components/PropertyCommerceLocationAddress.cs
   - UnifiedTo/Models/Components/PropertyConnectionAuth.cs
+  - UnifiedTo/Models/Components/PropertyConnectionAuthMeta.cs
   - UnifiedTo/Models/Components/PropertyConnectionCategories.cs
   - UnifiedTo/Models/Components/PropertyConnectionPermissions.cs
   - UnifiedTo/Models/Components/PropertyCrmCompanyAddress.cs
@@ -1421,6 +1424,7 @@ generatedFiles:
   - docs/Models/Components/ListQuery.md
   - docs/Models/Components/ListRawFields.md
   - docs/Models/Components/ListRepoId.md
+  - docs/Models/Components/ListRootId.md
   - docs/Models/Components/ListSortByCreatedAt.md
   - docs/Models/Components/ListSortByName.md
   - docs/Models/Components/ListSortByUpdatedAt.md
@@ -1449,6 +1453,7 @@ generatedFiles:
   - docs/Models/Components/MessagingChannel.md
   - docs/Models/Components/MessagingMember.md
   - docs/Models/Components/MessagingMessage.md
+  - docs/Models/Components/Meta.md
   - docs/Models/Components/MetadataMetadata.md
   - docs/Models/Components/NativeWebhookParentId.md
   - docs/Models/Components/NativeWebhookProjectId.md
@@ -1478,6 +1483,7 @@ generatedFiles:
   - docs/Models/Components/PropertyAtsCompanyAddress.md
   - docs/Models/Components/PropertyCommerceLocationAddress.md
   - docs/Models/Components/PropertyConnectionAuth.md
+  - docs/Models/Components/PropertyConnectionAuthMeta.md
   - docs/Models/Components/PropertyConnectionCategories.md
   - docs/Models/Components/PropertyConnectionPermissions.md
   - docs/Models/Components/PropertyCrmCompanyAddress.md
@@ -5836,7 +5842,7 @@ examples:
     speakeasy-default-create-unified-connection:
       responses:
         "200":
-          application/json: {"categories": ["accounting", "martech", "martech"], "environment": "Production", "integration_type": "<value>", "permissions": ["lms_course_read", "scim_users_read"]}
+          application/json: {"categories": ["accounting", "martech", "martech"], "environment": "Production", "integration_name": "<value>", "integration_type": "<value>", "permissions": ["lms_course_read", "scim_users_read"]}
   createUnifiedWebhook:
     speakeasy-default-create-unified-webhook:
       responses:
@@ -5857,7 +5863,7 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"categories": ["storage"], "environment": "Production", "integration_type": "<value>", "permissions": ["kms_page_read"]}
+          application/json: {"categories": ["storage"], "environment": "Production", "integration_name": "<value>", "integration_type": "<value>", "permissions": ["kms_page_read"]}
   getUnifiedIntegrationAuth:
     speakeasy-default-get-unified-integration-auth:
       parameters:
@@ -5885,7 +5891,7 @@ examples:
     speakeasy-default-list-unified-connections:
       responses:
         "200":
-          application/json: [{"categories": [], "environment": "Production", "integration_type": "<value>", "permissions": ["kms_comment_write", "kms_space_read"]}, {"categories": ["auth"], "environment": "Production", "integration_type": "<value>", "permissions": ["crm_deal_write", "ats_interview_read", "repo_pullrequest_read"]}]
+          application/json: [{"categories": [], "environment": "Production", "integration_name": "<value>", "integration_type": "<value>", "permissions": ["kms_comment_write", "kms_space_read"]}, {"categories": ["auth"], "environment": "Production", "integration_name": "<value>", "integration_type": "<value>", "permissions": ["crm_deal_write", "ats_interview_read", "repo_pullrequest_read"]}]
   listUnifiedIntegrationWorkspaces:
     speakeasy-default-list-unified-integration-workspaces:
       parameters:
@@ -5917,7 +5923,7 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"categories": ["metadata", "crm"], "environment": "Production", "integration_type": "<value>", "permissions": []}
+          application/json: {"categories": ["metadata", "crm"], "environment": "Production", "integration_name": "<value>", "integration_type": "<value>", "permissions": []}
   patchUnifiedWebhook:
     speakeasy-default-patch-unified-webhook:
       parameters:
@@ -5948,7 +5954,7 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"categories": ["metadata", "accounting", "metadata"], "environment": "Production", "integration_type": "<value>", "permissions": []}
+          application/json: {"categories": ["metadata", "accounting", "metadata"], "environment": "Production", "integration_name": "<value>", "integration_type": "<value>", "permissions": []}
   updateUnifiedWebhook:
     speakeasy-default-update-unified-webhook:
       parameters:

@@ -48,6 +48,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("integration_name")]
+        public string IntegrationName { get; set; } = default!;
+
         [JsonProperty("integration_type")]
         public string IntegrationType { get; set; } = default!;
 

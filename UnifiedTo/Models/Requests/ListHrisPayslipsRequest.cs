@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Requests
     public class ListHrisPayslipsRequest
     {
 
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=company_id")]
+        public string? CompanyId { get; set; }
+
         /// <summary>
         /// ID of the connection
         /// </summary>

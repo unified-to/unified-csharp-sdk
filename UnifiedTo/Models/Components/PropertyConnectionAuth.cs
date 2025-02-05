@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
     /// <summary>
@@ -60,7 +61,7 @@ namespace UnifiedTo.Models.Components
         public string? Key { get; set; }
 
         [JsonProperty("meta")]
-        public Dictionary<string, object>? Meta { get; set; }
+        public PropertyConnectionAuthMeta? Meta { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }

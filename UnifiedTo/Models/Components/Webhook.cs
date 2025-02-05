@@ -58,7 +58,7 @@ namespace UnifiedTo.Models.Components
         public bool? IsHealthy { get; set; }
 
         [JsonProperty("meta")]
-        public Dictionary<string, object>? Meta { get; set; }
+        public Meta? Meta { get; set; }
 
         [JsonProperty("object_type")]
         public ObjectType ObjectType { get; set; } = default!;
