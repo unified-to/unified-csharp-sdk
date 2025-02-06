@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
     public class MetadataMetadata
@@ -32,11 +33,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("objects")]
         public Dictionary<string, string>? Objects { get; set; }
 
+        [JsonProperty("options")]
+        public List<string>? Options { get; set; }
+
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public MetadataMetadataRaw? Raw { get; set; }
 
         [JsonProperty("type")]
-        public string? Type { get; set; }
+        public MetadataMetadataType? Type { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

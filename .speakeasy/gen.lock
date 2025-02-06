@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 075b9cea2675db23b5f8cea829ebb57f
+  docChecksum: d11952529f2b721f734977d81996920c
   docVersion: "1.0"
   speakeasyVersion: 1.484.1
   generationVersion: 2.503.2
-  releaseVersion: 0.22.9
-  configChecksum: ffcf488e432703ab67941f6b9770d2e5
+  releaseVersion: 0.22.10
+  configChecksum: ba1bf2979d0659aa4422a8de0ad075fc
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -276,6 +276,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/MessagingMessage.cs
   - UnifiedTo/Models/Components/Meta.cs
   - UnifiedTo/Models/Components/MetadataMetadata.cs
+  - UnifiedTo/Models/Components/MetadataMetadataRaw.cs
+  - UnifiedTo/Models/Components/MetadataMetadataType.cs
   - UnifiedTo/Models/Components/NativeWebhookParentId.cs
   - UnifiedTo/Models/Components/NativeWebhookProjectId.cs
   - UnifiedTo/Models/Components/ObjectType.cs
@@ -1455,6 +1457,8 @@ generatedFiles:
   - docs/Models/Components/MessagingMessage.md
   - docs/Models/Components/Meta.md
   - docs/Models/Components/MetadataMetadata.md
+  - docs/Models/Components/MetadataMetadataRaw.md
+  - docs/Models/Components/MetadataMetadataType.md
   - docs/Models/Components/NativeWebhookParentId.md
   - docs/Models/Components/NativeWebhookProjectId.md
   - docs/Models/Components/ObjectType.md

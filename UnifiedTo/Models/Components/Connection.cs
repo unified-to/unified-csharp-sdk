@@ -49,7 +49,7 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         [JsonProperty("integration_name")]
-        public string IntegrationName { get; set; } = default!;
+        public string? IntegrationName { get; set; }
 
         [JsonProperty("integration_type")]
         public string IntegrationType { get; set; } = default!;
