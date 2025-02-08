@@ -61,6 +61,12 @@ namespace UnifiedTo.Models.Components
         public double? NumberOfOpenings { get; set; }
 
         /// <summary>
+        /// Public job postings
+        /// </summary>
+        [JsonProperty("postings")]
+        public List<AtsJobPosting>? Postings { get; set; }
+
+        /// <summary>
         /// URLs for pages containing public listings for the job
         /// </summary>
         [JsonProperty("public_job_urls")]
@@ -70,7 +76,7 @@ namespace UnifiedTo.Models.Components
         public List<AtsJobQuestion>? Questions { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public AtsJobRaw? Raw { get; set; }
 
         [JsonProperty("recruiter_ids")]
         public List<string>? RecruiterIds { get; set; }

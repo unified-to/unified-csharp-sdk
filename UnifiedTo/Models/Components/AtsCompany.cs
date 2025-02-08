@@ -37,7 +37,7 @@ namespace UnifiedTo.Models.Components
         public string? Phone { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public AtsCompanyRaw? Raw { get; set; }
 
         [JsonProperty("recruiter_ids")]
         public List<string>? RecruiterIds { get; set; }

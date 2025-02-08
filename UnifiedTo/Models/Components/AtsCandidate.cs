@@ -58,7 +58,7 @@ namespace UnifiedTo.Models.Components
         public Origin? Origin { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public AtsCandidateRaw? Raw { get; set; }
 
         [JsonProperty("sources")]
         public List<string>? Sources { get; set; }

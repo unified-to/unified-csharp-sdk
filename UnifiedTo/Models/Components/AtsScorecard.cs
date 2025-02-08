@@ -46,7 +46,7 @@ namespace UnifiedTo.Models.Components
         public List<AtsScorecardQuestion>? Questions { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public AtsScorecardRaw? Raw { get; set; }
 
         [JsonProperty("recommendation")]
         public Recommendation? Recommendation { get; set; }

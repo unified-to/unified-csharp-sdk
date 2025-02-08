@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: d11952529f2b721f734977d81996920c
+  docChecksum: 079a662c33e65673ca2fb2b1cc54edc4
   docVersion: "1.0"
-  speakeasyVersion: 1.484.1
-  generationVersion: 2.503.2
-  releaseVersion: 0.22.10
-  configChecksum: ba1bf2979d0659aa4422a8de0ad075fc
+  speakeasyVersion: 1.487.1
+  generationVersion: 2.506.0
+  releaseVersion: 0.22.11
+  configChecksum: ee89606fedb9a7e1c90df0dc2a0f0de3
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -113,29 +113,39 @@ generatedFiles:
   - UnifiedTo/Models/Components/AtsAddress.cs
   - UnifiedTo/Models/Components/AtsApplication.cs
   - UnifiedTo/Models/Components/AtsApplicationAnswer.cs
+  - UnifiedTo/Models/Components/AtsApplicationRaw.cs
   - UnifiedTo/Models/Components/AtsApplicationStatus.cs
   - UnifiedTo/Models/Components/AtsCandidate.cs
+  - UnifiedTo/Models/Components/AtsCandidateRaw.cs
   - UnifiedTo/Models/Components/AtsCompany.cs
+  - UnifiedTo/Models/Components/AtsCompanyRaw.cs
   - UnifiedTo/Models/Components/AtsCompensation.cs
   - UnifiedTo/Models/Components/AtsCompensationType.cs
   - UnifiedTo/Models/Components/AtsDocument.cs
+  - UnifiedTo/Models/Components/AtsDocumentRaw.cs
   - UnifiedTo/Models/Components/AtsDocumentType.cs
   - UnifiedTo/Models/Components/AtsEmail.cs
   - UnifiedTo/Models/Components/AtsEmailType.cs
   - UnifiedTo/Models/Components/AtsInterview.cs
+  - UnifiedTo/Models/Components/AtsInterviewRaw.cs
   - UnifiedTo/Models/Components/AtsInterviewStatus.cs
   - UnifiedTo/Models/Components/AtsJob.cs
+  - UnifiedTo/Models/Components/AtsJobPosting.cs
   - UnifiedTo/Models/Components/AtsJobQuestion.cs
   - UnifiedTo/Models/Components/AtsJobQuestionType.cs
+  - UnifiedTo/Models/Components/AtsJobRaw.cs
   - UnifiedTo/Models/Components/AtsJobStatus.cs
   - UnifiedTo/Models/Components/AtsOffer.cs
   - UnifiedTo/Models/Components/AtsScorecard.cs
   - UnifiedTo/Models/Components/AtsScorecardQuestion.cs
+  - UnifiedTo/Models/Components/AtsScorecardRaw.cs
   - UnifiedTo/Models/Components/AtsStatus.cs
+  - UnifiedTo/Models/Components/AtsStatusRaw.cs
   - UnifiedTo/Models/Components/AtsStatusStatus.cs
   - UnifiedTo/Models/Components/AtsTelephone.cs
   - UnifiedTo/Models/Components/AtsTelephoneType.cs
   - UnifiedTo/Models/Components/CommerceCollection.cs
+  - UnifiedTo/Models/Components/CommerceCollectionRaw.cs
   - UnifiedTo/Models/Components/CommerceCollectionType.cs
   - UnifiedTo/Models/Components/CommerceInventory.cs
   - UnifiedTo/Models/Components/CommerceInventoryRaw.cs
@@ -304,6 +314,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyAtsActivityFromType.cs
   - UnifiedTo/Models/Components/PropertyAtsCandidateAddress.cs
   - UnifiedTo/Models/Components/PropertyAtsCompanyAddress.cs
+  - UnifiedTo/Models/Components/PropertyAtsJobPostingAddress.cs
   - UnifiedTo/Models/Components/PropertyCommerceLocationAddress.cs
   - UnifiedTo/Models/Components/PropertyConnectionAuth.cs
   - UnifiedTo/Models/Components/PropertyConnectionAuthMeta.cs
@@ -1294,29 +1305,39 @@ generatedFiles:
   - docs/Models/Components/AtsAddress.md
   - docs/Models/Components/AtsApplication.md
   - docs/Models/Components/AtsApplicationAnswer.md
+  - docs/Models/Components/AtsApplicationRaw.md
   - docs/Models/Components/AtsApplicationStatus.md
   - docs/Models/Components/AtsCandidate.md
+  - docs/Models/Components/AtsCandidateRaw.md
   - docs/Models/Components/AtsCompany.md
+  - docs/Models/Components/AtsCompanyRaw.md
   - docs/Models/Components/AtsCompensation.md
   - docs/Models/Components/AtsCompensationType.md
   - docs/Models/Components/AtsDocument.md
+  - docs/Models/Components/AtsDocumentRaw.md
   - docs/Models/Components/AtsDocumentType.md
   - docs/Models/Components/AtsEmail.md
   - docs/Models/Components/AtsEmailType.md
   - docs/Models/Components/AtsInterview.md
+  - docs/Models/Components/AtsInterviewRaw.md
   - docs/Models/Components/AtsInterviewStatus.md
   - docs/Models/Components/AtsJob.md
+  - docs/Models/Components/AtsJobPosting.md
   - docs/Models/Components/AtsJobQuestion.md
   - docs/Models/Components/AtsJobQuestionType.md
+  - docs/Models/Components/AtsJobRaw.md
   - docs/Models/Components/AtsJobStatus.md
   - docs/Models/Components/AtsOffer.md
   - docs/Models/Components/AtsScorecard.md
   - docs/Models/Components/AtsScorecardQuestion.md
+  - docs/Models/Components/AtsScorecardRaw.md
   - docs/Models/Components/AtsStatus.md
+  - docs/Models/Components/AtsStatusRaw.md
   - docs/Models/Components/AtsStatusStatus.md
   - docs/Models/Components/AtsTelephone.md
   - docs/Models/Components/AtsTelephoneType.md
   - docs/Models/Components/CommerceCollection.md
+  - docs/Models/Components/CommerceCollectionRaw.md
   - docs/Models/Components/CommerceCollectionType.md
   - docs/Models/Components/CommerceInventory.md
   - docs/Models/Components/CommerceInventoryRaw.md
@@ -1485,6 +1506,7 @@ generatedFiles:
   - docs/Models/Components/PropertyAtsActivityFromType.md
   - docs/Models/Components/PropertyAtsCandidateAddress.md
   - docs/Models/Components/PropertyAtsCompanyAddress.md
+  - docs/Models/Components/PropertyAtsJobPostingAddress.md
   - docs/Models/Components/PropertyCommerceLocationAddress.md
   - docs/Models/Components/PropertyConnectionAuth.md
   - docs/Models/Components/PropertyConnectionAuthMeta.md

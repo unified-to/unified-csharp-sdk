@@ -10,7 +10,6 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
-    using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
@@ -27,7 +26,7 @@ namespace UnifiedTo.Models.Components
         public string? OriginalStatus { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public AtsStatusRaw? Raw { get; set; }
 
         [JsonProperty("status")]
         public AtsStatusStatus? Status { get; set; }

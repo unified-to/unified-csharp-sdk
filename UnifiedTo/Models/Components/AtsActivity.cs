@@ -55,7 +55,7 @@ namespace UnifiedTo.Models.Components
         public string? JobId { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public Raw? Raw { get; set; }
 
         [JsonProperty("sub_type")]
         public string? SubType { get; set; }
