@@ -58,7 +58,7 @@ namespace UnifiedTo.Models.Components
         public string? PortalUrl { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public AccountingContactRaw? Raw { get; set; }
 
         [JsonProperty("shipping_address")]
         public PropertyAccountingContactShippingAddress? ShippingAddress { get; set; }

@@ -12,6 +12,7 @@
 | `MultipleChoice` | MULTIPLE_CHOICE  |
 | `File`           | FILE             |
 | `Textarea`       | TEXTAREA         |
+| `SingleSelect`   | SINGLE_SELECT    |
 | `MultipleSelect` | MULTIPLE_SELECT  |
 | `Email`          | EMAIL            |
 | `Phone`          | PHONE            |

@@ -11,7 +11,6 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
-    using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
@@ -27,6 +26,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("comments")]
         public string? Comments { get; set; }
 
+        [JsonProperty("company_id")]
+        public string? CompanyId { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -37,7 +39,7 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public HrisTimeoffRaw? Raw { get; set; }
 
         [JsonProperty("start_at")]
         public DateTime StartAt { get; set; } = default!;
@@ -52,6 +54,6 @@ namespace UnifiedTo.Models.Components
         public DateTime? UpdatedAt { get; set; }
 
         [JsonProperty("user_id")]
-        public string UserId { get; set; } = default!;
+        public string? UserId { get; set; }
     }
 }

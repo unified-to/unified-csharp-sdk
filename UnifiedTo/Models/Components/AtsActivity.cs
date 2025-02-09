@@ -55,7 +55,7 @@ namespace UnifiedTo.Models.Components
         public string? JobId { get; set; }
 
         [JsonProperty("raw")]
-        public Raw? Raw { get; set; }
+        public AtsActivityRaw? Raw { get; set; }
 
         [JsonProperty("sub_type")]
         public string? SubType { get; set; }

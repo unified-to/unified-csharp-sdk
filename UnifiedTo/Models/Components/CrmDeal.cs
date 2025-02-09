@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
     /// <summary>
@@ -25,6 +26,12 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("closed_at")]
         public DateTime? ClosedAt { get; set; }
+
+        [JsonProperty("company_ids")]
+        public List<string>? CompanyIds { get; set; }
+
+        [JsonProperty("contact_ids")]
+        public List<string>? ContactIds { get; set; }
 
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
@@ -50,11 +57,8 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("probability")]
         public double? Probability { get; set; }
 
-        /// <summary>
-        /// The raw data returned by the integration for this deal
-        /// </summary>
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public CrmDealRaw? Raw { get; set; }
 
         [JsonProperty("source")]
         public string? Source { get; set; }

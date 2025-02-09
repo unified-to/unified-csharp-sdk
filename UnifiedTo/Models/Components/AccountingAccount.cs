@@ -11,7 +11,6 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
-    using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
@@ -51,11 +50,8 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("parent_account_id")]
         public string? ParentAccountId { get; set; }
 
-        /// <summary>
-        /// The original data from the integration&apos;s API
-        /// </summary>
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public Raw? Raw { get; set; }
 
         [JsonProperty("section")]
         public string? Section { get; set; }

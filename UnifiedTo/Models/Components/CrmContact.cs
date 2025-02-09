@@ -51,17 +51,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// Additional URLs associated with the contact e.g., LinkedIn, website, etc
+        /// </summary>
         [JsonProperty("link_urls")]
         public List<string>? LinkUrls { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }
 
-        /// <summary>
-        /// The raw data returned by the integration for this contact
-        /// </summary>
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public CrmContactRaw? Raw { get; set; }
 
         /// <summary>
         /// An array of telephones for this contact

@@ -40,7 +40,7 @@ namespace UnifiedTo.Models.Components
         public List<AccountingLineitem>? Lineitems { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public AccountingOrderRaw? Raw { get; set; }
 
         [JsonProperty("shipping_address")]
         public PropertyAccountingOrderShippingAddress? ShippingAddress { get; set; }

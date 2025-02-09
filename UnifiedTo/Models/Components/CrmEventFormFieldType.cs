@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Components
         File,
         [JsonProperty("TEXTAREA")]
         Textarea,
+        [JsonProperty("SINGLE_SELECT")]
+        SingleSelect,
         [JsonProperty("MULTIPLE_SELECT")]
         MultipleSelect,
         [JsonProperty("EMAIL")]

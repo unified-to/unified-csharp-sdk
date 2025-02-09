@@ -57,17 +57,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        /// <summary>
+        /// Additional URLs associated with the contact e.g., LinkedIn, website, etc
+        /// </summary>
         [JsonProperty("link_urls")]
         public List<string>? LinkUrls { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }
 
-        /// <summary>
-        /// The raw data returned by the integration for this company
-        /// </summary>
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public CrmCompanyRaw? Raw { get; set; }
 
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }

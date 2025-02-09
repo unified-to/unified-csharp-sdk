@@ -18,6 +18,9 @@ namespace UnifiedTo.Models.Components
     public class HrisPayslip
     {
 
+        [JsonProperty("company_id")]
+        public string? CompanyId { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -46,7 +49,7 @@ namespace UnifiedTo.Models.Components
         public PaymentType? PaymentType { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object> Raw { get; set; } = default!;
+        public HrisPayslipRaw Raw { get; set; } = default!;
 
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
@@ -55,6 +58,6 @@ namespace UnifiedTo.Models.Components
         public DateTime? UpdatedAt { get; set; }
 
         [JsonProperty("user_id")]
-        public string UserId { get; set; } = default!;
+        public string? UserId { get; set; }
     }
 }

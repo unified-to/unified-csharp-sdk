@@ -37,7 +37,7 @@ namespace UnifiedTo.Models.Components
         public string? Name { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public CrmPipelineRaw? Raw { get; set; }
 
         [JsonProperty("stages")]
         public List<CrmStage>? Stages { get; set; }

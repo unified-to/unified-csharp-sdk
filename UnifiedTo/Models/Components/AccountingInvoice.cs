@@ -64,7 +64,7 @@ namespace UnifiedTo.Models.Components
         public PaymentCollectionMethod? PaymentCollectionMethod { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public AccountingInvoiceRaw? Raw { get; set; }
 
         [JsonProperty("refund_amount")]
         public double? RefundAmount { get; set; }

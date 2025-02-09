@@ -37,7 +37,7 @@ namespace UnifiedTo.Models.Components
         public List<AccountingJournalLineitem>? Lineitems { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public AccountingJournalRaw? Raw { get; set; }
 
         [JsonProperty("reference")]
         public string? Reference { get; set; }

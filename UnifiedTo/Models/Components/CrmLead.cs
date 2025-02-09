@@ -52,7 +52,7 @@ namespace UnifiedTo.Models.Components
         public string? Name { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public CrmLeadRaw? Raw { get; set; }
 
         [JsonProperty("source")]
         public string? Source { get; set; }

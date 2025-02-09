@@ -52,7 +52,7 @@ namespace UnifiedTo.Models.Components
         public string? PaymentTerms { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public AccountingTransactionRaw? Raw { get; set; }
 
         [JsonProperty("reference")]
         public string? Reference { get; set; }

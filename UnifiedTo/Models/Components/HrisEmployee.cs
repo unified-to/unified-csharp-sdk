@@ -100,7 +100,7 @@ namespace UnifiedTo.Models.Components
         public string? Pronouns { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public HrisEmployeeRaw? Raw { get; set; }
 
         [JsonProperty("salutation")]
         public string? Salutation { get; set; }

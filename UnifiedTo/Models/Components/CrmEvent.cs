@@ -81,11 +81,8 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("page_view")]
         public PropertyCrmEventPageView? PageView { get; set; }
 
-        /// <summary>
-        /// The raw data returned by the integration for this event.
-        /// </summary>
         [JsonProperty("raw")]
-        public Dictionary<string, object>? Raw { get; set; }
+        public CrmEventRaw? Raw { get; set; }
 
         /// <summary>
         /// The task object, when type = task

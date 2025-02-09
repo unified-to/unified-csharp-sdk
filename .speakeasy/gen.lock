@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 079a662c33e65673ca2fb2b1cc54edc4
+  docChecksum: b8229482579a72269cca223071c1d36c
   docVersion: "1.0"
   speakeasyVersion: 1.487.1
   generationVersion: 2.506.0
-  releaseVersion: 0.22.11
-  configChecksum: ee89606fedb9a7e1c90df0dc2a0f0de3
+  releaseVersion: 0.22.12
+  configChecksum: cd5bde66b63650b4b6c64b7745118705
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -88,27 +88,35 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingContact.cs
   - UnifiedTo/Models/Components/AccountingContactPaymentMethod.cs
   - UnifiedTo/Models/Components/AccountingContactPaymentMethodType.cs
+  - UnifiedTo/Models/Components/AccountingContactRaw.cs
   - UnifiedTo/Models/Components/AccountingEmail.cs
   - UnifiedTo/Models/Components/AccountingEmailType.cs
   - UnifiedTo/Models/Components/AccountingInvoice.cs
+  - UnifiedTo/Models/Components/AccountingInvoiceRaw.cs
   - UnifiedTo/Models/Components/AccountingInvoiceStatus.cs
   - UnifiedTo/Models/Components/AccountingInvoiceType.cs
   - UnifiedTo/Models/Components/AccountingJournal.cs
   - UnifiedTo/Models/Components/AccountingJournalLineitem.cs
+  - UnifiedTo/Models/Components/AccountingJournalRaw.cs
   - UnifiedTo/Models/Components/AccountingLineitem.cs
   - UnifiedTo/Models/Components/AccountingOrder.cs
+  - UnifiedTo/Models/Components/AccountingOrderRaw.cs
   - UnifiedTo/Models/Components/AccountingOrderStatus.cs
   - UnifiedTo/Models/Components/AccountingOrderType.cs
   - UnifiedTo/Models/Components/AccountingOrganization.cs
+  - UnifiedTo/Models/Components/AccountingOrganizationRaw.cs
   - UnifiedTo/Models/Components/AccountingTaxrate.cs
+  - UnifiedTo/Models/Components/AccountingTaxrateRaw.cs
   - UnifiedTo/Models/Components/AccountingTelephone.cs
   - UnifiedTo/Models/Components/AccountingTelephoneType.cs
   - UnifiedTo/Models/Components/AccountingTransaction.cs
   - UnifiedTo/Models/Components/AccountingTransactionContact.cs
   - UnifiedTo/Models/Components/AccountingTransactionLineItem.cs
+  - UnifiedTo/Models/Components/AccountingTransactionRaw.cs
   - UnifiedTo/Models/Components/ApiCall.cs
   - UnifiedTo/Models/Components/ApiCallType.cs
   - UnifiedTo/Models/Components/AtsActivity.cs
+  - UnifiedTo/Models/Components/AtsActivityRaw.cs
   - UnifiedTo/Models/Components/AtsActivityType.cs
   - UnifiedTo/Models/Components/AtsAddress.cs
   - UnifiedTo/Models/Components/AtsApplication.cs
@@ -136,6 +144,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/AtsJobRaw.cs
   - UnifiedTo/Models/Components/AtsJobStatus.cs
   - UnifiedTo/Models/Components/AtsOffer.cs
+  - UnifiedTo/Models/Components/AtsOfferRaw.cs
+  - UnifiedTo/Models/Components/AtsOfferStatus.cs
   - UnifiedTo/Models/Components/AtsScorecard.cs
   - UnifiedTo/Models/Components/AtsScorecardQuestion.cs
   - UnifiedTo/Models/Components/AtsScorecardRaw.cs
@@ -162,17 +172,23 @@ generatedFiles:
   - UnifiedTo/Models/Components/Connection.cs
   - UnifiedTo/Models/Components/ContentType.cs
   - UnifiedTo/Models/Components/CrmCompany.cs
+  - UnifiedTo/Models/Components/CrmCompanyRaw.cs
   - UnifiedTo/Models/Components/CrmContact.cs
+  - UnifiedTo/Models/Components/CrmContactRaw.cs
   - UnifiedTo/Models/Components/CrmDeal.cs
+  - UnifiedTo/Models/Components/CrmDealRaw.cs
   - UnifiedTo/Models/Components/CrmEmail.cs
   - UnifiedTo/Models/Components/CrmEmailType.cs
   - UnifiedTo/Models/Components/CrmEvent.cs
   - UnifiedTo/Models/Components/CrmEventFormField.cs
   - UnifiedTo/Models/Components/CrmEventFormFieldType.cs
   - UnifiedTo/Models/Components/CrmEventFormOption.cs
+  - UnifiedTo/Models/Components/CrmEventRaw.cs
   - UnifiedTo/Models/Components/CrmEventType.cs
   - UnifiedTo/Models/Components/CrmLead.cs
+  - UnifiedTo/Models/Components/CrmLeadRaw.cs
   - UnifiedTo/Models/Components/CrmPipeline.cs
+  - UnifiedTo/Models/Components/CrmPipelineRaw.cs
   - UnifiedTo/Models/Components/CrmStage.cs
   - UnifiedTo/Models/Components/CrmTelephone.cs
   - UnifiedTo/Models/Components/CrmTelephoneType.cs
@@ -195,6 +211,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/GenaiPrompt.cs
   - UnifiedTo/Models/Components/Gender.cs
   - UnifiedTo/Models/Components/HrisCompany.cs
+  - UnifiedTo/Models/Components/HrisCompanyRaw.cs
   - UnifiedTo/Models/Components/HrisCompensation.cs
   - UnifiedTo/Models/Components/HrisCompensationFrequency.cs
   - UnifiedTo/Models/Components/HrisCompensationType.cs
@@ -203,15 +220,20 @@ generatedFiles:
   - UnifiedTo/Models/Components/HrisEmployee.cs
   - UnifiedTo/Models/Components/HrisEmployeeEmploymentType.cs
   - UnifiedTo/Models/Components/HrisEmployeeGender.cs
+  - UnifiedTo/Models/Components/HrisEmployeeRaw.cs
   - UnifiedTo/Models/Components/HrisGroup.cs
+  - UnifiedTo/Models/Components/HrisGroupRaw.cs
   - UnifiedTo/Models/Components/HrisGroupType.cs
   - UnifiedTo/Models/Components/HrisLocation.cs
+  - UnifiedTo/Models/Components/HrisLocationRaw.cs
   - UnifiedTo/Models/Components/HrisPayslip.cs
   - UnifiedTo/Models/Components/HrisPayslipDetail.cs
   - UnifiedTo/Models/Components/HrisPayslipDetailType.cs
+  - UnifiedTo/Models/Components/HrisPayslipRaw.cs
   - UnifiedTo/Models/Components/HrisTelephone.cs
   - UnifiedTo/Models/Components/HrisTelephoneType.cs
   - UnifiedTo/Models/Components/HrisTimeoff.cs
+  - UnifiedTo/Models/Components/HrisTimeoffRaw.cs
   - UnifiedTo/Models/Components/HrisTimeoffStatus.cs
   - UnifiedTo/Models/Components/HrisTimeoffType.cs
   - UnifiedTo/Models/Components/Integration.cs
@@ -1280,27 +1302,35 @@ generatedFiles:
   - docs/Models/Components/AccountingContact.md
   - docs/Models/Components/AccountingContactPaymentMethod.md
   - docs/Models/Components/AccountingContactPaymentMethodType.md
+  - docs/Models/Components/AccountingContactRaw.md
   - docs/Models/Components/AccountingEmail.md
   - docs/Models/Components/AccountingEmailType.md
   - docs/Models/Components/AccountingInvoice.md
+  - docs/Models/Components/AccountingInvoiceRaw.md
   - docs/Models/Components/AccountingInvoiceStatus.md
   - docs/Models/Components/AccountingInvoiceType.md
   - docs/Models/Components/AccountingJournal.md
   - docs/Models/Components/AccountingJournalLineitem.md
+  - docs/Models/Components/AccountingJournalRaw.md
   - docs/Models/Components/AccountingLineitem.md
   - docs/Models/Components/AccountingOrder.md
+  - docs/Models/Components/AccountingOrderRaw.md
   - docs/Models/Components/AccountingOrderStatus.md
   - docs/Models/Components/AccountingOrderType.md
   - docs/Models/Components/AccountingOrganization.md
+  - docs/Models/Components/AccountingOrganizationRaw.md
   - docs/Models/Components/AccountingTaxrate.md
+  - docs/Models/Components/AccountingTaxrateRaw.md
   - docs/Models/Components/AccountingTelephone.md
   - docs/Models/Components/AccountingTelephoneType.md
   - docs/Models/Components/AccountingTransaction.md
   - docs/Models/Components/AccountingTransactionContact.md
   - docs/Models/Components/AccountingTransactionLineItem.md
+  - docs/Models/Components/AccountingTransactionRaw.md
   - docs/Models/Components/ApiCall.md
   - docs/Models/Components/ApiCallType.md
   - docs/Models/Components/AtsActivity.md
+  - docs/Models/Components/AtsActivityRaw.md
   - docs/Models/Components/AtsActivityType.md
   - docs/Models/Components/AtsAddress.md
   - docs/Models/Components/AtsApplication.md
@@ -1328,6 +1358,8 @@ generatedFiles:
   - docs/Models/Components/AtsJobRaw.md
   - docs/Models/Components/AtsJobStatus.md
   - docs/Models/Components/AtsOffer.md
+  - docs/Models/Components/AtsOfferRaw.md
+  - docs/Models/Components/AtsOfferStatus.md
   - docs/Models/Components/AtsScorecard.md
   - docs/Models/Components/AtsScorecardQuestion.md
   - docs/Models/Components/AtsScorecardRaw.md
@@ -1354,17 +1386,23 @@ generatedFiles:
   - docs/Models/Components/Connection.md
   - docs/Models/Components/ContentType.md
   - docs/Models/Components/CrmCompany.md
+  - docs/Models/Components/CrmCompanyRaw.md
   - docs/Models/Components/CrmContact.md
+  - docs/Models/Components/CrmContactRaw.md
   - docs/Models/Components/CrmDeal.md
+  - docs/Models/Components/CrmDealRaw.md
   - docs/Models/Components/CrmEmail.md
   - docs/Models/Components/CrmEmailType.md
   - docs/Models/Components/CrmEvent.md
   - docs/Models/Components/CrmEventFormField.md
   - docs/Models/Components/CrmEventFormFieldType.md
   - docs/Models/Components/CrmEventFormOption.md
+  - docs/Models/Components/CrmEventRaw.md
   - docs/Models/Components/CrmEventType.md
   - docs/Models/Components/CrmLead.md
+  - docs/Models/Components/CrmLeadRaw.md
   - docs/Models/Components/CrmPipeline.md
+  - docs/Models/Components/CrmPipelineRaw.md
   - docs/Models/Components/CrmStage.md
   - docs/Models/Components/CrmTelephone.md
   - docs/Models/Components/CrmTelephoneType.md
@@ -1387,6 +1425,7 @@ generatedFiles:
   - docs/Models/Components/GenaiPrompt.md
   - docs/Models/Components/Gender.md
   - docs/Models/Components/HrisCompany.md
+  - docs/Models/Components/HrisCompanyRaw.md
   - docs/Models/Components/HrisCompensation.md
   - docs/Models/Components/HrisCompensationFrequency.md
   - docs/Models/Components/HrisCompensationType.md
@@ -1395,15 +1434,20 @@ generatedFiles:
   - docs/Models/Components/HrisEmployee.md
   - docs/Models/Components/HrisEmployeeEmploymentType.md
   - docs/Models/Components/HrisEmployeeGender.md
+  - docs/Models/Components/HrisEmployeeRaw.md
   - docs/Models/Components/HrisGroup.md
+  - docs/Models/Components/HrisGroupRaw.md
   - docs/Models/Components/HrisGroupType.md
   - docs/Models/Components/HrisLocation.md
+  - docs/Models/Components/HrisLocationRaw.md
   - docs/Models/Components/HrisPayslip.md
   - docs/Models/Components/HrisPayslipDetail.md
   - docs/Models/Components/HrisPayslipDetailType.md
+  - docs/Models/Components/HrisPayslipRaw.md
   - docs/Models/Components/HrisTelephone.md
   - docs/Models/Components/HrisTelephoneType.md
   - docs/Models/Components/HrisTimeoff.md
+  - docs/Models/Components/HrisTimeoffRaw.md
   - docs/Models/Components/HrisTimeoffStatus.md
   - docs/Models/Components/HrisTimeoffType.md
   - docs/Models/Components/Integration.md
@@ -4184,7 +4228,7 @@ examples:
         query: {}
       responses:
         "200":
-          application/json: [{"raw": {"key": "<value>"}, "user_id": "<id>"}]
+          application/json: [{"raw": {}, "user_id": "<id>"}]
   listHrisTimeoffs:
     speakeasy-default-list-hris-timeoffs:
       parameters:

@@ -9,9 +9,19 @@
 #nullable enable
 namespace UnifiedTo.Models.Components
 {
+    using Newtonsoft.Json;
     using UnifiedTo.Utils;
     
     public class AccountingTransactionContact
     {
+
+        [JsonProperty("id")]
+        public string Id { get; set; } = default!;
+
+        [JsonProperty("is_customer")]
+        public bool? IsCustomer { get; set; }
+
+        [JsonProperty("is_supplier")]
+        public bool? IsSupplier { get; set; }
     }
 }
