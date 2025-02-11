@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: b8229482579a72269cca223071c1d36c
+  docChecksum: 9242e0b56a832180eec64ef3e27e0be0
   docVersion: "1.0"
-  speakeasyVersion: 1.487.1
+  speakeasyVersion: 1.488.0
   generationVersion: 2.506.0
-  releaseVersion: 0.22.12
-  configChecksum: cd5bde66b63650b4b6c64b7745118705
+  releaseVersion: 0.22.13
+  configChecksum: 9b172a65c5095735945e40751f076c7f
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -192,6 +192,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/CrmStage.cs
   - UnifiedTo/Models/Components/CrmTelephone.cs
   - UnifiedTo/Models/Components/CrmTelephoneType.cs
+  - UnifiedTo/Models/Components/DbType.cs
   - UnifiedTo/Models/Components/EmploymentStatus.cs
   - UnifiedTo/Models/Components/EmploymentType.cs
   - UnifiedTo/Models/Components/EnrichCompany.cs
@@ -1406,6 +1407,7 @@ generatedFiles:
   - docs/Models/Components/CrmStage.md
   - docs/Models/Components/CrmTelephone.md
   - docs/Models/Components/CrmTelephoneType.md
+  - docs/Models/Components/DbType.md
   - docs/Models/Components/EmploymentStatus.md
   - docs/Models/Components/EmploymentType.md
   - docs/Models/Components/EnrichCompany.md

@@ -30,6 +30,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonProperty("db_name_prefix")]
+        public string? DbNamePrefix { get; set; }
+
+        [JsonProperty("db_type")]
+        public DbType? DbType { get; set; }
+
+        [JsonProperty("db_url")]
+        public string? DbUrl { get; set; }
+
         [JsonProperty("environment")]
         public string? Environment { get; set; } = "Production";
 
@@ -43,7 +52,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, string>? Filters { get; set; }
 
         [JsonProperty("hook_url")]
-        public string HookUrl { get; set; } = default!;
+        public string? HookUrl { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }

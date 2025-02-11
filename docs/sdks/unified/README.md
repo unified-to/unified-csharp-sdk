@@ -90,8 +90,7 @@ var res = await sdk.Unified.CreateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
         Event = Event.Created,
-        HookUrl = "https://blind-platypus.org/",
-        ObjectType = ObjectType.CrmDeal,
+        ObjectType = ObjectType.HrisEmployee,
     },
     includeAll: false
 );
@@ -559,8 +558,7 @@ var res = await sdk.Unified.PatchUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
         Event = Event.Deleted,
-        HookUrl = "https://calculating-habit.name/",
-        ObjectType = ObjectType.CommerceCollection,
+        ObjectType = ObjectType.CrmDeal,
     }
 );
 
@@ -756,8 +754,7 @@ var res = await sdk.Unified.UpdateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
         Event = Event.Created,
-        HookUrl = "https://glaring-postbox.info/",
-        ObjectType = ObjectType.LmsCourse,
+        ObjectType = ObjectType.PaymentLink,
     }
 );
 
