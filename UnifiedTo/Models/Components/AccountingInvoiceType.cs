@@ -19,6 +19,8 @@ namespace UnifiedTo.Models.Components
         Bill,
         [JsonProperty("INVOICE")]
         Invoice,
+        [JsonProperty("CREDITMEMO")]
+        Creditmemo,
     }
 
     public static class AccountingInvoiceTypeExtension
