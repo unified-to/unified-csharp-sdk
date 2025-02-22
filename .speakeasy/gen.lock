@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 3da93e71a8a8edbd419c4dd261a040f9
+  docChecksum: c0d6af0ca0a33fa3f44a1fca666d6fae
   docVersion: "1.0"
-  speakeasyVersion: 1.494.0
-  generationVersion: 2.515.0
-  releaseVersion: 0.22.14
-  configChecksum: 1adcce22332f9b7939caa03c5a6eb4f2
+  speakeasyVersion: 1.501.0
+  generationVersion: 2.522.1
+  releaseVersion: 0.22.15
+  configChecksum: 28b58663994b9d23e62847806ef1d23d
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -14,7 +14,7 @@ features:
   csharp:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.0.1
-    core: 3.10.13
+    core: 3.10.14
     flattening: 2.81.3
     globalSecurity: 2.83.7
     globalSecurityCallbacks: 0.1.0
@@ -134,6 +134,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/AtsDocumentType.cs
   - UnifiedTo/Models/Components/AtsEmail.cs
   - UnifiedTo/Models/Components/AtsEmailType.cs
+  - UnifiedTo/Models/Components/AtsGroup.cs
+  - UnifiedTo/Models/Components/AtsGroupType.cs
   - UnifiedTo/Models/Components/AtsInterview.cs
   - UnifiedTo/Models/Components/AtsInterviewRaw.cs
   - UnifiedTo/Models/Components/AtsInterviewStatus.cs
@@ -205,6 +207,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/Ethnicity.cs
   - UnifiedTo/Models/Components/Event.cs
   - UnifiedTo/Models/Components/ExtraData.cs
+  - UnifiedTo/Models/Components/Format.cs
   - UnifiedTo/Models/Components/Frequency.cs
   - UnifiedTo/Models/Components/FromWebhook.cs
   - UnifiedTo/Models/Components/GenaiContent.cs
@@ -310,7 +313,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/Meta.cs
   - UnifiedTo/Models/Components/MetadataMetadata.cs
   - UnifiedTo/Models/Components/MetadataMetadataRaw.cs
-  - UnifiedTo/Models/Components/MetadataMetadataType.cs
   - UnifiedTo/Models/Components/NativeWebhookParentId.cs
   - UnifiedTo/Models/Components/NativeWebhookProjectId.cs
   - UnifiedTo/Models/Components/ObjectType.cs
@@ -1349,6 +1351,8 @@ generatedFiles:
   - docs/Models/Components/AtsDocumentType.md
   - docs/Models/Components/AtsEmail.md
   - docs/Models/Components/AtsEmailType.md
+  - docs/Models/Components/AtsGroup.md
+  - docs/Models/Components/AtsGroupType.md
   - docs/Models/Components/AtsInterview.md
   - docs/Models/Components/AtsInterviewRaw.md
   - docs/Models/Components/AtsInterviewStatus.md
@@ -1420,6 +1424,7 @@ generatedFiles:
   - docs/Models/Components/Ethnicity.md
   - docs/Models/Components/Event.md
   - docs/Models/Components/ExtraData.md
+  - docs/Models/Components/Format.md
   - docs/Models/Components/Frequency.md
   - docs/Models/Components/FromWebhook.md
   - docs/Models/Components/GenaiContent.md
@@ -1525,7 +1530,6 @@ generatedFiles:
   - docs/Models/Components/Meta.md
   - docs/Models/Components/MetadataMetadata.md
   - docs/Models/Components/MetadataMetadataRaw.md
-  - docs/Models/Components/MetadataMetadataType.md
   - docs/Models/Components/NativeWebhookParentId.md
   - docs/Models/Components/NativeWebhookProjectId.md
   - docs/Models/Components/ObjectType.md

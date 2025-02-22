@@ -34,7 +34,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// The names of the departments/divisions that this job belongs to
+        /// @deprecated Use `groups` instead
         /// </summary>
         [JsonProperty("departments")]
         public List<string>? Departments { get; set; }
@@ -44,6 +44,12 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("employment_type")]
         public EmploymentType? EmploymentType { get; set; }
+
+        /// <summary>
+        /// The departments/divisions/teams that this job belongs to
+        /// </summary>
+        [JsonProperty("groups")]
+        public List<AtsGroup>? Groups { get; set; }
 
         [JsonProperty("hiring_manager_ids")]
         public List<string>? HiringManagerIds { get; set; }

@@ -39,6 +39,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("document_id")]
         public string? DocumentId { get; set; }
 
+        /// <summary>
+        /// IDs for AtsDocument.get
+        /// </summary>
+        [JsonProperty("document_ids")]
+        public List<string>? DocumentIds { get; set; }
+
         [JsonProperty("from")]
         public PropertyAtsActivityFrom? From { get; set; }
 

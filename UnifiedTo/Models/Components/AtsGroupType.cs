@@ -13,46 +13,34 @@ namespace UnifiedTo.Models.Components
     using System;
     using UnifiedTo.Utils;
     
-    public enum MetadataMetadataType
+    public enum AtsGroupType
     {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("NUMBER")]
-        Number,
-        [JsonProperty("DATE")]
-        Date,
-        [JsonProperty("BOOLEAN")]
-        Boolean,
-        [JsonProperty("FILE")]
-        File,
-        [JsonProperty("TEXTAREA")]
-        Textarea,
-        [JsonProperty("SINGLE_SELECT")]
-        SingleSelect,
-        [JsonProperty("MULTIPLE_SELECT")]
-        MultipleSelect,
-        [JsonProperty("MEASUREMENT")]
-        Measurement,
-        [JsonProperty("PRICE")]
-        Price,
-        [JsonProperty("YES_NO")]
-        YesNo,
-        [JsonProperty("CURRENCY")]
-        Currency,
-        [JsonProperty("URL")]
-        Url,
+        [JsonProperty("TEAM")]
+        Team,
+        [JsonProperty("GROUP")]
+        Group,
+        [JsonProperty("DEPARTMENT")]
+        Department,
+        [JsonProperty("DIVISION")]
+        Division,
+        [JsonProperty("BUSINESS_UNIT")]
+        BusinessUnit,
+        [JsonProperty("BRANCH")]
+        Branch,
+        [JsonProperty("SUB_DEPARTMENT")]
+        SubDepartment,
     }
 
-    public static class MetadataMetadataTypeExtension
+    public static class AtsGroupTypeExtension
     {
-        public static string Value(this MetadataMetadataType value)
+        public static string Value(this AtsGroupType value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static MetadataMetadataType ToEnum(this string value)
+        public static AtsGroupType ToEnum(this string value)
         {
-            foreach(var field in typeof(MetadataMetadataType).GetFields())
+            foreach(var field in typeof(AtsGroupType).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -65,14 +53,14 @@ namespace UnifiedTo.Models.Components
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is MetadataMetadataType)
+                    if (enumVal is AtsGroupType)
                     {
-                        return (MetadataMetadataType)enumVal;
+                        return (AtsGroupType)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum MetadataMetadataType");
+            throw new Exception($"Unknown value {value} for enum AtsGroupType");
         }
     }
 

@@ -21,6 +21,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonProperty("format")]
+        public Format? Format { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -36,11 +39,11 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("options")]
         public List<string>? Options { get; set; }
 
+        [JsonProperty("original_format")]
+        public string? OriginalFormat { get; set; }
+
         [JsonProperty("raw")]
         public MetadataMetadataRaw? Raw { get; set; }
-
-        [JsonProperty("type")]
-        public MetadataMetadataType? Type { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

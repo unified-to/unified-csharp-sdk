@@ -66,6 +66,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_healthy")]
         public bool? IsHealthy { get; set; }
 
+        [JsonProperty("is_paused")]
+        public bool? IsPaused { get; set; }
+
         [JsonProperty("meta")]
         public Meta? Meta { get; set; }
 
