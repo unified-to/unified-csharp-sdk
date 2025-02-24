@@ -50,8 +50,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.CreateHrisCompanyAsync(
-    connectionId: "<id>",
     hrisCompany: new HrisCompany() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -64,8 +64,8 @@ var res = await sdk.Hris.CreateHrisCompanyAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
-| `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
@@ -94,8 +94,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.CreateHrisEmployeeAsync(
-    connectionId: "<id>",
     hrisEmployee: new HrisEmployee() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -108,8 +108,8 @@ var res = await sdk.Hris.CreateHrisEmployeeAsync(
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
 | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `HrisEmployee`                                          | [HrisEmployee](../../Models/Components/HrisEmployee.md) | :heavy_check_mark:                                      | N/A                                                     |
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
-| `HrisEmployee`                                          | [HrisEmployee](../../Models/Components/HrisEmployee.md) | :heavy_minus_sign:                                      | N/A                                                     |
 | `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
@@ -138,8 +138,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.CreateHrisGroupAsync(
-    connectionId: "<id>",
     hrisGroup: new HrisGroup() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -152,8 +152,8 @@ var res = await sdk.Hris.CreateHrisGroupAsync(
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_check_mark:                                | N/A                                               |
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
-| `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 | `Fields`                                          | List<*string*>                                    | :heavy_minus_sign:                                | Comma-delimited fields to return                  |
 
 ### Response
@@ -182,8 +182,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.CreateHrisLocationAsync(
-    connectionId: "<id>",
     hrisLocation: new HrisLocation() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -196,8 +196,8 @@ var res = await sdk.Hris.CreateHrisLocationAsync(
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
 | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_check_mark:                                      | N/A                                                     |
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
-| `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
 | `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
@@ -730,9 +730,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.PatchHrisCompanyAsync(
+    hrisCompany: new HrisCompany() {},
     connectionId: "<id>",
     id: "<id>",
-    hrisCompany: new HrisCompany() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -745,9 +745,9 @@ var res = await sdk.Hris.PatchHrisCompanyAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Company                                     |
-| `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
@@ -776,9 +776,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.PatchHrisEmployeeAsync(
+    hrisEmployee: new HrisEmployee() {},
     connectionId: "<id>",
     id: "<id>",
-    hrisEmployee: new HrisEmployee() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -791,9 +791,9 @@ var res = await sdk.Hris.PatchHrisEmployeeAsync(
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
 | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `HrisEmployee`                                          | [HrisEmployee](../../Models/Components/HrisEmployee.md) | :heavy_check_mark:                                      | N/A                                                     |
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Employee                                      |
-| `HrisEmployee`                                          | [HrisEmployee](../../Models/Components/HrisEmployee.md) | :heavy_minus_sign:                                      | N/A                                                     |
 | `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
@@ -822,9 +822,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.PatchHrisGroupAsync(
+    hrisGroup: new HrisGroup() {},
     connectionId: "<id>",
     id: "<id>",
-    hrisGroup: new HrisGroup() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -837,9 +837,9 @@ var res = await sdk.Hris.PatchHrisGroupAsync(
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_check_mark:                                | N/A                                               |
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
 | `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Group                                   |
-| `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 | `Fields`                                          | List<*string*>                                    | :heavy_minus_sign:                                | Comma-delimited fields to return                  |
 
 ### Response
@@ -868,9 +868,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.PatchHrisLocationAsync(
+    hrisLocation: new HrisLocation() {},
     connectionId: "<id>",
     id: "<id>",
-    hrisLocation: new HrisLocation() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -883,9 +883,9 @@ var res = await sdk.Hris.PatchHrisLocationAsync(
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
 | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_check_mark:                                      | N/A                                                     |
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Location                                      |
-| `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
 | `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
@@ -1070,9 +1070,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.UpdateHrisCompanyAsync(
+    hrisCompany: new HrisCompany() {},
     connectionId: "<id>",
     id: "<id>",
-    hrisCompany: new HrisCompany() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1085,9 +1085,9 @@ var res = await sdk.Hris.UpdateHrisCompanyAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Company                                     |
-| `HrisCompany`                                         | [HrisCompany](../../Models/Components/HrisCompany.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
@@ -1116,9 +1116,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.UpdateHrisEmployeeAsync(
+    hrisEmployee: new HrisEmployee() {},
     connectionId: "<id>",
     id: "<id>",
-    hrisEmployee: new HrisEmployee() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1131,9 +1131,9 @@ var res = await sdk.Hris.UpdateHrisEmployeeAsync(
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
 | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `HrisEmployee`                                          | [HrisEmployee](../../Models/Components/HrisEmployee.md) | :heavy_check_mark:                                      | N/A                                                     |
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Employee                                      |
-| `HrisEmployee`                                          | [HrisEmployee](../../Models/Components/HrisEmployee.md) | :heavy_minus_sign:                                      | N/A                                                     |
 | `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
@@ -1162,9 +1162,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.UpdateHrisGroupAsync(
+    hrisGroup: new HrisGroup() {},
     connectionId: "<id>",
     id: "<id>",
-    hrisGroup: new HrisGroup() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1177,9 +1177,9 @@ var res = await sdk.Hris.UpdateHrisGroupAsync(
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_check_mark:                                | N/A                                               |
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
 | `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Group                                   |
-| `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 | `Fields`                                          | List<*string*>                                    | :heavy_minus_sign:                                | Comma-delimited fields to return                  |
 
 ### Response
@@ -1208,9 +1208,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.UpdateHrisLocationAsync(
+    hrisLocation: new HrisLocation() {},
     connectionId: "<id>",
     id: "<id>",
-    hrisLocation: new HrisLocation() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1223,9 +1223,9 @@ var res = await sdk.Hris.UpdateHrisLocationAsync(
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
 | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_check_mark:                                      | N/A                                                     |
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Location                                      |
-| `HrisLocation`                                          | [HrisLocation](../../Models/Components/HrisLocation.md) | :heavy_minus_sign:                                      | N/A                                                     |
 | `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response

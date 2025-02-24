@@ -52,11 +52,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.CreateRepoBranchAsync(
-    connectionId: "<id>",
     repoBranch: new RepoBranch() {
         Name = "<value>",
         RepoId = "<id>",
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -69,8 +69,8 @@ var res = await sdk.Repo.CreateRepoBranchAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `RepoBranch`                                        | [RepoBranch](../../Models/Components/RepoBranch.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
-| `RepoBranch`                                        | [RepoBranch](../../Models/Components/RepoBranch.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -99,11 +99,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.CreateRepoCommitAsync(
-    connectionId: "<id>",
     repoCommit: new RepoCommit() {
         RepoId = "<id>",
         UserId = "<id>",
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -116,8 +116,8 @@ var res = await sdk.Repo.CreateRepoCommitAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `RepoCommit`                                        | [RepoCommit](../../Models/Components/RepoCommit.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
-| `RepoCommit`                                        | [RepoCommit](../../Models/Components/RepoCommit.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -146,8 +146,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.CreateRepoOrganizationAsync(
-    connectionId: "<id>",
     repoOrganization: new RepoOrganization() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,8 +160,8 @@ var res = await sdk.Repo.CreateRepoOrganizationAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `RepoOrganization`                                              | [RepoOrganization](../../Models/Components/RepoOrganization.md) | :heavy_check_mark:                                              | N/A                                                             |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
-| `RepoOrganization`                                              | [RepoOrganization](../../Models/Components/RepoOrganization.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
@@ -190,8 +190,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.CreateRepoPullrequestAsync(
-    connectionId: "<id>",
     repoPullrequest: new RepoPullrequest() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -204,8 +204,8 @@ var res = await sdk.Repo.CreateRepoPullrequestAsync(
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `RepoPullrequest`                                             | [RepoPullrequest](../../Models/Components/RepoPullrequest.md) | :heavy_check_mark:                                            | N/A                                                           |
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
-| `RepoPullrequest`                                             | [RepoPullrequest](../../Models/Components/RepoPullrequest.md) | :heavy_minus_sign:                                            | N/A                                                           |
 | `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response
@@ -234,10 +234,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.CreateRepoRepositoryAsync(
-    connectionId: "<id>",
     repoRepository: new RepoRepository() {
         Name = "<value>",
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -250,8 +250,8 @@ var res = await sdk.Repo.CreateRepoRepositoryAsync(
 
 | Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `RepoRepository`                                            | [RepoRepository](../../Models/Components/RepoRepository.md) | :heavy_check_mark:                                          | N/A                                                         |
 | `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
-| `RepoRepository`                                            | [RepoRepository](../../Models/Components/RepoRepository.md) | :heavy_minus_sign:                                          | N/A                                                         |
 | `Fields`                                                    | List<*string*>                                              | :heavy_minus_sign:                                          | Comma-delimited fields to return                            |
 
 ### Response
@@ -700,12 +700,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.PatchRepoBranchAsync(
-    connectionId: "<id>",
-    id: "<id>",
     repoBranch: new RepoBranch() {
         Name = "<value>",
         RepoId = "<id>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -718,9 +718,9 @@ var res = await sdk.Repo.PatchRepoBranchAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `RepoBranch`                                        | [RepoBranch](../../Models/Components/RepoBranch.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
 | `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Branch                                    |
-| `RepoBranch`                                        | [RepoBranch](../../Models/Components/RepoBranch.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -749,12 +749,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.PatchRepoCommitAsync(
-    connectionId: "<id>",
-    id: "<id>",
     repoCommit: new RepoCommit() {
         RepoId = "<id>",
         UserId = "<id>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -767,9 +767,9 @@ var res = await sdk.Repo.PatchRepoCommitAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `RepoCommit`                                        | [RepoCommit](../../Models/Components/RepoCommit.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
 | `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Commit                                    |
-| `RepoCommit`                                        | [RepoCommit](../../Models/Components/RepoCommit.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -798,9 +798,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.PatchRepoOrganizationAsync(
+    repoOrganization: new RepoOrganization() {},
     connectionId: "<id>",
     id: "<id>",
-    repoOrganization: new RepoOrganization() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -813,9 +813,9 @@ var res = await sdk.Repo.PatchRepoOrganizationAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `RepoOrganization`                                              | [RepoOrganization](../../Models/Components/RepoOrganization.md) | :heavy_check_mark:                                              | N/A                                                             |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Organization                                          |
-| `RepoOrganization`                                              | [RepoOrganization](../../Models/Components/RepoOrganization.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
@@ -844,9 +844,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.PatchRepoPullrequestAsync(
+    repoPullrequest: new RepoPullrequest() {},
     connectionId: "<id>",
     id: "<id>",
-    repoPullrequest: new RepoPullrequest() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -859,9 +859,9 @@ var res = await sdk.Repo.PatchRepoPullrequestAsync(
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `RepoPullrequest`                                             | [RepoPullrequest](../../Models/Components/RepoPullrequest.md) | :heavy_check_mark:                                            | N/A                                                           |
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Pullrequest                                         |
-| `RepoPullrequest`                                             | [RepoPullrequest](../../Models/Components/RepoPullrequest.md) | :heavy_minus_sign:                                            | N/A                                                           |
 | `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response
@@ -890,11 +890,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.PatchRepoRepositoryAsync(
-    connectionId: "<id>",
-    id: "<id>",
     repoRepository: new RepoRepository() {
         Name = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -907,9 +907,9 @@ var res = await sdk.Repo.PatchRepoRepositoryAsync(
 
 | Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `RepoRepository`                                            | [RepoRepository](../../Models/Components/RepoRepository.md) | :heavy_check_mark:                                          | N/A                                                         |
 | `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
 | `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Repository                                        |
-| `RepoRepository`                                            | [RepoRepository](../../Models/Components/RepoRepository.md) | :heavy_minus_sign:                                          | N/A                                                         |
 | `Fields`                                                    | List<*string*>                                              | :heavy_minus_sign:                                          | Comma-delimited fields to return                            |
 
 ### Response
@@ -1133,12 +1133,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.UpdateRepoBranchAsync(
-    connectionId: "<id>",
-    id: "<id>",
     repoBranch: new RepoBranch() {
         Name = "<value>",
         RepoId = "<id>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -1151,9 +1151,9 @@ var res = await sdk.Repo.UpdateRepoBranchAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `RepoBranch`                                        | [RepoBranch](../../Models/Components/RepoBranch.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
 | `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Branch                                    |
-| `RepoBranch`                                        | [RepoBranch](../../Models/Components/RepoBranch.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -1182,12 +1182,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.UpdateRepoCommitAsync(
-    connectionId: "<id>",
-    id: "<id>",
     repoCommit: new RepoCommit() {
         RepoId = "<id>",
         UserId = "<id>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -1200,9 +1200,9 @@ var res = await sdk.Repo.UpdateRepoCommitAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `RepoCommit`                                        | [RepoCommit](../../Models/Components/RepoCommit.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
 | `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Commit                                    |
-| `RepoCommit`                                        | [RepoCommit](../../Models/Components/RepoCommit.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -1231,9 +1231,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.UpdateRepoOrganizationAsync(
+    repoOrganization: new RepoOrganization() {},
     connectionId: "<id>",
     id: "<id>",
-    repoOrganization: new RepoOrganization() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1246,9 +1246,9 @@ var res = await sdk.Repo.UpdateRepoOrganizationAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `RepoOrganization`                                              | [RepoOrganization](../../Models/Components/RepoOrganization.md) | :heavy_check_mark:                                              | N/A                                                             |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Organization                                          |
-| `RepoOrganization`                                              | [RepoOrganization](../../Models/Components/RepoOrganization.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
@@ -1277,9 +1277,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.UpdateRepoPullrequestAsync(
+    repoPullrequest: new RepoPullrequest() {},
     connectionId: "<id>",
     id: "<id>",
-    repoPullrequest: new RepoPullrequest() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1292,9 +1292,9 @@ var res = await sdk.Repo.UpdateRepoPullrequestAsync(
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `RepoPullrequest`                                             | [RepoPullrequest](../../Models/Components/RepoPullrequest.md) | :heavy_check_mark:                                            | N/A                                                           |
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Pullrequest                                         |
-| `RepoPullrequest`                                             | [RepoPullrequest](../../Models/Components/RepoPullrequest.md) | :heavy_minus_sign:                                            | N/A                                                           |
 | `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response
@@ -1323,11 +1323,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repo.UpdateRepoRepositoryAsync(
-    connectionId: "<id>",
-    id: "<id>",
     repoRepository: new RepoRepository() {
         Name = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -1340,9 +1340,9 @@ var res = await sdk.Repo.UpdateRepoRepositoryAsync(
 
 | Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `RepoRepository`                                            | [RepoRepository](../../Models/Components/RepoRepository.md) | :heavy_check_mark:                                          | N/A                                                         |
 | `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
 | `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Repository                                        |
-| `RepoRepository`                                            | [RepoRepository](../../Models/Components/RepoRepository.md) | :heavy_minus_sign:                                          | N/A                                                         |
 | `Fields`                                                    | List<*string*>                                              | :heavy_minus_sign:                                          | Comma-delimited fields to return                            |
 
 ### Response

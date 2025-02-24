@@ -17,6 +17,12 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
+        /// A contact represents a person that optionally is associated with a deal and/or a company
+        /// </summary>
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public CrmContact CrmContact { get; set; } = default!;
+
+        /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
@@ -27,12 +33,6 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;
-
-        /// <summary>
-        /// A contact represents a person that optionally is associated with a deal and/or a company
-        /// </summary>
-        [SpeakeasyMetadata("request:mediaType=application/json")]
-        public CrmContact? CrmContact { get; set; }
 
         /// <summary>
         /// Comma-delimited fields to return

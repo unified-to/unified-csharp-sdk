@@ -17,6 +17,12 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
+        /// A member represents a person
+        /// </summary>
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public MarketingMember MarketingMember { get; set; } = default!;
+
+        /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
@@ -27,12 +33,6 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;
-
-        /// <summary>
-        /// A member represents a person
-        /// </summary>
-        [SpeakeasyMetadata("request:mediaType=application/json")]
-        public MarketingMember? MarketingMember { get; set; }
 
         /// <summary>
         /// Comma-delimited fields to return

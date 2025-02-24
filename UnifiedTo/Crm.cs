@@ -28,32 +28,32 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(string connectionId, CrmCompany? crmCompany = null, List<string>? fields = null);
+        Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateCrmContactResponse> CreateCrmContactAsync(string connectionId, CrmContact? crmContact = null, List<string>? fields = null);
+        Task<CreateCrmContactResponse> CreateCrmContactAsync(CrmContact crmContact, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a deal
         /// </summary>
-        Task<CreateCrmDealResponse> CreateCrmDealAsync(string connectionId, CrmDeal? crmDeal = null, List<string>? fields = null);
+        Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create an event
         /// </summary>
-        Task<CreateCrmEventResponse> CreateCrmEventAsync(string connectionId, CrmEvent? crmEvent = null, List<string>? fields = null);
+        Task<CreateCrmEventResponse> CreateCrmEventAsync(CrmEvent crmEvent, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a lead
         /// </summary>
-        Task<CreateCrmLeadResponse> CreateCrmLeadAsync(string connectionId, CrmLead? crmLead = null, List<string>? fields = null);
+        Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CrmLead crmLead, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a pipeline
         /// </summary>
-        Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(string connectionId, CrmPipeline? crmPipeline = null, List<string>? fields = null);
+        Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a company
@@ -118,32 +118,32 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null, List<string>? fields = null);
+        Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(CrmCompany crmCompany, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchCrmContactResponse> PatchCrmContactAsync(string connectionId, string id, CrmContact? crmContact = null, List<string>? fields = null);
+        Task<PatchCrmContactResponse> PatchCrmContactAsync(CrmContact crmContact, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a deal
         /// </summary>
-        Task<PatchCrmDealResponse> PatchCrmDealAsync(string connectionId, string id, CrmDeal? crmDeal = null, List<string>? fields = null);
+        Task<PatchCrmDealResponse> PatchCrmDealAsync(CrmDeal crmDeal, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update an event
         /// </summary>
-        Task<PatchCrmEventResponse> PatchCrmEventAsync(string connectionId, string id, CrmEvent? crmEvent = null, List<string>? fields = null);
+        Task<PatchCrmEventResponse> PatchCrmEventAsync(CrmEvent crmEvent, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a lead
         /// </summary>
-        Task<PatchCrmLeadResponse> PatchCrmLeadAsync(string connectionId, string id, CrmLead? crmLead = null, List<string>? fields = null);
+        Task<PatchCrmLeadResponse> PatchCrmLeadAsync(CrmLead crmLead, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a pipeline
         /// </summary>
-        Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(string connectionId, string id, CrmPipeline? crmPipeline = null, List<string>? fields = null);
+        Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove a company
@@ -178,42 +178,42 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null, List<string>? fields = null);
+        Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateCrmContactResponse> UpdateCrmContactAsync(string connectionId, string id, CrmContact? crmContact = null, List<string>? fields = null);
+        Task<UpdateCrmContactResponse> UpdateCrmContactAsync(CrmContact crmContact, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a deal
         /// </summary>
-        Task<UpdateCrmDealResponse> UpdateCrmDealAsync(string connectionId, string id, CrmDeal? crmDeal = null, List<string>? fields = null);
+        Task<UpdateCrmDealResponse> UpdateCrmDealAsync(CrmDeal crmDeal, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update an event
         /// </summary>
-        Task<UpdateCrmEventResponse> UpdateCrmEventAsync(string connectionId, string id, CrmEvent? crmEvent = null, List<string>? fields = null);
+        Task<UpdateCrmEventResponse> UpdateCrmEventAsync(CrmEvent crmEvent, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a lead
         /// </summary>
-        Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(string connectionId, string id, CrmLead? crmLead = null, List<string>? fields = null);
+        Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(CrmLead crmLead, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a pipeline
         /// </summary>
-        Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(string connectionId, string id, CrmPipeline? crmPipeline = null, List<string>? fields = null);
+        Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Crm: ICrm
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -226,12 +226,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(string connectionId, CrmCompany? crmCompany = null, List<string>? fields = null)
+        public async Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<string>? fields = null)
         {
             var request = new CreateCrmCompanyRequest()
             {
-                ConnectionId = connectionId,
                 CrmCompany = crmCompany,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -240,7 +240,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmCompany", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmCompany", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -316,12 +316,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmContactResponse> CreateCrmContactAsync(string connectionId, CrmContact? crmContact = null, List<string>? fields = null)
+        public async Task<CreateCrmContactResponse> CreateCrmContactAsync(CrmContact crmContact, string connectionId, List<string>? fields = null)
         {
             var request = new CreateCrmContactRequest()
             {
-                ConnectionId = connectionId,
                 CrmContact = crmContact,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -330,7 +330,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmContact", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmContact", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -406,12 +406,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmDealResponse> CreateCrmDealAsync(string connectionId, CrmDeal? crmDeal = null, List<string>? fields = null)
+        public async Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<string>? fields = null)
         {
             var request = new CreateCrmDealRequest()
             {
-                ConnectionId = connectionId,
                 CrmDeal = crmDeal,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -420,7 +420,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmDeal", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmDeal", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -496,12 +496,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmEventResponse> CreateCrmEventAsync(string connectionId, CrmEvent? crmEvent = null, List<string>? fields = null)
+        public async Task<CreateCrmEventResponse> CreateCrmEventAsync(CrmEvent crmEvent, string connectionId, List<string>? fields = null)
         {
             var request = new CreateCrmEventRequest()
             {
-                ConnectionId = connectionId,
                 CrmEvent = crmEvent,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -510,7 +510,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmEvent", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmEvent", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -586,12 +586,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmLeadResponse> CreateCrmLeadAsync(string connectionId, CrmLead? crmLead = null, List<string>? fields = null)
+        public async Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CrmLead crmLead, string connectionId, List<string>? fields = null)
         {
             var request = new CreateCrmLeadRequest()
             {
-                ConnectionId = connectionId,
                 CrmLead = crmLead,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -600,7 +600,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmLead", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmLead", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -676,12 +676,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(string connectionId, CrmPipeline? crmPipeline = null, List<string>? fields = null)
+        public async Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<string>? fields = null)
         {
             var request = new CreateCrmPipelineRequest()
             {
-                ConnectionId = connectionId,
                 CrmPipeline = crmPipeline,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -690,7 +690,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmPipeline", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmPipeline", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1738,13 +1738,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null, List<string>? fields = null)
+        public async Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(CrmCompany crmCompany, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchCrmCompanyRequest()
             {
+                CrmCompany = crmCompany,
                 ConnectionId = connectionId,
                 Id = id,
-                CrmCompany = crmCompany,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1753,7 +1753,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmCompany", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmCompany", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1829,13 +1829,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmContactResponse> PatchCrmContactAsync(string connectionId, string id, CrmContact? crmContact = null, List<string>? fields = null)
+        public async Task<PatchCrmContactResponse> PatchCrmContactAsync(CrmContact crmContact, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchCrmContactRequest()
             {
+                CrmContact = crmContact,
                 ConnectionId = connectionId,
                 Id = id,
-                CrmContact = crmContact,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1844,7 +1844,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmContact", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmContact", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1920,13 +1920,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmDealResponse> PatchCrmDealAsync(string connectionId, string id, CrmDeal? crmDeal = null, List<string>? fields = null)
+        public async Task<PatchCrmDealResponse> PatchCrmDealAsync(CrmDeal crmDeal, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchCrmDealRequest()
             {
+                CrmDeal = crmDeal,
                 ConnectionId = connectionId,
                 Id = id,
-                CrmDeal = crmDeal,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1935,7 +1935,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmDeal", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmDeal", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2011,13 +2011,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmEventResponse> PatchCrmEventAsync(string connectionId, string id, CrmEvent? crmEvent = null, List<string>? fields = null)
+        public async Task<PatchCrmEventResponse> PatchCrmEventAsync(CrmEvent crmEvent, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchCrmEventRequest()
             {
+                CrmEvent = crmEvent,
                 ConnectionId = connectionId,
                 Id = id,
-                CrmEvent = crmEvent,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2026,7 +2026,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmEvent", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmEvent", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2102,13 +2102,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmLeadResponse> PatchCrmLeadAsync(string connectionId, string id, CrmLead? crmLead = null, List<string>? fields = null)
+        public async Task<PatchCrmLeadResponse> PatchCrmLeadAsync(CrmLead crmLead, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchCrmLeadRequest()
             {
+                CrmLead = crmLead,
                 ConnectionId = connectionId,
                 Id = id,
-                CrmLead = crmLead,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2117,7 +2117,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmLead", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmLead", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2193,13 +2193,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(string connectionId, string id, CrmPipeline? crmPipeline = null, List<string>? fields = null)
+        public async Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchCrmPipelineRequest()
             {
+                CrmPipeline = crmPipeline,
                 ConnectionId = connectionId,
                 Id = id,
-                CrmPipeline = crmPipeline,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2208,7 +2208,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmPipeline", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmPipeline", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2776,13 +2776,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(string connectionId, string id, CrmCompany? crmCompany = null, List<string>? fields = null)
+        public async Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateCrmCompanyRequest()
             {
+                CrmCompany = crmCompany,
                 ConnectionId = connectionId,
                 Id = id,
-                CrmCompany = crmCompany,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2791,7 +2791,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmCompany", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmCompany", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2867,13 +2867,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateCrmContactResponse> UpdateCrmContactAsync(string connectionId, string id, CrmContact? crmContact = null, List<string>? fields = null)
+        public async Task<UpdateCrmContactResponse> UpdateCrmContactAsync(CrmContact crmContact, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateCrmContactRequest()
             {
+                CrmContact = crmContact,
                 ConnectionId = connectionId,
                 Id = id,
-                CrmContact = crmContact,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2882,7 +2882,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmContact", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmContact", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2958,13 +2958,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateCrmDealResponse> UpdateCrmDealAsync(string connectionId, string id, CrmDeal? crmDeal = null, List<string>? fields = null)
+        public async Task<UpdateCrmDealResponse> UpdateCrmDealAsync(CrmDeal crmDeal, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateCrmDealRequest()
             {
+                CrmDeal = crmDeal,
                 ConnectionId = connectionId,
                 Id = id,
-                CrmDeal = crmDeal,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2973,7 +2973,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmDeal", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmDeal", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -3049,13 +3049,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateCrmEventResponse> UpdateCrmEventAsync(string connectionId, string id, CrmEvent? crmEvent = null, List<string>? fields = null)
+        public async Task<UpdateCrmEventResponse> UpdateCrmEventAsync(CrmEvent crmEvent, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateCrmEventRequest()
             {
+                CrmEvent = crmEvent,
                 ConnectionId = connectionId,
                 Id = id,
-                CrmEvent = crmEvent,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3064,7 +3064,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmEvent", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmEvent", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -3140,13 +3140,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(string connectionId, string id, CrmLead? crmLead = null, List<string>? fields = null)
+        public async Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(CrmLead crmLead, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateCrmLeadRequest()
             {
+                CrmLead = crmLead,
                 ConnectionId = connectionId,
                 Id = id,
-                CrmLead = crmLead,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3155,7 +3155,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmLead", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmLead", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -3231,13 +3231,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(string connectionId, string id, CrmPipeline? crmPipeline = null, List<string>? fields = null)
+        public async Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateCrmPipelineRequest()
             {
+                CrmPipeline = crmPipeline,
                 ConnectionId = connectionId,
                 Id = id,
-                CrmPipeline = crmPipeline,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3246,7 +3246,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmPipeline", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmPipeline", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

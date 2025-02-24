@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create a note
         /// </summary>
-        Task<CreateTicketingNoteResponse> CreateTicketingNoteAsync(string connectionId, TicketingNote? ticketingNote = null, List<string>? fields = null);
+        Task<CreateTicketingNoteResponse> CreateTicketingNoteAsync(TicketingNote ticketingNote, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a note
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a note
         /// </summary>
-        Task<PatchTicketingNoteResponse> PatchTicketingNoteAsync(string connectionId, string id, TicketingNote? ticketingNote = null, List<string>? fields = null);
+        Task<PatchTicketingNoteResponse> PatchTicketingNoteAsync(TicketingNote ticketingNote, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove a note
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a note
         /// </summary>
-        Task<UpdateTicketingNoteResponse> UpdateTicketingNoteAsync(string connectionId, string id, TicketingNote? ticketingNote = null, List<string>? fields = null);
+        Task<UpdateTicketingNoteResponse> UpdateTicketingNoteAsync(TicketingNote ticketingNote, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Note: INote
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,12 +76,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateTicketingNoteResponse> CreateTicketingNoteAsync(string connectionId, TicketingNote? ticketingNote = null, List<string>? fields = null)
+        public async Task<CreateTicketingNoteResponse> CreateTicketingNoteAsync(TicketingNote ticketingNote, string connectionId, List<string>? fields = null)
         {
             var request = new CreateTicketingNoteRequest()
             {
-                ConnectionId = connectionId,
                 TicketingNote = ticketingNote,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -90,7 +90,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "TicketingNote", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "TicketingNote", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -328,13 +328,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchTicketingNoteResponse> PatchTicketingNoteAsync(string connectionId, string id, TicketingNote? ticketingNote = null, List<string>? fields = null)
+        public async Task<PatchTicketingNoteResponse> PatchTicketingNoteAsync(TicketingNote ticketingNote, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchTicketingNoteRequest()
             {
+                TicketingNote = ticketingNote,
                 ConnectionId = connectionId,
                 Id = id,
-                TicketingNote = ticketingNote,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -343,7 +343,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "TicketingNote", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "TicketingNote", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -501,13 +501,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateTicketingNoteResponse> UpdateTicketingNoteAsync(string connectionId, string id, TicketingNote? ticketingNote = null, List<string>? fields = null)
+        public async Task<UpdateTicketingNoteResponse> UpdateTicketingNoteAsync(TicketingNote ticketingNote, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateTicketingNoteRequest()
             {
+                TicketingNote = ticketingNote,
                 ConnectionId = connectionId,
                 Id = id,
-                TicketingNote = ticketingNote,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -516,7 +516,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "TicketingNote", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "TicketingNote", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

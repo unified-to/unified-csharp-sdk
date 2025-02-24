@@ -40,10 +40,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.CreateKmsCommentAsync(
-    connectionId: "<id>",
     kmsComment: new KmsComment() {
         Content = "<value>",
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -56,8 +56,8 @@ var res = await sdk.Kms.CreateKmsCommentAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
-| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -86,11 +86,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.CreateKmsPageAsync(
-    connectionId: "<id>",
     kmsPage: new KmsPage() {
         Title = "<value>",
         Type = KmsPageType.Html,
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -103,8 +103,8 @@ var res = await sdk.Kms.CreateKmsPageAsync(
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_check_mark:                            | N/A                                           |
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
-| `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_minus_sign:                            | N/A                                           |
 | `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response
@@ -133,10 +133,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.CreateKmsSpaceAsync(
-    connectionId: "<id>",
     kmsSpace: new KmsSpace() {
         Name = "<value>",
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -149,8 +149,8 @@ var res = await sdk.Kms.CreateKmsSpaceAsync(
 
 | Parameter                                       | Type                                            | Required                                        | Description                                     |
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_check_mark:                              | N/A                                             |
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
-| `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_minus_sign:                              | N/A                                             |
 | `Fields`                                        | List<*string*>                                  | :heavy_minus_sign:                              | Comma-delimited fields to return                |
 
 ### Response
@@ -431,11 +431,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.PatchKmsCommentAsync(
-    connectionId: "<id>",
-    id: "<id>",
     kmsComment: new KmsComment() {
         Content = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -448,9 +448,9 @@ var res = await sdk.Kms.PatchKmsCommentAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
 | `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Comment                                   |
-| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -479,12 +479,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.PatchKmsPageAsync(
-    connectionId: "<id>",
-    id: "<id>",
     kmsPage: new KmsPage() {
         Title = "<value>",
         Type = KmsPageType.Text,
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -497,9 +497,9 @@ var res = await sdk.Kms.PatchKmsPageAsync(
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_check_mark:                            | N/A                                           |
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Page                                |
-| `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_minus_sign:                            | N/A                                           |
 | `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response
@@ -528,11 +528,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.PatchKmsSpaceAsync(
-    connectionId: "<id>",
-    id: "<id>",
     kmsSpace: new KmsSpace() {
         Name = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -545,9 +545,9 @@ var res = await sdk.Kms.PatchKmsSpaceAsync(
 
 | Parameter                                       | Type                                            | Required                                        | Description                                     |
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_check_mark:                              | N/A                                             |
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
 | `Id`                                            | *string*                                        | :heavy_check_mark:                              | ID of the Space                                 |
-| `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_minus_sign:                              | N/A                                             |
 | `Fields`                                        | List<*string*>                                  | :heavy_minus_sign:                              | Comma-delimited fields to return                |
 
 ### Response
@@ -693,11 +693,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.UpdateKmsCommentAsync(
-    connectionId: "<id>",
-    id: "<id>",
     kmsComment: new KmsComment() {
         Content = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -710,9 +710,9 @@ var res = await sdk.Kms.UpdateKmsCommentAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
 | `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Comment                                   |
-| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -741,12 +741,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.UpdateKmsPageAsync(
-    connectionId: "<id>",
-    id: "<id>",
     kmsPage: new KmsPage() {
         Title = "<value>",
         Type = KmsPageType.Other,
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -759,9 +759,9 @@ var res = await sdk.Kms.UpdateKmsPageAsync(
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_check_mark:                            | N/A                                           |
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Page                                |
-| `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_minus_sign:                            | N/A                                           |
 | `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response
@@ -790,11 +790,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.UpdateKmsSpaceAsync(
-    connectionId: "<id>",
-    id: "<id>",
     kmsSpace: new KmsSpace() {
         Name = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -807,9 +807,9 @@ var res = await sdk.Kms.UpdateKmsSpaceAsync(
 
 | Parameter                                       | Type                                            | Required                                        | Description                                     |
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_check_mark:                              | N/A                                             |
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
 | `Id`                                            | *string*                                        | :heavy_check_mark:                              | ID of the Space                                 |
-| `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_minus_sign:                              | N/A                                             |
 | `Fields`                                        | List<*string*>                                  | :heavy_minus_sign:                              | Comma-delimited fields to return                |
 
 ### Response

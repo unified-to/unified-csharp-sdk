@@ -28,6 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 CreateScimUsersRequest req = new CreateScimUsersRequest() {
+    ScimUser = new ScimUser() {},
     ConnectionId = "<id>",
 };
 
@@ -146,9 +147,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.User.PatchScimUsersAsync(
+    scimUser: new ScimUser() {},
     connectionId: "<id>",
-    id: "<id>",
-    scimUser: new ScimUser() {}
+    id: "<id>"
 );
 
 // handle response
@@ -158,9 +159,9 @@ var res = await sdk.User.PatchScimUsersAsync(
 
 | Parameter                                       | Type                                            | Required                                        | Description                                     |
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `ScimUser`                                      | [ScimUser](../../Models/Components/ScimUser.md) | :heavy_check_mark:                              | N/A                                             |
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
 | `Id`                                            | *string*                                        | :heavy_check_mark:                              | ID of the User                                  |
-| `ScimUser`                                      | [ScimUser](../../Models/Components/ScimUser.md) | :heavy_minus_sign:                              | N/A                                             |
 
 ### Response
 
@@ -226,9 +227,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.User.UpdateScimUsersAsync(
+    scimUser: new ScimUser() {},
     connectionId: "<id>",
-    id: "<id>",
-    scimUser: new ScimUser() {}
+    id: "<id>"
 );
 
 // handle response
@@ -238,9 +239,9 @@ var res = await sdk.User.UpdateScimUsersAsync(
 
 | Parameter                                       | Type                                            | Required                                        | Description                                     |
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `ScimUser`                                      | [ScimUser](../../Models/Components/ScimUser.md) | :heavy_check_mark:                              | N/A                                             |
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
 | `Id`                                            | *string*                                        | :heavy_check_mark:                              | ID of the User                                  |
-| `ScimUser`                                      | [ScimUser](../../Models/Components/ScimUser.md) | :heavy_minus_sign:                              | N/A                                             |
 
 ### Response
 

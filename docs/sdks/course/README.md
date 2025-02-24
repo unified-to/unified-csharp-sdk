@@ -28,10 +28,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Course.CreateLmsCourseAsync(
-    connectionId: "<id>",
     lmsCourse: new LmsCourse() {
         Name = "<value>",
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -44,8 +44,8 @@ var res = await sdk.Course.CreateLmsCourseAsync(
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `LmsCourse`                                       | [LmsCourse](../../Models/Components/LmsCourse.md) | :heavy_check_mark:                                | N/A                                               |
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
-| `LmsCourse`                                       | [LmsCourse](../../Models/Components/LmsCourse.md) | :heavy_minus_sign:                                | N/A                                               |
 | `Fields`                                          | List<*string*>                                    | :heavy_minus_sign:                                | Comma-delimited fields to return                  |
 
 ### Response
@@ -158,11 +158,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Course.PatchLmsCourseAsync(
-    connectionId: "<id>",
-    id: "<id>",
     lmsCourse: new LmsCourse() {
         Name = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -175,9 +175,9 @@ var res = await sdk.Course.PatchLmsCourseAsync(
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `LmsCourse`                                       | [LmsCourse](../../Models/Components/LmsCourse.md) | :heavy_check_mark:                                | N/A                                               |
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
 | `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Course                                  |
-| `LmsCourse`                                       | [LmsCourse](../../Models/Components/LmsCourse.md) | :heavy_minus_sign:                                | N/A                                               |
 | `Fields`                                          | List<*string*>                                    | :heavy_minus_sign:                                | Comma-delimited fields to return                  |
 
 ### Response
@@ -245,11 +245,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Course.UpdateLmsCourseAsync(
-    connectionId: "<id>",
-    id: "<id>",
     lmsCourse: new LmsCourse() {
         Name = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -262,9 +262,9 @@ var res = await sdk.Course.UpdateLmsCourseAsync(
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `LmsCourse`                                       | [LmsCourse](../../Models/Components/LmsCourse.md) | :heavy_check_mark:                                | N/A                                               |
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
 | `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Course                                  |
-| `LmsCourse`                                       | [LmsCourse](../../Models/Components/LmsCourse.md) | :heavy_minus_sign:                                | N/A                                               |
 | `Fields`                                          | List<*string*>                                    | :heavy_minus_sign:                                | Comma-delimited fields to return                  |
 
 ### Response

@@ -28,10 +28,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Inventory.CreateCommerceInventoryAsync(
-    connectionId: "<id>",
     commerceInventory: new CommerceInventory() {
         Available = 5165.08D,
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -44,8 +44,8 @@ var res = await sdk.Inventory.CreateCommerceInventoryAsync(
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_check_mark:                                                | N/A                                                               |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
-| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
 | `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
@@ -158,11 +158,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Inventory.PatchCommerceInventoryAsync(
-    connectionId: "<id>",
-    id: "<id>",
     commerceInventory: new CommerceInventory() {
         Available = 615.23D,
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -175,9 +175,9 @@ var res = await sdk.Inventory.PatchCommerceInventoryAsync(
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_check_mark:                                                | N/A                                                               |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Inventory                                               |
-| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
 | `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
@@ -245,11 +245,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
-    connectionId: "<id>",
-    id: "<id>",
     commerceInventory: new CommerceInventory() {
         Available = 9360.02D,
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -262,9 +262,9 @@ var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_check_mark:                                                | N/A                                                               |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Inventory                                               |
-| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
 | `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response

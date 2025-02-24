@@ -30,8 +30,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Organization.CreateRepoOrganizationAsync(
-    connectionId: "<id>",
     repoOrganization: new RepoOrganization() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -44,8 +44,8 @@ var res = await sdk.Organization.CreateRepoOrganizationAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `RepoOrganization`                                              | [RepoOrganization](../../Models/Components/RepoOrganization.md) | :heavy_check_mark:                                              | N/A                                                             |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
-| `RepoOrganization`                                              | [RepoOrganization](../../Models/Components/RepoOrganization.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
@@ -242,9 +242,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Organization.PatchRepoOrganizationAsync(
+    repoOrganization: new RepoOrganization() {},
     connectionId: "<id>",
     id: "<id>",
-    repoOrganization: new RepoOrganization() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -257,9 +257,9 @@ var res = await sdk.Organization.PatchRepoOrganizationAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `RepoOrganization`                                              | [RepoOrganization](../../Models/Components/RepoOrganization.md) | :heavy_check_mark:                                              | N/A                                                             |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Organization                                          |
-| `RepoOrganization`                                              | [RepoOrganization](../../Models/Components/RepoOrganization.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
@@ -327,9 +327,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Organization.UpdateRepoOrganizationAsync(
+    repoOrganization: new RepoOrganization() {},
     connectionId: "<id>",
     id: "<id>",
-    repoOrganization: new RepoOrganization() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -342,9 +342,9 @@ var res = await sdk.Organization.UpdateRepoOrganizationAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `RepoOrganization`                                              | [RepoOrganization](../../Models/Components/RepoOrganization.md) | :heavy_check_mark:                                              | N/A                                                             |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Organization                                          |
-| `RepoOrganization`                                              | [RepoOrganization](../../Models/Components/RepoOrganization.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response

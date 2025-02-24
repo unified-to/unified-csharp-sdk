@@ -40,11 +40,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.CreateTaskCommentAsync(
-    connectionId: "<id>",
     taskComment: new TaskComment() {
         TaskId = "<id>",
         Text = "<value>",
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -57,8 +57,8 @@ var res = await sdk.Task.CreateTaskCommentAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `TaskComment`                                         | [TaskComment](../../Models/Components/TaskComment.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
-| `TaskComment`                                         | [TaskComment](../../Models/Components/TaskComment.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
@@ -87,8 +87,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.CreateTaskProjectAsync(
-    connectionId: "<id>",
     taskProject: new TaskProject() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -101,8 +101,8 @@ var res = await sdk.Task.CreateTaskProjectAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `TaskProject`                                         | [TaskProject](../../Models/Components/TaskProject.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
-| `TaskProject`                                         | [TaskProject](../../Models/Components/TaskProject.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
@@ -131,8 +131,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.CreateTaskTaskAsync(
-    connectionId: "<id>",
     taskTask: new TaskTask() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -145,8 +145,8 @@ var res = await sdk.Task.CreateTaskTaskAsync(
 
 | Parameter                                       | Type                                            | Required                                        | Description                                     |
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `TaskTask`                                      | [TaskTask](../../Models/Components/TaskTask.md) | :heavy_check_mark:                              | N/A                                             |
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
-| `TaskTask`                                      | [TaskTask](../../Models/Components/TaskTask.md) | :heavy_minus_sign:                              | N/A                                             |
 | `Fields`                                        | List<*string*>                                  | :heavy_minus_sign:                              | Comma-delimited fields to return                |
 
 ### Response
@@ -427,12 +427,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.PatchTaskCommentAsync(
-    connectionId: "<id>",
-    id: "<id>",
     taskComment: new TaskComment() {
         TaskId = "<id>",
         Text = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -445,9 +445,9 @@ var res = await sdk.Task.PatchTaskCommentAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `TaskComment`                                         | [TaskComment](../../Models/Components/TaskComment.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Comment                                     |
-| `TaskComment`                                         | [TaskComment](../../Models/Components/TaskComment.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
@@ -476,9 +476,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.PatchTaskProjectAsync(
+    taskProject: new TaskProject() {},
     connectionId: "<id>",
     id: "<id>",
-    taskProject: new TaskProject() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -491,9 +491,9 @@ var res = await sdk.Task.PatchTaskProjectAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `TaskProject`                                         | [TaskProject](../../Models/Components/TaskProject.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Project                                     |
-| `TaskProject`                                         | [TaskProject](../../Models/Components/TaskProject.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
@@ -522,9 +522,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.PatchTaskTaskAsync(
+    taskTask: new TaskTask() {},
     connectionId: "<id>",
     id: "<id>",
-    taskTask: new TaskTask() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -537,9 +537,9 @@ var res = await sdk.Task.PatchTaskTaskAsync(
 
 | Parameter                                       | Type                                            | Required                                        | Description                                     |
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `TaskTask`                                      | [TaskTask](../../Models/Components/TaskTask.md) | :heavy_check_mark:                              | N/A                                             |
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
 | `Id`                                            | *string*                                        | :heavy_check_mark:                              | ID of the Task                                  |
-| `TaskTask`                                      | [TaskTask](../../Models/Components/TaskTask.md) | :heavy_minus_sign:                              | N/A                                             |
 | `Fields`                                        | List<*string*>                                  | :heavy_minus_sign:                              | Comma-delimited fields to return                |
 
 ### Response
@@ -685,12 +685,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.UpdateTaskCommentAsync(
-    connectionId: "<id>",
-    id: "<id>",
     taskComment: new TaskComment() {
         TaskId = "<id>",
         Text = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -703,9 +703,9 @@ var res = await sdk.Task.UpdateTaskCommentAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `TaskComment`                                         | [TaskComment](../../Models/Components/TaskComment.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Comment                                     |
-| `TaskComment`                                         | [TaskComment](../../Models/Components/TaskComment.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
@@ -734,9 +734,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.UpdateTaskProjectAsync(
+    taskProject: new TaskProject() {},
     connectionId: "<id>",
     id: "<id>",
-    taskProject: new TaskProject() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -749,9 +749,9 @@ var res = await sdk.Task.UpdateTaskProjectAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `TaskProject`                                         | [TaskProject](../../Models/Components/TaskProject.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Project                                     |
-| `TaskProject`                                         | [TaskProject](../../Models/Components/TaskProject.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
@@ -780,9 +780,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Task.UpdateTaskTaskAsync(
+    taskTask: new TaskTask() {},
     connectionId: "<id>",
     id: "<id>",
-    taskTask: new TaskTask() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -795,9 +795,9 @@ var res = await sdk.Task.UpdateTaskTaskAsync(
 
 | Parameter                                       | Type                                            | Required                                        | Description                                     |
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `TaskTask`                                      | [TaskTask](../../Models/Components/TaskTask.md) | :heavy_check_mark:                              | N/A                                             |
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
 | `Id`                                            | *string*                                        | :heavy_check_mark:                              | ID of the Task                                  |
-| `TaskTask`                                      | [TaskTask](../../Models/Components/TaskTask.md) | :heavy_minus_sign:                              | N/A                                             |
 | `Fields`                                        | List<*string*>                                  | :heavy_minus_sign:                              | Comma-delimited fields to return                |
 
 ### Response

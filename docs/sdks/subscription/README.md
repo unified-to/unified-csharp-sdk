@@ -28,8 +28,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Subscription.CreatePaymentSubscriptionAsync(
-    connectionId: "<id>",
     paymentSubscription: new PaymentSubscription() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -42,8 +42,8 @@ var res = await sdk.Subscription.CreatePaymentSubscriptionAsync(
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `PaymentSubscription`                                                 | [PaymentSubscription](../../Models/Components/PaymentSubscription.md) | :heavy_check_mark:                                                    | N/A                                                                   |
 | `ConnectionId`                                                        | *string*                                                              | :heavy_check_mark:                                                    | ID of the connection                                                  |
-| `PaymentSubscription`                                                 | [PaymentSubscription](../../Models/Components/PaymentSubscription.md) | :heavy_minus_sign:                                                    | N/A                                                                   |
 | `Fields`                                                              | List<*string*>                                                        | :heavy_minus_sign:                                                    | Comma-delimited fields to return                                      |
 
 ### Response
@@ -156,9 +156,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Subscription.PatchPaymentSubscriptionAsync(
+    paymentSubscription: new PaymentSubscription() {},
     connectionId: "<id>",
     id: "<id>",
-    paymentSubscription: new PaymentSubscription() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -171,9 +171,9 @@ var res = await sdk.Subscription.PatchPaymentSubscriptionAsync(
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `PaymentSubscription`                                                 | [PaymentSubscription](../../Models/Components/PaymentSubscription.md) | :heavy_check_mark:                                                    | N/A                                                                   |
 | `ConnectionId`                                                        | *string*                                                              | :heavy_check_mark:                                                    | ID of the connection                                                  |
 | `Id`                                                                  | *string*                                                              | :heavy_check_mark:                                                    | ID of the Subscription                                                |
-| `PaymentSubscription`                                                 | [PaymentSubscription](../../Models/Components/PaymentSubscription.md) | :heavy_minus_sign:                                                    | N/A                                                                   |
 | `Fields`                                                              | List<*string*>                                                        | :heavy_minus_sign:                                                    | Comma-delimited fields to return                                      |
 
 ### Response
@@ -241,9 +241,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Subscription.UpdatePaymentSubscriptionAsync(
+    paymentSubscription: new PaymentSubscription() {},
     connectionId: "<id>",
     id: "<id>",
-    paymentSubscription: new PaymentSubscription() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -256,9 +256,9 @@ var res = await sdk.Subscription.UpdatePaymentSubscriptionAsync(
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `PaymentSubscription`                                                 | [PaymentSubscription](../../Models/Components/PaymentSubscription.md) | :heavy_check_mark:                                                    | N/A                                                                   |
 | `ConnectionId`                                                        | *string*                                                              | :heavy_check_mark:                                                    | ID of the connection                                                  |
 | `Id`                                                                  | *string*                                                              | :heavy_check_mark:                                                    | ID of the Subscription                                                |
-| `PaymentSubscription`                                                 | [PaymentSubscription](../../Models/Components/PaymentSubscription.md) | :heavy_minus_sign:                                                    | N/A                                                                   |
 | `Fields`                                                              | List<*string*>                                                        | :heavy_minus_sign:                                                    | Comma-delimited fields to return                                      |
 
 ### Response

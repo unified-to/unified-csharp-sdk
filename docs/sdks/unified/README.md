@@ -102,7 +102,7 @@ var res = await sdk.Unified.CreateUnifiedWebhookAsync(
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `Webhook`                                                         | [Models.Components.Webhook](../../Models/Components/Webhook.md)   | :heavy_minus_sign:                                                | A webhook is used to POST new/updated information to your server. |
+| `Webhook`                                                         | [Models.Components.Webhook](../../Models/Components/Webhook.md)   | :heavy_check_mark:                                                | A webhook is used to POST new/updated information to your server. |
 | `IncludeAll`                                                      | *bool*                                                            | :heavy_minus_sign:                                                | When set, all of the existing data will sent back to your server. |
 
 ### Response
@@ -507,7 +507,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Unified.PatchUnifiedConnectionAsync(
-    id: "<id>",
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
             PropertyConnectionCategories.Genai,
@@ -516,7 +515,8 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(
         Permissions = new List<PropertyConnectionPermissions>() {
             PropertyConnectionPermissions.MetadataMetadataWrite,
         },
-    }
+    },
+    id: "<id>"
 );
 
 // handle response
@@ -526,8 +526,8 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `Connection`                                                          | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_check_mark:                                                    | A connection represents a specific authentication of an integration.  |
 | `Id`                                                                  | *string*                                                              | :heavy_check_mark:                                                    | ID of the Connection                                                  |
-| `Connection`                                                          | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_minus_sign:                                                    | A connection represents a specific authentication of an integration.  |
 
 ### Response
 
@@ -554,12 +554,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Unified.PatchUnifiedWebhookAsync(
-    id: "<id>",
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
         Event = Event.Deleted,
         ObjectType = ObjectType.CrmDeal,
-    }
+    },
+    id: "<id>"
 );
 
 // handle response
@@ -569,8 +569,8 @@ var res = await sdk.Unified.PatchUnifiedWebhookAsync(
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `Webhook`                                                         | [Models.Components.Webhook](../../Models/Components/Webhook.md)   | :heavy_check_mark:                                                | A webhook is used to POST new/updated information to your server. |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Webhook                                                 |
-| `Webhook`                                                         | [Models.Components.Webhook](../../Models/Components/Webhook.md)   | :heavy_minus_sign:                                                | A webhook is used to POST new/updated information to your server. |
 
 ### Response
 
@@ -703,7 +703,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
-    id: "<id>",
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
             PropertyConnectionCategories.Task,
@@ -712,7 +711,8 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
         Permissions = new List<PropertyConnectionPermissions>() {
             PropertyConnectionPermissions.RepoPullrequestWrite,
         },
-    }
+    },
+    id: "<id>"
 );
 
 // handle response
@@ -722,8 +722,8 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `Connection`                                                          | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_check_mark:                                                    | A connection represents a specific authentication of an integration.  |
 | `Id`                                                                  | *string*                                                              | :heavy_check_mark:                                                    | ID of the Connection                                                  |
-| `Connection`                                                          | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_minus_sign:                                                    | A connection represents a specific authentication of an integration.  |
 
 ### Response
 
@@ -750,12 +750,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Unified.UpdateUnifiedWebhookAsync(
-    id: "<id>",
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
         Event = Event.Created,
         ObjectType = ObjectType.PaymentLink,
-    }
+    },
+    id: "<id>"
 );
 
 // handle response
@@ -765,8 +765,8 @@ var res = await sdk.Unified.UpdateUnifiedWebhookAsync(
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `Webhook`                                                         | [Models.Components.Webhook](../../Models/Components/Webhook.md)   | :heavy_check_mark:                                                | A webhook is used to POST new/updated information to your server. |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Webhook                                                 |
-| `Webhook`                                                         | [Models.Components.Webhook](../../Models/Components/Webhook.md)   | :heavy_minus_sign:                                                | A webhook is used to POST new/updated information to your server. |
 
 ### Response
 

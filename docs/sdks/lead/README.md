@@ -28,8 +28,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lead.CreateCrmLeadAsync(
-    connectionId: "<id>",
     crmLead: new CrmLead() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -42,8 +42,8 @@ var res = await sdk.Lead.CreateCrmLeadAsync(
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_check_mark:                            | N/A                                           |
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
-| `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_minus_sign:                            | N/A                                           |
 | `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response
@@ -156,9 +156,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lead.PatchCrmLeadAsync(
+    crmLead: new CrmLead() {},
     connectionId: "<id>",
     id: "<id>",
-    crmLead: new CrmLead() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -171,9 +171,9 @@ var res = await sdk.Lead.PatchCrmLeadAsync(
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_check_mark:                            | N/A                                           |
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Lead                                |
-| `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_minus_sign:                            | N/A                                           |
 | `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response
@@ -241,9 +241,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lead.UpdateCrmLeadAsync(
+    crmLead: new CrmLead() {},
     connectionId: "<id>",
     id: "<id>",
-    crmLead: new CrmLead() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -256,9 +256,9 @@ var res = await sdk.Lead.UpdateCrmLeadAsync(
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_check_mark:                            | N/A                                           |
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Lead                                |
-| `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_minus_sign:                            | N/A                                           |
 | `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response

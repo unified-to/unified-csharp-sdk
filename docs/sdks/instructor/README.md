@@ -28,8 +28,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Instructor.CreateLmsInstructorAsync(
-    connectionId: "<id>",
     lmsInstructor: new LmsInstructor() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -42,8 +42,8 @@ var res = await sdk.Instructor.CreateLmsInstructorAsync(
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
 | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| `LmsInstructor`                                           | [LmsInstructor](../../Models/Components/LmsInstructor.md) | :heavy_check_mark:                                        | N/A                                                       |
 | `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
-| `LmsInstructor`                                           | [LmsInstructor](../../Models/Components/LmsInstructor.md) | :heavy_minus_sign:                                        | N/A                                                       |
 | `Fields`                                                  | List<*string*>                                            | :heavy_minus_sign:                                        | Comma-delimited fields to return                          |
 
 ### Response
@@ -156,9 +156,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Instructor.PatchLmsInstructorAsync(
+    lmsInstructor: new LmsInstructor() {},
     connectionId: "<id>",
     id: "<id>",
-    lmsInstructor: new LmsInstructor() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -171,9 +171,9 @@ var res = await sdk.Instructor.PatchLmsInstructorAsync(
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
 | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| `LmsInstructor`                                           | [LmsInstructor](../../Models/Components/LmsInstructor.md) | :heavy_check_mark:                                        | N/A                                                       |
 | `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
 | `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the Instructor                                      |
-| `LmsInstructor`                                           | [LmsInstructor](../../Models/Components/LmsInstructor.md) | :heavy_minus_sign:                                        | N/A                                                       |
 | `Fields`                                                  | List<*string*>                                            | :heavy_minus_sign:                                        | Comma-delimited fields to return                          |
 
 ### Response
@@ -241,9 +241,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Instructor.UpdateLmsInstructorAsync(
+    lmsInstructor: new LmsInstructor() {},
     connectionId: "<id>",
     id: "<id>",
-    lmsInstructor: new LmsInstructor() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -256,9 +256,9 @@ var res = await sdk.Instructor.UpdateLmsInstructorAsync(
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
 | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| `LmsInstructor`                                           | [LmsInstructor](../../Models/Components/LmsInstructor.md) | :heavy_check_mark:                                        | N/A                                                       |
 | `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
 | `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the Instructor                                      |
-| `LmsInstructor`                                           | [LmsInstructor](../../Models/Components/LmsInstructor.md) | :heavy_minus_sign:                                        | N/A                                                       |
 | `Fields`                                                  | List<*string*>                                            | :heavy_minus_sign:                                        | Comma-delimited fields to return                          |
 
 ### Response

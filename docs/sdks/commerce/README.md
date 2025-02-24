@@ -46,10 +46,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.CreateCommerceCollectionAsync(
-    connectionId: "<id>",
     commerceCollection: new CommerceCollection() {
         Name = "<value>",
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -62,8 +62,8 @@ var res = await sdk.Commerce.CreateCommerceCollectionAsync(
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `CommerceCollection`                                                | [CommerceCollection](../../Models/Components/CommerceCollection.md) | :heavy_check_mark:                                                  | A collection of items/products/services                             |
 | `ConnectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
-| `CommerceCollection`                                                | [CommerceCollection](../../Models/Components/CommerceCollection.md) | :heavy_minus_sign:                                                  | A collection of items/products/services                             |
 | `Fields`                                                            | List<*string*>                                                      | :heavy_minus_sign:                                                  | Comma-delimited fields to return                                    |
 
 ### Response
@@ -92,10 +92,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.CreateCommerceInventoryAsync(
-    connectionId: "<id>",
     commerceInventory: new CommerceInventory() {
         Available = 5165.08D,
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -108,8 +108,8 @@ var res = await sdk.Commerce.CreateCommerceInventoryAsync(
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_check_mark:                                                | N/A                                                               |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
-| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
 | `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
@@ -138,8 +138,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.CreateCommerceItemAsync(
-    connectionId: "<id>",
     commerceItem: new CommerceItem() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -152,8 +152,8 @@ var res = await sdk.Commerce.CreateCommerceItemAsync(
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
 | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `CommerceItem`                                          | [CommerceItem](../../Models/Components/CommerceItem.md) | :heavy_check_mark:                                      | N/A                                                     |
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
-| `CommerceItem`                                          | [CommerceItem](../../Models/Components/CommerceItem.md) | :heavy_minus_sign:                                      | N/A                                                     |
 | `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
@@ -182,10 +182,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.CreateCommerceLocationAsync(
-    connectionId: "<id>",
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -198,8 +198,8 @@ var res = await sdk.Commerce.CreateCommerceLocationAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `CommerceLocation`                                              | [CommerceLocation](../../Models/Components/CommerceLocation.md) | :heavy_check_mark:                                              | N/A                                                             |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
-| `CommerceLocation`                                              | [CommerceLocation](../../Models/Components/CommerceLocation.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
@@ -564,11 +564,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.PatchCommerceCollectionAsync(
-    connectionId: "<id>",
-    id: "<id>",
     commerceCollection: new CommerceCollection() {
         Name = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -581,9 +581,9 @@ var res = await sdk.Commerce.PatchCommerceCollectionAsync(
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `CommerceCollection`                                                | [CommerceCollection](../../Models/Components/CommerceCollection.md) | :heavy_check_mark:                                                  | A collection of items/products/services                             |
 | `ConnectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
 | `Id`                                                                | *string*                                                            | :heavy_check_mark:                                                  | ID of the Collection                                                |
-| `CommerceCollection`                                                | [CommerceCollection](../../Models/Components/CommerceCollection.md) | :heavy_minus_sign:                                                  | A collection of items/products/services                             |
 | `Fields`                                                            | List<*string*>                                                      | :heavy_minus_sign:                                                  | Comma-delimited fields to return                                    |
 
 ### Response
@@ -612,11 +612,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.PatchCommerceInventoryAsync(
-    connectionId: "<id>",
-    id: "<id>",
     commerceInventory: new CommerceInventory() {
         Available = 615.23D,
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -629,9 +629,9 @@ var res = await sdk.Commerce.PatchCommerceInventoryAsync(
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_check_mark:                                                | N/A                                                               |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Inventory                                               |
-| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
 | `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
@@ -660,9 +660,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.PatchCommerceItemAsync(
+    commerceItem: new CommerceItem() {},
     connectionId: "<id>",
     id: "<id>",
-    commerceItem: new CommerceItem() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -675,9 +675,9 @@ var res = await sdk.Commerce.PatchCommerceItemAsync(
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
 | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `CommerceItem`                                          | [CommerceItem](../../Models/Components/CommerceItem.md) | :heavy_check_mark:                                      | N/A                                                     |
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Item                                          |
-| `CommerceItem`                                          | [CommerceItem](../../Models/Components/CommerceItem.md) | :heavy_minus_sign:                                      | N/A                                                     |
 | `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
@@ -706,11 +706,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.PatchCommerceLocationAsync(
-    connectionId: "<id>",
-    id: "<id>",
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -723,9 +723,9 @@ var res = await sdk.Commerce.PatchCommerceLocationAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `CommerceLocation`                                              | [CommerceLocation](../../Models/Components/CommerceLocation.md) | :heavy_check_mark:                                              | N/A                                                             |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Location                                              |
-| `CommerceLocation`                                              | [CommerceLocation](../../Models/Components/CommerceLocation.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
@@ -910,11 +910,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.UpdateCommerceCollectionAsync(
-    connectionId: "<id>",
-    id: "<id>",
     commerceCollection: new CommerceCollection() {
         Name = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -927,9 +927,9 @@ var res = await sdk.Commerce.UpdateCommerceCollectionAsync(
 
 | Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `CommerceCollection`                                                | [CommerceCollection](../../Models/Components/CommerceCollection.md) | :heavy_check_mark:                                                  | A collection of items/products/services                             |
 | `ConnectionId`                                                      | *string*                                                            | :heavy_check_mark:                                                  | ID of the connection                                                |
 | `Id`                                                                | *string*                                                            | :heavy_check_mark:                                                  | ID of the Collection                                                |
-| `CommerceCollection`                                                | [CommerceCollection](../../Models/Components/CommerceCollection.md) | :heavy_minus_sign:                                                  | A collection of items/products/services                             |
 | `Fields`                                                            | List<*string*>                                                      | :heavy_minus_sign:                                                  | Comma-delimited fields to return                                    |
 
 ### Response
@@ -958,11 +958,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.UpdateCommerceInventoryAsync(
-    connectionId: "<id>",
-    id: "<id>",
     commerceInventory: new CommerceInventory() {
         Available = 9360.02D,
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -975,9 +975,9 @@ var res = await sdk.Commerce.UpdateCommerceInventoryAsync(
 
 | Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
 | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_check_mark:                                                | N/A                                                               |
 | `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
 | `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Inventory                                               |
-| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_minus_sign:                                                | N/A                                                               |
 | `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
 
 ### Response
@@ -1006,9 +1006,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.UpdateCommerceItemAsync(
+    commerceItem: new CommerceItem() {},
     connectionId: "<id>",
     id: "<id>",
-    commerceItem: new CommerceItem() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1021,9 +1021,9 @@ var res = await sdk.Commerce.UpdateCommerceItemAsync(
 
 | Parameter                                               | Type                                                    | Required                                                | Description                                             |
 | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| `CommerceItem`                                          | [CommerceItem](../../Models/Components/CommerceItem.md) | :heavy_check_mark:                                      | N/A                                                     |
 | `ConnectionId`                                          | *string*                                                | :heavy_check_mark:                                      | ID of the connection                                    |
 | `Id`                                                    | *string*                                                | :heavy_check_mark:                                      | ID of the Item                                          |
-| `CommerceItem`                                          | [CommerceItem](../../Models/Components/CommerceItem.md) | :heavy_minus_sign:                                      | N/A                                                     |
 | `Fields`                                                | List<*string*>                                          | :heavy_minus_sign:                                      | Comma-delimited fields to return                        |
 
 ### Response
@@ -1052,11 +1052,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.UpdateCommerceLocationAsync(
-    connectionId: "<id>",
-    id: "<id>",
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -1069,9 +1069,9 @@ var res = await sdk.Commerce.UpdateCommerceLocationAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `CommerceLocation`                                              | [CommerceLocation](../../Models/Components/CommerceLocation.md) | :heavy_check_mark:                                              | N/A                                                             |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Location                                              |
-| `CommerceLocation`                                              | [CommerceLocation](../../Models/Components/CommerceLocation.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response

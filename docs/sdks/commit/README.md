@@ -28,11 +28,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commit.CreateRepoCommitAsync(
-    connectionId: "<id>",
     repoCommit: new RepoCommit() {
         RepoId = "<id>",
         UserId = "<id>",
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -45,8 +45,8 @@ var res = await sdk.Commit.CreateRepoCommitAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `RepoCommit`                                        | [RepoCommit](../../Models/Components/RepoCommit.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
-| `RepoCommit`                                        | [RepoCommit](../../Models/Components/RepoCommit.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -159,12 +159,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commit.PatchRepoCommitAsync(
-    connectionId: "<id>",
-    id: "<id>",
     repoCommit: new RepoCommit() {
         RepoId = "<id>",
         UserId = "<id>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -177,9 +177,9 @@ var res = await sdk.Commit.PatchRepoCommitAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `RepoCommit`                                        | [RepoCommit](../../Models/Components/RepoCommit.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
 | `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Commit                                    |
-| `RepoCommit`                                        | [RepoCommit](../../Models/Components/RepoCommit.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -247,12 +247,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commit.UpdateRepoCommitAsync(
-    connectionId: "<id>",
-    id: "<id>",
     repoCommit: new RepoCommit() {
         RepoId = "<id>",
         UserId = "<id>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -265,9 +265,9 @@ var res = await sdk.Commit.UpdateRepoCommitAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `RepoCommit`                                        | [RepoCommit](../../Models/Components/RepoCommit.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
 | `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Commit                                    |
-| `RepoCommit`                                        | [RepoCommit](../../Models/Components/RepoCommit.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response

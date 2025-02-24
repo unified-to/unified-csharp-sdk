@@ -16,14 +16,14 @@ namespace UnifiedTo.Models.Requests
     public class CreateLmsClassRequest
     {
 
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public LmsClass LmsClass { get; set; } = default!;
+
         /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
-
-        [SpeakeasyMetadata("request:mediaType=application/json")]
-        public LmsClass? LmsClass { get; set; }
 
         /// <summary>
         /// Comma-delimited fields to return

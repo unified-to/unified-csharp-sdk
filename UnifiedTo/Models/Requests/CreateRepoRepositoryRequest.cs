@@ -16,14 +16,14 @@ namespace UnifiedTo.Models.Requests
     public class CreateRepoRepositoryRequest
     {
 
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public RepoRepository RepoRepository { get; set; } = default!;
+
         /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
-
-        [SpeakeasyMetadata("request:mediaType=application/json")]
-        public RepoRepository? RepoRepository { get; set; }
 
         /// <summary>
         /// Comma-delimited fields to return

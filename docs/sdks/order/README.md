@@ -28,8 +28,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Order.CreateAccountingOrderAsync(
-    connectionId: "<id>",
     accountingOrder: new AccountingOrder() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -42,8 +42,8 @@ var res = await sdk.Order.CreateAccountingOrderAsync(
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `AccountingOrder`                                             | [AccountingOrder](../../Models/Components/AccountingOrder.md) | :heavy_check_mark:                                            | N/A                                                           |
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
-| `AccountingOrder`                                             | [AccountingOrder](../../Models/Components/AccountingOrder.md) | :heavy_minus_sign:                                            | N/A                                                           |
 | `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response
@@ -156,9 +156,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Order.PatchAccountingOrderAsync(
+    accountingOrder: new AccountingOrder() {},
     connectionId: "<id>",
     id: "<id>",
-    accountingOrder: new AccountingOrder() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -171,9 +171,9 @@ var res = await sdk.Order.PatchAccountingOrderAsync(
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `AccountingOrder`                                             | [AccountingOrder](../../Models/Components/AccountingOrder.md) | :heavy_check_mark:                                            | N/A                                                           |
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Order                                               |
-| `AccountingOrder`                                             | [AccountingOrder](../../Models/Components/AccountingOrder.md) | :heavy_minus_sign:                                            | N/A                                                           |
 | `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response
@@ -241,9 +241,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Order.UpdateAccountingOrderAsync(
+    accountingOrder: new AccountingOrder() {},
     connectionId: "<id>",
     id: "<id>",
-    accountingOrder: new AccountingOrder() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -256,9 +256,9 @@ var res = await sdk.Order.UpdateAccountingOrderAsync(
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `AccountingOrder`                                             | [AccountingOrder](../../Models/Components/AccountingOrder.md) | :heavy_check_mark:                                            | N/A                                                           |
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Order                                               |
-| `AccountingOrder`                                             | [AccountingOrder](../../Models/Components/AccountingOrder.md) | :heavy_minus_sign:                                            | N/A                                                           |
 | `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response

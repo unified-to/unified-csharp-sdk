@@ -17,6 +17,12 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
+        /// Chart of accounts
+        /// </summary>
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public AccountingAccount AccountingAccount { get; set; } = default!;
+
+        /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
@@ -27,12 +33,6 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;
-
-        /// <summary>
-        /// Chart of accounts
-        /// </summary>
-        [SpeakeasyMetadata("request:mediaType=application/json")]
-        public AccountingAccount? AccountingAccount { get; set; }
 
         /// <summary>
         /// Comma-delimited fields to return

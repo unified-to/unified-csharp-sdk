@@ -28,22 +28,22 @@ namespace UnifiedTo
         /// <summary>
         /// Create a class
         /// </summary>
-        Task<CreateLmsClassResponse> CreateLmsClassAsync(string connectionId, LmsClass? lmsClass = null, List<string>? fields = null);
+        Task<CreateLmsClassResponse> CreateLmsClassAsync(LmsClass lmsClass, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a course
         /// </summary>
-        Task<CreateLmsCourseResponse> CreateLmsCourseAsync(string connectionId, LmsCourse? lmsCourse = null, List<string>? fields = null);
+        Task<CreateLmsCourseResponse> CreateLmsCourseAsync(LmsCourse lmsCourse, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create an instructor
         /// </summary>
-        Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(string connectionId, LmsInstructor? lmsInstructor = null, List<string>? fields = null);
+        Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a student
         /// </summary>
-        Task<CreateLmsStudentResponse> CreateLmsStudentAsync(string connectionId, LmsStudent? lmsStudent = null, List<string>? fields = null);
+        Task<CreateLmsStudentResponse> CreateLmsStudentAsync(LmsStudent lmsStudent, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a class
@@ -88,22 +88,22 @@ namespace UnifiedTo
         /// <summary>
         /// Update a class
         /// </summary>
-        Task<PatchLmsClassResponse> PatchLmsClassAsync(string connectionId, string id, LmsClass? lmsClass = null, List<string>? fields = null);
+        Task<PatchLmsClassResponse> PatchLmsClassAsync(LmsClass lmsClass, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a course
         /// </summary>
-        Task<PatchLmsCourseResponse> PatchLmsCourseAsync(string connectionId, string id, LmsCourse? lmsCourse = null, List<string>? fields = null);
+        Task<PatchLmsCourseResponse> PatchLmsCourseAsync(LmsCourse lmsCourse, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update an instructor
         /// </summary>
-        Task<PatchLmsInstructorResponse> PatchLmsInstructorAsync(string connectionId, string id, LmsInstructor? lmsInstructor = null, List<string>? fields = null);
+        Task<PatchLmsInstructorResponse> PatchLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a student
         /// </summary>
-        Task<PatchLmsStudentResponse> PatchLmsStudentAsync(string connectionId, string id, LmsStudent? lmsStudent = null, List<string>? fields = null);
+        Task<PatchLmsStudentResponse> PatchLmsStudentAsync(LmsStudent lmsStudent, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove a class
@@ -128,32 +128,32 @@ namespace UnifiedTo
         /// <summary>
         /// Update a class
         /// </summary>
-        Task<UpdateLmsClassResponse> UpdateLmsClassAsync(string connectionId, string id, LmsClass? lmsClass = null, List<string>? fields = null);
+        Task<UpdateLmsClassResponse> UpdateLmsClassAsync(LmsClass lmsClass, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a course
         /// </summary>
-        Task<UpdateLmsCourseResponse> UpdateLmsCourseAsync(string connectionId, string id, LmsCourse? lmsCourse = null, List<string>? fields = null);
+        Task<UpdateLmsCourseResponse> UpdateLmsCourseAsync(LmsCourse lmsCourse, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update an instructor
         /// </summary>
-        Task<UpdateLmsInstructorResponse> UpdateLmsInstructorAsync(string connectionId, string id, LmsInstructor? lmsInstructor = null, List<string>? fields = null);
+        Task<UpdateLmsInstructorResponse> UpdateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a student
         /// </summary>
-        Task<UpdateLmsStudentResponse> UpdateLmsStudentAsync(string connectionId, string id, LmsStudent? lmsStudent = null, List<string>? fields = null);
+        Task<UpdateLmsStudentResponse> UpdateLmsStudentAsync(LmsStudent lmsStudent, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Lms: ILms
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -166,12 +166,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateLmsClassResponse> CreateLmsClassAsync(string connectionId, LmsClass? lmsClass = null, List<string>? fields = null)
+        public async Task<CreateLmsClassResponse> CreateLmsClassAsync(LmsClass lmsClass, string connectionId, List<string>? fields = null)
         {
             var request = new CreateLmsClassRequest()
             {
-                ConnectionId = connectionId,
                 LmsClass = lmsClass,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -180,7 +180,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "LmsClass", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "LmsClass", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -256,12 +256,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateLmsCourseResponse> CreateLmsCourseAsync(string connectionId, LmsCourse? lmsCourse = null, List<string>? fields = null)
+        public async Task<CreateLmsCourseResponse> CreateLmsCourseAsync(LmsCourse lmsCourse, string connectionId, List<string>? fields = null)
         {
             var request = new CreateLmsCourseRequest()
             {
-                ConnectionId = connectionId,
                 LmsCourse = lmsCourse,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -270,7 +270,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "LmsCourse", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "LmsCourse", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -346,12 +346,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(string connectionId, LmsInstructor? lmsInstructor = null, List<string>? fields = null)
+        public async Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, List<string>? fields = null)
         {
             var request = new CreateLmsInstructorRequest()
             {
-                ConnectionId = connectionId,
                 LmsInstructor = lmsInstructor,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -360,7 +360,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "LmsInstructor", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "LmsInstructor", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -436,12 +436,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateLmsStudentResponse> CreateLmsStudentAsync(string connectionId, LmsStudent? lmsStudent = null, List<string>? fields = null)
+        public async Task<CreateLmsStudentResponse> CreateLmsStudentAsync(LmsStudent lmsStudent, string connectionId, List<string>? fields = null)
         {
             var request = new CreateLmsStudentRequest()
             {
-                ConnectionId = connectionId,
                 LmsStudent = lmsStudent,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -450,7 +450,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "LmsStudent", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "LmsStudent", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1174,13 +1174,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchLmsClassResponse> PatchLmsClassAsync(string connectionId, string id, LmsClass? lmsClass = null, List<string>? fields = null)
+        public async Task<PatchLmsClassResponse> PatchLmsClassAsync(LmsClass lmsClass, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchLmsClassRequest()
             {
+                LmsClass = lmsClass,
                 ConnectionId = connectionId,
                 Id = id,
-                LmsClass = lmsClass,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1189,7 +1189,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "LmsClass", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "LmsClass", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1265,13 +1265,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchLmsCourseResponse> PatchLmsCourseAsync(string connectionId, string id, LmsCourse? lmsCourse = null, List<string>? fields = null)
+        public async Task<PatchLmsCourseResponse> PatchLmsCourseAsync(LmsCourse lmsCourse, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchLmsCourseRequest()
             {
+                LmsCourse = lmsCourse,
                 ConnectionId = connectionId,
                 Id = id,
-                LmsCourse = lmsCourse,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1280,7 +1280,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "LmsCourse", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "LmsCourse", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1356,13 +1356,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchLmsInstructorResponse> PatchLmsInstructorAsync(string connectionId, string id, LmsInstructor? lmsInstructor = null, List<string>? fields = null)
+        public async Task<PatchLmsInstructorResponse> PatchLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchLmsInstructorRequest()
             {
+                LmsInstructor = lmsInstructor,
                 ConnectionId = connectionId,
                 Id = id,
-                LmsInstructor = lmsInstructor,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1371,7 +1371,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "LmsInstructor", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "LmsInstructor", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1447,13 +1447,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchLmsStudentResponse> PatchLmsStudentAsync(string connectionId, string id, LmsStudent? lmsStudent = null, List<string>? fields = null)
+        public async Task<PatchLmsStudentResponse> PatchLmsStudentAsync(LmsStudent lmsStudent, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchLmsStudentRequest()
             {
+                LmsStudent = lmsStudent,
                 ConnectionId = connectionId,
                 Id = id,
-                LmsStudent = lmsStudent,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1462,7 +1462,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "LmsStudent", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "LmsStudent", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1866,13 +1866,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateLmsClassResponse> UpdateLmsClassAsync(string connectionId, string id, LmsClass? lmsClass = null, List<string>? fields = null)
+        public async Task<UpdateLmsClassResponse> UpdateLmsClassAsync(LmsClass lmsClass, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateLmsClassRequest()
             {
+                LmsClass = lmsClass,
                 ConnectionId = connectionId,
                 Id = id,
-                LmsClass = lmsClass,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1881,7 +1881,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "LmsClass", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "LmsClass", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1957,13 +1957,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateLmsCourseResponse> UpdateLmsCourseAsync(string connectionId, string id, LmsCourse? lmsCourse = null, List<string>? fields = null)
+        public async Task<UpdateLmsCourseResponse> UpdateLmsCourseAsync(LmsCourse lmsCourse, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateLmsCourseRequest()
             {
+                LmsCourse = lmsCourse,
                 ConnectionId = connectionId,
                 Id = id,
-                LmsCourse = lmsCourse,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1972,7 +1972,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "LmsCourse", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "LmsCourse", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2048,13 +2048,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateLmsInstructorResponse> UpdateLmsInstructorAsync(string connectionId, string id, LmsInstructor? lmsInstructor = null, List<string>? fields = null)
+        public async Task<UpdateLmsInstructorResponse> UpdateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateLmsInstructorRequest()
             {
+                LmsInstructor = lmsInstructor,
                 ConnectionId = connectionId,
                 Id = id,
-                LmsInstructor = lmsInstructor,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2063,7 +2063,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "LmsInstructor", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "LmsInstructor", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2139,13 +2139,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateLmsStudentResponse> UpdateLmsStudentAsync(string connectionId, string id, LmsStudent? lmsStudent = null, List<string>? fields = null)
+        public async Task<UpdateLmsStudentResponse> UpdateLmsStudentAsync(LmsStudent lmsStudent, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateLmsStudentRequest()
             {
+                LmsStudent = lmsStudent,
                 ConnectionId = connectionId,
                 Id = id,
-                LmsStudent = lmsStudent,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2154,7 +2154,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "LmsStudent", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "LmsStudent", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

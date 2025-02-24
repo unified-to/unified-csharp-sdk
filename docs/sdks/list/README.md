@@ -28,8 +28,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.List.CreateMartechListAsync(
-    connectionId: "<id>",
     marketingList: new MarketingList() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -42,8 +42,8 @@ var res = await sdk.List.CreateMartechListAsync(
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
 | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_check_mark:                                        | Mailing List                                              |
 | `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
-| `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_minus_sign:                                        | Mailing List                                              |
 | `Fields`                                                  | List<*string*>                                            | :heavy_minus_sign:                                        | Comma-delimited fields to return                          |
 
 ### Response
@@ -156,9 +156,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.List.PatchMartechListAsync(
+    marketingList: new MarketingList() {},
     connectionId: "<id>",
     id: "<id>",
-    marketingList: new MarketingList() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -171,9 +171,9 @@ var res = await sdk.List.PatchMartechListAsync(
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
 | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_check_mark:                                        | Mailing List                                              |
 | `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
 | `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the List                                            |
-| `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_minus_sign:                                        | Mailing List                                              |
 | `Fields`                                                  | List<*string*>                                            | :heavy_minus_sign:                                        | Comma-delimited fields to return                          |
 
 ### Response
@@ -241,9 +241,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.List.UpdateMartechListAsync(
+    marketingList: new MarketingList() {},
     connectionId: "<id>",
     id: "<id>",
-    marketingList: new MarketingList() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -256,9 +256,9 @@ var res = await sdk.List.UpdateMartechListAsync(
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
 | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_check_mark:                                        | Mailing List                                              |
 | `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
 | `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the List                                            |
-| `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_minus_sign:                                        | Mailing List                                              |
 | `Fields`                                                  | List<*string*>                                            | :heavy_minus_sign:                                        | Comma-delimited fields to return                          |
 
 ### Response

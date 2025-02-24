@@ -28,8 +28,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Link.CreatePaymentLinkAsync(
-    connectionId: "<id>",
     paymentLink: new PaymentLink() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -42,8 +42,8 @@ var res = await sdk.Link.CreatePaymentLinkAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `PaymentLink`                                         | [PaymentLink](../../Models/Components/PaymentLink.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
-| `PaymentLink`                                         | [PaymentLink](../../Models/Components/PaymentLink.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
@@ -156,9 +156,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Link.PatchPaymentLinkAsync(
+    paymentLink: new PaymentLink() {},
     connectionId: "<id>",
     id: "<id>",
-    paymentLink: new PaymentLink() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -171,9 +171,9 @@ var res = await sdk.Link.PatchPaymentLinkAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `PaymentLink`                                         | [PaymentLink](../../Models/Components/PaymentLink.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Link                                        |
-| `PaymentLink`                                         | [PaymentLink](../../Models/Components/PaymentLink.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
@@ -241,9 +241,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Link.UpdatePaymentLinkAsync(
+    paymentLink: new PaymentLink() {},
     connectionId: "<id>",
     id: "<id>",
-    paymentLink: new PaymentLink() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -256,9 +256,9 @@ var res = await sdk.Link.UpdatePaymentLinkAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `PaymentLink`                                         | [PaymentLink](../../Models/Components/PaymentLink.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Link                                        |
-| `PaymentLink`                                         | [PaymentLink](../../Models/Components/PaymentLink.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response

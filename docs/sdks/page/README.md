@@ -28,11 +28,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Page.CreateKmsPageAsync(
-    connectionId: "<id>",
     kmsPage: new KmsPage() {
         Title = "<value>",
         Type = KmsPageType.Html,
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -45,8 +45,8 @@ var res = await sdk.Page.CreateKmsPageAsync(
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_check_mark:                            | N/A                                           |
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
-| `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_minus_sign:                            | N/A                                           |
 | `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response
@@ -159,12 +159,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Page.PatchKmsPageAsync(
-    connectionId: "<id>",
-    id: "<id>",
     kmsPage: new KmsPage() {
         Title = "<value>",
         Type = KmsPageType.Text,
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -177,9 +177,9 @@ var res = await sdk.Page.PatchKmsPageAsync(
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_check_mark:                            | N/A                                           |
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Page                                |
-| `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_minus_sign:                            | N/A                                           |
 | `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response
@@ -247,12 +247,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Page.UpdateKmsPageAsync(
-    connectionId: "<id>",
-    id: "<id>",
     kmsPage: new KmsPage() {
         Title = "<value>",
         Type = KmsPageType.Other,
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -265,9 +265,9 @@ var res = await sdk.Page.UpdateKmsPageAsync(
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_check_mark:                            | N/A                                           |
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Page                                |
-| `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_minus_sign:                            | N/A                                           |
 | `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response

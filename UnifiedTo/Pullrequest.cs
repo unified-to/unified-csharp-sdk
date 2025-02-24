@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create a pullrequest
         /// </summary>
-        Task<CreateRepoPullrequestResponse> CreateRepoPullrequestAsync(string connectionId, RepoPullrequest? repoPullrequest = null, List<string>? fields = null);
+        Task<CreateRepoPullrequestResponse> CreateRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a pullrequest
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a pullrequest
         /// </summary>
-        Task<PatchRepoPullrequestResponse> PatchRepoPullrequestAsync(string connectionId, string id, RepoPullrequest? repoPullrequest = null, List<string>? fields = null);
+        Task<PatchRepoPullrequestResponse> PatchRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove a pullrequest
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a pullrequest
         /// </summary>
-        Task<UpdateRepoPullrequestResponse> UpdateRepoPullrequestAsync(string connectionId, string id, RepoPullrequest? repoPullrequest = null, List<string>? fields = null);
+        Task<UpdateRepoPullrequestResponse> UpdateRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Pullrequest: IPullrequest
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,12 +76,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateRepoPullrequestResponse> CreateRepoPullrequestAsync(string connectionId, RepoPullrequest? repoPullrequest = null, List<string>? fields = null)
+        public async Task<CreateRepoPullrequestResponse> CreateRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, List<string>? fields = null)
         {
             var request = new CreateRepoPullrequestRequest()
             {
-                ConnectionId = connectionId,
                 RepoPullrequest = repoPullrequest,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -90,7 +90,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "RepoPullrequest", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "RepoPullrequest", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -328,13 +328,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchRepoPullrequestResponse> PatchRepoPullrequestAsync(string connectionId, string id, RepoPullrequest? repoPullrequest = null, List<string>? fields = null)
+        public async Task<PatchRepoPullrequestResponse> PatchRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchRepoPullrequestRequest()
             {
+                RepoPullrequest = repoPullrequest,
                 ConnectionId = connectionId,
                 Id = id,
-                RepoPullrequest = repoPullrequest,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -343,7 +343,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "RepoPullrequest", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "RepoPullrequest", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -501,13 +501,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateRepoPullrequestResponse> UpdateRepoPullrequestAsync(string connectionId, string id, RepoPullrequest? repoPullrequest = null, List<string>? fields = null)
+        public async Task<UpdateRepoPullrequestResponse> UpdateRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateRepoPullrequestRequest()
             {
+                RepoPullrequest = repoPullrequest,
                 ConnectionId = connectionId,
                 Id = id,
-                RepoPullrequest = repoPullrequest,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -516,7 +516,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "RepoPullrequest", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "RepoPullrequest", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

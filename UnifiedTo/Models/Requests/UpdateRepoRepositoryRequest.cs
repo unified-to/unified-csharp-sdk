@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Requests
     public class UpdateRepoRepositoryRequest
     {
 
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public RepoRepository RepoRepository { get; set; } = default!;
+
         /// <summary>
         /// ID of the connection
         /// </summary>
@@ -27,9 +30,6 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;
-
-        [SpeakeasyMetadata("request:mediaType=application/json")]
-        public RepoRepository? RepoRepository { get; set; }
 
         /// <summary>
         /// Comma-delimited fields to return

@@ -58,8 +58,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.CreateCrmCompanyAsync(
-    connectionId: "<id>",
     crmCompany: new CrmCompany() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -72,8 +72,8 @@ var res = await sdk.Crm.CreateCrmCompanyAsync(
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `CrmCompany`                                                                                   | [CrmCompany](../../Models/Components/CrmCompany.md)                                            | :heavy_check_mark:                                                                             | A company represents an organization that optionally is associated with a deal and/or contacts |
 | `ConnectionId`                                                                                 | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the connection                                                                           |
-| `CrmCompany`                                                                                   | [CrmCompany](../../Models/Components/CrmCompany.md)                                            | :heavy_minus_sign:                                                                             | A company represents an organization that optionally is associated with a deal and/or contacts |
 | `Fields`                                                                                       | List<*string*>                                                                                 | :heavy_minus_sign:                                                                             | Comma-delimited fields to return                                                               |
 
 ### Response
@@ -102,8 +102,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.CreateCrmContactAsync(
-    connectionId: "<id>",
     crmContact: new CrmContact() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -116,8 +116,8 @@ var res = await sdk.Crm.CreateCrmContactAsync(
 
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
 | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `CrmContact`                                                                             | [CrmContact](../../Models/Components/CrmContact.md)                                      | :heavy_check_mark:                                                                       | A contact represents a person that optionally is associated with a deal and/or a company |
 | `ConnectionId`                                                                           | *string*                                                                                 | :heavy_check_mark:                                                                       | ID of the connection                                                                     |
-| `CrmContact`                                                                             | [CrmContact](../../Models/Components/CrmContact.md)                                      | :heavy_minus_sign:                                                                       | A contact represents a person that optionally is associated with a deal and/or a company |
 | `Fields`                                                                                 | List<*string*>                                                                           | :heavy_minus_sign:                                                                       | Comma-delimited fields to return                                                         |
 
 ### Response
@@ -146,8 +146,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.CreateCrmDealAsync(
-    connectionId: "<id>",
     crmDeal: new CrmDeal() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -160,8 +160,8 @@ var res = await sdk.Crm.CreateCrmDealAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `CrmDeal`                                                       | [CrmDeal](../../Models/Components/CrmDeal.md)                   | :heavy_check_mark:                                              | A deal represents an opportunity with companies and/or contacts |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
-| `CrmDeal`                                                       | [CrmDeal](../../Models/Components/CrmDeal.md)                   | :heavy_minus_sign:                                              | A deal represents an opportunity with companies and/or contacts |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
@@ -190,8 +190,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.CreateCrmEventAsync(
-    connectionId: "<id>",
     crmEvent: new CrmEvent() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -204,8 +204,8 @@ var res = await sdk.Crm.CreateCrmEventAsync(
 
 | Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
 | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `CrmEvent`                                                                                                      | [CrmEvent](../../Models/Components/CrmEvent.md)                                                                 | :heavy_check_mark:                                                                                              | An event represents an event, activity, or engagement and is always associated with a deal, contact, or company |
 | `ConnectionId`                                                                                                  | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the connection                                                                                            |
-| `CrmEvent`                                                                                                      | [CrmEvent](../../Models/Components/CrmEvent.md)                                                                 | :heavy_minus_sign:                                                                                              | An event represents an event, activity, or engagement and is always associated with a deal, contact, or company |
 | `Fields`                                                                                                        | List<*string*>                                                                                                  | :heavy_minus_sign:                                                                                              | Comma-delimited fields to return                                                                                |
 
 ### Response
@@ -234,8 +234,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.CreateCrmLeadAsync(
-    connectionId: "<id>",
     crmLead: new CrmLead() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -248,8 +248,8 @@ var res = await sdk.Crm.CreateCrmLeadAsync(
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_check_mark:                            | N/A                                           |
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
-| `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_minus_sign:                            | N/A                                           |
 | `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response
@@ -278,8 +278,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.CreateCrmPipelineAsync(
-    connectionId: "<id>",
     crmPipeline: new CrmPipeline() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -292,8 +292,8 @@ var res = await sdk.Crm.CreateCrmPipelineAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
-| `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
@@ -826,9 +826,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.PatchCrmCompanyAsync(
+    crmCompany: new CrmCompany() {},
     connectionId: "<id>",
     id: "<id>",
-    crmCompany: new CrmCompany() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -841,9 +841,9 @@ var res = await sdk.Crm.PatchCrmCompanyAsync(
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `CrmCompany`                                                                                   | [CrmCompany](../../Models/Components/CrmCompany.md)                                            | :heavy_check_mark:                                                                             | A company represents an organization that optionally is associated with a deal and/or contacts |
 | `ConnectionId`                                                                                 | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the connection                                                                           |
 | `Id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the Company                                                                              |
-| `CrmCompany`                                                                                   | [CrmCompany](../../Models/Components/CrmCompany.md)                                            | :heavy_minus_sign:                                                                             | A company represents an organization that optionally is associated with a deal and/or contacts |
 | `Fields`                                                                                       | List<*string*>                                                                                 | :heavy_minus_sign:                                                                             | Comma-delimited fields to return                                                               |
 
 ### Response
@@ -872,9 +872,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.PatchCrmContactAsync(
+    crmContact: new CrmContact() {},
     connectionId: "<id>",
     id: "<id>",
-    crmContact: new CrmContact() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -887,9 +887,9 @@ var res = await sdk.Crm.PatchCrmContactAsync(
 
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
 | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `CrmContact`                                                                             | [CrmContact](../../Models/Components/CrmContact.md)                                      | :heavy_check_mark:                                                                       | A contact represents a person that optionally is associated with a deal and/or a company |
 | `ConnectionId`                                                                           | *string*                                                                                 | :heavy_check_mark:                                                                       | ID of the connection                                                                     |
 | `Id`                                                                                     | *string*                                                                                 | :heavy_check_mark:                                                                       | ID of the Contact                                                                        |
-| `CrmContact`                                                                             | [CrmContact](../../Models/Components/CrmContact.md)                                      | :heavy_minus_sign:                                                                       | A contact represents a person that optionally is associated with a deal and/or a company |
 | `Fields`                                                                                 | List<*string*>                                                                           | :heavy_minus_sign:                                                                       | Comma-delimited fields to return                                                         |
 
 ### Response
@@ -918,9 +918,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.PatchCrmDealAsync(
+    crmDeal: new CrmDeal() {},
     connectionId: "<id>",
     id: "<id>",
-    crmDeal: new CrmDeal() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -933,9 +933,9 @@ var res = await sdk.Crm.PatchCrmDealAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `CrmDeal`                                                       | [CrmDeal](../../Models/Components/CrmDeal.md)                   | :heavy_check_mark:                                              | A deal represents an opportunity with companies and/or contacts |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Deal                                                  |
-| `CrmDeal`                                                       | [CrmDeal](../../Models/Components/CrmDeal.md)                   | :heavy_minus_sign:                                              | A deal represents an opportunity with companies and/or contacts |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
@@ -964,9 +964,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.PatchCrmEventAsync(
+    crmEvent: new CrmEvent() {},
     connectionId: "<id>",
     id: "<id>",
-    crmEvent: new CrmEvent() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -979,9 +979,9 @@ var res = await sdk.Crm.PatchCrmEventAsync(
 
 | Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
 | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `CrmEvent`                                                                                                      | [CrmEvent](../../Models/Components/CrmEvent.md)                                                                 | :heavy_check_mark:                                                                                              | An event represents an event, activity, or engagement and is always associated with a deal, contact, or company |
 | `ConnectionId`                                                                                                  | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the connection                                                                                            |
 | `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Event                                                                                                 |
-| `CrmEvent`                                                                                                      | [CrmEvent](../../Models/Components/CrmEvent.md)                                                                 | :heavy_minus_sign:                                                                                              | An event represents an event, activity, or engagement and is always associated with a deal, contact, or company |
 | `Fields`                                                                                                        | List<*string*>                                                                                                  | :heavy_minus_sign:                                                                                              | Comma-delimited fields to return                                                                                |
 
 ### Response
@@ -1010,9 +1010,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.PatchCrmLeadAsync(
+    crmLead: new CrmLead() {},
     connectionId: "<id>",
     id: "<id>",
-    crmLead: new CrmLead() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1025,9 +1025,9 @@ var res = await sdk.Crm.PatchCrmLeadAsync(
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_check_mark:                            | N/A                                           |
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Lead                                |
-| `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_minus_sign:                            | N/A                                           |
 | `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response
@@ -1056,9 +1056,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.PatchCrmPipelineAsync(
+    crmPipeline: new CrmPipeline() {},
     connectionId: "<id>",
     id: "<id>",
-    crmPipeline: new CrmPipeline() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1071,9 +1071,9 @@ var res = await sdk.Crm.PatchCrmPipelineAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Pipeline                                    |
-| `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
@@ -1336,9 +1336,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.UpdateCrmCompanyAsync(
+    crmCompany: new CrmCompany() {},
     connectionId: "<id>",
     id: "<id>",
-    crmCompany: new CrmCompany() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1351,9 +1351,9 @@ var res = await sdk.Crm.UpdateCrmCompanyAsync(
 
 | Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `CrmCompany`                                                                                   | [CrmCompany](../../Models/Components/CrmCompany.md)                                            | :heavy_check_mark:                                                                             | A company represents an organization that optionally is associated with a deal and/or contacts |
 | `ConnectionId`                                                                                 | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the connection                                                                           |
 | `Id`                                                                                           | *string*                                                                                       | :heavy_check_mark:                                                                             | ID of the Company                                                                              |
-| `CrmCompany`                                                                                   | [CrmCompany](../../Models/Components/CrmCompany.md)                                            | :heavy_minus_sign:                                                                             | A company represents an organization that optionally is associated with a deal and/or contacts |
 | `Fields`                                                                                       | List<*string*>                                                                                 | :heavy_minus_sign:                                                                             | Comma-delimited fields to return                                                               |
 
 ### Response
@@ -1382,9 +1382,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.UpdateCrmContactAsync(
+    crmContact: new CrmContact() {},
     connectionId: "<id>",
     id: "<id>",
-    crmContact: new CrmContact() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1397,9 +1397,9 @@ var res = await sdk.Crm.UpdateCrmContactAsync(
 
 | Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
 | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `CrmContact`                                                                             | [CrmContact](../../Models/Components/CrmContact.md)                                      | :heavy_check_mark:                                                                       | A contact represents a person that optionally is associated with a deal and/or a company |
 | `ConnectionId`                                                                           | *string*                                                                                 | :heavy_check_mark:                                                                       | ID of the connection                                                                     |
 | `Id`                                                                                     | *string*                                                                                 | :heavy_check_mark:                                                                       | ID of the Contact                                                                        |
-| `CrmContact`                                                                             | [CrmContact](../../Models/Components/CrmContact.md)                                      | :heavy_minus_sign:                                                                       | A contact represents a person that optionally is associated with a deal and/or a company |
 | `Fields`                                                                                 | List<*string*>                                                                           | :heavy_minus_sign:                                                                       | Comma-delimited fields to return                                                         |
 
 ### Response
@@ -1428,9 +1428,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.UpdateCrmDealAsync(
+    crmDeal: new CrmDeal() {},
     connectionId: "<id>",
     id: "<id>",
-    crmDeal: new CrmDeal() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1443,9 +1443,9 @@ var res = await sdk.Crm.UpdateCrmDealAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `CrmDeal`                                                       | [CrmDeal](../../Models/Components/CrmDeal.md)                   | :heavy_check_mark:                                              | A deal represents an opportunity with companies and/or contacts |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Deal                                                  |
-| `CrmDeal`                                                       | [CrmDeal](../../Models/Components/CrmDeal.md)                   | :heavy_minus_sign:                                              | A deal represents an opportunity with companies and/or contacts |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
@@ -1474,9 +1474,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.UpdateCrmEventAsync(
+    crmEvent: new CrmEvent() {},
     connectionId: "<id>",
     id: "<id>",
-    crmEvent: new CrmEvent() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1489,9 +1489,9 @@ var res = await sdk.Crm.UpdateCrmEventAsync(
 
 | Parameter                                                                                                       | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
 | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `CrmEvent`                                                                                                      | [CrmEvent](../../Models/Components/CrmEvent.md)                                                                 | :heavy_check_mark:                                                                                              | An event represents an event, activity, or engagement and is always associated with a deal, contact, or company |
 | `ConnectionId`                                                                                                  | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the connection                                                                                            |
 | `Id`                                                                                                            | *string*                                                                                                        | :heavy_check_mark:                                                                                              | ID of the Event                                                                                                 |
-| `CrmEvent`                                                                                                      | [CrmEvent](../../Models/Components/CrmEvent.md)                                                                 | :heavy_minus_sign:                                                                                              | An event represents an event, activity, or engagement and is always associated with a deal, contact, or company |
 | `Fields`                                                                                                        | List<*string*>                                                                                                  | :heavy_minus_sign:                                                                                              | Comma-delimited fields to return                                                                                |
 
 ### Response
@@ -1520,9 +1520,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.UpdateCrmLeadAsync(
+    crmLead: new CrmLead() {},
     connectionId: "<id>",
     id: "<id>",
-    crmLead: new CrmLead() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1535,9 +1535,9 @@ var res = await sdk.Crm.UpdateCrmLeadAsync(
 
 | Parameter                                     | Type                                          | Required                                      | Description                                   |
 | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_check_mark:                            | N/A                                           |
 | `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
 | `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Lead                                |
-| `CrmLead`                                     | [CrmLead](../../Models/Components/CrmLead.md) | :heavy_minus_sign:                            | N/A                                           |
 | `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
 
 ### Response
@@ -1566,9 +1566,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Crm.UpdateCrmPipelineAsync(
+    crmPipeline: new CrmPipeline() {},
     connectionId: "<id>",
     id: "<id>",
-    crmPipeline: new CrmPipeline() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -1581,9 +1581,9 @@ var res = await sdk.Crm.UpdateCrmPipelineAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Pipeline                                    |
-| `CrmPipeline`                                         | [CrmPipeline](../../Models/Components/CrmPipeline.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response

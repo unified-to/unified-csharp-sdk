@@ -34,10 +34,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Comment.CreateKmsCommentAsync(
-    connectionId: "<id>",
     kmsComment: new KmsComment() {
         Content = "<value>",
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -50,8 +50,8 @@ var res = await sdk.Comment.CreateKmsCommentAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
-| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -80,11 +80,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Comment.CreateTaskCommentAsync(
-    connectionId: "<id>",
     taskComment: new TaskComment() {
         TaskId = "<id>",
         Text = "<value>",
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -97,8 +97,8 @@ var res = await sdk.Comment.CreateTaskCommentAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `TaskComment`                                         | [TaskComment](../../Models/Components/TaskComment.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
-| `TaskComment`                                         | [TaskComment](../../Models/Components/TaskComment.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
@@ -295,11 +295,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Comment.PatchKmsCommentAsync(
-    connectionId: "<id>",
-    id: "<id>",
     kmsComment: new KmsComment() {
         Content = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -312,9 +312,9 @@ var res = await sdk.Comment.PatchKmsCommentAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
 | `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Comment                                   |
-| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -343,12 +343,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Comment.PatchTaskCommentAsync(
-    connectionId: "<id>",
-    id: "<id>",
     taskComment: new TaskComment() {
         TaskId = "<id>",
         Text = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -361,9 +361,9 @@ var res = await sdk.Comment.PatchTaskCommentAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `TaskComment`                                         | [TaskComment](../../Models/Components/TaskComment.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Comment                                     |
-| `TaskComment`                                         | [TaskComment](../../Models/Components/TaskComment.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response
@@ -470,11 +470,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Comment.UpdateKmsCommentAsync(
-    connectionId: "<id>",
-    id: "<id>",
     kmsComment: new KmsComment() {
         Content = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -487,9 +487,9 @@ var res = await sdk.Comment.UpdateKmsCommentAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
 | `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Comment                                   |
-| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -518,12 +518,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Comment.UpdateTaskCommentAsync(
-    connectionId: "<id>",
-    id: "<id>",
     taskComment: new TaskComment() {
         TaskId = "<id>",
         Text = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -536,9 +536,9 @@ var res = await sdk.Comment.UpdateTaskCommentAsync(
 
 | Parameter                                             | Type                                                  | Required                                              | Description                                           |
 | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
+| `TaskComment`                                         | [TaskComment](../../Models/Components/TaskComment.md) | :heavy_check_mark:                                    | N/A                                                   |
 | `ConnectionId`                                        | *string*                                              | :heavy_check_mark:                                    | ID of the connection                                  |
 | `Id`                                                  | *string*                                              | :heavy_check_mark:                                    | ID of the Comment                                     |
-| `TaskComment`                                         | [TaskComment](../../Models/Components/TaskComment.md) | :heavy_minus_sign:                                    | N/A                                                   |
 | `Fields`                                              | List<*string*>                                        | :heavy_minus_sign:                                    | Comma-delimited fields to return                      |
 
 ### Response

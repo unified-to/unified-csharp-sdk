@@ -19,7 +19,7 @@ namespace UnifiedTo.Models.Requests
         /// A webhook is used to POST new/updated information to your server.
         /// </summary>
         [SpeakeasyMetadata("request:mediaType=application/json")]
-        public Models.Components.Webhook? Webhook { get; set; }
+        public Models.Components.Webhook Webhook { get; set; } = default!;
 
         /// <summary>
         /// When set, all of the existing data will sent back to your server.

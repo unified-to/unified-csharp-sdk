@@ -28,11 +28,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Metadata.CreateMetadataMetadataAsync(
-    connectionId: "<id>",
     metadataMetadata: new MetadataMetadata() {
         Name = "<value>",
         ObjectType = "<value>",
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -45,8 +45,8 @@ var res = await sdk.Metadata.CreateMetadataMetadataAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `MetadataMetadata`                                              | [MetadataMetadata](../../Models/Components/MetadataMetadata.md) | :heavy_check_mark:                                              | N/A                                                             |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
-| `MetadataMetadata`                                              | [MetadataMetadata](../../Models/Components/MetadataMetadata.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
@@ -159,12 +159,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Metadata.PatchMetadataMetadataAsync(
-    connectionId: "<id>",
-    id: "<id>",
     metadataMetadata: new MetadataMetadata() {
         Name = "<value>",
         ObjectType = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -177,9 +177,9 @@ var res = await sdk.Metadata.PatchMetadataMetadataAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `MetadataMetadata`                                              | [MetadataMetadata](../../Models/Components/MetadataMetadata.md) | :heavy_check_mark:                                              | N/A                                                             |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Metadata                                              |
-| `MetadataMetadata`                                              | [MetadataMetadata](../../Models/Components/MetadataMetadata.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
@@ -247,12 +247,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Metadata.UpdateMetadataMetadataAsync(
-    connectionId: "<id>",
-    id: "<id>",
     metadataMetadata: new MetadataMetadata() {
         Name = "<value>",
         ObjectType = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -265,9 +265,9 @@ var res = await sdk.Metadata.UpdateMetadataMetadataAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `MetadataMetadata`                                              | [MetadataMetadata](../../Models/Components/MetadataMetadata.md) | :heavy_check_mark:                                              | N/A                                                             |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Metadata                                              |
-| `MetadataMetadata`                                              | [MetadataMetadata](../../Models/Components/MetadataMetadata.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response

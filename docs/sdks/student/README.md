@@ -28,8 +28,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Student.CreateLmsStudentAsync(
-    connectionId: "<id>",
     lmsStudent: new LmsStudent() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -42,8 +42,8 @@ var res = await sdk.Student.CreateLmsStudentAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `LmsStudent`                                        | [LmsStudent](../../Models/Components/LmsStudent.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
-| `LmsStudent`                                        | [LmsStudent](../../Models/Components/LmsStudent.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -156,9 +156,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Student.PatchLmsStudentAsync(
+    lmsStudent: new LmsStudent() {},
     connectionId: "<id>",
     id: "<id>",
-    lmsStudent: new LmsStudent() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -171,9 +171,9 @@ var res = await sdk.Student.PatchLmsStudentAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `LmsStudent`                                        | [LmsStudent](../../Models/Components/LmsStudent.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
 | `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Student                                   |
-| `LmsStudent`                                        | [LmsStudent](../../Models/Components/LmsStudent.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -241,9 +241,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Student.UpdateLmsStudentAsync(
+    lmsStudent: new LmsStudent() {},
     connectionId: "<id>",
     id: "<id>",
-    lmsStudent: new LmsStudent() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -256,9 +256,9 @@ var res = await sdk.Student.UpdateLmsStudentAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `LmsStudent`                                        | [LmsStudent](../../Models/Components/LmsStudent.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
 | `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Student                                   |
-| `LmsStudent`                                        | [LmsStudent](../../Models/Components/LmsStudent.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response

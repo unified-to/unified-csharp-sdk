@@ -28,17 +28,17 @@ namespace UnifiedTo
         /// <summary>
         /// Create a prompt
         /// </summary>
-        Task<CreateGenaiPromptResponse> CreateGenaiPromptAsync(string connectionId, GenaiPrompt? genaiPrompt = null, List<string>? fields = null);
+        Task<CreateGenaiPromptResponse> CreateGenaiPromptAsync(GenaiPrompt genaiPrompt, string connectionId, List<string>? fields = null);
     }
 
     public class Prompt: IPrompt
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -51,12 +51,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateGenaiPromptResponse> CreateGenaiPromptAsync(string connectionId, GenaiPrompt? genaiPrompt = null, List<string>? fields = null)
+        public async Task<CreateGenaiPromptResponse> CreateGenaiPromptAsync(GenaiPrompt genaiPrompt, string connectionId, List<string>? fields = null)
         {
             var request = new CreateGenaiPromptRequest()
             {
-                ConnectionId = connectionId,
                 GenaiPrompt = genaiPrompt,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -65,7 +65,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "GenaiPrompt", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "GenaiPrompt", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

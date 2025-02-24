@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create an order
         /// </summary>
-        Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(string connectionId, AccountingOrder? accountingOrder = null, List<string>? fields = null);
+        Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve an order
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update an order
         /// </summary>
-        Task<PatchAccountingOrderResponse> PatchAccountingOrderAsync(string connectionId, string id, AccountingOrder? accountingOrder = null, List<string>? fields = null);
+        Task<PatchAccountingOrderResponse> PatchAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove an order
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update an order
         /// </summary>
-        Task<UpdateAccountingOrderResponse> UpdateAccountingOrderAsync(string connectionId, string id, AccountingOrder? accountingOrder = null, List<string>? fields = null);
+        Task<UpdateAccountingOrderResponse> UpdateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Order: IOrder
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,12 +76,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(string connectionId, AccountingOrder? accountingOrder = null, List<string>? fields = null)
+        public async Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAccountingOrderRequest()
             {
-                ConnectionId = connectionId,
                 AccountingOrder = accountingOrder,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -90,7 +90,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingOrder", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingOrder", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -328,13 +328,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingOrderResponse> PatchAccountingOrderAsync(string connectionId, string id, AccountingOrder? accountingOrder = null, List<string>? fields = null)
+        public async Task<PatchAccountingOrderResponse> PatchAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAccountingOrderRequest()
             {
+                AccountingOrder = accountingOrder,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingOrder = accountingOrder,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -343,7 +343,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingOrder", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingOrder", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -501,13 +501,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingOrderResponse> UpdateAccountingOrderAsync(string connectionId, string id, AccountingOrder? accountingOrder = null, List<string>? fields = null)
+        public async Task<UpdateAccountingOrderResponse> UpdateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAccountingOrderRequest()
             {
+                AccountingOrder = accountingOrder,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingOrder = accountingOrder,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -516,7 +516,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingOrder", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingOrder", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

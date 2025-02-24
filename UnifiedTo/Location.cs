@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a location
         /// </summary>
-        Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(string connectionId, CommerceLocation? commerceLocation = null, List<string>? fields = null);
+        Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(CommerceLocation commerceLocation, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a location
         /// </summary>
-        Task<CreateHrisLocationResponse> CreateHrisLocationAsync(string connectionId, HrisLocation? hrisLocation = null, List<string>? fields = null);
+        Task<CreateHrisLocationResponse> CreateHrisLocationAsync(HrisLocation hrisLocation, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a location
@@ -58,12 +58,12 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location
         /// </summary>
-        Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null, List<string>? fields = null);
+        Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(CommerceLocation commerceLocation, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a location
         /// </summary>
-        Task<PatchHrisLocationResponse> PatchHrisLocationAsync(string connectionId, string id, HrisLocation? hrisLocation = null, List<string>? fields = null);
+        Task<PatchHrisLocationResponse> PatchHrisLocationAsync(HrisLocation hrisLocation, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove a location
@@ -78,22 +78,22 @@ namespace UnifiedTo
         /// <summary>
         /// Update a location
         /// </summary>
-        Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null, List<string>? fields = null);
+        Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(CommerceLocation commerceLocation, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a location
         /// </summary>
-        Task<UpdateHrisLocationResponse> UpdateHrisLocationAsync(string connectionId, string id, HrisLocation? hrisLocation = null, List<string>? fields = null);
+        Task<UpdateHrisLocationResponse> UpdateHrisLocationAsync(HrisLocation hrisLocation, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Location: ILocation
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -106,12 +106,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(string connectionId, CommerceLocation? commerceLocation = null, List<string>? fields = null)
+        public async Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(CommerceLocation commerceLocation, string connectionId, List<string>? fields = null)
         {
             var request = new CreateCommerceLocationRequest()
             {
-                ConnectionId = connectionId,
                 CommerceLocation = commerceLocation,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -120,7 +120,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceLocation", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceLocation", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -196,12 +196,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisLocationResponse> CreateHrisLocationAsync(string connectionId, HrisLocation? hrisLocation = null, List<string>? fields = null)
+        public async Task<CreateHrisLocationResponse> CreateHrisLocationAsync(HrisLocation hrisLocation, string connectionId, List<string>? fields = null)
         {
             var request = new CreateHrisLocationRequest()
             {
-                ConnectionId = connectionId,
                 HrisLocation = hrisLocation,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -210,7 +210,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "HrisLocation", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "HrisLocation", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -610,13 +610,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null, List<string>? fields = null)
+        public async Task<PatchCommerceLocationResponse> PatchCommerceLocationAsync(CommerceLocation commerceLocation, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchCommerceLocationRequest()
             {
+                CommerceLocation = commerceLocation,
                 ConnectionId = connectionId,
                 Id = id,
-                CommerceLocation = commerceLocation,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -625,7 +625,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceLocation", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceLocation", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -701,13 +701,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisLocationResponse> PatchHrisLocationAsync(string connectionId, string id, HrisLocation? hrisLocation = null, List<string>? fields = null)
+        public async Task<PatchHrisLocationResponse> PatchHrisLocationAsync(HrisLocation hrisLocation, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchHrisLocationRequest()
             {
+                HrisLocation = hrisLocation,
                 ConnectionId = connectionId,
                 Id = id,
-                HrisLocation = hrisLocation,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -716,7 +716,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "HrisLocation", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "HrisLocation", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -956,13 +956,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(string connectionId, string id, CommerceLocation? commerceLocation = null, List<string>? fields = null)
+        public async Task<UpdateCommerceLocationResponse> UpdateCommerceLocationAsync(CommerceLocation commerceLocation, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateCommerceLocationRequest()
             {
+                CommerceLocation = commerceLocation,
                 ConnectionId = connectionId,
                 Id = id,
-                CommerceLocation = commerceLocation,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -971,7 +971,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceLocation", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceLocation", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1047,13 +1047,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateHrisLocationResponse> UpdateHrisLocationAsync(string connectionId, string id, HrisLocation? hrisLocation = null, List<string>? fields = null)
+        public async Task<UpdateHrisLocationResponse> UpdateHrisLocationAsync(HrisLocation hrisLocation, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateHrisLocationRequest()
             {
+                HrisLocation = hrisLocation,
                 ConnectionId = connectionId,
                 Id = id,
-                HrisLocation = hrisLocation,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1062,7 +1062,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "HrisLocation", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "HrisLocation", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

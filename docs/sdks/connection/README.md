@@ -147,7 +147,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Connection.PatchUnifiedConnectionAsync(
-    id: "<id>",
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
             PropertyConnectionCategories.Genai,
@@ -156,7 +155,8 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(
         Permissions = new List<PropertyConnectionPermissions>() {
             PropertyConnectionPermissions.MetadataMetadataWrite,
         },
-    }
+    },
+    id: "<id>"
 );
 
 // handle response
@@ -166,8 +166,8 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `Connection`                                                          | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_check_mark:                                                    | A connection represents a specific authentication of an integration.  |
 | `Id`                                                                  | *string*                                                              | :heavy_check_mark:                                                    | ID of the Connection                                                  |
-| `Connection`                                                          | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_minus_sign:                                                    | A connection represents a specific authentication of an integration.  |
 
 ### Response
 
@@ -230,7 +230,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
-    id: "<id>",
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
             PropertyConnectionCategories.Task,
@@ -239,7 +238,8 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
         Permissions = new List<PropertyConnectionPermissions>() {
             PropertyConnectionPermissions.RepoPullrequestWrite,
         },
-    }
+    },
+    id: "<id>"
 );
 
 // handle response
@@ -249,8 +249,8 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
 
 | Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
 | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `Connection`                                                          | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_check_mark:                                                    | A connection represents a specific authentication of an integration.  |
 | `Id`                                                                  | *string*                                                              | :heavy_check_mark:                                                    | ID of the Connection                                                  |
-| `Connection`                                                          | [Models.Components.Connection](../../Models/Components/Connection.md) | :heavy_minus_sign:                                                    | A connection represents a specific authentication of an integration.  |
 
 ### Response
 

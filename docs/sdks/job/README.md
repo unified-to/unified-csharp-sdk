@@ -28,8 +28,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Job.CreateAtsJobAsync(
-    connectionId: "<id>",
     atsJob: new AtsJob() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -42,8 +42,8 @@ var res = await sdk.Job.CreateAtsJobAsync(
 
 | Parameter                                   | Type                                        | Required                                    | Description                                 |
 | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_check_mark:                          | N/A                                         |
 | `ConnectionId`                              | *string*                                    | :heavy_check_mark:                          | ID of the connection                        |
-| `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_minus_sign:                          | N/A                                         |
 | `Fields`                                    | List<*string*>                              | :heavy_minus_sign:                          | Comma-delimited fields to return            |
 
 ### Response
@@ -156,9 +156,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Job.PatchAtsJobAsync(
+    atsJob: new AtsJob() {},
     connectionId: "<id>",
     id: "<id>",
-    atsJob: new AtsJob() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -171,9 +171,9 @@ var res = await sdk.Job.PatchAtsJobAsync(
 
 | Parameter                                   | Type                                        | Required                                    | Description                                 |
 | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_check_mark:                          | N/A                                         |
 | `ConnectionId`                              | *string*                                    | :heavy_check_mark:                          | ID of the connection                        |
 | `Id`                                        | *string*                                    | :heavy_check_mark:                          | ID of the Job                               |
-| `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_minus_sign:                          | N/A                                         |
 | `Fields`                                    | List<*string*>                              | :heavy_minus_sign:                          | Comma-delimited fields to return            |
 
 ### Response
@@ -241,9 +241,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Job.UpdateAtsJobAsync(
+    atsJob: new AtsJob() {},
     connectionId: "<id>",
     id: "<id>",
-    atsJob: new AtsJob() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -256,9 +256,9 @@ var res = await sdk.Job.UpdateAtsJobAsync(
 
 | Parameter                                   | Type                                        | Required                                    | Description                                 |
 | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+| `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_check_mark:                          | N/A                                         |
 | `ConnectionId`                              | *string*                                    | :heavy_check_mark:                          | ID of the connection                        |
 | `Id`                                        | *string*                                    | :heavy_check_mark:                          | ID of the Job                               |
-| `AtsJob`                                    | [AtsJob](../../Models/Components/AtsJob.md) | :heavy_minus_sign:                          | N/A                                         |
 | `Fields`                                    | List<*string*>                              | :heavy_minus_sign:                          | Comma-delimited fields to return            |
 
 ### Response

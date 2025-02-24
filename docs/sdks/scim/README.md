@@ -33,10 +33,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Scim.CreateScimGroupsAsync(
-    connectionId: "<id>",
     scimGroup: new ScimGroup() {
         DisplayName = "Bert89",
-    }
+    },
+    connectionId: "<id>"
 );
 
 // handle response
@@ -46,8 +46,8 @@ var res = await sdk.Scim.CreateScimGroupsAsync(
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `ScimGroup`                                       | [ScimGroup](../../Models/Components/ScimGroup.md) | :heavy_check_mark:                                | N/A                                               |
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
-| `ScimGroup`                                       | [ScimGroup](../../Models/Components/ScimGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 
 ### Response
 
@@ -75,6 +75,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 CreateScimUsersRequest req = new CreateScimUsersRequest() {
+    ScimUser = new ScimUser() {},
     ConnectionId = "<id>",
 };
 
@@ -272,11 +273,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Scim.PatchScimGroupsAsync(
-    connectionId: "<id>",
-    id: "<id>",
     scimGroup: new ScimGroup() {
         DisplayName = "Damon_Rutherford93",
-    }
+    },
+    connectionId: "<id>",
+    id: "<id>"
 );
 
 // handle response
@@ -286,9 +287,9 @@ var res = await sdk.Scim.PatchScimGroupsAsync(
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `ScimGroup`                                       | [ScimGroup](../../Models/Components/ScimGroup.md) | :heavy_check_mark:                                | N/A                                               |
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
 | `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Group                                   |
-| `ScimGroup`                                       | [ScimGroup](../../Models/Components/ScimGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 
 ### Response
 
@@ -315,9 +316,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Scim.PatchScimUsersAsync(
+    scimUser: new ScimUser() {},
     connectionId: "<id>",
-    id: "<id>",
-    scimUser: new ScimUser() {}
+    id: "<id>"
 );
 
 // handle response
@@ -327,9 +328,9 @@ var res = await sdk.Scim.PatchScimUsersAsync(
 
 | Parameter                                       | Type                                            | Required                                        | Description                                     |
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `ScimUser`                                      | [ScimUser](../../Models/Components/ScimUser.md) | :heavy_check_mark:                              | N/A                                             |
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
 | `Id`                                            | *string*                                        | :heavy_check_mark:                              | ID of the User                                  |
-| `ScimUser`                                      | [ScimUser](../../Models/Components/ScimUser.md) | :heavy_minus_sign:                              | N/A                                             |
 
 ### Response
 
@@ -434,11 +435,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Scim.UpdateScimGroupsAsync(
-    connectionId: "<id>",
-    id: "<id>",
     scimGroup: new ScimGroup() {
         DisplayName = "Frederic.Reichel",
-    }
+    },
+    connectionId: "<id>",
+    id: "<id>"
 );
 
 // handle response
@@ -448,9 +449,9 @@ var res = await sdk.Scim.UpdateScimGroupsAsync(
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `ScimGroup`                                       | [ScimGroup](../../Models/Components/ScimGroup.md) | :heavy_check_mark:                                | N/A                                               |
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
 | `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Group                                   |
-| `ScimGroup`                                       | [ScimGroup](../../Models/Components/ScimGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 
 ### Response
 
@@ -477,9 +478,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Scim.UpdateScimUsersAsync(
+    scimUser: new ScimUser() {},
     connectionId: "<id>",
-    id: "<id>",
-    scimUser: new ScimUser() {}
+    id: "<id>"
 );
 
 // handle response
@@ -489,9 +490,9 @@ var res = await sdk.Scim.UpdateScimUsersAsync(
 
 | Parameter                                       | Type                                            | Required                                        | Description                                     |
 | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
+| `ScimUser`                                      | [ScimUser](../../Models/Components/ScimUser.md) | :heavy_check_mark:                              | N/A                                             |
 | `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
 | `Id`                                            | *string*                                        | :heavy_check_mark:                              | ID of the User                                  |
-| `ScimUser`                                      | [ScimUser](../../Models/Components/ScimUser.md) | :heavy_minus_sign:                              | N/A                                             |
 
 ### Response
 

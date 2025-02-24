@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create a transaction
         /// </summary>
-        Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(string connectionId, AccountingTransaction? accountingTransaction = null, List<string>? fields = null);
+        Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a transaction
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a transaction
         /// </summary>
-        Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null, List<string>? fields = null);
+        Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove a transaction
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a transaction
         /// </summary>
-        Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null, List<string>? fields = null);
+        Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Transaction: ITransaction
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,12 +76,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(string connectionId, AccountingTransaction? accountingTransaction = null, List<string>? fields = null)
+        public async Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAccountingTransactionRequest()
             {
-                ConnectionId = connectionId,
                 AccountingTransaction = accountingTransaction,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -90,7 +90,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTransaction", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTransaction", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -328,13 +328,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null, List<string>? fields = null)
+        public async Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAccountingTransactionRequest()
             {
+                AccountingTransaction = accountingTransaction,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingTransaction = accountingTransaction,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -343,7 +343,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTransaction", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTransaction", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -501,13 +501,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null, List<string>? fields = null)
+        public async Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAccountingTransactionRequest()
             {
+                AccountingTransaction = accountingTransaction,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingTransaction = accountingTransaction,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -516,7 +516,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTransaction", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTransaction", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

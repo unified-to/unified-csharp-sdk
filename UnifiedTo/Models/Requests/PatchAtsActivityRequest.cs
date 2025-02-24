@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Requests
     public class PatchAtsActivityRequest
     {
 
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public AtsActivity AtsActivity { get; set; } = default!;
+
         /// <summary>
         /// ID of the connection
         /// </summary>
@@ -27,9 +30,6 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;
-
-        [SpeakeasyMetadata("request:mediaType=application/json")]
-        public AtsActivity? AtsActivity { get; set; }
 
         /// <summary>
         /// Comma-delimited fields to return

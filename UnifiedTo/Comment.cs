@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateKmsCommentResponse> CreateKmsCommentAsync(string connectionId, KmsComment? kmsComment = null, List<string>? fields = null);
+        Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateTaskCommentResponse> CreateTaskCommentAsync(string connectionId, TaskComment? taskComment = null, List<string>? fields = null);
+        Task<CreateTaskCommentResponse> CreateTaskCommentAsync(TaskComment taskComment, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a comment
@@ -58,12 +58,12 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<PatchKmsCommentResponse> PatchKmsCommentAsync(string connectionId, string id, KmsComment? kmsComment = null, List<string>? fields = null);
+        Task<PatchKmsCommentResponse> PatchKmsCommentAsync(KmsComment kmsComment, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<PatchTaskCommentResponse> PatchTaskCommentAsync(string connectionId, string id, TaskComment? taskComment = null, List<string>? fields = null);
+        Task<PatchTaskCommentResponse> PatchTaskCommentAsync(TaskComment taskComment, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove a comment
@@ -78,22 +78,22 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(string connectionId, string id, KmsComment? kmsComment = null, List<string>? fields = null);
+        Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(KmsComment kmsComment, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<UpdateTaskCommentResponse> UpdateTaskCommentAsync(string connectionId, string id, TaskComment? taskComment = null, List<string>? fields = null);
+        Task<UpdateTaskCommentResponse> UpdateTaskCommentAsync(TaskComment taskComment, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Comment: IComment
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -106,12 +106,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateKmsCommentResponse> CreateKmsCommentAsync(string connectionId, KmsComment? kmsComment = null, List<string>? fields = null)
+        public async Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<string>? fields = null)
         {
             var request = new CreateKmsCommentRequest()
             {
-                ConnectionId = connectionId,
                 KmsComment = kmsComment,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -120,7 +120,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "KmsComment", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "KmsComment", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -196,12 +196,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateTaskCommentResponse> CreateTaskCommentAsync(string connectionId, TaskComment? taskComment = null, List<string>? fields = null)
+        public async Task<CreateTaskCommentResponse> CreateTaskCommentAsync(TaskComment taskComment, string connectionId, List<string>? fields = null)
         {
             var request = new CreateTaskCommentRequest()
             {
-                ConnectionId = connectionId,
                 TaskComment = taskComment,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -210,7 +210,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "TaskComment", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "TaskComment", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -610,13 +610,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchKmsCommentResponse> PatchKmsCommentAsync(string connectionId, string id, KmsComment? kmsComment = null, List<string>? fields = null)
+        public async Task<PatchKmsCommentResponse> PatchKmsCommentAsync(KmsComment kmsComment, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchKmsCommentRequest()
             {
+                KmsComment = kmsComment,
                 ConnectionId = connectionId,
                 Id = id,
-                KmsComment = kmsComment,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -625,7 +625,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "KmsComment", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "KmsComment", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -701,13 +701,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchTaskCommentResponse> PatchTaskCommentAsync(string connectionId, string id, TaskComment? taskComment = null, List<string>? fields = null)
+        public async Task<PatchTaskCommentResponse> PatchTaskCommentAsync(TaskComment taskComment, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchTaskCommentRequest()
             {
+                TaskComment = taskComment,
                 ConnectionId = connectionId,
                 Id = id,
-                TaskComment = taskComment,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -716,7 +716,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "TaskComment", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "TaskComment", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -956,13 +956,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(string connectionId, string id, KmsComment? kmsComment = null, List<string>? fields = null)
+        public async Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(KmsComment kmsComment, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateKmsCommentRequest()
             {
+                KmsComment = kmsComment,
                 ConnectionId = connectionId,
                 Id = id,
-                KmsComment = kmsComment,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -971,7 +971,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "KmsComment", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "KmsComment", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1047,13 +1047,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateTaskCommentResponse> UpdateTaskCommentAsync(string connectionId, string id, TaskComment? taskComment = null, List<string>? fields = null)
+        public async Task<UpdateTaskCommentResponse> UpdateTaskCommentAsync(TaskComment taskComment, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateTaskCommentRequest()
             {
+                TaskComment = taskComment,
                 ConnectionId = connectionId,
                 Id = id,
-                TaskComment = taskComment,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1062,7 +1062,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "TaskComment", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "TaskComment", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

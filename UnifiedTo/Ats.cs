@@ -28,37 +28,37 @@ namespace UnifiedTo
         /// <summary>
         /// Create an activity
         /// </summary>
-        Task<CreateAtsActivityResponse> CreateAtsActivityAsync(string connectionId, AtsActivity? atsActivity = null, List<string>? fields = null);
+        Task<CreateAtsActivityResponse> CreateAtsActivityAsync(AtsActivity atsActivity, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create an application
         /// </summary>
-        Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(string connectionId, AtsApplication? atsApplication = null, List<string>? fields = null);
+        Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a candidate
         /// </summary>
-        Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(string connectionId, AtsCandidate? atsCandidate = null, List<string>? fields = null);
+        Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a document
         /// </summary>
-        Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(string connectionId, AtsDocument? atsDocument = null, List<string>? fields = null);
+        Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(AtsDocument atsDocument, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create an interview
         /// </summary>
-        Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(string connectionId, AtsInterview? atsInterview = null, List<string>? fields = null);
+        Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a job
         /// </summary>
-        Task<CreateAtsJobResponse> CreateAtsJobAsync(string connectionId, AtsJob? atsJob = null, List<string>? fields = null);
+        Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a scorecard
         /// </summary>
-        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(string connectionId, AtsScorecard? atsScorecard = null, List<string>? fields = null);
+        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve an activity
@@ -148,37 +148,37 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity
         /// </summary>
-        Task<PatchAtsActivityResponse> PatchAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null, List<string>? fields = null);
+        Task<PatchAtsActivityResponse> PatchAtsActivityAsync(AtsActivity atsActivity, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update an application
         /// </summary>
-        Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null, List<string>? fields = null);
+        Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(AtsApplication atsApplication, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a candidate
         /// </summary>
-        Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(string connectionId, string id, AtsCandidate? atsCandidate = null, List<string>? fields = null);
+        Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a document
         /// </summary>
-        Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null, List<string>? fields = null);
+        Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(AtsDocument atsDocument, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update an interview
         /// </summary>
-        Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null, List<string>? fields = null);
+        Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(AtsInterview atsInterview, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a job
         /// </summary>
-        Task<PatchAtsJobResponse> PatchAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null, List<string>? fields = null);
+        Task<PatchAtsJobResponse> PatchAtsJobAsync(AtsJob atsJob, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a scorecard
         /// </summary>
-        Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null, List<string>? fields = null);
+        Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove an activity
@@ -218,47 +218,47 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity
         /// </summary>
-        Task<UpdateAtsActivityResponse> UpdateAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null, List<string>? fields = null);
+        Task<UpdateAtsActivityResponse> UpdateAtsActivityAsync(AtsActivity atsActivity, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update an application
         /// </summary>
-        Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null, List<string>? fields = null);
+        Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a candidate
         /// </summary>
-        Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(string connectionId, string id, AtsCandidate? atsCandidate = null, List<string>? fields = null);
+        Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a document
         /// </summary>
-        Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null, List<string>? fields = null);
+        Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(AtsDocument atsDocument, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update an interview
         /// </summary>
-        Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null, List<string>? fields = null);
+        Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a job
         /// </summary>
-        Task<UpdateAtsJobResponse> UpdateAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null, List<string>? fields = null);
+        Task<UpdateAtsJobResponse> UpdateAtsJobAsync(AtsJob atsJob, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a scorecard
         /// </summary>
-        Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null, List<string>? fields = null);
+        Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Ats: IAts
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -271,12 +271,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsActivityResponse> CreateAtsActivityAsync(string connectionId, AtsActivity? atsActivity = null, List<string>? fields = null)
+        public async Task<CreateAtsActivityResponse> CreateAtsActivityAsync(AtsActivity atsActivity, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAtsActivityRequest()
             {
-                ConnectionId = connectionId,
                 AtsActivity = atsActivity,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -285,7 +285,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsActivity", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsActivity", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -361,12 +361,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(string connectionId, AtsApplication? atsApplication = null, List<string>? fields = null)
+        public async Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAtsApplicationRequest()
             {
-                ConnectionId = connectionId,
                 AtsApplication = atsApplication,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -375,7 +375,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsApplication", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsApplication", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -451,12 +451,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(string connectionId, AtsCandidate? atsCandidate = null, List<string>? fields = null)
+        public async Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAtsCandidateRequest()
             {
-                ConnectionId = connectionId,
                 AtsCandidate = atsCandidate,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -465,7 +465,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsCandidate", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsCandidate", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -541,12 +541,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(string connectionId, AtsDocument? atsDocument = null, List<string>? fields = null)
+        public async Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(AtsDocument atsDocument, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAtsDocumentRequest()
             {
-                ConnectionId = connectionId,
                 AtsDocument = atsDocument,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -555,7 +555,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsDocument", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsDocument", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -631,12 +631,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(string connectionId, AtsInterview? atsInterview = null, List<string>? fields = null)
+        public async Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAtsInterviewRequest()
             {
-                ConnectionId = connectionId,
                 AtsInterview = atsInterview,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -645,7 +645,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsInterview", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsInterview", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -721,12 +721,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsJobResponse> CreateAtsJobAsync(string connectionId, AtsJob? atsJob = null, List<string>? fields = null)
+        public async Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAtsJobRequest()
             {
-                ConnectionId = connectionId,
                 AtsJob = atsJob,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -735,7 +735,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsJob", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsJob", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -811,12 +811,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(string connectionId, AtsScorecard? atsScorecard = null, List<string>? fields = null)
+        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAtsScorecardRequest()
             {
-                ConnectionId = connectionId,
                 AtsScorecard = atsScorecard,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -825,7 +825,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsScorecard", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsScorecard", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2275,13 +2275,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsActivityResponse> PatchAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null, List<string>? fields = null)
+        public async Task<PatchAtsActivityResponse> PatchAtsActivityAsync(AtsActivity atsActivity, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAtsActivityRequest()
             {
+                AtsActivity = atsActivity,
                 ConnectionId = connectionId,
                 Id = id,
-                AtsActivity = atsActivity,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2290,7 +2290,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsActivity", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsActivity", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2366,13 +2366,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null, List<string>? fields = null)
+        public async Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(AtsApplication atsApplication, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAtsApplicationRequest()
             {
+                AtsApplication = atsApplication,
                 ConnectionId = connectionId,
                 Id = id,
-                AtsApplication = atsApplication,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2381,7 +2381,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsApplication", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsApplication", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2457,13 +2457,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(string connectionId, string id, AtsCandidate? atsCandidate = null, List<string>? fields = null)
+        public async Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAtsCandidateRequest()
             {
+                AtsCandidate = atsCandidate,
                 ConnectionId = connectionId,
                 Id = id,
-                AtsCandidate = atsCandidate,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2472,7 +2472,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsCandidate", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsCandidate", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2548,13 +2548,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null, List<string>? fields = null)
+        public async Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(AtsDocument atsDocument, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAtsDocumentRequest()
             {
+                AtsDocument = atsDocument,
                 ConnectionId = connectionId,
                 Id = id,
-                AtsDocument = atsDocument,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2563,7 +2563,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsDocument", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsDocument", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2639,13 +2639,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null, List<string>? fields = null)
+        public async Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(AtsInterview atsInterview, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAtsInterviewRequest()
             {
+                AtsInterview = atsInterview,
                 ConnectionId = connectionId,
                 Id = id,
-                AtsInterview = atsInterview,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2654,7 +2654,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsInterview", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsInterview", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2730,13 +2730,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsJobResponse> PatchAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null, List<string>? fields = null)
+        public async Task<PatchAtsJobResponse> PatchAtsJobAsync(AtsJob atsJob, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAtsJobRequest()
             {
+                AtsJob = atsJob,
                 ConnectionId = connectionId,
                 Id = id,
-                AtsJob = atsJob,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2745,7 +2745,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsJob", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsJob", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2821,13 +2821,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null, List<string>? fields = null)
+        public async Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAtsScorecardRequest()
             {
+                AtsScorecard = atsScorecard,
                 ConnectionId = connectionId,
                 Id = id,
-                AtsScorecard = atsScorecard,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2836,7 +2836,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsScorecard", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsScorecard", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -3486,13 +3486,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsActivityResponse> UpdateAtsActivityAsync(string connectionId, string id, AtsActivity? atsActivity = null, List<string>? fields = null)
+        public async Task<UpdateAtsActivityResponse> UpdateAtsActivityAsync(AtsActivity atsActivity, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAtsActivityRequest()
             {
+                AtsActivity = atsActivity,
                 ConnectionId = connectionId,
                 Id = id,
-                AtsActivity = atsActivity,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3501,7 +3501,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsActivity", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsActivity", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -3577,13 +3577,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(string connectionId, string id, AtsApplication? atsApplication = null, List<string>? fields = null)
+        public async Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAtsApplicationRequest()
             {
+                AtsApplication = atsApplication,
                 ConnectionId = connectionId,
                 Id = id,
-                AtsApplication = atsApplication,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3592,7 +3592,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsApplication", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsApplication", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -3668,13 +3668,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(string connectionId, string id, AtsCandidate? atsCandidate = null, List<string>? fields = null)
+        public async Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAtsCandidateRequest()
             {
+                AtsCandidate = atsCandidate,
                 ConnectionId = connectionId,
                 Id = id,
-                AtsCandidate = atsCandidate,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3683,7 +3683,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsCandidate", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsCandidate", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -3759,13 +3759,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(string connectionId, string id, AtsDocument? atsDocument = null, List<string>? fields = null)
+        public async Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(AtsDocument atsDocument, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAtsDocumentRequest()
             {
+                AtsDocument = atsDocument,
                 ConnectionId = connectionId,
                 Id = id,
-                AtsDocument = atsDocument,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3774,7 +3774,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsDocument", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsDocument", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -3850,13 +3850,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(string connectionId, string id, AtsInterview? atsInterview = null, List<string>? fields = null)
+        public async Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAtsInterviewRequest()
             {
+                AtsInterview = atsInterview,
                 ConnectionId = connectionId,
                 Id = id,
-                AtsInterview = atsInterview,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3865,7 +3865,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsInterview", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsInterview", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -3941,13 +3941,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAtsJobResponse> UpdateAtsJobAsync(string connectionId, string id, AtsJob? atsJob = null, List<string>? fields = null)
+        public async Task<UpdateAtsJobResponse> UpdateAtsJobAsync(AtsJob atsJob, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAtsJobRequest()
             {
+                AtsJob = atsJob,
                 ConnectionId = connectionId,
                 Id = id,
-                AtsJob = atsJob,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3956,7 +3956,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsJob", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsJob", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -4032,13 +4032,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null, List<string>? fields = null)
+        public async Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAtsScorecardRequest()
             {
+                AtsScorecard = atsScorecard,
                 ConnectionId = connectionId,
                 Id = id,
-                AtsScorecard = atsScorecard,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -4047,7 +4047,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsScorecard", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsScorecard", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

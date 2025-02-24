@@ -28,10 +28,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repository.CreateRepoRepositoryAsync(
-    connectionId: "<id>",
     repoRepository: new RepoRepository() {
         Name = "<value>",
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -44,8 +44,8 @@ var res = await sdk.Repository.CreateRepoRepositoryAsync(
 
 | Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `RepoRepository`                                            | [RepoRepository](../../Models/Components/RepoRepository.md) | :heavy_check_mark:                                          | N/A                                                         |
 | `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
-| `RepoRepository`                                            | [RepoRepository](../../Models/Components/RepoRepository.md) | :heavy_minus_sign:                                          | N/A                                                         |
 | `Fields`                                                    | List<*string*>                                              | :heavy_minus_sign:                                          | Comma-delimited fields to return                            |
 
 ### Response
@@ -158,11 +158,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repository.PatchRepoRepositoryAsync(
-    connectionId: "<id>",
-    id: "<id>",
     repoRepository: new RepoRepository() {
         Name = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -175,9 +175,9 @@ var res = await sdk.Repository.PatchRepoRepositoryAsync(
 
 | Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `RepoRepository`                                            | [RepoRepository](../../Models/Components/RepoRepository.md) | :heavy_check_mark:                                          | N/A                                                         |
 | `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
 | `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Repository                                        |
-| `RepoRepository`                                            | [RepoRepository](../../Models/Components/RepoRepository.md) | :heavy_minus_sign:                                          | N/A                                                         |
 | `Fields`                                                    | List<*string*>                                              | :heavy_minus_sign:                                          | Comma-delimited fields to return                            |
 
 ### Response
@@ -245,11 +245,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Repository.UpdateRepoRepositoryAsync(
-    connectionId: "<id>",
-    id: "<id>",
     repoRepository: new RepoRepository() {
         Name = "<value>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -262,9 +262,9 @@ var res = await sdk.Repository.UpdateRepoRepositoryAsync(
 
 | Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `RepoRepository`                                            | [RepoRepository](../../Models/Components/RepoRepository.md) | :heavy_check_mark:                                          | N/A                                                         |
 | `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
 | `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Repository                                        |
-| `RepoRepository`                                            | [RepoRepository](../../Models/Components/RepoRepository.md) | :heavy_minus_sign:                                          | N/A                                                         |
 | `Fields`                                                    | List<*string*>                                              | :heavy_minus_sign:                                          | Comma-delimited fields to return                            |
 
 ### Response

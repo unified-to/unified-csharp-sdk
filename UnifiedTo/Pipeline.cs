@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create a pipeline
         /// </summary>
-        Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(string connectionId, CrmPipeline? crmPipeline = null, List<string>? fields = null);
+        Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a pipeline
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a pipeline
         /// </summary>
-        Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(string connectionId, string id, CrmPipeline? crmPipeline = null, List<string>? fields = null);
+        Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove a pipeline
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a pipeline
         /// </summary>
-        Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(string connectionId, string id, CrmPipeline? crmPipeline = null, List<string>? fields = null);
+        Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Pipeline: IPipeline
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,12 +76,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(string connectionId, CrmPipeline? crmPipeline = null, List<string>? fields = null)
+        public async Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<string>? fields = null)
         {
             var request = new CreateCrmPipelineRequest()
             {
-                ConnectionId = connectionId,
                 CrmPipeline = crmPipeline,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -90,7 +90,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmPipeline", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmPipeline", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -328,13 +328,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(string connectionId, string id, CrmPipeline? crmPipeline = null, List<string>? fields = null)
+        public async Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchCrmPipelineRequest()
             {
+                CrmPipeline = crmPipeline,
                 ConnectionId = connectionId,
                 Id = id,
-                CrmPipeline = crmPipeline,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -343,7 +343,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmPipeline", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmPipeline", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -501,13 +501,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(string connectionId, string id, CrmPipeline? crmPipeline = null, List<string>? fields = null)
+        public async Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateCrmPipelineRequest()
             {
+                CrmPipeline = crmPipeline,
                 ConnectionId = connectionId,
                 Id = id,
-                CrmPipeline = crmPipeline,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -516,7 +516,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmPipeline", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmPipeline", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

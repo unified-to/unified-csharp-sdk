@@ -28,17 +28,17 @@ namespace UnifiedTo
         /// <summary>
         /// Create a link
         /// </summary>
-        Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(string connectionId, PaymentLink? paymentLink = null, List<string>? fields = null);
+        Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a payment
         /// </summary>
-        Task<CreatePaymentPaymentResponse> CreatePaymentPaymentAsync(string connectionId, PaymentPayment? paymentPayment = null, List<string>? fields = null);
+        Task<CreatePaymentPaymentResponse> CreatePaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a subscription
         /// </summary>
-        Task<CreatePaymentSubscriptionResponse> CreatePaymentSubscriptionAsync(string connectionId, PaymentSubscription? paymentSubscription = null, List<string>? fields = null);
+        Task<CreatePaymentSubscriptionResponse> CreatePaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a link
@@ -93,17 +93,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link
         /// </summary>
-        Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(string connectionId, string id, PaymentLink? paymentLink = null, List<string>? fields = null);
+        Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(PaymentLink paymentLink, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a payment
         /// </summary>
-        Task<PatchPaymentPaymentResponse> PatchPaymentPaymentAsync(string connectionId, string id, PaymentPayment? paymentPayment = null, List<string>? fields = null);
+        Task<PatchPaymentPaymentResponse> PatchPaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a subscription
         /// </summary>
-        Task<PatchPaymentSubscriptionResponse> PatchPaymentSubscriptionAsync(string connectionId, string id, PaymentSubscription? paymentSubscription = null, List<string>? fields = null);
+        Task<PatchPaymentSubscriptionResponse> PatchPaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove a link
@@ -123,27 +123,27 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link
         /// </summary>
-        Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(string connectionId, string id, PaymentLink? paymentLink = null, List<string>? fields = null);
+        Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a payment
         /// </summary>
-        Task<UpdatePaymentPaymentResponse> UpdatePaymentPaymentAsync(string connectionId, string id, PaymentPayment? paymentPayment = null, List<string>? fields = null);
+        Task<UpdatePaymentPaymentResponse> UpdatePaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a subscription
         /// </summary>
-        Task<UpdatePaymentSubscriptionResponse> UpdatePaymentSubscriptionAsync(string connectionId, string id, PaymentSubscription? paymentSubscription = null, List<string>? fields = null);
+        Task<UpdatePaymentSubscriptionResponse> UpdatePaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Payment: IPayment
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -156,12 +156,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(string connectionId, PaymentLink? paymentLink = null, List<string>? fields = null)
+        public async Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<string>? fields = null)
         {
             var request = new CreatePaymentLinkRequest()
             {
-                ConnectionId = connectionId,
                 PaymentLink = paymentLink,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -170,7 +170,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentLink", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentLink", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -246,12 +246,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreatePaymentPaymentResponse> CreatePaymentPaymentAsync(string connectionId, PaymentPayment? paymentPayment = null, List<string>? fields = null)
+        public async Task<CreatePaymentPaymentResponse> CreatePaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, List<string>? fields = null)
         {
             var request = new CreatePaymentPaymentRequest()
             {
-                ConnectionId = connectionId,
                 PaymentPayment = paymentPayment,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -260,7 +260,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentPayment", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentPayment", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -336,12 +336,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreatePaymentSubscriptionResponse> CreatePaymentSubscriptionAsync(string connectionId, PaymentSubscription? paymentSubscription = null, List<string>? fields = null)
+        public async Task<CreatePaymentSubscriptionResponse> CreatePaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, List<string>? fields = null)
         {
             var request = new CreatePaymentSubscriptionRequest()
             {
-                ConnectionId = connectionId,
                 PaymentSubscription = paymentSubscription,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -350,7 +350,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentSubscription", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentSubscription", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1236,13 +1236,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(string connectionId, string id, PaymentLink? paymentLink = null, List<string>? fields = null)
+        public async Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(PaymentLink paymentLink, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchPaymentLinkRequest()
             {
+                PaymentLink = paymentLink,
                 ConnectionId = connectionId,
                 Id = id,
-                PaymentLink = paymentLink,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1251,7 +1251,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentLink", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentLink", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1327,13 +1327,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchPaymentPaymentResponse> PatchPaymentPaymentAsync(string connectionId, string id, PaymentPayment? paymentPayment = null, List<string>? fields = null)
+        public async Task<PatchPaymentPaymentResponse> PatchPaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchPaymentPaymentRequest()
             {
+                PaymentPayment = paymentPayment,
                 ConnectionId = connectionId,
                 Id = id,
-                PaymentPayment = paymentPayment,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1342,7 +1342,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentPayment", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentPayment", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1418,13 +1418,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchPaymentSubscriptionResponse> PatchPaymentSubscriptionAsync(string connectionId, string id, PaymentSubscription? paymentSubscription = null, List<string>? fields = null)
+        public async Task<PatchPaymentSubscriptionResponse> PatchPaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchPaymentSubscriptionRequest()
             {
+                PaymentSubscription = paymentSubscription,
                 ConnectionId = connectionId,
                 Id = id,
-                PaymentSubscription = paymentSubscription,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1433,7 +1433,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentSubscription", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentSubscription", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1755,13 +1755,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(string connectionId, string id, PaymentLink? paymentLink = null, List<string>? fields = null)
+        public async Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdatePaymentLinkRequest()
             {
+                PaymentLink = paymentLink,
                 ConnectionId = connectionId,
                 Id = id,
-                PaymentLink = paymentLink,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1770,7 +1770,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentLink", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentLink", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1846,13 +1846,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdatePaymentPaymentResponse> UpdatePaymentPaymentAsync(string connectionId, string id, PaymentPayment? paymentPayment = null, List<string>? fields = null)
+        public async Task<UpdatePaymentPaymentResponse> UpdatePaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdatePaymentPaymentRequest()
             {
+                PaymentPayment = paymentPayment,
                 ConnectionId = connectionId,
                 Id = id,
-                PaymentPayment = paymentPayment,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1861,7 +1861,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentPayment", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentPayment", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1937,13 +1937,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdatePaymentSubscriptionResponse> UpdatePaymentSubscriptionAsync(string connectionId, string id, PaymentSubscription? paymentSubscription = null, List<string>? fields = null)
+        public async Task<UpdatePaymentSubscriptionResponse> UpdatePaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdatePaymentSubscriptionRequest()
             {
+                PaymentSubscription = paymentSubscription,
                 ConnectionId = connectionId,
                 Id = id,
-                PaymentSubscription = paymentSubscription,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1952,7 +1952,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentSubscription", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "PaymentSubscription", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

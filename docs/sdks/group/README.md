@@ -34,8 +34,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Group.CreateHrisGroupAsync(
-    connectionId: "<id>",
     hrisGroup: new HrisGroup() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -48,8 +48,8 @@ var res = await sdk.Group.CreateHrisGroupAsync(
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_check_mark:                                | N/A                                               |
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
-| `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 | `Fields`                                          | List<*string*>                                    | :heavy_minus_sign:                                | Comma-delimited fields to return                  |
 
 ### Response
@@ -77,10 +77,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Group.CreateScimGroupsAsync(
-    connectionId: "<id>",
     scimGroup: new ScimGroup() {
         DisplayName = "Bert89",
-    }
+    },
+    connectionId: "<id>"
 );
 
 // handle response
@@ -90,8 +90,8 @@ var res = await sdk.Group.CreateScimGroupsAsync(
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `ScimGroup`                                       | [ScimGroup](../../Models/Components/ScimGroup.md) | :heavy_check_mark:                                | N/A                                               |
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
-| `ScimGroup`                                       | [ScimGroup](../../Models/Components/ScimGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 
 ### Response
 
@@ -282,9 +282,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Group.PatchHrisGroupAsync(
+    hrisGroup: new HrisGroup() {},
     connectionId: "<id>",
     id: "<id>",
-    hrisGroup: new HrisGroup() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -297,9 +297,9 @@ var res = await sdk.Group.PatchHrisGroupAsync(
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_check_mark:                                | N/A                                               |
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
 | `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Group                                   |
-| `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 | `Fields`                                          | List<*string*>                                    | :heavy_minus_sign:                                | Comma-delimited fields to return                  |
 
 ### Response
@@ -327,11 +327,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Group.PatchScimGroupsAsync(
-    connectionId: "<id>",
-    id: "<id>",
     scimGroup: new ScimGroup() {
         DisplayName = "Damon_Rutherford93",
-    }
+    },
+    connectionId: "<id>",
+    id: "<id>"
 );
 
 // handle response
@@ -341,9 +341,9 @@ var res = await sdk.Group.PatchScimGroupsAsync(
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `ScimGroup`                                       | [ScimGroup](../../Models/Components/ScimGroup.md) | :heavy_check_mark:                                | N/A                                               |
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
 | `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Group                                   |
-| `ScimGroup`                                       | [ScimGroup](../../Models/Components/ScimGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 
 ### Response
 
@@ -449,9 +449,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Group.UpdateHrisGroupAsync(
+    hrisGroup: new HrisGroup() {},
     connectionId: "<id>",
     id: "<id>",
-    hrisGroup: new HrisGroup() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -464,9 +464,9 @@ var res = await sdk.Group.UpdateHrisGroupAsync(
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_check_mark:                                | N/A                                               |
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
 | `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Group                                   |
-| `HrisGroup`                                       | [HrisGroup](../../Models/Components/HrisGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 | `Fields`                                          | List<*string*>                                    | :heavy_minus_sign:                                | Comma-delimited fields to return                  |
 
 ### Response
@@ -494,11 +494,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Group.UpdateScimGroupsAsync(
-    connectionId: "<id>",
-    id: "<id>",
     scimGroup: new ScimGroup() {
         DisplayName = "Frederic.Reichel",
-    }
+    },
+    connectionId: "<id>",
+    id: "<id>"
 );
 
 // handle response
@@ -508,9 +508,9 @@ var res = await sdk.Group.UpdateScimGroupsAsync(
 
 | Parameter                                         | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
+| `ScimGroup`                                       | [ScimGroup](../../Models/Components/ScimGroup.md) | :heavy_check_mark:                                | N/A                                               |
 | `ConnectionId`                                    | *string*                                          | :heavy_check_mark:                                | ID of the connection                              |
 | `Id`                                              | *string*                                          | :heavy_check_mark:                                | ID of the Group                                   |
-| `ScimGroup`                                       | [ScimGroup](../../Models/Components/ScimGroup.md) | :heavy_minus_sign:                                | N/A                                               |
 
 ### Response
 

@@ -34,8 +34,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Martech.CreateMartechListAsync(
-    connectionId: "<id>",
     marketingList: new MarketingList() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -48,8 +48,8 @@ var res = await sdk.Martech.CreateMartechListAsync(
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
 | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_check_mark:                                        | Mailing List                                              |
 | `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
-| `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_minus_sign:                                        | Mailing List                                              |
 | `Fields`                                                  | List<*string*>                                            | :heavy_minus_sign:                                        | Comma-delimited fields to return                          |
 
 ### Response
@@ -78,8 +78,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Martech.CreateMartechMemberAsync(
-    connectionId: "<id>",
     marketingMember: new MarketingMember() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -92,8 +92,8 @@ var res = await sdk.Martech.CreateMartechMemberAsync(
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `MarketingMember`                                             | [MarketingMember](../../Models/Components/MarketingMember.md) | :heavy_check_mark:                                            | A member represents a person                                  |
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
-| `MarketingMember`                                             | [MarketingMember](../../Models/Components/MarketingMember.md) | :heavy_minus_sign:                                            | A member represents a person                                  |
 | `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response
@@ -290,9 +290,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Martech.PatchMartechListAsync(
+    marketingList: new MarketingList() {},
     connectionId: "<id>",
     id: "<id>",
-    marketingList: new MarketingList() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -305,9 +305,9 @@ var res = await sdk.Martech.PatchMartechListAsync(
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
 | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_check_mark:                                        | Mailing List                                              |
 | `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
 | `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the List                                            |
-| `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_minus_sign:                                        | Mailing List                                              |
 | `Fields`                                                  | List<*string*>                                            | :heavy_minus_sign:                                        | Comma-delimited fields to return                          |
 
 ### Response
@@ -336,9 +336,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Martech.PatchMartechMemberAsync(
+    marketingMember: new MarketingMember() {},
     connectionId: "<id>",
     id: "<id>",
-    marketingMember: new MarketingMember() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -351,9 +351,9 @@ var res = await sdk.Martech.PatchMartechMemberAsync(
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `MarketingMember`                                             | [MarketingMember](../../Models/Components/MarketingMember.md) | :heavy_check_mark:                                            | A member represents a person                                  |
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Member                                              |
-| `MarketingMember`                                             | [MarketingMember](../../Models/Components/MarketingMember.md) | :heavy_minus_sign:                                            | A member represents a person                                  |
 | `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response
@@ -460,9 +460,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Martech.UpdateMartechListAsync(
+    marketingList: new MarketingList() {},
     connectionId: "<id>",
     id: "<id>",
-    marketingList: new MarketingList() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -475,9 +475,9 @@ var res = await sdk.Martech.UpdateMartechListAsync(
 
 | Parameter                                                 | Type                                                      | Required                                                  | Description                                               |
 | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_check_mark:                                        | Mailing List                                              |
 | `ConnectionId`                                            | *string*                                                  | :heavy_check_mark:                                        | ID of the connection                                      |
 | `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | ID of the List                                            |
-| `MarketingList`                                           | [MarketingList](../../Models/Components/MarketingList.md) | :heavy_minus_sign:                                        | Mailing List                                              |
 | `Fields`                                                  | List<*string*>                                            | :heavy_minus_sign:                                        | Comma-delimited fields to return                          |
 
 ### Response
@@ -506,9 +506,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Martech.UpdateMartechMemberAsync(
+    marketingMember: new MarketingMember() {},
     connectionId: "<id>",
     id: "<id>",
-    marketingMember: new MarketingMember() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -521,9 +521,9 @@ var res = await sdk.Martech.UpdateMartechMemberAsync(
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `MarketingMember`                                             | [MarketingMember](../../Models/Components/MarketingMember.md) | :heavy_check_mark:                                            | A member represents a person                                  |
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Member                                              |
-| `MarketingMember`                                             | [MarketingMember](../../Models/Components/MarketingMember.md) | :heavy_minus_sign:                                            | A member represents a person                                  |
 | `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response

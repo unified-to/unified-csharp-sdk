@@ -16,15 +16,15 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
+        /// A connection represents a specific authentication of an integration.
+        /// </summary>
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public Models.Components.Connection Connection { get; set; } = default!;
+
+        /// <summary>
         /// ID of the Connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;
-
-        /// <summary>
-        /// A connection represents a specific authentication of an integration.
-        /// </summary>
-        [SpeakeasyMetadata("request:mediaType=application/json")]
-        public Models.Components.Connection? Connection { get; set; }
     }
 }

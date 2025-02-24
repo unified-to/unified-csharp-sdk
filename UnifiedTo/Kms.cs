@@ -28,17 +28,17 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateKmsCommentResponse> CreateKmsCommentAsync(string connectionId, KmsComment? kmsComment = null, List<string>? fields = null);
+        Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a page
         /// </summary>
-        Task<CreateKmsPageResponse> CreateKmsPageAsync(string connectionId, KmsPage? kmsPage = null, List<string>? fields = null);
+        Task<CreateKmsPageResponse> CreateKmsPageAsync(KmsPage kmsPage, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a space
         /// </summary>
-        Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(string connectionId, KmsSpace? kmsSpace = null, List<string>? fields = null);
+        Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a comment
@@ -73,17 +73,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<PatchKmsCommentResponse> PatchKmsCommentAsync(string connectionId, string id, KmsComment? kmsComment = null, List<string>? fields = null);
+        Task<PatchKmsCommentResponse> PatchKmsCommentAsync(KmsComment kmsComment, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a page
         /// </summary>
-        Task<PatchKmsPageResponse> PatchKmsPageAsync(string connectionId, string id, KmsPage? kmsPage = null, List<string>? fields = null);
+        Task<PatchKmsPageResponse> PatchKmsPageAsync(KmsPage kmsPage, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a space
         /// </summary>
-        Task<PatchKmsSpaceResponse> PatchKmsSpaceAsync(string connectionId, string id, KmsSpace? kmsSpace = null, List<string>? fields = null);
+        Task<PatchKmsSpaceResponse> PatchKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove a comment
@@ -103,27 +103,27 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(string connectionId, string id, KmsComment? kmsComment = null, List<string>? fields = null);
+        Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(KmsComment kmsComment, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a page
         /// </summary>
-        Task<UpdateKmsPageResponse> UpdateKmsPageAsync(string connectionId, string id, KmsPage? kmsPage = null, List<string>? fields = null);
+        Task<UpdateKmsPageResponse> UpdateKmsPageAsync(KmsPage kmsPage, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a space
         /// </summary>
-        Task<UpdateKmsSpaceResponse> UpdateKmsSpaceAsync(string connectionId, string id, KmsSpace? kmsSpace = null, List<string>? fields = null);
+        Task<UpdateKmsSpaceResponse> UpdateKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Kms: IKms
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -136,12 +136,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateKmsCommentResponse> CreateKmsCommentAsync(string connectionId, KmsComment? kmsComment = null, List<string>? fields = null)
+        public async Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<string>? fields = null)
         {
             var request = new CreateKmsCommentRequest()
             {
-                ConnectionId = connectionId,
                 KmsComment = kmsComment,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -150,7 +150,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "KmsComment", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "KmsComment", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -226,12 +226,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateKmsPageResponse> CreateKmsPageAsync(string connectionId, KmsPage? kmsPage = null, List<string>? fields = null)
+        public async Task<CreateKmsPageResponse> CreateKmsPageAsync(KmsPage kmsPage, string connectionId, List<string>? fields = null)
         {
             var request = new CreateKmsPageRequest()
             {
-                ConnectionId = connectionId,
                 KmsPage = kmsPage,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -240,7 +240,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "KmsPage", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "KmsPage", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -316,12 +316,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(string connectionId, KmsSpace? kmsSpace = null, List<string>? fields = null)
+        public async Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, List<string>? fields = null)
         {
             var request = new CreateKmsSpaceRequest()
             {
-                ConnectionId = connectionId,
                 KmsSpace = kmsSpace,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -330,7 +330,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "KmsSpace", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "KmsSpace", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -892,13 +892,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchKmsCommentResponse> PatchKmsCommentAsync(string connectionId, string id, KmsComment? kmsComment = null, List<string>? fields = null)
+        public async Task<PatchKmsCommentResponse> PatchKmsCommentAsync(KmsComment kmsComment, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchKmsCommentRequest()
             {
+                KmsComment = kmsComment,
                 ConnectionId = connectionId,
                 Id = id,
-                KmsComment = kmsComment,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -907,7 +907,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "KmsComment", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "KmsComment", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -983,13 +983,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchKmsPageResponse> PatchKmsPageAsync(string connectionId, string id, KmsPage? kmsPage = null, List<string>? fields = null)
+        public async Task<PatchKmsPageResponse> PatchKmsPageAsync(KmsPage kmsPage, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchKmsPageRequest()
             {
+                KmsPage = kmsPage,
                 ConnectionId = connectionId,
                 Id = id,
-                KmsPage = kmsPage,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -998,7 +998,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "KmsPage", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "KmsPage", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1074,13 +1074,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchKmsSpaceResponse> PatchKmsSpaceAsync(string connectionId, string id, KmsSpace? kmsSpace = null, List<string>? fields = null)
+        public async Task<PatchKmsSpaceResponse> PatchKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchKmsSpaceRequest()
             {
+                KmsSpace = kmsSpace,
                 ConnectionId = connectionId,
                 Id = id,
-                KmsSpace = kmsSpace,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1089,7 +1089,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "KmsSpace", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "KmsSpace", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1411,13 +1411,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(string connectionId, string id, KmsComment? kmsComment = null, List<string>? fields = null)
+        public async Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(KmsComment kmsComment, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateKmsCommentRequest()
             {
+                KmsComment = kmsComment,
                 ConnectionId = connectionId,
                 Id = id,
-                KmsComment = kmsComment,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1426,7 +1426,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "KmsComment", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "KmsComment", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1502,13 +1502,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateKmsPageResponse> UpdateKmsPageAsync(string connectionId, string id, KmsPage? kmsPage = null, List<string>? fields = null)
+        public async Task<UpdateKmsPageResponse> UpdateKmsPageAsync(KmsPage kmsPage, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateKmsPageRequest()
             {
+                KmsPage = kmsPage,
                 ConnectionId = connectionId,
                 Id = id,
-                KmsPage = kmsPage,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1517,7 +1517,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "KmsPage", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "KmsPage", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1593,13 +1593,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateKmsSpaceResponse> UpdateKmsSpaceAsync(string connectionId, string id, KmsSpace? kmsSpace = null, List<string>? fields = null)
+        public async Task<UpdateKmsSpaceResponse> UpdateKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateKmsSpaceRequest()
             {
+                KmsSpace = kmsSpace,
                 ConnectionId = connectionId,
                 Id = id,
-                KmsSpace = kmsSpace,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -1608,7 +1608,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "KmsSpace", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "KmsSpace", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

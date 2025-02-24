@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create an organization
         /// </summary>
-        Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(string connectionId, RepoOrganization? repoOrganization = null, List<string>? fields = null);
+        Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve an organization
@@ -53,7 +53,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization
         /// </summary>
-        Task<PatchRepoOrganizationResponse> PatchRepoOrganizationAsync(string connectionId, string id, RepoOrganization? repoOrganization = null, List<string>? fields = null);
+        Task<PatchRepoOrganizationResponse> PatchRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove an organization
@@ -63,17 +63,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization
         /// </summary>
-        Task<UpdateRepoOrganizationResponse> UpdateRepoOrganizationAsync(string connectionId, string id, RepoOrganization? repoOrganization = null, List<string>? fields = null);
+        Task<UpdateRepoOrganizationResponse> UpdateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Organization: IOrganization
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -86,12 +86,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(string connectionId, RepoOrganization? repoOrganization = null, List<string>? fields = null)
+        public async Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, List<string>? fields = null)
         {
             var request = new CreateRepoOrganizationRequest()
             {
-                ConnectionId = connectionId,
                 RepoOrganization = repoOrganization,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -100,7 +100,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "RepoOrganization", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "RepoOrganization", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -500,13 +500,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchRepoOrganizationResponse> PatchRepoOrganizationAsync(string connectionId, string id, RepoOrganization? repoOrganization = null, List<string>? fields = null)
+        public async Task<PatchRepoOrganizationResponse> PatchRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchRepoOrganizationRequest()
             {
+                RepoOrganization = repoOrganization,
                 ConnectionId = connectionId,
                 Id = id,
-                RepoOrganization = repoOrganization,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -515,7 +515,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "RepoOrganization", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "RepoOrganization", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -673,13 +673,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateRepoOrganizationResponse> UpdateRepoOrganizationAsync(string connectionId, string id, RepoOrganization? repoOrganization = null, List<string>? fields = null)
+        public async Task<UpdateRepoOrganizationResponse> UpdateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateRepoOrganizationRequest()
             {
+                RepoOrganization = repoOrganization,
                 ConnectionId = connectionId,
                 Id = id,
-                RepoOrganization = repoOrganization,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -688,7 +688,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "RepoOrganization", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "RepoOrganization", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

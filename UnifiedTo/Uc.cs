@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateUcContactResponse> CreateUcContactAsync(string connectionId, UcContact? ucContact = null, List<string>? fields = null);
+        Task<CreateUcContactResponse> CreateUcContactAsync(UcContact ucContact, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a contact
@@ -48,7 +48,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchUcContactResponse> PatchUcContactAsync(string connectionId, string id, UcContact? ucContact = null, List<string>? fields = null);
+        Task<PatchUcContactResponse> PatchUcContactAsync(UcContact ucContact, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove a contact
@@ -58,17 +58,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateUcContactResponse> UpdateUcContactAsync(string connectionId, string id, UcContact? ucContact = null, List<string>? fields = null);
+        Task<UpdateUcContactResponse> UpdateUcContactAsync(UcContact ucContact, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Uc: IUc
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -81,12 +81,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateUcContactResponse> CreateUcContactAsync(string connectionId, UcContact? ucContact = null, List<string>? fields = null)
+        public async Task<CreateUcContactResponse> CreateUcContactAsync(UcContact ucContact, string connectionId, List<string>? fields = null)
         {
             var request = new CreateUcContactRequest()
             {
-                ConnectionId = connectionId,
                 UcContact = ucContact,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -95,7 +95,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "UcContact", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "UcContact", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -411,13 +411,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchUcContactResponse> PatchUcContactAsync(string connectionId, string id, UcContact? ucContact = null, List<string>? fields = null)
+        public async Task<PatchUcContactResponse> PatchUcContactAsync(UcContact ucContact, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchUcContactRequest()
             {
+                UcContact = ucContact,
                 ConnectionId = connectionId,
                 Id = id,
-                UcContact = ucContact,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -426,7 +426,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "UcContact", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "UcContact", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -584,13 +584,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateUcContactResponse> UpdateUcContactAsync(string connectionId, string id, UcContact? ucContact = null, List<string>? fields = null)
+        public async Task<UpdateUcContactResponse> UpdateUcContactAsync(UcContact ucContact, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateUcContactRequest()
             {
+                UcContact = ucContact,
                 ConnectionId = connectionId,
                 Id = id,
-                UcContact = ucContact,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -599,7 +599,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "UcContact", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "UcContact", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

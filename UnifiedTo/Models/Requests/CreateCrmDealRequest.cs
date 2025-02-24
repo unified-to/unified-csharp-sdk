@@ -17,16 +17,16 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
+        /// A deal represents an opportunity with companies and/or contacts
+        /// </summary>
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public CrmDeal CrmDeal { get; set; } = default!;
+
+        /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
-
-        /// <summary>
-        /// A deal represents an opportunity with companies and/or contacts
-        /// </summary>
-        [SpeakeasyMetadata("request:mediaType=application/json")]
-        public CrmDeal? CrmDeal { get; set; }
 
         /// <summary>
         /// Comma-delimited fields to return

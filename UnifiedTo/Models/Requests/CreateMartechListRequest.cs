@@ -17,16 +17,16 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
+        /// Mailing List
+        /// </summary>
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public MarketingList MarketingList { get; set; } = default!;
+
+        /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
-
-        /// <summary>
-        /// Mailing List
-        /// </summary>
-        [SpeakeasyMetadata("request:mediaType=application/json")]
-        public MarketingList? MarketingList { get; set; }
 
         /// <summary>
         /// Comma-delimited fields to return

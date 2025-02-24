@@ -28,8 +28,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Application.CreateAtsApplicationAsync(
-    connectionId: "<id>",
     atsApplication: new AtsApplication() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -42,8 +42,8 @@ var res = await sdk.Application.CreateAtsApplicationAsync(
 
 | Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `AtsApplication`                                            | [AtsApplication](../../Models/Components/AtsApplication.md) | :heavy_check_mark:                                          | N/A                                                         |
 | `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
-| `AtsApplication`                                            | [AtsApplication](../../Models/Components/AtsApplication.md) | :heavy_minus_sign:                                          | N/A                                                         |
 | `Fields`                                                    | List<*string*>                                              | :heavy_minus_sign:                                          | Comma-delimited fields to return                            |
 
 ### Response
@@ -156,9 +156,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Application.PatchAtsApplicationAsync(
+    atsApplication: new AtsApplication() {},
     connectionId: "<id>",
     id: "<id>",
-    atsApplication: new AtsApplication() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -171,9 +171,9 @@ var res = await sdk.Application.PatchAtsApplicationAsync(
 
 | Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `AtsApplication`                                            | [AtsApplication](../../Models/Components/AtsApplication.md) | :heavy_check_mark:                                          | N/A                                                         |
 | `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
 | `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Application                                       |
-| `AtsApplication`                                            | [AtsApplication](../../Models/Components/AtsApplication.md) | :heavy_minus_sign:                                          | N/A                                                         |
 | `Fields`                                                    | List<*string*>                                              | :heavy_minus_sign:                                          | Comma-delimited fields to return                            |
 
 ### Response
@@ -241,9 +241,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Application.UpdateAtsApplicationAsync(
+    atsApplication: new AtsApplication() {},
     connectionId: "<id>",
     id: "<id>",
-    atsApplication: new AtsApplication() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -256,9 +256,9 @@ var res = await sdk.Application.UpdateAtsApplicationAsync(
 
 | Parameter                                                   | Type                                                        | Required                                                    | Description                                                 |
 | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- |
+| `AtsApplication`                                            | [AtsApplication](../../Models/Components/AtsApplication.md) | :heavy_check_mark:                                          | N/A                                                         |
 | `ConnectionId`                                              | *string*                                                    | :heavy_check_mark:                                          | ID of the connection                                        |
 | `Id`                                                        | *string*                                                    | :heavy_check_mark:                                          | ID of the Application                                       |
-| `AtsApplication`                                            | [AtsApplication](../../Models/Components/AtsApplication.md) | :heavy_minus_sign:                                          | N/A                                                         |
 | `Fields`                                                    | List<*string*>                                              | :heavy_minus_sign:                                          | Comma-delimited fields to return                            |
 
 ### Response

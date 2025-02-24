@@ -32,7 +32,7 @@ namespace UnifiedTo
         /// Used only to import existing customer credentials; use &quot;Create connection indirectly&quot; instead
         /// </remarks>
         /// </summary>
-        Task<CreateUnifiedConnectionResponse> CreateUnifiedConnectionAsync(Models.Components.Connection? request = null);
+        Task<CreateUnifiedConnectionResponse> CreateUnifiedConnectionAsync(Models.Components.Connection request);
 
         /// <summary>
         /// Create webhook subscription
@@ -41,7 +41,7 @@ namespace UnifiedTo
         /// The data payload received by your server is described at https://docs.unified.to/unified/overview. The `interval` field can be set as low as 1 minute for paid accounts, and 60 minutes for free accounts.
         /// </remarks>
         /// </summary>
-        Task<CreateUnifiedWebhookResponse> CreateUnifiedWebhookAsync(Models.Components.Webhook? webhook = null, bool? includeAll = null);
+        Task<CreateUnifiedWebhookResponse> CreateUnifiedWebhookAsync(Models.Components.Webhook webhook, bool? includeAll = null);
 
         /// <summary>
         /// Retrieve specific API Call by its ID
@@ -104,12 +104,12 @@ namespace UnifiedTo
         /// <summary>
         /// Update connection
         /// </summary>
-        Task<PatchUnifiedConnectionResponse> PatchUnifiedConnectionAsync(string id, Models.Components.Connection? connection = null);
+        Task<PatchUnifiedConnectionResponse> PatchUnifiedConnectionAsync(Models.Components.Connection connection, string id);
 
         /// <summary>
         /// Update webhook subscription
         /// </summary>
-        Task<PatchUnifiedWebhookResponse> PatchUnifiedWebhookAsync(string id, Models.Components.Webhook? webhook = null);
+        Task<PatchUnifiedWebhookResponse> PatchUnifiedWebhookAsync(Models.Components.Webhook webhook, string id);
 
         /// <summary>
         /// Trigger webhook
@@ -129,12 +129,12 @@ namespace UnifiedTo
         /// <summary>
         /// Update connection
         /// </summary>
-        Task<UpdateUnifiedConnectionResponse> UpdateUnifiedConnectionAsync(string id, Models.Components.Connection? connection = null);
+        Task<UpdateUnifiedConnectionResponse> UpdateUnifiedConnectionAsync(Models.Components.Connection connection, string id);
 
         /// <summary>
         /// Update webhook subscription
         /// </summary>
-        Task<UpdateUnifiedWebhookResponse> UpdateUnifiedWebhookAsync(string id, Models.Components.Webhook? webhook = null);
+        Task<UpdateUnifiedWebhookResponse> UpdateUnifiedWebhookAsync(Models.Components.Webhook webhook, string id);
 
         /// <summary>
         /// Trigger webhook
@@ -146,10 +146,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -162,7 +162,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateUnifiedConnectionResponse> CreateUnifiedConnectionAsync(Models.Components.Connection? request = null)
+        public async Task<CreateUnifiedConnectionResponse> CreateUnifiedConnectionAsync(Models.Components.Connection request)
         {
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
 
@@ -171,7 +171,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "Request", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "Request", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -222,7 +222,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Models.Components.Connection>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Include);
+                    var obj = ResponseBodyDeserializer.Deserialize<Models.Components.Connection>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new CreateUnifiedConnectionResponse()
                     {
                         StatusCode = responseStatusCode,
@@ -247,7 +247,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateUnifiedWebhookResponse> CreateUnifiedWebhookAsync(Models.Components.Webhook? webhook = null, bool? includeAll = null)
+        public async Task<CreateUnifiedWebhookResponse> CreateUnifiedWebhookAsync(Models.Components.Webhook webhook, bool? includeAll = null)
         {
             var request = new CreateUnifiedWebhookRequest()
             {
@@ -260,7 +260,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "Webhook", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "Webhook", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -311,7 +311,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<Models.Components.Webhook>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Include);
+                    var obj = ResponseBodyDeserializer.Deserialize<Models.Components.Webhook>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new CreateUnifiedWebhookResponse()
                     {
                         StatusCode = responseStatusCode,
@@ -1127,12 +1127,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchUnifiedConnectionResponse> PatchUnifiedConnectionAsync(string id, Models.Components.Connection? connection = null)
+        public async Task<PatchUnifiedConnectionResponse> PatchUnifiedConnectionAsync(Models.Components.Connection connection, string id)
         {
             var request = new PatchUnifiedConnectionRequest()
             {
-                Id = id,
                 Connection = connection,
+                Id = id,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/connection/{id}", request);
@@ -1140,7 +1140,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "Connection", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "Connection", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1216,12 +1216,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchUnifiedWebhookResponse> PatchUnifiedWebhookAsync(string id, Models.Components.Webhook? webhook = null)
+        public async Task<PatchUnifiedWebhookResponse> PatchUnifiedWebhookAsync(Models.Components.Webhook webhook, string id)
         {
             var request = new PatchUnifiedWebhookRequest()
             {
-                Id = id,
                 Webhook = webhook,
+                Id = id,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/webhook/{id}", request);
@@ -1229,7 +1229,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "Webhook", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "Webhook", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1548,12 +1548,12 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateUnifiedConnectionResponse> UpdateUnifiedConnectionAsync(string id, Models.Components.Connection? connection = null)
+        public async Task<UpdateUnifiedConnectionResponse> UpdateUnifiedConnectionAsync(Models.Components.Connection connection, string id)
         {
             var request = new UpdateUnifiedConnectionRequest()
             {
-                Id = id,
                 Connection = connection,
+                Id = id,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/connection/{id}", request);
@@ -1561,7 +1561,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "Connection", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "Connection", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -1637,12 +1637,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateUnifiedWebhookResponse> UpdateUnifiedWebhookAsync(string id, Models.Components.Webhook? webhook = null)
+        public async Task<UpdateUnifiedWebhookResponse> UpdateUnifiedWebhookAsync(Models.Components.Webhook webhook, string id)
         {
             var request = new UpdateUnifiedWebhookRequest()
             {
-                Id = id,
                 Webhook = webhook,
+                Id = id,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/unified/webhook/{id}", request);
@@ -1650,7 +1650,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "Webhook", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "Webhook", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

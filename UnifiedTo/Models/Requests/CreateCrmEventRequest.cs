@@ -17,16 +17,16 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
+        /// An event represents an event, activity, or engagement and is always associated with a deal, contact, or company
+        /// </summary>
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public CrmEvent CrmEvent { get; set; } = default!;
+
+        /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
-
-        /// <summary>
-        /// An event represents an event, activity, or engagement and is always associated with a deal, contact, or company
-        /// </summary>
-        [SpeakeasyMetadata("request:mediaType=application/json")]
-        public CrmEvent? CrmEvent { get; set; }
 
         /// <summary>
         /// Comma-delimited fields to return

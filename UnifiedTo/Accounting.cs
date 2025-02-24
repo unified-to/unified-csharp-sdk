@@ -28,37 +28,37 @@ namespace UnifiedTo
         /// <summary>
         /// Create an account
         /// </summary>
-        Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(string connectionId, AccountingAccount? accountingAccount = null, List<string>? fields = null);
+        Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(string connectionId, AccountingContact? accountingContact = null, List<string>? fields = null);
+        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(AccountingContact accountingContact, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create an invoice
         /// </summary>
-        Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(string connectionId, AccountingInvoice? accountingInvoice = null, List<string>? fields = null);
+        Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a journal
         /// </summary>
-        Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(string connectionId, AccountingJournal? accountingJournal = null, List<string>? fields = null);
+        Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create an order
         /// </summary>
-        Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(string connectionId, AccountingOrder? accountingOrder = null, List<string>? fields = null);
+        Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a taxrate
         /// </summary>
-        Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(string connectionId, AccountingTaxrate? accountingTaxrate = null, List<string>? fields = null);
+        Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Create a transaction
         /// </summary>
-        Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(string connectionId, AccountingTransaction? accountingTransaction = null, List<string>? fields = null);
+        Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve an account
@@ -143,37 +143,37 @@ namespace UnifiedTo
         /// <summary>
         /// Update an account
         /// </summary>
-        Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null, List<string>? fields = null);
+        Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchAccountingContactResponse> PatchAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null, List<string>? fields = null);
+        Task<PatchAccountingContactResponse> PatchAccountingContactAsync(AccountingContact accountingContact, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update an invoice
         /// </summary>
-        Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null, List<string>? fields = null);
+        Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a journal
         /// </summary>
-        Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(string connectionId, string id, AccountingJournal? accountingJournal = null, List<string>? fields = null);
+        Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update an order
         /// </summary>
-        Task<PatchAccountingOrderResponse> PatchAccountingOrderAsync(string connectionId, string id, AccountingOrder? accountingOrder = null, List<string>? fields = null);
+        Task<PatchAccountingOrderResponse> PatchAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a taxrate
         /// </summary>
-        Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null, List<string>? fields = null);
+        Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a transaction
         /// </summary>
-        Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null, List<string>? fields = null);
+        Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove an account
@@ -213,47 +213,47 @@ namespace UnifiedTo
         /// <summary>
         /// Update an account
         /// </summary>
-        Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null, List<string>? fields = null);
+        Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null, List<string>? fields = null);
+        Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(AccountingContact accountingContact, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update an invoice
         /// </summary>
-        Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null, List<string>? fields = null);
+        Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a journal
         /// </summary>
-        Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(string connectionId, string id, AccountingJournal? accountingJournal = null, List<string>? fields = null);
+        Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update an order
         /// </summary>
-        Task<UpdateAccountingOrderResponse> UpdateAccountingOrderAsync(string connectionId, string id, AccountingOrder? accountingOrder = null, List<string>? fields = null);
+        Task<UpdateAccountingOrderResponse> UpdateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a taxrate
         /// </summary>
-        Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null, List<string>? fields = null);
+        Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Update a transaction
         /// </summary>
-        Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null, List<string>? fields = null);
+        Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Accounting: IAccounting
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -266,12 +266,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(string connectionId, AccountingAccount? accountingAccount = null, List<string>? fields = null)
+        public async Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAccountingAccountRequest()
             {
-                ConnectionId = connectionId,
                 AccountingAccount = accountingAccount,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -280,7 +280,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingAccount", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingAccount", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -356,12 +356,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(string connectionId, AccountingContact? accountingContact = null, List<string>? fields = null)
+        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(AccountingContact accountingContact, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAccountingContactRequest()
             {
-                ConnectionId = connectionId,
                 AccountingContact = accountingContact,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -370,7 +370,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingContact", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingContact", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -446,12 +446,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(string connectionId, AccountingInvoice? accountingInvoice = null, List<string>? fields = null)
+        public async Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAccountingInvoiceRequest()
             {
-                ConnectionId = connectionId,
                 AccountingInvoice = accountingInvoice,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -460,7 +460,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingInvoice", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingInvoice", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -536,12 +536,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(string connectionId, AccountingJournal? accountingJournal = null, List<string>? fields = null)
+        public async Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAccountingJournalRequest()
             {
-                ConnectionId = connectionId,
                 AccountingJournal = accountingJournal,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -550,7 +550,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingJournal", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingJournal", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -626,12 +626,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(string connectionId, AccountingOrder? accountingOrder = null, List<string>? fields = null)
+        public async Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAccountingOrderRequest()
             {
-                ConnectionId = connectionId,
                 AccountingOrder = accountingOrder,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -640,7 +640,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingOrder", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingOrder", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -716,12 +716,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(string connectionId, AccountingTaxrate? accountingTaxrate = null, List<string>? fields = null)
+        public async Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAccountingTaxrateRequest()
             {
-                ConnectionId = connectionId,
                 AccountingTaxrate = accountingTaxrate,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -730,7 +730,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTaxrate", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTaxrate", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -806,12 +806,12 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(string connectionId, AccountingTransaction? accountingTransaction = null, List<string>? fields = null)
+        public async Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAccountingTransactionRequest()
             {
-                ConnectionId = connectionId,
                 AccountingTransaction = accountingTransaction,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -820,7 +820,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTransaction", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTransaction", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2192,13 +2192,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null, List<string>? fields = null)
+        public async Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAccountingAccountRequest()
             {
+                AccountingAccount = accountingAccount,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingAccount = accountingAccount,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2207,7 +2207,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingAccount", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingAccount", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2283,13 +2283,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingContactResponse> PatchAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null, List<string>? fields = null)
+        public async Task<PatchAccountingContactResponse> PatchAccountingContactAsync(AccountingContact accountingContact, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAccountingContactRequest()
             {
+                AccountingContact = accountingContact,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingContact = accountingContact,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2298,7 +2298,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingContact", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingContact", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2374,13 +2374,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null, List<string>? fields = null)
+        public async Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAccountingInvoiceRequest()
             {
+                AccountingInvoice = accountingInvoice,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingInvoice = accountingInvoice,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2389,7 +2389,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingInvoice", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingInvoice", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2465,13 +2465,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(string connectionId, string id, AccountingJournal? accountingJournal = null, List<string>? fields = null)
+        public async Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAccountingJournalRequest()
             {
+                AccountingJournal = accountingJournal,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingJournal = accountingJournal,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2480,7 +2480,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingJournal", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingJournal", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2556,13 +2556,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingOrderResponse> PatchAccountingOrderAsync(string connectionId, string id, AccountingOrder? accountingOrder = null, List<string>? fields = null)
+        public async Task<PatchAccountingOrderResponse> PatchAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAccountingOrderRequest()
             {
+                AccountingOrder = accountingOrder,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingOrder = accountingOrder,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2571,7 +2571,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingOrder", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingOrder", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2647,13 +2647,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null, List<string>? fields = null)
+        public async Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAccountingTaxrateRequest()
             {
+                AccountingTaxrate = accountingTaxrate,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingTaxrate = accountingTaxrate,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2662,7 +2662,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTaxrate", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTaxrate", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -2738,13 +2738,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null, List<string>? fields = null)
+        public async Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAccountingTransactionRequest()
             {
+                AccountingTransaction = accountingTransaction,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingTransaction = accountingTransaction,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -2753,7 +2753,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTransaction", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTransaction", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -3403,13 +3403,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(string connectionId, string id, AccountingAccount? accountingAccount = null, List<string>? fields = null)
+        public async Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAccountingAccountRequest()
             {
+                AccountingAccount = accountingAccount,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingAccount = accountingAccount,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3418,7 +3418,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingAccount", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingAccount", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -3494,13 +3494,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(string connectionId, string id, AccountingContact? accountingContact = null, List<string>? fields = null)
+        public async Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(AccountingContact accountingContact, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAccountingContactRequest()
             {
+                AccountingContact = accountingContact,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingContact = accountingContact,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3509,7 +3509,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingContact", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingContact", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -3585,13 +3585,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(string connectionId, string id, AccountingInvoice? accountingInvoice = null, List<string>? fields = null)
+        public async Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAccountingInvoiceRequest()
             {
+                AccountingInvoice = accountingInvoice,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingInvoice = accountingInvoice,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3600,7 +3600,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingInvoice", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingInvoice", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -3676,13 +3676,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(string connectionId, string id, AccountingJournal? accountingJournal = null, List<string>? fields = null)
+        public async Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAccountingJournalRequest()
             {
+                AccountingJournal = accountingJournal,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingJournal = accountingJournal,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3691,7 +3691,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingJournal", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingJournal", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -3767,13 +3767,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAccountingOrderResponse> UpdateAccountingOrderAsync(string connectionId, string id, AccountingOrder? accountingOrder = null, List<string>? fields = null)
+        public async Task<UpdateAccountingOrderResponse> UpdateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAccountingOrderRequest()
             {
+                AccountingOrder = accountingOrder,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingOrder = accountingOrder,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3782,7 +3782,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingOrder", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingOrder", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -3858,13 +3858,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(string connectionId, string id, AccountingTaxrate? accountingTaxrate = null, List<string>? fields = null)
+        public async Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAccountingTaxrateRequest()
             {
+                AccountingTaxrate = accountingTaxrate,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingTaxrate = accountingTaxrate,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3873,7 +3873,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTaxrate", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTaxrate", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -3949,13 +3949,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(string connectionId, string id, AccountingTransaction? accountingTransaction = null, List<string>? fields = null)
+        public async Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAccountingTransactionRequest()
             {
+                AccountingTransaction = accountingTransaction,
                 ConnectionId = connectionId,
                 Id = id,
-                AccountingTransaction = accountingTransaction,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -3964,7 +3964,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTransaction", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AccountingTransaction", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

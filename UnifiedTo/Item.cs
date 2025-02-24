@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create an item
         /// </summary>
-        Task<CreateCommerceItemResponse> CreateCommerceItemAsync(string connectionId, CommerceItem? commerceItem = null, List<string>? fields = null);
+        Task<CreateCommerceItemResponse> CreateCommerceItemAsync(CommerceItem commerceItem, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve an item
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update an item
         /// </summary>
-        Task<PatchCommerceItemResponse> PatchCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null, List<string>? fields = null);
+        Task<PatchCommerceItemResponse> PatchCommerceItemAsync(CommerceItem commerceItem, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove an item
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update an item
         /// </summary>
-        Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null, List<string>? fields = null);
+        Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(CommerceItem commerceItem, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Item: IItem
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,12 +76,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCommerceItemResponse> CreateCommerceItemAsync(string connectionId, CommerceItem? commerceItem = null, List<string>? fields = null)
+        public async Task<CreateCommerceItemResponse> CreateCommerceItemAsync(CommerceItem commerceItem, string connectionId, List<string>? fields = null)
         {
             var request = new CreateCommerceItemRequest()
             {
-                ConnectionId = connectionId,
                 CommerceItem = commerceItem,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -90,7 +90,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceItem", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceItem", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -328,13 +328,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCommerceItemResponse> PatchCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null, List<string>? fields = null)
+        public async Task<PatchCommerceItemResponse> PatchCommerceItemAsync(CommerceItem commerceItem, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchCommerceItemRequest()
             {
+                CommerceItem = commerceItem,
                 ConnectionId = connectionId,
                 Id = id,
-                CommerceItem = commerceItem,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -343,7 +343,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceItem", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceItem", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -501,13 +501,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(string connectionId, string id, CommerceItem? commerceItem = null, List<string>? fields = null)
+        public async Task<UpdateCommerceItemResponse> UpdateCommerceItemAsync(CommerceItem commerceItem, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateCommerceItemRequest()
             {
+                CommerceItem = commerceItem,
                 ConnectionId = connectionId,
                 Id = id,
-                CommerceItem = commerceItem,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -516,7 +516,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceItem", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CommerceItem", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

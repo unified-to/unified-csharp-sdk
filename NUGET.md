@@ -16,8 +16,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    connectionId: "<id>",
     accountingAccount: new AccountingAccount() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -49,8 +49,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    connectionId: "<id>",
     accountingAccount: new AccountingAccount() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -95,8 +95,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 try
 {
     var res = await sdk.Accounting.CreateAccountingAccountAsync(
-        connectionId: "<id>",
         accountingAccount: new AccountingAccount() {},
+        connectionId: "<id>",
         fields: new List<string>() {
             "<value>",
         }
@@ -142,8 +142,8 @@ var sdk = new UnifiedToSDK(
 );
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    connectionId: "<id>",
     accountingAccount: new AccountingAccount() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -168,8 +168,8 @@ var sdk = new UnifiedToSDK(
 );
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
-    connectionId: "<id>",
     accountingAccount: new AccountingAccount() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }

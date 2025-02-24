@@ -30,8 +30,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Messaging.CreateMessagingMessageAsync(
-    connectionId: "<id>",
     messagingMessage: new MessagingMessage() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -44,8 +44,8 @@ var res = await sdk.Messaging.CreateMessagingMessageAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `MessagingMessage`                                              | [MessagingMessage](../../Models/Components/MessagingMessage.md) | :heavy_check_mark:                                              | N/A                                                             |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
-| `MessagingMessage`                                              | [MessagingMessage](../../Models/Components/MessagingMessage.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
@@ -242,9 +242,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Messaging.PatchMessagingMessageAsync(
+    messagingMessage: new MessagingMessage() {},
     connectionId: "<id>",
     id: "<id>",
-    messagingMessage: new MessagingMessage() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -257,9 +257,9 @@ var res = await sdk.Messaging.PatchMessagingMessageAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `MessagingMessage`                                              | [MessagingMessage](../../Models/Components/MessagingMessage.md) | :heavy_check_mark:                                              | N/A                                                             |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Message                                               |
-| `MessagingMessage`                                              | [MessagingMessage](../../Models/Components/MessagingMessage.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response
@@ -327,9 +327,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Messaging.UpdateMessagingMessageAsync(
+    messagingMessage: new MessagingMessage() {},
     connectionId: "<id>",
     id: "<id>",
-    messagingMessage: new MessagingMessage() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -342,9 +342,9 @@ var res = await sdk.Messaging.UpdateMessagingMessageAsync(
 
 | Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
 | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
+| `MessagingMessage`                                              | [MessagingMessage](../../Models/Components/MessagingMessage.md) | :heavy_check_mark:                                              | N/A                                                             |
 | `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
 | `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Message                                               |
-| `MessagingMessage`                                              | [MessagingMessage](../../Models/Components/MessagingMessage.md) | :heavy_minus_sign:                                              | N/A                                                             |
 | `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
 
 ### Response

@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create a deal
         /// </summary>
-        Task<CreateCrmDealResponse> CreateCrmDealAsync(string connectionId, CrmDeal? crmDeal = null, List<string>? fields = null);
+        Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a deal
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a deal
         /// </summary>
-        Task<PatchCrmDealResponse> PatchCrmDealAsync(string connectionId, string id, CrmDeal? crmDeal = null, List<string>? fields = null);
+        Task<PatchCrmDealResponse> PatchCrmDealAsync(CrmDeal crmDeal, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove a deal
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a deal
         /// </summary>
-        Task<UpdateCrmDealResponse> UpdateCrmDealAsync(string connectionId, string id, CrmDeal? crmDeal = null, List<string>? fields = null);
+        Task<UpdateCrmDealResponse> UpdateCrmDealAsync(CrmDeal crmDeal, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Deal: IDeal
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,12 +76,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCrmDealResponse> CreateCrmDealAsync(string connectionId, CrmDeal? crmDeal = null, List<string>? fields = null)
+        public async Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<string>? fields = null)
         {
             var request = new CreateCrmDealRequest()
             {
-                ConnectionId = connectionId,
                 CrmDeal = crmDeal,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -90,7 +90,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmDeal", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmDeal", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -328,13 +328,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmDealResponse> PatchCrmDealAsync(string connectionId, string id, CrmDeal? crmDeal = null, List<string>? fields = null)
+        public async Task<PatchCrmDealResponse> PatchCrmDealAsync(CrmDeal crmDeal, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchCrmDealRequest()
             {
+                CrmDeal = crmDeal,
                 ConnectionId = connectionId,
                 Id = id,
-                CrmDeal = crmDeal,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -343,7 +343,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmDeal", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmDeal", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -501,13 +501,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCrmDealResponse> UpdateCrmDealAsync(string connectionId, string id, CrmDeal? crmDeal = null, List<string>? fields = null)
+        public async Task<UpdateCrmDealResponse> UpdateCrmDealAsync(CrmDeal crmDeal, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateCrmDealRequest()
             {
+                CrmDeal = crmDeal,
                 ConnectionId = connectionId,
                 Id = id,
-                CrmDeal = crmDeal,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -516,7 +516,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "CrmDeal", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "CrmDeal", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

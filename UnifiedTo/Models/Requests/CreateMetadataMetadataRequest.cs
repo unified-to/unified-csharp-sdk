@@ -16,14 +16,14 @@ namespace UnifiedTo.Models.Requests
     public class CreateMetadataMetadataRequest
     {
 
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public MetadataMetadata MetadataMetadata { get; set; } = default!;
+
         /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
-
-        [SpeakeasyMetadata("request:mediaType=application/json")]
-        public MetadataMetadata? MetadataMetadata { get; set; }
 
         /// <summary>
         /// Comma-delimited fields to return

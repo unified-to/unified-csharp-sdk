@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create a scorecard
         /// </summary>
-        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(string connectionId, AtsScorecard? atsScorecard = null, List<string>? fields = null);
+        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<string>? fields = null);
 
         /// <summary>
         /// Retrieve a scorecard
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a scorecard
         /// </summary>
-        Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null, List<string>? fields = null);
+        Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, string id, List<string>? fields = null);
 
         /// <summary>
         /// Remove a scorecard
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a scorecard
         /// </summary>
-        Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null, List<string>? fields = null);
+        Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, string id, List<string>? fields = null);
     }
 
     public class Scorecard: IScorecard
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.15";
+        private const string _sdkVersion = "0.22.16";
         private const string _sdkGenVersion = "2.522.1";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.15 2.522.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.16 2.522.1 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,12 +76,12 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(string connectionId, AtsScorecard? atsScorecard = null, List<string>? fields = null)
+        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<string>? fields = null)
         {
             var request = new CreateAtsScorecardRequest()
             {
-                ConnectionId = connectionId,
                 AtsScorecard = atsScorecard,
+                ConnectionId = connectionId,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -90,7 +90,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Post, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsScorecard", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsScorecard", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -328,13 +328,13 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null, List<string>? fields = null)
+        public async Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, string id, List<string>? fields = null)
         {
             var request = new PatchAtsScorecardRequest()
             {
+                AtsScorecard = atsScorecard,
                 ConnectionId = connectionId,
                 Id = id,
-                AtsScorecard = atsScorecard,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -343,7 +343,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Patch, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsScorecard", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsScorecard", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;
@@ -501,13 +501,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(string connectionId, string id, AtsScorecard? atsScorecard = null, List<string>? fields = null)
+        public async Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, string id, List<string>? fields = null)
         {
             var request = new UpdateAtsScorecardRequest()
             {
+                AtsScorecard = atsScorecard,
                 ConnectionId = connectionId,
                 Id = id,
-                AtsScorecard = atsScorecard,
                 Fields = fields,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
@@ -516,7 +516,7 @@ namespace UnifiedTo
             var httpRequest = new HttpRequestMessage(HttpMethod.Put, urlString);
             httpRequest.Headers.Add("user-agent", _userAgent);
 
-            var serializedBody = RequestBodySerializer.Serialize(request, "AtsScorecard", "json", false, true);
+            var serializedBody = RequestBodySerializer.Serialize(request, "AtsScorecard", "json", false, false);
             if (serializedBody != null)
             {
                 httpRequest.Content = serializedBody;

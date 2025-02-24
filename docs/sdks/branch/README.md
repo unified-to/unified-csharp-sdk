@@ -28,11 +28,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Branch.CreateRepoBranchAsync(
-    connectionId: "<id>",
     repoBranch: new RepoBranch() {
         Name = "<value>",
         RepoId = "<id>",
     },
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -45,8 +45,8 @@ var res = await sdk.Branch.CreateRepoBranchAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `RepoBranch`                                        | [RepoBranch](../../Models/Components/RepoBranch.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
-| `RepoBranch`                                        | [RepoBranch](../../Models/Components/RepoBranch.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -159,12 +159,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Branch.PatchRepoBranchAsync(
-    connectionId: "<id>",
-    id: "<id>",
     repoBranch: new RepoBranch() {
         Name = "<value>",
         RepoId = "<id>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -177,9 +177,9 @@ var res = await sdk.Branch.PatchRepoBranchAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `RepoBranch`                                        | [RepoBranch](../../Models/Components/RepoBranch.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
 | `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Branch                                    |
-| `RepoBranch`                                        | [RepoBranch](../../Models/Components/RepoBranch.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response
@@ -247,12 +247,12 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Branch.UpdateRepoBranchAsync(
-    connectionId: "<id>",
-    id: "<id>",
     repoBranch: new RepoBranch() {
         Name = "<value>",
         RepoId = "<id>",
     },
+    connectionId: "<id>",
+    id: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -265,9 +265,9 @@ var res = await sdk.Branch.UpdateRepoBranchAsync(
 
 | Parameter                                           | Type                                                | Required                                            | Description                                         |
 | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `RepoBranch`                                        | [RepoBranch](../../Models/Components/RepoBranch.md) | :heavy_check_mark:                                  | N/A                                                 |
 | `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
 | `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Branch                                    |
-| `RepoBranch`                                        | [RepoBranch](../../Models/Components/RepoBranch.md) | :heavy_minus_sign:                                  | N/A                                                 |
 | `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
 
 ### Response

@@ -28,8 +28,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Pullrequest.CreateRepoPullrequestAsync(
-    connectionId: "<id>",
     repoPullrequest: new RepoPullrequest() {},
+    connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
     }
@@ -42,8 +42,8 @@ var res = await sdk.Pullrequest.CreateRepoPullrequestAsync(
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `RepoPullrequest`                                             | [RepoPullrequest](../../Models/Components/RepoPullrequest.md) | :heavy_check_mark:                                            | N/A                                                           |
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
-| `RepoPullrequest`                                             | [RepoPullrequest](../../Models/Components/RepoPullrequest.md) | :heavy_minus_sign:                                            | N/A                                                           |
 | `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response
@@ -156,9 +156,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Pullrequest.PatchRepoPullrequestAsync(
+    repoPullrequest: new RepoPullrequest() {},
     connectionId: "<id>",
     id: "<id>",
-    repoPullrequest: new RepoPullrequest() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -171,9 +171,9 @@ var res = await sdk.Pullrequest.PatchRepoPullrequestAsync(
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `RepoPullrequest`                                             | [RepoPullrequest](../../Models/Components/RepoPullrequest.md) | :heavy_check_mark:                                            | N/A                                                           |
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Pullrequest                                         |
-| `RepoPullrequest`                                             | [RepoPullrequest](../../Models/Components/RepoPullrequest.md) | :heavy_minus_sign:                                            | N/A                                                           |
 | `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response
@@ -241,9 +241,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Pullrequest.UpdateRepoPullrequestAsync(
+    repoPullrequest: new RepoPullrequest() {},
     connectionId: "<id>",
     id: "<id>",
-    repoPullrequest: new RepoPullrequest() {},
     fields: new List<string>() {
         "<value>",
     }
@@ -256,9 +256,9 @@ var res = await sdk.Pullrequest.UpdateRepoPullrequestAsync(
 
 | Parameter                                                     | Type                                                          | Required                                                      | Description                                                   |
 | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `RepoPullrequest`                                             | [RepoPullrequest](../../Models/Components/RepoPullrequest.md) | :heavy_check_mark:                                            | N/A                                                           |
 | `ConnectionId`                                                | *string*                                                      | :heavy_check_mark:                                            | ID of the connection                                          |
 | `Id`                                                          | *string*                                                      | :heavy_check_mark:                                            | ID of the Pullrequest                                         |
-| `RepoPullrequest`                                             | [RepoPullrequest](../../Models/Components/RepoPullrequest.md) | :heavy_minus_sign:                                            | N/A                                                           |
 | `Fields`                                                      | List<*string*>                                                | :heavy_minus_sign:                                            | Comma-delimited fields to return                              |
 
 ### Response
