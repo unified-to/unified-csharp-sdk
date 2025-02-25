@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 3c83ac41ca19a0aa4a6ad1896f8a1398
+  docChecksum: 9075a5eee0d5e437f7630ea01fb59832
   docVersion: "1.0"
-  speakeasyVersion: 1.501.0
-  generationVersion: 2.522.1
-  releaseVersion: 0.22.16
-  configChecksum: 8413fed173f777adc6d611d1a3030c51
+  speakeasyVersion: 1.502.0
+  generationVersion: 2.524.1
+  releaseVersion: 0.22.17
+  configChecksum: 48133e1d53e0c80dfd5abd19c89a98d0
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -262,6 +262,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListCourseId.cs
   - UnifiedTo/Models/Components/ListCustomerId.cs
   - UnifiedTo/Models/Components/ListDealId.cs
+  - UnifiedTo/Models/Components/ListEndLe.cs
   - UnifiedTo/Models/Components/ListInstructorId.cs
   - UnifiedTo/Models/Components/ListInterviewId.cs
   - UnifiedTo/Models/Components/ListInvoiceId.cs
@@ -286,6 +287,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListSortByName.cs
   - UnifiedTo/Models/Components/ListSortByUpdatedAt.cs
   - UnifiedTo/Models/Components/ListSpaceId.cs
+  - UnifiedTo/Models/Components/ListStartGte.cs
   - UnifiedTo/Models/Components/ListStudentId.cs
   - UnifiedTo/Models/Components/ListTaskId.cs
   - UnifiedTo/Models/Components/ListTicketId.cs
@@ -1479,6 +1481,7 @@ generatedFiles:
   - docs/Models/Components/ListCourseId.md
   - docs/Models/Components/ListCustomerId.md
   - docs/Models/Components/ListDealId.md
+  - docs/Models/Components/ListEndLe.md
   - docs/Models/Components/ListInstructorId.md
   - docs/Models/Components/ListInterviewId.md
   - docs/Models/Components/ListInvoiceId.md
@@ -1503,6 +1506,7 @@ generatedFiles:
   - docs/Models/Components/ListSortByName.md
   - docs/Models/Components/ListSortByUpdatedAt.md
   - docs/Models/Components/ListSpaceId.md
+  - docs/Models/Components/ListStartGte.md
   - docs/Models/Components/ListStudentId.md
   - docs/Models/Components/ListTaskId.md
   - docs/Models/Components/ListTicketId.md

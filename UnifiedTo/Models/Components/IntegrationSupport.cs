@@ -56,6 +56,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_deal_id")]
         public ListDealId? ListDealId { get; set; }
 
+        [JsonProperty("list_end_le")]
+        public ListEndLe? ListEndLe { get; set; }
+
         [JsonProperty("list_instructor_id")]
         public ListInstructorId? ListInstructorId { get; set; }
 
@@ -127,6 +130,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_space_id")]
         public ListSpaceId? ListSpaceId { get; set; }
+
+        [JsonProperty("list_start_gte")]
+        public ListStartGte? ListStartGte { get; set; }
 
         [JsonProperty("list_student_id")]
         public ListStudentId? ListStudentId { get; set; }
