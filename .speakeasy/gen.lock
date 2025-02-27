@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: eed3e21cce15d18d6d589ec03e5be2ce
+  docChecksum: a642c7bece4e0a94752d9efa149625ea
   docVersion: "1.0"
-  speakeasyVersion: 1.504.1
-  generationVersion: 2.529.2
-  releaseVersion: 0.22.18
-  configChecksum: 9277c9661299eab6e837f1d9f3563d71
+  speakeasyVersion: 1.505.1
+  generationVersion: 2.531.0
+  releaseVersion: 0.22.19
+  configChecksum: b46a3435097a2d883c2b42e431e9f8a1
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -124,6 +124,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/AtsApplicationRaw.cs
   - UnifiedTo/Models/Components/AtsApplicationStatus.cs
   - UnifiedTo/Models/Components/AtsCandidate.cs
+  - UnifiedTo/Models/Components/AtsCandidateEducation.cs
+  - UnifiedTo/Models/Components/AtsCandidateExperience.cs
   - UnifiedTo/Models/Components/AtsCandidateRaw.cs
   - UnifiedTo/Models/Components/AtsCompany.cs
   - UnifiedTo/Models/Components/AtsCompanyRaw.cs
@@ -1343,6 +1345,8 @@ generatedFiles:
   - docs/Models/Components/AtsApplicationRaw.md
   - docs/Models/Components/AtsApplicationStatus.md
   - docs/Models/Components/AtsCandidate.md
+  - docs/Models/Components/AtsCandidateEducation.md
+  - docs/Models/Components/AtsCandidateExperience.md
   - docs/Models/Components/AtsCandidateRaw.md
   - docs/Models/Components/AtsCompany.md
   - docs/Models/Components/AtsCompanyRaw.md

@@ -33,8 +33,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("date_of_birth")]
         public DateTime? DateOfBirth { get; set; }
 
+        [JsonProperty("education")]
+        public List<AtsCandidateEducation>? Education { get; set; }
+
         [JsonProperty("emails")]
         public List<AtsEmail>? Emails { get; set; }
+
+        [JsonProperty("experiences")]
+        public List<AtsCandidateExperience>? Experiences { get; set; }
 
         [JsonProperty("external_identifier")]
         public string? ExternalIdentifier { get; set; }
@@ -59,6 +65,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("raw")]
         public AtsCandidateRaw? Raw { get; set; }
+
+        [JsonProperty("skills")]
+        public List<string>? Skills { get; set; }
 
         [JsonProperty("sources")]
         public List<string>? Sources { get; set; }
