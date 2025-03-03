@@ -92,5 +92,8 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("token_url")]
         public string? TokenUrl { get; set; }
+
+        [JsonProperty("user_id")]
+        public string? UserId { get; set; }
     }
 }

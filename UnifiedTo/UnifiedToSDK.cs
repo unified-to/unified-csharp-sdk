@@ -44,6 +44,11 @@ namespace UnifiedTo
         public IInterview Interview { get; }
         public IJob Job { get; }
         public IScorecard Scorecard { get; }
+        public ICalendar Calendar { get; }
+        public IBusy Busy { get; }
+        public IEvent Event { get; }
+        public ILink Link { get; }
+        public IRecording Recording { get; }
         public ICommerce Commerce { get; }
         public ICollection Collection { get; }
         public IInventory Inventory { get; }
@@ -51,7 +56,6 @@ namespace UnifiedTo
         public ILocation Location { get; }
         public ICrm Crm { get; }
         public IDeal Deal { get; }
-        public IEvent Event { get; }
         public ILead Lead { get; }
         public IPipeline Pipeline { get; }
         public IEnrich Enrich { get; }
@@ -82,7 +86,6 @@ namespace UnifiedTo
         public IMetadata Metadata { get; }
         public IPassthrough Passthrough { get; }
         public IPayment Payment { get; }
-        public ILink Link { get; }
         public IPayout Payout { get; }
         public IRefund Refund { get; }
         public ISubscription Subscription { get; }
@@ -157,10 +160,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.19";
-        private const string _sdkGenVersion = "2.531.0";
+        private const string _sdkVersion = "0.22.20";
+        private const string _sdkGenVersion = "2.536.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.19 2.531.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.20 2.536.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _client;
@@ -184,6 +187,11 @@ namespace UnifiedTo
         public IInterview Interview { get; private set; }
         public IJob Job { get; private set; }
         public IScorecard Scorecard { get; private set; }
+        public ICalendar Calendar { get; private set; }
+        public IBusy Busy { get; private set; }
+        public IEvent Event { get; private set; }
+        public ILink Link { get; private set; }
+        public IRecording Recording { get; private set; }
         public ICommerce Commerce { get; private set; }
         public ICollection Collection { get; private set; }
         public IInventory Inventory { get; private set; }
@@ -191,7 +199,6 @@ namespace UnifiedTo
         public ILocation Location { get; private set; }
         public ICrm Crm { get; private set; }
         public IDeal Deal { get; private set; }
-        public IEvent Event { get; private set; }
         public ILead Lead { get; private set; }
         public IPipeline Pipeline { get; private set; }
         public IEnrich Enrich { get; private set; }
@@ -222,7 +229,6 @@ namespace UnifiedTo
         public IMetadata Metadata { get; private set; }
         public IPassthrough Passthrough { get; private set; }
         public IPayment Payment { get; private set; }
-        public ILink Link { get; private set; }
         public IPayout Payout { get; private set; }
         public IRefund Refund { get; private set; }
         public ISubscription Subscription { get; private set; }
@@ -354,6 +360,21 @@ namespace UnifiedTo
             Scorecard = new Scorecard(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
+            Calendar = new Calendar(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Busy = new Busy(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Event = new Event(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Link = new Link(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Recording = new Recording(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
             Commerce = new Commerce(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
@@ -373,9 +394,6 @@ namespace UnifiedTo
 
 
             Deal = new Deal(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Event = new Event(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
             Lead = new Lead(_client, _securitySource, _serverUrl, SDKConfiguration);
@@ -466,9 +484,6 @@ namespace UnifiedTo
 
 
             Payment = new Payment(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Link = new Link(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
             Payout = new Payout(_client, _securitySource, _serverUrl, SDKConfiguration);

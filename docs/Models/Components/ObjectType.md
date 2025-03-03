@@ -76,3 +76,8 @@
 | `RepoCommit`             | repo_commit              |
 | `RepoPullrequest`        | repo_pullrequest         |
 | `MetadataMetadata`       | metadata_metadata        |
+| `CalendarCalendar`       | calendar_calendar        |
+| `CalendarEvent`          | calendar_event           |
+| `CalendarBusy`           | calendar_busy            |
+| `CalendarLink`           | calendar_link            |
+| `CalendarRecording`      | calendar_recording       |

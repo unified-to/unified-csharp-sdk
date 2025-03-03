@@ -29,6 +29,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_application_id")]
         public ListApplicationId? ListApplicationId { get; set; }
 
+        [JsonProperty("list_calendar_id")]
+        public ListCalendarId? ListCalendarId { get; set; }
+
         [JsonProperty("list_candidate_id")]
         public ListCandidateId? ListCandidateId { get; set; }
 
@@ -58,6 +61,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_end_le")]
         public ListEndLe? ListEndLe { get; set; }
+
+        [JsonProperty("list_event_id")]
+        public ListEventId? ListEventId { get; set; }
 
         [JsonProperty("list_instructor_id")]
         public ListInstructorId? ListInstructorId { get; set; }

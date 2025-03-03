@@ -157,6 +157,16 @@ namespace UnifiedTo.Models.Components
         RepoPullrequest,
         [JsonProperty("metadata_metadata")]
         MetadataMetadata,
+        [JsonProperty("calendar_calendar")]
+        CalendarCalendar,
+        [JsonProperty("calendar_event")]
+        CalendarEvent,
+        [JsonProperty("calendar_busy")]
+        CalendarBusy,
+        [JsonProperty("calendar_link")]
+        CalendarLink,
+        [JsonProperty("calendar_recording")]
+        CalendarRecording,
     }
 
     public static class ObjectTypeExtension

@@ -275,6 +275,26 @@ namespace UnifiedTo.Models.Requests
         MetadataMetadataRead,
         [JsonProperty("metadata_metadata_write")]
         MetadataMetadataWrite,
+        [JsonProperty("calendar_calendar_read")]
+        CalendarCalendarRead,
+        [JsonProperty("calendar_calendar_write")]
+        CalendarCalendarWrite,
+        [JsonProperty("calendar_event_read")]
+        CalendarEventRead,
+        [JsonProperty("calendar_event_write")]
+        CalendarEventWrite,
+        [JsonProperty("calendar_busy_read")]
+        CalendarBusyRead,
+        [JsonProperty("calendar_busy_write")]
+        CalendarBusyWrite,
+        [JsonProperty("calendar_link_read")]
+        CalendarLinkRead,
+        [JsonProperty("calendar_link_write")]
+        CalendarLinkWrite,
+        [JsonProperty("calendar_recording_read")]
+        CalendarRecordingRead,
+        [JsonProperty("calendar_recording_write")]
+        CalendarRecordingWrite,
     }
 
     public static class ScopesExtension

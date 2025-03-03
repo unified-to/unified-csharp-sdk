@@ -57,6 +57,8 @@ namespace UnifiedTo.Models.Requests
         Repo,
         [JsonProperty("metadata")]
         Metadata,
+        [JsonProperty("calendar")]
+        Calendar,
     }
 
     public static class ListUnifiedIntegrationsQueryParamCategoriesExtension
