@@ -29,6 +29,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 
+        [JsonProperty("primary")]
+        public bool? Primary { get; set; }
+
         [JsonProperty("raw")]
         public CalendarCalendarRaw? Raw { get; set; }
 
