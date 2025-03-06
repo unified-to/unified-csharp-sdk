@@ -10,7 +10,6 @@
 namespace UnifiedTo.Models.Requests
 {
     using System.Collections.Generic;
-    using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
     
     public class GetUnifiedIntegrationAuthRequest
@@ -47,7 +46,7 @@ namespace UnifiedTo.Models.Requests
         public bool? Redirect { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=scopes")]
-        public List<Scopes>? Scopes { get; set; }
+        public List<string>? Scopes { get; set; }
 
         /// <summary>
         /// Extra state to send back to your success URL

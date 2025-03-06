@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 03fb3687a9211f1c85a85fd634fa1c98
+  docChecksum: 469567133059289c1dda4dbb71768014
   docVersion: "1.0"
-  speakeasyVersion: 1.509.1
-  generationVersion: 2.539.1
-  releaseVersion: 0.22.21
-  configChecksum: 66f50e0c8164807adfa1e4b179f121d5
+  speakeasyVersion: 1.510.0
+  generationVersion: 2.541.0
+  releaseVersion: 0.22.22
+  configChecksum: 37c3344edffe25751dd84179c8105cb2
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -1188,7 +1188,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveUnifiedConnectionResponse.cs
   - UnifiedTo/Models/Requests/RemoveUnifiedWebhookRequest.cs
   - UnifiedTo/Models/Requests/RemoveUnifiedWebhookResponse.cs
-  - UnifiedTo/Models/Requests/Scopes.cs
   - UnifiedTo/Models/Requests/UpdateAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingAccountResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingContactRequest.cs
@@ -2472,7 +2471,6 @@ generatedFiles:
   - docs/Models/Requests/RemoveUnifiedConnectionResponse.md
   - docs/Models/Requests/RemoveUnifiedWebhookRequest.md
   - docs/Models/Requests/RemoveUnifiedWebhookResponse.md
-  - docs/Models/Requests/Scopes.md
   - docs/Models/Requests/UpdateAccountingAccountRequest.md
   - docs/Models/Requests/UpdateAccountingAccountResponse.md
   - docs/Models/Requests/UpdateAccountingContactRequest.md
