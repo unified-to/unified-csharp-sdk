@@ -83,6 +83,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_job_id")]
         public ListJobId? ListJobId { get; set; }
 
+        [JsonProperty("list_lead_id")]
+        public ListLeadId? ListLeadId { get; set; }
+
         [JsonProperty("list_limit")]
         public ListLimit? ListLimit { get; set; }
 
