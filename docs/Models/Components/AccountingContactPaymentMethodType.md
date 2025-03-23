@@ -12,3 +12,5 @@
 | `Ideal`   | IDEAL     |
 | `Other`   | OTHER     |
 | `Paypal`  | PAYPAL    |
+| `Wire`    | WIRE      |
+| `Check`   | CHECK     |

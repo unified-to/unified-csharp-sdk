@@ -29,6 +29,10 @@ namespace UnifiedTo.Models.Components
         Other,
         [JsonProperty("PAYPAL")]
         Paypal,
+        [JsonProperty("WIRE")]
+        Wire,
+        [JsonProperty("CHECK")]
+        Check,
     }
 
     public static class AccountingContactPaymentMethodTypeExtension
