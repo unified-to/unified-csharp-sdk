@@ -17,7 +17,7 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("extra_data")]
-        public ExtraData? ExtraData { get; set; }
+        public CommerceItemMetadataExtraData? ExtraData { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
@@ -32,6 +32,6 @@ namespace UnifiedTo.Models.Components
         public string? Type { get; set; }
 
         [JsonProperty("value")]
-        public Value? Value { get; set; }
+        public CommerceItemMetadataValue? Value { get; set; }
     }
 }

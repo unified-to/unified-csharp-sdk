@@ -120,10 +120,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.24";
-        private const string _sdkGenVersion = "2.559.0";
+        private const string _sdkVersion = "0.22.25";
+        private const string _sdkGenVersion = "2.562.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.24 2.559.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.25 2.562.3 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -161,7 +161,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("createAccountingContact", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "createAccountingContact", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -251,7 +251,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("createCrmContact", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "createCrmContact", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -341,7 +341,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("createUcContact", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "createUcContact", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -425,7 +425,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("getAccountingContact", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "getAccountingContact", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -509,7 +509,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("getCrmContact", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "getCrmContact", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -593,7 +593,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("getUcContact", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "getUcContact", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -671,7 +671,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("listAccountingContacts", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "listAccountingContacts", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -749,7 +749,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("listCrmContacts", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "listCrmContacts", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -827,7 +827,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("listUcContacts", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "listUcContacts", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -918,7 +918,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("patchAccountingContact", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "patchAccountingContact", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1009,7 +1009,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("patchCrmContact", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "patchCrmContact", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1100,7 +1100,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("patchUcContact", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "patchUcContact", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1183,7 +1183,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("removeAccountingContact", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "removeAccountingContact", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1265,7 +1265,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("removeCrmContact", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "removeCrmContact", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1347,7 +1347,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("removeUcContact", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "removeUcContact", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1437,7 +1437,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("updateAccountingContact", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "updateAccountingContact", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1528,7 +1528,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("updateCrmContact", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "updateCrmContact", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1619,7 +1619,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("updateUcContact", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "updateUcContact", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 

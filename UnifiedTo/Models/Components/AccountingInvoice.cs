@@ -63,6 +63,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("payment_collection_method")]
         public PaymentCollectionMethod? PaymentCollectionMethod { get; set; }
 
+        [JsonProperty("posted_at")]
+        public DateTime? PostedAt { get; set; }
+
         [JsonProperty("raw")]
         public AccountingInvoiceRaw? Raw { get; set; }
 

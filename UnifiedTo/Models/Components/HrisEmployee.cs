@@ -93,6 +93,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("marital_status")]
         public MaritalStatus? MaritalStatus { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<HrisMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

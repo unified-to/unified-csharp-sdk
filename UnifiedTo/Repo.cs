@@ -180,10 +180,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.24";
-        private const string _sdkGenVersion = "2.559.0";
+        private const string _sdkVersion = "0.22.25";
+        private const string _sdkGenVersion = "2.562.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.24 2.559.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.25 2.562.3 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("createRepoBranch", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "createRepoBranch", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -311,7 +311,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("createRepoCommit", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "createRepoCommit", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -401,7 +401,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("createRepoOrganization", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "createRepoOrganization", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -491,7 +491,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("createRepoPullrequest", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "createRepoPullrequest", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -581,7 +581,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("createRepoRepository", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "createRepoRepository", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -665,7 +665,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("getRepoBranch", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "getRepoBranch", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -749,7 +749,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("getRepoCommit", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "getRepoCommit", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -833,7 +833,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("getRepoOrganization", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "getRepoOrganization", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -917,7 +917,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("getRepoPullrequest", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "getRepoPullrequest", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1001,7 +1001,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("getRepoRepository", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "getRepoRepository", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1079,7 +1079,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("listRepoBranches", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "listRepoBranches", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1157,7 +1157,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("listRepoCommits", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "listRepoCommits", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1235,7 +1235,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("listRepoOrganizations", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "listRepoOrganizations", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1313,7 +1313,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("listRepoPullrequests", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "listRepoPullrequests", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1391,7 +1391,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("listRepoRepositories", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "listRepoRepositories", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1482,7 +1482,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("patchRepoBranch", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "patchRepoBranch", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1573,7 +1573,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("patchRepoCommit", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "patchRepoCommit", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1664,7 +1664,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("patchRepoOrganization", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "patchRepoOrganization", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1755,7 +1755,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("patchRepoPullrequest", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "patchRepoPullrequest", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1846,7 +1846,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("patchRepoRepository", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "patchRepoRepository", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1929,7 +1929,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("removeRepoBranch", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "removeRepoBranch", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2011,7 +2011,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("removeRepoCommit", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "removeRepoCommit", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2093,7 +2093,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("removeRepoOrganization", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "removeRepoOrganization", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2175,7 +2175,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("removeRepoPullrequest", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "removeRepoPullrequest", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2257,7 +2257,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("removeRepoRepository", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "removeRepoRepository", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2347,7 +2347,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("updateRepoBranch", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "updateRepoBranch", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2438,7 +2438,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("updateRepoCommit", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "updateRepoCommit", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2529,7 +2529,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("updateRepoOrganization", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "updateRepoOrganization", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2620,7 +2620,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("updateRepoPullrequest", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "updateRepoPullrequest", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -2711,7 +2711,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("updateRepoRepository", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "updateRepoRepository", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 

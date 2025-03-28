@@ -90,10 +90,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.24";
-        private const string _sdkGenVersion = "2.559.0";
+        private const string _sdkVersion = "0.22.25";
+        private const string _sdkGenVersion = "2.562.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.24 2.559.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.25 2.562.3 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -131,7 +131,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("createKmsComment", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "createKmsComment", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -221,7 +221,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("createTaskComment", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "createTaskComment", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -305,7 +305,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("getKmsComment", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "getKmsComment", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -389,7 +389,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("getTaskComment", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "getTaskComment", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -467,7 +467,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("listKmsComments", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "listKmsComments", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -545,7 +545,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("listTaskComments", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "listTaskComments", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -636,7 +636,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("patchKmsComment", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "patchKmsComment", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -727,7 +727,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("patchTaskComment", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "patchTaskComment", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -810,7 +810,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("removeKmsComment", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "removeKmsComment", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -892,7 +892,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("removeTaskComment", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "removeTaskComment", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -982,7 +982,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("updateKmsComment", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "updateKmsComment", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1073,7 +1073,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("updateTaskComment", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "updateTaskComment", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 

@@ -90,10 +90,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.24";
-        private const string _sdkGenVersion = "2.559.0";
+        private const string _sdkVersion = "0.22.25";
+        private const string _sdkGenVersion = "2.562.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.24 2.559.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.25 2.562.3 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -130,7 +130,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("createScimGroups", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "createScimGroups", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -214,7 +214,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("createScimUsers", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "createScimUsers", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -297,7 +297,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("getScimGroups", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "getScimGroups", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -380,7 +380,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("getScimUsers", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "getScimUsers", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -458,7 +458,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("listScimGroups", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "listScimGroups", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -536,7 +536,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("listScimUsers", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "listScimUsers", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -626,7 +626,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("patchScimGroups", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "patchScimGroups", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -716,7 +716,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("patchScimUsers", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "patchScimUsers", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -799,7 +799,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("removeScimGroups", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "removeScimGroups", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -881,7 +881,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("removeScimUsers", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "removeScimUsers", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -970,7 +970,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("updateScimGroups", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "updateScimGroups", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -1060,7 +1060,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("updateScimUsers", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "updateScimUsers", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 

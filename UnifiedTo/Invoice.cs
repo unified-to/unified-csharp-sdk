@@ -60,10 +60,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.24";
-        private const string _sdkGenVersion = "2.559.0";
+        private const string _sdkVersion = "0.22.25";
+        private const string _sdkGenVersion = "2.562.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.24 2.559.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.25 2.562.3 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -101,7 +101,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("createAccountingInvoice", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "createAccountingInvoice", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -185,7 +185,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("getAccountingInvoice", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "getAccountingInvoice", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -263,7 +263,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("listAccountingInvoices", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "listAccountingInvoices", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -354,7 +354,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("patchAccountingInvoice", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "patchAccountingInvoice", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -437,7 +437,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("removeAccountingInvoice", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "removeAccountingInvoice", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 
@@ -527,7 +527,7 @@ namespace UnifiedTo
                 httpRequest = new SecurityMetadata(_securitySource).Apply(httpRequest);
             }
 
-            var hookCtx = new HookContext("updateAccountingInvoice", null, _securitySource);
+            var hookCtx = new HookContext(baseUrl, "updateAccountingInvoice", new List<string> {  }, _securitySource);
 
             httpRequest = await this.SDKConfiguration.Hooks.BeforeRequestAsync(new BeforeRequestContext(hookCtx), httpRequest);
 

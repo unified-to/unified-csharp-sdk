@@ -48,6 +48,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("link_urls")]
         public List<string>? LinkUrls { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<CrmMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

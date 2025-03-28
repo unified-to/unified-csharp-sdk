@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 34e2f659b85467cb5f9d62c4f5261dd8
+  docChecksum: d7c4d10aa3021eb73869b5af504ea3df
   docVersion: "1.0"
-  speakeasyVersion: 1.523.0
-  generationVersion: 2.559.0
-  releaseVersion: 0.22.24
-  configChecksum: 80f8139e36a28f777119736fe8c66224
+  speakeasyVersion: 1.525.2
+  generationVersion: 2.562.3
+  releaseVersion: 0.22.25
+  configChecksum: 84790aa5790b2c3a24f960b9eb7151fa
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -149,6 +149,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/AtsJobQuestionType.cs
   - UnifiedTo/Models/Components/AtsJobRaw.cs
   - UnifiedTo/Models/Components/AtsJobStatus.cs
+  - UnifiedTo/Models/Components/AtsMetadata.cs
   - UnifiedTo/Models/Components/AtsOffer.cs
   - UnifiedTo/Models/Components/AtsOfferRaw.cs
   - UnifiedTo/Models/Components/AtsOfferStatus.cs
@@ -184,6 +185,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/CommerceItemMedia.cs
   - UnifiedTo/Models/Components/CommerceItemMediaType.cs
   - UnifiedTo/Models/Components/CommerceItemMetadata.cs
+  - UnifiedTo/Models/Components/CommerceItemMetadataExtraData.cs
+  - UnifiedTo/Models/Components/CommerceItemMetadataValue.cs
   - UnifiedTo/Models/Components/CommerceItemOption.cs
   - UnifiedTo/Models/Components/CommerceItemPrice.cs
   - UnifiedTo/Models/Components/CommerceItemRaw.cs
@@ -208,6 +211,9 @@ generatedFiles:
   - UnifiedTo/Models/Components/CrmEventType.cs
   - UnifiedTo/Models/Components/CrmLead.cs
   - UnifiedTo/Models/Components/CrmLeadRaw.cs
+  - UnifiedTo/Models/Components/CrmMetadata.cs
+  - UnifiedTo/Models/Components/CrmMetadataExtraData.cs
+  - UnifiedTo/Models/Components/CrmMetadataValue.cs
   - UnifiedTo/Models/Components/CrmPipeline.cs
   - UnifiedTo/Models/Components/CrmPipelineRaw.cs
   - UnifiedTo/Models/Components/CrmStage.cs
@@ -249,6 +255,9 @@ generatedFiles:
   - UnifiedTo/Models/Components/HrisGroupType.cs
   - UnifiedTo/Models/Components/HrisLocation.cs
   - UnifiedTo/Models/Components/HrisLocationRaw.cs
+  - UnifiedTo/Models/Components/HrisMetadata.cs
+  - UnifiedTo/Models/Components/HrisMetadataExtraData.cs
+  - UnifiedTo/Models/Components/HrisMetadataValue.cs
   - UnifiedTo/Models/Components/HrisPayslip.cs
   - UnifiedTo/Models/Components/HrisPayslipDetail.cs
   - UnifiedTo/Models/Components/HrisPayslipDetailType.cs
@@ -1434,6 +1443,7 @@ generatedFiles:
   - docs/Models/Components/AtsJobQuestionType.md
   - docs/Models/Components/AtsJobRaw.md
   - docs/Models/Components/AtsJobStatus.md
+  - docs/Models/Components/AtsMetadata.md
   - docs/Models/Components/AtsOffer.md
   - docs/Models/Components/AtsOfferRaw.md
   - docs/Models/Components/AtsOfferStatus.md
@@ -1469,6 +1479,8 @@ generatedFiles:
   - docs/Models/Components/CommerceItemMedia.md
   - docs/Models/Components/CommerceItemMediaType.md
   - docs/Models/Components/CommerceItemMetadata.md
+  - docs/Models/Components/CommerceItemMetadataExtraData.md
+  - docs/Models/Components/CommerceItemMetadataValue.md
   - docs/Models/Components/CommerceItemOption.md
   - docs/Models/Components/CommerceItemPrice.md
   - docs/Models/Components/CommerceItemRaw.md
@@ -1493,6 +1505,9 @@ generatedFiles:
   - docs/Models/Components/CrmEventType.md
   - docs/Models/Components/CrmLead.md
   - docs/Models/Components/CrmLeadRaw.md
+  - docs/Models/Components/CrmMetadata.md
+  - docs/Models/Components/CrmMetadataExtraData.md
+  - docs/Models/Components/CrmMetadataValue.md
   - docs/Models/Components/CrmPipeline.md
   - docs/Models/Components/CrmPipelineRaw.md
   - docs/Models/Components/CrmStage.md
@@ -1534,6 +1549,9 @@ generatedFiles:
   - docs/Models/Components/HrisGroupType.md
   - docs/Models/Components/HrisLocation.md
   - docs/Models/Components/HrisLocationRaw.md
+  - docs/Models/Components/HrisMetadata.md
+  - docs/Models/Components/HrisMetadataExtraData.md
+  - docs/Models/Components/HrisMetadataValue.md
   - docs/Models/Components/HrisPayslip.md
   - docs/Models/Components/HrisPayslipDetail.md
   - docs/Models/Components/HrisPayslipDetailType.md

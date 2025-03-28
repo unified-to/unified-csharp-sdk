@@ -34,7 +34,7 @@ namespace UnifiedTo.Models.Components
         public string ObjectType { get; set; } = default!;
 
         [JsonProperty("objects")]
-        public Dictionary<string, string>? Objects { get; set; }
+        public Dictionary<string, object>? Objects { get; set; }
 
         [JsonProperty("options")]
         public List<string>? Options { get; set; }

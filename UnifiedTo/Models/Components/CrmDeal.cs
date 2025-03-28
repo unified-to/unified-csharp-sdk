@@ -45,6 +45,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("lost_reason")]
         public string? LostReason { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<CrmMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 
