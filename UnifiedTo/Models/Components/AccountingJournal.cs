@@ -36,6 +36,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("lineitems")]
         public List<AccountingJournalLineitem>? Lineitems { get; set; }
 
+        [JsonProperty("posted_at")]
+        public DateTime? PostedAt { get; set; }
+
         [JsonProperty("raw")]
         public AccountingJournalRaw? Raw { get; set; }
 
