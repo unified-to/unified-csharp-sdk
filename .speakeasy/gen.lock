@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 9857048e17c51b706f1f1755ce5dafdc
+  docChecksum: b86a0a7e009b89c881979b0459cdcf9b
   docVersion: "1.0"
-  speakeasyVersion: 1.526.0
-  generationVersion: 2.563.0
-  releaseVersion: 0.22.26
-  configChecksum: 8baa90aef85e032e814cbda1bdffee20
+  speakeasyVersion: 1.526.6
+  generationVersion: 2.563.1
+  releaseVersion: 0.22.27
+  configChecksum: d937918ba7b4677588ea860da2455c2e
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -343,7 +343,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/MessagingChannel.cs
   - UnifiedTo/Models/Components/MessagingMember.cs
   - UnifiedTo/Models/Components/MessagingMessage.cs
-  - UnifiedTo/Models/Components/Meta.cs
   - UnifiedTo/Models/Components/MetadataMetadata.cs
   - UnifiedTo/Models/Components/MetadataMetadataRaw.cs
   - UnifiedTo/Models/Components/NativeWebhookParentId.cs
@@ -379,7 +378,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyCalendarRecordingTranscriptAttendeeStatus.cs
   - UnifiedTo/Models/Components/PropertyCommerceLocationAddress.cs
   - UnifiedTo/Models/Components/PropertyConnectionAuth.cs
-  - UnifiedTo/Models/Components/PropertyConnectionAuthMeta.cs
   - UnifiedTo/Models/Components/PropertyConnectionCategories.cs
   - UnifiedTo/Models/Components/PropertyConnectionPermissions.cs
   - UnifiedTo/Models/Components/PropertyCrmCompanyAddress.cs
@@ -1637,7 +1635,6 @@ generatedFiles:
   - docs/Models/Components/MessagingChannel.md
   - docs/Models/Components/MessagingMember.md
   - docs/Models/Components/MessagingMessage.md
-  - docs/Models/Components/Meta.md
   - docs/Models/Components/MetadataMetadata.md
   - docs/Models/Components/MetadataMetadataRaw.md
   - docs/Models/Components/NativeWebhookParentId.md
@@ -1673,7 +1670,6 @@ generatedFiles:
   - docs/Models/Components/PropertyCalendarRecordingTranscriptAttendeeStatus.md
   - docs/Models/Components/PropertyCommerceLocationAddress.md
   - docs/Models/Components/PropertyConnectionAuth.md
-  - docs/Models/Components/PropertyConnectionAuthMeta.md
   - docs/Models/Components/PropertyConnectionCategories.md
   - docs/Models/Components/PropertyConnectionPermissions.md
   - docs/Models/Components/PropertyCrmCompanyAddress.md
