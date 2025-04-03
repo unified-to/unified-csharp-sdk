@@ -162,7 +162,7 @@ namespace UnifiedTo.Models.Components
         public ListUserId? ListUserId { get; set; }
 
         [JsonProperty("methods")]
-        public Dictionary<string, bool>? Methods { get; set; }
+        public Dictionary<string, object>? Methods { get; set; }
 
         [JsonProperty("native_webhook_parent_id")]
         public NativeWebhookParentId? NativeWebhookParentId { get; set; }

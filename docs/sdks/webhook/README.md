@@ -261,7 +261,7 @@ var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
         Event = Event.Created,
-        ObjectType = ObjectType.PaymentPayout,
+        ObjectType = ObjectType.PaymentLink,
     },
     id: "<id>"
 );

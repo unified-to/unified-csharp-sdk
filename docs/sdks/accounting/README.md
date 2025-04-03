@@ -18,6 +18,7 @@
 * [GetAccountingJournal](#getaccountingjournal) - Retrieve a journal
 * [GetAccountingOrder](#getaccountingorder) - Retrieve an order
 * [GetAccountingOrganization](#getaccountingorganization) - Retrieve an organization
+* [GetAccountingReport](#getaccountingreport) - Retrieve a report
 * [GetAccountingTaxrate](#getaccountingtaxrate) - Retrieve a taxrate
 * [GetAccountingTransaction](#getaccountingtransaction) - Retrieve a transaction
 * [ListAccountingAccounts](#listaccountingaccounts) - List all accounts
@@ -26,6 +27,7 @@
 * [ListAccountingJournals](#listaccountingjournals) - List all journals
 * [ListAccountingOrders](#listaccountingorders) - List all orders
 * [ListAccountingOrganizations](#listaccountingorganizations) - List all organizations
+* [ListAccountingReports](#listaccountingreports) - List all reports
 * [ListAccountingTaxrates](#listaccountingtaxrates) - List all taxrates
 * [ListAccountingTransactions](#listaccountingtransactions) - List all transactions
 * [PatchAccountingAccount](#patchaccountingaccount) - Update an account
@@ -622,6 +624,50 @@ var res = await sdk.Accounting.GetAccountingOrganizationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetAccountingReport
+
+Retrieve a report
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.GetAccountingReportAsync(
+    connectionId: "<id>",
+    id: "<id>",
+    fields: new List<string>() {
+        "<value>",
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Report                 |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+### Response
+
+**[GetAccountingReportResponse](../../Models/Requests/GetAccountingReportResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## GetAccountingTaxrate
 
 Retrieve a taxrate
@@ -943,6 +989,46 @@ var res = await sdk.Accounting.ListAccountingOrganizationsAsync(req);
 ### Response
 
 **[ListAccountingOrganizationsResponse](../../Models/Requests/ListAccountingOrganizationsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListAccountingReports
+
+List all reports
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListAccountingReportsRequest req = new ListAccountingReportsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Accounting.ListAccountingReportsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListAccountingReportsRequest](../../Models/Requests/ListAccountingReportsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+
+### Response
+
+**[ListAccountingReportsResponse](../../Models/Requests/ListAccountingReportsResponse.md)**
 
 ### Errors
 

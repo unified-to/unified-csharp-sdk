@@ -47,6 +47,10 @@ namespace UnifiedTo.Models.Components
         AccountingOrderRead,
         [JsonProperty("accounting_order_write")]
         AccountingOrderWrite,
+        [JsonProperty("accounting_report_read")]
+        AccountingReportRead,
+        [JsonProperty("accounting_report_write")]
+        AccountingReportWrite,
         [JsonProperty("payment_payment_read")]
         PaymentPaymentRead,
         [JsonProperty("payment_payment_write")]

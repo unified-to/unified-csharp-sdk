@@ -49,7 +49,7 @@ namespace UnifiedTo.Models.Components
         public string? Fields { get; set; }
 
         [JsonProperty("filters")]
-        public Dictionary<string, string>? Filters { get; set; }
+        public Dictionary<string, object>? Filters { get; set; }
 
         [JsonProperty("hook_url")]
         public string? HookUrl { get; set; }

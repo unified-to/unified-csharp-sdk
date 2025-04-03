@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: b86a0a7e009b89c881979b0459cdcf9b
+  docChecksum: 17d655d886642d9b7380dfa9cd15cb96
   docVersion: "1.0"
-  speakeasyVersion: 1.526.6
-  generationVersion: 2.563.1
-  releaseVersion: 0.22.27
-  configChecksum: d937918ba7b4677588ea860da2455c2e
+  speakeasyVersion: 1.528.1
+  generationVersion: 2.565.1
+  releaseVersion: 0.22.28
+  configChecksum: f8814ef15644e5149d8c2b36ae88a5bc
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -107,6 +107,9 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingOrderType.cs
   - UnifiedTo/Models/Components/AccountingOrganization.cs
   - UnifiedTo/Models/Components/AccountingOrganizationRaw.cs
+  - UnifiedTo/Models/Components/AccountingReport.cs
+  - UnifiedTo/Models/Components/AccountingReportRaw.cs
+  - UnifiedTo/Models/Components/AccountingReportType.cs
   - UnifiedTo/Models/Components/AccountingTaxrate.cs
   - UnifiedTo/Models/Components/AccountingTaxrateRaw.cs
   - UnifiedTo/Models/Components/AccountingTelephone.cs
@@ -642,6 +645,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetAccountingOrderResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingOrganizationRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingOrganizationResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingReportRequest.cs
+  - UnifiedTo/Models/Requests/GetAccountingReportResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingTaxrateResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingTransactionRequest.cs
@@ -788,6 +793,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListAccountingOrdersResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingOrganizationsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingOrganizationsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingReportsRequest.cs
+  - UnifiedTo/Models/Requests/ListAccountingReportsResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingTaxratesRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingTaxratesResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingTransactionsRequest.cs
@@ -1342,6 +1349,7 @@ generatedFiles:
   - UnifiedTo/Recording.cs
   - UnifiedTo/Refund.cs
   - UnifiedTo/Repo.cs
+  - UnifiedTo/Report.cs
   - UnifiedTo/Repository.cs
   - UnifiedTo/Scim.cs
   - UnifiedTo/Scorecard.cs
@@ -1399,6 +1407,9 @@ generatedFiles:
   - docs/Models/Components/AccountingOrderType.md
   - docs/Models/Components/AccountingOrganization.md
   - docs/Models/Components/AccountingOrganizationRaw.md
+  - docs/Models/Components/AccountingReport.md
+  - docs/Models/Components/AccountingReportRaw.md
+  - docs/Models/Components/AccountingReportType.md
   - docs/Models/Components/AccountingTaxrate.md
   - docs/Models/Components/AccountingTaxrateRaw.md
   - docs/Models/Components/AccountingTelephone.md
@@ -1933,6 +1944,8 @@ generatedFiles:
   - docs/Models/Requests/GetAccountingOrderResponse.md
   - docs/Models/Requests/GetAccountingOrganizationRequest.md
   - docs/Models/Requests/GetAccountingOrganizationResponse.md
+  - docs/Models/Requests/GetAccountingReportRequest.md
+  - docs/Models/Requests/GetAccountingReportResponse.md
   - docs/Models/Requests/GetAccountingTaxrateRequest.md
   - docs/Models/Requests/GetAccountingTaxrateResponse.md
   - docs/Models/Requests/GetAccountingTransactionRequest.md
@@ -2079,6 +2092,8 @@ generatedFiles:
   - docs/Models/Requests/ListAccountingOrdersResponse.md
   - docs/Models/Requests/ListAccountingOrganizationsRequest.md
   - docs/Models/Requests/ListAccountingOrganizationsResponse.md
+  - docs/Models/Requests/ListAccountingReportsRequest.md
+  - docs/Models/Requests/ListAccountingReportsResponse.md
   - docs/Models/Requests/ListAccountingTaxratesRequest.md
   - docs/Models/Requests/ListAccountingTaxratesResponse.md
   - docs/Models/Requests/ListAccountingTransactionsRequest.md
@@ -2689,6 +2704,7 @@ generatedFiles:
   - docs/sdks/recording/README.md
   - docs/sdks/refund/README.md
   - docs/sdks/repo/README.md
+  - docs/sdks/report/README.md
   - docs/sdks/repository/README.md
   - docs/sdks/scim/README.md
   - docs/sdks/scorecard/README.md
@@ -6772,5 +6788,24 @@ examples:
       responses:
         "200":
           application/json: {"url": "https://standard-birth.info/"}
+  getAccountingReport:
+    speakeasy-default-get-accounting-report:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {}
+  listAccountingReports:
+    speakeasy-default-list-accounting-reports:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{}, {}, {}]
 examplesVersion: 1.0.0
 generatedTests: {}

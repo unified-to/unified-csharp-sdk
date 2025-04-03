@@ -61,6 +61,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [GetAccountingJournal](docs/sdks/accounting/README.md#getaccountingjournal) - Retrieve a journal
 * [GetAccountingOrder](docs/sdks/accounting/README.md#getaccountingorder) - Retrieve an order
 * [GetAccountingOrganization](docs/sdks/accounting/README.md#getaccountingorganization) - Retrieve an organization
+* [GetAccountingReport](docs/sdks/accounting/README.md#getaccountingreport) - Retrieve a report
 * [GetAccountingTaxrate](docs/sdks/accounting/README.md#getaccountingtaxrate) - Retrieve a taxrate
 * [GetAccountingTransaction](docs/sdks/accounting/README.md#getaccountingtransaction) - Retrieve a transaction
 * [ListAccountingAccounts](docs/sdks/accounting/README.md#listaccountingaccounts) - List all accounts
@@ -69,6 +70,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [ListAccountingJournals](docs/sdks/accounting/README.md#listaccountingjournals) - List all journals
 * [ListAccountingOrders](docs/sdks/accounting/README.md#listaccountingorders) - List all orders
 * [ListAccountingOrganizations](docs/sdks/accounting/README.md#listaccountingorganizations) - List all organizations
+* [ListAccountingReports](docs/sdks/accounting/README.md#listaccountingreports) - List all reports
 * [ListAccountingTaxrates](docs/sdks/accounting/README.md#listaccountingtaxrates) - List all taxrates
 * [ListAccountingTransactions](docs/sdks/accounting/README.md#listaccountingtransactions) - List all transactions
 * [PatchAccountingAccount](docs/sdks/accounting/README.md#patchaccountingaccount) - Update an account
@@ -900,6 +902,11 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [UpdateRepoOrganization](docs/sdks/repo/README.md#updaterepoorganization) - Update an organization
 * [UpdateRepoPullrequest](docs/sdks/repo/README.md#updaterepopullrequest) - Update a pullrequest
 * [UpdateRepoRepository](docs/sdks/repo/README.md#updatereporepository) - Update a repository
+
+### [Report](docs/sdks/report/README.md)
+
+* [GetAccountingReport](docs/sdks/report/README.md#getaccountingreport) - Retrieve a report
+* [ListAccountingReports](docs/sdks/report/README.md#listaccountingreports) - List all reports
 
 ### [Repository](docs/sdks/repository/README.md)
 

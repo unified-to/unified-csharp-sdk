@@ -47,7 +47,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.MartechListRead,
+        PropertyConnectionPermissions.CrmPipelineWrite,
     },
 };
 
@@ -753,7 +753,7 @@ var res = await sdk.Unified.UpdateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
         Event = Event.Created,
-        ObjectType = ObjectType.PaymentPayout,
+        ObjectType = ObjectType.PaymentLink,
     },
     id: "<id>"
 );

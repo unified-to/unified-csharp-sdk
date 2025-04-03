@@ -31,6 +31,8 @@ namespace UnifiedTo.Models.Components
         AccountingOrganization,
         [JsonProperty("accounting_order")]
         AccountingOrder,
+        [JsonProperty("accounting_report")]
+        AccountingReport,
         [JsonProperty("payment_payment")]
         PaymentPayment,
         [JsonProperty("payment_link")]
