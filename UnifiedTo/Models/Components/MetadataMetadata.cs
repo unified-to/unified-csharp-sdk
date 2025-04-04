@@ -45,6 +45,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public MetadataMetadataRaw? Raw { get; set; }
 
+        [JsonProperty("slug")]
+        public string? Slug { get; set; }
+
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
     }

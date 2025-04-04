@@ -111,6 +111,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("ssn_sin")]
         public string? SsnSin { get; set; }
 
+        [JsonProperty("storage_quota_allocated")]
+        public double? StorageQuotaAllocated { get; set; }
+
+        [JsonProperty("storage_quota_available")]
+        public double? StorageQuotaAvailable { get; set; }
+
+        [JsonProperty("storage_quota_used")]
+        public double? StorageQuotaUsed { get; set; }
+
         [JsonProperty("telephones")]
         public List<HrisTelephone>? Telephones { get; set; }
 
