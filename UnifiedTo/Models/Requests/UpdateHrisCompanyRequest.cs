@@ -26,15 +26,15 @@ namespace UnifiedTo.Models.Requests
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
-        /// ID of the Company
-        /// </summary>
-        [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
-        public string Id { get; set; } = default!;
-
-        /// <summary>
         /// Comma-delimited fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<string>? Fields { get; set; }
+
+        /// <summary>
+        /// ID of the Company
+        /// </summary>
+        [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
+        public string Id { get; set; } = default!;
     }
 }

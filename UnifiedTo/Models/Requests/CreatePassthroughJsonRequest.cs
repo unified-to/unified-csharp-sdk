@@ -15,6 +15,12 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
+        /// integration-specific payload
+        /// </summary>
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public object? RequestBody { get; set; }
+
+        /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
@@ -22,11 +28,5 @@ namespace UnifiedTo.Models.Requests
 
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=path")]
         public string Path { get; set; } = default!;
-
-        /// <summary>
-        /// integration-specific payload
-        /// </summary>
-        [SpeakeasyMetadata("request:mediaType=application/json")]
-        public object? RequestBody { get; set; }
     }
 }

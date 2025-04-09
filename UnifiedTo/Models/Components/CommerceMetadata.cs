@@ -13,25 +13,28 @@ namespace UnifiedTo.Models.Components
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class CommerceItemMetadata
+    public class CommerceMetadata
     {
 
         [JsonProperty("extra_data")]
-        public CommerceItemMetadataExtraData? ExtraData { get; set; }
+        public CommerceMetadataExtraData? ExtraData { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
         [JsonProperty("key")]
-        public string Key { get; set; } = default!;
+        public string? Key { get; set; }
 
         [JsonProperty("namespace")]
         public string? Namespace { get; set; }
+
+        [JsonProperty("slug")]
+        public string? Slug { get; set; }
 
         [JsonProperty("type")]
         public string? Type { get; set; }
 
         [JsonProperty("value")]
-        public CommerceItemMetadataValue? Value { get; set; }
+        public CommerceMetadataValue? Value { get; set; }
     }
 }

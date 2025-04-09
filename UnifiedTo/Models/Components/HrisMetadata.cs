@@ -23,10 +23,13 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         [JsonProperty("key")]
-        public string Key { get; set; } = default!;
+        public string? Key { get; set; }
 
         [JsonProperty("namespace")]
         public string? Namespace { get; set; }
+
+        [JsonProperty("slug")]
+        public string? Slug { get; set; }
 
         [JsonProperty("type")]
         public string? Type { get; set; }

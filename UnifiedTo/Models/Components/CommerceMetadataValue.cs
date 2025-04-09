@@ -11,7 +11,7 @@ namespace UnifiedTo.Models.Components
 {
     using UnifiedTo.Utils;
     
-    public class CommerceItemMetadataExtraData
+    public class CommerceMetadataValue
     {
     }
 }

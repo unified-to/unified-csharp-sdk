@@ -27,7 +27,7 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         [JsonProperty("metadata")]
-        public List<CommerceItemMetadata>? Metadata { get; set; }
+        public List<CommerceMetadata>? Metadata { get; set; }
 
         [JsonProperty("position")]
         public double? Position { get; set; }
