@@ -299,6 +299,10 @@ namespace UnifiedTo.Models.Components
         CalendarRecordingRead,
         [JsonProperty("calendar_recording_write")]
         CalendarRecordingWrite,
+        [JsonProperty("enrich_person_read")]
+        EnrichPersonRead,
+        [JsonProperty("enrich_company_read")]
+        EnrichCompanyRead,
     }
 
     public static class PropertyConnectionPermissionsExtension

@@ -47,7 +47,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.CrmPipelineWrite,
+        PropertyConnectionPermissions.MartechListRead,
     },
 };
 
@@ -513,7 +513,7 @@ var res = await sdk.Unified.PatchUnifiedConnectionAsync(
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            PropertyConnectionPermissions.CalendarRecordingWrite,
+            PropertyConnectionPermissions.EnrichCompanyRead,
         },
     },
     id: "<id>"
@@ -709,7 +709,7 @@ var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            PropertyConnectionPermissions.CalendarLinkWrite,
+            PropertyConnectionPermissions.CalendarRecordingWrite,
         },
     },
     id: "<id>"
