@@ -67,7 +67,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? PostedAt { get; set; }
 
         [JsonProperty("raw")]
-        public AccountingInvoiceRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("refund_amount")]
         public double? RefundAmount { get; set; }

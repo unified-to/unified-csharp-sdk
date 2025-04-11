@@ -43,7 +43,7 @@ namespace UnifiedTo.Models.Components
         public string? OriginalFormat { get; set; }
 
         [JsonProperty("raw")]
-        public MetadataMetadataRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("slug")]
         public string? Slug { get; set; }

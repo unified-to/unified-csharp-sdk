@@ -37,7 +37,7 @@ namespace UnifiedTo.Models.Components
         public List<CalendarRecordingMedia>? Media { get; set; }
 
         [JsonProperty("raw")]
-        public CalendarRecordingRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }

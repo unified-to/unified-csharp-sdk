@@ -82,7 +82,7 @@ namespace UnifiedTo.Models.Components
         public PropertyCrmEventPageView? PageView { get; set; }
 
         [JsonProperty("raw")]
-        public CrmEventRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         /// <summary>
         /// The task object, when type = task

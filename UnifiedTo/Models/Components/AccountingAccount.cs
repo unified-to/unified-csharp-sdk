@@ -11,6 +11,7 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
@@ -51,7 +52,7 @@ namespace UnifiedTo.Models.Components
         public string? ParentAccountId { get; set; }
 
         [JsonProperty("raw")]
-        public Raw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("section")]
         public string? Section { get; set; }

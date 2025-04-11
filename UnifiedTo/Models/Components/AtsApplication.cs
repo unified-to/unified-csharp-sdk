@@ -49,7 +49,7 @@ namespace UnifiedTo.Models.Components
         public string? OriginalStatus { get; set; }
 
         [JsonProperty("raw")]
-        public AtsApplicationRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("rejected_at")]
         public DateTime? RejectedAt { get; set; }

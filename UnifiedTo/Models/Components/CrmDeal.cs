@@ -61,7 +61,7 @@ namespace UnifiedTo.Models.Components
         public double? Probability { get; set; }
 
         [JsonProperty("raw")]
-        public CrmDealRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("source")]
         public string? Source { get; set; }

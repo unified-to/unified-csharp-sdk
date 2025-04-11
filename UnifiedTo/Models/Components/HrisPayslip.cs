@@ -49,7 +49,7 @@ namespace UnifiedTo.Models.Components
         public PaymentType? PaymentType { get; set; }
 
         [JsonProperty("raw")]
-        public HrisPayslipRaw Raw { get; set; } = default!;
+        public Dictionary<string, object> Raw { get; set; } = default!;
 
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }

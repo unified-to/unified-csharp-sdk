@@ -40,7 +40,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? PostedAt { get; set; }
 
         [JsonProperty("raw")]
-        public AccountingJournalRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("reference")]
         public string? Reference { get; set; }

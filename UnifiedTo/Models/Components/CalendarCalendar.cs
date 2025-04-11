@@ -11,7 +11,7 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
-    using UnifiedTo.Models.Components;
+    using System.Collections.Generic;
     using UnifiedTo.Utils;
     
     public class CalendarCalendar
@@ -33,7 +33,7 @@ namespace UnifiedTo.Models.Components
         public bool? Primary { get; set; }
 
         [JsonProperty("raw")]
-        public CalendarCalendarRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("timezone")]
         public string? Timezone { get; set; }

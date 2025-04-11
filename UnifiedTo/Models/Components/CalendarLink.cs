@@ -10,7 +10,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
-    using UnifiedTo.Models.Components;
+    using System.Collections.Generic;
     using UnifiedTo.Utils;
     
     public class CalendarLink
@@ -41,7 +41,7 @@ namespace UnifiedTo.Models.Components
         public string? PriceCurrency { get; set; }
 
         [JsonProperty("raw")]
-        public CalendarLinkRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("updated_at")]
         public string? UpdatedAt { get; set; }

@@ -11,7 +11,7 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
-    using UnifiedTo.Models.Components;
+    using System.Collections.Generic;
     using UnifiedTo.Utils;
     
     public class CalendarBusy
@@ -27,7 +27,7 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         [JsonProperty("raw")]
-        public CalendarBusyRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("start_at")]
         public DateTime StartAt { get; set; } = default!;

@@ -11,7 +11,7 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
-    using UnifiedTo.Models.Components;
+    using System.Collections.Generic;
     using UnifiedTo.Utils;
     
     public class AccountingTaxrate
@@ -36,7 +36,7 @@ namespace UnifiedTo.Models.Components
         public double? Rate { get; set; }
 
         [JsonProperty("raw")]
-        public AccountingTaxrateRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

@@ -64,7 +64,7 @@ namespace UnifiedTo.Models.Components
         public string? Name { get; set; }
 
         [JsonProperty("raw")]
-        public CrmContactRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         /// <summary>
         /// An array of telephones for this contact

@@ -40,7 +40,7 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         [JsonProperty("raw")]
-        public AtsOfferRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("rejected_at")]
         public DateTime? RejectedAt { get; set; }

@@ -52,7 +52,7 @@ namespace UnifiedTo.Models.Components
         public string? ParentId { get; set; }
 
         [JsonProperty("raw")]
-        public HrisLocationRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("telephones")]
         public List<HrisTelephone>? Telephones { get; set; }

@@ -51,7 +51,7 @@ namespace UnifiedTo.Models.Components
         public PropertyCalendarEventOrganizer? Organizer { get; set; }
 
         [JsonProperty("raw")]
-        public CalendarEventRaw? Raw { get; set; }
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("start_at")]
         public string StartAt { get; set; } = default!;
