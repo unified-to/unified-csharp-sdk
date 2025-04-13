@@ -1119,6 +1119,7 @@ You can override the default server globally by passing a server index to the `s
 | --- | --------------------------- | -------------------------- |
 | 0   | `https://api.unified.to`    | North American data region |
 | 1   | `https://api-eu.unified.to` | European data region       |
+| 2   | `https://api-au.unified.to` | Australian data region     |
 
 #### Example
 
@@ -1128,7 +1129,7 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(
-    serverIndex: 1,
+    serverIndex: 2,
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     }
