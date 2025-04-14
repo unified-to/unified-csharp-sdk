@@ -5,5 +5,5 @@
 
 | Name         | Value        |
 | ------------ | ------------ |
-| `PageInline` | PAGE-INLINE  |
+| `PageInline` | PAGE_INLINE  |
 | `Page`       | PAGE         |

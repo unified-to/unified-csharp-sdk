@@ -15,7 +15,7 @@ namespace UnifiedTo.Models.Components
     
     public enum KmsCommentType
     {
-        [JsonProperty("PAGE-INLINE")]
+        [JsonProperty("PAGE_INLINE")]
         PageInline,
         [JsonProperty("PAGE")]
         Page,
