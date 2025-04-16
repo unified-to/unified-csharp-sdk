@@ -18,6 +18,9 @@ namespace UnifiedTo.Models.Components
     public class AccountingInvoice
     {
 
+        [JsonProperty("attachments")]
+        public List<AccountingAttachment>? Attachments { get; set; }
+
         [JsonProperty("balance_amount")]
         public double? BalanceAmount { get; set; }
 

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: f8c33b302b35d5dce19e700a53e8ea50
+  docChecksum: ce6ebc30e4ad046db9275dc804220d8b
   docVersion: "1.0"
-  speakeasyVersion: 1.531.4
-  generationVersion: 2.570.4
-  releaseVersion: 0.22.34
-  configChecksum: 6ae7c9ac90a67838b254425bd0ffb492
+  speakeasyVersion: 1.533.0
+  generationVersion: 2.578.0
+  releaseVersion: 0.22.35
+  configChecksum: f4f990a956b6803c2a108ea13c76de5f
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -87,6 +87,7 @@ generatedFiles:
   - UnifiedTo/Metadata.cs
   - UnifiedTo/Model.cs
   - UnifiedTo/Models/Components/AccountingAccount.cs
+  - UnifiedTo/Models/Components/AccountingAttachment.cs
   - UnifiedTo/Models/Components/AccountingContact.cs
   - UnifiedTo/Models/Components/AccountingContactPaymentMethod.cs
   - UnifiedTo/Models/Components/AccountingContactPaymentMethodType.cs
@@ -1346,6 +1347,7 @@ generatedFiles:
   - UnifiedTo/Utils/Utilities.cs
   - UnifiedTo/Webhook.cs
   - docs/Models/Components/AccountingAccount.md
+  - docs/Models/Components/AccountingAttachment.md
   - docs/Models/Components/AccountingContact.md
   - docs/Models/Components/AccountingContactPaymentMethod.md
   - docs/Models/Components/AccountingContactPaymentMethodType.md
