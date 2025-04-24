@@ -6,30 +6,36 @@
 ### Available Operations
 
 * [CreateHrisCompany](#createhriscompany) - Create a company
+* [CreateHrisDevice](#createhrisdevice) - Create a device
 * [CreateHrisEmployee](#createhrisemployee) - Create an employee
 * [CreateHrisGroup](#createhrisgroup) - Create a group
 * [CreateHrisLocation](#createhrislocation) - Create a location
 * [GetHrisCompany](#gethriscompany) - Retrieve a company
+* [GetHrisDevice](#gethrisdevice) - Retrieve a device
 * [GetHrisEmployee](#gethrisemployee) - Retrieve an employee
 * [GetHrisGroup](#gethrisgroup) - Retrieve a group
 * [GetHrisLocation](#gethrislocation) - Retrieve a location
 * [GetHrisPayslip](#gethrispayslip) - Retrieve a payslip
 * [GetHrisTimeoff](#gethristimeoff) - Retrieve a timeoff
 * [ListHrisCompanies](#listhriscompanies) - List all companies
+* [ListHrisDevices](#listhrisdevices) - List all devices
 * [ListHrisEmployees](#listhrisemployees) - List all employees
 * [ListHrisGroups](#listhrisgroups) - List all groups
 * [ListHrisLocations](#listhrislocations) - List all locations
 * [ListHrisPayslips](#listhrispayslips) - List all payslips
 * [ListHrisTimeoffs](#listhristimeoffs) - List all timeoffs
 * [PatchHrisCompany](#patchhriscompany) - Update a company
+* [PatchHrisDevice](#patchhrisdevice) - Update a device
 * [PatchHrisEmployee](#patchhrisemployee) - Update an employee
 * [PatchHrisGroup](#patchhrisgroup) - Update a group
 * [PatchHrisLocation](#patchhrislocation) - Update a location
 * [RemoveHrisCompany](#removehriscompany) - Remove a company
+* [RemoveHrisDevice](#removehrisdevice) - Remove a device
 * [RemoveHrisEmployee](#removehrisemployee) - Remove an employee
 * [RemoveHrisGroup](#removehrisgroup) - Remove a group
 * [RemoveHrisLocation](#removehrislocation) - Remove a location
 * [UpdateHrisCompany](#updatehriscompany) - Update a company
+* [UpdateHrisDevice](#updatehrisdevice) - Update a device
 * [UpdateHrisEmployee](#updatehrisemployee) - Update an employee
 * [UpdateHrisGroup](#updatehrisgroup) - Update a group
 * [UpdateHrisLocation](#updatehrislocation) - Update a location
@@ -71,6 +77,52 @@ var res = await sdk.Hris.CreateHrisCompanyAsync(
 ### Response
 
 **[CreateHrisCompanyResponse](../../Models/Requests/CreateHrisCompanyResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateHrisDevice
+
+Create a device
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.CreateHrisDeviceAsync(
+    hrisDevice: new HrisDevice() {
+        Name = "<value>",
+    },
+    connectionId: "<id>",
+    fields: new List<string>() {
+        "<value>",
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                           | Type                                                | Required                                            | Description                                         |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `HrisDevice`                                        | [HrisDevice](../../Models/Components/HrisDevice.md) | :heavy_check_mark:                                  | N/A                                                 |
+| `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
+| `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
+
+### Response
+
+**[CreateHrisDeviceResponse](../../Models/Requests/CreateHrisDeviceResponse.md)**
 
 ### Errors
 
@@ -247,6 +299,50 @@ var res = await sdk.Hris.GetHrisCompanyAsync(
 ### Response
 
 **[GetHrisCompanyResponse](../../Models/Requests/GetHrisCompanyResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetHrisDevice
+
+Retrieve a device
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.GetHrisDeviceAsync(
+    connectionId: "<id>",
+    id: "<id>",
+    fields: new List<string>() {
+        "<value>",
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                        | Type                             | Required                         | Description                      |
+| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
+| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
+| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Device                 |
+| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+
+### Response
+
+**[GetHrisDeviceResponse](../../Models/Requests/GetHrisDeviceResponse.md)**
 
 ### Errors
 
@@ -514,6 +610,46 @@ var res = await sdk.Hris.ListHrisCompaniesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListHrisDevices
+
+List all devices
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHrisDevicesRequest req = new ListHrisDevicesRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Hris.ListHrisDevicesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [ListHrisDevicesRequest](../../Models/Requests/ListHrisDevicesRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+
+### Response
+
+**[ListHrisDevicesResponse](../../Models/Requests/ListHrisDevicesResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListHrisEmployees
 
 List all employees
@@ -760,6 +896,54 @@ var res = await sdk.Hris.PatchHrisCompanyAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchHrisDevice
+
+Update a device
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.PatchHrisDeviceAsync(
+    hrisDevice: new HrisDevice() {
+        Name = "<value>",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+    fields: new List<string>() {
+        "<value>",
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                           | Type                                                | Required                                            | Description                                         |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `HrisDevice`                                        | [HrisDevice](../../Models/Components/HrisDevice.md) | :heavy_check_mark:                                  | N/A                                                 |
+| `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
+| `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Device                                    |
+| `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
+
+### Response
+
+**[PatchHrisDeviceResponse](../../Models/Requests/PatchHrisDeviceResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchHrisEmployee
 
 Update an employee
@@ -937,6 +1121,45 @@ var res = await sdk.Hris.RemoveHrisCompanyAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## RemoveHrisDevice
+
+Remove a device
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.RemoveHrisDeviceAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Device     |
+
+### Response
+
+**[RemoveHrisDeviceResponse](../../Models/Requests/RemoveHrisDeviceResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## RemoveHrisEmployee
 
 Remove an employee
@@ -1093,6 +1316,54 @@ var res = await sdk.Hris.UpdateHrisCompanyAsync(
 ### Response
 
 **[UpdateHrisCompanyResponse](../../Models/Requests/UpdateHrisCompanyResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateHrisDevice
+
+Update a device
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.UpdateHrisDeviceAsync(
+    hrisDevice: new HrisDevice() {
+        Name = "<value>",
+    },
+    connectionId: "<id>",
+    id: "<id>",
+    fields: new List<string>() {
+        "<value>",
+    }
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                           | Type                                                | Required                                            | Description                                         |
+| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| `HrisDevice`                                        | [HrisDevice](../../Models/Components/HrisDevice.md) | :heavy_check_mark:                                  | N/A                                                 |
+| `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
+| `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Device                                    |
+| `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
+
+### Response
+
+**[UpdateHrisDeviceResponse](../../Models/Requests/UpdateHrisDeviceResponse.md)**
 
 ### Errors
 

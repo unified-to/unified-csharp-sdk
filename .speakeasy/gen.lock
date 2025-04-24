@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 55f4dd2a712f44154e41aa0daba1b8ca
+  docChecksum: 8813ee1f8602d4e03a2488861b978482
   docVersion: "1.0"
-  speakeasyVersion: 1.533.0
-  generationVersion: 2.578.0
-  releaseVersion: 0.22.36
-  configChecksum: 7e49f4a824f78058f81495f7ba80137e
+  speakeasyVersion: 1.538.0
+  generationVersion: 2.591.1
+  releaseVersion: 0.22.37
+  configChecksum: 2ffbf43d3bbbd4dc8042fe7492818b36
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -54,6 +54,7 @@ generatedFiles:
   - UnifiedTo/Crm.cs
   - UnifiedTo/Customer.cs
   - UnifiedTo/Deal.cs
+  - UnifiedTo/Device.cs
   - UnifiedTo/Document.cs
   - UnifiedTo/Employee.cs
   - UnifiedTo/Enrich.cs
@@ -87,6 +88,7 @@ generatedFiles:
   - UnifiedTo/Metadata.cs
   - UnifiedTo/Model.cs
   - UnifiedTo/Models/Components/AccountingAccount.cs
+  - UnifiedTo/Models/Components/AccountingAssociatedContact.cs
   - UnifiedTo/Models/Components/AccountingAttachment.cs
   - UnifiedTo/Models/Components/AccountingContact.cs
   - UnifiedTo/Models/Components/AccountingContactPaymentMethod.cs
@@ -134,6 +136,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/AtsInterview.cs
   - UnifiedTo/Models/Components/AtsInterviewStatus.cs
   - UnifiedTo/Models/Components/AtsJob.cs
+  - UnifiedTo/Models/Components/AtsJobOpening.cs
+  - UnifiedTo/Models/Components/AtsJobOpeningStatus.cs
   - UnifiedTo/Models/Components/AtsJobPosting.cs
   - UnifiedTo/Models/Components/AtsJobQuestion.cs
   - UnifiedTo/Models/Components/AtsJobQuestionType.cs
@@ -214,6 +218,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/HrisCompensation.cs
   - UnifiedTo/Models/Components/HrisCompensationFrequency.cs
   - UnifiedTo/Models/Components/HrisCompensationType.cs
+  - UnifiedTo/Models/Components/HrisDevice.cs
   - UnifiedTo/Models/Components/HrisEmail.cs
   - UnifiedTo/Models/Components/HrisEmailType.cs
   - UnifiedTo/Models/Components/HrisEmployee.cs
@@ -522,6 +527,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateGenaiPromptResponse.cs
   - UnifiedTo/Models/Requests/CreateHrisCompanyRequest.cs
   - UnifiedTo/Models/Requests/CreateHrisCompanyResponse.cs
+  - UnifiedTo/Models/Requests/CreateHrisDeviceRequest.cs
+  - UnifiedTo/Models/Requests/CreateHrisDeviceResponse.cs
   - UnifiedTo/Models/Requests/CreateHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/CreateHrisEmployeeResponse.cs
   - UnifiedTo/Models/Requests/CreateHrisGroupRequest.cs
@@ -657,6 +664,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetCrmPipelineResponse.cs
   - UnifiedTo/Models/Requests/GetHrisCompanyRequest.cs
   - UnifiedTo/Models/Requests/GetHrisCompanyResponse.cs
+  - UnifiedTo/Models/Requests/GetHrisDeviceRequest.cs
+  - UnifiedTo/Models/Requests/GetHrisDeviceResponse.cs
   - UnifiedTo/Models/Requests/GetHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/GetHrisEmployeeResponse.cs
   - UnifiedTo/Models/Requests/GetHrisGroupRequest.cs
@@ -815,6 +824,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListGenaiModelsResponse.cs
   - UnifiedTo/Models/Requests/ListHrisCompaniesRequest.cs
   - UnifiedTo/Models/Requests/ListHrisCompaniesResponse.cs
+  - UnifiedTo/Models/Requests/ListHrisDevicesRequest.cs
+  - UnifiedTo/Models/Requests/ListHrisDevicesResponse.cs
   - UnifiedTo/Models/Requests/ListHrisEmployeesRequest.cs
   - UnifiedTo/Models/Requests/ListHrisEmployeesResponse.cs
   - UnifiedTo/Models/Requests/ListHrisGroupsRequest.cs
@@ -962,6 +973,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchCrmPipelineResponse.cs
   - UnifiedTo/Models/Requests/PatchHrisCompanyRequest.cs
   - UnifiedTo/Models/Requests/PatchHrisCompanyResponse.cs
+  - UnifiedTo/Models/Requests/PatchHrisDeviceRequest.cs
+  - UnifiedTo/Models/Requests/PatchHrisDeviceResponse.cs
   - UnifiedTo/Models/Requests/PatchHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/PatchHrisEmployeeResponse.cs
   - UnifiedTo/Models/Requests/PatchHrisGroupRequest.cs
@@ -1093,6 +1106,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveCrmPipelineResponse.cs
   - UnifiedTo/Models/Requests/RemoveHrisCompanyRequest.cs
   - UnifiedTo/Models/Requests/RemoveHrisCompanyResponse.cs
+  - UnifiedTo/Models/Requests/RemoveHrisDeviceRequest.cs
+  - UnifiedTo/Models/Requests/RemoveHrisDeviceResponse.cs
   - UnifiedTo/Models/Requests/RemoveHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/RemoveHrisEmployeeResponse.cs
   - UnifiedTo/Models/Requests/RemoveHrisGroupRequest.cs
@@ -1219,6 +1234,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateCrmPipelineResponse.cs
   - UnifiedTo/Models/Requests/UpdateHrisCompanyRequest.cs
   - UnifiedTo/Models/Requests/UpdateHrisCompanyResponse.cs
+  - UnifiedTo/Models/Requests/UpdateHrisDeviceRequest.cs
+  - UnifiedTo/Models/Requests/UpdateHrisDeviceResponse.cs
   - UnifiedTo/Models/Requests/UpdateHrisEmployeeRequest.cs
   - UnifiedTo/Models/Requests/UpdateHrisEmployeeResponse.cs
   - UnifiedTo/Models/Requests/UpdateHrisGroupRequest.cs
@@ -1347,6 +1364,7 @@ generatedFiles:
   - UnifiedTo/Utils/Utilities.cs
   - UnifiedTo/Webhook.cs
   - docs/Models/Components/AccountingAccount.md
+  - docs/Models/Components/AccountingAssociatedContact.md
   - docs/Models/Components/AccountingAttachment.md
   - docs/Models/Components/AccountingContact.md
   - docs/Models/Components/AccountingContactPaymentMethod.md
@@ -1394,6 +1412,8 @@ generatedFiles:
   - docs/Models/Components/AtsInterview.md
   - docs/Models/Components/AtsInterviewStatus.md
   - docs/Models/Components/AtsJob.md
+  - docs/Models/Components/AtsJobOpening.md
+  - docs/Models/Components/AtsJobOpeningStatus.md
   - docs/Models/Components/AtsJobPosting.md
   - docs/Models/Components/AtsJobQuestion.md
   - docs/Models/Components/AtsJobQuestionType.md
@@ -1474,6 +1494,7 @@ generatedFiles:
   - docs/Models/Components/HrisCompensation.md
   - docs/Models/Components/HrisCompensationFrequency.md
   - docs/Models/Components/HrisCompensationType.md
+  - docs/Models/Components/HrisDevice.md
   - docs/Models/Components/HrisEmail.md
   - docs/Models/Components/HrisEmailType.md
   - docs/Models/Components/HrisEmployee.md
@@ -1781,6 +1802,8 @@ generatedFiles:
   - docs/Models/Requests/CreateGenaiPromptResponse.md
   - docs/Models/Requests/CreateHrisCompanyRequest.md
   - docs/Models/Requests/CreateHrisCompanyResponse.md
+  - docs/Models/Requests/CreateHrisDeviceRequest.md
+  - docs/Models/Requests/CreateHrisDeviceResponse.md
   - docs/Models/Requests/CreateHrisEmployeeRequest.md
   - docs/Models/Requests/CreateHrisEmployeeResponse.md
   - docs/Models/Requests/CreateHrisGroupRequest.md
@@ -1916,6 +1939,8 @@ generatedFiles:
   - docs/Models/Requests/GetCrmPipelineResponse.md
   - docs/Models/Requests/GetHrisCompanyRequest.md
   - docs/Models/Requests/GetHrisCompanyResponse.md
+  - docs/Models/Requests/GetHrisDeviceRequest.md
+  - docs/Models/Requests/GetHrisDeviceResponse.md
   - docs/Models/Requests/GetHrisEmployeeRequest.md
   - docs/Models/Requests/GetHrisEmployeeResponse.md
   - docs/Models/Requests/GetHrisGroupRequest.md
@@ -2074,6 +2099,8 @@ generatedFiles:
   - docs/Models/Requests/ListGenaiModelsResponse.md
   - docs/Models/Requests/ListHrisCompaniesRequest.md
   - docs/Models/Requests/ListHrisCompaniesResponse.md
+  - docs/Models/Requests/ListHrisDevicesRequest.md
+  - docs/Models/Requests/ListHrisDevicesResponse.md
   - docs/Models/Requests/ListHrisEmployeesRequest.md
   - docs/Models/Requests/ListHrisEmployeesResponse.md
   - docs/Models/Requests/ListHrisGroupsRequest.md
@@ -2221,6 +2248,8 @@ generatedFiles:
   - docs/Models/Requests/PatchCrmPipelineResponse.md
   - docs/Models/Requests/PatchHrisCompanyRequest.md
   - docs/Models/Requests/PatchHrisCompanyResponse.md
+  - docs/Models/Requests/PatchHrisDeviceRequest.md
+  - docs/Models/Requests/PatchHrisDeviceResponse.md
   - docs/Models/Requests/PatchHrisEmployeeRequest.md
   - docs/Models/Requests/PatchHrisEmployeeResponse.md
   - docs/Models/Requests/PatchHrisGroupRequest.md
@@ -2352,6 +2381,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveCrmPipelineResponse.md
   - docs/Models/Requests/RemoveHrisCompanyRequest.md
   - docs/Models/Requests/RemoveHrisCompanyResponse.md
+  - docs/Models/Requests/RemoveHrisDeviceRequest.md
+  - docs/Models/Requests/RemoveHrisDeviceResponse.md
   - docs/Models/Requests/RemoveHrisEmployeeRequest.md
   - docs/Models/Requests/RemoveHrisEmployeeResponse.md
   - docs/Models/Requests/RemoveHrisGroupRequest.md
@@ -2478,6 +2509,8 @@ generatedFiles:
   - docs/Models/Requests/UpdateCrmPipelineResponse.md
   - docs/Models/Requests/UpdateHrisCompanyRequest.md
   - docs/Models/Requests/UpdateHrisCompanyResponse.md
+  - docs/Models/Requests/UpdateHrisDeviceRequest.md
+  - docs/Models/Requests/UpdateHrisDeviceResponse.md
   - docs/Models/Requests/UpdateHrisEmployeeRequest.md
   - docs/Models/Requests/UpdateHrisEmployeeResponse.md
   - docs/Models/Requests/UpdateHrisGroupRequest.md
@@ -2578,6 +2611,7 @@ generatedFiles:
   - docs/sdks/crm/README.md
   - docs/sdks/customer/README.md
   - docs/sdks/deal/README.md
+  - docs/sdks/device/README.md
   - docs/sdks/document/README.md
   - docs/sdks/employee/README.md
   - docs/sdks/enrich/README.md
@@ -6727,5 +6761,65 @@ examples:
       responses:
         "200":
           text/plain: "<value>"
+  createHrisDevice:
+    speakeasy-default-create-hris-device:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  getHrisDevice:
+    speakeasy-default-get-hris-device:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  listHrisDevices:
+    speakeasy-default-list-hris-devices:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{"name": "<value>"}, {"name": "<value>"}]
+  patchHrisDevice:
+    speakeasy-default-patch-hris-device:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  removeHrisDevice:
+    speakeasy-default-remove-hris-device:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateHrisDevice:
+    speakeasy-default-update-hris-device:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
 examplesVersion: 1.0.1
 generatedTests: {}

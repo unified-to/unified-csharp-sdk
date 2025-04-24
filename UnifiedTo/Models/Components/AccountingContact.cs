@@ -18,6 +18,9 @@ namespace UnifiedTo.Models.Components
     public class AccountingContact
     {
 
+        [JsonProperty("associated_contacts")]
+        public List<AccountingAssociatedContact>? AssociatedContacts { get; set; }
+
         [JsonProperty("billing_address")]
         public PropertyAccountingContactBillingAddress? BillingAddress { get; set; }
 

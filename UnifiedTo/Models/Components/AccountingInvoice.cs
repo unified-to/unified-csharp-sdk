@@ -81,6 +81,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("refunded_at")]
         public DateTime? RefundedAt { get; set; }
 
+        [JsonProperty("send")]
+        public bool? Send { get; set; }
+
         [JsonProperty("status")]
         public AccountingInvoiceStatus? Status { get; set; }
 

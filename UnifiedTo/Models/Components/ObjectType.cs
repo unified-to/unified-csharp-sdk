@@ -93,6 +93,8 @@ namespace UnifiedTo.Models.Components
         HrisCompany,
         [JsonProperty("hris_location")]
         HrisLocation,
+        [JsonProperty("hris_device")]
+        HrisDevice,
         [JsonProperty("martech_list")]
         MartechList,
         [JsonProperty("martech_member")]

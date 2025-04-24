@@ -69,6 +69,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("number_of_openings")]
         public double? NumberOfOpenings { get; set; }
 
+        [JsonProperty("openings")]
+        public List<AtsJobOpening>? Openings { get; set; }
+
         /// <summary>
         /// Public job postings
         /// </summary>

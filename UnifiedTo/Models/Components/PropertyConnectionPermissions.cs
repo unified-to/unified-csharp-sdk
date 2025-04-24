@@ -183,6 +183,10 @@ namespace UnifiedTo.Models.Components
         HrisLocationRead,
         [JsonProperty("hris_location_write")]
         HrisLocationWrite,
+        [JsonProperty("hris_device_read")]
+        HrisDeviceRead,
+        [JsonProperty("hris_device_write")]
+        HrisDeviceWrite,
         [JsonProperty("uc_call_read")]
         UcCallRead,
         [JsonProperty("uc_contact_read")]
