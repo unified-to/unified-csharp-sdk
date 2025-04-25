@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 8813ee1f8602d4e03a2488861b978482
+  docChecksum: 3cc7cb33432bf3a1c948159a8589fc49
   docVersion: "1.0"
-  speakeasyVersion: 1.538.0
+  speakeasyVersion: 1.539.2
   generationVersion: 2.591.1
-  releaseVersion: 0.22.37
-  configChecksum: 2ffbf43d3bbbd4dc8042fe7492818b36
+  releaseVersion: 0.22.38
+  configChecksum: 353024cc833dcd7149add111eaadc69a
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -90,6 +90,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingAccount.cs
   - UnifiedTo/Models/Components/AccountingAssociatedContact.cs
   - UnifiedTo/Models/Components/AccountingAttachment.cs
+  - UnifiedTo/Models/Components/AccountingBalanceSheetItem.cs
   - UnifiedTo/Models/Components/AccountingContact.cs
   - UnifiedTo/Models/Components/AccountingContactPaymentMethod.cs
   - UnifiedTo/Models/Components/AccountingContactPaymentMethodType.cs
@@ -105,6 +106,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingOrderStatus.cs
   - UnifiedTo/Models/Components/AccountingOrderType.cs
   - UnifiedTo/Models/Components/AccountingOrganization.cs
+  - UnifiedTo/Models/Components/AccountingProfitAndLossCategory.cs
+  - UnifiedTo/Models/Components/AccountingProfitAndLossSubcategory.cs
   - UnifiedTo/Models/Components/AccountingReport.cs
   - UnifiedTo/Models/Components/AccountingReportType.cs
   - UnifiedTo/Models/Components/AccountingTaxrate.cs
@@ -113,6 +116,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingTransaction.cs
   - UnifiedTo/Models/Components/AccountingTransactionContact.cs
   - UnifiedTo/Models/Components/AccountingTransactionLineItem.cs
+  - UnifiedTo/Models/Components/AccountingTrialBalanceSubItem.cs
   - UnifiedTo/Models/Components/ApiCall.cs
   - UnifiedTo/Models/Components/ApiCallType.cs
   - UnifiedTo/Models/Components/AtsActivity.cs
@@ -331,11 +335,15 @@ generatedFiles:
   - UnifiedTo/Models/Components/PaymentSubscriptionStatus.cs
   - UnifiedTo/Models/Components/PaymentType.cs
   - UnifiedTo/Models/Components/Priority.cs
+  - UnifiedTo/Models/Components/PropertyAccountingBalanceSheetItemSubItems.cs
   - UnifiedTo/Models/Components/PropertyAccountingContactBillingAddress.cs
   - UnifiedTo/Models/Components/PropertyAccountingContactShippingAddress.cs
   - UnifiedTo/Models/Components/PropertyAccountingOrderBillingAddress.cs
   - UnifiedTo/Models/Components/PropertyAccountingOrderShippingAddress.cs
   - UnifiedTo/Models/Components/PropertyAccountingOrganizationAddress.cs
+  - UnifiedTo/Models/Components/PropertyAccountingReportBalanceSheet.cs
+  - UnifiedTo/Models/Components/PropertyAccountingReportProfitAndLoss.cs
+  - UnifiedTo/Models/Components/PropertyAccountingReportTrialBalance.cs
   - UnifiedTo/Models/Components/PropertyAtsActivityFrom.cs
   - UnifiedTo/Models/Components/PropertyAtsActivityFromType.cs
   - UnifiedTo/Models/Components/PropertyAtsCandidateAddress.cs
@@ -1366,6 +1374,7 @@ generatedFiles:
   - docs/Models/Components/AccountingAccount.md
   - docs/Models/Components/AccountingAssociatedContact.md
   - docs/Models/Components/AccountingAttachment.md
+  - docs/Models/Components/AccountingBalanceSheetItem.md
   - docs/Models/Components/AccountingContact.md
   - docs/Models/Components/AccountingContactPaymentMethod.md
   - docs/Models/Components/AccountingContactPaymentMethodType.md
@@ -1381,6 +1390,8 @@ generatedFiles:
   - docs/Models/Components/AccountingOrderStatus.md
   - docs/Models/Components/AccountingOrderType.md
   - docs/Models/Components/AccountingOrganization.md
+  - docs/Models/Components/AccountingProfitAndLossCategory.md
+  - docs/Models/Components/AccountingProfitAndLossSubcategory.md
   - docs/Models/Components/AccountingReport.md
   - docs/Models/Components/AccountingReportType.md
   - docs/Models/Components/AccountingTaxrate.md
@@ -1389,6 +1400,7 @@ generatedFiles:
   - docs/Models/Components/AccountingTransaction.md
   - docs/Models/Components/AccountingTransactionContact.md
   - docs/Models/Components/AccountingTransactionLineItem.md
+  - docs/Models/Components/AccountingTrialBalanceSubItem.md
   - docs/Models/Components/ApiCall.md
   - docs/Models/Components/ApiCallType.md
   - docs/Models/Components/AtsActivity.md
@@ -1607,11 +1619,15 @@ generatedFiles:
   - docs/Models/Components/PaymentSubscriptionStatus.md
   - docs/Models/Components/PaymentType.md
   - docs/Models/Components/Priority.md
+  - docs/Models/Components/PropertyAccountingBalanceSheetItemSubItems.md
   - docs/Models/Components/PropertyAccountingContactBillingAddress.md
   - docs/Models/Components/PropertyAccountingContactShippingAddress.md
   - docs/Models/Components/PropertyAccountingOrderBillingAddress.md
   - docs/Models/Components/PropertyAccountingOrderShippingAddress.md
   - docs/Models/Components/PropertyAccountingOrganizationAddress.md
+  - docs/Models/Components/PropertyAccountingReportBalanceSheet.md
+  - docs/Models/Components/PropertyAccountingReportProfitAndLoss.md
+  - docs/Models/Components/PropertyAccountingReportTrialBalance.md
   - docs/Models/Components/PropertyAtsActivityFrom.md
   - docs/Models/Components/PropertyAtsActivityFromType.md
   - docs/Models/Components/PropertyAtsCandidateAddress.md

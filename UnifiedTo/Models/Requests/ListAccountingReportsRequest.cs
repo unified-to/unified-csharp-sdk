@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=end_le")]
+        public string? EndLe { get; set; }
+
         /// <summary>
         /// Comma-delimited fields to return
         /// </summary>
@@ -45,6 +48,9 @@ namespace UnifiedTo.Models.Requests
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")]
         public string? Sort { get; set; }
+
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=start_gte")]
+        public string? StartGte { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=type")]
         public string? Type { get; set; }

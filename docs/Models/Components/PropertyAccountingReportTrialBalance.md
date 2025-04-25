@@ -1,0 +1,10 @@
+# PropertyAccountingReportTrialBalance
+
+
+## Fields
+
+| Field                                                                                           | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `SubItems`                                                                                      | List<[AccountingTrialBalanceSubItem](../../Models/Components/AccountingTrialBalanceSubItem.md)> | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `TotalCreditAmount`                                                                             | *double*                                                                                        | :heavy_minus_sign:                                                                              | N/A                                                                                             |
+| `TotalDebitAmount`                                                                              | *double*                                                                                        | :heavy_minus_sign:                                                                              | N/A                                                                                             |

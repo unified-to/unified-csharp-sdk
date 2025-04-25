@@ -18,29 +18,35 @@ namespace UnifiedTo.Models.Components
     public class AccountingReport
     {
 
-        [JsonProperty("account_id")]
-        public string? AccountId { get; set; }
-
-        [JsonProperty("amount")]
-        public double? Amount { get; set; }
-
-        [JsonProperty("contact_id")]
-        public string? ContactId { get; set; }
+        [JsonProperty("balance_sheet")]
+        public PropertyAccountingReportBalanceSheet? BalanceSheet { get; set; }
 
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
-        [JsonProperty("group")]
-        public string? Group { get; set; }
+        [JsonProperty("currency")]
+        public string? Currency { get; set; }
+
+        [JsonProperty("end_at")]
+        public DateTime? EndAt { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("name")]
+        public string? Name { get; set; }
+
+        [JsonProperty("profit_and_loss")]
+        public PropertyAccountingReportProfitAndLoss? ProfitAndLoss { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
-        [JsonProperty("subgroup")]
-        public string? Subgroup { get; set; }
+        [JsonProperty("start_at")]
+        public DateTime? StartAt { get; set; }
+
+        [JsonProperty("trial_balance")]
+        public PropertyAccountingReportTrialBalance? TrialBalance { get; set; }
 
         [JsonProperty("type")]
         public AccountingReportType? Type { get; set; }
