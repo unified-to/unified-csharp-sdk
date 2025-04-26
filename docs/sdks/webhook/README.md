@@ -32,7 +32,7 @@ var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
         Event = Event.Created,
-        ObjectType = ObjectType.HrisPayslip,
+        ObjectType = ObjectType.HrisTimeoff,
     },
     includeAll: false
 );
@@ -148,7 +148,7 @@ var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
         Event = Event.Deleted,
-        ObjectType = ObjectType.CrmLead,
+        ObjectType = ObjectType.CrmPipeline,
     },
     id: "<id>"
 );
@@ -261,7 +261,7 @@ var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
         Event = Event.Created,
-        ObjectType = ObjectType.PaymentLink,
+        ObjectType = ObjectType.PaymentPayout,
     },
     id: "<id>"
 );

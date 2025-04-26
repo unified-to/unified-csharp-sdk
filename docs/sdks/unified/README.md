@@ -47,7 +47,7 @@ Models.Components.Connection req = new Models.Components.Connection() {
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.MartechListRead,
+        PropertyConnectionPermissions.MartechMemberRead,
     },
 };
 
@@ -90,7 +90,7 @@ var res = await sdk.Unified.CreateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
         Event = Event.Created,
-        ObjectType = ObjectType.HrisPayslip,
+        ObjectType = ObjectType.HrisTimeoff,
     },
     includeAll: false
 );
@@ -557,7 +557,7 @@ var res = await sdk.Unified.PatchUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
         Event = Event.Deleted,
-        ObjectType = ObjectType.CrmLead,
+        ObjectType = ObjectType.CrmPipeline,
     },
     id: "<id>"
 );
@@ -753,7 +753,7 @@ var res = await sdk.Unified.UpdateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
         Event = Event.Created,
-        ObjectType = ObjectType.PaymentLink,
+        ObjectType = ObjectType.PaymentPayout,
     },
     id: "<id>"
 );

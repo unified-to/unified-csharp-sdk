@@ -32,6 +32,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_calendar_id")]
         public ListCalendarId? ListCalendarId { get; set; }
 
+        [JsonProperty("list_call_id")]
+        public ListCallId? ListCallId { get; set; }
+
         [JsonProperty("list_candidate_id")]
         public ListCandidateId? ListCandidateId { get; set; }
 

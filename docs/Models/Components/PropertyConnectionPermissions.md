@@ -94,6 +94,9 @@
 | `UcCallRead`                 | uc_call_read                 |
 | `UcContactRead`              | uc_contact_read              |
 | `UcContactWrite`             | uc_contact_write             |
+| `UcCommentRead`              | uc_comment_read              |
+| `UcCommentWrite`             | uc_comment_write             |
+| `UcRecordingRead`            | uc_recording_read            |
 | `StorageFileRead`            | storage_file_read            |
 | `StorageFileWrite`           | storage_file_write           |
 | `Webhook`                    | webhook                      |

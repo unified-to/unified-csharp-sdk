@@ -28,52 +28,52 @@ namespace UnifiedTo
         /// <summary>
         /// Passthrough POST
         /// </summary>
-        Task<CreatePassthroughJsonResponse> CreatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null);
+        Task<CreatePassthroughJsonResponse> CreatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null);
 
         /// <summary>
         /// Passthrough POST
         /// </summary>
-        Task<CreatePassthroughRawResponse> CreatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null);
+        Task<CreatePassthroughRawResponse> CreatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null);
 
         /// <summary>
         /// Passthrough GET
         /// </summary>
-        Task<ListPassthroughsResponse> ListPassthroughsAsync(string connectionId, string path);
+        Task<ListPassthroughsResponse> ListPassthroughsAsync(string connectionId, string path, Dictionary<string, object>? query = null);
 
         /// <summary>
         /// Passthrough PUT
         /// </summary>
-        Task<PatchPassthroughJsonResponse> PatchPassthroughJsonAsync(string connectionId, string path, object? requestBody = null);
+        Task<PatchPassthroughJsonResponse> PatchPassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null);
 
         /// <summary>
         /// Passthrough PUT
         /// </summary>
-        Task<PatchPassthroughRawResponse> PatchPassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null);
+        Task<PatchPassthroughRawResponse> PatchPassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null);
 
         /// <summary>
         /// Passthrough DELETE
         /// </summary>
-        Task<RemovePassthroughResponse> RemovePassthroughAsync(string connectionId, string path);
+        Task<RemovePassthroughResponse> RemovePassthroughAsync(string connectionId, string path, Dictionary<string, object>? query = null);
 
         /// <summary>
         /// Passthrough PUT
         /// </summary>
-        Task<UpdatePassthroughJsonResponse> UpdatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null);
+        Task<UpdatePassthroughJsonResponse> UpdatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null);
 
         /// <summary>
         /// Passthrough PUT
         /// </summary>
-        Task<UpdatePassthroughRawResponse> UpdatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null);
+        Task<UpdatePassthroughRawResponse> UpdatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null);
     }
 
     public class Passthrough: IPassthrough
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.38";
-        private const string _sdkGenVersion = "2.591.1";
+        private const string _sdkVersion = "0.22.39";
+        private const string _sdkGenVersion = "2.593.3";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.38 2.591.1 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.39 2.593.3 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -86,13 +86,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreatePassthroughJsonResponse> CreatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null)
+        public async Task<CreatePassthroughJsonResponse> CreatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null)
         {
             var request = new CreatePassthroughJsonRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
                 RequestBody = requestBody,
+                Query = query,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
@@ -236,13 +237,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<CreatePassthroughRawResponse> CreatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null)
+        public async Task<CreatePassthroughRawResponse> CreatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null)
         {
             var request = new CreatePassthroughRawRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
                 RequestBody = requestBody,
+                Query = query,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
@@ -386,12 +388,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<ListPassthroughsResponse> ListPassthroughsAsync(string connectionId, string path)
+        public async Task<ListPassthroughsResponse> ListPassthroughsAsync(string connectionId, string path, Dictionary<string, object>? query = null)
         {
             var request = new ListPassthroughsRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
+                Query = query,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
@@ -529,13 +532,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchPassthroughJsonResponse> PatchPassthroughJsonAsync(string connectionId, string path, object? requestBody = null)
+        public async Task<PatchPassthroughJsonResponse> PatchPassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null)
         {
             var request = new PatchPassthroughJsonRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
                 RequestBody = requestBody,
+                Query = query,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
@@ -679,13 +683,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<PatchPassthroughRawResponse> PatchPassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null)
+        public async Task<PatchPassthroughRawResponse> PatchPassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null)
         {
             var request = new PatchPassthroughRawRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
                 RequestBody = requestBody,
+                Query = query,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
@@ -829,12 +834,13 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<RemovePassthroughResponse> RemovePassthroughAsync(string connectionId, string path)
+        public async Task<RemovePassthroughResponse> RemovePassthroughAsync(string connectionId, string path, Dictionary<string, object>? query = null)
         {
             var request = new RemovePassthroughRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
+                Query = query,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
@@ -972,13 +978,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdatePassthroughJsonResponse> UpdatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null)
+        public async Task<UpdatePassthroughJsonResponse> UpdatePassthroughJsonAsync(string connectionId, string path, object? requestBody = null, Dictionary<string, object>? query = null)
         {
             var request = new UpdatePassthroughJsonRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
                 RequestBody = requestBody,
+                Query = query,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);
@@ -1122,13 +1129,14 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdatePassthroughRawResponse> UpdatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null)
+        public async Task<UpdatePassthroughRawResponse> UpdatePassthroughRawAsync(string connectionId, string path, byte[]? requestBody = null, Dictionary<string, object>? query = null)
         {
             var request = new UpdatePassthroughRawRequest()
             {
                 ConnectionId = connectionId,
                 Path = path,
                 RequestBody = requestBody,
+                Query = query,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/passthrough/{connection_id}/{path}", request);

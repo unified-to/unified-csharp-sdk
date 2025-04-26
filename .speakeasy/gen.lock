@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 3cc7cb33432bf3a1c948159a8589fc49
+  docChecksum: e254ae145e90e83e726dc49d774763d7
   docVersion: "1.0"
-  speakeasyVersion: 1.539.2
-  generationVersion: 2.591.1
-  releaseVersion: 0.22.38
-  configChecksum: 353024cc833dcd7149add111eaadc69a
+  speakeasyVersion: 1.540.0
+  generationVersion: 2.593.3
+  releaseVersion: 0.22.39
+  configChecksum: b7285ec61e1399f2abfda5686d2cfa01
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -256,6 +256,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListAccountId.cs
   - UnifiedTo/Models/Components/ListApplicationId.cs
   - UnifiedTo/Models/Components/ListCalendarId.cs
+  - UnifiedTo/Models/Components/ListCallId.cs
   - UnifiedTo/Models/Components/ListCandidateId.cs
   - UnifiedTo/Models/Components/ListChannelId.cs
   - UnifiedTo/Models/Components/ListClassId.cs
@@ -455,9 +456,13 @@ generatedFiles:
   - UnifiedTo/Models/Components/TicketingTicketStatus.cs
   - UnifiedTo/Models/Components/Type.cs
   - UnifiedTo/Models/Components/UcCall.cs
+  - UnifiedTo/Models/Components/UcComment.cs
   - UnifiedTo/Models/Components/UcContact.cs
   - UnifiedTo/Models/Components/UcEmail.cs
   - UnifiedTo/Models/Components/UcEmailType.cs
+  - UnifiedTo/Models/Components/UcRecording.cs
+  - UnifiedTo/Models/Components/UcRecordingMedia.cs
+  - UnifiedTo/Models/Components/UcRecordingTranscript.cs
   - UnifiedTo/Models/Components/UcTelephone.cs
   - UnifiedTo/Models/Components/UcTelephoneType.cs
   - UnifiedTo/Models/Components/Value.cs
@@ -603,8 +608,12 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateTicketingNoteResponse.cs
   - UnifiedTo/Models/Requests/CreateTicketingTicketRequest.cs
   - UnifiedTo/Models/Requests/CreateTicketingTicketResponse.cs
+  - UnifiedTo/Models/Requests/CreateUcCommentRequest.cs
+  - UnifiedTo/Models/Requests/CreateUcCommentResponse.cs
   - UnifiedTo/Models/Requests/CreateUcContactRequest.cs
   - UnifiedTo/Models/Requests/CreateUcContactResponse.cs
+  - UnifiedTo/Models/Requests/CreateUcRecordingRequest.cs
+  - UnifiedTo/Models/Requests/CreateUcRecordingResponse.cs
   - UnifiedTo/Models/Requests/CreateUnifiedConnectionResponse.cs
   - UnifiedTo/Models/Requests/CreateUnifiedWebhookRequest.cs
   - UnifiedTo/Models/Requests/CreateUnifiedWebhookResponse.cs
@@ -746,8 +755,12 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetTicketingNoteResponse.cs
   - UnifiedTo/Models/Requests/GetTicketingTicketRequest.cs
   - UnifiedTo/Models/Requests/GetTicketingTicketResponse.cs
+  - UnifiedTo/Models/Requests/GetUcCommentRequest.cs
+  - UnifiedTo/Models/Requests/GetUcCommentResponse.cs
   - UnifiedTo/Models/Requests/GetUcContactRequest.cs
   - UnifiedTo/Models/Requests/GetUcContactResponse.cs
+  - UnifiedTo/Models/Requests/GetUcRecordingRequest.cs
+  - UnifiedTo/Models/Requests/GetUcRecordingResponse.cs
   - UnifiedTo/Models/Requests/GetUnifiedApicallRequest.cs
   - UnifiedTo/Models/Requests/GetUnifiedApicallResponse.cs
   - UnifiedTo/Models/Requests/GetUnifiedConnectionRequest.cs
@@ -910,8 +923,12 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListTicketingTicketsResponse.cs
   - UnifiedTo/Models/Requests/ListUcCallsRequest.cs
   - UnifiedTo/Models/Requests/ListUcCallsResponse.cs
+  - UnifiedTo/Models/Requests/ListUcCommentsRequest.cs
+  - UnifiedTo/Models/Requests/ListUcCommentsResponse.cs
   - UnifiedTo/Models/Requests/ListUcContactsRequest.cs
   - UnifiedTo/Models/Requests/ListUcContactsResponse.cs
+  - UnifiedTo/Models/Requests/ListUcRecordingsRequest.cs
+  - UnifiedTo/Models/Requests/ListUcRecordingsResponse.cs
   - UnifiedTo/Models/Requests/ListUnifiedApicallsRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedApicallsResponse.cs
   - UnifiedTo/Models/Requests/ListUnifiedConnectionsRequest.cs
@@ -1049,8 +1066,12 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchTicketingNoteResponse.cs
   - UnifiedTo/Models/Requests/PatchTicketingTicketRequest.cs
   - UnifiedTo/Models/Requests/PatchTicketingTicketResponse.cs
+  - UnifiedTo/Models/Requests/PatchUcCommentRequest.cs
+  - UnifiedTo/Models/Requests/PatchUcCommentResponse.cs
   - UnifiedTo/Models/Requests/PatchUcContactRequest.cs
   - UnifiedTo/Models/Requests/PatchUcContactResponse.cs
+  - UnifiedTo/Models/Requests/PatchUcRecordingRequest.cs
+  - UnifiedTo/Models/Requests/PatchUcRecordingResponse.cs
   - UnifiedTo/Models/Requests/PatchUnifiedConnectionRequest.cs
   - UnifiedTo/Models/Requests/PatchUnifiedConnectionResponse.cs
   - UnifiedTo/Models/Requests/PatchUnifiedWebhookRequest.cs
@@ -1180,8 +1201,12 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveTicketingNoteResponse.cs
   - UnifiedTo/Models/Requests/RemoveTicketingTicketRequest.cs
   - UnifiedTo/Models/Requests/RemoveTicketingTicketResponse.cs
+  - UnifiedTo/Models/Requests/RemoveUcCommentRequest.cs
+  - UnifiedTo/Models/Requests/RemoveUcCommentResponse.cs
   - UnifiedTo/Models/Requests/RemoveUcContactRequest.cs
   - UnifiedTo/Models/Requests/RemoveUcContactResponse.cs
+  - UnifiedTo/Models/Requests/RemoveUcRecordingRequest.cs
+  - UnifiedTo/Models/Requests/RemoveUcRecordingResponse.cs
   - UnifiedTo/Models/Requests/RemoveUnifiedConnectionRequest.cs
   - UnifiedTo/Models/Requests/RemoveUnifiedConnectionResponse.cs
   - UnifiedTo/Models/Requests/RemoveUnifiedWebhookRequest.cs
@@ -1310,8 +1335,12 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateTicketingNoteResponse.cs
   - UnifiedTo/Models/Requests/UpdateTicketingTicketRequest.cs
   - UnifiedTo/Models/Requests/UpdateTicketingTicketResponse.cs
+  - UnifiedTo/Models/Requests/UpdateUcCommentRequest.cs
+  - UnifiedTo/Models/Requests/UpdateUcCommentResponse.cs
   - UnifiedTo/Models/Requests/UpdateUcContactRequest.cs
   - UnifiedTo/Models/Requests/UpdateUcContactResponse.cs
+  - UnifiedTo/Models/Requests/UpdateUcRecordingRequest.cs
+  - UnifiedTo/Models/Requests/UpdateUcRecordingResponse.cs
   - UnifiedTo/Models/Requests/UpdateUnifiedConnectionRequest.cs
   - UnifiedTo/Models/Requests/UpdateUnifiedConnectionResponse.cs
   - UnifiedTo/Models/Requests/UpdateUnifiedWebhookRequest.cs
@@ -1540,6 +1569,7 @@ generatedFiles:
   - docs/Models/Components/ListAccountId.md
   - docs/Models/Components/ListApplicationId.md
   - docs/Models/Components/ListCalendarId.md
+  - docs/Models/Components/ListCallId.md
   - docs/Models/Components/ListCandidateId.md
   - docs/Models/Components/ListChannelId.md
   - docs/Models/Components/ListClassId.md
@@ -1739,9 +1769,13 @@ generatedFiles:
   - docs/Models/Components/TicketingTicketStatus.md
   - docs/Models/Components/Type.md
   - docs/Models/Components/UcCall.md
+  - docs/Models/Components/UcComment.md
   - docs/Models/Components/UcContact.md
   - docs/Models/Components/UcEmail.md
   - docs/Models/Components/UcEmailType.md
+  - docs/Models/Components/UcRecording.md
+  - docs/Models/Components/UcRecordingMedia.md
+  - docs/Models/Components/UcRecordingTranscript.md
   - docs/Models/Components/UcTelephone.md
   - docs/Models/Components/UcTelephoneType.md
   - docs/Models/Components/Value.md
@@ -1886,8 +1920,12 @@ generatedFiles:
   - docs/Models/Requests/CreateTicketingNoteResponse.md
   - docs/Models/Requests/CreateTicketingTicketRequest.md
   - docs/Models/Requests/CreateTicketingTicketResponse.md
+  - docs/Models/Requests/CreateUcCommentRequest.md
+  - docs/Models/Requests/CreateUcCommentResponse.md
   - docs/Models/Requests/CreateUcContactRequest.md
   - docs/Models/Requests/CreateUcContactResponse.md
+  - docs/Models/Requests/CreateUcRecordingRequest.md
+  - docs/Models/Requests/CreateUcRecordingResponse.md
   - docs/Models/Requests/CreateUnifiedConnectionResponse.md
   - docs/Models/Requests/CreateUnifiedWebhookRequest.md
   - docs/Models/Requests/CreateUnifiedWebhookResponse.md
@@ -2029,8 +2067,12 @@ generatedFiles:
   - docs/Models/Requests/GetTicketingNoteResponse.md
   - docs/Models/Requests/GetTicketingTicketRequest.md
   - docs/Models/Requests/GetTicketingTicketResponse.md
+  - docs/Models/Requests/GetUcCommentRequest.md
+  - docs/Models/Requests/GetUcCommentResponse.md
   - docs/Models/Requests/GetUcContactRequest.md
   - docs/Models/Requests/GetUcContactResponse.md
+  - docs/Models/Requests/GetUcRecordingRequest.md
+  - docs/Models/Requests/GetUcRecordingResponse.md
   - docs/Models/Requests/GetUnifiedApicallRequest.md
   - docs/Models/Requests/GetUnifiedApicallResponse.md
   - docs/Models/Requests/GetUnifiedConnectionRequest.md
@@ -2193,8 +2235,12 @@ generatedFiles:
   - docs/Models/Requests/ListTicketingTicketsResponse.md
   - docs/Models/Requests/ListUcCallsRequest.md
   - docs/Models/Requests/ListUcCallsResponse.md
+  - docs/Models/Requests/ListUcCommentsRequest.md
+  - docs/Models/Requests/ListUcCommentsResponse.md
   - docs/Models/Requests/ListUcContactsRequest.md
   - docs/Models/Requests/ListUcContactsResponse.md
+  - docs/Models/Requests/ListUcRecordingsRequest.md
+  - docs/Models/Requests/ListUcRecordingsResponse.md
   - docs/Models/Requests/ListUnifiedApicallsRequest.md
   - docs/Models/Requests/ListUnifiedApicallsResponse.md
   - docs/Models/Requests/ListUnifiedConnectionsRequest.md
@@ -2332,8 +2378,12 @@ generatedFiles:
   - docs/Models/Requests/PatchTicketingNoteResponse.md
   - docs/Models/Requests/PatchTicketingTicketRequest.md
   - docs/Models/Requests/PatchTicketingTicketResponse.md
+  - docs/Models/Requests/PatchUcCommentRequest.md
+  - docs/Models/Requests/PatchUcCommentResponse.md
   - docs/Models/Requests/PatchUcContactRequest.md
   - docs/Models/Requests/PatchUcContactResponse.md
+  - docs/Models/Requests/PatchUcRecordingRequest.md
+  - docs/Models/Requests/PatchUcRecordingResponse.md
   - docs/Models/Requests/PatchUnifiedConnectionRequest.md
   - docs/Models/Requests/PatchUnifiedConnectionResponse.md
   - docs/Models/Requests/PatchUnifiedWebhookRequest.md
@@ -2463,8 +2513,12 @@ generatedFiles:
   - docs/Models/Requests/RemoveTicketingNoteResponse.md
   - docs/Models/Requests/RemoveTicketingTicketRequest.md
   - docs/Models/Requests/RemoveTicketingTicketResponse.md
+  - docs/Models/Requests/RemoveUcCommentRequest.md
+  - docs/Models/Requests/RemoveUcCommentResponse.md
   - docs/Models/Requests/RemoveUcContactRequest.md
   - docs/Models/Requests/RemoveUcContactResponse.md
+  - docs/Models/Requests/RemoveUcRecordingRequest.md
+  - docs/Models/Requests/RemoveUcRecordingResponse.md
   - docs/Models/Requests/RemoveUnifiedConnectionRequest.md
   - docs/Models/Requests/RemoveUnifiedConnectionResponse.md
   - docs/Models/Requests/RemoveUnifiedWebhookRequest.md
@@ -2593,8 +2647,12 @@ generatedFiles:
   - docs/Models/Requests/UpdateTicketingNoteResponse.md
   - docs/Models/Requests/UpdateTicketingTicketRequest.md
   - docs/Models/Requests/UpdateTicketingTicketResponse.md
+  - docs/Models/Requests/UpdateUcCommentRequest.md
+  - docs/Models/Requests/UpdateUcCommentResponse.md
   - docs/Models/Requests/UpdateUcContactRequest.md
   - docs/Models/Requests/UpdateUcContactResponse.md
+  - docs/Models/Requests/UpdateUcRecordingRequest.md
+  - docs/Models/Requests/UpdateUcRecordingResponse.md
   - docs/Models/Requests/UpdateUnifiedConnectionRequest.md
   - docs/Models/Requests/UpdateUnifiedConnectionResponse.md
   - docs/Models/Requests/UpdateUnifiedWebhookRequest.md
@@ -5706,6 +5764,7 @@ examples:
         path:
           connection_id: "<id>"
           path: "/opt/lib"
+        query: {}
       responses:
         default:
           application/json: "<value>"
@@ -5718,6 +5777,7 @@ examples:
         path:
           connection_id: "<id>"
           path: "/etc/namedb"
+        query: {}
       responses:
         default:
           application/json: "<value>"
@@ -5731,6 +5791,7 @@ examples:
         path:
           connection_id: "<id>"
           path: "/selinux"
+        query: {}
       responses:
         default:
           application/json: "<value>"
@@ -5744,6 +5805,7 @@ examples:
         path:
           connection_id: "<id>"
           path: "/home/user"
+        query: {}
       responses:
         default:
           application/json: "<value>"
@@ -5756,6 +5818,7 @@ examples:
         path:
           connection_id: "<id>"
           path: "/etc/mail"
+        query: {}
       responses:
         default:
           application/json: "<value>"
@@ -5769,6 +5832,7 @@ examples:
         path:
           connection_id: "<id>"
           path: "/Applications"
+        query: {}
       responses:
         default:
           application/json: "<value>"
@@ -5782,6 +5846,7 @@ examples:
         path:
           connection_id: "<id>"
           path: "/etc/namedb"
+        query: {}
       responses:
         default:
           application/json: "<value>"
@@ -5794,6 +5859,7 @@ examples:
         path:
           connection_id: "<id>"
           path: "/System"
+        query: {}
       responses:
         default:
           application/json: "<value>"
@@ -6837,5 +6903,125 @@ examples:
       responses:
         "200":
           application/json: {"name": "<value>"}
+  createUcRecording:
+    speakeasy-default-create-uc-recording:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getUcRecording:
+    speakeasy-default-get-uc-recording:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {}
+  listUcRecordings:
+    speakeasy-default-list-uc-recordings:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{}]
+  patchUcRecording:
+    speakeasy-default-patch-uc-recording:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeUcRecording:
+    speakeasy-default-remove-uc-recording:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateUcRecording:
+    speakeasy-default-update-uc-recording:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  createUcComment:
+    speakeasy-default-create-uc-comment:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"content": "<value>"}
+      responses:
+        "200":
+          application/json: {"content": "<value>"}
+  getUcComment:
+    speakeasy-default-get-uc-comment:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"content": "<value>"}
+  listUcComments:
+    speakeasy-default-list-uc-comments:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{"content": "<value>"}, {"content": "<value>"}]
+  patchUcComment:
+    speakeasy-default-patch-uc-comment:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"content": "<value>"}
+      responses:
+        "200":
+          application/json: {"content": "<value>"}
+  removeUcComment:
+    speakeasy-default-remove-uc-comment:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateUcComment:
+    speakeasy-default-update-uc-comment:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"content": "<value>"}
+      responses:
+        "200":
+          application/json: {"content": "<value>"}
 examplesVersion: 1.0.1
 generatedTests: {}

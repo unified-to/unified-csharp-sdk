@@ -53,6 +53,8 @@
 | `TicketingCustomer`      | ticketing_customer       |
 | `UcContact`              | uc_contact               |
 | `UcCall`                 | uc_call                  |
+| `UcComment`              | uc_comment               |
+| `UcRecording`            | uc_recording             |
 | `EnrichPerson`           | enrich_person            |
 | `EnrichCompany`          | enrich_company           |
 | `StorageFile`            | storage_file             |

@@ -16,15 +16,15 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("download_url")]
-        public string DownloadUrl { get; set; } = default!;
+        public string? DownloadUrl { get; set; }
 
         [JsonProperty("id")]
-        public string Id { get; set; } = default!;
+        public string? Id { get; set; }
 
         [JsonProperty("mime_type")]
         public string? MimeType { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
     }
 }

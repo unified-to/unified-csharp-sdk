@@ -193,6 +193,12 @@ namespace UnifiedTo.Models.Components
         UcContactRead,
         [JsonProperty("uc_contact_write")]
         UcContactWrite,
+        [JsonProperty("uc_comment_read")]
+        UcCommentRead,
+        [JsonProperty("uc_comment_write")]
+        UcCommentWrite,
+        [JsonProperty("uc_recording_read")]
+        UcRecordingRead,
         [JsonProperty("storage_file_read")]
         StorageFileRead,
         [JsonProperty("storage_file_write")]

@@ -111,6 +111,10 @@ namespace UnifiedTo.Models.Components
         UcContact,
         [JsonProperty("uc_call")]
         UcCall,
+        [JsonProperty("uc_comment")]
+        UcComment,
+        [JsonProperty("uc_recording")]
+        UcRecording,
         [JsonProperty("enrich_person")]
         EnrichPerson,
         [JsonProperty("enrich_company")]

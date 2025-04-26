@@ -9,6 +9,7 @@
 #nullable enable
 namespace UnifiedTo.Models.Requests
 {
+    using System.Collections.Generic;
     using UnifiedTo.Utils;
     
     public class ListPassthroughsRequest
@@ -22,5 +23,8 @@ namespace UnifiedTo.Models.Requests
 
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=path")]
         public string Path { get; set; } = default!;
+
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=query")]
+        public Dictionary<string, object>? Query { get; set; }
     }
 }

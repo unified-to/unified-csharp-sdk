@@ -21,6 +21,7 @@ Passthrough POST
 ### Example Usage
 
 ```csharp
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -31,7 +32,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Passthrough.CreatePassthroughJsonAsync(
     connectionId: "<id>",
     path: "/opt/lib",
-    requestBody: "<value>"
+    requestBody: "<value>",
+    query: new Dictionary<string, object>() {
+        { "key", "<value>" },
+    }
 );
 
 // handle response
@@ -44,6 +48,7 @@ var res = await sdk.Passthrough.CreatePassthroughJsonAsync(
 | `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
 | `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
 | `RequestBody`                | *object*                     | :heavy_minus_sign:           | integration-specific payload |
+| `Query`                      | Dictionary<String, *object*> | :heavy_minus_sign:           | N/A                          |
 
 ### Response
 
@@ -63,6 +68,7 @@ Passthrough POST
 
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -73,7 +79,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Passthrough.CreatePassthroughRawAsync(
     connectionId: "<id>",
     path: "/etc/namedb",
-    requestBody: System.Text.Encoding.UTF8.GetBytes("0x4B93D6214f")
+    requestBody: System.Text.Encoding.UTF8.GetBytes("0x4B93D6214f"),
+    query: new Dictionary<string, object>() {
+        { "key", "<value>" },
+    }
 );
 
 // handle response
@@ -86,6 +95,7 @@ var res = await sdk.Passthrough.CreatePassthroughRawAsync(
 | `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
 | `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
 | `RequestBody`                | *byte[]*                     | :heavy_minus_sign:           | integration-specific payload |
+| `Query`                      | Dictionary<String, *object*> | :heavy_minus_sign:           | N/A                          |
 
 ### Response
 
@@ -104,6 +114,7 @@ Passthrough GET
 ### Example Usage
 
 ```csharp
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -113,7 +124,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.ListPassthroughsAsync(
     connectionId: "<id>",
-    path: "/selinux"
+    path: "/selinux",
+    query: new Dictionary<string, object>() {
+        { "key", "<value>" },
+    }
 );
 
 // handle response
@@ -121,10 +135,11 @@ var res = await sdk.Passthrough.ListPassthroughsAsync(
 
 ### Parameters
 
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Path`               | *string*             | :heavy_check_mark:   | N/A                  |
+| Parameter                    | Type                         | Required                     | Description                  |
+| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
+| `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
+| `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
+| `Query`                      | Dictionary<String, *object*> | :heavy_minus_sign:           | N/A                          |
 
 ### Response
 
@@ -143,6 +158,7 @@ Passthrough PUT
 ### Example Usage
 
 ```csharp
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -153,7 +169,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Passthrough.PatchPassthroughJsonAsync(
     connectionId: "<id>",
     path: "/home/user",
-    requestBody: "<value>"
+    requestBody: "<value>",
+    query: new Dictionary<string, object>() {
+        { "key", "<value>" },
+    }
 );
 
 // handle response
@@ -166,6 +185,7 @@ var res = await sdk.Passthrough.PatchPassthroughJsonAsync(
 | `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
 | `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
 | `RequestBody`                | *object*                     | :heavy_minus_sign:           | integration-specific payload |
+| `Query`                      | Dictionary<String, *object*> | :heavy_minus_sign:           | N/A                          |
 
 ### Response
 
@@ -185,6 +205,7 @@ Passthrough PUT
 
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -195,7 +216,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Passthrough.PatchPassthroughRawAsync(
     connectionId: "<id>",
     path: "/etc/mail",
-    requestBody: System.Text.Encoding.UTF8.GetBytes("0xCbf5667DBd")
+    requestBody: System.Text.Encoding.UTF8.GetBytes("0xCbf5667DBd"),
+    query: new Dictionary<string, object>() {
+        { "key", "<value>" },
+    }
 );
 
 // handle response
@@ -208,6 +232,7 @@ var res = await sdk.Passthrough.PatchPassthroughRawAsync(
 | `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
 | `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
 | `RequestBody`                | *byte[]*                     | :heavy_minus_sign:           | integration-specific payload |
+| `Query`                      | Dictionary<String, *object*> | :heavy_minus_sign:           | N/A                          |
 
 ### Response
 
@@ -226,6 +251,7 @@ Passthrough DELETE
 ### Example Usage
 
 ```csharp
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -235,7 +261,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.RemovePassthroughAsync(
     connectionId: "<id>",
-    path: "/Applications"
+    path: "/Applications",
+    query: new Dictionary<string, object>() {
+        { "key", "<value>" },
+    }
 );
 
 // handle response
@@ -243,10 +272,11 @@ var res = await sdk.Passthrough.RemovePassthroughAsync(
 
 ### Parameters
 
-| Parameter            | Type                 | Required             | Description          |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
-| `Path`               | *string*             | :heavy_check_mark:   | N/A                  |
+| Parameter                    | Type                         | Required                     | Description                  |
+| ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
+| `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
+| `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
+| `Query`                      | Dictionary<String, *object*> | :heavy_minus_sign:           | N/A                          |
 
 ### Response
 
@@ -265,6 +295,7 @@ Passthrough PUT
 ### Example Usage
 
 ```csharp
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -275,7 +306,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Passthrough.UpdatePassthroughJsonAsync(
     connectionId: "<id>",
     path: "/etc/namedb",
-    requestBody: "<value>"
+    requestBody: "<value>",
+    query: new Dictionary<string, object>() {
+        { "key", "<value>" },
+    }
 );
 
 // handle response
@@ -288,6 +322,7 @@ var res = await sdk.Passthrough.UpdatePassthroughJsonAsync(
 | `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
 | `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
 | `RequestBody`                | *object*                     | :heavy_minus_sign:           | integration-specific payload |
+| `Query`                      | Dictionary<String, *object*> | :heavy_minus_sign:           | N/A                          |
 
 ### Response
 
@@ -307,6 +342,7 @@ Passthrough PUT
 
 ```csharp
 using System;
+using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -317,7 +353,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Passthrough.UpdatePassthroughRawAsync(
     connectionId: "<id>",
     path: "/System",
-    requestBody: System.Text.Encoding.UTF8.GetBytes("0x5739830F8E")
+    requestBody: System.Text.Encoding.UTF8.GetBytes("0x5739830F8E"),
+    query: new Dictionary<string, object>() {
+        { "key", "<value>" },
+    }
 );
 
 // handle response
@@ -330,6 +369,7 @@ var res = await sdk.Passthrough.UpdatePassthroughRawAsync(
 | `ConnectionId`               | *string*                     | :heavy_check_mark:           | ID of the connection         |
 | `Path`                       | *string*                     | :heavy_check_mark:           | N/A                          |
 | `RequestBody`                | *byte[]*                     | :heavy_minus_sign:           | integration-specific payload |
+| `Query`                      | Dictionary<String, *object*> | :heavy_minus_sign:           | N/A                          |
 
 ### Response
 

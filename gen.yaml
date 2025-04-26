@@ -15,7 +15,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 csharp:
-  version: 0.22.38
+  version: 0.22.39
   additionalDependencies: []
   author: Unified API Inc.
   clientServerStatusCodesAsErrors: true
