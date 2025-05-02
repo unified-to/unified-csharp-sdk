@@ -9,13 +9,14 @@ generation:
     parameterOrderingFeb2024: false
     requestResponseComponentNamesFeb2024: false
     securityFeb2025: false
+    sharedErrorComponentsApr2025: false
   auth:
     oAuth2ClientCredentialsEnabled: false
     oAuth2PasswordEnabled: false
   baseServerURL: ""
   flattenGlobalSecurity: true
 csharp:
-  version: 0.22.39
+  version: 0.22.40
   additionalDependencies: []
   author: Unified API Inc.
   clientServerStatusCodesAsErrors: true
