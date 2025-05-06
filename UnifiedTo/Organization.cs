@@ -28,17 +28,17 @@ namespace UnifiedTo
         /// <summary>
         /// Create an organization
         /// </summary>
-        Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, List<string>? fields = null);
+        Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an organization
         /// </summary>
-        Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an organization
         /// </summary>
-        Task<GetRepoOrganizationResponse> GetRepoOrganizationAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetRepoOrganizationResponse> GetRepoOrganizationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all organizations
@@ -53,7 +53,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization
         /// </summary>
-        Task<PatchRepoOrganizationResponse> PatchRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, string id, List<string>? fields = null);
+        Task<PatchRepoOrganizationResponse> PatchRepoOrganizationAsync(PatchRepoOrganizationRequest request);
 
         /// <summary>
         /// Remove an organization
@@ -63,17 +63,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update an organization
         /// </summary>
-        Task<UpdateRepoOrganizationResponse> UpdateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateRepoOrganizationResponse> UpdateRepoOrganizationAsync(UpdateRepoOrganizationRequest request);
     }
 
     public class Organization: IOrganization
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -86,13 +86,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, List<string>? fields = null)
+        public async Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateRepoOrganizationRequest()
             {
                 RepoOrganization = repoOrganization,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/organization", request);
@@ -176,13 +177,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAccountingOrganizationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/organization/{id}", request);
@@ -260,13 +262,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetRepoOrganizationResponse> GetRepoOrganizationAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetRepoOrganizationResponse> GetRepoOrganizationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetRepoOrganizationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/organization/{id}", request);
@@ -500,15 +503,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchRepoOrganizationResponse> PatchRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchRepoOrganizationResponse> PatchRepoOrganizationAsync(PatchRepoOrganizationRequest request)
         {
-            var request = new PatchRepoOrganizationRequest()
-            {
-                RepoOrganization = repoOrganization,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/organization/{id}", request);
 
@@ -673,15 +669,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateRepoOrganizationResponse> UpdateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateRepoOrganizationResponse> UpdateRepoOrganizationAsync(UpdateRepoOrganizationRequest request)
         {
-            var request = new UpdateRepoOrganizationRequest()
-            {
-                RepoOrganization = repoOrganization,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/organization/{id}", request);
 

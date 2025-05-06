@@ -28,62 +28,62 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<string>? fields = null);
+        Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateCrmContactResponse> CreateCrmContactAsync(CrmContact crmContact, string connectionId, List<string>? fields = null);
+        Task<CreateCrmContactResponse> CreateCrmContactAsync(CrmContact crmContact, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a deal
         /// </summary>
-        Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<string>? fields = null);
+        Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an event
         /// </summary>
-        Task<CreateCrmEventResponse> CreateCrmEventAsync(CrmEvent crmEvent, string connectionId, List<string>? fields = null);
+        Task<CreateCrmEventResponse> CreateCrmEventAsync(CrmEvent crmEvent, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a lead
         /// </summary>
-        Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CrmLead crmLead, string connectionId, List<string>? fields = null);
+        Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CrmLead crmLead, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a pipeline
         /// </summary>
-        Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<string>? fields = null);
+        Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a deal
         /// </summary>
-        Task<GetCrmDealResponse> GetCrmDealAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCrmDealResponse> GetCrmDealAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an event
         /// </summary>
-        Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a lead
         /// </summary>
-        Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a pipeline
         /// </summary>
-        Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all companies
@@ -118,32 +118,32 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(CrmCompany crmCompany, string connectionId, string id, List<string>? fields = null);
+        Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(PatchCrmCompanyRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchCrmContactResponse> PatchCrmContactAsync(CrmContact crmContact, string connectionId, string id, List<string>? fields = null);
+        Task<PatchCrmContactResponse> PatchCrmContactAsync(PatchCrmContactRequest request);
 
         /// <summary>
         /// Update a deal
         /// </summary>
-        Task<PatchCrmDealResponse> PatchCrmDealAsync(CrmDeal crmDeal, string connectionId, string id, List<string>? fields = null);
+        Task<PatchCrmDealResponse> PatchCrmDealAsync(PatchCrmDealRequest request);
 
         /// <summary>
         /// Update an event
         /// </summary>
-        Task<PatchCrmEventResponse> PatchCrmEventAsync(CrmEvent crmEvent, string connectionId, string id, List<string>? fields = null);
+        Task<PatchCrmEventResponse> PatchCrmEventAsync(PatchCrmEventRequest request);
 
         /// <summary>
         /// Update a lead
         /// </summary>
-        Task<PatchCrmLeadResponse> PatchCrmLeadAsync(CrmLead crmLead, string connectionId, string id, List<string>? fields = null);
+        Task<PatchCrmLeadResponse> PatchCrmLeadAsync(PatchCrmLeadRequest request);
 
         /// <summary>
         /// Update a pipeline
         /// </summary>
-        Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, string id, List<string>? fields = null);
+        Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(PatchCrmPipelineRequest request);
 
         /// <summary>
         /// Remove a company
@@ -178,42 +178,42 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(UpdateCrmCompanyRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateCrmContactResponse> UpdateCrmContactAsync(CrmContact crmContact, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateCrmContactResponse> UpdateCrmContactAsync(UpdateCrmContactRequest request);
 
         /// <summary>
         /// Update a deal
         /// </summary>
-        Task<UpdateCrmDealResponse> UpdateCrmDealAsync(CrmDeal crmDeal, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateCrmDealResponse> UpdateCrmDealAsync(UpdateCrmDealRequest request);
 
         /// <summary>
         /// Update an event
         /// </summary>
-        Task<UpdateCrmEventResponse> UpdateCrmEventAsync(CrmEvent crmEvent, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateCrmEventResponse> UpdateCrmEventAsync(UpdateCrmEventRequest request);
 
         /// <summary>
         /// Update a lead
         /// </summary>
-        Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(CrmLead crmLead, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(UpdateCrmLeadRequest request);
 
         /// <summary>
         /// Update a pipeline
         /// </summary>
-        Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(UpdateCrmPipelineRequest request);
     }
 
     public class Crm: ICrm
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -226,13 +226,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<string>? fields = null)
+        public async Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateCrmCompanyRequest()
             {
                 CrmCompany = crmCompany,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company", request);
@@ -316,13 +317,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmContactResponse> CreateCrmContactAsync(CrmContact crmContact, string connectionId, List<string>? fields = null)
+        public async Task<CreateCrmContactResponse> CreateCrmContactAsync(CrmContact crmContact, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateCrmContactRequest()
             {
                 CrmContact = crmContact,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact", request);
@@ -406,13 +408,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<string>? fields = null)
+        public async Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateCrmDealRequest()
             {
                 CrmDeal = crmDeal,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal", request);
@@ -496,13 +499,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmEventResponse> CreateCrmEventAsync(CrmEvent crmEvent, string connectionId, List<string>? fields = null)
+        public async Task<CreateCrmEventResponse> CreateCrmEventAsync(CrmEvent crmEvent, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateCrmEventRequest()
             {
                 CrmEvent = crmEvent,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/event", request);
@@ -586,13 +590,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CrmLead crmLead, string connectionId, List<string>? fields = null)
+        public async Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CrmLead crmLead, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateCrmLeadRequest()
             {
                 CrmLead = crmLead,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead", request);
@@ -676,13 +681,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<string>? fields = null)
+        public async Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateCrmPipelineRequest()
             {
                 CrmPipeline = crmPipeline,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline", request);
@@ -766,13 +772,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCrmCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company/{id}", request);
@@ -850,13 +857,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCrmContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact/{id}", request);
@@ -934,13 +942,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmDealResponse> GetCrmDealAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCrmDealResponse> GetCrmDealAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCrmDealRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal/{id}", request);
@@ -1018,13 +1027,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCrmEventRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/event/{id}", request);
@@ -1102,13 +1112,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCrmLeadRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead/{id}", request);
@@ -1186,13 +1197,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCrmPipelineRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline/{id}", request);
@@ -1738,15 +1750,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(CrmCompany crmCompany, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(PatchCrmCompanyRequest request)
         {
-            var request = new PatchCrmCompanyRequest()
-            {
-                CrmCompany = crmCompany,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company/{id}", request);
 
@@ -1829,15 +1834,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmContactResponse> PatchCrmContactAsync(CrmContact crmContact, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchCrmContactResponse> PatchCrmContactAsync(PatchCrmContactRequest request)
         {
-            var request = new PatchCrmContactRequest()
-            {
-                CrmContact = crmContact,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact/{id}", request);
 
@@ -1920,15 +1918,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmDealResponse> PatchCrmDealAsync(CrmDeal crmDeal, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchCrmDealResponse> PatchCrmDealAsync(PatchCrmDealRequest request)
         {
-            var request = new PatchCrmDealRequest()
-            {
-                CrmDeal = crmDeal,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal/{id}", request);
 
@@ -2011,15 +2002,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmEventResponse> PatchCrmEventAsync(CrmEvent crmEvent, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchCrmEventResponse> PatchCrmEventAsync(PatchCrmEventRequest request)
         {
-            var request = new PatchCrmEventRequest()
-            {
-                CrmEvent = crmEvent,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/event/{id}", request);
 
@@ -2102,15 +2086,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmLeadResponse> PatchCrmLeadAsync(CrmLead crmLead, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchCrmLeadResponse> PatchCrmLeadAsync(PatchCrmLeadRequest request)
         {
-            var request = new PatchCrmLeadRequest()
-            {
-                CrmLead = crmLead,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead/{id}", request);
 
@@ -2193,15 +2170,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(PatchCrmPipelineRequest request)
         {
-            var request = new PatchCrmPipelineRequest()
-            {
-                CrmPipeline = crmPipeline,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline/{id}", request);
 
@@ -2776,15 +2746,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(UpdateCrmCompanyRequest request)
         {
-            var request = new UpdateCrmCompanyRequest()
-            {
-                CrmCompany = crmCompany,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company/{id}", request);
 
@@ -2867,15 +2830,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateCrmContactResponse> UpdateCrmContactAsync(CrmContact crmContact, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateCrmContactResponse> UpdateCrmContactAsync(UpdateCrmContactRequest request)
         {
-            var request = new UpdateCrmContactRequest()
-            {
-                CrmContact = crmContact,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact/{id}", request);
 
@@ -2958,15 +2914,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateCrmDealResponse> UpdateCrmDealAsync(CrmDeal crmDeal, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateCrmDealResponse> UpdateCrmDealAsync(UpdateCrmDealRequest request)
         {
-            var request = new UpdateCrmDealRequest()
-            {
-                CrmDeal = crmDeal,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal/{id}", request);
 
@@ -3049,15 +2998,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateCrmEventResponse> UpdateCrmEventAsync(CrmEvent crmEvent, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateCrmEventResponse> UpdateCrmEventAsync(UpdateCrmEventRequest request)
         {
-            var request = new UpdateCrmEventRequest()
-            {
-                CrmEvent = crmEvent,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/event/{id}", request);
 
@@ -3140,15 +3082,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(CrmLead crmLead, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(UpdateCrmLeadRequest request)
         {
-            var request = new UpdateCrmLeadRequest()
-            {
-                CrmLead = crmLead,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead/{id}", request);
 
@@ -3231,15 +3166,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(UpdateCrmPipelineRequest request)
         {
-            var request = new UpdateCrmPipelineRequest()
-            {
-                CrmPipeline = crmPipeline,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline/{id}", request);
 

@@ -20,7 +20,8 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
-    }
+    },
+    raw: "<value>"
 );
 
 // handle response
@@ -53,7 +54,8 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
-    }
+    },
+    raw: "<value>"
 );
 
 // handle response
@@ -99,7 +101,8 @@ try
         connectionId: "<id>",
         fields: new List<string>() {
             "<value>",
-        }
+        },
+        raw: "<value>"
     );
 
     // handle response
@@ -147,7 +150,8 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
-    }
+    },
+    raw: "<value>"
 );
 
 // handle response
@@ -173,7 +177,8 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
     connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
-    }
+    },
+    raw: "<value>"
 );
 
 // handle response

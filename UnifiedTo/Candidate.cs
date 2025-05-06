@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a candidate
         /// </summary>
-        Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, List<string>? fields = null);
+        Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a candidate
         /// </summary>
-        Task<GetAtsCandidateResponse> GetAtsCandidateAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsCandidateResponse> GetAtsCandidateAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all candidates
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a candidate
         /// </summary>
-        Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(PatchAtsCandidateRequest request);
 
         /// <summary>
         /// Remove a candidate
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a candidate
         /// </summary>
-        Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(UpdateAtsCandidateRequest request);
     }
 
     public class Candidate: ICandidate
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, List<string>? fields = null)
+        public async Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAtsCandidateRequest()
             {
                 AtsCandidate = atsCandidate,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsCandidateResponse> GetAtsCandidateAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsCandidateResponse> GetAtsCandidateAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAtsCandidateRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(PatchAtsCandidateRequest request)
         {
-            var request = new PatchAtsCandidateRequest()
-            {
-                AtsCandidate = atsCandidate,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(UpdateAtsCandidateRequest request)
         {
-            var request = new UpdateAtsCandidateRequest()
-            {
-                AtsCandidate = atsCandidate,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate/{id}", request);
 

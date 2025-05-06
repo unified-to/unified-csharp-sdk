@@ -32,7 +32,8 @@ var res = await sdk.Message.CreateMessagingMessageAsync(
     connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
-    }
+    },
+    raw: "<value>"
 );
 
 // handle response
@@ -40,11 +41,12 @@ var res = await sdk.Message.CreateMessagingMessageAsync(
 
 ### Parameters
 
-| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| `MessagingMessage`                                              | [MessagingMessage](../../Models/Components/MessagingMessage.md) | :heavy_check_mark:                                              | N/A                                                             |
-| `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
-| `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `MessagingMessage`                                                                                                                               | [MessagingMessage](../../Models/Components/MessagingMessage.md)                                                                                  | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
@@ -76,7 +78,8 @@ var res = await sdk.Message.GetMessagingMessageAsync(
     id: "<id>",
     fields: new List<string>() {
         "<value>",
-    }
+    },
+    raw: "<value>"
 );
 
 // handle response
@@ -84,11 +87,12 @@ var res = await sdk.Message.GetMessagingMessageAsync(
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Message                |
-| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Message                                                                                                                                |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
@@ -147,34 +151,30 @@ Update a message
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Message.PatchMessagingMessageAsync(
-    messagingMessage: new MessagingMessage() {},
-    connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    }
-);
+PatchMessagingMessageRequest req = new PatchMessagingMessageRequest() {
+    MessagingMessage = new MessagingMessage() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Message.PatchMessagingMessageAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| `MessagingMessage`                                              | [MessagingMessage](../../Models/Components/MessagingMessage.md) | :heavy_check_mark:                                              | N/A                                                             |
-| `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
-| `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Message                                               |
-| `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [PatchMessagingMessageRequest](../../Models/Requests/PatchMessagingMessageRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
 
 ### Response
 
@@ -232,34 +232,30 @@ Update a message
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Message.UpdateMessagingMessageAsync(
-    messagingMessage: new MessagingMessage() {},
-    connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    }
-);
+UpdateMessagingMessageRequest req = new UpdateMessagingMessageRequest() {
+    MessagingMessage = new MessagingMessage() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Message.UpdateMessagingMessageAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                       | Type                                                            | Required                                                        | Description                                                     |
-| --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- | --------------------------------------------------------------- |
-| `MessagingMessage`                                              | [MessagingMessage](../../Models/Components/MessagingMessage.md) | :heavy_check_mark:                                              | N/A                                                             |
-| `ConnectionId`                                                  | *string*                                                        | :heavy_check_mark:                                              | ID of the connection                                            |
-| `Id`                                                            | *string*                                                        | :heavy_check_mark:                                              | ID of the Message                                               |
-| `Fields`                                                        | List<*string*>                                                  | :heavy_minus_sign:                                              | Comma-delimited fields to return                                |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [UpdateMessagingMessageRequest](../../Models/Requests/UpdateMessagingMessageRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 

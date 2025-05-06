@@ -34,7 +34,8 @@ var res = await sdk.Inventory.CreateCommerceInventoryAsync(
     connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
-    }
+    },
+    raw: "<value>"
 );
 
 // handle response
@@ -42,11 +43,12 @@ var res = await sdk.Inventory.CreateCommerceInventoryAsync(
 
 ### Parameters
 
-| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_check_mark:                                                | N/A                                                               |
-| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
-| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `CommerceInventory`                                                                                                                              | [CommerceInventory](../../Models/Components/CommerceInventory.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
@@ -78,7 +80,8 @@ var res = await sdk.Inventory.GetCommerceInventoryAsync(
     id: "<id>",
     fields: new List<string>() {
         "<value>",
-    }
+    },
+    raw: "<value>"
 );
 
 // handle response
@@ -86,11 +89,12 @@ var res = await sdk.Inventory.GetCommerceInventoryAsync(
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Inventory              |
-| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Inventory                                                                                                                              |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
@@ -149,36 +153,32 @@ Update an inventory
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Inventory.PatchCommerceInventoryAsync(
-    commerceInventory: new CommerceInventory() {
+PatchCommerceInventoryRequest req = new PatchCommerceInventoryRequest() {
+    CommerceInventory = new CommerceInventory() {
         Available = 615.23D,
     },
-    connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    }
-);
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Inventory.PatchCommerceInventoryAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_check_mark:                                                | N/A                                                               |
-| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
-| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Inventory                                               |
-| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [PatchCommerceInventoryRequest](../../Models/Requests/PatchCommerceInventoryRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
 
 ### Response
 
@@ -236,36 +236,32 @@ Update an inventory
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Inventory.UpdateCommerceInventoryAsync(
-    commerceInventory: new CommerceInventory() {
+UpdateCommerceInventoryRequest req = new UpdateCommerceInventoryRequest() {
+    CommerceInventory = new CommerceInventory() {
         Available = 9360.02D,
     },
-    connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    }
-);
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Inventory.UpdateCommerceInventoryAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                         | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `CommerceInventory`                                               | [CommerceInventory](../../Models/Components/CommerceInventory.md) | :heavy_check_mark:                                                | N/A                                                               |
-| `ConnectionId`                                                    | *string*                                                          | :heavy_check_mark:                                                | ID of the connection                                              |
-| `Id`                                                              | *string*                                                          | :heavy_check_mark:                                                | ID of the Inventory                                               |
-| `Fields`                                                          | List<*string*>                                                    | :heavy_minus_sign:                                                | Comma-delimited fields to return                                  |
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [UpdateCommerceInventoryRequest](../../Models/Requests/UpdateCommerceInventoryRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
 
 ### Response
 

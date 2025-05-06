@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create an invoice
         /// </summary>
-        Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<string>? fields = null);
+        Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an invoice
         /// </summary>
-        Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all invoices
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update an invoice
         /// </summary>
-        Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(PatchAccountingInvoiceRequest request);
 
         /// <summary>
         /// Remove an invoice
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update an invoice
         /// </summary>
-        Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(UpdateAccountingInvoiceRequest request);
     }
 
     public class Invoice: IInvoice
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<string>? fields = null)
+        public async Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingInvoiceRequest()
             {
                 AccountingInvoice = accountingInvoice,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAccountingInvoiceRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(PatchAccountingInvoiceRequest request)
         {
-            var request = new PatchAccountingInvoiceRequest()
-            {
-                AccountingInvoice = accountingInvoice,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(UpdateAccountingInvoiceRequest request)
         {
-            var request = new UpdateAccountingInvoiceRequest()
-            {
-                AccountingInvoice = accountingInvoice,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice/{id}", request);
 

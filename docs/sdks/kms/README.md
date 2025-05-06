@@ -46,7 +46,8 @@ var res = await sdk.Kms.CreateKmsCommentAsync(
     connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
-    }
+    },
+    raw: "<value>"
 );
 
 // handle response
@@ -54,11 +55,12 @@ var res = await sdk.Kms.CreateKmsCommentAsync(
 
 ### Parameters
 
-| Parameter                                           | Type                                                | Required                                            | Description                                         |
-| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
-| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_check_mark:                                  | N/A                                                 |
-| `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
-| `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `KmsComment`                                                                                                                                     | [KmsComment](../../Models/Components/KmsComment.md)                                                                                              | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
@@ -93,7 +95,8 @@ var res = await sdk.Kms.CreateKmsPageAsync(
     connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
-    }
+    },
+    raw: "<value>"
 );
 
 // handle response
@@ -101,11 +104,12 @@ var res = await sdk.Kms.CreateKmsPageAsync(
 
 ### Parameters
 
-| Parameter                                     | Type                                          | Required                                      | Description                                   |
-| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-| `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_check_mark:                            | N/A                                           |
-| `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
-| `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `KmsPage`                                                                                                                                        | [KmsPage](../../Models/Components/KmsPage.md)                                                                                                    | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
@@ -139,7 +143,8 @@ var res = await sdk.Kms.CreateKmsSpaceAsync(
     connectionId: "<id>",
     fields: new List<string>() {
         "<value>",
-    }
+    },
+    raw: "<value>"
 );
 
 // handle response
@@ -147,11 +152,12 @@ var res = await sdk.Kms.CreateKmsSpaceAsync(
 
 ### Parameters
 
-| Parameter                                       | Type                                            | Required                                        | Description                                     |
-| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_check_mark:                              | N/A                                             |
-| `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
-| `Fields`                                        | List<*string*>                                  | :heavy_minus_sign:                              | Comma-delimited fields to return                |
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `KmsSpace`                                                                                                                                       | [KmsSpace](../../Models/Components/KmsSpace.md)                                                                                                  | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
@@ -183,7 +189,8 @@ var res = await sdk.Kms.GetKmsCommentAsync(
     id: "<id>",
     fields: new List<string>() {
         "<value>",
-    }
+    },
+    raw: "<value>"
 );
 
 // handle response
@@ -191,11 +198,12 @@ var res = await sdk.Kms.GetKmsCommentAsync(
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Comment                |
-| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Comment                                                                                                                                |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
@@ -227,7 +235,8 @@ var res = await sdk.Kms.GetKmsPageAsync(
     id: "<id>",
     fields: new List<string>() {
         "<value>",
-    }
+    },
+    raw: "<value>"
 );
 
 // handle response
@@ -235,11 +244,12 @@ var res = await sdk.Kms.GetKmsPageAsync(
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Page                   |
-| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Page                                                                                                                                   |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
@@ -271,7 +281,8 @@ var res = await sdk.Kms.GetKmsSpaceAsync(
     id: "<id>",
     fields: new List<string>() {
         "<value>",
-    }
+    },
+    raw: "<value>"
 );
 
 // handle response
@@ -279,11 +290,12 @@ var res = await sdk.Kms.GetKmsSpaceAsync(
 
 ### Parameters
 
-| Parameter                        | Type                             | Required                         | Description                      |
-| -------------------------------- | -------------------------------- | -------------------------------- | -------------------------------- |
-| `ConnectionId`                   | *string*                         | :heavy_check_mark:               | ID of the connection             |
-| `Id`                             | *string*                         | :heavy_check_mark:               | ID of the Space                  |
-| `Fields`                         | List<*string*>                   | :heavy_minus_sign:               | Comma-delimited fields to return |
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Space                                                                                                                                  |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
 
 ### Response
 
@@ -422,36 +434,32 @@ Update a comment
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Kms.PatchKmsCommentAsync(
-    kmsComment: new KmsComment() {
+PatchKmsCommentRequest req = new PatchKmsCommentRequest() {
+    KmsComment = new KmsComment() {
         Content = "<value>",
     },
-    connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    }
-);
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Kms.PatchKmsCommentAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                           | Type                                                | Required                                            | Description                                         |
-| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
-| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_check_mark:                                  | N/A                                                 |
-| `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
-| `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Comment                                   |
-| `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [PatchKmsCommentRequest](../../Models/Requests/PatchKmsCommentRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
 
 ### Response
 
@@ -470,37 +478,33 @@ Update a page
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Kms.PatchKmsPageAsync(
-    kmsPage: new KmsPage() {
+PatchKmsPageRequest req = new PatchKmsPageRequest() {
+    KmsPage = new KmsPage() {
         Title = "<value>",
         Type = KmsPageType.Text,
     },
-    connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    }
-);
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Kms.PatchKmsPageAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                     | Type                                          | Required                                      | Description                                   |
-| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-| `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_check_mark:                            | N/A                                           |
-| `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
-| `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Page                                |
-| `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
+| Parameter                                                           | Type                                                                | Required                                                            | Description                                                         |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `request`                                                           | [PatchKmsPageRequest](../../Models/Requests/PatchKmsPageRequest.md) | :heavy_check_mark:                                                  | The request object to use for the request.                          |
 
 ### Response
 
@@ -519,36 +523,32 @@ Update a space
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Kms.PatchKmsSpaceAsync(
-    kmsSpace: new KmsSpace() {
+PatchKmsSpaceRequest req = new PatchKmsSpaceRequest() {
+    KmsSpace = new KmsSpace() {
         Name = "<value>",
     },
-    connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    }
-);
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Kms.PatchKmsSpaceAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                       | Type                                            | Required                                        | Description                                     |
-| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_check_mark:                              | N/A                                             |
-| `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
-| `Id`                                            | *string*                                        | :heavy_check_mark:                              | ID of the Space                                 |
-| `Fields`                                        | List<*string*>                                  | :heavy_minus_sign:                              | Comma-delimited fields to return                |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [PatchKmsSpaceRequest](../../Models/Requests/PatchKmsSpaceRequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
 
 ### Response
 
@@ -684,36 +684,32 @@ Update a comment
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Kms.UpdateKmsCommentAsync(
-    kmsComment: new KmsComment() {
+UpdateKmsCommentRequest req = new UpdateKmsCommentRequest() {
+    KmsComment = new KmsComment() {
         Content = "<value>",
     },
-    connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    }
-);
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Kms.UpdateKmsCommentAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                           | Type                                                | Required                                            | Description                                         |
-| --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
-| `KmsComment`                                        | [KmsComment](../../Models/Components/KmsComment.md) | :heavy_check_mark:                                  | N/A                                                 |
-| `ConnectionId`                                      | *string*                                            | :heavy_check_mark:                                  | ID of the connection                                |
-| `Id`                                                | *string*                                            | :heavy_check_mark:                                  | ID of the Comment                                   |
-| `Fields`                                            | List<*string*>                                      | :heavy_minus_sign:                                  | Comma-delimited fields to return                    |
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [UpdateKmsCommentRequest](../../Models/Requests/UpdateKmsCommentRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
 
 ### Response
 
@@ -732,37 +728,33 @@ Update a page
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Kms.UpdateKmsPageAsync(
-    kmsPage: new KmsPage() {
+UpdateKmsPageRequest req = new UpdateKmsPageRequest() {
+    KmsPage = new KmsPage() {
         Title = "<value>",
         Type = KmsPageType.Other,
     },
-    connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    }
-);
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Kms.UpdateKmsPageAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                     | Type                                          | Required                                      | Description                                   |
-| --------------------------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-| `KmsPage`                                     | [KmsPage](../../Models/Components/KmsPage.md) | :heavy_check_mark:                            | N/A                                           |
-| `ConnectionId`                                | *string*                                      | :heavy_check_mark:                            | ID of the connection                          |
-| `Id`                                          | *string*                                      | :heavy_check_mark:                            | ID of the Page                                |
-| `Fields`                                      | List<*string*>                                | :heavy_minus_sign:                            | Comma-delimited fields to return              |
+| Parameter                                                             | Type                                                                  | Required                                                              | Description                                                           |
+| --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `request`                                                             | [UpdateKmsPageRequest](../../Models/Requests/UpdateKmsPageRequest.md) | :heavy_check_mark:                                                    | The request object to use for the request.                            |
 
 ### Response
 
@@ -781,36 +773,32 @@ Update a space
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
 
 var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Kms.UpdateKmsSpaceAsync(
-    kmsSpace: new KmsSpace() {
+UpdateKmsSpaceRequest req = new UpdateKmsSpaceRequest() {
+    KmsSpace = new KmsSpace() {
         Name = "<value>",
     },
-    connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    }
-);
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Kms.UpdateKmsSpaceAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                       | Type                                            | Required                                        | Description                                     |
-| ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- | ----------------------------------------------- |
-| `KmsSpace`                                      | [KmsSpace](../../Models/Components/KmsSpace.md) | :heavy_check_mark:                              | N/A                                             |
-| `ConnectionId`                                  | *string*                                        | :heavy_check_mark:                              | ID of the connection                            |
-| `Id`                                            | *string*                                        | :heavy_check_mark:                              | ID of the Space                                 |
-| `Fields`                                        | List<*string*>                                  | :heavy_minus_sign:                              | Comma-delimited fields to return                |
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `request`                                                               | [UpdateKmsSpaceRequest](../../Models/Requests/UpdateKmsSpaceRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
 
 ### Response
 

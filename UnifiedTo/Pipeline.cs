@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a pipeline
         /// </summary>
-        Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<string>? fields = null);
+        Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a pipeline
         /// </summary>
-        Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all pipelines
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a pipeline
         /// </summary>
-        Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, string id, List<string>? fields = null);
+        Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(PatchCrmPipelineRequest request);
 
         /// <summary>
         /// Remove a pipeline
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a pipeline
         /// </summary>
-        Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(UpdateCrmPipelineRequest request);
     }
 
     public class Pipeline: IPipeline
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<string>? fields = null)
+        public async Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateCrmPipelineRequest()
             {
                 CrmPipeline = crmPipeline,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCrmPipelineRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchCrmPipelineResponse> PatchCrmPipelineAsync(PatchCrmPipelineRequest request)
         {
-            var request = new PatchCrmPipelineRequest()
-            {
-                CrmPipeline = crmPipeline,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateCrmPipelineResponse> UpdateCrmPipelineAsync(UpdateCrmPipelineRequest request)
         {
-            var request = new UpdateCrmPipelineRequest()
-            {
-                CrmPipeline = crmPipeline,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/pipeline/{id}", request);
 

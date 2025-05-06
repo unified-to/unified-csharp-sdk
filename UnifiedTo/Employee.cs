@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create an employee
         /// </summary>
-        Task<CreateHrisEmployeeResponse> CreateHrisEmployeeAsync(HrisEmployee hrisEmployee, string connectionId, List<string>? fields = null);
+        Task<CreateHrisEmployeeResponse> CreateHrisEmployeeAsync(HrisEmployee hrisEmployee, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an employee
         /// </summary>
-        Task<GetHrisEmployeeResponse> GetHrisEmployeeAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetHrisEmployeeResponse> GetHrisEmployeeAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all employees
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update an employee
         /// </summary>
-        Task<PatchHrisEmployeeResponse> PatchHrisEmployeeAsync(HrisEmployee hrisEmployee, string connectionId, string id, List<string>? fields = null);
+        Task<PatchHrisEmployeeResponse> PatchHrisEmployeeAsync(PatchHrisEmployeeRequest request);
 
         /// <summary>
         /// Remove an employee
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update an employee
         /// </summary>
-        Task<UpdateHrisEmployeeResponse> UpdateHrisEmployeeAsync(HrisEmployee hrisEmployee, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateHrisEmployeeResponse> UpdateHrisEmployeeAsync(UpdateHrisEmployeeRequest request);
     }
 
     public class Employee: IEmployee
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateHrisEmployeeResponse> CreateHrisEmployeeAsync(HrisEmployee hrisEmployee, string connectionId, List<string>? fields = null)
+        public async Task<CreateHrisEmployeeResponse> CreateHrisEmployeeAsync(HrisEmployee hrisEmployee, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateHrisEmployeeRequest()
             {
                 HrisEmployee = hrisEmployee,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/employee", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisEmployeeResponse> GetHrisEmployeeAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetHrisEmployeeResponse> GetHrisEmployeeAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetHrisEmployeeRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/employee/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisEmployeeResponse> PatchHrisEmployeeAsync(HrisEmployee hrisEmployee, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchHrisEmployeeResponse> PatchHrisEmployeeAsync(PatchHrisEmployeeRequest request)
         {
-            var request = new PatchHrisEmployeeRequest()
-            {
-                HrisEmployee = hrisEmployee,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/employee/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateHrisEmployeeResponse> UpdateHrisEmployeeAsync(HrisEmployee hrisEmployee, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateHrisEmployeeResponse> UpdateHrisEmployeeAsync(UpdateHrisEmployeeRequest request)
         {
-            var request = new UpdateHrisEmployeeRequest()
-            {
-                HrisEmployee = hrisEmployee,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/employee/{id}", request);
 

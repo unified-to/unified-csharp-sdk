@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a class
         /// </summary>
-        Task<CreateLmsClassResponse> CreateLmsClassAsync(LmsClass lmsClass, string connectionId, List<string>? fields = null);
+        Task<CreateLmsClassResponse> CreateLmsClassAsync(LmsClass lmsClass, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a class
         /// </summary>
-        Task<GetLmsClassResponse> GetLmsClassAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetLmsClassResponse> GetLmsClassAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all classes
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a class
         /// </summary>
-        Task<PatchLmsClassResponse> PatchLmsClassAsync(LmsClass lmsClass, string connectionId, string id, List<string>? fields = null);
+        Task<PatchLmsClassResponse> PatchLmsClassAsync(PatchLmsClassRequest request);
 
         /// <summary>
         /// Remove a class
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a class
         /// </summary>
-        Task<UpdateLmsClassResponse> UpdateLmsClassAsync(LmsClass lmsClass, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateLmsClassResponse> UpdateLmsClassAsync(UpdateLmsClassRequest request);
     }
 
     public class Class: IClass
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateLmsClassResponse> CreateLmsClassAsync(LmsClass lmsClass, string connectionId, List<string>? fields = null)
+        public async Task<CreateLmsClassResponse> CreateLmsClassAsync(LmsClass lmsClass, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateLmsClassRequest()
             {
                 LmsClass = lmsClass,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/class", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetLmsClassResponse> GetLmsClassAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetLmsClassResponse> GetLmsClassAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetLmsClassRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/class/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchLmsClassResponse> PatchLmsClassAsync(LmsClass lmsClass, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchLmsClassResponse> PatchLmsClassAsync(PatchLmsClassRequest request)
         {
-            var request = new PatchLmsClassRequest()
-            {
-                LmsClass = lmsClass,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/class/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateLmsClassResponse> UpdateLmsClassAsync(LmsClass lmsClass, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateLmsClassResponse> UpdateLmsClassAsync(UpdateLmsClassRequest request)
         {
-            var request = new UpdateLmsClassRequest()
-            {
-                LmsClass = lmsClass,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/class/{id}", request);
 

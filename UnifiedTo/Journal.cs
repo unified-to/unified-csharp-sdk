@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a journal
         /// </summary>
-        Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, List<string>? fields = null);
+        Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a journal
         /// </summary>
-        Task<GetAccountingJournalResponse> GetAccountingJournalAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingJournalResponse> GetAccountingJournalAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all journals
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a journal
         /// </summary>
-        Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(PatchAccountingJournalRequest request);
 
         /// <summary>
         /// Remove a journal
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a journal
         /// </summary>
-        Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(UpdateAccountingJournalRequest request);
     }
 
     public class Journal: IJournal
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, List<string>? fields = null)
+        public async Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingJournalRequest()
             {
                 AccountingJournal = accountingJournal,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/journal", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingJournalResponse> GetAccountingJournalAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingJournalResponse> GetAccountingJournalAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAccountingJournalRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/journal/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(PatchAccountingJournalRequest request)
         {
-            var request = new PatchAccountingJournalRequest()
-            {
-                AccountingJournal = accountingJournal,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/journal/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(UpdateAccountingJournalRequest request)
         {
-            var request = new UpdateAccountingJournalRequest()
-            {
-                AccountingJournal = accountingJournal,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/journal/{id}", request);
 

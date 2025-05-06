@@ -28,17 +28,17 @@ namespace UnifiedTo
         /// <summary>
         /// Create a recording
         /// </summary>
-        Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<string>? fields = null);
+        Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a recording
         /// </summary>
-        Task<GetCalendarRecordingResponse> GetCalendarRecordingAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCalendarRecordingResponse> GetCalendarRecordingAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a recording
         /// </summary>
-        Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all recordings
@@ -53,7 +53,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a recording
         /// </summary>
-        Task<PatchUcRecordingResponse> PatchUcRecordingAsync(UcRecording ucRecording, string connectionId, string id, List<string>? fields = null);
+        Task<PatchUcRecordingResponse> PatchUcRecordingAsync(PatchUcRecordingRequest request);
 
         /// <summary>
         /// Remove a recording
@@ -63,17 +63,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a recording
         /// </summary>
-        Task<UpdateUcRecordingResponse> UpdateUcRecordingAsync(UcRecording ucRecording, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateUcRecordingResponse> UpdateUcRecordingAsync(UpdateUcRecordingRequest request);
     }
 
     public class Recording: IRecording
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -86,13 +86,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<string>? fields = null)
+        public async Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateUcRecordingRequest()
             {
                 UcRecording = ucRecording,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/recording", request);
@@ -176,13 +177,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCalendarRecordingResponse> GetCalendarRecordingAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCalendarRecordingResponse> GetCalendarRecordingAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCalendarRecordingRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/recording/{id}", request);
@@ -260,13 +262,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetUcRecordingRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/recording/{id}", request);
@@ -500,15 +503,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchUcRecordingResponse> PatchUcRecordingAsync(UcRecording ucRecording, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchUcRecordingResponse> PatchUcRecordingAsync(PatchUcRecordingRequest request)
         {
-            var request = new PatchUcRecordingRequest()
-            {
-                UcRecording = ucRecording,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/recording/{id}", request);
 
@@ -673,15 +669,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateUcRecordingResponse> UpdateUcRecordingAsync(UcRecording ucRecording, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateUcRecordingResponse> UpdateUcRecordingAsync(UpdateUcRecordingRequest request)
         {
-            var request = new UpdateUcRecordingRequest()
-            {
-                UcRecording = ucRecording,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/recording/{id}", request);
 

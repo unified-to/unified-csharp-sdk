@@ -28,42 +28,42 @@ namespace UnifiedTo
         /// <summary>
         /// Create a link
         /// </summary>
-        Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<string>? fields = null);
+        Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a payment
         /// </summary>
-        Task<CreatePaymentPaymentResponse> CreatePaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, List<string>? fields = null);
+        Task<CreatePaymentPaymentResponse> CreatePaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a subscription
         /// </summary>
-        Task<CreatePaymentSubscriptionResponse> CreatePaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, List<string>? fields = null);
+        Task<CreatePaymentSubscriptionResponse> CreatePaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a link
         /// </summary>
-        Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a payment
         /// </summary>
-        Task<GetPaymentPaymentResponse> GetPaymentPaymentAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetPaymentPaymentResponse> GetPaymentPaymentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a payout
         /// </summary>
-        Task<GetPaymentPayoutResponse> GetPaymentPayoutAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetPaymentPayoutResponse> GetPaymentPayoutAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a refund
         /// </summary>
-        Task<GetPaymentRefundResponse> GetPaymentRefundAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetPaymentRefundResponse> GetPaymentRefundAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a subscription
         /// </summary>
-        Task<GetPaymentSubscriptionResponse> GetPaymentSubscriptionAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetPaymentSubscriptionResponse> GetPaymentSubscriptionAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all links
@@ -93,17 +93,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link
         /// </summary>
-        Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(PaymentLink paymentLink, string connectionId, string id, List<string>? fields = null);
+        Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(PatchPaymentLinkRequest request);
 
         /// <summary>
         /// Update a payment
         /// </summary>
-        Task<PatchPaymentPaymentResponse> PatchPaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, string id, List<string>? fields = null);
+        Task<PatchPaymentPaymentResponse> PatchPaymentPaymentAsync(PatchPaymentPaymentRequest request);
 
         /// <summary>
         /// Update a subscription
         /// </summary>
-        Task<PatchPaymentSubscriptionResponse> PatchPaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, string id, List<string>? fields = null);
+        Task<PatchPaymentSubscriptionResponse> PatchPaymentSubscriptionAsync(PatchPaymentSubscriptionRequest request);
 
         /// <summary>
         /// Remove a link
@@ -123,27 +123,27 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link
         /// </summary>
-        Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, string id, List<string>? fields = null);
+        Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(UpdatePaymentLinkRequest request);
 
         /// <summary>
         /// Update a payment
         /// </summary>
-        Task<UpdatePaymentPaymentResponse> UpdatePaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, string id, List<string>? fields = null);
+        Task<UpdatePaymentPaymentResponse> UpdatePaymentPaymentAsync(UpdatePaymentPaymentRequest request);
 
         /// <summary>
         /// Update a subscription
         /// </summary>
-        Task<UpdatePaymentSubscriptionResponse> UpdatePaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, string id, List<string>? fields = null);
+        Task<UpdatePaymentSubscriptionResponse> UpdatePaymentSubscriptionAsync(UpdatePaymentSubscriptionRequest request);
     }
 
     public class Payment: IPayment
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -156,13 +156,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<string>? fields = null)
+        public async Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreatePaymentLinkRequest()
             {
                 PaymentLink = paymentLink,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/link", request);
@@ -246,13 +247,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreatePaymentPaymentResponse> CreatePaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, List<string>? fields = null)
+        public async Task<CreatePaymentPaymentResponse> CreatePaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreatePaymentPaymentRequest()
             {
                 PaymentPayment = paymentPayment,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/payment", request);
@@ -336,13 +338,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreatePaymentSubscriptionResponse> CreatePaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, List<string>? fields = null)
+        public async Task<CreatePaymentSubscriptionResponse> CreatePaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreatePaymentSubscriptionRequest()
             {
                 PaymentSubscription = paymentSubscription,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/subscription", request);
@@ -426,13 +429,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetPaymentLinkRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/link/{id}", request);
@@ -510,13 +514,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentPaymentResponse> GetPaymentPaymentAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetPaymentPaymentResponse> GetPaymentPaymentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetPaymentPaymentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/payment/{id}", request);
@@ -594,13 +599,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentPayoutResponse> GetPaymentPayoutAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetPaymentPayoutResponse> GetPaymentPayoutAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetPaymentPayoutRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/payout/{id}", request);
@@ -678,13 +684,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentRefundResponse> GetPaymentRefundAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetPaymentRefundResponse> GetPaymentRefundAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetPaymentRefundRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/refund/{id}", request);
@@ -762,13 +769,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentSubscriptionResponse> GetPaymentSubscriptionAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetPaymentSubscriptionResponse> GetPaymentSubscriptionAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetPaymentSubscriptionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/subscription/{id}", request);
@@ -1236,15 +1244,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(PaymentLink paymentLink, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(PatchPaymentLinkRequest request)
         {
-            var request = new PatchPaymentLinkRequest()
-            {
-                PaymentLink = paymentLink,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/link/{id}", request);
 
@@ -1327,15 +1328,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchPaymentPaymentResponse> PatchPaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchPaymentPaymentResponse> PatchPaymentPaymentAsync(PatchPaymentPaymentRequest request)
         {
-            var request = new PatchPaymentPaymentRequest()
-            {
-                PaymentPayment = paymentPayment,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/payment/{id}", request);
 
@@ -1418,15 +1412,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchPaymentSubscriptionResponse> PatchPaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchPaymentSubscriptionResponse> PatchPaymentSubscriptionAsync(PatchPaymentSubscriptionRequest request)
         {
-            var request = new PatchPaymentSubscriptionRequest()
-            {
-                PaymentSubscription = paymentSubscription,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/subscription/{id}", request);
 
@@ -1755,15 +1742,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(UpdatePaymentLinkRequest request)
         {
-            var request = new UpdatePaymentLinkRequest()
-            {
-                PaymentLink = paymentLink,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/link/{id}", request);
 
@@ -1846,15 +1826,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdatePaymentPaymentResponse> UpdatePaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdatePaymentPaymentResponse> UpdatePaymentPaymentAsync(UpdatePaymentPaymentRequest request)
         {
-            var request = new UpdatePaymentPaymentRequest()
-            {
-                PaymentPayment = paymentPayment,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/payment/{id}", request);
 
@@ -1937,15 +1910,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdatePaymentSubscriptionResponse> UpdatePaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdatePaymentSubscriptionResponse> UpdatePaymentSubscriptionAsync(UpdatePaymentSubscriptionRequest request)
         {
-            var request = new UpdatePaymentSubscriptionRequest()
-            {
-                PaymentSubscription = paymentSubscription,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/subscription/{id}", request);
 

@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a scorecard
         /// </summary>
-        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<string>? fields = null);
+        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a scorecard
         /// </summary>
-        Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all scorecards
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a scorecard
         /// </summary>
-        Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(PatchAtsScorecardRequest request);
 
         /// <summary>
         /// Remove a scorecard
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a scorecard
         /// </summary>
-        Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(UpdateAtsScorecardRequest request);
     }
 
     public class Scorecard: IScorecard
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<string>? fields = null)
+        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAtsScorecardRequest()
             {
                 AtsScorecard = atsScorecard,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAtsScorecardRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(PatchAtsScorecardRequest request)
         {
-            var request = new PatchAtsScorecardRequest()
-            {
-                AtsScorecard = atsScorecard,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(UpdateAtsScorecardRequest request)
         {
-            var request = new UpdateAtsScorecardRequest()
-            {
-                AtsScorecard = atsScorecard,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard/{id}", request);
 

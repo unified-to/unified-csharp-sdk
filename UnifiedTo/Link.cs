@@ -28,22 +28,22 @@ namespace UnifiedTo
         /// <summary>
         /// Create a link
         /// </summary>
-        Task<CreateCalendarLinkResponse> CreateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, List<string>? fields = null);
+        Task<CreateCalendarLinkResponse> CreateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a link
         /// </summary>
-        Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<string>? fields = null);
+        Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a link
         /// </summary>
-        Task<GetCalendarLinkResponse> GetCalendarLinkAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCalendarLinkResponse> GetCalendarLinkAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a link
         /// </summary>
-        Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all links
@@ -58,12 +58,12 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link
         /// </summary>
-        Task<PatchCalendarLinkResponse> PatchCalendarLinkAsync(CalendarLink calendarLink, string connectionId, string id, List<string>? fields = null);
+        Task<PatchCalendarLinkResponse> PatchCalendarLinkAsync(PatchCalendarLinkRequest request);
 
         /// <summary>
         /// Update a link
         /// </summary>
-        Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(PaymentLink paymentLink, string connectionId, string id, List<string>? fields = null);
+        Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(PatchPaymentLinkRequest request);
 
         /// <summary>
         /// Remove a link
@@ -78,22 +78,22 @@ namespace UnifiedTo
         /// <summary>
         /// Update a link
         /// </summary>
-        Task<UpdateCalendarLinkResponse> UpdateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateCalendarLinkResponse> UpdateCalendarLinkAsync(UpdateCalendarLinkRequest request);
 
         /// <summary>
         /// Update a link
         /// </summary>
-        Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, string id, List<string>? fields = null);
+        Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(UpdatePaymentLinkRequest request);
     }
 
     public class Link: ILink
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -106,13 +106,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCalendarLinkResponse> CreateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, List<string>? fields = null)
+        public async Task<CreateCalendarLinkResponse> CreateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateCalendarLinkRequest()
             {
                 CalendarLink = calendarLink,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/link", request);
@@ -196,13 +197,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<string>? fields = null)
+        public async Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreatePaymentLinkRequest()
             {
                 PaymentLink = paymentLink,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/link", request);
@@ -286,13 +288,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCalendarLinkResponse> GetCalendarLinkAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCalendarLinkResponse> GetCalendarLinkAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCalendarLinkRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/link/{id}", request);
@@ -370,13 +373,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetPaymentLinkRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/link/{id}", request);
@@ -610,15 +614,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCalendarLinkResponse> PatchCalendarLinkAsync(CalendarLink calendarLink, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchCalendarLinkResponse> PatchCalendarLinkAsync(PatchCalendarLinkRequest request)
         {
-            var request = new PatchCalendarLinkRequest()
-            {
-                CalendarLink = calendarLink,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/link/{id}", request);
 
@@ -701,15 +698,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(PaymentLink paymentLink, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchPaymentLinkResponse> PatchPaymentLinkAsync(PatchPaymentLinkRequest request)
         {
-            var request = new PatchPaymentLinkRequest()
-            {
-                PaymentLink = paymentLink,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/link/{id}", request);
 
@@ -956,15 +946,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCalendarLinkResponse> UpdateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateCalendarLinkResponse> UpdateCalendarLinkAsync(UpdateCalendarLinkRequest request)
         {
-            var request = new UpdateCalendarLinkRequest()
-            {
-                CalendarLink = calendarLink,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/link/{id}", request);
 
@@ -1047,15 +1030,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdatePaymentLinkResponse> UpdatePaymentLinkAsync(UpdatePaymentLinkRequest request)
         {
-            var request = new UpdatePaymentLinkRequest()
-            {
-                PaymentLink = paymentLink,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/payment/{connection_id}/link/{id}", request);
 

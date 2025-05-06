@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create an application
         /// </summary>
-        Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, List<string>? fields = null);
+        Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an application
         /// </summary>
-        Task<GetAtsApplicationResponse> GetAtsApplicationAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsApplicationResponse> GetAtsApplicationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all applications
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update an application
         /// </summary>
-        Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(AtsApplication atsApplication, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(PatchAtsApplicationRequest request);
 
         /// <summary>
         /// Remove an application
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update an application
         /// </summary>
-        Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(UpdateAtsApplicationRequest request);
     }
 
     public class Application: IApplication
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, List<string>? fields = null)
+        public async Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAtsApplicationRequest()
             {
                 AtsApplication = atsApplication,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsApplicationResponse> GetAtsApplicationAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsApplicationResponse> GetAtsApplicationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAtsApplicationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(AtsApplication atsApplication, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(PatchAtsApplicationRequest request)
         {
-            var request = new PatchAtsApplicationRequest()
-            {
-                AtsApplication = atsApplication,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(UpdateAtsApplicationRequest request)
         {
-            var request = new UpdateAtsApplicationRequest()
-            {
-                AtsApplication = atsApplication,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application/{id}", request);
 

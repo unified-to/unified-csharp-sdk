@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a device
         /// </summary>
-        Task<CreateHrisDeviceResponse> CreateHrisDeviceAsync(HrisDevice hrisDevice, string connectionId, List<string>? fields = null);
+        Task<CreateHrisDeviceResponse> CreateHrisDeviceAsync(HrisDevice hrisDevice, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a device
         /// </summary>
-        Task<GetHrisDeviceResponse> GetHrisDeviceAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetHrisDeviceResponse> GetHrisDeviceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all devices
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a device
         /// </summary>
-        Task<PatchHrisDeviceResponse> PatchHrisDeviceAsync(HrisDevice hrisDevice, string connectionId, string id, List<string>? fields = null);
+        Task<PatchHrisDeviceResponse> PatchHrisDeviceAsync(PatchHrisDeviceRequest request);
 
         /// <summary>
         /// Remove a device
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a device
         /// </summary>
-        Task<UpdateHrisDeviceResponse> UpdateHrisDeviceAsync(HrisDevice hrisDevice, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateHrisDeviceResponse> UpdateHrisDeviceAsync(UpdateHrisDeviceRequest request);
     }
 
     public class Device: IDevice
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateHrisDeviceResponse> CreateHrisDeviceAsync(HrisDevice hrisDevice, string connectionId, List<string>? fields = null)
+        public async Task<CreateHrisDeviceResponse> CreateHrisDeviceAsync(HrisDevice hrisDevice, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateHrisDeviceRequest()
             {
                 HrisDevice = hrisDevice,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/device", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisDeviceResponse> GetHrisDeviceAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetHrisDeviceResponse> GetHrisDeviceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetHrisDeviceRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/device/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisDeviceResponse> PatchHrisDeviceAsync(HrisDevice hrisDevice, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchHrisDeviceResponse> PatchHrisDeviceAsync(PatchHrisDeviceRequest request)
         {
-            var request = new PatchHrisDeviceRequest()
-            {
-                HrisDevice = hrisDevice,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/device/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateHrisDeviceResponse> UpdateHrisDeviceAsync(HrisDevice hrisDevice, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateHrisDeviceResponse> UpdateHrisDeviceAsync(UpdateHrisDeviceRequest request)
         {
-            var request = new UpdateHrisDeviceRequest()
-            {
-                HrisDevice = hrisDevice,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/device/{id}", request);
 

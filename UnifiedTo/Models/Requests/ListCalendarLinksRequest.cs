@@ -43,6 +43,12 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=query")]
         public string? Query { get; set; }
 
+        /// <summary>
+        /// Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=raw")]
+        public string? Raw { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")]
         public string? Sort { get; set; }
 

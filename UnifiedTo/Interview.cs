@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create an interview
         /// </summary>
-        Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<string>? fields = null);
+        Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an interview
         /// </summary>
-        Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all interviews
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update an interview
         /// </summary>
-        Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(AtsInterview atsInterview, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(PatchAtsInterviewRequest request);
 
         /// <summary>
         /// Remove an interview
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update an interview
         /// </summary>
-        Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(UpdateAtsInterviewRequest request);
     }
 
     public class Interview: IInterview
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<string>? fields = null)
+        public async Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAtsInterviewRequest()
             {
                 AtsInterview = atsInterview,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAtsInterviewRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(AtsInterview atsInterview, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(PatchAtsInterviewRequest request)
         {
-            var request = new PatchAtsInterviewRequest()
-            {
-                AtsInterview = atsInterview,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(UpdateAtsInterviewRequest request)
         {
-            var request = new UpdateAtsInterviewRequest()
-            {
-                AtsInterview = atsInterview,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview/{id}", request);
 

@@ -28,42 +28,42 @@ namespace UnifiedTo
         /// <summary>
         /// Create a class
         /// </summary>
-        Task<CreateLmsClassResponse> CreateLmsClassAsync(LmsClass lmsClass, string connectionId, List<string>? fields = null);
+        Task<CreateLmsClassResponse> CreateLmsClassAsync(LmsClass lmsClass, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a course
         /// </summary>
-        Task<CreateLmsCourseResponse> CreateLmsCourseAsync(LmsCourse lmsCourse, string connectionId, List<string>? fields = null);
+        Task<CreateLmsCourseResponse> CreateLmsCourseAsync(LmsCourse lmsCourse, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an instructor
         /// </summary>
-        Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, List<string>? fields = null);
+        Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a student
         /// </summary>
-        Task<CreateLmsStudentResponse> CreateLmsStudentAsync(LmsStudent lmsStudent, string connectionId, List<string>? fields = null);
+        Task<CreateLmsStudentResponse> CreateLmsStudentAsync(LmsStudent lmsStudent, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a class
         /// </summary>
-        Task<GetLmsClassResponse> GetLmsClassAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetLmsClassResponse> GetLmsClassAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a course
         /// </summary>
-        Task<GetLmsCourseResponse> GetLmsCourseAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetLmsCourseResponse> GetLmsCourseAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an instructor
         /// </summary>
-        Task<GetLmsInstructorResponse> GetLmsInstructorAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetLmsInstructorResponse> GetLmsInstructorAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a student
         /// </summary>
-        Task<GetLmsStudentResponse> GetLmsStudentAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetLmsStudentResponse> GetLmsStudentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all classes
@@ -88,22 +88,22 @@ namespace UnifiedTo
         /// <summary>
         /// Update a class
         /// </summary>
-        Task<PatchLmsClassResponse> PatchLmsClassAsync(LmsClass lmsClass, string connectionId, string id, List<string>? fields = null);
+        Task<PatchLmsClassResponse> PatchLmsClassAsync(PatchLmsClassRequest request);
 
         /// <summary>
         /// Update a course
         /// </summary>
-        Task<PatchLmsCourseResponse> PatchLmsCourseAsync(LmsCourse lmsCourse, string connectionId, string id, List<string>? fields = null);
+        Task<PatchLmsCourseResponse> PatchLmsCourseAsync(PatchLmsCourseRequest request);
 
         /// <summary>
         /// Update an instructor
         /// </summary>
-        Task<PatchLmsInstructorResponse> PatchLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, string id, List<string>? fields = null);
+        Task<PatchLmsInstructorResponse> PatchLmsInstructorAsync(PatchLmsInstructorRequest request);
 
         /// <summary>
         /// Update a student
         /// </summary>
-        Task<PatchLmsStudentResponse> PatchLmsStudentAsync(LmsStudent lmsStudent, string connectionId, string id, List<string>? fields = null);
+        Task<PatchLmsStudentResponse> PatchLmsStudentAsync(PatchLmsStudentRequest request);
 
         /// <summary>
         /// Remove a class
@@ -128,32 +128,32 @@ namespace UnifiedTo
         /// <summary>
         /// Update a class
         /// </summary>
-        Task<UpdateLmsClassResponse> UpdateLmsClassAsync(LmsClass lmsClass, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateLmsClassResponse> UpdateLmsClassAsync(UpdateLmsClassRequest request);
 
         /// <summary>
         /// Update a course
         /// </summary>
-        Task<UpdateLmsCourseResponse> UpdateLmsCourseAsync(LmsCourse lmsCourse, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateLmsCourseResponse> UpdateLmsCourseAsync(UpdateLmsCourseRequest request);
 
         /// <summary>
         /// Update an instructor
         /// </summary>
-        Task<UpdateLmsInstructorResponse> UpdateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateLmsInstructorResponse> UpdateLmsInstructorAsync(UpdateLmsInstructorRequest request);
 
         /// <summary>
         /// Update a student
         /// </summary>
-        Task<UpdateLmsStudentResponse> UpdateLmsStudentAsync(LmsStudent lmsStudent, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateLmsStudentResponse> UpdateLmsStudentAsync(UpdateLmsStudentRequest request);
     }
 
     public class Lms: ILms
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -166,13 +166,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateLmsClassResponse> CreateLmsClassAsync(LmsClass lmsClass, string connectionId, List<string>? fields = null)
+        public async Task<CreateLmsClassResponse> CreateLmsClassAsync(LmsClass lmsClass, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateLmsClassRequest()
             {
                 LmsClass = lmsClass,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/class", request);
@@ -256,13 +257,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateLmsCourseResponse> CreateLmsCourseAsync(LmsCourse lmsCourse, string connectionId, List<string>? fields = null)
+        public async Task<CreateLmsCourseResponse> CreateLmsCourseAsync(LmsCourse lmsCourse, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateLmsCourseRequest()
             {
                 LmsCourse = lmsCourse,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/course", request);
@@ -346,13 +348,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, List<string>? fields = null)
+        public async Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateLmsInstructorRequest()
             {
                 LmsInstructor = lmsInstructor,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/instructor", request);
@@ -436,13 +439,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateLmsStudentResponse> CreateLmsStudentAsync(LmsStudent lmsStudent, string connectionId, List<string>? fields = null)
+        public async Task<CreateLmsStudentResponse> CreateLmsStudentAsync(LmsStudent lmsStudent, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateLmsStudentRequest()
             {
                 LmsStudent = lmsStudent,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/student", request);
@@ -526,13 +530,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetLmsClassResponse> GetLmsClassAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetLmsClassResponse> GetLmsClassAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetLmsClassRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/class/{id}", request);
@@ -610,13 +615,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetLmsCourseResponse> GetLmsCourseAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetLmsCourseResponse> GetLmsCourseAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetLmsCourseRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/course/{id}", request);
@@ -694,13 +700,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetLmsInstructorResponse> GetLmsInstructorAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetLmsInstructorResponse> GetLmsInstructorAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetLmsInstructorRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/instructor/{id}", request);
@@ -778,13 +785,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetLmsStudentResponse> GetLmsStudentAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetLmsStudentResponse> GetLmsStudentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetLmsStudentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/student/{id}", request);
@@ -1174,15 +1182,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchLmsClassResponse> PatchLmsClassAsync(LmsClass lmsClass, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchLmsClassResponse> PatchLmsClassAsync(PatchLmsClassRequest request)
         {
-            var request = new PatchLmsClassRequest()
-            {
-                LmsClass = lmsClass,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/class/{id}", request);
 
@@ -1265,15 +1266,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchLmsCourseResponse> PatchLmsCourseAsync(LmsCourse lmsCourse, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchLmsCourseResponse> PatchLmsCourseAsync(PatchLmsCourseRequest request)
         {
-            var request = new PatchLmsCourseRequest()
-            {
-                LmsCourse = lmsCourse,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/course/{id}", request);
 
@@ -1356,15 +1350,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchLmsInstructorResponse> PatchLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchLmsInstructorResponse> PatchLmsInstructorAsync(PatchLmsInstructorRequest request)
         {
-            var request = new PatchLmsInstructorRequest()
-            {
-                LmsInstructor = lmsInstructor,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/instructor/{id}", request);
 
@@ -1447,15 +1434,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchLmsStudentResponse> PatchLmsStudentAsync(LmsStudent lmsStudent, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchLmsStudentResponse> PatchLmsStudentAsync(PatchLmsStudentRequest request)
         {
-            var request = new PatchLmsStudentRequest()
-            {
-                LmsStudent = lmsStudent,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/student/{id}", request);
 
@@ -1866,15 +1846,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateLmsClassResponse> UpdateLmsClassAsync(LmsClass lmsClass, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateLmsClassResponse> UpdateLmsClassAsync(UpdateLmsClassRequest request)
         {
-            var request = new UpdateLmsClassRequest()
-            {
-                LmsClass = lmsClass,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/class/{id}", request);
 
@@ -1957,15 +1930,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateLmsCourseResponse> UpdateLmsCourseAsync(LmsCourse lmsCourse, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateLmsCourseResponse> UpdateLmsCourseAsync(UpdateLmsCourseRequest request)
         {
-            var request = new UpdateLmsCourseRequest()
-            {
-                LmsCourse = lmsCourse,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/course/{id}", request);
 
@@ -2048,15 +2014,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateLmsInstructorResponse> UpdateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateLmsInstructorResponse> UpdateLmsInstructorAsync(UpdateLmsInstructorRequest request)
         {
-            var request = new UpdateLmsInstructorRequest()
-            {
-                LmsInstructor = lmsInstructor,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/instructor/{id}", request);
 
@@ -2139,15 +2098,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateLmsStudentResponse> UpdateLmsStudentAsync(LmsStudent lmsStudent, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateLmsStudentResponse> UpdateLmsStudentAsync(UpdateLmsStudentRequest request)
         {
-            var request = new UpdateLmsStudentRequest()
-            {
-                LmsStudent = lmsStudent,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/lms/{connection_id}/student/{id}", request);
 

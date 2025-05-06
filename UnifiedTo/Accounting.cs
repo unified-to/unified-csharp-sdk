@@ -28,82 +28,82 @@ namespace UnifiedTo
         /// <summary>
         /// Create an account
         /// </summary>
-        Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, List<string>? fields = null);
+        Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(AccountingContact accountingContact, string connectionId, List<string>? fields = null);
+        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(AccountingContact accountingContact, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an invoice
         /// </summary>
-        Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<string>? fields = null);
+        Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a journal
         /// </summary>
-        Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, List<string>? fields = null);
+        Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an order
         /// </summary>
-        Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, List<string>? fields = null);
+        Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a taxrate
         /// </summary>
-        Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, List<string>? fields = null);
+        Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a transaction
         /// </summary>
-        Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, List<string>? fields = null);
+        Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an account
         /// </summary>
-        Task<GetAccountingAccountResponse> GetAccountingAccountAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingAccountResponse> GetAccountingAccountAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an invoice
         /// </summary>
-        Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a journal
         /// </summary>
-        Task<GetAccountingJournalResponse> GetAccountingJournalAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingJournalResponse> GetAccountingJournalAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an order
         /// </summary>
-        Task<GetAccountingOrderResponse> GetAccountingOrderAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingOrderResponse> GetAccountingOrderAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an organization
         /// </summary>
-        Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a report
         /// </summary>
-        Task<GetAccountingReportResponse> GetAccountingReportAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingReportResponse> GetAccountingReportAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a taxrate
         /// </summary>
-        Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a transaction
         /// </summary>
-        Task<GetAccountingTransactionResponse> GetAccountingTransactionAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingTransactionResponse> GetAccountingTransactionAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all accounts
@@ -153,37 +153,37 @@ namespace UnifiedTo
         /// <summary>
         /// Update an account
         /// </summary>
-        Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(PatchAccountingAccountRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchAccountingContactResponse> PatchAccountingContactAsync(AccountingContact accountingContact, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAccountingContactResponse> PatchAccountingContactAsync(PatchAccountingContactRequest request);
 
         /// <summary>
         /// Update an invoice
         /// </summary>
-        Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(PatchAccountingInvoiceRequest request);
 
         /// <summary>
         /// Update a journal
         /// </summary>
-        Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(PatchAccountingJournalRequest request);
 
         /// <summary>
         /// Update an order
         /// </summary>
-        Task<PatchAccountingOrderResponse> PatchAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAccountingOrderResponse> PatchAccountingOrderAsync(PatchAccountingOrderRequest request);
 
         /// <summary>
         /// Update a taxrate
         /// </summary>
-        Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(PatchAccountingTaxrateRequest request);
 
         /// <summary>
         /// Update a transaction
         /// </summary>
-        Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(PatchAccountingTransactionRequest request);
 
         /// <summary>
         /// Remove an account
@@ -223,47 +223,47 @@ namespace UnifiedTo
         /// <summary>
         /// Update an account
         /// </summary>
-        Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(UpdateAccountingAccountRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(AccountingContact accountingContact, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(UpdateAccountingContactRequest request);
 
         /// <summary>
         /// Update an invoice
         /// </summary>
-        Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(UpdateAccountingInvoiceRequest request);
 
         /// <summary>
         /// Update a journal
         /// </summary>
-        Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(UpdateAccountingJournalRequest request);
 
         /// <summary>
         /// Update an order
         /// </summary>
-        Task<UpdateAccountingOrderResponse> UpdateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAccountingOrderResponse> UpdateAccountingOrderAsync(UpdateAccountingOrderRequest request);
 
         /// <summary>
         /// Update a taxrate
         /// </summary>
-        Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(UpdateAccountingTaxrateRequest request);
 
         /// <summary>
         /// Update a transaction
         /// </summary>
-        Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(UpdateAccountingTransactionRequest request);
     }
 
     public class Accounting: IAccounting
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -276,13 +276,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, List<string>? fields = null)
+        public async Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingAccountRequest()
             {
                 AccountingAccount = accountingAccount,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account", request);
@@ -366,13 +367,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(AccountingContact accountingContact, string connectionId, List<string>? fields = null)
+        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(AccountingContact accountingContact, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingContactRequest()
             {
                 AccountingContact = accountingContact,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact", request);
@@ -456,13 +458,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<string>? fields = null)
+        public async Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingInvoiceRequest()
             {
                 AccountingInvoice = accountingInvoice,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice", request);
@@ -546,13 +549,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, List<string>? fields = null)
+        public async Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingJournalRequest()
             {
                 AccountingJournal = accountingJournal,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/journal", request);
@@ -636,13 +640,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, List<string>? fields = null)
+        public async Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingOrderRequest()
             {
                 AccountingOrder = accountingOrder,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/order", request);
@@ -726,13 +731,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, List<string>? fields = null)
+        public async Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingTaxrateRequest()
             {
                 AccountingTaxrate = accountingTaxrate,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate", request);
@@ -816,13 +822,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, List<string>? fields = null)
+        public async Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingTransactionRequest()
             {
                 AccountingTransaction = accountingTransaction,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/transaction", request);
@@ -906,13 +913,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingAccountResponse> GetAccountingAccountAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingAccountResponse> GetAccountingAccountAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAccountingAccountRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account/{id}", request);
@@ -990,13 +998,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAccountingContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
@@ -1074,13 +1083,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAccountingInvoiceRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice/{id}", request);
@@ -1158,13 +1168,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingJournalResponse> GetAccountingJournalAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingJournalResponse> GetAccountingJournalAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAccountingJournalRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/journal/{id}", request);
@@ -1242,13 +1253,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingOrderResponse> GetAccountingOrderAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingOrderResponse> GetAccountingOrderAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAccountingOrderRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/order/{id}", request);
@@ -1326,13 +1338,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAccountingOrganizationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/organization/{id}", request);
@@ -1410,13 +1423,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingReportResponse> GetAccountingReportAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingReportResponse> GetAccountingReportAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAccountingReportRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/report/{id}", request);
@@ -1494,13 +1508,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAccountingTaxrateRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate/{id}", request);
@@ -1578,13 +1593,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingTransactionResponse> GetAccountingTransactionAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingTransactionResponse> GetAccountingTransactionAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAccountingTransactionRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/transaction/{id}", request);
@@ -2364,15 +2380,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAccountingAccountResponse> PatchAccountingAccountAsync(PatchAccountingAccountRequest request)
         {
-            var request = new PatchAccountingAccountRequest()
-            {
-                AccountingAccount = accountingAccount,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account/{id}", request);
 
@@ -2455,15 +2464,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingContactResponse> PatchAccountingContactAsync(AccountingContact accountingContact, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAccountingContactResponse> PatchAccountingContactAsync(PatchAccountingContactRequest request)
         {
-            var request = new PatchAccountingContactRequest()
-            {
-                AccountingContact = accountingContact,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
 
@@ -2546,15 +2548,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAccountingInvoiceResponse> PatchAccountingInvoiceAsync(PatchAccountingInvoiceRequest request)
         {
-            var request = new PatchAccountingInvoiceRequest()
-            {
-                AccountingInvoice = accountingInvoice,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice/{id}", request);
 
@@ -2637,15 +2632,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAccountingJournalResponse> PatchAccountingJournalAsync(PatchAccountingJournalRequest request)
         {
-            var request = new PatchAccountingJournalRequest()
-            {
-                AccountingJournal = accountingJournal,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/journal/{id}", request);
 
@@ -2728,15 +2716,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingOrderResponse> PatchAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAccountingOrderResponse> PatchAccountingOrderAsync(PatchAccountingOrderRequest request)
         {
-            var request = new PatchAccountingOrderRequest()
-            {
-                AccountingOrder = accountingOrder,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/order/{id}", request);
 
@@ -2819,15 +2800,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAccountingTaxrateResponse> PatchAccountingTaxrateAsync(PatchAccountingTaxrateRequest request)
         {
-            var request = new PatchAccountingTaxrateRequest()
-            {
-                AccountingTaxrate = accountingTaxrate,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate/{id}", request);
 
@@ -2910,15 +2884,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAccountingTransactionResponse> PatchAccountingTransactionAsync(PatchAccountingTransactionRequest request)
         {
-            var request = new PatchAccountingTransactionRequest()
-            {
-                AccountingTransaction = accountingTransaction,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/transaction/{id}", request);
 
@@ -3575,15 +3542,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAccountingAccountResponse> UpdateAccountingAccountAsync(UpdateAccountingAccountRequest request)
         {
-            var request = new UpdateAccountingAccountRequest()
-            {
-                AccountingAccount = accountingAccount,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/account/{id}", request);
 
@@ -3666,15 +3626,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(AccountingContact accountingContact, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(UpdateAccountingContactRequest request)
         {
-            var request = new UpdateAccountingContactRequest()
-            {
-                AccountingContact = accountingContact,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
 
@@ -3757,15 +3710,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAccountingInvoiceResponse> UpdateAccountingInvoiceAsync(UpdateAccountingInvoiceRequest request)
         {
-            var request = new UpdateAccountingInvoiceRequest()
-            {
-                AccountingInvoice = accountingInvoice,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/invoice/{id}", request);
 
@@ -3848,15 +3794,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAccountingJournalResponse> UpdateAccountingJournalAsync(UpdateAccountingJournalRequest request)
         {
-            var request = new UpdateAccountingJournalRequest()
-            {
-                AccountingJournal = accountingJournal,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/journal/{id}", request);
 
@@ -3939,15 +3878,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAccountingOrderResponse> UpdateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAccountingOrderResponse> UpdateAccountingOrderAsync(UpdateAccountingOrderRequest request)
         {
-            var request = new UpdateAccountingOrderRequest()
-            {
-                AccountingOrder = accountingOrder,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/order/{id}", request);
 
@@ -4030,15 +3962,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAccountingTaxrateResponse> UpdateAccountingTaxrateAsync(UpdateAccountingTaxrateRequest request)
         {
-            var request = new UpdateAccountingTaxrateRequest()
-            {
-                AccountingTaxrate = accountingTaxrate,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/taxrate/{id}", request);
 
@@ -4121,15 +4046,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAccountingTransactionResponse> UpdateAccountingTransactionAsync(UpdateAccountingTransactionRequest request)
         {
-            var request = new UpdateAccountingTransactionRequest()
-            {
-                AccountingTransaction = accountingTransaction,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/transaction/{id}", request);
 

@@ -28,32 +28,32 @@ namespace UnifiedTo
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(AccountingContact accountingContact, string connectionId, List<string>? fields = null);
+        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(AccountingContact accountingContact, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateCrmContactResponse> CreateCrmContactAsync(CrmContact crmContact, string connectionId, List<string>? fields = null);
+        Task<CreateCrmContactResponse> CreateCrmContactAsync(CrmContact crmContact, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateUcContactResponse> CreateUcContactAsync(UcContact ucContact, string connectionId, List<string>? fields = null);
+        Task<CreateUcContactResponse> CreateUcContactAsync(UcContact ucContact, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all contacts
@@ -73,17 +73,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchAccountingContactResponse> PatchAccountingContactAsync(AccountingContact accountingContact, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAccountingContactResponse> PatchAccountingContactAsync(PatchAccountingContactRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchCrmContactResponse> PatchCrmContactAsync(CrmContact crmContact, string connectionId, string id, List<string>? fields = null);
+        Task<PatchCrmContactResponse> PatchCrmContactAsync(PatchCrmContactRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchUcContactResponse> PatchUcContactAsync(UcContact ucContact, string connectionId, string id, List<string>? fields = null);
+        Task<PatchUcContactResponse> PatchUcContactAsync(PatchUcContactRequest request);
 
         /// <summary>
         /// Remove a contact
@@ -103,27 +103,27 @@ namespace UnifiedTo
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(AccountingContact accountingContact, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(UpdateAccountingContactRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateCrmContactResponse> UpdateCrmContactAsync(CrmContact crmContact, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateCrmContactResponse> UpdateCrmContactAsync(UpdateCrmContactRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateUcContactResponse> UpdateUcContactAsync(UcContact ucContact, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateUcContactResponse> UpdateUcContactAsync(UpdateUcContactRequest request);
     }
 
     public class Contact: IContact
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -136,13 +136,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(AccountingContact accountingContact, string connectionId, List<string>? fields = null)
+        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(AccountingContact accountingContact, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingContactRequest()
             {
                 AccountingContact = accountingContact,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact", request);
@@ -226,13 +227,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmContactResponse> CreateCrmContactAsync(CrmContact crmContact, string connectionId, List<string>? fields = null)
+        public async Task<CreateCrmContactResponse> CreateCrmContactAsync(CrmContact crmContact, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateCrmContactRequest()
             {
                 CrmContact = crmContact,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact", request);
@@ -316,13 +318,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateUcContactResponse> CreateUcContactAsync(UcContact ucContact, string connectionId, List<string>? fields = null)
+        public async Task<CreateUcContactResponse> CreateUcContactAsync(UcContact ucContact, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateUcContactRequest()
             {
                 UcContact = ucContact,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/contact", request);
@@ -406,13 +409,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAccountingContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
@@ -490,13 +494,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCrmContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact/{id}", request);
@@ -574,13 +579,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetUcContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/contact/{id}", request);
@@ -892,15 +898,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAccountingContactResponse> PatchAccountingContactAsync(AccountingContact accountingContact, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAccountingContactResponse> PatchAccountingContactAsync(PatchAccountingContactRequest request)
         {
-            var request = new PatchAccountingContactRequest()
-            {
-                AccountingContact = accountingContact,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
 
@@ -983,15 +982,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmContactResponse> PatchCrmContactAsync(CrmContact crmContact, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchCrmContactResponse> PatchCrmContactAsync(PatchCrmContactRequest request)
         {
-            var request = new PatchCrmContactRequest()
-            {
-                CrmContact = crmContact,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact/{id}", request);
 
@@ -1074,15 +1066,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchUcContactResponse> PatchUcContactAsync(UcContact ucContact, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchUcContactResponse> PatchUcContactAsync(PatchUcContactRequest request)
         {
-            var request = new PatchUcContactRequest()
-            {
-                UcContact = ucContact,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/contact/{id}", request);
 
@@ -1411,15 +1396,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(AccountingContact accountingContact, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAccountingContactResponse> UpdateAccountingContactAsync(UpdateAccountingContactRequest request)
         {
-            var request = new UpdateAccountingContactRequest()
-            {
-                AccountingContact = accountingContact,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/accounting/{connection_id}/contact/{id}", request);
 
@@ -1502,15 +1480,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateCrmContactResponse> UpdateCrmContactAsync(CrmContact crmContact, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateCrmContactResponse> UpdateCrmContactAsync(UpdateCrmContactRequest request)
         {
-            var request = new UpdateCrmContactRequest()
-            {
-                CrmContact = crmContact,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/contact/{id}", request);
 
@@ -1593,15 +1564,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateUcContactResponse> UpdateUcContactAsync(UcContact ucContact, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateUcContactResponse> UpdateUcContactAsync(UpdateUcContactRequest request)
         {
-            var request = new UpdateUcContactRequest()
-            {
-                UcContact = ucContact,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/contact/{id}", request);
 

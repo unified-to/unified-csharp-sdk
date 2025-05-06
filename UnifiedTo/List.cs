@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a list
         /// </summary>
-        Task<CreateMartechListResponse> CreateMartechListAsync(MarketingList marketingList, string connectionId, List<string>? fields = null);
+        Task<CreateMartechListResponse> CreateMartechListAsync(MarketingList marketingList, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a list
         /// </summary>
-        Task<GetMartechListResponse> GetMartechListAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetMartechListResponse> GetMartechListAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all lists
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a list
         /// </summary>
-        Task<PatchMartechListResponse> PatchMartechListAsync(MarketingList marketingList, string connectionId, string id, List<string>? fields = null);
+        Task<PatchMartechListResponse> PatchMartechListAsync(PatchMartechListRequest request);
 
         /// <summary>
         /// Remove a list
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a list
         /// </summary>
-        Task<UpdateMartechListResponse> UpdateMartechListAsync(MarketingList marketingList, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateMartechListResponse> UpdateMartechListAsync(UpdateMartechListRequest request);
     }
 
     public class List: IList
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateMartechListResponse> CreateMartechListAsync(MarketingList marketingList, string connectionId, List<string>? fields = null)
+        public async Task<CreateMartechListResponse> CreateMartechListAsync(MarketingList marketingList, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateMartechListRequest()
             {
                 MarketingList = marketingList,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/martech/{connection_id}/list", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetMartechListResponse> GetMartechListAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetMartechListResponse> GetMartechListAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetMartechListRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/martech/{connection_id}/list/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchMartechListResponse> PatchMartechListAsync(MarketingList marketingList, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchMartechListResponse> PatchMartechListAsync(PatchMartechListRequest request)
         {
-            var request = new PatchMartechListRequest()
-            {
-                MarketingList = marketingList,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/martech/{connection_id}/list/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateMartechListResponse> UpdateMartechListAsync(MarketingList marketingList, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateMartechListResponse> UpdateMartechListAsync(UpdateMartechListRequest request)
         {
-            var request = new UpdateMartechListRequest()
-            {
-                MarketingList = marketingList,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/martech/{connection_id}/list/{id}", request);
 

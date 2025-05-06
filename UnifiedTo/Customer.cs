@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a customer
         /// </summary>
-        Task<CreateTicketingCustomerResponse> CreateTicketingCustomerAsync(TicketingCustomer ticketingCustomer, string connectionId, List<string>? fields = null);
+        Task<CreateTicketingCustomerResponse> CreateTicketingCustomerAsync(TicketingCustomer ticketingCustomer, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a customer
         /// </summary>
-        Task<GetTicketingCustomerResponse> GetTicketingCustomerAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetTicketingCustomerResponse> GetTicketingCustomerAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all customers
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a customer
         /// </summary>
-        Task<PatchTicketingCustomerResponse> PatchTicketingCustomerAsync(TicketingCustomer ticketingCustomer, string connectionId, string id, List<string>? fields = null);
+        Task<PatchTicketingCustomerResponse> PatchTicketingCustomerAsync(PatchTicketingCustomerRequest request);
 
         /// <summary>
         /// Remove a customer
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a customer
         /// </summary>
-        Task<UpdateTicketingCustomerResponse> UpdateTicketingCustomerAsync(TicketingCustomer ticketingCustomer, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateTicketingCustomerResponse> UpdateTicketingCustomerAsync(UpdateTicketingCustomerRequest request);
     }
 
     public class Customer: ICustomer
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateTicketingCustomerResponse> CreateTicketingCustomerAsync(TicketingCustomer ticketingCustomer, string connectionId, List<string>? fields = null)
+        public async Task<CreateTicketingCustomerResponse> CreateTicketingCustomerAsync(TicketingCustomer ticketingCustomer, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateTicketingCustomerRequest()
             {
                 TicketingCustomer = ticketingCustomer,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ticketing/{connection_id}/customer", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetTicketingCustomerResponse> GetTicketingCustomerAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetTicketingCustomerResponse> GetTicketingCustomerAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetTicketingCustomerRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ticketing/{connection_id}/customer/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchTicketingCustomerResponse> PatchTicketingCustomerAsync(TicketingCustomer ticketingCustomer, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchTicketingCustomerResponse> PatchTicketingCustomerAsync(PatchTicketingCustomerRequest request)
         {
-            var request = new PatchTicketingCustomerRequest()
-            {
-                TicketingCustomer = ticketingCustomer,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ticketing/{connection_id}/customer/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateTicketingCustomerResponse> UpdateTicketingCustomerAsync(TicketingCustomer ticketingCustomer, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateTicketingCustomerResponse> UpdateTicketingCustomerAsync(UpdateTicketingCustomerRequest request)
         {
-            var request = new UpdateTicketingCustomerRequest()
-            {
-                TicketingCustomer = ticketingCustomer,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ticketing/{connection_id}/customer/{id}", request);
 

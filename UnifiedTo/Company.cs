@@ -28,27 +28,27 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<string>? fields = null);
+        Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, List<string>? fields = null);
+        Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all companies
@@ -73,12 +73,12 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(CrmCompany crmCompany, string connectionId, string id, List<string>? fields = null);
+        Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(PatchCrmCompanyRequest request);
 
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<PatchHrisCompanyResponse> PatchHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, string id, List<string>? fields = null);
+        Task<PatchHrisCompanyResponse> PatchHrisCompanyAsync(PatchHrisCompanyRequest request);
 
         /// <summary>
         /// Remove a company
@@ -93,22 +93,22 @@ namespace UnifiedTo
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(UpdateCrmCompanyRequest request);
 
         /// <summary>
         /// Update a company
         /// </summary>
-        Task<UpdateHrisCompanyResponse> UpdateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateHrisCompanyResponse> UpdateHrisCompanyAsync(UpdateHrisCompanyRequest request);
     }
 
     public class Company: ICompany
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -121,13 +121,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<string>? fields = null)
+        public async Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateCrmCompanyRequest()
             {
                 CrmCompany = crmCompany,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company", request);
@@ -211,13 +212,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, List<string>? fields = null)
+        public async Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateHrisCompanyRequest()
             {
                 HrisCompany = hrisCompany,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/company", request);
@@ -301,13 +303,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAtsCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/company/{id}", request);
@@ -385,13 +388,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCrmCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company/{id}", request);
@@ -469,13 +473,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetHrisCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/company/{id}", request);
@@ -871,15 +876,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(CrmCompany crmCompany, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchCrmCompanyResponse> PatchCrmCompanyAsync(PatchCrmCompanyRequest request)
         {
-            var request = new PatchCrmCompanyRequest()
-            {
-                CrmCompany = crmCompany,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company/{id}", request);
 
@@ -962,15 +960,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisCompanyResponse> PatchHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchHrisCompanyResponse> PatchHrisCompanyAsync(PatchHrisCompanyRequest request)
         {
-            var request = new PatchHrisCompanyRequest()
-            {
-                HrisCompany = hrisCompany,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/company/{id}", request);
 
@@ -1217,15 +1208,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateCrmCompanyResponse> UpdateCrmCompanyAsync(UpdateCrmCompanyRequest request)
         {
-            var request = new UpdateCrmCompanyRequest()
-            {
-                CrmCompany = crmCompany,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/company/{id}", request);
 
@@ -1308,15 +1292,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateHrisCompanyResponse> UpdateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateHrisCompanyResponse> UpdateHrisCompanyAsync(UpdateHrisCompanyRequest request)
         {
-            var request = new UpdateHrisCompanyRequest()
-            {
-                HrisCompany = hrisCompany,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/company/{id}", request);
 

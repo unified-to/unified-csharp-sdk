@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a repository
         /// </summary>
-        Task<CreateRepoRepositoryResponse> CreateRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, List<string>? fields = null);
+        Task<CreateRepoRepositoryResponse> CreateRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a repository
         /// </summary>
-        Task<GetRepoRepositoryResponse> GetRepoRepositoryAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetRepoRepositoryResponse> GetRepoRepositoryAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all repositories
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a repository
         /// </summary>
-        Task<PatchRepoRepositoryResponse> PatchRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, string id, List<string>? fields = null);
+        Task<PatchRepoRepositoryResponse> PatchRepoRepositoryAsync(PatchRepoRepositoryRequest request);
 
         /// <summary>
         /// Remove a repository
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a repository
         /// </summary>
-        Task<UpdateRepoRepositoryResponse> UpdateRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateRepoRepositoryResponse> UpdateRepoRepositoryAsync(UpdateRepoRepositoryRequest request);
     }
 
     public class Repository: IRepository
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateRepoRepositoryResponse> CreateRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, List<string>? fields = null)
+        public async Task<CreateRepoRepositoryResponse> CreateRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateRepoRepositoryRequest()
             {
                 RepoRepository = repoRepository,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/repository", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetRepoRepositoryResponse> GetRepoRepositoryAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetRepoRepositoryResponse> GetRepoRepositoryAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetRepoRepositoryRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/repository/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchRepoRepositoryResponse> PatchRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchRepoRepositoryResponse> PatchRepoRepositoryAsync(PatchRepoRepositoryRequest request)
         {
-            var request = new PatchRepoRepositoryRequest()
-            {
-                RepoRepository = repoRepository,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/repository/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateRepoRepositoryResponse> UpdateRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateRepoRepositoryResponse> UpdateRepoRepositoryAsync(UpdateRepoRepositoryRequest request)
         {
-            var request = new UpdateRepoRepositoryRequest()
-            {
-                RepoRepository = repoRepository,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/repository/{id}", request);
 

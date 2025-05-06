@@ -28,52 +28,52 @@ namespace UnifiedTo
         /// <summary>
         /// Create a branch
         /// </summary>
-        Task<CreateRepoBranchResponse> CreateRepoBranchAsync(RepoBranch repoBranch, string connectionId, List<string>? fields = null);
+        Task<CreateRepoBranchResponse> CreateRepoBranchAsync(RepoBranch repoBranch, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a commit
         /// </summary>
-        Task<CreateRepoCommitResponse> CreateRepoCommitAsync(RepoCommit repoCommit, string connectionId, List<string>? fields = null);
+        Task<CreateRepoCommitResponse> CreateRepoCommitAsync(RepoCommit repoCommit, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an organization
         /// </summary>
-        Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, List<string>? fields = null);
+        Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a pullrequest
         /// </summary>
-        Task<CreateRepoPullrequestResponse> CreateRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, List<string>? fields = null);
+        Task<CreateRepoPullrequestResponse> CreateRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a repository
         /// </summary>
-        Task<CreateRepoRepositoryResponse> CreateRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, List<string>? fields = null);
+        Task<CreateRepoRepositoryResponse> CreateRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a branch
         /// </summary>
-        Task<GetRepoBranchResponse> GetRepoBranchAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetRepoBranchResponse> GetRepoBranchAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a commit
         /// </summary>
-        Task<GetRepoCommitResponse> GetRepoCommitAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetRepoCommitResponse> GetRepoCommitAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an organization
         /// </summary>
-        Task<GetRepoOrganizationResponse> GetRepoOrganizationAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetRepoOrganizationResponse> GetRepoOrganizationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a pullrequest
         /// </summary>
-        Task<GetRepoPullrequestResponse> GetRepoPullrequestAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetRepoPullrequestResponse> GetRepoPullrequestAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a repository
         /// </summary>
-        Task<GetRepoRepositoryResponse> GetRepoRepositoryAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetRepoRepositoryResponse> GetRepoRepositoryAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all branches
@@ -103,27 +103,27 @@ namespace UnifiedTo
         /// <summary>
         /// Update a branch
         /// </summary>
-        Task<PatchRepoBranchResponse> PatchRepoBranchAsync(RepoBranch repoBranch, string connectionId, string id, List<string>? fields = null);
+        Task<PatchRepoBranchResponse> PatchRepoBranchAsync(PatchRepoBranchRequest request);
 
         /// <summary>
         /// Update a commit
         /// </summary>
-        Task<PatchRepoCommitResponse> PatchRepoCommitAsync(RepoCommit repoCommit, string connectionId, string id, List<string>? fields = null);
+        Task<PatchRepoCommitResponse> PatchRepoCommitAsync(PatchRepoCommitRequest request);
 
         /// <summary>
         /// Update an organization
         /// </summary>
-        Task<PatchRepoOrganizationResponse> PatchRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, string id, List<string>? fields = null);
+        Task<PatchRepoOrganizationResponse> PatchRepoOrganizationAsync(PatchRepoOrganizationRequest request);
 
         /// <summary>
         /// Update a pullrequest
         /// </summary>
-        Task<PatchRepoPullrequestResponse> PatchRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, string id, List<string>? fields = null);
+        Task<PatchRepoPullrequestResponse> PatchRepoPullrequestAsync(PatchRepoPullrequestRequest request);
 
         /// <summary>
         /// Update a repository
         /// </summary>
-        Task<PatchRepoRepositoryResponse> PatchRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, string id, List<string>? fields = null);
+        Task<PatchRepoRepositoryResponse> PatchRepoRepositoryAsync(PatchRepoRepositoryRequest request);
 
         /// <summary>
         /// Remove a branch
@@ -153,37 +153,37 @@ namespace UnifiedTo
         /// <summary>
         /// Update a branch
         /// </summary>
-        Task<UpdateRepoBranchResponse> UpdateRepoBranchAsync(RepoBranch repoBranch, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateRepoBranchResponse> UpdateRepoBranchAsync(UpdateRepoBranchRequest request);
 
         /// <summary>
         /// Update a commit
         /// </summary>
-        Task<UpdateRepoCommitResponse> UpdateRepoCommitAsync(RepoCommit repoCommit, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateRepoCommitResponse> UpdateRepoCommitAsync(UpdateRepoCommitRequest request);
 
         /// <summary>
         /// Update an organization
         /// </summary>
-        Task<UpdateRepoOrganizationResponse> UpdateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateRepoOrganizationResponse> UpdateRepoOrganizationAsync(UpdateRepoOrganizationRequest request);
 
         /// <summary>
         /// Update a pullrequest
         /// </summary>
-        Task<UpdateRepoPullrequestResponse> UpdateRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateRepoPullrequestResponse> UpdateRepoPullrequestAsync(UpdateRepoPullrequestRequest request);
 
         /// <summary>
         /// Update a repository
         /// </summary>
-        Task<UpdateRepoRepositoryResponse> UpdateRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateRepoRepositoryResponse> UpdateRepoRepositoryAsync(UpdateRepoRepositoryRequest request);
     }
 
     public class Repo: IRepo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -196,13 +196,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateRepoBranchResponse> CreateRepoBranchAsync(RepoBranch repoBranch, string connectionId, List<string>? fields = null)
+        public async Task<CreateRepoBranchResponse> CreateRepoBranchAsync(RepoBranch repoBranch, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateRepoBranchRequest()
             {
                 RepoBranch = repoBranch,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/branch", request);
@@ -286,13 +287,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateRepoCommitResponse> CreateRepoCommitAsync(RepoCommit repoCommit, string connectionId, List<string>? fields = null)
+        public async Task<CreateRepoCommitResponse> CreateRepoCommitAsync(RepoCommit repoCommit, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateRepoCommitRequest()
             {
                 RepoCommit = repoCommit,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/commit", request);
@@ -376,13 +378,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, List<string>? fields = null)
+        public async Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateRepoOrganizationRequest()
             {
                 RepoOrganization = repoOrganization,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/organization", request);
@@ -466,13 +469,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateRepoPullrequestResponse> CreateRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, List<string>? fields = null)
+        public async Task<CreateRepoPullrequestResponse> CreateRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateRepoPullrequestRequest()
             {
                 RepoPullrequest = repoPullrequest,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/pullrequest", request);
@@ -556,13 +560,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateRepoRepositoryResponse> CreateRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, List<string>? fields = null)
+        public async Task<CreateRepoRepositoryResponse> CreateRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateRepoRepositoryRequest()
             {
                 RepoRepository = repoRepository,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/repository", request);
@@ -646,13 +651,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetRepoBranchResponse> GetRepoBranchAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetRepoBranchResponse> GetRepoBranchAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetRepoBranchRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/branch/{id}", request);
@@ -730,13 +736,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetRepoCommitResponse> GetRepoCommitAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetRepoCommitResponse> GetRepoCommitAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetRepoCommitRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/commit/{id}", request);
@@ -814,13 +821,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetRepoOrganizationResponse> GetRepoOrganizationAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetRepoOrganizationResponse> GetRepoOrganizationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetRepoOrganizationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/organization/{id}", request);
@@ -898,13 +906,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetRepoPullrequestResponse> GetRepoPullrequestAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetRepoPullrequestResponse> GetRepoPullrequestAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetRepoPullrequestRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/pullrequest/{id}", request);
@@ -982,13 +991,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetRepoRepositoryResponse> GetRepoRepositoryAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetRepoRepositoryResponse> GetRepoRepositoryAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetRepoRepositoryRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/repository/{id}", request);
@@ -1456,15 +1466,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchRepoBranchResponse> PatchRepoBranchAsync(RepoBranch repoBranch, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchRepoBranchResponse> PatchRepoBranchAsync(PatchRepoBranchRequest request)
         {
-            var request = new PatchRepoBranchRequest()
-            {
-                RepoBranch = repoBranch,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/branch/{id}", request);
 
@@ -1547,15 +1550,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchRepoCommitResponse> PatchRepoCommitAsync(RepoCommit repoCommit, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchRepoCommitResponse> PatchRepoCommitAsync(PatchRepoCommitRequest request)
         {
-            var request = new PatchRepoCommitRequest()
-            {
-                RepoCommit = repoCommit,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/commit/{id}", request);
 
@@ -1638,15 +1634,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchRepoOrganizationResponse> PatchRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchRepoOrganizationResponse> PatchRepoOrganizationAsync(PatchRepoOrganizationRequest request)
         {
-            var request = new PatchRepoOrganizationRequest()
-            {
-                RepoOrganization = repoOrganization,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/organization/{id}", request);
 
@@ -1729,15 +1718,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchRepoPullrequestResponse> PatchRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchRepoPullrequestResponse> PatchRepoPullrequestAsync(PatchRepoPullrequestRequest request)
         {
-            var request = new PatchRepoPullrequestRequest()
-            {
-                RepoPullrequest = repoPullrequest,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/pullrequest/{id}", request);
 
@@ -1820,15 +1802,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchRepoRepositoryResponse> PatchRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchRepoRepositoryResponse> PatchRepoRepositoryAsync(PatchRepoRepositoryRequest request)
         {
-            var request = new PatchRepoRepositoryRequest()
-            {
-                RepoRepository = repoRepository,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/repository/{id}", request);
 
@@ -2321,15 +2296,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateRepoBranchResponse> UpdateRepoBranchAsync(RepoBranch repoBranch, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateRepoBranchResponse> UpdateRepoBranchAsync(UpdateRepoBranchRequest request)
         {
-            var request = new UpdateRepoBranchRequest()
-            {
-                RepoBranch = repoBranch,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/branch/{id}", request);
 
@@ -2412,15 +2380,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateRepoCommitResponse> UpdateRepoCommitAsync(RepoCommit repoCommit, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateRepoCommitResponse> UpdateRepoCommitAsync(UpdateRepoCommitRequest request)
         {
-            var request = new UpdateRepoCommitRequest()
-            {
-                RepoCommit = repoCommit,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/commit/{id}", request);
 
@@ -2503,15 +2464,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateRepoOrganizationResponse> UpdateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateRepoOrganizationResponse> UpdateRepoOrganizationAsync(UpdateRepoOrganizationRequest request)
         {
-            var request = new UpdateRepoOrganizationRequest()
-            {
-                RepoOrganization = repoOrganization,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/organization/{id}", request);
 
@@ -2594,15 +2548,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateRepoPullrequestResponse> UpdateRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateRepoPullrequestResponse> UpdateRepoPullrequestAsync(UpdateRepoPullrequestRequest request)
         {
-            var request = new UpdateRepoPullrequestRequest()
-            {
-                RepoPullrequest = repoPullrequest,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/pullrequest/{id}", request);
 
@@ -2685,15 +2632,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateRepoRepositoryResponse> UpdateRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateRepoRepositoryResponse> UpdateRepoRepositoryAsync(UpdateRepoRepositoryRequest request)
         {
-            var request = new UpdateRepoRepositoryRequest()
-            {
-                RepoRepository = repoRepository,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/repo/{connection_id}/repository/{id}", request);
 

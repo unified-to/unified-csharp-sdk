@@ -28,77 +28,77 @@ namespace UnifiedTo
         /// <summary>
         /// Create an activity
         /// </summary>
-        Task<CreateAtsActivityResponse> CreateAtsActivityAsync(AtsActivity atsActivity, string connectionId, List<string>? fields = null);
+        Task<CreateAtsActivityResponse> CreateAtsActivityAsync(AtsActivity atsActivity, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an application
         /// </summary>
-        Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, List<string>? fields = null);
+        Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a candidate
         /// </summary>
-        Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, List<string>? fields = null);
+        Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a document
         /// </summary>
-        Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(AtsDocument atsDocument, string connectionId, List<string>? fields = null);
+        Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(AtsDocument atsDocument, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an interview
         /// </summary>
-        Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<string>? fields = null);
+        Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a job
         /// </summary>
-        Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<string>? fields = null);
+        Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a scorecard
         /// </summary>
-        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<string>? fields = null);
+        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an activity
         /// </summary>
-        Task<GetAtsActivityResponse> GetAtsActivityAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsActivityResponse> GetAtsActivityAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an application
         /// </summary>
-        Task<GetAtsApplicationResponse> GetAtsApplicationAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsApplicationResponse> GetAtsApplicationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a candidate
         /// </summary>
-        Task<GetAtsCandidateResponse> GetAtsCandidateAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsCandidateResponse> GetAtsCandidateAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a document
         /// </summary>
-        Task<GetAtsDocumentResponse> GetAtsDocumentAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsDocumentResponse> GetAtsDocumentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an interview
         /// </summary>
-        Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a job
         /// </summary>
-        Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a scorecard
         /// </summary>
-        Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all activities
@@ -148,37 +148,37 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity
         /// </summary>
-        Task<PatchAtsActivityResponse> PatchAtsActivityAsync(AtsActivity atsActivity, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAtsActivityResponse> PatchAtsActivityAsync(PatchAtsActivityRequest request);
 
         /// <summary>
         /// Update an application
         /// </summary>
-        Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(AtsApplication atsApplication, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(PatchAtsApplicationRequest request);
 
         /// <summary>
         /// Update a candidate
         /// </summary>
-        Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(PatchAtsCandidateRequest request);
 
         /// <summary>
         /// Update a document
         /// </summary>
-        Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(AtsDocument atsDocument, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(PatchAtsDocumentRequest request);
 
         /// <summary>
         /// Update an interview
         /// </summary>
-        Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(AtsInterview atsInterview, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(PatchAtsInterviewRequest request);
 
         /// <summary>
         /// Update a job
         /// </summary>
-        Task<PatchAtsJobResponse> PatchAtsJobAsync(AtsJob atsJob, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAtsJobResponse> PatchAtsJobAsync(PatchAtsJobRequest request);
 
         /// <summary>
         /// Update a scorecard
         /// </summary>
-        Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(PatchAtsScorecardRequest request);
 
         /// <summary>
         /// Remove an activity
@@ -218,47 +218,47 @@ namespace UnifiedTo
         /// <summary>
         /// Update an activity
         /// </summary>
-        Task<UpdateAtsActivityResponse> UpdateAtsActivityAsync(AtsActivity atsActivity, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAtsActivityResponse> UpdateAtsActivityAsync(UpdateAtsActivityRequest request);
 
         /// <summary>
         /// Update an application
         /// </summary>
-        Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(UpdateAtsApplicationRequest request);
 
         /// <summary>
         /// Update a candidate
         /// </summary>
-        Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(UpdateAtsCandidateRequest request);
 
         /// <summary>
         /// Update a document
         /// </summary>
-        Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(AtsDocument atsDocument, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(UpdateAtsDocumentRequest request);
 
         /// <summary>
         /// Update an interview
         /// </summary>
-        Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(UpdateAtsInterviewRequest request);
 
         /// <summary>
         /// Update a job
         /// </summary>
-        Task<UpdateAtsJobResponse> UpdateAtsJobAsync(AtsJob atsJob, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAtsJobResponse> UpdateAtsJobAsync(UpdateAtsJobRequest request);
 
         /// <summary>
         /// Update a scorecard
         /// </summary>
-        Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(UpdateAtsScorecardRequest request);
     }
 
     public class Ats: IAts
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -271,13 +271,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsActivityResponse> CreateAtsActivityAsync(AtsActivity atsActivity, string connectionId, List<string>? fields = null)
+        public async Task<CreateAtsActivityResponse> CreateAtsActivityAsync(AtsActivity atsActivity, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAtsActivityRequest()
             {
                 AtsActivity = atsActivity,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity", request);
@@ -361,13 +362,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, List<string>? fields = null)
+        public async Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAtsApplicationRequest()
             {
                 AtsApplication = atsApplication,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application", request);
@@ -451,13 +453,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, List<string>? fields = null)
+        public async Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAtsCandidateRequest()
             {
                 AtsCandidate = atsCandidate,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate", request);
@@ -541,13 +544,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(AtsDocument atsDocument, string connectionId, List<string>? fields = null)
+        public async Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(AtsDocument atsDocument, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAtsDocumentRequest()
             {
                 AtsDocument = atsDocument,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document", request);
@@ -631,13 +635,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<string>? fields = null)
+        public async Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAtsInterviewRequest()
             {
                 AtsInterview = atsInterview,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview", request);
@@ -721,13 +726,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<string>? fields = null)
+        public async Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAtsJobRequest()
             {
                 AtsJob = atsJob,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job", request);
@@ -811,13 +817,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<string>? fields = null)
+        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAtsScorecardRequest()
             {
                 AtsScorecard = atsScorecard,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard", request);
@@ -901,13 +908,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsActivityResponse> GetAtsActivityAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsActivityResponse> GetAtsActivityAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAtsActivityRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity/{id}", request);
@@ -985,13 +993,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsApplicationResponse> GetAtsApplicationAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsApplicationResponse> GetAtsApplicationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAtsApplicationRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application/{id}", request);
@@ -1069,13 +1078,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsCandidateResponse> GetAtsCandidateAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsCandidateResponse> GetAtsCandidateAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAtsCandidateRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate/{id}", request);
@@ -1153,13 +1163,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAtsCompanyRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/company/{id}", request);
@@ -1237,13 +1248,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsDocumentResponse> GetAtsDocumentAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsDocumentResponse> GetAtsDocumentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAtsDocumentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document/{id}", request);
@@ -1321,13 +1333,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAtsInterviewRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview/{id}", request);
@@ -1405,13 +1418,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAtsJobRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job/{id}", request);
@@ -1489,13 +1503,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAtsScorecardRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard/{id}", request);
@@ -2275,15 +2290,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsActivityResponse> PatchAtsActivityAsync(AtsActivity atsActivity, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAtsActivityResponse> PatchAtsActivityAsync(PatchAtsActivityRequest request)
         {
-            var request = new PatchAtsActivityRequest()
-            {
-                AtsActivity = atsActivity,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity/{id}", request);
 
@@ -2366,15 +2374,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(AtsApplication atsApplication, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAtsApplicationResponse> PatchAtsApplicationAsync(PatchAtsApplicationRequest request)
         {
-            var request = new PatchAtsApplicationRequest()
-            {
-                AtsApplication = atsApplication,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application/{id}", request);
 
@@ -2457,15 +2458,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAtsCandidateResponse> PatchAtsCandidateAsync(PatchAtsCandidateRequest request)
         {
-            var request = new PatchAtsCandidateRequest()
-            {
-                AtsCandidate = atsCandidate,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate/{id}", request);
 
@@ -2548,15 +2542,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(AtsDocument atsDocument, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAtsDocumentResponse> PatchAtsDocumentAsync(PatchAtsDocumentRequest request)
         {
-            var request = new PatchAtsDocumentRequest()
-            {
-                AtsDocument = atsDocument,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document/{id}", request);
 
@@ -2639,15 +2626,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(AtsInterview atsInterview, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAtsInterviewResponse> PatchAtsInterviewAsync(PatchAtsInterviewRequest request)
         {
-            var request = new PatchAtsInterviewRequest()
-            {
-                AtsInterview = atsInterview,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview/{id}", request);
 
@@ -2730,15 +2710,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsJobResponse> PatchAtsJobAsync(AtsJob atsJob, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAtsJobResponse> PatchAtsJobAsync(PatchAtsJobRequest request)
         {
-            var request = new PatchAtsJobRequest()
-            {
-                AtsJob = atsJob,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job/{id}", request);
 
@@ -2821,15 +2794,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAtsScorecardResponse> PatchAtsScorecardAsync(PatchAtsScorecardRequest request)
         {
-            var request = new PatchAtsScorecardRequest()
-            {
-                AtsScorecard = atsScorecard,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard/{id}", request);
 
@@ -3486,15 +3452,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsActivityResponse> UpdateAtsActivityAsync(AtsActivity atsActivity, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAtsActivityResponse> UpdateAtsActivityAsync(UpdateAtsActivityRequest request)
         {
-            var request = new UpdateAtsActivityRequest()
-            {
-                AtsActivity = atsActivity,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/activity/{id}", request);
 
@@ -3577,15 +3536,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAtsApplicationResponse> UpdateAtsApplicationAsync(UpdateAtsApplicationRequest request)
         {
-            var request = new UpdateAtsApplicationRequest()
-            {
-                AtsApplication = atsApplication,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/application/{id}", request);
 
@@ -3668,15 +3620,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAtsCandidateResponse> UpdateAtsCandidateAsync(UpdateAtsCandidateRequest request)
         {
-            var request = new UpdateAtsCandidateRequest()
-            {
-                AtsCandidate = atsCandidate,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/candidate/{id}", request);
 
@@ -3759,15 +3704,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(AtsDocument atsDocument, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAtsDocumentResponse> UpdateAtsDocumentAsync(UpdateAtsDocumentRequest request)
         {
-            var request = new UpdateAtsDocumentRequest()
-            {
-                AtsDocument = atsDocument,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/document/{id}", request);
 
@@ -3850,15 +3788,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAtsInterviewResponse> UpdateAtsInterviewAsync(UpdateAtsInterviewRequest request)
         {
-            var request = new UpdateAtsInterviewRequest()
-            {
-                AtsInterview = atsInterview,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/interview/{id}", request);
 
@@ -3941,15 +3872,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAtsJobResponse> UpdateAtsJobAsync(AtsJob atsJob, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAtsJobResponse> UpdateAtsJobAsync(UpdateAtsJobRequest request)
         {
-            var request = new UpdateAtsJobRequest()
-            {
-                AtsJob = atsJob,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job/{id}", request);
 
@@ -4032,15 +3956,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAtsScorecardResponse> UpdateAtsScorecardAsync(UpdateAtsScorecardRequest request)
         {
-            var request = new UpdateAtsScorecardRequest()
-            {
-                AtsScorecard = atsScorecard,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/scorecard/{id}", request);
 

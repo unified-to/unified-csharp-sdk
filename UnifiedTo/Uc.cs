@@ -28,32 +28,32 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<string>? fields = null);
+        Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateUcContactResponse> CreateUcContactAsync(UcContact ucContact, string connectionId, List<string>? fields = null);
+        Task<CreateUcContactResponse> CreateUcContactAsync(UcContact ucContact, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a recording
         /// </summary>
-        Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<string>? fields = null);
+        Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a comment
         /// </summary>
-        Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a recording
         /// </summary>
-        Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all calls
@@ -78,17 +78,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<PatchUcCommentResponse> PatchUcCommentAsync(UcComment ucComment, string connectionId, string id, List<string>? fields = null);
+        Task<PatchUcCommentResponse> PatchUcCommentAsync(PatchUcCommentRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<PatchUcContactResponse> PatchUcContactAsync(UcContact ucContact, string connectionId, string id, List<string>? fields = null);
+        Task<PatchUcContactResponse> PatchUcContactAsync(PatchUcContactRequest request);
 
         /// <summary>
         /// Update a recording
         /// </summary>
-        Task<PatchUcRecordingResponse> PatchUcRecordingAsync(UcRecording ucRecording, string connectionId, string id, List<string>? fields = null);
+        Task<PatchUcRecordingResponse> PatchUcRecordingAsync(PatchUcRecordingRequest request);
 
         /// <summary>
         /// Remove a comment
@@ -108,27 +108,27 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<UpdateUcCommentResponse> UpdateUcCommentAsync(UcComment ucComment, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateUcCommentResponse> UpdateUcCommentAsync(UpdateUcCommentRequest request);
 
         /// <summary>
         /// Update a contact
         /// </summary>
-        Task<UpdateUcContactResponse> UpdateUcContactAsync(UcContact ucContact, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateUcContactResponse> UpdateUcContactAsync(UpdateUcContactRequest request);
 
         /// <summary>
         /// Update a recording
         /// </summary>
-        Task<UpdateUcRecordingResponse> UpdateUcRecordingAsync(UcRecording ucRecording, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateUcRecordingResponse> UpdateUcRecordingAsync(UpdateUcRecordingRequest request);
     }
 
     public class Uc: IUc
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -141,13 +141,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<string>? fields = null)
+        public async Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateUcCommentRequest()
             {
                 UcComment = ucComment,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/comment", request);
@@ -231,13 +232,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateUcContactResponse> CreateUcContactAsync(UcContact ucContact, string connectionId, List<string>? fields = null)
+        public async Task<CreateUcContactResponse> CreateUcContactAsync(UcContact ucContact, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateUcContactRequest()
             {
                 UcContact = ucContact,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/contact", request);
@@ -321,13 +323,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<string>? fields = null)
+        public async Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateUcRecordingRequest()
             {
                 UcRecording = ucRecording,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/recording", request);
@@ -411,13 +414,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetUcCommentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/comment/{id}", request);
@@ -495,13 +499,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetUcContactRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/contact/{id}", request);
@@ -579,13 +584,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetUcRecordingRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/recording/{id}", request);
@@ -975,15 +981,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchUcCommentResponse> PatchUcCommentAsync(UcComment ucComment, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchUcCommentResponse> PatchUcCommentAsync(PatchUcCommentRequest request)
         {
-            var request = new PatchUcCommentRequest()
-            {
-                UcComment = ucComment,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/comment/{id}", request);
 
@@ -1066,15 +1065,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchUcContactResponse> PatchUcContactAsync(UcContact ucContact, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchUcContactResponse> PatchUcContactAsync(PatchUcContactRequest request)
         {
-            var request = new PatchUcContactRequest()
-            {
-                UcContact = ucContact,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/contact/{id}", request);
 
@@ -1157,15 +1149,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchUcRecordingResponse> PatchUcRecordingAsync(UcRecording ucRecording, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchUcRecordingResponse> PatchUcRecordingAsync(PatchUcRecordingRequest request)
         {
-            var request = new PatchUcRecordingRequest()
-            {
-                UcRecording = ucRecording,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/recording/{id}", request);
 
@@ -1494,15 +1479,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateUcCommentResponse> UpdateUcCommentAsync(UcComment ucComment, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateUcCommentResponse> UpdateUcCommentAsync(UpdateUcCommentRequest request)
         {
-            var request = new UpdateUcCommentRequest()
-            {
-                UcComment = ucComment,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/comment/{id}", request);
 
@@ -1585,15 +1563,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateUcContactResponse> UpdateUcContactAsync(UcContact ucContact, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateUcContactResponse> UpdateUcContactAsync(UpdateUcContactRequest request)
         {
-            var request = new UpdateUcContactRequest()
-            {
-                UcContact = ucContact,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/contact/{id}", request);
 
@@ -1676,15 +1647,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateUcRecordingResponse> UpdateUcRecordingAsync(UcRecording ucRecording, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateUcRecordingResponse> UpdateUcRecordingAsync(UpdateUcRecordingRequest request)
         {
-            var request = new UpdateUcRecordingRequest()
-            {
-                UcRecording = ucRecording,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/recording/{id}", request);
 

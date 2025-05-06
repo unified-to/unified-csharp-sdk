@@ -28,32 +28,32 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateTaskCommentResponse> CreateTaskCommentAsync(TaskComment taskComment, string connectionId, List<string>? fields = null);
+        Task<CreateTaskCommentResponse> CreateTaskCommentAsync(TaskComment taskComment, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a project
         /// </summary>
-        Task<CreateTaskProjectResponse> CreateTaskProjectAsync(TaskProject taskProject, string connectionId, List<string>? fields = null);
+        Task<CreateTaskProjectResponse> CreateTaskProjectAsync(TaskProject taskProject, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a task
         /// </summary>
-        Task<CreateTaskTaskResponse> CreateTaskTaskAsync(TaskTask taskTask, string connectionId, List<string>? fields = null);
+        Task<CreateTaskTaskResponse> CreateTaskTaskAsync(TaskTask taskTask, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a comment
         /// </summary>
-        Task<GetTaskCommentResponse> GetTaskCommentAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetTaskCommentResponse> GetTaskCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a project
         /// </summary>
-        Task<GetTaskProjectResponse> GetTaskProjectAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetTaskProjectResponse> GetTaskProjectAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a task
         /// </summary>
-        Task<GetTaskTaskResponse> GetTaskTaskAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetTaskTaskResponse> GetTaskTaskAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all comments
@@ -73,17 +73,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<PatchTaskCommentResponse> PatchTaskCommentAsync(TaskComment taskComment, string connectionId, string id, List<string>? fields = null);
+        Task<PatchTaskCommentResponse> PatchTaskCommentAsync(PatchTaskCommentRequest request);
 
         /// <summary>
         /// Update a project
         /// </summary>
-        Task<PatchTaskProjectResponse> PatchTaskProjectAsync(TaskProject taskProject, string connectionId, string id, List<string>? fields = null);
+        Task<PatchTaskProjectResponse> PatchTaskProjectAsync(PatchTaskProjectRequest request);
 
         /// <summary>
         /// Update a task
         /// </summary>
-        Task<PatchTaskTaskResponse> PatchTaskTaskAsync(TaskTask taskTask, string connectionId, string id, List<string>? fields = null);
+        Task<PatchTaskTaskResponse> PatchTaskTaskAsync(PatchTaskTaskRequest request);
 
         /// <summary>
         /// Remove a comment
@@ -103,27 +103,27 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<UpdateTaskCommentResponse> UpdateTaskCommentAsync(TaskComment taskComment, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateTaskCommentResponse> UpdateTaskCommentAsync(UpdateTaskCommentRequest request);
 
         /// <summary>
         /// Update a project
         /// </summary>
-        Task<UpdateTaskProjectResponse> UpdateTaskProjectAsync(TaskProject taskProject, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateTaskProjectResponse> UpdateTaskProjectAsync(UpdateTaskProjectRequest request);
 
         /// <summary>
         /// Update a task
         /// </summary>
-        Task<UpdateTaskTaskResponse> UpdateTaskTaskAsync(TaskTask taskTask, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateTaskTaskResponse> UpdateTaskTaskAsync(UpdateTaskTaskRequest request);
     }
 
     public class Task: ITask
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -136,13 +136,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateTaskCommentResponse> CreateTaskCommentAsync(TaskComment taskComment, string connectionId, List<string>? fields = null)
+        public async Task<CreateTaskCommentResponse> CreateTaskCommentAsync(TaskComment taskComment, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateTaskCommentRequest()
             {
                 TaskComment = taskComment,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/comment", request);
@@ -226,13 +227,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateTaskProjectResponse> CreateTaskProjectAsync(TaskProject taskProject, string connectionId, List<string>? fields = null)
+        public async Task<CreateTaskProjectResponse> CreateTaskProjectAsync(TaskProject taskProject, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateTaskProjectRequest()
             {
                 TaskProject = taskProject,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/project", request);
@@ -316,13 +318,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateTaskTaskResponse> CreateTaskTaskAsync(TaskTask taskTask, string connectionId, List<string>? fields = null)
+        public async Task<CreateTaskTaskResponse> CreateTaskTaskAsync(TaskTask taskTask, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateTaskTaskRequest()
             {
                 TaskTask = taskTask,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/task", request);
@@ -406,13 +409,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetTaskCommentResponse> GetTaskCommentAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetTaskCommentResponse> GetTaskCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetTaskCommentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/comment/{id}", request);
@@ -490,13 +494,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetTaskProjectResponse> GetTaskProjectAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetTaskProjectResponse> GetTaskProjectAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetTaskProjectRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/project/{id}", request);
@@ -574,13 +579,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetTaskTaskResponse> GetTaskTaskAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetTaskTaskResponse> GetTaskTaskAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetTaskTaskRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/task/{id}", request);
@@ -892,15 +898,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchTaskCommentResponse> PatchTaskCommentAsync(TaskComment taskComment, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchTaskCommentResponse> PatchTaskCommentAsync(PatchTaskCommentRequest request)
         {
-            var request = new PatchTaskCommentRequest()
-            {
-                TaskComment = taskComment,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/comment/{id}", request);
 
@@ -983,15 +982,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchTaskProjectResponse> PatchTaskProjectAsync(TaskProject taskProject, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchTaskProjectResponse> PatchTaskProjectAsync(PatchTaskProjectRequest request)
         {
-            var request = new PatchTaskProjectRequest()
-            {
-                TaskProject = taskProject,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/project/{id}", request);
 
@@ -1074,15 +1066,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchTaskTaskResponse> PatchTaskTaskAsync(TaskTask taskTask, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchTaskTaskResponse> PatchTaskTaskAsync(PatchTaskTaskRequest request)
         {
-            var request = new PatchTaskTaskRequest()
-            {
-                TaskTask = taskTask,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/task/{id}", request);
 
@@ -1411,15 +1396,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateTaskCommentResponse> UpdateTaskCommentAsync(TaskComment taskComment, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateTaskCommentResponse> UpdateTaskCommentAsync(UpdateTaskCommentRequest request)
         {
-            var request = new UpdateTaskCommentRequest()
-            {
-                TaskComment = taskComment,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/comment/{id}", request);
 
@@ -1502,15 +1480,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateTaskProjectResponse> UpdateTaskProjectAsync(TaskProject taskProject, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateTaskProjectResponse> UpdateTaskProjectAsync(UpdateTaskProjectRequest request)
         {
-            var request = new UpdateTaskProjectRequest()
-            {
-                TaskProject = taskProject,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/project/{id}", request);
 
@@ -1593,15 +1564,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateTaskTaskResponse> UpdateTaskTaskAsync(TaskTask taskTask, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateTaskTaskResponse> UpdateTaskTaskAsync(UpdateTaskTaskRequest request)
         {
-            var request = new UpdateTaskTaskRequest()
-            {
-                TaskTask = taskTask,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/task/{id}", request);
 

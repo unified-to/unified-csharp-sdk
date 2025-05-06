@@ -28,37 +28,37 @@ namespace UnifiedTo
         /// <summary>
         /// Create a calendar
         /// </summary>
-        Task<CreateCalendarCalendarResponse> CreateCalendarCalendarAsync(CalendarCalendar calendarCalendar, string connectionId, List<string>? fields = null);
+        Task<CreateCalendarCalendarResponse> CreateCalendarCalendarAsync(CalendarCalendar calendarCalendar, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an event
         /// </summary>
-        Task<CreateCalendarEventResponse> CreateCalendarEventAsync(CalendarEvent calendarEvent, string connectionId, List<string>? fields = null);
+        Task<CreateCalendarEventResponse> CreateCalendarEventAsync(CalendarEvent calendarEvent, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a link
         /// </summary>
-        Task<CreateCalendarLinkResponse> CreateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, List<string>? fields = null);
+        Task<CreateCalendarLinkResponse> CreateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a calendar
         /// </summary>
-        Task<GetCalendarCalendarResponse> GetCalendarCalendarAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCalendarCalendarResponse> GetCalendarCalendarAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an event
         /// </summary>
-        Task<GetCalendarEventResponse> GetCalendarEventAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCalendarEventResponse> GetCalendarEventAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a link
         /// </summary>
-        Task<GetCalendarLinkResponse> GetCalendarLinkAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCalendarLinkResponse> GetCalendarLinkAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a recording
         /// </summary>
-        Task<GetCalendarRecordingResponse> GetCalendarRecordingAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCalendarRecordingResponse> GetCalendarRecordingAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all busies
@@ -88,17 +88,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a calendar
         /// </summary>
-        Task<PatchCalendarCalendarResponse> PatchCalendarCalendarAsync(CalendarCalendar calendarCalendar, string connectionId, string id, List<string>? fields = null);
+        Task<PatchCalendarCalendarResponse> PatchCalendarCalendarAsync(PatchCalendarCalendarRequest request);
 
         /// <summary>
         /// Update an event
         /// </summary>
-        Task<PatchCalendarEventResponse> PatchCalendarEventAsync(CalendarEvent calendarEvent, string connectionId, string id, List<string>? fields = null);
+        Task<PatchCalendarEventResponse> PatchCalendarEventAsync(PatchCalendarEventRequest request);
 
         /// <summary>
         /// Update a link
         /// </summary>
-        Task<PatchCalendarLinkResponse> PatchCalendarLinkAsync(CalendarLink calendarLink, string connectionId, string id, List<string>? fields = null);
+        Task<PatchCalendarLinkResponse> PatchCalendarLinkAsync(PatchCalendarLinkRequest request);
 
         /// <summary>
         /// Remove a calendar
@@ -118,27 +118,27 @@ namespace UnifiedTo
         /// <summary>
         /// Update a calendar
         /// </summary>
-        Task<UpdateCalendarCalendarResponse> UpdateCalendarCalendarAsync(CalendarCalendar calendarCalendar, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateCalendarCalendarResponse> UpdateCalendarCalendarAsync(UpdateCalendarCalendarRequest request);
 
         /// <summary>
         /// Update an event
         /// </summary>
-        Task<UpdateCalendarEventResponse> UpdateCalendarEventAsync(CalendarEvent calendarEvent, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateCalendarEventResponse> UpdateCalendarEventAsync(UpdateCalendarEventRequest request);
 
         /// <summary>
         /// Update a link
         /// </summary>
-        Task<UpdateCalendarLinkResponse> UpdateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateCalendarLinkResponse> UpdateCalendarLinkAsync(UpdateCalendarLinkRequest request);
     }
 
     public class Calendar: ICalendar
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -151,13 +151,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCalendarCalendarResponse> CreateCalendarCalendarAsync(CalendarCalendar calendarCalendar, string connectionId, List<string>? fields = null)
+        public async Task<CreateCalendarCalendarResponse> CreateCalendarCalendarAsync(CalendarCalendar calendarCalendar, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateCalendarCalendarRequest()
             {
                 CalendarCalendar = calendarCalendar,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/calendar", request);
@@ -241,13 +242,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCalendarEventResponse> CreateCalendarEventAsync(CalendarEvent calendarEvent, string connectionId, List<string>? fields = null)
+        public async Task<CreateCalendarEventResponse> CreateCalendarEventAsync(CalendarEvent calendarEvent, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateCalendarEventRequest()
             {
                 CalendarEvent = calendarEvent,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/event", request);
@@ -331,13 +333,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCalendarLinkResponse> CreateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, List<string>? fields = null)
+        public async Task<CreateCalendarLinkResponse> CreateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateCalendarLinkRequest()
             {
                 CalendarLink = calendarLink,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/link", request);
@@ -421,13 +424,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCalendarCalendarResponse> GetCalendarCalendarAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCalendarCalendarResponse> GetCalendarCalendarAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCalendarCalendarRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/calendar/{id}", request);
@@ -505,13 +509,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCalendarEventResponse> GetCalendarEventAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCalendarEventResponse> GetCalendarEventAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCalendarEventRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/event/{id}", request);
@@ -589,13 +594,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCalendarLinkResponse> GetCalendarLinkAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCalendarLinkResponse> GetCalendarLinkAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCalendarLinkRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/link/{id}", request);
@@ -673,13 +679,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCalendarRecordingResponse> GetCalendarRecordingAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCalendarRecordingResponse> GetCalendarRecordingAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCalendarRecordingRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/recording/{id}", request);
@@ -1147,15 +1154,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCalendarCalendarResponse> PatchCalendarCalendarAsync(CalendarCalendar calendarCalendar, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchCalendarCalendarResponse> PatchCalendarCalendarAsync(PatchCalendarCalendarRequest request)
         {
-            var request = new PatchCalendarCalendarRequest()
-            {
-                CalendarCalendar = calendarCalendar,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/calendar/{id}", request);
 
@@ -1238,15 +1238,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCalendarEventResponse> PatchCalendarEventAsync(CalendarEvent calendarEvent, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchCalendarEventResponse> PatchCalendarEventAsync(PatchCalendarEventRequest request)
         {
-            var request = new PatchCalendarEventRequest()
-            {
-                CalendarEvent = calendarEvent,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/event/{id}", request);
 
@@ -1329,15 +1322,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCalendarLinkResponse> PatchCalendarLinkAsync(CalendarLink calendarLink, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchCalendarLinkResponse> PatchCalendarLinkAsync(PatchCalendarLinkRequest request)
         {
-            var request = new PatchCalendarLinkRequest()
-            {
-                CalendarLink = calendarLink,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/link/{id}", request);
 
@@ -1666,15 +1652,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCalendarCalendarResponse> UpdateCalendarCalendarAsync(CalendarCalendar calendarCalendar, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateCalendarCalendarResponse> UpdateCalendarCalendarAsync(UpdateCalendarCalendarRequest request)
         {
-            var request = new UpdateCalendarCalendarRequest()
-            {
-                CalendarCalendar = calendarCalendar,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/calendar/{id}", request);
 
@@ -1757,15 +1736,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateCalendarEventResponse> UpdateCalendarEventAsync(CalendarEvent calendarEvent, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateCalendarEventResponse> UpdateCalendarEventAsync(UpdateCalendarEventRequest request)
         {
-            var request = new UpdateCalendarEventRequest()
-            {
-                CalendarEvent = calendarEvent,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/event/{id}", request);
 
@@ -1848,15 +1820,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateCalendarLinkResponse> UpdateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateCalendarLinkResponse> UpdateCalendarLinkAsync(UpdateCalendarLinkRequest request)
         {
-            var request = new UpdateCalendarLinkRequest()
-            {
-                CalendarLink = calendarLink,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/calendar/{connection_id}/link/{id}", request);
 

@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create a group
         /// </summary>
-        Task<CreateHrisGroupResponse> CreateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, List<string>? fields = null);
+        Task<CreateHrisGroupResponse> CreateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create group
@@ -38,7 +38,7 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a group
         /// </summary>
-        Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Get group
@@ -58,7 +58,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a group
         /// </summary>
-        Task<PatchHrisGroupResponse> PatchHrisGroupAsync(HrisGroup hrisGroup, string connectionId, string id, List<string>? fields = null);
+        Task<PatchHrisGroupResponse> PatchHrisGroupAsync(PatchHrisGroupRequest request);
 
         /// <summary>
         /// Update group
@@ -78,7 +78,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a group
         /// </summary>
-        Task<UpdateHrisGroupResponse> UpdateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateHrisGroupResponse> UpdateHrisGroupAsync(UpdateHrisGroupRequest request);
 
         /// <summary>
         /// Update group
@@ -90,10 +90,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -106,13 +106,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateHrisGroupResponse> CreateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, List<string>? fields = null)
+        public async Task<CreateHrisGroupResponse> CreateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateHrisGroupRequest()
             {
                 HrisGroup = hrisGroup,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/group", request);
@@ -285,13 +286,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetHrisGroupRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/group/{id}", request);
@@ -608,15 +610,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchHrisGroupResponse> PatchHrisGroupAsync(HrisGroup hrisGroup, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchHrisGroupResponse> PatchHrisGroupAsync(PatchHrisGroupRequest request)
         {
-            var request = new PatchHrisGroupRequest()
-            {
-                HrisGroup = hrisGroup,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/group/{id}", request);
 
@@ -953,15 +948,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateHrisGroupResponse> UpdateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateHrisGroupResponse> UpdateHrisGroupAsync(UpdateHrisGroupRequest request)
         {
-            var request = new UpdateHrisGroupRequest()
-            {
-                HrisGroup = hrisGroup,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/hris/{connection_id}/group/{id}", request);
 

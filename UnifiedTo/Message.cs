@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a message
         /// </summary>
-        Task<CreateMessagingMessageResponse> CreateMessagingMessageAsync(MessagingMessage messagingMessage, string connectionId, List<string>? fields = null);
+        Task<CreateMessagingMessageResponse> CreateMessagingMessageAsync(MessagingMessage messagingMessage, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a message
         /// </summary>
-        Task<GetMessagingMessageResponse> GetMessagingMessageAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetMessagingMessageResponse> GetMessagingMessageAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all messages
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a message
         /// </summary>
-        Task<PatchMessagingMessageResponse> PatchMessagingMessageAsync(MessagingMessage messagingMessage, string connectionId, string id, List<string>? fields = null);
+        Task<PatchMessagingMessageResponse> PatchMessagingMessageAsync(PatchMessagingMessageRequest request);
 
         /// <summary>
         /// Remove a message
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a message
         /// </summary>
-        Task<UpdateMessagingMessageResponse> UpdateMessagingMessageAsync(MessagingMessage messagingMessage, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateMessagingMessageResponse> UpdateMessagingMessageAsync(UpdateMessagingMessageRequest request);
     }
 
     public class Message: IMessage
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateMessagingMessageResponse> CreateMessagingMessageAsync(MessagingMessage messagingMessage, string connectionId, List<string>? fields = null)
+        public async Task<CreateMessagingMessageResponse> CreateMessagingMessageAsync(MessagingMessage messagingMessage, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateMessagingMessageRequest()
             {
                 MessagingMessage = messagingMessage,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/messaging/{connection_id}/message", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetMessagingMessageResponse> GetMessagingMessageAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetMessagingMessageResponse> GetMessagingMessageAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetMessagingMessageRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/messaging/{connection_id}/message/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchMessagingMessageResponse> PatchMessagingMessageAsync(MessagingMessage messagingMessage, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchMessagingMessageResponse> PatchMessagingMessageAsync(PatchMessagingMessageRequest request)
         {
-            var request = new PatchMessagingMessageRequest()
-            {
-                MessagingMessage = messagingMessage,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/messaging/{connection_id}/message/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateMessagingMessageResponse> UpdateMessagingMessageAsync(MessagingMessage messagingMessage, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateMessagingMessageResponse> UpdateMessagingMessageAsync(UpdateMessagingMessageRequest request)
         {
-            var request = new UpdateMessagingMessageRequest()
-            {
-                MessagingMessage = messagingMessage,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/messaging/{connection_id}/message/{id}", request);
 

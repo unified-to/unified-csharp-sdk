@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a lead
         /// </summary>
-        Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CrmLead crmLead, string connectionId, List<string>? fields = null);
+        Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CrmLead crmLead, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a lead
         /// </summary>
-        Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all leads
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a lead
         /// </summary>
-        Task<PatchCrmLeadResponse> PatchCrmLeadAsync(CrmLead crmLead, string connectionId, string id, List<string>? fields = null);
+        Task<PatchCrmLeadResponse> PatchCrmLeadAsync(PatchCrmLeadRequest request);
 
         /// <summary>
         /// Remove a lead
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a lead
         /// </summary>
-        Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(CrmLead crmLead, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(UpdateCrmLeadRequest request);
     }
 
     public class Lead: ILead
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CrmLead crmLead, string connectionId, List<string>? fields = null)
+        public async Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CrmLead crmLead, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateCrmLeadRequest()
             {
                 CrmLead = crmLead,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCrmLeadRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmLeadResponse> PatchCrmLeadAsync(CrmLead crmLead, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchCrmLeadResponse> PatchCrmLeadAsync(PatchCrmLeadRequest request)
         {
-            var request = new PatchCrmLeadRequest()
-            {
-                CrmLead = crmLead,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(CrmLead crmLead, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateCrmLeadResponse> UpdateCrmLeadAsync(UpdateCrmLeadRequest request)
         {
-            var request = new UpdateCrmLeadRequest()
-            {
-                CrmLead = crmLead,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/lead/{id}", request);
 

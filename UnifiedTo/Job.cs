@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a job
         /// </summary>
-        Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<string>? fields = null);
+        Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a job
         /// </summary>
-        Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all jobs
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job
         /// </summary>
-        Task<PatchAtsJobResponse> PatchAtsJobAsync(AtsJob atsJob, string connectionId, string id, List<string>? fields = null);
+        Task<PatchAtsJobResponse> PatchAtsJobAsync(PatchAtsJobRequest request);
 
         /// <summary>
         /// Remove a job
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a job
         /// </summary>
-        Task<UpdateAtsJobResponse> UpdateAtsJobAsync(AtsJob atsJob, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateAtsJobResponse> UpdateAtsJobAsync(UpdateAtsJobRequest request);
     }
 
     public class Job: IJob
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<string>? fields = null)
+        public async Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateAtsJobRequest()
             {
                 AtsJob = atsJob,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetAtsJobRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchAtsJobResponse> PatchAtsJobAsync(AtsJob atsJob, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchAtsJobResponse> PatchAtsJobAsync(PatchAtsJobRequest request)
         {
-            var request = new PatchAtsJobRequest()
-            {
-                AtsJob = atsJob,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateAtsJobResponse> UpdateAtsJobAsync(AtsJob atsJob, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateAtsJobResponse> UpdateAtsJobAsync(UpdateAtsJobRequest request)
         {
-            var request = new UpdateAtsJobRequest()
-            {
-                AtsJob = atsJob,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/ats/{connection_id}/job/{id}", request);
 

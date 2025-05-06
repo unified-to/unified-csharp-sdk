@@ -28,32 +28,32 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<string>? fields = null);
+        Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a page
         /// </summary>
-        Task<CreateKmsPageResponse> CreateKmsPageAsync(KmsPage kmsPage, string connectionId, List<string>? fields = null);
+        Task<CreateKmsPageResponse> CreateKmsPageAsync(KmsPage kmsPage, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a space
         /// </summary>
-        Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, List<string>? fields = null);
+        Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a comment
         /// </summary>
-        Task<GetKmsCommentResponse> GetKmsCommentAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetKmsCommentResponse> GetKmsCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a page
         /// </summary>
-        Task<GetKmsPageResponse> GetKmsPageAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetKmsPageResponse> GetKmsPageAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a space
         /// </summary>
-        Task<GetKmsSpaceResponse> GetKmsSpaceAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetKmsSpaceResponse> GetKmsSpaceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all comments
@@ -73,17 +73,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<PatchKmsCommentResponse> PatchKmsCommentAsync(KmsComment kmsComment, string connectionId, string id, List<string>? fields = null);
+        Task<PatchKmsCommentResponse> PatchKmsCommentAsync(PatchKmsCommentRequest request);
 
         /// <summary>
         /// Update a page
         /// </summary>
-        Task<PatchKmsPageResponse> PatchKmsPageAsync(KmsPage kmsPage, string connectionId, string id, List<string>? fields = null);
+        Task<PatchKmsPageResponse> PatchKmsPageAsync(PatchKmsPageRequest request);
 
         /// <summary>
         /// Update a space
         /// </summary>
-        Task<PatchKmsSpaceResponse> PatchKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, string id, List<string>? fields = null);
+        Task<PatchKmsSpaceResponse> PatchKmsSpaceAsync(PatchKmsSpaceRequest request);
 
         /// <summary>
         /// Remove a comment
@@ -103,27 +103,27 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(KmsComment kmsComment, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(UpdateKmsCommentRequest request);
 
         /// <summary>
         /// Update a page
         /// </summary>
-        Task<UpdateKmsPageResponse> UpdateKmsPageAsync(KmsPage kmsPage, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateKmsPageResponse> UpdateKmsPageAsync(UpdateKmsPageRequest request);
 
         /// <summary>
         /// Update a space
         /// </summary>
-        Task<UpdateKmsSpaceResponse> UpdateKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateKmsSpaceResponse> UpdateKmsSpaceAsync(UpdateKmsSpaceRequest request);
     }
 
     public class Kms: IKms
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -136,13 +136,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<string>? fields = null)
+        public async Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateKmsCommentRequest()
             {
                 KmsComment = kmsComment,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/comment", request);
@@ -226,13 +227,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateKmsPageResponse> CreateKmsPageAsync(KmsPage kmsPage, string connectionId, List<string>? fields = null)
+        public async Task<CreateKmsPageResponse> CreateKmsPageAsync(KmsPage kmsPage, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateKmsPageRequest()
             {
                 KmsPage = kmsPage,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/page", request);
@@ -316,13 +318,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, List<string>? fields = null)
+        public async Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateKmsSpaceRequest()
             {
                 KmsSpace = kmsSpace,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/space", request);
@@ -406,13 +409,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetKmsCommentResponse> GetKmsCommentAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetKmsCommentResponse> GetKmsCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetKmsCommentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/comment/{id}", request);
@@ -490,13 +494,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetKmsPageResponse> GetKmsPageAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetKmsPageResponse> GetKmsPageAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetKmsPageRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/page/{id}", request);
@@ -574,13 +579,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetKmsSpaceResponse> GetKmsSpaceAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetKmsSpaceResponse> GetKmsSpaceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetKmsSpaceRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/space/{id}", request);
@@ -892,15 +898,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchKmsCommentResponse> PatchKmsCommentAsync(KmsComment kmsComment, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchKmsCommentResponse> PatchKmsCommentAsync(PatchKmsCommentRequest request)
         {
-            var request = new PatchKmsCommentRequest()
-            {
-                KmsComment = kmsComment,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/comment/{id}", request);
 
@@ -983,15 +982,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchKmsPageResponse> PatchKmsPageAsync(KmsPage kmsPage, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchKmsPageResponse> PatchKmsPageAsync(PatchKmsPageRequest request)
         {
-            var request = new PatchKmsPageRequest()
-            {
-                KmsPage = kmsPage,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/page/{id}", request);
 
@@ -1074,15 +1066,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchKmsSpaceResponse> PatchKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchKmsSpaceResponse> PatchKmsSpaceAsync(PatchKmsSpaceRequest request)
         {
-            var request = new PatchKmsSpaceRequest()
-            {
-                KmsSpace = kmsSpace,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/space/{id}", request);
 
@@ -1411,15 +1396,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(KmsComment kmsComment, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(UpdateKmsCommentRequest request)
         {
-            var request = new UpdateKmsCommentRequest()
-            {
-                KmsComment = kmsComment,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/comment/{id}", request);
 
@@ -1502,15 +1480,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateKmsPageResponse> UpdateKmsPageAsync(KmsPage kmsPage, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateKmsPageResponse> UpdateKmsPageAsync(UpdateKmsPageRequest request)
         {
-            var request = new UpdateKmsPageRequest()
-            {
-                KmsPage = kmsPage,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/page/{id}", request);
 
@@ -1593,15 +1564,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateKmsSpaceResponse> UpdateKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateKmsSpaceResponse> UpdateKmsSpaceAsync(UpdateKmsSpaceRequest request)
         {
-            var request = new UpdateKmsSpaceRequest()
-            {
-                KmsSpace = kmsSpace,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/space/{id}", request);
 

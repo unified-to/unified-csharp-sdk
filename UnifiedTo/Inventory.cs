@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create an inventory
         /// </summary>
-        Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(CommerceInventory commerceInventory, string connectionId, List<string>? fields = null);
+        Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(CommerceInventory commerceInventory, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an inventory
         /// </summary>
-        Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all inventories
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update an inventory
         /// </summary>
-        Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(CommerceInventory commerceInventory, string connectionId, string id, List<string>? fields = null);
+        Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(PatchCommerceInventoryRequest request);
 
         /// <summary>
         /// Remove an inventory
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update an inventory
         /// </summary>
-        Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(CommerceInventory commerceInventory, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(UpdateCommerceInventoryRequest request);
     }
 
     public class Inventory: IInventory
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(CommerceInventory commerceInventory, string connectionId, List<string>? fields = null)
+        public async Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(CommerceInventory commerceInventory, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateCommerceInventoryRequest()
             {
                 CommerceInventory = commerceInventory,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/inventory", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCommerceInventoryRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/inventory/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(CommerceInventory commerceInventory, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchCommerceInventoryResponse> PatchCommerceInventoryAsync(PatchCommerceInventoryRequest request)
         {
-            var request = new PatchCommerceInventoryRequest()
-            {
-                CommerceInventory = commerceInventory,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/inventory/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(CommerceInventory commerceInventory, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateCommerceInventoryResponse> UpdateCommerceInventoryAsync(UpdateCommerceInventoryRequest request)
         {
-            var request = new UpdateCommerceInventoryRequest()
-            {
-                CommerceInventory = commerceInventory,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/commerce/{connection_id}/inventory/{id}", request);
 

@@ -28,17 +28,17 @@ namespace UnifiedTo
         /// <summary>
         /// Create a prompt
         /// </summary>
-        Task<CreateGenaiPromptResponse> CreateGenaiPromptAsync(GenaiPrompt genaiPrompt, string connectionId, List<string>? fields = null);
+        Task<CreateGenaiPromptResponse> CreateGenaiPromptAsync(GenaiPrompt genaiPrompt, string connectionId, List<string>? fields = null, string? raw = null);
     }
 
     public class Prompt: IPrompt
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -51,13 +51,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateGenaiPromptResponse> CreateGenaiPromptAsync(GenaiPrompt genaiPrompt, string connectionId, List<string>? fields = null)
+        public async Task<CreateGenaiPromptResponse> CreateGenaiPromptAsync(GenaiPrompt genaiPrompt, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateGenaiPromptRequest()
             {
                 GenaiPrompt = genaiPrompt,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/genai/{connection_id}/prompt", request);

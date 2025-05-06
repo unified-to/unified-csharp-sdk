@@ -28,32 +28,32 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<string>? fields = null);
+        Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateTaskCommentResponse> CreateTaskCommentAsync(TaskComment taskComment, string connectionId, List<string>? fields = null);
+        Task<CreateTaskCommentResponse> CreateTaskCommentAsync(TaskComment taskComment, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<string>? fields = null);
+        Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a comment
         /// </summary>
-        Task<GetKmsCommentResponse> GetKmsCommentAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetKmsCommentResponse> GetKmsCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a comment
         /// </summary>
-        Task<GetTaskCommentResponse> GetTaskCommentAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetTaskCommentResponse> GetTaskCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a comment
         /// </summary>
-        Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all comments
@@ -73,17 +73,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<PatchKmsCommentResponse> PatchKmsCommentAsync(KmsComment kmsComment, string connectionId, string id, List<string>? fields = null);
+        Task<PatchKmsCommentResponse> PatchKmsCommentAsync(PatchKmsCommentRequest request);
 
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<PatchTaskCommentResponse> PatchTaskCommentAsync(TaskComment taskComment, string connectionId, string id, List<string>? fields = null);
+        Task<PatchTaskCommentResponse> PatchTaskCommentAsync(PatchTaskCommentRequest request);
 
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<PatchUcCommentResponse> PatchUcCommentAsync(UcComment ucComment, string connectionId, string id, List<string>? fields = null);
+        Task<PatchUcCommentResponse> PatchUcCommentAsync(PatchUcCommentRequest request);
 
         /// <summary>
         /// Remove a comment
@@ -103,27 +103,27 @@ namespace UnifiedTo
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(KmsComment kmsComment, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(UpdateKmsCommentRequest request);
 
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<UpdateTaskCommentResponse> UpdateTaskCommentAsync(TaskComment taskComment, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateTaskCommentResponse> UpdateTaskCommentAsync(UpdateTaskCommentRequest request);
 
         /// <summary>
         /// Update a comment
         /// </summary>
-        Task<UpdateUcCommentResponse> UpdateUcCommentAsync(UcComment ucComment, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateUcCommentResponse> UpdateUcCommentAsync(UpdateUcCommentRequest request);
     }
 
     public class Comment: IComment
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -136,13 +136,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<string>? fields = null)
+        public async Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateKmsCommentRequest()
             {
                 KmsComment = kmsComment,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/comment", request);
@@ -226,13 +227,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateTaskCommentResponse> CreateTaskCommentAsync(TaskComment taskComment, string connectionId, List<string>? fields = null)
+        public async Task<CreateTaskCommentResponse> CreateTaskCommentAsync(TaskComment taskComment, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateTaskCommentRequest()
             {
                 TaskComment = taskComment,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/comment", request);
@@ -316,13 +318,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<string>? fields = null)
+        public async Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateUcCommentRequest()
             {
                 UcComment = ucComment,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/comment", request);
@@ -406,13 +409,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetKmsCommentResponse> GetKmsCommentAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetKmsCommentResponse> GetKmsCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetKmsCommentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/comment/{id}", request);
@@ -490,13 +494,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetTaskCommentResponse> GetTaskCommentAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetTaskCommentResponse> GetTaskCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetTaskCommentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/comment/{id}", request);
@@ -574,13 +579,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetUcCommentRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/comment/{id}", request);
@@ -892,15 +898,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchKmsCommentResponse> PatchKmsCommentAsync(KmsComment kmsComment, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchKmsCommentResponse> PatchKmsCommentAsync(PatchKmsCommentRequest request)
         {
-            var request = new PatchKmsCommentRequest()
-            {
-                KmsComment = kmsComment,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/comment/{id}", request);
 
@@ -983,15 +982,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchTaskCommentResponse> PatchTaskCommentAsync(TaskComment taskComment, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchTaskCommentResponse> PatchTaskCommentAsync(PatchTaskCommentRequest request)
         {
-            var request = new PatchTaskCommentRequest()
-            {
-                TaskComment = taskComment,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/comment/{id}", request);
 
@@ -1074,15 +1066,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchUcCommentResponse> PatchUcCommentAsync(UcComment ucComment, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchUcCommentResponse> PatchUcCommentAsync(PatchUcCommentRequest request)
         {
-            var request = new PatchUcCommentRequest()
-            {
-                UcComment = ucComment,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/comment/{id}", request);
 
@@ -1411,15 +1396,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(KmsComment kmsComment, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateKmsCommentResponse> UpdateKmsCommentAsync(UpdateKmsCommentRequest request)
         {
-            var request = new UpdateKmsCommentRequest()
-            {
-                KmsComment = kmsComment,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/kms/{connection_id}/comment/{id}", request);
 
@@ -1502,15 +1480,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateTaskCommentResponse> UpdateTaskCommentAsync(TaskComment taskComment, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateTaskCommentResponse> UpdateTaskCommentAsync(UpdateTaskCommentRequest request)
         {
-            var request = new UpdateTaskCommentRequest()
-            {
-                TaskComment = taskComment,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/task/{connection_id}/comment/{id}", request);
 
@@ -1593,15 +1564,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<UpdateUcCommentResponse> UpdateUcCommentAsync(UcComment ucComment, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateUcCommentResponse> UpdateUcCommentAsync(UpdateUcCommentRequest request)
         {
-            var request = new UpdateUcCommentRequest()
-            {
-                UcComment = ucComment,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/uc/{connection_id}/comment/{id}", request);
 

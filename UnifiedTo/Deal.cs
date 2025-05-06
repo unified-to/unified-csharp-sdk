@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a deal
         /// </summary>
-        Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<string>? fields = null);
+        Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a deal
         /// </summary>
-        Task<GetCrmDealResponse> GetCrmDealAsync(string connectionId, string id, List<string>? fields = null);
+        Task<GetCrmDealResponse> GetCrmDealAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all deals
@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Update a deal
         /// </summary>
-        Task<PatchCrmDealResponse> PatchCrmDealAsync(CrmDeal crmDeal, string connectionId, string id, List<string>? fields = null);
+        Task<PatchCrmDealResponse> PatchCrmDealAsync(PatchCrmDealRequest request);
 
         /// <summary>
         /// Remove a deal
@@ -53,17 +53,17 @@ namespace UnifiedTo
         /// <summary>
         /// Update a deal
         /// </summary>
-        Task<UpdateCrmDealResponse> UpdateCrmDealAsync(CrmDeal crmDeal, string connectionId, string id, List<string>? fields = null);
+        Task<UpdateCrmDealResponse> UpdateCrmDealAsync(UpdateCrmDealRequest request);
     }
 
     public class Deal: IDeal
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.22.40";
-        private const string _sdkGenVersion = "2.596.2";
+        private const string _sdkVersion = "0.22.41";
+        private const string _sdkGenVersion = "2.597.9";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.22.40 2.596.2 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.22.41 2.597.9 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;
@@ -76,13 +76,14 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<string>? fields = null)
+        public async Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<string>? fields = null, string? raw = null)
         {
             var request = new CreateCrmDealRequest()
             {
                 CrmDeal = crmDeal,
                 ConnectionId = connectionId,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal", request);
@@ -166,13 +167,14 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmDealResponse> GetCrmDealAsync(string connectionId, string id, List<string>? fields = null)
+        public async Task<GetCrmDealResponse> GetCrmDealAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
         {
             var request = new GetCrmDealRequest()
             {
                 ConnectionId = connectionId,
                 Id = id,
                 Fields = fields,
+                Raw = raw,
             };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal/{id}", request);
@@ -328,15 +330,8 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<PatchCrmDealResponse> PatchCrmDealAsync(CrmDeal crmDeal, string connectionId, string id, List<string>? fields = null)
+        public async Task<PatchCrmDealResponse> PatchCrmDealAsync(PatchCrmDealRequest request)
         {
-            var request = new PatchCrmDealRequest()
-            {
-                CrmDeal = crmDeal,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal/{id}", request);
 
@@ -501,15 +496,8 @@ namespace UnifiedTo
             }
         }
 
-        public async Task<UpdateCrmDealResponse> UpdateCrmDealAsync(CrmDeal crmDeal, string connectionId, string id, List<string>? fields = null)
+        public async Task<UpdateCrmDealResponse> UpdateCrmDealAsync(UpdateCrmDealRequest request)
         {
-            var request = new UpdateCrmDealRequest()
-            {
-                CrmDeal = crmDeal,
-                ConnectionId = connectionId,
-                Id = id,
-                Fields = fields,
-            };
             string baseUrl = this.SDKConfiguration.GetTemplatedServerUrl();
             var urlString = URLBuilder.Build(baseUrl, "/crm/{connection_id}/deal/{id}", request);
 
