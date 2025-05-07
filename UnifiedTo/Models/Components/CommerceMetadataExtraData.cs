@@ -9,9 +9,312 @@
 #nullable enable
 namespace UnifiedTo.Models.Components
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Numerics;
+    using System.Reflection;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class CommerceMetadataExtraData
+
+    public class CommerceMetadataExtraDataType
     {
+        private CommerceMetadataExtraDataType(string value) { Value = value; }
+
+        public string Value { get; private set; }
+        public static CommerceMetadataExtraDataType CommerceMetadata1 { get { return new CommerceMetadataExtraDataType("CommerceMetadata_1"); } }
+        
+        public static CommerceMetadataExtraDataType CommerceMetadata2 { get { return new CommerceMetadataExtraDataType("CommerceMetadata_2"); } }
+        
+        public static CommerceMetadataExtraDataType CommerceMetadata3 { get { return new CommerceMetadataExtraDataType("CommerceMetadata_3"); } }
+        
+        public static CommerceMetadataExtraDataType CommerceMetadata4 { get { return new CommerceMetadataExtraDataType("CommerceMetadata_4"); } }
+        
+        public static CommerceMetadataExtraDataType CommerceMetadata5 { get { return new CommerceMetadataExtraDataType("CommerceMetadata_5"); } }
+        
+        public static CommerceMetadataExtraDataType Null { get { return new CommerceMetadataExtraDataType("null"); } }
+
+        public override string ToString() { return Value; }
+        public static implicit operator String(CommerceMetadataExtraDataType v) { return v.Value; }
+        public static CommerceMetadataExtraDataType FromString(string v) {
+            switch(v) {
+                case "CommerceMetadata_1": return CommerceMetadata1;
+                case "CommerceMetadata_2": return CommerceMetadata2;
+                case "CommerceMetadata_3": return CommerceMetadata3;
+                case "CommerceMetadata_4": return CommerceMetadata4;
+                case "CommerceMetadata_5": return CommerceMetadata5;
+                case "null": return Null;
+                default: throw new ArgumentException("Invalid value for CommerceMetadataExtraDataType");
+            }
+        }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            return Value.Equals(((CommerceMetadataExtraDataType)obj).Value);
+        }
+
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
+        }
+    }
+
+
+    [JsonConverter(typeof(CommerceMetadataExtraData.CommerceMetadataExtraDataConverter))]
+    public class CommerceMetadataExtraData {
+        public CommerceMetadataExtraData(CommerceMetadataExtraDataType type) {
+            Type = type;
+        }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public CommerceMetadata1? CommerceMetadata1 { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public CommerceMetadata2? CommerceMetadata2 { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public CommerceMetadata3? CommerceMetadata3 { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public CommerceMetadata4? CommerceMetadata4 { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public CommerceMetadata5? CommerceMetadata5 { get; set; }
+
+        public CommerceMetadataExtraDataType Type { get; set; }
+
+
+        public static CommerceMetadataExtraData CreateCommerceMetadata1(CommerceMetadata1 commerceMetadata1) {
+            CommerceMetadataExtraDataType typ = CommerceMetadataExtraDataType.CommerceMetadata1;
+
+            CommerceMetadataExtraData res = new CommerceMetadataExtraData(typ);
+            res.CommerceMetadata1 = commerceMetadata1;
+            return res;
+        }
+
+        public static CommerceMetadataExtraData CreateCommerceMetadata2(CommerceMetadata2 commerceMetadata2) {
+            CommerceMetadataExtraDataType typ = CommerceMetadataExtraDataType.CommerceMetadata2;
+
+            CommerceMetadataExtraData res = new CommerceMetadataExtraData(typ);
+            res.CommerceMetadata2 = commerceMetadata2;
+            return res;
+        }
+
+        public static CommerceMetadataExtraData CreateCommerceMetadata3(CommerceMetadata3 commerceMetadata3) {
+            CommerceMetadataExtraDataType typ = CommerceMetadataExtraDataType.CommerceMetadata3;
+
+            CommerceMetadataExtraData res = new CommerceMetadataExtraData(typ);
+            res.CommerceMetadata3 = commerceMetadata3;
+            return res;
+        }
+
+        public static CommerceMetadataExtraData CreateCommerceMetadata4(CommerceMetadata4 commerceMetadata4) {
+            CommerceMetadataExtraDataType typ = CommerceMetadataExtraDataType.CommerceMetadata4;
+
+            CommerceMetadataExtraData res = new CommerceMetadataExtraData(typ);
+            res.CommerceMetadata4 = commerceMetadata4;
+            return res;
+        }
+
+        public static CommerceMetadataExtraData CreateCommerceMetadata5(CommerceMetadata5 commerceMetadata5) {
+            CommerceMetadataExtraDataType typ = CommerceMetadataExtraDataType.CommerceMetadata5;
+
+            CommerceMetadataExtraData res = new CommerceMetadataExtraData(typ);
+            res.CommerceMetadata5 = commerceMetadata5;
+            return res;
+        }
+
+        public static CommerceMetadataExtraData CreateNull() {
+            CommerceMetadataExtraDataType typ = CommerceMetadataExtraDataType.Null;
+            return new CommerceMetadataExtraData(typ);
+        }
+
+        public class CommerceMetadataExtraDataConverter : JsonConverter
+        {
+
+            public override bool CanConvert(System.Type objectType) => objectType == typeof(CommerceMetadataExtraData);
+
+            public override bool CanRead => true;
+
+            public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
+            {
+                var json = JRaw.Create(reader).ToString();
+                if (json == "null")
+                {
+                    return null;
+                }
+
+                var fallbackCandidates = new List<(System.Type, object, string)>();
+
+                try
+                {
+                    return new CommerceMetadataExtraData(CommerceMetadataExtraDataType.CommerceMetadata1)
+                    {
+                        CommerceMetadata1 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CommerceMetadata1>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(CommerceMetadata1), new CommerceMetadataExtraData(CommerceMetadataExtraDataType.CommerceMetadata1), "CommerceMetadata1"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new CommerceMetadataExtraData(CommerceMetadataExtraDataType.CommerceMetadata2)
+                    {
+                        CommerceMetadata2 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CommerceMetadata2>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(CommerceMetadata2), new CommerceMetadataExtraData(CommerceMetadataExtraDataType.CommerceMetadata2), "CommerceMetadata2"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new CommerceMetadataExtraData(CommerceMetadataExtraDataType.CommerceMetadata3)
+                    {
+                        CommerceMetadata3 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CommerceMetadata3>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(CommerceMetadata3), new CommerceMetadataExtraData(CommerceMetadataExtraDataType.CommerceMetadata3), "CommerceMetadata3"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new CommerceMetadataExtraData(CommerceMetadataExtraDataType.CommerceMetadata4)
+                    {
+                        CommerceMetadata4 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CommerceMetadata4>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(CommerceMetadata4), new CommerceMetadataExtraData(CommerceMetadataExtraDataType.CommerceMetadata4), "CommerceMetadata4"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new CommerceMetadataExtraData(CommerceMetadataExtraDataType.CommerceMetadata5)
+                    {
+                        CommerceMetadata5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CommerceMetadata5>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(CommerceMetadata5), new CommerceMetadataExtraData(CommerceMetadataExtraDataType.CommerceMetadata5), "CommerceMetadata5"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                if (fallbackCandidates.Count > 0)
+                {
+                    fallbackCandidates.Sort((a, b) => ResponseBodyDeserializer.CompareFallbackCandidates(a.Item1, b.Item1, json));
+                    foreach(var (deserializationType, returnObject, propertyName) in fallbackCandidates)
+                    {
+                        try
+                        {
+                            return ResponseBodyDeserializer.DeserializeUndiscriminatedUnionFallback(deserializationType, returnObject, propertyName, json);
+                        }
+                        catch (ResponseBodyDeserializer.DeserializationException)
+                        {
+                            // try next fallback option
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+                    }
+                }
+
+                throw new InvalidOperationException("Could not deserialize into any supported types.");
+            }
+
+            public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+            {
+                if (value == null) {
+                    writer.WriteRawValue("null");
+                    return;
+                }
+                CommerceMetadataExtraData res = (CommerceMetadataExtraData)value;
+                if (CommerceMetadataExtraDataType.FromString(res.Type).Equals(CommerceMetadataExtraDataType.Null))
+                {
+                    writer.WriteRawValue("null");
+                    return;
+                }
+                if (res.CommerceMetadata1 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.CommerceMetadata1));
+                    return;
+                }
+                if (res.CommerceMetadata2 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.CommerceMetadata2));
+                    return;
+                }
+                if (res.CommerceMetadata3 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.CommerceMetadata3));
+                    return;
+                }
+                if (res.CommerceMetadata4 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.CommerceMetadata4));
+                    return;
+                }
+                if (res.CommerceMetadata5 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.CommerceMetadata5));
+                    return;
+                }
+
+            }
+
+        }
+
     }
 }

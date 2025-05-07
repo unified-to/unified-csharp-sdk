@@ -9,9 +9,312 @@
 #nullable enable
 namespace UnifiedTo.Models.Components
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Numerics;
+    using System.Reflection;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class HrisMetadataExtraData
+
+    public class HrisMetadataExtraDataType
     {
+        private HrisMetadataExtraDataType(string value) { Value = value; }
+
+        public string Value { get; private set; }
+        public static HrisMetadataExtraDataType HrisMetadata1 { get { return new HrisMetadataExtraDataType("HrisMetadata_1"); } }
+        
+        public static HrisMetadataExtraDataType HrisMetadata2 { get { return new HrisMetadataExtraDataType("HrisMetadata_2"); } }
+        
+        public static HrisMetadataExtraDataType HrisMetadata3 { get { return new HrisMetadataExtraDataType("HrisMetadata_3"); } }
+        
+        public static HrisMetadataExtraDataType HrisMetadata4 { get { return new HrisMetadataExtraDataType("HrisMetadata_4"); } }
+        
+        public static HrisMetadataExtraDataType HrisMetadata5 { get { return new HrisMetadataExtraDataType("HrisMetadata_5"); } }
+        
+        public static HrisMetadataExtraDataType Null { get { return new HrisMetadataExtraDataType("null"); } }
+
+        public override string ToString() { return Value; }
+        public static implicit operator String(HrisMetadataExtraDataType v) { return v.Value; }
+        public static HrisMetadataExtraDataType FromString(string v) {
+            switch(v) {
+                case "HrisMetadata_1": return HrisMetadata1;
+                case "HrisMetadata_2": return HrisMetadata2;
+                case "HrisMetadata_3": return HrisMetadata3;
+                case "HrisMetadata_4": return HrisMetadata4;
+                case "HrisMetadata_5": return HrisMetadata5;
+                case "null": return Null;
+                default: throw new ArgumentException("Invalid value for HrisMetadataExtraDataType");
+            }
+        }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            return Value.Equals(((HrisMetadataExtraDataType)obj).Value);
+        }
+
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
+        }
+    }
+
+
+    [JsonConverter(typeof(HrisMetadataExtraData.HrisMetadataExtraDataConverter))]
+    public class HrisMetadataExtraData {
+        public HrisMetadataExtraData(HrisMetadataExtraDataType type) {
+            Type = type;
+        }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public HrisMetadata1? HrisMetadata1 { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public HrisMetadata2? HrisMetadata2 { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public HrisMetadata3? HrisMetadata3 { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public HrisMetadata4? HrisMetadata4 { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public HrisMetadata5? HrisMetadata5 { get; set; }
+
+        public HrisMetadataExtraDataType Type { get; set; }
+
+
+        public static HrisMetadataExtraData CreateHrisMetadata1(HrisMetadata1 hrisMetadata1) {
+            HrisMetadataExtraDataType typ = HrisMetadataExtraDataType.HrisMetadata1;
+
+            HrisMetadataExtraData res = new HrisMetadataExtraData(typ);
+            res.HrisMetadata1 = hrisMetadata1;
+            return res;
+        }
+
+        public static HrisMetadataExtraData CreateHrisMetadata2(HrisMetadata2 hrisMetadata2) {
+            HrisMetadataExtraDataType typ = HrisMetadataExtraDataType.HrisMetadata2;
+
+            HrisMetadataExtraData res = new HrisMetadataExtraData(typ);
+            res.HrisMetadata2 = hrisMetadata2;
+            return res;
+        }
+
+        public static HrisMetadataExtraData CreateHrisMetadata3(HrisMetadata3 hrisMetadata3) {
+            HrisMetadataExtraDataType typ = HrisMetadataExtraDataType.HrisMetadata3;
+
+            HrisMetadataExtraData res = new HrisMetadataExtraData(typ);
+            res.HrisMetadata3 = hrisMetadata3;
+            return res;
+        }
+
+        public static HrisMetadataExtraData CreateHrisMetadata4(HrisMetadata4 hrisMetadata4) {
+            HrisMetadataExtraDataType typ = HrisMetadataExtraDataType.HrisMetadata4;
+
+            HrisMetadataExtraData res = new HrisMetadataExtraData(typ);
+            res.HrisMetadata4 = hrisMetadata4;
+            return res;
+        }
+
+        public static HrisMetadataExtraData CreateHrisMetadata5(HrisMetadata5 hrisMetadata5) {
+            HrisMetadataExtraDataType typ = HrisMetadataExtraDataType.HrisMetadata5;
+
+            HrisMetadataExtraData res = new HrisMetadataExtraData(typ);
+            res.HrisMetadata5 = hrisMetadata5;
+            return res;
+        }
+
+        public static HrisMetadataExtraData CreateNull() {
+            HrisMetadataExtraDataType typ = HrisMetadataExtraDataType.Null;
+            return new HrisMetadataExtraData(typ);
+        }
+
+        public class HrisMetadataExtraDataConverter : JsonConverter
+        {
+
+            public override bool CanConvert(System.Type objectType) => objectType == typeof(HrisMetadataExtraData);
+
+            public override bool CanRead => true;
+
+            public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
+            {
+                var json = JRaw.Create(reader).ToString();
+                if (json == "null")
+                {
+                    return null;
+                }
+
+                var fallbackCandidates = new List<(System.Type, object, string)>();
+
+                try
+                {
+                    return new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata1)
+                    {
+                        HrisMetadata1 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<HrisMetadata1>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(HrisMetadata1), new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata1), "HrisMetadata1"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata2)
+                    {
+                        HrisMetadata2 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<HrisMetadata2>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(HrisMetadata2), new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata2), "HrisMetadata2"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata3)
+                    {
+                        HrisMetadata3 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<HrisMetadata3>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(HrisMetadata3), new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata3), "HrisMetadata3"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata4)
+                    {
+                        HrisMetadata4 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<HrisMetadata4>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(HrisMetadata4), new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata4), "HrisMetadata4"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata5)
+                    {
+                        HrisMetadata5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<HrisMetadata5>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(HrisMetadata5), new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata5), "HrisMetadata5"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                if (fallbackCandidates.Count > 0)
+                {
+                    fallbackCandidates.Sort((a, b) => ResponseBodyDeserializer.CompareFallbackCandidates(a.Item1, b.Item1, json));
+                    foreach(var (deserializationType, returnObject, propertyName) in fallbackCandidates)
+                    {
+                        try
+                        {
+                            return ResponseBodyDeserializer.DeserializeUndiscriminatedUnionFallback(deserializationType, returnObject, propertyName, json);
+                        }
+                        catch (ResponseBodyDeserializer.DeserializationException)
+                        {
+                            // try next fallback option
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+                    }
+                }
+
+                throw new InvalidOperationException("Could not deserialize into any supported types.");
+            }
+
+            public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+            {
+                if (value == null) {
+                    writer.WriteRawValue("null");
+                    return;
+                }
+                HrisMetadataExtraData res = (HrisMetadataExtraData)value;
+                if (HrisMetadataExtraDataType.FromString(res.Type).Equals(HrisMetadataExtraDataType.Null))
+                {
+                    writer.WriteRawValue("null");
+                    return;
+                }
+                if (res.HrisMetadata1 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.HrisMetadata1));
+                    return;
+                }
+                if (res.HrisMetadata2 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.HrisMetadata2));
+                    return;
+                }
+                if (res.HrisMetadata3 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.HrisMetadata3));
+                    return;
+                }
+                if (res.HrisMetadata4 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.HrisMetadata4));
+                    return;
+                }
+                if (res.HrisMetadata5 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.HrisMetadata5));
+                    return;
+                }
+
+            }
+
+        }
+
     }
 }

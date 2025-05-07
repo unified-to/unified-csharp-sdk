@@ -9,9 +9,312 @@
 #nullable enable
 namespace UnifiedTo.Models.Components
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Numerics;
+    using System.Reflection;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class CrmMetadataExtraData
+
+    public class CrmMetadataExtraDataType
     {
+        private CrmMetadataExtraDataType(string value) { Value = value; }
+
+        public string Value { get; private set; }
+        public static CrmMetadataExtraDataType CrmMetadata1 { get { return new CrmMetadataExtraDataType("CrmMetadata_1"); } }
+        
+        public static CrmMetadataExtraDataType CrmMetadata2 { get { return new CrmMetadataExtraDataType("CrmMetadata_2"); } }
+        
+        public static CrmMetadataExtraDataType CrmMetadata3 { get { return new CrmMetadataExtraDataType("CrmMetadata_3"); } }
+        
+        public static CrmMetadataExtraDataType CrmMetadata4 { get { return new CrmMetadataExtraDataType("CrmMetadata_4"); } }
+        
+        public static CrmMetadataExtraDataType CrmMetadata5 { get { return new CrmMetadataExtraDataType("CrmMetadata_5"); } }
+        
+        public static CrmMetadataExtraDataType Null { get { return new CrmMetadataExtraDataType("null"); } }
+
+        public override string ToString() { return Value; }
+        public static implicit operator String(CrmMetadataExtraDataType v) { return v.Value; }
+        public static CrmMetadataExtraDataType FromString(string v) {
+            switch(v) {
+                case "CrmMetadata_1": return CrmMetadata1;
+                case "CrmMetadata_2": return CrmMetadata2;
+                case "CrmMetadata_3": return CrmMetadata3;
+                case "CrmMetadata_4": return CrmMetadata4;
+                case "CrmMetadata_5": return CrmMetadata5;
+                case "null": return Null;
+                default: throw new ArgumentException("Invalid value for CrmMetadataExtraDataType");
+            }
+        }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            return Value.Equals(((CrmMetadataExtraDataType)obj).Value);
+        }
+
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
+        }
+    }
+
+
+    [JsonConverter(typeof(CrmMetadataExtraData.CrmMetadataExtraDataConverter))]
+    public class CrmMetadataExtraData {
+        public CrmMetadataExtraData(CrmMetadataExtraDataType type) {
+            Type = type;
+        }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public CrmMetadata1? CrmMetadata1 { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public CrmMetadata2? CrmMetadata2 { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public CrmMetadata3? CrmMetadata3 { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public CrmMetadata4? CrmMetadata4 { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public CrmMetadata5? CrmMetadata5 { get; set; }
+
+        public CrmMetadataExtraDataType Type { get; set; }
+
+
+        public static CrmMetadataExtraData CreateCrmMetadata1(CrmMetadata1 crmMetadata1) {
+            CrmMetadataExtraDataType typ = CrmMetadataExtraDataType.CrmMetadata1;
+
+            CrmMetadataExtraData res = new CrmMetadataExtraData(typ);
+            res.CrmMetadata1 = crmMetadata1;
+            return res;
+        }
+
+        public static CrmMetadataExtraData CreateCrmMetadata2(CrmMetadata2 crmMetadata2) {
+            CrmMetadataExtraDataType typ = CrmMetadataExtraDataType.CrmMetadata2;
+
+            CrmMetadataExtraData res = new CrmMetadataExtraData(typ);
+            res.CrmMetadata2 = crmMetadata2;
+            return res;
+        }
+
+        public static CrmMetadataExtraData CreateCrmMetadata3(CrmMetadata3 crmMetadata3) {
+            CrmMetadataExtraDataType typ = CrmMetadataExtraDataType.CrmMetadata3;
+
+            CrmMetadataExtraData res = new CrmMetadataExtraData(typ);
+            res.CrmMetadata3 = crmMetadata3;
+            return res;
+        }
+
+        public static CrmMetadataExtraData CreateCrmMetadata4(CrmMetadata4 crmMetadata4) {
+            CrmMetadataExtraDataType typ = CrmMetadataExtraDataType.CrmMetadata4;
+
+            CrmMetadataExtraData res = new CrmMetadataExtraData(typ);
+            res.CrmMetadata4 = crmMetadata4;
+            return res;
+        }
+
+        public static CrmMetadataExtraData CreateCrmMetadata5(CrmMetadata5 crmMetadata5) {
+            CrmMetadataExtraDataType typ = CrmMetadataExtraDataType.CrmMetadata5;
+
+            CrmMetadataExtraData res = new CrmMetadataExtraData(typ);
+            res.CrmMetadata5 = crmMetadata5;
+            return res;
+        }
+
+        public static CrmMetadataExtraData CreateNull() {
+            CrmMetadataExtraDataType typ = CrmMetadataExtraDataType.Null;
+            return new CrmMetadataExtraData(typ);
+        }
+
+        public class CrmMetadataExtraDataConverter : JsonConverter
+        {
+
+            public override bool CanConvert(System.Type objectType) => objectType == typeof(CrmMetadataExtraData);
+
+            public override bool CanRead => true;
+
+            public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
+            {
+                var json = JRaw.Create(reader).ToString();
+                if (json == "null")
+                {
+                    return null;
+                }
+
+                var fallbackCandidates = new List<(System.Type, object, string)>();
+
+                try
+                {
+                    return new CrmMetadataExtraData(CrmMetadataExtraDataType.CrmMetadata1)
+                    {
+                        CrmMetadata1 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CrmMetadata1>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(CrmMetadata1), new CrmMetadataExtraData(CrmMetadataExtraDataType.CrmMetadata1), "CrmMetadata1"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new CrmMetadataExtraData(CrmMetadataExtraDataType.CrmMetadata2)
+                    {
+                        CrmMetadata2 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CrmMetadata2>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(CrmMetadata2), new CrmMetadataExtraData(CrmMetadataExtraDataType.CrmMetadata2), "CrmMetadata2"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new CrmMetadataExtraData(CrmMetadataExtraDataType.CrmMetadata3)
+                    {
+                        CrmMetadata3 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CrmMetadata3>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(CrmMetadata3), new CrmMetadataExtraData(CrmMetadataExtraDataType.CrmMetadata3), "CrmMetadata3"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new CrmMetadataExtraData(CrmMetadataExtraDataType.CrmMetadata4)
+                    {
+                        CrmMetadata4 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CrmMetadata4>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(CrmMetadata4), new CrmMetadataExtraData(CrmMetadataExtraDataType.CrmMetadata4), "CrmMetadata4"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new CrmMetadataExtraData(CrmMetadataExtraDataType.CrmMetadata5)
+                    {
+                        CrmMetadata5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CrmMetadata5>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(CrmMetadata5), new CrmMetadataExtraData(CrmMetadataExtraDataType.CrmMetadata5), "CrmMetadata5"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                if (fallbackCandidates.Count > 0)
+                {
+                    fallbackCandidates.Sort((a, b) => ResponseBodyDeserializer.CompareFallbackCandidates(a.Item1, b.Item1, json));
+                    foreach(var (deserializationType, returnObject, propertyName) in fallbackCandidates)
+                    {
+                        try
+                        {
+                            return ResponseBodyDeserializer.DeserializeUndiscriminatedUnionFallback(deserializationType, returnObject, propertyName, json);
+                        }
+                        catch (ResponseBodyDeserializer.DeserializationException)
+                        {
+                            // try next fallback option
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+                    }
+                }
+
+                throw new InvalidOperationException("Could not deserialize into any supported types.");
+            }
+
+            public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+            {
+                if (value == null) {
+                    writer.WriteRawValue("null");
+                    return;
+                }
+                CrmMetadataExtraData res = (CrmMetadataExtraData)value;
+                if (CrmMetadataExtraDataType.FromString(res.Type).Equals(CrmMetadataExtraDataType.Null))
+                {
+                    writer.WriteRawValue("null");
+                    return;
+                }
+                if (res.CrmMetadata1 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.CrmMetadata1));
+                    return;
+                }
+                if (res.CrmMetadata2 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.CrmMetadata2));
+                    return;
+                }
+                if (res.CrmMetadata3 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.CrmMetadata3));
+                    return;
+                }
+                if (res.CrmMetadata4 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.CrmMetadata4));
+                    return;
+                }
+                if (res.CrmMetadata5 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.CrmMetadata5));
+                    return;
+                }
+
+            }
+
+        }
+
     }
 }

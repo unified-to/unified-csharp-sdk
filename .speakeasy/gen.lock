@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: f032e2d929e6463e2d345fa322684244
+  docChecksum: 2625a6ddd69ded1a0dfa97e04747a5af
   docVersion: "1.0"
   speakeasyVersion: 1.542.3
   generationVersion: 2.597.9
-  releaseVersion: 0.22.41
-  configChecksum: e1d17ad1be54ebbc8451f6ab65c68db0
+  releaseVersion: 0.23.0
+  configChecksum: 7b905dfe7a7baebe1b1deecb3cc1ce14
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -23,6 +23,7 @@ features:
     methodArguments: 0.2.0
     responseFormat: 0.0.4
     sdkHooks: 0.1.0
+    unions: 0.2.2
 generatedFiles:
   - .gitattributes
   - NUGET.md
@@ -147,6 +148,19 @@ generatedFiles:
   - UnifiedTo/Models/Components/AtsJobQuestionType.cs
   - UnifiedTo/Models/Components/AtsJobStatus.cs
   - UnifiedTo/Models/Components/AtsMetadata.cs
+  - UnifiedTo/Models/Components/AtsMetadata1.cs
+  - UnifiedTo/Models/Components/AtsMetadata2.cs
+  - UnifiedTo/Models/Components/AtsMetadata3.cs
+  - UnifiedTo/Models/Components/AtsMetadata4.cs
+  - UnifiedTo/Models/Components/AtsMetadata5.cs
+  - UnifiedTo/Models/Components/AtsMetadataSchemas2.cs
+  - UnifiedTo/Models/Components/AtsMetadataSchemasExtraData2.cs
+  - UnifiedTo/Models/Components/AtsMetadataSchemasExtraData22.cs
+  - UnifiedTo/Models/Components/AtsMetadataSchemasExtraData32.cs
+  - UnifiedTo/Models/Components/AtsMetadataSchemasValue2.cs
+  - UnifiedTo/Models/Components/AtsMetadataSchemasValue32.cs
+  - UnifiedTo/Models/Components/AtsMetadataSchemasValue42.cs
+  - UnifiedTo/Models/Components/AtsMetadataSchemasValue52.cs
   - UnifiedTo/Models/Components/AtsOffer.cs
   - UnifiedTo/Models/Components/AtsOfferStatus.cs
   - UnifiedTo/Models/Components/AtsScorecard.cs
@@ -176,7 +190,25 @@ generatedFiles:
   - UnifiedTo/Models/Components/CommerceItemVariant.cs
   - UnifiedTo/Models/Components/CommerceLocation.cs
   - UnifiedTo/Models/Components/CommerceMetadata.cs
+  - UnifiedTo/Models/Components/CommerceMetadata1.cs
+  - UnifiedTo/Models/Components/CommerceMetadata2.cs
+  - UnifiedTo/Models/Components/CommerceMetadata3.cs
+  - UnifiedTo/Models/Components/CommerceMetadata4.cs
+  - UnifiedTo/Models/Components/CommerceMetadata5.cs
   - UnifiedTo/Models/Components/CommerceMetadataExtraData.cs
+  - UnifiedTo/Models/Components/CommerceMetadataSchemas1.cs
+  - UnifiedTo/Models/Components/CommerceMetadataSchemas2.cs
+  - UnifiedTo/Models/Components/CommerceMetadataSchemas3.cs
+  - UnifiedTo/Models/Components/CommerceMetadataSchemas4.cs
+  - UnifiedTo/Models/Components/CommerceMetadataSchemas5.cs
+  - UnifiedTo/Models/Components/CommerceMetadataSchemasExtraData2.cs
+  - UnifiedTo/Models/Components/CommerceMetadataSchemasExtraData22.cs
+  - UnifiedTo/Models/Components/CommerceMetadataSchemasExtraData32.cs
+  - UnifiedTo/Models/Components/CommerceMetadataSchemasExtraData52.cs
+  - UnifiedTo/Models/Components/CommerceMetadataSchemasValue2.cs
+  - UnifiedTo/Models/Components/CommerceMetadataSchemasValue32.cs
+  - UnifiedTo/Models/Components/CommerceMetadataSchemasValue42.cs
+  - UnifiedTo/Models/Components/CommerceMetadataSchemasValue52.cs
   - UnifiedTo/Models/Components/CommerceMetadataValue.cs
   - UnifiedTo/Models/Components/Connection.cs
   - UnifiedTo/Models/Components/ContentType.cs
@@ -192,7 +224,25 @@ generatedFiles:
   - UnifiedTo/Models/Components/CrmEventType.cs
   - UnifiedTo/Models/Components/CrmLead.cs
   - UnifiedTo/Models/Components/CrmMetadata.cs
+  - UnifiedTo/Models/Components/CrmMetadata1.cs
+  - UnifiedTo/Models/Components/CrmMetadata2.cs
+  - UnifiedTo/Models/Components/CrmMetadata3.cs
+  - UnifiedTo/Models/Components/CrmMetadata4.cs
+  - UnifiedTo/Models/Components/CrmMetadata5.cs
   - UnifiedTo/Models/Components/CrmMetadataExtraData.cs
+  - UnifiedTo/Models/Components/CrmMetadataSchemas1.cs
+  - UnifiedTo/Models/Components/CrmMetadataSchemas2.cs
+  - UnifiedTo/Models/Components/CrmMetadataSchemas3.cs
+  - UnifiedTo/Models/Components/CrmMetadataSchemas4.cs
+  - UnifiedTo/Models/Components/CrmMetadataSchemas5.cs
+  - UnifiedTo/Models/Components/CrmMetadataSchemasExtraData2.cs
+  - UnifiedTo/Models/Components/CrmMetadataSchemasExtraData22.cs
+  - UnifiedTo/Models/Components/CrmMetadataSchemasExtraData32.cs
+  - UnifiedTo/Models/Components/CrmMetadataSchemasExtraData52.cs
+  - UnifiedTo/Models/Components/CrmMetadataSchemasValue2.cs
+  - UnifiedTo/Models/Components/CrmMetadataSchemasValue32.cs
+  - UnifiedTo/Models/Components/CrmMetadataSchemasValue42.cs
+  - UnifiedTo/Models/Components/CrmMetadataSchemasValue52.cs
   - UnifiedTo/Models/Components/CrmMetadataValue.cs
   - UnifiedTo/Models/Components/CrmPipeline.cs
   - UnifiedTo/Models/Components/CrmStage.cs
@@ -211,7 +261,9 @@ generatedFiles:
   - UnifiedTo/Models/Components/Ethnicity.cs
   - UnifiedTo/Models/Components/Event.cs
   - UnifiedTo/Models/Components/ExtraData.cs
+  - UnifiedTo/Models/Components/Five.cs
   - UnifiedTo/Models/Components/Format.cs
+  - UnifiedTo/Models/Components/Four.cs
   - UnifiedTo/Models/Components/Frequency.cs
   - UnifiedTo/Models/Components/FromWebhook.cs
   - UnifiedTo/Models/Components/GenaiContent.cs
@@ -232,7 +284,25 @@ generatedFiles:
   - UnifiedTo/Models/Components/HrisGroupType.cs
   - UnifiedTo/Models/Components/HrisLocation.cs
   - UnifiedTo/Models/Components/HrisMetadata.cs
+  - UnifiedTo/Models/Components/HrisMetadata1.cs
+  - UnifiedTo/Models/Components/HrisMetadata2.cs
+  - UnifiedTo/Models/Components/HrisMetadata3.cs
+  - UnifiedTo/Models/Components/HrisMetadata4.cs
+  - UnifiedTo/Models/Components/HrisMetadata5.cs
   - UnifiedTo/Models/Components/HrisMetadataExtraData.cs
+  - UnifiedTo/Models/Components/HrisMetadataSchemas1.cs
+  - UnifiedTo/Models/Components/HrisMetadataSchemas2.cs
+  - UnifiedTo/Models/Components/HrisMetadataSchemas3.cs
+  - UnifiedTo/Models/Components/HrisMetadataSchemas4.cs
+  - UnifiedTo/Models/Components/HrisMetadataSchemas5.cs
+  - UnifiedTo/Models/Components/HrisMetadataSchemasExtraData2.cs
+  - UnifiedTo/Models/Components/HrisMetadataSchemasExtraData22.cs
+  - UnifiedTo/Models/Components/HrisMetadataSchemasExtraData32.cs
+  - UnifiedTo/Models/Components/HrisMetadataSchemasExtraData52.cs
+  - UnifiedTo/Models/Components/HrisMetadataSchemasValue2.cs
+  - UnifiedTo/Models/Components/HrisMetadataSchemasValue32.cs
+  - UnifiedTo/Models/Components/HrisMetadataSchemasValue42.cs
+  - UnifiedTo/Models/Components/HrisMetadataSchemasValue52.cs
   - UnifiedTo/Models/Components/HrisMetadataValue.cs
   - UnifiedTo/Models/Components/HrisPayslip.cs
   - UnifiedTo/Models/Components/HrisPayslipDetail.cs
@@ -322,6 +392,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/NativeWebhookParentId.cs
   - UnifiedTo/Models/Components/NativeWebhookProjectId.cs
   - UnifiedTo/Models/Components/ObjectType.cs
+  - UnifiedTo/Models/Components/One.cs
   - UnifiedTo/Models/Components/Operation.cs
   - UnifiedTo/Models/Components/Origin.cs
   - UnifiedTo/Models/Components/PaymentCollectionMethod.cs
@@ -446,6 +517,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/TaskTask.cs
   - UnifiedTo/Models/Components/TaskTaskStatus.cs
   - UnifiedTo/Models/Components/TaxExemption.cs
+  - UnifiedTo/Models/Components/Three.cs
   - UnifiedTo/Models/Components/TicketingCustomer.cs
   - UnifiedTo/Models/Components/TicketingEmail.cs
   - UnifiedTo/Models/Components/TicketingEmailType.cs
@@ -454,6 +526,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/TicketingTelephoneType.cs
   - UnifiedTo/Models/Components/TicketingTicket.cs
   - UnifiedTo/Models/Components/TicketingTicketStatus.cs
+  - UnifiedTo/Models/Components/Two.cs
   - UnifiedTo/Models/Components/Type.cs
   - UnifiedTo/Models/Components/UcCall.cs
   - UnifiedTo/Models/Components/UcComment.cs
@@ -1460,6 +1533,19 @@ generatedFiles:
   - docs/Models/Components/AtsJobQuestionType.md
   - docs/Models/Components/AtsJobStatus.md
   - docs/Models/Components/AtsMetadata.md
+  - docs/Models/Components/AtsMetadata1.md
+  - docs/Models/Components/AtsMetadata2.md
+  - docs/Models/Components/AtsMetadata3.md
+  - docs/Models/Components/AtsMetadata4.md
+  - docs/Models/Components/AtsMetadata5.md
+  - docs/Models/Components/AtsMetadataSchemas2.md
+  - docs/Models/Components/AtsMetadataSchemasExtraData2.md
+  - docs/Models/Components/AtsMetadataSchemasExtraData22.md
+  - docs/Models/Components/AtsMetadataSchemasExtraData32.md
+  - docs/Models/Components/AtsMetadataSchemasValue2.md
+  - docs/Models/Components/AtsMetadataSchemasValue32.md
+  - docs/Models/Components/AtsMetadataSchemasValue42.md
+  - docs/Models/Components/AtsMetadataSchemasValue52.md
   - docs/Models/Components/AtsOffer.md
   - docs/Models/Components/AtsOfferStatus.md
   - docs/Models/Components/AtsScorecard.md
@@ -1489,7 +1575,25 @@ generatedFiles:
   - docs/Models/Components/CommerceItemVariant.md
   - docs/Models/Components/CommerceLocation.md
   - docs/Models/Components/CommerceMetadata.md
+  - docs/Models/Components/CommerceMetadata1.md
+  - docs/Models/Components/CommerceMetadata2.md
+  - docs/Models/Components/CommerceMetadata3.md
+  - docs/Models/Components/CommerceMetadata4.md
+  - docs/Models/Components/CommerceMetadata5.md
   - docs/Models/Components/CommerceMetadataExtraData.md
+  - docs/Models/Components/CommerceMetadataSchemas1.md
+  - docs/Models/Components/CommerceMetadataSchemas2.md
+  - docs/Models/Components/CommerceMetadataSchemas3.md
+  - docs/Models/Components/CommerceMetadataSchemas4.md
+  - docs/Models/Components/CommerceMetadataSchemas5.md
+  - docs/Models/Components/CommerceMetadataSchemasExtraData2.md
+  - docs/Models/Components/CommerceMetadataSchemasExtraData22.md
+  - docs/Models/Components/CommerceMetadataSchemasExtraData32.md
+  - docs/Models/Components/CommerceMetadataSchemasExtraData52.md
+  - docs/Models/Components/CommerceMetadataSchemasValue2.md
+  - docs/Models/Components/CommerceMetadataSchemasValue32.md
+  - docs/Models/Components/CommerceMetadataSchemasValue42.md
+  - docs/Models/Components/CommerceMetadataSchemasValue52.md
   - docs/Models/Components/CommerceMetadataValue.md
   - docs/Models/Components/Connection.md
   - docs/Models/Components/ContentType.md
@@ -1505,7 +1609,25 @@ generatedFiles:
   - docs/Models/Components/CrmEventType.md
   - docs/Models/Components/CrmLead.md
   - docs/Models/Components/CrmMetadata.md
+  - docs/Models/Components/CrmMetadata1.md
+  - docs/Models/Components/CrmMetadata2.md
+  - docs/Models/Components/CrmMetadata3.md
+  - docs/Models/Components/CrmMetadata4.md
+  - docs/Models/Components/CrmMetadata5.md
   - docs/Models/Components/CrmMetadataExtraData.md
+  - docs/Models/Components/CrmMetadataSchemas1.md
+  - docs/Models/Components/CrmMetadataSchemas2.md
+  - docs/Models/Components/CrmMetadataSchemas3.md
+  - docs/Models/Components/CrmMetadataSchemas4.md
+  - docs/Models/Components/CrmMetadataSchemas5.md
+  - docs/Models/Components/CrmMetadataSchemasExtraData2.md
+  - docs/Models/Components/CrmMetadataSchemasExtraData22.md
+  - docs/Models/Components/CrmMetadataSchemasExtraData32.md
+  - docs/Models/Components/CrmMetadataSchemasExtraData52.md
+  - docs/Models/Components/CrmMetadataSchemasValue2.md
+  - docs/Models/Components/CrmMetadataSchemasValue32.md
+  - docs/Models/Components/CrmMetadataSchemasValue42.md
+  - docs/Models/Components/CrmMetadataSchemasValue52.md
   - docs/Models/Components/CrmMetadataValue.md
   - docs/Models/Components/CrmPipeline.md
   - docs/Models/Components/CrmStage.md
@@ -1524,7 +1646,9 @@ generatedFiles:
   - docs/Models/Components/Ethnicity.md
   - docs/Models/Components/Event.md
   - docs/Models/Components/ExtraData.md
+  - docs/Models/Components/Five.md
   - docs/Models/Components/Format.md
+  - docs/Models/Components/Four.md
   - docs/Models/Components/Frequency.md
   - docs/Models/Components/FromWebhook.md
   - docs/Models/Components/GenaiContent.md
@@ -1545,7 +1669,25 @@ generatedFiles:
   - docs/Models/Components/HrisGroupType.md
   - docs/Models/Components/HrisLocation.md
   - docs/Models/Components/HrisMetadata.md
+  - docs/Models/Components/HrisMetadata1.md
+  - docs/Models/Components/HrisMetadata2.md
+  - docs/Models/Components/HrisMetadata3.md
+  - docs/Models/Components/HrisMetadata4.md
+  - docs/Models/Components/HrisMetadata5.md
   - docs/Models/Components/HrisMetadataExtraData.md
+  - docs/Models/Components/HrisMetadataSchemas1.md
+  - docs/Models/Components/HrisMetadataSchemas2.md
+  - docs/Models/Components/HrisMetadataSchemas3.md
+  - docs/Models/Components/HrisMetadataSchemas4.md
+  - docs/Models/Components/HrisMetadataSchemas5.md
+  - docs/Models/Components/HrisMetadataSchemasExtraData2.md
+  - docs/Models/Components/HrisMetadataSchemasExtraData22.md
+  - docs/Models/Components/HrisMetadataSchemasExtraData32.md
+  - docs/Models/Components/HrisMetadataSchemasExtraData52.md
+  - docs/Models/Components/HrisMetadataSchemasValue2.md
+  - docs/Models/Components/HrisMetadataSchemasValue32.md
+  - docs/Models/Components/HrisMetadataSchemasValue42.md
+  - docs/Models/Components/HrisMetadataSchemasValue52.md
   - docs/Models/Components/HrisMetadataValue.md
   - docs/Models/Components/HrisPayslip.md
   - docs/Models/Components/HrisPayslipDetail.md
@@ -1635,6 +1777,7 @@ generatedFiles:
   - docs/Models/Components/NativeWebhookParentId.md
   - docs/Models/Components/NativeWebhookProjectId.md
   - docs/Models/Components/ObjectType.md
+  - docs/Models/Components/One.md
   - docs/Models/Components/Operation.md
   - docs/Models/Components/Origin.md
   - docs/Models/Components/PaymentCollectionMethod.md
@@ -1759,6 +1902,7 @@ generatedFiles:
   - docs/Models/Components/TaskTask.md
   - docs/Models/Components/TaskTaskStatus.md
   - docs/Models/Components/TaxExemption.md
+  - docs/Models/Components/Three.md
   - docs/Models/Components/TicketingCustomer.md
   - docs/Models/Components/TicketingEmail.md
   - docs/Models/Components/TicketingEmailType.md
@@ -1767,6 +1911,7 @@ generatedFiles:
   - docs/Models/Components/TicketingTelephoneType.md
   - docs/Models/Components/TicketingTicket.md
   - docs/Models/Components/TicketingTicketStatus.md
+  - docs/Models/Components/Two.md
   - docs/Models/Components/Type.md
   - docs/Models/Components/UcCall.md
   - docs/Models/Components/UcComment.md

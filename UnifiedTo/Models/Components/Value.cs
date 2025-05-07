@@ -9,9 +9,312 @@
 #nullable enable
 namespace UnifiedTo.Models.Components
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Numerics;
+    using System.Reflection;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class Value
+
+    public class ValueType
     {
+        private ValueType(string value) { Value = value; }
+
+        public string Value { get; private set; }
+        public static ValueType AtsMetadata1 { get { return new ValueType("AtsMetadata_1"); } }
+        
+        public static ValueType AtsMetadata2 { get { return new ValueType("AtsMetadata_2"); } }
+        
+        public static ValueType AtsMetadata3 { get { return new ValueType("AtsMetadata_3"); } }
+        
+        public static ValueType AtsMetadata4 { get { return new ValueType("AtsMetadata_4"); } }
+        
+        public static ValueType AtsMetadata5 { get { return new ValueType("AtsMetadata_5"); } }
+        
+        public static ValueType Null { get { return new ValueType("null"); } }
+
+        public override string ToString() { return Value; }
+        public static implicit operator String(ValueType v) { return v.Value; }
+        public static ValueType FromString(string v) {
+            switch(v) {
+                case "AtsMetadata_1": return AtsMetadata1;
+                case "AtsMetadata_2": return AtsMetadata2;
+                case "AtsMetadata_3": return AtsMetadata3;
+                case "AtsMetadata_4": return AtsMetadata4;
+                case "AtsMetadata_5": return AtsMetadata5;
+                case "null": return Null;
+                default: throw new ArgumentException("Invalid value for ValueType");
+            }
+        }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            return Value.Equals(((ValueType)obj).Value);
+        }
+
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
+        }
+    }
+
+
+    [JsonConverter(typeof(Value.ValueConverter))]
+    public class Value {
+        public Value(ValueType type) {
+            Type = type;
+        }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public AtsMetadata1? AtsMetadata1 { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public AtsMetadata2? AtsMetadata2 { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public AtsMetadata3? AtsMetadata3 { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public AtsMetadata4? AtsMetadata4 { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public AtsMetadata5? AtsMetadata5 { get; set; }
+
+        public ValueType Type { get; set; }
+
+
+        public static Value CreateAtsMetadata1(AtsMetadata1 atsMetadata1) {
+            ValueType typ = ValueType.AtsMetadata1;
+
+            Value res = new Value(typ);
+            res.AtsMetadata1 = atsMetadata1;
+            return res;
+        }
+
+        public static Value CreateAtsMetadata2(AtsMetadata2 atsMetadata2) {
+            ValueType typ = ValueType.AtsMetadata2;
+
+            Value res = new Value(typ);
+            res.AtsMetadata2 = atsMetadata2;
+            return res;
+        }
+
+        public static Value CreateAtsMetadata3(AtsMetadata3 atsMetadata3) {
+            ValueType typ = ValueType.AtsMetadata3;
+
+            Value res = new Value(typ);
+            res.AtsMetadata3 = atsMetadata3;
+            return res;
+        }
+
+        public static Value CreateAtsMetadata4(AtsMetadata4 atsMetadata4) {
+            ValueType typ = ValueType.AtsMetadata4;
+
+            Value res = new Value(typ);
+            res.AtsMetadata4 = atsMetadata4;
+            return res;
+        }
+
+        public static Value CreateAtsMetadata5(AtsMetadata5 atsMetadata5) {
+            ValueType typ = ValueType.AtsMetadata5;
+
+            Value res = new Value(typ);
+            res.AtsMetadata5 = atsMetadata5;
+            return res;
+        }
+
+        public static Value CreateNull() {
+            ValueType typ = ValueType.Null;
+            return new Value(typ);
+        }
+
+        public class ValueConverter : JsonConverter
+        {
+
+            public override bool CanConvert(System.Type objectType) => objectType == typeof(Value);
+
+            public override bool CanRead => true;
+
+            public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
+            {
+                var json = JRaw.Create(reader).ToString();
+                if (json == "null")
+                {
+                    return null;
+                }
+
+                var fallbackCandidates = new List<(System.Type, object, string)>();
+
+                try
+                {
+                    return new Value(ValueType.AtsMetadata1)
+                    {
+                        AtsMetadata1 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<AtsMetadata1>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(AtsMetadata1), new Value(ValueType.AtsMetadata1), "AtsMetadata1"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new Value(ValueType.AtsMetadata2)
+                    {
+                        AtsMetadata2 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<AtsMetadata2>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(AtsMetadata2), new Value(ValueType.AtsMetadata2), "AtsMetadata2"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new Value(ValueType.AtsMetadata3)
+                    {
+                        AtsMetadata3 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<AtsMetadata3>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(AtsMetadata3), new Value(ValueType.AtsMetadata3), "AtsMetadata3"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new Value(ValueType.AtsMetadata4)
+                    {
+                        AtsMetadata4 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<AtsMetadata4>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(AtsMetadata4), new Value(ValueType.AtsMetadata4), "AtsMetadata4"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new Value(ValueType.AtsMetadata5)
+                    {
+                        AtsMetadata5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<AtsMetadata5>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(AtsMetadata5), new Value(ValueType.AtsMetadata5), "AtsMetadata5"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                if (fallbackCandidates.Count > 0)
+                {
+                    fallbackCandidates.Sort((a, b) => ResponseBodyDeserializer.CompareFallbackCandidates(a.Item1, b.Item1, json));
+                    foreach(var (deserializationType, returnObject, propertyName) in fallbackCandidates)
+                    {
+                        try
+                        {
+                            return ResponseBodyDeserializer.DeserializeUndiscriminatedUnionFallback(deserializationType, returnObject, propertyName, json);
+                        }
+                        catch (ResponseBodyDeserializer.DeserializationException)
+                        {
+                            // try next fallback option
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+                    }
+                }
+
+                throw new InvalidOperationException("Could not deserialize into any supported types.");
+            }
+
+            public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+            {
+                if (value == null) {
+                    writer.WriteRawValue("null");
+                    return;
+                }
+                Value res = (Value)value;
+                if (ValueType.FromString(res.Type).Equals(ValueType.Null))
+                {
+                    writer.WriteRawValue("null");
+                    return;
+                }
+                if (res.AtsMetadata1 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.AtsMetadata1));
+                    return;
+                }
+                if (res.AtsMetadata2 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.AtsMetadata2));
+                    return;
+                }
+                if (res.AtsMetadata3 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.AtsMetadata3));
+                    return;
+                }
+                if (res.AtsMetadata4 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.AtsMetadata4));
+                    return;
+                }
+                if (res.AtsMetadata5 != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.AtsMetadata5));
+                    return;
+                }
+
+            }
+
+        }
+
     }
 }

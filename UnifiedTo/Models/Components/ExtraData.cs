@@ -9,9 +9,312 @@
 #nullable enable
 namespace UnifiedTo.Models.Components
 {
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using System;
+    using System.Collections.Generic;
+    using System.Numerics;
+    using System.Reflection;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class ExtraData
+
+    public class ExtraDataType
     {
+        private ExtraDataType(string value) { Value = value; }
+
+        public string Value { get; private set; }
+        public static ExtraDataType One { get { return new ExtraDataType("1"); } }
+        
+        public static ExtraDataType Two { get { return new ExtraDataType("2"); } }
+        
+        public static ExtraDataType Three { get { return new ExtraDataType("3"); } }
+        
+        public static ExtraDataType Four { get { return new ExtraDataType("4"); } }
+        
+        public static ExtraDataType Five { get { return new ExtraDataType("5"); } }
+        
+        public static ExtraDataType Null { get { return new ExtraDataType("null"); } }
+
+        public override string ToString() { return Value; }
+        public static implicit operator String(ExtraDataType v) { return v.Value; }
+        public static ExtraDataType FromString(string v) {
+            switch(v) {
+                case "1": return One;
+                case "2": return Two;
+                case "3": return Three;
+                case "4": return Four;
+                case "5": return Five;
+                case "null": return Null;
+                default: throw new ArgumentException("Invalid value for ExtraDataType");
+            }
+        }
+        public override bool Equals(object? obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            return Value.Equals(((ExtraDataType)obj).Value);
+        }
+
+        public override int GetHashCode()
+        {
+            return Value.GetHashCode();
+        }
+    }
+
+
+    [JsonConverter(typeof(ExtraData.ExtraDataConverter))]
+    public class ExtraData {
+        public ExtraData(ExtraDataType type) {
+            Type = type;
+        }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public One? One { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public Two? Two { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public Three? Three { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public Four? Four { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public Five? Five { get; set; }
+
+        public ExtraDataType Type { get; set; }
+
+
+        public static ExtraData CreateOne(One one) {
+            ExtraDataType typ = ExtraDataType.One;
+
+            ExtraData res = new ExtraData(typ);
+            res.One = one;
+            return res;
+        }
+
+        public static ExtraData CreateTwo(Two two) {
+            ExtraDataType typ = ExtraDataType.Two;
+
+            ExtraData res = new ExtraData(typ);
+            res.Two = two;
+            return res;
+        }
+
+        public static ExtraData CreateThree(Three three) {
+            ExtraDataType typ = ExtraDataType.Three;
+
+            ExtraData res = new ExtraData(typ);
+            res.Three = three;
+            return res;
+        }
+
+        public static ExtraData CreateFour(Four four) {
+            ExtraDataType typ = ExtraDataType.Four;
+
+            ExtraData res = new ExtraData(typ);
+            res.Four = four;
+            return res;
+        }
+
+        public static ExtraData CreateFive(Five five) {
+            ExtraDataType typ = ExtraDataType.Five;
+
+            ExtraData res = new ExtraData(typ);
+            res.Five = five;
+            return res;
+        }
+
+        public static ExtraData CreateNull() {
+            ExtraDataType typ = ExtraDataType.Null;
+            return new ExtraData(typ);
+        }
+
+        public class ExtraDataConverter : JsonConverter
+        {
+
+            public override bool CanConvert(System.Type objectType) => objectType == typeof(ExtraData);
+
+            public override bool CanRead => true;
+
+            public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
+            {
+                var json = JRaw.Create(reader).ToString();
+                if (json == "null")
+                {
+                    return null;
+                }
+
+                var fallbackCandidates = new List<(System.Type, object, string)>();
+
+                try
+                {
+                    return new ExtraData(ExtraDataType.One)
+                    {
+                        One = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<One>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(One), new ExtraData(ExtraDataType.One), "One"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new ExtraData(ExtraDataType.Two)
+                    {
+                        Two = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Two>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(Two), new ExtraData(ExtraDataType.Two), "Two"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new ExtraData(ExtraDataType.Three)
+                    {
+                        Three = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Three>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(Three), new ExtraData(ExtraDataType.Three), "Three"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new ExtraData(ExtraDataType.Four)
+                    {
+                        Four = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Four>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(Four), new ExtraData(ExtraDataType.Four), "Four"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                try
+                {
+                    return new ExtraData(ExtraDataType.Five)
+                    {
+                        Five = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Five>(json)
+                    };
+                }
+                catch (ResponseBodyDeserializer.MissingMemberException)
+                {
+                    fallbackCandidates.Add((typeof(Five), new ExtraData(ExtraDataType.Five), "Five"));
+                }
+                catch (ResponseBodyDeserializer.DeserializationException)
+                {
+                    // try next option
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                if (fallbackCandidates.Count > 0)
+                {
+                    fallbackCandidates.Sort((a, b) => ResponseBodyDeserializer.CompareFallbackCandidates(a.Item1, b.Item1, json));
+                    foreach(var (deserializationType, returnObject, propertyName) in fallbackCandidates)
+                    {
+                        try
+                        {
+                            return ResponseBodyDeserializer.DeserializeUndiscriminatedUnionFallback(deserializationType, returnObject, propertyName, json);
+                        }
+                        catch (ResponseBodyDeserializer.DeserializationException)
+                        {
+                            // try next fallback option
+                        }
+                        catch (Exception)
+                        {
+                            throw;
+                        }
+                    }
+                }
+
+                throw new InvalidOperationException("Could not deserialize into any supported types.");
+            }
+
+            public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+            {
+                if (value == null) {
+                    writer.WriteRawValue("null");
+                    return;
+                }
+                ExtraData res = (ExtraData)value;
+                if (ExtraDataType.FromString(res.Type).Equals(ExtraDataType.Null))
+                {
+                    writer.WriteRawValue("null");
+                    return;
+                }
+                if (res.One != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.One));
+                    return;
+                }
+                if (res.Two != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Two));
+                    return;
+                }
+                if (res.Three != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Three));
+                    return;
+                }
+                if (res.Four != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Four));
+                    return;
+                }
+                if (res.Five != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Five));
+                    return;
+                }
+
+            }
+
+        }
+
     }
 }
