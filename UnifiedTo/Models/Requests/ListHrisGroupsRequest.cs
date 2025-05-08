@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Requests
     public class ListHrisGroupsRequest
     {
 
+        /// <summary>
+        /// The company ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=company_id")]
         public string? CompanyId { get; set; }
 

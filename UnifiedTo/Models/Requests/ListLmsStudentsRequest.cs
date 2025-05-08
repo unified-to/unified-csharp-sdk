@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Requests
     public class ListLmsStudentsRequest
     {
 
+        /// <summary>
+        /// The class ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=class_id")]
         public string? ClassId { get; set; }
 
@@ -25,6 +28,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
+        /// <summary>
+        /// The course ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=course_id")]
         public string? CourseId { get; set; }
 
@@ -37,6 +43,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }
 
+        /// <summary>
+        /// The location ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=location_id")]
         public string? LocationId { get; set; }
 
@@ -57,9 +66,6 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=raw")]
         public string? Raw { get; set; }
-
-        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=session_id")]
-        public string? SessionId { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")]
         public string? Sort { get; set; }

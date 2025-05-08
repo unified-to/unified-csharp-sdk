@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Requests
     public class ListCommerceItemsRequest
     {
 
+        /// <summary>
+        /// The collection ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=collection_id")]
         public string? CollectionId { get; set; }
 

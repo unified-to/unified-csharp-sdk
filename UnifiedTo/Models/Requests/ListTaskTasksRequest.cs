@@ -37,9 +37,15 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=order")]
         public string? Order { get; set; }
 
+        /// <summary>
+        /// The parent ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=parent_id")]
         public string? ParentId { get; set; }
 
+        /// <summary>
+        /// The project ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=project_id")]
         public string? ProjectId { get; set; }
 
@@ -64,6 +70,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public DateTime? UpdatedGte { get; set; }
 
+        /// <summary>
+        /// The user/employee ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=user_id")]
         public string? UserId { get; set; }
     }

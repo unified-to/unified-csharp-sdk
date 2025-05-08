@@ -16,9 +16,15 @@ namespace UnifiedTo.Models.Requests
     public class ListLmsCoursesRequest
     {
 
+        /// <summary>
+        /// The class ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=class_id")]
         public string? ClassId { get; set; }
 
+        /// <summary>
+        /// The company ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=company_id")]
         public string? CompanyId { get; set; }
 
@@ -28,6 +34,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
+        /// <summary>
+        /// The course ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=course_id")]
         public string? CourseId { get; set; }
 

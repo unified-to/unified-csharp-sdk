@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 2625a6ddd69ded1a0dfa97e04747a5af
+  docChecksum: 1cbf51aa4a732ad7a3160606fa7ef127
   docVersion: "1.0"
   speakeasyVersion: 1.542.3
   generationVersion: 2.597.9
-  releaseVersion: 0.23.0
-  configChecksum: 7b905dfe7a7baebe1b1deecb3cc1ce14
+  releaseVersion: 0.23.1
+  configChecksum: f2d65f5de725f1f2dddd6b6be942f542
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -210,6 +210,10 @@ generatedFiles:
   - UnifiedTo/Models/Components/CommerceMetadataSchemasValue42.cs
   - UnifiedTo/Models/Components/CommerceMetadataSchemasValue52.cs
   - UnifiedTo/Models/Components/CommerceMetadataValue.cs
+  - UnifiedTo/Models/Components/CommerceReview.cs
+  - UnifiedTo/Models/Components/CommerceReviewComment.cs
+  - UnifiedTo/Models/Components/CommerceReviewCommentStatus.cs
+  - UnifiedTo/Models/Components/CommerceReviewStatus.cs
   - UnifiedTo/Models/Components/Connection.cs
   - UnifiedTo/Models/Components/ContentType.cs
   - UnifiedTo/Models/Components/CrmCompany.cs
@@ -597,6 +601,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateCommerceItemResponse.cs
   - UnifiedTo/Models/Requests/CreateCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/CreateCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/CreateCommerceReviewRequest.cs
+  - UnifiedTo/Models/Requests/CreateCommerceReviewResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmContactRequest.cs
@@ -740,6 +746,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetCommerceItemResponse.cs
   - UnifiedTo/Models/Requests/GetCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/GetCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/GetCommerceReviewRequest.cs
+  - UnifiedTo/Models/Requests/GetCommerceReviewResponse.cs
   - UnifiedTo/Models/Requests/GetCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/GetCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/GetCrmContactRequest.cs
@@ -898,6 +906,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListCommerceItemsResponse.cs
   - UnifiedTo/Models/Requests/ListCommerceLocationsRequest.cs
   - UnifiedTo/Models/Requests/ListCommerceLocationsResponse.cs
+  - UnifiedTo/Models/Requests/ListCommerceReviewsRequest.cs
+  - UnifiedTo/Models/Requests/ListCommerceReviewsResponse.cs
   - UnifiedTo/Models/Requests/ListCrmCompaniesRequest.cs
   - UnifiedTo/Models/Requests/ListCrmCompaniesResponse.cs
   - UnifiedTo/Models/Requests/ListCrmContactsRequest.cs
@@ -1057,6 +1067,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchCommerceItemResponse.cs
   - UnifiedTo/Models/Requests/PatchCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/PatchCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/PatchCommerceReviewRequest.cs
+  - UnifiedTo/Models/Requests/PatchCommerceReviewResponse.cs
   - UnifiedTo/Models/Requests/PatchCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/PatchCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/PatchCrmContactRequest.cs
@@ -1194,6 +1206,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveCommerceItemResponse.cs
   - UnifiedTo/Models/Requests/RemoveCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/RemoveCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceReviewRequest.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceReviewResponse.cs
   - UnifiedTo/Models/Requests/RemoveCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/RemoveCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/RemoveCrmContactRequest.cs
@@ -1326,6 +1340,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateCommerceItemResponse.cs
   - UnifiedTo/Models/Requests/UpdateCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/UpdateCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceReviewRequest.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceReviewResponse.cs
   - UnifiedTo/Models/Requests/UpdateCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/UpdateCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/UpdateCrmContactRequest.cs
@@ -1438,6 +1454,7 @@ generatedFiles:
   - UnifiedTo/Repo.cs
   - UnifiedTo/Report.cs
   - UnifiedTo/Repository.cs
+  - UnifiedTo/Review.cs
   - UnifiedTo/Scim.cs
   - UnifiedTo/Scorecard.cs
   - UnifiedTo/Space.cs
@@ -1595,6 +1612,10 @@ generatedFiles:
   - docs/Models/Components/CommerceMetadataSchemasValue42.md
   - docs/Models/Components/CommerceMetadataSchemasValue52.md
   - docs/Models/Components/CommerceMetadataValue.md
+  - docs/Models/Components/CommerceReview.md
+  - docs/Models/Components/CommerceReviewComment.md
+  - docs/Models/Components/CommerceReviewCommentStatus.md
+  - docs/Models/Components/CommerceReviewStatus.md
   - docs/Models/Components/Connection.md
   - docs/Models/Components/ContentType.md
   - docs/Models/Components/CrmCompany.md
@@ -1981,6 +2002,8 @@ generatedFiles:
   - docs/Models/Requests/CreateCommerceItemResponse.md
   - docs/Models/Requests/CreateCommerceLocationRequest.md
   - docs/Models/Requests/CreateCommerceLocationResponse.md
+  - docs/Models/Requests/CreateCommerceReviewRequest.md
+  - docs/Models/Requests/CreateCommerceReviewResponse.md
   - docs/Models/Requests/CreateCrmCompanyRequest.md
   - docs/Models/Requests/CreateCrmCompanyResponse.md
   - docs/Models/Requests/CreateCrmContactRequest.md
@@ -2124,6 +2147,8 @@ generatedFiles:
   - docs/Models/Requests/GetCommerceItemResponse.md
   - docs/Models/Requests/GetCommerceLocationRequest.md
   - docs/Models/Requests/GetCommerceLocationResponse.md
+  - docs/Models/Requests/GetCommerceReviewRequest.md
+  - docs/Models/Requests/GetCommerceReviewResponse.md
   - docs/Models/Requests/GetCrmCompanyRequest.md
   - docs/Models/Requests/GetCrmCompanyResponse.md
   - docs/Models/Requests/GetCrmContactRequest.md
@@ -2282,6 +2307,8 @@ generatedFiles:
   - docs/Models/Requests/ListCommerceItemsResponse.md
   - docs/Models/Requests/ListCommerceLocationsRequest.md
   - docs/Models/Requests/ListCommerceLocationsResponse.md
+  - docs/Models/Requests/ListCommerceReviewsRequest.md
+  - docs/Models/Requests/ListCommerceReviewsResponse.md
   - docs/Models/Requests/ListCrmCompaniesRequest.md
   - docs/Models/Requests/ListCrmCompaniesResponse.md
   - docs/Models/Requests/ListCrmContactsRequest.md
@@ -2441,6 +2468,8 @@ generatedFiles:
   - docs/Models/Requests/PatchCommerceItemResponse.md
   - docs/Models/Requests/PatchCommerceLocationRequest.md
   - docs/Models/Requests/PatchCommerceLocationResponse.md
+  - docs/Models/Requests/PatchCommerceReviewRequest.md
+  - docs/Models/Requests/PatchCommerceReviewResponse.md
   - docs/Models/Requests/PatchCrmCompanyRequest.md
   - docs/Models/Requests/PatchCrmCompanyResponse.md
   - docs/Models/Requests/PatchCrmContactRequest.md
@@ -2578,6 +2607,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveCommerceItemResponse.md
   - docs/Models/Requests/RemoveCommerceLocationRequest.md
   - docs/Models/Requests/RemoveCommerceLocationResponse.md
+  - docs/Models/Requests/RemoveCommerceReviewRequest.md
+  - docs/Models/Requests/RemoveCommerceReviewResponse.md
   - docs/Models/Requests/RemoveCrmCompanyRequest.md
   - docs/Models/Requests/RemoveCrmCompanyResponse.md
   - docs/Models/Requests/RemoveCrmContactRequest.md
@@ -2710,6 +2741,8 @@ generatedFiles:
   - docs/Models/Requests/UpdateCommerceItemResponse.md
   - docs/Models/Requests/UpdateCommerceLocationRequest.md
   - docs/Models/Requests/UpdateCommerceLocationResponse.md
+  - docs/Models/Requests/UpdateCommerceReviewRequest.md
+  - docs/Models/Requests/UpdateCommerceReviewResponse.md
   - docs/Models/Requests/UpdateCrmCompanyRequest.md
   - docs/Models/Requests/UpdateCrmCompanyResponse.md
   - docs/Models/Requests/UpdateCrmContactRequest.md
@@ -2879,6 +2912,7 @@ generatedFiles:
   - docs/sdks/repo/README.md
   - docs/sdks/report/README.md
   - docs/sdks/repository/README.md
+  - docs/sdks/review/README.md
   - docs/sdks/scim/README.md
   - docs/sdks/scorecard/README.md
   - docs/sdks/space/README.md
@@ -7168,5 +7202,65 @@ examples:
       responses:
         "200":
           application/json: {"content": "<value>"}
+  createCommerceReview:
+    speakeasy-default-create-commerce-review:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"item_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"item_id": "<id>"}
+  getCommerceReview:
+    speakeasy-default-get-commerce-review:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: {"item_id": "<id>"}
+  listCommerceReviews:
+    speakeasy-default-list-commerce-reviews:
+      parameters:
+        path:
+          connection_id: "<id>"
+        query: {}
+      responses:
+        "200":
+          application/json: [{"item_id": "<id>"}, {"item_id": "<id>"}, {"item_id": "<id>"}]
+  patchCommerceReview:
+    speakeasy-default-patch-commerce-review:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"item_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"item_id": "<id>"}
+  removeCommerceReview:
+    speakeasy-default-remove-commerce-review:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateCommerceReview:
+    speakeasy-default-update-commerce-review:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+        query: {}
+      requestBody:
+        application/json: {"item_id": "<id>"}
+      responses:
+        "200":
+          application/json: {"item_id": "<id>"}
 examplesVersion: 1.0.1
 generatedTests: {}

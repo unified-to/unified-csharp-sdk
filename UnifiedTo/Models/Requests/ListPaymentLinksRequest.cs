@@ -22,6 +22,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
+        /// <summary>
+        /// The contact ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=contact_id")]
         public string? ContactId { get; set; }
 
@@ -40,6 +43,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=order")]
         public string? Order { get; set; }
 
+        /// <summary>
+        /// The payment ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=payment_id")]
         public string? PaymentId { get; set; }
 

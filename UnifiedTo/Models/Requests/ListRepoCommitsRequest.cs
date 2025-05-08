@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Requests
     public class ListRepoCommitsRequest
     {
 
+        /// <summary>
+        /// The repo branch ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=branch_id")]
         public string? BranchId { get; set; }
 
@@ -52,6 +55,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=raw")]
         public string? Raw { get; set; }
 
+        /// <summary>
+        /// The repo ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=repo_id")]
         public string? RepoId { get; set; }
 

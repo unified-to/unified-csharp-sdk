@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Requests
     public class ListUcCommentsRequest
     {
 
+        /// <summary>
+        /// The call ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=call_id")]
         public string? CallId { get; set; }
 
@@ -61,6 +64,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public DateTime? UpdatedGte { get; set; }
 
+        /// <summary>
+        /// The user/employee ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=user_id")]
         public string? UserId { get; set; }
     }

@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Requests
     public class ListUcRecordingsRequest
     {
 
+        /// <summary>
+        /// The call ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=call_id")]
         public string? CallId { get; set; }
 
@@ -25,6 +28,15 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
+        /// <summary>
+        /// The contact ID to filter by
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=contact_id")]
+        public string? ContactId { get; set; }
+
+        /// <summary>
+        /// The end date to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=end_le")]
         public string? EndLe { get; set; }
 
@@ -58,6 +70,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")]
         public string? Sort { get; set; }
 
+        /// <summary>
+        /// The start date to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=start_gte")]
         public string? StartGte { get; set; }
 
@@ -67,6 +82,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public DateTime? UpdatedGte { get; set; }
 
+        /// <summary>
+        /// The user/employee ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=user_id")]
         public string? UserId { get; set; }
     }

@@ -16,9 +16,15 @@ namespace UnifiedTo.Models.Requests
     public class ListAtsActivitiesRequest
     {
 
+        /// <summary>
+        /// The application ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=application_id")]
         public string? ApplicationId { get; set; }
 
+        /// <summary>
+        /// The candidate ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=candidate_id")]
         public string? CandidateId { get; set; }
 
@@ -28,6 +34,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
+        /// <summary>
+        /// The document ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=document_id")]
         public string? DocumentId { get; set; }
 
@@ -37,9 +46,15 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<string>? Fields { get; set; }
 
+        /// <summary>
+        /// The interview ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=interview_id")]
         public string? InterviewId { get; set; }
 
+        /// <summary>
+        /// The job ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=job_id")]
         public string? JobId { get; set; }
 
@@ -73,6 +88,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public DateTime? UpdatedGte { get; set; }
 
+        /// <summary>
+        /// The user/employee ID to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=user_id")]
         public string? UserId { get; set; }
     }
