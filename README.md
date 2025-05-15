@@ -1211,7 +1211,7 @@ using UnifiedTo;
 using UnifiedTo.Models.Components;
 
 var sdk = new UnifiedToSDK(
-    serverUrl: "https://api.unified.to",
+    serverUrl: "https://api-au.unified.to",
     security: new Security() {
         Jwt = "<YOUR_API_KEY_HERE>",
     }

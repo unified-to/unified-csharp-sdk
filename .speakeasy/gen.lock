@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 1cbf51aa4a732ad7a3160606fa7ef127
+  docChecksum: 384d22984f53ba58e35d8b7c45507e05
   docVersion: "1.0"
-  speakeasyVersion: 1.542.3
-  generationVersion: 2.597.9
-  releaseVersion: 0.23.1
-  configChecksum: f2d65f5de725f1f2dddd6b6be942f542
+  speakeasyVersion: 1.545.0
+  generationVersion: 2.599.0
+  releaseVersion: 0.23.2
+  configChecksum: a2c2b7b577e282e7ba85e24ee8fafdda
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -18,7 +18,7 @@ features:
     flattening: 2.81.3
     globalSecurity: 2.83.7
     globalSecurityCallbacks: 0.1.0
-    globalServerURLs: 2.82.3
+    globalServerURLs: 2.82.4
     intellisenseMarkdownSupport: 0.1.0
     methodArguments: 0.2.0
     responseFormat: 0.0.4
@@ -118,6 +118,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingTransactionContact.cs
   - UnifiedTo/Models/Components/AccountingTransactionLineItem.cs
   - UnifiedTo/Models/Components/AccountingTrialBalanceSubItem.cs
+  - UnifiedTo/Models/Components/Api.cs
   - UnifiedTo/Models/Components/ApiCall.cs
   - UnifiedTo/Models/Components/ApiCallType.cs
   - UnifiedTo/Models/Components/AtsActivity.cs
@@ -269,7 +270,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/Format.cs
   - UnifiedTo/Models/Components/Four.cs
   - UnifiedTo/Models/Components/Frequency.cs
-  - UnifiedTo/Models/Components/FromWebhook.cs
   - UnifiedTo/Models/Components/GenaiContent.cs
   - UnifiedTo/Models/Components/GenaiModel.cs
   - UnifiedTo/Models/Components/GenaiPrompt.cs
@@ -317,7 +317,33 @@ generatedFiles:
   - UnifiedTo/Models/Components/HrisTimeoffStatus.cs
   - UnifiedTo/Models/Components/HrisTimeoffType.cs
   - UnifiedTo/Models/Components/Integration.cs
-  - UnifiedTo/Models/Components/IntegrationSupport.cs
+  - UnifiedTo/Models/Components/Integration1.cs
+  - UnifiedTo/Models/Components/Integration2.cs
+  - UnifiedTo/Models/Components/Integration3.cs
+  - UnifiedTo/Models/Components/Integration4.cs
+  - UnifiedTo/Models/Components/Integration5.cs
+  - UnifiedTo/Models/Components/IntegrationSchemas1.cs
+  - UnifiedTo/Models/Components/IntegrationSchemas2.cs
+  - UnifiedTo/Models/Components/IntegrationSchemas3.cs
+  - UnifiedTo/Models/Components/IntegrationSchemas4.cs
+  - UnifiedTo/Models/Components/IntegrationSchemas5.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasApi2.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasApi22.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasApi32.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasApi52.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasPartnership2.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasPartnership32.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasPartnership42.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasPartnership52.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasSandbox1.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasSandbox2.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasSandbox22.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasSandbox3.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasSandbox32.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasSandbox4.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasSandbox42.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasSandbox5.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasSandbox52.cs
   - UnifiedTo/Models/Components/IntervalUnit.cs
   - UnifiedTo/Models/Components/Issue.cs
   - UnifiedTo/Models/Components/IssueStatus.cs
@@ -327,53 +353,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/KmsPageMetadata.cs
   - UnifiedTo/Models/Components/KmsPageType.cs
   - UnifiedTo/Models/Components/KmsSpace.cs
-  - UnifiedTo/Models/Components/ListAccountId.cs
-  - UnifiedTo/Models/Components/ListApplicationId.cs
-  - UnifiedTo/Models/Components/ListCalendarId.cs
-  - UnifiedTo/Models/Components/ListCallId.cs
-  - UnifiedTo/Models/Components/ListCandidateId.cs
-  - UnifiedTo/Models/Components/ListChannelId.cs
-  - UnifiedTo/Models/Components/ListClassId.cs
-  - UnifiedTo/Models/Components/ListCollectionId.cs
-  - UnifiedTo/Models/Components/ListCompanyId.cs
-  - UnifiedTo/Models/Components/ListContactId.cs
-  - UnifiedTo/Models/Components/ListCourseId.cs
-  - UnifiedTo/Models/Components/ListCustomerId.cs
-  - UnifiedTo/Models/Components/ListDealId.cs
-  - UnifiedTo/Models/Components/ListEndLe.cs
-  - UnifiedTo/Models/Components/ListEventId.cs
-  - UnifiedTo/Models/Components/ListInstructorId.cs
-  - UnifiedTo/Models/Components/ListInterviewId.cs
-  - UnifiedTo/Models/Components/ListInvoiceId.cs
-  - UnifiedTo/Models/Components/ListItemId.cs
-  - UnifiedTo/Models/Components/ListItemVariantId.cs
-  - UnifiedTo/Models/Components/ListJobId.cs
-  - UnifiedTo/Models/Components/ListLeadId.cs
-  - UnifiedTo/Models/Components/ListLimit.cs
-  - UnifiedTo/Models/Components/ListLinkId.cs
-  - UnifiedTo/Models/Components/ListListId.cs
-  - UnifiedTo/Models/Components/ListLocationId.cs
-  - UnifiedTo/Models/Components/ListOffset.cs
-  - UnifiedTo/Models/Components/ListOrder.cs
-  - UnifiedTo/Models/Components/ListOrgId.cs
-  - UnifiedTo/Models/Components/ListPageId.cs
-  - UnifiedTo/Models/Components/ListParentId.cs
-  - UnifiedTo/Models/Components/ListProjectId.cs
-  - UnifiedTo/Models/Components/ListQuery.cs
-  - UnifiedTo/Models/Components/ListRawFields.cs
-  - UnifiedTo/Models/Components/ListRepoId.cs
-  - UnifiedTo/Models/Components/ListRootId.cs
-  - UnifiedTo/Models/Components/ListSortByCreatedAt.cs
-  - UnifiedTo/Models/Components/ListSortByName.cs
-  - UnifiedTo/Models/Components/ListSortByUpdatedAt.cs
-  - UnifiedTo/Models/Components/ListSpaceId.cs
-  - UnifiedTo/Models/Components/ListStartGte.cs
-  - UnifiedTo/Models/Components/ListStudentId.cs
-  - UnifiedTo/Models/Components/ListTaskId.cs
-  - UnifiedTo/Models/Components/ListTicketId.cs
-  - UnifiedTo/Models/Components/ListType.cs
-  - UnifiedTo/Models/Components/ListUpdatedGte.cs
-  - UnifiedTo/Models/Components/ListUserId.cs
   - UnifiedTo/Models/Components/LmsClass.cs
   - UnifiedTo/Models/Components/LmsCourse.cs
   - UnifiedTo/Models/Components/LmsEmail.cs
@@ -393,12 +372,11 @@ generatedFiles:
   - UnifiedTo/Models/Components/MessagingMember.cs
   - UnifiedTo/Models/Components/MessagingMessage.cs
   - UnifiedTo/Models/Components/MetadataMetadata.cs
-  - UnifiedTo/Models/Components/NativeWebhookParentId.cs
-  - UnifiedTo/Models/Components/NativeWebhookProjectId.cs
   - UnifiedTo/Models/Components/ObjectType.cs
   - UnifiedTo/Models/Components/One.cs
   - UnifiedTo/Models/Components/Operation.cs
   - UnifiedTo/Models/Components/Origin.cs
+  - UnifiedTo/Models/Components/Partnership.cs
   - UnifiedTo/Models/Components/PaymentCollectionMethod.cs
   - UnifiedTo/Models/Components/PaymentLineitem.cs
   - UnifiedTo/Models/Components/PaymentLink.cs
@@ -452,10 +430,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyHrisEmployeeEmployeeRoles.cs
   - UnifiedTo/Models/Components/PropertyHrisLocationAddress.cs
   - UnifiedTo/Models/Components/PropertyIntegrationCategories.cs
-  - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEvents.cs
-  - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEventsCreated.cs
-  - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEventsDeleted.cs
-  - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEventsUpdated.cs
   - UnifiedTo/Models/Components/PropertyLmsStudentAddress.cs
   - UnifiedTo/Models/Components/PropertyMessagingMessageAuthorMember.cs
   - UnifiedTo/Models/Components/PropertyScimGroupMeta.cs
@@ -484,6 +458,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/RepoRepository.cs
   - UnifiedTo/Models/Components/ResourceType.cs
   - UnifiedTo/Models/Components/Role.cs
+  - UnifiedTo/Models/Components/Sandbox.cs
   - UnifiedTo/Models/Components/ScimAddress.cs
   - UnifiedTo/Models/Components/ScimAddressType.cs
   - UnifiedTo/Models/Components/ScimEmail.cs
@@ -504,11 +479,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/ScimUser.cs
   - UnifiedTo/Models/Components/ScimUserGroups.cs
   - UnifiedTo/Models/Components/ScimUserGroupsType.cs
-  - UnifiedTo/Models/Components/SearchDomain.cs
-  - UnifiedTo/Models/Components/SearchEmail.cs
-  - UnifiedTo/Models/Components/SearchLinkedinurl.cs
-  - UnifiedTo/Models/Components/SearchName.cs
-  - UnifiedTo/Models/Components/SearchTwitter.cs
   - UnifiedTo/Models/Components/Security.cs
   - UnifiedTo/Models/Components/SexualOrientation.cs
   - UnifiedTo/Models/Components/SizeUnit.cs
@@ -543,17 +513,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/UcTelephone.cs
   - UnifiedTo/Models/Components/UcTelephoneType.cs
   - UnifiedTo/Models/Components/Value.cs
-  - UnifiedTo/Models/Components/VirtualWebhookChannelId.cs
-  - UnifiedTo/Models/Components/VirtualWebhookCompanyId.cs
-  - UnifiedTo/Models/Components/VirtualWebhookContactId.cs
-  - UnifiedTo/Models/Components/VirtualWebhookDealId.cs
-  - UnifiedTo/Models/Components/VirtualWebhookJobId.cs
-  - UnifiedTo/Models/Components/VirtualWebhookLimit.cs
-  - UnifiedTo/Models/Components/VirtualWebhookParentId.cs
-  - UnifiedTo/Models/Components/VirtualWebhookTicketId.cs
-  - UnifiedTo/Models/Components/VirtualWebhookType.cs
-  - UnifiedTo/Models/Components/VirtualWebhookUpdatedGte.cs
-  - UnifiedTo/Models/Components/VirtualWebhookUserId.cs
   - UnifiedTo/Models/Components/Webhook.cs
   - UnifiedTo/Models/Components/WebhookType.cs
   - UnifiedTo/Models/Components/WeightUnit.cs
@@ -1520,6 +1479,7 @@ generatedFiles:
   - docs/Models/Components/AccountingTransactionContact.md
   - docs/Models/Components/AccountingTransactionLineItem.md
   - docs/Models/Components/AccountingTrialBalanceSubItem.md
+  - docs/Models/Components/Api.md
   - docs/Models/Components/ApiCall.md
   - docs/Models/Components/ApiCallType.md
   - docs/Models/Components/AtsActivity.md
@@ -1671,7 +1631,6 @@ generatedFiles:
   - docs/Models/Components/Format.md
   - docs/Models/Components/Four.md
   - docs/Models/Components/Frequency.md
-  - docs/Models/Components/FromWebhook.md
   - docs/Models/Components/GenaiContent.md
   - docs/Models/Components/GenaiModel.md
   - docs/Models/Components/GenaiPrompt.md
@@ -1719,7 +1678,33 @@ generatedFiles:
   - docs/Models/Components/HrisTimeoffStatus.md
   - docs/Models/Components/HrisTimeoffType.md
   - docs/Models/Components/Integration.md
-  - docs/Models/Components/IntegrationSupport.md
+  - docs/Models/Components/Integration1.md
+  - docs/Models/Components/Integration2.md
+  - docs/Models/Components/Integration3.md
+  - docs/Models/Components/Integration4.md
+  - docs/Models/Components/Integration5.md
+  - docs/Models/Components/IntegrationSchemas1.md
+  - docs/Models/Components/IntegrationSchemas2.md
+  - docs/Models/Components/IntegrationSchemas3.md
+  - docs/Models/Components/IntegrationSchemas4.md
+  - docs/Models/Components/IntegrationSchemas5.md
+  - docs/Models/Components/IntegrationSchemasApi2.md
+  - docs/Models/Components/IntegrationSchemasApi22.md
+  - docs/Models/Components/IntegrationSchemasApi32.md
+  - docs/Models/Components/IntegrationSchemasApi52.md
+  - docs/Models/Components/IntegrationSchemasPartnership2.md
+  - docs/Models/Components/IntegrationSchemasPartnership32.md
+  - docs/Models/Components/IntegrationSchemasPartnership42.md
+  - docs/Models/Components/IntegrationSchemasPartnership52.md
+  - docs/Models/Components/IntegrationSchemasSandbox1.md
+  - docs/Models/Components/IntegrationSchemasSandbox2.md
+  - docs/Models/Components/IntegrationSchemasSandbox22.md
+  - docs/Models/Components/IntegrationSchemasSandbox3.md
+  - docs/Models/Components/IntegrationSchemasSandbox32.md
+  - docs/Models/Components/IntegrationSchemasSandbox4.md
+  - docs/Models/Components/IntegrationSchemasSandbox42.md
+  - docs/Models/Components/IntegrationSchemasSandbox5.md
+  - docs/Models/Components/IntegrationSchemasSandbox52.md
   - docs/Models/Components/IntervalUnit.md
   - docs/Models/Components/Issue.md
   - docs/Models/Components/IssueStatus.md
@@ -1729,53 +1714,6 @@ generatedFiles:
   - docs/Models/Components/KmsPageMetadata.md
   - docs/Models/Components/KmsPageType.md
   - docs/Models/Components/KmsSpace.md
-  - docs/Models/Components/ListAccountId.md
-  - docs/Models/Components/ListApplicationId.md
-  - docs/Models/Components/ListCalendarId.md
-  - docs/Models/Components/ListCallId.md
-  - docs/Models/Components/ListCandidateId.md
-  - docs/Models/Components/ListChannelId.md
-  - docs/Models/Components/ListClassId.md
-  - docs/Models/Components/ListCollectionId.md
-  - docs/Models/Components/ListCompanyId.md
-  - docs/Models/Components/ListContactId.md
-  - docs/Models/Components/ListCourseId.md
-  - docs/Models/Components/ListCustomerId.md
-  - docs/Models/Components/ListDealId.md
-  - docs/Models/Components/ListEndLe.md
-  - docs/Models/Components/ListEventId.md
-  - docs/Models/Components/ListInstructorId.md
-  - docs/Models/Components/ListInterviewId.md
-  - docs/Models/Components/ListInvoiceId.md
-  - docs/Models/Components/ListItemId.md
-  - docs/Models/Components/ListItemVariantId.md
-  - docs/Models/Components/ListJobId.md
-  - docs/Models/Components/ListLeadId.md
-  - docs/Models/Components/ListLimit.md
-  - docs/Models/Components/ListLinkId.md
-  - docs/Models/Components/ListListId.md
-  - docs/Models/Components/ListLocationId.md
-  - docs/Models/Components/ListOffset.md
-  - docs/Models/Components/ListOrder.md
-  - docs/Models/Components/ListOrgId.md
-  - docs/Models/Components/ListPageId.md
-  - docs/Models/Components/ListParentId.md
-  - docs/Models/Components/ListProjectId.md
-  - docs/Models/Components/ListQuery.md
-  - docs/Models/Components/ListRawFields.md
-  - docs/Models/Components/ListRepoId.md
-  - docs/Models/Components/ListRootId.md
-  - docs/Models/Components/ListSortByCreatedAt.md
-  - docs/Models/Components/ListSortByName.md
-  - docs/Models/Components/ListSortByUpdatedAt.md
-  - docs/Models/Components/ListSpaceId.md
-  - docs/Models/Components/ListStartGte.md
-  - docs/Models/Components/ListStudentId.md
-  - docs/Models/Components/ListTaskId.md
-  - docs/Models/Components/ListTicketId.md
-  - docs/Models/Components/ListType.md
-  - docs/Models/Components/ListUpdatedGte.md
-  - docs/Models/Components/ListUserId.md
   - docs/Models/Components/LmsClass.md
   - docs/Models/Components/LmsCourse.md
   - docs/Models/Components/LmsEmail.md
@@ -1795,12 +1733,11 @@ generatedFiles:
   - docs/Models/Components/MessagingMember.md
   - docs/Models/Components/MessagingMessage.md
   - docs/Models/Components/MetadataMetadata.md
-  - docs/Models/Components/NativeWebhookParentId.md
-  - docs/Models/Components/NativeWebhookProjectId.md
   - docs/Models/Components/ObjectType.md
   - docs/Models/Components/One.md
   - docs/Models/Components/Operation.md
   - docs/Models/Components/Origin.md
+  - docs/Models/Components/Partnership.md
   - docs/Models/Components/PaymentCollectionMethod.md
   - docs/Models/Components/PaymentLineitem.md
   - docs/Models/Components/PaymentLink.md
@@ -1854,10 +1791,6 @@ generatedFiles:
   - docs/Models/Components/PropertyHrisEmployeeEmployeeRoles.md
   - docs/Models/Components/PropertyHrisLocationAddress.md
   - docs/Models/Components/PropertyIntegrationCategories.md
-  - docs/Models/Components/PropertyIntegrationSupportWebhookEvents.md
-  - docs/Models/Components/PropertyIntegrationSupportWebhookEventsCreated.md
-  - docs/Models/Components/PropertyIntegrationSupportWebhookEventsDeleted.md
-  - docs/Models/Components/PropertyIntegrationSupportWebhookEventsUpdated.md
   - docs/Models/Components/PropertyLmsStudentAddress.md
   - docs/Models/Components/PropertyMessagingMessageAuthorMember.md
   - docs/Models/Components/PropertyScimGroupMeta.md
@@ -1886,6 +1819,7 @@ generatedFiles:
   - docs/Models/Components/RepoRepository.md
   - docs/Models/Components/ResourceType.md
   - docs/Models/Components/Role.md
+  - docs/Models/Components/Sandbox.md
   - docs/Models/Components/ScimAddress.md
   - docs/Models/Components/ScimAddressType.md
   - docs/Models/Components/ScimEmail.md
@@ -1906,11 +1840,6 @@ generatedFiles:
   - docs/Models/Components/ScimUser.md
   - docs/Models/Components/ScimUserGroups.md
   - docs/Models/Components/ScimUserGroupsType.md
-  - docs/Models/Components/SearchDomain.md
-  - docs/Models/Components/SearchEmail.md
-  - docs/Models/Components/SearchLinkedinurl.md
-  - docs/Models/Components/SearchName.md
-  - docs/Models/Components/SearchTwitter.md
   - docs/Models/Components/Security.md
   - docs/Models/Components/SexualOrientation.md
   - docs/Models/Components/SizeUnit.md
@@ -1945,17 +1874,6 @@ generatedFiles:
   - docs/Models/Components/UcTelephone.md
   - docs/Models/Components/UcTelephoneType.md
   - docs/Models/Components/Value.md
-  - docs/Models/Components/VirtualWebhookChannelId.md
-  - docs/Models/Components/VirtualWebhookCompanyId.md
-  - docs/Models/Components/VirtualWebhookContactId.md
-  - docs/Models/Components/VirtualWebhookDealId.md
-  - docs/Models/Components/VirtualWebhookJobId.md
-  - docs/Models/Components/VirtualWebhookLimit.md
-  - docs/Models/Components/VirtualWebhookParentId.md
-  - docs/Models/Components/VirtualWebhookTicketId.md
-  - docs/Models/Components/VirtualWebhookType.md
-  - docs/Models/Components/VirtualWebhookUpdatedGte.md
-  - docs/Models/Components/VirtualWebhookUserId.md
   - docs/Models/Components/Webhook.md
   - docs/Models/Components/WebhookType.md
   - docs/Models/Components/WeightUnit.md

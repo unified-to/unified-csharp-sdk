@@ -148,7 +148,7 @@ var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
         Event = Event.Deleted,
-        ObjectType = ObjectType.CrmPipeline,
+        ObjectType = ObjectType.CrmLead,
     },
     id: "<id>"
 );

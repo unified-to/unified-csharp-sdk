@@ -83,6 +83,10 @@ namespace UnifiedTo.Models.Components
         CommerceLocationRead,
         [JsonProperty("commerce_location_write")]
         CommerceLocationWrite,
+        [JsonProperty("commerce_review_read")]
+        CommerceReviewRead,
+        [JsonProperty("commerce_review_write")]
+        CommerceReviewWrite,
         [JsonProperty("ats_activity_read")]
         AtsActivityRead,
         [JsonProperty("ats_activity_write")]

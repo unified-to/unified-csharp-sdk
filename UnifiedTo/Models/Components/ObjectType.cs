@@ -51,6 +51,8 @@ namespace UnifiedTo.Models.Components
         CommerceInventory,
         [JsonProperty("commerce_location")]
         CommerceLocation,
+        [JsonProperty("commerce_review")]
+        CommerceReview,
         [JsonProperty("ats_activity")]
         AtsActivity,
         [JsonProperty("ats_application")]

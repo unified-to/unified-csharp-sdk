@@ -40,10 +40,10 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.23.1";
-        private const string _sdkGenVersion = "2.597.9";
+        private const string _sdkVersion = "0.23.2";
+        private const string _sdkGenVersion = "2.599.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.23.1 2.597.9 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.23.2 2.599.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private ISpeakeasyHttpClient _client;
         private Func<UnifiedTo.Models.Components.Security>? _securitySource;

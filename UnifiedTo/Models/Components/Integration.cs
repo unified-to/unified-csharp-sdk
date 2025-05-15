@@ -25,7 +25,7 @@ namespace UnifiedTo.Models.Components
         public double? ActiveHealthyConnections { get; set; }
 
         [JsonProperty("api")]
-        public Dictionary<string, object>? Api { get; set; }
+        public Api? Api { get; set; }
 
         [JsonProperty("api_docs_url")]
         public string? ApiDocsUrl { get; set; }
@@ -66,14 +66,20 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
 
+        [JsonProperty("partnership")]
+        public Partnership? Partnership { get; set; }
+
         [JsonProperty("popularity")]
         public double? Popularity { get; set; }
 
         [JsonProperty("rate_limit_description")]
         public string? RateLimitDescription { get; set; }
 
+        [JsonProperty("sandbox")]
+        public Sandbox? Sandbox { get; set; }
+
         [JsonProperty("support")]
-        public Dictionary<string, IntegrationSupport>? Support { get; set; }
+        public Dictionary<string, object>? Support { get; set; }
 
         [JsonProperty("tested_at")]
         public DateTime? TestedAt { get; set; }
