@@ -38,6 +38,12 @@ namespace UnifiedTo.Models.Requests
         public string? Order { get; set; }
 
         /// <summary>
+        /// The org ID to filter by
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=org_id")]
+        public string? OrgId { get; set; }
+
+        /// <summary>
         /// The parent ID to filter by
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=parent_id")]

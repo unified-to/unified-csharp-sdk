@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 384d22984f53ba58e35d8b7c45507e05
+  docChecksum: 896ad02cb1fe122b37a5db9ff432b9bf
   docVersion: "1.0"
   speakeasyVersion: 1.545.0
   generationVersion: 2.599.0
-  releaseVersion: 0.23.2
-  configChecksum: a2c2b7b577e282e7ba85e24ee8fafdda
+  releaseVersion: 0.23.3
+  configChecksum: c4965a3bf76d4dfbf5076457463fbb17
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -430,6 +430,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyHrisEmployeeEmployeeRoles.cs
   - UnifiedTo/Models/Components/PropertyHrisLocationAddress.cs
   - UnifiedTo/Models/Components/PropertyIntegrationCategories.cs
+  - UnifiedTo/Models/Components/PropertyIntegrationTokenInstructions.cs
   - UnifiedTo/Models/Components/PropertyLmsStudentAddress.cs
   - UnifiedTo/Models/Components/PropertyMessagingMessageAuthorMember.cs
   - UnifiedTo/Models/Components/PropertyScimGroupMeta.cs
@@ -1791,6 +1792,7 @@ generatedFiles:
   - docs/Models/Components/PropertyHrisEmployeeEmployeeRoles.md
   - docs/Models/Components/PropertyHrisLocationAddress.md
   - docs/Models/Components/PropertyIntegrationCategories.md
+  - docs/Models/Components/PropertyIntegrationTokenInstructions.md
   - docs/Models/Components/PropertyLmsStudentAddress.md
   - docs/Models/Components/PropertyMessagingMessageAuthorMember.md
   - docs/Models/Components/PropertyScimGroupMeta.md

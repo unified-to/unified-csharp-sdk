@@ -91,7 +91,7 @@ namespace UnifiedTo.Models.Components
         /// instructions for the user on how to find the token/key
         /// </summary>
         [JsonProperty("token_instructions")]
-        public List<string>? TokenInstructions { get; set; }
+        public List<PropertyIntegrationTokenInstructions>? TokenInstructions { get; set; }
 
         /// <summary>
         /// if auth_types = &apos;token&apos;
