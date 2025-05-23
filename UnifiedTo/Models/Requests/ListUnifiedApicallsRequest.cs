@@ -9,7 +9,6 @@
 #nullable enable
 namespace UnifiedTo.Models.Requests
 {
-    using System;
     using UnifiedTo.Utils;
     
     public class ListUnifiedApicallsRequest
@@ -70,7 +69,7 @@ namespace UnifiedTo.Models.Requests
         /// Return only results whose updated date is equal or greater to this value
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
-        public DateTime? UpdatedGte { get; set; }
+        public string? UpdatedGte { get; set; }
 
         /// <summary>
         /// Filter the results to just this webhook

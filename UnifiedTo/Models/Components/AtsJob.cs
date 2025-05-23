@@ -37,7 +37,7 @@ namespace UnifiedTo.Models.Components
         /// @deprecated Use `groups` instead
         /// </summary>
         [JsonProperty("departments")]
-        public List<string>? Departments { get; set; }
+        public List<PropertyAtsJobDepartments>? Departments { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
@@ -82,7 +82,7 @@ namespace UnifiedTo.Models.Components
         /// URLs for pages containing public listings for the job
         /// </summary>
         [JsonProperty("public_job_urls")]
-        public List<string>? PublicJobUrls { get; set; }
+        public List<PropertyAtsJobPublicJobUrls>? PublicJobUrls { get; set; }
 
         [JsonProperty("questions")]
         public List<AtsJobQuestion>? Questions { get; set; }

@@ -10,18 +10,34 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
     public class KmsPageMetadata
     {
 
-        [JsonProperty("name")]
-        public string Name { get; set; } = default!;
+        [JsonProperty("extra_data")]
+        public KmsPageMetadataExtraData? ExtraData { get; set; }
+
+        [JsonProperty("format")]
+        public KmsPageMetadataFormat? Format { get; set; }
+
+        [JsonProperty("id")]
+        public string? Id { get; set; }
+
+        [JsonProperty("key")]
+        public string? Key { get; set; }
+
+        [JsonProperty("namespace")]
+        public string? Namespace { get; set; }
+
+        [JsonProperty("slug")]
+        public string? Slug { get; set; }
 
         [JsonProperty("type")]
         public string? Type { get; set; }
 
         [JsonProperty("value")]
-        public string? Value { get; set; }
+        public KmsPageMetadataValue? Value { get; set; }
     }
 }

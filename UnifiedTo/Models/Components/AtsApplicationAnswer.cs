@@ -11,13 +11,14 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
     public class AtsApplicationAnswer
     {
 
         [JsonProperty("answers")]
-        public List<string> Answers { get; set; } = default!;
+        public List<PropertyAtsApplicationAnswerAnswers> Answers { get; set; } = default!;
 
         [JsonProperty("question_id")]
         public string QuestionId { get; set; } = default!;

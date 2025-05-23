@@ -80,7 +80,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Group.CreateScimGroupsAsync(
     scimGroup: new ScimGroup() {
-        DisplayName = "Bert89",
+        DisplayName = "Nina.Tremblay",
     },
     connectionId: "<id>"
 );
@@ -328,7 +328,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Group.PatchScimGroupsAsync(
     scimGroup: new ScimGroup() {
-        DisplayName = "Damon_Rutherford93",
+        DisplayName = "Newell.Hoeger",
     },
     connectionId: "<id>",
     id: "<id>"
@@ -491,7 +491,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Group.UpdateScimGroupsAsync(
     scimGroup: new ScimGroup() {
-        DisplayName = "Frederic.Reichel",
+        DisplayName = "Reynold90",
     },
     connectionId: "<id>",
     id: "<id>"

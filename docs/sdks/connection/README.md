@@ -29,11 +29,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
-        PropertyConnectionCategories.Metadata,
+        PropertyConnectionCategories.Passthrough,
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.MartechListWrite,
+        PropertyConnectionPermissions.CrmContactWrite,
     },
 };
 
@@ -149,11 +149,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Connection.PatchUnifiedConnectionAsync(
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
-            PropertyConnectionCategories.Messaging,
+            PropertyConnectionCategories.Uc,
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            PropertyConnectionPermissions.EnrichCompanyRead,
+            PropertyConnectionPermissions.TicketingCustomerWrite,
         },
     },
     id: "<id>"
@@ -232,11 +232,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
-            PropertyConnectionCategories.Scim,
+            PropertyConnectionCategories.Hris,
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            PropertyConnectionPermissions.CalendarRecordingWrite,
+            PropertyConnectionPermissions.HrisDeviceRead,
         },
     },
     id: "<id>"

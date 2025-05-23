@@ -31,7 +31,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.CreatePassthroughJsonAsync(
     connectionId: "<id>",
-    path: "/opt/lib",
+    path: "/var/log",
     requestBody: "<value>",
     query: new Dictionary<string, object>() {
         { "key", "<value>" },
@@ -78,8 +78,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.CreatePassthroughRawAsync(
     connectionId: "<id>",
-    path: "/etc/namedb",
-    requestBody: System.Text.Encoding.UTF8.GetBytes("0x4B93D6214f"),
+    path: "/var/log",
+    requestBody: System.Text.Encoding.UTF8.GetBytes("0x7fcDf41f12"),
     query: new Dictionary<string, object>() {
         { "key", "<value>" },
     }
@@ -124,7 +124,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.ListPassthroughsAsync(
     connectionId: "<id>",
-    path: "/selinux",
+    path: "/System",
     query: new Dictionary<string, object>() {
         { "key", "<value>" },
     }
@@ -168,7 +168,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.PatchPassthroughJsonAsync(
     connectionId: "<id>",
-    path: "/home/user",
+    path: "/System",
     requestBody: "<value>",
     query: new Dictionary<string, object>() {
         { "key", "<value>" },
@@ -215,8 +215,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.PatchPassthroughRawAsync(
     connectionId: "<id>",
-    path: "/etc/mail",
-    requestBody: System.Text.Encoding.UTF8.GetBytes("0xCbf5667DBd"),
+    path: "/System",
+    requestBody: System.Text.Encoding.UTF8.GetBytes("0xFCeD1ffbA0"),
     query: new Dictionary<string, object>() {
         { "key", "<value>" },
     }
@@ -261,7 +261,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.RemovePassthroughAsync(
     connectionId: "<id>",
-    path: "/Applications",
+    path: "/bin",
     query: new Dictionary<string, object>() {
         { "key", "<value>" },
     }
@@ -305,7 +305,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.UpdatePassthroughJsonAsync(
     connectionId: "<id>",
-    path: "/etc/namedb",
+    path: "/var/tmp",
     requestBody: "<value>",
     query: new Dictionary<string, object>() {
         { "key", "<value>" },
@@ -352,8 +352,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.UpdatePassthroughRawAsync(
     connectionId: "<id>",
-    path: "/System",
-    requestBody: System.Text.Encoding.UTF8.GetBytes("0x5739830F8E"),
+    path: "/var/tmp",
+    requestBody: System.Text.Encoding.UTF8.GetBytes("0x62ce3B7Ebe"),
     query: new Dictionary<string, object>() {
         { "key", "<value>" },
     }

@@ -90,7 +90,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Kms.CreateKmsPageAsync(
     kmsPage: new KmsPage() {
         Title = "<value>",
-        Type = KmsPageType.Html,
+        Type = KmsPageType.Text,
     },
     connectionId: "<id>",
     fields: new List<string>() {
@@ -489,7 +489,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchKmsPageRequest req = new PatchKmsPageRequest() {
     KmsPage = new KmsPage() {
         Title = "<value>",
-        Type = KmsPageType.Text,
+        Type = KmsPageType.Other,
     },
     ConnectionId = "<id>",
     Id = "<id>",

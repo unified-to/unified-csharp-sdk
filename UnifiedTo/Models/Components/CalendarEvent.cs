@@ -53,6 +53,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        [JsonProperty("recurrence")]
+        public List<CalendarEventRecurrence>? Recurrence { get; set; }
+
+        [JsonProperty("recurring_event_id")]
+        public string? RecurringEventId { get; set; }
+
         [JsonProperty("start_at")]
         public string StartAt { get; set; } = default!;
 

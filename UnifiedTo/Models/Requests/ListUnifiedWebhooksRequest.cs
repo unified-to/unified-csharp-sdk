@@ -9,7 +9,6 @@
 #nullable enable
 namespace UnifiedTo.Models.Requests
 {
-    using System;
     using UnifiedTo.Utils;
     
     public class ListUnifiedWebhooksRequest
@@ -25,7 +24,7 @@ namespace UnifiedTo.Models.Requests
         /// Return only results whose created date is equal or less to this value
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=created_lte")]
-        public DateTime? CreatedLte { get; set; }
+        public string? CreatedLte { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=env")]
         public string? Env { get; set; }
@@ -58,6 +57,6 @@ namespace UnifiedTo.Models.Requests
         /// Return only results whose updated date is equal or greater to this value
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
-        public DateTime? UpdatedGte { get; set; }
+        public string? UpdatedGte { get; set; }
     }
 }

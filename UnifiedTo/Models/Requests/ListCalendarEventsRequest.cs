@@ -9,7 +9,6 @@
 #nullable enable
 namespace UnifiedTo.Models.Requests
 {
-    using System;
     using System.Collections.Generic;
     using UnifiedTo.Utils;
     
@@ -33,6 +32,12 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=end_le")]
         public string? EndLe { get; set; }
+
+        /// <summary>
+        /// Whether to expand recurring calendar events
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=expand_recurring_events")]
+        public string? ExpandRecurringEvents { get; set; }
 
         /// <summary>
         /// Comma-delimited fields to return
@@ -74,6 +79,6 @@ namespace UnifiedTo.Models.Requests
         /// Return only results whose updated date is equal or greater to this value
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
-        public DateTime? UpdatedGte { get; set; }
+        public string? UpdatedGte { get; set; }
     }
 }

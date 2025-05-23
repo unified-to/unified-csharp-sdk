@@ -55,7 +55,7 @@ namespace UnifiedTo.Models.Components
         /// URLs for web pages containing additional material about the candidate (LinkedIn, other social media, articles, etc.)
         /// </summary>
         [JsonProperty("link_urls")]
-        public List<string>? LinkUrls { get; set; }
+        public List<PropertyAtsCandidateLinkUrls>? LinkUrls { get; set; }
 
         [JsonProperty("metadata")]
         public List<AtsMetadata>? Metadata { get; set; }
@@ -70,13 +70,13 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("skills")]
-        public List<string>? Skills { get; set; }
+        public List<PropertyAtsCandidateSkills>? Skills { get; set; }
 
         [JsonProperty("sources")]
-        public List<string>? Sources { get; set; }
+        public List<PropertyAtsCandidateSources>? Sources { get; set; }
 
         [JsonProperty("tags")]
-        public List<string>? Tags { get; set; }
+        public List<PropertyAtsCandidateTags>? Tags { get; set; }
 
         [JsonProperty("telephones")]
         public List<AtsTelephone>? Telephones { get; set; }

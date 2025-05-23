@@ -32,7 +32,7 @@ var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
         Event = Event.Created,
-        ObjectType = ObjectType.HrisTimeoff,
+        ObjectType = ObjectType.AtsScorecard,
     },
     includeAll: false
 );
@@ -147,8 +147,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Webhook.PatchUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
-        Event = Event.Deleted,
-        ObjectType = ObjectType.CrmLead,
+        Event = Event.Updated,
+        ObjectType = ObjectType.TicketingCustomer,
     },
     id: "<id>"
 );
@@ -260,8 +260,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Webhook.UpdateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
-        Event = Event.Created,
-        ObjectType = ObjectType.PaymentPayout,
+        Event = Event.Deleted,
+        ObjectType = ObjectType.MessagingChannel,
     },
     id: "<id>"
 );

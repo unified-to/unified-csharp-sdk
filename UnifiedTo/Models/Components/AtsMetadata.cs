@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("extra_data")]
         public ExtraData? ExtraData { get; set; }
 
+        [JsonProperty("format")]
+        public Format? Format { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 

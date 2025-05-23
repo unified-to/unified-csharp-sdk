@@ -9,7 +9,6 @@
 #nullable enable
 namespace UnifiedTo.Models.Requests
 {
-    using System;
     using System.Collections.Generic;
     using UnifiedTo.Utils;
     
@@ -83,10 +82,16 @@ namespace UnifiedTo.Models.Requests
         public string? Sort { get; set; }
 
         /// <summary>
+        /// The type to filter by
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=type")]
+        public string? Type { get; set; }
+
+        /// <summary>
         /// Return only results whose updated date is equal or greater to this value
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
-        public DateTime? UpdatedGte { get; set; }
+        public string? UpdatedGte { get; set; }
 
         /// <summary>
         /// The user/employee ID to filter by

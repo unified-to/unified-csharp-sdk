@@ -61,7 +61,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("tags")]
-        public List<string>? Tags { get; set; }
+        public List<PropertyCommerceCollectionTags>? Tags { get; set; }
 
         [JsonProperty("type")]
         public CommerceCollectionType? Type { get; set; }

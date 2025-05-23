@@ -29,7 +29,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Inventory.CreateCommerceInventoryAsync(
     commerceInventory: new CommerceInventory() {
-        Available = 5165.08D,
+        Available = 7463.62D,
     },
     connectionId: "<id>",
     fields: new List<string>() {
@@ -163,7 +163,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchCommerceInventoryRequest req = new PatchCommerceInventoryRequest() {
     CommerceInventory = new CommerceInventory() {
-        Available = 615.23D,
+        Available = 7859.84D,
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -246,7 +246,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateCommerceInventoryRequest req = new UpdateCommerceInventoryRequest() {
     CommerceInventory = new CommerceInventory() {
-        Available = 9360.02D,
+        Available = 4497.29D,
     },
     ConnectionId = "<id>",
     Id = "<id>",

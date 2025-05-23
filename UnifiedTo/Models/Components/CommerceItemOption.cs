@@ -11,6 +11,7 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
     public class CommerceItemOption
@@ -26,6 +27,6 @@ namespace UnifiedTo.Models.Components
         public double? Position { get; set; }
 
         [JsonProperty("values")]
-        public List<string> Values { get; set; } = default!;
+        public List<PropertyCommerceItemOptionValues> Values { get; set; } = default!;
     }
 }

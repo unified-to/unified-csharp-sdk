@@ -3,7 +3,7 @@
 
 ## Fields
 
-| Field              | Type               | Required           | Description        |
-| ------------------ | ------------------ | ------------------ | ------------------ |
-| `Answers`          | List<*string*>     | :heavy_check_mark: | N/A                |
-| `QuestionId`       | *string*           | :heavy_check_mark: | N/A                |
+| Field                                                                                                       | Type                                                                                                        | Required                                                                                                    | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `Answers`                                                                                                   | List<[PropertyAtsApplicationAnswerAnswers](../../Models/Components/PropertyAtsApplicationAnswerAnswers.md)> | :heavy_check_mark:                                                                                          | N/A                                                                                                         |
+| `QuestionId`                                                                                                | *string*                                                                                                    | :heavy_check_mark:                                                                                          | N/A                                                                                                         |

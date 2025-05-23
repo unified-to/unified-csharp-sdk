@@ -22,7 +22,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("format")]
-        public Format? Format { get; set; }
+        public MetadataMetadataFormat? Format { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
@@ -37,7 +37,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Objects { get; set; }
 
         [JsonProperty("options")]
-        public List<string>? Options { get; set; }
+        public List<PropertyMetadataMetadataOptions>? Options { get; set; }
 
         [JsonProperty("original_format")]
         public string? OriginalFormat { get; set; }

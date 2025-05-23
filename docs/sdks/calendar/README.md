@@ -142,7 +142,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Calendar.CreateCalendarLinkAsync(
     calendarLink: new CalendarLink() {
-        Url = "https://sturdy-begonia.biz/",
+        Url = "https://misguided-thongs.info",
     },
     connectionId: "<id>",
     fields: new List<string>() {
@@ -664,7 +664,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchCalendarLinkRequest req = new PatchCalendarLinkRequest() {
     CalendarLink = new CalendarLink() {
-        Url = "https://curly-skyline.biz/",
+        Url = "https://warm-hexagon.name/",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -915,7 +915,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateCalendarLinkRequest req = new UpdateCalendarLinkRequest() {
     CalendarLink = new CalendarLink() {
-        Url = "https://quiet-coordination.name",
+        Url = "https://partial-hydrocarbon.info",
     },
     ConnectionId = "<id>",
     Id = "<id>",

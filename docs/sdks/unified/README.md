@@ -43,11 +43,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 Models.Components.Connection req = new Models.Components.Connection() {
     Categories = new List<PropertyConnectionCategories>() {
-        PropertyConnectionCategories.Metadata,
+        PropertyConnectionCategories.Passthrough,
     },
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.MartechListWrite,
+        PropertyConnectionPermissions.CrmContactWrite,
     },
 };
 
@@ -90,7 +90,7 @@ var res = await sdk.Unified.CreateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
         Event = Event.Created,
-        ObjectType = ObjectType.HrisTimeoff,
+        ObjectType = ObjectType.AtsScorecard,
     },
     includeAll: false
 );
@@ -509,11 +509,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Unified.PatchUnifiedConnectionAsync(
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
-            PropertyConnectionCategories.Messaging,
+            PropertyConnectionCategories.Uc,
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            PropertyConnectionPermissions.EnrichCompanyRead,
+            PropertyConnectionPermissions.TicketingCustomerWrite,
         },
     },
     id: "<id>"
@@ -556,8 +556,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Unified.PatchUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
-        Event = Event.Deleted,
-        ObjectType = ObjectType.CrmLead,
+        Event = Event.Updated,
+        ObjectType = ObjectType.TicketingCustomer,
     },
     id: "<id>"
 );
@@ -705,11 +705,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
-            PropertyConnectionCategories.Scim,
+            PropertyConnectionCategories.Hris,
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            PropertyConnectionPermissions.CalendarRecordingWrite,
+            PropertyConnectionPermissions.HrisDeviceRead,
         },
     },
     id: "<id>"
@@ -752,8 +752,8 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Unified.UpdateUnifiedWebhookAsync(
     webhook: new Models.Components.Webhook() {
         ConnectionId = "<id>",
-        Event = Event.Created,
-        ObjectType = ObjectType.PaymentPayout,
+        Event = Event.Deleted,
+        ObjectType = ObjectType.MessagingChannel,
     },
     id: "<id>"
 );
