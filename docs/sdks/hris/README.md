@@ -10,6 +10,7 @@
 * [CreateHrisEmployee](#createhrisemployee) - Create an employee
 * [CreateHrisGroup](#createhrisgroup) - Create a group
 * [CreateHrisLocation](#createhrislocation) - Create a location
+* [CreateHrisTimeshift](#createhristimeshift) - Create a timeshift
 * [GetHrisCompany](#gethriscompany) - Retrieve a company
 * [GetHrisDevice](#gethrisdevice) - Retrieve a device
 * [GetHrisEmployee](#gethrisemployee) - Retrieve an employee
@@ -17,6 +18,7 @@
 * [GetHrisLocation](#gethrislocation) - Retrieve a location
 * [GetHrisPayslip](#gethrispayslip) - Retrieve a payslip
 * [GetHrisTimeoff](#gethristimeoff) - Retrieve a timeoff
+* [GetHrisTimeshift](#gethristimeshift) - Retrieve a timeshift
 * [ListHrisCompanies](#listhriscompanies) - List all companies
 * [ListHrisDevices](#listhrisdevices) - List all devices
 * [ListHrisEmployees](#listhrisemployees) - List all employees
@@ -24,21 +26,25 @@
 * [ListHrisLocations](#listhrislocations) - List all locations
 * [ListHrisPayslips](#listhrispayslips) - List all payslips
 * [ListHrisTimeoffs](#listhristimeoffs) - List all timeoffs
+* [ListHrisTimeshifts](#listhristimeshifts) - List all timeshifts
 * [PatchHrisCompany](#patchhriscompany) - Update a company
 * [PatchHrisDevice](#patchhrisdevice) - Update a device
 * [PatchHrisEmployee](#patchhrisemployee) - Update an employee
 * [PatchHrisGroup](#patchhrisgroup) - Update a group
 * [PatchHrisLocation](#patchhrislocation) - Update a location
+* [PatchHrisTimeshift](#patchhristimeshift) - Update a timeshift
 * [RemoveHrisCompany](#removehriscompany) - Remove a company
 * [RemoveHrisDevice](#removehrisdevice) - Remove a device
 * [RemoveHrisEmployee](#removehrisemployee) - Remove an employee
 * [RemoveHrisGroup](#removehrisgroup) - Remove a group
 * [RemoveHrisLocation](#removehrislocation) - Remove a location
+* [RemoveHrisTimeshift](#removehristimeshift) - Remove a timeshift
 * [UpdateHrisCompany](#updatehriscompany) - Update a company
 * [UpdateHrisDevice](#updatehrisdevice) - Update a device
 * [UpdateHrisEmployee](#updatehrisemployee) - Update an employee
 * [UpdateHrisGroup](#updatehrisgroup) - Update a group
 * [UpdateHrisLocation](#updatehrislocation) - Update a location
+* [UpdateHrisTimeshift](#updatehristimeshift) - Update a timeshift
 
 ## CreateHrisCompany
 
@@ -265,6 +271,52 @@ var res = await sdk.Hris.CreateHrisLocationAsync(
 ### Response
 
 **[CreateHrisLocationResponse](../../Models/Requests/CreateHrisLocationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateHrisTimeshift
+
+Create a timeshift
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.CreateHrisTimeshiftAsync(
+    hrisTimeshift: new HrisTimeshift() {},
+    connectionId: "<id>",
+    fields: new List<string>() {
+        "<value>",
+    },
+    raw: "<value>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `HrisTimeshift`                                                                                                                                  | [HrisTimeshift](../../Models/Components/HrisTimeshift.md)                                                                                        | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateHrisTimeshiftResponse](../../Models/Requests/CreateHrisTimeshiftResponse.md)**
 
 ### Errors
 
@@ -594,6 +646,52 @@ var res = await sdk.Hris.GetHrisTimeoffAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetHrisTimeshift
+
+Retrieve a timeshift
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.GetHrisTimeshiftAsync(
+    connectionId: "<id>",
+    id: "<id>",
+    fields: new List<string>() {
+        "<value>",
+    },
+    raw: "<value>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Timeshift                                                                                                                              |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetHrisTimeshiftResponse](../../Models/Requests/GetHrisTimeshiftResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListHrisCompanies
 
 List all companies
@@ -874,6 +972,46 @@ var res = await sdk.Hris.ListHrisTimeoffsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListHrisTimeshifts
+
+List all timeshifts
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHrisTimeshiftsRequest req = new ListHrisTimeshiftsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Hris.ListHrisTimeshiftsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListHrisTimeshiftsRequest](../../Models/Requests/ListHrisTimeshiftsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+
+### Response
+
+**[ListHrisTimeshiftsResponse](../../Models/Requests/ListHrisTimeshiftsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchHrisCompany
 
 Update a company
@@ -1086,6 +1224,48 @@ var res = await sdk.Hris.PatchHrisLocationAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchHrisTimeshift
+
+Update a timeshift
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchHrisTimeshiftRequest req = new PatchHrisTimeshiftRequest() {
+    HrisTimeshift = new HrisTimeshift() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Hris.PatchHrisTimeshiftAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchHrisTimeshiftRequest](../../Models/Requests/PatchHrisTimeshiftRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+
+### Response
+
+**[PatchHrisTimeshiftResponse](../../Models/Requests/PatchHrisTimeshiftResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## RemoveHrisCompany
 
 Remove a company
@@ -1274,6 +1454,45 @@ var res = await sdk.Hris.RemoveHrisLocationAsync(
 ### Response
 
 **[RemoveHrisLocationResponse](../../Models/Requests/RemoveHrisLocationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveHrisTimeshift
+
+Remove a timeshift
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.RemoveHrisTimeshiftAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Timeshift  |
+
+### Response
+
+**[RemoveHrisTimeshiftResponse](../../Models/Requests/RemoveHrisTimeshiftResponse.md)**
 
 ### Errors
 
@@ -1486,6 +1705,48 @@ var res = await sdk.Hris.UpdateHrisLocationAsync(req);
 ### Response
 
 **[UpdateHrisLocationResponse](../../Models/Requests/UpdateHrisLocationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateHrisTimeshift
+
+Update a timeshift
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateHrisTimeshiftRequest req = new UpdateHrisTimeshiftRequest() {
+    HrisTimeshift = new HrisTimeshift() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Hris.UpdateHrisTimeshiftAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateHrisTimeshiftRequest](../../Models/Requests/UpdateHrisTimeshiftRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+
+### Response
+
+**[UpdateHrisTimeshiftResponse](../../Models/Requests/UpdateHrisTimeshiftResponse.md)**
 
 ### Errors
 

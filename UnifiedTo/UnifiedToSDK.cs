@@ -71,6 +71,7 @@ namespace UnifiedTo
         public IGroup Group { get; }
         public IPayslip Payslip { get; }
         public ITimeoff Timeoff { get; }
+        public ITimeshift Timeshift { get; }
         public IKms Kms { get; }
         public IComment Comment { get; }
         public IPage Page { get; }
@@ -164,10 +165,10 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.23.4";
+        private const string _sdkVersion = "0.23.5";
         private const string _sdkGenVersion = "2.610.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.23.4 2.610.0 1.0 UnifiedTo";
+        private const string _userAgent = "speakeasy-sdk/csharp 0.23.5 2.610.0 1.0 UnifiedTo";
         private string _serverUrl = "";
         private int _serverIndex = 0;
         private ISpeakeasyHttpClient _client;
@@ -218,6 +219,7 @@ namespace UnifiedTo
         public IGroup Group { get; private set; }
         public IPayslip Payslip { get; private set; }
         public ITimeoff Timeoff { get; private set; }
+        public ITimeshift Timeshift { get; private set; }
         public IKms Kms { get; private set; }
         public IComment Comment { get; private set; }
         public IPage Page { get; private set; }
@@ -446,6 +448,9 @@ namespace UnifiedTo
 
 
             Timeoff = new Timeoff(_client, _securitySource, _serverUrl, SDKConfiguration);
+
+
+            Timeshift = new Timeshift(_client, _securitySource, _serverUrl, SDKConfiguration);
 
 
             Kms = new Kms(_client, _securitySource, _serverUrl, SDKConfiguration);
