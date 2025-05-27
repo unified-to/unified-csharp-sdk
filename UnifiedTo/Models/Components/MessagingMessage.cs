@@ -39,6 +39,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("destination_members")]
         public List<MessagingMember>? DestinationMembers { get; set; }
 
+        [JsonProperty("has_children")]
+        public bool? HasChildren { get; set; }
+
         [JsonProperty("hidden_members")]
         public List<MessagingMember>? HiddenMembers { get; set; }
 
