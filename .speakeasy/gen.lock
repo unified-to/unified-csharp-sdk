@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 5d7224eae5351ceaef9292fed7b8c35a
+  docChecksum: d14d19d0a1732100e72235d3371aa316
   docVersion: "1.0"
-  speakeasyVersion: 1.551.0
+  speakeasyVersion: 1.552.0
   generationVersion: 2.610.0
-  releaseVersion: 0.23.6
-  configChecksum: 71cf05a16f4b94dca57707397caadd54
+  releaseVersion: 0.23.7
+  configChecksum: 5faea803895f21b3684a327d6a27a7fc
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -427,26 +427,14 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyAccountingReportTrialBalance.cs
   - UnifiedTo/Models/Components/PropertyAtsActivityFrom.cs
   - UnifiedTo/Models/Components/PropertyAtsActivityFromType.cs
-  - UnifiedTo/Models/Components/PropertyAtsApplicationAnswerAnswers.cs
   - UnifiedTo/Models/Components/PropertyAtsCandidateAddress.cs
-  - UnifiedTo/Models/Components/PropertyAtsCandidateLinkUrls.cs
-  - UnifiedTo/Models/Components/PropertyAtsCandidateSkills.cs
-  - UnifiedTo/Models/Components/PropertyAtsCandidateSources.cs
-  - UnifiedTo/Models/Components/PropertyAtsCandidateTags.cs
   - UnifiedTo/Models/Components/PropertyAtsCompanyAddress.cs
-  - UnifiedTo/Models/Components/PropertyAtsJobDepartments.cs
   - UnifiedTo/Models/Components/PropertyAtsJobPostingAddress.cs
-  - UnifiedTo/Models/Components/PropertyAtsJobPublicJobUrls.cs
-  - UnifiedTo/Models/Components/PropertyAtsJobQuestionOptions.cs
   - UnifiedTo/Models/Components/PropertyCalendarEventOrganizer.cs
   - UnifiedTo/Models/Components/PropertyCalendarEventOrganizerStatus.cs
   - UnifiedTo/Models/Components/PropertyCalendarEventRecurrenceOnDays.cs
   - UnifiedTo/Models/Components/PropertyCalendarRecordingTranscriptAttendee.cs
   - UnifiedTo/Models/Components/PropertyCalendarRecordingTranscriptAttendeeStatus.cs
-  - UnifiedTo/Models/Components/PropertyCommerceCollectionTags.cs
-  - UnifiedTo/Models/Components/PropertyCommerceItemOptionValues.cs
-  - UnifiedTo/Models/Components/PropertyCommerceItemTags.cs
-  - UnifiedTo/Models/Components/PropertyCommerceItemVariantTags.cs
   - UnifiedTo/Models/Components/PropertyCommerceLocationAddress.cs
   - UnifiedTo/Models/Components/PropertyConnectionAuth.cs
   - UnifiedTo/Models/Components/PropertyConnectionCategories.cs
@@ -470,10 +458,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyHrisEmployeeEmployeeRoles.cs
   - UnifiedTo/Models/Components/PropertyHrisLocationAddress.cs
   - UnifiedTo/Models/Components/PropertyIntegrationCategories.cs
-  - UnifiedTo/Models/Components/PropertyIntegrationTokenInstructions.cs
   - UnifiedTo/Models/Components/PropertyLmsStudentAddress.cs
   - UnifiedTo/Models/Components/PropertyMessagingMessageAuthorMember.cs
-  - UnifiedTo/Models/Components/PropertyMetadataMetadataOptions.cs
   - UnifiedTo/Models/Components/PropertyScimGroupMeta.cs
   - UnifiedTo/Models/Components/PropertyScimGroupSchemas.cs
   - UnifiedTo/Models/Components/PropertyScimUserMeta.cs
@@ -1843,26 +1829,14 @@ generatedFiles:
   - docs/Models/Components/PropertyAccountingReportTrialBalance.md
   - docs/Models/Components/PropertyAtsActivityFrom.md
   - docs/Models/Components/PropertyAtsActivityFromType.md
-  - docs/Models/Components/PropertyAtsApplicationAnswerAnswers.md
   - docs/Models/Components/PropertyAtsCandidateAddress.md
-  - docs/Models/Components/PropertyAtsCandidateLinkUrls.md
-  - docs/Models/Components/PropertyAtsCandidateSkills.md
-  - docs/Models/Components/PropertyAtsCandidateSources.md
-  - docs/Models/Components/PropertyAtsCandidateTags.md
   - docs/Models/Components/PropertyAtsCompanyAddress.md
-  - docs/Models/Components/PropertyAtsJobDepartments.md
   - docs/Models/Components/PropertyAtsJobPostingAddress.md
-  - docs/Models/Components/PropertyAtsJobPublicJobUrls.md
-  - docs/Models/Components/PropertyAtsJobQuestionOptions.md
   - docs/Models/Components/PropertyCalendarEventOrganizer.md
   - docs/Models/Components/PropertyCalendarEventOrganizerStatus.md
   - docs/Models/Components/PropertyCalendarEventRecurrenceOnDays.md
   - docs/Models/Components/PropertyCalendarRecordingTranscriptAttendee.md
   - docs/Models/Components/PropertyCalendarRecordingTranscriptAttendeeStatus.md
-  - docs/Models/Components/PropertyCommerceCollectionTags.md
-  - docs/Models/Components/PropertyCommerceItemOptionValues.md
-  - docs/Models/Components/PropertyCommerceItemTags.md
-  - docs/Models/Components/PropertyCommerceItemVariantTags.md
   - docs/Models/Components/PropertyCommerceLocationAddress.md
   - docs/Models/Components/PropertyConnectionAuth.md
   - docs/Models/Components/PropertyConnectionCategories.md
@@ -1886,10 +1860,8 @@ generatedFiles:
   - docs/Models/Components/PropertyHrisEmployeeEmployeeRoles.md
   - docs/Models/Components/PropertyHrisLocationAddress.md
   - docs/Models/Components/PropertyIntegrationCategories.md
-  - docs/Models/Components/PropertyIntegrationTokenInstructions.md
   - docs/Models/Components/PropertyLmsStudentAddress.md
   - docs/Models/Components/PropertyMessagingMessageAuthorMember.md
-  - docs/Models/Components/PropertyMetadataMetadataOptions.md
   - docs/Models/Components/PropertyScimGroupMeta.md
   - docs/Models/Components/PropertyScimGroupSchemas.md
   - docs/Models/Components/PropertyScimUserMeta.md
@@ -4088,10 +4060,10 @@ examples:
         path:
           connection_id: "<id>"
       requestBody:
-        application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+        application/json: {}
       responses:
         "200":
-          application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+          application/json: {}
   createCalendarLink:
     speakeasy-default-create-calendar-link:
       parameters:
@@ -4119,7 +4091,7 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+          application/json: {}
   getCalendarLink:
     speakeasy-default-get-calendar-link:
       parameters:
@@ -4196,10 +4168,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+        application/json: {}
       responses:
         "200":
-          application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+          application/json: {}
   patchCalendarLink:
     speakeasy-default-patch-calendar-link:
       parameters:
@@ -4247,10 +4219,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+        application/json: {}
       responses:
         "200":
-          application/json: {"end_at": "<value>", "start_at": "<value>", "subject": "<value>"}
+          application/json: {}
   updateCalendarLink:
     speakeasy-default-update-calendar-link:
       parameters:

@@ -37,7 +37,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Objects { get; set; }
 
         [JsonProperty("options")]
-        public List<PropertyMetadataMetadataOptions>? Options { get; set; }
+        public List<string>? Options { get; set; }
 
         [JsonProperty("original_format")]
         public string? OriginalFormat { get; set; }

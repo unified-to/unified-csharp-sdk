@@ -61,7 +61,7 @@ namespace UnifiedTo.Models.Components
         public string? Slug { get; set; }
 
         [JsonProperty("tags")]
-        public List<PropertyCommerceItemTags>? Tags { get; set; }
+        public List<string>? Tags { get; set; }
 
         [JsonProperty("type")]
         public string? Type { get; set; }

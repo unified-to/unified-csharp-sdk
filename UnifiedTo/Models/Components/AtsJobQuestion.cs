@@ -24,7 +24,7 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         [JsonProperty("options")]
-        public List<PropertyAtsJobQuestionOptions>? Options { get; set; }
+        public List<string>? Options { get; set; }
 
         [JsonProperty("prompt")]
         public string? Prompt { get; set; }

@@ -27,7 +27,7 @@ namespace UnifiedTo.Models.Components
         public string? CreatedAt { get; set; }
 
         [JsonProperty("end_at")]
-        public string EndAt { get; set; } = default!;
+        public string? EndAt { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
@@ -60,13 +60,13 @@ namespace UnifiedTo.Models.Components
         public string? RecurringEventId { get; set; }
 
         [JsonProperty("start_at")]
-        public string StartAt { get; set; } = default!;
+        public string? StartAt { get; set; }
 
         [JsonProperty("status")]
         public CalendarEventStatus? Status { get; set; }
 
         [JsonProperty("subject")]
-        public string Subject { get; set; } = default!;
+        public string? Subject { get; set; }
 
         [JsonProperty("timezone")]
         public string? Timezone { get; set; }

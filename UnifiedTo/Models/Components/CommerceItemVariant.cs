@@ -76,7 +76,7 @@ namespace UnifiedTo.Models.Components
         public string? Sku { get; set; }
 
         [JsonProperty("tags")]
-        public List<PropertyCommerceItemVariantTags>? Tags { get; set; }
+        public List<string>? Tags { get; set; }
 
         [JsonProperty("total_stock")]
         public double? TotalStock { get; set; }
