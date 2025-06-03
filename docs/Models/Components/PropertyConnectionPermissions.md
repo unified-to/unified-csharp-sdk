@@ -87,6 +87,8 @@
 | `HrisPayslipWrite`           | hris_payslip_write           |
 | `HrisTimeoffRead`            | hris_timeoff_read            |
 | `HrisTimeoffWrite`           | hris_timeoff_write           |
+| `HrisTimeshiftRead`          | hris_timeshift_read          |
+| `HrisTimeshiftWrite`         | hris_timeshift_write         |
 | `HrisCompanyRead`            | hris_company_read            |
 | `HrisCompanyWrite`           | hris_company_write           |
 | `HrisLocationRead`           | hris_location_read           |
@@ -149,7 +151,6 @@
 | `CalendarEventRead`          | calendar_event_read          |
 | `CalendarEventWrite`         | calendar_event_write         |
 | `CalendarBusyRead`           | calendar_busy_read           |
-| `CalendarBusyWrite`          | calendar_busy_write          |
 | `CalendarLinkRead`           | calendar_link_read           |
 | `CalendarLinkWrite`          | calendar_link_write          |
 | `CalendarRecordingRead`      | calendar_recording_read      |

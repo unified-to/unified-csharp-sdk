@@ -179,6 +179,10 @@ namespace UnifiedTo.Models.Components
         HrisTimeoffRead,
         [JsonProperty("hris_timeoff_write")]
         HrisTimeoffWrite,
+        [JsonProperty("hris_timeshift_read")]
+        HrisTimeshiftRead,
+        [JsonProperty("hris_timeshift_write")]
+        HrisTimeshiftWrite,
         [JsonProperty("hris_company_read")]
         HrisCompanyRead,
         [JsonProperty("hris_company_write")]
@@ -303,8 +307,6 @@ namespace UnifiedTo.Models.Components
         CalendarEventWrite,
         [JsonProperty("calendar_busy_read")]
         CalendarBusyRead,
-        [JsonProperty("calendar_busy_write")]
-        CalendarBusyWrite,
         [JsonProperty("calendar_link_read")]
         CalendarLinkRead,
         [JsonProperty("calendar_link_write")]

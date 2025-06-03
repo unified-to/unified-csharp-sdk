@@ -120,42 +120,6 @@ namespace UnifiedTo
         public IWebhook Webhook { get; }
     }
 
-    public class SDKConfig
-    {
-        /// <summary>
-        /// List of server URLs available to the SDK.
-        /// </summary>
-        public static readonly string[] ServerList = {
-            "https://api.unified.to",
-            "https://api-eu.unified.to",
-            "https://api-au.unified.to",
-        };
-
-        public string ServerUrl = "";
-        public int ServerIndex = 0;
-        public SDKHooks Hooks = new SDKHooks();
-        public RetryConfig? RetryConfig = null;
-
-        public string GetTemplatedServerUrl()
-        {
-            if (!String.IsNullOrEmpty(this.ServerUrl))
-            {
-                return Utilities.TemplateUrl(Utilities.RemoveSuffix(this.ServerUrl, "/"), new Dictionary<string, string>());
-            }
-            return Utilities.TemplateUrl(SDKConfig.ServerList[this.ServerIndex], new Dictionary<string, string>());
-        }
-
-        public ISpeakeasyHttpClient InitHooks(ISpeakeasyHttpClient client)
-        {
-            string preHooksUrl = GetTemplatedServerUrl();
-            var (postHooksUrl, postHooksClient) = this.Hooks.SDKInit(preHooksUrl, client);
-            if (preHooksUrl != postHooksUrl)
-            {
-                this.ServerUrl = postHooksUrl;
-            }
-            return postHooksClient;
-        }
-    }
 
     /// <summary>
     /// Unified.to API: One API to Rule Them All
@@ -165,14 +129,9 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.23.7";
-        private const string _sdkGenVersion = "2.610.0";
+        private const string _sdkVersion = "0.24.0";
+        private const string _sdkGenVersion = "2.618.0";
         private const string _openapiDocVersion = "1.0";
-        private const string _userAgent = "speakeasy-sdk/csharp 0.23.7 2.610.0 1.0 UnifiedTo";
-        private string _serverUrl = "";
-        private int _serverIndex = 0;
-        private ISpeakeasyHttpClient _client;
-        private Func<UnifiedTo.Models.Components.Security>? _securitySource;
         public IAccounting Accounting { get; private set; }
         public IAccount Account { get; private set; }
         public IContact Contact { get; private set; }
@@ -267,6 +226,198 @@ namespace UnifiedTo
         public IIssue Issue { get; private set; }
         public IWebhook Webhook { get; private set; }
 
+        public UnifiedToSDK(SDKConfig config)
+        {
+            SDKConfiguration = config;
+            InitHooks();
+
+            Accounting = new Accounting(SDKConfiguration);
+
+            Account = new Account(SDKConfiguration);
+
+            Contact = new Contact(SDKConfiguration);
+
+            Invoice = new Invoice(SDKConfiguration);
+
+            Journal = new Journal(SDKConfiguration);
+
+            Order = new Order(SDKConfiguration);
+
+            Organization = new Organization(SDKConfiguration);
+
+            Report = new Report(SDKConfiguration);
+
+            Taxrate = new Taxrate(SDKConfiguration);
+
+            Transaction = new Transaction(SDKConfiguration);
+
+            Ats = new Ats(SDKConfiguration);
+
+            Activity = new Activity(SDKConfiguration);
+
+            Application = new Application(SDKConfiguration);
+
+            Applicationstatus = new Applicationstatus(SDKConfiguration);
+
+            Candidate = new Candidate(SDKConfiguration);
+
+            Company = new Company(SDKConfiguration);
+
+            Document = new Document(SDKConfiguration);
+
+            Interview = new Interview(SDKConfiguration);
+
+            Job = new Job(SDKConfiguration);
+
+            Scorecard = new Scorecard(SDKConfiguration);
+
+            Calendar = new Calendar(SDKConfiguration);
+
+            Busy = new Busy(SDKConfiguration);
+
+            Event = new Event(SDKConfiguration);
+
+            Link = new Link(SDKConfiguration);
+
+            Recording = new Recording(SDKConfiguration);
+
+            Commerce = new Commerce(SDKConfiguration);
+
+            Collection = new Collection(SDKConfiguration);
+
+            Inventory = new Inventory(SDKConfiguration);
+
+            Item = new Item(SDKConfiguration);
+
+            Location = new Location(SDKConfiguration);
+
+            Review = new Review(SDKConfiguration);
+
+            Crm = new Crm(SDKConfiguration);
+
+            Deal = new Deal(SDKConfiguration);
+
+            Lead = new Lead(SDKConfiguration);
+
+            Pipeline = new Pipeline(SDKConfiguration);
+
+            Enrich = new Enrich(SDKConfiguration);
+
+            Person = new Person(SDKConfiguration);
+
+            Genai = new Genai(SDKConfiguration);
+
+            Model = new Model(SDKConfiguration);
+
+            Prompt = new Prompt(SDKConfiguration);
+
+            Hris = new Hris(SDKConfiguration);
+
+            Device = new Device(SDKConfiguration);
+
+            Employee = new Employee(SDKConfiguration);
+
+            Group = new Group(SDKConfiguration);
+
+            Payslip = new Payslip(SDKConfiguration);
+
+            Timeoff = new Timeoff(SDKConfiguration);
+
+            Timeshift = new Timeshift(SDKConfiguration);
+
+            Kms = new Kms(SDKConfiguration);
+
+            Comment = new Comment(SDKConfiguration);
+
+            Page = new Page(SDKConfiguration);
+
+            Space = new Space(SDKConfiguration);
+
+            Lms = new Lms(SDKConfiguration);
+
+            Class = new Class(SDKConfiguration);
+
+            Course = new Course(SDKConfiguration);
+
+            Instructor = new Instructor(SDKConfiguration);
+
+            Student = new Student(SDKConfiguration);
+
+            Martech = new Martech(SDKConfiguration);
+
+            List = new List(SDKConfiguration);
+
+            Member = new Member(SDKConfiguration);
+
+            Messaging = new Messaging(SDKConfiguration);
+
+            Channel = new Channel(SDKConfiguration);
+
+            Message = new Message(SDKConfiguration);
+
+            Metadata = new Metadata(SDKConfiguration);
+
+            Passthrough = new Passthrough(SDKConfiguration);
+
+            Payment = new Payment(SDKConfiguration);
+
+            Payout = new Payout(SDKConfiguration);
+
+            Refund = new Refund(SDKConfiguration);
+
+            Subscription = new Subscription(SDKConfiguration);
+
+            Repo = new Repo(SDKConfiguration);
+
+            Branch = new Branch(SDKConfiguration);
+
+            Commit = new Commit(SDKConfiguration);
+
+            Pullrequest = new Pullrequest(SDKConfiguration);
+
+            Repository = new Repository(SDKConfiguration);
+
+            Scim = new Scim(SDKConfiguration);
+
+            User = new User(SDKConfiguration);
+
+            Storage = new Storage(SDKConfiguration);
+
+            File = new File(SDKConfiguration);
+
+            Task = new Task(SDKConfiguration);
+
+            Project = new Project(SDKConfiguration);
+
+            Ticketing = new Ticketing(SDKConfiguration);
+
+            Customer = new Customer(SDKConfiguration);
+
+            Note = new Note(SDKConfiguration);
+
+            Ticket = new Ticket(SDKConfiguration);
+
+            Uc = new Uc(SDKConfiguration);
+
+            Call = new Call(SDKConfiguration);
+
+            Unified = new Unified(SDKConfiguration);
+
+            Apicall = new Apicall(SDKConfiguration);
+
+            Connection = new Connection(SDKConfiguration);
+
+            Integration = new Integration(SDKConfiguration);
+
+            Auth = new Auth(SDKConfiguration);
+
+            Login = new Login(SDKConfiguration);
+
+            Issue = new Issue(SDKConfiguration);
+
+            Webhook = new Webhook(SDKConfiguration);
+        }
+
         public UnifiedToSDK(UnifiedTo.Models.Components.Security? security = null, Func<UnifiedTo.Models.Components.Security>? securitySource = null, int? serverIndex = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, ISpeakeasyHttpClient? client = null, RetryConfig? retryConfig = null)
         {
             if (serverIndex != null)
@@ -275,7 +426,6 @@ namespace UnifiedTo
                 {
                     throw new Exception($"Invalid server index {serverIndex.Value}");
                 }
-                _serverIndex = serverIndex.Value;
             }
 
             if (serverUrl != null)
@@ -284,10 +434,8 @@ namespace UnifiedTo
                 {
                     serverUrl = Utilities.TemplateUrl(serverUrl, urlParams);
                 }
-                _serverUrl = serverUrl;
             }
-
-            _client = client ?? new SpeakeasyHttpClient();
+            Func<UnifiedTo.Models.Components.Security>? _securitySource = null;
 
             if(securitySource != null)
             {
@@ -302,293 +450,276 @@ namespace UnifiedTo
                 throw new Exception("security and securitySource cannot both be null");
             }
 
-            SDKConfiguration = new SDKConfig()
+            SDKConfiguration = new SDKConfig(client)
             {
-                ServerIndex = _serverIndex,
-                ServerUrl = _serverUrl,
+                ServerIndex = serverIndex == null ? 0 : serverIndex.Value,
+                ServerUrl = serverUrl == null ? "" : serverUrl,
+                SecuritySource = _securitySource,
                 RetryConfig = retryConfig
             };
 
-            _client = SDKConfiguration.InitHooks(_client);
+            InitHooks();
 
+            Accounting = new Accounting(SDKConfiguration);
 
-            Accounting = new Accounting(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Account = new Account(SDKConfiguration);
 
+            Contact = new Contact(SDKConfiguration);
 
-            Account = new Account(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Invoice = new Invoice(SDKConfiguration);
 
+            Journal = new Journal(SDKConfiguration);
 
-            Contact = new Contact(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Order = new Order(SDKConfiguration);
 
+            Organization = new Organization(SDKConfiguration);
 
-            Invoice = new Invoice(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Report = new Report(SDKConfiguration);
 
+            Taxrate = new Taxrate(SDKConfiguration);
 
-            Journal = new Journal(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Transaction = new Transaction(SDKConfiguration);
 
+            Ats = new Ats(SDKConfiguration);
 
-            Order = new Order(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Activity = new Activity(SDKConfiguration);
 
+            Application = new Application(SDKConfiguration);
 
-            Organization = new Organization(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Applicationstatus = new Applicationstatus(SDKConfiguration);
 
+            Candidate = new Candidate(SDKConfiguration);
 
-            Report = new Report(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Company = new Company(SDKConfiguration);
 
+            Document = new Document(SDKConfiguration);
 
-            Taxrate = new Taxrate(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Interview = new Interview(SDKConfiguration);
 
+            Job = new Job(SDKConfiguration);
 
-            Transaction = new Transaction(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Scorecard = new Scorecard(SDKConfiguration);
 
+            Calendar = new Calendar(SDKConfiguration);
 
-            Ats = new Ats(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Busy = new Busy(SDKConfiguration);
 
+            Event = new Event(SDKConfiguration);
 
-            Activity = new Activity(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Link = new Link(SDKConfiguration);
 
+            Recording = new Recording(SDKConfiguration);
 
-            Application = new Application(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Commerce = new Commerce(SDKConfiguration);
 
+            Collection = new Collection(SDKConfiguration);
 
-            Applicationstatus = new Applicationstatus(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Inventory = new Inventory(SDKConfiguration);
 
+            Item = new Item(SDKConfiguration);
 
-            Candidate = new Candidate(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Location = new Location(SDKConfiguration);
 
+            Review = new Review(SDKConfiguration);
 
-            Company = new Company(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Crm = new Crm(SDKConfiguration);
 
+            Deal = new Deal(SDKConfiguration);
 
-            Document = new Document(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Lead = new Lead(SDKConfiguration);
 
+            Pipeline = new Pipeline(SDKConfiguration);
 
-            Interview = new Interview(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Enrich = new Enrich(SDKConfiguration);
 
+            Person = new Person(SDKConfiguration);
 
-            Job = new Job(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Genai = new Genai(SDKConfiguration);
 
+            Model = new Model(SDKConfiguration);
 
-            Scorecard = new Scorecard(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Prompt = new Prompt(SDKConfiguration);
 
+            Hris = new Hris(SDKConfiguration);
 
-            Calendar = new Calendar(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Device = new Device(SDKConfiguration);
 
+            Employee = new Employee(SDKConfiguration);
 
-            Busy = new Busy(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Group = new Group(SDKConfiguration);
 
+            Payslip = new Payslip(SDKConfiguration);
 
-            Event = new Event(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Timeoff = new Timeoff(SDKConfiguration);
 
+            Timeshift = new Timeshift(SDKConfiguration);
 
-            Link = new Link(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Kms = new Kms(SDKConfiguration);
 
+            Comment = new Comment(SDKConfiguration);
 
-            Recording = new Recording(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Page = new Page(SDKConfiguration);
 
+            Space = new Space(SDKConfiguration);
 
-            Commerce = new Commerce(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Lms = new Lms(SDKConfiguration);
 
+            Class = new Class(SDKConfiguration);
 
-            Collection = new Collection(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Course = new Course(SDKConfiguration);
 
+            Instructor = new Instructor(SDKConfiguration);
 
-            Inventory = new Inventory(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Student = new Student(SDKConfiguration);
 
+            Martech = new Martech(SDKConfiguration);
 
-            Item = new Item(_client, _securitySource, _serverUrl, SDKConfiguration);
+            List = new List(SDKConfiguration);
 
+            Member = new Member(SDKConfiguration);
 
-            Location = new Location(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Messaging = new Messaging(SDKConfiguration);
 
+            Channel = new Channel(SDKConfiguration);
 
-            Review = new Review(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Message = new Message(SDKConfiguration);
 
+            Metadata = new Metadata(SDKConfiguration);
 
-            Crm = new Crm(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Passthrough = new Passthrough(SDKConfiguration);
 
+            Payment = new Payment(SDKConfiguration);
 
-            Deal = new Deal(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Payout = new Payout(SDKConfiguration);
 
+            Refund = new Refund(SDKConfiguration);
 
-            Lead = new Lead(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Subscription = new Subscription(SDKConfiguration);
 
+            Repo = new Repo(SDKConfiguration);
 
-            Pipeline = new Pipeline(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Branch = new Branch(SDKConfiguration);
 
+            Commit = new Commit(SDKConfiguration);
 
-            Enrich = new Enrich(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Pullrequest = new Pullrequest(SDKConfiguration);
 
+            Repository = new Repository(SDKConfiguration);
 
-            Person = new Person(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Scim = new Scim(SDKConfiguration);
 
+            User = new User(SDKConfiguration);
 
-            Genai = new Genai(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Storage = new Storage(SDKConfiguration);
 
+            File = new File(SDKConfiguration);
 
-            Model = new Model(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Task = new Task(SDKConfiguration);
 
+            Project = new Project(SDKConfiguration);
 
-            Prompt = new Prompt(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Ticketing = new Ticketing(SDKConfiguration);
 
+            Customer = new Customer(SDKConfiguration);
 
-            Hris = new Hris(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Note = new Note(SDKConfiguration);
 
+            Ticket = new Ticket(SDKConfiguration);
 
-            Device = new Device(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Uc = new Uc(SDKConfiguration);
 
+            Call = new Call(SDKConfiguration);
 
-            Employee = new Employee(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Unified = new Unified(SDKConfiguration);
 
+            Apicall = new Apicall(SDKConfiguration);
 
-            Group = new Group(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Connection = new Connection(SDKConfiguration);
 
+            Integration = new Integration(SDKConfiguration);
 
-            Payslip = new Payslip(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Auth = new Auth(SDKConfiguration);
 
+            Login = new Login(SDKConfiguration);
 
-            Timeoff = new Timeoff(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Issue = new Issue(SDKConfiguration);
 
-
-            Timeshift = new Timeshift(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Kms = new Kms(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Comment = new Comment(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Page = new Page(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Space = new Space(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Lms = new Lms(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Class = new Class(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Course = new Course(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Instructor = new Instructor(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Student = new Student(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Martech = new Martech(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            List = new List(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Member = new Member(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Messaging = new Messaging(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Channel = new Channel(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Message = new Message(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Metadata = new Metadata(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Passthrough = new Passthrough(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Payment = new Payment(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Payout = new Payout(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Refund = new Refund(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Subscription = new Subscription(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Repo = new Repo(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Branch = new Branch(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Commit = new Commit(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Pullrequest = new Pullrequest(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Repository = new Repository(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Scim = new Scim(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            User = new User(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Storage = new Storage(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            File = new File(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Task = new Task(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Project = new Project(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Ticketing = new Ticketing(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Customer = new Customer(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Note = new Note(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Ticket = new Ticket(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Uc = new Uc(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Call = new Call(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Unified = new Unified(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Apicall = new Apicall(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Connection = new Connection(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Integration = new Integration(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Auth = new Auth(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Login = new Login(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Issue = new Issue(_client, _securitySource, _serverUrl, SDKConfiguration);
-
-
-            Webhook = new Webhook(_client, _securitySource, _serverUrl, SDKConfiguration);
+            Webhook = new Webhook(SDKConfiguration);
         }
+
+        private void InitHooks()
+        {
+            string preHooksUrl = SDKConfiguration.GetTemplatedServerUrl();
+            var (postHooksUrl, postHooksClient) = SDKConfiguration.Hooks.SDKInit(preHooksUrl, SDKConfiguration.Client);
+            var config = SDKConfiguration;
+            if (preHooksUrl != postHooksUrl)
+            {
+                config.ServerUrl = postHooksUrl;
+            }
+            config.Client = postHooksClient;
+            SDKConfiguration = config;
+        }
+
+        public class SDKBuilder
+        {
+            private SDKConfig _sdkConfig = new SDKConfig(client: new SpeakeasyHttpClient());
+
+            public SDKBuilder() { }
+
+            public SDKBuilder WithServerIndex(int serverIndex)
+            {
+                if (serverIndex < 0 || serverIndex >= SDKConfig.ServerList.Length)
+                {
+                    throw new Exception($"Invalid server index {serverIndex}");
+                }
+                _sdkConfig.ServerIndex = serverIndex;
+                return this;
+            }
+
+            public SDKBuilder WithServerUrl(string serverUrl, Dictionary<string, string>? serverVariables = null)
+            {
+                if (serverVariables != null)
+                {
+                    serverUrl = Utilities.TemplateUrl(serverUrl, serverVariables);
+                }
+                _sdkConfig.ServerUrl = serverUrl;
+                return this;
+            }
+
+            public SDKBuilder WithSecuritySource(Func<UnifiedTo.Models.Components.Security> securitySource)
+            {
+                _sdkConfig.SecuritySource = securitySource;
+                return this;
+            }
+
+            public SDKBuilder WithSecurity(UnifiedTo.Models.Components.Security security)
+            {
+                _sdkConfig.SecuritySource = () => security;
+                return this;
+            }
+
+            public SDKBuilder WithClient(ISpeakeasyHttpClient client)
+            {
+                _sdkConfig.Client = client;
+                return this;
+            }
+
+            public SDKBuilder WithRetryConfig(RetryConfig retryConfig)
+            {
+                _sdkConfig.RetryConfig = retryConfig;
+                return this;
+            }
+
+            public UnifiedToSDK Build()
+            {
+              if (_sdkConfig.SecuritySource == null) {
+                  throw new Exception("securitySource cannot be null. One of `Security` or `securitySource` needs to be defined.");
+              }
+              return new UnifiedToSDK(_sdkConfig);
+            }
+
+        }
+
+        public static SDKBuilder Builder() => new SDKBuilder();
     }
 }

@@ -3,6 +3,7 @@ generation:
   sdkClassName: Unified-to
   usageSnippets:
     optionalPropertyRendering: withExample
+    sdkInitStyle: constructor
   useClassNamesForArrayFields: true
   fixes:
     nameResolutionFeb2025: false
@@ -16,7 +17,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 csharp:
-  version: 0.23.7
+  version: 0.24.0
   additionalDependencies: []
   author: Unified API Inc.
   clientServerStatusCodesAsErrors: true

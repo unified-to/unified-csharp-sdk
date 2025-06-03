@@ -153,7 +153,7 @@ var res = await sdk.Connection.PatchUnifiedConnectionAsync(
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            PropertyConnectionPermissions.TicketingCustomerWrite,
+            PropertyConnectionPermissions.TicketingTicketRead,
         },
     },
     id: "<id>"
@@ -236,7 +236,7 @@ var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            PropertyConnectionPermissions.HrisDeviceRead,
+            PropertyConnectionPermissions.HrisLocationWrite,
         },
     },
     id: "<id>"
