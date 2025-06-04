@@ -51,6 +51,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("parent_account_id")]
         public string? ParentAccountId { get; set; }
 
+        [JsonProperty("parent_id")]
+        public string? ParentId { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

@@ -31,7 +31,6 @@ Create a customer
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -41,11 +40,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.CreateTicketingCustomerAsync(
     ticketingCustomer: new TicketingCustomer() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -77,7 +72,6 @@ Create a note
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -87,11 +81,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.CreateTicketingNoteAsync(
     ticketingNote: new TicketingNote() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -123,7 +113,6 @@ Create a ticket
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -133,11 +122,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.CreateTicketingTicketAsync(
     ticketingTicket: new TicketingTicket() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -169,7 +154,6 @@ Retrieve a customer
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -179,11 +163,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.GetTicketingCustomerAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -215,7 +195,6 @@ Retrieve a note
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -225,11 +204,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.GetTicketingNoteAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -261,7 +236,6 @@ Retrieve a ticket
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -271,11 +245,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ticketing.GetTicketingTicketAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response

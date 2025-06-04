@@ -42,12 +42,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 Models.Components.Connection req = new Models.Components.Connection() {
-    Categories = new List<PropertyConnectionCategories>() {
-        PropertyConnectionCategories.Passthrough,
-    },
+    Categories = new List<PropertyConnectionCategories>() {},
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.CrmContactWrite,
+        PropertyConnectionPermissions.EnrichCompanyRead,
     },
 };
 
@@ -86,14 +84,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Unified.CreateUnifiedWebhookAsync(
-    webhook: new Models.Components.Webhook() {
-        ConnectionId = "<id>",
-        Event = Event.Created,
-        ObjectType = ObjectType.AtsScorecard,
-    },
-    includeAll: false
-);
+var res = await sdk.Unified.CreateUnifiedWebhookAsync(webhook: new Models.Components.Webhook() {
+    ConnectionId = "<id>",
+    Event = Event.Created,
+    ObjectType = ObjectType.AtsScorecard,
+});
 
 // handle response
 ```
@@ -276,7 +271,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedApicallsRequest req = new ListUnifiedApicallsRequest() {};
+ListUnifiedApicallsRequest req = ;
 
 var res = await sdk.Unified.ListUnifiedApicallsAsync(req);
 
@@ -314,7 +309,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedConnectionsRequest req = new ListUnifiedConnectionsRequest() {};
+ListUnifiedConnectionsRequest req = ;
 
 var res = await sdk.Unified.ListUnifiedConnectionsAsync(req);
 
@@ -392,7 +387,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedIntegrationsRequest req = new ListUnifiedIntegrationsRequest() {};
+ListUnifiedIntegrationsRequest req = ;
 
 var res = await sdk.Unified.ListUnifiedIntegrationsAsync(req);
 
@@ -430,7 +425,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedIssuesRequest req = new ListUnifiedIssuesRequest() {};
+ListUnifiedIssuesRequest req = ;
 
 var res = await sdk.Unified.ListUnifiedIssuesAsync(req);
 
@@ -468,7 +463,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedWebhooksRequest req = new ListUnifiedWebhooksRequest() {};
+ListUnifiedWebhooksRequest req = ;
 
 var res = await sdk.Unified.ListUnifiedWebhooksAsync(req);
 
@@ -509,11 +504,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Unified.PatchUnifiedConnectionAsync(
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
-            PropertyConnectionCategories.Uc,
+            PropertyConnectionCategories.Storage,
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            PropertyConnectionPermissions.TicketingTicketRead,
+            PropertyConnectionPermissions.UcContactWrite,
         },
     },
     id: "<id>"
@@ -704,12 +699,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Unified.UpdateUnifiedConnectionAsync(
     connection: new Models.Components.Connection() {
-        Categories = new List<PropertyConnectionCategories>() {
-            PropertyConnectionCategories.Hris,
-        },
+        Categories = new List<PropertyConnectionCategories>() {},
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            PropertyConnectionPermissions.HrisLocationWrite,
+            PropertyConnectionPermissions.CommerceReviewRead,
+            PropertyConnectionPermissions.CalendarCalendarRead,
         },
     },
     id: "<id>"

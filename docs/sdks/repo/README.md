@@ -43,7 +43,6 @@ Create a branch
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -56,11 +55,7 @@ var res = await sdk.Repo.CreateRepoBranchAsync(
         Name = "<value>",
         RepoId = "<id>",
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -92,7 +87,6 @@ Create a commit
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -105,11 +99,7 @@ var res = await sdk.Repo.CreateRepoCommitAsync(
         RepoId = "<id>",
         UserId = "<id>",
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -141,7 +131,6 @@ Create an organization
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -151,11 +140,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Repo.CreateRepoOrganizationAsync(
     repoOrganization: new RepoOrganization() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -187,7 +172,6 @@ Create a pullrequest
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -197,11 +181,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Repo.CreateRepoPullrequestAsync(
     repoPullrequest: new RepoPullrequest() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -233,7 +213,6 @@ Create a repository
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -245,11 +224,7 @@ var res = await sdk.Repo.CreateRepoRepositoryAsync(
     repoRepository: new RepoRepository() {
         Name = "<value>",
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -281,7 +256,6 @@ Retrieve a branch
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -291,11 +265,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Repo.GetRepoBranchAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -327,7 +297,6 @@ Retrieve a commit
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -337,11 +306,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Repo.GetRepoCommitAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -373,7 +338,6 @@ Retrieve an organization
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -383,11 +347,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Repo.GetRepoOrganizationAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -419,7 +379,6 @@ Retrieve a pullrequest
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -429,11 +388,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Repo.GetRepoPullrequestAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -465,7 +420,6 @@ Retrieve a repository
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -475,11 +429,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Repo.GetRepoRepositoryAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response

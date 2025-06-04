@@ -28,12 +28,10 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 Models.Components.Connection req = new Models.Components.Connection() {
-    Categories = new List<PropertyConnectionCategories>() {
-        PropertyConnectionCategories.Passthrough,
-    },
+    Categories = new List<PropertyConnectionCategories>() {},
     IntegrationType = "<value>",
     Permissions = new List<PropertyConnectionPermissions>() {
-        PropertyConnectionPermissions.CrmContactWrite,
+        PropertyConnectionPermissions.EnrichCompanyRead,
     },
 };
 
@@ -108,7 +106,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedConnectionsRequest req = new ListUnifiedConnectionsRequest() {};
+ListUnifiedConnectionsRequest req = ;
 
 var res = await sdk.Connection.ListUnifiedConnectionsAsync(req);
 
@@ -149,11 +147,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Connection.PatchUnifiedConnectionAsync(
     connection: new Models.Components.Connection() {
         Categories = new List<PropertyConnectionCategories>() {
-            PropertyConnectionCategories.Uc,
+            PropertyConnectionCategories.Storage,
         },
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            PropertyConnectionPermissions.TicketingTicketRead,
+            PropertyConnectionPermissions.UcContactWrite,
         },
     },
     id: "<id>"
@@ -231,12 +229,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Connection.UpdateUnifiedConnectionAsync(
     connection: new Models.Components.Connection() {
-        Categories = new List<PropertyConnectionCategories>() {
-            PropertyConnectionCategories.Hris,
-        },
+        Categories = new List<PropertyConnectionCategories>() {},
         IntegrationType = "<value>",
         Permissions = new List<PropertyConnectionPermissions>() {
-            PropertyConnectionPermissions.HrisLocationWrite,
+            PropertyConnectionPermissions.CommerceReviewRead,
+            PropertyConnectionPermissions.CalendarCalendarRead,
         },
     },
     id: "<id>"

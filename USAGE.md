@@ -1,6 +1,5 @@
 <!-- Start SDK Example Usage [usage] -->
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -10,11 +9,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
     accountingAccount: new AccountingAccount() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response

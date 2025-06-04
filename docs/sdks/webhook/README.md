@@ -28,14 +28,11 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Webhook.CreateUnifiedWebhookAsync(
-    webhook: new Models.Components.Webhook() {
-        ConnectionId = "<id>",
-        Event = Event.Created,
-        ObjectType = ObjectType.AtsScorecard,
-    },
-    includeAll: false
-);
+var res = await sdk.Webhook.CreateUnifiedWebhookAsync(webhook: new Models.Components.Webhook() {
+    ConnectionId = "<id>",
+    Event = Event.Created,
+    ObjectType = ObjectType.AtsScorecard,
+});
 
 // handle response
 ```
@@ -107,7 +104,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedWebhooksRequest req = new ListUnifiedWebhooksRequest() {};
+ListUnifiedWebhooksRequest req = ;
 
 var res = await sdk.Webhook.ListUnifiedWebhooksAsync(req);
 

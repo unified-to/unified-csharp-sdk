@@ -53,7 +53,6 @@ Create a company
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -63,11 +62,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisCompanyAsync(
     hrisCompany: new HrisCompany() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -99,7 +94,6 @@ Create a device
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -111,11 +105,7 @@ var res = await sdk.Hris.CreateHrisDeviceAsync(
     hrisDevice: new HrisDevice() {
         Name = "<value>",
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -147,7 +137,6 @@ Create an employee
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -157,11 +146,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisEmployeeAsync(
     hrisEmployee: new HrisEmployee() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -193,7 +178,6 @@ Create a group
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -203,11 +187,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisGroupAsync(
     hrisGroup: new HrisGroup() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -239,7 +219,6 @@ Create a location
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -249,11 +228,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisLocationAsync(
     hrisLocation: new HrisLocation() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -285,7 +260,6 @@ Create a timeshift
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -295,11 +269,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisTimeshiftAsync(
     hrisTimeshift: new HrisTimeshift() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -331,7 +301,6 @@ Retrieve a company
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -341,11 +310,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.GetHrisCompanyAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -377,7 +342,6 @@ Retrieve a device
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -387,11 +351,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.GetHrisDeviceAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -423,7 +383,6 @@ Retrieve an employee
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -433,11 +392,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.GetHrisEmployeeAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -469,7 +424,6 @@ Retrieve a group
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -479,11 +433,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.GetHrisGroupAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -515,7 +465,6 @@ Retrieve a location
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -525,11 +474,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.GetHrisLocationAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -561,7 +506,6 @@ Retrieve a payslip
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -571,11 +515,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.GetHrisPayslipAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -607,7 +547,6 @@ Retrieve a timeoff
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -617,11 +556,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.GetHrisTimeoffAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -653,7 +588,6 @@ Retrieve a timeshift
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -663,11 +597,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.GetHrisTimeshiftAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response

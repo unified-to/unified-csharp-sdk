@@ -35,7 +35,6 @@ Create a link
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -45,11 +44,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.CreatePaymentLinkAsync(
     paymentLink: new PaymentLink() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -81,7 +76,6 @@ Create a payment
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -91,11 +85,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.CreatePaymentPaymentAsync(
     paymentPayment: new PaymentPayment() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -127,7 +117,6 @@ Create a subscription
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -137,11 +126,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.CreatePaymentSubscriptionAsync(
     paymentSubscription: new PaymentSubscription() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -173,7 +158,6 @@ Retrieve a link
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -183,11 +167,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.GetPaymentLinkAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -219,7 +199,6 @@ Retrieve a payment
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -229,11 +208,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.GetPaymentPaymentAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -265,7 +240,6 @@ Retrieve a payout
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -275,11 +249,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.GetPaymentPayoutAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -311,7 +281,6 @@ Retrieve a refund
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -321,11 +290,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.GetPaymentRefundAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -357,7 +322,6 @@ Retrieve a subscription
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -367,11 +331,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Payment.GetPaymentSubscriptionAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response

@@ -25,7 +25,6 @@ Create a link
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -37,11 +36,7 @@ var res = await sdk.Link.CreateCalendarLinkAsync(
     calendarLink: new CalendarLink() {
         Url = "https://misguided-thongs.info",
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -73,7 +68,6 @@ Create a link
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -83,11 +77,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Link.CreatePaymentLinkAsync(
     paymentLink: new PaymentLink() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -119,7 +109,6 @@ Retrieve a link
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -129,11 +118,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Link.GetCalendarLinkAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -165,7 +150,6 @@ Retrieve a link
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -175,11 +159,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Link.GetPaymentLinkAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response

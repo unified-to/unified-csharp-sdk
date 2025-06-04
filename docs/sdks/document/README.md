@@ -19,7 +19,6 @@ Create a document
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -29,11 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Document.CreateAtsDocumentAsync(
     atsDocument: new AtsDocument() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -65,7 +60,6 @@ Retrieve a document
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -75,11 +69,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Document.GetAtsDocumentAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response

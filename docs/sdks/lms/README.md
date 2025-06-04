@@ -37,7 +37,6 @@ Create a class
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -50,11 +49,7 @@ var res = await sdk.Lms.CreateLmsClassAsync(
         CourseId = "<id>",
         Name = "<value>",
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -86,7 +81,6 @@ Create a course
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -98,11 +92,7 @@ var res = await sdk.Lms.CreateLmsCourseAsync(
     lmsCourse: new LmsCourse() {
         Name = "<value>",
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -134,7 +124,6 @@ Create an instructor
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -144,11 +133,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Lms.CreateLmsInstructorAsync(
     lmsInstructor: new LmsInstructor() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -180,7 +165,6 @@ Create a student
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -190,11 +174,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Lms.CreateLmsStudentAsync(
     lmsStudent: new LmsStudent() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -226,7 +206,6 @@ Retrieve a class
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -236,11 +215,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Lms.GetLmsClassAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -272,7 +247,6 @@ Retrieve a course
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -282,11 +256,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Lms.GetLmsCourseAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -318,7 +288,6 @@ Retrieve an instructor
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -328,11 +297,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Lms.GetLmsInstructorAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -364,7 +329,6 @@ Retrieve a student
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -374,11 +338,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Lms.GetLmsStudentAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response

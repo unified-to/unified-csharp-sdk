@@ -46,6 +46,7 @@
 | `HrisCompany`            | hris_company             |
 | `HrisLocation`           | hris_location            |
 | `HrisDevice`             | hris_device              |
+| `HrisTimeshift`          | hris_timeshift           |
 | `MartechList`            | martech_list             |
 | `MartechMember`          | martech_member           |
 | `Passthrough`            | passthrough              |

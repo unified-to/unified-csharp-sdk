@@ -58,7 +58,6 @@ Create an activity
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -68,11 +67,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsActivityAsync(
     atsActivity: new AtsActivity() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -104,7 +99,6 @@ Create an application
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -114,11 +108,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsApplicationAsync(
     atsApplication: new AtsApplication() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -150,7 +140,6 @@ Create a candidate
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -160,11 +149,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsCandidateAsync(
     atsCandidate: new AtsCandidate() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -196,7 +181,6 @@ Create a document
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -206,11 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsDocumentAsync(
     atsDocument: new AtsDocument() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -242,7 +222,6 @@ Create an interview
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -252,11 +231,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsInterviewAsync(
     atsInterview: new AtsInterview() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -288,7 +263,6 @@ Create a job
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -298,11 +272,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsJobAsync(
     atsJob: new AtsJob() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -334,7 +304,6 @@ Create a scorecard
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -344,11 +313,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.CreateAtsScorecardAsync(
     atsScorecard: new AtsScorecard() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -380,7 +345,6 @@ Retrieve an activity
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -390,11 +354,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.GetAtsActivityAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -426,7 +386,6 @@ Retrieve an application
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -436,11 +395,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.GetAtsApplicationAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -472,7 +427,6 @@ Retrieve a candidate
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -482,11 +436,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.GetAtsCandidateAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -518,7 +468,6 @@ Retrieve a company
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -528,11 +477,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.GetAtsCompanyAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -564,7 +509,6 @@ Retrieve a document
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -574,11 +518,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.GetAtsDocumentAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -610,7 +550,6 @@ Retrieve an interview
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -620,11 +559,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.GetAtsInterviewAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -656,7 +591,6 @@ Retrieve a job
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -666,11 +600,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.GetAtsJobAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -702,7 +632,6 @@ Retrieve a scorecard
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -712,11 +641,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Ats.GetAtsScorecardAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response

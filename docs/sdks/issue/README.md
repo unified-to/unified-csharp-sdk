@@ -22,7 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedIssuesRequest req = new ListUnifiedIssuesRequest() {};
+ListUnifiedIssuesRequest req = ;
 
 var res = await sdk.Issue.ListUnifiedIssuesAsync(req);
 

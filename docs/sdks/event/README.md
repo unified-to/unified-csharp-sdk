@@ -25,7 +25,6 @@ Create an event
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -35,11 +34,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Event.CreateCalendarEventAsync(
     calendarEvent: new CalendarEvent() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -71,7 +66,6 @@ Create an event
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -81,11 +75,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Event.CreateCrmEventAsync(
     crmEvent: new CrmEvent() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -117,7 +107,6 @@ Retrieve an event
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -127,11 +116,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Event.GetCalendarEventAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -163,7 +148,6 @@ Retrieve an event
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -173,11 +157,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Event.GetCrmEventAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response

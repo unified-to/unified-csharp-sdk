@@ -43,7 +43,6 @@ Create a collection
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -55,11 +54,7 @@ var res = await sdk.Commerce.CreateCommerceCollectionAsync(
     commerceCollection: new CommerceCollection() {
         Name = "<value>",
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -91,7 +86,6 @@ Create an inventory
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -103,11 +97,7 @@ var res = await sdk.Commerce.CreateCommerceInventoryAsync(
     commerceInventory: new CommerceInventory() {
         Available = 7463.62D,
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -139,7 +129,6 @@ Create an item
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -149,11 +138,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.CreateCommerceItemAsync(
     commerceItem: new CommerceItem() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -185,7 +170,6 @@ Create a location
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -197,11 +181,7 @@ var res = await sdk.Commerce.CreateCommerceLocationAsync(
     commerceLocation: new CommerceLocation() {
         Name = "<value>",
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -233,7 +213,6 @@ Create a review
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -245,11 +224,7 @@ var res = await sdk.Commerce.CreateCommerceReviewAsync(
     commerceReview: new CommerceReview() {
         ItemId = "<id>",
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -281,7 +256,6 @@ Retrieve a collection
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -291,11 +265,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.GetCommerceCollectionAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -327,7 +297,6 @@ Retrieve an inventory
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -337,11 +306,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.GetCommerceInventoryAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -373,7 +338,6 @@ Retrieve an item
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -383,11 +347,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.GetCommerceItemAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -419,7 +379,6 @@ Retrieve a location
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -429,11 +388,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.GetCommerceLocationAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -465,7 +420,6 @@ Retrieve a review
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -475,11 +429,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Commerce.GetCommerceReviewAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response

@@ -34,7 +34,6 @@ Create a calendar
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -46,11 +45,7 @@ var res = await sdk.Calendar.CreateCalendarCalendarAsync(
     calendarCalendar: new CalendarCalendar() {
         Name = "<value>",
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -82,7 +77,6 @@ Create an event
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -92,11 +86,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Calendar.CreateCalendarEventAsync(
     calendarEvent: new CalendarEvent() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -128,7 +118,6 @@ Create a link
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -140,11 +129,7 @@ var res = await sdk.Calendar.CreateCalendarLinkAsync(
     calendarLink: new CalendarLink() {
         Url = "https://misguided-thongs.info",
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -176,7 +161,6 @@ Retrieve a calendar
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -186,11 +170,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Calendar.GetCalendarCalendarAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -222,7 +202,6 @@ Retrieve an event
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -232,11 +211,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Calendar.GetCalendarEventAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -268,7 +243,6 @@ Retrieve a link
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -278,11 +252,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Calendar.GetCalendarLinkAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -314,7 +284,6 @@ Retrieve a recording
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -324,11 +293,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Calendar.GetCalendarRecordingAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response

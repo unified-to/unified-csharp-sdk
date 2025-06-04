@@ -21,7 +21,6 @@ Passthrough POST
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -31,11 +30,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.CreatePassthroughJsonAsync(
     connectionId: "<id>",
-    path: "/var/log",
-    requestBody: "<value>",
-    query: new Dictionary<string, object>() {
-        { "key", "<value>" },
-    }
+    path: "/var/log"
 );
 
 // handle response
@@ -67,8 +62,6 @@ Passthrough POST
 ### Example Usage
 
 ```csharp
-using System;
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -78,11 +71,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.CreatePassthroughRawAsync(
     connectionId: "<id>",
-    path: "/var/log",
-    requestBody: System.Text.Encoding.UTF8.GetBytes("0x7fcDf41f12"),
-    query: new Dictionary<string, object>() {
-        { "key", "<value>" },
-    }
+    path: "/var/log"
 );
 
 // handle response
@@ -114,7 +103,6 @@ Passthrough GET
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -124,10 +112,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.ListPassthroughsAsync(
     connectionId: "<id>",
-    path: "/System",
-    query: new Dictionary<string, object>() {
-        { "key", "<value>" },
-    }
+    path: "/System"
 );
 
 // handle response
@@ -158,7 +143,6 @@ Passthrough PUT
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -168,11 +152,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.PatchPassthroughJsonAsync(
     connectionId: "<id>",
-    path: "/System",
-    requestBody: "<value>",
-    query: new Dictionary<string, object>() {
-        { "key", "<value>" },
-    }
+    path: "/System"
 );
 
 // handle response
@@ -204,8 +184,6 @@ Passthrough PUT
 ### Example Usage
 
 ```csharp
-using System;
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -215,11 +193,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.PatchPassthroughRawAsync(
     connectionId: "<id>",
-    path: "/System",
-    requestBody: System.Text.Encoding.UTF8.GetBytes("0xFCeD1ffbA0"),
-    query: new Dictionary<string, object>() {
-        { "key", "<value>" },
-    }
+    path: "/System"
 );
 
 // handle response
@@ -251,7 +225,6 @@ Passthrough DELETE
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -261,10 +234,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.RemovePassthroughAsync(
     connectionId: "<id>",
-    path: "/bin",
-    query: new Dictionary<string, object>() {
-        { "key", "<value>" },
-    }
+    path: "/bin"
 );
 
 // handle response
@@ -295,7 +265,6 @@ Passthrough PUT
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -305,11 +274,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.UpdatePassthroughJsonAsync(
     connectionId: "<id>",
-    path: "/var/tmp",
-    requestBody: "<value>",
-    query: new Dictionary<string, object>() {
-        { "key", "<value>" },
-    }
+    path: "/var/tmp"
 );
 
 // handle response
@@ -341,8 +306,6 @@ Passthrough PUT
 ### Example Usage
 
 ```csharp
-using System;
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -352,11 +315,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Passthrough.UpdatePassthroughRawAsync(
     connectionId: "<id>",
-    path: "/var/tmp",
-    requestBody: System.Text.Encoding.UTF8.GetBytes("0x62ce3B7Ebe"),
-    query: new Dictionary<string, object>() {
-        { "key", "<value>" },
-    }
+    path: "/var/tmp"
 );
 
 // handle response

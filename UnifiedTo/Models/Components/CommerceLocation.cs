@@ -24,6 +24,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonProperty("currency")]
+        public string? Currency { get; set; }
+
         [JsonProperty("description")]
         public string? Description { get; set; }
 
@@ -33,8 +36,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        [JsonProperty("language_locale")]
+        public string? LanguageLocale { get; set; }
+
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
+
+        [JsonProperty("parent_id")]
+        public string? ParentId { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }

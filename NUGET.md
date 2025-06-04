@@ -7,7 +7,6 @@
 ### Example
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -17,11 +16,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
     accountingAccount: new AccountingAccount() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -41,7 +36,6 @@ This SDK supports the following security scheme globally:
 
 You can set the security parameters through the `security` optional parameter when initializing the SDK client instance. For example:
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -51,11 +45,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
     accountingAccount: new AccountingAccount() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -85,7 +75,6 @@ When custom error responses are specified for an operation, the SDK may also thr
 ### Example
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Errors;
@@ -98,11 +87,7 @@ try
 {
     var res = await sdk.Accounting.CreateAccountingAccountAsync(
         accountingAccount: new AccountingAccount() {},
-        connectionId: "<id>",
-        fields: new List<string>() {
-            "<value>",
-        },
-        raw: "<value>"
+        connectionId: "<id>"
     );
 
     // handle response
@@ -134,7 +119,6 @@ You can override the default server globally by passing a server index to the `s
 #### Example
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -147,11 +131,7 @@ var sdk = new UnifiedToSDK(
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
     accountingAccount: new AccountingAccount() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -161,7 +141,6 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 The default server can also be overridden globally by passing a URL to the `serverUrl: string` optional parameter when initializing the SDK client instance. For example:
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -174,11 +153,7 @@ var sdk = new UnifiedToSDK(
 
 var res = await sdk.Accounting.CreateAccountingAccountAsync(
     accountingAccount: new AccountingAccount() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response

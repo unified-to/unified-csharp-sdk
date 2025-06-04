@@ -49,7 +49,6 @@ Create a company
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -59,11 +58,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.CreateCrmCompanyAsync(
     crmCompany: new CrmCompany() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -95,7 +90,6 @@ Create a contact
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -105,11 +99,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.CreateCrmContactAsync(
     crmContact: new CrmContact() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -141,7 +131,6 @@ Create a deal
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -151,11 +140,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.CreateCrmDealAsync(
     crmDeal: new CrmDeal() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -187,7 +172,6 @@ Create an event
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -197,11 +181,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.CreateCrmEventAsync(
     crmEvent: new CrmEvent() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -233,7 +213,6 @@ Create a lead
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -243,11 +222,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.CreateCrmLeadAsync(
     crmLead: new CrmLead() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -279,7 +254,6 @@ Create a pipeline
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -289,11 +263,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.CreateCrmPipelineAsync(
     crmPipeline: new CrmPipeline() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -325,7 +295,6 @@ Retrieve a company
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -335,11 +304,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.GetCrmCompanyAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -371,7 +336,6 @@ Retrieve a contact
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -381,11 +345,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.GetCrmContactAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -417,7 +377,6 @@ Retrieve a deal
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -427,11 +386,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.GetCrmDealAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -463,7 +418,6 @@ Retrieve an event
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -473,11 +427,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.GetCrmEventAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -509,7 +459,6 @@ Retrieve a lead
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -519,11 +468,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.GetCrmLeadAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -555,7 +500,6 @@ Retrieve a pipeline
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -565,11 +509,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Crm.GetCrmPipelineAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response

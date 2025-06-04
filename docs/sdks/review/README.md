@@ -19,7 +19,6 @@ Create a review
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -31,11 +30,7 @@ var res = await sdk.Review.CreateCommerceReviewAsync(
     commerceReview: new CommerceReview() {
         ItemId = "<id>",
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -67,7 +62,6 @@ Retrieve a review
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -77,11 +71,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Review.GetCommerceReviewAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response

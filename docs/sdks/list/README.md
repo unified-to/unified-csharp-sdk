@@ -19,7 +19,6 @@ Create a list
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -29,11 +28,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.List.CreateMartechListAsync(
     marketingList: new MarketingList() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -65,7 +60,6 @@ Retrieve a list
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -75,11 +69,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.List.GetMartechListAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response

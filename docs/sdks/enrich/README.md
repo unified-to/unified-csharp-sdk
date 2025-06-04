@@ -22,11 +22,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Enrich.ListEnrichCompaniesAsync(
-    connectionId: "<id>",
-    domain: "shocked-blowgun.biz",
-    name: "<value>"
-);
+var res = await sdk.Enrich.ListEnrichCompaniesAsync(connectionId: "<id>");
 
 // handle response
 ```

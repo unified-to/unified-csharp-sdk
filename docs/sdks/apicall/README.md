@@ -58,7 +58,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedApicallsRequest req = new ListUnifiedApicallsRequest() {};
+ListUnifiedApicallsRequest req = ;
 
 var res = await sdk.Apicall.ListUnifiedApicallsAsync(req);
 

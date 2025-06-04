@@ -28,7 +28,6 @@ Create a company
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -38,11 +37,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.CreateCrmCompanyAsync(
     crmCompany: new CrmCompany() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -74,7 +69,6 @@ Create a company
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -84,11 +78,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.CreateHrisCompanyAsync(
     hrisCompany: new HrisCompany() {},
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -120,7 +110,6 @@ Retrieve a company
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -130,11 +119,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.GetAtsCompanyAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -166,7 +151,6 @@ Retrieve a company
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -176,11 +160,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.GetCrmCompanyAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -212,7 +192,6 @@ Retrieve a company
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -222,11 +201,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Company.GetHrisCompanyAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -345,11 +320,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-var res = await sdk.Company.ListEnrichCompaniesAsync(
-    connectionId: "<id>",
-    domain: "shocked-blowgun.biz",
-    name: "<value>"
-);
+var res = await sdk.Company.ListEnrichCompaniesAsync(connectionId: "<id>");
 
 // handle response
 ```

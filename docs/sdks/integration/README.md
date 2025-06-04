@@ -105,7 +105,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListUnifiedIntegrationsRequest req = new ListUnifiedIntegrationsRequest() {};
+ListUnifiedIntegrationsRequest req = ;
 
 var res = await sdk.Integration.ListUnifiedIntegrationsAsync(req);
 

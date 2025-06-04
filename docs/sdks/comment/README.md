@@ -31,7 +31,6 @@ Create a comment
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -43,11 +42,7 @@ var res = await sdk.Comment.CreateKmsCommentAsync(
     kmsComment: new KmsComment() {
         Content = "<value>",
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -79,7 +74,6 @@ Create a comment
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -92,11 +86,7 @@ var res = await sdk.Comment.CreateTaskCommentAsync(
         TaskId = "<id>",
         Text = "<value>",
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -128,7 +118,6 @@ Create a comment
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -140,11 +129,7 @@ var res = await sdk.Comment.CreateUcCommentAsync(
     ucComment: new UcComment() {
         Content = "<value>",
     },
-    connectionId: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    connectionId: "<id>"
 );
 
 // handle response
@@ -176,7 +161,6 @@ Retrieve a comment
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -186,11 +170,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Comment.GetKmsCommentAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -222,7 +202,6 @@ Retrieve a comment
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -232,11 +211,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Comment.GetTaskCommentAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
@@ -268,7 +243,6 @@ Retrieve a comment
 ### Example Usage
 
 ```csharp
-using System.Collections.Generic;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -278,11 +252,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Comment.GetUcCommentAsync(
     connectionId: "<id>",
-    id: "<id>",
-    fields: new List<string>() {
-        "<value>",
-    },
-    raw: "<value>"
+    id: "<id>"
 );
 
 // handle response
