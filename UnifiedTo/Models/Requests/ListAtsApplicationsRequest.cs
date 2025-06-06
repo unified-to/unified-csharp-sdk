@@ -22,6 +22,12 @@ namespace UnifiedTo.Models.Requests
         public string? CandidateId { get; set; }
 
         /// <summary>
+        /// The company ID to filter by
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=company_id")]
+        public string? CompanyId { get; set; }
+
+        /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
