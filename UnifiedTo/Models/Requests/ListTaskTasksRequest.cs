@@ -64,6 +64,12 @@ namespace UnifiedTo.Models.Requests
         public string? Sort { get; set; }
 
         /// <summary>
+        /// The status to filter by
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=status")]
+        public string? Status { get; set; }
+
+        /// <summary>
         /// Return only results whose updated date is equal or greater to this value
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]

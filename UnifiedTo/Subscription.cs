@@ -60,8 +60,8 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.24.2";
-        private const string _sdkGenVersion = "2.621.3";
+        private const string _sdkVersion = "0.24.3";
+        private const string _sdkGenVersion = "2.624.0";
         private const string _openapiDocVersion = "1.0";
 
         public Subscription(SDKConfig config)

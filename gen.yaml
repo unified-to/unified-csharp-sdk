@@ -17,9 +17,10 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 csharp:
-  version: 0.24.2
+  version: 0.24.3
   additionalDependencies: []
   author: Unified API Inc.
+  baseErrorName: UnifiedToError
   clientServerStatusCodesAsErrors: true
   company: ""
   defaultErrorName: SDKException
