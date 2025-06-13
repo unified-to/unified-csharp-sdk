@@ -57,6 +57,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("message_html")]
         public string? MessageHtml { get; set; }
 
+        [JsonProperty("message_markdown")]
+        public string? MessageMarkdown { get; set; }
+
         [JsonProperty("parent_message_id")]
         public string? ParentMessageId { get; set; }
 
