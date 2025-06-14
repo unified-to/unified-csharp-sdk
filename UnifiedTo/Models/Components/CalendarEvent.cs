@@ -29,6 +29,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("end_at")]
         public string? EndAt { get; set; }
 
+        [JsonProperty("has_conference")]
+        public bool? HasConference { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 

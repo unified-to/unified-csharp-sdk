@@ -49,6 +49,12 @@ namespace UnifiedTo.Models.Requests
         public string? Order { get; set; }
 
         /// <summary>
+        /// The pipeline ID to filter by
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=pipeline_id")]
+        public string? PipelineId { get; set; }
+
+        /// <summary>
         /// Query string to search. eg. email address or name
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=query")]
