@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: ee3cd61f0397ce8487b98d4e43c4a292
+  docChecksum: 9c22bf145f46a0257497cabc87445f51
   docVersion: "1.0"
-  speakeasyVersion: 1.563.0
-  generationVersion: 2.629.1
-  releaseVersion: 0.24.5
-  configChecksum: 3a1eb999a77e7a14227b7991f51f94aa
+  speakeasyVersion: 1.568.0
+  generationVersion: 2.632.2
+  releaseVersion: 0.24.6
+  configChecksum: 81f2743ecd3db0206f53b975f68d83c8
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -170,10 +170,12 @@ generatedFiles:
   - UnifiedTo/Models/Components/AtsStatusStatus.cs
   - UnifiedTo/Models/Components/AtsTelephone.cs
   - UnifiedTo/Models/Components/AtsTelephoneType.cs
+  - UnifiedTo/Models/Components/CalendarAttachment.cs
   - UnifiedTo/Models/Components/CalendarAttendee.cs
   - UnifiedTo/Models/Components/CalendarAttendeeStatus.cs
   - UnifiedTo/Models/Components/CalendarBusy.cs
   - UnifiedTo/Models/Components/CalendarCalendar.cs
+  - UnifiedTo/Models/Components/CalendarConference.cs
   - UnifiedTo/Models/Components/CalendarEvent.cs
   - UnifiedTo/Models/Components/CalendarEventRecurrence.cs
   - UnifiedTo/Models/Components/CalendarEventRecurrenceFrequency.cs
@@ -1573,10 +1575,12 @@ generatedFiles:
   - docs/Models/Components/AtsStatusStatus.md
   - docs/Models/Components/AtsTelephone.md
   - docs/Models/Components/AtsTelephoneType.md
+  - docs/Models/Components/CalendarAttachment.md
   - docs/Models/Components/CalendarAttendee.md
   - docs/Models/Components/CalendarAttendeeStatus.md
   - docs/Models/Components/CalendarBusy.md
   - docs/Models/Components/CalendarCalendar.md
+  - docs/Models/Components/CalendarConference.md
   - docs/Models/Components/CalendarEvent.md
   - docs/Models/Components/CalendarEventRecurrence.md
   - docs/Models/Components/CalendarEventRecurrenceFrequency.md

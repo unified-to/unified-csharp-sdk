@@ -17,11 +17,17 @@ namespace UnifiedTo.Models.Components
     public class CalendarEvent
     {
 
+        [JsonProperty("attachments")]
+        public List<CalendarAttachment>? Attachments { get; set; }
+
         [JsonProperty("attendees")]
         public List<CalendarAttendee>? Attendees { get; set; }
 
         [JsonProperty("calendar_id")]
         public string? CalendarId { get; set; }
+
+        [JsonProperty("conference")]
+        public List<CalendarConference>? Conference { get; set; }
 
         [JsonProperty("created_at")]
         public string? CreatedAt { get; set; }
