@@ -1,0 +1,15 @@
+# TaskMetadata
+
+
+## Fields
+
+| Field                                                                     | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `ExtraData`                                                               | [TaskMetadataExtraData](../../Models/Components/TaskMetadataExtraData.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Format`                                                                  | [TaskMetadataFormat](../../Models/Components/TaskMetadataFormat.md)       | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Id`                                                                      | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Key`                                                                     | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Namespace`                                                               | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Slug`                                                                    | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Type`                                                                    | *string*                                                                  | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `Value`                                                                   | [TaskMetadataValue](../../Models/Components/TaskMetadataValue.md)         | :heavy_minus_sign:                                                        | N/A                                                                       |

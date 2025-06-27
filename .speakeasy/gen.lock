@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: eefce76fdb52f66af4668d4a91100b69
+  docChecksum: 1ed136fdd156254f45506d66d75335d4
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.24.7
-  configChecksum: 82dee8706f4e4bea818843d3e0e781c5
+  releaseVersion: 0.26.0
+  configChecksum: ad3156842ac5547a921b7d351bb3353e
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -517,6 +517,28 @@ generatedFiles:
   - UnifiedTo/Models/Components/StorageFileType.cs
   - UnifiedTo/Models/Components/StoragePermission.cs
   - UnifiedTo/Models/Components/TaskComment.cs
+  - UnifiedTo/Models/Components/TaskMetadata.cs
+  - UnifiedTo/Models/Components/TaskMetadata1.cs
+  - UnifiedTo/Models/Components/TaskMetadata2.cs
+  - UnifiedTo/Models/Components/TaskMetadata3.cs
+  - UnifiedTo/Models/Components/TaskMetadata4.cs
+  - UnifiedTo/Models/Components/TaskMetadata5.cs
+  - UnifiedTo/Models/Components/TaskMetadataExtraData.cs
+  - UnifiedTo/Models/Components/TaskMetadataFormat.cs
+  - UnifiedTo/Models/Components/TaskMetadataSchemas1.cs
+  - UnifiedTo/Models/Components/TaskMetadataSchemas2.cs
+  - UnifiedTo/Models/Components/TaskMetadataSchemas3.cs
+  - UnifiedTo/Models/Components/TaskMetadataSchemas4.cs
+  - UnifiedTo/Models/Components/TaskMetadataSchemas5.cs
+  - UnifiedTo/Models/Components/TaskMetadataSchemasExtraData2.cs
+  - UnifiedTo/Models/Components/TaskMetadataSchemasExtraData22.cs
+  - UnifiedTo/Models/Components/TaskMetadataSchemasExtraData32.cs
+  - UnifiedTo/Models/Components/TaskMetadataSchemasExtraData52.cs
+  - UnifiedTo/Models/Components/TaskMetadataSchemasValue2.cs
+  - UnifiedTo/Models/Components/TaskMetadataSchemasValue32.cs
+  - UnifiedTo/Models/Components/TaskMetadataSchemasValue42.cs
+  - UnifiedTo/Models/Components/TaskMetadataSchemasValue52.cs
+  - UnifiedTo/Models/Components/TaskMetadataValue.cs
   - UnifiedTo/Models/Components/TaskProject.cs
   - UnifiedTo/Models/Components/TaskTask.cs
   - UnifiedTo/Models/Components/TaskTaskStatus.cs
@@ -1922,6 +1944,28 @@ generatedFiles:
   - docs/Models/Components/StorageFileType.md
   - docs/Models/Components/StoragePermission.md
   - docs/Models/Components/TaskComment.md
+  - docs/Models/Components/TaskMetadata.md
+  - docs/Models/Components/TaskMetadata1.md
+  - docs/Models/Components/TaskMetadata2.md
+  - docs/Models/Components/TaskMetadata3.md
+  - docs/Models/Components/TaskMetadata4.md
+  - docs/Models/Components/TaskMetadata5.md
+  - docs/Models/Components/TaskMetadataExtraData.md
+  - docs/Models/Components/TaskMetadataFormat.md
+  - docs/Models/Components/TaskMetadataSchemas1.md
+  - docs/Models/Components/TaskMetadataSchemas2.md
+  - docs/Models/Components/TaskMetadataSchemas3.md
+  - docs/Models/Components/TaskMetadataSchemas4.md
+  - docs/Models/Components/TaskMetadataSchemas5.md
+  - docs/Models/Components/TaskMetadataSchemasExtraData2.md
+  - docs/Models/Components/TaskMetadataSchemasExtraData22.md
+  - docs/Models/Components/TaskMetadataSchemasExtraData32.md
+  - docs/Models/Components/TaskMetadataSchemasExtraData52.md
+  - docs/Models/Components/TaskMetadataSchemasValue2.md
+  - docs/Models/Components/TaskMetadataSchemasValue32.md
+  - docs/Models/Components/TaskMetadataSchemasValue42.md
+  - docs/Models/Components/TaskMetadataSchemasValue52.md
+  - docs/Models/Components/TaskMetadataValue.md
   - docs/Models/Components/TaskProject.md
   - docs/Models/Components/TaskTask.md
   - docs/Models/Components/TaskTaskStatus.md
