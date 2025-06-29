@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 1ed136fdd156254f45506d66d75335d4
+  docChecksum: 30f30cd0f1e19f64975bb2a6da82b7fc
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.26.0
-  configChecksum: ad3156842ac5547a921b7d351bb3353e
+  releaseVersion: 0.28.0
+  configChecksum: 94b331012fe9c4e84ef4222d0332f775
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -590,6 +590,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateAtsApplicationResponse.cs
   - UnifiedTo/Models/Requests/CreateAtsCandidateRequest.cs
   - UnifiedTo/Models/Requests/CreateAtsCandidateResponse.cs
+  - UnifiedTo/Models/Requests/CreateAtsCompanyRequest.cs
+  - UnifiedTo/Models/Requests/CreateAtsCompanyResponse.cs
   - UnifiedTo/Models/Requests/CreateAtsDocumentRequest.cs
   - UnifiedTo/Models/Requests/CreateAtsDocumentResponse.cs
   - UnifiedTo/Models/Requests/CreateAtsInterviewRequest.cs
@@ -1062,6 +1064,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchAtsApplicationResponse.cs
   - UnifiedTo/Models/Requests/PatchAtsCandidateRequest.cs
   - UnifiedTo/Models/Requests/PatchAtsCandidateResponse.cs
+  - UnifiedTo/Models/Requests/PatchAtsCompanyRequest.cs
+  - UnifiedTo/Models/Requests/PatchAtsCompanyResponse.cs
   - UnifiedTo/Models/Requests/PatchAtsDocumentRequest.cs
   - UnifiedTo/Models/Requests/PatchAtsDocumentResponse.cs
   - UnifiedTo/Models/Requests/PatchAtsInterviewRequest.cs
@@ -1203,6 +1207,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveAtsApplicationResponse.cs
   - UnifiedTo/Models/Requests/RemoveAtsCandidateRequest.cs
   - UnifiedTo/Models/Requests/RemoveAtsCandidateResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAtsCompanyRequest.cs
+  - UnifiedTo/Models/Requests/RemoveAtsCompanyResponse.cs
   - UnifiedTo/Models/Requests/RemoveAtsDocumentRequest.cs
   - UnifiedTo/Models/Requests/RemoveAtsDocumentResponse.cs
   - UnifiedTo/Models/Requests/RemoveAtsInterviewRequest.cs
@@ -1339,6 +1345,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateAtsApplicationResponse.cs
   - UnifiedTo/Models/Requests/UpdateAtsCandidateRequest.cs
   - UnifiedTo/Models/Requests/UpdateAtsCandidateResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAtsCompanyRequest.cs
+  - UnifiedTo/Models/Requests/UpdateAtsCompanyResponse.cs
   - UnifiedTo/Models/Requests/UpdateAtsDocumentRequest.cs
   - UnifiedTo/Models/Requests/UpdateAtsDocumentResponse.cs
   - UnifiedTo/Models/Requests/UpdateAtsInterviewRequest.cs
@@ -2016,6 +2024,8 @@ generatedFiles:
   - docs/Models/Requests/CreateAtsApplicationResponse.md
   - docs/Models/Requests/CreateAtsCandidateRequest.md
   - docs/Models/Requests/CreateAtsCandidateResponse.md
+  - docs/Models/Requests/CreateAtsCompanyRequest.md
+  - docs/Models/Requests/CreateAtsCompanyResponse.md
   - docs/Models/Requests/CreateAtsDocumentRequest.md
   - docs/Models/Requests/CreateAtsDocumentResponse.md
   - docs/Models/Requests/CreateAtsInterviewRequest.md
@@ -2488,6 +2498,8 @@ generatedFiles:
   - docs/Models/Requests/PatchAtsApplicationResponse.md
   - docs/Models/Requests/PatchAtsCandidateRequest.md
   - docs/Models/Requests/PatchAtsCandidateResponse.md
+  - docs/Models/Requests/PatchAtsCompanyRequest.md
+  - docs/Models/Requests/PatchAtsCompanyResponse.md
   - docs/Models/Requests/PatchAtsDocumentRequest.md
   - docs/Models/Requests/PatchAtsDocumentResponse.md
   - docs/Models/Requests/PatchAtsInterviewRequest.md
@@ -2629,6 +2641,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveAtsApplicationResponse.md
   - docs/Models/Requests/RemoveAtsCandidateRequest.md
   - docs/Models/Requests/RemoveAtsCandidateResponse.md
+  - docs/Models/Requests/RemoveAtsCompanyRequest.md
+  - docs/Models/Requests/RemoveAtsCompanyResponse.md
   - docs/Models/Requests/RemoveAtsDocumentRequest.md
   - docs/Models/Requests/RemoveAtsDocumentResponse.md
   - docs/Models/Requests/RemoveAtsInterviewRequest.md
@@ -2765,6 +2779,8 @@ generatedFiles:
   - docs/Models/Requests/UpdateAtsApplicationResponse.md
   - docs/Models/Requests/UpdateAtsCandidateRequest.md
   - docs/Models/Requests/UpdateAtsCandidateResponse.md
+  - docs/Models/Requests/UpdateAtsCompanyRequest.md
+  - docs/Models/Requests/UpdateAtsCompanyResponse.md
   - docs/Models/Requests/UpdateAtsDocumentRequest.md
   - docs/Models/Requests/UpdateAtsDocumentResponse.md
   - docs/Models/Requests/UpdateAtsInterviewRequest.md
@@ -7017,5 +7033,43 @@ examples:
       responses:
         "200":
           application/json: {}
+  createAtsCompany:
+    speakeasy-default-create-ats-company:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  patchAtsCompany:
+    speakeasy-default-patch-ats-company:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
+  removeAtsCompany:
+    speakeasy-default-remove-ats-company:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateAtsCompany:
+    speakeasy-default-update-ats-company:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {"name": "<value>"}
+      responses:
+        "200":
+          application/json: {"name": "<value>"}
 examplesVersion: 1.0.2
 generatedTests: {}

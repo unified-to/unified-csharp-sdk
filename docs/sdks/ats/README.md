@@ -8,6 +8,7 @@
 * [CreateAtsActivity](#createatsactivity) - Create an activity
 * [CreateAtsApplication](#createatsapplication) - Create an application
 * [CreateAtsCandidate](#createatscandidate) - Create a candidate
+* [CreateAtsCompany](#createatscompany) - Create a company
 * [CreateAtsDocument](#createatsdocument) - Create a document
 * [CreateAtsInterview](#createatsinterview) - Create an interview
 * [CreateAtsJob](#createatsjob) - Create a job
@@ -32,6 +33,7 @@
 * [PatchAtsActivity](#patchatsactivity) - Update an activity
 * [PatchAtsApplication](#patchatsapplication) - Update an application
 * [PatchAtsCandidate](#patchatscandidate) - Update a candidate
+* [PatchAtsCompany](#patchatscompany) - Update a company
 * [PatchAtsDocument](#patchatsdocument) - Update a document
 * [PatchAtsInterview](#patchatsinterview) - Update an interview
 * [PatchAtsJob](#patchatsjob) - Update a job
@@ -39,6 +41,7 @@
 * [RemoveAtsActivity](#removeatsactivity) - Remove an activity
 * [RemoveAtsApplication](#removeatsapplication) - Remove an application
 * [RemoveAtsCandidate](#removeatscandidate) - Remove a candidate
+* [RemoveAtsCompany](#removeatscompany) - Remove a company
 * [RemoveAtsDocument](#removeatsdocument) - Remove a document
 * [RemoveAtsInterview](#removeatsinterview) - Remove an interview
 * [RemoveAtsJob](#removeatsjob) - Remove a job
@@ -46,6 +49,7 @@
 * [UpdateAtsActivity](#updateatsactivity) - Update an activity
 * [UpdateAtsApplication](#updateatsapplication) - Update an application
 * [UpdateAtsCandidate](#updateatscandidate) - Update a candidate
+* [UpdateAtsCompany](#updateatscompany) - Update a company
 * [UpdateAtsDocument](#updateatsdocument) - Update a document
 * [UpdateAtsInterview](#updateatsinterview) - Update an interview
 * [UpdateAtsJob](#updateatsjob) - Update a job
@@ -167,6 +171,49 @@ var res = await sdk.Ats.CreateAtsCandidateAsync(
 ### Response
 
 **[CreateAtsCandidateResponse](../../Models/Requests/CreateAtsCandidateResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateAtsCompany
+
+Create a company
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Ats.CreateAtsCompanyAsync(
+    atsCompany: new AtsCompany() {
+        Name = "<value>",
+    },
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `AtsCompany`                                                                                                                                     | [AtsCompany](../../Models/Components/AtsCompany.md)                                                                                              | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateAtsCompanyResponse](../../Models/Requests/CreateAtsCompanyResponse.md)**
 
 ### Errors
 
@@ -1152,6 +1199,50 @@ var res = await sdk.Ats.PatchAtsCandidateAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchAtsCompany
+
+Update a company
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchAtsCompanyRequest req = new PatchAtsCompanyRequest() {
+    AtsCompany = new AtsCompany() {
+        Name = "<value>",
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Ats.PatchAtsCompanyAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [PatchAtsCompanyRequest](../../Models/Requests/PatchAtsCompanyRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+
+### Response
+
+**[PatchAtsCompanyResponse](../../Models/Requests/PatchAtsCompanyResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchAtsDocument
 
 Update a document
@@ -1437,6 +1528,45 @@ var res = await sdk.Ats.RemoveAtsCandidateAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## RemoveAtsCompany
+
+Remove a company
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Ats.RemoveAtsCompanyAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Company    |
+
+### Response
+
+**[RemoveAtsCompanyResponse](../../Models/Requests/RemoveAtsCompanyResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## RemoveAtsDocument
 
 Remove a document
@@ -1712,6 +1842,50 @@ var res = await sdk.Ats.UpdateAtsCandidateAsync(req);
 ### Response
 
 **[UpdateAtsCandidateResponse](../../Models/Requests/UpdateAtsCandidateResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateAtsCompany
+
+Update a company
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateAtsCompanyRequest req = new UpdateAtsCompanyRequest() {
+    AtsCompany = new AtsCompany() {
+        Name = "<value>",
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Ats.UpdateAtsCompanyAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [UpdateAtsCompanyRequest](../../Models/Requests/UpdateAtsCompanyRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+
+### Response
+
+**[UpdateAtsCompanyResponse](../../Models/Requests/UpdateAtsCompanyResponse.md)**
 
 ### Errors
 
