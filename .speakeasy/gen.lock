@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 30f30cd0f1e19f64975bb2a6da82b7fc
+  docChecksum: b9a9d44d0d49d0a08964e6f3ef075270
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.28.0
-  configChecksum: 94b331012fe9c4e84ef4222d0332f775
+  releaseVersion: 0.30.0
+  configChecksum: 25f5aa46a2bdc618ed1a3e210d7ae1db
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -399,6 +399,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/MessagingChannel.cs
   - UnifiedTo/Models/Components/MessagingMember.cs
   - UnifiedTo/Models/Components/MessagingMessage.cs
+  - UnifiedTo/Models/Components/MessagingReaction.cs
   - UnifiedTo/Models/Components/MetadataMetadata.cs
   - UnifiedTo/Models/Components/MetadataMetadataFormat.cs
   - UnifiedTo/Models/Components/ObjectType.cs
@@ -462,6 +463,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyIntegrationCategories.cs
   - UnifiedTo/Models/Components/PropertyLmsStudentAddress.cs
   - UnifiedTo/Models/Components/PropertyMessagingMessageAuthorMember.cs
+  - UnifiedTo/Models/Components/PropertyMessagingReactionMember.cs
   - UnifiedTo/Models/Components/PropertyScimGroupMeta.cs
   - UnifiedTo/Models/Components/PropertyScimGroupSchemas.cs
   - UnifiedTo/Models/Components/PropertyScimUserMeta.cs
@@ -1834,6 +1836,7 @@ generatedFiles:
   - docs/Models/Components/MessagingChannel.md
   - docs/Models/Components/MessagingMember.md
   - docs/Models/Components/MessagingMessage.md
+  - docs/Models/Components/MessagingReaction.md
   - docs/Models/Components/MetadataMetadata.md
   - docs/Models/Components/MetadataMetadataFormat.md
   - docs/Models/Components/ObjectType.md
@@ -1897,6 +1900,7 @@ generatedFiles:
   - docs/Models/Components/PropertyIntegrationCategories.md
   - docs/Models/Components/PropertyLmsStudentAddress.md
   - docs/Models/Components/PropertyMessagingMessageAuthorMember.md
+  - docs/Models/Components/PropertyMessagingReactionMember.md
   - docs/Models/Components/PropertyScimGroupMeta.md
   - docs/Models/Components/PropertyScimGroupSchemas.md
   - docs/Models/Components/PropertyScimUserMeta.md

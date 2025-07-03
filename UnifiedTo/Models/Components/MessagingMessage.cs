@@ -66,6 +66,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        [JsonProperty("reactions")]
+        public List<MessagingReaction>? Reactions { get; set; }
+
         [JsonProperty("reference")]
         public string? Reference { get; set; }
 
