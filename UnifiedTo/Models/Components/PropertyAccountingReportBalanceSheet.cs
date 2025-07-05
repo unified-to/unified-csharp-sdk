@@ -10,6 +10,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
@@ -18,15 +19,39 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("assets")]
-        public List<AccountingBalanceSheetItem>? Assets { get; set; }
+        public List<AccountingBalancesheetItem>? Assets { get; set; }
+
+        [JsonProperty("created_at")]
+        public DateTime? CreatedAt { get; set; }
+
+        [JsonProperty("currency")]
+        public string? Currency { get; set; }
+
+        [JsonProperty("end_at")]
+        public DateTime? EndAt { get; set; }
 
         [JsonProperty("equity")]
-        public List<AccountingBalanceSheetItem>? Equity { get; set; }
+        public List<AccountingBalancesheetItem>? Equity { get; set; }
+
+        [JsonProperty("id")]
+        public string? Id { get; set; }
 
         [JsonProperty("liabilities")]
-        public List<AccountingBalanceSheetItem>? Liabilities { get; set; }
+        public List<AccountingBalancesheetItem>? Liabilities { get; set; }
+
+        [JsonProperty("name")]
+        public string? Name { get; set; }
 
         [JsonProperty("net_assets_amount")]
         public double? NetAssetsAmount { get; set; }
+
+        [JsonProperty("raw")]
+        public Dictionary<string, object>? Raw { get; set; }
+
+        [JsonProperty("start_at")]
+        public DateTime? StartAt { get; set; }
+
+        [JsonProperty("updated_at")]
+        public DateTime? UpdatedAt { get; set; }
     }
 }

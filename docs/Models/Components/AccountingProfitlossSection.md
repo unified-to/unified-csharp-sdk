@@ -1,0 +1,11 @@
+# AccountingProfitlossSection
+
+
+## Fields
+
+| Field                                                                                       | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `Accounts`                                                                                  | List<[AccountingProfitlossAccount](../../Models/Components/AccountingProfitlossAccount.md)> | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `SectionName`                                                                               | *string*                                                                                    | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `SectionType`                                                                               | *string*                                                                                    | :heavy_minus_sign:                                                                          | N/A                                                                                         |
+| `TotalAmount`                                                                               | *double*                                                                                    | :heavy_minus_sign:                                                                          | N/A                                                                                         |

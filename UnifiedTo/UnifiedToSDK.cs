@@ -27,14 +27,21 @@ namespace UnifiedTo
     {
         public IAccounting Accounting { get; }
         public IAccount Account { get; }
+        public IBalancesheet Balancesheet { get; }
+        public IBill Bill { get; }
         public IContact Contact { get; }
+        public ICreditmemo Creditmemo { get; }
         public IInvoice Invoice { get; }
         public IJournal Journal { get; }
         public IOrder Order { get; }
         public IOrganization Organization { get; }
+        public IProfitloss Profitloss { get; }
+        public IPurchaseorder Purchaseorder { get; }
         public IReport Report { get; }
+        public ISalesorder Salesorder { get; }
         public ITaxrate Taxrate { get; }
         public ITransaction Transaction { get; }
+        public ITrialbalance Trialbalance { get; }
         public IAts Ats { get; }
         public IActivity Activity { get; }
         public IApplication Application { get; }
@@ -129,19 +136,26 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.30.0";
+        private const string _sdkVersion = "0.32.0";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
         public IAccount Account { get; private set; }
+        public IBalancesheet Balancesheet { get; private set; }
+        public IBill Bill { get; private set; }
         public IContact Contact { get; private set; }
+        public ICreditmemo Creditmemo { get; private set; }
         public IInvoice Invoice { get; private set; }
         public IJournal Journal { get; private set; }
         public IOrder Order { get; private set; }
         public IOrganization Organization { get; private set; }
+        public IProfitloss Profitloss { get; private set; }
+        public IPurchaseorder Purchaseorder { get; private set; }
         public IReport Report { get; private set; }
+        public ISalesorder Salesorder { get; private set; }
         public ITaxrate Taxrate { get; private set; }
         public ITransaction Transaction { get; private set; }
+        public ITrialbalance Trialbalance { get; private set; }
         public IAts Ats { get; private set; }
         public IActivity Activity { get; private set; }
         public IApplication Application { get; private set; }
@@ -235,7 +249,13 @@ namespace UnifiedTo
 
             Account = new Account(SDKConfiguration);
 
+            Balancesheet = new Balancesheet(SDKConfiguration);
+
+            Bill = new Bill(SDKConfiguration);
+
             Contact = new Contact(SDKConfiguration);
+
+            Creditmemo = new Creditmemo(SDKConfiguration);
 
             Invoice = new Invoice(SDKConfiguration);
 
@@ -245,11 +265,19 @@ namespace UnifiedTo
 
             Organization = new Organization(SDKConfiguration);
 
+            Profitloss = new Profitloss(SDKConfiguration);
+
+            Purchaseorder = new Purchaseorder(SDKConfiguration);
+
             Report = new Report(SDKConfiguration);
+
+            Salesorder = new Salesorder(SDKConfiguration);
 
             Taxrate = new Taxrate(SDKConfiguration);
 
             Transaction = new Transaction(SDKConfiguration);
+
+            Trialbalance = new Trialbalance(SDKConfiguration);
 
             Ats = new Ats(SDKConfiguration);
 
@@ -464,7 +492,13 @@ namespace UnifiedTo
 
             Account = new Account(SDKConfiguration);
 
+            Balancesheet = new Balancesheet(SDKConfiguration);
+
+            Bill = new Bill(SDKConfiguration);
+
             Contact = new Contact(SDKConfiguration);
+
+            Creditmemo = new Creditmemo(SDKConfiguration);
 
             Invoice = new Invoice(SDKConfiguration);
 
@@ -474,11 +508,19 @@ namespace UnifiedTo
 
             Organization = new Organization(SDKConfiguration);
 
+            Profitloss = new Profitloss(SDKConfiguration);
+
+            Purchaseorder = new Purchaseorder(SDKConfiguration);
+
             Report = new Report(SDKConfiguration);
+
+            Salesorder = new Salesorder(SDKConfiguration);
 
             Taxrate = new Taxrate(SDKConfiguration);
 
             Transaction = new Transaction(SDKConfiguration);
+
+            Trialbalance = new Trialbalance(SDKConfiguration);
 
             Ats = new Ats(SDKConfiguration);
 

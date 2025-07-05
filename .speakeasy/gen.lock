@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: b9a9d44d0d49d0a08964e6f3ef075270
+  docChecksum: df14941bc85aac484869c35ad39aa806
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.30.0
-  configChecksum: 25f5aa46a2bdc618ed1a3e210d7ae1db
+  releaseVersion: 0.32.0
+  configChecksum: f39c01b46a73f032ccfe4831b7109d83
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -37,6 +37,8 @@ generatedFiles:
   - UnifiedTo/Applicationstatus.cs
   - UnifiedTo/Ats.cs
   - UnifiedTo/Auth.cs
+  - UnifiedTo/Balancesheet.cs
+  - UnifiedTo/Bill.cs
   - UnifiedTo/Branch.cs
   - UnifiedTo/Busy.cs
   - UnifiedTo/Calendar.cs
@@ -52,6 +54,7 @@ generatedFiles:
   - UnifiedTo/Connection.cs
   - UnifiedTo/Contact.cs
   - UnifiedTo/Course.cs
+  - UnifiedTo/Creditmemo.cs
   - UnifiedTo/Crm.cs
   - UnifiedTo/Customer.cs
   - UnifiedTo/Deal.cs
@@ -91,13 +94,20 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingAccount.cs
   - UnifiedTo/Models/Components/AccountingAssociatedContact.cs
   - UnifiedTo/Models/Components/AccountingAttachment.cs
-  - UnifiedTo/Models/Components/AccountingBalanceSheetItem.cs
+  - UnifiedTo/Models/Components/AccountingBalancesheet.cs
+  - UnifiedTo/Models/Components/AccountingBalancesheetItem.cs
+  - UnifiedTo/Models/Components/AccountingBill.cs
+  - UnifiedTo/Models/Components/AccountingBillStatus.cs
   - UnifiedTo/Models/Components/AccountingContact.cs
   - UnifiedTo/Models/Components/AccountingContactPaymentMethod.cs
   - UnifiedTo/Models/Components/AccountingContactPaymentMethodType.cs
+  - UnifiedTo/Models/Components/AccountingCreditmemo.cs
+  - UnifiedTo/Models/Components/AccountingCreditmemoPaymentCollectionMethod.cs
+  - UnifiedTo/Models/Components/AccountingCreditmemoStatus.cs
   - UnifiedTo/Models/Components/AccountingEmail.cs
   - UnifiedTo/Models/Components/AccountingEmailType.cs
   - UnifiedTo/Models/Components/AccountingInvoice.cs
+  - UnifiedTo/Models/Components/AccountingInvoicePaymentCollectionMethod.cs
   - UnifiedTo/Models/Components/AccountingInvoiceStatus.cs
   - UnifiedTo/Models/Components/AccountingInvoiceType.cs
   - UnifiedTo/Models/Components/AccountingJournal.cs
@@ -107,17 +117,25 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingOrderStatus.cs
   - UnifiedTo/Models/Components/AccountingOrderType.cs
   - UnifiedTo/Models/Components/AccountingOrganization.cs
-  - UnifiedTo/Models/Components/AccountingProfitAndLossCategory.cs
-  - UnifiedTo/Models/Components/AccountingProfitAndLossSubcategory.cs
+  - UnifiedTo/Models/Components/AccountingProfitloss.cs
+  - UnifiedTo/Models/Components/AccountingProfitlossAccount.cs
+  - UnifiedTo/Models/Components/AccountingProfitlossCategory.cs
+  - UnifiedTo/Models/Components/AccountingProfitlossSection.cs
+  - UnifiedTo/Models/Components/AccountingProfitlossSubcategory.cs
+  - UnifiedTo/Models/Components/AccountingPurchaseorder.cs
+  - UnifiedTo/Models/Components/AccountingPurchaseorderStatus.cs
   - UnifiedTo/Models/Components/AccountingReport.cs
   - UnifiedTo/Models/Components/AccountingReportType.cs
+  - UnifiedTo/Models/Components/AccountingSalesorder.cs
+  - UnifiedTo/Models/Components/AccountingSalesorderStatus.cs
   - UnifiedTo/Models/Components/AccountingTaxrate.cs
   - UnifiedTo/Models/Components/AccountingTelephone.cs
   - UnifiedTo/Models/Components/AccountingTelephoneType.cs
   - UnifiedTo/Models/Components/AccountingTransaction.cs
   - UnifiedTo/Models/Components/AccountingTransactionContact.cs
   - UnifiedTo/Models/Components/AccountingTransactionLineItem.cs
-  - UnifiedTo/Models/Components/AccountingTrialBalanceSubItem.cs
+  - UnifiedTo/Models/Components/AccountingTrialbalance.cs
+  - UnifiedTo/Models/Components/AccountingTrialbalanceSubItem.cs
   - UnifiedTo/Models/Components/Api.cs
   - UnifiedTo/Models/Components/ApiCall.cs
   - UnifiedTo/Models/Components/ApiCallType.cs
@@ -419,15 +437,19 @@ generatedFiles:
   - UnifiedTo/Models/Components/PaymentSubscriptionStatus.cs
   - UnifiedTo/Models/Components/PaymentType.cs
   - UnifiedTo/Models/Components/Priority.cs
-  - UnifiedTo/Models/Components/PropertyAccountingBalanceSheetItemSubItems.cs
+  - UnifiedTo/Models/Components/PropertyAccountingBalancesheetItemSubItems.cs
   - UnifiedTo/Models/Components/PropertyAccountingContactBillingAddress.cs
   - UnifiedTo/Models/Components/PropertyAccountingContactShippingAddress.cs
   - UnifiedTo/Models/Components/PropertyAccountingOrderBillingAddress.cs
   - UnifiedTo/Models/Components/PropertyAccountingOrderShippingAddress.cs
   - UnifiedTo/Models/Components/PropertyAccountingOrganizationAddress.cs
+  - UnifiedTo/Models/Components/PropertyAccountingPurchaseorderBillingAddress.cs
+  - UnifiedTo/Models/Components/PropertyAccountingPurchaseorderShippingAddress.cs
   - UnifiedTo/Models/Components/PropertyAccountingReportBalanceSheet.cs
   - UnifiedTo/Models/Components/PropertyAccountingReportProfitAndLoss.cs
   - UnifiedTo/Models/Components/PropertyAccountingReportTrialBalance.cs
+  - UnifiedTo/Models/Components/PropertyAccountingSalesorderBillingAddress.cs
+  - UnifiedTo/Models/Components/PropertyAccountingSalesorderShippingAddress.cs
   - UnifiedTo/Models/Components/PropertyAtsActivityFrom.cs
   - UnifiedTo/Models/Components/PropertyAtsActivityFromType.cs
   - UnifiedTo/Models/Components/PropertyAtsCandidateAddress.cs
@@ -574,14 +596,22 @@ generatedFiles:
   - UnifiedTo/Models/Requests/Categories.cs
   - UnifiedTo/Models/Requests/CreateAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingAccountResponse.cs
+  - UnifiedTo/Models/Requests/CreateAccountingBillRequest.cs
+  - UnifiedTo/Models/Requests/CreateAccountingBillResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingContactRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingContactResponse.cs
+  - UnifiedTo/Models/Requests/CreateAccountingCreditmemoRequest.cs
+  - UnifiedTo/Models/Requests/CreateAccountingCreditmemoResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingInvoiceResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingJournalRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingJournalResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingOrderRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingOrderResponse.cs
+  - UnifiedTo/Models/Requests/CreateAccountingPurchaseorderRequest.cs
+  - UnifiedTo/Models/Requests/CreateAccountingPurchaseorderResponse.cs
+  - UnifiedTo/Models/Requests/CreateAccountingSalesorderRequest.cs
+  - UnifiedTo/Models/Requests/CreateAccountingSalesorderResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingTaxrateResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingTransactionRequest.cs
@@ -715,8 +745,14 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateUnifiedWebhookResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingAccountResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingBalancesheetRequest.cs
+  - UnifiedTo/Models/Requests/GetAccountingBalancesheetResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingBillRequest.cs
+  - UnifiedTo/Models/Requests/GetAccountingBillResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingContactRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingContactResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingCreditmemoRequest.cs
+  - UnifiedTo/Models/Requests/GetAccountingCreditmemoResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingInvoiceResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingJournalRequest.cs
@@ -725,12 +761,20 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetAccountingOrderResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingOrganizationRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingOrganizationResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingProfitlossRequest.cs
+  - UnifiedTo/Models/Requests/GetAccountingProfitlossResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingPurchaseorderRequest.cs
+  - UnifiedTo/Models/Requests/GetAccountingPurchaseorderResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingReportRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingReportResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingSalesorderRequest.cs
+  - UnifiedTo/Models/Requests/GetAccountingSalesorderResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingTaxrateResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingTransactionRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingTransactionResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingTrialbalanceRequest.cs
+  - UnifiedTo/Models/Requests/GetAccountingTrialbalanceResponse.cs
   - UnifiedTo/Models/Requests/GetAtsActivityRequest.cs
   - UnifiedTo/Models/Requests/GetAtsActivityResponse.cs
   - UnifiedTo/Models/Requests/GetAtsApplicationRequest.cs
@@ -873,8 +917,14 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetUnifiedWebhookResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingAccountsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingAccountsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingBalancesheetsRequest.cs
+  - UnifiedTo/Models/Requests/ListAccountingBalancesheetsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingBillsRequest.cs
+  - UnifiedTo/Models/Requests/ListAccountingBillsResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingContactsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingContactsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingCreditmemoesRequest.cs
+  - UnifiedTo/Models/Requests/ListAccountingCreditmemoesResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingInvoicesRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingInvoicesResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingJournalsRequest.cs
@@ -883,12 +933,20 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListAccountingOrdersResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingOrganizationsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingOrganizationsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingProfitlossesRequest.cs
+  - UnifiedTo/Models/Requests/ListAccountingProfitlossesResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingPurchaseordersRequest.cs
+  - UnifiedTo/Models/Requests/ListAccountingPurchaseordersResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingReportsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingReportsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingSalesordersRequest.cs
+  - UnifiedTo/Models/Requests/ListAccountingSalesordersResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingTaxratesRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingTaxratesResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingTransactionsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingTransactionsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingTrialbalancesRequest.cs
+  - UnifiedTo/Models/Requests/ListAccountingTrialbalancesResponse.cs
   - UnifiedTo/Models/Requests/ListAtsActivitiesRequest.cs
   - UnifiedTo/Models/Requests/ListAtsActivitiesResponse.cs
   - UnifiedTo/Models/Requests/ListAtsApplicationsRequest.cs
@@ -1048,14 +1106,22 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListUnifiedWebhooksResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingAccountResponse.cs
+  - UnifiedTo/Models/Requests/PatchAccountingBillRequest.cs
+  - UnifiedTo/Models/Requests/PatchAccountingBillResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingContactRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingContactResponse.cs
+  - UnifiedTo/Models/Requests/PatchAccountingCreditmemoRequest.cs
+  - UnifiedTo/Models/Requests/PatchAccountingCreditmemoResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingInvoiceResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingJournalRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingJournalResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingOrderRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingOrderResponse.cs
+  - UnifiedTo/Models/Requests/PatchAccountingPurchaseorderRequest.cs
+  - UnifiedTo/Models/Requests/PatchAccountingPurchaseorderResponse.cs
+  - UnifiedTo/Models/Requests/PatchAccountingSalesorderRequest.cs
+  - UnifiedTo/Models/Requests/PatchAccountingSalesorderResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingTaxrateResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingTransactionRequest.cs
@@ -1191,14 +1257,22 @@ generatedFiles:
   - UnifiedTo/Models/Requests/QueryParamCategories.cs
   - UnifiedTo/Models/Requests/RemoveAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingAccountResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingBillRequest.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingBillResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingContactRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingContactResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingCreditmemoRequest.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingCreditmemoResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingInvoiceResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingJournalRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingJournalResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingOrderRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingOrderResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingPurchaseorderRequest.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingPurchaseorderResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingSalesorderRequest.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingSalesorderResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingTaxrateResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingTransactionRequest.cs
@@ -1329,14 +1403,22 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveUnifiedWebhookResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingAccountResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingBillRequest.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingBillResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingContactRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingContactResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingCreditmemoRequest.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingCreditmemoResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingInvoiceResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingJournalRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingJournalResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingOrderRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingOrderResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingPurchaseorderRequest.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingPurchaseorderResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingSalesorderRequest.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingSalesorderResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingTaxrateRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingTaxrateResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingTransactionRequest.cs
@@ -1479,9 +1561,11 @@ generatedFiles:
   - UnifiedTo/Payslip.cs
   - UnifiedTo/Person.cs
   - UnifiedTo/Pipeline.cs
+  - UnifiedTo/Profitloss.cs
   - UnifiedTo/Project.cs
   - UnifiedTo/Prompt.cs
   - UnifiedTo/Pullrequest.cs
+  - UnifiedTo/Purchaseorder.cs
   - UnifiedTo/Recording.cs
   - UnifiedTo/Refund.cs
   - UnifiedTo/Repo.cs
@@ -1489,6 +1573,7 @@ generatedFiles:
   - UnifiedTo/Repository.cs
   - UnifiedTo/Review.cs
   - UnifiedTo/SDKConfig.cs
+  - UnifiedTo/Salesorder.cs
   - UnifiedTo/Scim.cs
   - UnifiedTo/Scorecard.cs
   - UnifiedTo/Space.cs
@@ -1502,6 +1587,7 @@ generatedFiles:
   - UnifiedTo/Timeoff.cs
   - UnifiedTo/Timeshift.cs
   - UnifiedTo/Transaction.cs
+  - UnifiedTo/Trialbalance.cs
   - UnifiedTo/Uc.cs
   - UnifiedTo/Unified.cs
   - UnifiedTo/UnifiedTo.csproj
@@ -1528,13 +1614,20 @@ generatedFiles:
   - docs/Models/Components/AccountingAccount.md
   - docs/Models/Components/AccountingAssociatedContact.md
   - docs/Models/Components/AccountingAttachment.md
-  - docs/Models/Components/AccountingBalanceSheetItem.md
+  - docs/Models/Components/AccountingBalancesheet.md
+  - docs/Models/Components/AccountingBalancesheetItem.md
+  - docs/Models/Components/AccountingBill.md
+  - docs/Models/Components/AccountingBillStatus.md
   - docs/Models/Components/AccountingContact.md
   - docs/Models/Components/AccountingContactPaymentMethod.md
   - docs/Models/Components/AccountingContactPaymentMethodType.md
+  - docs/Models/Components/AccountingCreditmemo.md
+  - docs/Models/Components/AccountingCreditmemoPaymentCollectionMethod.md
+  - docs/Models/Components/AccountingCreditmemoStatus.md
   - docs/Models/Components/AccountingEmail.md
   - docs/Models/Components/AccountingEmailType.md
   - docs/Models/Components/AccountingInvoice.md
+  - docs/Models/Components/AccountingInvoicePaymentCollectionMethod.md
   - docs/Models/Components/AccountingInvoiceStatus.md
   - docs/Models/Components/AccountingInvoiceType.md
   - docs/Models/Components/AccountingJournal.md
@@ -1544,17 +1637,25 @@ generatedFiles:
   - docs/Models/Components/AccountingOrderStatus.md
   - docs/Models/Components/AccountingOrderType.md
   - docs/Models/Components/AccountingOrganization.md
-  - docs/Models/Components/AccountingProfitAndLossCategory.md
-  - docs/Models/Components/AccountingProfitAndLossSubcategory.md
+  - docs/Models/Components/AccountingProfitloss.md
+  - docs/Models/Components/AccountingProfitlossAccount.md
+  - docs/Models/Components/AccountingProfitlossCategory.md
+  - docs/Models/Components/AccountingProfitlossSection.md
+  - docs/Models/Components/AccountingProfitlossSubcategory.md
+  - docs/Models/Components/AccountingPurchaseorder.md
+  - docs/Models/Components/AccountingPurchaseorderStatus.md
   - docs/Models/Components/AccountingReport.md
   - docs/Models/Components/AccountingReportType.md
+  - docs/Models/Components/AccountingSalesorder.md
+  - docs/Models/Components/AccountingSalesorderStatus.md
   - docs/Models/Components/AccountingTaxrate.md
   - docs/Models/Components/AccountingTelephone.md
   - docs/Models/Components/AccountingTelephoneType.md
   - docs/Models/Components/AccountingTransaction.md
   - docs/Models/Components/AccountingTransactionContact.md
   - docs/Models/Components/AccountingTransactionLineItem.md
-  - docs/Models/Components/AccountingTrialBalanceSubItem.md
+  - docs/Models/Components/AccountingTrialbalance.md
+  - docs/Models/Components/AccountingTrialbalanceSubItem.md
   - docs/Models/Components/Api.md
   - docs/Models/Components/ApiCall.md
   - docs/Models/Components/ApiCallType.md
@@ -1856,15 +1957,19 @@ generatedFiles:
   - docs/Models/Components/PaymentSubscriptionStatus.md
   - docs/Models/Components/PaymentType.md
   - docs/Models/Components/Priority.md
-  - docs/Models/Components/PropertyAccountingBalanceSheetItemSubItems.md
+  - docs/Models/Components/PropertyAccountingBalancesheetItemSubItems.md
   - docs/Models/Components/PropertyAccountingContactBillingAddress.md
   - docs/Models/Components/PropertyAccountingContactShippingAddress.md
   - docs/Models/Components/PropertyAccountingOrderBillingAddress.md
   - docs/Models/Components/PropertyAccountingOrderShippingAddress.md
   - docs/Models/Components/PropertyAccountingOrganizationAddress.md
+  - docs/Models/Components/PropertyAccountingPurchaseorderBillingAddress.md
+  - docs/Models/Components/PropertyAccountingPurchaseorderShippingAddress.md
   - docs/Models/Components/PropertyAccountingReportBalanceSheet.md
   - docs/Models/Components/PropertyAccountingReportProfitAndLoss.md
   - docs/Models/Components/PropertyAccountingReportTrialBalance.md
+  - docs/Models/Components/PropertyAccountingSalesorderBillingAddress.md
+  - docs/Models/Components/PropertyAccountingSalesorderShippingAddress.md
   - docs/Models/Components/PropertyAtsActivityFrom.md
   - docs/Models/Components/PropertyAtsActivityFromType.md
   - docs/Models/Components/PropertyAtsCandidateAddress.md
@@ -2010,14 +2115,22 @@ generatedFiles:
   - docs/Models/Requests/Categories.md
   - docs/Models/Requests/CreateAccountingAccountRequest.md
   - docs/Models/Requests/CreateAccountingAccountResponse.md
+  - docs/Models/Requests/CreateAccountingBillRequest.md
+  - docs/Models/Requests/CreateAccountingBillResponse.md
   - docs/Models/Requests/CreateAccountingContactRequest.md
   - docs/Models/Requests/CreateAccountingContactResponse.md
+  - docs/Models/Requests/CreateAccountingCreditmemoRequest.md
+  - docs/Models/Requests/CreateAccountingCreditmemoResponse.md
   - docs/Models/Requests/CreateAccountingInvoiceRequest.md
   - docs/Models/Requests/CreateAccountingInvoiceResponse.md
   - docs/Models/Requests/CreateAccountingJournalRequest.md
   - docs/Models/Requests/CreateAccountingJournalResponse.md
   - docs/Models/Requests/CreateAccountingOrderRequest.md
   - docs/Models/Requests/CreateAccountingOrderResponse.md
+  - docs/Models/Requests/CreateAccountingPurchaseorderRequest.md
+  - docs/Models/Requests/CreateAccountingPurchaseorderResponse.md
+  - docs/Models/Requests/CreateAccountingSalesorderRequest.md
+  - docs/Models/Requests/CreateAccountingSalesorderResponse.md
   - docs/Models/Requests/CreateAccountingTaxrateRequest.md
   - docs/Models/Requests/CreateAccountingTaxrateResponse.md
   - docs/Models/Requests/CreateAccountingTransactionRequest.md
@@ -2151,8 +2264,14 @@ generatedFiles:
   - docs/Models/Requests/CreateUnifiedWebhookResponse.md
   - docs/Models/Requests/GetAccountingAccountRequest.md
   - docs/Models/Requests/GetAccountingAccountResponse.md
+  - docs/Models/Requests/GetAccountingBalancesheetRequest.md
+  - docs/Models/Requests/GetAccountingBalancesheetResponse.md
+  - docs/Models/Requests/GetAccountingBillRequest.md
+  - docs/Models/Requests/GetAccountingBillResponse.md
   - docs/Models/Requests/GetAccountingContactRequest.md
   - docs/Models/Requests/GetAccountingContactResponse.md
+  - docs/Models/Requests/GetAccountingCreditmemoRequest.md
+  - docs/Models/Requests/GetAccountingCreditmemoResponse.md
   - docs/Models/Requests/GetAccountingInvoiceRequest.md
   - docs/Models/Requests/GetAccountingInvoiceResponse.md
   - docs/Models/Requests/GetAccountingJournalRequest.md
@@ -2161,12 +2280,20 @@ generatedFiles:
   - docs/Models/Requests/GetAccountingOrderResponse.md
   - docs/Models/Requests/GetAccountingOrganizationRequest.md
   - docs/Models/Requests/GetAccountingOrganizationResponse.md
+  - docs/Models/Requests/GetAccountingProfitlossRequest.md
+  - docs/Models/Requests/GetAccountingProfitlossResponse.md
+  - docs/Models/Requests/GetAccountingPurchaseorderRequest.md
+  - docs/Models/Requests/GetAccountingPurchaseorderResponse.md
   - docs/Models/Requests/GetAccountingReportRequest.md
   - docs/Models/Requests/GetAccountingReportResponse.md
+  - docs/Models/Requests/GetAccountingSalesorderRequest.md
+  - docs/Models/Requests/GetAccountingSalesorderResponse.md
   - docs/Models/Requests/GetAccountingTaxrateRequest.md
   - docs/Models/Requests/GetAccountingTaxrateResponse.md
   - docs/Models/Requests/GetAccountingTransactionRequest.md
   - docs/Models/Requests/GetAccountingTransactionResponse.md
+  - docs/Models/Requests/GetAccountingTrialbalanceRequest.md
+  - docs/Models/Requests/GetAccountingTrialbalanceResponse.md
   - docs/Models/Requests/GetAtsActivityRequest.md
   - docs/Models/Requests/GetAtsActivityResponse.md
   - docs/Models/Requests/GetAtsApplicationRequest.md
@@ -2309,8 +2436,14 @@ generatedFiles:
   - docs/Models/Requests/GetUnifiedWebhookResponse.md
   - docs/Models/Requests/ListAccountingAccountsRequest.md
   - docs/Models/Requests/ListAccountingAccountsResponse.md
+  - docs/Models/Requests/ListAccountingBalancesheetsRequest.md
+  - docs/Models/Requests/ListAccountingBalancesheetsResponse.md
+  - docs/Models/Requests/ListAccountingBillsRequest.md
+  - docs/Models/Requests/ListAccountingBillsResponse.md
   - docs/Models/Requests/ListAccountingContactsRequest.md
   - docs/Models/Requests/ListAccountingContactsResponse.md
+  - docs/Models/Requests/ListAccountingCreditmemoesRequest.md
+  - docs/Models/Requests/ListAccountingCreditmemoesResponse.md
   - docs/Models/Requests/ListAccountingInvoicesRequest.md
   - docs/Models/Requests/ListAccountingInvoicesResponse.md
   - docs/Models/Requests/ListAccountingJournalsRequest.md
@@ -2319,12 +2452,20 @@ generatedFiles:
   - docs/Models/Requests/ListAccountingOrdersResponse.md
   - docs/Models/Requests/ListAccountingOrganizationsRequest.md
   - docs/Models/Requests/ListAccountingOrganizationsResponse.md
+  - docs/Models/Requests/ListAccountingProfitlossesRequest.md
+  - docs/Models/Requests/ListAccountingProfitlossesResponse.md
+  - docs/Models/Requests/ListAccountingPurchaseordersRequest.md
+  - docs/Models/Requests/ListAccountingPurchaseordersResponse.md
   - docs/Models/Requests/ListAccountingReportsRequest.md
   - docs/Models/Requests/ListAccountingReportsResponse.md
+  - docs/Models/Requests/ListAccountingSalesordersRequest.md
+  - docs/Models/Requests/ListAccountingSalesordersResponse.md
   - docs/Models/Requests/ListAccountingTaxratesRequest.md
   - docs/Models/Requests/ListAccountingTaxratesResponse.md
   - docs/Models/Requests/ListAccountingTransactionsRequest.md
   - docs/Models/Requests/ListAccountingTransactionsResponse.md
+  - docs/Models/Requests/ListAccountingTrialbalancesRequest.md
+  - docs/Models/Requests/ListAccountingTrialbalancesResponse.md
   - docs/Models/Requests/ListAtsActivitiesRequest.md
   - docs/Models/Requests/ListAtsActivitiesResponse.md
   - docs/Models/Requests/ListAtsApplicationsRequest.md
@@ -2484,14 +2625,22 @@ generatedFiles:
   - docs/Models/Requests/ListUnifiedWebhooksResponse.md
   - docs/Models/Requests/PatchAccountingAccountRequest.md
   - docs/Models/Requests/PatchAccountingAccountResponse.md
+  - docs/Models/Requests/PatchAccountingBillRequest.md
+  - docs/Models/Requests/PatchAccountingBillResponse.md
   - docs/Models/Requests/PatchAccountingContactRequest.md
   - docs/Models/Requests/PatchAccountingContactResponse.md
+  - docs/Models/Requests/PatchAccountingCreditmemoRequest.md
+  - docs/Models/Requests/PatchAccountingCreditmemoResponse.md
   - docs/Models/Requests/PatchAccountingInvoiceRequest.md
   - docs/Models/Requests/PatchAccountingInvoiceResponse.md
   - docs/Models/Requests/PatchAccountingJournalRequest.md
   - docs/Models/Requests/PatchAccountingJournalResponse.md
   - docs/Models/Requests/PatchAccountingOrderRequest.md
   - docs/Models/Requests/PatchAccountingOrderResponse.md
+  - docs/Models/Requests/PatchAccountingPurchaseorderRequest.md
+  - docs/Models/Requests/PatchAccountingPurchaseorderResponse.md
+  - docs/Models/Requests/PatchAccountingSalesorderRequest.md
+  - docs/Models/Requests/PatchAccountingSalesorderResponse.md
   - docs/Models/Requests/PatchAccountingTaxrateRequest.md
   - docs/Models/Requests/PatchAccountingTaxrateResponse.md
   - docs/Models/Requests/PatchAccountingTransactionRequest.md
@@ -2627,14 +2776,22 @@ generatedFiles:
   - docs/Models/Requests/QueryParamCategories.md
   - docs/Models/Requests/RemoveAccountingAccountRequest.md
   - docs/Models/Requests/RemoveAccountingAccountResponse.md
+  - docs/Models/Requests/RemoveAccountingBillRequest.md
+  - docs/Models/Requests/RemoveAccountingBillResponse.md
   - docs/Models/Requests/RemoveAccountingContactRequest.md
   - docs/Models/Requests/RemoveAccountingContactResponse.md
+  - docs/Models/Requests/RemoveAccountingCreditmemoRequest.md
+  - docs/Models/Requests/RemoveAccountingCreditmemoResponse.md
   - docs/Models/Requests/RemoveAccountingInvoiceRequest.md
   - docs/Models/Requests/RemoveAccountingInvoiceResponse.md
   - docs/Models/Requests/RemoveAccountingJournalRequest.md
   - docs/Models/Requests/RemoveAccountingJournalResponse.md
   - docs/Models/Requests/RemoveAccountingOrderRequest.md
   - docs/Models/Requests/RemoveAccountingOrderResponse.md
+  - docs/Models/Requests/RemoveAccountingPurchaseorderRequest.md
+  - docs/Models/Requests/RemoveAccountingPurchaseorderResponse.md
+  - docs/Models/Requests/RemoveAccountingSalesorderRequest.md
+  - docs/Models/Requests/RemoveAccountingSalesorderResponse.md
   - docs/Models/Requests/RemoveAccountingTaxrateRequest.md
   - docs/Models/Requests/RemoveAccountingTaxrateResponse.md
   - docs/Models/Requests/RemoveAccountingTransactionRequest.md
@@ -2765,14 +2922,22 @@ generatedFiles:
   - docs/Models/Requests/RemoveUnifiedWebhookResponse.md
   - docs/Models/Requests/UpdateAccountingAccountRequest.md
   - docs/Models/Requests/UpdateAccountingAccountResponse.md
+  - docs/Models/Requests/UpdateAccountingBillRequest.md
+  - docs/Models/Requests/UpdateAccountingBillResponse.md
   - docs/Models/Requests/UpdateAccountingContactRequest.md
   - docs/Models/Requests/UpdateAccountingContactResponse.md
+  - docs/Models/Requests/UpdateAccountingCreditmemoRequest.md
+  - docs/Models/Requests/UpdateAccountingCreditmemoResponse.md
   - docs/Models/Requests/UpdateAccountingInvoiceRequest.md
   - docs/Models/Requests/UpdateAccountingInvoiceResponse.md
   - docs/Models/Requests/UpdateAccountingJournalRequest.md
   - docs/Models/Requests/UpdateAccountingJournalResponse.md
   - docs/Models/Requests/UpdateAccountingOrderRequest.md
   - docs/Models/Requests/UpdateAccountingOrderResponse.md
+  - docs/Models/Requests/UpdateAccountingPurchaseorderRequest.md
+  - docs/Models/Requests/UpdateAccountingPurchaseorderResponse.md
+  - docs/Models/Requests/UpdateAccountingSalesorderRequest.md
+  - docs/Models/Requests/UpdateAccountingSalesorderResponse.md
   - docs/Models/Requests/UpdateAccountingTaxrateRequest.md
   - docs/Models/Requests/UpdateAccountingTaxrateResponse.md
   - docs/Models/Requests/UpdateAccountingTransactionRequest.md
@@ -2913,6 +3078,8 @@ generatedFiles:
   - docs/sdks/applicationstatus/README.md
   - docs/sdks/ats/README.md
   - docs/sdks/auth/README.md
+  - docs/sdks/balancesheet/README.md
+  - docs/sdks/bill/README.md
   - docs/sdks/branch/README.md
   - docs/sdks/busy/README.md
   - docs/sdks/calendar/README.md
@@ -2928,6 +3095,7 @@ generatedFiles:
   - docs/sdks/connection/README.md
   - docs/sdks/contact/README.md
   - docs/sdks/course/README.md
+  - docs/sdks/creditmemo/README.md
   - docs/sdks/crm/README.md
   - docs/sdks/customer/README.md
   - docs/sdks/deal/README.md
@@ -2972,15 +3140,18 @@ generatedFiles:
   - docs/sdks/payslip/README.md
   - docs/sdks/person/README.md
   - docs/sdks/pipeline/README.md
+  - docs/sdks/profitloss/README.md
   - docs/sdks/project/README.md
   - docs/sdks/prompt/README.md
   - docs/sdks/pullrequest/README.md
+  - docs/sdks/purchaseorder/README.md
   - docs/sdks/recording/README.md
   - docs/sdks/refund/README.md
   - docs/sdks/repo/README.md
   - docs/sdks/report/README.md
   - docs/sdks/repository/README.md
   - docs/sdks/review/README.md
+  - docs/sdks/salesorder/README.md
   - docs/sdks/scim/README.md
   - docs/sdks/scorecard/README.md
   - docs/sdks/space/README.md
@@ -2994,6 +3165,7 @@ generatedFiles:
   - docs/sdks/timeoff/README.md
   - docs/sdks/timeshift/README.md
   - docs/sdks/transaction/README.md
+  - docs/sdks/trialbalance/README.md
   - docs/sdks/uc/README.md
   - docs/sdks/unified/README.md
   - docs/sdks/unifiedto/README.md
@@ -7075,5 +7247,276 @@ examples:
       responses:
         "200":
           application/json: {"name": "<value>"}
+  createAccountingBill:
+    speakeasy-default-create-accounting-bill:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  createAccountingCreditmemo:
+    speakeasy-default-create-accounting-creditmemo:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  createAccountingPurchaseorder:
+    speakeasy-default-create-accounting-purchaseorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  createAccountingSalesorder:
+    speakeasy-default-create-accounting-salesorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getAccountingBalancesheet:
+    speakeasy-default-get-accounting-balancesheet:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getAccountingBill:
+    speakeasy-default-get-accounting-bill:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getAccountingCreditmemo:
+    speakeasy-default-get-accounting-creditmemo:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getAccountingProfitloss:
+    speakeasy-default-get-accounting-profitloss:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getAccountingPurchaseorder:
+    speakeasy-default-get-accounting-purchaseorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getAccountingSalesorder:
+    speakeasy-default-get-accounting-salesorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getAccountingTrialbalance:
+    speakeasy-default-get-accounting-trialbalance:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listAccountingBalancesheets:
+    speakeasy-default-list-accounting-balancesheets:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listAccountingBills:
+    speakeasy-default-list-accounting-bills:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listAccountingCreditmemoes:
+    speakeasy-default-list-accounting-creditmemoes:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listAccountingProfitlosses:
+    speakeasy-default-list-accounting-profitlosses:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listAccountingPurchaseorders:
+    speakeasy-default-list-accounting-purchaseorders:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listAccountingSalesorders:
+    speakeasy-default-list-accounting-salesorders:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listAccountingTrialbalances:
+    speakeasy-default-list-accounting-trialbalances:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchAccountingBill:
+    speakeasy-default-patch-accounting-bill:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  patchAccountingCreditmemo:
+    speakeasy-default-patch-accounting-creditmemo:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  patchAccountingPurchaseorder:
+    speakeasy-default-patch-accounting-purchaseorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  patchAccountingSalesorder:
+    speakeasy-default-patch-accounting-salesorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeAccountingBill:
+    speakeasy-default-remove-accounting-bill:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeAccountingCreditmemo:
+    speakeasy-default-remove-accounting-creditmemo:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeAccountingPurchaseorder:
+    speakeasy-default-remove-accounting-purchaseorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeAccountingSalesorder:
+    speakeasy-default-remove-accounting-salesorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateAccountingBill:
+    speakeasy-default-update-accounting-bill:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  updateAccountingCreditmemo:
+    speakeasy-default-update-accounting-creditmemo:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  updateAccountingPurchaseorder:
+    speakeasy-default-update-accounting-purchaseorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  updateAccountingSalesorder:
+    speakeasy-default-update-accounting-salesorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}

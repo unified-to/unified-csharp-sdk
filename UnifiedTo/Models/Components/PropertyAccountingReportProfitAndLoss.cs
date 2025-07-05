@@ -10,6 +10,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
@@ -17,19 +18,73 @@ namespace UnifiedTo.Models.Components
     public class PropertyAccountingReportProfitAndLoss
     {
 
+        /// <summary>
+        /// @deprecated
+        /// </summary>
         [JsonProperty("cost_of_goods_sold")]
-        public List<AccountingProfitAndLossCategory>? CostOfGoodsSold { get; set; }
+        public List<AccountingProfitlossCategory>? CostOfGoodsSold { get; set; }
 
+        [JsonProperty("cost_of_goods_sold_sections")]
+        public List<AccountingProfitlossSection>? CostOfGoodsSoldSections { get; set; }
+
+        [JsonProperty("cost_of_goods_sold_total_amount")]
+        public double? CostOfGoodsSoldTotalAmount { get; set; }
+
+        [JsonProperty("created_at")]
+        public DateTime? CreatedAt { get; set; }
+
+        [JsonProperty("currency")]
+        public string? Currency { get; set; }
+
+        [JsonProperty("end_at")]
+        public DateTime? EndAt { get; set; }
+
+        /// <summary>
+        /// @deprecated
+        /// </summary>
         [JsonProperty("expenses")]
-        public List<AccountingProfitAndLossCategory>? Expenses { get; set; }
+        public List<AccountingProfitlossCategory>? Expenses { get; set; }
+
+        [JsonProperty("expenses_sections")]
+        public List<AccountingProfitlossSection>? ExpensesSections { get; set; }
+
+        [JsonProperty("expenses_total_amount")]
+        public double? ExpensesTotalAmount { get; set; }
 
         [JsonProperty("gross_profit_amount")]
         public double? GrossProfitAmount { get; set; }
 
+        [JsonProperty("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
+        /// @deprecated
+        /// </summary>
         [JsonProperty("income")]
-        public List<AccountingProfitAndLossCategory>? Income { get; set; }
+        public List<AccountingProfitlossCategory>? Income { get; set; }
+
+        [JsonProperty("income_sections")]
+        public List<AccountingProfitlossSection>? IncomeSections { get; set; }
+
+        [JsonProperty("income_total_amount")]
+        public double? IncomeTotalAmount { get; set; }
+
+        [JsonProperty("name")]
+        public string? Name { get; set; }
+
+        [JsonProperty("net_income_amount")]
+        public double? NetIncomeAmount { get; set; }
 
         [JsonProperty("net_profit_amount")]
         public double? NetProfitAmount { get; set; }
+
+        [JsonProperty("raw")]
+        public Dictionary<string, object>? Raw { get; set; }
+
+        [JsonProperty("start_at")]
+        public DateTime? StartAt { get; set; }
+
+        [JsonProperty("updated_at")]
+        public DateTime? UpdatedAt { get; set; }
     }
 }
