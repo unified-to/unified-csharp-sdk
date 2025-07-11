@@ -25,14 +25,28 @@ namespace UnifiedTo.Models.Components
         AccountingContact,
         [JsonProperty("accounting_invoice")]
         AccountingInvoice,
+        [JsonProperty("accounting_bill")]
+        AccountingBill,
+        [JsonProperty("accounting_creditmemo")]
+        AccountingCreditmemo,
         [JsonProperty("accounting_taxrate")]
         AccountingTaxrate,
         [JsonProperty("accounting_organization")]
         AccountingOrganization,
         [JsonProperty("accounting_order")]
         AccountingOrder,
+        [JsonProperty("accounting_salesorder")]
+        AccountingSalesorder,
+        [JsonProperty("accounting_purchaseorder")]
+        AccountingPurchaseorder,
         [JsonProperty("accounting_report")]
         AccountingReport,
+        [JsonProperty("accounting_balancesheet")]
+        AccountingBalancesheet,
+        [JsonProperty("accounting_profitloss")]
+        AccountingProfitloss,
+        [JsonProperty("accounting_trialbalance")]
+        AccountingTrialbalance,
         [JsonProperty("payment_payment")]
         PaymentPayment,
         [JsonProperty("payment_link")]

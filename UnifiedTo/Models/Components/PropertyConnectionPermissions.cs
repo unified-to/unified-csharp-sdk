@@ -33,6 +33,14 @@ namespace UnifiedTo.Models.Components
         AccountingInvoiceRead,
         [JsonProperty("accounting_invoice_write")]
         AccountingInvoiceWrite,
+        [JsonProperty("accounting_bill_read")]
+        AccountingBillRead,
+        [JsonProperty("accounting_bill_write")]
+        AccountingBillWrite,
+        [JsonProperty("accounting_creditmemo_read")]
+        AccountingCreditmemoRead,
+        [JsonProperty("accounting_creditmemo_write")]
+        AccountingCreditmemoWrite,
         [JsonProperty("accounting_contact_read")]
         AccountingContactRead,
         [JsonProperty("accounting_contact_write")]
@@ -47,10 +55,30 @@ namespace UnifiedTo.Models.Components
         AccountingOrderRead,
         [JsonProperty("accounting_order_write")]
         AccountingOrderWrite,
+        [JsonProperty("accounting_purchaseorder_read")]
+        AccountingPurchaseorderRead,
+        [JsonProperty("accounting_purchaseorder_write")]
+        AccountingPurchaseorderWrite,
+        [JsonProperty("accounting_salesorder_read")]
+        AccountingSalesorderRead,
+        [JsonProperty("accounting_salesorder_write")]
+        AccountingSalesorderWrite,
         [JsonProperty("accounting_report_read")]
         AccountingReportRead,
         [JsonProperty("accounting_report_write")]
         AccountingReportWrite,
+        [JsonProperty("accounting_trialbalance_read")]
+        AccountingTrialbalanceRead,
+        [JsonProperty("accounting_trialbalance_write")]
+        AccountingTrialbalanceWrite,
+        [JsonProperty("accounting_profitloss_read")]
+        AccountingProfitlossRead,
+        [JsonProperty("accounting_profitloss_write")]
+        AccountingProfitlossWrite,
+        [JsonProperty("accounting_balancesheet_read")]
+        AccountingBalancesheetRead,
+        [JsonProperty("accounting_balancesheet_write")]
+        AccountingBalancesheetWrite,
         [JsonProperty("payment_payment_read")]
         PaymentPaymentRead,
         [JsonProperty("payment_payment_write")]
