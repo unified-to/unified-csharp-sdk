@@ -45,6 +45,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("group_ids")]
         public List<string>? GroupIds { get; set; }
 
+        [JsonProperty("has_children")]
+        public bool? HasChildren { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 

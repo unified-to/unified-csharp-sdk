@@ -12,4 +12,3 @@
 | `OnHold`     | ON_HOLD      |
 | `Validating` | VALIDATING   |
 | `Rejected`   | REJECTED     |
-| `UpNext`     | UP_NEXT      |
