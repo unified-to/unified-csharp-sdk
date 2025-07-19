@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: a8fe650f09e411054ff20cdef36cc669
+  docChecksum: 34e9b060cccb99df9d62ad47f96d358d
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.36.0
-  configChecksum: b54d60e2365d8382194309ac59c5132b
+  releaseVersion: 0.38.0
+  configChecksum: 6ace3dd4d42f5018037a2cd8347ba2d2
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -591,6 +591,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/Value.cs
   - UnifiedTo/Models/Components/Webhook.cs
   - UnifiedTo/Models/Components/WebhookType.cs
+  - UnifiedTo/Models/Components/WeekStart.cs
   - UnifiedTo/Models/Components/WeightUnit.cs
   - UnifiedTo/Models/Errors/SDKException.cs
   - UnifiedTo/Models/Requests/Categories.cs
@@ -2111,6 +2112,7 @@ generatedFiles:
   - docs/Models/Components/Value.md
   - docs/Models/Components/Webhook.md
   - docs/Models/Components/WebhookType.md
+  - docs/Models/Components/WeekStart.md
   - docs/Models/Components/WeightUnit.md
   - docs/Models/Requests/Categories.md
   - docs/Models/Requests/CreateAccountingAccountRequest.md

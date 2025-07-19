@@ -53,5 +53,23 @@ namespace UnifiedTo.Models.Components
         /// </summary>
         [JsonProperty("on_months")]
         public List<double>? OnMonths { get; set; }
+
+        /// <summary>
+        /// week ordinals for BYDAY (e.g., -1 for last, -2 for second-to-last, 1 for first, 2 for second), only used with on_days. 0 is used for days without week ordinals.
+        /// </summary>
+        [JsonProperty("on_weeks")]
+        public List<double>? OnWeeks { get; set; }
+
+        /// <summary>
+        /// days of the year to repeat on, defaults to undefined (every day), only used if frequency is YEARLY
+        /// </summary>
+        [JsonProperty("on_year_days")]
+        public List<double>? OnYearDays { get; set; }
+
+        [JsonProperty("timezone")]
+        public string? Timezone { get; set; }
+
+        [JsonProperty("week_start")]
+        public WeekStart? WeekStart { get; set; }
     }
 }

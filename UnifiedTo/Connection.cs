@@ -29,7 +29,7 @@ namespace UnifiedTo
         /// Create connection
         /// 
         /// <remarks>
-        /// Used only to import existing customer credentials; use &quot;Create connection indirectly&quot; instead
+        /// Used only to import existing customer credentials; use &quot;Authorize new connection&quot; instead
         /// </remarks>
         /// </summary>
         Task<CreateUnifiedConnectionResponse> CreateUnifiedConnectionAsync(Models.Components.Connection request);
@@ -64,7 +64,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.36.0";
+        private const string _sdkVersion = "0.38.0";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
