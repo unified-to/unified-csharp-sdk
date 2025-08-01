@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 34e9b060cccb99df9d62ad47f96d358d
+  docChecksum: 29f7859e9080ffea0b7fd7e4996b62ce
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.38.0
-  configChecksum: 6ace3dd4d42f5018037a2cd8347ba2d2
+  releaseVersion: 0.40.0
+  configChecksum: 538946feaadf5c8beb56cbb82ace290c
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -44,6 +44,7 @@ generatedFiles:
   - UnifiedTo/Calendar.cs
   - UnifiedTo/Call.cs
   - UnifiedTo/Candidate.cs
+  - UnifiedTo/Category.cs
   - UnifiedTo/Channel.cs
   - UnifiedTo/Class.cs
   - UnifiedTo/Collection.cs
@@ -98,6 +99,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingBalancesheetItem.cs
   - UnifiedTo/Models/Components/AccountingBill.cs
   - UnifiedTo/Models/Components/AccountingBillStatus.cs
+  - UnifiedTo/Models/Components/AccountingCategory.cs
   - UnifiedTo/Models/Components/AccountingContact.cs
   - UnifiedTo/Models/Components/AccountingContactPaymentMethod.cs
   - UnifiedTo/Models/Components/AccountingContactPaymentMethodType.cs
@@ -599,6 +601,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateAccountingAccountResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingBillRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingBillResponse.cs
+  - UnifiedTo/Models/Requests/CreateAccountingCategoryRequest.cs
+  - UnifiedTo/Models/Requests/CreateAccountingCategoryResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingContactRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingContactResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingCreditmemoRequest.cs
@@ -750,6 +754,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetAccountingBalancesheetResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingBillRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingBillResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingCategoryRequest.cs
+  - UnifiedTo/Models/Requests/GetAccountingCategoryResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingContactRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingContactResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingCreditmemoRequest.cs
@@ -922,6 +928,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListAccountingBalancesheetsResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingBillsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingBillsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingCategoriesRequest.cs
+  - UnifiedTo/Models/Requests/ListAccountingCategoriesResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingContactsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingContactsResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingCreditmemoesRequest.cs
@@ -1109,6 +1117,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchAccountingAccountResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingBillRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingBillResponse.cs
+  - UnifiedTo/Models/Requests/PatchAccountingCategoryRequest.cs
+  - UnifiedTo/Models/Requests/PatchAccountingCategoryResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingContactRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingContactResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingCreditmemoRequest.cs
@@ -1260,6 +1270,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveAccountingAccountResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingBillRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingBillResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingCategoryRequest.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingCategoryResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingContactRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingContactResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingCreditmemoRequest.cs
@@ -1406,6 +1418,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateAccountingAccountResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingBillRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingBillResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingCategoryRequest.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingCategoryResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingContactRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingContactResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingCreditmemoRequest.cs
@@ -1619,6 +1633,7 @@ generatedFiles:
   - docs/Models/Components/AccountingBalancesheetItem.md
   - docs/Models/Components/AccountingBill.md
   - docs/Models/Components/AccountingBillStatus.md
+  - docs/Models/Components/AccountingCategory.md
   - docs/Models/Components/AccountingContact.md
   - docs/Models/Components/AccountingContactPaymentMethod.md
   - docs/Models/Components/AccountingContactPaymentMethodType.md
@@ -2119,6 +2134,8 @@ generatedFiles:
   - docs/Models/Requests/CreateAccountingAccountResponse.md
   - docs/Models/Requests/CreateAccountingBillRequest.md
   - docs/Models/Requests/CreateAccountingBillResponse.md
+  - docs/Models/Requests/CreateAccountingCategoryRequest.md
+  - docs/Models/Requests/CreateAccountingCategoryResponse.md
   - docs/Models/Requests/CreateAccountingContactRequest.md
   - docs/Models/Requests/CreateAccountingContactResponse.md
   - docs/Models/Requests/CreateAccountingCreditmemoRequest.md
@@ -2270,6 +2287,8 @@ generatedFiles:
   - docs/Models/Requests/GetAccountingBalancesheetResponse.md
   - docs/Models/Requests/GetAccountingBillRequest.md
   - docs/Models/Requests/GetAccountingBillResponse.md
+  - docs/Models/Requests/GetAccountingCategoryRequest.md
+  - docs/Models/Requests/GetAccountingCategoryResponse.md
   - docs/Models/Requests/GetAccountingContactRequest.md
   - docs/Models/Requests/GetAccountingContactResponse.md
   - docs/Models/Requests/GetAccountingCreditmemoRequest.md
@@ -2442,6 +2461,8 @@ generatedFiles:
   - docs/Models/Requests/ListAccountingBalancesheetsResponse.md
   - docs/Models/Requests/ListAccountingBillsRequest.md
   - docs/Models/Requests/ListAccountingBillsResponse.md
+  - docs/Models/Requests/ListAccountingCategoriesRequest.md
+  - docs/Models/Requests/ListAccountingCategoriesResponse.md
   - docs/Models/Requests/ListAccountingContactsRequest.md
   - docs/Models/Requests/ListAccountingContactsResponse.md
   - docs/Models/Requests/ListAccountingCreditmemoesRequest.md
@@ -2629,6 +2650,8 @@ generatedFiles:
   - docs/Models/Requests/PatchAccountingAccountResponse.md
   - docs/Models/Requests/PatchAccountingBillRequest.md
   - docs/Models/Requests/PatchAccountingBillResponse.md
+  - docs/Models/Requests/PatchAccountingCategoryRequest.md
+  - docs/Models/Requests/PatchAccountingCategoryResponse.md
   - docs/Models/Requests/PatchAccountingContactRequest.md
   - docs/Models/Requests/PatchAccountingContactResponse.md
   - docs/Models/Requests/PatchAccountingCreditmemoRequest.md
@@ -2780,6 +2803,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveAccountingAccountResponse.md
   - docs/Models/Requests/RemoveAccountingBillRequest.md
   - docs/Models/Requests/RemoveAccountingBillResponse.md
+  - docs/Models/Requests/RemoveAccountingCategoryRequest.md
+  - docs/Models/Requests/RemoveAccountingCategoryResponse.md
   - docs/Models/Requests/RemoveAccountingContactRequest.md
   - docs/Models/Requests/RemoveAccountingContactResponse.md
   - docs/Models/Requests/RemoveAccountingCreditmemoRequest.md
@@ -2926,6 +2951,8 @@ generatedFiles:
   - docs/Models/Requests/UpdateAccountingAccountResponse.md
   - docs/Models/Requests/UpdateAccountingBillRequest.md
   - docs/Models/Requests/UpdateAccountingBillResponse.md
+  - docs/Models/Requests/UpdateAccountingCategoryRequest.md
+  - docs/Models/Requests/UpdateAccountingCategoryResponse.md
   - docs/Models/Requests/UpdateAccountingContactRequest.md
   - docs/Models/Requests/UpdateAccountingContactResponse.md
   - docs/Models/Requests/UpdateAccountingCreditmemoRequest.md
@@ -3087,6 +3114,7 @@ generatedFiles:
   - docs/sdks/calendar/README.md
   - docs/sdks/call/README.md
   - docs/sdks/candidate/README.md
+  - docs/sdks/category/README.md
   - docs/sdks/channel/README.md
   - docs/sdks/class/README.md
   - docs/sdks/collection/README.md
@@ -7511,6 +7539,61 @@ examples:
           application/json: {}
   updateAccountingSalesorder:
     speakeasy-default-update-accounting-salesorder:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  createAccountingCategory:
+    speakeasy-default-create-accounting-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getAccountingCategory:
+    speakeasy-default-get-accounting-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listAccountingCategories:
+    speakeasy-default-list-accounting-categories:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchAccountingCategory:
+    speakeasy-default-patch-accounting-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeAccountingCategory:
+    speakeasy-default-remove-accounting-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateAccountingCategory:
+    speakeasy-default-update-accounting-category:
       parameters:
         path:
           connection_id: "<id>"

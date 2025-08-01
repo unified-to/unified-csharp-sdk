@@ -11,6 +11,7 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Generic;
     using UnifiedTo.Utils;
     
     public class AccountingLineitem
@@ -18,6 +19,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
+
+        [JsonProperty("category_ids")]
+        public List<string>? CategoryIds { get; set; }
 
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }

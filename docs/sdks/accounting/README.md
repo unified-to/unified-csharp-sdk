@@ -7,6 +7,7 @@
 
 * [CreateAccountingAccount](#createaccountingaccount) - Create an account
 * [CreateAccountingBill](#createaccountingbill) - Create a bill
+* [CreateAccountingCategory](#createaccountingcategory) - Create a category
 * [CreateAccountingContact](#createaccountingcontact) - Create a contact
 * [CreateAccountingCreditmemo](#createaccountingcreditmemo) - Create a creditmemo
 * [CreateAccountingInvoice](#createaccountinginvoice) - Create an invoice
@@ -19,6 +20,7 @@
 * [GetAccountingAccount](#getaccountingaccount) - Retrieve an account
 * [GetAccountingBalancesheet](#getaccountingbalancesheet) - Retrieve a balancesheet
 * [GetAccountingBill](#getaccountingbill) - Retrieve a bill
+* [GetAccountingCategory](#getaccountingcategory) - Retrieve a category
 * [GetAccountingContact](#getaccountingcontact) - Retrieve a contact
 * [GetAccountingCreditmemo](#getaccountingcreditmemo) - Retrieve a creditmemo
 * [GetAccountingInvoice](#getaccountinginvoice) - Retrieve an invoice
@@ -35,6 +37,7 @@
 * [ListAccountingAccounts](#listaccountingaccounts) - List all accounts
 * [ListAccountingBalancesheets](#listaccountingbalancesheets) - List all balancesheets
 * [ListAccountingBills](#listaccountingbills) - List all bills
+* [ListAccountingCategories](#listaccountingcategories) - List all categories
 * [ListAccountingContacts](#listaccountingcontacts) - List all contacts
 * [ListAccountingCreditmemoes](#listaccountingcreditmemoes) - List all creditmemoes
 * [ListAccountingInvoices](#listaccountinginvoices) - List all invoices
@@ -50,6 +53,7 @@
 * [ListAccountingTrialbalances](#listaccountingtrialbalances) - List all trialbalances
 * [PatchAccountingAccount](#patchaccountingaccount) - Update an account
 * [PatchAccountingBill](#patchaccountingbill) - Update a bill
+* [PatchAccountingCategory](#patchaccountingcategory) - Update a category
 * [PatchAccountingContact](#patchaccountingcontact) - Update a contact
 * [PatchAccountingCreditmemo](#patchaccountingcreditmemo) - Update a creditmemo
 * [PatchAccountingInvoice](#patchaccountinginvoice) - Update an invoice
@@ -61,6 +65,7 @@
 * [PatchAccountingTransaction](#patchaccountingtransaction) - Update a transaction
 * [RemoveAccountingAccount](#removeaccountingaccount) - Remove an account
 * [RemoveAccountingBill](#removeaccountingbill) - Remove a bill
+* [RemoveAccountingCategory](#removeaccountingcategory) - Remove a category
 * [RemoveAccountingContact](#removeaccountingcontact) - Remove a contact
 * [RemoveAccountingCreditmemo](#removeaccountingcreditmemo) - Remove a creditmemo
 * [RemoveAccountingInvoice](#removeaccountinginvoice) - Remove an invoice
@@ -72,6 +77,7 @@
 * [RemoveAccountingTransaction](#removeaccountingtransaction) - Remove a transaction
 * [UpdateAccountingAccount](#updateaccountingaccount) - Update an account
 * [UpdateAccountingBill](#updateaccountingbill) - Update a bill
+* [UpdateAccountingCategory](#updateaccountingcategory) - Update a category
 * [UpdateAccountingContact](#updateaccountingcontact) - Update a contact
 * [UpdateAccountingCreditmemo](#updateaccountingcreditmemo) - Update a creditmemo
 * [UpdateAccountingInvoice](#updateaccountinginvoice) - Update an invoice
@@ -157,6 +163,47 @@ var res = await sdk.Accounting.CreateAccountingBillAsync(
 ### Response
 
 **[CreateAccountingBillResponse](../../Models/Requests/CreateAccountingBillResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateAccountingCategory
+
+Create a category
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.CreateAccountingCategoryAsync(
+    accountingCategory: new AccountingCategory() {},
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `AccountingCategory`                                                                                                                             | [AccountingCategory](../../Models/Components/AccountingCategory.md)                                                                              | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateAccountingCategoryResponse](../../Models/Requests/CreateAccountingCategoryResponse.md)**
 
 ### Errors
 
@@ -649,6 +696,47 @@ var res = await sdk.Accounting.GetAccountingBillAsync(
 ### Response
 
 **[GetAccountingBillResponse](../../Models/Requests/GetAccountingBillResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetAccountingCategory
+
+Retrieve a category
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.GetAccountingCategoryAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Category                                                                                                                               |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetAccountingCategoryResponse](../../Models/Requests/GetAccountingCategoryResponse.md)**
 
 ### Errors
 
@@ -1309,6 +1397,46 @@ var res = await sdk.Accounting.ListAccountingBillsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListAccountingCategories
+
+List all categories
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListAccountingCategoriesRequest req = new ListAccountingCategoriesRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Accounting.ListAccountingCategoriesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [ListAccountingCategoriesRequest](../../Models/Requests/ListAccountingCategoriesRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+
+### Response
+
+**[ListAccountingCategoriesResponse](../../Models/Requests/ListAccountingCategoriesResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListAccountingContacts
 
 List all contacts
@@ -1913,6 +2041,48 @@ var res = await sdk.Accounting.PatchAccountingBillAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchAccountingCategory
+
+Update a category
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchAccountingCategoryRequest req = new PatchAccountingCategoryRequest() {
+    AccountingCategory = new AccountingCategory() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Accounting.PatchAccountingCategoryAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [PatchAccountingCategoryRequest](../../Models/Requests/PatchAccountingCategoryRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+
+### Response
+
+**[PatchAccountingCategoryResponse](../../Models/Requests/PatchAccountingCategoryResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchAccountingContact
 
 Update a contact
@@ -2369,6 +2539,45 @@ var res = await sdk.Accounting.RemoveAccountingBillAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## RemoveAccountingCategory
+
+Remove a category
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.RemoveAccountingCategoryAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Category   |
+
+### Response
+
+**[RemoveAccountingCategoryResponse](../../Models/Requests/RemoveAccountingCategoryResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## RemoveAccountingContact
 
 Remove a contact
@@ -2797,6 +3006,48 @@ var res = await sdk.Accounting.UpdateAccountingBillAsync(req);
 ### Response
 
 **[UpdateAccountingBillResponse](../../Models/Requests/UpdateAccountingBillResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateAccountingCategory
+
+Update a category
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateAccountingCategoryRequest req = new UpdateAccountingCategoryRequest() {
+    AccountingCategory = new AccountingCategory() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Accounting.UpdateAccountingCategoryAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [UpdateAccountingCategoryRequest](../../Models/Requests/UpdateAccountingCategoryRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+
+### Response
+
+**[UpdateAccountingCategoryResponse](../../Models/Requests/UpdateAccountingCategoryResponse.md)**
 
 ### Errors
 
