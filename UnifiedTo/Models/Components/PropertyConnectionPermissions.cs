@@ -79,6 +79,10 @@ namespace UnifiedTo.Models.Components
         AccountingBalancesheetRead,
         [JsonProperty("accounting_balancesheet_write")]
         AccountingBalancesheetWrite,
+        [JsonProperty("accounting_category_read")]
+        AccountingCategoryRead,
+        [JsonProperty("accounting_category_write")]
+        AccountingCategoryWrite,
         [JsonProperty("payment_payment_read")]
         PaymentPaymentRead,
         [JsonProperty("payment_payment_write")]

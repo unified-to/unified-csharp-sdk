@@ -19,7 +19,7 @@ namespace UnifiedTo.Models.Components
     {
 
         /// <summary>
-        /// @deprecated
+        /// @deprecated – use cost_of_goods_sold_sections instead
         /// </summary>
         [JsonProperty("cost_of_goods_sold")]
         public List<AccountingProfitlossCategory>? CostOfGoodsSold { get; set; }
@@ -40,7 +40,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? EndAt { get; set; }
 
         /// <summary>
-        /// @deprecated
+        /// @deprecated – use expenses_sections instead
         /// </summary>
         [JsonProperty("expenses")]
         public List<AccountingProfitlossCategory>? Expenses { get; set; }
@@ -58,7 +58,7 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         /// <summary>
-        /// @deprecated
+        /// @deprecated – use income_sections instead
         /// </summary>
         [JsonProperty("income")]
         public List<AccountingProfitlossCategory>? Income { get; set; }
