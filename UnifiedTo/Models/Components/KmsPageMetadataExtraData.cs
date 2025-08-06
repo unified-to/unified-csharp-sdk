@@ -24,15 +24,15 @@ namespace UnifiedTo.Models.Components
         private KmsPageMetadataExtraDataType(string value) { Value = value; }
 
         public string Value { get; private set; }
-        public static KmsPageMetadataExtraDataType KmsPageMetadata1 { get { return new KmsPageMetadataExtraDataType("KmsPageMetadata_1"); } }
+        public static KmsPageMetadataExtraDataType MapOfAny { get { return new KmsPageMetadataExtraDataType("mapOfAny"); } }
         
-        public static KmsPageMetadataExtraDataType KmsPageMetadata2 { get { return new KmsPageMetadataExtraDataType("KmsPageMetadata_2"); } }
+        public static KmsPageMetadataExtraDataType Str { get { return new KmsPageMetadataExtraDataType("str"); } }
         
-        public static KmsPageMetadataExtraDataType KmsPageMetadata3 { get { return new KmsPageMetadataExtraDataType("KmsPageMetadata_3"); } }
+        public static KmsPageMetadataExtraDataType Number { get { return new KmsPageMetadataExtraDataType("number"); } }
         
-        public static KmsPageMetadataExtraDataType KmsPageMetadata4 { get { return new KmsPageMetadataExtraDataType("KmsPageMetadata_4"); } }
+        public static KmsPageMetadataExtraDataType Boolean { get { return new KmsPageMetadataExtraDataType("boolean"); } }
         
-        public static KmsPageMetadataExtraDataType KmsPageMetadata5 { get { return new KmsPageMetadataExtraDataType("KmsPageMetadata_5"); } }
+        public static KmsPageMetadataExtraDataType ArrayOfKmsPageMetadata5 { get { return new KmsPageMetadataExtraDataType("arrayOfKmsPageMetadata5"); } }
         
         public static KmsPageMetadataExtraDataType Null { get { return new KmsPageMetadataExtraDataType("null"); } }
 
@@ -40,11 +40,11 @@ namespace UnifiedTo.Models.Components
         public static implicit operator String(KmsPageMetadataExtraDataType v) { return v.Value; }
         public static KmsPageMetadataExtraDataType FromString(string v) {
             switch(v) {
-                case "KmsPageMetadata_1": return KmsPageMetadata1;
-                case "KmsPageMetadata_2": return KmsPageMetadata2;
-                case "KmsPageMetadata_3": return KmsPageMetadata3;
-                case "KmsPageMetadata_4": return KmsPageMetadata4;
-                case "KmsPageMetadata_5": return KmsPageMetadata5;
+                case "mapOfAny": return MapOfAny;
+                case "str": return Str;
+                case "number": return Number;
+                case "boolean": return Boolean;
+                case "arrayOfKmsPageMetadata5": return ArrayOfKmsPageMetadata5;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for KmsPageMetadataExtraDataType");
             }
@@ -72,60 +72,60 @@ namespace UnifiedTo.Models.Components
         }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public KmsPageMetadata1? KmsPageMetadata1 { get; set; }
+        public Dictionary<string, object>? MapOfAny { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public KmsPageMetadata2? KmsPageMetadata2 { get; set; }
+        public string? Str { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public KmsPageMetadata3? KmsPageMetadata3 { get; set; }
+        public double? Number { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public KmsPageMetadata4? KmsPageMetadata4 { get; set; }
+        public bool? Boolean { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public KmsPageMetadata5? KmsPageMetadata5 { get; set; }
+        public List<KmsPageMetadata5>? ArrayOfKmsPageMetadata5 { get; set; }
 
         public KmsPageMetadataExtraDataType Type { get; set; }
 
 
-        public static KmsPageMetadataExtraData CreateKmsPageMetadata1(KmsPageMetadata1 kmsPageMetadata1) {
-            KmsPageMetadataExtraDataType typ = KmsPageMetadataExtraDataType.KmsPageMetadata1;
+        public static KmsPageMetadataExtraData CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+            KmsPageMetadataExtraDataType typ = KmsPageMetadataExtraDataType.MapOfAny;
 
             KmsPageMetadataExtraData res = new KmsPageMetadataExtraData(typ);
-            res.KmsPageMetadata1 = kmsPageMetadata1;
+            res.MapOfAny = mapOfAny;
             return res;
         }
 
-        public static KmsPageMetadataExtraData CreateKmsPageMetadata2(KmsPageMetadata2 kmsPageMetadata2) {
-            KmsPageMetadataExtraDataType typ = KmsPageMetadataExtraDataType.KmsPageMetadata2;
+        public static KmsPageMetadataExtraData CreateStr(string str) {
+            KmsPageMetadataExtraDataType typ = KmsPageMetadataExtraDataType.Str;
 
             KmsPageMetadataExtraData res = new KmsPageMetadataExtraData(typ);
-            res.KmsPageMetadata2 = kmsPageMetadata2;
+            res.Str = str;
             return res;
         }
 
-        public static KmsPageMetadataExtraData CreateKmsPageMetadata3(KmsPageMetadata3 kmsPageMetadata3) {
-            KmsPageMetadataExtraDataType typ = KmsPageMetadataExtraDataType.KmsPageMetadata3;
+        public static KmsPageMetadataExtraData CreateNumber(double number) {
+            KmsPageMetadataExtraDataType typ = KmsPageMetadataExtraDataType.Number;
 
             KmsPageMetadataExtraData res = new KmsPageMetadataExtraData(typ);
-            res.KmsPageMetadata3 = kmsPageMetadata3;
+            res.Number = number;
             return res;
         }
 
-        public static KmsPageMetadataExtraData CreateKmsPageMetadata4(KmsPageMetadata4 kmsPageMetadata4) {
-            KmsPageMetadataExtraDataType typ = KmsPageMetadataExtraDataType.KmsPageMetadata4;
+        public static KmsPageMetadataExtraData CreateBoolean(bool boolean) {
+            KmsPageMetadataExtraDataType typ = KmsPageMetadataExtraDataType.Boolean;
 
             KmsPageMetadataExtraData res = new KmsPageMetadataExtraData(typ);
-            res.KmsPageMetadata4 = kmsPageMetadata4;
+            res.Boolean = boolean;
             return res;
         }
 
-        public static KmsPageMetadataExtraData CreateKmsPageMetadata5(KmsPageMetadata5 kmsPageMetadata5) {
-            KmsPageMetadataExtraDataType typ = KmsPageMetadataExtraDataType.KmsPageMetadata5;
+        public static KmsPageMetadataExtraData CreateArrayOfKmsPageMetadata5(List<KmsPageMetadata5> arrayOfKmsPageMetadata5) {
+            KmsPageMetadataExtraDataType typ = KmsPageMetadataExtraDataType.ArrayOfKmsPageMetadata5;
 
             KmsPageMetadataExtraData res = new KmsPageMetadataExtraData(typ);
-            res.KmsPageMetadata5 = kmsPageMetadata5;
+            res.ArrayOfKmsPageMetadata5 = arrayOfKmsPageMetadata5;
             return res;
         }
 
@@ -153,14 +153,14 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.KmsPageMetadata1)
+                    return new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.MapOfAny)
                     {
-                        KmsPageMetadata1 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<KmsPageMetadata1>(json)
+                        MapOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Dictionary<string, object>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(KmsPageMetadata1), new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.KmsPageMetadata1), "KmsPageMetadata1"));
+                    fallbackCandidates.Add((typeof(Dictionary<string, object>), new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.MapOfAny), "MapOfAny"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -171,76 +171,49 @@ namespace UnifiedTo.Models.Components
                     throw;
                 }
 
-                try
-                {
-                    return new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.KmsPageMetadata2)
+                if (json[0] == '"' && json[^1] == '"'){
+                    return new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.Str)
                     {
-                        KmsPageMetadata2 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<KmsPageMetadata2>(json)
+                        Str = json[1..^1]
                     };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(KmsPageMetadata2), new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.KmsPageMetadata2), "KmsPageMetadata2"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.KmsPageMetadata3)
+                    var converted = Convert.ToDouble(json);
+                    return new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.Number)
                     {
-                        KmsPageMetadata3 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<KmsPageMetadata3>(json)
+                        Number = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(KmsPageMetadata3), new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.KmsPageMetadata3), "KmsPageMetadata3"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.KmsPageMetadata4)
+                    var converted = Convert.ToBoolean(json);
+                    return new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.Boolean)
                     {
-                        KmsPageMetadata4 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<KmsPageMetadata4>(json)
+                        Boolean = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(KmsPageMetadata4), new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.KmsPageMetadata4), "KmsPageMetadata4"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.KmsPageMetadata5)
+                    return new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.ArrayOfKmsPageMetadata5)
                     {
-                        KmsPageMetadata5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<KmsPageMetadata5>(json)
+                        ArrayOfKmsPageMetadata5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<KmsPageMetadata5>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(KmsPageMetadata5), new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.KmsPageMetadata5), "KmsPageMetadata5"));
+                    fallbackCandidates.Add((typeof(List<KmsPageMetadata5>), new KmsPageMetadataExtraData(KmsPageMetadataExtraDataType.ArrayOfKmsPageMetadata5), "ArrayOfKmsPageMetadata5"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -286,29 +259,29 @@ namespace UnifiedTo.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
-                if (res.KmsPageMetadata1 != null)
+                if (res.MapOfAny != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.KmsPageMetadata1));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
-                if (res.KmsPageMetadata2 != null)
+                if (res.Str != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.KmsPageMetadata2));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
-                if (res.KmsPageMetadata3 != null)
+                if (res.Number != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.KmsPageMetadata3));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
-                if (res.KmsPageMetadata4 != null)
+                if (res.Boolean != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.KmsPageMetadata4));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
-                if (res.KmsPageMetadata5 != null)
+                if (res.ArrayOfKmsPageMetadata5 != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.KmsPageMetadata5));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfKmsPageMetadata5));
                     return;
                 }
 

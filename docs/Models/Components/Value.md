@@ -3,32 +3,32 @@
 
 ## Supported Types
 
-### AtsMetadata1
+### MapOfAny
 
 ```csharp
-Value.CreateAtsMetadata1(/* values here */);
+Value.CreateMapOfAny(/* values here */);
 ```
 
-### AtsMetadata2
+### Str
 
 ```csharp
-Value.CreateAtsMetadata2(/* values here */);
+Value.CreateStr(/* values here */);
 ```
 
-### AtsMetadata3
+### Number
 
 ```csharp
-Value.CreateAtsMetadata3(/* values here */);
+Value.CreateNumber(/* values here */);
 ```
 
-### AtsMetadata4
+### Boolean
 
 ```csharp
-Value.CreateAtsMetadata4(/* values here */);
+Value.CreateBoolean(/* values here */);
 ```
 
-### AtsMetadata5
+### ArrayOfAtsMetadata5
 
 ```csharp
-Value.CreateAtsMetadata5(/* values here */);
+Value.CreateArrayOfAtsMetadata5(/* values here */);
 ```

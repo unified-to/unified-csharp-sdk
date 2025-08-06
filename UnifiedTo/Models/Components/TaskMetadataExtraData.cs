@@ -24,15 +24,15 @@ namespace UnifiedTo.Models.Components
         private TaskMetadataExtraDataType(string value) { Value = value; }
 
         public string Value { get; private set; }
-        public static TaskMetadataExtraDataType TaskMetadata1 { get { return new TaskMetadataExtraDataType("TaskMetadata_1"); } }
+        public static TaskMetadataExtraDataType MapOfAny { get { return new TaskMetadataExtraDataType("mapOfAny"); } }
         
-        public static TaskMetadataExtraDataType TaskMetadata2 { get { return new TaskMetadataExtraDataType("TaskMetadata_2"); } }
+        public static TaskMetadataExtraDataType Str { get { return new TaskMetadataExtraDataType("str"); } }
         
-        public static TaskMetadataExtraDataType TaskMetadata3 { get { return new TaskMetadataExtraDataType("TaskMetadata_3"); } }
+        public static TaskMetadataExtraDataType Number { get { return new TaskMetadataExtraDataType("number"); } }
         
-        public static TaskMetadataExtraDataType TaskMetadata4 { get { return new TaskMetadataExtraDataType("TaskMetadata_4"); } }
+        public static TaskMetadataExtraDataType Boolean { get { return new TaskMetadataExtraDataType("boolean"); } }
         
-        public static TaskMetadataExtraDataType TaskMetadata5 { get { return new TaskMetadataExtraDataType("TaskMetadata_5"); } }
+        public static TaskMetadataExtraDataType ArrayOfTaskMetadata5 { get { return new TaskMetadataExtraDataType("arrayOfTaskMetadata5"); } }
         
         public static TaskMetadataExtraDataType Null { get { return new TaskMetadataExtraDataType("null"); } }
 
@@ -40,11 +40,11 @@ namespace UnifiedTo.Models.Components
         public static implicit operator String(TaskMetadataExtraDataType v) { return v.Value; }
         public static TaskMetadataExtraDataType FromString(string v) {
             switch(v) {
-                case "TaskMetadata_1": return TaskMetadata1;
-                case "TaskMetadata_2": return TaskMetadata2;
-                case "TaskMetadata_3": return TaskMetadata3;
-                case "TaskMetadata_4": return TaskMetadata4;
-                case "TaskMetadata_5": return TaskMetadata5;
+                case "mapOfAny": return MapOfAny;
+                case "str": return Str;
+                case "number": return Number;
+                case "boolean": return Boolean;
+                case "arrayOfTaskMetadata5": return ArrayOfTaskMetadata5;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for TaskMetadataExtraDataType");
             }
@@ -72,60 +72,60 @@ namespace UnifiedTo.Models.Components
         }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public TaskMetadata1? TaskMetadata1 { get; set; }
+        public Dictionary<string, object>? MapOfAny { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public TaskMetadata2? TaskMetadata2 { get; set; }
+        public string? Str { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public TaskMetadata3? TaskMetadata3 { get; set; }
+        public double? Number { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public TaskMetadata4? TaskMetadata4 { get; set; }
+        public bool? Boolean { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public TaskMetadata5? TaskMetadata5 { get; set; }
+        public List<TaskMetadata5>? ArrayOfTaskMetadata5 { get; set; }
 
         public TaskMetadataExtraDataType Type { get; set; }
 
 
-        public static TaskMetadataExtraData CreateTaskMetadata1(TaskMetadata1 taskMetadata1) {
-            TaskMetadataExtraDataType typ = TaskMetadataExtraDataType.TaskMetadata1;
+        public static TaskMetadataExtraData CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+            TaskMetadataExtraDataType typ = TaskMetadataExtraDataType.MapOfAny;
 
             TaskMetadataExtraData res = new TaskMetadataExtraData(typ);
-            res.TaskMetadata1 = taskMetadata1;
+            res.MapOfAny = mapOfAny;
             return res;
         }
 
-        public static TaskMetadataExtraData CreateTaskMetadata2(TaskMetadata2 taskMetadata2) {
-            TaskMetadataExtraDataType typ = TaskMetadataExtraDataType.TaskMetadata2;
+        public static TaskMetadataExtraData CreateStr(string str) {
+            TaskMetadataExtraDataType typ = TaskMetadataExtraDataType.Str;
 
             TaskMetadataExtraData res = new TaskMetadataExtraData(typ);
-            res.TaskMetadata2 = taskMetadata2;
+            res.Str = str;
             return res;
         }
 
-        public static TaskMetadataExtraData CreateTaskMetadata3(TaskMetadata3 taskMetadata3) {
-            TaskMetadataExtraDataType typ = TaskMetadataExtraDataType.TaskMetadata3;
+        public static TaskMetadataExtraData CreateNumber(double number) {
+            TaskMetadataExtraDataType typ = TaskMetadataExtraDataType.Number;
 
             TaskMetadataExtraData res = new TaskMetadataExtraData(typ);
-            res.TaskMetadata3 = taskMetadata3;
+            res.Number = number;
             return res;
         }
 
-        public static TaskMetadataExtraData CreateTaskMetadata4(TaskMetadata4 taskMetadata4) {
-            TaskMetadataExtraDataType typ = TaskMetadataExtraDataType.TaskMetadata4;
+        public static TaskMetadataExtraData CreateBoolean(bool boolean) {
+            TaskMetadataExtraDataType typ = TaskMetadataExtraDataType.Boolean;
 
             TaskMetadataExtraData res = new TaskMetadataExtraData(typ);
-            res.TaskMetadata4 = taskMetadata4;
+            res.Boolean = boolean;
             return res;
         }
 
-        public static TaskMetadataExtraData CreateTaskMetadata5(TaskMetadata5 taskMetadata5) {
-            TaskMetadataExtraDataType typ = TaskMetadataExtraDataType.TaskMetadata5;
+        public static TaskMetadataExtraData CreateArrayOfTaskMetadata5(List<TaskMetadata5> arrayOfTaskMetadata5) {
+            TaskMetadataExtraDataType typ = TaskMetadataExtraDataType.ArrayOfTaskMetadata5;
 
             TaskMetadataExtraData res = new TaskMetadataExtraData(typ);
-            res.TaskMetadata5 = taskMetadata5;
+            res.ArrayOfTaskMetadata5 = arrayOfTaskMetadata5;
             return res;
         }
 
@@ -153,14 +153,14 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new TaskMetadataExtraData(TaskMetadataExtraDataType.TaskMetadata1)
+                    return new TaskMetadataExtraData(TaskMetadataExtraDataType.MapOfAny)
                     {
-                        TaskMetadata1 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<TaskMetadata1>(json)
+                        MapOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Dictionary<string, object>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(TaskMetadata1), new TaskMetadataExtraData(TaskMetadataExtraDataType.TaskMetadata1), "TaskMetadata1"));
+                    fallbackCandidates.Add((typeof(Dictionary<string, object>), new TaskMetadataExtraData(TaskMetadataExtraDataType.MapOfAny), "MapOfAny"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -171,76 +171,49 @@ namespace UnifiedTo.Models.Components
                     throw;
                 }
 
-                try
-                {
-                    return new TaskMetadataExtraData(TaskMetadataExtraDataType.TaskMetadata2)
+                if (json[0] == '"' && json[^1] == '"'){
+                    return new TaskMetadataExtraData(TaskMetadataExtraDataType.Str)
                     {
-                        TaskMetadata2 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<TaskMetadata2>(json)
+                        Str = json[1..^1]
                     };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(TaskMetadata2), new TaskMetadataExtraData(TaskMetadataExtraDataType.TaskMetadata2), "TaskMetadata2"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new TaskMetadataExtraData(TaskMetadataExtraDataType.TaskMetadata3)
+                    var converted = Convert.ToDouble(json);
+                    return new TaskMetadataExtraData(TaskMetadataExtraDataType.Number)
                     {
-                        TaskMetadata3 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<TaskMetadata3>(json)
+                        Number = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(TaskMetadata3), new TaskMetadataExtraData(TaskMetadataExtraDataType.TaskMetadata3), "TaskMetadata3"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new TaskMetadataExtraData(TaskMetadataExtraDataType.TaskMetadata4)
+                    var converted = Convert.ToBoolean(json);
+                    return new TaskMetadataExtraData(TaskMetadataExtraDataType.Boolean)
                     {
-                        TaskMetadata4 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<TaskMetadata4>(json)
+                        Boolean = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(TaskMetadata4), new TaskMetadataExtraData(TaskMetadataExtraDataType.TaskMetadata4), "TaskMetadata4"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new TaskMetadataExtraData(TaskMetadataExtraDataType.TaskMetadata5)
+                    return new TaskMetadataExtraData(TaskMetadataExtraDataType.ArrayOfTaskMetadata5)
                     {
-                        TaskMetadata5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<TaskMetadata5>(json)
+                        ArrayOfTaskMetadata5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<TaskMetadata5>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(TaskMetadata5), new TaskMetadataExtraData(TaskMetadataExtraDataType.TaskMetadata5), "TaskMetadata5"));
+                    fallbackCandidates.Add((typeof(List<TaskMetadata5>), new TaskMetadataExtraData(TaskMetadataExtraDataType.ArrayOfTaskMetadata5), "ArrayOfTaskMetadata5"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -286,29 +259,29 @@ namespace UnifiedTo.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
-                if (res.TaskMetadata1 != null)
+                if (res.MapOfAny != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.TaskMetadata1));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
-                if (res.TaskMetadata2 != null)
+                if (res.Str != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.TaskMetadata2));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
-                if (res.TaskMetadata3 != null)
+                if (res.Number != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.TaskMetadata3));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
-                if (res.TaskMetadata4 != null)
+                if (res.Boolean != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.TaskMetadata4));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
-                if (res.TaskMetadata5 != null)
+                if (res.ArrayOfTaskMetadata5 != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.TaskMetadata5));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfTaskMetadata5));
                     return;
                 }
 

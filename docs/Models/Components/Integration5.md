@@ -3,14 +3,26 @@
 
 ## Supported Types
 
-### ArrayOfAny
+### Integration1
 
 ```csharp
-Integration5.CreateArrayOfAny(/* values here */);
+Integration5.CreateIntegration1(/* values here */);
 ```
 
-### IntegrationSchemasApi52
+### Str
 
 ```csharp
-Integration5.CreateIntegrationSchemasApi52(/* values here */);
+Integration5.CreateStr(/* values here */);
+```
+
+### Number
+
+```csharp
+Integration5.CreateNumber(/* values here */);
+```
+
+### Boolean
+
+```csharp
+Integration5.CreateBoolean(/* values here */);
 ```

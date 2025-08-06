@@ -24,9 +24,13 @@ namespace UnifiedTo.Models.Components
         private TaskMetadataSchemas5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
-        public static TaskMetadataSchemas5Type ArrayOfAny { get { return new TaskMetadataSchemas5Type("arrayOfAny"); } }
+        public static TaskMetadataSchemas5Type TaskMetadataSchemas1 { get { return new TaskMetadataSchemas5Type("TaskMetadata_Schemas_1"); } }
         
-        public static TaskMetadataSchemas5Type TaskMetadataSchemasValue52 { get { return new TaskMetadataSchemas5Type("TaskMetadata_Schemas_value_5_2"); } }
+        public static TaskMetadataSchemas5Type Str { get { return new TaskMetadataSchemas5Type("str"); } }
+        
+        public static TaskMetadataSchemas5Type Number { get { return new TaskMetadataSchemas5Type("number"); } }
+        
+        public static TaskMetadataSchemas5Type Boolean { get { return new TaskMetadataSchemas5Type("boolean"); } }
         
         public static TaskMetadataSchemas5Type Null { get { return new TaskMetadataSchemas5Type("null"); } }
 
@@ -34,8 +38,10 @@ namespace UnifiedTo.Models.Components
         public static implicit operator String(TaskMetadataSchemas5Type v) { return v.Value; }
         public static TaskMetadataSchemas5Type FromString(string v) {
             switch(v) {
-                case "arrayOfAny": return ArrayOfAny;
-                case "TaskMetadata_Schemas_value_5_2": return TaskMetadataSchemasValue52;
+                case "TaskMetadata_Schemas_1": return TaskMetadataSchemas1;
+                case "str": return Str;
+                case "number": return Number;
+                case "boolean": return Boolean;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for TaskMetadataSchemas5Type");
             }
@@ -63,27 +69,49 @@ namespace UnifiedTo.Models.Components
         }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public List<object>? ArrayOfAny { get; set; }
+        public TaskMetadataSchemas1? TaskMetadataSchemas1 { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public TaskMetadataSchemasValue52? TaskMetadataSchemasValue52 { get; set; }
+        public string? Str { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public double? Number { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public bool? Boolean { get; set; }
 
         public TaskMetadataSchemas5Type Type { get; set; }
 
 
-        public static TaskMetadataSchemas5 CreateArrayOfAny(List<object> arrayOfAny) {
-            TaskMetadataSchemas5Type typ = TaskMetadataSchemas5Type.ArrayOfAny;
+        public static TaskMetadataSchemas5 CreateTaskMetadataSchemas1(TaskMetadataSchemas1 taskMetadataSchemas1) {
+            TaskMetadataSchemas5Type typ = TaskMetadataSchemas5Type.TaskMetadataSchemas1;
 
             TaskMetadataSchemas5 res = new TaskMetadataSchemas5(typ);
-            res.ArrayOfAny = arrayOfAny;
+            res.TaskMetadataSchemas1 = taskMetadataSchemas1;
             return res;
         }
 
-        public static TaskMetadataSchemas5 CreateTaskMetadataSchemasValue52(TaskMetadataSchemasValue52 taskMetadataSchemasValue52) {
-            TaskMetadataSchemas5Type typ = TaskMetadataSchemas5Type.TaskMetadataSchemasValue52;
+        public static TaskMetadataSchemas5 CreateStr(string str) {
+            TaskMetadataSchemas5Type typ = TaskMetadataSchemas5Type.Str;
 
             TaskMetadataSchemas5 res = new TaskMetadataSchemas5(typ);
-            res.TaskMetadataSchemasValue52 = taskMetadataSchemasValue52;
+            res.Str = str;
+            return res;
+        }
+
+        public static TaskMetadataSchemas5 CreateNumber(double number) {
+            TaskMetadataSchemas5Type typ = TaskMetadataSchemas5Type.Number;
+
+            TaskMetadataSchemas5 res = new TaskMetadataSchemas5(typ);
+            res.Number = number;
+            return res;
+        }
+
+        public static TaskMetadataSchemas5 CreateBoolean(bool boolean) {
+            TaskMetadataSchemas5Type typ = TaskMetadataSchemas5Type.Boolean;
+
+            TaskMetadataSchemas5 res = new TaskMetadataSchemas5(typ);
+            res.Boolean = boolean;
             return res;
         }
 
@@ -111,14 +139,14 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new TaskMetadataSchemas5(TaskMetadataSchemas5Type.TaskMetadataSchemasValue52)
+                    return new TaskMetadataSchemas5(TaskMetadataSchemas5Type.TaskMetadataSchemas1)
                     {
-                        TaskMetadataSchemasValue52 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<TaskMetadataSchemasValue52>(json)
+                        TaskMetadataSchemas1 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<TaskMetadataSchemas1>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(TaskMetadataSchemasValue52), new TaskMetadataSchemas5(TaskMetadataSchemas5Type.TaskMetadataSchemasValue52), "TaskMetadataSchemasValue52"));
+                    fallbackCandidates.Add((typeof(TaskMetadataSchemas1), new TaskMetadataSchemas5(TaskMetadataSchemas5Type.TaskMetadataSchemas1), "TaskMetadataSchemas1"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -129,24 +157,37 @@ namespace UnifiedTo.Models.Components
                     throw;
                 }
 
-                try
-                {
-                    return new TaskMetadataSchemas5(TaskMetadataSchemas5Type.ArrayOfAny)
+                if (json[0] == '"' && json[^1] == '"'){
+                    return new TaskMetadataSchemas5(TaskMetadataSchemas5Type.Str)
                     {
-                        ArrayOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<object>>(json)
+                        Str = json[1..^1]
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
+
+                try
                 {
-                    fallbackCandidates.Add((typeof(List<object>), new TaskMetadataSchemas5(TaskMetadataSchemas5Type.ArrayOfAny), "ArrayOfAny"));
+                    var converted = Convert.ToDouble(json);
+                    return new TaskMetadataSchemas5(TaskMetadataSchemas5Type.Number)
+                    {
+                        Number = converted
+                    };
                 }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
                 }
-                catch (Exception)
+
+                try
                 {
-                    throw;
+                    var converted = Convert.ToBoolean(json);
+                    return new TaskMetadataSchemas5(TaskMetadataSchemas5Type.Boolean)
+                    {
+                        Boolean = converted
+                    };
+                }
+                catch (System.FormatException)
+                {
+                    // try next option
                 }
 
                 if (fallbackCandidates.Count > 0)
@@ -184,14 +225,24 @@ namespace UnifiedTo.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
-                if (res.ArrayOfAny != null)
+                if (res.TaskMetadataSchemas1 != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.TaskMetadataSchemas1));
                     return;
                 }
-                if (res.TaskMetadataSchemasValue52 != null)
+                if (res.Str != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.TaskMetadataSchemasValue52));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
+                    return;
+                }
+                if (res.Number != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
+                    return;
+                }
+                if (res.Boolean != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 

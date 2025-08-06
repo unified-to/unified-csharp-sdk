@@ -3,14 +3,26 @@
 
 ## Supported Types
 
-### ArrayOfAny
+### TaskMetadata1
 
 ```csharp
-TaskMetadata5.CreateArrayOfAny(/* values here */);
+TaskMetadata5.CreateTaskMetadata1(/* values here */);
 ```
 
-### TaskMetadataSchemasExtraData52
+### Str
 
 ```csharp
-TaskMetadata5.CreateTaskMetadataSchemasExtraData52(/* values here */);
+TaskMetadata5.CreateStr(/* values here */);
+```
+
+### Number
+
+```csharp
+TaskMetadata5.CreateNumber(/* values here */);
+```
+
+### Boolean
+
+```csharp
+TaskMetadata5.CreateBoolean(/* values here */);
 ```

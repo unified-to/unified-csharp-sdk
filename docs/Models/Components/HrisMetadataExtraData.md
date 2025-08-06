@@ -3,32 +3,32 @@
 
 ## Supported Types
 
-### HrisMetadata1
+### MapOfAny
 
 ```csharp
-HrisMetadataExtraData.CreateHrisMetadata1(/* values here */);
+HrisMetadataExtraData.CreateMapOfAny(/* values here */);
 ```
 
-### HrisMetadata2
+### Str
 
 ```csharp
-HrisMetadataExtraData.CreateHrisMetadata2(/* values here */);
+HrisMetadataExtraData.CreateStr(/* values here */);
 ```
 
-### HrisMetadata3
+### Number
 
 ```csharp
-HrisMetadataExtraData.CreateHrisMetadata3(/* values here */);
+HrisMetadataExtraData.CreateNumber(/* values here */);
 ```
 
-### HrisMetadata4
+### Boolean
 
 ```csharp
-HrisMetadataExtraData.CreateHrisMetadata4(/* values here */);
+HrisMetadataExtraData.CreateBoolean(/* values here */);
 ```
 
-### HrisMetadata5
+### ArrayOfHrisMetadata5
 
 ```csharp
-HrisMetadataExtraData.CreateHrisMetadata5(/* values here */);
+HrisMetadataExtraData.CreateArrayOfHrisMetadata5(/* values here */);
 ```

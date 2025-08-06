@@ -24,15 +24,15 @@ namespace UnifiedTo.Models.Components
         private PartnershipType(string value) { Value = value; }
 
         public string Value { get; private set; }
-        public static PartnershipType IntegrationSchemas1 { get { return new PartnershipType("Integration_Schemas_1"); } }
+        public static PartnershipType MapOfAny { get { return new PartnershipType("mapOfAny"); } }
         
-        public static PartnershipType IntegrationSchemas2 { get { return new PartnershipType("Integration_Schemas_2"); } }
+        public static PartnershipType Str { get { return new PartnershipType("str"); } }
         
-        public static PartnershipType IntegrationSchemas3 { get { return new PartnershipType("Integration_Schemas_3"); } }
+        public static PartnershipType Number { get { return new PartnershipType("number"); } }
         
-        public static PartnershipType IntegrationSchemas4 { get { return new PartnershipType("Integration_Schemas_4"); } }
+        public static PartnershipType Boolean { get { return new PartnershipType("boolean"); } }
         
-        public static PartnershipType IntegrationSchemas5 { get { return new PartnershipType("Integration_Schemas_5"); } }
+        public static PartnershipType ArrayOfIntegrationSchemas5 { get { return new PartnershipType("arrayOfIntegrationSchemas5"); } }
         
         public static PartnershipType Null { get { return new PartnershipType("null"); } }
 
@@ -40,11 +40,11 @@ namespace UnifiedTo.Models.Components
         public static implicit operator String(PartnershipType v) { return v.Value; }
         public static PartnershipType FromString(string v) {
             switch(v) {
-                case "Integration_Schemas_1": return IntegrationSchemas1;
-                case "Integration_Schemas_2": return IntegrationSchemas2;
-                case "Integration_Schemas_3": return IntegrationSchemas3;
-                case "Integration_Schemas_4": return IntegrationSchemas4;
-                case "Integration_Schemas_5": return IntegrationSchemas5;
+                case "mapOfAny": return MapOfAny;
+                case "str": return Str;
+                case "number": return Number;
+                case "boolean": return Boolean;
+                case "arrayOfIntegrationSchemas5": return ArrayOfIntegrationSchemas5;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for PartnershipType");
             }
@@ -72,60 +72,60 @@ namespace UnifiedTo.Models.Components
         }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public IntegrationSchemas1? IntegrationSchemas1 { get; set; }
+        public Dictionary<string, object>? MapOfAny { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public IntegrationSchemas2? IntegrationSchemas2 { get; set; }
+        public string? Str { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public IntegrationSchemas3? IntegrationSchemas3 { get; set; }
+        public double? Number { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public IntegrationSchemas4? IntegrationSchemas4 { get; set; }
+        public bool? Boolean { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public IntegrationSchemas5? IntegrationSchemas5 { get; set; }
+        public List<IntegrationSchemas5>? ArrayOfIntegrationSchemas5 { get; set; }
 
         public PartnershipType Type { get; set; }
 
 
-        public static Partnership CreateIntegrationSchemas1(IntegrationSchemas1 integrationSchemas1) {
-            PartnershipType typ = PartnershipType.IntegrationSchemas1;
+        public static Partnership CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+            PartnershipType typ = PartnershipType.MapOfAny;
 
             Partnership res = new Partnership(typ);
-            res.IntegrationSchemas1 = integrationSchemas1;
+            res.MapOfAny = mapOfAny;
             return res;
         }
 
-        public static Partnership CreateIntegrationSchemas2(IntegrationSchemas2 integrationSchemas2) {
-            PartnershipType typ = PartnershipType.IntegrationSchemas2;
+        public static Partnership CreateStr(string str) {
+            PartnershipType typ = PartnershipType.Str;
 
             Partnership res = new Partnership(typ);
-            res.IntegrationSchemas2 = integrationSchemas2;
+            res.Str = str;
             return res;
         }
 
-        public static Partnership CreateIntegrationSchemas3(IntegrationSchemas3 integrationSchemas3) {
-            PartnershipType typ = PartnershipType.IntegrationSchemas3;
+        public static Partnership CreateNumber(double number) {
+            PartnershipType typ = PartnershipType.Number;
 
             Partnership res = new Partnership(typ);
-            res.IntegrationSchemas3 = integrationSchemas3;
+            res.Number = number;
             return res;
         }
 
-        public static Partnership CreateIntegrationSchemas4(IntegrationSchemas4 integrationSchemas4) {
-            PartnershipType typ = PartnershipType.IntegrationSchemas4;
+        public static Partnership CreateBoolean(bool boolean) {
+            PartnershipType typ = PartnershipType.Boolean;
 
             Partnership res = new Partnership(typ);
-            res.IntegrationSchemas4 = integrationSchemas4;
+            res.Boolean = boolean;
             return res;
         }
 
-        public static Partnership CreateIntegrationSchemas5(IntegrationSchemas5 integrationSchemas5) {
-            PartnershipType typ = PartnershipType.IntegrationSchemas5;
+        public static Partnership CreateArrayOfIntegrationSchemas5(List<IntegrationSchemas5> arrayOfIntegrationSchemas5) {
+            PartnershipType typ = PartnershipType.ArrayOfIntegrationSchemas5;
 
             Partnership res = new Partnership(typ);
-            res.IntegrationSchemas5 = integrationSchemas5;
+            res.ArrayOfIntegrationSchemas5 = arrayOfIntegrationSchemas5;
             return res;
         }
 
@@ -153,14 +153,14 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new Partnership(PartnershipType.IntegrationSchemas1)
+                    return new Partnership(PartnershipType.MapOfAny)
                     {
-                        IntegrationSchemas1 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<IntegrationSchemas1>(json)
+                        MapOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Dictionary<string, object>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(IntegrationSchemas1), new Partnership(PartnershipType.IntegrationSchemas1), "IntegrationSchemas1"));
+                    fallbackCandidates.Add((typeof(Dictionary<string, object>), new Partnership(PartnershipType.MapOfAny), "MapOfAny"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -171,76 +171,49 @@ namespace UnifiedTo.Models.Components
                     throw;
                 }
 
-                try
-                {
-                    return new Partnership(PartnershipType.IntegrationSchemas2)
+                if (json[0] == '"' && json[^1] == '"'){
+                    return new Partnership(PartnershipType.Str)
                     {
-                        IntegrationSchemas2 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<IntegrationSchemas2>(json)
+                        Str = json[1..^1]
                     };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(IntegrationSchemas2), new Partnership(PartnershipType.IntegrationSchemas2), "IntegrationSchemas2"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new Partnership(PartnershipType.IntegrationSchemas3)
+                    var converted = Convert.ToDouble(json);
+                    return new Partnership(PartnershipType.Number)
                     {
-                        IntegrationSchemas3 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<IntegrationSchemas3>(json)
+                        Number = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(IntegrationSchemas3), new Partnership(PartnershipType.IntegrationSchemas3), "IntegrationSchemas3"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new Partnership(PartnershipType.IntegrationSchemas4)
+                    var converted = Convert.ToBoolean(json);
+                    return new Partnership(PartnershipType.Boolean)
                     {
-                        IntegrationSchemas4 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<IntegrationSchemas4>(json)
+                        Boolean = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(IntegrationSchemas4), new Partnership(PartnershipType.IntegrationSchemas4), "IntegrationSchemas4"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new Partnership(PartnershipType.IntegrationSchemas5)
+                    return new Partnership(PartnershipType.ArrayOfIntegrationSchemas5)
                     {
-                        IntegrationSchemas5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<IntegrationSchemas5>(json)
+                        ArrayOfIntegrationSchemas5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<IntegrationSchemas5>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(IntegrationSchemas5), new Partnership(PartnershipType.IntegrationSchemas5), "IntegrationSchemas5"));
+                    fallbackCandidates.Add((typeof(List<IntegrationSchemas5>), new Partnership(PartnershipType.ArrayOfIntegrationSchemas5), "ArrayOfIntegrationSchemas5"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -286,29 +259,29 @@ namespace UnifiedTo.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
-                if (res.IntegrationSchemas1 != null)
+                if (res.MapOfAny != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.IntegrationSchemas1));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
-                if (res.IntegrationSchemas2 != null)
+                if (res.Str != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.IntegrationSchemas2));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
-                if (res.IntegrationSchemas3 != null)
+                if (res.Number != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.IntegrationSchemas3));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
-                if (res.IntegrationSchemas4 != null)
+                if (res.Boolean != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.IntegrationSchemas4));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
-                if (res.IntegrationSchemas5 != null)
+                if (res.ArrayOfIntegrationSchemas5 != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.IntegrationSchemas5));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfIntegrationSchemas5));
                     return;
                 }
 

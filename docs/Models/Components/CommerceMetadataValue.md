@@ -3,32 +3,32 @@
 
 ## Supported Types
 
-### CommerceMetadataSchemas1
+### MapOfAny
 
 ```csharp
-CommerceMetadataValue.CreateCommerceMetadataSchemas1(/* values here */);
+CommerceMetadataValue.CreateMapOfAny(/* values here */);
 ```
 
-### CommerceMetadataSchemas2
+### Str
 
 ```csharp
-CommerceMetadataValue.CreateCommerceMetadataSchemas2(/* values here */);
+CommerceMetadataValue.CreateStr(/* values here */);
 ```
 
-### CommerceMetadataSchemas3
+### Number
 
 ```csharp
-CommerceMetadataValue.CreateCommerceMetadataSchemas3(/* values here */);
+CommerceMetadataValue.CreateNumber(/* values here */);
 ```
 
-### CommerceMetadataSchemas4
+### Boolean
 
 ```csharp
-CommerceMetadataValue.CreateCommerceMetadataSchemas4(/* values here */);
+CommerceMetadataValue.CreateBoolean(/* values here */);
 ```
 
-### CommerceMetadataSchemas5
+### ArrayOfCommerceMetadataSchemas5
 
 ```csharp
-CommerceMetadataValue.CreateCommerceMetadataSchemas5(/* values here */);
+CommerceMetadataValue.CreateArrayOfCommerceMetadataSchemas5(/* values here */);
 ```

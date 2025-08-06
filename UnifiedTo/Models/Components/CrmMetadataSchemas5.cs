@@ -24,9 +24,13 @@ namespace UnifiedTo.Models.Components
         private CrmMetadataSchemas5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
-        public static CrmMetadataSchemas5Type ArrayOfAny { get { return new CrmMetadataSchemas5Type("arrayOfAny"); } }
+        public static CrmMetadataSchemas5Type CrmMetadataSchemas1 { get { return new CrmMetadataSchemas5Type("CrmMetadata_Schemas_1"); } }
         
-        public static CrmMetadataSchemas5Type CrmMetadataSchemasValue52 { get { return new CrmMetadataSchemas5Type("CrmMetadata_Schemas_value_5_2"); } }
+        public static CrmMetadataSchemas5Type Str { get { return new CrmMetadataSchemas5Type("str"); } }
+        
+        public static CrmMetadataSchemas5Type Number { get { return new CrmMetadataSchemas5Type("number"); } }
+        
+        public static CrmMetadataSchemas5Type Boolean { get { return new CrmMetadataSchemas5Type("boolean"); } }
         
         public static CrmMetadataSchemas5Type Null { get { return new CrmMetadataSchemas5Type("null"); } }
 
@@ -34,8 +38,10 @@ namespace UnifiedTo.Models.Components
         public static implicit operator String(CrmMetadataSchemas5Type v) { return v.Value; }
         public static CrmMetadataSchemas5Type FromString(string v) {
             switch(v) {
-                case "arrayOfAny": return ArrayOfAny;
-                case "CrmMetadata_Schemas_value_5_2": return CrmMetadataSchemasValue52;
+                case "CrmMetadata_Schemas_1": return CrmMetadataSchemas1;
+                case "str": return Str;
+                case "number": return Number;
+                case "boolean": return Boolean;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for CrmMetadataSchemas5Type");
             }
@@ -63,27 +69,49 @@ namespace UnifiedTo.Models.Components
         }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public List<object>? ArrayOfAny { get; set; }
+        public CrmMetadataSchemas1? CrmMetadataSchemas1 { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public CrmMetadataSchemasValue52? CrmMetadataSchemasValue52 { get; set; }
+        public string? Str { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public double? Number { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public bool? Boolean { get; set; }
 
         public CrmMetadataSchemas5Type Type { get; set; }
 
 
-        public static CrmMetadataSchemas5 CreateArrayOfAny(List<object> arrayOfAny) {
-            CrmMetadataSchemas5Type typ = CrmMetadataSchemas5Type.ArrayOfAny;
+        public static CrmMetadataSchemas5 CreateCrmMetadataSchemas1(CrmMetadataSchemas1 crmMetadataSchemas1) {
+            CrmMetadataSchemas5Type typ = CrmMetadataSchemas5Type.CrmMetadataSchemas1;
 
             CrmMetadataSchemas5 res = new CrmMetadataSchemas5(typ);
-            res.ArrayOfAny = arrayOfAny;
+            res.CrmMetadataSchemas1 = crmMetadataSchemas1;
             return res;
         }
 
-        public static CrmMetadataSchemas5 CreateCrmMetadataSchemasValue52(CrmMetadataSchemasValue52 crmMetadataSchemasValue52) {
-            CrmMetadataSchemas5Type typ = CrmMetadataSchemas5Type.CrmMetadataSchemasValue52;
+        public static CrmMetadataSchemas5 CreateStr(string str) {
+            CrmMetadataSchemas5Type typ = CrmMetadataSchemas5Type.Str;
 
             CrmMetadataSchemas5 res = new CrmMetadataSchemas5(typ);
-            res.CrmMetadataSchemasValue52 = crmMetadataSchemasValue52;
+            res.Str = str;
+            return res;
+        }
+
+        public static CrmMetadataSchemas5 CreateNumber(double number) {
+            CrmMetadataSchemas5Type typ = CrmMetadataSchemas5Type.Number;
+
+            CrmMetadataSchemas5 res = new CrmMetadataSchemas5(typ);
+            res.Number = number;
+            return res;
+        }
+
+        public static CrmMetadataSchemas5 CreateBoolean(bool boolean) {
+            CrmMetadataSchemas5Type typ = CrmMetadataSchemas5Type.Boolean;
+
+            CrmMetadataSchemas5 res = new CrmMetadataSchemas5(typ);
+            res.Boolean = boolean;
             return res;
         }
 
@@ -111,14 +139,14 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new CrmMetadataSchemas5(CrmMetadataSchemas5Type.CrmMetadataSchemasValue52)
+                    return new CrmMetadataSchemas5(CrmMetadataSchemas5Type.CrmMetadataSchemas1)
                     {
-                        CrmMetadataSchemasValue52 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CrmMetadataSchemasValue52>(json)
+                        CrmMetadataSchemas1 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CrmMetadataSchemas1>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(CrmMetadataSchemasValue52), new CrmMetadataSchemas5(CrmMetadataSchemas5Type.CrmMetadataSchemasValue52), "CrmMetadataSchemasValue52"));
+                    fallbackCandidates.Add((typeof(CrmMetadataSchemas1), new CrmMetadataSchemas5(CrmMetadataSchemas5Type.CrmMetadataSchemas1), "CrmMetadataSchemas1"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -129,24 +157,37 @@ namespace UnifiedTo.Models.Components
                     throw;
                 }
 
-                try
-                {
-                    return new CrmMetadataSchemas5(CrmMetadataSchemas5Type.ArrayOfAny)
+                if (json[0] == '"' && json[^1] == '"'){
+                    return new CrmMetadataSchemas5(CrmMetadataSchemas5Type.Str)
                     {
-                        ArrayOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<object>>(json)
+                        Str = json[1..^1]
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
+
+                try
                 {
-                    fallbackCandidates.Add((typeof(List<object>), new CrmMetadataSchemas5(CrmMetadataSchemas5Type.ArrayOfAny), "ArrayOfAny"));
+                    var converted = Convert.ToDouble(json);
+                    return new CrmMetadataSchemas5(CrmMetadataSchemas5Type.Number)
+                    {
+                        Number = converted
+                    };
                 }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
                 }
-                catch (Exception)
+
+                try
                 {
-                    throw;
+                    var converted = Convert.ToBoolean(json);
+                    return new CrmMetadataSchemas5(CrmMetadataSchemas5Type.Boolean)
+                    {
+                        Boolean = converted
+                    };
+                }
+                catch (System.FormatException)
+                {
+                    // try next option
                 }
 
                 if (fallbackCandidates.Count > 0)
@@ -184,14 +225,24 @@ namespace UnifiedTo.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
-                if (res.ArrayOfAny != null)
+                if (res.CrmMetadataSchemas1 != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.CrmMetadataSchemas1));
                     return;
                 }
-                if (res.CrmMetadataSchemasValue52 != null)
+                if (res.Str != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.CrmMetadataSchemasValue52));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
+                    return;
+                }
+                if (res.Number != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
+                    return;
+                }
+                if (res.Boolean != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 

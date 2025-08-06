@@ -3,14 +3,26 @@
 
 ## Supported Types
 
-### ArrayOfAny
+### AtsMetadata1
 
 ```csharp
-AtsMetadata5.CreateArrayOfAny(/* values here */);
+AtsMetadata5.CreateAtsMetadata1(/* values here */);
 ```
 
-### AtsMetadataSchemasValue52
+### Str
 
 ```csharp
-AtsMetadata5.CreateAtsMetadataSchemasValue52(/* values here */);
+AtsMetadata5.CreateStr(/* values here */);
+```
+
+### Number
+
+```csharp
+AtsMetadata5.CreateNumber(/* values here */);
+```
+
+### Boolean
+
+```csharp
+AtsMetadata5.CreateBoolean(/* values here */);
 ```

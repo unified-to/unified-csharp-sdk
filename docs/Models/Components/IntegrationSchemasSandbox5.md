@@ -3,14 +3,26 @@
 
 ## Supported Types
 
-### ArrayOfAny
+### IntegrationSchemasSandbox1
 
 ```csharp
-IntegrationSchemasSandbox5.CreateArrayOfAny(/* values here */);
+IntegrationSchemasSandbox5.CreateIntegrationSchemasSandbox1(/* values here */);
 ```
 
-### IntegrationSchemasSandbox52
+### Str
 
 ```csharp
-IntegrationSchemasSandbox5.CreateIntegrationSchemasSandbox52(/* values here */);
+IntegrationSchemasSandbox5.CreateStr(/* values here */);
+```
+
+### Number
+
+```csharp
+IntegrationSchemasSandbox5.CreateNumber(/* values here */);
+```
+
+### Boolean
+
+```csharp
+IntegrationSchemasSandbox5.CreateBoolean(/* values here */);
 ```

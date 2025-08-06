@@ -3,32 +3,32 @@
 
 ## Supported Types
 
-### TaskMetadata1
+### MapOfAny
 
 ```csharp
-TaskMetadataExtraData.CreateTaskMetadata1(/* values here */);
+TaskMetadataExtraData.CreateMapOfAny(/* values here */);
 ```
 
-### TaskMetadata2
+### Str
 
 ```csharp
-TaskMetadataExtraData.CreateTaskMetadata2(/* values here */);
+TaskMetadataExtraData.CreateStr(/* values here */);
 ```
 
-### TaskMetadata3
+### Number
 
 ```csharp
-TaskMetadataExtraData.CreateTaskMetadata3(/* values here */);
+TaskMetadataExtraData.CreateNumber(/* values here */);
 ```
 
-### TaskMetadata4
+### Boolean
 
 ```csharp
-TaskMetadataExtraData.CreateTaskMetadata4(/* values here */);
+TaskMetadataExtraData.CreateBoolean(/* values here */);
 ```
 
-### TaskMetadata5
+### ArrayOfTaskMetadata5
 
 ```csharp
-TaskMetadataExtraData.CreateTaskMetadata5(/* values here */);
+TaskMetadataExtraData.CreateArrayOfTaskMetadata5(/* values here */);
 ```

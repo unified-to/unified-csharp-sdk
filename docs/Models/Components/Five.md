@@ -3,14 +3,26 @@
 
 ## Supported Types
 
-### ArrayOfAny
+### One
 
 ```csharp
-Five.CreateArrayOfAny(/* values here */);
+Five.CreateOne(/* values here */);
 ```
 
-### AtsMetadataSchemasExtraData2
+### Str
 
 ```csharp
-Five.CreateAtsMetadataSchemasExtraData2(/* values here */);
+Five.CreateStr(/* values here */);
+```
+
+### Number
+
+```csharp
+Five.CreateNumber(/* values here */);
+```
+
+### Boolean
+
+```csharp
+Five.CreateBoolean(/* values here */);
 ```

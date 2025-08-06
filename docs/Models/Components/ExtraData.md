@@ -3,32 +3,32 @@
 
 ## Supported Types
 
-### One
+### MapOfAny
 
 ```csharp
-ExtraData.CreateOne(/* values here */);
+ExtraData.CreateMapOfAny(/* values here */);
 ```
 
-### Two
+### Str
 
 ```csharp
-ExtraData.CreateTwo(/* values here */);
+ExtraData.CreateStr(/* values here */);
 ```
 
-### Three
+### Number
 
 ```csharp
-ExtraData.CreateThree(/* values here */);
+ExtraData.CreateNumber(/* values here */);
 ```
 
-### Four
+### Boolean
 
 ```csharp
-ExtraData.CreateFour(/* values here */);
+ExtraData.CreateBoolean(/* values here */);
 ```
 
-### Five
+### ArrayOf5
 
 ```csharp
-ExtraData.CreateFive(/* values here */);
+ExtraData.CreateArrayOf5(/* values here */);
 ```

@@ -3,32 +3,32 @@
 
 ## Supported Types
 
-### CrmMetadataSchemas1
+### MapOfAny
 
 ```csharp
-CrmMetadataValue.CreateCrmMetadataSchemas1(/* values here */);
+CrmMetadataValue.CreateMapOfAny(/* values here */);
 ```
 
-### CrmMetadataSchemas2
+### Str
 
 ```csharp
-CrmMetadataValue.CreateCrmMetadataSchemas2(/* values here */);
+CrmMetadataValue.CreateStr(/* values here */);
 ```
 
-### CrmMetadataSchemas3
+### Number
 
 ```csharp
-CrmMetadataValue.CreateCrmMetadataSchemas3(/* values here */);
+CrmMetadataValue.CreateNumber(/* values here */);
 ```
 
-### CrmMetadataSchemas4
+### Boolean
 
 ```csharp
-CrmMetadataValue.CreateCrmMetadataSchemas4(/* values here */);
+CrmMetadataValue.CreateBoolean(/* values here */);
 ```
 
-### CrmMetadataSchemas5
+### ArrayOfCrmMetadataSchemas5
 
 ```csharp
-CrmMetadataValue.CreateCrmMetadataSchemas5(/* values here */);
+CrmMetadataValue.CreateArrayOfCrmMetadataSchemas5(/* values here */);
 ```

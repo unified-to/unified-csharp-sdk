@@ -24,15 +24,15 @@ namespace UnifiedTo.Models.Components
         private ApiType(string value) { Value = value; }
 
         public string Value { get; private set; }
-        public static ApiType Integration1 { get { return new ApiType("Integration_1"); } }
+        public static ApiType MapOfAny { get { return new ApiType("mapOfAny"); } }
         
-        public static ApiType Integration2 { get { return new ApiType("Integration_2"); } }
+        public static ApiType Str { get { return new ApiType("str"); } }
         
-        public static ApiType Integration3 { get { return new ApiType("Integration_3"); } }
+        public static ApiType Number { get { return new ApiType("number"); } }
         
-        public static ApiType Integration4 { get { return new ApiType("Integration_4"); } }
+        public static ApiType Boolean { get { return new ApiType("boolean"); } }
         
-        public static ApiType Integration5 { get { return new ApiType("Integration_5"); } }
+        public static ApiType ArrayOfIntegration5 { get { return new ApiType("arrayOfIntegration5"); } }
         
         public static ApiType Null { get { return new ApiType("null"); } }
 
@@ -40,11 +40,11 @@ namespace UnifiedTo.Models.Components
         public static implicit operator String(ApiType v) { return v.Value; }
         public static ApiType FromString(string v) {
             switch(v) {
-                case "Integration_1": return Integration1;
-                case "Integration_2": return Integration2;
-                case "Integration_3": return Integration3;
-                case "Integration_4": return Integration4;
-                case "Integration_5": return Integration5;
+                case "mapOfAny": return MapOfAny;
+                case "str": return Str;
+                case "number": return Number;
+                case "boolean": return Boolean;
+                case "arrayOfIntegration5": return ArrayOfIntegration5;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for ApiType");
             }
@@ -72,60 +72,60 @@ namespace UnifiedTo.Models.Components
         }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public Integration1? Integration1 { get; set; }
+        public Dictionary<string, object>? MapOfAny { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public Integration2? Integration2 { get; set; }
+        public string? Str { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public Integration3? Integration3 { get; set; }
+        public double? Number { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public Integration4? Integration4 { get; set; }
+        public bool? Boolean { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public Integration5? Integration5 { get; set; }
+        public List<Integration5>? ArrayOfIntegration5 { get; set; }
 
         public ApiType Type { get; set; }
 
 
-        public static Api CreateIntegration1(Integration1 integration1) {
-            ApiType typ = ApiType.Integration1;
+        public static Api CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+            ApiType typ = ApiType.MapOfAny;
 
             Api res = new Api(typ);
-            res.Integration1 = integration1;
+            res.MapOfAny = mapOfAny;
             return res;
         }
 
-        public static Api CreateIntegration2(Integration2 integration2) {
-            ApiType typ = ApiType.Integration2;
+        public static Api CreateStr(string str) {
+            ApiType typ = ApiType.Str;
 
             Api res = new Api(typ);
-            res.Integration2 = integration2;
+            res.Str = str;
             return res;
         }
 
-        public static Api CreateIntegration3(Integration3 integration3) {
-            ApiType typ = ApiType.Integration3;
+        public static Api CreateNumber(double number) {
+            ApiType typ = ApiType.Number;
 
             Api res = new Api(typ);
-            res.Integration3 = integration3;
+            res.Number = number;
             return res;
         }
 
-        public static Api CreateIntegration4(Integration4 integration4) {
-            ApiType typ = ApiType.Integration4;
+        public static Api CreateBoolean(bool boolean) {
+            ApiType typ = ApiType.Boolean;
 
             Api res = new Api(typ);
-            res.Integration4 = integration4;
+            res.Boolean = boolean;
             return res;
         }
 
-        public static Api CreateIntegration5(Integration5 integration5) {
-            ApiType typ = ApiType.Integration5;
+        public static Api CreateArrayOfIntegration5(List<Integration5> arrayOfIntegration5) {
+            ApiType typ = ApiType.ArrayOfIntegration5;
 
             Api res = new Api(typ);
-            res.Integration5 = integration5;
+            res.ArrayOfIntegration5 = arrayOfIntegration5;
             return res;
         }
 
@@ -153,14 +153,14 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new Api(ApiType.Integration1)
+                    return new Api(ApiType.MapOfAny)
                     {
-                        Integration1 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Integration1>(json)
+                        MapOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Dictionary<string, object>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(Integration1), new Api(ApiType.Integration1), "Integration1"));
+                    fallbackCandidates.Add((typeof(Dictionary<string, object>), new Api(ApiType.MapOfAny), "MapOfAny"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -171,76 +171,49 @@ namespace UnifiedTo.Models.Components
                     throw;
                 }
 
-                try
-                {
-                    return new Api(ApiType.Integration2)
+                if (json[0] == '"' && json[^1] == '"'){
+                    return new Api(ApiType.Str)
                     {
-                        Integration2 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Integration2>(json)
+                        Str = json[1..^1]
                     };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(Integration2), new Api(ApiType.Integration2), "Integration2"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new Api(ApiType.Integration3)
+                    var converted = Convert.ToDouble(json);
+                    return new Api(ApiType.Number)
                     {
-                        Integration3 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Integration3>(json)
+                        Number = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(Integration3), new Api(ApiType.Integration3), "Integration3"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new Api(ApiType.Integration4)
+                    var converted = Convert.ToBoolean(json);
+                    return new Api(ApiType.Boolean)
                     {
-                        Integration4 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Integration4>(json)
+                        Boolean = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(Integration4), new Api(ApiType.Integration4), "Integration4"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new Api(ApiType.Integration5)
+                    return new Api(ApiType.ArrayOfIntegration5)
                     {
-                        Integration5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Integration5>(json)
+                        ArrayOfIntegration5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<Integration5>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(Integration5), new Api(ApiType.Integration5), "Integration5"));
+                    fallbackCandidates.Add((typeof(List<Integration5>), new Api(ApiType.ArrayOfIntegration5), "ArrayOfIntegration5"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -286,29 +259,29 @@ namespace UnifiedTo.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
-                if (res.Integration1 != null)
+                if (res.MapOfAny != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Integration1));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
-                if (res.Integration2 != null)
+                if (res.Str != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Integration2));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
-                if (res.Integration3 != null)
+                if (res.Number != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Integration3));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
-                if (res.Integration4 != null)
+                if (res.Boolean != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Integration4));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
-                if (res.Integration5 != null)
+                if (res.ArrayOfIntegration5 != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Integration5));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfIntegration5));
                     return;
                 }
 

@@ -24,15 +24,15 @@ namespace UnifiedTo.Models.Components
         private CrmMetadataValueType(string value) { Value = value; }
 
         public string Value { get; private set; }
-        public static CrmMetadataValueType CrmMetadataSchemas1 { get { return new CrmMetadataValueType("CrmMetadata_Schemas_1"); } }
+        public static CrmMetadataValueType MapOfAny { get { return new CrmMetadataValueType("mapOfAny"); } }
         
-        public static CrmMetadataValueType CrmMetadataSchemas2 { get { return new CrmMetadataValueType("CrmMetadata_Schemas_2"); } }
+        public static CrmMetadataValueType Str { get { return new CrmMetadataValueType("str"); } }
         
-        public static CrmMetadataValueType CrmMetadataSchemas3 { get { return new CrmMetadataValueType("CrmMetadata_Schemas_3"); } }
+        public static CrmMetadataValueType Number { get { return new CrmMetadataValueType("number"); } }
         
-        public static CrmMetadataValueType CrmMetadataSchemas4 { get { return new CrmMetadataValueType("CrmMetadata_Schemas_4"); } }
+        public static CrmMetadataValueType Boolean { get { return new CrmMetadataValueType("boolean"); } }
         
-        public static CrmMetadataValueType CrmMetadataSchemas5 { get { return new CrmMetadataValueType("CrmMetadata_Schemas_5"); } }
+        public static CrmMetadataValueType ArrayOfCrmMetadataSchemas5 { get { return new CrmMetadataValueType("arrayOfCrmMetadataSchemas5"); } }
         
         public static CrmMetadataValueType Null { get { return new CrmMetadataValueType("null"); } }
 
@@ -40,11 +40,11 @@ namespace UnifiedTo.Models.Components
         public static implicit operator String(CrmMetadataValueType v) { return v.Value; }
         public static CrmMetadataValueType FromString(string v) {
             switch(v) {
-                case "CrmMetadata_Schemas_1": return CrmMetadataSchemas1;
-                case "CrmMetadata_Schemas_2": return CrmMetadataSchemas2;
-                case "CrmMetadata_Schemas_3": return CrmMetadataSchemas3;
-                case "CrmMetadata_Schemas_4": return CrmMetadataSchemas4;
-                case "CrmMetadata_Schemas_5": return CrmMetadataSchemas5;
+                case "mapOfAny": return MapOfAny;
+                case "str": return Str;
+                case "number": return Number;
+                case "boolean": return Boolean;
+                case "arrayOfCrmMetadataSchemas5": return ArrayOfCrmMetadataSchemas5;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for CrmMetadataValueType");
             }
@@ -72,60 +72,60 @@ namespace UnifiedTo.Models.Components
         }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public CrmMetadataSchemas1? CrmMetadataSchemas1 { get; set; }
+        public Dictionary<string, object>? MapOfAny { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public CrmMetadataSchemas2? CrmMetadataSchemas2 { get; set; }
+        public string? Str { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public CrmMetadataSchemas3? CrmMetadataSchemas3 { get; set; }
+        public double? Number { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public CrmMetadataSchemas4? CrmMetadataSchemas4 { get; set; }
+        public bool? Boolean { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public CrmMetadataSchemas5? CrmMetadataSchemas5 { get; set; }
+        public List<CrmMetadataSchemas5>? ArrayOfCrmMetadataSchemas5 { get; set; }
 
         public CrmMetadataValueType Type { get; set; }
 
 
-        public static CrmMetadataValue CreateCrmMetadataSchemas1(CrmMetadataSchemas1 crmMetadataSchemas1) {
-            CrmMetadataValueType typ = CrmMetadataValueType.CrmMetadataSchemas1;
+        public static CrmMetadataValue CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+            CrmMetadataValueType typ = CrmMetadataValueType.MapOfAny;
 
             CrmMetadataValue res = new CrmMetadataValue(typ);
-            res.CrmMetadataSchemas1 = crmMetadataSchemas1;
+            res.MapOfAny = mapOfAny;
             return res;
         }
 
-        public static CrmMetadataValue CreateCrmMetadataSchemas2(CrmMetadataSchemas2 crmMetadataSchemas2) {
-            CrmMetadataValueType typ = CrmMetadataValueType.CrmMetadataSchemas2;
+        public static CrmMetadataValue CreateStr(string str) {
+            CrmMetadataValueType typ = CrmMetadataValueType.Str;
 
             CrmMetadataValue res = new CrmMetadataValue(typ);
-            res.CrmMetadataSchemas2 = crmMetadataSchemas2;
+            res.Str = str;
             return res;
         }
 
-        public static CrmMetadataValue CreateCrmMetadataSchemas3(CrmMetadataSchemas3 crmMetadataSchemas3) {
-            CrmMetadataValueType typ = CrmMetadataValueType.CrmMetadataSchemas3;
+        public static CrmMetadataValue CreateNumber(double number) {
+            CrmMetadataValueType typ = CrmMetadataValueType.Number;
 
             CrmMetadataValue res = new CrmMetadataValue(typ);
-            res.CrmMetadataSchemas3 = crmMetadataSchemas3;
+            res.Number = number;
             return res;
         }
 
-        public static CrmMetadataValue CreateCrmMetadataSchemas4(CrmMetadataSchemas4 crmMetadataSchemas4) {
-            CrmMetadataValueType typ = CrmMetadataValueType.CrmMetadataSchemas4;
+        public static CrmMetadataValue CreateBoolean(bool boolean) {
+            CrmMetadataValueType typ = CrmMetadataValueType.Boolean;
 
             CrmMetadataValue res = new CrmMetadataValue(typ);
-            res.CrmMetadataSchemas4 = crmMetadataSchemas4;
+            res.Boolean = boolean;
             return res;
         }
 
-        public static CrmMetadataValue CreateCrmMetadataSchemas5(CrmMetadataSchemas5 crmMetadataSchemas5) {
-            CrmMetadataValueType typ = CrmMetadataValueType.CrmMetadataSchemas5;
+        public static CrmMetadataValue CreateArrayOfCrmMetadataSchemas5(List<CrmMetadataSchemas5> arrayOfCrmMetadataSchemas5) {
+            CrmMetadataValueType typ = CrmMetadataValueType.ArrayOfCrmMetadataSchemas5;
 
             CrmMetadataValue res = new CrmMetadataValue(typ);
-            res.CrmMetadataSchemas5 = crmMetadataSchemas5;
+            res.ArrayOfCrmMetadataSchemas5 = arrayOfCrmMetadataSchemas5;
             return res;
         }
 
@@ -153,14 +153,14 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new CrmMetadataValue(CrmMetadataValueType.CrmMetadataSchemas1)
+                    return new CrmMetadataValue(CrmMetadataValueType.MapOfAny)
                     {
-                        CrmMetadataSchemas1 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CrmMetadataSchemas1>(json)
+                        MapOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Dictionary<string, object>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(CrmMetadataSchemas1), new CrmMetadataValue(CrmMetadataValueType.CrmMetadataSchemas1), "CrmMetadataSchemas1"));
+                    fallbackCandidates.Add((typeof(Dictionary<string, object>), new CrmMetadataValue(CrmMetadataValueType.MapOfAny), "MapOfAny"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -171,76 +171,49 @@ namespace UnifiedTo.Models.Components
                     throw;
                 }
 
-                try
-                {
-                    return new CrmMetadataValue(CrmMetadataValueType.CrmMetadataSchemas2)
+                if (json[0] == '"' && json[^1] == '"'){
+                    return new CrmMetadataValue(CrmMetadataValueType.Str)
                     {
-                        CrmMetadataSchemas2 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CrmMetadataSchemas2>(json)
+                        Str = json[1..^1]
                     };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(CrmMetadataSchemas2), new CrmMetadataValue(CrmMetadataValueType.CrmMetadataSchemas2), "CrmMetadataSchemas2"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new CrmMetadataValue(CrmMetadataValueType.CrmMetadataSchemas3)
+                    var converted = Convert.ToDouble(json);
+                    return new CrmMetadataValue(CrmMetadataValueType.Number)
                     {
-                        CrmMetadataSchemas3 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CrmMetadataSchemas3>(json)
+                        Number = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(CrmMetadataSchemas3), new CrmMetadataValue(CrmMetadataValueType.CrmMetadataSchemas3), "CrmMetadataSchemas3"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new CrmMetadataValue(CrmMetadataValueType.CrmMetadataSchemas4)
+                    var converted = Convert.ToBoolean(json);
+                    return new CrmMetadataValue(CrmMetadataValueType.Boolean)
                     {
-                        CrmMetadataSchemas4 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CrmMetadataSchemas4>(json)
+                        Boolean = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(CrmMetadataSchemas4), new CrmMetadataValue(CrmMetadataValueType.CrmMetadataSchemas4), "CrmMetadataSchemas4"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new CrmMetadataValue(CrmMetadataValueType.CrmMetadataSchemas5)
+                    return new CrmMetadataValue(CrmMetadataValueType.ArrayOfCrmMetadataSchemas5)
                     {
-                        CrmMetadataSchemas5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<CrmMetadataSchemas5>(json)
+                        ArrayOfCrmMetadataSchemas5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<CrmMetadataSchemas5>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(CrmMetadataSchemas5), new CrmMetadataValue(CrmMetadataValueType.CrmMetadataSchemas5), "CrmMetadataSchemas5"));
+                    fallbackCandidates.Add((typeof(List<CrmMetadataSchemas5>), new CrmMetadataValue(CrmMetadataValueType.ArrayOfCrmMetadataSchemas5), "ArrayOfCrmMetadataSchemas5"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -286,29 +259,29 @@ namespace UnifiedTo.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
-                if (res.CrmMetadataSchemas1 != null)
+                if (res.MapOfAny != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.CrmMetadataSchemas1));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
-                if (res.CrmMetadataSchemas2 != null)
+                if (res.Str != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.CrmMetadataSchemas2));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
-                if (res.CrmMetadataSchemas3 != null)
+                if (res.Number != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.CrmMetadataSchemas3));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
-                if (res.CrmMetadataSchemas4 != null)
+                if (res.Boolean != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.CrmMetadataSchemas4));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
-                if (res.CrmMetadataSchemas5 != null)
+                if (res.ArrayOfCrmMetadataSchemas5 != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.CrmMetadataSchemas5));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfCrmMetadataSchemas5));
                     return;
                 }
 

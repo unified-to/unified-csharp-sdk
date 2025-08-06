@@ -3,14 +3,26 @@
 
 ## Supported Types
 
-### ArrayOfAny
+### HrisMetadataSchemas1
 
 ```csharp
-HrisMetadataSchemas5.CreateArrayOfAny(/* values here */);
+HrisMetadataSchemas5.CreateHrisMetadataSchemas1(/* values here */);
 ```
 
-### HrisMetadataSchemasValue52
+### Str
 
 ```csharp
-HrisMetadataSchemas5.CreateHrisMetadataSchemasValue52(/* values here */);
+HrisMetadataSchemas5.CreateStr(/* values here */);
+```
+
+### Number
+
+```csharp
+HrisMetadataSchemas5.CreateNumber(/* values here */);
+```
+
+### Boolean
+
+```csharp
+HrisMetadataSchemas5.CreateBoolean(/* values here */);
 ```

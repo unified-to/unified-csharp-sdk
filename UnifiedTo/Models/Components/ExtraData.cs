@@ -24,15 +24,15 @@ namespace UnifiedTo.Models.Components
         private ExtraDataType(string value) { Value = value; }
 
         public string Value { get; private set; }
-        public static ExtraDataType One { get { return new ExtraDataType("1"); } }
+        public static ExtraDataType MapOfAny { get { return new ExtraDataType("mapOfAny"); } }
         
-        public static ExtraDataType Two { get { return new ExtraDataType("2"); } }
+        public static ExtraDataType Str { get { return new ExtraDataType("str"); } }
         
-        public static ExtraDataType Three { get { return new ExtraDataType("3"); } }
+        public static ExtraDataType Number { get { return new ExtraDataType("number"); } }
         
-        public static ExtraDataType Four { get { return new ExtraDataType("4"); } }
+        public static ExtraDataType Boolean { get { return new ExtraDataType("boolean"); } }
         
-        public static ExtraDataType Five { get { return new ExtraDataType("5"); } }
+        public static ExtraDataType ArrayOf5 { get { return new ExtraDataType("arrayOf5"); } }
         
         public static ExtraDataType Null { get { return new ExtraDataType("null"); } }
 
@@ -40,11 +40,11 @@ namespace UnifiedTo.Models.Components
         public static implicit operator String(ExtraDataType v) { return v.Value; }
         public static ExtraDataType FromString(string v) {
             switch(v) {
-                case "1": return One;
-                case "2": return Two;
-                case "3": return Three;
-                case "4": return Four;
-                case "5": return Five;
+                case "mapOfAny": return MapOfAny;
+                case "str": return Str;
+                case "number": return Number;
+                case "boolean": return Boolean;
+                case "arrayOf5": return ArrayOf5;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for ExtraDataType");
             }
@@ -72,60 +72,60 @@ namespace UnifiedTo.Models.Components
         }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public One? One { get; set; }
+        public Dictionary<string, object>? MapOfAny { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public Two? Two { get; set; }
+        public string? Str { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public Three? Three { get; set; }
+        public double? Number { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public Four? Four { get; set; }
+        public bool? Boolean { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public Five? Five { get; set; }
+        public List<Five>? ArrayOf5 { get; set; }
 
         public ExtraDataType Type { get; set; }
 
 
-        public static ExtraData CreateOne(One one) {
-            ExtraDataType typ = ExtraDataType.One;
+        public static ExtraData CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+            ExtraDataType typ = ExtraDataType.MapOfAny;
 
             ExtraData res = new ExtraData(typ);
-            res.One = one;
+            res.MapOfAny = mapOfAny;
             return res;
         }
 
-        public static ExtraData CreateTwo(Two two) {
-            ExtraDataType typ = ExtraDataType.Two;
+        public static ExtraData CreateStr(string str) {
+            ExtraDataType typ = ExtraDataType.Str;
 
             ExtraData res = new ExtraData(typ);
-            res.Two = two;
+            res.Str = str;
             return res;
         }
 
-        public static ExtraData CreateThree(Three three) {
-            ExtraDataType typ = ExtraDataType.Three;
+        public static ExtraData CreateNumber(double number) {
+            ExtraDataType typ = ExtraDataType.Number;
 
             ExtraData res = new ExtraData(typ);
-            res.Three = three;
+            res.Number = number;
             return res;
         }
 
-        public static ExtraData CreateFour(Four four) {
-            ExtraDataType typ = ExtraDataType.Four;
+        public static ExtraData CreateBoolean(bool boolean) {
+            ExtraDataType typ = ExtraDataType.Boolean;
 
             ExtraData res = new ExtraData(typ);
-            res.Four = four;
+            res.Boolean = boolean;
             return res;
         }
 
-        public static ExtraData CreateFive(Five five) {
-            ExtraDataType typ = ExtraDataType.Five;
+        public static ExtraData CreateArrayOf5(List<Five> arrayOf5) {
+            ExtraDataType typ = ExtraDataType.ArrayOf5;
 
             ExtraData res = new ExtraData(typ);
-            res.Five = five;
+            res.ArrayOf5 = arrayOf5;
             return res;
         }
 
@@ -153,14 +153,14 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new ExtraData(ExtraDataType.One)
+                    return new ExtraData(ExtraDataType.MapOfAny)
                     {
-                        One = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<One>(json)
+                        MapOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Dictionary<string, object>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(One), new ExtraData(ExtraDataType.One), "One"));
+                    fallbackCandidates.Add((typeof(Dictionary<string, object>), new ExtraData(ExtraDataType.MapOfAny), "MapOfAny"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -171,76 +171,49 @@ namespace UnifiedTo.Models.Components
                     throw;
                 }
 
-                try
-                {
-                    return new ExtraData(ExtraDataType.Two)
+                if (json[0] == '"' && json[^1] == '"'){
+                    return new ExtraData(ExtraDataType.Str)
                     {
-                        Two = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Two>(json)
+                        Str = json[1..^1]
                     };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(Two), new ExtraData(ExtraDataType.Two), "Two"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new ExtraData(ExtraDataType.Three)
+                    var converted = Convert.ToDouble(json);
+                    return new ExtraData(ExtraDataType.Number)
                     {
-                        Three = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Three>(json)
+                        Number = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(Three), new ExtraData(ExtraDataType.Three), "Three"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new ExtraData(ExtraDataType.Four)
+                    var converted = Convert.ToBoolean(json);
+                    return new ExtraData(ExtraDataType.Boolean)
                     {
-                        Four = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Four>(json)
+                        Boolean = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(Four), new ExtraData(ExtraDataType.Four), "Four"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new ExtraData(ExtraDataType.Five)
+                    return new ExtraData(ExtraDataType.ArrayOf5)
                     {
-                        Five = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Five>(json)
+                        ArrayOf5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<Five>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(Five), new ExtraData(ExtraDataType.Five), "Five"));
+                    fallbackCandidates.Add((typeof(List<Five>), new ExtraData(ExtraDataType.ArrayOf5), "ArrayOf5"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -286,29 +259,29 @@ namespace UnifiedTo.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
-                if (res.One != null)
+                if (res.MapOfAny != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.One));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
-                if (res.Two != null)
+                if (res.Str != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Two));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
-                if (res.Three != null)
+                if (res.Number != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Three));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
-                if (res.Four != null)
+                if (res.Boolean != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Four));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
-                if (res.Five != null)
+                if (res.ArrayOf5 != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Five));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOf5));
                     return;
                 }
 

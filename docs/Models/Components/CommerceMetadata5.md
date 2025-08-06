@@ -3,14 +3,26 @@
 
 ## Supported Types
 
-### ArrayOfAny
+### CommerceMetadata1
 
 ```csharp
-CommerceMetadata5.CreateArrayOfAny(/* values here */);
+CommerceMetadata5.CreateCommerceMetadata1(/* values here */);
 ```
 
-### CommerceMetadataSchemasExtraData52
+### Str
 
 ```csharp
-CommerceMetadata5.CreateCommerceMetadataSchemasExtraData52(/* values here */);
+CommerceMetadata5.CreateStr(/* values here */);
+```
+
+### Number
+
+```csharp
+CommerceMetadata5.CreateNumber(/* values here */);
+```
+
+### Boolean
+
+```csharp
+CommerceMetadata5.CreateBoolean(/* values here */);
 ```

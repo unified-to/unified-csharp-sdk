@@ -3,32 +3,32 @@
 
 ## Supported Types
 
-### IntegrationSchemasSandbox1
+### MapOfAny
 
 ```csharp
-Sandbox.CreateIntegrationSchemasSandbox1(/* values here */);
+Sandbox.CreateMapOfAny(/* values here */);
 ```
 
-### IntegrationSchemasSandbox2
+### Str
 
 ```csharp
-Sandbox.CreateIntegrationSchemasSandbox2(/* values here */);
+Sandbox.CreateStr(/* values here */);
 ```
 
-### IntegrationSchemasSandbox3
+### Number
 
 ```csharp
-Sandbox.CreateIntegrationSchemasSandbox3(/* values here */);
+Sandbox.CreateNumber(/* values here */);
 ```
 
-### IntegrationSchemasSandbox4
+### Boolean
 
 ```csharp
-Sandbox.CreateIntegrationSchemasSandbox4(/* values here */);
+Sandbox.CreateBoolean(/* values here */);
 ```
 
-### IntegrationSchemasSandbox5
+### ArrayOfIntegrationSchemasSandbox5
 
 ```csharp
-Sandbox.CreateIntegrationSchemasSandbox5(/* values here */);
+Sandbox.CreateArrayOfIntegrationSchemasSandbox5(/* values here */);
 ```

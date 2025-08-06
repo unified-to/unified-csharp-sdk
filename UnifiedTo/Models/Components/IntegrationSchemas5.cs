@@ -24,9 +24,13 @@ namespace UnifiedTo.Models.Components
         private IntegrationSchemas5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
-        public static IntegrationSchemas5Type ArrayOfAny { get { return new IntegrationSchemas5Type("arrayOfAny"); } }
+        public static IntegrationSchemas5Type IntegrationSchemas1 { get { return new IntegrationSchemas5Type("Integration_Schemas_1"); } }
         
-        public static IntegrationSchemas5Type IntegrationSchemasPartnership52 { get { return new IntegrationSchemas5Type("Integration_Schemas_partnership_5_2"); } }
+        public static IntegrationSchemas5Type Str { get { return new IntegrationSchemas5Type("str"); } }
+        
+        public static IntegrationSchemas5Type Number { get { return new IntegrationSchemas5Type("number"); } }
+        
+        public static IntegrationSchemas5Type Boolean { get { return new IntegrationSchemas5Type("boolean"); } }
         
         public static IntegrationSchemas5Type Null { get { return new IntegrationSchemas5Type("null"); } }
 
@@ -34,8 +38,10 @@ namespace UnifiedTo.Models.Components
         public static implicit operator String(IntegrationSchemas5Type v) { return v.Value; }
         public static IntegrationSchemas5Type FromString(string v) {
             switch(v) {
-                case "arrayOfAny": return ArrayOfAny;
-                case "Integration_Schemas_partnership_5_2": return IntegrationSchemasPartnership52;
+                case "Integration_Schemas_1": return IntegrationSchemas1;
+                case "str": return Str;
+                case "number": return Number;
+                case "boolean": return Boolean;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for IntegrationSchemas5Type");
             }
@@ -63,27 +69,49 @@ namespace UnifiedTo.Models.Components
         }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public List<object>? ArrayOfAny { get; set; }
+        public IntegrationSchemas1? IntegrationSchemas1 { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public IntegrationSchemasPartnership52? IntegrationSchemasPartnership52 { get; set; }
+        public string? Str { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public double? Number { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public bool? Boolean { get; set; }
 
         public IntegrationSchemas5Type Type { get; set; }
 
 
-        public static IntegrationSchemas5 CreateArrayOfAny(List<object> arrayOfAny) {
-            IntegrationSchemas5Type typ = IntegrationSchemas5Type.ArrayOfAny;
+        public static IntegrationSchemas5 CreateIntegrationSchemas1(IntegrationSchemas1 integrationSchemas1) {
+            IntegrationSchemas5Type typ = IntegrationSchemas5Type.IntegrationSchemas1;
 
             IntegrationSchemas5 res = new IntegrationSchemas5(typ);
-            res.ArrayOfAny = arrayOfAny;
+            res.IntegrationSchemas1 = integrationSchemas1;
             return res;
         }
 
-        public static IntegrationSchemas5 CreateIntegrationSchemasPartnership52(IntegrationSchemasPartnership52 integrationSchemasPartnership52) {
-            IntegrationSchemas5Type typ = IntegrationSchemas5Type.IntegrationSchemasPartnership52;
+        public static IntegrationSchemas5 CreateStr(string str) {
+            IntegrationSchemas5Type typ = IntegrationSchemas5Type.Str;
 
             IntegrationSchemas5 res = new IntegrationSchemas5(typ);
-            res.IntegrationSchemasPartnership52 = integrationSchemasPartnership52;
+            res.Str = str;
+            return res;
+        }
+
+        public static IntegrationSchemas5 CreateNumber(double number) {
+            IntegrationSchemas5Type typ = IntegrationSchemas5Type.Number;
+
+            IntegrationSchemas5 res = new IntegrationSchemas5(typ);
+            res.Number = number;
+            return res;
+        }
+
+        public static IntegrationSchemas5 CreateBoolean(bool boolean) {
+            IntegrationSchemas5Type typ = IntegrationSchemas5Type.Boolean;
+
+            IntegrationSchemas5 res = new IntegrationSchemas5(typ);
+            res.Boolean = boolean;
             return res;
         }
 
@@ -111,14 +139,14 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new IntegrationSchemas5(IntegrationSchemas5Type.IntegrationSchemasPartnership52)
+                    return new IntegrationSchemas5(IntegrationSchemas5Type.IntegrationSchemas1)
                     {
-                        IntegrationSchemasPartnership52 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<IntegrationSchemasPartnership52>(json)
+                        IntegrationSchemas1 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<IntegrationSchemas1>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(IntegrationSchemasPartnership52), new IntegrationSchemas5(IntegrationSchemas5Type.IntegrationSchemasPartnership52), "IntegrationSchemasPartnership52"));
+                    fallbackCandidates.Add((typeof(IntegrationSchemas1), new IntegrationSchemas5(IntegrationSchemas5Type.IntegrationSchemas1), "IntegrationSchemas1"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -129,24 +157,37 @@ namespace UnifiedTo.Models.Components
                     throw;
                 }
 
-                try
-                {
-                    return new IntegrationSchemas5(IntegrationSchemas5Type.ArrayOfAny)
+                if (json[0] == '"' && json[^1] == '"'){
+                    return new IntegrationSchemas5(IntegrationSchemas5Type.Str)
                     {
-                        ArrayOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<object>>(json)
+                        Str = json[1..^1]
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
+
+                try
                 {
-                    fallbackCandidates.Add((typeof(List<object>), new IntegrationSchemas5(IntegrationSchemas5Type.ArrayOfAny), "ArrayOfAny"));
+                    var converted = Convert.ToDouble(json);
+                    return new IntegrationSchemas5(IntegrationSchemas5Type.Number)
+                    {
+                        Number = converted
+                    };
                 }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
                 }
-                catch (Exception)
+
+                try
                 {
-                    throw;
+                    var converted = Convert.ToBoolean(json);
+                    return new IntegrationSchemas5(IntegrationSchemas5Type.Boolean)
+                    {
+                        Boolean = converted
+                    };
+                }
+                catch (System.FormatException)
+                {
+                    // try next option
                 }
 
                 if (fallbackCandidates.Count > 0)
@@ -184,14 +225,24 @@ namespace UnifiedTo.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
-                if (res.ArrayOfAny != null)
+                if (res.IntegrationSchemas1 != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.IntegrationSchemas1));
                     return;
                 }
-                if (res.IntegrationSchemasPartnership52 != null)
+                if (res.Str != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.IntegrationSchemasPartnership52));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
+                    return;
+                }
+                if (res.Number != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
+                    return;
+                }
+                if (res.Boolean != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 

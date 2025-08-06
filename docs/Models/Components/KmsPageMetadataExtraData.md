@@ -3,32 +3,32 @@
 
 ## Supported Types
 
-### KmsPageMetadata1
+### MapOfAny
 
 ```csharp
-KmsPageMetadataExtraData.CreateKmsPageMetadata1(/* values here */);
+KmsPageMetadataExtraData.CreateMapOfAny(/* values here */);
 ```
 
-### KmsPageMetadata2
+### Str
 
 ```csharp
-KmsPageMetadataExtraData.CreateKmsPageMetadata2(/* values here */);
+KmsPageMetadataExtraData.CreateStr(/* values here */);
 ```
 
-### KmsPageMetadata3
+### Number
 
 ```csharp
-KmsPageMetadataExtraData.CreateKmsPageMetadata3(/* values here */);
+KmsPageMetadataExtraData.CreateNumber(/* values here */);
 ```
 
-### KmsPageMetadata4
+### Boolean
 
 ```csharp
-KmsPageMetadataExtraData.CreateKmsPageMetadata4(/* values here */);
+KmsPageMetadataExtraData.CreateBoolean(/* values here */);
 ```
 
-### KmsPageMetadata5
+### ArrayOfKmsPageMetadata5
 
 ```csharp
-KmsPageMetadataExtraData.CreateKmsPageMetadata5(/* values here */);
+KmsPageMetadataExtraData.CreateArrayOfKmsPageMetadata5(/* values here */);
 ```

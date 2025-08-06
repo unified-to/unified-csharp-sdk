@@ -24,9 +24,13 @@ namespace UnifiedTo.Models.Components
         private AtsMetadata5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
-        public static AtsMetadata5Type ArrayOfAny { get { return new AtsMetadata5Type("arrayOfAny"); } }
+        public static AtsMetadata5Type AtsMetadata1 { get { return new AtsMetadata5Type("AtsMetadata_1"); } }
         
-        public static AtsMetadata5Type AtsMetadataSchemasValue52 { get { return new AtsMetadata5Type("AtsMetadata_Schemas_value_5_2"); } }
+        public static AtsMetadata5Type Str { get { return new AtsMetadata5Type("str"); } }
+        
+        public static AtsMetadata5Type Number { get { return new AtsMetadata5Type("number"); } }
+        
+        public static AtsMetadata5Type Boolean { get { return new AtsMetadata5Type("boolean"); } }
         
         public static AtsMetadata5Type Null { get { return new AtsMetadata5Type("null"); } }
 
@@ -34,8 +38,10 @@ namespace UnifiedTo.Models.Components
         public static implicit operator String(AtsMetadata5Type v) { return v.Value; }
         public static AtsMetadata5Type FromString(string v) {
             switch(v) {
-                case "arrayOfAny": return ArrayOfAny;
-                case "AtsMetadata_Schemas_value_5_2": return AtsMetadataSchemasValue52;
+                case "AtsMetadata_1": return AtsMetadata1;
+                case "str": return Str;
+                case "number": return Number;
+                case "boolean": return Boolean;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for AtsMetadata5Type");
             }
@@ -63,27 +69,49 @@ namespace UnifiedTo.Models.Components
         }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public List<object>? ArrayOfAny { get; set; }
+        public AtsMetadata1? AtsMetadata1 { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public AtsMetadataSchemasValue52? AtsMetadataSchemasValue52 { get; set; }
+        public string? Str { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public double? Number { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public bool? Boolean { get; set; }
 
         public AtsMetadata5Type Type { get; set; }
 
 
-        public static AtsMetadata5 CreateArrayOfAny(List<object> arrayOfAny) {
-            AtsMetadata5Type typ = AtsMetadata5Type.ArrayOfAny;
+        public static AtsMetadata5 CreateAtsMetadata1(AtsMetadata1 atsMetadata1) {
+            AtsMetadata5Type typ = AtsMetadata5Type.AtsMetadata1;
 
             AtsMetadata5 res = new AtsMetadata5(typ);
-            res.ArrayOfAny = arrayOfAny;
+            res.AtsMetadata1 = atsMetadata1;
             return res;
         }
 
-        public static AtsMetadata5 CreateAtsMetadataSchemasValue52(AtsMetadataSchemasValue52 atsMetadataSchemasValue52) {
-            AtsMetadata5Type typ = AtsMetadata5Type.AtsMetadataSchemasValue52;
+        public static AtsMetadata5 CreateStr(string str) {
+            AtsMetadata5Type typ = AtsMetadata5Type.Str;
 
             AtsMetadata5 res = new AtsMetadata5(typ);
-            res.AtsMetadataSchemasValue52 = atsMetadataSchemasValue52;
+            res.Str = str;
+            return res;
+        }
+
+        public static AtsMetadata5 CreateNumber(double number) {
+            AtsMetadata5Type typ = AtsMetadata5Type.Number;
+
+            AtsMetadata5 res = new AtsMetadata5(typ);
+            res.Number = number;
+            return res;
+        }
+
+        public static AtsMetadata5 CreateBoolean(bool boolean) {
+            AtsMetadata5Type typ = AtsMetadata5Type.Boolean;
+
+            AtsMetadata5 res = new AtsMetadata5(typ);
+            res.Boolean = boolean;
             return res;
         }
 
@@ -111,14 +139,14 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new AtsMetadata5(AtsMetadata5Type.AtsMetadataSchemasValue52)
+                    return new AtsMetadata5(AtsMetadata5Type.AtsMetadata1)
                     {
-                        AtsMetadataSchemasValue52 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<AtsMetadataSchemasValue52>(json)
+                        AtsMetadata1 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<AtsMetadata1>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(AtsMetadataSchemasValue52), new AtsMetadata5(AtsMetadata5Type.AtsMetadataSchemasValue52), "AtsMetadataSchemasValue52"));
+                    fallbackCandidates.Add((typeof(AtsMetadata1), new AtsMetadata5(AtsMetadata5Type.AtsMetadata1), "AtsMetadata1"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -129,24 +157,37 @@ namespace UnifiedTo.Models.Components
                     throw;
                 }
 
-                try
-                {
-                    return new AtsMetadata5(AtsMetadata5Type.ArrayOfAny)
+                if (json[0] == '"' && json[^1] == '"'){
+                    return new AtsMetadata5(AtsMetadata5Type.Str)
                     {
-                        ArrayOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<object>>(json)
+                        Str = json[1..^1]
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
+
+                try
                 {
-                    fallbackCandidates.Add((typeof(List<object>), new AtsMetadata5(AtsMetadata5Type.ArrayOfAny), "ArrayOfAny"));
+                    var converted = Convert.ToDouble(json);
+                    return new AtsMetadata5(AtsMetadata5Type.Number)
+                    {
+                        Number = converted
+                    };
                 }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
                 }
-                catch (Exception)
+
+                try
                 {
-                    throw;
+                    var converted = Convert.ToBoolean(json);
+                    return new AtsMetadata5(AtsMetadata5Type.Boolean)
+                    {
+                        Boolean = converted
+                    };
+                }
+                catch (System.FormatException)
+                {
+                    // try next option
                 }
 
                 if (fallbackCandidates.Count > 0)
@@ -184,14 +225,24 @@ namespace UnifiedTo.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
-                if (res.ArrayOfAny != null)
+                if (res.AtsMetadata1 != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.AtsMetadata1));
                     return;
                 }
-                if (res.AtsMetadataSchemasValue52 != null)
+                if (res.Str != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.AtsMetadataSchemasValue52));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
+                    return;
+                }
+                if (res.Number != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
+                    return;
+                }
+                if (res.Boolean != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 

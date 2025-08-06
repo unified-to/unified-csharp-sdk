@@ -24,15 +24,15 @@ namespace UnifiedTo.Models.Components
         private HrisMetadataExtraDataType(string value) { Value = value; }
 
         public string Value { get; private set; }
-        public static HrisMetadataExtraDataType HrisMetadata1 { get { return new HrisMetadataExtraDataType("HrisMetadata_1"); } }
+        public static HrisMetadataExtraDataType MapOfAny { get { return new HrisMetadataExtraDataType("mapOfAny"); } }
         
-        public static HrisMetadataExtraDataType HrisMetadata2 { get { return new HrisMetadataExtraDataType("HrisMetadata_2"); } }
+        public static HrisMetadataExtraDataType Str { get { return new HrisMetadataExtraDataType("str"); } }
         
-        public static HrisMetadataExtraDataType HrisMetadata3 { get { return new HrisMetadataExtraDataType("HrisMetadata_3"); } }
+        public static HrisMetadataExtraDataType Number { get { return new HrisMetadataExtraDataType("number"); } }
         
-        public static HrisMetadataExtraDataType HrisMetadata4 { get { return new HrisMetadataExtraDataType("HrisMetadata_4"); } }
+        public static HrisMetadataExtraDataType Boolean { get { return new HrisMetadataExtraDataType("boolean"); } }
         
-        public static HrisMetadataExtraDataType HrisMetadata5 { get { return new HrisMetadataExtraDataType("HrisMetadata_5"); } }
+        public static HrisMetadataExtraDataType ArrayOfHrisMetadata5 { get { return new HrisMetadataExtraDataType("arrayOfHrisMetadata5"); } }
         
         public static HrisMetadataExtraDataType Null { get { return new HrisMetadataExtraDataType("null"); } }
 
@@ -40,11 +40,11 @@ namespace UnifiedTo.Models.Components
         public static implicit operator String(HrisMetadataExtraDataType v) { return v.Value; }
         public static HrisMetadataExtraDataType FromString(string v) {
             switch(v) {
-                case "HrisMetadata_1": return HrisMetadata1;
-                case "HrisMetadata_2": return HrisMetadata2;
-                case "HrisMetadata_3": return HrisMetadata3;
-                case "HrisMetadata_4": return HrisMetadata4;
-                case "HrisMetadata_5": return HrisMetadata5;
+                case "mapOfAny": return MapOfAny;
+                case "str": return Str;
+                case "number": return Number;
+                case "boolean": return Boolean;
+                case "arrayOfHrisMetadata5": return ArrayOfHrisMetadata5;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for HrisMetadataExtraDataType");
             }
@@ -72,60 +72,60 @@ namespace UnifiedTo.Models.Components
         }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public HrisMetadata1? HrisMetadata1 { get; set; }
+        public Dictionary<string, object>? MapOfAny { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public HrisMetadata2? HrisMetadata2 { get; set; }
+        public string? Str { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public HrisMetadata3? HrisMetadata3 { get; set; }
+        public double? Number { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public HrisMetadata4? HrisMetadata4 { get; set; }
+        public bool? Boolean { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public HrisMetadata5? HrisMetadata5 { get; set; }
+        public List<HrisMetadata5>? ArrayOfHrisMetadata5 { get; set; }
 
         public HrisMetadataExtraDataType Type { get; set; }
 
 
-        public static HrisMetadataExtraData CreateHrisMetadata1(HrisMetadata1 hrisMetadata1) {
-            HrisMetadataExtraDataType typ = HrisMetadataExtraDataType.HrisMetadata1;
+        public static HrisMetadataExtraData CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+            HrisMetadataExtraDataType typ = HrisMetadataExtraDataType.MapOfAny;
 
             HrisMetadataExtraData res = new HrisMetadataExtraData(typ);
-            res.HrisMetadata1 = hrisMetadata1;
+            res.MapOfAny = mapOfAny;
             return res;
         }
 
-        public static HrisMetadataExtraData CreateHrisMetadata2(HrisMetadata2 hrisMetadata2) {
-            HrisMetadataExtraDataType typ = HrisMetadataExtraDataType.HrisMetadata2;
+        public static HrisMetadataExtraData CreateStr(string str) {
+            HrisMetadataExtraDataType typ = HrisMetadataExtraDataType.Str;
 
             HrisMetadataExtraData res = new HrisMetadataExtraData(typ);
-            res.HrisMetadata2 = hrisMetadata2;
+            res.Str = str;
             return res;
         }
 
-        public static HrisMetadataExtraData CreateHrisMetadata3(HrisMetadata3 hrisMetadata3) {
-            HrisMetadataExtraDataType typ = HrisMetadataExtraDataType.HrisMetadata3;
+        public static HrisMetadataExtraData CreateNumber(double number) {
+            HrisMetadataExtraDataType typ = HrisMetadataExtraDataType.Number;
 
             HrisMetadataExtraData res = new HrisMetadataExtraData(typ);
-            res.HrisMetadata3 = hrisMetadata3;
+            res.Number = number;
             return res;
         }
 
-        public static HrisMetadataExtraData CreateHrisMetadata4(HrisMetadata4 hrisMetadata4) {
-            HrisMetadataExtraDataType typ = HrisMetadataExtraDataType.HrisMetadata4;
+        public static HrisMetadataExtraData CreateBoolean(bool boolean) {
+            HrisMetadataExtraDataType typ = HrisMetadataExtraDataType.Boolean;
 
             HrisMetadataExtraData res = new HrisMetadataExtraData(typ);
-            res.HrisMetadata4 = hrisMetadata4;
+            res.Boolean = boolean;
             return res;
         }
 
-        public static HrisMetadataExtraData CreateHrisMetadata5(HrisMetadata5 hrisMetadata5) {
-            HrisMetadataExtraDataType typ = HrisMetadataExtraDataType.HrisMetadata5;
+        public static HrisMetadataExtraData CreateArrayOfHrisMetadata5(List<HrisMetadata5> arrayOfHrisMetadata5) {
+            HrisMetadataExtraDataType typ = HrisMetadataExtraDataType.ArrayOfHrisMetadata5;
 
             HrisMetadataExtraData res = new HrisMetadataExtraData(typ);
-            res.HrisMetadata5 = hrisMetadata5;
+            res.ArrayOfHrisMetadata5 = arrayOfHrisMetadata5;
             return res;
         }
 
@@ -153,14 +153,14 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata1)
+                    return new HrisMetadataExtraData(HrisMetadataExtraDataType.MapOfAny)
                     {
-                        HrisMetadata1 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<HrisMetadata1>(json)
+                        MapOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Dictionary<string, object>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(HrisMetadata1), new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata1), "HrisMetadata1"));
+                    fallbackCandidates.Add((typeof(Dictionary<string, object>), new HrisMetadataExtraData(HrisMetadataExtraDataType.MapOfAny), "MapOfAny"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -171,76 +171,49 @@ namespace UnifiedTo.Models.Components
                     throw;
                 }
 
-                try
-                {
-                    return new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata2)
+                if (json[0] == '"' && json[^1] == '"'){
+                    return new HrisMetadataExtraData(HrisMetadataExtraDataType.Str)
                     {
-                        HrisMetadata2 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<HrisMetadata2>(json)
+                        Str = json[1..^1]
                     };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(HrisMetadata2), new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata2), "HrisMetadata2"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata3)
+                    var converted = Convert.ToDouble(json);
+                    return new HrisMetadataExtraData(HrisMetadataExtraDataType.Number)
                     {
-                        HrisMetadata3 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<HrisMetadata3>(json)
+                        Number = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(HrisMetadata3), new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata3), "HrisMetadata3"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata4)
+                    var converted = Convert.ToBoolean(json);
+                    return new HrisMetadataExtraData(HrisMetadataExtraDataType.Boolean)
                     {
-                        HrisMetadata4 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<HrisMetadata4>(json)
+                        Boolean = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(HrisMetadata4), new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata4), "HrisMetadata4"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata5)
+                    return new HrisMetadataExtraData(HrisMetadataExtraDataType.ArrayOfHrisMetadata5)
                     {
-                        HrisMetadata5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<HrisMetadata5>(json)
+                        ArrayOfHrisMetadata5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<HrisMetadata5>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(HrisMetadata5), new HrisMetadataExtraData(HrisMetadataExtraDataType.HrisMetadata5), "HrisMetadata5"));
+                    fallbackCandidates.Add((typeof(List<HrisMetadata5>), new HrisMetadataExtraData(HrisMetadataExtraDataType.ArrayOfHrisMetadata5), "ArrayOfHrisMetadata5"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -286,29 +259,29 @@ namespace UnifiedTo.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
-                if (res.HrisMetadata1 != null)
+                if (res.MapOfAny != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.HrisMetadata1));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
-                if (res.HrisMetadata2 != null)
+                if (res.Str != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.HrisMetadata2));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
-                if (res.HrisMetadata3 != null)
+                if (res.Number != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.HrisMetadata3));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
-                if (res.HrisMetadata4 != null)
+                if (res.Boolean != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.HrisMetadata4));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
-                if (res.HrisMetadata5 != null)
+                if (res.ArrayOfHrisMetadata5 != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.HrisMetadata5));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfHrisMetadata5));
                     return;
                 }
 

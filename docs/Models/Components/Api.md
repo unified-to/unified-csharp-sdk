@@ -3,32 +3,32 @@
 
 ## Supported Types
 
-### Integration1
+### MapOfAny
 
 ```csharp
-Api.CreateIntegration1(/* values here */);
+Api.CreateMapOfAny(/* values here */);
 ```
 
-### Integration2
+### Str
 
 ```csharp
-Api.CreateIntegration2(/* values here */);
+Api.CreateStr(/* values here */);
 ```
 
-### Integration3
+### Number
 
 ```csharp
-Api.CreateIntegration3(/* values here */);
+Api.CreateNumber(/* values here */);
 ```
 
-### Integration4
+### Boolean
 
 ```csharp
-Api.CreateIntegration4(/* values here */);
+Api.CreateBoolean(/* values here */);
 ```
 
-### Integration5
+### ArrayOfIntegration5
 
 ```csharp
-Api.CreateIntegration5(/* values here */);
+Api.CreateArrayOfIntegration5(/* values here */);
 ```

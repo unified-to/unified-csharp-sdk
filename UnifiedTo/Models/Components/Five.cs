@@ -24,9 +24,13 @@ namespace UnifiedTo.Models.Components
         private FiveType(string value) { Value = value; }
 
         public string Value { get; private set; }
-        public static FiveType ArrayOfAny { get { return new FiveType("arrayOfAny"); } }
+        public static FiveType One { get { return new FiveType("1"); } }
         
-        public static FiveType AtsMetadataSchemasExtraData2 { get { return new FiveType("AtsMetadata_Schemas_extra_data_2"); } }
+        public static FiveType Str { get { return new FiveType("str"); } }
+        
+        public static FiveType Number { get { return new FiveType("number"); } }
+        
+        public static FiveType Boolean { get { return new FiveType("boolean"); } }
         
         public static FiveType Null { get { return new FiveType("null"); } }
 
@@ -34,8 +38,10 @@ namespace UnifiedTo.Models.Components
         public static implicit operator String(FiveType v) { return v.Value; }
         public static FiveType FromString(string v) {
             switch(v) {
-                case "arrayOfAny": return ArrayOfAny;
-                case "AtsMetadata_Schemas_extra_data_2": return AtsMetadataSchemasExtraData2;
+                case "1": return One;
+                case "str": return Str;
+                case "number": return Number;
+                case "boolean": return Boolean;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for FiveType");
             }
@@ -63,27 +69,49 @@ namespace UnifiedTo.Models.Components
         }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public List<object>? ArrayOfAny { get; set; }
+        public One? One { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public AtsMetadataSchemasExtraData2? AtsMetadataSchemasExtraData2 { get; set; }
+        public string? Str { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public double? Number { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public bool? Boolean { get; set; }
 
         public FiveType Type { get; set; }
 
 
-        public static Five CreateArrayOfAny(List<object> arrayOfAny) {
-            FiveType typ = FiveType.ArrayOfAny;
+        public static Five CreateOne(One one) {
+            FiveType typ = FiveType.One;
 
             Five res = new Five(typ);
-            res.ArrayOfAny = arrayOfAny;
+            res.One = one;
             return res;
         }
 
-        public static Five CreateAtsMetadataSchemasExtraData2(AtsMetadataSchemasExtraData2 atsMetadataSchemasExtraData2) {
-            FiveType typ = FiveType.AtsMetadataSchemasExtraData2;
+        public static Five CreateStr(string str) {
+            FiveType typ = FiveType.Str;
 
             Five res = new Five(typ);
-            res.AtsMetadataSchemasExtraData2 = atsMetadataSchemasExtraData2;
+            res.Str = str;
+            return res;
+        }
+
+        public static Five CreateNumber(double number) {
+            FiveType typ = FiveType.Number;
+
+            Five res = new Five(typ);
+            res.Number = number;
+            return res;
+        }
+
+        public static Five CreateBoolean(bool boolean) {
+            FiveType typ = FiveType.Boolean;
+
+            Five res = new Five(typ);
+            res.Boolean = boolean;
             return res;
         }
 
@@ -111,14 +139,14 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new Five(FiveType.AtsMetadataSchemasExtraData2)
+                    return new Five(FiveType.One)
                     {
-                        AtsMetadataSchemasExtraData2 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<AtsMetadataSchemasExtraData2>(json)
+                        One = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<One>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(AtsMetadataSchemasExtraData2), new Five(FiveType.AtsMetadataSchemasExtraData2), "AtsMetadataSchemasExtraData2"));
+                    fallbackCandidates.Add((typeof(One), new Five(FiveType.One), "One"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -129,24 +157,37 @@ namespace UnifiedTo.Models.Components
                     throw;
                 }
 
-                try
-                {
-                    return new Five(FiveType.ArrayOfAny)
+                if (json[0] == '"' && json[^1] == '"'){
+                    return new Five(FiveType.Str)
                     {
-                        ArrayOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<object>>(json)
+                        Str = json[1..^1]
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
+
+                try
                 {
-                    fallbackCandidates.Add((typeof(List<object>), new Five(FiveType.ArrayOfAny), "ArrayOfAny"));
+                    var converted = Convert.ToDouble(json);
+                    return new Five(FiveType.Number)
+                    {
+                        Number = converted
+                    };
                 }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
                 }
-                catch (Exception)
+
+                try
                 {
-                    throw;
+                    var converted = Convert.ToBoolean(json);
+                    return new Five(FiveType.Boolean)
+                    {
+                        Boolean = converted
+                    };
+                }
+                catch (System.FormatException)
+                {
+                    // try next option
                 }
 
                 if (fallbackCandidates.Count > 0)
@@ -184,14 +225,24 @@ namespace UnifiedTo.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
-                if (res.ArrayOfAny != null)
+                if (res.One != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.One));
                     return;
                 }
-                if (res.AtsMetadataSchemasExtraData2 != null)
+                if (res.Str != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.AtsMetadataSchemasExtraData2));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
+                    return;
+                }
+                if (res.Number != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
+                    return;
+                }
+                if (res.Boolean != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 

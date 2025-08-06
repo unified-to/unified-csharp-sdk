@@ -24,15 +24,15 @@ namespace UnifiedTo.Models.Components
         private SandboxType(string value) { Value = value; }
 
         public string Value { get; private set; }
-        public static SandboxType IntegrationSchemasSandbox1 { get { return new SandboxType("Integration_Schemas_sandbox_1"); } }
+        public static SandboxType MapOfAny { get { return new SandboxType("mapOfAny"); } }
         
-        public static SandboxType IntegrationSchemasSandbox2 { get { return new SandboxType("Integration_Schemas_sandbox_2"); } }
+        public static SandboxType Str { get { return new SandboxType("str"); } }
         
-        public static SandboxType IntegrationSchemasSandbox3 { get { return new SandboxType("Integration_Schemas_sandbox_3"); } }
+        public static SandboxType Number { get { return new SandboxType("number"); } }
         
-        public static SandboxType IntegrationSchemasSandbox4 { get { return new SandboxType("Integration_Schemas_sandbox_4"); } }
+        public static SandboxType Boolean { get { return new SandboxType("boolean"); } }
         
-        public static SandboxType IntegrationSchemasSandbox5 { get { return new SandboxType("Integration_Schemas_sandbox_5"); } }
+        public static SandboxType ArrayOfIntegrationSchemasSandbox5 { get { return new SandboxType("arrayOfIntegrationSchemasSandbox5"); } }
         
         public static SandboxType Null { get { return new SandboxType("null"); } }
 
@@ -40,11 +40,11 @@ namespace UnifiedTo.Models.Components
         public static implicit operator String(SandboxType v) { return v.Value; }
         public static SandboxType FromString(string v) {
             switch(v) {
-                case "Integration_Schemas_sandbox_1": return IntegrationSchemasSandbox1;
-                case "Integration_Schemas_sandbox_2": return IntegrationSchemasSandbox2;
-                case "Integration_Schemas_sandbox_3": return IntegrationSchemasSandbox3;
-                case "Integration_Schemas_sandbox_4": return IntegrationSchemasSandbox4;
-                case "Integration_Schemas_sandbox_5": return IntegrationSchemasSandbox5;
+                case "mapOfAny": return MapOfAny;
+                case "str": return Str;
+                case "number": return Number;
+                case "boolean": return Boolean;
+                case "arrayOfIntegrationSchemasSandbox5": return ArrayOfIntegrationSchemasSandbox5;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for SandboxType");
             }
@@ -72,60 +72,60 @@ namespace UnifiedTo.Models.Components
         }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public IntegrationSchemasSandbox1? IntegrationSchemasSandbox1 { get; set; }
+        public Dictionary<string, object>? MapOfAny { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public IntegrationSchemasSandbox2? IntegrationSchemasSandbox2 { get; set; }
+        public string? Str { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public IntegrationSchemasSandbox3? IntegrationSchemasSandbox3 { get; set; }
+        public double? Number { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public IntegrationSchemasSandbox4? IntegrationSchemasSandbox4 { get; set; }
+        public bool? Boolean { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public IntegrationSchemasSandbox5? IntegrationSchemasSandbox5 { get; set; }
+        public List<IntegrationSchemasSandbox5>? ArrayOfIntegrationSchemasSandbox5 { get; set; }
 
         public SandboxType Type { get; set; }
 
 
-        public static Sandbox CreateIntegrationSchemasSandbox1(IntegrationSchemasSandbox1 integrationSchemasSandbox1) {
-            SandboxType typ = SandboxType.IntegrationSchemasSandbox1;
+        public static Sandbox CreateMapOfAny(Dictionary<string, object> mapOfAny) {
+            SandboxType typ = SandboxType.MapOfAny;
 
             Sandbox res = new Sandbox(typ);
-            res.IntegrationSchemasSandbox1 = integrationSchemasSandbox1;
+            res.MapOfAny = mapOfAny;
             return res;
         }
 
-        public static Sandbox CreateIntegrationSchemasSandbox2(IntegrationSchemasSandbox2 integrationSchemasSandbox2) {
-            SandboxType typ = SandboxType.IntegrationSchemasSandbox2;
+        public static Sandbox CreateStr(string str) {
+            SandboxType typ = SandboxType.Str;
 
             Sandbox res = new Sandbox(typ);
-            res.IntegrationSchemasSandbox2 = integrationSchemasSandbox2;
+            res.Str = str;
             return res;
         }
 
-        public static Sandbox CreateIntegrationSchemasSandbox3(IntegrationSchemasSandbox3 integrationSchemasSandbox3) {
-            SandboxType typ = SandboxType.IntegrationSchemasSandbox3;
+        public static Sandbox CreateNumber(double number) {
+            SandboxType typ = SandboxType.Number;
 
             Sandbox res = new Sandbox(typ);
-            res.IntegrationSchemasSandbox3 = integrationSchemasSandbox3;
+            res.Number = number;
             return res;
         }
 
-        public static Sandbox CreateIntegrationSchemasSandbox4(IntegrationSchemasSandbox4 integrationSchemasSandbox4) {
-            SandboxType typ = SandboxType.IntegrationSchemasSandbox4;
+        public static Sandbox CreateBoolean(bool boolean) {
+            SandboxType typ = SandboxType.Boolean;
 
             Sandbox res = new Sandbox(typ);
-            res.IntegrationSchemasSandbox4 = integrationSchemasSandbox4;
+            res.Boolean = boolean;
             return res;
         }
 
-        public static Sandbox CreateIntegrationSchemasSandbox5(IntegrationSchemasSandbox5 integrationSchemasSandbox5) {
-            SandboxType typ = SandboxType.IntegrationSchemasSandbox5;
+        public static Sandbox CreateArrayOfIntegrationSchemasSandbox5(List<IntegrationSchemasSandbox5> arrayOfIntegrationSchemasSandbox5) {
+            SandboxType typ = SandboxType.ArrayOfIntegrationSchemasSandbox5;
 
             Sandbox res = new Sandbox(typ);
-            res.IntegrationSchemasSandbox5 = integrationSchemasSandbox5;
+            res.ArrayOfIntegrationSchemasSandbox5 = arrayOfIntegrationSchemasSandbox5;
             return res;
         }
 
@@ -153,14 +153,14 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new Sandbox(SandboxType.IntegrationSchemasSandbox1)
+                    return new Sandbox(SandboxType.MapOfAny)
                     {
-                        IntegrationSchemasSandbox1 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<IntegrationSchemasSandbox1>(json)
+                        MapOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Dictionary<string, object>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(IntegrationSchemasSandbox1), new Sandbox(SandboxType.IntegrationSchemasSandbox1), "IntegrationSchemasSandbox1"));
+                    fallbackCandidates.Add((typeof(Dictionary<string, object>), new Sandbox(SandboxType.MapOfAny), "MapOfAny"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -171,76 +171,49 @@ namespace UnifiedTo.Models.Components
                     throw;
                 }
 
-                try
-                {
-                    return new Sandbox(SandboxType.IntegrationSchemasSandbox2)
+                if (json[0] == '"' && json[^1] == '"'){
+                    return new Sandbox(SandboxType.Str)
                     {
-                        IntegrationSchemasSandbox2 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<IntegrationSchemasSandbox2>(json)
+                        Str = json[1..^1]
                     };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(IntegrationSchemasSandbox2), new Sandbox(SandboxType.IntegrationSchemasSandbox2), "IntegrationSchemasSandbox2"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new Sandbox(SandboxType.IntegrationSchemasSandbox3)
+                    var converted = Convert.ToDouble(json);
+                    return new Sandbox(SandboxType.Number)
                     {
-                        IntegrationSchemasSandbox3 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<IntegrationSchemasSandbox3>(json)
+                        Number = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(IntegrationSchemasSandbox3), new Sandbox(SandboxType.IntegrationSchemasSandbox3), "IntegrationSchemasSandbox3"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new Sandbox(SandboxType.IntegrationSchemasSandbox4)
+                    var converted = Convert.ToBoolean(json);
+                    return new Sandbox(SandboxType.Boolean)
                     {
-                        IntegrationSchemasSandbox4 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<IntegrationSchemasSandbox4>(json)
+                        Boolean = converted
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(IntegrationSchemasSandbox4), new Sandbox(SandboxType.IntegrationSchemasSandbox4), "IntegrationSchemasSandbox4"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
                 }
 
                 try
                 {
-                    return new Sandbox(SandboxType.IntegrationSchemasSandbox5)
+                    return new Sandbox(SandboxType.ArrayOfIntegrationSchemasSandbox5)
                     {
-                        IntegrationSchemasSandbox5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<IntegrationSchemasSandbox5>(json)
+                        ArrayOfIntegrationSchemasSandbox5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<IntegrationSchemasSandbox5>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(IntegrationSchemasSandbox5), new Sandbox(SandboxType.IntegrationSchemasSandbox5), "IntegrationSchemasSandbox5"));
+                    fallbackCandidates.Add((typeof(List<IntegrationSchemasSandbox5>), new Sandbox(SandboxType.ArrayOfIntegrationSchemasSandbox5), "ArrayOfIntegrationSchemasSandbox5"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -286,29 +259,29 @@ namespace UnifiedTo.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
-                if (res.IntegrationSchemasSandbox1 != null)
+                if (res.MapOfAny != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.IntegrationSchemasSandbox1));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
                     return;
                 }
-                if (res.IntegrationSchemasSandbox2 != null)
+                if (res.Str != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.IntegrationSchemasSandbox2));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
                     return;
                 }
-                if (res.IntegrationSchemasSandbox3 != null)
+                if (res.Number != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.IntegrationSchemasSandbox3));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
                     return;
                 }
-                if (res.IntegrationSchemasSandbox4 != null)
+                if (res.Boolean != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.IntegrationSchemasSandbox4));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
-                if (res.IntegrationSchemasSandbox5 != null)
+                if (res.ArrayOfIntegrationSchemasSandbox5 != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.IntegrationSchemasSandbox5));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfIntegrationSchemasSandbox5));
                     return;
                 }
 

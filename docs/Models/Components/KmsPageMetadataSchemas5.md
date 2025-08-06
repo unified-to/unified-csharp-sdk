@@ -3,14 +3,26 @@
 
 ## Supported Types
 
-### ArrayOfAny
+### KmsPageMetadataSchemas1
 
 ```csharp
-KmsPageMetadataSchemas5.CreateArrayOfAny(/* values here */);
+KmsPageMetadataSchemas5.CreateKmsPageMetadataSchemas1(/* values here */);
 ```
 
-### KmsPageMetadataSchemasValue52
+### Str
 
 ```csharp
-KmsPageMetadataSchemas5.CreateKmsPageMetadataSchemasValue52(/* values here */);
+KmsPageMetadataSchemas5.CreateStr(/* values here */);
+```
+
+### Number
+
+```csharp
+KmsPageMetadataSchemas5.CreateNumber(/* values here */);
+```
+
+### Boolean
+
+```csharp
+KmsPageMetadataSchemas5.CreateBoolean(/* values here */);
 ```

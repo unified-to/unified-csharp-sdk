@@ -3,32 +3,32 @@
 
 ## Supported Types
 
-### IntegrationSchemas1
+### MapOfAny
 
 ```csharp
-Partnership.CreateIntegrationSchemas1(/* values here */);
+Partnership.CreateMapOfAny(/* values here */);
 ```
 
-### IntegrationSchemas2
+### Str
 
 ```csharp
-Partnership.CreateIntegrationSchemas2(/* values here */);
+Partnership.CreateStr(/* values here */);
 ```
 
-### IntegrationSchemas3
+### Number
 
 ```csharp
-Partnership.CreateIntegrationSchemas3(/* values here */);
+Partnership.CreateNumber(/* values here */);
 ```
 
-### IntegrationSchemas4
+### Boolean
 
 ```csharp
-Partnership.CreateIntegrationSchemas4(/* values here */);
+Partnership.CreateBoolean(/* values here */);
 ```
 
-### IntegrationSchemas5
+### ArrayOfIntegrationSchemas5
 
 ```csharp
-Partnership.CreateIntegrationSchemas5(/* values here */);
+Partnership.CreateArrayOfIntegrationSchemas5(/* values here */);
 ```

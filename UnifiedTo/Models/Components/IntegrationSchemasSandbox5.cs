@@ -24,9 +24,13 @@ namespace UnifiedTo.Models.Components
         private IntegrationSchemasSandbox5Type(string value) { Value = value; }
 
         public string Value { get; private set; }
-        public static IntegrationSchemasSandbox5Type ArrayOfAny { get { return new IntegrationSchemasSandbox5Type("arrayOfAny"); } }
+        public static IntegrationSchemasSandbox5Type IntegrationSchemasSandbox1 { get { return new IntegrationSchemasSandbox5Type("Integration_Schemas_sandbox_1"); } }
         
-        public static IntegrationSchemasSandbox5Type IntegrationSchemasSandbox52 { get { return new IntegrationSchemasSandbox5Type("Integration_Schemas_sandbox_5_2"); } }
+        public static IntegrationSchemasSandbox5Type Str { get { return new IntegrationSchemasSandbox5Type("str"); } }
+        
+        public static IntegrationSchemasSandbox5Type Number { get { return new IntegrationSchemasSandbox5Type("number"); } }
+        
+        public static IntegrationSchemasSandbox5Type Boolean { get { return new IntegrationSchemasSandbox5Type("boolean"); } }
         
         public static IntegrationSchemasSandbox5Type Null { get { return new IntegrationSchemasSandbox5Type("null"); } }
 
@@ -34,8 +38,10 @@ namespace UnifiedTo.Models.Components
         public static implicit operator String(IntegrationSchemasSandbox5Type v) { return v.Value; }
         public static IntegrationSchemasSandbox5Type FromString(string v) {
             switch(v) {
-                case "arrayOfAny": return ArrayOfAny;
-                case "Integration_Schemas_sandbox_5_2": return IntegrationSchemasSandbox52;
+                case "Integration_Schemas_sandbox_1": return IntegrationSchemasSandbox1;
+                case "str": return Str;
+                case "number": return Number;
+                case "boolean": return Boolean;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for IntegrationSchemasSandbox5Type");
             }
@@ -63,27 +69,49 @@ namespace UnifiedTo.Models.Components
         }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public List<object>? ArrayOfAny { get; set; }
+        public IntegrationSchemasSandbox1? IntegrationSchemasSandbox1 { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public IntegrationSchemasSandbox52? IntegrationSchemasSandbox52 { get; set; }
+        public string? Str { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public double? Number { get; set; }
+
+        [SpeakeasyMetadata("form:explode=true")]
+        public bool? Boolean { get; set; }
 
         public IntegrationSchemasSandbox5Type Type { get; set; }
 
 
-        public static IntegrationSchemasSandbox5 CreateArrayOfAny(List<object> arrayOfAny) {
-            IntegrationSchemasSandbox5Type typ = IntegrationSchemasSandbox5Type.ArrayOfAny;
+        public static IntegrationSchemasSandbox5 CreateIntegrationSchemasSandbox1(IntegrationSchemasSandbox1 integrationSchemasSandbox1) {
+            IntegrationSchemasSandbox5Type typ = IntegrationSchemasSandbox5Type.IntegrationSchemasSandbox1;
 
             IntegrationSchemasSandbox5 res = new IntegrationSchemasSandbox5(typ);
-            res.ArrayOfAny = arrayOfAny;
+            res.IntegrationSchemasSandbox1 = integrationSchemasSandbox1;
             return res;
         }
 
-        public static IntegrationSchemasSandbox5 CreateIntegrationSchemasSandbox52(IntegrationSchemasSandbox52 integrationSchemasSandbox52) {
-            IntegrationSchemasSandbox5Type typ = IntegrationSchemasSandbox5Type.IntegrationSchemasSandbox52;
+        public static IntegrationSchemasSandbox5 CreateStr(string str) {
+            IntegrationSchemasSandbox5Type typ = IntegrationSchemasSandbox5Type.Str;
 
             IntegrationSchemasSandbox5 res = new IntegrationSchemasSandbox5(typ);
-            res.IntegrationSchemasSandbox52 = integrationSchemasSandbox52;
+            res.Str = str;
+            return res;
+        }
+
+        public static IntegrationSchemasSandbox5 CreateNumber(double number) {
+            IntegrationSchemasSandbox5Type typ = IntegrationSchemasSandbox5Type.Number;
+
+            IntegrationSchemasSandbox5 res = new IntegrationSchemasSandbox5(typ);
+            res.Number = number;
+            return res;
+        }
+
+        public static IntegrationSchemasSandbox5 CreateBoolean(bool boolean) {
+            IntegrationSchemasSandbox5Type typ = IntegrationSchemasSandbox5Type.Boolean;
+
+            IntegrationSchemasSandbox5 res = new IntegrationSchemasSandbox5(typ);
+            res.Boolean = boolean;
             return res;
         }
 
@@ -111,14 +139,14 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new IntegrationSchemasSandbox5(IntegrationSchemasSandbox5Type.IntegrationSchemasSandbox52)
+                    return new IntegrationSchemasSandbox5(IntegrationSchemasSandbox5Type.IntegrationSchemasSandbox1)
                     {
-                        IntegrationSchemasSandbox52 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<IntegrationSchemasSandbox52>(json)
+                        IntegrationSchemasSandbox1 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<IntegrationSchemasSandbox1>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(IntegrationSchemasSandbox52), new IntegrationSchemasSandbox5(IntegrationSchemasSandbox5Type.IntegrationSchemasSandbox52), "IntegrationSchemasSandbox52"));
+                    fallbackCandidates.Add((typeof(IntegrationSchemasSandbox1), new IntegrationSchemasSandbox5(IntegrationSchemasSandbox5Type.IntegrationSchemasSandbox1), "IntegrationSchemasSandbox1"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -129,24 +157,37 @@ namespace UnifiedTo.Models.Components
                     throw;
                 }
 
-                try
-                {
-                    return new IntegrationSchemasSandbox5(IntegrationSchemasSandbox5Type.ArrayOfAny)
+                if (json[0] == '"' && json[^1] == '"'){
+                    return new IntegrationSchemasSandbox5(IntegrationSchemasSandbox5Type.Str)
                     {
-                        ArrayOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<object>>(json)
+                        Str = json[1..^1]
                     };
                 }
-                catch (ResponseBodyDeserializer.MissingMemberException)
+
+                try
                 {
-                    fallbackCandidates.Add((typeof(List<object>), new IntegrationSchemasSandbox5(IntegrationSchemasSandbox5Type.ArrayOfAny), "ArrayOfAny"));
+                    var converted = Convert.ToDouble(json);
+                    return new IntegrationSchemasSandbox5(IntegrationSchemasSandbox5Type.Number)
+                    {
+                        Number = converted
+                    };
                 }
-                catch (ResponseBodyDeserializer.DeserializationException)
+                catch (System.FormatException)
                 {
                     // try next option
                 }
-                catch (Exception)
+
+                try
                 {
-                    throw;
+                    var converted = Convert.ToBoolean(json);
+                    return new IntegrationSchemasSandbox5(IntegrationSchemasSandbox5Type.Boolean)
+                    {
+                        Boolean = converted
+                    };
+                }
+                catch (System.FormatException)
+                {
+                    // try next option
                 }
 
                 if (fallbackCandidates.Count > 0)
@@ -184,14 +225,24 @@ namespace UnifiedTo.Models.Components
                     writer.WriteRawValue("null");
                     return;
                 }
-                if (res.ArrayOfAny != null)
+                if (res.IntegrationSchemasSandbox1 != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAny));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.IntegrationSchemasSandbox1));
                     return;
                 }
-                if (res.IntegrationSchemasSandbox52 != null)
+                if (res.Str != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.IntegrationSchemasSandbox52));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
+                    return;
+                }
+                if (res.Number != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
+                    return;
+                }
+                if (res.Boolean != null)
+                {
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
 
