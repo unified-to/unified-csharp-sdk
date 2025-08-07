@@ -30,6 +30,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        [JsonProperty("global_code")]
+        public string? GlobalCode { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
