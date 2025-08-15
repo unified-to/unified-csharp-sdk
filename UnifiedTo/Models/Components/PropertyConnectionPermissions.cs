@@ -15,8 +15,6 @@ namespace UnifiedTo.Models.Components
     
     public enum PropertyConnectionPermissions
     {
-        [JsonProperty("auth_login")]
-        AuthLogin,
         [JsonProperty("accounting_account_read")]
         AccountingAccountRead,
         [JsonProperty("accounting_account_write")]

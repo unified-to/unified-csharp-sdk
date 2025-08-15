@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 585a933222a93cac4e23b48d062c4a0c
+  docChecksum: 3a5734f3a7c4cfbbb830e6e58476de9b
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.46.0
-  configChecksum: 899278521515823e9a0b310e1bd64afd
+  releaseVersion: 0.48.0
+  configChecksum: 0eacb204127f35089b56ef7984168384
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -6854,7 +6854,7 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"categories": ["auth"], "environment": "Production", "integration_type": "<value>", "permissions": ["scim_groups_read", "auth_login"]}
+          application/json: {"categories": ["auth"], "environment": "Production", "integration_type": "<value>", "permissions": ["scim_groups_read", "crm_pipeline_write"]}
   getUnifiedIntegrationAuth:
     speakeasy-default-get-unified-integration-auth:
       parameters:

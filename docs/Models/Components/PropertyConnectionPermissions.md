@@ -5,7 +5,6 @@
 
 | Name                           | Value                          |
 | ------------------------------ | ------------------------------ |
-| `AuthLogin`                    | auth_login                     |
 | `AccountingAccountRead`        | accounting_account_read        |
 | `AccountingAccountWrite`       | accounting_account_write       |
 | `AccountingTransactionRead`    | accounting_transaction_read    |
