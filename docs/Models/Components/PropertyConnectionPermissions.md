@@ -135,6 +135,7 @@
 | `TaskProjectWrite`             | task_project_write             |
 | `TaskTaskRead`                 | task_task_read                 |
 | `TaskTaskWrite`                | task_task_write                |
+| `TaskChangeRead`               | task_change_read               |
 | `TaskCommentRead`              | task_comment_read              |
 | `TaskCommentWrite`             | task_comment_write             |
 | `ScimUsersRead`                | scim_users_read                |

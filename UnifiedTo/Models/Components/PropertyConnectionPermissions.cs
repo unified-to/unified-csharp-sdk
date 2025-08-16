@@ -275,6 +275,8 @@ namespace UnifiedTo.Models.Components
         TaskTaskRead,
         [JsonProperty("task_task_write")]
         TaskTaskWrite,
+        [JsonProperty("task_change_read")]
+        TaskChangeRead,
         [JsonProperty("task_comment_read")]
         TaskCommentRead,
         [JsonProperty("task_comment_write")]

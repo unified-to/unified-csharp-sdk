@@ -78,6 +78,7 @@
 | `TaskProject`             | task_project              |
 | `TaskTask`                | task_task                 |
 | `TaskComment`             | task_comment              |
+| `TaskChange`              | task_change               |
 | `ScimUsers`               | scim_users                |
 | `ScimGroups`              | scim_groups               |
 | `LmsCourse`               | lms_course                |

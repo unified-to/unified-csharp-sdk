@@ -111,6 +111,7 @@ namespace UnifiedTo
         public IStorage Storage { get; }
         public IFile File { get; }
         public ITask Task { get; }
+        public IChange Change { get; }
         public IProject Project { get; }
         public ITicketing Ticketing { get; }
         public ICustomer Customer { get; }
@@ -137,7 +138,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.48.0";
+        private const string _sdkVersion = "0.50.0";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -226,6 +227,7 @@ namespace UnifiedTo
         public IStorage Storage { get; private set; }
         public IFile File { get; private set; }
         public ITask Task { get; private set; }
+        public IChange Change { get; private set; }
         public IProject Project { get; private set; }
         public ITicketing Ticketing { get; private set; }
         public ICustomer Customer { get; private set; }
@@ -418,6 +420,8 @@ namespace UnifiedTo
             File = new File(SDKConfiguration);
 
             Task = new Task(SDKConfiguration);
+
+            Change = new Change(SDKConfiguration);
 
             Project = new Project(SDKConfiguration);
 
@@ -663,6 +667,8 @@ namespace UnifiedTo
             File = new File(SDKConfiguration);
 
             Task = new Task(SDKConfiguration);
+
+            Change = new Change(SDKConfiguration);
 
             Project = new Project(SDKConfiguration);
 

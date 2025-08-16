@@ -161,6 +161,8 @@ namespace UnifiedTo.Models.Components
         TaskTask,
         [JsonProperty("task_comment")]
         TaskComment,
+        [JsonProperty("task_change")]
+        TaskChange,
         [JsonProperty("scim_users")]
         ScimUsers,
         [JsonProperty("scim_groups")]

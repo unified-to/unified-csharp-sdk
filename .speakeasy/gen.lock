@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 3a5734f3a7c4cfbbb830e6e58476de9b
+  docChecksum: 190c325c2a6a2949d578db67163791d8
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.48.0
-  configChecksum: 0eacb204127f35089b56ef7984168384
+  releaseVersion: 0.50.0
+  configChecksum: 89336d76c11d3fd47434b069fff83dca
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -45,6 +45,7 @@ generatedFiles:
   - UnifiedTo/Call.cs
   - UnifiedTo/Candidate.cs
   - UnifiedTo/Category.cs
+  - UnifiedTo/Change.cs
   - UnifiedTo/Channel.cs
   - UnifiedTo/Class.cs
   - UnifiedTo/Collection.cs
@@ -453,6 +454,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/StorageFile.cs
   - UnifiedTo/Models/Components/StorageFileType.cs
   - UnifiedTo/Models/Components/StoragePermission.cs
+  - UnifiedTo/Models/Components/TaskChange.cs
+  - UnifiedTo/Models/Components/TaskChangeItem.cs
   - UnifiedTo/Models/Components/TaskComment.cs
   - UnifiedTo/Models/Components/TaskMetadata.cs
   - UnifiedTo/Models/Components/TaskMetadata1.cs
@@ -789,6 +792,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetScimUsersResponse.cs
   - UnifiedTo/Models/Requests/GetStorageFileRequest.cs
   - UnifiedTo/Models/Requests/GetStorageFileResponse.cs
+  - UnifiedTo/Models/Requests/GetTaskChangeRequest.cs
+  - UnifiedTo/Models/Requests/GetTaskChangeResponse.cs
   - UnifiedTo/Models/Requests/GetTaskCommentRequest.cs
   - UnifiedTo/Models/Requests/GetTaskCommentResponse.cs
   - UnifiedTo/Models/Requests/GetTaskProjectRequest.cs
@@ -975,6 +980,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListScimUsersResponse.cs
   - UnifiedTo/Models/Requests/ListStorageFilesRequest.cs
   - UnifiedTo/Models/Requests/ListStorageFilesResponse.cs
+  - UnifiedTo/Models/Requests/ListTaskChangesRequest.cs
+  - UnifiedTo/Models/Requests/ListTaskChangesResponse.cs
   - UnifiedTo/Models/Requests/ListTaskCommentsRequest.cs
   - UnifiedTo/Models/Requests/ListTaskCommentsResponse.cs
   - UnifiedTo/Models/Requests/ListTaskProjectsRequest.cs
@@ -1882,6 +1889,8 @@ generatedFiles:
   - docs/Models/Components/StorageFile.md
   - docs/Models/Components/StorageFileType.md
   - docs/Models/Components/StoragePermission.md
+  - docs/Models/Components/TaskChange.md
+  - docs/Models/Components/TaskChangeItem.md
   - docs/Models/Components/TaskComment.md
   - docs/Models/Components/TaskMetadata.md
   - docs/Models/Components/TaskMetadata1.md
@@ -2217,6 +2226,8 @@ generatedFiles:
   - docs/Models/Requests/GetScimUsersResponse.md
   - docs/Models/Requests/GetStorageFileRequest.md
   - docs/Models/Requests/GetStorageFileResponse.md
+  - docs/Models/Requests/GetTaskChangeRequest.md
+  - docs/Models/Requests/GetTaskChangeResponse.md
   - docs/Models/Requests/GetTaskCommentRequest.md
   - docs/Models/Requests/GetTaskCommentResponse.md
   - docs/Models/Requests/GetTaskProjectRequest.md
@@ -2403,6 +2414,8 @@ generatedFiles:
   - docs/Models/Requests/ListScimUsersResponse.md
   - docs/Models/Requests/ListStorageFilesRequest.md
   - docs/Models/Requests/ListStorageFilesResponse.md
+  - docs/Models/Requests/ListTaskChangesRequest.md
+  - docs/Models/Requests/ListTaskChangesResponse.md
   - docs/Models/Requests/ListTaskCommentsRequest.md
   - docs/Models/Requests/ListTaskCommentsResponse.md
   - docs/Models/Requests/ListTaskProjectsRequest.md
@@ -2905,6 +2918,7 @@ generatedFiles:
   - docs/sdks/call/README.md
   - docs/sdks/candidate/README.md
   - docs/sdks/category/README.md
+  - docs/sdks/change/README.md
   - docs/sdks/channel/README.md
   - docs/sdks/class/README.md
   - docs/sdks/collection/README.md
@@ -7393,5 +7407,28 @@ examples:
       responses:
         "200":
           application/json: {}
+  getTaskChange:
+    speakeasy-default-get-task-change:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listTaskChanges:
+    speakeasy-default-list-task-changes:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: |
+  ## SDK Changes Detected:
+  * `UnifiedTo.Task.GetTaskChange()`: **Added**
+  * `UnifiedTo.Task.ListTaskChanges()`: **Added**
+  * `UnifiedTo.Change.GetTaskChange()`: **Added**
+  * `UnifiedTo.Change.ListTaskChanges()`: **Added**
