@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 190c325c2a6a2949d578db67163791d8
+  docChecksum: 4f3132855d15c32adf7ca6526ca7469f
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.50.0
-  configChecksum: 89336d76c11d3fd47434b069fff83dca
+  releaseVersion: 0.52.0
+  configChecksum: 172b57efce1ea59a561296d09d96c350
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -7426,9 +7426,4 @@ examples:
           application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## SDK Changes Detected:
-  * `UnifiedTo.Task.GetTaskChange()`: **Added**
-  * `UnifiedTo.Task.ListTaskChanges()`: **Added**
-  * `UnifiedTo.Change.GetTaskChange()`: **Added**
-  * `UnifiedTo.Change.ListTaskChanges()`: **Added**
+releaseNotes: "## SDK Changes Detected:\n* `UnifiedTo.Unified.CreateUnifiedConnection()`: \n  *  `request.Auth.RefreshUrl` **Added**\n  *  `response.auth.RefreshUrl` **Added**\n* `UnifiedTo.Unified.CreateUnifiedWebhook()`: \n  *  `request.webhook.DbSchema` **Added**\n  *  `response.dbSchema` **Added**\n* `UnifiedTo.Unified.GetUnifiedConnection()`:  `response.auth.RefreshUrl` **Added**\n* `UnifiedTo.Unified.GetUnifiedWebhook()`:  `response.dbSchema` **Added**\n* `UnifiedTo.Unified.ListUnifiedConnections()`:  `response.[].Auth.RefreshUrl` **Added**\n* `UnifiedTo.Unified.ListUnifiedWebhooks()`:  `response.[].DbSchema` **Added**\n* `UnifiedTo.Unified.PatchUnifiedConnection()`: \n  *  `request.connection.Auth.RefreshUrl` **Added**\n  *  `response.auth.RefreshUrl` **Added**\n* `UnifiedTo.Unified.PatchUnifiedWebhook()`: \n  *  `request.webhook.DbSchema` **Added**\n  *  `response.dbSchema` **Added**\n* `UnifiedTo.Unified.UpdateUnifiedConnection()`: \n  *  `request.connection.Auth.RefreshUrl` **Added**\n  *  `response.auth.RefreshUrl` **Added**\n* `UnifiedTo.Unified.UpdateUnifiedWebhook()`: \n  *  `request.webhook.DbSchema` **Added**\n  *  `response.dbSchema` **Added**\n* `UnifiedTo.Connection.CreateUnifiedConnection()`: \n  *  `request.Auth.RefreshUrl` **Added**\n  *  `response.auth.RefreshUrl` **Added**\n* `UnifiedTo.Connection.GetUnifiedConnection()`:  `response.auth.RefreshUrl` **Added**\n* `UnifiedTo.Connection.ListUnifiedConnections()`:  `response.[].Auth.RefreshUrl` **Added**\n* `UnifiedTo.Connection.PatchUnifiedConnection()`: \n  *  `request.connection.Auth.RefreshUrl` **Added**\n  *  `response.auth.RefreshUrl` **Added**\n* `UnifiedTo.Connection.UpdateUnifiedConnection()`: \n  *  `request.connection.Auth.RefreshUrl` **Added**\n  *  `response.auth.RefreshUrl` **Added**\n* `UnifiedTo.Webhook.CreateUnifiedWebhook()`: \n  *  `request.webhook.DbSchema` **Added**\n  *  `response.dbSchema` **Added**\n* `UnifiedTo.Webhook.GetUnifiedWebhook()`:  `response.dbSchema` **Added**\n* `UnifiedTo.Webhook.ListUnifiedWebhooks()`:  `response.[].DbSchema` **Added**\n* `UnifiedTo.Webhook.PatchUnifiedWebhook()`: \n  *  `request.webhook.DbSchema` **Added**\n  *  `response.dbSchema` **Added**\n* `UnifiedTo.Webhook.UpdateUnifiedWebhook()`: \n  *  `request.webhook.DbSchema` **Added**\n  *  `response.dbSchema` **Added**\n"

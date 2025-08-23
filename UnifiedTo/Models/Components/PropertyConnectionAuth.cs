@@ -83,6 +83,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("refresh_token_expires_in")]
         public double? RefreshTokenExpiresIn { get; set; }
 
+        [JsonProperty("refresh_url")]
+        public string? RefreshUrl { get; set; }
+
         [JsonProperty("state")]
         public string? State { get; set; }
 

@@ -33,6 +33,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("db_name_prefix")]
         public string? DbNamePrefix { get; set; }
 
+        [JsonProperty("db_schema")]
+        public string? DbSchema { get; set; }
+
         [JsonProperty("db_type")]
         public DbType? DbType { get; set; }
 
