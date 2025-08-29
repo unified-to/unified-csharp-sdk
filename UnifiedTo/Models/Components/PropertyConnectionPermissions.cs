@@ -117,6 +117,12 @@ namespace UnifiedTo.Models.Components
         CommerceReviewRead,
         [JsonProperty("commerce_review_write")]
         CommerceReviewWrite,
+        [JsonProperty("verification_package_read")]
+        VerificationPackageRead,
+        [JsonProperty("verification_request_read")]
+        VerificationRequestRead,
+        [JsonProperty("verification_request_write")]
+        VerificationRequestWrite,
         [JsonProperty("ats_activity_read")]
         AtsActivityRead,
         [JsonProperty("ats_activity_write")]

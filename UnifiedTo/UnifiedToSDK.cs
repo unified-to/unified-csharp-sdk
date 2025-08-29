@@ -127,6 +127,9 @@ namespace UnifiedTo
         public ILogin Login { get; }
         public IIssue Issue { get; }
         public IWebhook Webhook { get; }
+        public IVerification Verification { get; }
+        public IPackage Package { get; }
+        public IRequest Request { get; }
     }
 
 
@@ -138,7 +141,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.52.0";
+        private const string _sdkVersion = "0.54.0";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -243,6 +246,9 @@ namespace UnifiedTo
         public ILogin Login { get; private set; }
         public IIssue Issue { get; private set; }
         public IWebhook Webhook { get; private set; }
+        public IVerification Verification { get; private set; }
+        public IPackage Package { get; private set; }
+        public IRequest Request { get; private set; }
 
         public UnifiedToSDK(SDKConfig config)
         {
@@ -452,6 +458,12 @@ namespace UnifiedTo
             Issue = new Issue(SDKConfiguration);
 
             Webhook = new Webhook(SDKConfiguration);
+
+            Verification = new Verification(SDKConfiguration);
+
+            Package = new Package(SDKConfiguration);
+
+            Request = new Request(SDKConfiguration);
         }
 
         public UnifiedToSDK(UnifiedTo.Models.Components.Security? security = null, Func<UnifiedTo.Models.Components.Security>? securitySource = null, int? serverIndex = null, string? serverUrl = null, Dictionary<string, string>? urlParams = null, ISpeakeasyHttpClient? client = null, RetryConfig? retryConfig = null)
@@ -699,6 +711,12 @@ namespace UnifiedTo
             Issue = new Issue(SDKConfiguration);
 
             Webhook = new Webhook(SDKConfiguration);
+
+            Verification = new Verification(SDKConfiguration);
+
+            Package = new Package(SDKConfiguration);
+
+            Request = new Request(SDKConfiguration);
         }
 
         private void InitHooks()

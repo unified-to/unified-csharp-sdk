@@ -59,6 +59,8 @@ namespace UnifiedTo.Models.Requests
         Metadata,
         [JsonProperty("calendar")]
         Calendar,
+        [JsonProperty("verification")]
+        Verification,
     }
 
     public static class QueryParamCategoriesExtension

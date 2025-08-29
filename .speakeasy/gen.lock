@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 4f3132855d15c32adf7ca6526ca7469f
+  docChecksum: b7b8f3e6ae3a4420539b46d5e0a59d99
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.52.0
-  configChecksum: 172b57efce1ea59a561296d09d96c350
+  releaseVersion: 0.54.0
+  configChecksum: 33b9d33c1f8bf1270434d4954a2a2e6a
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -351,6 +351,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/PaymentSubscriptionStatus.cs
   - UnifiedTo/Models/Components/PaymentType.cs
   - UnifiedTo/Models/Components/Priority.cs
+  - UnifiedTo/Models/Components/ProfileGender.cs
   - UnifiedTo/Models/Components/PropertyAccountingBalancesheetItemSubItems.cs
   - UnifiedTo/Models/Components/PropertyAccountingContactBillingAddress.cs
   - UnifiedTo/Models/Components/PropertyAccountingContactShippingAddress.cs
@@ -425,6 +426,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/RepoPullrequestStatus.cs
   - UnifiedTo/Models/Components/RepoRepository.cs
   - UnifiedTo/Models/Components/ResourceType.cs
+  - UnifiedTo/Models/Components/ResponseStatus.cs
   - UnifiedTo/Models/Components/Role.cs
   - UnifiedTo/Models/Components/Sandbox.cs
   - UnifiedTo/Models/Components/ScimAddress.cs
@@ -489,6 +491,15 @@ generatedFiles:
   - UnifiedTo/Models/Components/UcTelephone.cs
   - UnifiedTo/Models/Components/UcTelephoneType.cs
   - UnifiedTo/Models/Components/Value.cs
+  - UnifiedTo/Models/Components/VerificationAddress.cs
+  - UnifiedTo/Models/Components/VerificationPackage.cs
+  - UnifiedTo/Models/Components/VerificationPackageType.cs
+  - UnifiedTo/Models/Components/VerificationParameter.cs
+  - UnifiedTo/Models/Components/VerificationParameterInput.cs
+  - UnifiedTo/Models/Components/VerificationParameterType.cs
+  - UnifiedTo/Models/Components/VerificationRequest.cs
+  - UnifiedTo/Models/Components/VerificationResponseDetail.cs
+  - UnifiedTo/Models/Components/VerificationTime.cs
   - UnifiedTo/Models/Components/Webhook.cs
   - UnifiedTo/Models/Components/WebhookType.cs
   - UnifiedTo/Models/Components/WeekStart.cs
@@ -646,6 +657,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateUnifiedConnectionResponse.cs
   - UnifiedTo/Models/Requests/CreateUnifiedWebhookRequest.cs
   - UnifiedTo/Models/Requests/CreateUnifiedWebhookResponse.cs
+  - UnifiedTo/Models/Requests/CreateVerificationRequestRequest.cs
+  - UnifiedTo/Models/Requests/CreateVerificationRequestResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingAccountResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingBalancesheetRequest.cs
@@ -822,6 +835,10 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetUnifiedIntegrationLoginResponse.cs
   - UnifiedTo/Models/Requests/GetUnifiedWebhookRequest.cs
   - UnifiedTo/Models/Requests/GetUnifiedWebhookResponse.cs
+  - UnifiedTo/Models/Requests/GetVerificationPackageRequest.cs
+  - UnifiedTo/Models/Requests/GetVerificationPackageResponse.cs
+  - UnifiedTo/Models/Requests/GetVerificationRequestRequest.cs
+  - UnifiedTo/Models/Requests/GetVerificationRequestResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingAccountsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingAccountsResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingBalancesheetsRequest.cs
@@ -1015,6 +1032,10 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListUnifiedIssuesResponse.cs
   - UnifiedTo/Models/Requests/ListUnifiedWebhooksRequest.cs
   - UnifiedTo/Models/Requests/ListUnifiedWebhooksResponse.cs
+  - UnifiedTo/Models/Requests/ListVerificationPackagesRequest.cs
+  - UnifiedTo/Models/Requests/ListVerificationPackagesResponse.cs
+  - UnifiedTo/Models/Requests/ListVerificationRequestsRequest.cs
+  - UnifiedTo/Models/Requests/ListVerificationRequestsResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingAccountResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingBillRequest.cs
@@ -1167,6 +1188,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchUnifiedWebhookResponse.cs
   - UnifiedTo/Models/Requests/PatchUnifiedWebhookTriggerRequest.cs
   - UnifiedTo/Models/Requests/PatchUnifiedWebhookTriggerResponse.cs
+  - UnifiedTo/Models/Requests/PatchVerificationRequestRequest.cs
+  - UnifiedTo/Models/Requests/PatchVerificationRequestResponse.cs
   - UnifiedTo/Models/Requests/QueryParamCategories.cs
   - UnifiedTo/Models/Requests/RemoveAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingAccountResponse.cs
@@ -1316,6 +1339,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveUnifiedConnectionResponse.cs
   - UnifiedTo/Models/Requests/RemoveUnifiedWebhookRequest.cs
   - UnifiedTo/Models/Requests/RemoveUnifiedWebhookResponse.cs
+  - UnifiedTo/Models/Requests/RemoveVerificationRequestRequest.cs
+  - UnifiedTo/Models/Requests/RemoveVerificationRequestResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingAccountRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingAccountResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingBillRequest.cs
@@ -1468,9 +1493,12 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateUnifiedWebhookResponse.cs
   - UnifiedTo/Models/Requests/UpdateUnifiedWebhookTriggerRequest.cs
   - UnifiedTo/Models/Requests/UpdateUnifiedWebhookTriggerResponse.cs
+  - UnifiedTo/Models/Requests/UpdateVerificationRequestRequest.cs
+  - UnifiedTo/Models/Requests/UpdateVerificationRequestResponse.cs
   - UnifiedTo/Note.cs
   - UnifiedTo/Order.cs
   - UnifiedTo/Organization.cs
+  - UnifiedTo/Package.cs
   - UnifiedTo/Page.cs
   - UnifiedTo/Passthrough.cs
   - UnifiedTo/Payment.cs
@@ -1488,6 +1516,7 @@ generatedFiles:
   - UnifiedTo/Repo.cs
   - UnifiedTo/Report.cs
   - UnifiedTo/Repository.cs
+  - UnifiedTo/Request.cs
   - UnifiedTo/Review.cs
   - UnifiedTo/SDKConfig.cs
   - UnifiedTo/Salesorder.cs
@@ -1527,6 +1556,7 @@ generatedFiles:
   - UnifiedTo/Utils/SpeakeasyMetadata.cs
   - UnifiedTo/Utils/URLBuilder.cs
   - UnifiedTo/Utils/Utilities.cs
+  - UnifiedTo/Verification.cs
   - UnifiedTo/Webhook.cs
   - docs/Models/Components/AccountingAccount.md
   - docs/Models/Components/AccountingAssociatedContact.md
@@ -1786,6 +1816,7 @@ generatedFiles:
   - docs/Models/Components/PaymentSubscriptionStatus.md
   - docs/Models/Components/PaymentType.md
   - docs/Models/Components/Priority.md
+  - docs/Models/Components/ProfileGender.md
   - docs/Models/Components/PropertyAccountingBalancesheetItemSubItems.md
   - docs/Models/Components/PropertyAccountingContactBillingAddress.md
   - docs/Models/Components/PropertyAccountingContactShippingAddress.md
@@ -1860,6 +1891,7 @@ generatedFiles:
   - docs/Models/Components/RepoPullrequestStatus.md
   - docs/Models/Components/RepoRepository.md
   - docs/Models/Components/ResourceType.md
+  - docs/Models/Components/ResponseStatus.md
   - docs/Models/Components/Role.md
   - docs/Models/Components/Sandbox.md
   - docs/Models/Components/ScimAddress.md
@@ -1924,6 +1956,15 @@ generatedFiles:
   - docs/Models/Components/UcTelephone.md
   - docs/Models/Components/UcTelephoneType.md
   - docs/Models/Components/Value.md
+  - docs/Models/Components/VerificationAddress.md
+  - docs/Models/Components/VerificationPackage.md
+  - docs/Models/Components/VerificationPackageType.md
+  - docs/Models/Components/VerificationParameter.md
+  - docs/Models/Components/VerificationParameterInput.md
+  - docs/Models/Components/VerificationParameterType.md
+  - docs/Models/Components/VerificationRequest.md
+  - docs/Models/Components/VerificationResponseDetail.md
+  - docs/Models/Components/VerificationTime.md
   - docs/Models/Components/Webhook.md
   - docs/Models/Components/WebhookType.md
   - docs/Models/Components/WeekStart.md
@@ -2080,6 +2121,8 @@ generatedFiles:
   - docs/Models/Requests/CreateUnifiedConnectionResponse.md
   - docs/Models/Requests/CreateUnifiedWebhookRequest.md
   - docs/Models/Requests/CreateUnifiedWebhookResponse.md
+  - docs/Models/Requests/CreateVerificationRequestRequest.md
+  - docs/Models/Requests/CreateVerificationRequestResponse.md
   - docs/Models/Requests/GetAccountingAccountRequest.md
   - docs/Models/Requests/GetAccountingAccountResponse.md
   - docs/Models/Requests/GetAccountingBalancesheetRequest.md
@@ -2256,6 +2299,10 @@ generatedFiles:
   - docs/Models/Requests/GetUnifiedIntegrationLoginResponse.md
   - docs/Models/Requests/GetUnifiedWebhookRequest.md
   - docs/Models/Requests/GetUnifiedWebhookResponse.md
+  - docs/Models/Requests/GetVerificationPackageRequest.md
+  - docs/Models/Requests/GetVerificationPackageResponse.md
+  - docs/Models/Requests/GetVerificationRequestRequest.md
+  - docs/Models/Requests/GetVerificationRequestResponse.md
   - docs/Models/Requests/ListAccountingAccountsRequest.md
   - docs/Models/Requests/ListAccountingAccountsResponse.md
   - docs/Models/Requests/ListAccountingBalancesheetsRequest.md
@@ -2449,6 +2496,10 @@ generatedFiles:
   - docs/Models/Requests/ListUnifiedIssuesResponse.md
   - docs/Models/Requests/ListUnifiedWebhooksRequest.md
   - docs/Models/Requests/ListUnifiedWebhooksResponse.md
+  - docs/Models/Requests/ListVerificationPackagesRequest.md
+  - docs/Models/Requests/ListVerificationPackagesResponse.md
+  - docs/Models/Requests/ListVerificationRequestsRequest.md
+  - docs/Models/Requests/ListVerificationRequestsResponse.md
   - docs/Models/Requests/PatchAccountingAccountRequest.md
   - docs/Models/Requests/PatchAccountingAccountResponse.md
   - docs/Models/Requests/PatchAccountingBillRequest.md
@@ -2601,6 +2652,8 @@ generatedFiles:
   - docs/Models/Requests/PatchUnifiedWebhookResponse.md
   - docs/Models/Requests/PatchUnifiedWebhookTriggerRequest.md
   - docs/Models/Requests/PatchUnifiedWebhookTriggerResponse.md
+  - docs/Models/Requests/PatchVerificationRequestRequest.md
+  - docs/Models/Requests/PatchVerificationRequestResponse.md
   - docs/Models/Requests/QueryParamCategories.md
   - docs/Models/Requests/RemoveAccountingAccountRequest.md
   - docs/Models/Requests/RemoveAccountingAccountResponse.md
@@ -2750,6 +2803,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveUnifiedConnectionResponse.md
   - docs/Models/Requests/RemoveUnifiedWebhookRequest.md
   - docs/Models/Requests/RemoveUnifiedWebhookResponse.md
+  - docs/Models/Requests/RemoveVerificationRequestRequest.md
+  - docs/Models/Requests/RemoveVerificationRequestResponse.md
   - docs/Models/Requests/UpdateAccountingAccountRequest.md
   - docs/Models/Requests/UpdateAccountingAccountResponse.md
   - docs/Models/Requests/UpdateAccountingBillRequest.md
@@ -2902,6 +2957,8 @@ generatedFiles:
   - docs/Models/Requests/UpdateUnifiedWebhookResponse.md
   - docs/Models/Requests/UpdateUnifiedWebhookTriggerRequest.md
   - docs/Models/Requests/UpdateUnifiedWebhookTriggerResponse.md
+  - docs/Models/Requests/UpdateVerificationRequestRequest.md
+  - docs/Models/Requests/UpdateVerificationRequestResponse.md
   - docs/sdks/account/README.md
   - docs/sdks/accounting/README.md
   - docs/sdks/activity/README.md
@@ -2967,6 +3024,7 @@ generatedFiles:
   - docs/sdks/note/README.md
   - docs/sdks/order/README.md
   - docs/sdks/organization/README.md
+  - docs/sdks/package/README.md
   - docs/sdks/page/README.md
   - docs/sdks/passthrough/README.md
   - docs/sdks/payment/README.md
@@ -2984,6 +3042,7 @@ generatedFiles:
   - docs/sdks/repo/README.md
   - docs/sdks/report/README.md
   - docs/sdks/repository/README.md
+  - docs/sdks/request/README.md
   - docs/sdks/review/README.md
   - docs/sdks/salesorder/README.md
   - docs/sdks/scim/README.md
@@ -3004,6 +3063,7 @@ generatedFiles:
   - docs/sdks/unified/README.md
   - docs/sdks/unifiedto/README.md
   - docs/sdks/user/README.md
+  - docs/sdks/verification/README.md
   - docs/sdks/webhook/README.md
   - global.json
 examples:
@@ -7424,6 +7484,78 @@ examples:
       responses:
         "200":
           application/json: [{}]
+  createVerificationRequest:
+    speakeasy-default-create-verification-request:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getVerificationPackage:
+    speakeasy-default-get-verification-package:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"id": "<id>", "name": "<value>", "type": "EMPLOYMENT_VERIFICATION"}
+  getVerificationRequest:
+    speakeasy-default-get-verification-request:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listVerificationPackages:
+    speakeasy-default-list-verification-packages:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{"id": "<id>", "name": "<value>", "type": "FRAUD_PREVENTION"}]
+  listVerificationRequests:
+    speakeasy-default-list-verification-requests:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchVerificationRequest:
+    speakeasy-default-patch-verification-request:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeVerificationRequest:
+    speakeasy-default-remove-verification-request:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateVerificationRequest:
+    speakeasy-default-update-verification-request:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## SDK Changes Detected:\n* `UnifiedTo.Unified.CreateUnifiedConnection()`: \n  *  `request.Auth.RefreshUrl` **Added**\n  *  `response.auth.RefreshUrl` **Added**\n* `UnifiedTo.Unified.CreateUnifiedWebhook()`: \n  *  `request.webhook.DbSchema` **Added**\n  *  `response.dbSchema` **Added**\n* `UnifiedTo.Unified.GetUnifiedConnection()`:  `response.auth.RefreshUrl` **Added**\n* `UnifiedTo.Unified.GetUnifiedWebhook()`:  `response.dbSchema` **Added**\n* `UnifiedTo.Unified.ListUnifiedConnections()`:  `response.[].Auth.RefreshUrl` **Added**\n* `UnifiedTo.Unified.ListUnifiedWebhooks()`:  `response.[].DbSchema` **Added**\n* `UnifiedTo.Unified.PatchUnifiedConnection()`: \n  *  `request.connection.Auth.RefreshUrl` **Added**\n  *  `response.auth.RefreshUrl` **Added**\n* `UnifiedTo.Unified.PatchUnifiedWebhook()`: \n  *  `request.webhook.DbSchema` **Added**\n  *  `response.dbSchema` **Added**\n* `UnifiedTo.Unified.UpdateUnifiedConnection()`: \n  *  `request.connection.Auth.RefreshUrl` **Added**\n  *  `response.auth.RefreshUrl` **Added**\n* `UnifiedTo.Unified.UpdateUnifiedWebhook()`: \n  *  `request.webhook.DbSchema` **Added**\n  *  `response.dbSchema` **Added**\n* `UnifiedTo.Connection.CreateUnifiedConnection()`: \n  *  `request.Auth.RefreshUrl` **Added**\n  *  `response.auth.RefreshUrl` **Added**\n* `UnifiedTo.Connection.GetUnifiedConnection()`:  `response.auth.RefreshUrl` **Added**\n* `UnifiedTo.Connection.ListUnifiedConnections()`:  `response.[].Auth.RefreshUrl` **Added**\n* `UnifiedTo.Connection.PatchUnifiedConnection()`: \n  *  `request.connection.Auth.RefreshUrl` **Added**\n  *  `response.auth.RefreshUrl` **Added**\n* `UnifiedTo.Connection.UpdateUnifiedConnection()`: \n  *  `request.connection.Auth.RefreshUrl` **Added**\n  *  `response.auth.RefreshUrl` **Added**\n* `UnifiedTo.Webhook.CreateUnifiedWebhook()`: \n  *  `request.webhook.DbSchema` **Added**\n  *  `response.dbSchema` **Added**\n* `UnifiedTo.Webhook.GetUnifiedWebhook()`:  `response.dbSchema` **Added**\n* `UnifiedTo.Webhook.ListUnifiedWebhooks()`:  `response.[].DbSchema` **Added**\n* `UnifiedTo.Webhook.PatchUnifiedWebhook()`: \n  *  `request.webhook.DbSchema` **Added**\n  *  `response.dbSchema` **Added**\n* `UnifiedTo.Webhook.UpdateUnifiedWebhook()`: \n  *  `request.webhook.DbSchema` **Added**\n  *  `response.dbSchema` **Added**\n"
+releaseNotes: "## SDK Changes Detected:\n* `UnifiedTo.Verification.CreateVerificationRequest()`: **Added**\n* `UnifiedTo.Verification.GetVerificationPackage()`: **Added**\n* `UnifiedTo.Verification.GetVerificationRequest()`: **Added**\n* `UnifiedTo.Verification.ListVerificationPackages()`: **Added**\n* `UnifiedTo.Verification.ListVerificationRequests()`: **Added**\n* `UnifiedTo.Verification.PatchVerificationRequest()`: **Added**\n* `UnifiedTo.Verification.RemoveVerificationRequest()`: **Added**\n* `UnifiedTo.Verification.UpdateVerificationRequest()`: **Added**\n* `UnifiedTo.Package.GetVerificationPackage()`: **Added**\n* `UnifiedTo.Package.ListVerificationPackages()`: **Added**\n* `UnifiedTo.Request.CreateVerificationRequest()`: **Added**\n* `UnifiedTo.Request.GetVerificationRequest()`: **Added**\n* `UnifiedTo.Request.ListVerificationRequests()`: **Added**\n* `UnifiedTo.Request.PatchVerificationRequest()`: **Added**\n* `UnifiedTo.Request.RemoveVerificationRequest()`: **Added**\n* `UnifiedTo.Request.UpdateVerificationRequest()`: **Added**\n* `UnifiedTo.Accounting.ListAccountingBalancesheets()`:  `request` **Changed**\n* `UnifiedTo.Accounting.ListAccountingProfitlosses()`:  `request` **Changed**\n* `UnifiedTo.Balancesheet.ListAccountingBalancesheets()`:  `request` **Changed**\n* `UnifiedTo.Profitloss.ListAccountingProfitlosses()`:  `request` **Changed**\n* `UnifiedTo.Unified.ListUnifiedConnections()`: \n  *  `request.Categories` **Changed**\n* `UnifiedTo.Unified.ListUnifiedIntegrationWorkspaces()`: \n  *  `request.Categories` **Changed**\n* `UnifiedTo.Unified.ListUnifiedIntegrations()`: \n  *  `request.Categories` **Changed**\n* `UnifiedTo.Connection.ListUnifiedConnections()`: \n  *  `request.Categories` **Changed**\n* `UnifiedTo.Integration.ListUnifiedIntegrationWorkspaces()`: \n  *  `request.Categories` **Changed**\n* `UnifiedTo.Integration.ListUnifiedIntegrations()`: \n  *  `request.Categories` **Changed**\n"

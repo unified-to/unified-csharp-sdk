@@ -16,10 +16,22 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
+        /// The category ID to filter by
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=category_id")]
+        public string? CategoryId { get; set; }
+
+        /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
+
+        /// <summary>
+        /// The contact ID to filter by
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=contact_id")]
+        public string? ContactId { get; set; }
 
         /// <summary>
         /// The end date to filter by

@@ -59,6 +59,8 @@ namespace UnifiedTo.Models.Components
         Metadata,
         [JsonProperty("calendar")]
         Calendar,
+        [JsonProperty("verification")]
+        Verification,
     }
 
     public static class PropertyIntegrationCategoriesExtension

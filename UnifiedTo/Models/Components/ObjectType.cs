@@ -69,6 +69,10 @@ namespace UnifiedTo.Models.Components
         CommerceLocation,
         [JsonProperty("commerce_review")]
         CommerceReview,
+        [JsonProperty("verification_package")]
+        VerificationPackage,
+        [JsonProperty("verification_request")]
+        VerificationRequest,
         [JsonProperty("ats_activity")]
         AtsActivity,
         [JsonProperty("ats_application")]
