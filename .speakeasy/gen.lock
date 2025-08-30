@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: b7b8f3e6ae3a4420539b46d5e0a59d99
+  docChecksum: 422074ec49c609508b54a0d217c0ad82
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.54.0
-  configChecksum: 33b9d33c1f8bf1270434d4954a2a2e6a
+  releaseVersion: 0.56.0
+  configChecksum: f982c491cc661caf403c61b60979d3d6
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -7558,4 +7558,4 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## SDK Changes Detected:\n* `UnifiedTo.Verification.CreateVerificationRequest()`: **Added**\n* `UnifiedTo.Verification.GetVerificationPackage()`: **Added**\n* `UnifiedTo.Verification.GetVerificationRequest()`: **Added**\n* `UnifiedTo.Verification.ListVerificationPackages()`: **Added**\n* `UnifiedTo.Verification.ListVerificationRequests()`: **Added**\n* `UnifiedTo.Verification.PatchVerificationRequest()`: **Added**\n* `UnifiedTo.Verification.RemoveVerificationRequest()`: **Added**\n* `UnifiedTo.Verification.UpdateVerificationRequest()`: **Added**\n* `UnifiedTo.Package.GetVerificationPackage()`: **Added**\n* `UnifiedTo.Package.ListVerificationPackages()`: **Added**\n* `UnifiedTo.Request.CreateVerificationRequest()`: **Added**\n* `UnifiedTo.Request.GetVerificationRequest()`: **Added**\n* `UnifiedTo.Request.ListVerificationRequests()`: **Added**\n* `UnifiedTo.Request.PatchVerificationRequest()`: **Added**\n* `UnifiedTo.Request.RemoveVerificationRequest()`: **Added**\n* `UnifiedTo.Request.UpdateVerificationRequest()`: **Added**\n* `UnifiedTo.Accounting.ListAccountingBalancesheets()`:  `request` **Changed**\n* `UnifiedTo.Accounting.ListAccountingProfitlosses()`:  `request` **Changed**\n* `UnifiedTo.Balancesheet.ListAccountingBalancesheets()`:  `request` **Changed**\n* `UnifiedTo.Profitloss.ListAccountingProfitlosses()`:  `request` **Changed**\n* `UnifiedTo.Unified.ListUnifiedConnections()`: \n  *  `request.Categories` **Changed**\n* `UnifiedTo.Unified.ListUnifiedIntegrationWorkspaces()`: \n  *  `request.Categories` **Changed**\n* `UnifiedTo.Unified.ListUnifiedIntegrations()`: \n  *  `request.Categories` **Changed**\n* `UnifiedTo.Connection.ListUnifiedConnections()`: \n  *  `request.Categories` **Changed**\n* `UnifiedTo.Integration.ListUnifiedIntegrationWorkspaces()`: \n  *  `request.Categories` **Changed**\n* `UnifiedTo.Integration.ListUnifiedIntegrations()`: \n  *  `request.Categories` **Changed**\n"
+releaseNotes: "## SDK Changes Detected:\n* `UnifiedTo.Genai.CreateGenaiPrompt()`: \n  *  `request.genaiPrompt.McpUrl` **Added**\n  *  `response.mcpUrl` **Added**\n* `UnifiedTo.Prompt.CreateGenaiPrompt()`: \n  *  `request.genaiPrompt.McpUrl` **Added**\n  *  `response.mcpUrl` **Added**\n"

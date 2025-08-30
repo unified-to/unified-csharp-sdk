@@ -20,6 +20,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("max_tokens")]
         public double? MaxTokens { get; set; }
 
+        [JsonProperty("mcp_url")]
+        public string? McpUrl { get; set; }
+
         [JsonProperty("messages")]
         public List<GenaiContent>? Messages { get; set; }
 
