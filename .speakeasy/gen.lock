@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 422074ec49c609508b54a0d217c0ad82
+  docChecksum: a9003bf9eba5cb988acee2ba39aeae6f
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.56.0
-  configChecksum: f982c491cc661caf403c61b60979d3d6
+  releaseVersion: 0.58.0
+  configChecksum: df69990ac6f35143ae2ccf1a371e665b
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -62,6 +62,7 @@ generatedFiles:
   - UnifiedTo/Deal.cs
   - UnifiedTo/Device.cs
   - UnifiedTo/Document.cs
+  - UnifiedTo/Embedding.cs
   - UnifiedTo/Employee.cs
   - UnifiedTo/Enrich.cs
   - UnifiedTo/Event.cs
@@ -243,6 +244,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/DbType.cs
   - UnifiedTo/Models/Components/EmploymentStatus.cs
   - UnifiedTo/Models/Components/EmploymentType.cs
+  - UnifiedTo/Models/Components/EncondingFormat.cs
   - UnifiedTo/Models/Components/EnrichCompany.cs
   - UnifiedTo/Models/Components/EnrichEmail.cs
   - UnifiedTo/Models/Components/EnrichEmailType.cs
@@ -257,6 +259,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/Format.cs
   - UnifiedTo/Models/Components/Frequency.cs
   - UnifiedTo/Models/Components/GenaiContent.cs
+  - UnifiedTo/Models/Components/GenaiEmbedding.cs
+  - UnifiedTo/Models/Components/GenaiEmbeddingContent.cs
   - UnifiedTo/Models/Components/GenaiModel.cs
   - UnifiedTo/Models/Components/GenaiPrompt.cs
   - UnifiedTo/Models/Components/Gender.cs
@@ -471,6 +475,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/TaskTask.cs
   - UnifiedTo/Models/Components/TaskTaskStatus.cs
   - UnifiedTo/Models/Components/TaxExemption.cs
+  - UnifiedTo/Models/Components/TicketingCategory.cs
   - UnifiedTo/Models/Components/TicketingCustomer.cs
   - UnifiedTo/Models/Components/TicketingEmail.cs
   - UnifiedTo/Models/Components/TicketingEmailType.cs
@@ -574,6 +579,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateCrmLeadResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmPipelineRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmPipelineResponse.cs
+  - UnifiedTo/Models/Requests/CreateGenaiEmbeddingRequest.cs
+  - UnifiedTo/Models/Requests/CreateGenaiEmbeddingResponse.cs
   - UnifiedTo/Models/Requests/CreateGenaiPromptRequest.cs
   - UnifiedTo/Models/Requests/CreateGenaiPromptResponse.cs
   - UnifiedTo/Models/Requests/CreateHrisCompanyRequest.cs
@@ -642,6 +649,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateTaskProjectResponse.cs
   - UnifiedTo/Models/Requests/CreateTaskTaskRequest.cs
   - UnifiedTo/Models/Requests/CreateTaskTaskResponse.cs
+  - UnifiedTo/Models/Requests/CreateTicketingCategoryRequest.cs
+  - UnifiedTo/Models/Requests/CreateTicketingCategoryResponse.cs
   - UnifiedTo/Models/Requests/CreateTicketingCustomerRequest.cs
   - UnifiedTo/Models/Requests/CreateTicketingCustomerResponse.cs
   - UnifiedTo/Models/Requests/CreateTicketingNoteRequest.cs
@@ -739,6 +748,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetCrmLeadResponse.cs
   - UnifiedTo/Models/Requests/GetCrmPipelineRequest.cs
   - UnifiedTo/Models/Requests/GetCrmPipelineResponse.cs
+  - UnifiedTo/Models/Requests/GetGenaiModelRequest.cs
+  - UnifiedTo/Models/Requests/GetGenaiModelResponse.cs
   - UnifiedTo/Models/Requests/GetHrisCompanyRequest.cs
   - UnifiedTo/Models/Requests/GetHrisCompanyResponse.cs
   - UnifiedTo/Models/Requests/GetHrisDeviceRequest.cs
@@ -813,6 +824,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetTaskProjectResponse.cs
   - UnifiedTo/Models/Requests/GetTaskTaskRequest.cs
   - UnifiedTo/Models/Requests/GetTaskTaskResponse.cs
+  - UnifiedTo/Models/Requests/GetTicketingCategoryRequest.cs
+  - UnifiedTo/Models/Requests/GetTicketingCategoryResponse.cs
   - UnifiedTo/Models/Requests/GetTicketingCustomerRequest.cs
   - UnifiedTo/Models/Requests/GetTicketingCustomerResponse.cs
   - UnifiedTo/Models/Requests/GetTicketingNoteRequest.cs
@@ -1005,6 +1018,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListTaskProjectsResponse.cs
   - UnifiedTo/Models/Requests/ListTaskTasksRequest.cs
   - UnifiedTo/Models/Requests/ListTaskTasksResponse.cs
+  - UnifiedTo/Models/Requests/ListTicketingCategoriesRequest.cs
+  - UnifiedTo/Models/Requests/ListTicketingCategoriesResponse.cs
   - UnifiedTo/Models/Requests/ListTicketingCustomersRequest.cs
   - UnifiedTo/Models/Requests/ListTicketingCustomersResponse.cs
   - UnifiedTo/Models/Requests/ListTicketingNotesRequest.cs
@@ -1170,6 +1185,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchTaskProjectResponse.cs
   - UnifiedTo/Models/Requests/PatchTaskTaskRequest.cs
   - UnifiedTo/Models/Requests/PatchTaskTaskResponse.cs
+  - UnifiedTo/Models/Requests/PatchTicketingCategoryRequest.cs
+  - UnifiedTo/Models/Requests/PatchTicketingCategoryResponse.cs
   - UnifiedTo/Models/Requests/PatchTicketingCustomerRequest.cs
   - UnifiedTo/Models/Requests/PatchTicketingCustomerResponse.cs
   - UnifiedTo/Models/Requests/PatchTicketingNoteRequest.cs
@@ -1323,6 +1340,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveTaskProjectResponse.cs
   - UnifiedTo/Models/Requests/RemoveTaskTaskRequest.cs
   - UnifiedTo/Models/Requests/RemoveTaskTaskResponse.cs
+  - UnifiedTo/Models/Requests/RemoveTicketingCategoryRequest.cs
+  - UnifiedTo/Models/Requests/RemoveTicketingCategoryResponse.cs
   - UnifiedTo/Models/Requests/RemoveTicketingCustomerRequest.cs
   - UnifiedTo/Models/Requests/RemoveTicketingCustomerResponse.cs
   - UnifiedTo/Models/Requests/RemoveTicketingNoteRequest.cs
@@ -1475,6 +1494,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateTaskProjectResponse.cs
   - UnifiedTo/Models/Requests/UpdateTaskTaskRequest.cs
   - UnifiedTo/Models/Requests/UpdateTaskTaskResponse.cs
+  - UnifiedTo/Models/Requests/UpdateTicketingCategoryRequest.cs
+  - UnifiedTo/Models/Requests/UpdateTicketingCategoryResponse.cs
   - UnifiedTo/Models/Requests/UpdateTicketingCustomerRequest.cs
   - UnifiedTo/Models/Requests/UpdateTicketingCustomerResponse.cs
   - UnifiedTo/Models/Requests/UpdateTicketingNoteRequest.cs
@@ -1708,6 +1729,7 @@ generatedFiles:
   - docs/Models/Components/DbType.md
   - docs/Models/Components/EmploymentStatus.md
   - docs/Models/Components/EmploymentType.md
+  - docs/Models/Components/EncondingFormat.md
   - docs/Models/Components/EnrichCompany.md
   - docs/Models/Components/EnrichEmail.md
   - docs/Models/Components/EnrichEmailType.md
@@ -1722,6 +1744,8 @@ generatedFiles:
   - docs/Models/Components/Format.md
   - docs/Models/Components/Frequency.md
   - docs/Models/Components/GenaiContent.md
+  - docs/Models/Components/GenaiEmbedding.md
+  - docs/Models/Components/GenaiEmbeddingContent.md
   - docs/Models/Components/GenaiModel.md
   - docs/Models/Components/GenaiPrompt.md
   - docs/Models/Components/Gender.md
@@ -1936,6 +1960,7 @@ generatedFiles:
   - docs/Models/Components/TaskTask.md
   - docs/Models/Components/TaskTaskStatus.md
   - docs/Models/Components/TaxExemption.md
+  - docs/Models/Components/TicketingCategory.md
   - docs/Models/Components/TicketingCustomer.md
   - docs/Models/Components/TicketingEmail.md
   - docs/Models/Components/TicketingEmailType.md
@@ -2038,6 +2063,8 @@ generatedFiles:
   - docs/Models/Requests/CreateCrmLeadResponse.md
   - docs/Models/Requests/CreateCrmPipelineRequest.md
   - docs/Models/Requests/CreateCrmPipelineResponse.md
+  - docs/Models/Requests/CreateGenaiEmbeddingRequest.md
+  - docs/Models/Requests/CreateGenaiEmbeddingResponse.md
   - docs/Models/Requests/CreateGenaiPromptRequest.md
   - docs/Models/Requests/CreateGenaiPromptResponse.md
   - docs/Models/Requests/CreateHrisCompanyRequest.md
@@ -2106,6 +2133,8 @@ generatedFiles:
   - docs/Models/Requests/CreateTaskProjectResponse.md
   - docs/Models/Requests/CreateTaskTaskRequest.md
   - docs/Models/Requests/CreateTaskTaskResponse.md
+  - docs/Models/Requests/CreateTicketingCategoryRequest.md
+  - docs/Models/Requests/CreateTicketingCategoryResponse.md
   - docs/Models/Requests/CreateTicketingCustomerRequest.md
   - docs/Models/Requests/CreateTicketingCustomerResponse.md
   - docs/Models/Requests/CreateTicketingNoteRequest.md
@@ -2203,6 +2232,8 @@ generatedFiles:
   - docs/Models/Requests/GetCrmLeadResponse.md
   - docs/Models/Requests/GetCrmPipelineRequest.md
   - docs/Models/Requests/GetCrmPipelineResponse.md
+  - docs/Models/Requests/GetGenaiModelRequest.md
+  - docs/Models/Requests/GetGenaiModelResponse.md
   - docs/Models/Requests/GetHrisCompanyRequest.md
   - docs/Models/Requests/GetHrisCompanyResponse.md
   - docs/Models/Requests/GetHrisDeviceRequest.md
@@ -2277,6 +2308,8 @@ generatedFiles:
   - docs/Models/Requests/GetTaskProjectResponse.md
   - docs/Models/Requests/GetTaskTaskRequest.md
   - docs/Models/Requests/GetTaskTaskResponse.md
+  - docs/Models/Requests/GetTicketingCategoryRequest.md
+  - docs/Models/Requests/GetTicketingCategoryResponse.md
   - docs/Models/Requests/GetTicketingCustomerRequest.md
   - docs/Models/Requests/GetTicketingCustomerResponse.md
   - docs/Models/Requests/GetTicketingNoteRequest.md
@@ -2469,6 +2502,8 @@ generatedFiles:
   - docs/Models/Requests/ListTaskProjectsResponse.md
   - docs/Models/Requests/ListTaskTasksRequest.md
   - docs/Models/Requests/ListTaskTasksResponse.md
+  - docs/Models/Requests/ListTicketingCategoriesRequest.md
+  - docs/Models/Requests/ListTicketingCategoriesResponse.md
   - docs/Models/Requests/ListTicketingCustomersRequest.md
   - docs/Models/Requests/ListTicketingCustomersResponse.md
   - docs/Models/Requests/ListTicketingNotesRequest.md
@@ -2634,6 +2669,8 @@ generatedFiles:
   - docs/Models/Requests/PatchTaskProjectResponse.md
   - docs/Models/Requests/PatchTaskTaskRequest.md
   - docs/Models/Requests/PatchTaskTaskResponse.md
+  - docs/Models/Requests/PatchTicketingCategoryRequest.md
+  - docs/Models/Requests/PatchTicketingCategoryResponse.md
   - docs/Models/Requests/PatchTicketingCustomerRequest.md
   - docs/Models/Requests/PatchTicketingCustomerResponse.md
   - docs/Models/Requests/PatchTicketingNoteRequest.md
@@ -2787,6 +2824,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveTaskProjectResponse.md
   - docs/Models/Requests/RemoveTaskTaskRequest.md
   - docs/Models/Requests/RemoveTaskTaskResponse.md
+  - docs/Models/Requests/RemoveTicketingCategoryRequest.md
+  - docs/Models/Requests/RemoveTicketingCategoryResponse.md
   - docs/Models/Requests/RemoveTicketingCustomerRequest.md
   - docs/Models/Requests/RemoveTicketingCustomerResponse.md
   - docs/Models/Requests/RemoveTicketingNoteRequest.md
@@ -2939,6 +2978,8 @@ generatedFiles:
   - docs/Models/Requests/UpdateTaskProjectResponse.md
   - docs/Models/Requests/UpdateTaskTaskRequest.md
   - docs/Models/Requests/UpdateTaskTaskResponse.md
+  - docs/Models/Requests/UpdateTicketingCategoryRequest.md
+  - docs/Models/Requests/UpdateTicketingCategoryResponse.md
   - docs/Models/Requests/UpdateTicketingCustomerRequest.md
   - docs/Models/Requests/UpdateTicketingCustomerResponse.md
   - docs/Models/Requests/UpdateTicketingNoteRequest.md
@@ -2992,6 +3033,7 @@ generatedFiles:
   - docs/sdks/deal/README.md
   - docs/sdks/device/README.md
   - docs/sdks/document/README.md
+  - docs/sdks/embedding/README.md
   - docs/sdks/employee/README.md
   - docs/sdks/enrich/README.md
   - docs/sdks/event/README.md
@@ -7556,6 +7598,80 @@ examples:
       responses:
         "200":
           application/json: {}
+  createTicketingCategory:
+    speakeasy-default-create-ticketing-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getTicketingCategory:
+    speakeasy-default-get-ticketing-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listTicketingCategories:
+    speakeasy-default-list-ticketing-categories:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchTicketingCategory:
+    speakeasy-default-patch-ticketing-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeTicketingCategory:
+    speakeasy-default-remove-ticketing-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateTicketingCategory:
+    speakeasy-default-update-ticketing-category:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  createGenaiEmbedding:
+    speakeasy-default-create-genai-embedding:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getGenaiModel:
+    speakeasy-default-get-genai-model:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## SDK Changes Detected:\n* `UnifiedTo.Genai.CreateGenaiPrompt()`: \n  *  `request.genaiPrompt.McpUrl` **Added**\n  *  `response.mcpUrl` **Added**\n* `UnifiedTo.Prompt.CreateGenaiPrompt()`: \n  *  `request.genaiPrompt.McpUrl` **Added**\n  *  `response.mcpUrl` **Added**\n"
+releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Category.CreateTicketingCategory()`: **Added**\n* `UnifiedTo.Category.GetTicketingCategory()`: **Added**\n* `UnifiedTo.Category.ListTicketingCategories()`: **Added**\n* `UnifiedTo.Category.PatchTicketingCategory()`: **Added**\n* `UnifiedTo.Category.RemoveTicketingCategory()`: **Added**\n* `UnifiedTo.Category.UpdateTicketingCategory()`: **Added**\n* `UnifiedTo.Genai.CreateGenaiEmbedding()`: **Added**\n* `UnifiedTo.Genai.GetGenaiModel()`: **Added**\n* `UnifiedTo.Embedding.CreateGenaiEmbedding()`: **Added**\n* `UnifiedTo.Model.GetGenaiModel()`: **Added**\n* `UnifiedTo.Ticketing.CreateTicketingCategory()`: **Added**\n* `UnifiedTo.Ticketing.GetTicketingCategory()`: **Added**\n* `UnifiedTo.Ticketing.ListTicketingCategories()`: **Added**\n* `UnifiedTo.Ticketing.PatchTicketingCategory()`: **Added**\n* `UnifiedTo.Ticketing.RemoveTicketingCategory()`: **Added**\n* `UnifiedTo.Ticketing.UpdateTicketingCategory()`: **Added**\n* `UnifiedTo.Ticketing.CreateTicketingTicket()`: \n  *  `request.ticketingTicket.CategoryId` **Added**\n  *  `response.categoryId` **Added**\n* `UnifiedTo.Ticketing.GetTicketingTicket()`:  `response.categoryId` **Added**\n* `UnifiedTo.Ticketing.ListTicketingTickets()`:  `response.[].CategoryId` **Added**\n* `UnifiedTo.Ticketing.PatchTicketingTicket()`: \n  *  `request.TicketingTicket.CategoryId` **Added**\n  *  `response.categoryId` **Added**\n* `UnifiedTo.Ticketing.UpdateTicketingTicket()`: \n  *  `request.TicketingTicket.CategoryId` **Added**\n  *  `response.categoryId` **Added**\n* `UnifiedTo.Ticket.CreateTicketingTicket()`: \n  *  `request.ticketingTicket.CategoryId` **Added**\n  *  `response.categoryId` **Added**\n* `UnifiedTo.Ticket.GetTicketingTicket()`:  `response.categoryId` **Added**\n* `UnifiedTo.Ticket.ListTicketingTickets()`:  `response.[].CategoryId` **Added**\n* `UnifiedTo.Ticket.PatchTicketingTicket()`: \n  *  `request.TicketingTicket.CategoryId` **Added**\n  *  `response.categoryId` **Added**\n* `UnifiedTo.Ticket.UpdateTicketingTicket()`: \n  *  `request.TicketingTicket.CategoryId` **Added**\n  *  `response.categoryId` **Added**\n"

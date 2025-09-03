@@ -71,6 +71,7 @@ namespace UnifiedTo
         public IEnrich Enrich { get; }
         public IPerson Person { get; }
         public IGenai Genai { get; }
+        public IEmbedding Embedding { get; }
         public IModel Model { get; }
         public IPrompt Prompt { get; }
         public IHris Hris { get; }
@@ -141,7 +142,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.56.0";
+        private const string _sdkVersion = "0.58.0";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -190,6 +191,7 @@ namespace UnifiedTo
         public IEnrich Enrich { get; private set; }
         public IPerson Person { get; private set; }
         public IGenai Genai { get; private set; }
+        public IEmbedding Embedding { get; private set; }
         public IModel Model { get; private set; }
         public IPrompt Prompt { get; private set; }
         public IHris Hris { get; private set; }
@@ -346,6 +348,8 @@ namespace UnifiedTo
             Person = new Person(SDKConfiguration);
 
             Genai = new Genai(SDKConfiguration);
+
+            Embedding = new Embedding(SDKConfiguration);
 
             Model = new Model(SDKConfiguration);
 
@@ -599,6 +603,8 @@ namespace UnifiedTo
             Person = new Person(SDKConfiguration);
 
             Genai = new Genai(SDKConfiguration);
+
+            Embedding = new Embedding(SDKConfiguration);
 
             Model = new Model(SDKConfiguration);
 

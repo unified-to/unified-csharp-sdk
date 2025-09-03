@@ -199,6 +199,10 @@ namespace UnifiedTo.Models.Components
         TicketingNoteRead,
         [JsonProperty("ticketing_note_write")]
         TicketingNoteWrite,
+        [JsonProperty("ticketing_category_read")]
+        TicketingCategoryRead,
+        [JsonProperty("ticketing_category_write")]
+        TicketingCategoryWrite,
         [JsonProperty("hris_employee_read")]
         HrisEmployeeRead,
         [JsonProperty("hris_employee_write")]
@@ -255,6 +259,10 @@ namespace UnifiedTo.Models.Components
         GenaiPromptRead,
         [JsonProperty("genai_prompt_write")]
         GenaiPromptWrite,
+        [JsonProperty("genai_embedding_read")]
+        GenaiEmbeddingRead,
+        [JsonProperty("genai_embedding_write")]
+        GenaiEmbeddingWrite,
         [JsonProperty("messaging_message_read")]
         MessagingMessageRead,
         [JsonProperty("messaging_message_write")]

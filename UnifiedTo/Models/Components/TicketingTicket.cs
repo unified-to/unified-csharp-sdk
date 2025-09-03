@@ -21,6 +21,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("category")]
         public string? Category { get; set; }
 
+        [JsonProperty("category_id")]
+        public string? CategoryId { get; set; }
+
         [JsonProperty("closed_at")]
         public DateTime? ClosedAt { get; set; }
 

@@ -131,6 +131,8 @@ namespace UnifiedTo.Models.Components
         TicketingTicket,
         [JsonProperty("ticketing_customer")]
         TicketingCustomer,
+        [JsonProperty("ticketing_category")]
+        TicketingCategory,
         [JsonProperty("uc_contact")]
         UcContact,
         [JsonProperty("uc_call")]
@@ -149,6 +151,8 @@ namespace UnifiedTo.Models.Components
         GenaiModel,
         [JsonProperty("genai_prompt")]
         GenaiPrompt,
+        [JsonProperty("genai_embedding")]
+        GenaiEmbedding,
         [JsonProperty("messaging_message")]
         MessagingMessage,
         [JsonProperty("messaging_channel")]

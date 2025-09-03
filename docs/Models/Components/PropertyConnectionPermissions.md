@@ -97,6 +97,8 @@
 | `TicketingTicketWrite`         | ticketing_ticket_write         |
 | `TicketingNoteRead`            | ticketing_note_read            |
 | `TicketingNoteWrite`           | ticketing_note_write           |
+| `TicketingCategoryRead`        | ticketing_category_read        |
+| `TicketingCategoryWrite`       | ticketing_category_write       |
 | `HrisEmployeeRead`             | hris_employee_read             |
 | `HrisEmployeeWrite`            | hris_employee_write            |
 | `HrisGroupRead`                | hris_group_read                |
@@ -125,6 +127,8 @@
 | `GenaiModelRead`               | genai_model_read               |
 | `GenaiPromptRead`              | genai_prompt_read              |
 | `GenaiPromptWrite`             | genai_prompt_write             |
+| `GenaiEmbeddingRead`           | genai_embedding_read           |
+| `GenaiEmbeddingWrite`          | genai_embedding_write          |
 | `MessagingMessageRead`         | messaging_message_read         |
 | `MessagingMessageWrite`        | messaging_message_write        |
 | `MessagingChannelRead`         | messaging_channel_read         |

@@ -5,24 +5,71 @@
 
 ### Available Operations
 
+* [CreateTicketingCategory](#createticketingcategory) - Create a category
 * [CreateTicketingCustomer](#createticketingcustomer) - Create a customer
 * [CreateTicketingNote](#createticketingnote) - Create a note
 * [CreateTicketingTicket](#createticketingticket) - Create a ticket
+* [GetTicketingCategory](#getticketingcategory) - Retrieve a category
 * [GetTicketingCustomer](#getticketingcustomer) - Retrieve a customer
 * [GetTicketingNote](#getticketingnote) - Retrieve a note
 * [GetTicketingTicket](#getticketingticket) - Retrieve a ticket
+* [ListTicketingCategories](#listticketingcategories) - List all categories
 * [ListTicketingCustomers](#listticketingcustomers) - List all customers
 * [ListTicketingNotes](#listticketingnotes) - List all notes
 * [ListTicketingTickets](#listticketingtickets) - List all tickets
+* [PatchTicketingCategory](#patchticketingcategory) - Update a category
 * [PatchTicketingCustomer](#patchticketingcustomer) - Update a customer
 * [PatchTicketingNote](#patchticketingnote) - Update a note
 * [PatchTicketingTicket](#patchticketingticket) - Update a ticket
+* [RemoveTicketingCategory](#removeticketingcategory) - Remove a category
 * [RemoveTicketingCustomer](#removeticketingcustomer) - Remove a customer
 * [RemoveTicketingNote](#removeticketingnote) - Remove a note
 * [RemoveTicketingTicket](#removeticketingticket) - Remove a ticket
+* [UpdateTicketingCategory](#updateticketingcategory) - Update a category
 * [UpdateTicketingCustomer](#updateticketingcustomer) - Update a customer
 * [UpdateTicketingNote](#updateticketingnote) - Update a note
 * [UpdateTicketingTicket](#updateticketingticket) - Update a ticket
+
+## CreateTicketingCategory
+
+Create a category
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Ticketing.CreateTicketingCategoryAsync(
+    ticketingCategory: new TicketingCategory() {},
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `TicketingCategory`                                                                                                                              | [TicketingCategory](../../Models/Components/TicketingCategory.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateTicketingCategoryResponse](../../Models/Requests/CreateTicketingCategoryResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateTicketingCustomer
 
@@ -140,6 +187,47 @@ var res = await sdk.Ticketing.CreateTicketingTicketAsync(
 ### Response
 
 **[CreateTicketingTicketResponse](../../Models/Requests/CreateTicketingTicketResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetTicketingCategory
+
+Retrieve a category
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Ticketing.GetTicketingCategoryAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Category                                                                                                                               |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetTicketingCategoryResponse](../../Models/Requests/GetTicketingCategoryResponse.md)**
 
 ### Errors
 
@@ -270,6 +358,46 @@ var res = await sdk.Ticketing.GetTicketingTicketAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListTicketingCategories
+
+List all categories
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListTicketingCategoriesRequest req = new ListTicketingCategoriesRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Ticketing.ListTicketingCategoriesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [ListTicketingCategoriesRequest](../../Models/Requests/ListTicketingCategoriesRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+
+### Response
+
+**[ListTicketingCategoriesResponse](../../Models/Requests/ListTicketingCategoriesResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListTicketingCustomers
 
 List all customers
@@ -383,6 +511,48 @@ var res = await sdk.Ticketing.ListTicketingTicketsAsync(req);
 ### Response
 
 **[ListTicketingTicketsResponse](../../Models/Requests/ListTicketingTicketsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## PatchTicketingCategory
+
+Update a category
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchTicketingCategoryRequest req = new PatchTicketingCategoryRequest() {
+    TicketingCategory = new TicketingCategory() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Ticketing.PatchTicketingCategoryAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [PatchTicketingCategoryRequest](../../Models/Requests/PatchTicketingCategoryRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+
+### Response
+
+**[PatchTicketingCategoryResponse](../../Models/Requests/PatchTicketingCategoryResponse.md)**
 
 ### Errors
 
@@ -516,6 +686,45 @@ var res = await sdk.Ticketing.PatchTicketingTicketAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## RemoveTicketingCategory
+
+Remove a category
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Ticketing.RemoveTicketingCategoryAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Category   |
+
+### Response
+
+**[RemoveTicketingCategoryResponse](../../Models/Requests/RemoveTicketingCategoryResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## RemoveTicketingCustomer
 
 Remove a customer
@@ -626,6 +835,48 @@ var res = await sdk.Ticketing.RemoveTicketingTicketAsync(
 ### Response
 
 **[RemoveTicketingTicketResponse](../../Models/Requests/RemoveTicketingTicketResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateTicketingCategory
+
+Update a category
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateTicketingCategoryRequest req = new UpdateTicketingCategoryRequest() {
+    TicketingCategory = new TicketingCategory() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Ticketing.UpdateTicketingCategoryAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [UpdateTicketingCategoryRequest](../../Models/Requests/UpdateTicketingCategoryRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+
+### Response
+
+**[UpdateTicketingCategoryResponse](../../Models/Requests/UpdateTicketingCategoryResponse.md)**
 
 ### Errors
 
