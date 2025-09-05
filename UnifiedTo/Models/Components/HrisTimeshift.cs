@@ -34,10 +34,10 @@ namespace UnifiedTo.Models.Components
         public DateTime? CreatedAt { get; set; }
 
         [JsonProperty("employee_user_id")]
-        public string? EmployeeUserId { get; set; }
+        public string EmployeeUserId { get; set; } = default!;
 
         [JsonProperty("end_at")]
-        public DateTime? EndAt { get; set; }
+        public DateTime EndAt { get; set; } = default!;
 
         [JsonProperty("group_id")]
         public string? GroupId { get; set; }
@@ -58,7 +58,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("start_at")]
-        public DateTime? StartAt { get; set; }
+        public DateTime StartAt { get; set; } = default!;
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

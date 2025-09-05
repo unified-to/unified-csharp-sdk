@@ -25,6 +25,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("frequency")]
         public HrisCompensationFrequency? Frequency { get; set; }
 
+        [JsonProperty("group_id")]
+        public string? GroupId { get; set; }
+
         [JsonProperty("type")]
         public HrisCompensationType? Type { get; set; }
     }
