@@ -39,17 +39,20 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("is_paid")]
+        public bool? IsPaid { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
+
+        [JsonProperty("reason")]
+        public string? Reason { get; set; }
 
         [JsonProperty("start_at")]
         public DateTime StartAt { get; set; } = default!;
 
         [JsonProperty("status")]
         public HrisTimeoffStatus? Status { get; set; }
-
-        [JsonProperty("type")]
-        public HrisTimeoffType? Type { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

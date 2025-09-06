@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 815d3eb3e63fd66f5050d707713e3c46
+  docChecksum: 8ed442c273cdb35b6056af069e0583c0
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.60.0
-  configChecksum: 3dfbbdcf21697b5aff5ff12ff53b92ae
+  releaseVersion: 0.62.0
+  configChecksum: 3f035b46fb20c08ec6de69b74f834f36
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -292,7 +292,6 @@ generatedFiles:
   - UnifiedTo/Models/Components/HrisTelephoneType.cs
   - UnifiedTo/Models/Components/HrisTimeoff.cs
   - UnifiedTo/Models/Components/HrisTimeoffStatus.cs
-  - UnifiedTo/Models/Components/HrisTimeoffType.cs
   - UnifiedTo/Models/Components/HrisTimeshift.cs
   - UnifiedTo/Models/Components/Integration.cs
   - UnifiedTo/Models/Components/Integration1.cs
@@ -1777,7 +1776,6 @@ generatedFiles:
   - docs/Models/Components/HrisTelephoneType.md
   - docs/Models/Components/HrisTimeoff.md
   - docs/Models/Components/HrisTimeoffStatus.md
-  - docs/Models/Components/HrisTimeoffType.md
   - docs/Models/Components/HrisTimeshift.md
   - docs/Models/Components/Integration.md
   - docs/Models/Components/Integration1.md
@@ -7674,4 +7672,9 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Hris.PatchHrisTimeshift()`: \n  *  `request.HrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `UnifiedTo.Hris.CreateHrisTimeshift()`: \n  *  `request.hrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `UnifiedTo.Timeshift.UpdateHrisTimeshift()`: \n  *  `request.HrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `UnifiedTo.Timeshift.PatchHrisTimeshift()`: \n  *  `request.HrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `UnifiedTo.Timeshift.CreateHrisTimeshift()`: \n  *  `request.hrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `UnifiedTo.Hris.UpdateHrisTimeshift()`: \n  *  `request.HrisTimeshift` **Changed** **Breaking** :warning:\n  *  `response` **Changed**\n* `UnifiedTo.Hris.ListHrisTimeshifts()`:  `response.[]` **Changed**\n* `UnifiedTo.Employee.PatchHrisEmployee()`: \n  *  `request.HrisEmployee.Compensation.[].GroupId` **Added**\n  *  `response.compensation.[].GroupId` **Added**\n* `UnifiedTo.Hris.UpdateHrisEmployee()`: \n  *  `request.HrisEmployee.Compensation.[].GroupId` **Added**\n  *  `response.compensation.[].GroupId` **Added**\n* `UnifiedTo.Hris.CreateHrisEmployee()`: \n  *  `request.hrisEmployee.Compensation.[].GroupId` **Added**\n  *  `response.compensation.[].GroupId` **Added**\n* `UnifiedTo.Employee.CreateHrisEmployee()`: \n  *  `request.hrisEmployee.Compensation.[].GroupId` **Added**\n  *  `response.compensation.[].GroupId` **Added**\n* `UnifiedTo.Employee.GetHrisEmployee()`:  `response.compensation.[].GroupId` **Added**\n* `UnifiedTo.Employee.ListHrisEmployees()`:  `response.[].Compensation.[].GroupId` **Added**\n* `UnifiedTo.Hris.PatchHrisEmployee()`: \n  *  `request.HrisEmployee.Compensation.[].GroupId` **Added**\n  *  `response.compensation.[].GroupId` **Added**\n* `UnifiedTo.Employee.UpdateHrisEmployee()`: \n  *  `request.HrisEmployee.Compensation.[].GroupId` **Added**\n  *  `response.compensation.[].GroupId` **Added**\n* `UnifiedTo.Hris.ListHrisEmployees()`:  `response.[].Compensation.[].GroupId` **Added**\n* `UnifiedTo.Timeshift.GetHrisTimeshift()`:  `response` **Changed**\n* `UnifiedTo.Timeshift.ListHrisTimeshifts()`:  `response.[]` **Changed**\n* `UnifiedTo.Hris.GetHrisTimeshift()`:  `response` **Changed**\n* `UnifiedTo.Hris.GetHrisEmployee()`:  `response.compensation.[].GroupId` **Added**\n"
+releaseNotes: |
+  ## Csharp SDK Changes Detected:
+  * `UnifiedTo.Hris.GetHrisTimeoff()`:  `response` **Changed** **Breaking** :warning:
+  * `UnifiedTo.Hris.ListHrisTimeoffs()`:  `response.[]` **Changed** **Breaking** :warning:
+  * `UnifiedTo.Timeoff.GetHrisTimeoff()`:  `response` **Changed** **Breaking** :warning:
+  * `UnifiedTo.Timeoff.ListHrisTimeoffs()`:  `response.[]` **Changed** **Breaking** :warning:
