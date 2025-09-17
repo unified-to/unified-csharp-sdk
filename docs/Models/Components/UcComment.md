@@ -5,6 +5,7 @@
 
 | Field                        | Type                         | Required                     | Description                  |
 | ---------------------------- | ---------------------------- | ---------------------------- | ---------------------------- |
+| `CallId`                     | *string*                     | :heavy_minus_sign:           | N/A                          |
 | `Content`                    | *string*                     | :heavy_check_mark:           | N/A                          |
 | `CreatedAt`                  | *string*                     | :heavy_minus_sign:           | N/A                          |
 | `Id`                         | *string*                     | :heavy_minus_sign:           | N/A                          |

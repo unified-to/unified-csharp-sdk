@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     public class UcComment
     {
 
+        [JsonProperty("call_id")]
+        public string? CallId { get; set; }
+
         [JsonProperty("content")]
         public string Content { get; set; } = default!;
 
