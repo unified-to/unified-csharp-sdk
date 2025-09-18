@@ -18,6 +18,9 @@ namespace UnifiedTo.Models.Components
     public class AccountingProfitloss
     {
 
+        [JsonProperty("category_ids")]
+        public List<string>? CategoryIds { get; set; }
+
         /// <summary>
         /// @deprecated – use cost_of_goods_sold_sections instead
         /// </summary>
