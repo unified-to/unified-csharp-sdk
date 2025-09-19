@@ -33,6 +33,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=end_le")]
         public string? EndLe { get; set; }
 
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=expand")]
+        public string? Expand { get; set; }
+
         /// <summary>
         /// Comma-delimited fields to return
         /// </summary>
