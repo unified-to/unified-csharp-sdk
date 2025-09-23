@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 6ba38662f570a477a5eacdaf583b3b85
+  docChecksum: 3a2b9f42726c5dfd24761ce463b8da0d
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.68.0
-  configChecksum: 18e43afb8aced64c44770bf077eaa9d7
+  releaseVersion: 0.70.0
+  configChecksum: e166faad73a5dc5de7dd60c49ad30324
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -7672,4 +7672,4 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Calendar.ListCalendarEvents()`: \n  *  `request.Expand` **Added**\n* `UnifiedTo.Event.ListCalendarEvents()`: \n  *  `request.Expand` **Added**\n* `UnifiedTo.Messaging.ListMessagingMessages()`: \n  *  `request.Expand` **Added**\n* `UnifiedTo.Message.ListMessagingMessages()`: \n  *  `request.Expand` **Added**\n"
+releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Calendar.ListCalendarEvents()`:  `request` **Changed** **Breaking** :warning:\n* `UnifiedTo.Event.ListCalendarEvents()`:  `request` **Changed** **Breaking** :warning:\n* `UnifiedTo.Messaging.ListMessagingMessages()`: \n  *  `request.Expand` **Changed** **Breaking** :warning:\n* `UnifiedTo.Message.ListMessagingMessages()`: \n  *  `request.Expand` **Changed** **Breaking** :warning:\n"

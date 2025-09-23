@@ -33,8 +33,11 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=end_le")]
         public string? EndLe { get; set; }
 
+        /// <summary>
+        /// Whether to flatten grouped or recurring items into individual entries.
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=expand")]
-        public string? Expand { get; set; }
+        public bool? Expand { get; set; }
 
         /// <summary>
         /// Comma-delimited fields to return
