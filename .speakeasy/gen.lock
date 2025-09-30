@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: c7b234a89c45d96ea050dc7c9d6d4030
+  docChecksum: 877b52162b06392093c3efbd89172e36
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.72.0
-  configChecksum: 2f4960b49006e7a7ad2342d26ace7999
+  releaseVersion: 0.74.0
+  configChecksum: bb129aa59767c0f5fe46857d787392fb
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -298,6 +298,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/Integration5.cs
   - UnifiedTo/Models/Components/IntegrationSchemas1.cs
   - UnifiedTo/Models/Components/IntegrationSchemas5.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasSaml1.cs
+  - UnifiedTo/Models/Components/IntegrationSchemasSaml5.cs
   - UnifiedTo/Models/Components/IntegrationSchemasSandbox1.cs
   - UnifiedTo/Models/Components/IntegrationSchemasSandbox5.cs
   - UnifiedTo/Models/Components/IntervalUnit.cs
@@ -431,6 +433,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ResourceType.cs
   - UnifiedTo/Models/Components/ResponseStatus.cs
   - UnifiedTo/Models/Components/Role.cs
+  - UnifiedTo/Models/Components/Saml.cs
   - UnifiedTo/Models/Components/Sandbox.cs
   - UnifiedTo/Models/Components/ScimAddress.cs
   - UnifiedTo/Models/Components/ScimAddressType.cs
@@ -1782,6 +1785,8 @@ generatedFiles:
   - docs/Models/Components/Integration5.md
   - docs/Models/Components/IntegrationSchemas1.md
   - docs/Models/Components/IntegrationSchemas5.md
+  - docs/Models/Components/IntegrationSchemasSaml1.md
+  - docs/Models/Components/IntegrationSchemasSaml5.md
   - docs/Models/Components/IntegrationSchemasSandbox1.md
   - docs/Models/Components/IntegrationSchemasSandbox5.md
   - docs/Models/Components/IntervalUnit.md
@@ -1915,6 +1920,7 @@ generatedFiles:
   - docs/Models/Components/ResourceType.md
   - docs/Models/Components/ResponseStatus.md
   - docs/Models/Components/Role.md
+  - docs/Models/Components/Saml.md
   - docs/Models/Components/Sandbox.md
   - docs/Models/Components/ScimAddress.md
   - docs/Models/Components/ScimAddressType.md
@@ -7672,4 +7678,4 @@ examples:
           application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Messaging.CreateMessagingMessage()`: \n  *  `request.messagingMessage.ParentId` **Added**\n  *  `response.parentId` **Added**\n* `UnifiedTo.Messaging.GetMessagingMessage()`:  `response.parentId` **Added**\n* `UnifiedTo.Messaging.ListMessagingMessages()`:  `response.[].ParentId` **Added**\n* `UnifiedTo.Messaging.PatchMessagingMessage()`: \n  *  `request.MessagingMessage.ParentId` **Added**\n  *  `response.parentId` **Added**\n* `UnifiedTo.Messaging.UpdateMessagingMessage()`: \n  *  `request.MessagingMessage.ParentId` **Added**\n  *  `response.parentId` **Added**\n* `UnifiedTo.Message.CreateMessagingMessage()`: \n  *  `request.messagingMessage.ParentId` **Added**\n  *  `response.parentId` **Added**\n* `UnifiedTo.Message.GetMessagingMessage()`:  `response.parentId` **Added**\n* `UnifiedTo.Message.ListMessagingMessages()`:  `response.[].ParentId` **Added**\n* `UnifiedTo.Message.PatchMessagingMessage()`: \n  *  `request.MessagingMessage.ParentId` **Added**\n  *  `response.parentId` **Added**\n* `UnifiedTo.Message.UpdateMessagingMessage()`: \n  *  `request.MessagingMessage.ParentId` **Added**\n  *  `response.parentId` **Added**\n"
+releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Messaging.CreateMessagingMessage()`: \n  *  `request.messagingMessage.IsUnread` **Added**\n  *  `response.isUnread` **Added**\n* `UnifiedTo.Messaging.GetMessagingMessage()`:  `response.isUnread` **Added**\n* `UnifiedTo.Messaging.ListMessagingMessages()`:  `response.[].IsUnread` **Added**\n* `UnifiedTo.Messaging.PatchMessagingMessage()`: \n  *  `request.MessagingMessage.IsUnread` **Added**\n  *  `response.isUnread` **Added**\n* `UnifiedTo.Messaging.UpdateMessagingMessage()`: \n  *  `request.MessagingMessage.IsUnread` **Added**\n  *  `response.isUnread` **Added**\n* `UnifiedTo.Message.CreateMessagingMessage()`: \n  *  `request.messagingMessage.IsUnread` **Added**\n  *  `response.isUnread` **Added**\n* `UnifiedTo.Message.GetMessagingMessage()`:  `response.isUnread` **Added**\n* `UnifiedTo.Message.ListMessagingMessages()`:  `response.[].IsUnread` **Added**\n* `UnifiedTo.Message.PatchMessagingMessage()`: \n  *  `request.MessagingMessage.IsUnread` **Added**\n  *  `response.isUnread` **Added**\n* `UnifiedTo.Message.UpdateMessagingMessage()`: \n  *  `request.MessagingMessage.IsUnread` **Added**\n  *  `response.isUnread` **Added**\n* `UnifiedTo.Unified.ListUnifiedIntegrationWorkspaces()`:  `response.[].Saml` **Added**\n* `UnifiedTo.Unified.ListUnifiedIntegrations()`:  `response.[].Saml` **Added**\n* `UnifiedTo.Integration.ListUnifiedIntegrationWorkspaces()`:  `response.[].Saml` **Added**\n* `UnifiedTo.Integration.ListUnifiedIntegrations()`:  `response.[].Saml` **Added**\n"

@@ -17,7 +17,7 @@ generation:
   baseServerURL: ""
   flattenGlobalSecurity: true
 csharp:
-  version: 0.72.0
+  version: 0.74.0
   additionalDependencies: []
   author: Unified API Inc.
   baseErrorName: UnifiedToError
@@ -48,6 +48,7 @@ csharp:
   product: ""
   responseFormat: envelope
   sourceDirectory: ""
+  useNodatime: true
 ruby:
   version: 0.0.1
   author: Unified API Inc

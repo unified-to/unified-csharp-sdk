@@ -48,6 +48,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("is_unread")]
+        public bool? IsUnread { get; set; }
+
         [JsonProperty("mentioned_members")]
         public List<MessagingMember>? MentionedMembers { get; set; }
 

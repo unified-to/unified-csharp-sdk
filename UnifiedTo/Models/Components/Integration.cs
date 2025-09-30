@@ -75,6 +75,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("rate_limit_description")]
         public string? RateLimitDescription { get; set; }
 
+        [JsonProperty("saml")]
+        public Saml? Saml { get; set; }
+
         [JsonProperty("sandbox")]
         public Sandbox? Sandbox { get; set; }
 
