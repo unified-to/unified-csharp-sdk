@@ -10,6 +10,7 @@
 * [GetUnifiedApicall](#getunifiedapicall) - Retrieve specific API Call by its ID
 * [GetUnifiedConnection](#getunifiedconnection) - Retrieve connection
 * [GetUnifiedIntegrationAuth](#getunifiedintegrationauth) - Authorize new connection
+* [GetUnifiedIssue](#getunifiedissue) - Retrieve support issue
 * [GetUnifiedWebhook](#getunifiedwebhook) - Retrieve webhook by its ID
 * [ListUnifiedApicalls](#listunifiedapicalls) - Returns API Calls
 * [ListUnifiedConnections](#listunifiedconnections) - List all connections
@@ -214,6 +215,41 @@ var res = await sdk.Unified.GetUnifiedIntegrationAuthAsync(req);
 ### Response
 
 **[GetUnifiedIntegrationAuthResponse](../../Models/Requests/GetUnifiedIntegrationAuthResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetUnifiedIssue
+
+Retrieve support issue
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Unified.GetUnifiedIssueAsync(id: "<id>");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `Id`               | *string*           | :heavy_check_mark: | ID of the Issue    |
+
+### Response
+
+**[GetUnifiedIssueResponse](../../Models/Requests/GetUnifiedIssueResponse.md)**
 
 ### Errors
 

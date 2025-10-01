@@ -677,6 +677,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 ### [Issue](docs/sdks/issue/README.md)
 
+* [GetUnifiedIssue](docs/sdks/issue/README.md#getunifiedissue) - Retrieve support issue
 * [ListUnifiedIssues](docs/sdks/issue/README.md#listunifiedissues) - List support issues
 
 ### [Item](docs/sdks/item/README.md)
@@ -1277,6 +1278,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [GetUnifiedApicall](docs/sdks/unified/README.md#getunifiedapicall) - Retrieve specific API Call by its ID
 * [GetUnifiedConnection](docs/sdks/unified/README.md#getunifiedconnection) - Retrieve connection
 * [GetUnifiedIntegrationAuth](docs/sdks/unified/README.md#getunifiedintegrationauth) - Authorize new connection
+* [GetUnifiedIssue](docs/sdks/unified/README.md#getunifiedissue) - Retrieve support issue
 * [GetUnifiedWebhook](docs/sdks/unified/README.md#getunifiedwebhook) - Retrieve webhook by its ID
 * [ListUnifiedApicalls](docs/sdks/unified/README.md#listunifiedapicalls) - Returns API Calls
 * [ListUnifiedConnections](docs/sdks/unified/README.md#listunifiedconnections) - List all connections

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 877b52162b06392093c3efbd89172e36
+  docChecksum: 93627d104d7b0fff5c900b54ba7421e8
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.74.0
-  configChecksum: bb129aa59767c0f5fe46857d787392fb
+  releaseVersion: 0.76.0
+  configChecksum: 7df3a9afdd6d39ee38802a9218325c53
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -848,6 +848,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetUnifiedIntegrationAuthResponse.cs
   - UnifiedTo/Models/Requests/GetUnifiedIntegrationLoginRequest.cs
   - UnifiedTo/Models/Requests/GetUnifiedIntegrationLoginResponse.cs
+  - UnifiedTo/Models/Requests/GetUnifiedIssueRequest.cs
+  - UnifiedTo/Models/Requests/GetUnifiedIssueResponse.cs
   - UnifiedTo/Models/Requests/GetUnifiedWebhookRequest.cs
   - UnifiedTo/Models/Requests/GetUnifiedWebhookResponse.cs
   - UnifiedTo/Models/Requests/GetVerificationPackageRequest.cs
@@ -2334,6 +2336,8 @@ generatedFiles:
   - docs/Models/Requests/GetUnifiedIntegrationAuthResponse.md
   - docs/Models/Requests/GetUnifiedIntegrationLoginRequest.md
   - docs/Models/Requests/GetUnifiedIntegrationLoginResponse.md
+  - docs/Models/Requests/GetUnifiedIssueRequest.md
+  - docs/Models/Requests/GetUnifiedIssueResponse.md
   - docs/Models/Requests/GetUnifiedWebhookRequest.md
   - docs/Models/Requests/GetUnifiedWebhookResponse.md
   - docs/Models/Requests/GetVerificationPackageRequest.md
@@ -7676,6 +7680,17 @@ examples:
       responses:
         "200":
           application/json: {}
+  getUnifiedIssue:
+    speakeasy-default-get-unified-issue:
+      parameters:
+        path:
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {"status": "ON_HOLD", "ticket_ref": "<value>", "title": "<value>", "workspace_id": "<id>"}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Messaging.CreateMessagingMessage()`: \n  *  `request.messagingMessage.IsUnread` **Added**\n  *  `response.isUnread` **Added**\n* `UnifiedTo.Messaging.GetMessagingMessage()`:  `response.isUnread` **Added**\n* `UnifiedTo.Messaging.ListMessagingMessages()`:  `response.[].IsUnread` **Added**\n* `UnifiedTo.Messaging.PatchMessagingMessage()`: \n  *  `request.MessagingMessage.IsUnread` **Added**\n  *  `response.isUnread` **Added**\n* `UnifiedTo.Messaging.UpdateMessagingMessage()`: \n  *  `request.MessagingMessage.IsUnread` **Added**\n  *  `response.isUnread` **Added**\n* `UnifiedTo.Message.CreateMessagingMessage()`: \n  *  `request.messagingMessage.IsUnread` **Added**\n  *  `response.isUnread` **Added**\n* `UnifiedTo.Message.GetMessagingMessage()`:  `response.isUnread` **Added**\n* `UnifiedTo.Message.ListMessagingMessages()`:  `response.[].IsUnread` **Added**\n* `UnifiedTo.Message.PatchMessagingMessage()`: \n  *  `request.MessagingMessage.IsUnread` **Added**\n  *  `response.isUnread` **Added**\n* `UnifiedTo.Message.UpdateMessagingMessage()`: \n  *  `request.MessagingMessage.IsUnread` **Added**\n  *  `response.isUnread` **Added**\n* `UnifiedTo.Unified.ListUnifiedIntegrationWorkspaces()`:  `response.[].Saml` **Added**\n* `UnifiedTo.Unified.ListUnifiedIntegrations()`:  `response.[].Saml` **Added**\n* `UnifiedTo.Integration.ListUnifiedIntegrationWorkspaces()`:  `response.[].Saml` **Added**\n* `UnifiedTo.Integration.ListUnifiedIntegrations()`:  `response.[].Saml` **Added**\n"
+releaseNotes: |
+  ## Csharp SDK Changes Detected:
+  * `UnifiedTo.Unified.GetUnifiedIssue()`: **Added**
+  * `UnifiedTo.Issue.GetUnifiedIssue()`: **Added**
