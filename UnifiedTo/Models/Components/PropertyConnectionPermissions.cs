@@ -147,6 +147,8 @@ namespace UnifiedTo.Models.Components
         AtsJobWrite,
         [JsonProperty("ats_company_read")]
         AtsCompanyRead,
+        [JsonProperty("ats_company_write")]
+        AtsCompanyWrite,
         [JsonProperty("ats_document_read")]
         AtsDocumentRead,
         [JsonProperty("ats_document_write")]
