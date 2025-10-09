@@ -12,19 +12,13 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
     
-    public class PropertyMessagingMessageAuthorMember
+    public class MessagingChannelMessage
     {
 
-        [JsonProperty("email")]
-        public string? Email { get; set; }
-
-        [JsonProperty("image_url")]
-        public string? ImageUrl { get; set; }
+        [JsonProperty("id")]
+        public string? Id { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }
-
-        [JsonProperty("user_id")]
-        public string? UserId { get; set; }
     }
 }

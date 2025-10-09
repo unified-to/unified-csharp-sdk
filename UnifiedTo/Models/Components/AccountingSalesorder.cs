@@ -45,6 +45,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        [JsonProperty("sales_channel")]
+        public string? SalesChannel { get; set; }
+
         [JsonProperty("shipping_address")]
         public PropertyAccountingSalesorderShippingAddress? ShippingAddress { get; set; }
 

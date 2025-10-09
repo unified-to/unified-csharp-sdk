@@ -18,6 +18,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("email")]
         public string? Email { get; set; }
 
+        [JsonProperty("image_url")]
+        public string? ImageUrl { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

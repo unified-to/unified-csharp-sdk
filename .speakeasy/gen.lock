@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 0b33a55547cf2ac860e6a35542823995
+  docChecksum: dc91eeac96415353b77e357c69ab74d6
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.80.0
-  configChecksum: 2efab16bcf98b55f684dac4aef7a2774
+  releaseVersion: 0.82.0
+  configChecksum: 0b24d3ca22f17bb7ffa7fd5dc25de5c5
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -334,6 +334,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/MarketingMember.cs
   - UnifiedTo/Models/Components/MessagingAttachment.cs
   - UnifiedTo/Models/Components/MessagingChannel.cs
+  - UnifiedTo/Models/Components/MessagingChannelMessage.cs
   - UnifiedTo/Models/Components/MessagingMember.cs
   - UnifiedTo/Models/Components/MessagingMessage.cs
   - UnifiedTo/Models/Components/MessagingReaction.cs
@@ -1823,6 +1824,7 @@ generatedFiles:
   - docs/Models/Components/MarketingMember.md
   - docs/Models/Components/MessagingAttachment.md
   - docs/Models/Components/MessagingChannel.md
+  - docs/Models/Components/MessagingChannelMessage.md
   - docs/Models/Components/MessagingMember.md
   - docs/Models/Components/MessagingMessage.md
   - docs/Models/Components/MessagingReaction.md
@@ -7690,3 +7692,4 @@ examples:
           application/json: {"status": "ON_HOLD", "ticket_ref": "<value>", "title": "<value>", "workspace_id": "<id>"}
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Accounting.CreateAccountingSalesorder()`: \n  *  `request.accountingSalesorder.SalesChannel` **Added**\n  *  `response.salesChannel` **Added**\n* `UnifiedTo.Accounting.GetAccountingSalesorder()`:  `response.salesChannel` **Added**\n* `UnifiedTo.Accounting.ListAccountingSalesorders()`:  `response.[].SalesChannel` **Added**\n* `UnifiedTo.Accounting.PatchAccountingSalesorder()`: \n  *  `request.AccountingSalesorder.SalesChannel` **Added**\n  *  `response.salesChannel` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingSalesorder()`: \n  *  `request.AccountingSalesorder.SalesChannel` **Added**\n  *  `response.salesChannel` **Added**\n* `UnifiedTo.Salesorder.CreateAccountingSalesorder()`: \n  *  `request.accountingSalesorder.SalesChannel` **Added**\n  *  `response.salesChannel` **Added**\n* `UnifiedTo.Salesorder.GetAccountingSalesorder()`:  `response.salesChannel` **Added**\n* `UnifiedTo.Salesorder.ListAccountingSalesorders()`:  `response.[].SalesChannel` **Added**\n* `UnifiedTo.Salesorder.PatchAccountingSalesorder()`: \n  *  `request.AccountingSalesorder.SalesChannel` **Added**\n  *  `response.salesChannel` **Added**\n* `UnifiedTo.Salesorder.UpdateAccountingSalesorder()`: \n  *  `request.AccountingSalesorder.SalesChannel` **Added**\n  *  `response.salesChannel` **Added**\n* `UnifiedTo.Messaging.CreateMessagingMessage()`: \n  *  `request.messagingMessage` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Messaging.GetMessagingChannel()`:  `response.members.[].ImageUrl` **Added**\n* `UnifiedTo.Messaging.GetMessagingMessage()`:  `response` **Changed**\n* `UnifiedTo.Messaging.ListMessagingChannels()`:  `response.[].Members.[].ImageUrl` **Added**\n* `UnifiedTo.Messaging.ListMessagingMessages()`:  `response.[]` **Changed**\n* `UnifiedTo.Messaging.PatchMessagingMessage()`: \n  *  `request.MessagingMessage` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Messaging.UpdateMessagingMessage()`: \n  *  `request.MessagingMessage` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Channel.GetMessagingChannel()`:  `response.members.[].ImageUrl` **Added**\n* `UnifiedTo.Channel.ListMessagingChannels()`:  `response.[].Members.[].ImageUrl` **Added**\n* `UnifiedTo.Message.CreateMessagingMessage()`: \n  *  `request.messagingMessage` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Message.GetMessagingMessage()`:  `response` **Changed**\n* `UnifiedTo.Message.ListMessagingMessages()`:  `response.[]` **Changed**\n* `UnifiedTo.Message.PatchMessagingMessage()`: \n  *  `request.MessagingMessage` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Message.UpdateMessagingMessage()`: \n  *  `request.MessagingMessage` **Changed**\n  *  `response` **Changed**\n"
