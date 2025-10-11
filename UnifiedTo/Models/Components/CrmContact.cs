@@ -42,6 +42,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("deal_ids")]
         public List<string>? DealIds { get; set; }
 
+        [JsonProperty("department")]
+        public string? Department { get; set; }
+
         /// <summary>
         /// An array of email addresses for this contact
         /// </summary>
@@ -50,6 +53,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("id")]
         public string? Id { get; set; }
+
+        [JsonProperty("image_url")]
+        public string? ImageUrl { get; set; }
 
         /// <summary>
         /// Additional URLs associated with the contact e.g., LinkedIn, website, etc

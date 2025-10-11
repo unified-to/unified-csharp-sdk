@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("extra_data")]
         public CrmMetadataExtraData? ExtraData { get; set; }
 
+        [JsonProperty("format")]
+        public CrmMetadataFormat? Format { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
