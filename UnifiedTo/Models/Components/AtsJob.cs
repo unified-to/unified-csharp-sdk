@@ -63,6 +63,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<AtsMetadata>? Metadata { get; set; }
 
+        [JsonProperty("minimum_degree")]
+        public string? MinimumDegree { get; set; }
+
+        [JsonProperty("minimum_experience_years")]
+        public double? MinimumExperienceYears { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 
