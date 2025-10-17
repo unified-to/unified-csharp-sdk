@@ -32,6 +32,7 @@ namespace UnifiedTo
         public ICategory Category { get; }
         public IContact Contact { get; }
         public ICreditmemo Creditmemo { get; }
+        public IExpense Expense { get; }
         public IInvoice Invoice { get; }
         public IJournal Journal { get; }
         public IOrder Order { get; }
@@ -142,7 +143,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.86.0";
+        private const string _sdkVersion = "0.88.0";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -152,6 +153,7 @@ namespace UnifiedTo
         public ICategory Category { get; private set; }
         public IContact Contact { get; private set; }
         public ICreditmemo Creditmemo { get; private set; }
+        public IExpense Expense { get; private set; }
         public IInvoice Invoice { get; private set; }
         public IJournal Journal { get; private set; }
         public IOrder Order { get; private set; }
@@ -270,6 +272,8 @@ namespace UnifiedTo
             Contact = new Contact(SDKConfiguration);
 
             Creditmemo = new Creditmemo(SDKConfiguration);
+
+            Expense = new Expense(SDKConfiguration);
 
             Invoice = new Invoice(SDKConfiguration);
 
@@ -525,6 +529,8 @@ namespace UnifiedTo
             Contact = new Contact(SDKConfiguration);
 
             Creditmemo = new Creditmemo(SDKConfiguration);
+
+            Expense = new Expense(SDKConfiguration);
 
             Invoice = new Invoice(SDKConfiguration);
 

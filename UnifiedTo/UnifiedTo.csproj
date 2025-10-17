@@ -3,7 +3,7 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <PackageId>UnifiedTo</PackageId>
-    <Version>0.86.0</Version>
+    <Version>0.88.0</Version>
     <TargetFramework>net6.0</TargetFramework>
     <Authors>Unified API Inc.</Authors>
     <Copyright>Copyright (c) Unified API Inc. 2025</Copyright>

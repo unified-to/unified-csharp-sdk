@@ -43,6 +43,10 @@ namespace UnifiedTo.Models.Components
         AccountingContactRead,
         [JsonProperty("accounting_contact_write")]
         AccountingContactWrite,
+        [JsonProperty("accounting_expense_read")]
+        AccountingExpenseRead,
+        [JsonProperty("accounting_expense_write")]
+        AccountingExpenseWrite,
         [JsonProperty("accounting_taxrate_read")]
         AccountingTaxrateRead,
         [JsonProperty("accounting_taxrate_write")]

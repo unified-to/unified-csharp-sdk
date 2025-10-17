@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: a340dff9ff9a611e83b0ac8c9df95754
+  docChecksum: 5e991f57774a394989eb351c469cc219
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.86.0
-  configChecksum: 54036ace3bb2816410d835db7f597423
+  releaseVersion: 0.88.0
+  configChecksum: 3a0c4ee972e5ad280b99c7a54b7aae43
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -66,6 +66,7 @@ generatedFiles:
   - UnifiedTo/Employee.cs
   - UnifiedTo/Enrich.cs
   - UnifiedTo/Event.cs
+  - UnifiedTo/Expense.cs
   - UnifiedTo/File.cs
   - UnifiedTo/Genai.cs
   - UnifiedTo/Group.cs
@@ -110,6 +111,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingCreditmemoStatus.cs
   - UnifiedTo/Models/Components/AccountingEmail.cs
   - UnifiedTo/Models/Components/AccountingEmailType.cs
+  - UnifiedTo/Models/Components/AccountingExpense.cs
   - UnifiedTo/Models/Components/AccountingInvoice.cs
   - UnifiedTo/Models/Components/AccountingInvoicePaymentCollectionMethod.cs
   - UnifiedTo/Models/Components/AccountingInvoiceStatus.cs
@@ -525,6 +527,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateAccountingContactResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingCreditmemoRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingCreditmemoResponse.cs
+  - UnifiedTo/Models/Requests/CreateAccountingExpenseRequest.cs
+  - UnifiedTo/Models/Requests/CreateAccountingExpenseResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/CreateAccountingInvoiceResponse.cs
   - UnifiedTo/Models/Requests/CreateAccountingJournalRequest.cs
@@ -684,6 +688,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetAccountingContactResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingCreditmemoRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingCreditmemoResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingExpenseRequest.cs
+  - UnifiedTo/Models/Requests/GetAccountingExpenseResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingInvoiceResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingJournalRequest.cs
@@ -870,6 +876,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListAccountingContactsResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingCreditmemoesRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingCreditmemoesResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingExpensesRequest.cs
+  - UnifiedTo/Models/Requests/ListAccountingExpensesResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingInvoicesRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingInvoicesResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingJournalsRequest.cs
@@ -1067,6 +1075,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchAccountingContactResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingCreditmemoRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingCreditmemoResponse.cs
+  - UnifiedTo/Models/Requests/PatchAccountingExpenseRequest.cs
+  - UnifiedTo/Models/Requests/PatchAccountingExpenseResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/PatchAccountingInvoiceResponse.cs
   - UnifiedTo/Models/Requests/PatchAccountingJournalRequest.cs
@@ -1224,6 +1234,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveAccountingContactResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingCreditmemoRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingCreditmemoResponse.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingExpenseRequest.cs
+  - UnifiedTo/Models/Requests/RemoveAccountingExpenseResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/RemoveAccountingInvoiceResponse.cs
   - UnifiedTo/Models/Requests/RemoveAccountingJournalRequest.cs
@@ -1376,6 +1388,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateAccountingContactResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingCreditmemoRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingCreditmemoResponse.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingExpenseRequest.cs
+  - UnifiedTo/Models/Requests/UpdateAccountingExpenseResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingInvoiceRequest.cs
   - UnifiedTo/Models/Requests/UpdateAccountingInvoiceResponse.cs
   - UnifiedTo/Models/Requests/UpdateAccountingJournalRequest.cs
@@ -1601,6 +1615,7 @@ generatedFiles:
   - docs/Models/Components/AccountingCreditmemoStatus.md
   - docs/Models/Components/AccountingEmail.md
   - docs/Models/Components/AccountingEmailType.md
+  - docs/Models/Components/AccountingExpense.md
   - docs/Models/Components/AccountingInvoice.md
   - docs/Models/Components/AccountingInvoicePaymentCollectionMethod.md
   - docs/Models/Components/AccountingInvoiceStatus.md
@@ -2015,6 +2030,8 @@ generatedFiles:
   - docs/Models/Requests/CreateAccountingContactResponse.md
   - docs/Models/Requests/CreateAccountingCreditmemoRequest.md
   - docs/Models/Requests/CreateAccountingCreditmemoResponse.md
+  - docs/Models/Requests/CreateAccountingExpenseRequest.md
+  - docs/Models/Requests/CreateAccountingExpenseResponse.md
   - docs/Models/Requests/CreateAccountingInvoiceRequest.md
   - docs/Models/Requests/CreateAccountingInvoiceResponse.md
   - docs/Models/Requests/CreateAccountingJournalRequest.md
@@ -2174,6 +2191,8 @@ generatedFiles:
   - docs/Models/Requests/GetAccountingContactResponse.md
   - docs/Models/Requests/GetAccountingCreditmemoRequest.md
   - docs/Models/Requests/GetAccountingCreditmemoResponse.md
+  - docs/Models/Requests/GetAccountingExpenseRequest.md
+  - docs/Models/Requests/GetAccountingExpenseResponse.md
   - docs/Models/Requests/GetAccountingInvoiceRequest.md
   - docs/Models/Requests/GetAccountingInvoiceResponse.md
   - docs/Models/Requests/GetAccountingJournalRequest.md
@@ -2360,6 +2379,8 @@ generatedFiles:
   - docs/Models/Requests/ListAccountingContactsResponse.md
   - docs/Models/Requests/ListAccountingCreditmemoesRequest.md
   - docs/Models/Requests/ListAccountingCreditmemoesResponse.md
+  - docs/Models/Requests/ListAccountingExpensesRequest.md
+  - docs/Models/Requests/ListAccountingExpensesResponse.md
   - docs/Models/Requests/ListAccountingInvoicesRequest.md
   - docs/Models/Requests/ListAccountingInvoicesResponse.md
   - docs/Models/Requests/ListAccountingJournalsRequest.md
@@ -2557,6 +2578,8 @@ generatedFiles:
   - docs/Models/Requests/PatchAccountingContactResponse.md
   - docs/Models/Requests/PatchAccountingCreditmemoRequest.md
   - docs/Models/Requests/PatchAccountingCreditmemoResponse.md
+  - docs/Models/Requests/PatchAccountingExpenseRequest.md
+  - docs/Models/Requests/PatchAccountingExpenseResponse.md
   - docs/Models/Requests/PatchAccountingInvoiceRequest.md
   - docs/Models/Requests/PatchAccountingInvoiceResponse.md
   - docs/Models/Requests/PatchAccountingJournalRequest.md
@@ -2714,6 +2737,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveAccountingContactResponse.md
   - docs/Models/Requests/RemoveAccountingCreditmemoRequest.md
   - docs/Models/Requests/RemoveAccountingCreditmemoResponse.md
+  - docs/Models/Requests/RemoveAccountingExpenseRequest.md
+  - docs/Models/Requests/RemoveAccountingExpenseResponse.md
   - docs/Models/Requests/RemoveAccountingInvoiceRequest.md
   - docs/Models/Requests/RemoveAccountingInvoiceResponse.md
   - docs/Models/Requests/RemoveAccountingJournalRequest.md
@@ -2866,6 +2891,8 @@ generatedFiles:
   - docs/Models/Requests/UpdateAccountingContactResponse.md
   - docs/Models/Requests/UpdateAccountingCreditmemoRequest.md
   - docs/Models/Requests/UpdateAccountingCreditmemoResponse.md
+  - docs/Models/Requests/UpdateAccountingExpenseRequest.md
+  - docs/Models/Requests/UpdateAccountingExpenseResponse.md
   - docs/Models/Requests/UpdateAccountingInvoiceRequest.md
   - docs/Models/Requests/UpdateAccountingInvoiceResponse.md
   - docs/Models/Requests/UpdateAccountingJournalRequest.md
@@ -3049,6 +3076,7 @@ generatedFiles:
   - docs/sdks/employee/README.md
   - docs/sdks/enrich/README.md
   - docs/sdks/event/README.md
+  - docs/sdks/expense/README.md
   - docs/sdks/file/README.md
   - docs/sdks/genai/README.md
   - docs/sdks/group/README.md
@@ -7692,6 +7720,61 @@ examples:
       responses:
         "200":
           application/json: {"status": "ON_HOLD", "ticket_ref": "<value>", "title": "<value>", "workspace_id": "<id>"}
+  createAccountingExpense:
+    speakeasy-default-create-accounting-expense:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getAccountingExpense:
+    speakeasy-default-get-accounting-expense:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listAccountingExpenses:
+    speakeasy-default-list-accounting-expenses:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchAccountingExpense:
+    speakeasy-default-patch-accounting-expense:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeAccountingExpense:
+    speakeasy-default-remove-accounting-expense:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateAccountingExpense:
+    speakeasy-default-update-accounting-expense:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Ats.CreateAtsJob()`: \n  *  `request.atsJob` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Ats.GetAtsJob()`:  `response` **Changed**\n* `UnifiedTo.Ats.ListAtsJobs()`:  `response.[]` **Changed**\n* `UnifiedTo.Ats.PatchAtsJob()`: \n  *  `request.AtsJob` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Ats.UpdateAtsJob()`: \n  *  `request.AtsJob` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Job.CreateAtsJob()`: \n  *  `request.atsJob` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Job.GetAtsJob()`:  `response` **Changed**\n* `UnifiedTo.Job.ListAtsJobs()`:  `response.[]` **Changed**\n* `UnifiedTo.Job.PatchAtsJob()`: \n  *  `request.AtsJob` **Changed**\n  *  `response` **Changed**\n* `UnifiedTo.Job.UpdateAtsJob()`: \n  *  `request.AtsJob` **Changed**\n  *  `response` **Changed**\n"
+releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Accounting.CreateAccountingExpense()`: **Added**\n* `UnifiedTo.Accounting.GetAccountingExpense()`: **Added**\n* `UnifiedTo.Accounting.ListAccountingExpenses()`: **Added**\n* `UnifiedTo.Accounting.PatchAccountingExpense()`: **Added**\n* `UnifiedTo.Accounting.RemoveAccountingExpense()`: **Added**\n* `UnifiedTo.Accounting.UpdateAccountingExpense()`: **Added**\n* `UnifiedTo.Expense.CreateAccountingExpense()`: **Added**\n* `UnifiedTo.Expense.GetAccountingExpense()`: **Added**\n* `UnifiedTo.Expense.ListAccountingExpenses()`: **Added**\n* `UnifiedTo.Expense.PatchAccountingExpense()`: **Added**\n* `UnifiedTo.Expense.RemoveAccountingExpense()`: **Added**\n* `UnifiedTo.Expense.UpdateAccountingExpense()`: **Added**\n* `UnifiedTo.Messaging.ListMessagingMessages()`: \n  *  `request.UserId` **Added**\n* `UnifiedTo.Message.ListMessagingMessages()`: \n  *  `request.UserId` **Added**\n"

@@ -10,6 +10,7 @@
 * [CreateAccountingCategory](#createaccountingcategory) - Create a category
 * [CreateAccountingContact](#createaccountingcontact) - Create a contact
 * [CreateAccountingCreditmemo](#createaccountingcreditmemo) - Create a creditmemo
+* [CreateAccountingExpense](#createaccountingexpense) - Create an expense
 * [CreateAccountingInvoice](#createaccountinginvoice) - Create an invoice
 * [CreateAccountingJournal](#createaccountingjournal) - Create a journal
 * [CreateAccountingOrder](#createaccountingorder) - Create an order
@@ -23,6 +24,7 @@
 * [GetAccountingCategory](#getaccountingcategory) - Retrieve a category
 * [GetAccountingContact](#getaccountingcontact) - Retrieve a contact
 * [GetAccountingCreditmemo](#getaccountingcreditmemo) - Retrieve a creditmemo
+* [GetAccountingExpense](#getaccountingexpense) - Retrieve an expense
 * [GetAccountingInvoice](#getaccountinginvoice) - Retrieve an invoice
 * [GetAccountingJournal](#getaccountingjournal) - Retrieve a journal
 * [GetAccountingOrder](#getaccountingorder) - Retrieve an order
@@ -40,6 +42,7 @@
 * [ListAccountingCategories](#listaccountingcategories) - List all categories
 * [ListAccountingContacts](#listaccountingcontacts) - List all contacts
 * [ListAccountingCreditmemoes](#listaccountingcreditmemoes) - List all creditmemoes
+* [ListAccountingExpenses](#listaccountingexpenses) - List all expenses
 * [ListAccountingInvoices](#listaccountinginvoices) - List all invoices
 * [ListAccountingJournals](#listaccountingjournals) - List all journals
 * [ListAccountingOrders](#listaccountingorders) - List all orders
@@ -56,6 +59,7 @@
 * [PatchAccountingCategory](#patchaccountingcategory) - Update a category
 * [PatchAccountingContact](#patchaccountingcontact) - Update a contact
 * [PatchAccountingCreditmemo](#patchaccountingcreditmemo) - Update a creditmemo
+* [PatchAccountingExpense](#patchaccountingexpense) - Update an expense
 * [PatchAccountingInvoice](#patchaccountinginvoice) - Update an invoice
 * [PatchAccountingJournal](#patchaccountingjournal) - Update a journal
 * [PatchAccountingOrder](#patchaccountingorder) - Update an order
@@ -68,6 +72,7 @@
 * [RemoveAccountingCategory](#removeaccountingcategory) - Remove a category
 * [RemoveAccountingContact](#removeaccountingcontact) - Remove a contact
 * [RemoveAccountingCreditmemo](#removeaccountingcreditmemo) - Remove a creditmemo
+* [RemoveAccountingExpense](#removeaccountingexpense) - Remove an expense
 * [RemoveAccountingInvoice](#removeaccountinginvoice) - Remove an invoice
 * [RemoveAccountingJournal](#removeaccountingjournal) - Remove a journal
 * [RemoveAccountingOrder](#removeaccountingorder) - Remove an order
@@ -80,6 +85,7 @@
 * [UpdateAccountingCategory](#updateaccountingcategory) - Update a category
 * [UpdateAccountingContact](#updateaccountingcontact) - Update a contact
 * [UpdateAccountingCreditmemo](#updateaccountingcreditmemo) - Update a creditmemo
+* [UpdateAccountingExpense](#updateaccountingexpense) - Update an expense
 * [UpdateAccountingInvoice](#updateaccountinginvoice) - Update an invoice
 * [UpdateAccountingJournal](#updateaccountingjournal) - Update a journal
 * [UpdateAccountingOrder](#updateaccountingorder) - Update an order
@@ -286,6 +292,47 @@ var res = await sdk.Accounting.CreateAccountingCreditmemoAsync(
 ### Response
 
 **[CreateAccountingCreditmemoResponse](../../Models/Requests/CreateAccountingCreditmemoResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateAccountingExpense
+
+Create an expense
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.CreateAccountingExpenseAsync(
+    accountingExpense: new AccountingExpense() {},
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `AccountingExpense`                                                                                                                              | [AccountingExpense](../../Models/Components/AccountingExpense.md)                                                                                | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateAccountingExpenseResponse](../../Models/Requests/CreateAccountingExpenseResponse.md)**
 
 ### Errors
 
@@ -819,6 +866,47 @@ var res = await sdk.Accounting.GetAccountingCreditmemoAsync(
 ### Response
 
 **[GetAccountingCreditmemoResponse](../../Models/Requests/GetAccountingCreditmemoResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetAccountingExpense
+
+Retrieve an expense
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.GetAccountingExpenseAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Expense                                                                                                                                |
+| `Fields`                                                                                                                                         | List<*string*>                                                                                                                                   | :heavy_minus_sign:                                                                                                                               | Comma-delimited fields to return                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetAccountingExpenseResponse](../../Models/Requests/GetAccountingExpenseResponse.md)**
 
 ### Errors
 
@@ -1517,6 +1605,46 @@ var res = await sdk.Accounting.ListAccountingCreditmemoesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListAccountingExpenses
+
+List all expenses
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListAccountingExpensesRequest req = new ListAccountingExpensesRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Accounting.ListAccountingExpensesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [ListAccountingExpensesRequest](../../Models/Requests/ListAccountingExpensesRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+
+### Response
+
+**[ListAccountingExpensesResponse](../../Models/Requests/ListAccountingExpensesResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListAccountingInvoices
 
 List all invoices
@@ -2167,6 +2295,48 @@ var res = await sdk.Accounting.PatchAccountingCreditmemoAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchAccountingExpense
+
+Update an expense
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchAccountingExpenseRequest req = new PatchAccountingExpenseRequest() {
+    AccountingExpense = new AccountingExpense() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Accounting.PatchAccountingExpenseAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
+| --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| `request`                                                                               | [PatchAccountingExpenseRequest](../../Models/Requests/PatchAccountingExpenseRequest.md) | :heavy_check_mark:                                                                      | The request object to use for the request.                                              |
+
+### Response
+
+**[PatchAccountingExpenseResponse](../../Models/Requests/PatchAccountingExpenseResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchAccountingInvoice
 
 Update an invoice
@@ -2656,6 +2826,45 @@ var res = await sdk.Accounting.RemoveAccountingCreditmemoAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## RemoveAccountingExpense
+
+Remove an expense
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Accounting.RemoveAccountingExpenseAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Expense    |
+
+### Response
+
+**[RemoveAccountingExpenseResponse](../../Models/Requests/RemoveAccountingExpenseResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## RemoveAccountingInvoice
 
 Remove an invoice
@@ -3132,6 +3341,48 @@ var res = await sdk.Accounting.UpdateAccountingCreditmemoAsync(req);
 ### Response
 
 **[UpdateAccountingCreditmemoResponse](../../Models/Requests/UpdateAccountingCreditmemoResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateAccountingExpense
+
+Update an expense
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateAccountingExpenseRequest req = new UpdateAccountingExpenseRequest() {
+    AccountingExpense = new AccountingExpense() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Accounting.UpdateAccountingExpenseAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                 | Type                                                                                      | Required                                                                                  | Description                                                                               |
+| ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `request`                                                                                 | [UpdateAccountingExpenseRequest](../../Models/Requests/UpdateAccountingExpenseRequest.md) | :heavy_check_mark:                                                                        | The request object to use for the request.                                                |
+
+### Response
+
+**[UpdateAccountingExpenseResponse](../../Models/Requests/UpdateAccountingExpenseResponse.md)**
 
 ### Errors
 

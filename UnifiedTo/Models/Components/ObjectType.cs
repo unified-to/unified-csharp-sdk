@@ -49,6 +49,8 @@ namespace UnifiedTo.Models.Components
         AccountingTrialbalance,
         [JsonProperty("accounting_category")]
         AccountingCategory,
+        [JsonProperty("accounting_expense")]
+        AccountingExpense,
         [JsonProperty("payment_payment")]
         PaymentPayment,
         [JsonProperty("payment_link")]
