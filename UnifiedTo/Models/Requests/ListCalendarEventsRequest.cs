@@ -28,10 +28,16 @@ namespace UnifiedTo.Models.Requests
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
-        /// The end date to filter by
+        /// The end date to filter by (deprecated)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=end_le")]
         public string? EndLe { get; set; }
+
+        /// <summary>
+        /// The end date to filter by
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=end_lt")]
+        public string? EndLt { get; set; }
 
         /// <summary>
         /// Whether to flatten grouped or recurring items into individual entries.

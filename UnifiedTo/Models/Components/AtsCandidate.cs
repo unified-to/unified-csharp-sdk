@@ -45,11 +45,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("external_identifier")]
         public string? ExternalIdentifier { get; set; }
 
+        [JsonProperty("first_name")]
+        public string? FirstName { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
         [JsonProperty("image_url")]
         public string? ImageUrl { get; set; }
+
+        [JsonProperty("last_name")]
+        public string? LastName { get; set; }
 
         /// <summary>
         /// URLs for web pages containing additional material about the candidate (LinkedIn, other social media, articles, etc.)

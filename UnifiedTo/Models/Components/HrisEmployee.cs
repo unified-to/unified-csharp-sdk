@@ -60,6 +60,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("employment_type")]
         public HrisEmployeeEmploymentType? EmploymentType { get; set; }
 
+        [JsonProperty("first_name")]
+        public string? FirstName { get; set; }
+
         [JsonProperty("gender")]
         public HrisEmployeeGender? Gender { get; set; }
 
@@ -80,6 +83,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("language_locale")]
         public string? LanguageLocale { get; set; }
+
+        [JsonProperty("last_name")]
+        public string? LastName { get; set; }
 
         [JsonProperty("location")]
         public string? Location { get; set; }

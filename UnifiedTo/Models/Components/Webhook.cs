@@ -72,9 +72,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_paused")]
         public bool? IsPaused { get; set; }
 
-        [JsonProperty("meta")]
-        public Dictionary<string, object>? Meta { get; set; }
-
         [JsonProperty("object_type")]
         public ObjectType ObjectType { get; set; } = default!;
 

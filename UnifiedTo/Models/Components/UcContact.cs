@@ -33,8 +33,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("emails")]
         public List<UcEmail>? Emails { get; set; }
 
+        [JsonProperty("first_name")]
+        public string? FirstName { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
+
+        [JsonProperty("last_name")]
+        public string? LastName { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }

@@ -51,6 +51,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("facebook_url")]
         public string? FacebookUrl { get; set; }
 
+        [JsonProperty("first_name")]
+        public string? FirstName { get; set; }
+
         [JsonProperty("gender")]
         public Gender? Gender { get; set; }
 
@@ -66,15 +69,15 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("image_url")]
         public string? ImageUrl { get; set; }
 
+        [JsonProperty("last_name")]
+        public string? LastName { get; set; }
+
         [JsonProperty("linkedin_url")]
         public string? LinkedinUrl { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }
 
-        /// <summary>
-        /// The raw data returned by the integration for this person
-        /// </summary>
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

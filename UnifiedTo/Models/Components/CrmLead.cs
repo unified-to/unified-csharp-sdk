@@ -39,11 +39,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("emails")]
         public List<CrmEmail>? Emails { get; set; }
 
+        [JsonProperty("first_name")]
+        public string? FirstName { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
+
+        [JsonProperty("last_name")]
+        public string? LastName { get; set; }
 
         [JsonProperty("link_urls")]
         public List<string>? LinkUrls { get; set; }

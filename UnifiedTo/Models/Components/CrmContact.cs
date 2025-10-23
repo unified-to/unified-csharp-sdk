@@ -51,11 +51,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("emails")]
         public List<CrmEmail>? Emails { get; set; }
 
+        [JsonProperty("first_name")]
+        public string? FirstName { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
         [JsonProperty("image_url")]
         public string? ImageUrl { get; set; }
+
+        [JsonProperty("last_name")]
+        public string? LastName { get; set; }
 
         /// <summary>
         /// Additional URLs associated with the contact e.g., LinkedIn, website, etc

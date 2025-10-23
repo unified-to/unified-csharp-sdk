@@ -36,6 +36,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("emails")]
         public List<AccountingEmail>? Emails { get; set; }
 
+        [JsonProperty("first_name")]
+        public string? FirstName { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -50,6 +53,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("is_supplier")]
         public bool? IsSupplier { get; set; }
+
+        [JsonProperty("last_name")]
+        public string? LastName { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }
