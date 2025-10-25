@@ -10,6 +10,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using UnifiedTo.Utils;
     
     public class AccountingJournalLineitem
@@ -18,11 +19,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
+        [JsonProperty("category_ids")]
+        public List<string>? CategoryIds { get; set; }
+
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
         [JsonProperty("description")]
         public string? Description { get; set; }
+
+        [JsonProperty("group_id")]
+        public string? GroupId { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
@@ -32,6 +39,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("payment_id")]
         public string? PaymentId { get; set; }
+
+        [JsonProperty("project_id")]
+        public string? ProjectId { get; set; }
 
         [JsonProperty("tax_amount")]
         public double? TaxAmount { get; set; }

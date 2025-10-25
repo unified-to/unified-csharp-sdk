@@ -29,7 +29,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Commit.CreateRepoCommitAsync(
     repoCommit: new RepoCommit() {
         RepoId = "<id>",
-        UserId = "<id>",
     },
     connectionId: "<id>"
 );
@@ -155,7 +154,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchRepoCommitRequest req = new PatchRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
         RepoId = "<id>",
-        UserId = "<id>",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -239,7 +237,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateRepoCommitRequest req = new UpdateRepoCommitRequest() {
     RepoCommit = new RepoCommit() {
         RepoId = "<id>",
-        UserId = "<id>",
     },
     ConnectionId = "<id>",
     Id = "<id>",

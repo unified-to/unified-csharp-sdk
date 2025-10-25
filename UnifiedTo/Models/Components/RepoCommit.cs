@@ -39,6 +39,6 @@ namespace UnifiedTo.Models.Components
         public DateTime? UpdatedAt { get; set; }
 
         [JsonProperty("user_id")]
-        public string UserId { get; set; } = default!;
+        public string? UserId { get; set; }
     }
 }
