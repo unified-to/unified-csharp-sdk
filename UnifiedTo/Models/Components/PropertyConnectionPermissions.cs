@@ -89,6 +89,10 @@ namespace UnifiedTo.Models.Components
         PaymentPaymentRead,
         [JsonProperty("payment_payment_write")]
         PaymentPaymentWrite,
+        [JsonProperty("accounting_cashflow_read")]
+        AccountingCashflowRead,
+        [JsonProperty("accounting_cashflow_write")]
+        AccountingCashflowWrite,
         [JsonProperty("payment_payout_read")]
         PaymentPayoutRead,
         [JsonProperty("payment_refund_read")]

@@ -29,6 +29,7 @@ namespace UnifiedTo
         public IAccount Account { get; }
         public IBalancesheet Balancesheet { get; }
         public IBill Bill { get; }
+        public ICashflow Cashflow { get; }
         public ICategory Category { get; }
         public IContact Contact { get; }
         public ICreditmemo Creditmemo { get; }
@@ -143,13 +144,14 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.92.0";
+        private const string _sdkVersion = "0.94.0";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
         public IAccount Account { get; private set; }
         public IBalancesheet Balancesheet { get; private set; }
         public IBill Bill { get; private set; }
+        public ICashflow Cashflow { get; private set; }
         public ICategory Category { get; private set; }
         public IContact Contact { get; private set; }
         public ICreditmemo Creditmemo { get; private set; }
@@ -266,6 +268,8 @@ namespace UnifiedTo
             Balancesheet = new Balancesheet(SDKConfiguration);
 
             Bill = new Bill(SDKConfiguration);
+
+            Cashflow = new Cashflow(SDKConfiguration);
 
             Category = new Category(SDKConfiguration);
 
@@ -523,6 +527,8 @@ namespace UnifiedTo
             Balancesheet = new Balancesheet(SDKConfiguration);
 
             Bill = new Bill(SDKConfiguration);
+
+            Cashflow = new Cashflow(SDKConfiguration);
 
             Category = new Category(SDKConfiguration);
 

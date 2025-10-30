@@ -51,6 +51,8 @@ namespace UnifiedTo.Models.Components
         AccountingCategory,
         [JsonProperty("accounting_expense")]
         AccountingExpense,
+        [JsonProperty("accounting_cashflow")]
+        AccountingCashflow,
         [JsonProperty("payment_payment")]
         PaymentPayment,
         [JsonProperty("payment_link")]

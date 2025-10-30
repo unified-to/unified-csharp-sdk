@@ -60,6 +60,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [GetAccountingAccount](docs/sdks/accounting/README.md#getaccountingaccount) - Retrieve an account
 * [GetAccountingBalancesheet](docs/sdks/accounting/README.md#getaccountingbalancesheet) - Retrieve a balancesheet
 * [GetAccountingBill](docs/sdks/accounting/README.md#getaccountingbill) - Retrieve a bill
+* [GetAccountingCashflow](docs/sdks/accounting/README.md#getaccountingcashflow) - Retrieve a cashflow
 * [GetAccountingCategory](docs/sdks/accounting/README.md#getaccountingcategory) - Retrieve a category
 * [GetAccountingContact](docs/sdks/accounting/README.md#getaccountingcontact) - Retrieve a contact
 * [GetAccountingCreditmemo](docs/sdks/accounting/README.md#getaccountingcreditmemo) - Retrieve a creditmemo
@@ -78,6 +79,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [ListAccountingAccounts](docs/sdks/accounting/README.md#listaccountingaccounts) - List all accounts
 * [ListAccountingBalancesheets](docs/sdks/accounting/README.md#listaccountingbalancesheets) - List all balancesheets
 * [ListAccountingBills](docs/sdks/accounting/README.md#listaccountingbills) - List all bills
+* [ListAccountingCashflows](docs/sdks/accounting/README.md#listaccountingcashflows) - List all cashflows
 * [ListAccountingCategories](docs/sdks/accounting/README.md#listaccountingcategories) - List all categories
 * [ListAccountingContacts](docs/sdks/accounting/README.md#listaccountingcontacts) - List all contacts
 * [ListAccountingCreditmemoes](docs/sdks/accounting/README.md#listaccountingcreditmemoes) - List all creditmemoes
@@ -280,6 +282,11 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [PatchAtsCandidate](docs/sdks/candidate/README.md#patchatscandidate) - Update a candidate
 * [RemoveAtsCandidate](docs/sdks/candidate/README.md#removeatscandidate) - Remove a candidate
 * [UpdateAtsCandidate](docs/sdks/candidate/README.md#updateatscandidate) - Update a candidate
+
+### [Cashflow](docs/sdks/cashflow/README.md)
+
+* [GetAccountingCashflow](docs/sdks/cashflow/README.md#getaccountingcashflow) - Retrieve a cashflow
+* [ListAccountingCashflows](docs/sdks/cashflow/README.md#listaccountingcashflows) - List all cashflows
 
 ### [Category](docs/sdks/category/README.md)
 

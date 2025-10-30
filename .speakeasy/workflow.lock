@@ -2,20 +2,20 @@ speakeasyVersion: 1.568.0
 sources:
     my-source:
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:66c9fe9fabbe4a028dabbac64eae3ccc3366cefd1f2846e9353b2b52e0886b3c
-        sourceBlobDigest: sha256:6ed60af467b5032ca488c1ced17aad6656955d7d75c7352cbeadf2e8063cefc4
+        sourceRevisionDigest: sha256:8fc2dcf25f3606c0064dfd689f9a27619647a7d02e2bd4e0b3fa0e181781d315
+        sourceBlobDigest: sha256:7b6ffd1e384469bbd4b99835421a80846e26011005aadfa08f983efc3de4370d
         tags:
             - latest
-            - speakeasy-sdk-regen-1761350589
+            - speakeasy-sdk-regen-1761782605
             - "1.0"
 targets:
     csharp-target:
         source: my-source
         sourceNamespace: my-source
-        sourceRevisionDigest: sha256:66c9fe9fabbe4a028dabbac64eae3ccc3366cefd1f2846e9353b2b52e0886b3c
-        sourceBlobDigest: sha256:6ed60af467b5032ca488c1ced17aad6656955d7d75c7352cbeadf2e8063cefc4
+        sourceRevisionDigest: sha256:8fc2dcf25f3606c0064dfd689f9a27619647a7d02e2bd4e0b3fa0e181781d315
+        sourceBlobDigest: sha256:7b6ffd1e384469bbd4b99835421a80846e26011005aadfa08f983efc3de4370d
         codeSamplesNamespace: my-source-csharp-code-samples
-        codeSamplesRevisionDigest: sha256:6c1635fc66547c565d4aee76bc8df14927fd3b2dc4db305e2de2f3c5462f8685
+        codeSamplesRevisionDigest: sha256:38a4444cf2af6cd6b1c9713364af7590949af8393ac36fe0e9244fb5cda1a5b2
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
@@ -23,7 +23,6 @@ workflow:
         my-source:
             inputs:
                 - location: https://api.unified.to/openapi.json
-                  authSecret: $openapi_doc_auth_token
             registry:
                 location: registry.speakeasyapi.dev/unified/unified/my-source
     targets:

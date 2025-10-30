@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 018de8bfc3ab59a73a1c069f241e60a4
+  docChecksum: 488263b38991bc1af62a3a84968ffb52
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.92.0
-  configChecksum: c8ec4f93f514f1296c49d2e76c5d8eee
+  releaseVersion: 0.94.0
+  configChecksum: ed54a90f2daaa47fedf91051bdf8116d
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -44,6 +44,7 @@ generatedFiles:
   - UnifiedTo/Calendar.cs
   - UnifiedTo/Call.cs
   - UnifiedTo/Candidate.cs
+  - UnifiedTo/Cashflow.cs
   - UnifiedTo/Category.cs
   - UnifiedTo/Change.cs
   - UnifiedTo/Channel.cs
@@ -102,6 +103,9 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingBalancesheetItem.cs
   - UnifiedTo/Models/Components/AccountingBill.cs
   - UnifiedTo/Models/Components/AccountingBillStatus.cs
+  - UnifiedTo/Models/Components/AccountingCashflow.cs
+  - UnifiedTo/Models/Components/AccountingCashflowItem.cs
+  - UnifiedTo/Models/Components/AccountingCashflowSection.cs
   - UnifiedTo/Models/Components/AccountingCategory.cs
   - UnifiedTo/Models/Components/AccountingContact.cs
   - UnifiedTo/Models/Components/AccountingContactPaymentMethod.cs
@@ -362,6 +366,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/Priority.cs
   - UnifiedTo/Models/Components/ProfileGender.cs
   - UnifiedTo/Models/Components/PropertyAccountingBalancesheetItemSubItems.cs
+  - UnifiedTo/Models/Components/PropertyAccountingCashflowItemSubItems.cs
   - UnifiedTo/Models/Components/PropertyAccountingContactBillingAddress.cs
   - UnifiedTo/Models/Components/PropertyAccountingContactShippingAddress.cs
   - UnifiedTo/Models/Components/PropertyAccountingOrderBillingAddress.cs
@@ -682,6 +687,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetAccountingBalancesheetResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingBillRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingBillResponse.cs
+  - UnifiedTo/Models/Requests/GetAccountingCashflowRequest.cs
+  - UnifiedTo/Models/Requests/GetAccountingCashflowResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingCategoryRequest.cs
   - UnifiedTo/Models/Requests/GetAccountingCategoryResponse.cs
   - UnifiedTo/Models/Requests/GetAccountingContactRequest.cs
@@ -870,6 +877,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListAccountingBalancesheetsResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingBillsRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingBillsResponse.cs
+  - UnifiedTo/Models/Requests/ListAccountingCashflowsRequest.cs
+  - UnifiedTo/Models/Requests/ListAccountingCashflowsResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingCategoriesRequest.cs
   - UnifiedTo/Models/Requests/ListAccountingCategoriesResponse.cs
   - UnifiedTo/Models/Requests/ListAccountingContactsRequest.cs
@@ -1606,6 +1615,9 @@ generatedFiles:
   - docs/Models/Components/AccountingBalancesheetItem.md
   - docs/Models/Components/AccountingBill.md
   - docs/Models/Components/AccountingBillStatus.md
+  - docs/Models/Components/AccountingCashflow.md
+  - docs/Models/Components/AccountingCashflowItem.md
+  - docs/Models/Components/AccountingCashflowSection.md
   - docs/Models/Components/AccountingCategory.md
   - docs/Models/Components/AccountingContact.md
   - docs/Models/Components/AccountingContactPaymentMethod.md
@@ -1866,6 +1878,7 @@ generatedFiles:
   - docs/Models/Components/Priority.md
   - docs/Models/Components/ProfileGender.md
   - docs/Models/Components/PropertyAccountingBalancesheetItemSubItems.md
+  - docs/Models/Components/PropertyAccountingCashflowItemSubItems.md
   - docs/Models/Components/PropertyAccountingContactBillingAddress.md
   - docs/Models/Components/PropertyAccountingContactShippingAddress.md
   - docs/Models/Components/PropertyAccountingOrderBillingAddress.md
@@ -2185,6 +2198,8 @@ generatedFiles:
   - docs/Models/Requests/GetAccountingBalancesheetResponse.md
   - docs/Models/Requests/GetAccountingBillRequest.md
   - docs/Models/Requests/GetAccountingBillResponse.md
+  - docs/Models/Requests/GetAccountingCashflowRequest.md
+  - docs/Models/Requests/GetAccountingCashflowResponse.md
   - docs/Models/Requests/GetAccountingCategoryRequest.md
   - docs/Models/Requests/GetAccountingCategoryResponse.md
   - docs/Models/Requests/GetAccountingContactRequest.md
@@ -2373,6 +2388,8 @@ generatedFiles:
   - docs/Models/Requests/ListAccountingBalancesheetsResponse.md
   - docs/Models/Requests/ListAccountingBillsRequest.md
   - docs/Models/Requests/ListAccountingBillsResponse.md
+  - docs/Models/Requests/ListAccountingCashflowsRequest.md
+  - docs/Models/Requests/ListAccountingCashflowsResponse.md
   - docs/Models/Requests/ListAccountingCategoriesRequest.md
   - docs/Models/Requests/ListAccountingCategoriesResponse.md
   - docs/Models/Requests/ListAccountingContactsRequest.md
@@ -3054,6 +3071,7 @@ generatedFiles:
   - docs/sdks/calendar/README.md
   - docs/sdks/call/README.md
   - docs/sdks/candidate/README.md
+  - docs/sdks/cashflow/README.md
   - docs/sdks/category/README.md
   - docs/sdks/change/README.md
   - docs/sdks/channel/README.md
@@ -7775,6 +7793,28 @@ examples:
       responses:
         "200":
           application/json: {}
+  getAccountingCashflow:
+    speakeasy-default-get-accounting-cashflow:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listAccountingCashflows:
+    speakeasy-default-list-accounting-cashflows:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Accounting.CreateAccountingJournal()`: \n  *  `request.accountingJournal.Lineitems.[]` **Changed**\n  *  `response.lineitems.[]` **Changed**\n* `UnifiedTo.Accounting.GetAccountingJournal()`:  `response.lineitems.[]` **Changed**\n* `UnifiedTo.Accounting.ListAccountingJournals()`:  `response.[].Lineitems.[]` **Changed**\n* `UnifiedTo.Accounting.PatchAccountingJournal()`: \n  *  `request.AccountingJournal.Lineitems.[]` **Changed**\n  *  `response.lineitems.[]` **Changed**\n* `UnifiedTo.Accounting.UpdateAccountingJournal()`: \n  *  `request.AccountingJournal.Lineitems.[]` **Changed**\n  *  `response.lineitems.[]` **Changed**\n* `UnifiedTo.Journal.CreateAccountingJournal()`: \n  *  `request.accountingJournal.Lineitems.[]` **Changed**\n  *  `response.lineitems.[]` **Changed**\n* `UnifiedTo.Journal.GetAccountingJournal()`:  `response.lineitems.[]` **Changed**\n* `UnifiedTo.Journal.ListAccountingJournals()`:  `response.[].Lineitems.[]` **Changed**\n* `UnifiedTo.Journal.PatchAccountingJournal()`: \n  *  `request.AccountingJournal.Lineitems.[]` **Changed**\n  *  `response.lineitems.[]` **Changed**\n* `UnifiedTo.Journal.UpdateAccountingJournal()`: \n  *  `request.AccountingJournal.Lineitems.[]` **Changed**\n  *  `response.lineitems.[]` **Changed**\n* `UnifiedTo.Repo.CreateRepoCommit()`: \n  *  `request.repoCommit.UserId` **Changed**\n  *  `response.userId` **Changed**\n* `UnifiedTo.Repo.GetRepoCommit()`:  `response.userId` **Changed**\n* `UnifiedTo.Repo.ListRepoCommits()`:  `response.[].UserId` **Changed**\n* `UnifiedTo.Repo.PatchRepoCommit()`: \n  *  `request.RepoCommit.UserId` **Changed**\n  *  `response.userId` **Changed**\n* `UnifiedTo.Repo.UpdateRepoCommit()`: \n  *  `request.RepoCommit.UserId` **Changed**\n  *  `response.userId` **Changed**\n* `UnifiedTo.Commit.CreateRepoCommit()`: \n  *  `request.repoCommit.UserId` **Changed**\n  *  `response.userId` **Changed**\n* `UnifiedTo.Commit.GetRepoCommit()`:  `response.userId` **Changed**\n* `UnifiedTo.Commit.ListRepoCommits()`:  `response.[].UserId` **Changed**\n* `UnifiedTo.Commit.PatchRepoCommit()`: \n  *  `request.RepoCommit.UserId` **Changed**\n  *  `response.userId` **Changed**\n* `UnifiedTo.Commit.UpdateRepoCommit()`: \n  *  `request.RepoCommit.UserId` **Changed**\n  *  `response.userId` **Changed**\n"
+releaseNotes: |
+  ## Csharp SDK Changes Detected:
+  * `UnifiedTo.Accounting.GetAccountingCashflow()`: **Added**
+  * `UnifiedTo.Accounting.ListAccountingCashflows()`: **Added**
+  * `UnifiedTo.Cashflow.GetAccountingCashflow()`: **Added**
+  * `UnifiedTo.Cashflow.ListAccountingCashflows()`: **Added**

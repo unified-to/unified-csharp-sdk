@@ -23,6 +23,7 @@
 | `AccountingTrialbalance`  | accounting_trialbalance   |
 | `AccountingCategory`      | accounting_category       |
 | `AccountingExpense`       | accounting_expense        |
+| `AccountingCashflow`      | accounting_cashflow       |
 | `PaymentPayment`          | payment_payment           |
 | `PaymentLink`             | payment_link              |
 | `PaymentPayout`           | payment_payout            |
