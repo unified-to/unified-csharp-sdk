@@ -41,6 +41,16 @@ namespace UnifiedTo.Models.Components
         Currency,
         [JsonProperty("URL")]
         Url,
+        [JsonProperty("PERCENT")]
+        Percent,
+        [JsonProperty("EMAIL")]
+        Email,
+        [JsonProperty("PHONE")]
+        Phone,
+        [JsonProperty("REFERENCE")]
+        Reference,
+        [JsonProperty("TIME")]
+        Time,
     }
 
     public static class KmsPageMetadataFormatExtension

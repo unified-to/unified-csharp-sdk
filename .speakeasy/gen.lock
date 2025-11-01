@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 488263b38991bc1af62a3a84968ffb52
+  docChecksum: 2cae2cbd3b5100db6145386c7734d017
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.94.0
-  configChecksum: ed54a90f2daaa47fedf91051bdf8116d
+  releaseVersion: 0.96.0
+  configChecksum: be14cdee247520ff4e06c9567c4fe671
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -7812,9 +7812,4 @@ examples:
           application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Csharp SDK Changes Detected:
-  * `UnifiedTo.Accounting.GetAccountingCashflow()`: **Added**
-  * `UnifiedTo.Accounting.ListAccountingCashflows()`: **Added**
-  * `UnifiedTo.Cashflow.GetAccountingCashflow()`: **Added**
-  * `UnifiedTo.Cashflow.ListAccountingCashflows()`: **Added**
+releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Calendar.CreateCalendarEvent()`: \n  *  `request.calendarEvent.Recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Calendar.GetCalendarEvent()`:  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Calendar.ListCalendarEvents()`:  `response.[].Recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Calendar.PatchCalendarEvent()`: \n  *  `request.CalendarEvent.Recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Calendar.UpdateCalendarEvent()`: \n  *  `request.CalendarEvent.Recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Event.CreateCalendarEvent()`: \n  *  `request.calendarEvent.Recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Event.GetCalendarEvent()`:  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Event.ListCalendarEvents()`:  `response.[].Recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Event.PatchCalendarEvent()`: \n  *  `request.CalendarEvent.Recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Event.UpdateCalendarEvent()`: \n  *  `request.CalendarEvent.Recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n"

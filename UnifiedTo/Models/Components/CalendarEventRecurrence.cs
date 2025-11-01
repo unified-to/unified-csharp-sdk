@@ -31,7 +31,13 @@ namespace UnifiedTo.Models.Components
         public List<string>? ExcludedDates { get; set; }
 
         [JsonProperty("frequency")]
-        public CalendarEventRecurrenceFrequency Frequency { get; set; } = default!;
+        public CalendarEventRecurrenceFrequency? Frequency { get; set; }
+
+        /// <summary>
+        /// dates to include in the recurrence, defaults to undefined (no inclusions)
+        /// </summary>
+        [JsonProperty("included_dates")]
+        public List<string>? IncludedDates { get; set; }
 
         [JsonProperty("interval")]
         public double? Interval { get; set; }
@@ -66,8 +72,11 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("on_year_days")]
         public List<double>? OnYearDays { get; set; }
 
+        /// <summary>
+        /// timezone, defaults to undefined (no timezone)
+        /// </summary>
         [JsonProperty("timezone")]
-        public string? Timezone { get; set; }
+        public List<string>? Timezone { get; set; }
 
         [JsonProperty("week_start")]
         public WeekStart? WeekStart { get; set; }
