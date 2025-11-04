@@ -82,7 +82,7 @@ namespace UnifiedTo.Models.Components
         public Sandbox? Sandbox { get; set; }
 
         [JsonProperty("support")]
-        public Dictionary<string, object>? Support { get; set; }
+        public Dictionary<string, IntegrationSupport>? Support { get; set; }
 
         [JsonProperty("tested_at")]
         public DateTime? TestedAt { get; set; }

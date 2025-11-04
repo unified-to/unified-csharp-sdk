@@ -72,11 +72,8 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("on_year_days")]
         public List<double>? OnYearDays { get; set; }
 
-        /// <summary>
-        /// timezone, defaults to undefined (no timezone)
-        /// </summary>
         [JsonProperty("timezone")]
-        public List<string>? Timezone { get; set; }
+        public string? Timezone { get; set; }
 
         [JsonProperty("week_start")]
         public WeekStart? WeekStart { get; set; }

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 2cae2cbd3b5100db6145386c7734d017
+  docChecksum: 05e6e4d2a4d7ca37f46c06db114a0eac
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.96.0
-  configChecksum: be14cdee247520ff4e06c9567c4fe671
+  releaseVersion: 0.98.0
+  configChecksum: c4597c8e30b6d65c764397b0aba632fa
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -265,6 +265,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/Five.cs
   - UnifiedTo/Models/Components/Format.cs
   - UnifiedTo/Models/Components/Frequency.cs
+  - UnifiedTo/Models/Components/FromWebhook.cs
   - UnifiedTo/Models/Components/GenaiContent.cs
   - UnifiedTo/Models/Components/GenaiEmbedding.cs
   - UnifiedTo/Models/Components/GenaiEmbeddingContent.cs
@@ -309,6 +310,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/IntegrationSchemasSaml5.cs
   - UnifiedTo/Models/Components/IntegrationSchemasSandbox1.cs
   - UnifiedTo/Models/Components/IntegrationSchemasSandbox5.cs
+  - UnifiedTo/Models/Components/IntegrationSupport.cs
   - UnifiedTo/Models/Components/IntervalUnit.cs
   - UnifiedTo/Models/Components/Issue.cs
   - UnifiedTo/Models/Components/IssueStatus.cs
@@ -325,6 +327,64 @@ generatedFiles:
   - UnifiedTo/Models/Components/KmsPageMetadataValue.cs
   - UnifiedTo/Models/Components/KmsPageType.cs
   - UnifiedTo/Models/Components/KmsSpace.cs
+  - UnifiedTo/Models/Components/ListAccountId.cs
+  - UnifiedTo/Models/Components/ListApplicationId.cs
+  - UnifiedTo/Models/Components/ListBranchId.cs
+  - UnifiedTo/Models/Components/ListCalendarId.cs
+  - UnifiedTo/Models/Components/ListCallId.cs
+  - UnifiedTo/Models/Components/ListCandidateId.cs
+  - UnifiedTo/Models/Components/ListCategoryId.cs
+  - UnifiedTo/Models/Components/ListChannelId.cs
+  - UnifiedTo/Models/Components/ListClassId.cs
+  - UnifiedTo/Models/Components/ListCollectionId.cs
+  - UnifiedTo/Models/Components/ListCompanyId.cs
+  - UnifiedTo/Models/Components/ListContactId.cs
+  - UnifiedTo/Models/Components/ListCourseId.cs
+  - UnifiedTo/Models/Components/ListCustomerId.cs
+  - UnifiedTo/Models/Components/ListDealId.cs
+  - UnifiedTo/Models/Components/ListDocumentId.cs
+  - UnifiedTo/Models/Components/ListEndLe.cs
+  - UnifiedTo/Models/Components/ListEndLt.cs
+  - UnifiedTo/Models/Components/ListEventId.cs
+  - UnifiedTo/Models/Components/ListExpand.cs
+  - UnifiedTo/Models/Components/ListExpandRecurringEvents.cs
+  - UnifiedTo/Models/Components/ListInstructorId.cs
+  - UnifiedTo/Models/Components/ListInterviewId.cs
+  - UnifiedTo/Models/Components/ListInvoiceId.cs
+  - UnifiedTo/Models/Components/ListItemId.cs
+  - UnifiedTo/Models/Components/ListItemVariantId.cs
+  - UnifiedTo/Models/Components/ListJobId.cs
+  - UnifiedTo/Models/Components/ListLeadId.cs
+  - UnifiedTo/Models/Components/ListLimit.cs
+  - UnifiedTo/Models/Components/ListLinkId.cs
+  - UnifiedTo/Models/Components/ListListId.cs
+  - UnifiedTo/Models/Components/ListLocationId.cs
+  - UnifiedTo/Models/Components/ListOffset.cs
+  - UnifiedTo/Models/Components/ListOrder.cs
+  - UnifiedTo/Models/Components/ListOrgId.cs
+  - UnifiedTo/Models/Components/ListPackageId.cs
+  - UnifiedTo/Models/Components/ListPageId.cs
+  - UnifiedTo/Models/Components/ListParentId.cs
+  - UnifiedTo/Models/Components/ListPaymentId.cs
+  - UnifiedTo/Models/Components/ListPipelineId.cs
+  - UnifiedTo/Models/Components/ListProjectId.cs
+  - UnifiedTo/Models/Components/ListQuery.cs
+  - UnifiedTo/Models/Components/ListRawFields.cs
+  - UnifiedTo/Models/Components/ListRepoId.cs
+  - UnifiedTo/Models/Components/ListRootId.cs
+  - UnifiedTo/Models/Components/ListSortByCreatedAt.cs
+  - UnifiedTo/Models/Components/ListSortByName.cs
+  - UnifiedTo/Models/Components/ListSortByUpdatedAt.cs
+  - UnifiedTo/Models/Components/ListSpaceId.cs
+  - UnifiedTo/Models/Components/ListStartGte.cs
+  - UnifiedTo/Models/Components/ListStatus.cs
+  - UnifiedTo/Models/Components/ListStudentId.cs
+  - UnifiedTo/Models/Components/ListTaskId.cs
+  - UnifiedTo/Models/Components/ListTeacherId.cs
+  - UnifiedTo/Models/Components/ListTicketId.cs
+  - UnifiedTo/Models/Components/ListType.cs
+  - UnifiedTo/Models/Components/ListUpdatedGte.cs
+  - UnifiedTo/Models/Components/ListUserId.cs
   - UnifiedTo/Models/Components/LmsClass.cs
   - UnifiedTo/Models/Components/LmsCourse.cs
   - UnifiedTo/Models/Components/LmsEmail.cs
@@ -347,6 +407,13 @@ generatedFiles:
   - UnifiedTo/Models/Components/MessagingReaction.cs
   - UnifiedTo/Models/Components/MetadataMetadata.cs
   - UnifiedTo/Models/Components/MetadataMetadataFormat.cs
+  - UnifiedTo/Models/Components/NativeWebhookCalendarId.cs
+  - UnifiedTo/Models/Components/NativeWebhookChannelId.cs
+  - UnifiedTo/Models/Components/NativeWebhookCompanyId.cs
+  - UnifiedTo/Models/Components/NativeWebhookEventId.cs
+  - UnifiedTo/Models/Components/NativeWebhookParentId.cs
+  - UnifiedTo/Models/Components/NativeWebhookProjectId.cs
+  - UnifiedTo/Models/Components/NativeWebhookTaskId.cs
   - UnifiedTo/Models/Components/ObjectType.cs
   - UnifiedTo/Models/Components/One.cs
   - UnifiedTo/Models/Components/Operation.cs
@@ -412,6 +479,10 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyHrisEmployeeEmployeeRoles.cs
   - UnifiedTo/Models/Components/PropertyHrisLocationAddress.cs
   - UnifiedTo/Models/Components/PropertyIntegrationCategories.cs
+  - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEvents.cs
+  - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEventsCreated.cs
+  - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEventsDeleted.cs
+  - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEventsUpdated.cs
   - UnifiedTo/Models/Components/PropertyLmsStudentAddress.cs
   - UnifiedTo/Models/Components/PropertyMessagingMessageAuthorMember.cs
   - UnifiedTo/Models/Components/PropertyMessagingReactionMember.cs
@@ -464,6 +535,11 @@ generatedFiles:
   - UnifiedTo/Models/Components/ScimUser.cs
   - UnifiedTo/Models/Components/ScimUserGroups.cs
   - UnifiedTo/Models/Components/ScimUserGroupsType.cs
+  - UnifiedTo/Models/Components/SearchDomain.cs
+  - UnifiedTo/Models/Components/SearchEmail.cs
+  - UnifiedTo/Models/Components/SearchLinkedinurl.cs
+  - UnifiedTo/Models/Components/SearchName.cs
+  - UnifiedTo/Models/Components/SearchTwitter.cs
   - UnifiedTo/Models/Components/Security.cs
   - UnifiedTo/Models/Components/SexualOrientation.cs
   - UnifiedTo/Models/Components/SizeUnit.cs
@@ -516,6 +592,42 @@ generatedFiles:
   - UnifiedTo/Models/Components/VerificationRequest.cs
   - UnifiedTo/Models/Components/VerificationResponseDetail.cs
   - UnifiedTo/Models/Components/VerificationTime.cs
+  - UnifiedTo/Models/Components/VirtualWebhookApplicationId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookBranchId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookCalendarId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookCallId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookCandidateId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookChannelId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookCollectionId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookCompanyId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookContactId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookCustomerId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookDealId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookEndLe.cs
+  - UnifiedTo/Models/Components/VirtualWebhookEndLt.cs
+  - UnifiedTo/Models/Components/VirtualWebhookEventId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookExpand.cs
+  - UnifiedTo/Models/Components/VirtualWebhookFields.cs
+  - UnifiedTo/Models/Components/VirtualWebhookItemId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookItemVariantId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookJobId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookLimit.cs
+  - UnifiedTo/Models/Components/VirtualWebhookListId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookLocationId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookOrgId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookPageId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookParentId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookPipelineId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookProjectId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookRepoId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookSpaceId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookStartGte.cs
+  - UnifiedTo/Models/Components/VirtualWebhookStatus.cs
+  - UnifiedTo/Models/Components/VirtualWebhookTaskId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookTicketId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookType.cs
+  - UnifiedTo/Models/Components/VirtualWebhookUpdatedGte.cs
+  - UnifiedTo/Models/Components/VirtualWebhookUserId.cs
   - UnifiedTo/Models/Components/Webhook.cs
   - UnifiedTo/Models/Components/WebhookType.cs
   - UnifiedTo/Models/Components/WeekStart.cs
@@ -1777,6 +1889,7 @@ generatedFiles:
   - docs/Models/Components/Five.md
   - docs/Models/Components/Format.md
   - docs/Models/Components/Frequency.md
+  - docs/Models/Components/FromWebhook.md
   - docs/Models/Components/GenaiContent.md
   - docs/Models/Components/GenaiEmbedding.md
   - docs/Models/Components/GenaiEmbeddingContent.md
@@ -1821,6 +1934,7 @@ generatedFiles:
   - docs/Models/Components/IntegrationSchemasSaml5.md
   - docs/Models/Components/IntegrationSchemasSandbox1.md
   - docs/Models/Components/IntegrationSchemasSandbox5.md
+  - docs/Models/Components/IntegrationSupport.md
   - docs/Models/Components/IntervalUnit.md
   - docs/Models/Components/Issue.md
   - docs/Models/Components/IssueStatus.md
@@ -1837,6 +1951,64 @@ generatedFiles:
   - docs/Models/Components/KmsPageMetadataValue.md
   - docs/Models/Components/KmsPageType.md
   - docs/Models/Components/KmsSpace.md
+  - docs/Models/Components/ListAccountId.md
+  - docs/Models/Components/ListApplicationId.md
+  - docs/Models/Components/ListBranchId.md
+  - docs/Models/Components/ListCalendarId.md
+  - docs/Models/Components/ListCallId.md
+  - docs/Models/Components/ListCandidateId.md
+  - docs/Models/Components/ListCategoryId.md
+  - docs/Models/Components/ListChannelId.md
+  - docs/Models/Components/ListClassId.md
+  - docs/Models/Components/ListCollectionId.md
+  - docs/Models/Components/ListCompanyId.md
+  - docs/Models/Components/ListContactId.md
+  - docs/Models/Components/ListCourseId.md
+  - docs/Models/Components/ListCustomerId.md
+  - docs/Models/Components/ListDealId.md
+  - docs/Models/Components/ListDocumentId.md
+  - docs/Models/Components/ListEndLe.md
+  - docs/Models/Components/ListEndLt.md
+  - docs/Models/Components/ListEventId.md
+  - docs/Models/Components/ListExpand.md
+  - docs/Models/Components/ListExpandRecurringEvents.md
+  - docs/Models/Components/ListInstructorId.md
+  - docs/Models/Components/ListInterviewId.md
+  - docs/Models/Components/ListInvoiceId.md
+  - docs/Models/Components/ListItemId.md
+  - docs/Models/Components/ListItemVariantId.md
+  - docs/Models/Components/ListJobId.md
+  - docs/Models/Components/ListLeadId.md
+  - docs/Models/Components/ListLimit.md
+  - docs/Models/Components/ListLinkId.md
+  - docs/Models/Components/ListListId.md
+  - docs/Models/Components/ListLocationId.md
+  - docs/Models/Components/ListOffset.md
+  - docs/Models/Components/ListOrder.md
+  - docs/Models/Components/ListOrgId.md
+  - docs/Models/Components/ListPackageId.md
+  - docs/Models/Components/ListPageId.md
+  - docs/Models/Components/ListParentId.md
+  - docs/Models/Components/ListPaymentId.md
+  - docs/Models/Components/ListPipelineId.md
+  - docs/Models/Components/ListProjectId.md
+  - docs/Models/Components/ListQuery.md
+  - docs/Models/Components/ListRawFields.md
+  - docs/Models/Components/ListRepoId.md
+  - docs/Models/Components/ListRootId.md
+  - docs/Models/Components/ListSortByCreatedAt.md
+  - docs/Models/Components/ListSortByName.md
+  - docs/Models/Components/ListSortByUpdatedAt.md
+  - docs/Models/Components/ListSpaceId.md
+  - docs/Models/Components/ListStartGte.md
+  - docs/Models/Components/ListStatus.md
+  - docs/Models/Components/ListStudentId.md
+  - docs/Models/Components/ListTaskId.md
+  - docs/Models/Components/ListTeacherId.md
+  - docs/Models/Components/ListTicketId.md
+  - docs/Models/Components/ListType.md
+  - docs/Models/Components/ListUpdatedGte.md
+  - docs/Models/Components/ListUserId.md
   - docs/Models/Components/LmsClass.md
   - docs/Models/Components/LmsCourse.md
   - docs/Models/Components/LmsEmail.md
@@ -1859,6 +2031,13 @@ generatedFiles:
   - docs/Models/Components/MessagingReaction.md
   - docs/Models/Components/MetadataMetadata.md
   - docs/Models/Components/MetadataMetadataFormat.md
+  - docs/Models/Components/NativeWebhookCalendarId.md
+  - docs/Models/Components/NativeWebhookChannelId.md
+  - docs/Models/Components/NativeWebhookCompanyId.md
+  - docs/Models/Components/NativeWebhookEventId.md
+  - docs/Models/Components/NativeWebhookParentId.md
+  - docs/Models/Components/NativeWebhookProjectId.md
+  - docs/Models/Components/NativeWebhookTaskId.md
   - docs/Models/Components/ObjectType.md
   - docs/Models/Components/One.md
   - docs/Models/Components/Operation.md
@@ -1924,6 +2103,10 @@ generatedFiles:
   - docs/Models/Components/PropertyHrisEmployeeEmployeeRoles.md
   - docs/Models/Components/PropertyHrisLocationAddress.md
   - docs/Models/Components/PropertyIntegrationCategories.md
+  - docs/Models/Components/PropertyIntegrationSupportWebhookEvents.md
+  - docs/Models/Components/PropertyIntegrationSupportWebhookEventsCreated.md
+  - docs/Models/Components/PropertyIntegrationSupportWebhookEventsDeleted.md
+  - docs/Models/Components/PropertyIntegrationSupportWebhookEventsUpdated.md
   - docs/Models/Components/PropertyLmsStudentAddress.md
   - docs/Models/Components/PropertyMessagingMessageAuthorMember.md
   - docs/Models/Components/PropertyMessagingReactionMember.md
@@ -1976,6 +2159,11 @@ generatedFiles:
   - docs/Models/Components/ScimUser.md
   - docs/Models/Components/ScimUserGroups.md
   - docs/Models/Components/ScimUserGroupsType.md
+  - docs/Models/Components/SearchDomain.md
+  - docs/Models/Components/SearchEmail.md
+  - docs/Models/Components/SearchLinkedinurl.md
+  - docs/Models/Components/SearchName.md
+  - docs/Models/Components/SearchTwitter.md
   - docs/Models/Components/Security.md
   - docs/Models/Components/SexualOrientation.md
   - docs/Models/Components/SizeUnit.md
@@ -2028,6 +2216,42 @@ generatedFiles:
   - docs/Models/Components/VerificationRequest.md
   - docs/Models/Components/VerificationResponseDetail.md
   - docs/Models/Components/VerificationTime.md
+  - docs/Models/Components/VirtualWebhookApplicationId.md
+  - docs/Models/Components/VirtualWebhookBranchId.md
+  - docs/Models/Components/VirtualWebhookCalendarId.md
+  - docs/Models/Components/VirtualWebhookCallId.md
+  - docs/Models/Components/VirtualWebhookCandidateId.md
+  - docs/Models/Components/VirtualWebhookChannelId.md
+  - docs/Models/Components/VirtualWebhookCollectionId.md
+  - docs/Models/Components/VirtualWebhookCompanyId.md
+  - docs/Models/Components/VirtualWebhookContactId.md
+  - docs/Models/Components/VirtualWebhookCustomerId.md
+  - docs/Models/Components/VirtualWebhookDealId.md
+  - docs/Models/Components/VirtualWebhookEndLe.md
+  - docs/Models/Components/VirtualWebhookEndLt.md
+  - docs/Models/Components/VirtualWebhookEventId.md
+  - docs/Models/Components/VirtualWebhookExpand.md
+  - docs/Models/Components/VirtualWebhookFields.md
+  - docs/Models/Components/VirtualWebhookItemId.md
+  - docs/Models/Components/VirtualWebhookItemVariantId.md
+  - docs/Models/Components/VirtualWebhookJobId.md
+  - docs/Models/Components/VirtualWebhookLimit.md
+  - docs/Models/Components/VirtualWebhookListId.md
+  - docs/Models/Components/VirtualWebhookLocationId.md
+  - docs/Models/Components/VirtualWebhookOrgId.md
+  - docs/Models/Components/VirtualWebhookPageId.md
+  - docs/Models/Components/VirtualWebhookParentId.md
+  - docs/Models/Components/VirtualWebhookPipelineId.md
+  - docs/Models/Components/VirtualWebhookProjectId.md
+  - docs/Models/Components/VirtualWebhookRepoId.md
+  - docs/Models/Components/VirtualWebhookSpaceId.md
+  - docs/Models/Components/VirtualWebhookStartGte.md
+  - docs/Models/Components/VirtualWebhookStatus.md
+  - docs/Models/Components/VirtualWebhookTaskId.md
+  - docs/Models/Components/VirtualWebhookTicketId.md
+  - docs/Models/Components/VirtualWebhookType.md
+  - docs/Models/Components/VirtualWebhookUpdatedGte.md
+  - docs/Models/Components/VirtualWebhookUserId.md
   - docs/Models/Components/Webhook.md
   - docs/Models/Components/WebhookType.md
   - docs/Models/Components/WeekStart.md
@@ -7812,4 +8036,4 @@ examples:
           application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Calendar.CreateCalendarEvent()`: \n  *  `request.calendarEvent.Recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Calendar.GetCalendarEvent()`:  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Calendar.ListCalendarEvents()`:  `response.[].Recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Calendar.PatchCalendarEvent()`: \n  *  `request.CalendarEvent.Recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Calendar.UpdateCalendarEvent()`: \n  *  `request.CalendarEvent.Recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Event.CreateCalendarEvent()`: \n  *  `request.calendarEvent.Recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Event.GetCalendarEvent()`:  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Event.ListCalendarEvents()`:  `response.[].Recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Event.PatchCalendarEvent()`: \n  *  `request.CalendarEvent.Recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Event.UpdateCalendarEvent()`: \n  *  `request.CalendarEvent.Recurrence.[]` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[]` **Changed** **Breaking** :warning:\n"
+releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Calendar.CreateCalendarEvent()`: \n  *  `request.calendarEvent.Recurrence.[].Timezone` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[].Timezone` **Changed** **Breaking** :warning:\n* `UnifiedTo.Calendar.GetCalendarEvent()`:  `response.recurrence.[].Timezone` **Changed** **Breaking** :warning:\n* `UnifiedTo.Calendar.ListCalendarEvents()`:  `response.[].Recurrence.[].Timezone` **Changed** **Breaking** :warning:\n* `UnifiedTo.Calendar.PatchCalendarEvent()`: \n  *  `request.CalendarEvent.Recurrence.[].Timezone` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[].Timezone` **Changed** **Breaking** :warning:\n* `UnifiedTo.Calendar.UpdateCalendarEvent()`: \n  *  `request.CalendarEvent.Recurrence.[].Timezone` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[].Timezone` **Changed** **Breaking** :warning:\n* `UnifiedTo.Event.CreateCalendarEvent()`: \n  *  `request.calendarEvent.Recurrence.[].Timezone` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[].Timezone` **Changed** **Breaking** :warning:\n* `UnifiedTo.Event.GetCalendarEvent()`:  `response.recurrence.[].Timezone` **Changed** **Breaking** :warning:\n* `UnifiedTo.Event.ListCalendarEvents()`:  `response.[].Recurrence.[].Timezone` **Changed** **Breaking** :warning:\n* `UnifiedTo.Event.PatchCalendarEvent()`: \n  *  `request.CalendarEvent.Recurrence.[].Timezone` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[].Timezone` **Changed** **Breaking** :warning:\n* `UnifiedTo.Event.UpdateCalendarEvent()`: \n  *  `request.CalendarEvent.Recurrence.[].Timezone` **Changed** **Breaking** :warning:\n  *  `response.recurrence.[].Timezone` **Changed** **Breaking** :warning:\n* `UnifiedTo.Unified.CreateUnifiedWebhook()`: \n  *  `request.webhook.Filters.{}` **Changed** **Breaking** :warning:\n  *  `response.filters.{}` **Changed** **Breaking** :warning:\n* `UnifiedTo.Unified.GetUnifiedWebhook()`:  `response.filters.{}` **Changed** **Breaking** :warning:\n* `UnifiedTo.Unified.ListUnifiedIntegrationWorkspaces()`:  `response.[].Support.{}` **Changed** **Breaking** :warning:\n* `UnifiedTo.Unified.ListUnifiedIntegrations()`:  `response.[].Support.{}` **Changed** **Breaking** :warning:\n* `UnifiedTo.Unified.ListUnifiedWebhooks()`:  `response.[].Filters.{}` **Changed** **Breaking** :warning:\n* `UnifiedTo.Unified.PatchUnifiedWebhook()`: \n  *  `request.webhook.Filters.{}` **Changed** **Breaking** :warning:\n  *  `response.filters.{}` **Changed** **Breaking** :warning:\n* `UnifiedTo.Unified.UpdateUnifiedWebhook()`: \n  *  `request.webhook.Filters.{}` **Changed** **Breaking** :warning:\n  *  `response.filters.{}` **Changed** **Breaking** :warning:\n* `UnifiedTo.Integration.ListUnifiedIntegrationWorkspaces()`:  `response.[].Support.{}` **Changed** **Breaking** :warning:\n* `UnifiedTo.Integration.ListUnifiedIntegrations()`:  `response.[].Support.{}` **Changed** **Breaking** :warning:\n* `UnifiedTo.Webhook.CreateUnifiedWebhook()`: \n  *  `request.webhook.Filters.{}` **Changed** **Breaking** :warning:\n  *  `response.filters.{}` **Changed** **Breaking** :warning:\n* `UnifiedTo.Webhook.GetUnifiedWebhook()`:  `response.filters.{}` **Changed** **Breaking** :warning:\n* `UnifiedTo.Webhook.ListUnifiedWebhooks()`:  `response.[].Filters.{}` **Changed** **Breaking** :warning:\n* `UnifiedTo.Webhook.PatchUnifiedWebhook()`: \n  *  `request.webhook.Filters.{}` **Changed** **Breaking** :warning:\n  *  `response.filters.{}` **Changed** **Breaking** :warning:\n* `UnifiedTo.Webhook.UpdateUnifiedWebhook()`: \n  *  `request.webhook.Filters.{}` **Changed** **Breaking** :warning:\n  *  `response.filters.{}` **Changed** **Breaking** :warning:\n"
