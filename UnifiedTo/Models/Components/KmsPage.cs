@@ -36,6 +36,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("metadata")]
         public List<KmsPageMetadata>? Metadata { get; set; }
 
+        [JsonProperty("parent_id")]
+        public string? ParentId { get; set; }
+
         [JsonProperty("parent_page_id")]
         public string? ParentPageId { get; set; }
 
