@@ -39,6 +39,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_visible")]
         public bool? IsVisible { get; set; }
 
+        /// <summary>
+        /// includes the list of metadata_metadata required to create a commerce_item under the respective commerce_collection
+        /// </summary>
+        [JsonProperty("item_metadata")]
+        public List<CommerceMetadata>? ItemMetadata { get; set; }
+
         [JsonProperty("media")]
         public List<CommerceItemMedia>? Media { get; set; }
 
