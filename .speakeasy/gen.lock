@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 5c2a3f40eea3f879043c36a4d45e9686
+  docChecksum: 8e0da3e048dab0529dab732bc1eb6105
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.104.0
-  configChecksum: 46a3ac552d6650c825f502246120dc68
+  releaseVersion: 0.106.0
+  configChecksum: 063a5b5900a63e0fa9affd7e004fe207
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -611,6 +611,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/VirtualWebhookItemId.cs
   - UnifiedTo/Models/Components/VirtualWebhookItemVariantId.cs
   - UnifiedTo/Models/Components/VirtualWebhookJobId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookLeadId.cs
   - UnifiedTo/Models/Components/VirtualWebhookLimit.cs
   - UnifiedTo/Models/Components/VirtualWebhookListId.cs
   - UnifiedTo/Models/Components/VirtualWebhookLocationId.cs
@@ -2235,6 +2236,7 @@ generatedFiles:
   - docs/Models/Components/VirtualWebhookItemId.md
   - docs/Models/Components/VirtualWebhookItemVariantId.md
   - docs/Models/Components/VirtualWebhookJobId.md
+  - docs/Models/Components/VirtualWebhookLeadId.md
   - docs/Models/Components/VirtualWebhookLimit.md
   - docs/Models/Components/VirtualWebhookListId.md
   - docs/Models/Components/VirtualWebhookLocationId.md
@@ -8036,4 +8038,4 @@ examples:
           application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Ats.CreateAtsApplication()`: \n  *  `request.atsApplication.UserId` **Added**\n  *  `response.userId` **Added**\n* `UnifiedTo.Ats.GetAtsApplication()`:  `response.userId` **Added**\n* `UnifiedTo.Ats.ListAtsApplications()`:  `response.[].UserId` **Added**\n* `UnifiedTo.Ats.PatchAtsApplication()`: \n  *  `request.AtsApplication.UserId` **Added**\n  *  `response.userId` **Added**\n* `UnifiedTo.Ats.UpdateAtsApplication()`: \n  *  `request.AtsApplication.UserId` **Added**\n  *  `response.userId` **Added**\n* `UnifiedTo.Application.CreateAtsApplication()`: \n  *  `request.atsApplication.UserId` **Added**\n  *  `response.userId` **Added**\n* `UnifiedTo.Application.GetAtsApplication()`:  `response.userId` **Added**\n* `UnifiedTo.Application.ListAtsApplications()`:  `response.[].UserId` **Added**\n* `UnifiedTo.Application.PatchAtsApplication()`: \n  *  `request.AtsApplication.UserId` **Added**\n  *  `response.userId` **Added**\n* `UnifiedTo.Application.UpdateAtsApplication()`: \n  *  `request.AtsApplication.UserId` **Added**\n  *  `response.userId` **Added**\n"
+releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Ats.CreateAtsJob()`: \n  *  `request.atsJob.Skills` **Added**\n  *  `response.skills` **Added**\n* `UnifiedTo.Ats.GetAtsJob()`:  `response.skills` **Added**\n* `UnifiedTo.Ats.ListAtsJobs()`:  `response.[].Skills` **Added**\n* `UnifiedTo.Ats.PatchAtsJob()`: \n  *  `request.AtsJob.Skills` **Added**\n  *  `response.skills` **Added**\n* `UnifiedTo.Ats.UpdateAtsJob()`: \n  *  `request.AtsJob.Skills` **Added**\n  *  `response.skills` **Added**\n* `UnifiedTo.Job.CreateAtsJob()`: \n  *  `request.atsJob.Skills` **Added**\n  *  `response.skills` **Added**\n* `UnifiedTo.Job.GetAtsJob()`:  `response.skills` **Added**\n* `UnifiedTo.Job.ListAtsJobs()`:  `response.[].Skills` **Added**\n* `UnifiedTo.Job.PatchAtsJob()`: \n  *  `request.AtsJob.Skills` **Added**\n  *  `response.skills` **Added**\n* `UnifiedTo.Job.UpdateAtsJob()`: \n  *  `request.AtsJob.Skills` **Added**\n  *  `response.skills` **Added**\n* `UnifiedTo.Calendar.CreateCalendarCalendar()`: \n  *  `request.calendarCalendar.IsPrimary` **Added**\n  *  `response.isPrimary` **Added**\n* `UnifiedTo.Calendar.GetCalendarCalendar()`:  `response.isPrimary` **Added**\n* `UnifiedTo.Calendar.ListCalendarCalendars()`:  `response.[].IsPrimary` **Added**\n* `UnifiedTo.Calendar.PatchCalendarCalendar()`: \n  *  `request.CalendarCalendar.IsPrimary` **Added**\n  *  `response.isPrimary` **Added**\n* `UnifiedTo.Calendar.UpdateCalendarCalendar()`: \n  *  `request.CalendarCalendar.IsPrimary` **Added**\n  *  `response.isPrimary` **Added**\n* `UnifiedTo.Unified.ListUnifiedIntegrationWorkspaces()`:  `response.[].Support.{}.VirtualWebhookLeadId` **Added**\n* `UnifiedTo.Unified.ListUnifiedIntegrations()`:  `response.[].Support.{}.VirtualWebhookLeadId` **Added**\n* `UnifiedTo.Integration.ListUnifiedIntegrationWorkspaces()`:  `response.[].Support.{}.VirtualWebhookLeadId` **Added**\n* `UnifiedTo.Integration.ListUnifiedIntegrations()`:  `response.[].Support.{}.VirtualWebhookLeadId` **Added**\n"

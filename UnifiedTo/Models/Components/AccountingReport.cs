@@ -15,6 +15,9 @@ namespace UnifiedTo.Models.Components
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
+    /// <summary>
+    /// @deprecated; use either AccountingProfitandloss, AccountingTrialbalance, AccountingBalancesheet, or AccountingCashflow instead
+    /// </summary>
     public class AccountingReport
     {
 

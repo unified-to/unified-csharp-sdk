@@ -305,6 +305,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("virtual_webhook_job_id")]
         public VirtualWebhookJobId? VirtualWebhookJobId { get; set; }
 
+        [JsonProperty("virtual_webhook_lead_id")]
+        public VirtualWebhookLeadId? VirtualWebhookLeadId { get; set; }
+
         [JsonProperty("virtual_webhook_limit")]
         public VirtualWebhookLimit? VirtualWebhookLimit { get; set; }
 

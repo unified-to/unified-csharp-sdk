@@ -102,6 +102,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("remote")]
         public bool? Remote { get; set; }
 
+        [JsonProperty("skills")]
+        public List<string>? Skills { get; set; }
+
         [JsonProperty("status")]
         public AtsJobStatus? Status { get; set; }
 

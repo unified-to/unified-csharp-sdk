@@ -13,28 +13,26 @@ namespace UnifiedTo.Models.Components
     using System;
     using UnifiedTo.Utils;
     
-    public enum ApiCallType
+    public enum VirtualWebhookLeadId
     {
-        [JsonProperty("login")]
-        Login,
-        [JsonProperty("webhook")]
-        Webhook,
-        [JsonProperty("inbound")]
-        Inbound,
-        [JsonProperty("mcp")]
-        Mcp,
+        [JsonProperty("supported-required")]
+        SupportedRequired,
+        [JsonProperty("supported")]
+        Supported,
+        [JsonProperty("not-supported")]
+        NotSupported,
     }
 
-    public static class ApiCallTypeExtension
+    public static class VirtualWebhookLeadIdExtension
     {
-        public static string Value(this ApiCallType value)
+        public static string Value(this VirtualWebhookLeadId value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static ApiCallType ToEnum(this string value)
+        public static VirtualWebhookLeadId ToEnum(this string value)
         {
-            foreach(var field in typeof(ApiCallType).GetFields())
+            foreach(var field in typeof(VirtualWebhookLeadId).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -47,14 +45,14 @@ namespace UnifiedTo.Models.Components
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is ApiCallType)
+                    if (enumVal is VirtualWebhookLeadId)
                     {
-                        return (ApiCallType)enumVal;
+                        return (VirtualWebhookLeadId)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum ApiCallType");
+            throw new Exception($"Unknown value {value} for enum VirtualWebhookLeadId");
         }
     }
 
