@@ -42,6 +42,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        [JsonProperty("domains")]
+        public List<string>? Domains { get; set; }
+
         [JsonProperty("emails")]
         public List<CrmEmail>? Emails { get; set; }
 
