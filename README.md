@@ -272,6 +272,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 
 ### [Call](docs/sdks/call/README.md)
 
+* [GetUcCall](docs/sdks/call/README.md#getuccall) - Retrieve a call
 * [ListUcCalls](docs/sdks/call/README.md#listuccalls) - List all calls
 
 ### [Candidate](docs/sdks/candidate/README.md)
@@ -1276,6 +1277,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [CreateUcComment](docs/sdks/uc/README.md#createuccomment) - Create a comment
 * [CreateUcContact](docs/sdks/uc/README.md#createuccontact) - Create a contact
 * [CreateUcRecording](docs/sdks/uc/README.md#createucrecording) - Create a recording
+* [GetUcCall](docs/sdks/uc/README.md#getuccall) - Retrieve a call
 * [GetUcComment](docs/sdks/uc/README.md#getuccomment) - Retrieve a comment
 * [GetUcContact](docs/sdks/uc/README.md#getuccontact) - Retrieve a contact
 * [GetUcRecording](docs/sdks/uc/README.md#getucrecording) - Retrieve a recording
