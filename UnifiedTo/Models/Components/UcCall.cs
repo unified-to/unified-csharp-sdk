@@ -21,6 +21,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
+        [JsonProperty("contacts")]
+        public List<UcContact>? Contacts { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -29,6 +32,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("id")]
         public string? Id { get; set; }
+
+        [JsonProperty("is_private")]
+        public bool? IsPrivate { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }

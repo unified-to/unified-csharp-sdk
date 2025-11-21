@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
     public class AccountingLineitem
@@ -43,6 +44,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("item_sku")]
         public string? ItemSku { get; set; }
+
+        [JsonProperty("locations")]
+        public List<AccountingReference>? Locations { get; set; }
 
         [JsonProperty("notes")]
         public string? Notes { get; set; }

@@ -69,6 +69,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("message_markdown")]
         public string? MessageMarkdown { get; set; }
 
+        [JsonProperty("message_thread_identifier")]
+        public string? MessageThreadIdentifier { get; set; }
+
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; }
 

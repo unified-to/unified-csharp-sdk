@@ -245,6 +245,14 @@ namespace UnifiedTo.Models.Components
         HrisDeviceRead,
         [JsonProperty("hris_device_write")]
         HrisDeviceWrite,
+        [JsonProperty("hris_deduction_read")]
+        HrisDeductionRead,
+        [JsonProperty("hris_deduction_write")]
+        HrisDeductionWrite,
+        [JsonProperty("hris_benefit_read")]
+        HrisBenefitRead,
+        [JsonProperty("hris_benefit_write")]
+        HrisBenefitWrite,
         [JsonProperty("uc_call_read")]
         UcCallRead,
         [JsonProperty("uc_contact_read")]

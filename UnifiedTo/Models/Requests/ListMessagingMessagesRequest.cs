@@ -16,7 +16,7 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
-        /// The channel ID to filter by
+        /// The channel ID to filter by. You can also use these aliases; INBOX, SENT or DRAFT
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=channel_id")]
         public string? ChannelId { get; set; }
@@ -98,5 +98,11 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=user_id")]
         public string? UserId { get; set; }
+
+        /// <summary>
+        /// The user/employee ID to filter by
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=user_mentioned_id")]
+        public string? UserMentionedId { get; set; }
     }
 }

@@ -123,6 +123,10 @@ namespace UnifiedTo.Models.Components
         HrisDevice,
         [JsonProperty("hris_timeshift")]
         HrisTimeshift,
+        [JsonProperty("hris_deduction")]
+        HrisDeduction,
+        [JsonProperty("hris_benefit")]
+        HrisBenefit,
         [JsonProperty("martech_list")]
         MartechList,
         [JsonProperty("martech_member")]

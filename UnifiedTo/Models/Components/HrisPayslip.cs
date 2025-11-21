@@ -27,6 +27,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        /// <summary>
+        /// // The ID (and optionally name) of the employee deduction (if this detail represents a deduction)
+        /// </summary>
+        [JsonProperty("deduction")]
+        public PropertyHrisPayslipDeduction? Deduction { get; set; }
+
         [JsonProperty("details")]
         public List<HrisPayslipDetail>? Details { get; set; }
 

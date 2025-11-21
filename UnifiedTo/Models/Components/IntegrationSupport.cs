@@ -140,6 +140,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_payment_id")]
         public ListPaymentId? ListPaymentId { get; set; }
 
+        [JsonProperty("list_payslip_id")]
+        public ListPayslipId? ListPayslipId { get; set; }
+
         [JsonProperty("list_pipeline_id")]
         public ListPipelineId? ListPipelineId { get; set; }
 
@@ -196,6 +199,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_user_id")]
         public ListUserId? ListUserId { get; set; }
+
+        [JsonProperty("list_user_mentioned_id")]
+        public ListUserMentionedId? ListUserMentionedId { get; set; }
 
         [JsonProperty("methods")]
         public Dictionary<string, bool>? Methods { get; set; }
@@ -358,6 +364,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_user_id")]
         public VirtualWebhookUserId? VirtualWebhookUserId { get; set; }
+
+        [JsonProperty("virtual_webhook_user_mentioned_id")]
+        public VirtualWebhookUserMentionedId? VirtualWebhookUserMentionedId { get; set; }
 
         [JsonProperty("webhook_events")]
         public PropertyIntegrationSupportWebhookEvents? WebhookEvents { get; set; }

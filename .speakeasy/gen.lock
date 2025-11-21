@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: d3236800ede7509df7bab0e934cc59f0
+  docChecksum: 67f7d6d0c66da74ba7cdc2b88db1c97d
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.110.0
-  configChecksum: 124ec33c4aa7d6e5270cd35d3c8043e6
+  releaseVersion: 0.112.0
+  configChecksum: b1791034928e7c59892372373ed94b71
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -38,6 +38,7 @@ generatedFiles:
   - UnifiedTo/Ats.cs
   - UnifiedTo/Auth.cs
   - UnifiedTo/Balancesheet.cs
+  - UnifiedTo/Benefit.cs
   - UnifiedTo/Bill.cs
   - UnifiedTo/Branch.cs
   - UnifiedTo/Busy.cs
@@ -61,6 +62,7 @@ generatedFiles:
   - UnifiedTo/Crm.cs
   - UnifiedTo/Customer.cs
   - UnifiedTo/Deal.cs
+  - UnifiedTo/Deduction.cs
   - UnifiedTo/Device.cs
   - UnifiedTo/Document.cs
   - UnifiedTo/Embedding.cs
@@ -134,6 +136,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/AccountingProfitlossSubcategory.cs
   - UnifiedTo/Models/Components/AccountingPurchaseorder.cs
   - UnifiedTo/Models/Components/AccountingPurchaseorderStatus.cs
+  - UnifiedTo/Models/Components/AccountingReference.cs
   - UnifiedTo/Models/Components/AccountingReport.cs
   - UnifiedTo/Models/Components/AccountingReportType.cs
   - UnifiedTo/Models/Components/AccountingSalesorder.cs
@@ -225,6 +228,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/CommerceReviewStatus.cs
   - UnifiedTo/Models/Components/Connection.cs
   - UnifiedTo/Models/Components/ContentType.cs
+  - UnifiedTo/Models/Components/CoverageLevel.cs
   - UnifiedTo/Models/Components/CrmCompany.cs
   - UnifiedTo/Models/Components/CrmContact.cs
   - UnifiedTo/Models/Components/CrmDeal.cs
@@ -249,6 +253,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/CrmTelephone.cs
   - UnifiedTo/Models/Components/CrmTelephoneType.cs
   - UnifiedTo/Models/Components/DbType.cs
+  - UnifiedTo/Models/Components/EmployerContributionType.cs
   - UnifiedTo/Models/Components/EmploymentStatus.cs
   - UnifiedTo/Models/Components/EmploymentType.cs
   - UnifiedTo/Models/Components/EncondingFormat.cs
@@ -272,10 +277,17 @@ generatedFiles:
   - UnifiedTo/Models/Components/GenaiModel.cs
   - UnifiedTo/Models/Components/GenaiPrompt.cs
   - UnifiedTo/Models/Components/Gender.cs
+  - UnifiedTo/Models/Components/HrisBenefit.cs
+  - UnifiedTo/Models/Components/HrisBenefitFrequency.cs
+  - UnifiedTo/Models/Components/HrisBenefitType.cs
   - UnifiedTo/Models/Components/HrisCompany.cs
   - UnifiedTo/Models/Components/HrisCompensation.cs
   - UnifiedTo/Models/Components/HrisCompensationFrequency.cs
   - UnifiedTo/Models/Components/HrisCompensationType.cs
+  - UnifiedTo/Models/Components/HrisDeduction.cs
+  - UnifiedTo/Models/Components/HrisDeductionCoverageLevel.cs
+  - UnifiedTo/Models/Components/HrisDeductionFrequency.cs
+  - UnifiedTo/Models/Components/HrisDeductionType.cs
   - UnifiedTo/Models/Components/HrisDevice.cs
   - UnifiedTo/Models/Components/HrisEmail.cs
   - UnifiedTo/Models/Components/HrisEmailType.cs
@@ -366,6 +378,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListPageId.cs
   - UnifiedTo/Models/Components/ListParentId.cs
   - UnifiedTo/Models/Components/ListPaymentId.cs
+  - UnifiedTo/Models/Components/ListPayslipId.cs
   - UnifiedTo/Models/Components/ListPipelineId.cs
   - UnifiedTo/Models/Components/ListProjectId.cs
   - UnifiedTo/Models/Components/ListQuery.cs
@@ -385,6 +398,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListType.cs
   - UnifiedTo/Models/Components/ListUpdatedGte.cs
   - UnifiedTo/Models/Components/ListUserId.cs
+  - UnifiedTo/Models/Components/ListUserMentionedId.cs
   - UnifiedTo/Models/Components/LmsClass.cs
   - UnifiedTo/Models/Components/LmsCourse.cs
   - UnifiedTo/Models/Components/LmsEmail.cs
@@ -478,6 +492,10 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyHrisEmployeeAddress.cs
   - UnifiedTo/Models/Components/PropertyHrisEmployeeEmployeeRoles.cs
   - UnifiedTo/Models/Components/PropertyHrisLocationAddress.cs
+  - UnifiedTo/Models/Components/PropertyHrisPayslipDeduction.cs
+  - UnifiedTo/Models/Components/PropertyHrisPayslipDeductionCoverageLevel.cs
+  - UnifiedTo/Models/Components/PropertyHrisPayslipDeductionFrequency.cs
+  - UnifiedTo/Models/Components/PropertyHrisPayslipDeductionType.cs
   - UnifiedTo/Models/Components/PropertyIntegrationCategories.cs
   - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEvents.cs
   - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEventsCreated.cs
@@ -561,6 +579,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/TaskProject.cs
   - UnifiedTo/Models/Components/TaskTask.cs
   - UnifiedTo/Models/Components/TaskTaskStatus.cs
+  - UnifiedTo/Models/Components/Tax.cs
   - UnifiedTo/Models/Components/TaxExemption.cs
   - UnifiedTo/Models/Components/TicketingCategory.cs
   - UnifiedTo/Models/Components/TicketingCustomer.cs
@@ -629,6 +648,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/VirtualWebhookType.cs
   - UnifiedTo/Models/Components/VirtualWebhookUpdatedGte.cs
   - UnifiedTo/Models/Components/VirtualWebhookUserId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookUserMentionedId.cs
   - UnifiedTo/Models/Components/Webhook.cs
   - UnifiedTo/Models/Components/WebhookType.cs
   - UnifiedTo/Models/Components/WeekStart.cs
@@ -709,8 +729,12 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateGenaiEmbeddingResponse.cs
   - UnifiedTo/Models/Requests/CreateGenaiPromptRequest.cs
   - UnifiedTo/Models/Requests/CreateGenaiPromptResponse.cs
+  - UnifiedTo/Models/Requests/CreateHrisBenefitRequest.cs
+  - UnifiedTo/Models/Requests/CreateHrisBenefitResponse.cs
   - UnifiedTo/Models/Requests/CreateHrisCompanyRequest.cs
   - UnifiedTo/Models/Requests/CreateHrisCompanyResponse.cs
+  - UnifiedTo/Models/Requests/CreateHrisDeductionRequest.cs
+  - UnifiedTo/Models/Requests/CreateHrisDeductionResponse.cs
   - UnifiedTo/Models/Requests/CreateHrisDeviceRequest.cs
   - UnifiedTo/Models/Requests/CreateHrisDeviceResponse.cs
   - UnifiedTo/Models/Requests/CreateHrisEmployeeRequest.cs
@@ -880,8 +904,12 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetCrmPipelineResponse.cs
   - UnifiedTo/Models/Requests/GetGenaiModelRequest.cs
   - UnifiedTo/Models/Requests/GetGenaiModelResponse.cs
+  - UnifiedTo/Models/Requests/GetHrisBenefitRequest.cs
+  - UnifiedTo/Models/Requests/GetHrisBenefitResponse.cs
   - UnifiedTo/Models/Requests/GetHrisCompanyRequest.cs
   - UnifiedTo/Models/Requests/GetHrisCompanyResponse.cs
+  - UnifiedTo/Models/Requests/GetHrisDeductionRequest.cs
+  - UnifiedTo/Models/Requests/GetHrisDeductionResponse.cs
   - UnifiedTo/Models/Requests/GetHrisDeviceRequest.cs
   - UnifiedTo/Models/Requests/GetHrisDeviceResponse.cs
   - UnifiedTo/Models/Requests/GetHrisEmployeeRequest.cs
@@ -1080,8 +1108,12 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListEnrichPeopleResponse.cs
   - UnifiedTo/Models/Requests/ListGenaiModelsRequest.cs
   - UnifiedTo/Models/Requests/ListGenaiModelsResponse.cs
+  - UnifiedTo/Models/Requests/ListHrisBenefitsRequest.cs
+  - UnifiedTo/Models/Requests/ListHrisBenefitsResponse.cs
   - UnifiedTo/Models/Requests/ListHrisCompaniesRequest.cs
   - UnifiedTo/Models/Requests/ListHrisCompaniesResponse.cs
+  - UnifiedTo/Models/Requests/ListHrisDeductionsRequest.cs
+  - UnifiedTo/Models/Requests/ListHrisDeductionsResponse.cs
   - UnifiedTo/Models/Requests/ListHrisDevicesRequest.cs
   - UnifiedTo/Models/Requests/ListHrisDevicesResponse.cs
   - UnifiedTo/Models/Requests/ListHrisEmployeesRequest.cs
@@ -1259,8 +1291,12 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchCrmLeadResponse.cs
   - UnifiedTo/Models/Requests/PatchCrmPipelineRequest.cs
   - UnifiedTo/Models/Requests/PatchCrmPipelineResponse.cs
+  - UnifiedTo/Models/Requests/PatchHrisBenefitRequest.cs
+  - UnifiedTo/Models/Requests/PatchHrisBenefitResponse.cs
   - UnifiedTo/Models/Requests/PatchHrisCompanyRequest.cs
   - UnifiedTo/Models/Requests/PatchHrisCompanyResponse.cs
+  - UnifiedTo/Models/Requests/PatchHrisDeductionRequest.cs
+  - UnifiedTo/Models/Requests/PatchHrisDeductionResponse.cs
   - UnifiedTo/Models/Requests/PatchHrisDeviceRequest.cs
   - UnifiedTo/Models/Requests/PatchHrisDeviceResponse.cs
   - UnifiedTo/Models/Requests/PatchHrisEmployeeRequest.cs
@@ -1418,8 +1454,12 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveCrmLeadResponse.cs
   - UnifiedTo/Models/Requests/RemoveCrmPipelineRequest.cs
   - UnifiedTo/Models/Requests/RemoveCrmPipelineResponse.cs
+  - UnifiedTo/Models/Requests/RemoveHrisBenefitRequest.cs
+  - UnifiedTo/Models/Requests/RemoveHrisBenefitResponse.cs
   - UnifiedTo/Models/Requests/RemoveHrisCompanyRequest.cs
   - UnifiedTo/Models/Requests/RemoveHrisCompanyResponse.cs
+  - UnifiedTo/Models/Requests/RemoveHrisDeductionRequest.cs
+  - UnifiedTo/Models/Requests/RemoveHrisDeductionResponse.cs
   - UnifiedTo/Models/Requests/RemoveHrisDeviceRequest.cs
   - UnifiedTo/Models/Requests/RemoveHrisDeviceResponse.cs
   - UnifiedTo/Models/Requests/RemoveHrisEmployeeRequest.cs
@@ -1572,8 +1612,12 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateCrmLeadResponse.cs
   - UnifiedTo/Models/Requests/UpdateCrmPipelineRequest.cs
   - UnifiedTo/Models/Requests/UpdateCrmPipelineResponse.cs
+  - UnifiedTo/Models/Requests/UpdateHrisBenefitRequest.cs
+  - UnifiedTo/Models/Requests/UpdateHrisBenefitResponse.cs
   - UnifiedTo/Models/Requests/UpdateHrisCompanyRequest.cs
   - UnifiedTo/Models/Requests/UpdateHrisCompanyResponse.cs
+  - UnifiedTo/Models/Requests/UpdateHrisDeductionRequest.cs
+  - UnifiedTo/Models/Requests/UpdateHrisDeductionResponse.cs
   - UnifiedTo/Models/Requests/UpdateHrisDeviceRequest.cs
   - UnifiedTo/Models/Requests/UpdateHrisDeviceResponse.cs
   - UnifiedTo/Models/Requests/UpdateHrisEmployeeRequest.cs
@@ -1761,6 +1805,7 @@ generatedFiles:
   - docs/Models/Components/AccountingProfitlossSubcategory.md
   - docs/Models/Components/AccountingPurchaseorder.md
   - docs/Models/Components/AccountingPurchaseorderStatus.md
+  - docs/Models/Components/AccountingReference.md
   - docs/Models/Components/AccountingReport.md
   - docs/Models/Components/AccountingReportType.md
   - docs/Models/Components/AccountingSalesorder.md
@@ -1852,6 +1897,7 @@ generatedFiles:
   - docs/Models/Components/CommerceReviewStatus.md
   - docs/Models/Components/Connection.md
   - docs/Models/Components/ContentType.md
+  - docs/Models/Components/CoverageLevel.md
   - docs/Models/Components/CrmCompany.md
   - docs/Models/Components/CrmContact.md
   - docs/Models/Components/CrmDeal.md
@@ -1876,6 +1922,7 @@ generatedFiles:
   - docs/Models/Components/CrmTelephone.md
   - docs/Models/Components/CrmTelephoneType.md
   - docs/Models/Components/DbType.md
+  - docs/Models/Components/EmployerContributionType.md
   - docs/Models/Components/EmploymentStatus.md
   - docs/Models/Components/EmploymentType.md
   - docs/Models/Components/EncondingFormat.md
@@ -1899,10 +1946,17 @@ generatedFiles:
   - docs/Models/Components/GenaiModel.md
   - docs/Models/Components/GenaiPrompt.md
   - docs/Models/Components/Gender.md
+  - docs/Models/Components/HrisBenefit.md
+  - docs/Models/Components/HrisBenefitFrequency.md
+  - docs/Models/Components/HrisBenefitType.md
   - docs/Models/Components/HrisCompany.md
   - docs/Models/Components/HrisCompensation.md
   - docs/Models/Components/HrisCompensationFrequency.md
   - docs/Models/Components/HrisCompensationType.md
+  - docs/Models/Components/HrisDeduction.md
+  - docs/Models/Components/HrisDeductionCoverageLevel.md
+  - docs/Models/Components/HrisDeductionFrequency.md
+  - docs/Models/Components/HrisDeductionType.md
   - docs/Models/Components/HrisDevice.md
   - docs/Models/Components/HrisEmail.md
   - docs/Models/Components/HrisEmailType.md
@@ -1993,6 +2047,7 @@ generatedFiles:
   - docs/Models/Components/ListPageId.md
   - docs/Models/Components/ListParentId.md
   - docs/Models/Components/ListPaymentId.md
+  - docs/Models/Components/ListPayslipId.md
   - docs/Models/Components/ListPipelineId.md
   - docs/Models/Components/ListProjectId.md
   - docs/Models/Components/ListQuery.md
@@ -2012,6 +2067,7 @@ generatedFiles:
   - docs/Models/Components/ListType.md
   - docs/Models/Components/ListUpdatedGte.md
   - docs/Models/Components/ListUserId.md
+  - docs/Models/Components/ListUserMentionedId.md
   - docs/Models/Components/LmsClass.md
   - docs/Models/Components/LmsCourse.md
   - docs/Models/Components/LmsEmail.md
@@ -2105,6 +2161,10 @@ generatedFiles:
   - docs/Models/Components/PropertyHrisEmployeeAddress.md
   - docs/Models/Components/PropertyHrisEmployeeEmployeeRoles.md
   - docs/Models/Components/PropertyHrisLocationAddress.md
+  - docs/Models/Components/PropertyHrisPayslipDeduction.md
+  - docs/Models/Components/PropertyHrisPayslipDeductionCoverageLevel.md
+  - docs/Models/Components/PropertyHrisPayslipDeductionFrequency.md
+  - docs/Models/Components/PropertyHrisPayslipDeductionType.md
   - docs/Models/Components/PropertyIntegrationCategories.md
   - docs/Models/Components/PropertyIntegrationSupportWebhookEvents.md
   - docs/Models/Components/PropertyIntegrationSupportWebhookEventsCreated.md
@@ -2188,6 +2248,7 @@ generatedFiles:
   - docs/Models/Components/TaskProject.md
   - docs/Models/Components/TaskTask.md
   - docs/Models/Components/TaskTaskStatus.md
+  - docs/Models/Components/Tax.md
   - docs/Models/Components/TaxExemption.md
   - docs/Models/Components/TicketingCategory.md
   - docs/Models/Components/TicketingCustomer.md
@@ -2256,6 +2317,7 @@ generatedFiles:
   - docs/Models/Components/VirtualWebhookType.md
   - docs/Models/Components/VirtualWebhookUpdatedGte.md
   - docs/Models/Components/VirtualWebhookUserId.md
+  - docs/Models/Components/VirtualWebhookUserMentionedId.md
   - docs/Models/Components/Webhook.md
   - docs/Models/Components/WebhookType.md
   - docs/Models/Components/WeekStart.md
@@ -2335,8 +2397,12 @@ generatedFiles:
   - docs/Models/Requests/CreateGenaiEmbeddingResponse.md
   - docs/Models/Requests/CreateGenaiPromptRequest.md
   - docs/Models/Requests/CreateGenaiPromptResponse.md
+  - docs/Models/Requests/CreateHrisBenefitRequest.md
+  - docs/Models/Requests/CreateHrisBenefitResponse.md
   - docs/Models/Requests/CreateHrisCompanyRequest.md
   - docs/Models/Requests/CreateHrisCompanyResponse.md
+  - docs/Models/Requests/CreateHrisDeductionRequest.md
+  - docs/Models/Requests/CreateHrisDeductionResponse.md
   - docs/Models/Requests/CreateHrisDeviceRequest.md
   - docs/Models/Requests/CreateHrisDeviceResponse.md
   - docs/Models/Requests/CreateHrisEmployeeRequest.md
@@ -2506,8 +2572,12 @@ generatedFiles:
   - docs/Models/Requests/GetCrmPipelineResponse.md
   - docs/Models/Requests/GetGenaiModelRequest.md
   - docs/Models/Requests/GetGenaiModelResponse.md
+  - docs/Models/Requests/GetHrisBenefitRequest.md
+  - docs/Models/Requests/GetHrisBenefitResponse.md
   - docs/Models/Requests/GetHrisCompanyRequest.md
   - docs/Models/Requests/GetHrisCompanyResponse.md
+  - docs/Models/Requests/GetHrisDeductionRequest.md
+  - docs/Models/Requests/GetHrisDeductionResponse.md
   - docs/Models/Requests/GetHrisDeviceRequest.md
   - docs/Models/Requests/GetHrisDeviceResponse.md
   - docs/Models/Requests/GetHrisEmployeeRequest.md
@@ -2706,8 +2776,12 @@ generatedFiles:
   - docs/Models/Requests/ListEnrichPeopleResponse.md
   - docs/Models/Requests/ListGenaiModelsRequest.md
   - docs/Models/Requests/ListGenaiModelsResponse.md
+  - docs/Models/Requests/ListHrisBenefitsRequest.md
+  - docs/Models/Requests/ListHrisBenefitsResponse.md
   - docs/Models/Requests/ListHrisCompaniesRequest.md
   - docs/Models/Requests/ListHrisCompaniesResponse.md
+  - docs/Models/Requests/ListHrisDeductionsRequest.md
+  - docs/Models/Requests/ListHrisDeductionsResponse.md
   - docs/Models/Requests/ListHrisDevicesRequest.md
   - docs/Models/Requests/ListHrisDevicesResponse.md
   - docs/Models/Requests/ListHrisEmployeesRequest.md
@@ -2885,8 +2959,12 @@ generatedFiles:
   - docs/Models/Requests/PatchCrmLeadResponse.md
   - docs/Models/Requests/PatchCrmPipelineRequest.md
   - docs/Models/Requests/PatchCrmPipelineResponse.md
+  - docs/Models/Requests/PatchHrisBenefitRequest.md
+  - docs/Models/Requests/PatchHrisBenefitResponse.md
   - docs/Models/Requests/PatchHrisCompanyRequest.md
   - docs/Models/Requests/PatchHrisCompanyResponse.md
+  - docs/Models/Requests/PatchHrisDeductionRequest.md
+  - docs/Models/Requests/PatchHrisDeductionResponse.md
   - docs/Models/Requests/PatchHrisDeviceRequest.md
   - docs/Models/Requests/PatchHrisDeviceResponse.md
   - docs/Models/Requests/PatchHrisEmployeeRequest.md
@@ -3044,8 +3122,12 @@ generatedFiles:
   - docs/Models/Requests/RemoveCrmLeadResponse.md
   - docs/Models/Requests/RemoveCrmPipelineRequest.md
   - docs/Models/Requests/RemoveCrmPipelineResponse.md
+  - docs/Models/Requests/RemoveHrisBenefitRequest.md
+  - docs/Models/Requests/RemoveHrisBenefitResponse.md
   - docs/Models/Requests/RemoveHrisCompanyRequest.md
   - docs/Models/Requests/RemoveHrisCompanyResponse.md
+  - docs/Models/Requests/RemoveHrisDeductionRequest.md
+  - docs/Models/Requests/RemoveHrisDeductionResponse.md
   - docs/Models/Requests/RemoveHrisDeviceRequest.md
   - docs/Models/Requests/RemoveHrisDeviceResponse.md
   - docs/Models/Requests/RemoveHrisEmployeeRequest.md
@@ -3198,8 +3280,12 @@ generatedFiles:
   - docs/Models/Requests/UpdateCrmLeadResponse.md
   - docs/Models/Requests/UpdateCrmPipelineRequest.md
   - docs/Models/Requests/UpdateCrmPipelineResponse.md
+  - docs/Models/Requests/UpdateHrisBenefitRequest.md
+  - docs/Models/Requests/UpdateHrisBenefitResponse.md
   - docs/Models/Requests/UpdateHrisCompanyRequest.md
   - docs/Models/Requests/UpdateHrisCompanyResponse.md
+  - docs/Models/Requests/UpdateHrisDeductionRequest.md
+  - docs/Models/Requests/UpdateHrisDeductionResponse.md
   - docs/Models/Requests/UpdateHrisDeviceRequest.md
   - docs/Models/Requests/UpdateHrisDeviceResponse.md
   - docs/Models/Requests/UpdateHrisEmployeeRequest.md
@@ -3295,6 +3381,7 @@ generatedFiles:
   - docs/sdks/ats/README.md
   - docs/sdks/auth/README.md
   - docs/sdks/balancesheet/README.md
+  - docs/sdks/benefit/README.md
   - docs/sdks/bill/README.md
   - docs/sdks/branch/README.md
   - docs/sdks/busy/README.md
@@ -3318,6 +3405,7 @@ generatedFiles:
   - docs/sdks/crm/README.md
   - docs/sdks/customer/README.md
   - docs/sdks/deal/README.md
+  - docs/sdks/deduction/README.md
   - docs/sdks/device/README.md
   - docs/sdks/document/README.md
   - docs/sdks/embedding/README.md
@@ -8049,9 +8137,116 @@ examples:
       responses:
         "200":
           application/json: {}
+  createHrisBenefit:
+    speakeasy-default-create-hris-benefit:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  createHrisDeduction:
+    speakeasy-default-create-hris-deduction:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getHrisBenefit:
+    speakeasy-default-get-hris-benefit:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getHrisDeduction:
+    speakeasy-default-get-hris-deduction:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listHrisBenefits:
+    speakeasy-default-list-hris-benefits:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listHrisDeductions:
+    speakeasy-default-list-hris-deductions:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchHrisBenefit:
+    speakeasy-default-patch-hris-benefit:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  patchHrisDeduction:
+    speakeasy-default-patch-hris-deduction:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeHrisBenefit:
+    speakeasy-default-remove-hris-benefit:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  removeHrisDeduction:
+    speakeasy-default-remove-hris-deduction:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateHrisBenefit:
+    speakeasy-default-update-hris-benefit:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  updateHrisDeduction:
+    speakeasy-default-update-hris-deduction:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: |
-  ## Csharp SDK Changes Detected:
-  * `UnifiedTo.Uc.GetUcCall()`: **Added**
-  * `UnifiedTo.Call.GetUcCall()`: **Added**
+releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Hris.CreateHrisBenefit()`: **Added**\n* `UnifiedTo.Hris.CreateHrisDeduction()`: **Added**\n* `UnifiedTo.Hris.GetHrisBenefit()`: **Added**\n* `UnifiedTo.Hris.GetHrisDeduction()`: **Added**\n* `UnifiedTo.Hris.ListHrisBenefits()`: **Added**\n* `UnifiedTo.Hris.ListHrisDeductions()`: **Added**\n* `UnifiedTo.Hris.PatchHrisBenefit()`: **Added**\n* `UnifiedTo.Hris.PatchHrisDeduction()`: **Added**\n* `UnifiedTo.Hris.RemoveHrisBenefit()`: **Added**\n* `UnifiedTo.Hris.RemoveHrisDeduction()`: **Added**\n* `UnifiedTo.Hris.UpdateHrisBenefit()`: **Added**\n* `UnifiedTo.Hris.UpdateHrisDeduction()`: **Added**\n* `UnifiedTo.Benefit.CreateHrisBenefit()`: **Added**\n* `UnifiedTo.Benefit.GetHrisBenefit()`: **Added**\n* `UnifiedTo.Benefit.ListHrisBenefits()`: **Added**\n* `UnifiedTo.Benefit.PatchHrisBenefit()`: **Added**\n* `UnifiedTo.Benefit.RemoveHrisBenefit()`: **Added**\n* `UnifiedTo.Benefit.UpdateHrisBenefit()`: **Added**\n* `UnifiedTo.Deduction.CreateHrisDeduction()`: **Added**\n* `UnifiedTo.Deduction.GetHrisDeduction()`: **Added**\n* `UnifiedTo.Deduction.ListHrisDeductions()`: **Added**\n* `UnifiedTo.Deduction.PatchHrisDeduction()`: **Added**\n* `UnifiedTo.Deduction.RemoveHrisDeduction()`: **Added**\n* `UnifiedTo.Deduction.UpdateHrisDeduction()`: **Added**\n* `UnifiedTo.Accounting.CreateAccountingBill()`: \n  *  `request.accountingBill.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.CreateAccountingCreditmemo()`: \n  *  `request.accountingCreditmemo.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.CreateAccountingExpense()`: \n  *  `request.accountingExpense.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.CreateAccountingInvoice()`: \n  *  `request.accountingInvoice.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.CreateAccountingOrder()`: \n  *  `request.accountingOrder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.CreateAccountingPurchaseorder()`: \n  *  `request.accountingPurchaseorder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.CreateAccountingSalesorder()`: \n  *  `request.accountingSalesorder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.GetAccountingBill()`:  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.GetAccountingCreditmemo()`:  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.GetAccountingExpense()`:  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.GetAccountingInvoice()`:  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.GetAccountingOrder()`:  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.GetAccountingPurchaseorder()`:  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.GetAccountingSalesorder()`:  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.ListAccountingBills()`:  `response.[].Lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.ListAccountingCreditmemoes()`:  `response.[].Lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.ListAccountingExpenses()`:  `response.[].Lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.ListAccountingInvoices()`:  `response.[].Lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.ListAccountingOrders()`:  `response.[].Lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.ListAccountingPurchaseorders()`:  `response.[].Lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.ListAccountingSalesorders()`:  `response.[].Lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.PatchAccountingBill()`: \n  *  `request.AccountingBill.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.PatchAccountingCreditmemo()`: \n  *  `request.AccountingCreditmemo.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.PatchAccountingExpense()`: \n  *  `request.AccountingExpense.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.PatchAccountingInvoice()`: \n  *  `request.AccountingInvoice.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.PatchAccountingOrder()`: \n  *  `request.AccountingOrder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.PatchAccountingPurchaseorder()`: \n  *  `request.AccountingPurchaseorder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.PatchAccountingSalesorder()`: \n  *  `request.AccountingSalesorder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingBill()`: \n  *  `request.AccountingBill.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingCreditmemo()`: \n  *  `request.AccountingCreditmemo.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingExpense()`: \n  *  `request.AccountingExpense.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingInvoice()`: \n  *  `request.AccountingInvoice.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingOrder()`: \n  *  `request.AccountingOrder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingPurchaseorder()`: \n  *  `request.AccountingPurchaseorder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingSalesorder()`: \n  *  `request.AccountingSalesorder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Bill.CreateAccountingBill()`: \n  *  `request.accountingBill.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Bill.GetAccountingBill()`:  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Bill.ListAccountingBills()`:  `response.[].Lineitems.[].Locations` **Added**\n* `UnifiedTo.Bill.PatchAccountingBill()`: \n  *  `request.AccountingBill.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Bill.UpdateAccountingBill()`: \n  *  `request.AccountingBill.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Creditmemo.CreateAccountingCreditmemo()`: \n  *  `request.accountingCreditmemo.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Creditmemo.GetAccountingCreditmemo()`:  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Creditmemo.ListAccountingCreditmemoes()`:  `response.[].Lineitems.[].Locations` **Added**\n* `UnifiedTo.Creditmemo.PatchAccountingCreditmemo()`: \n  *  `request.AccountingCreditmemo.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Creditmemo.UpdateAccountingCreditmemo()`: \n  *  `request.AccountingCreditmemo.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Expense.CreateAccountingExpense()`: \n  *  `request.accountingExpense.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Expense.GetAccountingExpense()`:  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Expense.ListAccountingExpenses()`:  `response.[].Lineitems.[].Locations` **Added**\n* `UnifiedTo.Expense.PatchAccountingExpense()`: \n  *  `request.AccountingExpense.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Expense.UpdateAccountingExpense()`: \n  *  `request.AccountingExpense.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Invoice.CreateAccountingInvoice()`: \n  *  `request.accountingInvoice.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Invoice.GetAccountingInvoice()`:  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Invoice.ListAccountingInvoices()`:  `response.[].Lineitems.[].Locations` **Added**\n* `UnifiedTo.Invoice.PatchAccountingInvoice()`: \n  *  `request.AccountingInvoice.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Invoice.UpdateAccountingInvoice()`: \n  *  `request.AccountingInvoice.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Order.CreateAccountingOrder()`: \n  *  `request.accountingOrder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Order.GetAccountingOrder()`:  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Order.ListAccountingOrders()`:  `response.[].Lineitems.[].Locations` **Added**\n* `UnifiedTo.Order.PatchAccountingOrder()`: \n  *  `request.AccountingOrder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Order.UpdateAccountingOrder()`: \n  *  `request.AccountingOrder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Purchaseorder.CreateAccountingPurchaseorder()`: \n  *  `request.accountingPurchaseorder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Purchaseorder.GetAccountingPurchaseorder()`:  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Purchaseorder.ListAccountingPurchaseorders()`:  `response.[].Lineitems.[].Locations` **Added**\n* `UnifiedTo.Purchaseorder.PatchAccountingPurchaseorder()`: \n  *  `request.AccountingPurchaseorder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Purchaseorder.UpdateAccountingPurchaseorder()`: \n  *  `request.AccountingPurchaseorder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Salesorder.CreateAccountingSalesorder()`: \n  *  `request.accountingSalesorder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Salesorder.GetAccountingSalesorder()`:  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Salesorder.ListAccountingSalesorders()`:  `response.[].Lineitems.[].Locations` **Added**\n* `UnifiedTo.Salesorder.PatchAccountingSalesorder()`: \n  *  `request.AccountingSalesorder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Salesorder.UpdateAccountingSalesorder()`: \n  *  `request.AccountingSalesorder.Lineitems.[].Locations` **Added**\n  *  `response.lineitems.[].Locations` **Added**\n* `UnifiedTo.Hris.GetHrisPayslip()`:  `response.deduction` **Added**\n* `UnifiedTo.Hris.ListHrisPayslips()`:  `response.[].Deduction` **Added**\n* `UnifiedTo.Payslip.GetHrisPayslip()`:  `response.deduction` **Added**\n* `UnifiedTo.Payslip.ListHrisPayslips()`:  `response.[].Deduction` **Added**\n* `UnifiedTo.Messaging.CreateMessagingMessage()`: \n  *  `request.messagingMessage.MessageThreadIdentifier` **Added**\n  *  `response.messageThreadIdentifier` **Added**\n* `UnifiedTo.Messaging.GetMessagingMessage()`:  `response.messageThreadIdentifier` **Added**\n* `UnifiedTo.Messaging.ListMessagingMessages()`: \n  *  `request.UserMentionedId` **Added**\n  *  `response.[].MessageThreadIdentifier` **Added**\n* `UnifiedTo.Messaging.PatchMessagingMessage()`: \n  *  `request.MessagingMessage.MessageThreadIdentifier` **Added**\n  *  `response.messageThreadIdentifier` **Added**\n* `UnifiedTo.Messaging.UpdateMessagingMessage()`: \n  *  `request.MessagingMessage.MessageThreadIdentifier` **Added**\n  *  `response.messageThreadIdentifier` **Added**\n* `UnifiedTo.Message.CreateMessagingMessage()`: \n  *  `request.messagingMessage.MessageThreadIdentifier` **Added**\n  *  `response.messageThreadIdentifier` **Added**\n* `UnifiedTo.Message.GetMessagingMessage()`:  `response.messageThreadIdentifier` **Added**\n* `UnifiedTo.Message.ListMessagingMessages()`: \n  *  `request.UserMentionedId` **Added**\n  *  `response.[].MessageThreadIdentifier` **Added**\n* `UnifiedTo.Message.PatchMessagingMessage()`: \n  *  `request.MessagingMessage.MessageThreadIdentifier` **Added**\n  *  `response.messageThreadIdentifier` **Added**\n* `UnifiedTo.Message.UpdateMessagingMessage()`: \n  *  `request.MessagingMessage.MessageThreadIdentifier` **Added**\n  *  `response.messageThreadIdentifier` **Added**\n* `UnifiedTo.Uc.GetUcCall()`:  `response` **Changed**\n* `UnifiedTo.Uc.ListUcCalls()`:  `response.[]` **Changed**\n* `UnifiedTo.Call.GetUcCall()`:  `response` **Changed**\n* `UnifiedTo.Call.ListUcCalls()`:  `response.[]` **Changed**\n* `UnifiedTo.Unified.ListUnifiedIntegrationWorkspaces()`:  `response.[].Support.{}` **Changed**\n* `UnifiedTo.Unified.ListUnifiedIntegrations()`:  `response.[].Support.{}` **Changed**\n* `UnifiedTo.Integration.ListUnifiedIntegrationWorkspaces()`:  `response.[].Support.{}` **Changed**\n* `UnifiedTo.Integration.ListUnifiedIntegrations()`:  `response.[].Support.{}` **Changed**\n"
