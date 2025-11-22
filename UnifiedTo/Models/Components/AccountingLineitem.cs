@@ -45,6 +45,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("item_sku")]
         public string? ItemSku { get; set; }
 
+        [JsonProperty("item_variants")]
+        public List<AccountingReference>? ItemVariants { get; set; }
+
         [JsonProperty("locations")]
         public List<AccountingReference>? Locations { get; set; }
 
