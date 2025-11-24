@@ -125,6 +125,10 @@ namespace UnifiedTo.Models.Components
         CommerceReviewRead,
         [JsonProperty("commerce_review_write")]
         CommerceReviewWrite,
+        [JsonProperty("commerce_saleschannel_read")]
+        CommerceSaleschannelRead,
+        [JsonProperty("commerce_saleschannel_write")]
+        CommerceSaleschannelWrite,
         [JsonProperty("verification_package_read")]
         VerificationPackageRead,
         [JsonProperty("verification_request_read")]

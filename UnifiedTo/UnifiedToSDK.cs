@@ -66,6 +66,7 @@ namespace UnifiedTo
         public IItem Item { get; }
         public ILocation Location { get; }
         public IReview Review { get; }
+        public ISaleschannel Saleschannel { get; }
         public ICrm Crm { get; }
         public IDeal Deal { get; }
         public ILead Lead { get; }
@@ -146,7 +147,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.114.0";
+        private const string _sdkVersion = "0.116.0";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -190,6 +191,7 @@ namespace UnifiedTo
         public IItem Item { get; private set; }
         public ILocation Location { get; private set; }
         public IReview Review { get; private set; }
+        public ISaleschannel Saleschannel { get; private set; }
         public ICrm Crm { get; private set; }
         public IDeal Deal { get; private set; }
         public ILead Lead { get; private set; }
@@ -346,6 +348,8 @@ namespace UnifiedTo
             Location = new Location(SDKConfiguration);
 
             Review = new Review(SDKConfiguration);
+
+            Saleschannel = new Saleschannel(SDKConfiguration);
 
             Crm = new Crm(SDKConfiguration);
 
@@ -609,6 +613,8 @@ namespace UnifiedTo
             Location = new Location(SDKConfiguration);
 
             Review = new Review(SDKConfiguration);
+
+            Saleschannel = new Saleschannel(SDKConfiguration);
 
             Crm = new Crm(SDKConfiguration);
 

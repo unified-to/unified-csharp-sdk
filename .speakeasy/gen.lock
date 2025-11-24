@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: c6058565310b31d840e18ece25ff2318
+  docChecksum: 0cbfedd6f5ab2e89dc21eefa192c619d
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.114.0
-  configChecksum: 63e1f85318e500bc2824f4231c889dc5
+  releaseVersion: 0.116.0
+  configChecksum: 7776aeac8237be7a216bb54c8c564833
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -222,10 +222,12 @@ generatedFiles:
   - UnifiedTo/Models/Components/CommerceMetadataSchemas1.cs
   - UnifiedTo/Models/Components/CommerceMetadataSchemas5.cs
   - UnifiedTo/Models/Components/CommerceMetadataValue.cs
+  - UnifiedTo/Models/Components/CommerceReference.cs
   - UnifiedTo/Models/Components/CommerceReview.cs
   - UnifiedTo/Models/Components/CommerceReviewComment.cs
   - UnifiedTo/Models/Components/CommerceReviewCommentStatus.cs
   - UnifiedTo/Models/Components/CommerceReviewStatus.cs
+  - UnifiedTo/Models/Components/CommerceSaleschannel.cs
   - UnifiedTo/Models/Components/Connection.cs
   - UnifiedTo/Models/Components/ContentType.cs
   - UnifiedTo/Models/Components/CoverageLevel.cs
@@ -341,6 +343,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/KmsSpace.cs
   - UnifiedTo/Models/Components/ListAccountId.cs
   - UnifiedTo/Models/Components/ListApplicationId.cs
+  - UnifiedTo/Models/Components/ListBenefitId.cs
   - UnifiedTo/Models/Components/ListBranchId.cs
   - UnifiedTo/Models/Components/ListCalendarId.cs
   - UnifiedTo/Models/Components/ListCallId.cs
@@ -385,6 +388,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListRawFields.cs
   - UnifiedTo/Models/Components/ListRepoId.cs
   - UnifiedTo/Models/Components/ListRootId.cs
+  - UnifiedTo/Models/Components/ListSaleschannelId.cs
   - UnifiedTo/Models/Components/ListSortByCreatedAt.cs
   - UnifiedTo/Models/Components/ListSortByName.cs
   - UnifiedTo/Models/Components/ListSortByUpdatedAt.cs
@@ -640,6 +644,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/VirtualWebhookPipelineId.cs
   - UnifiedTo/Models/Components/VirtualWebhookProjectId.cs
   - UnifiedTo/Models/Components/VirtualWebhookRepoId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookSaleschannelId.cs
   - UnifiedTo/Models/Components/VirtualWebhookSpaceId.cs
   - UnifiedTo/Models/Components/VirtualWebhookStartGte.cs
   - UnifiedTo/Models/Components/VirtualWebhookStatus.cs
@@ -713,6 +718,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateCommerceLocationResponse.cs
   - UnifiedTo/Models/Requests/CreateCommerceReviewRequest.cs
   - UnifiedTo/Models/Requests/CreateCommerceReviewResponse.cs
+  - UnifiedTo/Models/Requests/CreateCommerceSaleschannelRequest.cs
+  - UnifiedTo/Models/Requests/CreateCommerceSaleschannelResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/CreateCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/CreateCrmContactRequest.cs
@@ -890,6 +897,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetCommerceLocationResponse.cs
   - UnifiedTo/Models/Requests/GetCommerceReviewRequest.cs
   - UnifiedTo/Models/Requests/GetCommerceReviewResponse.cs
+  - UnifiedTo/Models/Requests/GetCommerceSaleschannelRequest.cs
+  - UnifiedTo/Models/Requests/GetCommerceSaleschannelResponse.cs
   - UnifiedTo/Models/Requests/GetCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/GetCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/GetCrmContactRequest.cs
@@ -1090,6 +1099,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListCommerceLocationsResponse.cs
   - UnifiedTo/Models/Requests/ListCommerceReviewsRequest.cs
   - UnifiedTo/Models/Requests/ListCommerceReviewsResponse.cs
+  - UnifiedTo/Models/Requests/ListCommerceSaleschannelsRequest.cs
+  - UnifiedTo/Models/Requests/ListCommerceSaleschannelsResponse.cs
   - UnifiedTo/Models/Requests/ListCrmCompaniesRequest.cs
   - UnifiedTo/Models/Requests/ListCrmCompaniesResponse.cs
   - UnifiedTo/Models/Requests/ListCrmContactsRequest.cs
@@ -1279,6 +1290,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchCommerceLocationResponse.cs
   - UnifiedTo/Models/Requests/PatchCommerceReviewRequest.cs
   - UnifiedTo/Models/Requests/PatchCommerceReviewResponse.cs
+  - UnifiedTo/Models/Requests/PatchCommerceSaleschannelRequest.cs
+  - UnifiedTo/Models/Requests/PatchCommerceSaleschannelResponse.cs
   - UnifiedTo/Models/Requests/PatchCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/PatchCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/PatchCrmContactRequest.cs
@@ -1442,6 +1455,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveCommerceLocationResponse.cs
   - UnifiedTo/Models/Requests/RemoveCommerceReviewRequest.cs
   - UnifiedTo/Models/Requests/RemoveCommerceReviewResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceSaleschannelRequest.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceSaleschannelResponse.cs
   - UnifiedTo/Models/Requests/RemoveCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/RemoveCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/RemoveCrmContactRequest.cs
@@ -1600,6 +1615,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateCommerceLocationResponse.cs
   - UnifiedTo/Models/Requests/UpdateCommerceReviewRequest.cs
   - UnifiedTo/Models/Requests/UpdateCommerceReviewResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceSaleschannelRequest.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceSaleschannelResponse.cs
   - UnifiedTo/Models/Requests/UpdateCrmCompanyRequest.cs
   - UnifiedTo/Models/Requests/UpdateCrmCompanyResponse.cs
   - UnifiedTo/Models/Requests/UpdateCrmContactRequest.cs
@@ -1728,6 +1745,7 @@ generatedFiles:
   - UnifiedTo/Request.cs
   - UnifiedTo/Review.cs
   - UnifiedTo/SDKConfig.cs
+  - UnifiedTo/Saleschannel.cs
   - UnifiedTo/Salesorder.cs
   - UnifiedTo/Scim.cs
   - UnifiedTo/Scorecard.cs
@@ -1891,10 +1909,12 @@ generatedFiles:
   - docs/Models/Components/CommerceMetadataSchemas1.md
   - docs/Models/Components/CommerceMetadataSchemas5.md
   - docs/Models/Components/CommerceMetadataValue.md
+  - docs/Models/Components/CommerceReference.md
   - docs/Models/Components/CommerceReview.md
   - docs/Models/Components/CommerceReviewComment.md
   - docs/Models/Components/CommerceReviewCommentStatus.md
   - docs/Models/Components/CommerceReviewStatus.md
+  - docs/Models/Components/CommerceSaleschannel.md
   - docs/Models/Components/Connection.md
   - docs/Models/Components/ContentType.md
   - docs/Models/Components/CoverageLevel.md
@@ -2010,6 +2030,7 @@ generatedFiles:
   - docs/Models/Components/KmsSpace.md
   - docs/Models/Components/ListAccountId.md
   - docs/Models/Components/ListApplicationId.md
+  - docs/Models/Components/ListBenefitId.md
   - docs/Models/Components/ListBranchId.md
   - docs/Models/Components/ListCalendarId.md
   - docs/Models/Components/ListCallId.md
@@ -2054,6 +2075,7 @@ generatedFiles:
   - docs/Models/Components/ListRawFields.md
   - docs/Models/Components/ListRepoId.md
   - docs/Models/Components/ListRootId.md
+  - docs/Models/Components/ListSaleschannelId.md
   - docs/Models/Components/ListSortByCreatedAt.md
   - docs/Models/Components/ListSortByName.md
   - docs/Models/Components/ListSortByUpdatedAt.md
@@ -2309,6 +2331,7 @@ generatedFiles:
   - docs/Models/Components/VirtualWebhookPipelineId.md
   - docs/Models/Components/VirtualWebhookProjectId.md
   - docs/Models/Components/VirtualWebhookRepoId.md
+  - docs/Models/Components/VirtualWebhookSaleschannelId.md
   - docs/Models/Components/VirtualWebhookSpaceId.md
   - docs/Models/Components/VirtualWebhookStartGte.md
   - docs/Models/Components/VirtualWebhookStatus.md
@@ -2381,6 +2404,8 @@ generatedFiles:
   - docs/Models/Requests/CreateCommerceLocationResponse.md
   - docs/Models/Requests/CreateCommerceReviewRequest.md
   - docs/Models/Requests/CreateCommerceReviewResponse.md
+  - docs/Models/Requests/CreateCommerceSaleschannelRequest.md
+  - docs/Models/Requests/CreateCommerceSaleschannelResponse.md
   - docs/Models/Requests/CreateCrmCompanyRequest.md
   - docs/Models/Requests/CreateCrmCompanyResponse.md
   - docs/Models/Requests/CreateCrmContactRequest.md
@@ -2558,6 +2583,8 @@ generatedFiles:
   - docs/Models/Requests/GetCommerceLocationResponse.md
   - docs/Models/Requests/GetCommerceReviewRequest.md
   - docs/Models/Requests/GetCommerceReviewResponse.md
+  - docs/Models/Requests/GetCommerceSaleschannelRequest.md
+  - docs/Models/Requests/GetCommerceSaleschannelResponse.md
   - docs/Models/Requests/GetCrmCompanyRequest.md
   - docs/Models/Requests/GetCrmCompanyResponse.md
   - docs/Models/Requests/GetCrmContactRequest.md
@@ -2758,6 +2785,8 @@ generatedFiles:
   - docs/Models/Requests/ListCommerceLocationsResponse.md
   - docs/Models/Requests/ListCommerceReviewsRequest.md
   - docs/Models/Requests/ListCommerceReviewsResponse.md
+  - docs/Models/Requests/ListCommerceSaleschannelsRequest.md
+  - docs/Models/Requests/ListCommerceSaleschannelsResponse.md
   - docs/Models/Requests/ListCrmCompaniesRequest.md
   - docs/Models/Requests/ListCrmCompaniesResponse.md
   - docs/Models/Requests/ListCrmContactsRequest.md
@@ -2947,6 +2976,8 @@ generatedFiles:
   - docs/Models/Requests/PatchCommerceLocationResponse.md
   - docs/Models/Requests/PatchCommerceReviewRequest.md
   - docs/Models/Requests/PatchCommerceReviewResponse.md
+  - docs/Models/Requests/PatchCommerceSaleschannelRequest.md
+  - docs/Models/Requests/PatchCommerceSaleschannelResponse.md
   - docs/Models/Requests/PatchCrmCompanyRequest.md
   - docs/Models/Requests/PatchCrmCompanyResponse.md
   - docs/Models/Requests/PatchCrmContactRequest.md
@@ -3110,6 +3141,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveCommerceLocationResponse.md
   - docs/Models/Requests/RemoveCommerceReviewRequest.md
   - docs/Models/Requests/RemoveCommerceReviewResponse.md
+  - docs/Models/Requests/RemoveCommerceSaleschannelRequest.md
+  - docs/Models/Requests/RemoveCommerceSaleschannelResponse.md
   - docs/Models/Requests/RemoveCrmCompanyRequest.md
   - docs/Models/Requests/RemoveCrmCompanyResponse.md
   - docs/Models/Requests/RemoveCrmContactRequest.md
@@ -3268,6 +3301,8 @@ generatedFiles:
   - docs/Models/Requests/UpdateCommerceLocationResponse.md
   - docs/Models/Requests/UpdateCommerceReviewRequest.md
   - docs/Models/Requests/UpdateCommerceReviewResponse.md
+  - docs/Models/Requests/UpdateCommerceSaleschannelRequest.md
+  - docs/Models/Requests/UpdateCommerceSaleschannelResponse.md
   - docs/Models/Requests/UpdateCrmCompanyRequest.md
   - docs/Models/Requests/UpdateCrmCompanyResponse.md
   - docs/Models/Requests/UpdateCrmContactRequest.md
@@ -3462,6 +3497,7 @@ generatedFiles:
   - docs/sdks/repository/README.md
   - docs/sdks/request/README.md
   - docs/sdks/review/README.md
+  - docs/sdks/saleschannel/README.md
   - docs/sdks/salesorder/README.md
   - docs/sdks/scim/README.md
   - docs/sdks/scorecard/README.md
@@ -8247,6 +8283,61 @@ examples:
       responses:
         "200":
           application/json: {}
+  createCommerceSaleschannel:
+    speakeasy-default-create-commerce-saleschannel:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getCommerceSaleschannel:
+    speakeasy-default-get-commerce-saleschannel:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listCommerceSaleschannels:
+    speakeasy-default-list-commerce-saleschannels:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchCommerceSaleschannel:
+    speakeasy-default-patch-commerce-saleschannel:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeCommerceSaleschannel:
+    speakeasy-default-remove-commerce-saleschannel:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateCommerceSaleschannel:
+    speakeasy-default-update-commerce-saleschannel:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
-releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Accounting.CreateAccountingBill()`: \n  *  `request.accountingBill.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.CreateAccountingCreditmemo()`: \n  *  `request.accountingCreditmemo.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.CreateAccountingExpense()`: \n  *  `request.accountingExpense.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.CreateAccountingInvoice()`: \n  *  `request.accountingInvoice.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.CreateAccountingOrder()`: \n  *  `request.accountingOrder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.CreateAccountingPurchaseorder()`: \n  *  `request.accountingPurchaseorder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.CreateAccountingSalesorder()`: \n  *  `request.accountingSalesorder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.GetAccountingBill()`:  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.GetAccountingCreditmemo()`:  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.GetAccountingExpense()`:  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.GetAccountingInvoice()`:  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.GetAccountingOrder()`:  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.GetAccountingPurchaseorder()`:  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.GetAccountingSalesorder()`:  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.ListAccountingBills()`:  `response.[].Lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.ListAccountingCreditmemoes()`:  `response.[].Lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.ListAccountingExpenses()`:  `response.[].Lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.ListAccountingInvoices()`:  `response.[].Lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.ListAccountingOrders()`:  `response.[].Lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.ListAccountingPurchaseorders()`:  `response.[].Lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.ListAccountingSalesorders()`:  `response.[].Lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.PatchAccountingBill()`: \n  *  `request.AccountingBill.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.PatchAccountingCreditmemo()`: \n  *  `request.AccountingCreditmemo.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.PatchAccountingExpense()`: \n  *  `request.AccountingExpense.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.PatchAccountingInvoice()`: \n  *  `request.AccountingInvoice.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.PatchAccountingOrder()`: \n  *  `request.AccountingOrder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.PatchAccountingPurchaseorder()`: \n  *  `request.AccountingPurchaseorder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.PatchAccountingSalesorder()`: \n  *  `request.AccountingSalesorder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingBill()`: \n  *  `request.AccountingBill.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingCreditmemo()`: \n  *  `request.AccountingCreditmemo.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingExpense()`: \n  *  `request.AccountingExpense.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingInvoice()`: \n  *  `request.AccountingInvoice.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingOrder()`: \n  *  `request.AccountingOrder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingPurchaseorder()`: \n  *  `request.AccountingPurchaseorder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Accounting.UpdateAccountingSalesorder()`: \n  *  `request.AccountingSalesorder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Bill.CreateAccountingBill()`: \n  *  `request.accountingBill.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Bill.GetAccountingBill()`:  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Bill.ListAccountingBills()`:  `response.[].Lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Bill.PatchAccountingBill()`: \n  *  `request.AccountingBill.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Bill.UpdateAccountingBill()`: \n  *  `request.AccountingBill.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Creditmemo.CreateAccountingCreditmemo()`: \n  *  `request.accountingCreditmemo.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Creditmemo.GetAccountingCreditmemo()`:  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Creditmemo.ListAccountingCreditmemoes()`:  `response.[].Lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Creditmemo.PatchAccountingCreditmemo()`: \n  *  `request.AccountingCreditmemo.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Creditmemo.UpdateAccountingCreditmemo()`: \n  *  `request.AccountingCreditmemo.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Expense.CreateAccountingExpense()`: \n  *  `request.accountingExpense.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Expense.GetAccountingExpense()`:  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Expense.ListAccountingExpenses()`:  `response.[].Lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Expense.PatchAccountingExpense()`: \n  *  `request.AccountingExpense.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Expense.UpdateAccountingExpense()`: \n  *  `request.AccountingExpense.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Invoice.CreateAccountingInvoice()`: \n  *  `request.accountingInvoice.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Invoice.GetAccountingInvoice()`:  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Invoice.ListAccountingInvoices()`:  `response.[].Lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Invoice.PatchAccountingInvoice()`: \n  *  `request.AccountingInvoice.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Invoice.UpdateAccountingInvoice()`: \n  *  `request.AccountingInvoice.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Order.CreateAccountingOrder()`: \n  *  `request.accountingOrder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Order.GetAccountingOrder()`:  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Order.ListAccountingOrders()`:  `response.[].Lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Order.PatchAccountingOrder()`: \n  *  `request.AccountingOrder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Order.UpdateAccountingOrder()`: \n  *  `request.AccountingOrder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Purchaseorder.CreateAccountingPurchaseorder()`: \n  *  `request.accountingPurchaseorder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Purchaseorder.GetAccountingPurchaseorder()`:  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Purchaseorder.ListAccountingPurchaseorders()`:  `response.[].Lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Purchaseorder.PatchAccountingPurchaseorder()`: \n  *  `request.AccountingPurchaseorder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Purchaseorder.UpdateAccountingPurchaseorder()`: \n  *  `request.AccountingPurchaseorder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Salesorder.CreateAccountingSalesorder()`: \n  *  `request.accountingSalesorder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Salesorder.GetAccountingSalesorder()`:  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Salesorder.ListAccountingSalesorders()`:  `response.[].Lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Salesorder.PatchAccountingSalesorder()`: \n  *  `request.AccountingSalesorder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n* `UnifiedTo.Salesorder.UpdateAccountingSalesorder()`: \n  *  `request.AccountingSalesorder.Lineitems.[].ItemVariants` **Added**\n  *  `response.lineitems.[].ItemVariants` **Added**\n"
+releaseNotes: "## Csharp SDK Changes Detected:\n* `UnifiedTo.Item.GetCommerceItem()`:  `response.media.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Commerce.GetCommerceCollection()`:  `response` **Changed** **Breaking** :warning:\n* `UnifiedTo.Review.UpdateCommerceReview()`: \n  *  `request.CommerceReview.Comments.[].Metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.comments.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Review.PatchCommerceReview()`: \n  *  `request.CommerceReview.Comments.[].Metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.comments.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Review.ListCommerceReviews()`:  `response.[].Comments.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Commerce.UpdateCommerceCollection()`: \n  *  `request.CommerceCollection` **Changed** **Breaking** :warning:\n  *  `response` **Changed** **Breaking** :warning:\n* `UnifiedTo.Review.CreateCommerceReview()`: \n  *  `request.commerceReview.Comments.[].Metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.comments.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Item.UpdateCommerceItem()`: \n  *  `request.CommerceItem.Media.[].Metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.media.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Item.PatchCommerceItem()`: \n  *  `request.CommerceItem.Media.[].Metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.media.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Item.ListCommerceItems()`:  `response.[].Media.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Item.CreateCommerceItem()`: \n  *  `request.commerceItem.Media.[].Metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.media.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Collection.UpdateCommerceCollection()`: \n  *  `request.CommerceCollection` **Changed** **Breaking** :warning:\n  *  `response` **Changed** **Breaking** :warning:\n* `UnifiedTo.Commerce.CreateCommerceCollection()`: \n  *  `request.commerceCollection` **Changed** **Breaking** :warning:\n  *  `response` **Changed** **Breaking** :warning:\n* `UnifiedTo.Commerce.CreateCommerceItem()`: \n  *  `request.commerceItem.Media.[].Metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.media.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Commerce.CreateCommerceReview()`: \n  *  `request.commerceReview.Comments.[].Metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.comments.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Commerce.PatchCommerceReview()`: \n  *  `request.CommerceReview.Comments.[].Metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.comments.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Commerce.GetCommerceItem()`:  `response.media.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Commerce.GetCommerceReview()`:  `response.comments.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Commerce.ListCommerceCollections()`: \n  *  `request.SaleschannelId` **Added**\n  *  `response.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Commerce.ListCommerceItems()`:  `response.[].Media.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Commerce.ListCommerceReviews()`:  `response.[].Comments.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Commerce.PatchCommerceCollection()`: \n  *  `request.CommerceCollection` **Changed** **Breaking** :warning:\n  *  `response` **Changed** **Breaking** :warning:\n* `UnifiedTo.Collection.PatchCommerceCollection()`: \n  *  `request.CommerceCollection` **Changed** **Breaking** :warning:\n  *  `response` **Changed** **Breaking** :warning:\n* `UnifiedTo.Commerce.PatchCommerceItem()`: \n  *  `request.CommerceItem.Media.[].Metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.media.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Review.GetCommerceReview()`:  `response.comments.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Commerce.UpdateCommerceItem()`: \n  *  `request.CommerceItem.Media.[].Metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.media.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Commerce.UpdateCommerceReview()`: \n  *  `request.CommerceReview.Comments.[].Metadata.[]` **Changed** **Breaking** :warning:\n  *  `response.comments.[].Metadata.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Collection.CreateCommerceCollection()`: \n  *  `request.commerceCollection` **Changed** **Breaking** :warning:\n  *  `response` **Changed** **Breaking** :warning:\n* `UnifiedTo.Collection.GetCommerceCollection()`:  `response` **Changed** **Breaking** :warning:\n* `UnifiedTo.Collection.ListCommerceCollections()`: \n  *  `request.SaleschannelId` **Added**\n  *  `response.[]` **Changed** **Breaking** :warning:\n* `UnifiedTo.Commerce.UpdateCommerceSaleschannel()`: **Added**\n* `UnifiedTo.Saleschannel.CreateCommerceSaleschannel()`: **Added**\n* `UnifiedTo.Saleschannel.RemoveCommerceSaleschannel()`: **Added**\n* `UnifiedTo.Commerce.CreateCommerceSaleschannel()`: **Added**\n* `UnifiedTo.Saleschannel.PatchCommerceSaleschannel()`: **Added**\n* `UnifiedTo.Saleschannel.ListCommerceSaleschannels()`: **Added**\n* `UnifiedTo.Saleschannel.UpdateCommerceSaleschannel()`: **Added**\n* `UnifiedTo.Saleschannel.GetCommerceSaleschannel()`: **Added**\n* `UnifiedTo.Commerce.RemoveCommerceSaleschannel()`: **Added**\n* `UnifiedTo.Commerce.GetCommerceSaleschannel()`: **Added**\n* `UnifiedTo.Commerce.PatchCommerceSaleschannel()`: **Added**\n* `UnifiedTo.Commerce.ListCommerceSaleschannels()`: **Added**\n* `UnifiedTo.Unified.ListUnifiedIntegrationWorkspaces()`:  `response.[].Support.{}` **Changed**\n* `UnifiedTo.Unified.ListUnifiedIntegrations()`:  `response.[].Support.{}` **Changed**\n* `UnifiedTo.Integration.ListUnifiedIntegrationWorkspaces()`:  `response.[].Support.{}` **Changed**\n* `UnifiedTo.Integration.ListUnifiedIntegrations()`:  `response.[].Support.{}` **Changed**\n"

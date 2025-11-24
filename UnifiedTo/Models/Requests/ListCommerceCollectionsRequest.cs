@@ -54,6 +54,12 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=raw")]
         public string? Raw { get; set; }
 
+        /// <summary>
+        /// The saleschannel ID to filter by
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=saleschannel_id")]
+        public string? SaleschannelId { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")]
         public string? Sort { get; set; }
 

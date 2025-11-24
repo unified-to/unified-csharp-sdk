@@ -29,6 +29,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_application_id")]
         public ListApplicationId? ListApplicationId { get; set; }
 
+        [JsonProperty("list_benefit_id")]
+        public ListBenefitId? ListBenefitId { get; set; }
+
         [JsonProperty("list_branch_id")]
         public ListBranchId? ListBranchId { get; set; }
 
@@ -160,6 +163,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_root_id")]
         public ListRootId? ListRootId { get; set; }
+
+        [JsonProperty("list_saleschannel_id")]
+        public ListSaleschannelId? ListSaleschannelId { get; set; }
 
         [JsonProperty("list_sort_by_created_at")]
         public ListSortByCreatedAt? ListSortByCreatedAt { get; set; }
@@ -340,6 +346,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_repo_id")]
         public VirtualWebhookRepoId? VirtualWebhookRepoId { get; set; }
+
+        [JsonProperty("virtual_webhook_saleschannel_id")]
+        public VirtualWebhookSaleschannelId? VirtualWebhookSaleschannelId { get; set; }
 
         [JsonProperty("virtual_webhook_space_id")]
         public VirtualWebhookSpaceId? VirtualWebhookSpaceId { get; set; }
