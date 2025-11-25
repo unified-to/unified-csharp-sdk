@@ -39,6 +39,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_visible")]
         public bool? IsVisible { get; set; }
 
+        [JsonProperty("item_metadata")]
+        public List<CommerceMetadata>? ItemMetadata { get; set; }
+
         [JsonProperty("media")]
         public List<CommerceItemMedia>? Media { get; set; }
 

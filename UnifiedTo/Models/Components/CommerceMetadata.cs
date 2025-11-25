@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     public class CommerceMetadata
     {
 
+        [JsonProperty("description")]
+        public string? Description { get; set; }
+
         [JsonProperty("extra_data")]
         public CommerceMetadataExtraData? ExtraData { get; set; }
 
@@ -24,6 +27,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("id")]
         public string? Id { get; set; }
+
+        [JsonProperty("is_required")]
+        public bool? IsRequired { get; set; }
 
         [JsonProperty("key")]
         public string? Key { get; set; }

@@ -36,9 +36,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
-        [JsonProperty("item_metadata")]
-        public List<CommerceMetadata>? ItemMetadata { get; set; }
-
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
