@@ -6,6 +6,7 @@
 ### Available Operations
 
 * [CreateUnifiedConnection](#createunifiedconnection) - Create connection
+* [CreateUnifiedEnvironment](#createunifiedenvironment)
 * [CreateUnifiedWebhook](#createunifiedwebhook) - Create webhook subscription
 * [GetUnifiedApicall](#getunifiedapicall) - Retrieve specific API Call by its ID
 * [GetUnifiedConnection](#getunifiedconnection) - Retrieve connection
@@ -14,6 +15,7 @@
 * [GetUnifiedWebhook](#getunifiedwebhook) - Retrieve webhook by its ID
 * [ListUnifiedApicalls](#listunifiedapicalls) - Returns API Calls
 * [ListUnifiedConnections](#listunifiedconnections) - List all connections
+* [ListUnifiedEnvironments](#listunifiedenvironments)
 * [ListUnifiedIntegrationWorkspaces](#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
 * [ListUnifiedIntegrations](#listunifiedintegrations) - Returns all integrations
 * [ListUnifiedIssues](#listunifiedissues) - List support issues
@@ -22,6 +24,7 @@
 * [PatchUnifiedWebhook](#patchunifiedwebhook) - Update webhook subscription
 * [PatchUnifiedWebhookTrigger](#patchunifiedwebhooktrigger) - Trigger webhook
 * [RemoveUnifiedConnection](#removeunifiedconnection) - Remove connection
+* [RemoveUnifiedEnvironment](#removeunifiedenvironment)
 * [RemoveUnifiedWebhook](#removeunifiedwebhook) - Remove webhook subscription
 * [UpdateUnifiedConnection](#updateunifiedconnection) - Update connection
 * [UpdateUnifiedWebhook](#updateunifiedwebhook) - Update webhook subscription
@@ -64,6 +67,42 @@ var res = await sdk.Unified.CreateUnifiedConnectionAsync(req);
 ### Response
 
 **[CreateUnifiedConnectionResponse](../../Models/Requests/CreateUnifiedConnectionResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateUnifiedEnvironment
+
+### Example Usage
+
+```csharp
+using System.Collections.Generic;
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+List<string> req = new List<string>() {};
+
+var res = await sdk.Unified.CreateUnifiedEnvironmentAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                  | Type                                       | Required                                   | Description                                |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| `request`                                  | List<*string*>                             | :heavy_check_mark:                         | The request object to use for the request. |
+
+### Response
+
+**[CreateUnifiedEnvironmentResponse](../../Models/Requests/CreateUnifiedEnvironmentResponse.md)**
 
 ### Errors
 
@@ -361,6 +400,33 @@ var res = await sdk.Unified.ListUnifiedConnectionsAsync(req);
 ### Response
 
 **[ListUnifiedConnectionsResponse](../../Models/Requests/ListUnifiedConnectionsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListUnifiedEnvironments
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Unified.ListUnifiedEnvironmentsAsync();
+
+// handle response
+```
+
+### Response
+
+**[ListUnifiedEnvironmentsResponse](../../Models/Requests/ListUnifiedEnvironmentsResponse.md)**
 
 ### Errors
 
@@ -676,6 +742,39 @@ var res = await sdk.Unified.RemoveUnifiedConnectionAsync(id: "<id>");
 ### Response
 
 **[RemoveUnifiedConnectionResponse](../../Models/Requests/RemoveUnifiedConnectionResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveUnifiedEnvironment
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Unified.RemoveUnifiedEnvironmentAsync(env: "<value>");
+
+// handle response
+```
+
+### Parameters
+
+| Parameter          | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `Env`              | *string*           | :heavy_check_mark: | N/A                |
+
+### Response
+
+**[RemoveUnifiedEnvironmentResponse](../../Models/Requests/RemoveUnifiedEnvironmentResponse.md)**
 
 ### Errors
 

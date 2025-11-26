@@ -128,6 +128,7 @@ namespace UnifiedTo
         public IUnified Unified { get; }
         public IApicall Apicall { get; }
         public IConnection Connection { get; }
+        public IEnvironment Environment { get; }
         public IIntegration Integration { get; }
         public IAuth Auth { get; }
         public ILogin Login { get; }
@@ -147,7 +148,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.118.0";
+        private const string _sdkVersion = "0.120.0";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -253,6 +254,7 @@ namespace UnifiedTo
         public IUnified Unified { get; private set; }
         public IApicall Apicall { get; private set; }
         public IConnection Connection { get; private set; }
+        public IEnvironment Environment { get; private set; }
         public IIntegration Integration { get; private set; }
         public IAuth Auth { get; private set; }
         public ILogin Login { get; private set; }
@@ -472,6 +474,8 @@ namespace UnifiedTo
             Apicall = new Apicall(SDKConfiguration);
 
             Connection = new Connection(SDKConfiguration);
+
+            Environment = new Environment(SDKConfiguration);
 
             Integration = new Integration(SDKConfiguration);
 
@@ -737,6 +741,8 @@ namespace UnifiedTo
             Apicall = new Apicall(SDKConfiguration);
 
             Connection = new Connection(SDKConfiguration);
+
+            Environment = new Environment(SDKConfiguration);
 
             Integration = new Integration(SDKConfiguration);
 

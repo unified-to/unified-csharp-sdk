@@ -20,7 +20,7 @@ generation:
   schemas:
     allOfMergeStrategy: shallowMerge
 csharp:
-  version: 0.118.0
+  version: 0.120.0
   additionalDependencies: []
   author: Unified API Inc.
   baseErrorName: UnifiedToError
@@ -43,6 +43,7 @@ csharp:
       shared: Models/Components
       webhooks: Models/Webhooks
   includeDebugSymbols: false
+  inferUnionDiscriminators: false
   inputModelSuffix: input
   maxMethodParams: 4
   methodArguments: infer-optional-args
