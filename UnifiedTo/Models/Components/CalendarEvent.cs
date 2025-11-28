@@ -68,6 +68,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("recurring_event_id")]
         public string? RecurringEventId { get; set; }
 
+        [JsonProperty("send_notifications")]
+        public bool? SendNotifications { get; set; }
+
         [JsonProperty("start_at")]
         public string? StartAt { get; set; }
 
