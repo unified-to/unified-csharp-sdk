@@ -25,6 +25,8 @@ namespace UnifiedTo.Models.Components
         Mssql,
         [JsonProperty("mariadb")]
         Mariadb,
+        [JsonProperty("supabase")]
+        Supabase,
     }
 
     public static class DbTypeExtension

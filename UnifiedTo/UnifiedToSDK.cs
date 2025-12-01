@@ -21,7 +21,9 @@ namespace UnifiedTo
     using UnifiedTo.Utils.Retries;
 
     /// <summary>
-    /// Unified.to API: One API to Rule Them All
+    /// Unified.to  API: One API to Rule Them All
+    /// 
+    /// <see>https://docs.unified.to} - API Documentation</see>
     /// </summary>
     public interface IUnifiedToSDK
     {
@@ -141,14 +143,16 @@ namespace UnifiedTo
 
 
     /// <summary>
-    /// Unified.to API: One API to Rule Them All
+    /// Unified.to  API: One API to Rule Them All
+    /// 
+    /// <see>https://docs.unified.to} - API Documentation</see>
     /// </summary>
     public class UnifiedToSDK: IUnifiedToSDK
     {
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.122.0";
+        private const string _sdkVersion = "0.124.0";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
