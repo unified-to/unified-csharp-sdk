@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 0b28d8593f165fb3de853a45b8c6ab17
+  docChecksum: 5cc9bd003a02a42d13a2683d5b08bc71
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.124.0
-  configChecksum: f272e2e3c314500b60af292b64732e5d
+  releaseVersion: 0.126.0
+  configChecksum: 9219359550573c2d6450e9da31ec2063
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -8370,3 +8370,4 @@ examples:
           application/json: ["<value 1>", "<value 2>", "<value 3>"]
 examplesVersion: 1.0.2
 generatedTests: {}
+releaseNotes: "## Csharp SDK Changes:\n* `UnifiedTo.Commerce.CreateCommerceItem()`: \n  *  `request.commerceItem.Collections` **Added**\n  *  `response.collections` **Added**\n* `UnifiedTo.Commerce.CreateCommerceSaleschannel()`: \n  *  `request.commerceSaleschannel.Collections.[].Type` **Added**\n  *  `response.collections.[].Type` **Added**\n* `UnifiedTo.Commerce.GetCommerceItem()`:  `response.collections` **Added**\n* `UnifiedTo.Commerce.GetCommerceSaleschannel()`:  `response.collections.[].Type` **Added**\n* `UnifiedTo.Commerce.ListCommerceItems()`:  `response.[].Collections` **Added**\n* `UnifiedTo.Commerce.ListCommerceSaleschannels()`:  `response.[].Collections.[].Type` **Added**\n* `UnifiedTo.Commerce.PatchCommerceItem()`: \n  *  `request.CommerceItem.Collections` **Added**\n  *  `response.collections` **Added**\n* `UnifiedTo.Commerce.PatchCommerceSaleschannel()`: \n  *  `request.CommerceSaleschannel.Collections.[].Type` **Added**\n  *  `response.collections.[].Type` **Added**\n* `UnifiedTo.Commerce.UpdateCommerceItem()`: \n  *  `request.CommerceItem.Collections` **Added**\n  *  `response.collections` **Added**\n* `UnifiedTo.Commerce.UpdateCommerceSaleschannel()`: \n  *  `request.CommerceSaleschannel.Collections.[].Type` **Added**\n  *  `response.collections.[].Type` **Added**\n* `UnifiedTo.Item.CreateCommerceItem()`: \n  *  `request.commerceItem.Collections` **Added**\n  *  `response.collections` **Added**\n* `UnifiedTo.Item.GetCommerceItem()`:  `response.collections` **Added**\n* `UnifiedTo.Item.ListCommerceItems()`:  `response.[].Collections` **Added**\n* `UnifiedTo.Item.PatchCommerceItem()`: \n  *  `request.CommerceItem.Collections` **Added**\n  *  `response.collections` **Added**\n* `UnifiedTo.Item.UpdateCommerceItem()`: \n  *  `request.CommerceItem.Collections` **Added**\n  *  `response.collections` **Added**\n* `UnifiedTo.Saleschannel.CreateCommerceSaleschannel()`: \n  *  `request.commerceSaleschannel.Collections.[].Type` **Added**\n  *  `response.collections.[].Type` **Added**\n* `UnifiedTo.Saleschannel.GetCommerceSaleschannel()`:  `response.collections.[].Type` **Added**\n* `UnifiedTo.Saleschannel.ListCommerceSaleschannels()`:  `response.[].Collections.[].Type` **Added**\n* `UnifiedTo.Saleschannel.PatchCommerceSaleschannel()`: \n  *  `request.CommerceSaleschannel.Collections.[].Type` **Added**\n  *  `response.collections.[].Type` **Added**\n* `UnifiedTo.Saleschannel.UpdateCommerceSaleschannel()`: \n  *  `request.CommerceSaleschannel.Collections.[].Type` **Added**\n  *  `response.collections.[].Type` **Added**\n"

@@ -21,8 +21,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
+        /// <summary>
+        ///  @deprecated; use collections instead
+        /// </summary>
         [JsonProperty("collection_ids")]
         public List<string>? CollectionIds { get; set; }
+
+        /// <summary>
+        /// points to Collection with id, name, and type fields
+        /// </summary>
+        [JsonProperty("collections")]
+        public List<CommerceReference>? Collections { get; set; }
 
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
