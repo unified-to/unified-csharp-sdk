@@ -27,7 +27,7 @@ namespace UnifiedTo.Models.Components
         public string? Name { get; set; }
 
         [JsonProperty("sub_items")]
-        public List<PropertyAccountingCashflowItemSubItems>? SubItems { get; set; }
+        public List<AccountingCashflowItem>? SubItems { get; set; }
 
         /// <summary>
         /// Optional linkage to transactions
