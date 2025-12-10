@@ -16,11 +16,12 @@ generation:
     oAuth2PasswordEnabled: false
   baseServerURL: ""
   flattenGlobalSecurity: true
+  persistentEdits: {}
   requestBodyFieldName: ""
   schemas:
     allOfMergeStrategy: shallowMerge
 csharp:
-  version: 0.128.0
+  version: 0.130.0
   additionalDependencies: []
   author: Unified API Inc.
   baseErrorName: UnifiedToError

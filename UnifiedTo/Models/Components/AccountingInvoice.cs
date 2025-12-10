@@ -72,6 +72,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        [JsonProperty("reference")]
+        public string? Reference { get; set; }
+
         [JsonProperty("refund_amount")]
         public double? RefundAmount { get; set; }
 
