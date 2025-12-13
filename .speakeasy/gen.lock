@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 7ef3d1caec75891711e5e81373e284c3
+  docChecksum: dbaf8b38742d89e3249fbd4c5a4e2a74
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.0
-  configChecksum: 15d6782de589cd21b480533ebde75a05
+  releaseVersion: 0.130.1
+  configChecksum: d3cad1b75412c9abfdb5efcd96921eeb
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -9283,7 +9283,7 @@ trackedFiles:
     pristine_git_object: cebc4b0956b242aeb77819fd2e703ce021df9c78
   UnifiedTo/Models/Components/CrmStage.cs:
     id: cec39f049d4f
-    last_write_checksum: sha1:0e969819dd2aca7bcc38ae9b299e8773019b2e7d
+    last_write_checksum: sha1:01629dba1304fe9d1505971bc4d5a40f5f0611b6
     pristine_git_object: 901a97644ff132c926be8eff5a07860ba0b08e26
   UnifiedTo/Models/Components/CrmTelephone.cs:
     id: 61044e5a507f
@@ -15271,7 +15271,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:5310193c615a47164a5e2a4f4f9489c9e94bf187
+    last_write_checksum: sha1:66bc7ac700d96d4c74623ca8b532e5696c002fda
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -15347,7 +15347,7 @@ trackedFiles:
     pristine_git_object: 430cf6d0a2882d64973490c67760a6eeaa8e6ec0
   UnifiedTo/UnifiedTo.csproj:
     id: f6547b4d0755
-    last_write_checksum: sha1:5708c7560afbbe2715b11f08ba7659bfabdaa805
+    last_write_checksum: sha1:2dec4a81994df35e4a8941e95df47f99be30d84b
     pristine_git_object: 883792bc149f1152a8331b8e409d591075c3a6bd
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
@@ -15367,7 +15367,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:71b6737047d4928b5edf40bf3af4cd78dcce2140
+    last_write_checksum: sha1:13e6251b33a90de759e78f428805a2c0ed0a7362
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -16055,7 +16055,7 @@ trackedFiles:
     pristine_git_object: ed4a8c119cb6e778efc54a9c0ddd80290b7048c8
   docs/Models/Components/CrmStage.md:
     id: a06af814e86a
-    last_write_checksum: sha1:a4e8a630afc06ad826b68422d47b039f17555773
+    last_write_checksum: sha1:49dd6fb179a85a387add89405563031ae32662d8
     pristine_git_object: f4df13a7aa303f71e1b5c80d9ce1e81ef16f104a
   docs/Models/Components/CrmTelephone.md:
     id: 6c9b69c100ff

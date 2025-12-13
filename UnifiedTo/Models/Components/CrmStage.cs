@@ -31,6 +31,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("is_closed")]
+        public bool? IsClosed { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 
