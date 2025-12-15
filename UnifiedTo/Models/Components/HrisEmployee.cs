@@ -111,6 +111,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        /// <summary>
+        /// the employee&apos;s personal relationships (eg. emergency contacts, spouse, dependants, ...)
+        /// </summary>
+        [JsonProperty("relationships")]
+        public List<HrisEmployeerelationship>? Relationships { get; set; }
+
         [JsonProperty("salutation")]
         public string? Salutation { get; set; }
 

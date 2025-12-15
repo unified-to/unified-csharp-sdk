@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: dbaf8b38742d89e3249fbd4c5a4e2a74
+  docChecksum: 4b755486531295c10ba7a2e07a4c42c1
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.1
-  configChecksum: d3cad1b75412c9abfdb5efcd96921eeb
+  releaseVersion: 0.130.2
+  configChecksum: e3594f7c49a3a34812f520c439c0bfd3
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -298,6 +298,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/HrisEmployee.cs
   - UnifiedTo/Models/Components/HrisEmployeeEmploymentType.cs
   - UnifiedTo/Models/Components/HrisEmployeeGender.cs
+  - UnifiedTo/Models/Components/HrisEmployeerelationship.cs
+  - UnifiedTo/Models/Components/HrisEmployeerelationshipType.cs
   - UnifiedTo/Models/Components/HrisGroup.cs
   - UnifiedTo/Models/Components/HrisGroupType.cs
   - UnifiedTo/Models/Components/HrisLocation.cs
@@ -495,6 +497,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyHrisCompanyAddress.cs
   - UnifiedTo/Models/Components/PropertyHrisEmployeeAddress.cs
   - UnifiedTo/Models/Components/PropertyHrisEmployeeEmployeeRoles.cs
+  - UnifiedTo/Models/Components/PropertyHrisEmployeerelationshipAddress.cs
   - UnifiedTo/Models/Components/PropertyHrisLocationAddress.cs
   - UnifiedTo/Models/Components/PropertyHrisPayslipDeduction.cs
   - UnifiedTo/Models/Components/PropertyHrisPayslipDeductionCoverageLevel.cs
@@ -1987,6 +1990,8 @@ generatedFiles:
   - docs/Models/Components/HrisEmployee.md
   - docs/Models/Components/HrisEmployeeEmploymentType.md
   - docs/Models/Components/HrisEmployeeGender.md
+  - docs/Models/Components/HrisEmployeerelationship.md
+  - docs/Models/Components/HrisEmployeerelationshipType.md
   - docs/Models/Components/HrisGroup.md
   - docs/Models/Components/HrisGroupType.md
   - docs/Models/Components/HrisLocation.md
@@ -2184,6 +2189,7 @@ generatedFiles:
   - docs/Models/Components/PropertyHrisCompanyAddress.md
   - docs/Models/Components/PropertyHrisEmployeeAddress.md
   - docs/Models/Components/PropertyHrisEmployeeEmployeeRoles.md
+  - docs/Models/Components/PropertyHrisEmployeerelationshipAddress.md
   - docs/Models/Components/PropertyHrisLocationAddress.md
   - docs/Models/Components/PropertyHrisPayslipDeduction.md
   - docs/Models/Components/PropertyHrisPayslipDeductionCoverageLevel.md
@@ -9451,7 +9457,7 @@ trackedFiles:
     pristine_git_object: ae315bc1726857533c2f0a719b0d7a5967e7624e
   UnifiedTo/Models/Components/HrisEmployee.cs:
     id: 94bc3284d693
-    last_write_checksum: sha1:236309a503286985bceaf775eddcadf47efa7f58
+    last_write_checksum: sha1:87f29f7e8c432204c36c2d6a538e95b3b063073f
     pristine_git_object: 9c5c3ed1068ce32a541983f64c00d185170a48aa
   UnifiedTo/Models/Components/HrisEmployeeEmploymentType.cs:
     id: 02c53c5383b8
@@ -9461,6 +9467,10 @@ trackedFiles:
     id: cce59364f33e
     last_write_checksum: sha1:e5702ae2ddbf155153b888e8d72e6a03dd1e11b5
     pristine_git_object: 40a613ecb4ce2ae30bc6c9d17d1551045b24a7b3
+  UnifiedTo/Models/Components/HrisEmployeerelationship.cs:
+    last_write_checksum: sha1:8152dafb25a35a364fc29702a5bbbeeebc2a5c71
+  UnifiedTo/Models/Components/HrisEmployeerelationshipType.cs:
+    last_write_checksum: sha1:7ea61b8c4f32d4a182a53572d67b13713c676871
   UnifiedTo/Models/Components/HrisGroup.cs:
     id: 999124d6f5aa
     last_write_checksum: sha1:33567697fa763fd95be3f9c92fbdeaba52791be1
@@ -10249,6 +10259,8 @@ trackedFiles:
     id: 81aa83b0e692
     last_write_checksum: sha1:76f87e7efe42c8b4a52febd8538dcd508cd25914
     pristine_git_object: 2d1571cf778f13a2e5d51d7ea5e9b6272df04761
+  UnifiedTo/Models/Components/PropertyHrisEmployeerelationshipAddress.cs:
+    last_write_checksum: sha1:3af6257c8084e6fef8712caf5d71659dbb317af4
   UnifiedTo/Models/Components/PropertyHrisLocationAddress.cs:
     id: 451b6871c842
     last_write_checksum: sha1:94afe6db07418d0f42f62acb748377409386bad7
@@ -16223,7 +16235,7 @@ trackedFiles:
     pristine_git_object: e1aabdd5666ff4d3f8894862124598352ddc41f2
   docs/Models/Components/HrisEmployee.md:
     id: e25ea7ff5102
-    last_write_checksum: sha1:574f77005277adc3fe56b8cd14725f794dd0cd22
+    last_write_checksum: sha1:3db90a3c12b1040ded77cf139545b168bb715ac1
     pristine_git_object: 88bcaa4ae575d20052bc03662fb043a533ebe637
   docs/Models/Components/HrisEmployeeEmploymentType.md:
     id: f6882ff61723
@@ -16233,6 +16245,10 @@ trackedFiles:
     id: 7a66812a6d27
     last_write_checksum: sha1:bb26aedab26faba70465ccbc31cbce22c7d30414
     pristine_git_object: 3749bef8b50c749a9ea262360f071c89e3dd901b
+  docs/Models/Components/HrisEmployeerelationship.md:
+    last_write_checksum: sha1:751b7a48e6f11b24e9c29c67c3c2b36ec99de80b
+  docs/Models/Components/HrisEmployeerelationshipType.md:
+    last_write_checksum: sha1:9f2fb1059e29e6a8ae3c09bd41e02fc8317b3b05
   docs/Models/Components/HrisGroup.md:
     id: 8718d4d83c79
     last_write_checksum: sha1:d625c9a7af157e7c197b3677b7e032bb6261aeee
@@ -17021,6 +17037,8 @@ trackedFiles:
     id: 622a9d01de26
     last_write_checksum: sha1:fa203fb878d398d3281c0bcb022f8d679afda423
     pristine_git_object: 471aeb44f954afd77c0312993e5086ca1573c532
+  docs/Models/Components/PropertyHrisEmployeerelationshipAddress.md:
+    last_write_checksum: sha1:eb7c9dfd68600c3fa3e1d2e7f86e8d1b542990aa
   docs/Models/Components/PropertyHrisLocationAddress.md:
     id: e7daca3b0cec
     last_write_checksum: sha1:12b090ca8b357fc0f01b958681c91abe9aff8116
