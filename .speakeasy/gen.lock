@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 4b755486531295c10ba7a2e07a4c42c1
+  docChecksum: 72dca536fc3e4387cdd9f33a075cc801
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.2
-  configChecksum: e3594f7c49a3a34812f520c439c0bfd3
+  releaseVersion: 0.130.3
+  configChecksum: b56aac8c311d7297bbdf44c510e8ae99
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -9481,7 +9481,7 @@ trackedFiles:
     pristine_git_object: 784d4d5287c81824739413e8343fcdf128574086
   UnifiedTo/Models/Components/HrisLocation.cs:
     id: d8c033056deb
-    last_write_checksum: sha1:63880edc389bf0f596e1f360d2295818015dfac7
+    last_write_checksum: sha1:14f7aae1e988b8c69f2ef6b339e5647fd595c6f4
     pristine_git_object: d079651c6261d04eecc55a46c864f8a7e97e8ec2
   UnifiedTo/Models/Components/HrisMetadata.cs:
     id: 229dd1728070
@@ -15283,7 +15283,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:66bc7ac700d96d4c74623ca8b532e5696c002fda
+    last_write_checksum: sha1:0b2104fe9609c5fc348c8f1e29b97458c197fe87
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -15379,7 +15379,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:13e6251b33a90de759e78f428805a2c0ed0a7362
+    last_write_checksum: sha1:74c38a6b805474f25392a3ac6672036ad23bde43
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -16259,7 +16259,7 @@ trackedFiles:
     pristine_git_object: 26d5f771f12608eb50aa007a384c0a3aae880109
   docs/Models/Components/HrisLocation.md:
     id: 20deb1e874c7
-    last_write_checksum: sha1:e0cd772b65f3fd57742b3f10404732495956caa3
+    last_write_checksum: sha1:e4c0293bcf9735acba347d2b6a9721fa59f77e96
     pristine_git_object: eadfc0a9dede9985f5b877b66d2dd2abcf827daa
   docs/Models/Components/HrisMetadata.md:
     id: 7ab963063cbe
