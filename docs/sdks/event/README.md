@@ -13,10 +13,12 @@
 * [ListCrmEvents](#listcrmevents) - List all events
 * [PatchCalendarEvent](#patchcalendarevent) - Update an event
 * [PatchCrmEvent](#patchcrmevent) - Update an event
+* [PatchMessagingEvent](#patchmessagingevent) - Update an event
 * [RemoveCalendarEvent](#removecalendarevent) - Remove an event
 * [RemoveCrmEvent](#removecrmevent) - Remove an event
 * [UpdateCalendarEvent](#updatecalendarevent) - Update an event
 * [UpdateCrmEvent](#updatecrmevent) - Update an event
+* [UpdateMessagingEvent](#updatemessagingevent) - Update an event
 
 ## CreateCalendarEvent
 
@@ -346,6 +348,50 @@ var res = await sdk.Event.PatchCrmEventAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchMessagingEvent
+
+Update an event
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchMessagingEventRequest req = new PatchMessagingEventRequest() {
+    MessagingEvent = new MessagingEvent() {
+        Type = MessagingEventType.ChannelJoined,
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Event.PatchMessagingEventAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [PatchMessagingEventRequest](../../Models/Requests/PatchMessagingEventRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+
+### Response
+
+**[PatchMessagingEventResponse](../../Models/Requests/PatchMessagingEventResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## RemoveCalendarEvent
 
 Remove an event
@@ -501,6 +547,50 @@ var res = await sdk.Event.UpdateCrmEventAsync(req);
 ### Response
 
 **[UpdateCrmEventResponse](../../Models/Requests/UpdateCrmEventResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateMessagingEvent
+
+Update an event
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateMessagingEventRequest req = new UpdateMessagingEventRequest() {
+    MessagingEvent = new MessagingEvent() {
+        Type = MessagingEventType.ChannelJoined,
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Event.UpdateMessagingEventAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [UpdateMessagingEventRequest](../../Models/Requests/UpdateMessagingEventRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+
+### Response
+
+**[UpdateMessagingEventResponse](../../Models/Requests/UpdateMessagingEventResponse.md)**
 
 ### Errors
 

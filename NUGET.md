@@ -224,8 +224,7 @@ var customHttpClient = new CustomHttpClient();
 var sdk = new UnifiedTo(client: customHttpClient);
 ```
 
-<details>
-<summary>You can also provide a completely custom HTTP client with your own configuration:</summary>
+**You can also provide a completely custom HTTP client with your own configuration:**
 
 ```csharp
 using UnifiedTo.Utils;
@@ -267,10 +266,8 @@ var sdk = UnifiedTo.Builder()
     .WithClient(new AdvancedHttpClient())
     .Build();
 ```
-</details>
 
-<details>
-<summary>For simple debugging, you can enable request/response logging by implementing a custom client:</summary>
+**For simple debugging, you can enable request/response logging by implementing a custom client:**
 
 ```csharp
 public class LoggingHttpClient : ISpeakeasyHttpClient
@@ -300,7 +297,6 @@ public class LoggingHttpClient : ISpeakeasyHttpClient
 
 var sdk = new UnifiedTo(client: new LoggingHttpClient());
 ```
-</details>
 
 The SDK also provides built-in hook support through the `SDKConfiguration.Hooks` system, which automatically handles
 `BeforeRequestAsync`, `AfterSuccessAsync`, and `AfterErrorAsync` hooks for advanced request lifecycle management.

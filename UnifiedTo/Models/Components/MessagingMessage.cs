@@ -24,6 +24,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("author_member")]
         public PropertyMessagingMessageAuthorMember? AuthorMember { get; set; }
 
+        [JsonProperty("buttons")]
+        public List<MessagingButton>? Buttons { get; set; }
+
         [JsonProperty("channel_id")]
         public string? ChannelId { get; set; }
 
@@ -37,7 +40,7 @@ namespace UnifiedTo.Models.Components
         /// Represents the names of all channels to which the message is sent. Identifies the channels where the message is posted.
         /// </summary>
         [JsonProperty("channels")]
-        public List<MessagingChannelMessage>? Channels { get; set; }
+        public List<MessagingReference>? Channels { get; set; }
 
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }

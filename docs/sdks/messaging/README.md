@@ -10,8 +10,10 @@
 * [GetMessagingMessage](#getmessagingmessage) - Retrieve a message
 * [ListMessagingChannels](#listmessagingchannels) - List all channels
 * [ListMessagingMessages](#listmessagingmessages) - List all messages
+* [PatchMessagingEvent](#patchmessagingevent) - Update an event
 * [PatchMessagingMessage](#patchmessagingmessage) - Update a message
 * [RemoveMessagingMessage](#removemessagingmessage) - Remove a message
+* [UpdateMessagingEvent](#updatemessagingevent) - Update an event
 * [UpdateMessagingMessage](#updatemessagingmessage) - Update a message
 
 ## CreateMessagingMessage
@@ -217,6 +219,50 @@ var res = await sdk.Messaging.ListMessagingMessagesAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchMessagingEvent
+
+Update an event
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchMessagingEventRequest req = new PatchMessagingEventRequest() {
+    MessagingEvent = new MessagingEvent() {
+        Type = MessagingEventType.ChannelJoined,
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Messaging.PatchMessagingEventAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [PatchMessagingEventRequest](../../Models/Requests/PatchMessagingEventRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+
+### Response
+
+**[PatchMessagingEventResponse](../../Models/Requests/PatchMessagingEventResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchMessagingMessage
 
 Update a message
@@ -291,6 +337,50 @@ var res = await sdk.Messaging.RemoveMessagingMessageAsync(
 ### Response
 
 **[RemoveMessagingMessageResponse](../../Models/Requests/RemoveMessagingMessageResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateMessagingEvent
+
+Update an event
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateMessagingEventRequest req = new UpdateMessagingEventRequest() {
+    MessagingEvent = new MessagingEvent() {
+        Type = MessagingEventType.ChannelJoined,
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Messaging.UpdateMessagingEventAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [UpdateMessagingEventRequest](../../Models/Requests/UpdateMessagingEventRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+
+### Response
+
+**[UpdateMessagingEventResponse](../../Models/Requests/UpdateMessagingEventResponse.md)**
 
 ### Errors
 

@@ -598,10 +598,12 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [ListCrmEvents](docs/sdks/event/README.md#listcrmevents) - List all events
 * [PatchCalendarEvent](docs/sdks/event/README.md#patchcalendarevent) - Update an event
 * [PatchCrmEvent](docs/sdks/event/README.md#patchcrmevent) - Update an event
+* [PatchMessagingEvent](docs/sdks/event/README.md#patchmessagingevent) - Update an event
 * [RemoveCalendarEvent](docs/sdks/event/README.md#removecalendarevent) - Remove an event
 * [RemoveCrmEvent](docs/sdks/event/README.md#removecrmevent) - Remove an event
 * [UpdateCalendarEvent](docs/sdks/event/README.md#updatecalendarevent) - Update an event
 * [UpdateCrmEvent](docs/sdks/event/README.md#updatecrmevent) - Update an event
+* [UpdateMessagingEvent](docs/sdks/event/README.md#updatemessagingevent) - Update an event
 
 ### [Expense](docs/sdks/expense/README.md)
 
@@ -912,8 +914,10 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [GetMessagingMessage](docs/sdks/messaging/README.md#getmessagingmessage) - Retrieve a message
 * [ListMessagingChannels](docs/sdks/messaging/README.md#listmessagingchannels) - List all channels
 * [ListMessagingMessages](docs/sdks/messaging/README.md#listmessagingmessages) - List all messages
+* [PatchMessagingEvent](docs/sdks/messaging/README.md#patchmessagingevent) - Update an event
 * [PatchMessagingMessage](docs/sdks/messaging/README.md#patchmessagingmessage) - Update a message
 * [RemoveMessagingMessage](docs/sdks/messaging/README.md#removemessagingmessage) - Remove a message
+* [UpdateMessagingEvent](docs/sdks/messaging/README.md#updatemessagingevent) - Update an event
 * [UpdateMessagingMessage](docs/sdks/messaging/README.md#updatemessagingmessage) - Update a message
 
 ### [Metadata](docs/sdks/metadata/README.md)

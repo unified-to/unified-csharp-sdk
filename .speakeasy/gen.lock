@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 72dca536fc3e4387cdd9f33a075cc801
+  docChecksum: 1a896c50bc225151e4415d9bcea95f29
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.3
-  configChecksum: b56aac8c311d7297bbdf44c510e8ae99
+  releaseVersion: 0.130.4
+  configChecksum: cc2c9b0bf165eb09a244be97698ebbff
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -422,11 +422,14 @@ generatedFiles:
   - UnifiedTo/Models/Components/MarketingList.cs
   - UnifiedTo/Models/Components/MarketingMember.cs
   - UnifiedTo/Models/Components/MessagingAttachment.cs
+  - UnifiedTo/Models/Components/MessagingButton.cs
   - UnifiedTo/Models/Components/MessagingChannel.cs
-  - UnifiedTo/Models/Components/MessagingChannelMessage.cs
+  - UnifiedTo/Models/Components/MessagingEvent.cs
+  - UnifiedTo/Models/Components/MessagingEventType.cs
   - UnifiedTo/Models/Components/MessagingMember.cs
   - UnifiedTo/Models/Components/MessagingMessage.cs
   - UnifiedTo/Models/Components/MessagingReaction.cs
+  - UnifiedTo/Models/Components/MessagingReference.cs
   - UnifiedTo/Models/Components/MetadataMetadata.cs
   - UnifiedTo/Models/Components/MetadataMetadataFormat.cs
   - UnifiedTo/Models/Components/NativeWebhookCalendarId.cs
@@ -509,6 +512,11 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEventsDeleted.cs
   - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEventsUpdated.cs
   - UnifiedTo/Models/Components/PropertyLmsStudentAddress.cs
+  - UnifiedTo/Models/Components/PropertyMessagingEventButton.cs
+  - UnifiedTo/Models/Components/PropertyMessagingEventChannel.cs
+  - UnifiedTo/Models/Components/PropertyMessagingEventMessage.cs
+  - UnifiedTo/Models/Components/PropertyMessagingEventMessageAuthorMember.cs
+  - UnifiedTo/Models/Components/PropertyMessagingEventUser.cs
   - UnifiedTo/Models/Components/PropertyMessagingMessageAuthorMember.cs
   - UnifiedTo/Models/Components/PropertyMessagingReactionMember.cs
   - UnifiedTo/Models/Components/PropertyScimGroupMeta.cs
@@ -1343,6 +1351,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchMartechListResponse.cs
   - UnifiedTo/Models/Requests/PatchMartechMemberRequest.cs
   - UnifiedTo/Models/Requests/PatchMartechMemberResponse.cs
+  - UnifiedTo/Models/Requests/PatchMessagingEventRequest.cs
+  - UnifiedTo/Models/Requests/PatchMessagingEventResponse.cs
   - UnifiedTo/Models/Requests/PatchMessagingMessageRequest.cs
   - UnifiedTo/Models/Requests/PatchMessagingMessageResponse.cs
   - UnifiedTo/Models/Requests/PatchMetadataMetadataRequest.cs
@@ -1670,6 +1680,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateMartechListResponse.cs
   - UnifiedTo/Models/Requests/UpdateMartechMemberRequest.cs
   - UnifiedTo/Models/Requests/UpdateMartechMemberResponse.cs
+  - UnifiedTo/Models/Requests/UpdateMessagingEventRequest.cs
+  - UnifiedTo/Models/Requests/UpdateMessagingEventResponse.cs
   - UnifiedTo/Models/Requests/UpdateMessagingMessageRequest.cs
   - UnifiedTo/Models/Requests/UpdateMessagingMessageResponse.cs
   - UnifiedTo/Models/Requests/UpdateMetadataMetadataRequest.cs
@@ -2114,11 +2126,14 @@ generatedFiles:
   - docs/Models/Components/MarketingList.md
   - docs/Models/Components/MarketingMember.md
   - docs/Models/Components/MessagingAttachment.md
+  - docs/Models/Components/MessagingButton.md
   - docs/Models/Components/MessagingChannel.md
-  - docs/Models/Components/MessagingChannelMessage.md
+  - docs/Models/Components/MessagingEvent.md
+  - docs/Models/Components/MessagingEventType.md
   - docs/Models/Components/MessagingMember.md
   - docs/Models/Components/MessagingMessage.md
   - docs/Models/Components/MessagingReaction.md
+  - docs/Models/Components/MessagingReference.md
   - docs/Models/Components/MetadataMetadata.md
   - docs/Models/Components/MetadataMetadataFormat.md
   - docs/Models/Components/NativeWebhookCalendarId.md
@@ -2201,6 +2216,11 @@ generatedFiles:
   - docs/Models/Components/PropertyIntegrationSupportWebhookEventsDeleted.md
   - docs/Models/Components/PropertyIntegrationSupportWebhookEventsUpdated.md
   - docs/Models/Components/PropertyLmsStudentAddress.md
+  - docs/Models/Components/PropertyMessagingEventButton.md
+  - docs/Models/Components/PropertyMessagingEventChannel.md
+  - docs/Models/Components/PropertyMessagingEventMessage.md
+  - docs/Models/Components/PropertyMessagingEventMessageAuthorMember.md
+  - docs/Models/Components/PropertyMessagingEventUser.md
   - docs/Models/Components/PropertyMessagingMessageAuthorMember.md
   - docs/Models/Components/PropertyMessagingReactionMember.md
   - docs/Models/Components/PropertyScimGroupMeta.md
@@ -3034,6 +3054,8 @@ generatedFiles:
   - docs/Models/Requests/PatchMartechListResponse.md
   - docs/Models/Requests/PatchMartechMemberRequest.md
   - docs/Models/Requests/PatchMartechMemberResponse.md
+  - docs/Models/Requests/PatchMessagingEventRequest.md
+  - docs/Models/Requests/PatchMessagingEventResponse.md
   - docs/Models/Requests/PatchMessagingMessageRequest.md
   - docs/Models/Requests/PatchMessagingMessageResponse.md
   - docs/Models/Requests/PatchMetadataMetadataRequest.md
@@ -3361,6 +3383,8 @@ generatedFiles:
   - docs/Models/Requests/UpdateMartechListResponse.md
   - docs/Models/Requests/UpdateMartechMemberRequest.md
   - docs/Models/Requests/UpdateMartechMemberResponse.md
+  - docs/Models/Requests/UpdateMessagingEventRequest.md
+  - docs/Models/Requests/UpdateMessagingEventResponse.md
   - docs/Models/Requests/UpdateMessagingMessageRequest.md
   - docs/Models/Requests/UpdateMessagingMessageResponse.md
   - docs/Models/Requests/UpdateMetadataMetadataRequest.md
@@ -8371,6 +8395,28 @@ examples:
       responses:
         "200":
           application/json: ["<value 1>", "<value 2>", "<value 3>"]
+  patchMessagingEvent:
+    speakeasy-default-patch-messaging-event:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {"type": "CHANNEL_JOINED"}
+      responses:
+        "200":
+          application/json: {"type": "USER_UPDATED"}
+  updateMessagingEvent:
+    speakeasy-default-update-messaging-event:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {"type": "CHANNEL_JOINED"}
+      responses:
+        "200":
+          application/json: {"type": "CHANNEL_LEFT"}
 examplesVersion: 1.0.2
 generatedTests: {}
 persistentEdits:
@@ -8385,7 +8431,7 @@ trackedFiles:
     pristine_git_object: c094dba670119a1a5414e11c713a4ea3218147cd
   NUGET.md:
     id: f4c8a442a6e5
-    last_write_checksum: sha1:d27dfcc64b52485825138fa966594d2aea3ea584
+    last_write_checksum: sha1:9b7bacffa457a39fadc812f41ed96c536293a848
     pristine_git_object: 7aa3617f8580542c9180a6ba735546cc9d3bb26b
   USAGE.md:
     id: 3aed33ce6e6f
@@ -8557,7 +8603,7 @@ trackedFiles:
     pristine_git_object: 442cc1d2f1c9a2c314c643661b12ae28ca156bbd
   UnifiedTo/Event.cs:
     id: 99e807e5eabd
-    last_write_checksum: sha1:7766e9c6f85fd60154ebafc561f27698a68bb7e6
+    last_write_checksum: sha1:ec491839a18be31fc914166a522c704acf1ce302
     pristine_git_object: bf5943a8fc4c990f22e2289629a7fa34de26c136
   UnifiedTo/Expense.cs:
     id: cede45b1edc2
@@ -8665,7 +8711,7 @@ trackedFiles:
     pristine_git_object: ac2129bdc688f8cc646c04155db110bf3914d4e5
   UnifiedTo/Messaging.cs:
     id: 9bace3884d08
-    last_write_checksum: sha1:3e69dcc5a5169145d51ca684754e05701c2c3a67
+    last_write_checksum: sha1:df14c20fcd720898529d4d134aa5ecca23ac7b49
     pristine_git_object: 135a6870facdd8415d537228e7158354e679bf7a
   UnifiedTo/Metadata.cs:
     id: e59db9663070
@@ -9959,26 +10005,30 @@ trackedFiles:
     id: 5fc489ad76c2
     last_write_checksum: sha1:bd96b6c8a7abbf0c2b800d7cc44327f23825e31c
     pristine_git_object: 7276787bcd4c7e7803eb04bfe88de8f4d23a9d47
+  UnifiedTo/Models/Components/MessagingButton.cs:
+    last_write_checksum: sha1:00666c29f48d6af693d4c14ce2c5e36fd391e0ab
   UnifiedTo/Models/Components/MessagingChannel.cs:
     id: 072c1d628cdc
     last_write_checksum: sha1:2c62a4de98f53314d6e995b6ca92e814e9e6ed19
     pristine_git_object: dcec5d255034883e46e4038e1ef56bdd7e51a51d
-  UnifiedTo/Models/Components/MessagingChannelMessage.cs:
-    id: 02121328023b
-    last_write_checksum: sha1:8f7c06152a1f4a2cc1c192a5fc7a1fdbe4e7f6ad
-    pristine_git_object: 6ffbd603ba17a8861293afe1524ff0b32f7441a9
+  UnifiedTo/Models/Components/MessagingEvent.cs:
+    last_write_checksum: sha1:8c71554887e752401edfe410fb881a4a824f953e
+  UnifiedTo/Models/Components/MessagingEventType.cs:
+    last_write_checksum: sha1:9007b00482d97001aa3c5669ba81f85122b12dfa
   UnifiedTo/Models/Components/MessagingMember.cs:
     id: fd244de38830
     last_write_checksum: sha1:b774c1768af9d07fa77b335243dc73242205c465
     pristine_git_object: 5d508a0072f097a8ca662ede4e0f696357939c3b
   UnifiedTo/Models/Components/MessagingMessage.cs:
     id: 437aabab4586
-    last_write_checksum: sha1:c6a36d75e3d2ec84ba1bc252c2f743581bbe015a
+    last_write_checksum: sha1:7598d6c56c67b30c912ad2c1a68a5fed0b5d852b
     pristine_git_object: 47c4e73064e38b832cb8464023a875e487e01122
   UnifiedTo/Models/Components/MessagingReaction.cs:
     id: 29dd5d109a41
     last_write_checksum: sha1:ab88e53ade742c9b0c9ada937a8d6c131de3db4c
     pristine_git_object: e7d43c7d0e261f01032a69d1e4269683961ededc
+  UnifiedTo/Models/Components/MessagingReference.cs:
+    last_write_checksum: sha1:3f38c0a026652752d1293cc1084d001f89757f3e
   UnifiedTo/Models/Components/MetadataMetadata.cs:
     id: b1f6cdb5a505
     last_write_checksum: sha1:88a0ae8f6d45cfac5365bf5789cdcb94b6939daa
@@ -10305,6 +10355,16 @@ trackedFiles:
     id: f641ea33d553
     last_write_checksum: sha1:e32b3d284c112369d1c0ae6007cbc6bbb056f909
     pristine_git_object: 34dc44b53d720edf8e5f88bdd804173b4ba89e67
+  UnifiedTo/Models/Components/PropertyMessagingEventButton.cs:
+    last_write_checksum: sha1:8369f3d89cba5c9abe9c7444fea6e4c81ba1309f
+  UnifiedTo/Models/Components/PropertyMessagingEventChannel.cs:
+    last_write_checksum: sha1:0b94a9420ad4c2b05dc51b0a51ffefc5fb923da2
+  UnifiedTo/Models/Components/PropertyMessagingEventMessage.cs:
+    last_write_checksum: sha1:2134be3d12c446fa66ee5798ba6f3e6530326856
+  UnifiedTo/Models/Components/PropertyMessagingEventMessageAuthorMember.cs:
+    last_write_checksum: sha1:a5f4411a7da36aaec2210a421da8974641b899f1
+  UnifiedTo/Models/Components/PropertyMessagingEventUser.cs:
+    last_write_checksum: sha1:dad1abf6064f9039c8e50f22224ea01f16c817cb
   UnifiedTo/Models/Components/PropertyMessagingMessageAuthorMember.cs:
     id: fcb0dc165a10
     last_write_checksum: sha1:21c0e6791cc708c9ae9bdfdd0759f044990167e8
@@ -13649,6 +13709,10 @@ trackedFiles:
     id: b008775f136f
     last_write_checksum: sha1:a6b05b669a3762ab1e6f6df86ae8b47085dbc6c8
     pristine_git_object: 9f3293d2ff3785968d9c89df30832a9ce06f36bc
+  UnifiedTo/Models/Requests/PatchMessagingEventRequest.cs:
+    last_write_checksum: sha1:37c7df001a769ef78dbd4985594a854879833027
+  UnifiedTo/Models/Requests/PatchMessagingEventResponse.cs:
+    last_write_checksum: sha1:b970cc181a380dab11fae4a187a41beb0590a9f2
   UnifiedTo/Models/Requests/PatchMessagingMessageRequest.cs:
     id: eda373fe64e2
     last_write_checksum: sha1:c0eee2c0156f24bb284345e2d3fb3c5d9d07619f
@@ -14957,6 +15021,10 @@ trackedFiles:
     id: 4314011411ad
     last_write_checksum: sha1:c12a67fdcaa7f979d2116e351988592cfa86cc2f
     pristine_git_object: 004864a79bd380fccf695abca3d63da19bd5d219
+  UnifiedTo/Models/Requests/UpdateMessagingEventRequest.cs:
+    last_write_checksum: sha1:4b66c86858acc2d6e5ae649c11a29bc6e4a80840
+  UnifiedTo/Models/Requests/UpdateMessagingEventResponse.cs:
+    last_write_checksum: sha1:555511051f1305d472309c92ce037175fdf02928
   UnifiedTo/Models/Requests/UpdateMessagingMessageRequest.cs:
     id: 6a2e17d066d7
     last_write_checksum: sha1:86e2be37ca41d7d39e01b159cb9e537b4bfb3a75
@@ -15283,7 +15351,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:0b2104fe9609c5fc348c8f1e29b97458c197fe87
+    last_write_checksum: sha1:20890b1ff91ef5eeccf530090fe42de3b5601d97
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -15379,7 +15447,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:74c38a6b805474f25392a3ac6672036ad23bde43
+    last_write_checksum: sha1:6fbe2238c622d6b491f38364fbf41789dd1d8fe1
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -16737,26 +16805,30 @@ trackedFiles:
     id: 2a5b603e5312
     last_write_checksum: sha1:e2b212cb5c8170dac648c904e998fe9c4abaefb2
     pristine_git_object: bbd2fbcd9aa720e8a724fb6b6411161e1d39fc41
+  docs/Models/Components/MessagingButton.md:
+    last_write_checksum: sha1:c539f8483f50d4796c37b7fb209946e9ea593482
   docs/Models/Components/MessagingChannel.md:
     id: d9d2027ffb3a
     last_write_checksum: sha1:40530fffa33895c16cd2de0d65feae910afa5ab3
     pristine_git_object: e5e863e8b682cd84af2bfe610e905de83b2b53a2
-  docs/Models/Components/MessagingChannelMessage.md:
-    id: a49605beb116
-    last_write_checksum: sha1:a0b60083ee8698fe6e38eff4a087763317fd6c0d
-    pristine_git_object: 4b50783e9867e389f0f86b19a7ef75fef2b7a563
+  docs/Models/Components/MessagingEvent.md:
+    last_write_checksum: sha1:8053458c3bcafd0e1b5bc99c2dd83b2578aa0d88
+  docs/Models/Components/MessagingEventType.md:
+    last_write_checksum: sha1:249b0d536f9c599aa5e5ee19ef98e065d6d5319f
   docs/Models/Components/MessagingMember.md:
     id: 80982476c91f
     last_write_checksum: sha1:7d7ff33086fb68b189f5d6e6a2d4527ed01e3c2f
     pristine_git_object: 05419dbc38b66fd7bd00e1001c98be2fe5a1a66b
   docs/Models/Components/MessagingMessage.md:
     id: c5d11552f1c5
-    last_write_checksum: sha1:040fec41c3f5471fcb8899905bc275cee6c947d5
+    last_write_checksum: sha1:ac2f0bc5b8da0316e23b44a073d39e5a8fbbbdf5
     pristine_git_object: 080ae80ce58bfaf056c0ac61fb671825667ba8dd
   docs/Models/Components/MessagingReaction.md:
     id: 900e432bb528
     last_write_checksum: sha1:34618355046c68e4f91516e84b9a8bf733381d5f
     pristine_git_object: f628b8c4fc16e872e50df697c8908f4743dc5cc8
+  docs/Models/Components/MessagingReference.md:
+    last_write_checksum: sha1:cfbea3e3fa3ee5f398c89ef6a7a09131b0276b95
   docs/Models/Components/MetadataMetadata.md:
     id: e2568429e2a8
     last_write_checksum: sha1:7a66473bcb930e07ea818132f0fbb291ebb29fac
@@ -17083,6 +17155,16 @@ trackedFiles:
     id: 9859e5a5304e
     last_write_checksum: sha1:68cbd9675a5683cff8ffb3f4bc0e5466c0222c94
     pristine_git_object: ae8fd19f41d3161403fa5f82cfcb079f585dca1a
+  docs/Models/Components/PropertyMessagingEventButton.md:
+    last_write_checksum: sha1:32d4851ba744ef4b05a313864f8d637ae650c6e3
+  docs/Models/Components/PropertyMessagingEventChannel.md:
+    last_write_checksum: sha1:7b375e6d79a6fe5592f76309ca523cbe75287891
+  docs/Models/Components/PropertyMessagingEventMessage.md:
+    last_write_checksum: sha1:5387c56b4b6b3666fe14a614e58325be157bcf5b
+  docs/Models/Components/PropertyMessagingEventMessageAuthorMember.md:
+    last_write_checksum: sha1:d7a2bde07f1c5530b91195e0c5ef591cb6379d9e
+  docs/Models/Components/PropertyMessagingEventUser.md:
+    last_write_checksum: sha1:6f240fd335ff18a10eb5e1037874d59d8dd4e5c8
   docs/Models/Components/PropertyMessagingMessageAuthorMember.md:
     id: b33420e10dfb
     last_write_checksum: sha1:e422a0d3eb8470ad6690fa64d3189f74cb50306d
@@ -20415,6 +20497,10 @@ trackedFiles:
     id: 8c518df770d3
     last_write_checksum: sha1:b079ad06e9ef728298fbe39fd91eea0b49df7884
     pristine_git_object: 27a03a528c1e08dbc7072dbafd26a680c7b2cf8d
+  docs/Models/Requests/PatchMessagingEventRequest.md:
+    last_write_checksum: sha1:55743480c65d7abcbf1f604fac1046a7158c5365
+  docs/Models/Requests/PatchMessagingEventResponse.md:
+    last_write_checksum: sha1:6fed01b0f4f0df7e1d3c94c26dbf388dbe01de8e
   docs/Models/Requests/PatchMessagingMessageRequest.md:
     id: b5d56754b78d
     last_write_checksum: sha1:03192098dce10015a6c13fad1fc33273e20be80d
@@ -21723,6 +21809,10 @@ trackedFiles:
     id: 77a3809dcc42
     last_write_checksum: sha1:62eed51eb6f70ecf90c42a83a799389af98ae0b8
     pristine_git_object: 400a2a388f0096770162d6601d9a3968f1926045
+  docs/Models/Requests/UpdateMessagingEventRequest.md:
+    last_write_checksum: sha1:499841bd6b2dc7c7d3e42495c0e3e37f36925eeb
+  docs/Models/Requests/UpdateMessagingEventResponse.md:
+    last_write_checksum: sha1:b3ac3e10ca5cbe70abfe029027e3d115c483c138
   docs/Models/Requests/UpdateMessagingMessageRequest.md:
     id: 0265ff783360
     last_write_checksum: sha1:e1510881e82471964ad2a6427b7898f43a8d4cf2
@@ -22117,7 +22207,7 @@ trackedFiles:
     pristine_git_object: 1b72660558917b2ec51da2d18ce9d451835743b6
   docs/sdks/event/README.md:
     id: 38354de266eb
-    last_write_checksum: sha1:46cb48a39484eacd58905ada03c8cc571a464ee2
+    last_write_checksum: sha1:67dc21199f6e16b74a7533c46b0611149ea9fd24
     pristine_git_object: 451d249a7c45db16a61c57e8ff07b0c567383a92
   docs/sdks/expense/README.md:
     id: 8bba157370c0
@@ -22217,7 +22307,7 @@ trackedFiles:
     pristine_git_object: b594e02d4bdba742d1b763803e7b4087b085a972
   docs/sdks/messaging/README.md:
     id: 827f9d81a390
-    last_write_checksum: sha1:b2fe76ac4dba020f4c111133b3dc67805159ca8b
+    last_write_checksum: sha1:222da76c88bd080fae5885f0545ab2ea83527549
     pristine_git_object: 9d2e55918c5b878910737499d6ea06a9aa7845ad
   docs/sdks/metadata/README.md:
     id: de871ca7dbeb
