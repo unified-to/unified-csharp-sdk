@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 1a896c50bc225151e4415d9bcea95f29
+  docChecksum: 333cdf57ecb8fc0562c8da2e5dd0fd38
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.4
-  configChecksum: cc2c9b0bf165eb09a244be97698ebbff
+  releaseVersion: 0.130.5
+  configChecksum: 99f1e5c0e5ed6f9d8569470f00471f50
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -8747,7 +8747,7 @@ trackedFiles:
     pristine_git_object: 53cb4bc3ae45989ce93d8c3dd7fc76bea22d9d99
   UnifiedTo/Models/Components/AccountingBillStatus.cs:
     id: 045af6d52f63
-    last_write_checksum: sha1:c4e0f3a4d3fe605891949b62b965445dc80223ec
+    last_write_checksum: sha1:778eb86ec48ee78c0a2cd3e72ee7f2d88acbb020
     pristine_git_object: 6ae9a7fdbd976b2fc4e0732b445aa5afa9bf71c4
   UnifiedTo/Models/Components/AccountingCashflow.cs:
     id: 94cee2948476
@@ -8787,7 +8787,7 @@ trackedFiles:
     pristine_git_object: da00cc72e8ace5e0fe32cc67cea68bc074acb549
   UnifiedTo/Models/Components/AccountingCreditmemoStatus.cs:
     id: 1427b09032c7
-    last_write_checksum: sha1:65832d86e719cff417384969a9a574ebbe056378
+    last_write_checksum: sha1:d6e45f7825c189ce6cc68cf3ed598437b5088652
     pristine_git_object: e81850f2dd74fe8a8e29c7ee5e7a0159e9e57f0f
   UnifiedTo/Models/Components/AccountingEmail.cs:
     id: d9250ebc95a2
@@ -8811,7 +8811,7 @@ trackedFiles:
     pristine_git_object: f60a4f34975bf213a9004e3dd8cc1f64dcd47e3d
   UnifiedTo/Models/Components/AccountingInvoiceStatus.cs:
     id: 90cb719e47cb
-    last_write_checksum: sha1:a5bf54cdd2df5069079430d5c9cb4d50e235c09e
+    last_write_checksum: sha1:0de6899fb6a92d4340b62eac21d53c6485ac8b21
     pristine_git_object: f30c88fc7067b504fffa1731460329a58c3473c2
   UnifiedTo/Models/Components/AccountingInvoiceType.cs:
     id: f9d046d91a07
@@ -15351,7 +15351,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:20890b1ff91ef5eeccf530090fe42de3b5601d97
+    last_write_checksum: sha1:77cd21f27a6cfedd44acb5d7d5ed2fe0e7cdd825
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -15447,7 +15447,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:6fbe2238c622d6b491f38364fbf41789dd1d8fe1
+    last_write_checksum: sha1:a1974d0cd2b9b935e63be305c800505b15023c4f
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -15547,7 +15547,7 @@ trackedFiles:
     pristine_git_object: d4793430b2cf837c99f29b91dbe82e5f2b7def77
   docs/Models/Components/AccountingBillStatus.md:
     id: ca51803234ad
-    last_write_checksum: sha1:9eaae73368a1c12eeac2a63cb3389383f1a7bf5e
+    last_write_checksum: sha1:6b0c8ee0575328f9e3026fcee81b7e6add7b4fd9
     pristine_git_object: a46d0c719dea337f184171312b804581bdb75b00
   docs/Models/Components/AccountingCashflow.md:
     id: 23aa334ba2b1
@@ -15587,7 +15587,7 @@ trackedFiles:
     pristine_git_object: fb48c7caa43bdb2e1ee8ce604ca4f7080cf5f456
   docs/Models/Components/AccountingCreditmemoStatus.md:
     id: ab179c65beae
-    last_write_checksum: sha1:615a74817973d8e01d9fc47dd0359873f884e4d0
+    last_write_checksum: sha1:e207097a7a7f2de62bb5c8564c49813c93a08fa1
     pristine_git_object: bb5a5c7dac95fc9c82c627ed37cf49541939a45c
   docs/Models/Components/AccountingEmail.md:
     id: 7f9844dff0b2
@@ -15611,7 +15611,7 @@ trackedFiles:
     pristine_git_object: c3dccd91e36b508f1c7aeda788844fac2a923c27
   docs/Models/Components/AccountingInvoiceStatus.md:
     id: 072c4ca1908f
-    last_write_checksum: sha1:b4e83103c94a1bc194347a473848f4e5a50e28ac
+    last_write_checksum: sha1:0338786693a4814c74071375664ebfe9d198e91e
     pristine_git_object: a43a64aa619b31a7af50d99dba93dbf5bf8525c4
   docs/Models/Components/AccountingInvoiceType.md:
     id: a3713dc93626

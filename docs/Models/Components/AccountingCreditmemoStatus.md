@@ -12,3 +12,4 @@
 | `PartiallyPaid`     | PARTIALLY_PAID      |
 | `PartiallyRefunded` | PARTIALLY_REFUNDED  |
 | `Refunded`          | REFUNDED            |
+| `Overdue`           | OVERDUE             |

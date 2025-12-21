@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Components
         PartiallyRefunded,
         [JsonProperty("REFUNDED")]
         Refunded,
+        [JsonProperty("OVERDUE")]
+        Overdue,
     }
 
     public static class AccountingCreditmemoStatusExtension
