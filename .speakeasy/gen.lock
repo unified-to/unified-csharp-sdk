@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 333cdf57ecb8fc0562c8da2e5dd0fd38
+  docChecksum: 33d600247d6caaa9557a7dac72257357
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.5
-  configChecksum: 99f1e5c0e5ed6f9d8569470f00471f50
+  releaseVersion: 0.130.6
+  configChecksum: 0ebb419810c3a028b35633e31d6a14fd
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -10067,7 +10067,7 @@ trackedFiles:
     pristine_git_object: bb0bd2481948dbadeefd52638d2c39371c2a8a8f
   UnifiedTo/Models/Components/ObjectType.cs:
     id: 8e5be1040e8b
-    last_write_checksum: sha1:2dc318cde450a43db797196a82e619f5b2ca7704
+    last_write_checksum: sha1:8b0c6dac7ae470e6c91388c3a02ce8436cc6b2d8
     pristine_git_object: 8aa887cf95b9ca7e4de4189a0994cf8d7de53ac6
   UnifiedTo/Models/Components/One.cs:
     id: d6fa3c7b6dc5
@@ -10239,7 +10239,7 @@ trackedFiles:
     pristine_git_object: 058a7265ff607fc57d02159cac6833325b133d8b
   UnifiedTo/Models/Components/PropertyConnectionPermissions.cs:
     id: f924575570ed
-    last_write_checksum: sha1:4aab453858ae3290bcc348daeda119f892505525
+    last_write_checksum: sha1:731f972820eff65f53e5465ebb7cb0b715894192
     pristine_git_object: 1fbf256600c76cb7463c9b53c5891696d45c4cd6
   UnifiedTo/Models/Components/PropertyCrmCompanyAddress.cs:
     id: 9ecc38382b6c
@@ -16867,7 +16867,7 @@ trackedFiles:
     pristine_git_object: 4b3743a7dec83d7530294aa27581f508d223cd29
   docs/Models/Components/ObjectType.md:
     id: 70698fd5bb26
-    last_write_checksum: sha1:7458847c771273f8018e00434d99ef51e59594cc
+    last_write_checksum: sha1:5b2ae7d4b24ec7397739539597c9150e7d5655b6
     pristine_git_object: 91af6f273850d152ad35aa723ed82eb7c07b6cff
   docs/Models/Components/One.md:
     id: 37e74752e70f
@@ -17039,7 +17039,7 @@ trackedFiles:
     pristine_git_object: 6b4bf574f578f75b9133779b9acde99497b64e46
   docs/Models/Components/PropertyConnectionPermissions.md:
     id: eb5eb79c93e6
-    last_write_checksum: sha1:7a0d44f93e4483122ef9c196fbdba45e4db567ea
+    last_write_checksum: sha1:60af5e1113775ad1ba7aa8b6fe69a5536df7ede6
     pristine_git_object: 152432bd22d8101ccd205bc3481571ae0fb148e0
   docs/Models/Components/PropertyCrmCompanyAddress.md:
     id: 5836e935161d

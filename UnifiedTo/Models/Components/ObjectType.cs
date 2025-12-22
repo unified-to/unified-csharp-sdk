@@ -167,6 +167,8 @@ namespace UnifiedTo.Models.Components
         MessagingMessage,
         [JsonProperty("messaging_channel")]
         MessagingChannel,
+        [JsonProperty("messaging_event")]
+        MessagingEvent,
         [JsonProperty("kms_space")]
         KmsSpace,
         [JsonProperty("kms_page")]

@@ -291,6 +291,10 @@ namespace UnifiedTo.Models.Components
         MessagingMessageWrite,
         [JsonProperty("messaging_channel_read")]
         MessagingChannelRead,
+        [JsonProperty("messaging_event_read")]
+        MessagingEventRead,
+        [JsonProperty("messaging_event_write")]
+        MessagingEventWrite,
         [JsonProperty("kms_space_read")]
         KmsSpaceRead,
         [JsonProperty("kms_space_write")]
