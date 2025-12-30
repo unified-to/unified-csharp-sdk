@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 33d600247d6caaa9557a7dac72257357
+  docChecksum: 3030116e4bf9d3b64608579d9e62771f
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.6
-  configChecksum: 0ebb419810c3a028b35633e31d6a14fd
+  releaseVersion: 0.130.7
+  configChecksum: fc317ca6927c8f24f0a4efacf3551a6d
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -8747,7 +8747,7 @@ trackedFiles:
     pristine_git_object: 53cb4bc3ae45989ce93d8c3dd7fc76bea22d9d99
   UnifiedTo/Models/Components/AccountingBillStatus.cs:
     id: 045af6d52f63
-    last_write_checksum: sha1:778eb86ec48ee78c0a2cd3e72ee7f2d88acbb020
+    last_write_checksum: sha1:48912ba195106e9e4897b32404d189cf6562d722
     pristine_git_object: 6ae9a7fdbd976b2fc4e0732b445aa5afa9bf71c4
   UnifiedTo/Models/Components/AccountingCashflow.cs:
     id: 94cee2948476
@@ -8787,7 +8787,7 @@ trackedFiles:
     pristine_git_object: da00cc72e8ace5e0fe32cc67cea68bc074acb549
   UnifiedTo/Models/Components/AccountingCreditmemoStatus.cs:
     id: 1427b09032c7
-    last_write_checksum: sha1:d6e45f7825c189ce6cc68cf3ed598437b5088652
+    last_write_checksum: sha1:a9c7b3d8de5bfddd21dbeefa8742b884cd1b35e4
     pristine_git_object: e81850f2dd74fe8a8e29c7ee5e7a0159e9e57f0f
   UnifiedTo/Models/Components/AccountingEmail.cs:
     id: d9250ebc95a2
@@ -8811,7 +8811,7 @@ trackedFiles:
     pristine_git_object: f60a4f34975bf213a9004e3dd8cc1f64dcd47e3d
   UnifiedTo/Models/Components/AccountingInvoiceStatus.cs:
     id: 90cb719e47cb
-    last_write_checksum: sha1:0de6899fb6a92d4340b62eac21d53c6485ac8b21
+    last_write_checksum: sha1:d00058531dbed71fd2d4051fc11ace04787b8c6c
     pristine_git_object: f30c88fc7067b504fffa1731460329a58c3473c2
   UnifiedTo/Models/Components/AccountingInvoiceType.cs:
     id: f9d046d91a07
@@ -8835,7 +8835,7 @@ trackedFiles:
     pristine_git_object: f763fd321b98918f76b418713bbbc754f9797583
   UnifiedTo/Models/Components/AccountingOrderStatus.cs:
     id: f02ce33b76ad
-    last_write_checksum: sha1:b98d1092b2f6d889ef9fd083d0ce25a166c9ff1a
+    last_write_checksum: sha1:a607c3e894dee1c69cbc01a6748a548f6686e660
     pristine_git_object: 8440640f0f5ac428e33c5596c62a204bf4c84ea4
   UnifiedTo/Models/Components/AccountingOrderType.cs:
     id: d85b0c790f9d
@@ -8871,7 +8871,7 @@ trackedFiles:
     pristine_git_object: de9f49f132b4450c251663dd18c0644aba804340
   UnifiedTo/Models/Components/AccountingPurchaseorderStatus.cs:
     id: 1a6fdcb3dc45
-    last_write_checksum: sha1:7c2a73be1469f3b9636e094d73923ff6a0f2bd09
+    last_write_checksum: sha1:22018fbeb17434c95801d8f8c77b8fb3105c575b
     pristine_git_object: 35fa382b1922012d8c1563f26f6a3b51d7d704f4
   UnifiedTo/Models/Components/AccountingReference.cs:
     id: "45691450e079"
@@ -8891,7 +8891,7 @@ trackedFiles:
     pristine_git_object: 2b77dd4ae9d218c055d7aa5aa07114d6fd6f5039
   UnifiedTo/Models/Components/AccountingSalesorderStatus.cs:
     id: 77bb0c0ebc13
-    last_write_checksum: sha1:5d46e8589c2dbad9a8b7b66f8adb86ef492e1a8a
+    last_write_checksum: sha1:ff25af9ad0a8fd8b03cc3d2213bad53842a6a674
     pristine_git_object: bff0270c99b32d707a2b88aed3e2eb5c992f613b
   UnifiedTo/Models/Components/AccountingTaxrate.cs:
     id: c2e6fe053370
@@ -15351,7 +15351,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:77cd21f27a6cfedd44acb5d7d5ed2fe0e7cdd825
+    last_write_checksum: sha1:92add0797ce1ad943953c351281b64ae45306ca6
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -15447,7 +15447,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:a1974d0cd2b9b935e63be305c800505b15023c4f
+    last_write_checksum: sha1:3a0db6b3d33cc1f2efb2307d3df2f54877bacf45
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -15547,7 +15547,7 @@ trackedFiles:
     pristine_git_object: d4793430b2cf837c99f29b91dbe82e5f2b7def77
   docs/Models/Components/AccountingBillStatus.md:
     id: ca51803234ad
-    last_write_checksum: sha1:6b0c8ee0575328f9e3026fcee81b7e6add7b4fd9
+    last_write_checksum: sha1:a03c41a0379e4ab0712cc7e7b05bd13451f3165e
     pristine_git_object: a46d0c719dea337f184171312b804581bdb75b00
   docs/Models/Components/AccountingCashflow.md:
     id: 23aa334ba2b1
@@ -15587,7 +15587,7 @@ trackedFiles:
     pristine_git_object: fb48c7caa43bdb2e1ee8ce604ca4f7080cf5f456
   docs/Models/Components/AccountingCreditmemoStatus.md:
     id: ab179c65beae
-    last_write_checksum: sha1:e207097a7a7f2de62bb5c8564c49813c93a08fa1
+    last_write_checksum: sha1:c0985ca694ef42fdbaac1423bb1c4188646515a5
     pristine_git_object: bb5a5c7dac95fc9c82c627ed37cf49541939a45c
   docs/Models/Components/AccountingEmail.md:
     id: 7f9844dff0b2
@@ -15611,7 +15611,7 @@ trackedFiles:
     pristine_git_object: c3dccd91e36b508f1c7aeda788844fac2a923c27
   docs/Models/Components/AccountingInvoiceStatus.md:
     id: 072c4ca1908f
-    last_write_checksum: sha1:0338786693a4814c74071375664ebfe9d198e91e
+    last_write_checksum: sha1:3892f787f00a5213ffe5028197ffe0213ba473b5
     pristine_git_object: a43a64aa619b31a7af50d99dba93dbf5bf8525c4
   docs/Models/Components/AccountingInvoiceType.md:
     id: a3713dc93626
@@ -15635,7 +15635,7 @@ trackedFiles:
     pristine_git_object: 528ad0ff626e3ccfc48e76358cd7205fad499686
   docs/Models/Components/AccountingOrderStatus.md:
     id: 69ce9454ad02
-    last_write_checksum: sha1:0cd003a57073810f18f4876f75695f7dc78382fd
+    last_write_checksum: sha1:9838f36aacbf8818c654b6de8d4773bf7aee4c6a
     pristine_git_object: 0235c3e00141a425113d1b104d425a387954ad9a
   docs/Models/Components/AccountingOrderType.md:
     id: da299b188b18
@@ -15671,7 +15671,7 @@ trackedFiles:
     pristine_git_object: d25e3decd90dec2467600feff6484f96b1d02dc5
   docs/Models/Components/AccountingPurchaseorderStatus.md:
     id: cd1820a672a6
-    last_write_checksum: sha1:996e18717427756bba68c0674f327b02bb39b133
+    last_write_checksum: sha1:15cb112b0c1d19f96fd4a324162dc7eba10817a3
     pristine_git_object: 6fb66852a0fdcafb049974bd5bb54ee5e1f3971c
   docs/Models/Components/AccountingReference.md:
     id: 9ac44726351b
@@ -15691,7 +15691,7 @@ trackedFiles:
     pristine_git_object: f3ac54dfe56ce326e589f5336c213cd492c31c21
   docs/Models/Components/AccountingSalesorderStatus.md:
     id: ef020d6ba1f2
-    last_write_checksum: sha1:49c565b06b53cb805a097bcae663a462f8c99843
+    last_write_checksum: sha1:9e15bc7325838aaa487037263860b3081e75c83c
     pristine_git_object: a28422165427b6c4bf87cfda1835666cab78b98e
   docs/Models/Components/AccountingTaxrate.md:
     id: 63ec187e9bc8

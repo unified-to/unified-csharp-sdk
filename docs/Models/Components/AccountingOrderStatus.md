@@ -12,3 +12,5 @@
 | `PartiallyPaid`     | PARTIALLY_PAID      |
 | `PartiallyRefunded` | PARTIALLY_REFUNDED  |
 | `Refunded`          | REFUNDED            |
+| `Submitted`         | SUBMITTED           |
+| `Deleted`           | DELETED             |

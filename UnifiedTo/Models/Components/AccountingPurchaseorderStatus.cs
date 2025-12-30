@@ -29,6 +29,10 @@ namespace UnifiedTo.Models.Components
         PartiallyRefunded,
         [JsonProperty("REFUNDED")]
         Refunded,
+        [JsonProperty("SUBMITTED")]
+        Submitted,
+        [JsonProperty("DELETED")]
+        Deleted,
     }
 
     public static class AccountingPurchaseorderStatusExtension
