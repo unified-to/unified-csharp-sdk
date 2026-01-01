@@ -61,6 +61,8 @@ namespace UnifiedTo.Models.Requests
         Calendar,
         [JsonProperty("verification")]
         Verification,
+        [JsonProperty("ads")]
+        Ads,
     }
 
     public static class ListUnifiedIntegrationsQueryParamCategoriesExtension

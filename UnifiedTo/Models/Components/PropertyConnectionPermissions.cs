@@ -391,6 +391,24 @@ namespace UnifiedTo.Models.Components
         EnrichPersonRead,
         [JsonProperty("enrich_company_read")]
         EnrichCompanyRead,
+        [JsonProperty("ads_ad_read")]
+        AdsAdRead,
+        [JsonProperty("ads_ad_write")]
+        AdsAdWrite,
+        [JsonProperty("ads_campaign_read")]
+        AdsCampaignRead,
+        [JsonProperty("ads_campaign_write")]
+        AdsCampaignWrite,
+        [JsonProperty("ads_group_read")]
+        AdsGroupRead,
+        [JsonProperty("ads_group_write")]
+        AdsGroupWrite,
+        [JsonProperty("ads_report_read")]
+        AdsReportRead,
+        [JsonProperty("ads_organization_read")]
+        AdsOrganizationRead,
+        [JsonProperty("ads_organization_write")]
+        AdsOrganizationWrite,
     }
 
     public static class PropertyConnectionPermissionsExtension

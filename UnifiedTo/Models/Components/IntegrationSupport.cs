@@ -26,6 +26,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_account_id")]
         public ListAccountId? ListAccountId { get; set; }
 
+        [JsonProperty("list_ad_id")]
+        public ListAdId? ListAdId { get; set; }
+
         [JsonProperty("list_application_id")]
         public ListApplicationId? ListApplicationId { get; set; }
 
@@ -40,6 +43,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_call_id")]
         public ListCallId? ListCallId { get; set; }
+
+        [JsonProperty("list_campaign_id")]
+        public ListCampaignId? ListCampaignId { get; set; }
 
         [JsonProperty("list_candidate_id")]
         public ListCandidateId? ListCandidateId { get; set; }
@@ -88,6 +94,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_expand_recurring_events")]
         public ListExpandRecurringEvents? ListExpandRecurringEvents { get; set; }
+
+        [JsonProperty("list_group_id")]
+        public ListGroupId? ListGroupId { get; set; }
 
         [JsonProperty("list_instructor_id")]
         public ListInstructorId? ListInstructorId { get; set; }
@@ -260,6 +269,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("slow_fields")]
         public List<string>? SlowFields { get; set; }
 
+        [JsonProperty("virtual_webhook_ad_id")]
+        public VirtualWebhookAdId? VirtualWebhookAdId { get; set; }
+
         [JsonProperty("virtual_webhook_application_id")]
         public VirtualWebhookApplicationId? VirtualWebhookApplicationId { get; set; }
 
@@ -271,6 +283,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_call_id")]
         public VirtualWebhookCallId? VirtualWebhookCallId { get; set; }
+
+        [JsonProperty("virtual_webhook_campaign_id")]
+        public VirtualWebhookCampaignId? VirtualWebhookCampaignId { get; set; }
 
         [JsonProperty("virtual_webhook_candidate_id")]
         public VirtualWebhookCandidateId? VirtualWebhookCandidateId { get; set; }
@@ -307,6 +322,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_fields")]
         public VirtualWebhookFields? VirtualWebhookFields { get; set; }
+
+        [JsonProperty("virtual_webhook_group_id")]
+        public VirtualWebhookGroupId? VirtualWebhookGroupId { get; set; }
 
         [JsonProperty("virtual_webhook_item_id")]
         public VirtualWebhookItemId? VirtualWebhookItemId { get; set; }

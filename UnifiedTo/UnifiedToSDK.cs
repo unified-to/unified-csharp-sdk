@@ -47,6 +47,10 @@ namespace UnifiedTo
         public ITaxrate Taxrate { get; }
         public ITransaction Transaction { get; }
         public ITrialbalance Trialbalance { get; }
+        public IAds Ads { get; }
+        public IAd Ad { get; }
+        public ICampaign Campaign { get; }
+        public IGroup Group { get; }
         public IAts Ats { get; }
         public IActivity Activity { get; }
         public IApplication Application { get; }
@@ -84,7 +88,6 @@ namespace UnifiedTo
         public IDeduction Deduction { get; }
         public IDevice Device { get; }
         public IEmployee Employee { get; }
-        public IGroup Group { get; }
         public IPayslip Payslip { get; }
         public ITimeoff Timeoff { get; }
         public ITimeshift Timeshift { get; }
@@ -152,7 +155,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.7";
+        private const string _sdkVersion = "0.130.8";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -175,6 +178,10 @@ namespace UnifiedTo
         public ITaxrate Taxrate { get; private set; }
         public ITransaction Transaction { get; private set; }
         public ITrialbalance Trialbalance { get; private set; }
+        public IAds Ads { get; private set; }
+        public IAd Ad { get; private set; }
+        public ICampaign Campaign { get; private set; }
+        public IGroup Group { get; private set; }
         public IAts Ats { get; private set; }
         public IActivity Activity { get; private set; }
         public IApplication Application { get; private set; }
@@ -212,7 +219,6 @@ namespace UnifiedTo
         public IDeduction Deduction { get; private set; }
         public IDevice Device { get; private set; }
         public IEmployee Employee { get; private set; }
-        public IGroup Group { get; private set; }
         public IPayslip Payslip { get; private set; }
         public ITimeoff Timeoff { get; private set; }
         public ITimeshift Timeshift { get; private set; }
@@ -313,6 +319,14 @@ namespace UnifiedTo
 
             Trialbalance = new Trialbalance(SDKConfiguration);
 
+            Ads = new Ads(SDKConfiguration);
+
+            Ad = new Ad(SDKConfiguration);
+
+            Campaign = new Campaign(SDKConfiguration);
+
+            Group = new Group(SDKConfiguration);
+
             Ats = new Ats(SDKConfiguration);
 
             Activity = new Activity(SDKConfiguration);
@@ -386,8 +400,6 @@ namespace UnifiedTo
             Device = new Device(SDKConfiguration);
 
             Employee = new Employee(SDKConfiguration);
-
-            Group = new Group(SDKConfiguration);
 
             Payslip = new Payslip(SDKConfiguration);
 
@@ -580,6 +592,14 @@ namespace UnifiedTo
 
             Trialbalance = new Trialbalance(SDKConfiguration);
 
+            Ads = new Ads(SDKConfiguration);
+
+            Ad = new Ad(SDKConfiguration);
+
+            Campaign = new Campaign(SDKConfiguration);
+
+            Group = new Group(SDKConfiguration);
+
             Ats = new Ats(SDKConfiguration);
 
             Activity = new Activity(SDKConfiguration);
@@ -653,8 +673,6 @@ namespace UnifiedTo
             Device = new Device(SDKConfiguration);
 
             Employee = new Employee(SDKConfiguration);
-
-            Group = new Group(SDKConfiguration);
 
             Payslip = new Payslip(SDKConfiguration);
 

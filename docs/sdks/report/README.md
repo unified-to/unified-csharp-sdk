@@ -7,6 +7,7 @@
 
 * [GetAccountingReport](#getaccountingreport) - Retrieve a report
 * [ListAccountingReports](#listaccountingreports) - List all reports
+* [ListAdsReports](#listadsreports) - List all reports
 
 ## GetAccountingReport
 
@@ -82,6 +83,46 @@ var res = await sdk.Report.ListAccountingReportsAsync(req);
 ### Response
 
 **[ListAccountingReportsResponse](../../Models/Requests/ListAccountingReportsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListAdsReports
+
+List all reports
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListAdsReportsRequest req = new ListAdsReportsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Report.ListAdsReportsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                               | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `request`                                                               | [ListAdsReportsRequest](../../Models/Requests/ListAdsReportsRequest.md) | :heavy_check_mark:                                                      | The request object to use for the request.                              |
+
+### Response
+
+**[ListAdsReportsResponse](../../Models/Requests/ListAdsReportsResponse.md)**
 
 ### Errors
 

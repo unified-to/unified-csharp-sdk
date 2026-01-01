@@ -72,6 +72,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("groups")]
         public List<HrisGroup>? Groups { get; set; }
 
+        [JsonProperty("has_mfa")]
+        public bool? HasMfa { get; set; }
+
         [JsonProperty("hired_at")]
         public DateTime? HiredAt { get; set; }
 

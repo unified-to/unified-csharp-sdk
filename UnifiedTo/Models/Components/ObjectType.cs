@@ -217,6 +217,16 @@ namespace UnifiedTo.Models.Components
         CalendarLink,
         [JsonProperty("calendar_recording")]
         CalendarRecording,
+        [JsonProperty("ads_organization")]
+        AdsOrganization,
+        [JsonProperty("ads_ad")]
+        AdsAd,
+        [JsonProperty("ads_campaign")]
+        AdsCampaign,
+        [JsonProperty("ads_report")]
+        AdsReport,
+        [JsonProperty("ads_group")]
+        AdsGroup,
     }
 
     public static class ObjectTypeExtension
