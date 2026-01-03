@@ -13,38 +13,28 @@ namespace UnifiedTo.Models.Components
     using System;
     using UnifiedTo.Utils;
     
-    public enum AdType
+    public enum PropertyAdsReportMetricsGroupBudgetPeriod
     {
-        [JsonProperty("TEXT")]
-        Text,
-        [JsonProperty("IMAGE")]
-        Image,
-        [JsonProperty("VIDEO")]
-        Video,
-        [JsonProperty("RESPONSIVE")]
-        Responsive,
-        [JsonProperty("SHOPPING")]
-        Shopping,
-        [JsonProperty("APP")]
-        App,
-        [JsonProperty("CALL")]
-        Call,
-        [JsonProperty("CAROUSEL")]
-        Carousel,
-        [JsonProperty("SOCIAL")]
-        Social,
+        [JsonProperty("DAILY")]
+        Daily,
+        [JsonProperty("MONTHLY")]
+        Monthly,
+        [JsonProperty("TOTAL")]
+        Total,
+        [JsonProperty("LIFETIME")]
+        Lifetime,
     }
 
-    public static class AdTypeExtension
+    public static class PropertyAdsReportMetricsGroupBudgetPeriodExtension
     {
-        public static string Value(this AdType value)
+        public static string Value(this PropertyAdsReportMetricsGroupBudgetPeriod value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static AdType ToEnum(this string value)
+        public static PropertyAdsReportMetricsGroupBudgetPeriod ToEnum(this string value)
         {
-            foreach(var field in typeof(AdType).GetFields())
+            foreach(var field in typeof(PropertyAdsReportMetricsGroupBudgetPeriod).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -57,14 +47,14 @@ namespace UnifiedTo.Models.Components
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is AdType)
+                    if (enumVal is PropertyAdsReportMetricsGroupBudgetPeriod)
                     {
-                        return (AdType)enumVal;
+                        return (PropertyAdsReportMetricsGroupBudgetPeriod)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum AdType");
+            throw new Exception($"Unknown value {value} for enum PropertyAdsReportMetricsGroupBudgetPeriod");
         }
     }
 

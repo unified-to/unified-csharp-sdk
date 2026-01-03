@@ -44,7 +44,7 @@ namespace UnifiedTo
             Client = client ?? new SpeakeasyHttpClient();
             ServerUrl = "";
             ServerIndex = 0;
-            UserAgent = "speakeasy-sdk/csharp 0.130.8 2.632.2 1.0 UnifiedTo";
+            UserAgent = "speakeasy-sdk/csharp 0.130.9 2.632.2 1.0 UnifiedTo";
             SecuritySource = null;
             Hooks = new SDKHooks();
             RetryConfig = null;

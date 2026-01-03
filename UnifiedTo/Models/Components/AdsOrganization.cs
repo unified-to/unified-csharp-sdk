@@ -20,14 +20,23 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonProperty("currency")]
+        public string? Currency { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        [JsonProperty("parent_id")]
+        public string? ParentId { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
+
+        [JsonProperty("timezone")]
+        public string? Timezone { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

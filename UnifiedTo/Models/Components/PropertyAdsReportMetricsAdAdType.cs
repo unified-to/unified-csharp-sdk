@@ -29,6 +29,10 @@ namespace UnifiedTo.Models.Components
         App,
         [JsonProperty("CALL")]
         Call,
+        [JsonProperty("CAROUSEL")]
+        Carousel,
+        [JsonProperty("SOCIAL")]
+        Social,
     }
 
     public static class PropertyAdsReportMetricsAdAdTypeExtension

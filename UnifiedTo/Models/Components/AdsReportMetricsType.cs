@@ -33,6 +33,30 @@ namespace UnifiedTo.Models.Components
         Cpa,
         [JsonProperty("ROAS")]
         Roas,
+        [JsonProperty("CPM")]
+        Cpm,
+        [JsonProperty("ECPM")]
+        Ecpm,
+        [JsonProperty("ENGAGEMENT")]
+        Engagement,
+        [JsonProperty("VIDEO_COMPLETIONS")]
+        VideoCompletions,
+        [JsonProperty("VIDEO_VIEWS")]
+        VideoViews,
+        [JsonProperty("LEADS")]
+        Leads,
+        [JsonProperty("ENGAGEMENTS")]
+        Engagements,
+        [JsonProperty("SAVES")]
+        Saves,
+        [JsonProperty("LIKES")]
+        Likes,
+        [JsonProperty("SHARES")]
+        Shares,
+        [JsonProperty("COMMENTS")]
+        Comments,
+        [JsonProperty("FOLLOWS")]
+        Follows,
     }
 
     public static class AdsReportMetricsTypeExtension

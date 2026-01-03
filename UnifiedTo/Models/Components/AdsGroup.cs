@@ -18,11 +18,23 @@ namespace UnifiedTo.Models.Components
     public class AdsGroup
     {
 
+        [JsonProperty("bid_amount")]
+        public double? BidAmount { get; set; }
+
+        [JsonProperty("budget_amount")]
+        public double? BudgetAmount { get; set; }
+
+        [JsonProperty("budget_period")]
+        public AdsGroupBudgetPeriod? BudgetPeriod { get; set; }
+
         [JsonProperty("campaign_id")]
         public string? CampaignId { get; set; }
 
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
+
+        [JsonProperty("end_at")]
+        public DateTime? EndAt { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
@@ -38,6 +50,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
+
+        [JsonProperty("start_at")]
+        public DateTime? StartAt { get; set; }
 
         [JsonProperty("targeting")]
         public PropertyAdsGroupTargeting? Targeting { get; set; }

@@ -12,3 +12,5 @@
 | `Shopping`   | SHOPPING     |
 | `App`        | APP          |
 | `Call`       | CALL         |
+| `Carousel`   | CAROUSEL     |
+| `Social`     | SOCIAL       |

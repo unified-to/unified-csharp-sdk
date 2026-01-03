@@ -22,11 +22,32 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("audiences")]
         public List<string>? Audiences { get; set; }
 
+        [JsonProperty("companies")]
+        public List<string>? Companies { get; set; }
+
+        [JsonProperty("company_sizes")]
+        public List<string>? CompanySizes { get; set; }
+
+        [JsonProperty("degrees")]
+        public List<string>? Degrees { get; set; }
+
         [JsonProperty("devices")]
         public List<string>? Devices { get; set; }
 
         [JsonProperty("genders")]
         public List<string>? Genders { get; set; }
+
+        [JsonProperty("industries")]
+        public List<string>? Industries { get; set; }
+
+        [JsonProperty("interests")]
+        public List<string>? Interests { get; set; }
+
+        [JsonProperty("job_functions")]
+        public List<string>? JobFunctions { get; set; }
+
+        [JsonProperty("job_titles")]
+        public List<string>? JobTitles { get; set; }
 
         [JsonProperty("keywords")]
         public List<string>? Keywords { get; set; }
@@ -39,5 +60,14 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("placements")]
         public List<string>? Placements { get; set; }
+
+        [JsonProperty("schools")]
+        public List<string>? Schools { get; set; }
+
+        [JsonProperty("seniorities")]
+        public List<string>? Seniorities { get; set; }
+
+        [JsonProperty("skills")]
+        public List<string>? Skills { get; set; }
     }
 }
