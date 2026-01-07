@@ -227,6 +227,10 @@ namespace UnifiedTo.Models.Components
         AdsReport,
         [JsonProperty("ads_group")]
         AdsGroup,
+        [JsonProperty("forms_form")]
+        FormsForm,
+        [JsonProperty("forms_submission")]
+        FormsSubmission,
     }
 
     public static class ObjectTypeExtension

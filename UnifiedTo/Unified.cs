@@ -33,6 +33,10 @@ namespace UnifiedTo
         /// </remarks>
         /// </summary>
         Task<CreateUnifiedConnectionResponse> CreateUnifiedConnectionAsync(Models.Components.Connection request);
+
+        /// <summary>
+        /// Create new environments
+        /// </summary>
         Task<CreateUnifiedEnvironmentResponse> CreateUnifiedEnvironmentAsync(List<string> request);
 
         /// <summary>
@@ -82,6 +86,10 @@ namespace UnifiedTo
         /// List all connections
         /// </summary>
         Task<ListUnifiedConnectionsResponse> ListUnifiedConnectionsAsync(ListUnifiedConnectionsRequest? request = null);
+
+        /// <summary>
+        /// Returns all environments
+        /// </summary>
         Task<ListUnifiedEnvironmentsResponse> ListUnifiedEnvironmentsAsync();
 
         /// <summary>
@@ -127,6 +135,10 @@ namespace UnifiedTo
         /// Remove connection
         /// </summary>
         Task<RemoveUnifiedConnectionResponse> RemoveUnifiedConnectionAsync(string id);
+
+        /// <summary>
+        /// Remove an environment
+        /// </summary>
         Task<RemoveUnifiedEnvironmentResponse> RemoveUnifiedEnvironmentAsync(string env);
 
         /// <summary>
@@ -154,7 +166,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.9";
+        private const string _sdkVersion = "0.130.10";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -315,7 +327,7 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.S = obj;
+                    response.Environments = obj;
                     return response;
                 }
 
@@ -1044,7 +1056,7 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.S = obj;
+                    response.Environments = obj;
                     return response;
                 }
 
@@ -1778,7 +1790,7 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.S = obj;
+                    response.Environments = obj;
                     return response;
                 }
 

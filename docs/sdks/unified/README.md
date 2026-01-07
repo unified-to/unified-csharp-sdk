@@ -6,7 +6,7 @@
 ### Available Operations
 
 * [CreateUnifiedConnection](#createunifiedconnection) - Create connection
-* [CreateUnifiedEnvironment](#createunifiedenvironment)
+* [CreateUnifiedEnvironment](#createunifiedenvironment) - Create new environments
 * [CreateUnifiedWebhook](#createunifiedwebhook) - Create webhook subscription
 * [GetUnifiedApicall](#getunifiedapicall) - Retrieve specific API Call by its ID
 * [GetUnifiedConnection](#getunifiedconnection) - Retrieve connection
@@ -15,7 +15,7 @@
 * [GetUnifiedWebhook](#getunifiedwebhook) - Retrieve webhook by its ID
 * [ListUnifiedApicalls](#listunifiedapicalls) - Returns API Calls
 * [ListUnifiedConnections](#listunifiedconnections) - List all connections
-* [ListUnifiedEnvironments](#listunifiedenvironments)
+* [ListUnifiedEnvironments](#listunifiedenvironments) - Returns all environments
 * [ListUnifiedIntegrationWorkspaces](#listunifiedintegrationworkspaces) - Returns all activated integrations in a workspace
 * [ListUnifiedIntegrations](#listunifiedintegrations) - Returns all integrations
 * [ListUnifiedIssues](#listunifiedissues) - List support issues
@@ -24,7 +24,7 @@
 * [PatchUnifiedWebhook](#patchunifiedwebhook) - Update webhook subscription
 * [PatchUnifiedWebhookTrigger](#patchunifiedwebhooktrigger) - Trigger webhook
 * [RemoveUnifiedConnection](#removeunifiedconnection) - Remove connection
-* [RemoveUnifiedEnvironment](#removeunifiedenvironment)
+* [RemoveUnifiedEnvironment](#removeunifiedenvironment) - Remove an environment
 * [RemoveUnifiedWebhook](#removeunifiedwebhook) - Remove webhook subscription
 * [UpdateUnifiedConnection](#updateunifiedconnection) - Update connection
 * [UpdateUnifiedWebhook](#updateunifiedwebhook) - Update webhook subscription
@@ -75,6 +75,8 @@ var res = await sdk.Unified.CreateUnifiedConnectionAsync(req);
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateUnifiedEnvironment
+
+Create new environments
 
 ### Example Usage
 
@@ -408,6 +410,8 @@ var res = await sdk.Unified.ListUnifiedConnectionsAsync(req);
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## ListUnifiedEnvironments
+
+Returns all environments
 
 ### Example Usage
 
@@ -750,6 +754,8 @@ var res = await sdk.Unified.RemoveUnifiedConnectionAsync(id: "<id>");
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveUnifiedEnvironment
+
+Remove an environment
 
 ### Example Usage
 

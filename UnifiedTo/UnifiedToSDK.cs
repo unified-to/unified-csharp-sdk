@@ -79,6 +79,9 @@ namespace UnifiedTo
         public IPipeline Pipeline { get; }
         public IEnrich Enrich { get; }
         public IPerson Person { get; }
+        public IForms Forms { get; }
+        public IForm Form { get; }
+        public ISubmission Submission { get; }
         public IGenai Genai { get; }
         public IEmbedding Embedding { get; }
         public IModel Model { get; }
@@ -155,7 +158,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.9";
+        private const string _sdkVersion = "0.130.10";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -210,6 +213,9 @@ namespace UnifiedTo
         public IPipeline Pipeline { get; private set; }
         public IEnrich Enrich { get; private set; }
         public IPerson Person { get; private set; }
+        public IForms Forms { get; private set; }
+        public IForm Form { get; private set; }
+        public ISubmission Submission { get; private set; }
         public IGenai Genai { get; private set; }
         public IEmbedding Embedding { get; private set; }
         public IModel Model { get; private set; }
@@ -382,6 +388,12 @@ namespace UnifiedTo
             Enrich = new Enrich(SDKConfiguration);
 
             Person = new Person(SDKConfiguration);
+
+            Forms = new Forms(SDKConfiguration);
+
+            Form = new Form(SDKConfiguration);
+
+            Submission = new Submission(SDKConfiguration);
 
             Genai = new Genai(SDKConfiguration);
 
@@ -655,6 +667,12 @@ namespace UnifiedTo
             Enrich = new Enrich(SDKConfiguration);
 
             Person = new Person(SDKConfiguration);
+
+            Forms = new Forms(SDKConfiguration);
+
+            Form = new Form(SDKConfiguration);
+
+            Submission = new Submission(SDKConfiguration);
 
             Genai = new Genai(SDKConfiguration);
 

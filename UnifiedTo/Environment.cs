@@ -24,8 +24,20 @@ namespace UnifiedTo
 
     public interface IEnvironment
     {
+
+        /// <summary>
+        /// Create new environments
+        /// </summary>
         Task<CreateUnifiedEnvironmentResponse> CreateUnifiedEnvironmentAsync(List<string> request);
+
+        /// <summary>
+        /// Returns all environments
+        /// </summary>
         Task<ListUnifiedEnvironmentsResponse> ListUnifiedEnvironmentsAsync();
+
+        /// <summary>
+        /// Remove an environment
+        /// </summary>
         Task<RemoveUnifiedEnvironmentResponse> RemoveUnifiedEnvironmentAsync(string env);
     }
 
@@ -33,7 +45,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.9";
+        private const string _sdkVersion = "0.130.10";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -109,7 +121,7 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.S = obj;
+                    response.Environments = obj;
                     return response;
                 }
 
@@ -188,7 +200,7 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.S = obj;
+                    response.Environments = obj;
                     return response;
                 }
 
@@ -270,7 +282,7 @@ namespace UnifiedTo
                         ContentType = contentType,
                         RawResponse = httpResponse
                     };
-                    response.S = obj;
+                    response.Environments = obj;
                     return response;
                 }
 

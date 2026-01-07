@@ -63,6 +63,8 @@ namespace UnifiedTo.Models.Components
         Verification,
         [JsonProperty("ads")]
         Ads,
+        [JsonProperty("forms")]
+        Forms,
     }
 
     public static class PropertyConnectionCategoriesExtension

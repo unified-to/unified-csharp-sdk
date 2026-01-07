@@ -141,6 +141,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("terminated_at")]
         public DateTime? TerminatedAt { get; set; }
 
+        [JsonProperty("termination_reason")]
+        public string? TerminationReason { get; set; }
+
         [JsonProperty("timezone")]
         public string? Timezone { get; set; }
 

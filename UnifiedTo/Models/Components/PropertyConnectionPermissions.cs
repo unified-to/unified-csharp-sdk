@@ -409,6 +409,14 @@ namespace UnifiedTo.Models.Components
         AdsOrganizationRead,
         [JsonProperty("ads_organization_write")]
         AdsOrganizationWrite,
+        [JsonProperty("forms_form_read")]
+        FormsFormRead,
+        [JsonProperty("forms_form_write")]
+        FormsFormWrite,
+        [JsonProperty("forms_submission_read")]
+        FormsSubmissionRead,
+        [JsonProperty("forms_submission_write")]
+        FormsSubmissionWrite,
     }
 
     public static class PropertyConnectionPermissionsExtension

@@ -63,6 +63,8 @@ namespace UnifiedTo.Models.Requests
         Verification,
         [JsonProperty("ads")]
         Ads,
+        [JsonProperty("forms")]
+        Forms,
     }
 
     public static class CategoriesExtension

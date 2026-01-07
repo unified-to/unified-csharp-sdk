@@ -95,6 +95,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_expand_recurring_events")]
         public ListExpandRecurringEvents? ListExpandRecurringEvents { get; set; }
 
+        [JsonProperty("list_form_id")]
+        public ListFormId? ListFormId { get; set; }
+
         [JsonProperty("list_group_id")]
         public ListGroupId? ListGroupId { get; set; }
 
@@ -233,6 +236,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("native_webhook_event_id")]
         public NativeWebhookEventId? NativeWebhookEventId { get; set; }
 
+        [JsonProperty("native_webhook_form_id")]
+        public NativeWebhookFormId? NativeWebhookFormId { get; set; }
+
         [JsonProperty("native_webhook_parent_id")]
         public NativeWebhookParentId? NativeWebhookParentId { get; set; }
 
@@ -322,6 +328,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_fields")]
         public VirtualWebhookFields? VirtualWebhookFields { get; set; }
+
+        [JsonProperty("virtual_webhook_form_id")]
+        public VirtualWebhookFormId? VirtualWebhookFormId { get; set; }
 
         [JsonProperty("virtual_webhook_group_id")]
         public VirtualWebhookGroupId? VirtualWebhookGroupId { get; set; }

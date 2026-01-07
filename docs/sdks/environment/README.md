@@ -5,11 +5,13 @@
 
 ### Available Operations
 
-* [CreateUnifiedEnvironment](#createunifiedenvironment)
-* [ListUnifiedEnvironments](#listunifiedenvironments)
-* [RemoveUnifiedEnvironment](#removeunifiedenvironment)
+* [CreateUnifiedEnvironment](#createunifiedenvironment) - Create new environments
+* [ListUnifiedEnvironments](#listunifiedenvironments) - Returns all environments
+* [RemoveUnifiedEnvironment](#removeunifiedenvironment) - Remove an environment
 
 ## CreateUnifiedEnvironment
+
+Create new environments
 
 ### Example Usage
 
@@ -47,6 +49,8 @@ var res = await sdk.Environment.CreateUnifiedEnvironmentAsync(req);
 
 ## ListUnifiedEnvironments
 
+Returns all environments
+
 ### Example Usage
 
 ```csharp
@@ -73,6 +77,8 @@ var res = await sdk.Environment.ListUnifiedEnvironmentsAsync();
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## RemoveUnifiedEnvironment
+
+Remove an environment
 
 ### Example Usage
 

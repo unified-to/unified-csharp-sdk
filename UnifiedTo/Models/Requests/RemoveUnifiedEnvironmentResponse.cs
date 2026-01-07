@@ -23,6 +23,11 @@ namespace UnifiedTo.Models.Requests
         public string? ContentType { get; set; } = default!;
 
         /// <summary>
+        /// Successful
+        /// </summary>
+        public List<string>? Environments { get; set; }
+
+        /// <summary>
         /// HTTP response status code for this operation
         /// </summary>
         public int StatusCode { get; set; } = default!;
@@ -31,10 +36,5 @@ namespace UnifiedTo.Models.Requests
         /// Raw HTTP response; suitable for custom response parsing
         /// </summary>
         public HttpResponseMessage RawResponse { get; set; } = default!;
-
-        /// <summary>
-        /// Successful
-        /// </summary>
-        public List<string>? S { get; set; }
     }
 }
