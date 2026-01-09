@@ -28,42 +28,42 @@ namespace UnifiedTo
         /// <summary>
         /// Create a class
         /// </summary>
-        Task<CreateLmsClassResponse> CreateLmsClassAsync(LmsClass lmsClass, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateLmsClassResponse> CreateLmsClassAsync(LmsClass lmsClass, string connectionId, List<CreateLmsClassQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a course
         /// </summary>
-        Task<CreateLmsCourseResponse> CreateLmsCourseAsync(LmsCourse lmsCourse, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateLmsCourseResponse> CreateLmsCourseAsync(LmsCourse lmsCourse, string connectionId, List<CreateLmsCourseQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an instructor
         /// </summary>
-        Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, List<CreateLmsInstructorQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a student
         /// </summary>
-        Task<CreateLmsStudentResponse> CreateLmsStudentAsync(LmsStudent lmsStudent, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateLmsStudentResponse> CreateLmsStudentAsync(LmsStudent lmsStudent, string connectionId, List<CreateLmsStudentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a class
         /// </summary>
-        Task<GetLmsClassResponse> GetLmsClassAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetLmsClassResponse> GetLmsClassAsync(string connectionId, string id, List<GetLmsClassQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a course
         /// </summary>
-        Task<GetLmsCourseResponse> GetLmsCourseAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetLmsCourseResponse> GetLmsCourseAsync(string connectionId, string id, List<GetLmsCourseQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an instructor
         /// </summary>
-        Task<GetLmsInstructorResponse> GetLmsInstructorAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetLmsInstructorResponse> GetLmsInstructorAsync(string connectionId, string id, List<GetLmsInstructorQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a student
         /// </summary>
-        Task<GetLmsStudentResponse> GetLmsStudentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetLmsStudentResponse> GetLmsStudentAsync(string connectionId, string id, List<GetLmsStudentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all classes
@@ -150,7 +150,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -159,7 +159,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateLmsClassResponse> CreateLmsClassAsync(LmsClass lmsClass, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateLmsClassResponse> CreateLmsClassAsync(LmsClass lmsClass, string connectionId, List<CreateLmsClassQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateLmsClassRequest()
             {
@@ -250,7 +250,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateLmsCourseResponse> CreateLmsCourseAsync(LmsCourse lmsCourse, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateLmsCourseResponse> CreateLmsCourseAsync(LmsCourse lmsCourse, string connectionId, List<CreateLmsCourseQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateLmsCourseRequest()
             {
@@ -341,7 +341,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, List<CreateLmsInstructorQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateLmsInstructorRequest()
             {
@@ -432,7 +432,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateLmsStudentResponse> CreateLmsStudentAsync(LmsStudent lmsStudent, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateLmsStudentResponse> CreateLmsStudentAsync(LmsStudent lmsStudent, string connectionId, List<CreateLmsStudentQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateLmsStudentRequest()
             {
@@ -523,7 +523,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetLmsClassResponse> GetLmsClassAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetLmsClassResponse> GetLmsClassAsync(string connectionId, string id, List<GetLmsClassQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetLmsClassRequest()
             {
@@ -608,7 +608,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetLmsCourseResponse> GetLmsCourseAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetLmsCourseResponse> GetLmsCourseAsync(string connectionId, string id, List<GetLmsCourseQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetLmsCourseRequest()
             {
@@ -693,7 +693,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetLmsInstructorResponse> GetLmsInstructorAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetLmsInstructorResponse> GetLmsInstructorAsync(string connectionId, string id, List<GetLmsInstructorQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetLmsInstructorRequest()
             {
@@ -778,7 +778,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetLmsStudentResponse> GetLmsStudentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetLmsStudentResponse> GetLmsStudentAsync(string connectionId, string id, List<GetLmsStudentQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetLmsStudentRequest()
             {

@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create an invoice
         /// </summary>
-        Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<CreateAccountingInvoiceQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an invoice
         /// </summary>
-        Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<GetAccountingInvoiceQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all invoices
@@ -60,7 +60,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,7 +69,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<CreateAccountingInvoiceQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingInvoiceRequest()
             {
@@ -160,7 +160,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<GetAccountingInvoiceQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingInvoiceRequest()
             {

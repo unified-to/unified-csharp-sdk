@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create an ad
         /// </summary>
-        Task<CreateAdsAdResponse> CreateAdsAdAsync(AdsAd adsAd, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAdsAdResponse> CreateAdsAdAsync(AdsAd adsAd, string connectionId, List<CreateAdsAdQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an ad
         /// </summary>
-        Task<GetAdsAdResponse> GetAdsAdAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAdsAdResponse> GetAdsAdAsync(string connectionId, string id, List<GetAdsAdQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all ads
@@ -60,7 +60,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,7 +69,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAdsAdResponse> CreateAdsAdAsync(AdsAd adsAd, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAdsAdResponse> CreateAdsAdAsync(AdsAd adsAd, string connectionId, List<CreateAdsAdQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAdsAdRequest()
             {
@@ -160,7 +160,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAdsAdResponse> GetAdsAdAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAdsAdResponse> GetAdsAdAsync(string connectionId, string id, List<GetAdsAdQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAdsAdRequest()
             {

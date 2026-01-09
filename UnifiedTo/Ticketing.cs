@@ -28,42 +28,42 @@ namespace UnifiedTo
         /// <summary>
         /// Create a category
         /// </summary>
-        Task<CreateTicketingCategoryResponse> CreateTicketingCategoryAsync(TicketingCategory ticketingCategory, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateTicketingCategoryResponse> CreateTicketingCategoryAsync(TicketingCategory ticketingCategory, string connectionId, List<CreateTicketingCategoryQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a customer
         /// </summary>
-        Task<CreateTicketingCustomerResponse> CreateTicketingCustomerAsync(TicketingCustomer ticketingCustomer, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateTicketingCustomerResponse> CreateTicketingCustomerAsync(TicketingCustomer ticketingCustomer, string connectionId, List<CreateTicketingCustomerQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a note
         /// </summary>
-        Task<CreateTicketingNoteResponse> CreateTicketingNoteAsync(TicketingNote ticketingNote, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateTicketingNoteResponse> CreateTicketingNoteAsync(TicketingNote ticketingNote, string connectionId, List<CreateTicketingNoteQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a ticket
         /// </summary>
-        Task<CreateTicketingTicketResponse> CreateTicketingTicketAsync(TicketingTicket ticketingTicket, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateTicketingTicketResponse> CreateTicketingTicketAsync(TicketingTicket ticketingTicket, string connectionId, List<CreateTicketingTicketQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a category
         /// </summary>
-        Task<GetTicketingCategoryResponse> GetTicketingCategoryAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetTicketingCategoryResponse> GetTicketingCategoryAsync(string connectionId, string id, List<GetTicketingCategoryQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a customer
         /// </summary>
-        Task<GetTicketingCustomerResponse> GetTicketingCustomerAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetTicketingCustomerResponse> GetTicketingCustomerAsync(string connectionId, string id, List<GetTicketingCustomerQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a note
         /// </summary>
-        Task<GetTicketingNoteResponse> GetTicketingNoteAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetTicketingNoteResponse> GetTicketingNoteAsync(string connectionId, string id, List<GetTicketingNoteQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a ticket
         /// </summary>
-        Task<GetTicketingTicketResponse> GetTicketingTicketAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetTicketingTicketResponse> GetTicketingTicketAsync(string connectionId, string id, List<GetTicketingTicketQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all categories
@@ -150,7 +150,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -159,7 +159,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateTicketingCategoryResponse> CreateTicketingCategoryAsync(TicketingCategory ticketingCategory, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateTicketingCategoryResponse> CreateTicketingCategoryAsync(TicketingCategory ticketingCategory, string connectionId, List<CreateTicketingCategoryQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateTicketingCategoryRequest()
             {
@@ -250,7 +250,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateTicketingCustomerResponse> CreateTicketingCustomerAsync(TicketingCustomer ticketingCustomer, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateTicketingCustomerResponse> CreateTicketingCustomerAsync(TicketingCustomer ticketingCustomer, string connectionId, List<CreateTicketingCustomerQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateTicketingCustomerRequest()
             {
@@ -341,7 +341,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateTicketingNoteResponse> CreateTicketingNoteAsync(TicketingNote ticketingNote, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateTicketingNoteResponse> CreateTicketingNoteAsync(TicketingNote ticketingNote, string connectionId, List<CreateTicketingNoteQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateTicketingNoteRequest()
             {
@@ -432,7 +432,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateTicketingTicketResponse> CreateTicketingTicketAsync(TicketingTicket ticketingTicket, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateTicketingTicketResponse> CreateTicketingTicketAsync(TicketingTicket ticketingTicket, string connectionId, List<CreateTicketingTicketQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateTicketingTicketRequest()
             {
@@ -523,7 +523,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetTicketingCategoryResponse> GetTicketingCategoryAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetTicketingCategoryResponse> GetTicketingCategoryAsync(string connectionId, string id, List<GetTicketingCategoryQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetTicketingCategoryRequest()
             {
@@ -608,7 +608,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetTicketingCustomerResponse> GetTicketingCustomerAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetTicketingCustomerResponse> GetTicketingCustomerAsync(string connectionId, string id, List<GetTicketingCustomerQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetTicketingCustomerRequest()
             {
@@ -693,7 +693,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetTicketingNoteResponse> GetTicketingNoteAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetTicketingNoteResponse> GetTicketingNoteAsync(string connectionId, string id, List<GetTicketingNoteQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetTicketingNoteRequest()
             {
@@ -778,7 +778,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetTicketingTicketResponse> GetTicketingTicketAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetTicketingTicketResponse> GetTicketingTicketAsync(string connectionId, string id, List<GetTicketingTicketQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetTicketingTicketRequest()
             {

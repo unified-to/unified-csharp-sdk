@@ -11,6 +11,7 @@ namespace UnifiedTo.Models.Requests
 {
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
+    using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
     
     public class CreatePaymentSubscriptionRequest
@@ -29,7 +30,7 @@ namespace UnifiedTo.Models.Requests
         /// Comma-delimited fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
-        public List<string>? Fields { get; set; }
+        public List<CreatePaymentSubscriptionQueryParamFields>? Fields { get; set; }
 
         /// <summary>
         /// Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar

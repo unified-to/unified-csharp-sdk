@@ -28,22 +28,22 @@ namespace UnifiedTo
         /// <summary>
         /// Create a location
         /// </summary>
-        Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(CommerceLocation commerceLocation, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(CommerceLocation commerceLocation, string connectionId, List<CreateCommerceLocationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a location
         /// </summary>
-        Task<CreateHrisLocationResponse> CreateHrisLocationAsync(HrisLocation hrisLocation, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateHrisLocationResponse> CreateHrisLocationAsync(HrisLocation hrisLocation, string connectionId, List<CreateHrisLocationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a location
         /// </summary>
-        Task<GetCommerceLocationResponse> GetCommerceLocationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCommerceLocationResponse> GetCommerceLocationAsync(string connectionId, string id, List<GetCommerceLocationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a location
         /// </summary>
-        Task<GetHrisLocationResponse> GetHrisLocationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetHrisLocationResponse> GetHrisLocationAsync(string connectionId, string id, List<GetHrisLocationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all locations
@@ -90,7 +90,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -99,7 +99,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(CommerceLocation commerceLocation, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(CommerceLocation commerceLocation, string connectionId, List<CreateCommerceLocationQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCommerceLocationRequest()
             {
@@ -190,7 +190,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisLocationResponse> CreateHrisLocationAsync(HrisLocation hrisLocation, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateHrisLocationResponse> CreateHrisLocationAsync(HrisLocation hrisLocation, string connectionId, List<CreateHrisLocationQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateHrisLocationRequest()
             {
@@ -281,7 +281,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCommerceLocationResponse> GetCommerceLocationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCommerceLocationResponse> GetCommerceLocationAsync(string connectionId, string id, List<GetCommerceLocationQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCommerceLocationRequest()
             {
@@ -366,7 +366,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisLocationResponse> GetHrisLocationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetHrisLocationResponse> GetHrisLocationAsync(string connectionId, string id, List<GetHrisLocationQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetHrisLocationRequest()
             {

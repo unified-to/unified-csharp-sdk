@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a customer
         /// </summary>
-        Task<CreateTicketingCustomerResponse> CreateTicketingCustomerAsync(TicketingCustomer ticketingCustomer, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateTicketingCustomerResponse> CreateTicketingCustomerAsync(TicketingCustomer ticketingCustomer, string connectionId, List<CreateTicketingCustomerQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a customer
         /// </summary>
-        Task<GetTicketingCustomerResponse> GetTicketingCustomerAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetTicketingCustomerResponse> GetTicketingCustomerAsync(string connectionId, string id, List<GetTicketingCustomerQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all customers
@@ -60,7 +60,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,7 +69,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateTicketingCustomerResponse> CreateTicketingCustomerAsync(TicketingCustomer ticketingCustomer, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateTicketingCustomerResponse> CreateTicketingCustomerAsync(TicketingCustomer ticketingCustomer, string connectionId, List<CreateTicketingCustomerQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateTicketingCustomerRequest()
             {
@@ -160,7 +160,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetTicketingCustomerResponse> GetTicketingCustomerAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetTicketingCustomerResponse> GetTicketingCustomerAsync(string connectionId, string id, List<GetTicketingCustomerQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetTicketingCustomerRequest()
             {

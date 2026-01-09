@@ -10,6 +10,7 @@
 namespace UnifiedTo.Models.Requests
 {
     using System.Collections.Generic;
+    using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
     
     public class ListTaskTasksRequest
@@ -25,7 +26,7 @@ namespace UnifiedTo.Models.Requests
         /// Comma-delimited fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
-        public List<string>? Fields { get; set; }
+        public List<ListTaskTasksQueryParamFields>? Fields { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }
@@ -43,7 +44,7 @@ namespace UnifiedTo.Models.Requests
         public string? ParentId { get; set; }
 
         /// <summary>
-        /// The project ID to filter by
+        /// The project ID to filter by (reference to TaskProject)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=project_id")]
         public string? ProjectId { get; set; }
@@ -70,13 +71,13 @@ namespace UnifiedTo.Models.Requests
         public string? Status { get; set; }
 
         /// <summary>
-        /// Return only results whose updated date is equal or greater to this value
+        /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public string? UpdatedGte { get; set; }
 
         /// <summary>
-        /// The user/employee ID to filter by
+        /// The user/employee ID to filter by (reference to HrisEmployee)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=user_id")]
         public string? UserId { get; set; }

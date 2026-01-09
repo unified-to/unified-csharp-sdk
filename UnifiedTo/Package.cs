@@ -28,7 +28,7 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a package
         /// </summary>
-        Task<GetVerificationPackageResponse> GetVerificationPackageAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetVerificationPackageResponse> GetVerificationPackageAsync(string connectionId, string id, List<GetVerificationPackageQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all packages
@@ -40,7 +40,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -49,7 +49,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<GetVerificationPackageResponse> GetVerificationPackageAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetVerificationPackageResponse> GetVerificationPackageAsync(string connectionId, string id, List<GetVerificationPackageQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetVerificationPackageRequest()
             {

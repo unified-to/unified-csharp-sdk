@@ -28,17 +28,17 @@ namespace UnifiedTo
         /// <summary>
         /// Create a recording
         /// </summary>
-        Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<CreateUcRecordingQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a recording
         /// </summary>
-        Task<GetCalendarRecordingResponse> GetCalendarRecordingAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCalendarRecordingResponse> GetCalendarRecordingAsync(string connectionId, string id, List<GetCalendarRecordingQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a recording
         /// </summary>
-        Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<GetUcRecordingQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all recordings
@@ -70,7 +70,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -79,7 +79,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<CreateUcRecordingQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateUcRecordingRequest()
             {
@@ -170,7 +170,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCalendarRecordingResponse> GetCalendarRecordingAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCalendarRecordingResponse> GetCalendarRecordingAsync(string connectionId, string id, List<GetCalendarRecordingQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCalendarRecordingRequest()
             {
@@ -255,7 +255,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<GetUcRecordingQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetUcRecordingRequest()
             {

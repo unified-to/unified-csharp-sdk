@@ -33,12 +33,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
-        /// <summary>
-        /// @deprecated Use `groups` instead
-        /// </summary>
-        [JsonProperty("departments")]
-        public List<string>? Departments { get; set; }
-
         [JsonProperty("description")]
         public string? Description { get; set; }
 

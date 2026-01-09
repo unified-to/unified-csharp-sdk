@@ -28,37 +28,37 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<CreateUcCommentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateUcContactResponse> CreateUcContactAsync(UcContact ucContact, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateUcContactResponse> CreateUcContactAsync(UcContact ucContact, string connectionId, List<CreateUcContactQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a recording
         /// </summary>
-        Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<CreateUcRecordingQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a call
         /// </summary>
-        Task<GetUcCallResponse> GetUcCallAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetUcCallResponse> GetUcCallAsync(string connectionId, string id, List<GetUcCallQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a comment
         /// </summary>
-        Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<GetUcCommentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<GetUcContactQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a recording
         /// </summary>
-        Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<GetUcRecordingQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all calls
@@ -130,7 +130,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -139,7 +139,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<CreateUcCommentQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateUcCommentRequest()
             {
@@ -230,7 +230,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateUcContactResponse> CreateUcContactAsync(UcContact ucContact, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateUcContactResponse> CreateUcContactAsync(UcContact ucContact, string connectionId, List<CreateUcContactQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateUcContactRequest()
             {
@@ -321,7 +321,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateUcRecordingResponse> CreateUcRecordingAsync(UcRecording ucRecording, string connectionId, List<CreateUcRecordingQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateUcRecordingRequest()
             {
@@ -412,7 +412,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetUcCallResponse> GetUcCallAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetUcCallResponse> GetUcCallAsync(string connectionId, string id, List<GetUcCallQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetUcCallRequest()
             {
@@ -497,7 +497,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<GetUcCommentQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetUcCommentRequest()
             {
@@ -582,7 +582,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetUcContactResponse> GetUcContactAsync(string connectionId, string id, List<GetUcContactQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetUcContactRequest()
             {
@@ -667,7 +667,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetUcRecordingResponse> GetUcRecordingAsync(string connectionId, string id, List<GetUcRecordingQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetUcRecordingRequest()
             {

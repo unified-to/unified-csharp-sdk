@@ -28,17 +28,17 @@ namespace UnifiedTo
         /// <summary>
         /// Create a request
         /// </summary>
-        Task<CreateVerificationRequestResponse> CreateVerificationRequestAsync(VerificationRequest verificationRequest, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateVerificationRequestResponse> CreateVerificationRequestAsync(VerificationRequest verificationRequest, string connectionId, List<CreateVerificationRequestQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a package
         /// </summary>
-        Task<GetVerificationPackageResponse> GetVerificationPackageAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetVerificationPackageResponse> GetVerificationPackageAsync(string connectionId, string id, List<GetVerificationPackageQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a request
         /// </summary>
-        Task<GetVerificationRequestResponse> GetVerificationRequestAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetVerificationRequestResponse> GetVerificationRequestAsync(string connectionId, string id, List<GetVerificationRequestQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all packages
@@ -70,7 +70,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -79,7 +79,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateVerificationRequestResponse> CreateVerificationRequestAsync(VerificationRequest verificationRequest, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateVerificationRequestResponse> CreateVerificationRequestAsync(VerificationRequest verificationRequest, string connectionId, List<CreateVerificationRequestQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateVerificationRequestRequest()
             {
@@ -170,7 +170,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetVerificationPackageResponse> GetVerificationPackageAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetVerificationPackageResponse> GetVerificationPackageAsync(string connectionId, string id, List<GetVerificationPackageQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetVerificationPackageRequest()
             {
@@ -255,7 +255,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetVerificationRequestResponse> GetVerificationRequestAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetVerificationRequestResponse> GetVerificationRequestAsync(string connectionId, string id, List<GetVerificationRequestQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetVerificationRequestRequest()
             {

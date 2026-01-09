@@ -28,22 +28,22 @@ namespace UnifiedTo
         /// <summary>
         /// Create a link
         /// </summary>
-        Task<CreateCalendarLinkResponse> CreateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCalendarLinkResponse> CreateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, List<CreateCalendarLinkQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a link
         /// </summary>
-        Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<CreatePaymentLinkQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a link
         /// </summary>
-        Task<GetCalendarLinkResponse> GetCalendarLinkAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCalendarLinkResponse> GetCalendarLinkAsync(string connectionId, string id, List<GetCalendarLinkQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a link
         /// </summary>
-        Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<GetPaymentLinkQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all links
@@ -90,7 +90,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -99,7 +99,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCalendarLinkResponse> CreateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCalendarLinkResponse> CreateCalendarLinkAsync(CalendarLink calendarLink, string connectionId, List<CreateCalendarLinkQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCalendarLinkRequest()
             {
@@ -190,7 +190,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<CreatePaymentLinkQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreatePaymentLinkRequest()
             {
@@ -281,7 +281,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCalendarLinkResponse> GetCalendarLinkAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCalendarLinkResponse> GetCalendarLinkAsync(string connectionId, string id, List<GetCalendarLinkQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCalendarLinkRequest()
             {
@@ -366,7 +366,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<GetPaymentLinkQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetPaymentLinkRequest()
             {

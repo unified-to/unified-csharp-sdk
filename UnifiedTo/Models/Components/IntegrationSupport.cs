@@ -80,9 +80,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_document_id")]
         public ListDocumentId? ListDocumentId { get; set; }
 
-        [JsonProperty("list_end_le")]
-        public ListEndLe? ListEndLe { get; set; }
-
         [JsonProperty("list_end_lt")]
         public ListEndLt? ListEndLt { get; set; }
 
@@ -91,9 +88,6 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_expand")]
         public ListExpand? ListExpand { get; set; }
-
-        [JsonProperty("list_expand_recurring_events")]
-        public ListExpandRecurringEvents? ListExpandRecurringEvents { get; set; }
 
         [JsonProperty("list_form_id")]
         public ListFormId? ListFormId { get; set; }
@@ -313,9 +307,6 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_deal_id")]
         public VirtualWebhookDealId? VirtualWebhookDealId { get; set; }
-
-        [JsonProperty("virtual_webhook_end_le")]
-        public VirtualWebhookEndLe? VirtualWebhookEndLe { get; set; }
 
         [JsonProperty("virtual_webhook_end_lt")]
         public VirtualWebhookEndLt? VirtualWebhookEndLt { get; set; }

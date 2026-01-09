@@ -39,12 +39,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("date_of_birth")]
         public DateTime? DateOfBirth { get; set; }
 
-        [JsonProperty("department")]
-        public string? Department { get; set; }
-
-        [JsonProperty("division")]
-        public string? Division { get; set; }
-
         [JsonProperty("emails")]
         public List<HrisEmail>? Emails { get; set; }
 
@@ -89,9 +83,6 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("last_name")]
         public string? LastName { get; set; }
-
-        [JsonProperty("location")]
-        public string? Location { get; set; }
 
         [JsonProperty("locations")]
         public List<HrisLocation>? Locations { get; set; }

@@ -28,82 +28,82 @@ namespace UnifiedTo
         /// <summary>
         /// Create an activity
         /// </summary>
-        Task<CreateAtsActivityResponse> CreateAtsActivityAsync(AtsActivity atsActivity, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAtsActivityResponse> CreateAtsActivityAsync(AtsActivity atsActivity, string connectionId, List<CreateAtsActivityQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an application
         /// </summary>
-        Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, List<CreateAtsApplicationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a candidate
         /// </summary>
-        Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, List<CreateAtsCandidateQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateAtsCompanyResponse> CreateAtsCompanyAsync(AtsCompany atsCompany, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAtsCompanyResponse> CreateAtsCompanyAsync(AtsCompany atsCompany, string connectionId, List<CreateAtsCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a document
         /// </summary>
-        Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(AtsDocument atsDocument, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(AtsDocument atsDocument, string connectionId, List<CreateAtsDocumentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an interview
         /// </summary>
-        Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<CreateAtsInterviewQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a job
         /// </summary>
-        Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<CreateAtsJobQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a scorecard
         /// </summary>
-        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<CreateAtsScorecardQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an activity
         /// </summary>
-        Task<GetAtsActivityResponse> GetAtsActivityAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAtsActivityResponse> GetAtsActivityAsync(string connectionId, string id, List<GetAtsActivityQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an application
         /// </summary>
-        Task<GetAtsApplicationResponse> GetAtsApplicationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAtsApplicationResponse> GetAtsApplicationAsync(string connectionId, string id, List<GetAtsApplicationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a candidate
         /// </summary>
-        Task<GetAtsCandidateResponse> GetAtsCandidateAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAtsCandidateResponse> GetAtsCandidateAsync(string connectionId, string id, List<GetAtsCandidateQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<GetAtsCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a document
         /// </summary>
-        Task<GetAtsDocumentResponse> GetAtsDocumentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAtsDocumentResponse> GetAtsDocumentAsync(string connectionId, string id, List<GetAtsDocumentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an interview
         /// </summary>
-        Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<GetAtsInterviewQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a job
         /// </summary>
-        Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<GetAtsJobQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a scorecard
         /// </summary>
-        Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<GetAtsScorecardQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all activities
@@ -275,7 +275,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -284,7 +284,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsActivityResponse> CreateAtsActivityAsync(AtsActivity atsActivity, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAtsActivityResponse> CreateAtsActivityAsync(AtsActivity atsActivity, string connectionId, List<CreateAtsActivityQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAtsActivityRequest()
             {
@@ -375,7 +375,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAtsApplicationResponse> CreateAtsApplicationAsync(AtsApplication atsApplication, string connectionId, List<CreateAtsApplicationQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAtsApplicationRequest()
             {
@@ -466,7 +466,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAtsCandidateResponse> CreateAtsCandidateAsync(AtsCandidate atsCandidate, string connectionId, List<CreateAtsCandidateQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAtsCandidateRequest()
             {
@@ -557,7 +557,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsCompanyResponse> CreateAtsCompanyAsync(AtsCompany atsCompany, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAtsCompanyResponse> CreateAtsCompanyAsync(AtsCompany atsCompany, string connectionId, List<CreateAtsCompanyQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAtsCompanyRequest()
             {
@@ -648,7 +648,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(AtsDocument atsDocument, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAtsDocumentResponse> CreateAtsDocumentAsync(AtsDocument atsDocument, string connectionId, List<CreateAtsDocumentQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAtsDocumentRequest()
             {
@@ -739,7 +739,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<CreateAtsInterviewQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAtsInterviewRequest()
             {
@@ -830,7 +830,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<CreateAtsJobQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAtsJobRequest()
             {
@@ -921,7 +921,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAtsScorecardResponse> CreateAtsScorecardAsync(AtsScorecard atsScorecard, string connectionId, List<CreateAtsScorecardQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAtsScorecardRequest()
             {
@@ -1012,7 +1012,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsActivityResponse> GetAtsActivityAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAtsActivityResponse> GetAtsActivityAsync(string connectionId, string id, List<GetAtsActivityQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAtsActivityRequest()
             {
@@ -1097,7 +1097,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsApplicationResponse> GetAtsApplicationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAtsApplicationResponse> GetAtsApplicationAsync(string connectionId, string id, List<GetAtsApplicationQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAtsApplicationRequest()
             {
@@ -1182,7 +1182,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsCandidateResponse> GetAtsCandidateAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAtsCandidateResponse> GetAtsCandidateAsync(string connectionId, string id, List<GetAtsCandidateQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAtsCandidateRequest()
             {
@@ -1267,7 +1267,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<GetAtsCompanyQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAtsCompanyRequest()
             {
@@ -1352,7 +1352,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsDocumentResponse> GetAtsDocumentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAtsDocumentResponse> GetAtsDocumentAsync(string connectionId, string id, List<GetAtsDocumentQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAtsDocumentRequest()
             {
@@ -1437,7 +1437,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<GetAtsInterviewQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAtsInterviewRequest()
             {
@@ -1522,7 +1522,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<GetAtsJobQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAtsJobRequest()
             {
@@ -1607,7 +1607,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAtsScorecardResponse> GetAtsScorecardAsync(string connectionId, string id, List<GetAtsScorecardQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAtsScorecardRequest()
             {

@@ -28,22 +28,22 @@ namespace UnifiedTo
         /// <summary>
         /// Create an event
         /// </summary>
-        Task<CreateCalendarEventResponse> CreateCalendarEventAsync(CalendarEvent calendarEvent, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCalendarEventResponse> CreateCalendarEventAsync(CalendarEvent calendarEvent, string connectionId, List<CreateCalendarEventQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an event
         /// </summary>
-        Task<CreateCrmEventResponse> CreateCrmEventAsync(CrmEvent crmEvent, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCrmEventResponse> CreateCrmEventAsync(CrmEvent crmEvent, string connectionId, List<CreateCrmEventQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an event
         /// </summary>
-        Task<GetCalendarEventResponse> GetCalendarEventAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCalendarEventResponse> GetCalendarEventAsync(string connectionId, string id, List<GetCalendarEventQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an event
         /// </summary>
-        Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<GetCrmEventQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all events
@@ -100,7 +100,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -109,7 +109,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCalendarEventResponse> CreateCalendarEventAsync(CalendarEvent calendarEvent, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCalendarEventResponse> CreateCalendarEventAsync(CalendarEvent calendarEvent, string connectionId, List<CreateCalendarEventQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCalendarEventRequest()
             {
@@ -200,7 +200,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmEventResponse> CreateCrmEventAsync(CrmEvent crmEvent, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCrmEventResponse> CreateCrmEventAsync(CrmEvent crmEvent, string connectionId, List<CreateCrmEventQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCrmEventRequest()
             {
@@ -291,7 +291,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCalendarEventResponse> GetCalendarEventAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCalendarEventResponse> GetCalendarEventAsync(string connectionId, string id, List<GetCalendarEventQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCalendarEventRequest()
             {
@@ -376,7 +376,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<GetCrmEventQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCrmEventRequest()
             {

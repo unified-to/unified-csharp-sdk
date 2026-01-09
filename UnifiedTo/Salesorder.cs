@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a salesorder
         /// </summary>
-        Task<CreateAccountingSalesorderResponse> CreateAccountingSalesorderAsync(AccountingSalesorder accountingSalesorder, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAccountingSalesorderResponse> CreateAccountingSalesorderAsync(AccountingSalesorder accountingSalesorder, string connectionId, List<CreateAccountingSalesorderQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a salesorder
         /// </summary>
-        Task<GetAccountingSalesorderResponse> GetAccountingSalesorderAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingSalesorderResponse> GetAccountingSalesorderAsync(string connectionId, string id, List<GetAccountingSalesorderQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all salesorders
@@ -60,7 +60,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,7 +69,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingSalesorderResponse> CreateAccountingSalesorderAsync(AccountingSalesorder accountingSalesorder, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAccountingSalesorderResponse> CreateAccountingSalesorderAsync(AccountingSalesorder accountingSalesorder, string connectionId, List<CreateAccountingSalesorderQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingSalesorderRequest()
             {
@@ -160,7 +160,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingSalesorderResponse> GetAccountingSalesorderAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingSalesorderResponse> GetAccountingSalesorderAsync(string connectionId, string id, List<GetAccountingSalesorderQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingSalesorderRequest()
             {

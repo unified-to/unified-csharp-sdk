@@ -28,62 +28,62 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<CreateCrmCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateCrmContactResponse> CreateCrmContactAsync(CrmContact crmContact, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCrmContactResponse> CreateCrmContactAsync(CrmContact crmContact, string connectionId, List<CreateCrmContactQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a deal
         /// </summary>
-        Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<CreateCrmDealQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an event
         /// </summary>
-        Task<CreateCrmEventResponse> CreateCrmEventAsync(CrmEvent crmEvent, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCrmEventResponse> CreateCrmEventAsync(CrmEvent crmEvent, string connectionId, List<CreateCrmEventQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a lead
         /// </summary>
-        Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CrmLead crmLead, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CrmLead crmLead, string connectionId, List<CreateCrmLeadQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a pipeline
         /// </summary>
-        Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<CreateCrmPipelineQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<GetCrmCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<GetCrmContactQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a deal
         /// </summary>
-        Task<GetCrmDealResponse> GetCrmDealAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCrmDealResponse> GetCrmDealAsync(string connectionId, string id, List<GetCrmDealQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an event
         /// </summary>
-        Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<GetCrmEventQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a lead
         /// </summary>
-        Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<GetCrmLeadQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a pipeline
         /// </summary>
-        Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<GetCrmPipelineQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all companies
@@ -210,7 +210,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -219,7 +219,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<CreateCrmCompanyQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCrmCompanyRequest()
             {
@@ -310,7 +310,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmContactResponse> CreateCrmContactAsync(CrmContact crmContact, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCrmContactResponse> CreateCrmContactAsync(CrmContact crmContact, string connectionId, List<CreateCrmContactQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCrmContactRequest()
             {
@@ -401,7 +401,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCrmDealResponse> CreateCrmDealAsync(CrmDeal crmDeal, string connectionId, List<CreateCrmDealQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCrmDealRequest()
             {
@@ -492,7 +492,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmEventResponse> CreateCrmEventAsync(CrmEvent crmEvent, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCrmEventResponse> CreateCrmEventAsync(CrmEvent crmEvent, string connectionId, List<CreateCrmEventQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCrmEventRequest()
             {
@@ -583,7 +583,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CrmLead crmLead, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCrmLeadResponse> CreateCrmLeadAsync(CrmLead crmLead, string connectionId, List<CreateCrmLeadQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCrmLeadRequest()
             {
@@ -674,7 +674,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCrmPipelineResponse> CreateCrmPipelineAsync(CrmPipeline crmPipeline, string connectionId, List<CreateCrmPipelineQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCrmPipelineRequest()
             {
@@ -765,7 +765,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<GetCrmCompanyQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCrmCompanyRequest()
             {
@@ -850,7 +850,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCrmContactResponse> GetCrmContactAsync(string connectionId, string id, List<GetCrmContactQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCrmContactRequest()
             {
@@ -935,7 +935,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmDealResponse> GetCrmDealAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCrmDealResponse> GetCrmDealAsync(string connectionId, string id, List<GetCrmDealQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCrmDealRequest()
             {
@@ -1020,7 +1020,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCrmEventResponse> GetCrmEventAsync(string connectionId, string id, List<GetCrmEventQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCrmEventRequest()
             {
@@ -1105,7 +1105,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCrmLeadResponse> GetCrmLeadAsync(string connectionId, string id, List<GetCrmLeadQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCrmLeadRequest()
             {
@@ -1190,7 +1190,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCrmPipelineResponse> GetCrmPipelineAsync(string connectionId, string id, List<GetCrmPipelineQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCrmPipelineRequest()
             {

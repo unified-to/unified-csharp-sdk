@@ -28,52 +28,52 @@ namespace UnifiedTo
         /// <summary>
         /// Create a branch
         /// </summary>
-        Task<CreateRepoBranchResponse> CreateRepoBranchAsync(RepoBranch repoBranch, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateRepoBranchResponse> CreateRepoBranchAsync(RepoBranch repoBranch, string connectionId, List<CreateRepoBranchQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a commit
         /// </summary>
-        Task<CreateRepoCommitResponse> CreateRepoCommitAsync(RepoCommit repoCommit, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateRepoCommitResponse> CreateRepoCommitAsync(RepoCommit repoCommit, string connectionId, List<CreateRepoCommitQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an organization
         /// </summary>
-        Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, List<CreateRepoOrganizationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a pullrequest
         /// </summary>
-        Task<CreateRepoPullrequestResponse> CreateRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateRepoPullrequestResponse> CreateRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, List<CreateRepoPullrequestQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a repository
         /// </summary>
-        Task<CreateRepoRepositoryResponse> CreateRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateRepoRepositoryResponse> CreateRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, List<CreateRepoRepositoryQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a branch
         /// </summary>
-        Task<GetRepoBranchResponse> GetRepoBranchAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetRepoBranchResponse> GetRepoBranchAsync(string connectionId, string id, List<GetRepoBranchQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a commit
         /// </summary>
-        Task<GetRepoCommitResponse> GetRepoCommitAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetRepoCommitResponse> GetRepoCommitAsync(string connectionId, string id, List<GetRepoCommitQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an organization
         /// </summary>
-        Task<GetRepoOrganizationResponse> GetRepoOrganizationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetRepoOrganizationResponse> GetRepoOrganizationAsync(string connectionId, string id, List<GetRepoOrganizationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a pullrequest
         /// </summary>
-        Task<GetRepoPullrequestResponse> GetRepoPullrequestAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetRepoPullrequestResponse> GetRepoPullrequestAsync(string connectionId, string id, List<GetRepoPullrequestQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a repository
         /// </summary>
-        Task<GetRepoRepositoryResponse> GetRepoRepositoryAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetRepoRepositoryResponse> GetRepoRepositoryAsync(string connectionId, string id, List<GetRepoRepositoryQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all branches
@@ -180,7 +180,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -189,7 +189,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateRepoBranchResponse> CreateRepoBranchAsync(RepoBranch repoBranch, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateRepoBranchResponse> CreateRepoBranchAsync(RepoBranch repoBranch, string connectionId, List<CreateRepoBranchQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateRepoBranchRequest()
             {
@@ -280,7 +280,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateRepoCommitResponse> CreateRepoCommitAsync(RepoCommit repoCommit, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateRepoCommitResponse> CreateRepoCommitAsync(RepoCommit repoCommit, string connectionId, List<CreateRepoCommitQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateRepoCommitRequest()
             {
@@ -371,7 +371,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateRepoOrganizationResponse> CreateRepoOrganizationAsync(RepoOrganization repoOrganization, string connectionId, List<CreateRepoOrganizationQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateRepoOrganizationRequest()
             {
@@ -462,7 +462,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateRepoPullrequestResponse> CreateRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateRepoPullrequestResponse> CreateRepoPullrequestAsync(RepoPullrequest repoPullrequest, string connectionId, List<CreateRepoPullrequestQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateRepoPullrequestRequest()
             {
@@ -553,7 +553,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateRepoRepositoryResponse> CreateRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateRepoRepositoryResponse> CreateRepoRepositoryAsync(RepoRepository repoRepository, string connectionId, List<CreateRepoRepositoryQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateRepoRepositoryRequest()
             {
@@ -644,7 +644,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetRepoBranchResponse> GetRepoBranchAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetRepoBranchResponse> GetRepoBranchAsync(string connectionId, string id, List<GetRepoBranchQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetRepoBranchRequest()
             {
@@ -729,7 +729,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetRepoCommitResponse> GetRepoCommitAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetRepoCommitResponse> GetRepoCommitAsync(string connectionId, string id, List<GetRepoCommitQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetRepoCommitRequest()
             {
@@ -814,7 +814,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetRepoOrganizationResponse> GetRepoOrganizationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetRepoOrganizationResponse> GetRepoOrganizationAsync(string connectionId, string id, List<GetRepoOrganizationQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetRepoOrganizationRequest()
             {
@@ -899,7 +899,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetRepoPullrequestResponse> GetRepoPullrequestAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetRepoPullrequestResponse> GetRepoPullrequestAsync(string connectionId, string id, List<GetRepoPullrequestQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetRepoPullrequestRequest()
             {
@@ -984,7 +984,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetRepoRepositoryResponse> GetRepoRepositoryAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetRepoRepositoryResponse> GetRepoRepositoryAsync(string connectionId, string id, List<GetRepoRepositoryQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetRepoRepositoryRequest()
             {

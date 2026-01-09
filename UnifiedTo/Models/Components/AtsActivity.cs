@@ -36,9 +36,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
-        [JsonProperty("document_id")]
-        public string? DocumentId { get; set; }
-
         /// <summary>
         /// IDs for AtsDocument.get
         /// </summary>

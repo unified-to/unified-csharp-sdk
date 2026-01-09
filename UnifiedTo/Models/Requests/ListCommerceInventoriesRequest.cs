@@ -10,6 +10,7 @@
 namespace UnifiedTo.Models.Requests
 {
     using System.Collections.Generic;
+    using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
     
     public class ListCommerceInventoriesRequest
@@ -25,10 +26,10 @@ namespace UnifiedTo.Models.Requests
         /// Comma-delimited fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
-        public List<string>? Fields { get; set; }
+        public List<ListCommerceInventoriesQueryParamFields>? Fields { get; set; }
 
         /// <summary>
-        /// The item variant ID to filter by
+        /// The item variant ID to filter by (reference to CommerceItemVariant)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=item_variant_id")]
         public string? ItemVariantId { get; set; }
@@ -37,7 +38,7 @@ namespace UnifiedTo.Models.Requests
         public double? Limit { get; set; }
 
         /// <summary>
-        /// The location ID to filter by
+        /// The location ID to filter by (reference to CommerceLocation)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=location_id")]
         public string? LocationId { get; set; }
@@ -64,7 +65,7 @@ namespace UnifiedTo.Models.Requests
         public string? Sort { get; set; }
 
         /// <summary>
-        /// Return only results whose updated date is equal or greater to this value
+        /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public string? UpdatedGte { get; set; }

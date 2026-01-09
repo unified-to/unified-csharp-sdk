@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create an instructor
         /// </summary>
-        Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, List<CreateLmsInstructorQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an instructor
         /// </summary>
-        Task<GetLmsInstructorResponse> GetLmsInstructorAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetLmsInstructorResponse> GetLmsInstructorAsync(string connectionId, string id, List<GetLmsInstructorQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all instructors
@@ -60,7 +60,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,7 +69,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateLmsInstructorResponse> CreateLmsInstructorAsync(LmsInstructor lmsInstructor, string connectionId, List<CreateLmsInstructorQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateLmsInstructorRequest()
             {
@@ -160,7 +160,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetLmsInstructorResponse> GetLmsInstructorAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetLmsInstructorResponse> GetLmsInstructorAsync(string connectionId, string id, List<GetLmsInstructorQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetLmsInstructorRequest()
             {

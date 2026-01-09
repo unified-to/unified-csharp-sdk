@@ -28,32 +28,32 @@ namespace UnifiedTo
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateAtsCompanyResponse> CreateAtsCompanyAsync(AtsCompany atsCompany, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAtsCompanyResponse> CreateAtsCompanyAsync(AtsCompany atsCompany, string connectionId, List<CreateAtsCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<CreateCrmCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, List<CreateHrisCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<GetAtsCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<GetCrmCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<GetHrisCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all companies
@@ -125,7 +125,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -134,7 +134,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsCompanyResponse> CreateAtsCompanyAsync(AtsCompany atsCompany, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAtsCompanyResponse> CreateAtsCompanyAsync(AtsCompany atsCompany, string connectionId, List<CreateAtsCompanyQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAtsCompanyRequest()
             {
@@ -225,7 +225,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCrmCompanyResponse> CreateCrmCompanyAsync(CrmCompany crmCompany, string connectionId, List<CreateCrmCompanyQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCrmCompanyRequest()
             {
@@ -316,7 +316,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, List<CreateHrisCompanyQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateHrisCompanyRequest()
             {
@@ -407,7 +407,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAtsCompanyResponse> GetAtsCompanyAsync(string connectionId, string id, List<GetAtsCompanyQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAtsCompanyRequest()
             {
@@ -492,7 +492,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCrmCompanyResponse> GetCrmCompanyAsync(string connectionId, string id, List<GetCrmCompanyQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCrmCompanyRequest()
             {
@@ -577,7 +577,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<GetHrisCompanyQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetHrisCompanyRequest()
             {

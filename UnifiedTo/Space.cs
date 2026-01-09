@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a space
         /// </summary>
-        Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, List<CreateKmsSpaceQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a space
         /// </summary>
-        Task<GetKmsSpaceResponse> GetKmsSpaceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetKmsSpaceResponse> GetKmsSpaceAsync(string connectionId, string id, List<GetKmsSpaceQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all spaces
@@ -60,7 +60,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,7 +69,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateKmsSpaceResponse> CreateKmsSpaceAsync(KmsSpace kmsSpace, string connectionId, List<CreateKmsSpaceQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateKmsSpaceRequest()
             {
@@ -160,7 +160,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetKmsSpaceResponse> GetKmsSpaceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetKmsSpaceResponse> GetKmsSpaceAsync(string connectionId, string id, List<GetKmsSpaceQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetKmsSpaceRequest()
             {

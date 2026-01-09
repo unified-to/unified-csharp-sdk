@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create an activity
         /// </summary>
-        Task<CreateAtsActivityResponse> CreateAtsActivityAsync(AtsActivity atsActivity, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAtsActivityResponse> CreateAtsActivityAsync(AtsActivity atsActivity, string connectionId, List<CreateAtsActivityQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an activity
         /// </summary>
-        Task<GetAtsActivityResponse> GetAtsActivityAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAtsActivityResponse> GetAtsActivityAsync(string connectionId, string id, List<GetAtsActivityQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all activities
@@ -60,7 +60,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,7 +69,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsActivityResponse> CreateAtsActivityAsync(AtsActivity atsActivity, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAtsActivityResponse> CreateAtsActivityAsync(AtsActivity atsActivity, string connectionId, List<CreateAtsActivityQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAtsActivityRequest()
             {
@@ -160,7 +160,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsActivityResponse> GetAtsActivityAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAtsActivityResponse> GetAtsActivityAsync(string connectionId, string id, List<GetAtsActivityQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAtsActivityRequest()
             {

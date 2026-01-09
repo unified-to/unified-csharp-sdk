@@ -10,13 +10,14 @@
 namespace UnifiedTo.Models.Requests
 {
     using System.Collections.Generic;
+    using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
     
     public class ListMessagingMessagesRequest
     {
 
         /// <summary>
-        /// The channel ID to filter by. You can also use these aliases; INBOX, SENT or DRAFT
+        /// The channel ID to filter by. You can also use these aliases; INBOX, SENT or DRAFT (reference to MessagingChannel)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=channel_id")]
         public string? ChannelId { get; set; }
@@ -28,13 +29,7 @@ namespace UnifiedTo.Models.Requests
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
-        /// The end date to filter by (deprecated)
-        /// </summary>
-        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=end_le")]
-        public string? EndLe { get; set; }
-
-        /// <summary>
-        /// The end date to filter by
+        /// The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=end_lt")]
         public string? EndLt { get; set; }
@@ -49,7 +44,7 @@ namespace UnifiedTo.Models.Requests
         /// Comma-delimited fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
-        public List<string>? Fields { get; set; }
+        public List<ListMessagingMessagesQueryParamFields>? Fields { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }
@@ -82,7 +77,7 @@ namespace UnifiedTo.Models.Requests
         public string? Sort { get; set; }
 
         /// <summary>
-        /// The start date to filter by
+        /// The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=start_gte")]
         public string? StartGte { get; set; }
@@ -91,13 +86,13 @@ namespace UnifiedTo.Models.Requests
         public string? Type { get; set; }
 
         /// <summary>
-        /// Return only results whose updated date is equal or greater to this value
+        /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public string? UpdatedGte { get; set; }
 
         /// <summary>
-        /// The user/employee ID to filter by
+        /// The user/employee ID to filter by (reference to HrisEmployee)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=user_id")]
         public string? UserId { get; set; }

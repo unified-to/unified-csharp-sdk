@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create an item
         /// </summary>
-        Task<CreateCommerceItemResponse> CreateCommerceItemAsync(CommerceItem commerceItem, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCommerceItemResponse> CreateCommerceItemAsync(CommerceItem commerceItem, string connectionId, List<CreateCommerceItemQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an item
         /// </summary>
-        Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<GetCommerceItemQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all items
@@ -60,7 +60,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,7 +69,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCommerceItemResponse> CreateCommerceItemAsync(CommerceItem commerceItem, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCommerceItemResponse> CreateCommerceItemAsync(CommerceItem commerceItem, string connectionId, List<CreateCommerceItemQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCommerceItemRequest()
             {
@@ -160,7 +160,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<GetCommerceItemQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCommerceItemRequest()
             {

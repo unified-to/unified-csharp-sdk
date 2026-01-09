@@ -10,6 +10,7 @@
 namespace UnifiedTo.Models.Requests
 {
     using System.Collections.Generic;
+    using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
     
     public class ListAdsAdsRequest
@@ -31,10 +32,10 @@ namespace UnifiedTo.Models.Requests
         /// Comma-delimited fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
-        public List<string>? Fields { get; set; }
+        public List<ListAdsAdsQueryParamFields>? Fields { get; set; }
 
         /// <summary>
-        /// The group ID to filter by
+        /// The group ID to filter by (reference to HrisGroup)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=group_id")]
         public string? GroupId { get; set; }
@@ -49,7 +50,7 @@ namespace UnifiedTo.Models.Requests
         public string? Order { get; set; }
 
         /// <summary>
-        /// The org ID to filter by
+        /// The org ID to filter by (reference to AdsOrganization)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=org_id")]
         public string? OrgId { get; set; }
@@ -70,7 +71,7 @@ namespace UnifiedTo.Models.Requests
         public string? Sort { get; set; }
 
         /// <summary>
-        /// Return only results whose updated date is equal or greater to this value
+        /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public string? UpdatedGte { get; set; }

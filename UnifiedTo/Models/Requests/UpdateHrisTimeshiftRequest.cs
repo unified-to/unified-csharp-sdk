@@ -11,6 +11,7 @@ namespace UnifiedTo.Models.Requests
 {
     using System.Collections.Generic;
     using UnifiedTo.Models.Components;
+    using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
     
     public class UpdateHrisTimeshiftRequest
@@ -29,7 +30,7 @@ namespace UnifiedTo.Models.Requests
         /// Comma-delimited fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
-        public List<string>? Fields { get; set; }
+        public List<UpdateHrisTimeshiftQueryParamFields>? Fields { get; set; }
 
         /// <summary>
         /// ID of the Timeshift

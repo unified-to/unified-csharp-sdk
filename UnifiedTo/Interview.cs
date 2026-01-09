@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create an interview
         /// </summary>
-        Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<CreateAtsInterviewQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an interview
         /// </summary>
-        Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<GetAtsInterviewQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all interviews
@@ -60,7 +60,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,7 +69,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAtsInterviewResponse> CreateAtsInterviewAsync(AtsInterview atsInterview, string connectionId, List<CreateAtsInterviewQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAtsInterviewRequest()
             {
@@ -160,7 +160,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAtsInterviewResponse> GetAtsInterviewAsync(string connectionId, string id, List<GetAtsInterviewQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAtsInterviewRequest()
             {

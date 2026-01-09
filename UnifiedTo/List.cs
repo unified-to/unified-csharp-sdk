@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a list
         /// </summary>
-        Task<CreateMartechListResponse> CreateMartechListAsync(MarketingList marketingList, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateMartechListResponse> CreateMartechListAsync(MarketingList marketingList, string connectionId, List<CreateMartechListQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a list
         /// </summary>
-        Task<GetMartechListResponse> GetMartechListAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetMartechListResponse> GetMartechListAsync(string connectionId, string id, List<GetMartechListQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all lists
@@ -60,7 +60,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,7 +69,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateMartechListResponse> CreateMartechListAsync(MarketingList marketingList, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateMartechListResponse> CreateMartechListAsync(MarketingList marketingList, string connectionId, List<CreateMartechListQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateMartechListRequest()
             {
@@ -160,7 +160,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetMartechListResponse> GetMartechListAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetMartechListResponse> GetMartechListAsync(string connectionId, string id, List<GetMartechListQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetMartechListRequest()
             {

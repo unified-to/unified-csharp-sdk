@@ -28,17 +28,17 @@ namespace UnifiedTo
         /// <summary>
         /// Create a message
         /// </summary>
-        Task<CreateMessagingMessageResponse> CreateMessagingMessageAsync(MessagingMessage messagingMessage, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateMessagingMessageResponse> CreateMessagingMessageAsync(MessagingMessage messagingMessage, string connectionId, List<CreateMessagingMessageQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a channel
         /// </summary>
-        Task<GetMessagingChannelResponse> GetMessagingChannelAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetMessagingChannelResponse> GetMessagingChannelAsync(string connectionId, string id, List<GetMessagingChannelQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a message
         /// </summary>
-        Task<GetMessagingMessageResponse> GetMessagingMessageAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetMessagingMessageResponse> GetMessagingMessageAsync(string connectionId, string id, List<GetMessagingMessageQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all channels
@@ -80,7 +80,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -89,7 +89,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateMessagingMessageResponse> CreateMessagingMessageAsync(MessagingMessage messagingMessage, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateMessagingMessageResponse> CreateMessagingMessageAsync(MessagingMessage messagingMessage, string connectionId, List<CreateMessagingMessageQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateMessagingMessageRequest()
             {
@@ -180,7 +180,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetMessagingChannelResponse> GetMessagingChannelAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetMessagingChannelResponse> GetMessagingChannelAsync(string connectionId, string id, List<GetMessagingChannelQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetMessagingChannelRequest()
             {
@@ -265,7 +265,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetMessagingMessageResponse> GetMessagingMessageAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetMessagingMessageResponse> GetMessagingMessageAsync(string connectionId, string id, List<GetMessagingMessageQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetMessagingMessageRequest()
             {

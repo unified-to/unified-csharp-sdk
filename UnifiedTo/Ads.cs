@@ -28,42 +28,42 @@ namespace UnifiedTo
         /// <summary>
         /// Create an ad
         /// </summary>
-        Task<CreateAdsAdResponse> CreateAdsAdAsync(AdsAd adsAd, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAdsAdResponse> CreateAdsAdAsync(AdsAd adsAd, string connectionId, List<CreateAdsAdQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a campaign
         /// </summary>
-        Task<CreateAdsCampaignResponse> CreateAdsCampaignAsync(AdsCampaign adsCampaign, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAdsCampaignResponse> CreateAdsCampaignAsync(AdsCampaign adsCampaign, string connectionId, List<CreateAdsCampaignQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a group
         /// </summary>
-        Task<CreateAdsGroupResponse> CreateAdsGroupAsync(AdsGroup adsGroup, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAdsGroupResponse> CreateAdsGroupAsync(AdsGroup adsGroup, string connectionId, List<CreateAdsGroupQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an organization
         /// </summary>
-        Task<CreateAdsOrganizationResponse> CreateAdsOrganizationAsync(AdsOrganization adsOrganization, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAdsOrganizationResponse> CreateAdsOrganizationAsync(AdsOrganization adsOrganization, string connectionId, List<CreateAdsOrganizationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an ad
         /// </summary>
-        Task<GetAdsAdResponse> GetAdsAdAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAdsAdResponse> GetAdsAdAsync(string connectionId, string id, List<GetAdsAdQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a campaign
         /// </summary>
-        Task<GetAdsCampaignResponse> GetAdsCampaignAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAdsCampaignResponse> GetAdsCampaignAsync(string connectionId, string id, List<GetAdsCampaignQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a group
         /// </summary>
-        Task<GetAdsGroupResponse> GetAdsGroupAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAdsGroupResponse> GetAdsGroupAsync(string connectionId, string id, List<GetAdsGroupQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an organization
         /// </summary>
-        Task<GetAdsOrganizationResponse> GetAdsOrganizationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAdsOrganizationResponse> GetAdsOrganizationAsync(string connectionId, string id, List<GetAdsOrganizationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all ads
@@ -155,7 +155,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -164,7 +164,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAdsAdResponse> CreateAdsAdAsync(AdsAd adsAd, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAdsAdResponse> CreateAdsAdAsync(AdsAd adsAd, string connectionId, List<CreateAdsAdQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAdsAdRequest()
             {
@@ -255,7 +255,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAdsCampaignResponse> CreateAdsCampaignAsync(AdsCampaign adsCampaign, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAdsCampaignResponse> CreateAdsCampaignAsync(AdsCampaign adsCampaign, string connectionId, List<CreateAdsCampaignQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAdsCampaignRequest()
             {
@@ -346,7 +346,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAdsGroupResponse> CreateAdsGroupAsync(AdsGroup adsGroup, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAdsGroupResponse> CreateAdsGroupAsync(AdsGroup adsGroup, string connectionId, List<CreateAdsGroupQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAdsGroupRequest()
             {
@@ -437,7 +437,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAdsOrganizationResponse> CreateAdsOrganizationAsync(AdsOrganization adsOrganization, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAdsOrganizationResponse> CreateAdsOrganizationAsync(AdsOrganization adsOrganization, string connectionId, List<CreateAdsOrganizationQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAdsOrganizationRequest()
             {
@@ -528,7 +528,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAdsAdResponse> GetAdsAdAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAdsAdResponse> GetAdsAdAsync(string connectionId, string id, List<GetAdsAdQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAdsAdRequest()
             {
@@ -613,7 +613,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAdsCampaignResponse> GetAdsCampaignAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAdsCampaignResponse> GetAdsCampaignAsync(string connectionId, string id, List<GetAdsCampaignQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAdsCampaignRequest()
             {
@@ -698,7 +698,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAdsGroupResponse> GetAdsGroupAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAdsGroupResponse> GetAdsGroupAsync(string connectionId, string id, List<GetAdsGroupQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAdsGroupRequest()
             {
@@ -783,7 +783,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAdsOrganizationResponse> GetAdsOrganizationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAdsOrganizationResponse> GetAdsOrganizationAsync(string connectionId, string id, List<GetAdsOrganizationQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAdsOrganizationRequest()
             {

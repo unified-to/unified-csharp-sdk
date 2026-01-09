@@ -10,6 +10,7 @@
 namespace UnifiedTo.Models.Requests
 {
     using System.Collections.Generic;
+    using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
     
     public class ListLmsClassesRequest
@@ -22,7 +23,7 @@ namespace UnifiedTo.Models.Requests
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
-        /// The course ID to filter by
+        /// The course ID to filter by (reference to Course)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=course_id")]
         public string? CourseId { get; set; }
@@ -31,16 +32,10 @@ namespace UnifiedTo.Models.Requests
         /// Comma-delimited fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
-        public List<string>? Fields { get; set; }
+        public List<ListLmsClassesQueryParamFields>? Fields { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }
-
-        /// <summary>
-        /// The location ID to filter by
-        /// </summary>
-        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=location_id")]
-        public string? LocationId { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=offset")]
         public double? Offset { get; set; }
@@ -64,7 +59,7 @@ namespace UnifiedTo.Models.Requests
         public string? Sort { get; set; }
 
         /// <summary>
-        /// Return only results whose updated date is equal or greater to this value
+        /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public string? UpdatedGte { get; set; }

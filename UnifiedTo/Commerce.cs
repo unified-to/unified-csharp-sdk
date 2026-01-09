@@ -28,62 +28,62 @@ namespace UnifiedTo
         /// <summary>
         /// Create a collection
         /// </summary>
-        Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(CommerceCollection commerceCollection, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(CommerceCollection commerceCollection, string connectionId, List<CreateCommerceCollectionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an inventory
         /// </summary>
-        Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(CommerceInventory commerceInventory, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(CommerceInventory commerceInventory, string connectionId, List<CreateCommerceInventoryQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an item
         /// </summary>
-        Task<CreateCommerceItemResponse> CreateCommerceItemAsync(CommerceItem commerceItem, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCommerceItemResponse> CreateCommerceItemAsync(CommerceItem commerceItem, string connectionId, List<CreateCommerceItemQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a location
         /// </summary>
-        Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(CommerceLocation commerceLocation, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(CommerceLocation commerceLocation, string connectionId, List<CreateCommerceLocationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a review
         /// </summary>
-        Task<CreateCommerceReviewResponse> CreateCommerceReviewAsync(CommerceReview commerceReview, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCommerceReviewResponse> CreateCommerceReviewAsync(CommerceReview commerceReview, string connectionId, List<CreateCommerceReviewQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a saleschannel
         /// </summary>
-        Task<CreateCommerceSaleschannelResponse> CreateCommerceSaleschannelAsync(CommerceSaleschannel commerceSaleschannel, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateCommerceSaleschannelResponse> CreateCommerceSaleschannelAsync(CommerceSaleschannel commerceSaleschannel, string connectionId, List<CreateCommerceSaleschannelQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a collection
         /// </summary>
-        Task<GetCommerceCollectionResponse> GetCommerceCollectionAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCommerceCollectionResponse> GetCommerceCollectionAsync(string connectionId, string id, List<GetCommerceCollectionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an inventory
         /// </summary>
-        Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(string connectionId, string id, List<GetCommerceInventoryQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an item
         /// </summary>
-        Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<GetCommerceItemQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a location
         /// </summary>
-        Task<GetCommerceLocationResponse> GetCommerceLocationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCommerceLocationResponse> GetCommerceLocationAsync(string connectionId, string id, List<GetCommerceLocationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a review
         /// </summary>
-        Task<GetCommerceReviewResponse> GetCommerceReviewAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCommerceReviewResponse> GetCommerceReviewAsync(string connectionId, string id, List<GetCommerceReviewQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a saleschannel
         /// </summary>
-        Task<GetCommerceSaleschannelResponse> GetCommerceSaleschannelAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetCommerceSaleschannelResponse> GetCommerceSaleschannelAsync(string connectionId, string id, List<GetCommerceSaleschannelQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all collections
@@ -210,7 +210,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -219,7 +219,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(CommerceCollection commerceCollection, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCommerceCollectionResponse> CreateCommerceCollectionAsync(CommerceCollection commerceCollection, string connectionId, List<CreateCommerceCollectionQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCommerceCollectionRequest()
             {
@@ -310,7 +310,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(CommerceInventory commerceInventory, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCommerceInventoryResponse> CreateCommerceInventoryAsync(CommerceInventory commerceInventory, string connectionId, List<CreateCommerceInventoryQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCommerceInventoryRequest()
             {
@@ -401,7 +401,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCommerceItemResponse> CreateCommerceItemAsync(CommerceItem commerceItem, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCommerceItemResponse> CreateCommerceItemAsync(CommerceItem commerceItem, string connectionId, List<CreateCommerceItemQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCommerceItemRequest()
             {
@@ -492,7 +492,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(CommerceLocation commerceLocation, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCommerceLocationResponse> CreateCommerceLocationAsync(CommerceLocation commerceLocation, string connectionId, List<CreateCommerceLocationQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCommerceLocationRequest()
             {
@@ -583,7 +583,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCommerceReviewResponse> CreateCommerceReviewAsync(CommerceReview commerceReview, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCommerceReviewResponse> CreateCommerceReviewAsync(CommerceReview commerceReview, string connectionId, List<CreateCommerceReviewQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCommerceReviewRequest()
             {
@@ -674,7 +674,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCommerceSaleschannelResponse> CreateCommerceSaleschannelAsync(CommerceSaleschannel commerceSaleschannel, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateCommerceSaleschannelResponse> CreateCommerceSaleschannelAsync(CommerceSaleschannel commerceSaleschannel, string connectionId, List<CreateCommerceSaleschannelQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCommerceSaleschannelRequest()
             {
@@ -765,7 +765,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCommerceCollectionResponse> GetCommerceCollectionAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCommerceCollectionResponse> GetCommerceCollectionAsync(string connectionId, string id, List<GetCommerceCollectionQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCommerceCollectionRequest()
             {
@@ -850,7 +850,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCommerceInventoryResponse> GetCommerceInventoryAsync(string connectionId, string id, List<GetCommerceInventoryQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCommerceInventoryRequest()
             {
@@ -935,7 +935,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCommerceItemResponse> GetCommerceItemAsync(string connectionId, string id, List<GetCommerceItemQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCommerceItemRequest()
             {
@@ -1020,7 +1020,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCommerceLocationResponse> GetCommerceLocationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCommerceLocationResponse> GetCommerceLocationAsync(string connectionId, string id, List<GetCommerceLocationQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCommerceLocationRequest()
             {
@@ -1105,7 +1105,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCommerceReviewResponse> GetCommerceReviewAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCommerceReviewResponse> GetCommerceReviewAsync(string connectionId, string id, List<GetCommerceReviewQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCommerceReviewRequest()
             {
@@ -1190,7 +1190,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetCommerceSaleschannelResponse> GetCommerceSaleschannelAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetCommerceSaleschannelResponse> GetCommerceSaleschannelAsync(string connectionId, string id, List<GetCommerceSaleschannelQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetCommerceSaleschannelRequest()
             {

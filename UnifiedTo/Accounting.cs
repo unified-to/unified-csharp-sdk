@@ -28,162 +28,162 @@ namespace UnifiedTo
         /// <summary>
         /// Create an account
         /// </summary>
-        Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, List<Fields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a bill
         /// </summary>
-        Task<CreateAccountingBillResponse> CreateAccountingBillAsync(AccountingBill accountingBill, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAccountingBillResponse> CreateAccountingBillAsync(AccountingBill accountingBill, string connectionId, List<CreateAccountingBillQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a category
         /// </summary>
-        Task<CreateAccountingCategoryResponse> CreateAccountingCategoryAsync(AccountingCategory accountingCategory, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAccountingCategoryResponse> CreateAccountingCategoryAsync(AccountingCategory accountingCategory, string connectionId, List<CreateAccountingCategoryQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a contact
         /// </summary>
-        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(AccountingContact accountingContact, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAccountingContactResponse> CreateAccountingContactAsync(AccountingContact accountingContact, string connectionId, List<CreateAccountingContactQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a creditmemo
         /// </summary>
-        Task<CreateAccountingCreditmemoResponse> CreateAccountingCreditmemoAsync(AccountingCreditmemo accountingCreditmemo, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAccountingCreditmemoResponse> CreateAccountingCreditmemoAsync(AccountingCreditmemo accountingCreditmemo, string connectionId, List<CreateAccountingCreditmemoQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an expense
         /// </summary>
-        Task<CreateAccountingExpenseResponse> CreateAccountingExpenseAsync(AccountingExpense accountingExpense, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAccountingExpenseResponse> CreateAccountingExpenseAsync(AccountingExpense accountingExpense, string connectionId, List<CreateAccountingExpenseQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an invoice
         /// </summary>
-        Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<CreateAccountingInvoiceQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a journal
         /// </summary>
-        Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, List<CreateAccountingJournalQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an order
         /// </summary>
-        Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, List<CreateAccountingOrderQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a purchaseorder
         /// </summary>
-        Task<CreateAccountingPurchaseorderResponse> CreateAccountingPurchaseorderAsync(AccountingPurchaseorder accountingPurchaseorder, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAccountingPurchaseorderResponse> CreateAccountingPurchaseorderAsync(AccountingPurchaseorder accountingPurchaseorder, string connectionId, List<CreateAccountingPurchaseorderQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a salesorder
         /// </summary>
-        Task<CreateAccountingSalesorderResponse> CreateAccountingSalesorderAsync(AccountingSalesorder accountingSalesorder, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAccountingSalesorderResponse> CreateAccountingSalesorderAsync(AccountingSalesorder accountingSalesorder, string connectionId, List<CreateAccountingSalesorderQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a taxrate
         /// </summary>
-        Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, List<CreateAccountingTaxrateQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a transaction
         /// </summary>
-        Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, List<CreateAccountingTransactionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an account
         /// </summary>
-        Task<GetAccountingAccountResponse> GetAccountingAccountAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingAccountResponse> GetAccountingAccountAsync(string connectionId, string id, List<QueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a balancesheet
         /// </summary>
-        Task<GetAccountingBalancesheetResponse> GetAccountingBalancesheetAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingBalancesheetResponse> GetAccountingBalancesheetAsync(string connectionId, string id, List<GetAccountingBalancesheetQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a bill
         /// </summary>
-        Task<GetAccountingBillResponse> GetAccountingBillAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingBillResponse> GetAccountingBillAsync(string connectionId, string id, List<GetAccountingBillQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a cashflow
         /// </summary>
-        Task<GetAccountingCashflowResponse> GetAccountingCashflowAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingCashflowResponse> GetAccountingCashflowAsync(string connectionId, string id, List<GetAccountingCashflowQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a category
         /// </summary>
-        Task<GetAccountingCategoryResponse> GetAccountingCategoryAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingCategoryResponse> GetAccountingCategoryAsync(string connectionId, string id, List<GetAccountingCategoryQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a contact
         /// </summary>
-        Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<GetAccountingContactQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a creditmemo
         /// </summary>
-        Task<GetAccountingCreditmemoResponse> GetAccountingCreditmemoAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingCreditmemoResponse> GetAccountingCreditmemoAsync(string connectionId, string id, List<GetAccountingCreditmemoQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an expense
         /// </summary>
-        Task<GetAccountingExpenseResponse> GetAccountingExpenseAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingExpenseResponse> GetAccountingExpenseAsync(string connectionId, string id, List<GetAccountingExpenseQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an invoice
         /// </summary>
-        Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<GetAccountingInvoiceQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a journal
         /// </summary>
-        Task<GetAccountingJournalResponse> GetAccountingJournalAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingJournalResponse> GetAccountingJournalAsync(string connectionId, string id, List<GetAccountingJournalQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an order
         /// </summary>
-        Task<GetAccountingOrderResponse> GetAccountingOrderAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingOrderResponse> GetAccountingOrderAsync(string connectionId, string id, List<GetAccountingOrderQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an organization
         /// </summary>
-        Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<GetAccountingOrganizationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a profitloss
         /// </summary>
-        Task<GetAccountingProfitlossResponse> GetAccountingProfitlossAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingProfitlossResponse> GetAccountingProfitlossAsync(string connectionId, string id, List<GetAccountingProfitlossQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a purchaseorder
         /// </summary>
-        Task<GetAccountingPurchaseorderResponse> GetAccountingPurchaseorderAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingPurchaseorderResponse> GetAccountingPurchaseorderAsync(string connectionId, string id, List<GetAccountingPurchaseorderQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a report
         /// </summary>
-        Task<GetAccountingReportResponse> GetAccountingReportAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingReportResponse> GetAccountingReportAsync(string connectionId, string id, List<GetAccountingReportQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a salesorder
         /// </summary>
-        Task<GetAccountingSalesorderResponse> GetAccountingSalesorderAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingSalesorderResponse> GetAccountingSalesorderAsync(string connectionId, string id, List<GetAccountingSalesorderQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a taxrate
         /// </summary>
-        Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<GetAccountingTaxrateQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a transaction
         /// </summary>
-        Task<GetAccountingTransactionResponse> GetAccountingTransactionAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingTransactionResponse> GetAccountingTransactionAsync(string connectionId, string id, List<GetAccountingTransactionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a trialbalance
         /// </summary>
-        Task<GetAccountingTrialbalanceResponse> GetAccountingTrialbalanceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAccountingTrialbalanceResponse> GetAccountingTrialbalanceAsync(string connectionId, string id, List<GetAccountingTrialbalanceQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all accounts
@@ -480,7 +480,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -489,7 +489,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAccountingAccountResponse> CreateAccountingAccountAsync(AccountingAccount accountingAccount, string connectionId, List<Fields>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingAccountRequest()
             {
@@ -580,7 +580,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingBillResponse> CreateAccountingBillAsync(AccountingBill accountingBill, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAccountingBillResponse> CreateAccountingBillAsync(AccountingBill accountingBill, string connectionId, List<CreateAccountingBillQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingBillRequest()
             {
@@ -671,7 +671,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingCategoryResponse> CreateAccountingCategoryAsync(AccountingCategory accountingCategory, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAccountingCategoryResponse> CreateAccountingCategoryAsync(AccountingCategory accountingCategory, string connectionId, List<CreateAccountingCategoryQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingCategoryRequest()
             {
@@ -762,7 +762,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(AccountingContact accountingContact, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAccountingContactResponse> CreateAccountingContactAsync(AccountingContact accountingContact, string connectionId, List<CreateAccountingContactQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingContactRequest()
             {
@@ -853,7 +853,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingCreditmemoResponse> CreateAccountingCreditmemoAsync(AccountingCreditmemo accountingCreditmemo, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAccountingCreditmemoResponse> CreateAccountingCreditmemoAsync(AccountingCreditmemo accountingCreditmemo, string connectionId, List<CreateAccountingCreditmemoQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingCreditmemoRequest()
             {
@@ -944,7 +944,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingExpenseResponse> CreateAccountingExpenseAsync(AccountingExpense accountingExpense, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAccountingExpenseResponse> CreateAccountingExpenseAsync(AccountingExpense accountingExpense, string connectionId, List<CreateAccountingExpenseQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingExpenseRequest()
             {
@@ -1035,7 +1035,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAccountingInvoiceResponse> CreateAccountingInvoiceAsync(AccountingInvoice accountingInvoice, string connectionId, List<CreateAccountingInvoiceQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingInvoiceRequest()
             {
@@ -1126,7 +1126,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAccountingJournalResponse> CreateAccountingJournalAsync(AccountingJournal accountingJournal, string connectionId, List<CreateAccountingJournalQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingJournalRequest()
             {
@@ -1217,7 +1217,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAccountingOrderResponse> CreateAccountingOrderAsync(AccountingOrder accountingOrder, string connectionId, List<CreateAccountingOrderQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingOrderRequest()
             {
@@ -1308,7 +1308,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingPurchaseorderResponse> CreateAccountingPurchaseorderAsync(AccountingPurchaseorder accountingPurchaseorder, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAccountingPurchaseorderResponse> CreateAccountingPurchaseorderAsync(AccountingPurchaseorder accountingPurchaseorder, string connectionId, List<CreateAccountingPurchaseorderQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingPurchaseorderRequest()
             {
@@ -1399,7 +1399,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingSalesorderResponse> CreateAccountingSalesorderAsync(AccountingSalesorder accountingSalesorder, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAccountingSalesorderResponse> CreateAccountingSalesorderAsync(AccountingSalesorder accountingSalesorder, string connectionId, List<CreateAccountingSalesorderQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingSalesorderRequest()
             {
@@ -1490,7 +1490,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAccountingTaxrateResponse> CreateAccountingTaxrateAsync(AccountingTaxrate accountingTaxrate, string connectionId, List<CreateAccountingTaxrateQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingTaxrateRequest()
             {
@@ -1581,7 +1581,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAccountingTransactionResponse> CreateAccountingTransactionAsync(AccountingTransaction accountingTransaction, string connectionId, List<CreateAccountingTransactionQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAccountingTransactionRequest()
             {
@@ -1672,7 +1672,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingAccountResponse> GetAccountingAccountAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingAccountResponse> GetAccountingAccountAsync(string connectionId, string id, List<QueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingAccountRequest()
             {
@@ -1757,7 +1757,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingBalancesheetResponse> GetAccountingBalancesheetAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingBalancesheetResponse> GetAccountingBalancesheetAsync(string connectionId, string id, List<GetAccountingBalancesheetQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingBalancesheetRequest()
             {
@@ -1842,7 +1842,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingBillResponse> GetAccountingBillAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingBillResponse> GetAccountingBillAsync(string connectionId, string id, List<GetAccountingBillQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingBillRequest()
             {
@@ -1927,7 +1927,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingCashflowResponse> GetAccountingCashflowAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingCashflowResponse> GetAccountingCashflowAsync(string connectionId, string id, List<GetAccountingCashflowQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingCashflowRequest()
             {
@@ -2012,7 +2012,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingCategoryResponse> GetAccountingCategoryAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingCategoryResponse> GetAccountingCategoryAsync(string connectionId, string id, List<GetAccountingCategoryQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingCategoryRequest()
             {
@@ -2097,7 +2097,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingContactResponse> GetAccountingContactAsync(string connectionId, string id, List<GetAccountingContactQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingContactRequest()
             {
@@ -2182,7 +2182,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingCreditmemoResponse> GetAccountingCreditmemoAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingCreditmemoResponse> GetAccountingCreditmemoAsync(string connectionId, string id, List<GetAccountingCreditmemoQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingCreditmemoRequest()
             {
@@ -2267,7 +2267,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingExpenseResponse> GetAccountingExpenseAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingExpenseResponse> GetAccountingExpenseAsync(string connectionId, string id, List<GetAccountingExpenseQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingExpenseRequest()
             {
@@ -2352,7 +2352,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingInvoiceResponse> GetAccountingInvoiceAsync(string connectionId, string id, List<GetAccountingInvoiceQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingInvoiceRequest()
             {
@@ -2437,7 +2437,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingJournalResponse> GetAccountingJournalAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingJournalResponse> GetAccountingJournalAsync(string connectionId, string id, List<GetAccountingJournalQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingJournalRequest()
             {
@@ -2522,7 +2522,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingOrderResponse> GetAccountingOrderAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingOrderResponse> GetAccountingOrderAsync(string connectionId, string id, List<GetAccountingOrderQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingOrderRequest()
             {
@@ -2607,7 +2607,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingOrganizationResponse> GetAccountingOrganizationAsync(string connectionId, string id, List<GetAccountingOrganizationQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingOrganizationRequest()
             {
@@ -2692,7 +2692,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingProfitlossResponse> GetAccountingProfitlossAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingProfitlossResponse> GetAccountingProfitlossAsync(string connectionId, string id, List<GetAccountingProfitlossQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingProfitlossRequest()
             {
@@ -2777,7 +2777,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingPurchaseorderResponse> GetAccountingPurchaseorderAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingPurchaseorderResponse> GetAccountingPurchaseorderAsync(string connectionId, string id, List<GetAccountingPurchaseorderQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingPurchaseorderRequest()
             {
@@ -2862,7 +2862,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingReportResponse> GetAccountingReportAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingReportResponse> GetAccountingReportAsync(string connectionId, string id, List<GetAccountingReportQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingReportRequest()
             {
@@ -2947,7 +2947,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingSalesorderResponse> GetAccountingSalesorderAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingSalesorderResponse> GetAccountingSalesorderAsync(string connectionId, string id, List<GetAccountingSalesorderQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingSalesorderRequest()
             {
@@ -3032,7 +3032,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingTaxrateResponse> GetAccountingTaxrateAsync(string connectionId, string id, List<GetAccountingTaxrateQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingTaxrateRequest()
             {
@@ -3117,7 +3117,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingTransactionResponse> GetAccountingTransactionAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingTransactionResponse> GetAccountingTransactionAsync(string connectionId, string id, List<GetAccountingTransactionQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingTransactionRequest()
             {
@@ -3202,7 +3202,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAccountingTrialbalanceResponse> GetAccountingTrialbalanceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAccountingTrialbalanceResponse> GetAccountingTrialbalanceAsync(string connectionId, string id, List<GetAccountingTrialbalanceQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAccountingTrialbalanceRequest()
             {

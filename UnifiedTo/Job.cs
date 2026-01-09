@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a job
         /// </summary>
-        Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<CreateAtsJobQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a job
         /// </summary>
-        Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<GetAtsJobQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all jobs
@@ -60,7 +60,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -69,7 +69,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAtsJobResponse> CreateAtsJobAsync(AtsJob atsJob, string connectionId, List<CreateAtsJobQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAtsJobRequest()
             {
@@ -160,7 +160,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAtsJobResponse> GetAtsJobAsync(string connectionId, string id, List<GetAtsJobQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAtsJobRequest()
             {

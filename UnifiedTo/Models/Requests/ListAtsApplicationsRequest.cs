@@ -10,6 +10,7 @@
 namespace UnifiedTo.Models.Requests
 {
     using System.Collections.Generic;
+    using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
     
     public class ListAtsApplicationsRequest
@@ -22,7 +23,7 @@ namespace UnifiedTo.Models.Requests
         public string? CandidateId { get; set; }
 
         /// <summary>
-        /// The company ID to filter by
+        /// The company ID to filter by (reference to AtsCompany)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=company_id")]
         public string? CompanyId { get; set; }
@@ -37,7 +38,7 @@ namespace UnifiedTo.Models.Requests
         /// Comma-delimited fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
-        public List<string>? Fields { get; set; }
+        public List<ListAtsApplicationsQueryParamFields>? Fields { get; set; }
 
         /// <summary>
         /// The job ID to filter by
@@ -70,7 +71,7 @@ namespace UnifiedTo.Models.Requests
         public string? Sort { get; set; }
 
         /// <summary>
-        /// Return only results whose updated date is equal or greater to this value
+        /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public string? UpdatedGte { get; set; }

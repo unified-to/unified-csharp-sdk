@@ -28,32 +28,32 @@ namespace UnifiedTo
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<CreateKmsCommentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateTaskCommentResponse> CreateTaskCommentAsync(TaskComment taskComment, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateTaskCommentResponse> CreateTaskCommentAsync(TaskComment taskComment, string connectionId, List<CreateTaskCommentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a comment
         /// </summary>
-        Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<CreateUcCommentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a comment
         /// </summary>
-        Task<GetKmsCommentResponse> GetKmsCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetKmsCommentResponse> GetKmsCommentAsync(string connectionId, string id, List<GetKmsCommentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a comment
         /// </summary>
-        Task<GetTaskCommentResponse> GetTaskCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetTaskCommentResponse> GetTaskCommentAsync(string connectionId, string id, List<GetTaskCommentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a comment
         /// </summary>
-        Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<GetUcCommentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all comments
@@ -120,7 +120,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -129,7 +129,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateKmsCommentResponse> CreateKmsCommentAsync(KmsComment kmsComment, string connectionId, List<CreateKmsCommentQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateKmsCommentRequest()
             {
@@ -220,7 +220,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateTaskCommentResponse> CreateTaskCommentAsync(TaskComment taskComment, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateTaskCommentResponse> CreateTaskCommentAsync(TaskComment taskComment, string connectionId, List<CreateTaskCommentQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateTaskCommentRequest()
             {
@@ -311,7 +311,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateUcCommentResponse> CreateUcCommentAsync(UcComment ucComment, string connectionId, List<CreateUcCommentQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateUcCommentRequest()
             {
@@ -402,7 +402,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetKmsCommentResponse> GetKmsCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetKmsCommentResponse> GetKmsCommentAsync(string connectionId, string id, List<GetKmsCommentQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetKmsCommentRequest()
             {
@@ -487,7 +487,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetTaskCommentResponse> GetTaskCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetTaskCommentResponse> GetTaskCommentAsync(string connectionId, string id, List<GetTaskCommentQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetTaskCommentRequest()
             {
@@ -572,7 +572,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetUcCommentResponse> GetUcCommentAsync(string connectionId, string id, List<GetUcCommentQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetUcCommentRequest()
             {

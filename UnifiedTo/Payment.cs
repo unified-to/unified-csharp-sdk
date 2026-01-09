@@ -28,42 +28,42 @@ namespace UnifiedTo
         /// <summary>
         /// Create a link
         /// </summary>
-        Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<CreatePaymentLinkQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a payment
         /// </summary>
-        Task<CreatePaymentPaymentResponse> CreatePaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreatePaymentPaymentResponse> CreatePaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, List<CreatePaymentPaymentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a subscription
         /// </summary>
-        Task<CreatePaymentSubscriptionResponse> CreatePaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreatePaymentSubscriptionResponse> CreatePaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, List<CreatePaymentSubscriptionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a link
         /// </summary>
-        Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<GetPaymentLinkQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a payment
         /// </summary>
-        Task<GetPaymentPaymentResponse> GetPaymentPaymentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetPaymentPaymentResponse> GetPaymentPaymentAsync(string connectionId, string id, List<GetPaymentPaymentQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a payout
         /// </summary>
-        Task<GetPaymentPayoutResponse> GetPaymentPayoutAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetPaymentPayoutResponse> GetPaymentPayoutAsync(string connectionId, string id, List<GetPaymentPayoutQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a refund
         /// </summary>
-        Task<GetPaymentRefundResponse> GetPaymentRefundAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetPaymentRefundResponse> GetPaymentRefundAsync(string connectionId, string id, List<GetPaymentRefundQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a subscription
         /// </summary>
-        Task<GetPaymentSubscriptionResponse> GetPaymentSubscriptionAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetPaymentSubscriptionResponse> GetPaymentSubscriptionAsync(string connectionId, string id, List<GetPaymentSubscriptionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all links
@@ -140,7 +140,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -149,7 +149,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreatePaymentLinkResponse> CreatePaymentLinkAsync(PaymentLink paymentLink, string connectionId, List<CreatePaymentLinkQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreatePaymentLinkRequest()
             {
@@ -240,7 +240,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreatePaymentPaymentResponse> CreatePaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreatePaymentPaymentResponse> CreatePaymentPaymentAsync(PaymentPayment paymentPayment, string connectionId, List<CreatePaymentPaymentQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreatePaymentPaymentRequest()
             {
@@ -331,7 +331,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreatePaymentSubscriptionResponse> CreatePaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreatePaymentSubscriptionResponse> CreatePaymentSubscriptionAsync(PaymentSubscription paymentSubscription, string connectionId, List<CreatePaymentSubscriptionQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreatePaymentSubscriptionRequest()
             {
@@ -422,7 +422,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetPaymentLinkResponse> GetPaymentLinkAsync(string connectionId, string id, List<GetPaymentLinkQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetPaymentLinkRequest()
             {
@@ -507,7 +507,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentPaymentResponse> GetPaymentPaymentAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetPaymentPaymentResponse> GetPaymentPaymentAsync(string connectionId, string id, List<GetPaymentPaymentQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetPaymentPaymentRequest()
             {
@@ -592,7 +592,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentPayoutResponse> GetPaymentPayoutAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetPaymentPayoutResponse> GetPaymentPayoutAsync(string connectionId, string id, List<GetPaymentPayoutQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetPaymentPayoutRequest()
             {
@@ -677,7 +677,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentRefundResponse> GetPaymentRefundAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetPaymentRefundResponse> GetPaymentRefundAsync(string connectionId, string id, List<GetPaymentRefundQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetPaymentRefundRequest()
             {
@@ -762,7 +762,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetPaymentSubscriptionResponse> GetPaymentSubscriptionAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetPaymentSubscriptionResponse> GetPaymentSubscriptionAsync(string connectionId, string id, List<GetPaymentSubscriptionQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetPaymentSubscriptionRequest()
             {

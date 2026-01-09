@@ -28,12 +28,12 @@ namespace UnifiedTo
         /// <summary>
         /// Create a group
         /// </summary>
-        Task<CreateAdsGroupResponse> CreateAdsGroupAsync(AdsGroup adsGroup, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateAdsGroupResponse> CreateAdsGroupAsync(AdsGroup adsGroup, string connectionId, List<CreateAdsGroupQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a group
         /// </summary>
-        Task<CreateHrisGroupResponse> CreateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateHrisGroupResponse> CreateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, List<CreateHrisGroupQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create group
@@ -43,12 +43,12 @@ namespace UnifiedTo
         /// <summary>
         /// Retrieve a group
         /// </summary>
-        Task<GetAdsGroupResponse> GetAdsGroupAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetAdsGroupResponse> GetAdsGroupAsync(string connectionId, string id, List<GetAdsGroupQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a group
         /// </summary>
-        Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<GetHrisGroupQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Get group
@@ -120,7 +120,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -129,7 +129,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateAdsGroupResponse> CreateAdsGroupAsync(AdsGroup adsGroup, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateAdsGroupResponse> CreateAdsGroupAsync(AdsGroup adsGroup, string connectionId, List<CreateAdsGroupQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateAdsGroupRequest()
             {
@@ -220,7 +220,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisGroupResponse> CreateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateHrisGroupResponse> CreateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, List<CreateHrisGroupQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateHrisGroupRequest()
             {
@@ -400,7 +400,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetAdsGroupResponse> GetAdsGroupAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetAdsGroupResponse> GetAdsGroupAsync(string connectionId, string id, List<GetAdsGroupQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetAdsGroupRequest()
             {
@@ -485,7 +485,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<GetHrisGroupQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetHrisGroupRequest()
             {

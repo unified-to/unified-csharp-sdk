@@ -28,17 +28,17 @@ namespace UnifiedTo
         /// <summary>
         /// Create a form
         /// </summary>
-        Task<CreateFormsFormResponse> CreateFormsFormAsync(FormsForm formsForm, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateFormsFormResponse> CreateFormsFormAsync(FormsForm formsForm, string connectionId, List<CreateFormsFormQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a form
         /// </summary>
-        Task<GetFormsFormResponse> GetFormsFormAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetFormsFormResponse> GetFormsFormAsync(string connectionId, string id, List<GetFormsFormQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a submission
         /// </summary>
-        Task<GetFormsSubmissionResponse> GetFormsSubmissionAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetFormsSubmissionResponse> GetFormsSubmissionAsync(string connectionId, string id, List<GetFormsSubmissionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all forms
@@ -70,7 +70,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -79,7 +79,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateFormsFormResponse> CreateFormsFormAsync(FormsForm formsForm, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateFormsFormResponse> CreateFormsFormAsync(FormsForm formsForm, string connectionId, List<CreateFormsFormQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateFormsFormRequest()
             {
@@ -170,7 +170,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetFormsFormResponse> GetFormsFormAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetFormsFormResponse> GetFormsFormAsync(string connectionId, string id, List<GetFormsFormQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetFormsFormRequest()
             {
@@ -255,7 +255,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetFormsSubmissionResponse> GetFormsSubmissionAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetFormsSubmissionResponse> GetFormsSubmissionAsync(string connectionId, string id, List<GetFormsSubmissionQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetFormsSubmissionRequest()
             {

@@ -28,92 +28,92 @@ namespace UnifiedTo
         /// <summary>
         /// Create a benefit
         /// </summary>
-        Task<CreateHrisBenefitResponse> CreateHrisBenefitAsync(HrisBenefit hrisBenefit, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateHrisBenefitResponse> CreateHrisBenefitAsync(HrisBenefit hrisBenefit, string connectionId, List<CreateHrisBenefitQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a company
         /// </summary>
-        Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, List<CreateHrisCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a deduction
         /// </summary>
-        Task<CreateHrisDeductionResponse> CreateHrisDeductionAsync(HrisDeduction hrisDeduction, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateHrisDeductionResponse> CreateHrisDeductionAsync(HrisDeduction hrisDeduction, string connectionId, List<CreateHrisDeductionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a device
         /// </summary>
-        Task<CreateHrisDeviceResponse> CreateHrisDeviceAsync(HrisDevice hrisDevice, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateHrisDeviceResponse> CreateHrisDeviceAsync(HrisDevice hrisDevice, string connectionId, List<CreateHrisDeviceQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create an employee
         /// </summary>
-        Task<CreateHrisEmployeeResponse> CreateHrisEmployeeAsync(HrisEmployee hrisEmployee, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateHrisEmployeeResponse> CreateHrisEmployeeAsync(HrisEmployee hrisEmployee, string connectionId, List<CreateHrisEmployeeQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a group
         /// </summary>
-        Task<CreateHrisGroupResponse> CreateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateHrisGroupResponse> CreateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, List<CreateHrisGroupQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a location
         /// </summary>
-        Task<CreateHrisLocationResponse> CreateHrisLocationAsync(HrisLocation hrisLocation, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateHrisLocationResponse> CreateHrisLocationAsync(HrisLocation hrisLocation, string connectionId, List<CreateHrisLocationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a timeshift
         /// </summary>
-        Task<CreateHrisTimeshiftResponse> CreateHrisTimeshiftAsync(HrisTimeshift hrisTimeshift, string connectionId, List<string>? fields = null, string? raw = null);
+        Task<CreateHrisTimeshiftResponse> CreateHrisTimeshiftAsync(HrisTimeshift hrisTimeshift, string connectionId, List<CreateHrisTimeshiftQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a benefit
         /// </summary>
-        Task<GetHrisBenefitResponse> GetHrisBenefitAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetHrisBenefitResponse> GetHrisBenefitAsync(string connectionId, string id, List<GetHrisBenefitQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a company
         /// </summary>
-        Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<GetHrisCompanyQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a deduction
         /// </summary>
-        Task<GetHrisDeductionResponse> GetHrisDeductionAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetHrisDeductionResponse> GetHrisDeductionAsync(string connectionId, string id, List<GetHrisDeductionQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a device
         /// </summary>
-        Task<GetHrisDeviceResponse> GetHrisDeviceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetHrisDeviceResponse> GetHrisDeviceAsync(string connectionId, string id, List<GetHrisDeviceQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve an employee
         /// </summary>
-        Task<GetHrisEmployeeResponse> GetHrisEmployeeAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetHrisEmployeeResponse> GetHrisEmployeeAsync(string connectionId, string id, List<GetHrisEmployeeQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a group
         /// </summary>
-        Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<GetHrisGroupQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a location
         /// </summary>
-        Task<GetHrisLocationResponse> GetHrisLocationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetHrisLocationResponse> GetHrisLocationAsync(string connectionId, string id, List<GetHrisLocationQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a payslip
         /// </summary>
-        Task<GetHrisPayslipResponse> GetHrisPayslipAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetHrisPayslipResponse> GetHrisPayslipAsync(string connectionId, string id, List<GetHrisPayslipQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a timeoff
         /// </summary>
-        Task<GetHrisTimeoffResponse> GetHrisTimeoffAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetHrisTimeoffResponse> GetHrisTimeoffAsync(string connectionId, string id, List<GetHrisTimeoffQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Retrieve a timeshift
         /// </summary>
-        Task<GetHrisTimeshiftResponse> GetHrisTimeshiftAsync(string connectionId, string id, List<string>? fields = null, string? raw = null);
+        Task<GetHrisTimeshiftResponse> GetHrisTimeshiftAsync(string connectionId, string id, List<GetHrisTimeshiftQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// List all benefits
@@ -290,7 +290,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.10";
+        private const string _sdkVersion = "0.130.11";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -299,7 +299,7 @@ namespace UnifiedTo
             SDKConfiguration = config;
         }
 
-        public async Task<CreateHrisBenefitResponse> CreateHrisBenefitAsync(HrisBenefit hrisBenefit, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateHrisBenefitResponse> CreateHrisBenefitAsync(HrisBenefit hrisBenefit, string connectionId, List<CreateHrisBenefitQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateHrisBenefitRequest()
             {
@@ -390,7 +390,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateHrisCompanyResponse> CreateHrisCompanyAsync(HrisCompany hrisCompany, string connectionId, List<CreateHrisCompanyQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateHrisCompanyRequest()
             {
@@ -481,7 +481,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisDeductionResponse> CreateHrisDeductionAsync(HrisDeduction hrisDeduction, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateHrisDeductionResponse> CreateHrisDeductionAsync(HrisDeduction hrisDeduction, string connectionId, List<CreateHrisDeductionQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateHrisDeductionRequest()
             {
@@ -572,7 +572,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisDeviceResponse> CreateHrisDeviceAsync(HrisDevice hrisDevice, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateHrisDeviceResponse> CreateHrisDeviceAsync(HrisDevice hrisDevice, string connectionId, List<CreateHrisDeviceQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateHrisDeviceRequest()
             {
@@ -663,7 +663,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisEmployeeResponse> CreateHrisEmployeeAsync(HrisEmployee hrisEmployee, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateHrisEmployeeResponse> CreateHrisEmployeeAsync(HrisEmployee hrisEmployee, string connectionId, List<CreateHrisEmployeeQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateHrisEmployeeRequest()
             {
@@ -754,7 +754,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisGroupResponse> CreateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateHrisGroupResponse> CreateHrisGroupAsync(HrisGroup hrisGroup, string connectionId, List<CreateHrisGroupQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateHrisGroupRequest()
             {
@@ -845,7 +845,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisLocationResponse> CreateHrisLocationAsync(HrisLocation hrisLocation, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateHrisLocationResponse> CreateHrisLocationAsync(HrisLocation hrisLocation, string connectionId, List<CreateHrisLocationQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateHrisLocationRequest()
             {
@@ -936,7 +936,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateHrisTimeshiftResponse> CreateHrisTimeshiftAsync(HrisTimeshift hrisTimeshift, string connectionId, List<string>? fields = null, string? raw = null)
+        public async Task<CreateHrisTimeshiftResponse> CreateHrisTimeshiftAsync(HrisTimeshift hrisTimeshift, string connectionId, List<CreateHrisTimeshiftQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateHrisTimeshiftRequest()
             {
@@ -1027,7 +1027,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisBenefitResponse> GetHrisBenefitAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetHrisBenefitResponse> GetHrisBenefitAsync(string connectionId, string id, List<GetHrisBenefitQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetHrisBenefitRequest()
             {
@@ -1112,7 +1112,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetHrisCompanyResponse> GetHrisCompanyAsync(string connectionId, string id, List<GetHrisCompanyQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetHrisCompanyRequest()
             {
@@ -1197,7 +1197,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisDeductionResponse> GetHrisDeductionAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetHrisDeductionResponse> GetHrisDeductionAsync(string connectionId, string id, List<GetHrisDeductionQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetHrisDeductionRequest()
             {
@@ -1282,7 +1282,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisDeviceResponse> GetHrisDeviceAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetHrisDeviceResponse> GetHrisDeviceAsync(string connectionId, string id, List<GetHrisDeviceQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetHrisDeviceRequest()
             {
@@ -1367,7 +1367,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisEmployeeResponse> GetHrisEmployeeAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetHrisEmployeeResponse> GetHrisEmployeeAsync(string connectionId, string id, List<GetHrisEmployeeQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetHrisEmployeeRequest()
             {
@@ -1452,7 +1452,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetHrisGroupResponse> GetHrisGroupAsync(string connectionId, string id, List<GetHrisGroupQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetHrisGroupRequest()
             {
@@ -1537,7 +1537,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisLocationResponse> GetHrisLocationAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetHrisLocationResponse> GetHrisLocationAsync(string connectionId, string id, List<GetHrisLocationQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetHrisLocationRequest()
             {
@@ -1622,7 +1622,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisPayslipResponse> GetHrisPayslipAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetHrisPayslipResponse> GetHrisPayslipAsync(string connectionId, string id, List<GetHrisPayslipQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetHrisPayslipRequest()
             {
@@ -1707,7 +1707,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisTimeoffResponse> GetHrisTimeoffAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetHrisTimeoffResponse> GetHrisTimeoffAsync(string connectionId, string id, List<GetHrisTimeoffQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetHrisTimeoffRequest()
             {
@@ -1792,7 +1792,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<GetHrisTimeshiftResponse> GetHrisTimeshiftAsync(string connectionId, string id, List<string>? fields = null, string? raw = null)
+        public async Task<GetHrisTimeshiftResponse> GetHrisTimeshiftAsync(string connectionId, string id, List<GetHrisTimeshiftQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new GetHrisTimeshiftRequest()
             {
