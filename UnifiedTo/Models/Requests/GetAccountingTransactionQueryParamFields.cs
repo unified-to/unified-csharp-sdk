@@ -29,8 +29,6 @@ namespace UnifiedTo.Models.Requests
         TaxAmount,
         [JsonProperty("account_id")]
         AccountId,
-        [JsonProperty("contact_id")]
-        ContactId,
         [JsonProperty("reference")]
         Reference,
         [JsonProperty("sub_total_amount")]

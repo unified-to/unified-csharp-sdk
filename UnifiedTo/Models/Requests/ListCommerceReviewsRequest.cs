@@ -29,7 +29,7 @@ namespace UnifiedTo.Models.Requests
         public string? ContactId { get; set; }
 
         /// <summary>
-        /// Comma-delimited fields to return
+        /// Fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<ListCommerceReviewsQueryParamFields>? Fields { get; set; }

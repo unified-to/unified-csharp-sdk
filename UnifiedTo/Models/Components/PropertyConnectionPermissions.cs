@@ -109,6 +109,10 @@ namespace UnifiedTo.Models.Components
         CommerceItemRead,
         [JsonProperty("commerce_item_write")]
         CommerceItemWrite,
+        [JsonProperty("commerce_itemvariant_read")]
+        CommerceItemvariantRead,
+        [JsonProperty("commerce_itemvariant_write")]
+        CommerceItemvariantWrite,
         [JsonProperty("commerce_collection_read")]
         CommerceCollectionRead,
         [JsonProperty("commerce_collection_write")]

@@ -12,7 +12,6 @@
 | `TotalAmount`     | total_amount      |
 | `TaxAmount`       | tax_amount        |
 | `AccountId`       | account_id        |
-| `ContactId`       | contact_id        |
 | `Reference`       | reference         |
 | `SubTotalAmount`  | sub_total_amount  |
 | `SplitAccountId`  | split_account_id  |

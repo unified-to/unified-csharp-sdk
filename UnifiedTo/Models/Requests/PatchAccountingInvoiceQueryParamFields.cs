@@ -63,8 +63,6 @@ namespace UnifiedTo.Models.Requests
         Url,
         [JsonProperty("payment_collection_method")]
         PaymentCollectionMethod,
-        [JsonProperty("invoice_at")]
-        InvoiceAt,
         [JsonProperty("type")]
         Type,
         [JsonProperty("attachments")]

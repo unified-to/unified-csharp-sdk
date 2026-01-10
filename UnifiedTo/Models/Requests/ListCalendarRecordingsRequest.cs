@@ -35,7 +35,7 @@ namespace UnifiedTo.Models.Requests
         public string? EventId { get; set; }
 
         /// <summary>
-        /// Comma-delimited fields to return
+        /// Fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<ListCalendarRecordingsQueryParamFields>? Fields { get; set; }

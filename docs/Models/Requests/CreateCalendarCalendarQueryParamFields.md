@@ -11,6 +11,5 @@
 | `Name`        | name          |
 | `Description` | description   |
 | `Timezone`    | timezone      |
-| `Primary`     | primary       |
 | `IsPrimary`   | is_primary    |
 | `Raw`         | raw           |

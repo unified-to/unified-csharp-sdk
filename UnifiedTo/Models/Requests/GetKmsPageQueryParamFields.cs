@@ -27,8 +27,6 @@ namespace UnifiedTo.Models.Requests
         Type,
         [JsonProperty("space_id")]
         SpaceId,
-        [JsonProperty("parent_page_id")]
-        ParentPageId,
         [JsonProperty("parent_id")]
         ParentId,
         [JsonProperty("is_active")]

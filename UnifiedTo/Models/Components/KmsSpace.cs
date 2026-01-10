@@ -38,9 +38,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("parent_page_id")]
         public string? ParentPageId { get; set; }
 
-        [JsonProperty("parent_space_id")]
-        public string? ParentSpaceId { get; set; } = "sp";
-
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 

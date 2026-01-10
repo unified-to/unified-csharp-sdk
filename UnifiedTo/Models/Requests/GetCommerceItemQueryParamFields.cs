@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Requests
         Slug,
         [JsonProperty("description")]
         Description,
+        [JsonProperty("taxrate_id")]
+        TaxrateId,
         [JsonProperty("global_code")]
         GlobalCode,
         [JsonProperty("public_description")]

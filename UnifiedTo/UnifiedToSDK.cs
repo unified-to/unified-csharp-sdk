@@ -70,6 +70,7 @@ namespace UnifiedTo
         public ICollection Collection { get; }
         public IInventory Inventory { get; }
         public IItem Item { get; }
+        public IItemvariant Itemvariant { get; }
         public ILocation Location { get; }
         public IReview Review { get; }
         public ISaleschannel Saleschannel { get; }
@@ -158,7 +159,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.11";
+        private const string _sdkVersion = "0.130.12";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -204,6 +205,7 @@ namespace UnifiedTo
         public ICollection Collection { get; private set; }
         public IInventory Inventory { get; private set; }
         public IItem Item { get; private set; }
+        public IItemvariant Itemvariant { get; private set; }
         public ILocation Location { get; private set; }
         public IReview Review { get; private set; }
         public ISaleschannel Saleschannel { get; private set; }
@@ -370,6 +372,8 @@ namespace UnifiedTo
             Inventory = new Inventory(SDKConfiguration);
 
             Item = new Item(SDKConfiguration);
+
+            Itemvariant = new Itemvariant(SDKConfiguration);
 
             Location = new Location(SDKConfiguration);
 
@@ -649,6 +653,8 @@ namespace UnifiedTo
             Inventory = new Inventory(SDKConfiguration);
 
             Item = new Item(SDKConfiguration);
+
+            Itemvariant = new Itemvariant(SDKConfiguration);
 
             Location = new Location(SDKConfiguration);
 

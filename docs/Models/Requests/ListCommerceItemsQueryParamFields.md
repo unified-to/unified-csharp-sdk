@@ -12,6 +12,7 @@
 | `PublicName`        | public_name         |
 | `Slug`              | slug                |
 | `Description`       | description         |
+| `TaxrateId`         | taxrate_id          |
 | `GlobalCode`        | global_code         |
 | `PublicDescription` | public_description  |
 | `IsActive`          | is_active           |

@@ -48,9 +48,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
-        [JsonProperty("parent_account_id")]
-        public string? ParentAccountId { get; set; }
-
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; }
 

@@ -45,9 +45,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
-        [JsonProperty("invoice_at")]
-        public DateTime? InvoiceAt { get; set; }
-
         [JsonProperty("invoice_number")]
         public string? InvoiceNumber { get; set; }
 

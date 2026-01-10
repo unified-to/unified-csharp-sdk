@@ -75,6 +75,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }
 
+        [JsonProperty("taxrate_id")]
+        public string? TaxrateId { get; set; }
+
         [JsonProperty("type")]
         public string? Type { get; set; }
 

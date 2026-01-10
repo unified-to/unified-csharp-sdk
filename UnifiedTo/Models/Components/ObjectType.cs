@@ -65,6 +65,8 @@ namespace UnifiedTo.Models.Components
         PaymentSubscription,
         [JsonProperty("commerce_item")]
         CommerceItem,
+        [JsonProperty("commerce_itemvariant")]
+        CommerceItemvariant,
         [JsonProperty("commerce_collection")]
         CommerceCollection,
         [JsonProperty("commerce_inventory")]

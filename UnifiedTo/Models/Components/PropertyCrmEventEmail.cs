@@ -26,7 +26,7 @@ namespace UnifiedTo.Models.Components
         public string? Body { get; set; }
 
         /// <summary>
-        /// The event email&apos;s cc name &amp; email (name )
+        /// The event email&apos;s cc name &amp; email (name &lt;test@test.com&gt;)
         /// </summary>
         [JsonProperty("cc")]
         public List<string>? Cc { get; set; }
@@ -38,7 +38,7 @@ namespace UnifiedTo.Models.Components
         public string? Subject { get; set; }
 
         /// <summary>
-        /// The event email&apos;s &quot;to&quot; name &amp; email (name )
+        /// The event email&apos;s &quot;to&quot; name &amp; email (name &lt;test@test.com&gt;)
         /// </summary>
         [JsonProperty("to")]
         public List<string>? To { get; set; }

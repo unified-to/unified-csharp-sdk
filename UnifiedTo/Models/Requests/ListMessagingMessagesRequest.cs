@@ -41,7 +41,7 @@ namespace UnifiedTo.Models.Requests
         public bool? Expand { get; set; }
 
         /// <summary>
-        /// Comma-delimited fields to return
+        /// Fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<ListMessagingMessagesQueryParamFields>? Fields { get; set; }

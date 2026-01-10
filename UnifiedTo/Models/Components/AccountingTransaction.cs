@@ -21,9 +21,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
 
-        [JsonProperty("contact_id")]
-        public string? ContactId { get; set; }
-
         [JsonProperty("contacts")]
         public List<AccountingTransactionContact>? Contacts { get; set; }
 

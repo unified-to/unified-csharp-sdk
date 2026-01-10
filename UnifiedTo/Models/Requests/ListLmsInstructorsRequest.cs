@@ -41,7 +41,7 @@ namespace UnifiedTo.Models.Requests
         public string? CourseId { get; set; }
 
         /// <summary>
-        /// Comma-delimited fields to return
+        /// Fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<ListLmsInstructorsQueryParamFields>? Fields { get; set; }
