@@ -235,9 +235,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchMessagingEventRequest req = new PatchMessagingEventRequest() {
-    MessagingEvent = new MessagingEvent() {
-        Type = MessagingEventType.ChannelJoined,
-    },
+    MessagingEvent = new MessagingEvent() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -360,9 +358,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateMessagingEventRequest req = new UpdateMessagingEventRequest() {
-    MessagingEvent = new MessagingEvent() {
-        Type = MessagingEventType.ChannelJoined,
-    },
+    MessagingEvent = new MessagingEvent() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };

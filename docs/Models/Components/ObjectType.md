@@ -30,12 +30,12 @@
 | `PaymentRefund`           | payment_refund            |
 | `PaymentSubscription`     | payment_subscription      |
 | `CommerceItem`            | commerce_item             |
-| `CommerceItemvariant`     | commerce_itemvariant      |
 | `CommerceCollection`      | commerce_collection       |
 | `CommerceInventory`       | commerce_inventory        |
 | `CommerceLocation`        | commerce_location         |
 | `CommerceReview`          | commerce_review           |
 | `CommerceSaleschannel`    | commerce_saleschannel     |
+| `CommerceItemvariant`     | commerce_itemvariant      |
 | `VerificationPackage`     | verification_package      |
 | `VerificationRequest`     | verification_request      |
 | `AtsActivity`             | ats_activity              |
@@ -114,3 +114,8 @@
 | `AdsGroup`                | ads_group                 |
 | `FormsForm`               | forms_form                |
 | `FormsSubmission`         | forms_submission          |
+| `ShippingCarrier`         | shipping_carrier          |
+| `ShippingRate`            | shipping_rate             |
+| `ShippingShipment`        | shipping_shipment         |
+| `ShippingLabel`           | shipping_label            |
+| `ShippingTracking`        | shipping_tracking         |

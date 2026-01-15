@@ -123,6 +123,12 @@ namespace UnifiedTo
         public IRepository Repository { get; }
         public IScim Scim { get; }
         public IUser User { get; }
+        public IShipping Shipping { get; }
+        public ICarrier Carrier { get; }
+        public ILabel Label { get; }
+        public IRate Rate { get; }
+        public IShipment Shipment { get; }
+        public ITracking Tracking { get; }
         public IStorage Storage { get; }
         public IFile File { get; }
         public ITask Task { get; }
@@ -159,7 +165,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.12";
+        private const string _sdkVersion = "0.130.13";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -258,6 +264,12 @@ namespace UnifiedTo
         public IRepository Repository { get; private set; }
         public IScim Scim { get; private set; }
         public IUser User { get; private set; }
+        public IShipping Shipping { get; private set; }
+        public ICarrier Carrier { get; private set; }
+        public ILabel Label { get; private set; }
+        public IRate Rate { get; private set; }
+        public IShipment Shipment { get; private set; }
+        public ITracking Tracking { get; private set; }
         public IStorage Storage { get; private set; }
         public IFile File { get; private set; }
         public ITask Task { get; private set; }
@@ -478,6 +490,18 @@ namespace UnifiedTo
             Scim = new Scim(SDKConfiguration);
 
             User = new User(SDKConfiguration);
+
+            Shipping = new Shipping(SDKConfiguration);
+
+            Carrier = new Carrier(SDKConfiguration);
+
+            Label = new Label(SDKConfiguration);
+
+            Rate = new Rate(SDKConfiguration);
+
+            Shipment = new Shipment(SDKConfiguration);
+
+            Tracking = new Tracking(SDKConfiguration);
 
             Storage = new Storage(SDKConfiguration);
 
@@ -759,6 +783,18 @@ namespace UnifiedTo
             Scim = new Scim(SDKConfiguration);
 
             User = new User(SDKConfiguration);
+
+            Shipping = new Shipping(SDKConfiguration);
+
+            Carrier = new Carrier(SDKConfiguration);
+
+            Label = new Label(SDKConfiguration);
+
+            Rate = new Rate(SDKConfiguration);
+
+            Shipment = new Shipment(SDKConfiguration);
+
+            Tracking = new Tracking(SDKConfiguration);
 
             Storage = new Storage(SDKConfiguration);
 

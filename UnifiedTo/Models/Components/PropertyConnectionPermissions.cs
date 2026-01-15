@@ -109,10 +109,6 @@ namespace UnifiedTo.Models.Components
         CommerceItemRead,
         [JsonProperty("commerce_item_write")]
         CommerceItemWrite,
-        [JsonProperty("commerce_itemvariant_read")]
-        CommerceItemvariantRead,
-        [JsonProperty("commerce_itemvariant_write")]
-        CommerceItemvariantWrite,
         [JsonProperty("commerce_collection_read")]
         CommerceCollectionRead,
         [JsonProperty("commerce_collection_write")]
@@ -133,6 +129,10 @@ namespace UnifiedTo.Models.Components
         CommerceSaleschannelRead,
         [JsonProperty("commerce_saleschannel_write")]
         CommerceSaleschannelWrite,
+        [JsonProperty("commerce_itemvariant_read")]
+        CommerceItemvariantRead,
+        [JsonProperty("commerce_itemvariant_write")]
+        CommerceItemvariantWrite,
         [JsonProperty("verification_package_read")]
         VerificationPackageRead,
         [JsonProperty("verification_request_read")]
@@ -421,6 +421,20 @@ namespace UnifiedTo.Models.Components
         FormsSubmissionRead,
         [JsonProperty("forms_submission_write")]
         FormsSubmissionWrite,
+        [JsonProperty("shipping_shipment_read")]
+        ShippingShipmentRead,
+        [JsonProperty("shipping_shipment_write")]
+        ShippingShipmentWrite,
+        [JsonProperty("shipping_label_read")]
+        ShippingLabelRead,
+        [JsonProperty("shipping_label_write")]
+        ShippingLabelWrite,
+        [JsonProperty("shipping_tracking_read")]
+        ShippingTrackingRead,
+        [JsonProperty("shipping_rate_read")]
+        ShippingRateRead,
+        [JsonProperty("shipping_carrier_read")]
+        ShippingCarrierRead,
     }
 
     public static class PropertyConnectionPermissionsExtension

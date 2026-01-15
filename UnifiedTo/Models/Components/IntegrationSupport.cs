@@ -50,6 +50,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_candidate_id")]
         public ListCandidateId? ListCandidateId { get; set; }
 
+        [JsonProperty("list_carrier_id")]
+        public ListCarrierId? ListCarrierId { get; set; }
+
         [JsonProperty("list_category_id")]
         public ListCategoryId? ListCategoryId { get; set; }
 
@@ -113,6 +116,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_job_id")]
         public ListJobId? ListJobId { get; set; }
 
+        [JsonProperty("list_label_id")]
+        public ListLabelId? ListLabelId { get; set; }
+
         [JsonProperty("list_lead_id")]
         public ListLeadId? ListLeadId { get; set; }
 
@@ -133,6 +139,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_order")]
         public ListOrder? ListOrder { get; set; }
+
+        [JsonProperty("list_order_id")]
+        public ListOrderId? ListOrderId { get; set; }
 
         [JsonProperty("list_org_id")]
         public ListOrgId? ListOrgId { get; set; }
@@ -172,6 +181,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("list_saleschannel_id")]
         public ListSaleschannelId? ListSaleschannelId { get; set; }
+
+        [JsonProperty("list_shipment_id")]
+        public ListShipmentId? ListShipmentId { get; set; }
 
         [JsonProperty("list_sort_by_created_at")]
         public ListSortByCreatedAt? ListSortByCreatedAt { get; set; }
@@ -221,6 +233,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("native_webhook_calendar_id")]
         public NativeWebhookCalendarId? NativeWebhookCalendarId { get; set; }
 
+        [JsonProperty("native_webhook_carrier_id")]
+        public NativeWebhookCarrierId? NativeWebhookCarrierId { get; set; }
+
         [JsonProperty("native_webhook_channel_id")]
         public NativeWebhookChannelId? NativeWebhookChannelId { get; set; }
 
@@ -233,11 +248,20 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("native_webhook_form_id")]
         public NativeWebhookFormId? NativeWebhookFormId { get; set; }
 
+        [JsonProperty("native_webhook_label_id")]
+        public NativeWebhookLabelId? NativeWebhookLabelId { get; set; }
+
+        [JsonProperty("native_webhook_order_id")]
+        public NativeWebhookOrderId? NativeWebhookOrderId { get; set; }
+
         [JsonProperty("native_webhook_parent_id")]
         public NativeWebhookParentId? NativeWebhookParentId { get; set; }
 
         [JsonProperty("native_webhook_project_id")]
         public NativeWebhookProjectId? NativeWebhookProjectId { get; set; }
+
+        [JsonProperty("native_webhook_shipment_id")]
+        public NativeWebhookShipmentId? NativeWebhookShipmentId { get; set; }
 
         [JsonProperty("native_webhook_task_id")]
         public NativeWebhookTaskId? NativeWebhookTaskId { get; set; }
@@ -290,6 +314,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("virtual_webhook_candidate_id")]
         public VirtualWebhookCandidateId? VirtualWebhookCandidateId { get; set; }
 
+        [JsonProperty("virtual_webhook_carrier_id")]
+        public VirtualWebhookCarrierId? VirtualWebhookCarrierId { get; set; }
+
         [JsonProperty("virtual_webhook_channel_id")]
         public VirtualWebhookChannelId? VirtualWebhookChannelId { get; set; }
 
@@ -335,6 +362,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("virtual_webhook_job_id")]
         public VirtualWebhookJobId? VirtualWebhookJobId { get; set; }
 
+        [JsonProperty("virtual_webhook_label_id")]
+        public VirtualWebhookLabelId? VirtualWebhookLabelId { get; set; }
+
         [JsonProperty("virtual_webhook_lead_id")]
         public VirtualWebhookLeadId? VirtualWebhookLeadId { get; set; }
 
@@ -346,6 +376,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_location_id")]
         public VirtualWebhookLocationId? VirtualWebhookLocationId { get; set; }
+
+        [JsonProperty("virtual_webhook_order_id")]
+        public VirtualWebhookOrderId? VirtualWebhookOrderId { get; set; }
 
         [JsonProperty("virtual_webhook_org_id")]
         public VirtualWebhookOrgId? VirtualWebhookOrgId { get; set; }
@@ -367,6 +400,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_saleschannel_id")]
         public VirtualWebhookSaleschannelId? VirtualWebhookSaleschannelId { get; set; }
+
+        [JsonProperty("virtual_webhook_shipment_id")]
+        public VirtualWebhookShipmentId? VirtualWebhookShipmentId { get; set; }
 
         [JsonProperty("virtual_webhook_space_id")]
         public VirtualWebhookSpaceId? VirtualWebhookSpaceId { get; set; }

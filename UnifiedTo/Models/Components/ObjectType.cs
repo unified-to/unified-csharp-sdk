@@ -65,8 +65,6 @@ namespace UnifiedTo.Models.Components
         PaymentSubscription,
         [JsonProperty("commerce_item")]
         CommerceItem,
-        [JsonProperty("commerce_itemvariant")]
-        CommerceItemvariant,
         [JsonProperty("commerce_collection")]
         CommerceCollection,
         [JsonProperty("commerce_inventory")]
@@ -77,6 +75,8 @@ namespace UnifiedTo.Models.Components
         CommerceReview,
         [JsonProperty("commerce_saleschannel")]
         CommerceSaleschannel,
+        [JsonProperty("commerce_itemvariant")]
+        CommerceItemvariant,
         [JsonProperty("verification_package")]
         VerificationPackage,
         [JsonProperty("verification_request")]
@@ -233,6 +233,16 @@ namespace UnifiedTo.Models.Components
         FormsForm,
         [JsonProperty("forms_submission")]
         FormsSubmission,
+        [JsonProperty("shipping_carrier")]
+        ShippingCarrier,
+        [JsonProperty("shipping_rate")]
+        ShippingRate,
+        [JsonProperty("shipping_shipment")]
+        ShippingShipment,
+        [JsonProperty("shipping_label")]
+        ShippingLabel,
+        [JsonProperty("shipping_tracking")]
+        ShippingTracking,
     }
 
     public static class ObjectTypeExtension

@@ -30,6 +30,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("is_replacing_original")]
+        public bool? IsReplacingOriginal { get; set; }
+
         [JsonProperty("message")]
         public PropertyMessagingEventMessage? Message { get; set; }
 
@@ -37,7 +40,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("type")]
-        public MessagingEventType Type { get; set; } = default!;
+        public MessagingEventType? Type { get; set; }
 
         [JsonProperty("user")]
         public PropertyMessagingEventUser? User { get; set; }

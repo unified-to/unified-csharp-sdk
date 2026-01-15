@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Requests
         Button,
         [JsonProperty("user")]
         User,
+        [JsonProperty("is_replacing_original")]
+        IsReplacingOriginal,
         [JsonProperty("raw")]
         Raw,
     }

@@ -65,6 +65,8 @@ namespace UnifiedTo.Models.Requests
         Ads,
         [JsonProperty("forms")]
         Forms,
+        [JsonProperty("shipping")]
+        Shipping,
     }
 
     public static class QueryParamCategoriesExtension
