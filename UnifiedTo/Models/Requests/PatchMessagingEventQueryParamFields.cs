@@ -29,10 +29,10 @@ namespace UnifiedTo.Models.Requests
         Button,
         [JsonProperty("user")]
         User,
-        [JsonProperty("is_replacing_original")]
-        IsReplacingOriginal,
         [JsonProperty("raw")]
         Raw,
+        [JsonProperty("is_replacing_original")]
+        IsReplacingOriginal,
     }
 
     public static class PatchMessagingEventQueryParamFieldsExtension

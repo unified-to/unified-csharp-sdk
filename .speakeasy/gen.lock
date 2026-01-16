@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: fc328f365075899265a9857aed41aa46
+  docChecksum: 091d7b9c5c8337ec015b0663ff6edb22
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.13
-  configChecksum: ca32cc2ce3b783df11af3be7b09b820a
+  releaseVersion: 0.130.14
+  configChecksum: 568977238de937a3ef976ea9d3394ad6
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -11927,7 +11927,7 @@ trackedFiles:
     pristine_git_object: 5d508a0072f097a8ca662ede4e0f696357939c3b
   UnifiedTo/Models/Components/MessagingMessage.cs:
     id: 437aabab4586
-    last_write_checksum: sha1:7598d6c56c67b30c912ad2c1a68a5fed0b5d852b
+    last_write_checksum: sha1:35e0a4b162c264a7d9a5af963ae5d98a8c2c79be
     pristine_git_object: 47c4e73064e38b832cb8464023a875e487e01122
   UnifiedTo/Models/Components/MessagingReaction.cs:
     id: 29dd5d109a41
@@ -12302,14 +12302,14 @@ trackedFiles:
   UnifiedTo/Models/Components/PropertyMessagingEventChannel.cs:
     last_write_checksum: sha1:0b94a9420ad4c2b05dc51b0a51ffefc5fb923da2
   UnifiedTo/Models/Components/PropertyMessagingEventMessage.cs:
-    last_write_checksum: sha1:2134be3d12c446fa66ee5798ba6f3e6530326856
+    last_write_checksum: sha1:9db691362f1361c42dca023a976819000c00414f
   UnifiedTo/Models/Components/PropertyMessagingEventMessageAuthorMember.cs:
-    last_write_checksum: sha1:a5f4411a7da36aaec2210a421da8974641b899f1
+    last_write_checksum: sha1:f417a0761bf6bc0d688e582acef3a3d2e8cdd12e
   UnifiedTo/Models/Components/PropertyMessagingEventUser.cs:
     last_write_checksum: sha1:dad1abf6064f9039c8e50f22224ea01f16c817cb
   UnifiedTo/Models/Components/PropertyMessagingMessageAuthorMember.cs:
     id: fcb0dc165a10
-    last_write_checksum: sha1:21c0e6791cc708c9ae9bdfdd0759f044990167e8
+    last_write_checksum: sha1:01470380e08a674c04db464a0c1211d18495c580
     pristine_git_object: 15f8d78b5020fb6df4c63023cf81e8ba7830e8d3
   UnifiedTo/Models/Components/PropertyMessagingReactionMember.cs:
     id: 1ebcc6f1bb98
@@ -16584,7 +16584,7 @@ trackedFiles:
     last_write_checksum: sha1:a6b05b669a3762ab1e6f6df86ae8b47085dbc6c8
     pristine_git_object: 9f3293d2ff3785968d9c89df30832a9ce06f36bc
   UnifiedTo/Models/Requests/PatchMessagingEventQueryParamFields.cs:
-    last_write_checksum: sha1:bbf938ca024bcc26a844ddca5a9c9d5262b93dc6
+    last_write_checksum: sha1:4eb1857ebbb825d7c928816bb9ad47411a95ce3c
   UnifiedTo/Models/Requests/PatchMessagingEventRequest.cs:
     last_write_checksum: sha1:f3d4d92f65559983f4cd2e9582b11edd9b75d5da
   UnifiedTo/Models/Requests/PatchMessagingEventResponse.cs:
@@ -18124,7 +18124,7 @@ trackedFiles:
     last_write_checksum: sha1:c12a67fdcaa7f979d2116e351988592cfa86cc2f
     pristine_git_object: 004864a79bd380fccf695abca3d63da19bd5d219
   UnifiedTo/Models/Requests/UpdateMessagingEventQueryParamFields.cs:
-    last_write_checksum: sha1:193cea6e85842d2fee3cb950b4ac8e2130c25bed
+    last_write_checksum: sha1:2f1765de78d37468261076d205a83c3a8c3a655a
   UnifiedTo/Models/Requests/UpdateMessagingEventRequest.cs:
     last_write_checksum: sha1:77b64dbf6af8cb6f9d043131b6e798082bf9c754
   UnifiedTo/Models/Requests/UpdateMessagingEventResponse.cs:
@@ -18507,7 +18507,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:ffbe65dd329d21c286644ddd29ac3ced1e435ebe
+    last_write_checksum: sha1:406193c05b25e53ab36fe850316c0f16a7045d7b
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -18611,7 +18611,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:6104d4a03deea78d05cb3592df10b5a74815ba12
+    last_write_checksum: sha1:7493670c9a052e77264e30cba0219f852965a2d1
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -20037,7 +20037,7 @@ trackedFiles:
     pristine_git_object: 05419dbc38b66fd7bd00e1001c98be2fe5a1a66b
   docs/Models/Components/MessagingMessage.md:
     id: c5d11552f1c5
-    last_write_checksum: sha1:ac2f0bc5b8da0316e23b44a073d39e5a8fbbbdf5
+    last_write_checksum: sha1:7e2d6493ed3562f10abc7dae9860b537ebe879a0
     pristine_git_object: 080ae80ce58bfaf056c0ac61fb671825667ba8dd
   docs/Models/Components/MessagingReaction.md:
     id: 900e432bb528
@@ -20412,14 +20412,14 @@ trackedFiles:
   docs/Models/Components/PropertyMessagingEventChannel.md:
     last_write_checksum: sha1:7b375e6d79a6fe5592f76309ca523cbe75287891
   docs/Models/Components/PropertyMessagingEventMessage.md:
-    last_write_checksum: sha1:5387c56b4b6b3666fe14a614e58325be157bcf5b
+    last_write_checksum: sha1:664e433b8f0cb433d8bfe184930b1b704c2c2c26
   docs/Models/Components/PropertyMessagingEventMessageAuthorMember.md:
-    last_write_checksum: sha1:d7a2bde07f1c5530b91195e0c5ef591cb6379d9e
+    last_write_checksum: sha1:fdee4036b2039b17fea26ae7e9ce752c22722c60
   docs/Models/Components/PropertyMessagingEventUser.md:
     last_write_checksum: sha1:6f240fd335ff18a10eb5e1037874d59d8dd4e5c8
   docs/Models/Components/PropertyMessagingMessageAuthorMember.md:
     id: b33420e10dfb
-    last_write_checksum: sha1:e422a0d3eb8470ad6690fa64d3189f74cb50306d
+    last_write_checksum: sha1:08cc9bef1b7760cc7875c6e0d19f02bdd007938a
     pristine_git_object: b4f38f0e04a6363b6bed8fb4ddabc082afd0fd66
   docs/Models/Components/PropertyMessagingReactionMember.md:
     id: d993c6715618
@@ -24682,7 +24682,7 @@ trackedFiles:
     last_write_checksum: sha1:b079ad06e9ef728298fbe39fd91eea0b49df7884
     pristine_git_object: 27a03a528c1e08dbc7072dbafd26a680c7b2cf8d
   docs/Models/Requests/PatchMessagingEventQueryParamFields.md:
-    last_write_checksum: sha1:ad0ecc76fc6c7c5a47cc853dfb11baf73efb3467
+    last_write_checksum: sha1:b93f5a8c2d8978f445830fdcbdacee2a7f500f1f
   docs/Models/Requests/PatchMessagingEventRequest.md:
     last_write_checksum: sha1:2e2338bdb64d3d74262803f8a6cb8582875db3d0
   docs/Models/Requests/PatchMessagingEventResponse.md:
@@ -26222,7 +26222,7 @@ trackedFiles:
     last_write_checksum: sha1:62eed51eb6f70ecf90c42a83a799389af98ae0b8
     pristine_git_object: 400a2a388f0096770162d6601d9a3968f1926045
   docs/Models/Requests/UpdateMessagingEventQueryParamFields.md:
-    last_write_checksum: sha1:3823a9190d873500dca859572b624299b950cb23
+    last_write_checksum: sha1:79295c99f1dbb532fe91c5505be1f0415ca71224
   docs/Models/Requests/UpdateMessagingEventRequest.md:
     last_write_checksum: sha1:a0002e2e407cbff834c2f35f376b8a97119d0feb
   docs/Models/Requests/UpdateMessagingEventResponse.md:

@@ -21,6 +21,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("attachments")]
         public List<MessagingAttachment>? Attachments { get; set; }
 
+        /// <summary>
+        /// for email systems, this field represents the From value
+        /// </summary>
         [JsonProperty("author_member")]
         public PropertyMessagingMessageAuthorMember? AuthorMember { get; set; }
 
@@ -45,12 +48,18 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        /// <summary>
+        /// for email systems, this field represents the To value
+        /// </summary>
         [JsonProperty("destination_members")]
         public List<MessagingMember>? DestinationMembers { get; set; }
 
         [JsonProperty("has_children")]
         public bool? HasChildren { get; set; }
 
+        /// <summary>
+        /// for email systems, this field represents the BCC value
+        /// </summary>
         [JsonProperty("hidden_members")]
         public List<MessagingMember>? HiddenMembers { get; set; }
 
@@ -60,6 +69,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_unread")]
         public bool? IsUnread { get; set; }
 
+        /// <summary>
+        /// for email systems, this field represents the CC value
+        /// </summary>
         [JsonProperty("mentioned_members")]
         public List<MessagingMember>? MentionedMembers { get; set; }
 

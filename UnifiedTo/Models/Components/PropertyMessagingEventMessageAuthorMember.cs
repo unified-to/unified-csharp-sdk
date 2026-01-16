@@ -12,6 +12,9 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
     
+    /// <summary>
+    /// for email systems, this field represents the From value
+    /// </summary>
     public class PropertyMessagingEventMessageAuthorMember
     {
 
