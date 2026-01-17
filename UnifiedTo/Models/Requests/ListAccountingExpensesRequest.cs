@@ -17,16 +17,40 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
+        /// The category ID to filter by (reference to AccountingCategory)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=category_id")]
+        public string? CategoryId { get; set; }
+
+        /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
+        /// The contact ID to filter by (reference to AccountingContact)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=contact_id")]
+        public string? ContactId { get; set; }
+
+        /// <summary>
+        /// The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=end_lt")]
+        public string? EndLt { get; set; }
+
+        /// <summary>
         /// Fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<ListAccountingExpensesQueryParamFields>? Fields { get; set; }
+
+        /// <summary>
+        /// The group ID to filter by (reference to HrisGroup)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=group_id")]
+        public string? GroupId { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }
@@ -51,6 +75,12 @@ namespace UnifiedTo.Models.Requests
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")]
         public string? Sort { get; set; }
+
+        /// <summary>
+        /// The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=start_gte")]
+        public string? StartGte { get; set; }
 
         /// <summary>
         /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)

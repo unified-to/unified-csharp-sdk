@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 091d7b9c5c8337ec015b0663ff6edb22
+  docChecksum: efb9a6c3665234f4ced6bdd175a6f17e
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.14
-  configChecksum: 568977238de937a3ef976ea9d3394ad6
+  releaseVersion: 0.130.15
+  configChecksum: c97f2314456c02989e5fd245f709f622
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -14993,7 +14993,7 @@ trackedFiles:
     last_write_checksum: sha1:e0c0474d510139e1bb858652967a9648c0160045
   UnifiedTo/Models/Requests/ListAccountingExpensesRequest.cs:
     id: 13cae24046f9
-    last_write_checksum: sha1:3cdec2a3310993e5e317eb1c9818a69a70c30ed3
+    last_write_checksum: sha1:dc05036d060a145eac9e68815fac6e74caab6d1b
     pristine_git_object: 3465fcf053a89b9094e4cc4f543b1439300ce037
   UnifiedTo/Models/Requests/ListAccountingExpensesResponse.cs:
     id: 0d7780bbe143
@@ -15124,7 +15124,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListAdsGroupsQueryParamFields.cs:
     last_write_checksum: sha1:b8275517dcd007a8b945b77a42e15d91778c7227
   UnifiedTo/Models/Requests/ListAdsGroupsRequest.cs:
-    last_write_checksum: sha1:a54d7c7afb8bf77244e1530249a1d03a840a08c8
+    last_write_checksum: sha1:88e430bfe38ba9417133b8fc156204892ce5376a
   UnifiedTo/Models/Requests/ListAdsGroupsResponse.cs:
     last_write_checksum: sha1:9c51a3590f9c080e2e97bc813e1405d0b600bd8f
   UnifiedTo/Models/Requests/ListAdsOrganizationsQueryParamFields.cs:
@@ -23091,7 +23091,7 @@ trackedFiles:
     last_write_checksum: sha1:58c0ac7c63720829096f8a980e95067c2f52f766
   docs/Models/Requests/ListAccountingExpensesRequest.md:
     id: 5b99b21b3870
-    last_write_checksum: sha1:236b7257dac3c98ac230ff75ec1a2dcfc3b5f5cf
+    last_write_checksum: sha1:848d19821337ef2f7f8c8f34d8bb48c059134e92
     pristine_git_object: a750859713a973c042f0e86c8cac59e761a0ed92
   docs/Models/Requests/ListAccountingExpensesResponse.md:
     id: a160c66c1ba4
@@ -23222,7 +23222,7 @@ trackedFiles:
   docs/Models/Requests/ListAdsGroupsQueryParamFields.md:
     last_write_checksum: sha1:66db7dd6de96d93a9a92bb8a125e42051be55abf
   docs/Models/Requests/ListAdsGroupsRequest.md:
-    last_write_checksum: sha1:5364cb80bc7e5270c0677ce8f6f400de7855dd7f
+    last_write_checksum: sha1:d152bf04979b1eb39685d0a4451ab33ceada1079
   docs/Models/Requests/ListAdsGroupsResponse.md:
     last_write_checksum: sha1:b4d2e33269fe691873a7839ac6fba4f66fab5eb8
   docs/Models/Requests/ListAdsOrganizationsQueryParamFields.md:
