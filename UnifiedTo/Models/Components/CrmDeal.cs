@@ -60,6 +60,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("pipeline_id")]
         public string? PipelineId { get; set; }
 
+        [JsonProperty("pipelines")]
+        public List<CrmReference>? Pipelines { get; set; }
+
         [JsonProperty("probability")]
         public double? Probability { get; set; }
 
@@ -74,6 +77,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("stage_id")]
         public string? StageId { get; set; }
+
+        [JsonProperty("stages")]
+        public List<CrmReference>? Stages { get; set; }
 
         [JsonProperty("tags")]
         public List<string>? Tags { get; set; }

@@ -17,6 +17,7 @@
 | `StageId`     | stage_id      |
 | `Pipeline`    | pipeline      |
 | `PipelineId`  | pipeline_id   |
+| `Stages`      | stages        |
 | `Source`      | source        |
 | `Probability` | probability   |
 | `Tags`        | tags          |
@@ -27,3 +28,4 @@
 | `CompanyIds`  | company_ids   |
 | `Metadata`    | metadata      |
 | `Raw`         | raw           |
+| `Pipelines`   | pipelines     |
