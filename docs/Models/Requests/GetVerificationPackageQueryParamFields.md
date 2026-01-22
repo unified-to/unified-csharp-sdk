@@ -22,4 +22,5 @@
 | `Currency`               | currency                 |
 | `MaxScore`               | max_score                |
 | `InfoUrl`                | info_url                 |
+| `ValidRegions`           | valid_regions            |
 | `Raw`                    | raw                      |

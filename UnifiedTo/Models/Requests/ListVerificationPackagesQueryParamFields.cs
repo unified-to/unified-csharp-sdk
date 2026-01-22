@@ -49,6 +49,8 @@ namespace UnifiedTo.Models.Requests
         MaxScore,
         [JsonProperty("info_url")]
         InfoUrl,
+        [JsonProperty("valid_regions")]
+        ValidRegions,
         [JsonProperty("raw")]
         Raw,
     }

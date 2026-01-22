@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: ffa471bd7fa4f3990f03aef2cc210f38
+  docChecksum: 8871ab86c0b3e5ad56d0c55ebdf768e9
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.16
-  configChecksum: 36d611b72054421ee8543d1747d01d87
+  releaseVersion: 0.130.17
+  configChecksum: c606fa448be1f1e33b4c9ab1426880ab
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -12771,7 +12771,7 @@ trackedFiles:
     pristine_git_object: 3e0660b0457edc1449bf2c0d145c646a0d0e55cb
   UnifiedTo/Models/Components/VerificationPackage.cs:
     id: "947801195993"
-    last_write_checksum: sha1:bcbbe7b92045ff364479b448ba42cccea5ac281f
+    last_write_checksum: sha1:2506baa4ea6aa4f64ff983dfa9496e6383fe7bc5
     pristine_git_object: 0e990bff92cc85528e19572a925bda8f651555ab
   UnifiedTo/Models/Components/VerificationPackageType.cs:
     id: dfb111932f16
@@ -14904,7 +14904,7 @@ trackedFiles:
     last_write_checksum: sha1:a984b23b09d5424b4bb389fec54a8b8123eadcb2
     pristine_git_object: 60ea6a186fcc6a4c912c2ba62ceef273bc189bc5
   UnifiedTo/Models/Requests/GetVerificationPackageQueryParamFields.cs:
-    last_write_checksum: sha1:b2cf6db7af7853a7b3b38163e9d039bd7ff6104c
+    last_write_checksum: sha1:ca9e303487a0b018c3e0d18a578ae830347ae66b
   UnifiedTo/Models/Requests/GetVerificationPackageRequest.cs:
     id: 42ebf24f0346
     last_write_checksum: sha1:c55a76f809a31a1bb68bcd5b10341ee0e2dc7fa7
@@ -16002,7 +16002,7 @@ trackedFiles:
     last_write_checksum: sha1:a46999b779bdf7313a31f2e52ee16c952043bf0e
     pristine_git_object: b2cb3e64d2ae2a6011f3bed6123cacd4629dbefc
   UnifiedTo/Models/Requests/ListVerificationPackagesQueryParamFields.cs:
-    last_write_checksum: sha1:facf54dcfea551132c39d61f2d7d691833951ba4
+    last_write_checksum: sha1:c7b57fd3176debd5c3da3567200e2ae929ea1008
   UnifiedTo/Models/Requests/ListVerificationPackagesRequest.cs:
     id: ece3422b10fe
     last_write_checksum: sha1:1d632a4498ef939f3f6cbe0acd653ed9bfe5a036
@@ -18511,7 +18511,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:cc3b34c3480494c2b0cdb41b6c3d0fdf84ed4566
+    last_write_checksum: sha1:55072062f22da715ef66d0c32646e4c11b8bd576
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -18615,7 +18615,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:04cd566591f2fbf5bca5bba5287bc7bd22cc1cb0
+    last_write_checksum: sha1:b0b70adb1660ecde3d3362b262993cf7ccbedd19
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -20883,7 +20883,7 @@ trackedFiles:
     pristine_git_object: e5b47419c32ba32e1bd7c4f63b1927ab6af115f3
   docs/Models/Components/VerificationPackage.md:
     id: 121ae17921ee
-    last_write_checksum: sha1:f5764ca13e2b9b2584f6a2b35ca6120f09372820
+    last_write_checksum: sha1:b1961c85a4305b710915dcab18696a0a88393971
     pristine_git_object: 1610578ace8bc20b7923e2abbd9e3c95719d1dfa
   docs/Models/Components/VerificationPackageType.md:
     id: ce445272b0a7
@@ -23004,7 +23004,7 @@ trackedFiles:
     last_write_checksum: sha1:6ac925ac76aec78cd0d2b8cec83fc192146b956b
     pristine_git_object: 7d2f46f8a0f0f3f9db4303f6d7723bc866ca4c47
   docs/Models/Requests/GetVerificationPackageQueryParamFields.md:
-    last_write_checksum: sha1:2ff147c3432f9ca0ccd87dc69036683a26f80410
+    last_write_checksum: sha1:8a56a6b6748183d1ece8d02b630f8a092f7b2c07
   docs/Models/Requests/GetVerificationPackageRequest.md:
     id: 5da42bc75729
     last_write_checksum: sha1:174b50f3ef72a4b85668a1d7a5cfa94c9de311ff
@@ -24102,7 +24102,7 @@ trackedFiles:
     last_write_checksum: sha1:b2e4ad63f48545e3c0bafef493a71e781f86d593
     pristine_git_object: da420cd466df099977dbb4f2de83768ecc24686d
   docs/Models/Requests/ListVerificationPackagesQueryParamFields.md:
-    last_write_checksum: sha1:a97e2d4d605eb7fc2bba19f6f7ff1713d2d5de84
+    last_write_checksum: sha1:27aef7c79f33d198d28e8adfd7e17e4a2b46262e
   docs/Models/Requests/ListVerificationPackagesRequest.md:
     id: 0ca3f50e5f41
     last_write_checksum: sha1:4a6b2ca806cab9c871d3d3be8974def0e2cedf07

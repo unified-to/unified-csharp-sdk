@@ -80,5 +80,11 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
+
+        /// <summary>
+        /// {country}-{stateprovince/territory} or just {country} 2-digit ISO codes
+        /// </summary>
+        [JsonProperty("valid_regions")]
+        public List<string>? ValidRegions { get; set; }
     }
 }
