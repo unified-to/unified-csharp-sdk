@@ -27,12 +27,16 @@ namespace UnifiedTo.Models.Requests
         CampaignId,
         [JsonProperty("group_id")]
         GroupId,
+        [JsonProperty("item_id")]
+        ItemId,
         [JsonProperty("organization_id")]
         OrganizationId,
-        [JsonProperty("is_active")]
-        IsActive,
+        [JsonProperty("status")]
+        Status,
         [JsonProperty("ad_type")]
         AdType,
+        [JsonProperty("creative_ids")]
+        CreativeIds,
         [JsonProperty("creative_asset_url")]
         CreativeAssetUrl,
         [JsonProperty("ad_copy")]
@@ -47,6 +51,8 @@ namespace UnifiedTo.Models.Requests
         FinalUrl,
         [JsonProperty("targeting")]
         Targeting,
+        [JsonProperty("is_active")]
+        IsActive,
         [JsonProperty("raw")]
         Raw,
     }

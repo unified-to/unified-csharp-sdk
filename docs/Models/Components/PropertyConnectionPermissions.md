@@ -204,6 +204,10 @@
 | `AdsReportRead`                | ads_report_read                |
 | `AdsOrganizationRead`          | ads_organization_read          |
 | `AdsOrganizationWrite`         | ads_organization_write         |
+| `AdsCreativeRead`              | ads_creative_read              |
+| `AdsCreativeWrite`             | ads_creative_write             |
+| `AdsInsertionorderRead`        | ads_insertionorder_read        |
+| `AdsInsertionorderWrite`       | ads_insertionorder_write       |
 | `FormsFormRead`                | forms_form_read                |
 | `FormsFormWrite`               | forms_form_write               |
 | `FormsSubmissionRead`          | forms_submission_read          |

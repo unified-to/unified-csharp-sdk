@@ -25,8 +25,8 @@ namespace UnifiedTo.Models.Requests
         Name,
         [JsonProperty("organization_id")]
         OrganizationId,
-        [JsonProperty("is_active")]
-        IsActive,
+        [JsonProperty("status")]
+        Status,
         [JsonProperty("start_at")]
         StartAt,
         [JsonProperty("end_at")]
@@ -41,6 +41,14 @@ namespace UnifiedTo.Models.Requests
         Targeting,
         [JsonProperty("raw")]
         Raw,
+        [JsonProperty("goal")]
+        Goal,
+        [JsonProperty("planned_spend_amount")]
+        PlannedSpendAmount,
+        [JsonProperty("frequency_cap")]
+        FrequencyCap,
+        [JsonProperty("is_active")]
+        IsActive,
     }
 
     public static class PatchAdsCampaignQueryParamFieldsExtension

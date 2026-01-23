@@ -50,7 +50,9 @@ namespace UnifiedTo
         public IAds Ads { get; }
         public IAd Ad { get; }
         public ICampaign Campaign { get; }
+        public ICreative Creative { get; }
         public IGroup Group { get; }
+        public IInsertionorder Insertionorder { get; }
         public IAts Ats { get; }
         public IActivity Activity { get; }
         public IApplication Application { get; }
@@ -165,7 +167,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.17";
+        private const string _sdkVersion = "0.130.18";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -191,7 +193,9 @@ namespace UnifiedTo
         public IAds Ads { get; private set; }
         public IAd Ad { get; private set; }
         public ICampaign Campaign { get; private set; }
+        public ICreative Creative { get; private set; }
         public IGroup Group { get; private set; }
+        public IInsertionorder Insertionorder { get; private set; }
         public IAts Ats { get; private set; }
         public IActivity Activity { get; private set; }
         public IApplication Application { get; private set; }
@@ -345,7 +349,11 @@ namespace UnifiedTo
 
             Campaign = new Campaign(SDKConfiguration);
 
+            Creative = new Creative(SDKConfiguration);
+
             Group = new Group(SDKConfiguration);
+
+            Insertionorder = new Insertionorder(SDKConfiguration);
 
             Ats = new Ats(SDKConfiguration);
 
@@ -638,7 +646,11 @@ namespace UnifiedTo
 
             Campaign = new Campaign(SDKConfiguration);
 
+            Creative = new Creative(SDKConfiguration);
+
             Group = new Group(SDKConfiguration);
+
+            Insertionorder = new Insertionorder(SDKConfiguration);
 
             Ats = new Ats(SDKConfiguration);
 

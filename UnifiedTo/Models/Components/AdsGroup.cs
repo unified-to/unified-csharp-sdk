@@ -21,11 +21,26 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("bid_amount")]
         public double? BidAmount { get; set; }
 
+        /// <summary>
+        /// YOUTUBE_AND_PARTNERS
+        /// </summary>
+        [JsonProperty("bid_strategy")]
+        public PropertyAdsGroupBidStrategy? BidStrategy { get; set; }
+
+        [JsonProperty("budget_allocation_type")]
+        public BudgetAllocationType? BudgetAllocationType { get; set; }
+
         [JsonProperty("budget_amount")]
         public double? BudgetAmount { get; set; }
 
+        [JsonProperty("budget_max_amount")]
+        public double? BudgetMaxAmount { get; set; }
+
         [JsonProperty("budget_period")]
         public AdsGroupBudgetPeriod? BudgetPeriod { get; set; }
+
+        [JsonProperty("budget_unit")]
+        public BudgetUnit? BudgetUnit { get; set; }
 
         [JsonProperty("campaign_id")]
         public string? CampaignId { get; set; }
@@ -33,11 +48,23 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonProperty("creative_ids")]
+        public List<string>? CreativeIds { get; set; }
+
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
+        [JsonProperty("frequency_cap")]
+        public PropertyAdsGroupFrequencyCap? FrequencyCap { get; set; }
+
+        [JsonProperty("has_eu_political_ads")]
+        public bool? HasEuPoliticalAds { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
+
+        [JsonProperty("insertionorder_id")]
+        public string? InsertionorderId { get; set; }
 
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
@@ -48,14 +75,26 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
+        [JsonProperty("pacing")]
+        public PropertyAdsGroupPacing? Pacing { get; set; }
+
+        [JsonProperty("parent_id")]
+        public string? ParentId { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
+        [JsonProperty("status")]
+        public AdsGroupStatus? Status { get; set; }
+
         [JsonProperty("targeting")]
         public PropertyAdsGroupTargeting? Targeting { get; set; }
+
+        [JsonProperty("type")]
+        public AdsGroupType? Type { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

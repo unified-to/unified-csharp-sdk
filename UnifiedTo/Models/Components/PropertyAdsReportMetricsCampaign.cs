@@ -30,6 +30,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
+        [JsonProperty("frequency_cap")]
+        public PropertyAdsReportMetricsCampaignFrequencyCap? FrequencyCap { get; set; }
+
+        [JsonProperty("goal")]
+        public PropertyAdsReportMetricsCampaignGoal? Goal { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -42,11 +48,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
+        [JsonProperty("planned_spend_amount")]
+        public double? PlannedSpendAmount { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
+
+        [JsonProperty("status")]
+        public PropertyAdsReportMetricsCampaignStatus? Status { get; set; }
 
         [JsonProperty("targeting")]
         public PropertyAdsReportMetricsCampaignTargeting? Targeting { get; set; }

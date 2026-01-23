@@ -413,6 +413,14 @@ namespace UnifiedTo.Models.Components
         AdsOrganizationRead,
         [JsonProperty("ads_organization_write")]
         AdsOrganizationWrite,
+        [JsonProperty("ads_creative_read")]
+        AdsCreativeRead,
+        [JsonProperty("ads_creative_write")]
+        AdsCreativeWrite,
+        [JsonProperty("ads_insertionorder_read")]
+        AdsInsertionorderRead,
+        [JsonProperty("ads_insertionorder_write")]
+        AdsInsertionorderWrite,
         [JsonProperty("forms_form_read")]
         FormsFormRead,
         [JsonProperty("forms_form_write")]

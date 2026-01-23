@@ -229,6 +229,10 @@ namespace UnifiedTo.Models.Components
         AdsReport,
         [JsonProperty("ads_group")]
         AdsGroup,
+        [JsonProperty("ads_creative")]
+        AdsCreative,
+        [JsonProperty("ads_insertionorder")]
+        AdsInsertionorder,
         [JsonProperty("forms_form")]
         FormsForm,
         [JsonProperty("forms_submission")]

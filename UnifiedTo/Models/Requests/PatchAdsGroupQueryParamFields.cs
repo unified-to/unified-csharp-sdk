@@ -23,24 +23,48 @@ namespace UnifiedTo.Models.Requests
         UpdatedAt,
         [JsonProperty("name")]
         Name,
+        [JsonProperty("parent_id")]
+        ParentId,
         [JsonProperty("campaign_id")]
         CampaignId,
         [JsonProperty("organization_id")]
         OrganizationId,
-        [JsonProperty("is_active")]
-        IsActive,
+        [JsonProperty("insertionorder_id")]
+        InsertionorderId,
+        [JsonProperty("status")]
+        Status,
         [JsonProperty("targeting")]
         Targeting,
         [JsonProperty("bid_amount")]
         BidAmount,
+        [JsonProperty("bid_strategy")]
+        BidStrategy,
         [JsonProperty("budget_amount")]
         BudgetAmount,
         [JsonProperty("budget_period")]
         BudgetPeriod,
+        [JsonProperty("budget_allocation_type")]
+        BudgetAllocationType,
         [JsonProperty("start_at")]
         StartAt,
         [JsonProperty("end_at")]
         EndAt,
+        [JsonProperty("budget_unit")]
+        BudgetUnit,
+        [JsonProperty("budget_max_amount")]
+        BudgetMaxAmount,
+        [JsonProperty("type")]
+        Type,
+        [JsonProperty("has_eu_political_ads")]
+        HasEuPoliticalAds,
+        [JsonProperty("pacing")]
+        Pacing,
+        [JsonProperty("frequency_cap")]
+        FrequencyCap,
+        [JsonProperty("creative_ids")]
+        CreativeIds,
+        [JsonProperty("is_active")]
+        IsActive,
         [JsonProperty("raw")]
         Raw,
     }

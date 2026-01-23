@@ -62,6 +62,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("type")]
         public ApiCallType Type { get; set; } = default!;
 
+        [JsonProperty("user_agent")]
+        public string? UserAgent { get; set; }
+
         [JsonProperty("webhook_id")]
         public string? WebhookId { get; set; }
 

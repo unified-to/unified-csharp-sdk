@@ -33,6 +33,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("creative_asset_url")]
         public string? CreativeAssetUrl { get; set; }
 
+        [JsonProperty("creative_ids")]
+        public List<string>? CreativeIds { get; set; }
+
         [JsonProperty("cta")]
         public string? Cta { get; set; }
 
@@ -54,6 +57,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        [JsonProperty("item_id")]
+        public string? ItemId { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -62,6 +68,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
+
+        [JsonProperty("status")]
+        public AdsAdStatus? Status { get; set; }
 
         [JsonProperty("targeting")]
         public PropertyAdsAdTargeting? Targeting { get; set; }
