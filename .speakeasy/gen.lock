@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: e791a4d4f6acb4af6f7a5261e1dded55
+  docChecksum: 85c371a0fa4d94ec3af46b9fe331307f
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.18
-  configChecksum: f4e238ae345c92aa60cc088f80fce380
+  releaseVersion: 0.130.19
+  configChecksum: 865a8f31a2f5ab02050b839d461cbe15
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -11115,7 +11115,7 @@ trackedFiles:
     pristine_git_object: 61df42238a90004f46591f4a5624505cc9389cdb
   UnifiedTo/Models/Components/ApiCall.cs:
     id: 9010e1c625c0
-    last_write_checksum: sha1:85baa01d9911d602ed334155174a3819f8e23f82
+    last_write_checksum: sha1:a72c7d1cf811405e9b2f264965599a2841cab925
     pristine_git_object: 6db09a3a42ee54f9c060492dc2aa31499ad9be30
   UnifiedTo/Models/Components/ApiCallType.cs:
     id: a2fe1f499080
@@ -11439,7 +11439,7 @@ trackedFiles:
     pristine_git_object: 56f729c5915fa3a4a2f6eaadbe3b54ae93002b01
   UnifiedTo/Models/Components/Connection.cs:
     id: 48bc2319d927
-    last_write_checksum: sha1:10ea5d8d650afde0275feb29e1bb0ea804c8a928
+    last_write_checksum: sha1:2e5260008d472993aca52810ef72de236d072197
     pristine_git_object: ed254c08145d8dcbe037bf58cff50ae6200dce72
   UnifiedTo/Models/Components/ContentType.cs:
     id: 3bb0b21cabdc
@@ -19399,7 +19399,7 @@ trackedFiles:
     pristine_git_object: fbb0efec89f4af946e7678dc684b2e9a3764f77f
   docs/Models/Components/ApiCall.md:
     id: d7b20fa93a98
-    last_write_checksum: sha1:f75622c621f495e6bc28687dfa90e9a0b7f18bed
+    last_write_checksum: sha1:7e7d2905dee5812bcfeea72039a448a3a2e04d40
     pristine_git_object: aa6c28efd7057a92c2c202f108e5d892e40da090
   docs/Models/Components/ApiCallType.md:
     id: b9e0083aacc5
@@ -19723,7 +19723,7 @@ trackedFiles:
     pristine_git_object: 811af0371aaf4c0dd40dd66ca429d18a08d21242
   docs/Models/Components/Connection.md:
     id: 5688c7e8f7e9
-    last_write_checksum: sha1:b7114cc6a057d27ed02f0cc59d1f35e673f593d6
+    last_write_checksum: sha1:1d375a96dc5491d066e5122075263774ef672692
     pristine_git_object: 43aca14537445b6f8a753627a823a48cd67d2288
   docs/Models/Components/ContentType.md:
     id: 89ba6a58f12b

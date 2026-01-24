@@ -23,6 +23,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonProperty("endapi_response_time")]
+        public double? EndapiResponseTime { get; set; }
+
         [JsonProperty("environment")]
         public string? Environment { get; set; } = "Production";
 
@@ -61,6 +64,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("type")]
         public ApiCallType Type { get; set; } = default!;
+
+        [JsonProperty("unified_response_time")]
+        public double? UnifiedResponseTime { get; set; }
 
         [JsonProperty("user_agent")]
         public string? UserAgent { get; set; }
