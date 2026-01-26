@@ -10,11 +10,15 @@
 namespace UnifiedTo.Models.Requests
 {
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
     
-    public class GetShippingRateRequest
+    public class PatchShippingLabelRequest
     {
+
+        [SpeakeasyMetadata("request:mediaType=application/json")]
+        public ShippingLabel ShippingLabel { get; set; } = default!;
 
         /// <summary>
         /// ID of the connection
@@ -26,10 +30,10 @@ namespace UnifiedTo.Models.Requests
         /// Fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
-        public List<GetShippingRateQueryParamFields>? Fields { get; set; }
+        public List<PatchShippingLabelQueryParamFields>? Fields { get; set; }
 
         /// <summary>
-        /// ID of the Rate
+        /// ID of the Label
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
         public string Id { get; set; } = default!;

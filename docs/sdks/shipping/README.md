@@ -8,19 +8,18 @@
 * [CreateShippingLabel](#createshippinglabel) - Create a label
 * [CreateShippingRate](#createshippingrate) - Create a rate
 * [CreateShippingShipment](#createshippingshipment) - Create a shipment
-* [CreateShippingTracking](#createshippingtracking) - Create a tracking
 * [GetShippingCarrier](#getshippingcarrier) - Retrieve a carrier
 * [GetShippingLabel](#getshippinglabel) - Retrieve a label
-* [GetShippingRate](#getshippingrate) - Retrieve a rate
 * [GetShippingShipment](#getshippingshipment) - Retrieve a shipment
 * [GetShippingTracking](#getshippingtracking) - Retrieve a tracking
 * [ListShippingCarriers](#listshippingcarriers) - List all carriers
 * [ListShippingLabels](#listshippinglabels) - List all labels
 * [ListShippingShipments](#listshippingshipments) - List all shipments
-* [ListShippingTrackings](#listshippingtrackings) - List all trackings
+* [PatchShippingLabel](#patchshippinglabel) - Update a label
 * [PatchShippingShipment](#patchshippingshipment) - Update a shipment
 * [RemoveShippingLabel](#removeshippinglabel) - Remove a label
 * [RemoveShippingShipment](#removeshippingshipment) - Remove a shipment
+* [UpdateShippingLabel](#updateshippinglabel) - Update a label
 * [UpdateShippingShipment](#updateshippingshipment) - Update a shipment
 
 ## CreateShippingLabel
@@ -146,47 +145,6 @@ var res = await sdk.Shipping.CreateShippingShipmentAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## CreateShippingTracking
-
-Create a tracking
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-var res = await sdk.Shipping.CreateShippingTrackingAsync(
-    shippingTracking: new ShippingTracking() {},
-    connectionId: "<id>"
-);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
-| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `ShippingTracking`                                                                                                                               | [ShippingTracking](../../Models/Components/ShippingTracking.md)                                                                                  | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
-| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Fields`                                                                                                                                         | List<[CreateShippingTrackingQueryParamFields](../../Models/Requests/CreateShippingTrackingQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
-| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
-
-### Response
-
-**[CreateShippingTrackingResponse](../../Models/Requests/CreateShippingTrackingResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
 ## GetShippingCarrier
 
 Retrieve a carrier
@@ -262,47 +220,6 @@ var res = await sdk.Shipping.GetShippingLabelAsync(
 ### Response
 
 **[GetShippingLabelResponse](../../Models/Requests/GetShippingLabelResponse.md)**
-
-### Errors
-
-| Error Type                           | Status Code                          | Content Type                         |
-| ------------------------------------ | ------------------------------------ | ------------------------------------ |
-| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
-
-## GetShippingRate
-
-Retrieve a rate
-
-### Example Usage
-
-```csharp
-using UnifiedTo;
-using UnifiedTo.Models.Components;
-
-var sdk = new UnifiedToSDK(security: new Security() {
-    Jwt = "<YOUR_API_KEY_HERE>",
-});
-
-var res = await sdk.Shipping.GetShippingRateAsync(
-    connectionId: "<id>",
-    id: "<id>"
-);
-
-// handle response
-```
-
-### Parameters
-
-| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
-| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
-| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Rate                                                                                                                                   |
-| `Fields`                                                                                                                                         | List<[GetShippingRateQueryParamFields](../../Models/Requests/GetShippingRateQueryParamFields.md)>                                                | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
-| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
-
-### Response
-
-**[GetShippingRateResponse](../../Models/Requests/GetShippingRateResponse.md)**
 
 ### Errors
 
@@ -512,9 +429,9 @@ var res = await sdk.Shipping.ListShippingShipmentsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
-## ListShippingTrackings
+## PatchShippingLabel
 
-List all trackings
+Update a label
 
 ### Example Usage
 
@@ -527,24 +444,26 @@ var sdk = new UnifiedToSDK(security: new Security() {
     Jwt = "<YOUR_API_KEY_HERE>",
 });
 
-ListShippingTrackingsRequest req = new ListShippingTrackingsRequest() {
+PatchShippingLabelRequest req = new PatchShippingLabelRequest() {
+    ShippingLabel = new ShippingLabel() {},
     ConnectionId = "<id>",
+    Id = "<id>",
 };
 
-var res = await sdk.Shipping.ListShippingTrackingsAsync(req);
+var res = await sdk.Shipping.PatchShippingLabelAsync(req);
 
 // handle response
 ```
 
 ### Parameters
 
-| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| `request`                                                                             | [ListShippingTrackingsRequest](../../Models/Requests/ListShippingTrackingsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchShippingLabelRequest](../../Models/Requests/PatchShippingLabelRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
 
 ### Response
 
-**[ListShippingTrackingsResponse](../../Models/Requests/ListShippingTrackingsResponse.md)**
+**[PatchShippingLabelResponse](../../Models/Requests/PatchShippingLabelResponse.md)**
 
 ### Errors
 
@@ -665,6 +584,48 @@ var res = await sdk.Shipping.RemoveShippingShipmentAsync(
 ### Response
 
 **[RemoveShippingShipmentResponse](../../Models/Requests/RemoveShippingShipmentResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateShippingLabel
+
+Update a label
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateShippingLabelRequest req = new UpdateShippingLabelRequest() {
+    ShippingLabel = new ShippingLabel() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Shipping.UpdateShippingLabelAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateShippingLabelRequest](../../Models/Requests/UpdateShippingLabelRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+
+### Response
+
+**[UpdateShippingLabelResponse](../../Models/Requests/UpdateShippingLabelResponse.md)**
 
 ### Errors
 

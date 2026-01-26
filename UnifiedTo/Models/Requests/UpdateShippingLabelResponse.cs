@@ -14,7 +14,7 @@ namespace UnifiedTo.Models.Requests
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class GetShippingRateResponse
+    public class UpdateShippingLabelResponse
     {
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace UnifiedTo.Models.Requests
         /// <summary>
         /// Successful
         /// </summary>
-        public ShippingRate? ShippingRate { get; set; }
+        public ShippingLabel? ShippingLabel { get; set; }
 
         /// <summary>
         /// HTTP response status code for this operation

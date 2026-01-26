@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 85c371a0fa4d94ec3af46b9fe331307f
+  docChecksum: 409dad276455ac494bf49828ee2c63da
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.19
-  configChecksum: 865a8f31a2f5ab02050b839d461cbe15
+  releaseVersion: 0.130.20
+  configChecksum: a09e8048160d2bf54b698aceb9fbb035
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -1049,9 +1049,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateShippingShipmentQueryParamFields.cs
   - UnifiedTo/Models/Requests/CreateShippingShipmentRequest.cs
   - UnifiedTo/Models/Requests/CreateShippingShipmentResponse.cs
-  - UnifiedTo/Models/Requests/CreateShippingTrackingQueryParamFields.cs
-  - UnifiedTo/Models/Requests/CreateShippingTrackingRequest.cs
-  - UnifiedTo/Models/Requests/CreateShippingTrackingResponse.cs
   - UnifiedTo/Models/Requests/CreateStorageFileQueryParamFields.cs
   - UnifiedTo/Models/Requests/CreateStorageFileRequest.cs
   - UnifiedTo/Models/Requests/CreateStorageFileResponse.cs
@@ -1357,9 +1354,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetShippingLabelQueryParamFields.cs
   - UnifiedTo/Models/Requests/GetShippingLabelRequest.cs
   - UnifiedTo/Models/Requests/GetShippingLabelResponse.cs
-  - UnifiedTo/Models/Requests/GetShippingRateQueryParamFields.cs
-  - UnifiedTo/Models/Requests/GetShippingRateRequest.cs
-  - UnifiedTo/Models/Requests/GetShippingRateResponse.cs
   - UnifiedTo/Models/Requests/GetShippingShipmentQueryParamFields.cs
   - UnifiedTo/Models/Requests/GetShippingShipmentRequest.cs
   - UnifiedTo/Models/Requests/GetShippingShipmentResponse.cs
@@ -1706,9 +1700,6 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListShippingShipmentsQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListShippingShipmentsRequest.cs
   - UnifiedTo/Models/Requests/ListShippingShipmentsResponse.cs
-  - UnifiedTo/Models/Requests/ListShippingTrackingsQueryParamFields.cs
-  - UnifiedTo/Models/Requests/ListShippingTrackingsRequest.cs
-  - UnifiedTo/Models/Requests/ListShippingTrackingsResponse.cs
   - UnifiedTo/Models/Requests/ListStorageFilesQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListStorageFilesRequest.cs
   - UnifiedTo/Models/Requests/ListStorageFilesResponse.cs
@@ -1992,6 +1983,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchScimGroupsResponse.cs
   - UnifiedTo/Models/Requests/PatchScimUsersRequest.cs
   - UnifiedTo/Models/Requests/PatchScimUsersResponse.cs
+  - UnifiedTo/Models/Requests/PatchShippingLabelQueryParamFields.cs
+  - UnifiedTo/Models/Requests/PatchShippingLabelRequest.cs
+  - UnifiedTo/Models/Requests/PatchShippingLabelResponse.cs
   - UnifiedTo/Models/Requests/PatchShippingShipmentQueryParamFields.cs
   - UnifiedTo/Models/Requests/PatchShippingShipmentRequest.cs
   - UnifiedTo/Models/Requests/PatchShippingShipmentResponse.cs
@@ -2445,6 +2439,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateScimGroupsResponse.cs
   - UnifiedTo/Models/Requests/UpdateScimUsersRequest.cs
   - UnifiedTo/Models/Requests/UpdateScimUsersResponse.cs
+  - UnifiedTo/Models/Requests/UpdateShippingLabelQueryParamFields.cs
+  - UnifiedTo/Models/Requests/UpdateShippingLabelRequest.cs
+  - UnifiedTo/Models/Requests/UpdateShippingLabelResponse.cs
   - UnifiedTo/Models/Requests/UpdateShippingShipmentQueryParamFields.cs
   - UnifiedTo/Models/Requests/UpdateShippingShipmentRequest.cs
   - UnifiedTo/Models/Requests/UpdateShippingShipmentResponse.cs
@@ -3497,9 +3494,6 @@ generatedFiles:
   - docs/Models/Requests/CreateShippingShipmentQueryParamFields.md
   - docs/Models/Requests/CreateShippingShipmentRequest.md
   - docs/Models/Requests/CreateShippingShipmentResponse.md
-  - docs/Models/Requests/CreateShippingTrackingQueryParamFields.md
-  - docs/Models/Requests/CreateShippingTrackingRequest.md
-  - docs/Models/Requests/CreateShippingTrackingResponse.md
   - docs/Models/Requests/CreateStorageFileQueryParamFields.md
   - docs/Models/Requests/CreateStorageFileRequest.md
   - docs/Models/Requests/CreateStorageFileResponse.md
@@ -3805,9 +3799,6 @@ generatedFiles:
   - docs/Models/Requests/GetShippingLabelQueryParamFields.md
   - docs/Models/Requests/GetShippingLabelRequest.md
   - docs/Models/Requests/GetShippingLabelResponse.md
-  - docs/Models/Requests/GetShippingRateQueryParamFields.md
-  - docs/Models/Requests/GetShippingRateRequest.md
-  - docs/Models/Requests/GetShippingRateResponse.md
   - docs/Models/Requests/GetShippingShipmentQueryParamFields.md
   - docs/Models/Requests/GetShippingShipmentRequest.md
   - docs/Models/Requests/GetShippingShipmentResponse.md
@@ -4154,9 +4145,6 @@ generatedFiles:
   - docs/Models/Requests/ListShippingShipmentsQueryParamFields.md
   - docs/Models/Requests/ListShippingShipmentsRequest.md
   - docs/Models/Requests/ListShippingShipmentsResponse.md
-  - docs/Models/Requests/ListShippingTrackingsQueryParamFields.md
-  - docs/Models/Requests/ListShippingTrackingsRequest.md
-  - docs/Models/Requests/ListShippingTrackingsResponse.md
   - docs/Models/Requests/ListStorageFilesQueryParamFields.md
   - docs/Models/Requests/ListStorageFilesRequest.md
   - docs/Models/Requests/ListStorageFilesResponse.md
@@ -4440,6 +4428,9 @@ generatedFiles:
   - docs/Models/Requests/PatchScimGroupsResponse.md
   - docs/Models/Requests/PatchScimUsersRequest.md
   - docs/Models/Requests/PatchScimUsersResponse.md
+  - docs/Models/Requests/PatchShippingLabelQueryParamFields.md
+  - docs/Models/Requests/PatchShippingLabelRequest.md
+  - docs/Models/Requests/PatchShippingLabelResponse.md
   - docs/Models/Requests/PatchShippingShipmentQueryParamFields.md
   - docs/Models/Requests/PatchShippingShipmentRequest.md
   - docs/Models/Requests/PatchShippingShipmentResponse.md
@@ -4893,6 +4884,9 @@ generatedFiles:
   - docs/Models/Requests/UpdateScimGroupsResponse.md
   - docs/Models/Requests/UpdateScimUsersRequest.md
   - docs/Models/Requests/UpdateScimUsersResponse.md
+  - docs/Models/Requests/UpdateShippingLabelQueryParamFields.md
+  - docs/Models/Requests/UpdateShippingLabelRequest.md
+  - docs/Models/Requests/UpdateShippingLabelResponse.md
   - docs/Models/Requests/UpdateShippingShipmentQueryParamFields.md
   - docs/Models/Requests/UpdateShippingShipmentRequest.md
   - docs/Models/Requests/UpdateShippingShipmentResponse.md
@@ -10543,6 +10537,28 @@ examples:
       responses:
         "200":
           application/json: {}
+  patchShippingLabel:
+    speakeasy-default-patch-shipping-label:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  updateShippingLabel:
+    speakeasy-default-update-shipping-label:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
 persistentEdits:
@@ -10818,7 +10834,7 @@ trackedFiles:
     last_write_checksum: sha1:0c0ad039e4f218dea474560b571a60627353aeb3
     pristine_git_object: 4600485efd4f918d462ae860fac8943a0097ca29
   UnifiedTo/Label.cs:
-    last_write_checksum: sha1:8888de7a83839bd2418e95e25423efe40953c8bd
+    last_write_checksum: sha1:13bbe10f370c3eba5c0dbb860c7ea3710430bdd5
   UnifiedTo/Lead.cs:
     id: 484d14796b60
     last_write_checksum: sha1:47f80981f78d1223853421f32bb86d7dd68c5593
@@ -14141,12 +14157,6 @@ trackedFiles:
     last_write_checksum: sha1:bf7514a4b8ab1513e8f13fbfea5c8b0a2bafbab7
   UnifiedTo/Models/Requests/CreateShippingShipmentResponse.cs:
     last_write_checksum: sha1:aea59ec0bad68ded32a5ccd981fe1505d6a98f38
-  UnifiedTo/Models/Requests/CreateShippingTrackingQueryParamFields.cs:
-    last_write_checksum: sha1:7575289d646a78925ce72ee1ad09898c4941796d
-  UnifiedTo/Models/Requests/CreateShippingTrackingRequest.cs:
-    last_write_checksum: sha1:3e8e6f0abbb402ecb56aff60bd69bafed0b7b71d
-  UnifiedTo/Models/Requests/CreateShippingTrackingResponse.cs:
-    last_write_checksum: sha1:619caf13a3bd26532c6c92bd0c97fef4e50833b4
   UnifiedTo/Models/Requests/CreateStorageFileQueryParamFields.cs:
     last_write_checksum: sha1:48920a6b164b23d8924ebb92aaef3c73ae7e1eb3
   UnifiedTo/Models/Requests/CreateStorageFileRequest.cs:
@@ -15125,12 +15135,6 @@ trackedFiles:
     last_write_checksum: sha1:db4aa21584aac97cac03d79d60ed7d4d75a887dd
   UnifiedTo/Models/Requests/GetShippingLabelResponse.cs:
     last_write_checksum: sha1:a8517effd55cfd2dc79d7eb0838a3038f77af9b3
-  UnifiedTo/Models/Requests/GetShippingRateQueryParamFields.cs:
-    last_write_checksum: sha1:f8aff66a6f89e139a78ebfb26d088c8b1b9b0990
-  UnifiedTo/Models/Requests/GetShippingRateRequest.cs:
-    last_write_checksum: sha1:cd97c69db975b9344ae80398e6baa9dfe24f90cf
-  UnifiedTo/Models/Requests/GetShippingRateResponse.cs:
-    last_write_checksum: sha1:6de8c98152c7c991946aaa9145b8eaa83cb71ee4
   UnifiedTo/Models/Requests/GetShippingShipmentQueryParamFields.cs:
     last_write_checksum: sha1:8fb4169c04b2faccb3dd0c9fe8488e6d5cde2f8c
   UnifiedTo/Models/Requests/GetShippingShipmentRequest.cs:
@@ -16239,12 +16243,6 @@ trackedFiles:
     last_write_checksum: sha1:1c84615c8c099163fd7f9252a3fd38f035166f57
   UnifiedTo/Models/Requests/ListShippingShipmentsResponse.cs:
     last_write_checksum: sha1:8e0163c34303a48d413e456aaf70682ff54fc12e
-  UnifiedTo/Models/Requests/ListShippingTrackingsQueryParamFields.cs:
-    last_write_checksum: sha1:8852ddf5fd8e71a64eccd181463e2baf8e984cd5
-  UnifiedTo/Models/Requests/ListShippingTrackingsRequest.cs:
-    last_write_checksum: sha1:7fe3f757a0b5c69152b5078bb0a48d1d98db5562
-  UnifiedTo/Models/Requests/ListShippingTrackingsResponse.cs:
-    last_write_checksum: sha1:a7ec2b7a51cd5ea911c8c616a43f85584ab5e155
   UnifiedTo/Models/Requests/ListStorageFilesQueryParamFields.cs:
     last_write_checksum: sha1:1697b3dca40a8aa13f5d43e2053214d7e34d951e
   UnifiedTo/Models/Requests/ListStorageFilesRequest.cs:
@@ -17167,6 +17165,12 @@ trackedFiles:
     id: 11d24f572082
     last_write_checksum: sha1:480d3a19d8126544487d8e092d3918912b232e9c
     pristine_git_object: 2c3c388b7913b6226d0f315550cf4c2cf6e38dcf
+  UnifiedTo/Models/Requests/PatchShippingLabelQueryParamFields.cs:
+    last_write_checksum: sha1:73d0da16e26b172c5eb48dc35d416900b1c9e947
+  UnifiedTo/Models/Requests/PatchShippingLabelRequest.cs:
+    last_write_checksum: sha1:99c7066707659281b238eed269c106cef1b4983a
+  UnifiedTo/Models/Requests/PatchShippingLabelResponse.cs:
+    last_write_checksum: sha1:070ee033d3b87e58b311fc9a935a052adbe636e8
   UnifiedTo/Models/Requests/PatchShippingShipmentQueryParamFields.cs:
     last_write_checksum: sha1:cc628c6cde0d9b1dc1edfa9da1f3eda3dbed449a
   UnifiedTo/Models/Requests/PatchShippingShipmentRequest.cs:
@@ -18727,6 +18731,12 @@ trackedFiles:
     id: 2880cf978774
     last_write_checksum: sha1:94e9fd7cf197557ca1373848554dba1dd01ce81d
     pristine_git_object: a94427fb6da07a00125e8f7bac89b8603b01920c
+  UnifiedTo/Models/Requests/UpdateShippingLabelQueryParamFields.cs:
+    last_write_checksum: sha1:550341eb37edd554b8a116035ae54297ee7cd09e
+  UnifiedTo/Models/Requests/UpdateShippingLabelRequest.cs:
+    last_write_checksum: sha1:3b4f24dac73e02dc24d1cfd4bd916c994ec3e4af
+  UnifiedTo/Models/Requests/UpdateShippingLabelResponse.cs:
+    last_write_checksum: sha1:2ec9b70fa75c5cc3e0f9959ed562267d5adb1dd9
   UnifiedTo/Models/Requests/UpdateShippingShipmentQueryParamFields.cs:
     last_write_checksum: sha1:c823cbda56a50c75d68a79d810de8db500961174
   UnifiedTo/Models/Requests/UpdateShippingShipmentRequest.cs:
@@ -18942,7 +18952,7 @@ trackedFiles:
     last_write_checksum: sha1:47403ae105cca3d27b6dd9e7254c943c8f00a635
     pristine_git_object: 96d94df1b8516443899cd46610317b6308672234
   UnifiedTo/Rate.cs:
-    last_write_checksum: sha1:1e6e9d4e6fbddf03cc2ce29beb8413a1e94f4381
+    last_write_checksum: sha1:20da7cf011bd1c901a747d6ed2d70f1417ca04ba
   UnifiedTo/Recording.cs:
     id: 89f388533272
     last_write_checksum: sha1:fa54c5d02b9f61d8a94fe539c50d1de760c679a1
@@ -18994,7 +19004,7 @@ trackedFiles:
   UnifiedTo/Shipment.cs:
     last_write_checksum: sha1:5eb3df44c0553b160fc7681d0bbde029028e5be6
   UnifiedTo/Shipping.cs:
-    last_write_checksum: sha1:a7159cf3a14c6e34478cfe073437e4058c2f30b6
+    last_write_checksum: sha1:cf8dbf99900b3641aff3d594585c3a8258ca54aa
   UnifiedTo/Space.cs:
     id: af5ac14a51ce
     last_write_checksum: sha1:575d9105edbde210a0bd398463f11be0b7f4483d
@@ -19038,7 +19048,7 @@ trackedFiles:
     last_write_checksum: sha1:f5eca72f7ce76660d53957d950d80edac75b738b
     pristine_git_object: 0d931e5798896f4c2f467e0743e2765b6fbc572d
   UnifiedTo/Tracking.cs:
-    last_write_checksum: sha1:35f212c15edc258ed5903e66470bf91806649d89
+    last_write_checksum: sha1:4351be06698eebb061951ffb20e08d8749b5ac8a
   UnifiedTo/Transaction.cs:
     id: 4e06c17c2090
     last_write_checksum: sha1:db5343e0e3c1af3df08c936539362647e66d4b4b
@@ -22413,12 +22423,6 @@ trackedFiles:
     last_write_checksum: sha1:7a1b381663685487304c3ded4bb597bdf5d08105
   docs/Models/Requests/CreateShippingShipmentResponse.md:
     last_write_checksum: sha1:b2bf71be64c13b6e36b32bd3c5dbb9594ef648e2
-  docs/Models/Requests/CreateShippingTrackingQueryParamFields.md:
-    last_write_checksum: sha1:e02b662b41ef16af3567b458ac5d42853c4e9c4a
-  docs/Models/Requests/CreateShippingTrackingRequest.md:
-    last_write_checksum: sha1:37a5acec82e10e1400539edcb35217d665ba5b4c
-  docs/Models/Requests/CreateShippingTrackingResponse.md:
-    last_write_checksum: sha1:6bad4d24ae464db1c5b3897cf78bd77b69209140
   docs/Models/Requests/CreateStorageFileQueryParamFields.md:
     last_write_checksum: sha1:e53478ddef3d54fc2b2e70a8f88d1527c9c8e341
   docs/Models/Requests/CreateStorageFileRequest.md:
@@ -23397,12 +23401,6 @@ trackedFiles:
     last_write_checksum: sha1:6402f6f693c7647280ab779f95c5031de6526956
   docs/Models/Requests/GetShippingLabelResponse.md:
     last_write_checksum: sha1:93e7031c383fec7a1eadd94646a6fd72235519ef
-  docs/Models/Requests/GetShippingRateQueryParamFields.md:
-    last_write_checksum: sha1:75c60708e6ed2a885c93b4f9fb818b7293965451
-  docs/Models/Requests/GetShippingRateRequest.md:
-    last_write_checksum: sha1:8082b65daae89dfd1632a8188eefc097a2e9dbc4
-  docs/Models/Requests/GetShippingRateResponse.md:
-    last_write_checksum: sha1:dbc0eb3a32c0db972ae62463dc4127cc48b25e17
   docs/Models/Requests/GetShippingShipmentQueryParamFields.md:
     last_write_checksum: sha1:0f2cf78c80f4a909fbfcaf52e41ef655d298abaa
   docs/Models/Requests/GetShippingShipmentRequest.md:
@@ -24511,12 +24509,6 @@ trackedFiles:
     last_write_checksum: sha1:58d2b506c8e65bff71646b6d5a478ab4d7625b84
   docs/Models/Requests/ListShippingShipmentsResponse.md:
     last_write_checksum: sha1:2c3f1459850068bddd9ec7a32a5fa610177bc930
-  docs/Models/Requests/ListShippingTrackingsQueryParamFields.md:
-    last_write_checksum: sha1:a79505e1f5316e880ec263da4fe3915215fde8d0
-  docs/Models/Requests/ListShippingTrackingsRequest.md:
-    last_write_checksum: sha1:ae8d1bdb5bceb4b34a8b1f9fed4e05a5cdc515a8
-  docs/Models/Requests/ListShippingTrackingsResponse.md:
-    last_write_checksum: sha1:6dd4830abe46e328bb8f77d636c2bc8856bd9d02
   docs/Models/Requests/ListStorageFilesQueryParamFields.md:
     last_write_checksum: sha1:07a6c5797bb101bdc9f281873d2a0943881fb7e8
   docs/Models/Requests/ListStorageFilesRequest.md:
@@ -25439,6 +25431,12 @@ trackedFiles:
     id: 8a7441794e4d
     last_write_checksum: sha1:c59e8c14e4068b27665a30808b877d6a17ca9f7a
     pristine_git_object: ce47fb6700fe89e71650a0f89d38ce3c872377d8
+  docs/Models/Requests/PatchShippingLabelQueryParamFields.md:
+    last_write_checksum: sha1:59c070f14011fd1d2ebf858e83405295fed0f63d
+  docs/Models/Requests/PatchShippingLabelRequest.md:
+    last_write_checksum: sha1:c0028bde21cfb2cbb408064a77f05a4037c510d1
+  docs/Models/Requests/PatchShippingLabelResponse.md:
+    last_write_checksum: sha1:9806c98579ad32731bbcf9e3342e50894a12f494
   docs/Models/Requests/PatchShippingShipmentQueryParamFields.md:
     last_write_checksum: sha1:f35efe1abbf5c03d0c59cd51cd4599ad67722878
   docs/Models/Requests/PatchShippingShipmentRequest.md:
@@ -26999,6 +26997,12 @@ trackedFiles:
     id: 627dd7abe836
     last_write_checksum: sha1:db997aba974234127a3c05a432c8b3380ba18820
     pristine_git_object: 1ce5f7a42f109fce45acc47d358dd1c256fad138
+  docs/Models/Requests/UpdateShippingLabelQueryParamFields.md:
+    last_write_checksum: sha1:d53410521e53079a15129cb78fb0cd39c72cbc1b
+  docs/Models/Requests/UpdateShippingLabelRequest.md:
+    last_write_checksum: sha1:3b4d05548bf41a1c85d451cfc95fc6cab59efcc4
+  docs/Models/Requests/UpdateShippingLabelResponse.md:
+    last_write_checksum: sha1:fa3f21f24ebab3f99bbcb1890a1a2dde8827017a
   docs/Models/Requests/UpdateShippingShipmentQueryParamFields.md:
     last_write_checksum: sha1:557e4cf9e927ce636813e245b766d8ecce42cf5b
   docs/Models/Requests/UpdateShippingShipmentRequest.md:
@@ -27392,7 +27396,7 @@ trackedFiles:
     last_write_checksum: sha1:54990a9066f825775f4af25998b317bef8d82553
     pristine_git_object: 759594e85caf11813b8de3146dfa3a8b75dc934f
   docs/sdks/label/README.md:
-    last_write_checksum: sha1:80f32732453a60efe4d66bbc945ba243db8b5795
+    last_write_checksum: sha1:bd75aefed3e674481a0e50e5e40033c7c389519b
   docs/sdks/lead/README.md:
     id: cd27770a8fda
     last_write_checksum: sha1:6e96aae613a476f9d54c34b1654864e4a446069b
@@ -27506,7 +27510,7 @@ trackedFiles:
     last_write_checksum: sha1:a05a1c15b00ad9f9931bd2f2d6592dade0324d89
     pristine_git_object: 038ee26903b551504a4bd8f5bc6489dd60a28580
   docs/sdks/rate/README.md:
-    last_write_checksum: sha1:a92cb74f2d66fe159749f5ca4d6a2f7da567b54a
+    last_write_checksum: sha1:453c1927c1a0cbd5077697ebbb8c4387c2491fca
   docs/sdks/recording/README.md:
     id: 3a51a1d7f8a5
     last_write_checksum: sha1:7f6d54b9da14638f5fb83cc63d2bd92c04d1d743
@@ -27554,7 +27558,7 @@ trackedFiles:
   docs/sdks/shipment/README.md:
     last_write_checksum: sha1:01e020a1c02f571eba6c94a651d4dc39aba7ef1e
   docs/sdks/shipping/README.md:
-    last_write_checksum: sha1:579c070e39d24747b68627ee1e82139562be8750
+    last_write_checksum: sha1:d352f47917e9bb6b14c8e1e49ea7e3d400cd4860
   docs/sdks/space/README.md:
     id: b3ce86241634
     last_write_checksum: sha1:c2c52720b00908ade25460e2dbca75eaed91c783
@@ -27598,7 +27602,7 @@ trackedFiles:
     last_write_checksum: sha1:5164ae7e004f2db0d955a6e6eb3f65ecdd8bb7eb
     pristine_git_object: 15adb945ca7e159b8995a477c77e549cc2d9785f
   docs/sdks/tracking/README.md:
-    last_write_checksum: sha1:9748bab82ce08076e897441281d029cec33d1a1f
+    last_write_checksum: sha1:f4664c5800636a96860e56bac4a2313fcb9972d9
   docs/sdks/transaction/README.md:
     id: aabe9a10cc76
     last_write_checksum: sha1:79de14d73928fecebf02f89aa3ce08a564494746

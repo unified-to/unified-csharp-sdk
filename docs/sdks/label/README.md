@@ -8,7 +8,9 @@
 * [CreateShippingLabel](#createshippinglabel) - Create a label
 * [GetShippingLabel](#getshippinglabel) - Retrieve a label
 * [ListShippingLabels](#listshippinglabels) - List all labels
+* [PatchShippingLabel](#patchshippinglabel) - Update a label
 * [RemoveShippingLabel](#removeshippinglabel) - Remove a label
+* [UpdateShippingLabel](#updateshippinglabel) - Update a label
 
 ## CreateShippingLabel
 
@@ -132,6 +134,48 @@ var res = await sdk.Label.ListShippingLabelsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchShippingLabel
+
+Update a label
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchShippingLabelRequest req = new PatchShippingLabelRequest() {
+    ShippingLabel = new ShippingLabel() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Label.PatchShippingLabelAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [PatchShippingLabelRequest](../../Models/Requests/PatchShippingLabelRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+
+### Response
+
+**[PatchShippingLabelResponse](../../Models/Requests/PatchShippingLabelResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## RemoveShippingLabel
 
 Remove a label
@@ -164,6 +208,48 @@ var res = await sdk.Label.RemoveShippingLabelAsync(
 ### Response
 
 **[RemoveShippingLabelResponse](../../Models/Requests/RemoveShippingLabelResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateShippingLabel
+
+Update a label
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateShippingLabelRequest req = new UpdateShippingLabelRequest() {
+    ShippingLabel = new ShippingLabel() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Label.UpdateShippingLabelAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [UpdateShippingLabelRequest](../../Models/Requests/UpdateShippingLabelRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+
+### Response
+
+**[UpdateShippingLabelResponse](../../Models/Requests/UpdateShippingLabelResponse.md)**
 
 ### Errors
 

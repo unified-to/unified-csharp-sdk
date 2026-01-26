@@ -14,11 +14,11 @@ namespace UnifiedTo.Models.Requests
     using UnifiedTo.Models.Requests;
     using UnifiedTo.Utils;
     
-    public class CreateShippingTrackingRequest
+    public class UpdateShippingLabelRequest
     {
 
         [SpeakeasyMetadata("request:mediaType=application/json")]
-        public ShippingTracking ShippingTracking { get; set; } = default!;
+        public ShippingLabel ShippingLabel { get; set; } = default!;
 
         /// <summary>
         /// ID of the connection
@@ -30,7 +30,13 @@ namespace UnifiedTo.Models.Requests
         /// Fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
-        public List<CreateShippingTrackingQueryParamFields>? Fields { get; set; }
+        public List<UpdateShippingLabelQueryParamFields>? Fields { get; set; }
+
+        /// <summary>
+        /// ID of the Label
+        /// </summary>
+        [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")]
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&amp;zoo=bar -&gt; raw=foo%3Dbar%26zoo%3Dbar

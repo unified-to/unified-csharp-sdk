@@ -13,40 +13,48 @@ namespace UnifiedTo.Models.Requests
     using System;
     using UnifiedTo.Utils;
     
-    public enum GetShippingRateQueryParamFields
+    public enum PatchShippingLabelQueryParamFields
     {
-        [JsonProperty("shipment_id")]
-        ShipmentId,
-        [JsonProperty("currency")]
-        Currency,
-        [JsonProperty("from_address")]
-        FromAddress,
-        [JsonProperty("to_address")]
-        ToAddress,
-        [JsonProperty("packages")]
-        Packages,
-        [JsonProperty("ship_by_at")]
-        ShipByAt,
-        [JsonProperty("carrier_id")]
-        CarrierId,
         [JsonProperty("id")]
         Id,
-        [JsonProperty("rates")]
-        Rates,
+        [JsonProperty("created_at")]
+        CreatedAt,
+        [JsonProperty("updated_at")]
+        UpdatedAt,
+        [JsonProperty("shipment_id")]
+        ShipmentId,
+        [JsonProperty("tracking_number")]
+        TrackingNumber,
+        [JsonProperty("label_url")]
+        LabelUrl,
+        [JsonProperty("label_format")]
+        LabelFormat,
+        [JsonProperty("status")]
+        Status,
+        [JsonProperty("is_voided")]
+        IsVoided,
+        [JsonProperty("label_cost")]
+        LabelCost,
+        [JsonProperty("label_cost_currency")]
+        LabelCostCurrency,
+        [JsonProperty("rate_id")]
+        RateId,
+        [JsonProperty("service_code")]
+        ServiceCode,
         [JsonProperty("raw")]
         Raw,
     }
 
-    public static class GetShippingRateQueryParamFieldsExtension
+    public static class PatchShippingLabelQueryParamFieldsExtension
     {
-        public static string Value(this GetShippingRateQueryParamFields value)
+        public static string Value(this PatchShippingLabelQueryParamFields value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static GetShippingRateQueryParamFields ToEnum(this string value)
+        public static PatchShippingLabelQueryParamFields ToEnum(this string value)
         {
-            foreach(var field in typeof(GetShippingRateQueryParamFields).GetFields())
+            foreach(var field in typeof(PatchShippingLabelQueryParamFields).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -59,14 +67,14 @@ namespace UnifiedTo.Models.Requests
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is GetShippingRateQueryParamFields)
+                    if (enumVal is PatchShippingLabelQueryParamFields)
                     {
-                        return (GetShippingRateQueryParamFields)enumVal;
+                        return (PatchShippingLabelQueryParamFields)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum GetShippingRateQueryParamFields");
+            throw new Exception($"Unknown value {value} for enum PatchShippingLabelQueryParamFields");
         }
     }
 

@@ -13,7 +13,7 @@ namespace UnifiedTo.Models.Requests
     using System;
     using UnifiedTo.Utils;
     
-    public enum ListShippingTrackingsQueryParamFields
+    public enum UpdateShippingLabelQueryParamFields
     {
         [JsonProperty("id")]
         Id,
@@ -25,36 +25,36 @@ namespace UnifiedTo.Models.Requests
         ShipmentId,
         [JsonProperty("tracking_number")]
         TrackingNumber,
+        [JsonProperty("label_url")]
+        LabelUrl,
+        [JsonProperty("label_format")]
+        LabelFormat,
         [JsonProperty("status")]
         Status,
-        [JsonProperty("events")]
-        Events,
-        [JsonProperty("estimated_delivery")]
-        EstimatedDelivery,
-        [JsonProperty("actual_delivery_at")]
-        ActualDeliveryAt,
-        [JsonProperty("status_description")]
-        StatusDescription,
-        [JsonProperty("carrier_id")]
-        CarrierId,
-        [JsonProperty("carrier_status_code")]
-        CarrierStatusCode,
-        [JsonProperty("carrier_status_description")]
-        CarrierStatusDescription,
+        [JsonProperty("is_voided")]
+        IsVoided,
+        [JsonProperty("label_cost")]
+        LabelCost,
+        [JsonProperty("label_cost_currency")]
+        LabelCostCurrency,
+        [JsonProperty("rate_id")]
+        RateId,
+        [JsonProperty("service_code")]
+        ServiceCode,
         [JsonProperty("raw")]
         Raw,
     }
 
-    public static class ListShippingTrackingsQueryParamFieldsExtension
+    public static class UpdateShippingLabelQueryParamFieldsExtension
     {
-        public static string Value(this ListShippingTrackingsQueryParamFields value)
+        public static string Value(this UpdateShippingLabelQueryParamFields value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static ListShippingTrackingsQueryParamFields ToEnum(this string value)
+        public static UpdateShippingLabelQueryParamFields ToEnum(this string value)
         {
-            foreach(var field in typeof(ListShippingTrackingsQueryParamFields).GetFields())
+            foreach(var field in typeof(UpdateShippingLabelQueryParamFields).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -67,14 +67,14 @@ namespace UnifiedTo.Models.Requests
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is ListShippingTrackingsQueryParamFields)
+                    if (enumVal is UpdateShippingLabelQueryParamFields)
                     {
-                        return (ListShippingTrackingsQueryParamFields)enumVal;
+                        return (UpdateShippingLabelQueryParamFields)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum ListShippingTrackingsQueryParamFields");
+            throw new Exception($"Unknown value {value} for enum UpdateShippingLabelQueryParamFields");
         }
     }
 
