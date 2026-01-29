@@ -22,7 +22,7 @@ generation:
   schemas:
     allOfMergeStrategy: shallowMerge
 csharp:
-  version: 0.130.20
+  version: 0.130.21
   additionalDependencies: []
   author: Unified API Inc.
   baseErrorName: UnifiedToError

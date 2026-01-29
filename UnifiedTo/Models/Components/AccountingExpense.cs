@@ -24,6 +24,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("approver_user_id")]
         public string? ApproverUserId { get; set; }
 
+        [JsonProperty("contact_id")]
+        public string? ContactId { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 

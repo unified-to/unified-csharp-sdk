@@ -23,6 +23,8 @@ namespace UnifiedTo.Models.Requests
         UpdatedAt,
         [JsonProperty("user_id")]
         UserId,
+        [JsonProperty("contact_id")]
+        ContactId,
         [JsonProperty("name")]
         Name,
         [JsonProperty("total_amount")]

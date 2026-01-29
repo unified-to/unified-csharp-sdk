@@ -25,6 +25,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
 
+        [JsonProperty("credit_amount")]
+        public double? CreditAmount { get; set; }
+
+        [JsonProperty("debit_amount")]
+        public double? DebitAmount { get; set; }
+
         [JsonProperty("description")]
         public string? Description { get; set; }
 
