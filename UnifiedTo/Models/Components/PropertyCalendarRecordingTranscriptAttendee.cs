@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("email")]
         public string? Email { get; set; }
 
+        [JsonProperty("is_cohost")]
+        public bool? IsCohost { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 

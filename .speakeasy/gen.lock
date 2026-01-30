@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 842cdb22961f557bcd41a4dc4569932b
+  docChecksum: 92ddc604425066fbaa39dfc01dd91097
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.21
-  configChecksum: 2cdb4d7c0d7ab715781147253092a984
+  releaseVersion: 0.130.22
+  configChecksum: 4187c93d5782dfdfb074f5c3013ff9f1
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -11301,7 +11301,7 @@ trackedFiles:
     pristine_git_object: b3f6b31e2bf17c438a7eac11f3f32d15e4e59411
   UnifiedTo/Models/Components/CalendarAttendee.cs:
     id: ab89aaf035d4
-    last_write_checksum: sha1:f9683660a84275dcf063512d749dd03e7b5c395e
+    last_write_checksum: sha1:572e58d3afda2b49f5c85c6df83c6c73e698b08e
     pristine_git_object: eae7aad884e5ba526e0d5fcd464932f97f16a2c1
   UnifiedTo/Models/Components/CalendarAttendeeStatus.cs:
     id: 8193968f1f3a
@@ -12559,7 +12559,7 @@ trackedFiles:
     pristine_git_object: 165932b1642e732255bc6762f660044f1c18cf46
   UnifiedTo/Models/Components/PropertyCalendarEventOrganizer.cs:
     id: 3cd69f97a3b4
-    last_write_checksum: sha1:e2e6409de718e61a64cd7049504b3bcd2dc8df4e
+    last_write_checksum: sha1:42b93d1ebcfb7e53435e718a85e9a639372d5140
     pristine_git_object: 307f154dbd0198ddff91bc6c7699620f4ccefd7f
   UnifiedTo/Models/Components/PropertyCalendarEventOrganizerStatus.cs:
     id: 9976f9d12a1c
@@ -12571,7 +12571,7 @@ trackedFiles:
     pristine_git_object: fe9371ad0fc82d129af87590e62fe0b495f31df1
   UnifiedTo/Models/Components/PropertyCalendarRecordingTranscriptAttendee.cs:
     id: 2c2c0761138c
-    last_write_checksum: sha1:2517be690e93cfe41480795292343ad5261dd5aa
+    last_write_checksum: sha1:8037af84fe5fc29794b7eee29a6e102b9a842382
     pristine_git_object: a9c29654bb2a3c78115e8ad2c1980ad0e07effee
   UnifiedTo/Models/Components/PropertyCalendarRecordingTranscriptAttendeeStatus.cs:
     id: 456f9ee6f944
@@ -19579,7 +19579,7 @@ trackedFiles:
     pristine_git_object: 93b435787278c5e21deccf771246fd1e6cf9741f
   docs/Models/Components/CalendarAttendee.md:
     id: fc6ae47c5edc
-    last_write_checksum: sha1:88a0a9c26e238e6c9a4e8b55b55407df90f4d12c
+    last_write_checksum: sha1:062d5a927b0308b5c283aeb3c15fcd5343fe7705
     pristine_git_object: 91d874f2774cc622e0ed2186c22f2ae8edd68baf
   docs/Models/Components/CalendarAttendeeStatus.md:
     id: 753f25363ce8
@@ -20837,7 +20837,7 @@ trackedFiles:
     pristine_git_object: 4d0eaf454f5c9d80678dddacb53552211101f8a0
   docs/Models/Components/PropertyCalendarEventOrganizer.md:
     id: aae25b5bfead
-    last_write_checksum: sha1:cc589aa4f1fe04487f915c083b64329232f94138
+    last_write_checksum: sha1:0ab9195f9a06112131dfd9ac6affece334c799bb
     pristine_git_object: 9fe93ce9839c0605d8eb790443ad9009ba17c858
   docs/Models/Components/PropertyCalendarEventOrganizerStatus.md:
     id: 3cc4ad764a40
@@ -20849,7 +20849,7 @@ trackedFiles:
     pristine_git_object: 4bd58b79d40a2aac415cf43013a9e1ade4eedae8
   docs/Models/Components/PropertyCalendarRecordingTranscriptAttendee.md:
     id: cc5d9638fcec
-    last_write_checksum: sha1:ebc7a83e5f0ff89a21f5f5685ec65ec490c2ca62
+    last_write_checksum: sha1:3cdd58e30e5302a6825fa281736c42d628ec397f
     pristine_git_object: e617d9be9231c14428331ca7e19ce7373ae2cecd
   docs/Models/Components/PropertyCalendarRecordingTranscriptAttendeeStatus.md:
     id: e80981b39639
