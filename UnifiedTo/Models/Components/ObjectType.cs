@@ -219,6 +219,8 @@ namespace UnifiedTo.Models.Components
         CalendarLink,
         [JsonProperty("calendar_recording")]
         CalendarRecording,
+        [JsonProperty("calendar_webinar")]
+        CalendarWebinar,
         [JsonProperty("ads_organization")]
         AdsOrganization,
         [JsonProperty("ads_ad")]

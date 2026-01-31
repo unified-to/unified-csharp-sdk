@@ -391,6 +391,10 @@ namespace UnifiedTo.Models.Components
         CalendarRecordingRead,
         [JsonProperty("calendar_recording_write")]
         CalendarRecordingWrite,
+        [JsonProperty("calendar_webinar_read")]
+        CalendarWebinarRead,
+        [JsonProperty("calendar_webinar_write")]
+        CalendarWebinarWrite,
         [JsonProperty("enrich_person_read")]
         EnrichPersonRead,
         [JsonProperty("enrich_company_read")]

@@ -68,6 +68,7 @@ namespace UnifiedTo
         public IEvent Event { get; }
         public ILink Link { get; }
         public IRecording Recording { get; }
+        public IWebinar Webinar { get; }
         public ICommerce Commerce { get; }
         public ICollection Collection { get; }
         public IInventory Inventory { get; }
@@ -167,7 +168,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.22";
+        private const string _sdkVersion = "0.130.23";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -211,6 +212,7 @@ namespace UnifiedTo
         public IEvent Event { get; private set; }
         public ILink Link { get; private set; }
         public IRecording Recording { get; private set; }
+        public IWebinar Webinar { get; private set; }
         public ICommerce Commerce { get; private set; }
         public ICollection Collection { get; private set; }
         public IInventory Inventory { get; private set; }
@@ -384,6 +386,8 @@ namespace UnifiedTo
             Link = new Link(SDKConfiguration);
 
             Recording = new Recording(SDKConfiguration);
+
+            Webinar = new Webinar(SDKConfiguration);
 
             Commerce = new Commerce(SDKConfiguration);
 
@@ -681,6 +685,8 @@ namespace UnifiedTo
             Link = new Link(SDKConfiguration);
 
             Recording = new Recording(SDKConfiguration);
+
+            Webinar = new Webinar(SDKConfiguration);
 
             Commerce = new Commerce(SDKConfiguration);
 

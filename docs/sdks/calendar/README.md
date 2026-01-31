@@ -8,24 +8,30 @@
 * [CreateCalendarCalendar](#createcalendarcalendar) - Create a calendar
 * [CreateCalendarEvent](#createcalendarevent) - Create an event
 * [CreateCalendarLink](#createcalendarlink) - Create a link
+* [CreateCalendarWebinar](#createcalendarwebinar) - Create a webinar
 * [GetCalendarCalendar](#getcalendarcalendar) - Retrieve a calendar
 * [GetCalendarEvent](#getcalendarevent) - Retrieve an event
 * [GetCalendarLink](#getcalendarlink) - Retrieve a link
 * [GetCalendarRecording](#getcalendarrecording) - Retrieve a recording
+* [GetCalendarWebinar](#getcalendarwebinar) - Retrieve a webinar
 * [ListCalendarBusies](#listcalendarbusies) - List all busies
 * [ListCalendarCalendars](#listcalendarcalendars) - List all calendars
 * [ListCalendarEvents](#listcalendarevents) - List all events
 * [ListCalendarLinks](#listcalendarlinks) - List all links
 * [ListCalendarRecordings](#listcalendarrecordings) - List all recordings
+* [ListCalendarWebinars](#listcalendarwebinars) - List all webinars
 * [PatchCalendarCalendar](#patchcalendarcalendar) - Update a calendar
 * [PatchCalendarEvent](#patchcalendarevent) - Update an event
 * [PatchCalendarLink](#patchcalendarlink) - Update a link
+* [PatchCalendarWebinar](#patchcalendarwebinar) - Update a webinar
 * [RemoveCalendarCalendar](#removecalendarcalendar) - Remove a calendar
 * [RemoveCalendarEvent](#removecalendarevent) - Remove an event
 * [RemoveCalendarLink](#removecalendarlink) - Remove a link
+* [RemoveCalendarWebinar](#removecalendarwebinar) - Remove a webinar
 * [UpdateCalendarCalendar](#updatecalendarcalendar) - Update a calendar
 * [UpdateCalendarEvent](#updatecalendarevent) - Update an event
 * [UpdateCalendarLink](#updatecalendarlink) - Update a link
+* [UpdateCalendarWebinar](#updatecalendarwebinar) - Update a webinar
 
 ## CreateCalendarCalendar
 
@@ -147,6 +153,47 @@ var res = await sdk.Calendar.CreateCalendarLinkAsync(
 ### Response
 
 **[CreateCalendarLinkResponse](../../Models/Requests/CreateCalendarLinkResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateCalendarWebinar
+
+Create a webinar
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Calendar.CreateCalendarWebinarAsync(
+    calendarWebinar: new CalendarWebinar() {},
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `CalendarWebinar`                                                                                                                                | [CalendarWebinar](../../Models/Components/CalendarWebinar.md)                                                                                    | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateCalendarWebinarQueryParamFields](../../Models/Requests/CreateCalendarWebinarQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateCalendarWebinarResponse](../../Models/Requests/CreateCalendarWebinarResponse.md)**
 
 ### Errors
 
@@ -311,6 +358,47 @@ var res = await sdk.Calendar.GetCalendarRecordingAsync(
 ### Response
 
 **[GetCalendarRecordingResponse](../../Models/Requests/GetCalendarRecordingResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetCalendarWebinar
+
+Retrieve a webinar
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Calendar.GetCalendarWebinarAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Webinar                                                                                                                                |
+| `Fields`                                                                                                                                         | List<[GetCalendarWebinarQueryParamFields](../../Models/Requests/GetCalendarWebinarQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetCalendarWebinarResponse](../../Models/Requests/GetCalendarWebinarResponse.md)**
 
 ### Errors
 
@@ -518,6 +606,46 @@ var res = await sdk.Calendar.ListCalendarRecordingsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListCalendarWebinars
+
+List all webinars
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListCalendarWebinarsRequest req = new ListCalendarWebinarsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Calendar.ListCalendarWebinarsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListCalendarWebinarsRequest](../../Models/Requests/ListCalendarWebinarsRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+
+### Response
+
+**[ListCalendarWebinarsResponse](../../Models/Requests/ListCalendarWebinarsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchCalendarCalendar
 
 Update a calendar
@@ -648,6 +776,48 @@ var res = await sdk.Calendar.PatchCalendarLinkAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchCalendarWebinar
+
+Update a webinar
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchCalendarWebinarRequest req = new PatchCalendarWebinarRequest() {
+    CalendarWebinar = new CalendarWebinar() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Calendar.PatchCalendarWebinarAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [PatchCalendarWebinarRequest](../../Models/Requests/PatchCalendarWebinarRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+
+### Response
+
+**[PatchCalendarWebinarResponse](../../Models/Requests/PatchCalendarWebinarResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## RemoveCalendarCalendar
 
 Remove a calendar
@@ -758,6 +928,45 @@ var res = await sdk.Calendar.RemoveCalendarLinkAsync(
 ### Response
 
 **[RemoveCalendarLinkResponse](../../Models/Requests/RemoveCalendarLinkResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveCalendarWebinar
+
+Remove a webinar
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Calendar.RemoveCalendarWebinarAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter            | Type                 | Required             | Description          |
+| -------------------- | -------------------- | -------------------- | -------------------- |
+| `ConnectionId`       | *string*             | :heavy_check_mark:   | ID of the connection |
+| `Id`                 | *string*             | :heavy_check_mark:   | ID of the Webinar    |
+
+### Response
+
+**[RemoveCalendarWebinarResponse](../../Models/Requests/RemoveCalendarWebinarResponse.md)**
 
 ### Errors
 
@@ -888,6 +1097,48 @@ var res = await sdk.Calendar.UpdateCalendarLinkAsync(req);
 ### Response
 
 **[UpdateCalendarLinkResponse](../../Models/Requests/UpdateCalendarLinkResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateCalendarWebinar
+
+Update a webinar
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateCalendarWebinarRequest req = new UpdateCalendarWebinarRequest() {
+    CalendarWebinar = new CalendarWebinar() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Calendar.UpdateCalendarWebinarAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [UpdateCalendarWebinarRequest](../../Models/Requests/UpdateCalendarWebinarRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+
+### Response
+
+**[UpdateCalendarWebinarResponse](../../Models/Requests/UpdateCalendarWebinarResponse.md)**
 
 ### Errors
 

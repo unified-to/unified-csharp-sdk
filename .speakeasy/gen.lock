@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 92ddc604425066fbaa39dfc01dd91097
+  docChecksum: f1a8d59500c94e46966b2cfaf9ce5506
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.22
-  configChecksum: 4187c93d5782dfdfb074f5c3013ff9f1
+  releaseVersion: 0.130.23
+  configChecksum: 3b18ae4744e7e88e6f7f04f03d367790
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -238,6 +238,11 @@ generatedFiles:
   - UnifiedTo/Models/Components/CalendarRecording.cs
   - UnifiedTo/Models/Components/CalendarRecordingMedia.cs
   - UnifiedTo/Models/Components/CalendarRecordingTranscript.cs
+  - UnifiedTo/Models/Components/CalendarWebinar.cs
+  - UnifiedTo/Models/Components/CalendarWebinarPanelist.cs
+  - UnifiedTo/Models/Components/CalendarWebinarPanelistStatus.cs
+  - UnifiedTo/Models/Components/CalendarWebinarRegistrant.cs
+  - UnifiedTo/Models/Components/CalendarWebinarStatus.cs
   - UnifiedTo/Models/Components/CommerceCollection.cs
   - UnifiedTo/Models/Components/CommerceCollectionType.cs
   - UnifiedTo/Models/Components/CommerceInventory.cs
@@ -586,6 +591,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyCalendarEventRecurrenceOnDays.cs
   - UnifiedTo/Models/Components/PropertyCalendarRecordingTranscriptAttendee.cs
   - UnifiedTo/Models/Components/PropertyCalendarRecordingTranscriptAttendeeStatus.cs
+  - UnifiedTo/Models/Components/PropertyCalendarWebinarOrganizer.cs
+  - UnifiedTo/Models/Components/PropertyCalendarWebinarOrganizerStatus.cs
   - UnifiedTo/Models/Components/PropertyCommerceLocationAddress.cs
   - UnifiedTo/Models/Components/PropertyConnectionAuth.cs
   - UnifiedTo/Models/Components/PropertyConnectionCategories.cs
@@ -652,6 +659,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyUcCallTelephone.cs
   - UnifiedTo/Models/Components/PropertyUcCallTelephoneType.cs
   - UnifiedTo/Models/Components/Recommendation.cs
+  - UnifiedTo/Models/Components/RegistrationStatus.cs
   - UnifiedTo/Models/Components/RepoBranch.cs
   - UnifiedTo/Models/Components/RepoCommit.cs
   - UnifiedTo/Models/Components/RepoOrganization.cs
@@ -903,6 +911,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateCalendarLinkQueryParamFields.cs
   - UnifiedTo/Models/Requests/CreateCalendarLinkRequest.cs
   - UnifiedTo/Models/Requests/CreateCalendarLinkResponse.cs
+  - UnifiedTo/Models/Requests/CreateCalendarWebinarQueryParamFields.cs
+  - UnifiedTo/Models/Requests/CreateCalendarWebinarRequest.cs
+  - UnifiedTo/Models/Requests/CreateCalendarWebinarResponse.cs
   - UnifiedTo/Models/Requests/CreateCommerceCollectionQueryParamFields.cs
   - UnifiedTo/Models/Requests/CreateCommerceCollectionRequest.cs
   - UnifiedTo/Models/Requests/CreateCommerceCollectionResponse.cs
@@ -1200,6 +1211,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetCalendarRecordingQueryParamFields.cs
   - UnifiedTo/Models/Requests/GetCalendarRecordingRequest.cs
   - UnifiedTo/Models/Requests/GetCalendarRecordingResponse.cs
+  - UnifiedTo/Models/Requests/GetCalendarWebinarQueryParamFields.cs
+  - UnifiedTo/Models/Requests/GetCalendarWebinarRequest.cs
+  - UnifiedTo/Models/Requests/GetCalendarWebinarResponse.cs
   - UnifiedTo/Models/Requests/GetCommerceCollectionQueryParamFields.cs
   - UnifiedTo/Models/Requests/GetCommerceCollectionRequest.cs
   - UnifiedTo/Models/Requests/GetCommerceCollectionResponse.cs
@@ -1537,6 +1551,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListCalendarRecordingsQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListCalendarRecordingsRequest.cs
   - UnifiedTo/Models/Requests/ListCalendarRecordingsResponse.cs
+  - UnifiedTo/Models/Requests/ListCalendarWebinarsQueryParamFields.cs
+  - UnifiedTo/Models/Requests/ListCalendarWebinarsRequest.cs
+  - UnifiedTo/Models/Requests/ListCalendarWebinarsResponse.cs
   - UnifiedTo/Models/Requests/ListCommerceCollectionsQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListCommerceCollectionsRequest.cs
   - UnifiedTo/Models/Requests/ListCommerceCollectionsResponse.cs
@@ -1849,6 +1866,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchCalendarLinkQueryParamFields.cs
   - UnifiedTo/Models/Requests/PatchCalendarLinkRequest.cs
   - UnifiedTo/Models/Requests/PatchCalendarLinkResponse.cs
+  - UnifiedTo/Models/Requests/PatchCalendarWebinarQueryParamFields.cs
+  - UnifiedTo/Models/Requests/PatchCalendarWebinarRequest.cs
+  - UnifiedTo/Models/Requests/PatchCalendarWebinarResponse.cs
   - UnifiedTo/Models/Requests/PatchCommerceCollectionQueryParamFields.cs
   - UnifiedTo/Models/Requests/PatchCommerceCollectionRequest.cs
   - UnifiedTo/Models/Requests/PatchCommerceCollectionResponse.cs
@@ -2093,6 +2113,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveCalendarEventResponse.cs
   - UnifiedTo/Models/Requests/RemoveCalendarLinkRequest.cs
   - UnifiedTo/Models/Requests/RemoveCalendarLinkResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCalendarWebinarRequest.cs
+  - UnifiedTo/Models/Requests/RemoveCalendarWebinarResponse.cs
   - UnifiedTo/Models/Requests/RemoveCommerceCollectionRequest.cs
   - UnifiedTo/Models/Requests/RemoveCommerceCollectionResponse.cs
   - UnifiedTo/Models/Requests/RemoveCommerceInventoryRequest.cs
@@ -2305,6 +2327,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateCalendarLinkQueryParamFields.cs
   - UnifiedTo/Models/Requests/UpdateCalendarLinkRequest.cs
   - UnifiedTo/Models/Requests/UpdateCalendarLinkResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCalendarWebinarQueryParamFields.cs
+  - UnifiedTo/Models/Requests/UpdateCalendarWebinarRequest.cs
+  - UnifiedTo/Models/Requests/UpdateCalendarWebinarResponse.cs
   - UnifiedTo/Models/Requests/UpdateCommerceCollectionQueryParamFields.cs
   - UnifiedTo/Models/Requests/UpdateCommerceCollectionRequest.cs
   - UnifiedTo/Models/Requests/UpdateCommerceCollectionResponse.cs
@@ -2556,6 +2581,7 @@ generatedFiles:
   - UnifiedTo/Utils/Utilities.cs
   - UnifiedTo/Verification.cs
   - UnifiedTo/Webhook.cs
+  - UnifiedTo/Webinar.cs
   - docs/Models/Components/AccountingAccount.md
   - docs/Models/Components/AccountingAssociatedContact.md
   - docs/Models/Components/AccountingAttachment.md
@@ -2684,6 +2710,11 @@ generatedFiles:
   - docs/Models/Components/CalendarRecording.md
   - docs/Models/Components/CalendarRecordingMedia.md
   - docs/Models/Components/CalendarRecordingTranscript.md
+  - docs/Models/Components/CalendarWebinar.md
+  - docs/Models/Components/CalendarWebinarPanelist.md
+  - docs/Models/Components/CalendarWebinarPanelistStatus.md
+  - docs/Models/Components/CalendarWebinarRegistrant.md
+  - docs/Models/Components/CalendarWebinarStatus.md
   - docs/Models/Components/CommerceCollection.md
   - docs/Models/Components/CommerceCollectionType.md
   - docs/Models/Components/CommerceInventory.md
@@ -3032,6 +3063,8 @@ generatedFiles:
   - docs/Models/Components/PropertyCalendarEventRecurrenceOnDays.md
   - docs/Models/Components/PropertyCalendarRecordingTranscriptAttendee.md
   - docs/Models/Components/PropertyCalendarRecordingTranscriptAttendeeStatus.md
+  - docs/Models/Components/PropertyCalendarWebinarOrganizer.md
+  - docs/Models/Components/PropertyCalendarWebinarOrganizerStatus.md
   - docs/Models/Components/PropertyCommerceLocationAddress.md
   - docs/Models/Components/PropertyConnectionAuth.md
   - docs/Models/Components/PropertyConnectionCategories.md
@@ -3098,6 +3131,7 @@ generatedFiles:
   - docs/Models/Components/PropertyUcCallTelephone.md
   - docs/Models/Components/PropertyUcCallTelephoneType.md
   - docs/Models/Components/Recommendation.md
+  - docs/Models/Components/RegistrationStatus.md
   - docs/Models/Components/RepoBranch.md
   - docs/Models/Components/RepoCommit.md
   - docs/Models/Components/RepoOrganization.md
@@ -3348,6 +3382,9 @@ generatedFiles:
   - docs/Models/Requests/CreateCalendarLinkQueryParamFields.md
   - docs/Models/Requests/CreateCalendarLinkRequest.md
   - docs/Models/Requests/CreateCalendarLinkResponse.md
+  - docs/Models/Requests/CreateCalendarWebinarQueryParamFields.md
+  - docs/Models/Requests/CreateCalendarWebinarRequest.md
+  - docs/Models/Requests/CreateCalendarWebinarResponse.md
   - docs/Models/Requests/CreateCommerceCollectionQueryParamFields.md
   - docs/Models/Requests/CreateCommerceCollectionRequest.md
   - docs/Models/Requests/CreateCommerceCollectionResponse.md
@@ -3645,6 +3682,9 @@ generatedFiles:
   - docs/Models/Requests/GetCalendarRecordingQueryParamFields.md
   - docs/Models/Requests/GetCalendarRecordingRequest.md
   - docs/Models/Requests/GetCalendarRecordingResponse.md
+  - docs/Models/Requests/GetCalendarWebinarQueryParamFields.md
+  - docs/Models/Requests/GetCalendarWebinarRequest.md
+  - docs/Models/Requests/GetCalendarWebinarResponse.md
   - docs/Models/Requests/GetCommerceCollectionQueryParamFields.md
   - docs/Models/Requests/GetCommerceCollectionRequest.md
   - docs/Models/Requests/GetCommerceCollectionResponse.md
@@ -3982,6 +4022,9 @@ generatedFiles:
   - docs/Models/Requests/ListCalendarRecordingsQueryParamFields.md
   - docs/Models/Requests/ListCalendarRecordingsRequest.md
   - docs/Models/Requests/ListCalendarRecordingsResponse.md
+  - docs/Models/Requests/ListCalendarWebinarsQueryParamFields.md
+  - docs/Models/Requests/ListCalendarWebinarsRequest.md
+  - docs/Models/Requests/ListCalendarWebinarsResponse.md
   - docs/Models/Requests/ListCommerceCollectionsQueryParamFields.md
   - docs/Models/Requests/ListCommerceCollectionsRequest.md
   - docs/Models/Requests/ListCommerceCollectionsResponse.md
@@ -4294,6 +4337,9 @@ generatedFiles:
   - docs/Models/Requests/PatchCalendarLinkQueryParamFields.md
   - docs/Models/Requests/PatchCalendarLinkRequest.md
   - docs/Models/Requests/PatchCalendarLinkResponse.md
+  - docs/Models/Requests/PatchCalendarWebinarQueryParamFields.md
+  - docs/Models/Requests/PatchCalendarWebinarRequest.md
+  - docs/Models/Requests/PatchCalendarWebinarResponse.md
   - docs/Models/Requests/PatchCommerceCollectionQueryParamFields.md
   - docs/Models/Requests/PatchCommerceCollectionRequest.md
   - docs/Models/Requests/PatchCommerceCollectionResponse.md
@@ -4538,6 +4584,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveCalendarEventResponse.md
   - docs/Models/Requests/RemoveCalendarLinkRequest.md
   - docs/Models/Requests/RemoveCalendarLinkResponse.md
+  - docs/Models/Requests/RemoveCalendarWebinarRequest.md
+  - docs/Models/Requests/RemoveCalendarWebinarResponse.md
   - docs/Models/Requests/RemoveCommerceCollectionRequest.md
   - docs/Models/Requests/RemoveCommerceCollectionResponse.md
   - docs/Models/Requests/RemoveCommerceInventoryRequest.md
@@ -4750,6 +4798,9 @@ generatedFiles:
   - docs/Models/Requests/UpdateCalendarLinkQueryParamFields.md
   - docs/Models/Requests/UpdateCalendarLinkRequest.md
   - docs/Models/Requests/UpdateCalendarLinkResponse.md
+  - docs/Models/Requests/UpdateCalendarWebinarQueryParamFields.md
+  - docs/Models/Requests/UpdateCalendarWebinarRequest.md
+  - docs/Models/Requests/UpdateCalendarWebinarResponse.md
   - docs/Models/Requests/UpdateCommerceCollectionQueryParamFields.md
   - docs/Models/Requests/UpdateCommerceCollectionRequest.md
   - docs/Models/Requests/UpdateCommerceCollectionResponse.md
@@ -5060,6 +5111,7 @@ generatedFiles:
   - docs/sdks/user/README.md
   - docs/sdks/verification/README.md
   - docs/sdks/webhook/README.md
+  - docs/sdks/webinar/README.md
   - global.json
 examples:
   createAccountingAccount:
@@ -10559,6 +10611,61 @@ examples:
       responses:
         "200":
           application/json: {}
+  createCalendarWebinar:
+    speakeasy-default-create-calendar-webinar:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getCalendarWebinar:
+    speakeasy-default-get-calendar-webinar:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listCalendarWebinars:
+    speakeasy-default-list-calendar-webinars:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchCalendarWebinar:
+    speakeasy-default-patch-calendar-webinar:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeCalendarWebinar:
+    speakeasy-default-remove-calendar-webinar:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateCalendarWebinar:
+    speakeasy-default-update-calendar-webinar:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
 persistentEdits:
@@ -10641,7 +10748,7 @@ trackedFiles:
     pristine_git_object: 7e75fe26d17f09865dca9883e6adfd527c884a4a
   UnifiedTo/Calendar.cs:
     id: 857e953cc80c
-    last_write_checksum: sha1:52e47af809b4047b6fd655fa0489bace4aaaca05
+    last_write_checksum: sha1:f6fc13ce97972de22b9ba107d955a8225b6d670b
     pristine_git_object: ff374c711c02b28de610e0acff5e6a918a6e9367
   UnifiedTo/Call.cs:
     id: 089516f2422a
@@ -11351,6 +11458,16 @@ trackedFiles:
     id: c268489fc4e9
     last_write_checksum: sha1:e0be9ec0f87c6427d04936d6d4892cd0590b83ee
     pristine_git_object: 682c19b42352a93cc75f41954db262a12a6d3edf
+  UnifiedTo/Models/Components/CalendarWebinar.cs:
+    last_write_checksum: sha1:907aa49ad52e4c0e623ed4be7a4d42e2eb0a5e30
+  UnifiedTo/Models/Components/CalendarWebinarPanelist.cs:
+    last_write_checksum: sha1:1cf0c3e2721d3f54d1b10e8d09c0ebfb6223229e
+  UnifiedTo/Models/Components/CalendarWebinarPanelistStatus.cs:
+    last_write_checksum: sha1:9750dbaac7ac5950fd2e045043665058de212bb8
+  UnifiedTo/Models/Components/CalendarWebinarRegistrant.cs:
+    last_write_checksum: sha1:46526c6177753937e2486e077321503ccc58b5b9
+  UnifiedTo/Models/Components/CalendarWebinarStatus.cs:
+    last_write_checksum: sha1:5ca6110464c781ccf18056717dd944c43bd45951
   UnifiedTo/Models/Components/CommerceCollection.cs:
     id: 4f7cb066d071
     last_write_checksum: sha1:b21693facd1c51da27f85633fb80d661c0b71f38
@@ -12325,7 +12442,7 @@ trackedFiles:
     last_write_checksum: sha1:2600fee70f1e697d78687bf8756486885a2bc240
   UnifiedTo/Models/Components/ObjectType.cs:
     id: 8e5be1040e8b
-    last_write_checksum: sha1:64f51977c715f746c79bfa1c74a490ba1a763bea
+    last_write_checksum: sha1:75173632c6c85a3f4c5f46507128ab79b676d76a
     pristine_git_object: 8aa887cf95b9ca7e4de4189a0994cf8d7de53ac6
   UnifiedTo/Models/Components/One.cs:
     id: d6fa3c7b6dc5
@@ -12577,6 +12694,10 @@ trackedFiles:
     id: 456f9ee6f944
     last_write_checksum: sha1:9dee5d737a3480d35cbe0a0a16320c5f96caf7be
     pristine_git_object: cb614e6233587fb7abc88d97e661d949f6791397
+  UnifiedTo/Models/Components/PropertyCalendarWebinarOrganizer.cs:
+    last_write_checksum: sha1:13801ae79832fbe194f82a20c777f9c8f85891df
+  UnifiedTo/Models/Components/PropertyCalendarWebinarOrganizerStatus.cs:
+    last_write_checksum: sha1:63e77ff9d023cecdd409e72370070fbb3ea20181
   UnifiedTo/Models/Components/PropertyCommerceLocationAddress.cs:
     id: 4c3702c9ef8a
     last_write_checksum: sha1:3c64793ffb5e6f0d4b3164345aea815c083f14bb
@@ -12591,7 +12712,7 @@ trackedFiles:
     pristine_git_object: 058a7265ff607fc57d02159cac6833325b133d8b
   UnifiedTo/Models/Components/PropertyConnectionPermissions.cs:
     id: f924575570ed
-    last_write_checksum: sha1:eb7e809c0e1b0c5731697dd4676a34dbdeeadefc
+    last_write_checksum: sha1:9e249ea17bc7556b40a68f7161159dd1731f30e2
     pristine_git_object: 1fbf256600c76cb7463c9b53c5891696d45c4cd6
   UnifiedTo/Models/Components/PropertyCrmCompanyAddress.cs:
     id: 9ecc38382b6c
@@ -12813,6 +12934,8 @@ trackedFiles:
     id: ec64dc6ce6ba
     last_write_checksum: sha1:20efa3c816d0b9d2e4853f1aa338f620727161ca
     pristine_git_object: 9e7e440cc63ee7ef8c7b4a93b546416b257c62c1
+  UnifiedTo/Models/Components/RegistrationStatus.cs:
+    last_write_checksum: sha1:6a90d30baec24275348c9b1e77ae02586cf63415
   UnifiedTo/Models/Components/RepoBranch.cs:
     id: b05c888ec7c2
     last_write_checksum: sha1:266f5582ce0f49562182baf2db2bc6898440ba56
@@ -13685,6 +13808,12 @@ trackedFiles:
     id: 1466f9be3389
     last_write_checksum: sha1:bd2ef7bf47e49846abaa1d78a74e9de65127d978
     pristine_git_object: 24f56054d7034afb7aa7813e5a27a7dc5f5ef5c3
+  UnifiedTo/Models/Requests/CreateCalendarWebinarQueryParamFields.cs:
+    last_write_checksum: sha1:2c655cac40991b78b46a98f2191c3eca58b141e8
+  UnifiedTo/Models/Requests/CreateCalendarWebinarRequest.cs:
+    last_write_checksum: sha1:2ec0bd1c655b99b038b2c88c1cccb084d2335695
+  UnifiedTo/Models/Requests/CreateCalendarWebinarResponse.cs:
+    last_write_checksum: sha1:841f5fabd87c18e36da821af9903b82573c6bc88
   UnifiedTo/Models/Requests/CreateCommerceCollectionQueryParamFields.cs:
     last_write_checksum: sha1:371247ffede5f9906cbe0995b635bda69f0fef97
   UnifiedTo/Models/Requests/CreateCommerceCollectionRequest.cs:
@@ -14639,6 +14768,12 @@ trackedFiles:
     id: 0c249d2c7411
     last_write_checksum: sha1:946cffc0730078dcbef2895aba4fffdfdeba4981
     pristine_git_object: f5ed163c7e6aad41a8250adc04b92ac579a79fe9
+  UnifiedTo/Models/Requests/GetCalendarWebinarQueryParamFields.cs:
+    last_write_checksum: sha1:a2ec5befc987af00dc57c762a5183d9da80043d5
+  UnifiedTo/Models/Requests/GetCalendarWebinarRequest.cs:
+    last_write_checksum: sha1:2cc66701651988c3723aaf845884ba071abdffaf
+  UnifiedTo/Models/Requests/GetCalendarWebinarResponse.cs:
+    last_write_checksum: sha1:077f62c17d472813cb8b214a08fa2980330db50a
   UnifiedTo/Models/Requests/GetCommerceCollectionQueryParamFields.cs:
     last_write_checksum: sha1:3883cd23e8db21e55f6829abf2a81f22d1e0c1c6
   UnifiedTo/Models/Requests/GetCommerceCollectionRequest.cs:
@@ -15717,6 +15852,12 @@ trackedFiles:
     id: df65d04a825c
     last_write_checksum: sha1:fe775c149923539fcb0d9fc5bd6d5196e0eab33d
     pristine_git_object: c0dd08a69c1d97e4ce976bb8d57165528e11a10b
+  UnifiedTo/Models/Requests/ListCalendarWebinarsQueryParamFields.cs:
+    last_write_checksum: sha1:83243898f9c21a550bd2b6b22d6b9d0fba12669b
+  UnifiedTo/Models/Requests/ListCalendarWebinarsRequest.cs:
+    last_write_checksum: sha1:763046e1fd16f519b7b203cb22294e362cf67463
+  UnifiedTo/Models/Requests/ListCalendarWebinarsResponse.cs:
+    last_write_checksum: sha1:e0fcea772d88a9346cedc5e56548279c2798babf
   UnifiedTo/Models/Requests/ListCommerceCollectionsQueryParamFields.cs:
     last_write_checksum: sha1:e8f0badaf8f91293dd5fbbb07487192c7d325ed3
   UnifiedTo/Models/Requests/ListCommerceCollectionsRequest.cs:
@@ -16725,6 +16866,12 @@ trackedFiles:
     id: 9292208a5e25
     last_write_checksum: sha1:4d4b540317253938119a7fbd90257efb60a726f4
     pristine_git_object: ffc37c1981c7f3d436132f50b2de338d8f1e3bf8
+  UnifiedTo/Models/Requests/PatchCalendarWebinarQueryParamFields.cs:
+    last_write_checksum: sha1:b47730c78e71c3312b829a35b46c0b1ac21aa360
+  UnifiedTo/Models/Requests/PatchCalendarWebinarRequest.cs:
+    last_write_checksum: sha1:32181de14f3830774f728abc5882c1f9a7b908d9
+  UnifiedTo/Models/Requests/PatchCalendarWebinarResponse.cs:
+    last_write_checksum: sha1:b2165fe569182a4cce31811e0002a61ec71e9e87
   UnifiedTo/Models/Requests/PatchCommerceCollectionQueryParamFields.cs:
     last_write_checksum: sha1:a894f589ab88cd1a0d0be278f27c09620af0f789
   UnifiedTo/Models/Requests/PatchCommerceCollectionRequest.cs:
@@ -17543,6 +17690,10 @@ trackedFiles:
     id: a30266e30a2d
     last_write_checksum: sha1:f7f61906c3acf5fa67dd1c867b10e865dc97066a
     pristine_git_object: a727a58986f90923a0dad4dc2a2724f961f691f1
+  UnifiedTo/Models/Requests/RemoveCalendarWebinarRequest.cs:
+    last_write_checksum: sha1:1c9e646f6ef1d6abfb08148470a3b7f1c803038a
+  UnifiedTo/Models/Requests/RemoveCalendarWebinarResponse.cs:
+    last_write_checksum: sha1:873789de1d545965d2257e3d46508659eef60029
   UnifiedTo/Models/Requests/RemoveCommerceCollectionRequest.cs:
     id: f946bc488490
     last_write_checksum: sha1:d3a3aaf6f613e9a0cd4ca32b9658fb5d70abe35b
@@ -18291,6 +18442,12 @@ trackedFiles:
     id: c3f71c00b6d2
     last_write_checksum: sha1:66c6be59cf5cfd6d5f2eb3f57802cbb441855e36
     pristine_git_object: e3aef44a23f504e568a9892b5f2bf2033f2d955f
+  UnifiedTo/Models/Requests/UpdateCalendarWebinarQueryParamFields.cs:
+    last_write_checksum: sha1:8df1b14a6a7e84d1b06e64a105e4ddbc1dea6dbc
+  UnifiedTo/Models/Requests/UpdateCalendarWebinarRequest.cs:
+    last_write_checksum: sha1:9ffec619cf4ade554992804c5e00a3fc18ed19fd
+  UnifiedTo/Models/Requests/UpdateCalendarWebinarResponse.cs:
+    last_write_checksum: sha1:f599ff6d43c9722706f890d864202db3b3fad6db
   UnifiedTo/Models/Requests/UpdateCommerceCollectionQueryParamFields.cs:
     last_write_checksum: sha1:0402d7bb75ad825e6add2305b3902bcd01e651d6
   UnifiedTo/Models/Requests/UpdateCommerceCollectionRequest.cs:
@@ -19071,7 +19228,7 @@ trackedFiles:
     pristine_git_object: 883792bc149f1152a8331b8e409d591075c3a6bd
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
-    last_write_checksum: sha1:1132aa0b1dbde0eb1cbbdd5a5ca32db487cac4bc
+    last_write_checksum: sha1:0b52598ecc7b031d97d3d476af5a62ebea619b86
     pristine_git_object: b2dbc023c5e4be2a5de721c2bbc9330db399f4bd
   UnifiedTo/User.cs:
     id: 603e44ffd153
@@ -19161,6 +19318,8 @@ trackedFiles:
     id: 9e55bbe39f98
     last_write_checksum: sha1:f7bd4d2c271038a1ee4d7fcf21427a04f885f35c
     pristine_git_object: 05f0d5a798fd7c11d396b97714a65f052f725396
+  UnifiedTo/Webinar.cs:
+    last_write_checksum: sha1:60fc1b2f2db35642c50dcbd4fcb21bb756fae612
   docs/Models/Components/AccountingAccount.md:
     id: 9f3d83bb3728
     last_write_checksum: sha1:1a9b068a28677289389691221c617b64a37ceae5
@@ -19629,6 +19788,16 @@ trackedFiles:
     id: 748f07a30d1f
     last_write_checksum: sha1:5d0b185d7006105acb4f9d59d023b42f75b10737
     pristine_git_object: a9da36da4b1c7d9a9dd7b7b95efc87a05d5c9f62
+  docs/Models/Components/CalendarWebinar.md:
+    last_write_checksum: sha1:8c3fd81f92a900b6a087653c9cb5ac9b4401b603
+  docs/Models/Components/CalendarWebinarPanelist.md:
+    last_write_checksum: sha1:35e6a9d2fb59fb8bcf468516a791b5c49d67efb9
+  docs/Models/Components/CalendarWebinarPanelistStatus.md:
+    last_write_checksum: sha1:2aa009e8b8156558bbe3f7b80d16f6b645c327db
+  docs/Models/Components/CalendarWebinarRegistrant.md:
+    last_write_checksum: sha1:3ff48d7b0f92659764888084d2de74472c9fdc4e
+  docs/Models/Components/CalendarWebinarStatus.md:
+    last_write_checksum: sha1:4c4dbdb778e7e7da6266fdde917d8b694b1c0c2b
   docs/Models/Components/CommerceCollection.md:
     id: c9e302229c55
     last_write_checksum: sha1:3358985b3b8beeae79026d3c2746ea58c081c5fd
@@ -20603,7 +20772,7 @@ trackedFiles:
     last_write_checksum: sha1:40b40f2331b32e4e71df45765aa0b4c1ae936925
   docs/Models/Components/ObjectType.md:
     id: 70698fd5bb26
-    last_write_checksum: sha1:3ef720256e43be1f2998702a9f660276c4d3a32a
+    last_write_checksum: sha1:dc638c85ada9da77d82cd69e3903a00cb2fe16cb
     pristine_git_object: 91af6f273850d152ad35aa723ed82eb7c07b6cff
   docs/Models/Components/One.md:
     id: 37e74752e70f
@@ -20855,6 +21024,10 @@ trackedFiles:
     id: e80981b39639
     last_write_checksum: sha1:f4e294b7355d679edeea70b5e3e5fdad9a78a28f
     pristine_git_object: ca78cdd8505fb228e772ad0f511a4b25cb699552
+  docs/Models/Components/PropertyCalendarWebinarOrganizer.md:
+    last_write_checksum: sha1:84ce0973054b8df8e7b112daf5bff1d3094fdc90
+  docs/Models/Components/PropertyCalendarWebinarOrganizerStatus.md:
+    last_write_checksum: sha1:c509ea95b64debdd89bafabee04c60247fd2a075
   docs/Models/Components/PropertyCommerceLocationAddress.md:
     id: c875398d47c3
     last_write_checksum: sha1:de299d1f6da3e22d8d6f8517326bf8648cadf4f8
@@ -20869,7 +21042,7 @@ trackedFiles:
     pristine_git_object: 6b4bf574f578f75b9133779b9acde99497b64e46
   docs/Models/Components/PropertyConnectionPermissions.md:
     id: eb5eb79c93e6
-    last_write_checksum: sha1:53a1332db321571ef4db1b18121968af2287278f
+    last_write_checksum: sha1:655065688ba83452da2395bed4008e3da435e88c
     pristine_git_object: 152432bd22d8101ccd205bc3481571ae0fb148e0
   docs/Models/Components/PropertyCrmCompanyAddress.md:
     id: 5836e935161d
@@ -21091,6 +21264,8 @@ trackedFiles:
     id: 16c77c03dc13
     last_write_checksum: sha1:b5ee7bb29c0d0ebe1030cbbfdc7583871bb66056
     pristine_git_object: 2f45b9f7cf02927156811d1dad7e9ddc55471c50
+  docs/Models/Components/RegistrationStatus.md:
+    last_write_checksum: sha1:0571c3e076ce8c64b06a8e09e0c51b6b9cacc150
   docs/Models/Components/RepoBranch.md:
     id: 0d3e5ea61720
     last_write_checksum: sha1:92b1f8a7ae2965ef4c325f4aa1c400a01d7c9325
@@ -21951,6 +22126,12 @@ trackedFiles:
     id: f7ac07e9597b
     last_write_checksum: sha1:a9ccb0130e3d6a797824e31751cea95c4306a6d4
     pristine_git_object: 8a44224abf09a4f465a4f8389a00749596477241
+  docs/Models/Requests/CreateCalendarWebinarQueryParamFields.md:
+    last_write_checksum: sha1:8207621d336d781703516817cef54cbb1d552185
+  docs/Models/Requests/CreateCalendarWebinarRequest.md:
+    last_write_checksum: sha1:81202c69298ab7cd60f10933a4b4797abe506f7d
+  docs/Models/Requests/CreateCalendarWebinarResponse.md:
+    last_write_checksum: sha1:b80c260727c83294cd9a88d56fd5be86160365e9
   docs/Models/Requests/CreateCommerceCollectionQueryParamFields.md:
     last_write_checksum: sha1:ded5be83dd2eaead4a6fc335091e452ecae6c851
   docs/Models/Requests/CreateCommerceCollectionRequest.md:
@@ -22905,6 +23086,12 @@ trackedFiles:
     id: a16427607448
     last_write_checksum: sha1:22e94edf082c30054e9af6dd7ca25f3053e9411a
     pristine_git_object: 193f221678d8ad7dc2bb471ea3d1202291ead7fc
+  docs/Models/Requests/GetCalendarWebinarQueryParamFields.md:
+    last_write_checksum: sha1:2340e7954cbbd81e6462205a81bc667b5593060f
+  docs/Models/Requests/GetCalendarWebinarRequest.md:
+    last_write_checksum: sha1:10707be5fc4e854d3a78d820cbf3e86c28c979df
+  docs/Models/Requests/GetCalendarWebinarResponse.md:
+    last_write_checksum: sha1:a7a3d664c02f4a549ea5b8035c43eb77a996adff
   docs/Models/Requests/GetCommerceCollectionQueryParamFields.md:
     last_write_checksum: sha1:8f58cfa2e324108d0ce333de7deeb97bb48383b8
   docs/Models/Requests/GetCommerceCollectionRequest.md:
@@ -23983,6 +24170,12 @@ trackedFiles:
     id: dd8d5dabe050
     last_write_checksum: sha1:c8d33dff46aac282f37ab74837ecc680c1f593b9
     pristine_git_object: 602c7e500c493a34816dcad40dd9a201332ee8be
+  docs/Models/Requests/ListCalendarWebinarsQueryParamFields.md:
+    last_write_checksum: sha1:a0ab97b36c46b2fd69dd42006d020217ff2d9e7d
+  docs/Models/Requests/ListCalendarWebinarsRequest.md:
+    last_write_checksum: sha1:a61535a40bd8061ed9c9984c9a721cdd3efb7020
+  docs/Models/Requests/ListCalendarWebinarsResponse.md:
+    last_write_checksum: sha1:8426d1c3dc0adae8484f9cc678c96d3a79e4829a
   docs/Models/Requests/ListCommerceCollectionsQueryParamFields.md:
     last_write_checksum: sha1:693e290ae7898a14a7130360f2b09374167221a8
   docs/Models/Requests/ListCommerceCollectionsRequest.md:
@@ -24991,6 +25184,12 @@ trackedFiles:
     id: f09b377a2e6f
     last_write_checksum: sha1:54c834ce3f66c7f6667fd6f1c9e1a9acb99bf734
     pristine_git_object: 160f901228d59a0fe129d92965c29f08fb6be885
+  docs/Models/Requests/PatchCalendarWebinarQueryParamFields.md:
+    last_write_checksum: sha1:07d444fc0f40391971d8f1ed18737349777688a9
+  docs/Models/Requests/PatchCalendarWebinarRequest.md:
+    last_write_checksum: sha1:7e0effe1b587e572e602ed465546d480fcfecde3
+  docs/Models/Requests/PatchCalendarWebinarResponse.md:
+    last_write_checksum: sha1:136c5daaa46764e44d985b264d54044079b8507d
   docs/Models/Requests/PatchCommerceCollectionQueryParamFields.md:
     last_write_checksum: sha1:1ae1b9cb4880f1a55f942ef8760010a47662113d
   docs/Models/Requests/PatchCommerceCollectionRequest.md:
@@ -25809,6 +26008,10 @@ trackedFiles:
     id: 6558fdc55b28
     last_write_checksum: sha1:8f1b0dc8437ee060a54082b461378ab3ec1f1120
     pristine_git_object: 74648def0b091d3517132ea05b1cf01602997891
+  docs/Models/Requests/RemoveCalendarWebinarRequest.md:
+    last_write_checksum: sha1:0ce223678db2a1dcc1f1593e73bb33e7bbf97fe8
+  docs/Models/Requests/RemoveCalendarWebinarResponse.md:
+    last_write_checksum: sha1:199b743ca9b394c707a2009a4ea31063102d57f3
   docs/Models/Requests/RemoveCommerceCollectionRequest.md:
     id: a28b42406fb6
     last_write_checksum: sha1:607f228283ecad9c024314cbc84603adac938ad2
@@ -26557,6 +26760,12 @@ trackedFiles:
     id: 98b0bdc08449
     last_write_checksum: sha1:6841fdd453de5f5b37b3257cb790045056b153d7
     pristine_git_object: 4fa5a17696a288fa71970b50346710f2500c434d
+  docs/Models/Requests/UpdateCalendarWebinarQueryParamFields.md:
+    last_write_checksum: sha1:8fb3064df164336542c56da5695a10a1be06d5be
+  docs/Models/Requests/UpdateCalendarWebinarRequest.md:
+    last_write_checksum: sha1:6ee05c78563be1bfc7ad7b189ca7c8053230c158
+  docs/Models/Requests/UpdateCalendarWebinarResponse.md:
+    last_write_checksum: sha1:10d36851328f9e5c9ee666ac04a929aa8b59af5d
   docs/Models/Requests/UpdateCommerceCollectionQueryParamFields.md:
     last_write_checksum: sha1:e7514a14ae5713e6258c73dcc5970d41289f2e16
   docs/Models/Requests/UpdateCommerceCollectionRequest.md:
@@ -27211,7 +27420,7 @@ trackedFiles:
     pristine_git_object: cca2797879b97059ecb7a1554a356086fdd14332
   docs/sdks/calendar/README.md:
     id: b85c3af313ad
-    last_write_checksum: sha1:fa0a3aeed4ac5a5d7949ac4334fb514ff675d8de
+    last_write_checksum: sha1:fe5c597b7b8b4157e1bc63ea13fa8e2cab072d49
     pristine_git_object: cc8aa6cbd60681f32a4f32180de5e845542a9d81
   docs/sdks/call/README.md:
     id: 63a19d6314f9
@@ -27631,6 +27840,8 @@ trackedFiles:
     id: 3b908e644c3d
     last_write_checksum: sha1:8d6d4a9c4f479c659aec24b6b8ca4eba145682cc
     pristine_git_object: b26d19906c005c5bb46cfcf48d66f6cc6c67311b
+  docs/sdks/webinar/README.md:
+    last_write_checksum: sha1:bf5397fcad643137317c95c335e351cce6634fb1
   global.json:
     id: 908e72401bf4
     last_write_checksum: sha1:01473f6b7b44feb83e45cafd45177fed791c38ff
