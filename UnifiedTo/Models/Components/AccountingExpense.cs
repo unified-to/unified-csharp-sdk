@@ -18,6 +18,9 @@ namespace UnifiedTo.Models.Components
     public class AccountingExpense
     {
 
+        [JsonProperty("account_id")]
+        public string? AccountId { get; set; }
+
         [JsonProperty("approved_at")]
         public DateTime? ApprovedAt { get; set; }
 
@@ -41,6 +44,12 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("name")]
         public string? Name { get; set; }
+
+        [JsonProperty("payment_method")]
+        public string? PaymentMethod { get; set; }
+
+        [JsonProperty("posted_at")]
+        public DateTime? PostedAt { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }

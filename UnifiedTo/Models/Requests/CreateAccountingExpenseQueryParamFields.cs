@@ -25,8 +25,14 @@ namespace UnifiedTo.Models.Requests
         UserId,
         [JsonProperty("contact_id")]
         ContactId,
+        [JsonProperty("account_id")]
+        AccountId,
         [JsonProperty("name")]
         Name,
+        [JsonProperty("payment_method")]
+        PaymentMethod,
+        [JsonProperty("posted_at")]
+        PostedAt,
         [JsonProperty("total_amount")]
         TotalAmount,
         [JsonProperty("currency")]

@@ -21,8 +21,9 @@ generation:
   requestBodyFieldName: ""
   schemas:
     allOfMergeStrategy: shallowMerge
+  versioningStrategy: automatic
 csharp:
-  version: 0.130.23
+  version: 0.130.24
   additionalDependencies: []
   author: Unified API Inc.
   baseErrorName: UnifiedToError
@@ -54,6 +55,7 @@ csharp:
   packageName: UnifiedTo
   packageTags: ""
   product: ""
+  respectTitlesForPrimitiveUnionMembers: false
   responseFormat: envelope
   sourceDirectory: ""
   useNodatime: true
