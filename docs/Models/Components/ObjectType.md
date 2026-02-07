@@ -63,8 +63,10 @@
 | `HrisTimeshift`           | hris_timeshift            |
 | `HrisDeduction`           | hris_deduction            |
 | `HrisBenefit`             | hris_benefit              |
+| `MartechCampaign`         | martech_campaign          |
 | `MartechList`             | martech_list              |
 | `MartechMember`           | martech_member            |
+| `MartechReport`           | martech_report            |
 | `Passthrough`             | passthrough               |
 | `TicketingNote`           | ticketing_note            |
 | `TicketingTicket`         | ticketing_ticket          |

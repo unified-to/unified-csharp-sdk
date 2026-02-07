@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 920d3864f2302ad5f3efefc595c4d0d8
+  docChecksum: 15ec18fc071c0aef95cddded62ccfdd3
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.24
-  configChecksum: 58a1175bd8b0251ecd95c5a108507140
+  releaseVersion: 0.130.25
+  configChecksum: 972e70723dc3f7d0cef02fb3269e0863
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -435,6 +435,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListLinkId.cs
   - UnifiedTo/Models/Components/ListListId.cs
   - UnifiedTo/Models/Components/ListLocationId.cs
+  - UnifiedTo/Models/Components/ListMemberId.cs
   - UnifiedTo/Models/Components/ListOffset.cs
   - UnifiedTo/Models/Components/ListOrder.cs
   - UnifiedTo/Models/Components/ListOrderId.cs
@@ -476,10 +477,14 @@ generatedFiles:
   - UnifiedTo/Models/Components/LmsTelephone.cs
   - UnifiedTo/Models/Components/LmsTelephoneType.cs
   - UnifiedTo/Models/Components/MaritalStatus.cs
+  - UnifiedTo/Models/Components/MarketingCampaign.cs
+  - UnifiedTo/Models/Components/MarketingCampaignStatus.cs
   - UnifiedTo/Models/Components/MarketingEmail.cs
   - UnifiedTo/Models/Components/MarketingEmailType.cs
   - UnifiedTo/Models/Components/MarketingList.cs
   - UnifiedTo/Models/Components/MarketingMember.cs
+  - UnifiedTo/Models/Components/MarketingReport.cs
+  - UnifiedTo/Models/Components/MarketingReportLink.cs
   - UnifiedTo/Models/Components/MessagingAttachment.cs
   - UnifiedTo/Models/Components/MessagingButton.cs
   - UnifiedTo/Models/Components/MessagingChannel.cs
@@ -797,6 +802,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/VirtualWebhookLimit.cs
   - UnifiedTo/Models/Components/VirtualWebhookListId.cs
   - UnifiedTo/Models/Components/VirtualWebhookLocationId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookMemberId.cs
   - UnifiedTo/Models/Components/VirtualWebhookOrderId.cs
   - UnifiedTo/Models/Components/VirtualWebhookOrgId.cs
   - UnifiedTo/Models/Components/VirtualWebhookPageId.cs
@@ -1007,6 +1013,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateLmsStudentQueryParamFields.cs
   - UnifiedTo/Models/Requests/CreateLmsStudentRequest.cs
   - UnifiedTo/Models/Requests/CreateLmsStudentResponse.cs
+  - UnifiedTo/Models/Requests/CreateMartechCampaignQueryParamFields.cs
+  - UnifiedTo/Models/Requests/CreateMartechCampaignRequest.cs
+  - UnifiedTo/Models/Requests/CreateMartechCampaignResponse.cs
   - UnifiedTo/Models/Requests/CreateMartechListQueryParamFields.cs
   - UnifiedTo/Models/Requests/CreateMartechListRequest.cs
   - UnifiedTo/Models/Requests/CreateMartechListResponse.cs
@@ -1313,6 +1322,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetLmsStudentQueryParamFields.cs
   - UnifiedTo/Models/Requests/GetLmsStudentRequest.cs
   - UnifiedTo/Models/Requests/GetLmsStudentResponse.cs
+  - UnifiedTo/Models/Requests/GetMartechCampaignQueryParamFields.cs
+  - UnifiedTo/Models/Requests/GetMartechCampaignRequest.cs
+  - UnifiedTo/Models/Requests/GetMartechCampaignResponse.cs
   - UnifiedTo/Models/Requests/GetMartechListQueryParamFields.cs
   - UnifiedTo/Models/Requests/GetMartechListRequest.cs
   - UnifiedTo/Models/Requests/GetMartechListResponse.cs
@@ -1657,12 +1669,18 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListLmsStudentsQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListLmsStudentsRequest.cs
   - UnifiedTo/Models/Requests/ListLmsStudentsResponse.cs
+  - UnifiedTo/Models/Requests/ListMartechCampaignsQueryParamFields.cs
+  - UnifiedTo/Models/Requests/ListMartechCampaignsRequest.cs
+  - UnifiedTo/Models/Requests/ListMartechCampaignsResponse.cs
   - UnifiedTo/Models/Requests/ListMartechListsQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListMartechListsRequest.cs
   - UnifiedTo/Models/Requests/ListMartechListsResponse.cs
   - UnifiedTo/Models/Requests/ListMartechMembersQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListMartechMembersRequest.cs
   - UnifiedTo/Models/Requests/ListMartechMembersResponse.cs
+  - UnifiedTo/Models/Requests/ListMartechReportsQueryParamFields.cs
+  - UnifiedTo/Models/Requests/ListMartechReportsRequest.cs
+  - UnifiedTo/Models/Requests/ListMartechReportsResponse.cs
   - UnifiedTo/Models/Requests/ListMessagingChannelsQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListMessagingChannelsRequest.cs
   - UnifiedTo/Models/Requests/ListMessagingChannelsResponse.cs
@@ -1956,6 +1974,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchLmsStudentQueryParamFields.cs
   - UnifiedTo/Models/Requests/PatchLmsStudentRequest.cs
   - UnifiedTo/Models/Requests/PatchLmsStudentResponse.cs
+  - UnifiedTo/Models/Requests/PatchMartechCampaignQueryParamFields.cs
+  - UnifiedTo/Models/Requests/PatchMartechCampaignRequest.cs
+  - UnifiedTo/Models/Requests/PatchMartechCampaignResponse.cs
   - UnifiedTo/Models/Requests/PatchMartechListQueryParamFields.cs
   - UnifiedTo/Models/Requests/PatchMartechListRequest.cs
   - UnifiedTo/Models/Requests/PatchMartechListResponse.cs
@@ -2173,6 +2194,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveLmsInstructorResponse.cs
   - UnifiedTo/Models/Requests/RemoveLmsStudentRequest.cs
   - UnifiedTo/Models/Requests/RemoveLmsStudentResponse.cs
+  - UnifiedTo/Models/Requests/RemoveMartechCampaignRequest.cs
+  - UnifiedTo/Models/Requests/RemoveMartechCampaignResponse.cs
   - UnifiedTo/Models/Requests/RemoveMartechListRequest.cs
   - UnifiedTo/Models/Requests/RemoveMartechListResponse.cs
   - UnifiedTo/Models/Requests/RemoveMartechMemberRequest.cs
@@ -2417,6 +2440,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateLmsStudentQueryParamFields.cs
   - UnifiedTo/Models/Requests/UpdateLmsStudentRequest.cs
   - UnifiedTo/Models/Requests/UpdateLmsStudentResponse.cs
+  - UnifiedTo/Models/Requests/UpdateMartechCampaignQueryParamFields.cs
+  - UnifiedTo/Models/Requests/UpdateMartechCampaignRequest.cs
+  - UnifiedTo/Models/Requests/UpdateMartechCampaignResponse.cs
   - UnifiedTo/Models/Requests/UpdateMartechListQueryParamFields.cs
   - UnifiedTo/Models/Requests/UpdateMartechListRequest.cs
   - UnifiedTo/Models/Requests/UpdateMartechListResponse.cs
@@ -2907,6 +2933,7 @@ generatedFiles:
   - docs/Models/Components/ListLinkId.md
   - docs/Models/Components/ListListId.md
   - docs/Models/Components/ListLocationId.md
+  - docs/Models/Components/ListMemberId.md
   - docs/Models/Components/ListOffset.md
   - docs/Models/Components/ListOrder.md
   - docs/Models/Components/ListOrderId.md
@@ -2948,10 +2975,14 @@ generatedFiles:
   - docs/Models/Components/LmsTelephone.md
   - docs/Models/Components/LmsTelephoneType.md
   - docs/Models/Components/MaritalStatus.md
+  - docs/Models/Components/MarketingCampaign.md
+  - docs/Models/Components/MarketingCampaignStatus.md
   - docs/Models/Components/MarketingEmail.md
   - docs/Models/Components/MarketingEmailType.md
   - docs/Models/Components/MarketingList.md
   - docs/Models/Components/MarketingMember.md
+  - docs/Models/Components/MarketingReport.md
+  - docs/Models/Components/MarketingReportLink.md
   - docs/Models/Components/MessagingAttachment.md
   - docs/Models/Components/MessagingButton.md
   - docs/Models/Components/MessagingChannel.md
@@ -3269,6 +3300,7 @@ generatedFiles:
   - docs/Models/Components/VirtualWebhookLimit.md
   - docs/Models/Components/VirtualWebhookListId.md
   - docs/Models/Components/VirtualWebhookLocationId.md
+  - docs/Models/Components/VirtualWebhookMemberId.md
   - docs/Models/Components/VirtualWebhookOrderId.md
   - docs/Models/Components/VirtualWebhookOrgId.md
   - docs/Models/Components/VirtualWebhookPageId.md
@@ -3478,6 +3510,9 @@ generatedFiles:
   - docs/Models/Requests/CreateLmsStudentQueryParamFields.md
   - docs/Models/Requests/CreateLmsStudentRequest.md
   - docs/Models/Requests/CreateLmsStudentResponse.md
+  - docs/Models/Requests/CreateMartechCampaignQueryParamFields.md
+  - docs/Models/Requests/CreateMartechCampaignRequest.md
+  - docs/Models/Requests/CreateMartechCampaignResponse.md
   - docs/Models/Requests/CreateMartechListQueryParamFields.md
   - docs/Models/Requests/CreateMartechListRequest.md
   - docs/Models/Requests/CreateMartechListResponse.md
@@ -3784,6 +3819,9 @@ generatedFiles:
   - docs/Models/Requests/GetLmsStudentQueryParamFields.md
   - docs/Models/Requests/GetLmsStudentRequest.md
   - docs/Models/Requests/GetLmsStudentResponse.md
+  - docs/Models/Requests/GetMartechCampaignQueryParamFields.md
+  - docs/Models/Requests/GetMartechCampaignRequest.md
+  - docs/Models/Requests/GetMartechCampaignResponse.md
   - docs/Models/Requests/GetMartechListQueryParamFields.md
   - docs/Models/Requests/GetMartechListRequest.md
   - docs/Models/Requests/GetMartechListResponse.md
@@ -4128,12 +4166,18 @@ generatedFiles:
   - docs/Models/Requests/ListLmsStudentsQueryParamFields.md
   - docs/Models/Requests/ListLmsStudentsRequest.md
   - docs/Models/Requests/ListLmsStudentsResponse.md
+  - docs/Models/Requests/ListMartechCampaignsQueryParamFields.md
+  - docs/Models/Requests/ListMartechCampaignsRequest.md
+  - docs/Models/Requests/ListMartechCampaignsResponse.md
   - docs/Models/Requests/ListMartechListsQueryParamFields.md
   - docs/Models/Requests/ListMartechListsRequest.md
   - docs/Models/Requests/ListMartechListsResponse.md
   - docs/Models/Requests/ListMartechMembersQueryParamFields.md
   - docs/Models/Requests/ListMartechMembersRequest.md
   - docs/Models/Requests/ListMartechMembersResponse.md
+  - docs/Models/Requests/ListMartechReportsQueryParamFields.md
+  - docs/Models/Requests/ListMartechReportsRequest.md
+  - docs/Models/Requests/ListMartechReportsResponse.md
   - docs/Models/Requests/ListMessagingChannelsQueryParamFields.md
   - docs/Models/Requests/ListMessagingChannelsRequest.md
   - docs/Models/Requests/ListMessagingChannelsResponse.md
@@ -4427,6 +4471,9 @@ generatedFiles:
   - docs/Models/Requests/PatchLmsStudentQueryParamFields.md
   - docs/Models/Requests/PatchLmsStudentRequest.md
   - docs/Models/Requests/PatchLmsStudentResponse.md
+  - docs/Models/Requests/PatchMartechCampaignQueryParamFields.md
+  - docs/Models/Requests/PatchMartechCampaignRequest.md
+  - docs/Models/Requests/PatchMartechCampaignResponse.md
   - docs/Models/Requests/PatchMartechListQueryParamFields.md
   - docs/Models/Requests/PatchMartechListRequest.md
   - docs/Models/Requests/PatchMartechListResponse.md
@@ -4644,6 +4691,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveLmsInstructorResponse.md
   - docs/Models/Requests/RemoveLmsStudentRequest.md
   - docs/Models/Requests/RemoveLmsStudentResponse.md
+  - docs/Models/Requests/RemoveMartechCampaignRequest.md
+  - docs/Models/Requests/RemoveMartechCampaignResponse.md
   - docs/Models/Requests/RemoveMartechListRequest.md
   - docs/Models/Requests/RemoveMartechListResponse.md
   - docs/Models/Requests/RemoveMartechMemberRequest.md
@@ -4888,6 +4937,9 @@ generatedFiles:
   - docs/Models/Requests/UpdateLmsStudentQueryParamFields.md
   - docs/Models/Requests/UpdateLmsStudentRequest.md
   - docs/Models/Requests/UpdateLmsStudentResponse.md
+  - docs/Models/Requests/UpdateMartechCampaignQueryParamFields.md
+  - docs/Models/Requests/UpdateMartechCampaignRequest.md
+  - docs/Models/Requests/UpdateMartechCampaignResponse.md
   - docs/Models/Requests/UpdateMartechListQueryParamFields.md
   - docs/Models/Requests/UpdateMartechListRequest.md
   - docs/Models/Requests/UpdateMartechListResponse.md
@@ -10666,6 +10718,69 @@ examples:
       responses:
         "200":
           application/json: {}
+  listMartechReports:
+    speakeasy-default-list-martech-reports:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  createMartechCampaign:
+    speakeasy-default-create-martech-campaign:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getMartechCampaign:
+    speakeasy-default-get-martech-campaign:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listMartechCampaigns:
+    speakeasy-default-list-martech-campaigns:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchMartechCampaign:
+    speakeasy-default-patch-martech-campaign:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeMartechCampaign:
+    speakeasy-default-remove-martech-campaign:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateMartechCampaign:
+    speakeasy-default-update-martech-campaign:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
 persistentEdits:
@@ -10755,7 +10870,7 @@ trackedFiles:
     last_write_checksum: sha1:0cbfa0cb28db0790a18c3f809ade088961a52786
     pristine_git_object: e0d97e9ba44a4161f820565032e04de5d4617c44
   UnifiedTo/Campaign.cs:
-    last_write_checksum: sha1:fbf2e3308fda31e42b88e803acd9d18819d727cc
+    last_write_checksum: sha1:ae924ecaf9c26f0722476b20887ebc2287b5c185
   UnifiedTo/Candidate.cs:
     id: 5685d3fd065e
     last_write_checksum: sha1:01b31ee114f349802dc65c2e49fe4d31f66a7794
@@ -10968,7 +11083,7 @@ trackedFiles:
     pristine_git_object: 2eed898c8f3d9a61ed113c3df83ef25ed1854ad6
   UnifiedTo/Martech.cs:
     id: e48e7876b44c
-    last_write_checksum: sha1:a9ad9a7b261620b5fc096b84649d1654a30cba83
+    last_write_checksum: sha1:0b37fc8143b39de0371fb2a7c86dc30b08af7e6f
     pristine_git_object: d90f12eb5abe12e89753f1d4de756e3a4d2fc831
   UnifiedTo/Member.cs:
     id: 954dc7fb2b1b
@@ -11984,7 +12099,7 @@ trackedFiles:
     pristine_git_object: c713343e8622b8cfb7c52924b3765b26217d6385
   UnifiedTo/Models/Components/IntegrationSupport.cs:
     id: a60768677b8a
-    last_write_checksum: sha1:003b8e44eae8143596559ac98894ce4e6083355d
+    last_write_checksum: sha1:6593e254c65d5c7bf93bcc47c627d1f021e70656
     pristine_git_object: df9a5cf369f1185b54a41e701ccea4848720d748
   UnifiedTo/Models/Components/IntervalUnit.cs:
     id: 8caa2a3c48ea
@@ -12188,6 +12303,8 @@ trackedFiles:
     id: fd4de800152f
     last_write_checksum: sha1:c7964e02b43bddeae479f34feac28c9e4b53b5b6
     pristine_git_object: dc00129a07e5e8ec01ec8bfa26da8c1128779879
+  UnifiedTo/Models/Components/ListMemberId.cs:
+    last_write_checksum: sha1:f7724adca7c469fffb37c57ef4a2f9ceec627978
   UnifiedTo/Models/Components/ListOffset.cs:
     id: c54f52b1b953
     last_write_checksum: sha1:9c8d2db68d4d4d144b42430eda5443c587b9a139
@@ -12348,6 +12465,10 @@ trackedFiles:
     id: 0beda1167e5f
     last_write_checksum: sha1:d5f2ff2006df05bc72bc1d89f8b1859efe7be17e
     pristine_git_object: 1e138bf9e720b6db0a474aa1f7b9596e96fd0d27
+  UnifiedTo/Models/Components/MarketingCampaign.cs:
+    last_write_checksum: sha1:5248be4de55d6aa7ec2c12afe95251f005e8bfed
+  UnifiedTo/Models/Components/MarketingCampaignStatus.cs:
+    last_write_checksum: sha1:a77012bee1cd36ca8e95b0ebfef6550987007833
   UnifiedTo/Models/Components/MarketingEmail.cs:
     id: a8a45dd116c8
     last_write_checksum: sha1:e936c9f5b5a12ac98ce013d5a57adec7baa6f94b
@@ -12364,6 +12485,10 @@ trackedFiles:
     id: 125c5309be96
     last_write_checksum: sha1:2784afdb292ad85346c3eb8079c462a8cd88527c
     pristine_git_object: 91bb6a8f2c2ef781fa79a003e8d9804c619c76fa
+  UnifiedTo/Models/Components/MarketingReport.cs:
+    last_write_checksum: sha1:dd5a3f1e82bf5f1236e28f57520588638060d1aa
+  UnifiedTo/Models/Components/MarketingReportLink.cs:
+    last_write_checksum: sha1:99bd38911e2468f90cd8fa11d891ac61cbcd12e1
   UnifiedTo/Models/Components/MessagingAttachment.cs:
     id: 5fc489ad76c2
     last_write_checksum: sha1:f63797939db8d622b6c1e9d7352e259f7cd368b0
@@ -12442,7 +12567,7 @@ trackedFiles:
     last_write_checksum: sha1:2600fee70f1e697d78687bf8756486885a2bc240
   UnifiedTo/Models/Components/ObjectType.cs:
     id: 8e5be1040e8b
-    last_write_checksum: sha1:75173632c6c85a3f4c5f46507128ab79b676d76a
+    last_write_checksum: sha1:ead77002fd41f097e49a73269e52833f506599b3
     pristine_git_object: 8aa887cf95b9ca7e4de4189a0994cf8d7de53ac6
   UnifiedTo/Models/Components/One.cs:
     id: d6fa3c7b6dc5
@@ -12712,7 +12837,7 @@ trackedFiles:
     pristine_git_object: 058a7265ff607fc57d02159cac6833325b133d8b
   UnifiedTo/Models/Components/PropertyConnectionPermissions.cs:
     id: f924575570ed
-    last_write_checksum: sha1:9e249ea17bc7556b40a68f7161159dd1731f30e2
+    last_write_checksum: sha1:7c79411468db3e1bcd574c0df15da17db9236fd3
     pristine_git_object: 1fbf256600c76cb7463c9b53c5891696d45c4cd6
   UnifiedTo/Models/Components/PropertyCrmCompanyAddress.cs:
     id: 9ecc38382b6c
@@ -13432,6 +13557,8 @@ trackedFiles:
     id: 015a2cc1201b
     last_write_checksum: sha1:f4be6f36535afd66ab81ed55d2e1fd291d4e0acd
     pristine_git_object: 63429544566480c343242c547ff18ec484bd143e
+  UnifiedTo/Models/Components/VirtualWebhookMemberId.cs:
+    last_write_checksum: sha1:85c704d07f0f614316c29cd3f7a92b5f8f84404d
   UnifiedTo/Models/Components/VirtualWebhookOrderId.cs:
     last_write_checksum: sha1:26d359488dbf59bc0ad6232c59089a6b582f0a13
   UnifiedTo/Models/Components/VirtualWebhookOrgId.cs:
@@ -14116,6 +14243,12 @@ trackedFiles:
     id: 63ef204ed6f3
     last_write_checksum: sha1:d37658db833fa24df3ebad92f5c2fcb080e8ee50
     pristine_git_object: 206578202d2c6a0f8ee4b6727d9bbdb5471c5db9
+  UnifiedTo/Models/Requests/CreateMartechCampaignQueryParamFields.cs:
+    last_write_checksum: sha1:8b009ab12261142a63ad84712247f3afe026712a
+  UnifiedTo/Models/Requests/CreateMartechCampaignRequest.cs:
+    last_write_checksum: sha1:13239f04f6e71935a7eaff0859087f9ddf087cf3
+  UnifiedTo/Models/Requests/CreateMartechCampaignResponse.cs:
+    last_write_checksum: sha1:b1f97ed8af487984b1f91d669689b897d05de413
   UnifiedTo/Models/Requests/CreateMartechListQueryParamFields.cs:
     last_write_checksum: sha1:7b3031beedd2c8df7400c8548f57eb09ffae31cd
   UnifiedTo/Models/Requests/CreateMartechListRequest.cs:
@@ -15092,6 +15225,12 @@ trackedFiles:
     id: cfb9997d5e79
     last_write_checksum: sha1:2eac3dcedbcc3857a2edffb67536fcdd37a75369
     pristine_git_object: 438bac9040bd0ac52d6e2620f2bac2f0d0172020
+  UnifiedTo/Models/Requests/GetMartechCampaignQueryParamFields.cs:
+    last_write_checksum: sha1:d9c7c12fab63675f10db838acfc2a24715e99762
+  UnifiedTo/Models/Requests/GetMartechCampaignRequest.cs:
+    last_write_checksum: sha1:f2628f29eaf814e10459cae16071b1f8af8c0acc
+  UnifiedTo/Models/Requests/GetMartechCampaignResponse.cs:
+    last_write_checksum: sha1:e93a44aa3638f47141713b95fe89f2b9455f9185
   UnifiedTo/Models/Requests/GetMartechListQueryParamFields.cs:
     last_write_checksum: sha1:1a48fcce5385d1bfafad0a8b88c2c3b3810daf4c
   UnifiedTo/Models/Requests/GetMartechListRequest.cs:
@@ -16192,6 +16331,12 @@ trackedFiles:
     id: ac6b3f76559a
     last_write_checksum: sha1:360b1a750dfa327b8c2fe17718b3e2d47baa2a38
     pristine_git_object: 69f2eb97b97fe276d0bfd9d9e8fa8bcbae8a5a29
+  UnifiedTo/Models/Requests/ListMartechCampaignsQueryParamFields.cs:
+    last_write_checksum: sha1:24df8bac803aa2cf8df0af5879c207163c0da875
+  UnifiedTo/Models/Requests/ListMartechCampaignsRequest.cs:
+    last_write_checksum: sha1:5c07f7cd15a275f213fc868aa42f677459f5b530
+  UnifiedTo/Models/Requests/ListMartechCampaignsResponse.cs:
+    last_write_checksum: sha1:68ff46914632866f9677c854f0c865e3aeb9d05d
   UnifiedTo/Models/Requests/ListMartechListsQueryParamFields.cs:
     last_write_checksum: sha1:ab621bce36139c2def35caf6389d0de904423756
   UnifiedTo/Models/Requests/ListMartechListsRequest.cs:
@@ -16212,6 +16357,12 @@ trackedFiles:
     id: 4f3110daa09a
     last_write_checksum: sha1:5b1795674b47de7e4baf9239c54a0a02885ae263
     pristine_git_object: 23608e95fa2e787ba5cea9750d331fbba6dca049
+  UnifiedTo/Models/Requests/ListMartechReportsQueryParamFields.cs:
+    last_write_checksum: sha1:afd6c3a95934aa494dfc8ea85676619d34fa26d6
+  UnifiedTo/Models/Requests/ListMartechReportsRequest.cs:
+    last_write_checksum: sha1:cec7e6eb681e6cec3ea579da6ff60113b7ee9453
+  UnifiedTo/Models/Requests/ListMartechReportsResponse.cs:
+    last_write_checksum: sha1:b509c06e8025db4f256e39190661dd6689588204
   UnifiedTo/Models/Requests/ListMessagingChannelsQueryParamFields.cs:
     last_write_checksum: sha1:c6f12baf5f5a6e182eac7286cc4f8b288ee87cb0
   UnifiedTo/Models/Requests/ListMessagingChannelsRequest.cs:
@@ -17154,6 +17305,12 @@ trackedFiles:
     id: 1905ba641dcd
     last_write_checksum: sha1:76cd4b4b226163e321c5af359a71c840824126d1
     pristine_git_object: af33812026936de39145179c053c0269a6e3a059
+  UnifiedTo/Models/Requests/PatchMartechCampaignQueryParamFields.cs:
+    last_write_checksum: sha1:d2f0b09835d52cddba8193041222c28777d521b3
+  UnifiedTo/Models/Requests/PatchMartechCampaignRequest.cs:
+    last_write_checksum: sha1:fe578539a1d314da3c288b2e448757001cc1fd7a
+  UnifiedTo/Models/Requests/PatchMartechCampaignResponse.cs:
+    last_write_checksum: sha1:3b8947606f1dda43e4750e93e339194a2a9854cc
   UnifiedTo/Models/Requests/PatchMartechListQueryParamFields.cs:
     last_write_checksum: sha1:a4cf2b47c7592c4fc84f6a239e12aa3e213db37e
   UnifiedTo/Models/Requests/PatchMartechListRequest.cs:
@@ -17918,6 +18075,10 @@ trackedFiles:
     id: c963005ed377
     last_write_checksum: sha1:a74d237e6a02bd21083e323acf26d08d4c4e9e27
     pristine_git_object: 2aa5d69f49af75e542444f9a189286444de6b9ca
+  UnifiedTo/Models/Requests/RemoveMartechCampaignRequest.cs:
+    last_write_checksum: sha1:e391a1c9473363f6034212171220b979ac24d6ee
+  UnifiedTo/Models/Requests/RemoveMartechCampaignResponse.cs:
+    last_write_checksum: sha1:d5c1ca3b8c5285f9b47b7e245cc9b47f153e743c
   UnifiedTo/Models/Requests/RemoveMartechListRequest.cs:
     id: c3654d88e1f6
     last_write_checksum: sha1:ad11e54ae642f264fdaea4243a62cc6955211c56
@@ -18730,6 +18891,12 @@ trackedFiles:
     id: f3d9cdab60b3
     last_write_checksum: sha1:64230f9cd276924c49677e2a9c6128e53c161a50
     pristine_git_object: 12d99dc7214f9e02b4cb08570a2bf5623ee98f0c
+  UnifiedTo/Models/Requests/UpdateMartechCampaignQueryParamFields.cs:
+    last_write_checksum: sha1:44bf5f27b2e852a3b792c8e67f6a6edd5399fe00
+  UnifiedTo/Models/Requests/UpdateMartechCampaignRequest.cs:
+    last_write_checksum: sha1:4d669314412b2ce9d4ec695e0ece0c4cd368492c
+  UnifiedTo/Models/Requests/UpdateMartechCampaignResponse.cs:
+    last_write_checksum: sha1:33be64f0342560f065f46ba5b3000b07e1e4924a
   UnifiedTo/Models/Requests/UpdateMartechListQueryParamFields.cs:
     last_write_checksum: sha1:206346fb14c52a5b41cfdecdb3846aa1d4b9adfc
   UnifiedTo/Models/Requests/UpdateMartechListRequest.cs:
@@ -19124,7 +19291,7 @@ trackedFiles:
     pristine_git_object: b63bc877a82b5bce178998ffb395c0e46441a2f9
   UnifiedTo/Report.cs:
     id: 7ac277bf94d4
-    last_write_checksum: sha1:845535676d0ae33da2bbbabed8d29a5b44750378
+    last_write_checksum: sha1:7a7af7514771648dd3c8e83f6d22002788b95d79
     pristine_git_object: 5cd663fe67602c00a901f1143fdc30c9a2de60cc
   UnifiedTo/Repository.cs:
     id: cc642e633004
@@ -19140,7 +19307,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:cbaaa0dad5768607a43daa7ed07f3bcd349dad91
+    last_write_checksum: sha1:7eceb46db759aef53a344383ea0531a7277baddb
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -19244,7 +19411,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:263deb47877e2aea078ecc9fcabf9d71fb79a22e
+    last_write_checksum: sha1:8bb6425398d7f6da3c0c54a1d27943830f884b36
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -20314,7 +20481,7 @@ trackedFiles:
     pristine_git_object: a1bf4d40b69786c43195fd92204558699e7dac2f
   docs/Models/Components/IntegrationSupport.md:
     id: 6410e8499735
-    last_write_checksum: sha1:1b9401a9b4fd45c4b21ffdef1119f6a3caf6a3e8
+    last_write_checksum: sha1:d98fdb27f1ada6458f5bca750e9bed034aeca195
     pristine_git_object: d46883eaa7696d5c3e2ab66daacd0fa47d8c706d
   docs/Models/Components/IntervalUnit.md:
     id: 779660b22183
@@ -20518,6 +20685,8 @@ trackedFiles:
     id: 07949321b66c
     last_write_checksum: sha1:27f31f902cedd7e9728434f11fe2164db606466d
     pristine_git_object: 91e8f1875526c1dd9fb4aa1e6863b34dea9b6982
+  docs/Models/Components/ListMemberId.md:
+    last_write_checksum: sha1:2d5313f2748f3060a1bf3477c9e80f50b308d3e4
   docs/Models/Components/ListOffset.md:
     id: 1e87a977af66
     last_write_checksum: sha1:d0ee0a07d610daed4dddd71825a0ee54595291a1
@@ -20678,6 +20847,10 @@ trackedFiles:
     id: e398f36a992a
     last_write_checksum: sha1:576641a9f9ace4531c50b939901d4bc4c9ee4222
     pristine_git_object: 48c2317e540b9d90c5d46c4c21ac3a0c1bacbd30
+  docs/Models/Components/MarketingCampaign.md:
+    last_write_checksum: sha1:cc60dc4d64389e078fbd992f6eadde28b9c6bf16
+  docs/Models/Components/MarketingCampaignStatus.md:
+    last_write_checksum: sha1:b9baac8a12d9a1ea3812b521ff694fbec4231304
   docs/Models/Components/MarketingEmail.md:
     id: 2abf663cff87
     last_write_checksum: sha1:f9103ec2613a09745686e76073585a1b054853ba
@@ -20694,6 +20867,10 @@ trackedFiles:
     id: bcfe23bd96e4
     last_write_checksum: sha1:33a69cd57a0a3520bf47f84f3c437ad3b00667f4
     pristine_git_object: 149de9736ca70390f0836a2ed007abb8526a82f9
+  docs/Models/Components/MarketingReport.md:
+    last_write_checksum: sha1:0bbf078d5169a54fa46a316cd339128bda4c22ad
+  docs/Models/Components/MarketingReportLink.md:
+    last_write_checksum: sha1:cac5f9b12a7eeb95ce26f866babe24c3afb002d0
   docs/Models/Components/MessagingAttachment.md:
     id: 2a5b603e5312
     last_write_checksum: sha1:e2b212cb5c8170dac648c904e998fe9c4abaefb2
@@ -20772,7 +20949,7 @@ trackedFiles:
     last_write_checksum: sha1:40b40f2331b32e4e71df45765aa0b4c1ae936925
   docs/Models/Components/ObjectType.md:
     id: 70698fd5bb26
-    last_write_checksum: sha1:dc638c85ada9da77d82cd69e3903a00cb2fe16cb
+    last_write_checksum: sha1:3546dbc02de1240c191b0034b8f5bf32bb107c5e
     pristine_git_object: 91af6f273850d152ad35aa723ed82eb7c07b6cff
   docs/Models/Components/One.md:
     id: 37e74752e70f
@@ -21042,7 +21219,7 @@ trackedFiles:
     pristine_git_object: 6b4bf574f578f75b9133779b9acde99497b64e46
   docs/Models/Components/PropertyConnectionPermissions.md:
     id: eb5eb79c93e6
-    last_write_checksum: sha1:655065688ba83452da2395bed4008e3da435e88c
+    last_write_checksum: sha1:e5b3ef54349005b7e96c07ffd0d0122210c79856
     pristine_git_object: 152432bd22d8101ccd205bc3481571ae0fb148e0
   docs/Models/Components/PropertyCrmCompanyAddress.md:
     id: 5836e935161d
@@ -21762,6 +21939,8 @@ trackedFiles:
     id: c4639f1d5848
     last_write_checksum: sha1:fbadf9d8771670ada99a5ee4a0d6c22e2d702793
     pristine_git_object: ca5ad003f955e585f6fec82d3358de69cd44d919
+  docs/Models/Components/VirtualWebhookMemberId.md:
+    last_write_checksum: sha1:e8b9c83edddcb58242ba0d98485c1389197dbcec
   docs/Models/Components/VirtualWebhookOrderId.md:
     last_write_checksum: sha1:33c44e27f5ae9fa2d1bf827ca454605a0b6e7763
   docs/Models/Components/VirtualWebhookOrgId.md:
@@ -22434,6 +22613,12 @@ trackedFiles:
     id: 766c7d915a10
     last_write_checksum: sha1:3065a6a708b747aa4db96af5453617aefbda37a2
     pristine_git_object: 87499b84ee600dc56cef163079e3d435705db2a1
+  docs/Models/Requests/CreateMartechCampaignQueryParamFields.md:
+    last_write_checksum: sha1:487d57c9647b77ce963ac16f534edc5acd5975b8
+  docs/Models/Requests/CreateMartechCampaignRequest.md:
+    last_write_checksum: sha1:eb33af6aebfe9cbabe9b9eec108371d747f1f723
+  docs/Models/Requests/CreateMartechCampaignResponse.md:
+    last_write_checksum: sha1:383c29a2ab2ecb5d239fe0cf466c9914ed1099d1
   docs/Models/Requests/CreateMartechListQueryParamFields.md:
     last_write_checksum: sha1:a24d91465b8a24b3122e9646d64ae16771417ecf
   docs/Models/Requests/CreateMartechListRequest.md:
@@ -23410,6 +23595,12 @@ trackedFiles:
     id: 92c4891a5dea
     last_write_checksum: sha1:dd9df547c220f84d29143433770d25e3c9545645
     pristine_git_object: 417ea98f619454d6503245c2b572afe611c641c0
+  docs/Models/Requests/GetMartechCampaignQueryParamFields.md:
+    last_write_checksum: sha1:9f88f9bf90d36eb8e09fac055cbe4388fe227e20
+  docs/Models/Requests/GetMartechCampaignRequest.md:
+    last_write_checksum: sha1:9aa2f6d5db7381c9614d26fcb552fb922c26b908
+  docs/Models/Requests/GetMartechCampaignResponse.md:
+    last_write_checksum: sha1:b060eb20d9a7f1c32be187cfaca769990aefdcd7
   docs/Models/Requests/GetMartechListQueryParamFields.md:
     last_write_checksum: sha1:62529c69168b17305553dbc2feba98e1e74492c9
   docs/Models/Requests/GetMartechListRequest.md:
@@ -24510,6 +24701,12 @@ trackedFiles:
     id: d2d6c364d3e2
     last_write_checksum: sha1:2aa2f99f6cc22a5e9aa90b5b9236cce464323f22
     pristine_git_object: 08baab7c3461da1190d4f254a5dccce9de1d28bb
+  docs/Models/Requests/ListMartechCampaignsQueryParamFields.md:
+    last_write_checksum: sha1:ed3c4d91bfbecbe431d3a5bead00c1e08aea9fa8
+  docs/Models/Requests/ListMartechCampaignsRequest.md:
+    last_write_checksum: sha1:e78a650b9c6f9f95c9f6290e3d5f93524fcf5b08
+  docs/Models/Requests/ListMartechCampaignsResponse.md:
+    last_write_checksum: sha1:716d343d341ac681fb9ed22380e3af1bdec408cd
   docs/Models/Requests/ListMartechListsQueryParamFields.md:
     last_write_checksum: sha1:839c3917d171afaf8ec95b283b552d0c0a1b4357
   docs/Models/Requests/ListMartechListsRequest.md:
@@ -24530,6 +24727,12 @@ trackedFiles:
     id: f4e7c35b1be4
     last_write_checksum: sha1:b1b670ed1e2eb25f9a9780a57aeae0c4f39b9360
     pristine_git_object: 2564b45a23272d9ab3dc7a0e5206d4365fa0f621
+  docs/Models/Requests/ListMartechReportsQueryParamFields.md:
+    last_write_checksum: sha1:923869a4d79a3b95d6ce24fe8dbab2baeaa26b12
+  docs/Models/Requests/ListMartechReportsRequest.md:
+    last_write_checksum: sha1:5323e921d3a91ace191f8466e9ed4e57f2a9a3ed
+  docs/Models/Requests/ListMartechReportsResponse.md:
+    last_write_checksum: sha1:102c20e28d327839ae02ac06d07d93cfcf394a82
   docs/Models/Requests/ListMessagingChannelsQueryParamFields.md:
     last_write_checksum: sha1:1eebdb472efe3f4e9fcd66c22961da37e47a1c9e
   docs/Models/Requests/ListMessagingChannelsRequest.md:
@@ -25472,6 +25675,12 @@ trackedFiles:
     id: 473484674a95
     last_write_checksum: sha1:311d23540bb4c91ead41f4da916ddfe64fc865d1
     pristine_git_object: 87ec02b52d8a71290c66469caead7876c60f9148
+  docs/Models/Requests/PatchMartechCampaignQueryParamFields.md:
+    last_write_checksum: sha1:49444bbac94f842ab86a54f825ffb7a27a43c943
+  docs/Models/Requests/PatchMartechCampaignRequest.md:
+    last_write_checksum: sha1:12d84f16acd10eee2237913b9af8a5672b1997a3
+  docs/Models/Requests/PatchMartechCampaignResponse.md:
+    last_write_checksum: sha1:232873c485da1242bb54e7171228ab2210d04d93
   docs/Models/Requests/PatchMartechListQueryParamFields.md:
     last_write_checksum: sha1:1fe2ab985f4a05c51103f8c7a064f5cb7589990e
   docs/Models/Requests/PatchMartechListRequest.md:
@@ -26236,6 +26445,10 @@ trackedFiles:
     id: 61ad5efb1a2e
     last_write_checksum: sha1:b956ffa532218dd4c63e92c82c2048b925971195
     pristine_git_object: 8c88e124e35a699f3acfcf13e450094fe722f0bc
+  docs/Models/Requests/RemoveMartechCampaignRequest.md:
+    last_write_checksum: sha1:3e67027edaa2ebdbc8c67440f00f7e71fb36634d
+  docs/Models/Requests/RemoveMartechCampaignResponse.md:
+    last_write_checksum: sha1:cd60979a4116133041af11424c9b66d2291295d0
   docs/Models/Requests/RemoveMartechListRequest.md:
     id: 931a1d6c06ac
     last_write_checksum: sha1:549108284009ca867143ced6ad338e9a23d3730f
@@ -27048,6 +27261,12 @@ trackedFiles:
     id: 8900291de711
     last_write_checksum: sha1:2eb196c5c8366245bf723f8f434a44d09645ec97
     pristine_git_object: 296a142af33487ba9520fd2b8e4bd486330375ca
+  docs/Models/Requests/UpdateMartechCampaignQueryParamFields.md:
+    last_write_checksum: sha1:f19594b855cf1fc3fb8f09e986767022ebdac013
+  docs/Models/Requests/UpdateMartechCampaignRequest.md:
+    last_write_checksum: sha1:3c1c8eeb84d88794c7feb24dc225a49014304ece
+  docs/Models/Requests/UpdateMartechCampaignResponse.md:
+    last_write_checksum: sha1:87e215896a949764e7ecb3bdaaf0785545be144f
   docs/Models/Requests/UpdateMartechListQueryParamFields.md:
     last_write_checksum: sha1:ee7a5016357d16bf6d59f24e11d8a44bf866a8b2
   docs/Models/Requests/UpdateMartechListRequest.md:
@@ -27427,7 +27646,7 @@ trackedFiles:
     last_write_checksum: sha1:cea4d44f6e74d58cee9c307bad578a9ff8ce7e51
     pristine_git_object: c54b042c39ebe97eacb71e2eea01f205093ced2c
   docs/sdks/campaign/README.md:
-    last_write_checksum: sha1:894bc100be62178f614c93e26fe90abec68ec27b
+    last_write_checksum: sha1:f196ffeb2690cb7780ef034434787177361ec46f
   docs/sdks/candidate/README.md:
     id: af1eaf3d177f
     last_write_checksum: sha1:3ec07aaa75259b61aaf23f680c73d94297af208c
@@ -27632,7 +27851,7 @@ trackedFiles:
     pristine_git_object: 1551b5cca3a41af35366a3a0ec491422ba372594
   docs/sdks/martech/README.md:
     id: ba21e4ca633c
-    last_write_checksum: sha1:b1533576fb870c3a062a3a5440943d56d80f2117
+    last_write_checksum: sha1:d374948a8a5f7fe3acb89009b47121bc8056ecc2
     pristine_git_object: d6f8eaa0246e1c7263c79ad8edfebb7f1d79de17
   docs/sdks/member/README.md:
     id: 699c1c3b93e4
@@ -27734,7 +27953,7 @@ trackedFiles:
     pristine_git_object: dbbbe8398af317030b1733a92270c28f62fdec86
   docs/sdks/report/README.md:
     id: 0e99424930fc
-    last_write_checksum: sha1:ae2577e47337bcbbbb3a4644e116aec2f5773a7f
+    last_write_checksum: sha1:2224f069add902703a546caebce93fb80bfc916f
     pristine_git_object: bf27eae3bf47071c33fb4bf52cf98b66642dbd91
   docs/sdks/repository/README.md:
     id: 25db3a468495

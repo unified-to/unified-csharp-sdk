@@ -131,10 +131,14 @@ namespace UnifiedTo.Models.Components
         HrisDeduction,
         [JsonProperty("hris_benefit")]
         HrisBenefit,
+        [JsonProperty("martech_campaign")]
+        MartechCampaign,
         [JsonProperty("martech_list")]
         MartechList,
         [JsonProperty("martech_member")]
         MartechMember,
+        [JsonProperty("martech_report")]
+        MartechReport,
         [JsonProperty("passthrough")]
         Passthrough,
         [JsonProperty("ticketing_note")]

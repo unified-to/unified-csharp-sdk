@@ -8,6 +8,7 @@
 * [GetAccountingReport](#getaccountingreport) - Retrieve a report
 * [ListAccountingReports](#listaccountingreports) - List all reports
 * [ListAdsReports](#listadsreports) - List all reports
+* [ListMartechReports](#listmartechreports) - List all reports
 
 ## GetAccountingReport
 
@@ -123,6 +124,46 @@ var res = await sdk.Report.ListAdsReportsAsync(req);
 ### Response
 
 **[ListAdsReportsResponse](../../Models/Requests/ListAdsReportsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListMartechReports
+
+List all reports
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListMartechReportsRequest req = new ListMartechReportsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Report.ListMartechReportsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListMartechReportsRequest](../../Models/Requests/ListMartechReportsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+
+### Response
+
+**[ListMartechReportsResponse](../../Models/Requests/ListMartechReportsResponse.md)**
 
 ### Errors
 

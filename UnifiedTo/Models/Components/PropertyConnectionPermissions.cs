@@ -197,6 +197,10 @@ namespace UnifiedTo.Models.Components
         CrmPipelineRead,
         [JsonProperty("crm_pipeline_write")]
         CrmPipelineWrite,
+        [JsonProperty("martech_campaign_read")]
+        MartechCampaignRead,
+        [JsonProperty("martech_campaign_write")]
+        MartechCampaignWrite,
         [JsonProperty("martech_list_read")]
         MartechListRead,
         [JsonProperty("martech_list_write")]
@@ -205,6 +209,10 @@ namespace UnifiedTo.Models.Components
         MartechMemberRead,
         [JsonProperty("martech_member_write")]
         MartechMemberWrite,
+        [JsonProperty("martech_report_read")]
+        MartechReportRead,
+        [JsonProperty("martech_report_write")]
+        MartechReportWrite,
         [JsonProperty("ticketing_customer_read")]
         TicketingCustomerRead,
         [JsonProperty("ticketing_customer_write")]

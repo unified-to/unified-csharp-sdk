@@ -134,6 +134,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_location_id")]
         public ListLocationId? ListLocationId { get; set; }
 
+        [JsonProperty("list_member_id")]
+        public ListMemberId? ListMemberId { get; set; }
+
         [JsonProperty("list_offset")]
         public ListOffset? ListOffset { get; set; }
 
@@ -376,6 +379,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_location_id")]
         public VirtualWebhookLocationId? VirtualWebhookLocationId { get; set; }
+
+        [JsonProperty("virtual_webhook_member_id")]
+        public VirtualWebhookMemberId? VirtualWebhookMemberId { get; set; }
 
         [JsonProperty("virtual_webhook_order_id")]
         public VirtualWebhookOrderId? VirtualWebhookOrderId { get; set; }
