@@ -15,14 +15,16 @@ namespace UnifiedTo.Models.Components
     
     public enum ResponseStatus
     {
+        [JsonProperty("OPEN")]
+        Open,
+        [JsonProperty("IN_PROGRESS")]
+        InProgress,
         [JsonProperty("COMPLETED")]
         Completed,
         [JsonProperty("FAILED")]
         Failed,
-        [JsonProperty("PASSED")]
-        Passed,
-        [JsonProperty("PENDING")]
-        Pending,
+        [JsonProperty("REJECTED")]
+        Rejected,
     }
 
     public static class ResponseStatusExtension

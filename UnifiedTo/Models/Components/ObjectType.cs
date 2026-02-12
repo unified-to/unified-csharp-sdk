@@ -81,6 +81,10 @@ namespace UnifiedTo.Models.Components
         VerificationPackage,
         [JsonProperty("verification_request")]
         VerificationRequest,
+        [JsonProperty("assessment_package")]
+        AssessmentPackage,
+        [JsonProperty("assessment_order")]
+        AssessmentOrder,
         [JsonProperty("ats_activity")]
         AtsActivity,
         [JsonProperty("ats_application")]
@@ -131,12 +135,12 @@ namespace UnifiedTo.Models.Components
         HrisDeduction,
         [JsonProperty("hris_benefit")]
         HrisBenefit,
-        [JsonProperty("martech_campaign")]
-        MartechCampaign,
         [JsonProperty("martech_list")]
         MartechList,
         [JsonProperty("martech_member")]
         MartechMember,
+        [JsonProperty("martech_campaign")]
+        MartechCampaign,
         [JsonProperty("martech_report")]
         MartechReport,
         [JsonProperty("passthrough")]

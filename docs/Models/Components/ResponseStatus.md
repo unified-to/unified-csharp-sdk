@@ -3,9 +3,10 @@
 
 ## Values
 
-| Name        | Value       |
-| ----------- | ----------- |
-| `Completed` | COMPLETED   |
-| `Failed`    | FAILED      |
-| `Passed`    | PASSED      |
-| `Pending`   | PENDING     |
+| Name         | Value        |
+| ------------ | ------------ |
+| `Open`       | OPEN         |
+| `InProgress` | IN_PROGRESS  |
+| `Completed`  | COMPLETED    |
+| `Failed`     | FAILED       |
+| `Rejected`   | REJECTED     |

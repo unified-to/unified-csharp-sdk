@@ -67,6 +67,9 @@
 | `VerificationPackageRead`      | verification_package_read      |
 | `VerificationRequestRead`      | verification_request_read      |
 | `VerificationRequestWrite`     | verification_request_write     |
+| `AssessmentPackageRead`        | assessment_package_read        |
+| `AssessmentPackageWrite`       | assessment_package_write       |
+| `AssessmentOrderWrite`         | assessment_order_write         |
 | `AtsActivityRead`              | ats_activity_read              |
 | `AtsActivityWrite`             | ats_activity_write             |
 | `AtsApplicationRead`           | ats_application_read           |
@@ -96,12 +99,12 @@
 | `CrmLeadWrite`                 | crm_lead_write                 |
 | `CrmPipelineRead`              | crm_pipeline_read              |
 | `CrmPipelineWrite`             | crm_pipeline_write             |
-| `MartechCampaignRead`          | martech_campaign_read          |
-| `MartechCampaignWrite`         | martech_campaign_write         |
 | `MartechListRead`              | martech_list_read              |
 | `MartechListWrite`             | martech_list_write             |
 | `MartechMemberRead`            | martech_member_read            |
 | `MartechMemberWrite`           | martech_member_write           |
+| `MartechCampaignRead`          | martech_campaign_read          |
+| `MartechCampaignWrite`         | martech_campaign_write         |
 | `MartechReportRead`            | martech_report_read            |
 | `MartechReportWrite`           | martech_report_write           |
 | `TicketingCustomerRead`        | ticketing_customer_read        |

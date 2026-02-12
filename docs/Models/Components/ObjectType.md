@@ -38,6 +38,8 @@
 | `CommerceItemvariant`     | commerce_itemvariant      |
 | `VerificationPackage`     | verification_package      |
 | `VerificationRequest`     | verification_request      |
+| `AssessmentPackage`       | assessment_package        |
+| `AssessmentOrder`         | assessment_order          |
 | `AtsActivity`             | ats_activity              |
 | `AtsApplication`          | ats_application           |
 | `AtsApplicationstatus`    | ats_applicationstatus     |
@@ -63,9 +65,9 @@
 | `HrisTimeshift`           | hris_timeshift            |
 | `HrisDeduction`           | hris_deduction            |
 | `HrisBenefit`             | hris_benefit              |
-| `MartechCampaign`         | martech_campaign          |
 | `MartechList`             | martech_list              |
 | `MartechMember`           | martech_member            |
+| `MartechCampaign`         | martech_campaign          |
 | `MartechReport`           | martech_report            |
 | `Passthrough`             | passthrough               |
 | `TicketingNote`           | ticketing_note            |

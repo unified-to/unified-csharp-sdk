@@ -9,8 +9,10 @@
 * [GetAccountingOrder](#getaccountingorder) - Retrieve an order
 * [ListAccountingOrders](#listaccountingorders) - List all orders
 * [PatchAccountingOrder](#patchaccountingorder) - Update an order
+* [PatchAssessmentOrder](#patchassessmentorder) - Update an order
 * [RemoveAccountingOrder](#removeaccountingorder) - Remove an order
 * [UpdateAccountingOrder](#updateaccountingorder) - Update an order
+* [UpdateAssessmentOrder](#updateassessmentorder) - Update an order
 
 ## CreateAccountingOrder
 
@@ -176,6 +178,51 @@ var res = await sdk.Order.PatchAccountingOrderAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchAssessmentOrder
+
+Update an order
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchAssessmentOrderRequest req = new PatchAssessmentOrderRequest() {
+    AssessmentOrder = new AssessmentOrder() {
+        ConnectionId = "<id>",
+        WorkspaceId = "<id>",
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Order.PatchAssessmentOrderAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [PatchAssessmentOrderRequest](../../Models/Requests/PatchAssessmentOrderRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+
+### Response
+
+**[PatchAssessmentOrderResponse](../../Models/Requests/PatchAssessmentOrderResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## RemoveAccountingOrder
 
 Remove an order
@@ -250,6 +297,51 @@ var res = await sdk.Order.UpdateAccountingOrderAsync(req);
 ### Response
 
 **[UpdateAccountingOrderResponse](../../Models/Requests/UpdateAccountingOrderResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateAssessmentOrder
+
+Update an order
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateAssessmentOrderRequest req = new UpdateAssessmentOrderRequest() {
+    AssessmentOrder = new AssessmentOrder() {
+        ConnectionId = "<id>",
+        WorkspaceId = "<id>",
+    },
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Order.UpdateAssessmentOrderAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [UpdateAssessmentOrderRequest](../../Models/Requests/UpdateAssessmentOrderRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+
+### Response
+
+**[UpdateAssessmentOrderResponse](../../Models/Requests/UpdateAssessmentOrderResponse.md)**
 
 ### Errors
 

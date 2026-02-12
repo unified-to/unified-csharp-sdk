@@ -67,6 +67,8 @@ namespace UnifiedTo.Models.Requests
         Forms,
         [JsonProperty("shipping")]
         Shipping,
+        [JsonProperty("assessment")]
+        Assessment,
     }
 
     public static class CategoriesExtension

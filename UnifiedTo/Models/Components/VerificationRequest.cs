@@ -43,7 +43,7 @@ namespace UnifiedTo.Models.Components
         public List<string>? ProfileEmails { get; set; }
 
         [JsonProperty("profile_gender")]
-        public ProfileGender? ProfileGender { get; set; }
+        public VerificationRequestProfileGender? ProfileGender { get; set; }
 
         [JsonProperty("profile_ip_address")]
         public string? ProfileIpAddress { get; set; }
@@ -88,7 +88,7 @@ namespace UnifiedTo.Models.Components
         public string? ResponseSource { get; set; }
 
         [JsonProperty("response_status")]
-        public ResponseStatus? ResponseStatus { get; set; }
+        public VerificationRequestResponseStatus? ResponseStatus { get; set; }
 
         [JsonProperty("target_url")]
         public string? TargetUrl { get; set; }

@@ -254,6 +254,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("native_webhook_label_id")]
         public NativeWebhookLabelId? NativeWebhookLabelId { get; set; }
 
+        [JsonProperty("native_webhook_member_id")]
+        public NativeWebhookMemberId? NativeWebhookMemberId { get; set; }
+
         [JsonProperty("native_webhook_order_id")]
         public NativeWebhookOrderId? NativeWebhookOrderId { get; set; }
 

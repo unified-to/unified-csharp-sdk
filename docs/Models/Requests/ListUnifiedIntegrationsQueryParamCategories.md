@@ -31,3 +31,4 @@
 | `Ads`          | ads            |
 | `Forms`        | forms          |
 | `Shipping`     | shipping       |
+| `Assessment`   | assessment     |

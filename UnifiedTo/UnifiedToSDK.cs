@@ -53,6 +53,8 @@ namespace UnifiedTo
         public ICreative Creative { get; }
         public IGroup Group { get; }
         public IInsertionorder Insertionorder { get; }
+        public IAssessment Assessment { get; }
+        public IPackage Package { get; }
         public IAts Ats { get; }
         public IActivity Activity { get; }
         public IApplication Application { get; }
@@ -153,7 +155,6 @@ namespace UnifiedTo
         public IIssue Issue { get; }
         public IWebhook Webhook { get; }
         public IVerification Verification { get; }
-        public IPackage Package { get; }
         public IRequest Request { get; }
     }
 
@@ -168,7 +169,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.25";
+        private const string _sdkVersion = "0.130.26";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -197,6 +198,8 @@ namespace UnifiedTo
         public ICreative Creative { get; private set; }
         public IGroup Group { get; private set; }
         public IInsertionorder Insertionorder { get; private set; }
+        public IAssessment Assessment { get; private set; }
+        public IPackage Package { get; private set; }
         public IAts Ats { get; private set; }
         public IActivity Activity { get; private set; }
         public IApplication Application { get; private set; }
@@ -297,7 +300,6 @@ namespace UnifiedTo
         public IIssue Issue { get; private set; }
         public IWebhook Webhook { get; private set; }
         public IVerification Verification { get; private set; }
-        public IPackage Package { get; private set; }
         public IRequest Request { get; private set; }
 
         public UnifiedToSDK(SDKConfig config)
@@ -356,6 +358,10 @@ namespace UnifiedTo
             Group = new Group(SDKConfiguration);
 
             Insertionorder = new Insertionorder(SDKConfiguration);
+
+            Assessment = new Assessment(SDKConfiguration);
+
+            Package = new Package(SDKConfiguration);
 
             Ats = new Ats(SDKConfiguration);
 
@@ -556,8 +562,6 @@ namespace UnifiedTo
             Webhook = new Webhook(SDKConfiguration);
 
             Verification = new Verification(SDKConfiguration);
-
-            Package = new Package(SDKConfiguration);
 
             Request = new Request(SDKConfiguration);
         }
@@ -656,6 +660,10 @@ namespace UnifiedTo
 
             Insertionorder = new Insertionorder(SDKConfiguration);
 
+            Assessment = new Assessment(SDKConfiguration);
+
+            Package = new Package(SDKConfiguration);
+
             Ats = new Ats(SDKConfiguration);
 
             Activity = new Activity(SDKConfiguration);
@@ -855,8 +863,6 @@ namespace UnifiedTo
             Webhook = new Webhook(SDKConfiguration);
 
             Verification = new Verification(SDKConfiguration);
-
-            Package = new Package(SDKConfiguration);
 
             Request = new Request(SDKConfiguration);
         }
