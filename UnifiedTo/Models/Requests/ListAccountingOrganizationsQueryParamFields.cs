@@ -35,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         Timezone,
         [JsonProperty("website")]
         Website,
+        [JsonProperty("parent_id")]
+        ParentId,
         [JsonProperty("fiscal_year_end_month")]
         FiscalYearEndMonth,
         [JsonProperty("organization_code")]

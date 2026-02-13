@@ -14,6 +14,7 @@
 | `GroupId`          | *string*           | :heavy_minus_sign: | N/A                |
 | `Id`               | *string*           | :heavy_minus_sign: | N/A                |
 | `InvoiceId`        | *string*           | :heavy_minus_sign: | N/A                |
+| `OrganizationId`   | *string*           | :heavy_minus_sign: | N/A                |
 | `PaymentId`        | *string*           | :heavy_minus_sign: | N/A                |
 | `ProjectId`        | *string*           | :heavy_minus_sign: | N/A                |
 | `TaxAmount`        | *double*           | :heavy_minus_sign: | N/A                |

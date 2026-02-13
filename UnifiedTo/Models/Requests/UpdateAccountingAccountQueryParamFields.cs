@@ -47,6 +47,8 @@ namespace UnifiedTo.Models.Requests
         Subgroup,
         [JsonProperty("parent_id")]
         ParentId,
+        [JsonProperty("taxonomy")]
+        Taxonomy,
         [JsonProperty("raw")]
         Raw,
     }

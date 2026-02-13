@@ -29,8 +29,6 @@ namespace UnifiedTo.Models.Requests
         Channels,
         [JsonProperty("parent_id")]
         ParentId,
-        [JsonProperty("parent_message_id")]
-        ParentMessageId,
         [JsonProperty("root_message_id")]
         RootMessageId,
         [JsonProperty("message_thread_identifier")]

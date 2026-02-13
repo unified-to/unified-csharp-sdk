@@ -37,10 +37,13 @@ namespace UnifiedTo.Models.Components
         public string? LegalName { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
 
         [JsonProperty("organization_code")]
         public string? OrganizationCode { get; set; }
+
+        [JsonProperty("parent_id")]
+        public string? ParentId { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }

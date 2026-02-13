@@ -66,6 +66,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("subsection")]
         public string? Subsection { get; set; }
 
+        [JsonProperty("taxonomy")]
+        public List<AccountingAccountTaxonomy>? Taxonomy { get; set; }
+
         [JsonProperty("type")]
         public Models.Components.Type? Type { get; set; }
 

@@ -90,9 +90,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; }
 
-        [JsonProperty("parent_message_id")]
-        public string? ParentMessageId { get; set; }
-
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
