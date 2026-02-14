@@ -71,6 +71,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_contact_id")]
         public ListContactId? ListContactId { get; set; }
 
+        [JsonProperty("list_content_id")]
+        public ListContentId? ListContentId { get; set; }
+
         [JsonProperty("list_course_id")]
         public ListCourseId? ListCourseId { get; set; }
 
@@ -245,6 +248,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("native_webhook_company_id")]
         public NativeWebhookCompanyId? NativeWebhookCompanyId { get; set; }
 
+        [JsonProperty("native_webhook_course_id")]
+        public NativeWebhookCourseId? NativeWebhookCourseId { get; set; }
+
         [JsonProperty("native_webhook_event_id")]
         public NativeWebhookEventId? NativeWebhookEventId { get; set; }
 
@@ -268,6 +274,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("native_webhook_shipment_id")]
         public NativeWebhookShipmentId? NativeWebhookShipmentId { get; set; }
+
+        [JsonProperty("native_webhook_student_id")]
+        public NativeWebhookStudentId? NativeWebhookStudentId { get; set; }
 
         [JsonProperty("native_webhook_task_id")]
         public NativeWebhookTaskId? NativeWebhookTaskId { get; set; }
@@ -334,6 +343,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_contact_id")]
         public VirtualWebhookContactId? VirtualWebhookContactId { get; set; }
+
+        [JsonProperty("virtual_webhook_course_id")]
+        public VirtualWebhookCourseId? VirtualWebhookCourseId { get; set; }
 
         [JsonProperty("virtual_webhook_customer_id")]
         public VirtualWebhookCustomerId? VirtualWebhookCustomerId { get; set; }
@@ -421,6 +433,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_status")]
         public VirtualWebhookStatus? VirtualWebhookStatus { get; set; }
+
+        [JsonProperty("virtual_webhook_student_id")]
+        public VirtualWebhookStudentId? VirtualWebhookStudentId { get; set; }
 
         [JsonProperty("virtual_webhook_task_id")]
         public VirtualWebhookTaskId? VirtualWebhookTaskId { get; set; }

@@ -205,6 +205,12 @@ namespace UnifiedTo.Models.Components
         LmsStudent,
         [JsonProperty("lms_instructor")]
         LmsInstructor,
+        [JsonProperty("lms_content")]
+        LmsContent,
+        [JsonProperty("lms_collection")]
+        LmsCollection,
+        [JsonProperty("lms_activity")]
+        LmsActivity,
         [JsonProperty("repo_organization")]
         RepoOrganization,
         [JsonProperty("repo_repository")]

@@ -25,6 +25,12 @@ namespace UnifiedTo.Models.Components
         Web,
         [JsonProperty("DOCUMENT")]
         Document,
+        [JsonProperty("TEXT")]
+        Text,
+        [JsonProperty("HTML")]
+        Html,
+        [JsonProperty("MARKDOWN")]
+        Markdown,
         [JsonProperty("OTHER")]
         Other,
     }

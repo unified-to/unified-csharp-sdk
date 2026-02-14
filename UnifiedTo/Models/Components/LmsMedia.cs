@@ -16,6 +16,9 @@ namespace UnifiedTo.Models.Components
     public class LmsMedia
     {
 
+        [JsonProperty("content")]
+        public string? Content { get; set; }
+
         [JsonProperty("description")]
         public string? Description { get; set; }
 

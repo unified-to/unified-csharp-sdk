@@ -106,6 +106,7 @@ namespace UnifiedTo
         public ISpace Space { get; }
         public ILms Lms { get; }
         public IClass Class { get; }
+        public IContent Content { get; }
         public ICourse Course { get; }
         public IInstructor Instructor { get; }
         public IStudent Student { get; }
@@ -169,7 +170,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.27";
+        private const string _sdkVersion = "0.130.28";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -251,6 +252,7 @@ namespace UnifiedTo
         public ISpace Space { get; private set; }
         public ILms Lms { get; private set; }
         public IClass Class { get; private set; }
+        public IContent Content { get; private set; }
         public ICourse Course { get; private set; }
         public IInstructor Instructor { get; private set; }
         public IStudent Student { get; private set; }
@@ -464,6 +466,8 @@ namespace UnifiedTo
             Lms = new Lms(SDKConfiguration);
 
             Class = new Class(SDKConfiguration);
+
+            Content = new Content(SDKConfiguration);
 
             Course = new Course(SDKConfiguration);
 
@@ -765,6 +769,8 @@ namespace UnifiedTo
             Lms = new Lms(SDKConfiguration);
 
             Class = new Class(SDKConfiguration);
+
+            Content = new Content(SDKConfiguration);
 
             Course = new Course(SDKConfiguration);
 

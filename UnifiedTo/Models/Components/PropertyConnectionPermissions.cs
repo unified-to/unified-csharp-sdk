@@ -363,6 +363,18 @@ namespace UnifiedTo.Models.Components
         LmsInstructorRead,
         [JsonProperty("lms_instructor_write")]
         LmsInstructorWrite,
+        [JsonProperty("lms_content_read")]
+        LmsContentRead,
+        [JsonProperty("lms_content_write")]
+        LmsContentWrite,
+        [JsonProperty("lms_collection_read")]
+        LmsCollectionRead,
+        [JsonProperty("lms_collection_write")]
+        LmsCollectionWrite,
+        [JsonProperty("lms_activity_read")]
+        LmsActivityRead,
+        [JsonProperty("lms_activity_write")]
+        LmsActivityWrite,
         [JsonProperty("repo_organization_read")]
         RepoOrganizationRead,
         [JsonProperty("repo_organization_write")]
