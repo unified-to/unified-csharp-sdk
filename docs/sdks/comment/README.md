@@ -83,7 +83,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Comment.CreateTaskCommentAsync(
     taskComment: new TaskComment() {
-        TaskId = "<id>",
         Text = "<value>",
     },
     connectionId: "<id>"
@@ -458,7 +457,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchTaskCommentRequest req = new PatchTaskCommentRequest() {
     TaskComment = new TaskComment() {
-        TaskId = "<id>",
         Text = "<value>",
     },
     ConnectionId = "<id>",
@@ -708,7 +706,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateTaskCommentRequest req = new UpdateTaskCommentRequest() {
     TaskComment = new TaskComment() {
-        TaskId = "<id>",
         Text = "<value>",
     },
     ConnectionId = "<id>",

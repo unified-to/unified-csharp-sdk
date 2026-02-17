@@ -17,6 +17,12 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
+        /// The ad ID to filter by
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=ad_id")]
+        public string? AdId { get; set; }
+
+        /// <summary>
         /// The campaign ID to filter by
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=campaign_id")]
@@ -29,10 +35,22 @@ namespace UnifiedTo.Models.Requests
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
+        /// The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=end_lt")]
+        public string? EndLt { get; set; }
+
+        /// <summary>
         /// Fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<ListAdsReportsQueryParamFields>? Fields { get; set; }
+
+        /// <summary>
+        /// The group ID to filter by (reference to HrisGroup)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=group_id")]
+        public string? GroupId { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }
@@ -63,6 +81,12 @@ namespace UnifiedTo.Models.Requests
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")]
         public string? Sort { get; set; }
+
+        /// <summary>
+        /// The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=start_gte")]
+        public string? StartGte { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=type")]
         public string? Type { get; set; }

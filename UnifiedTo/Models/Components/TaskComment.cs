@@ -27,7 +27,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("task_id")]
-        public string TaskId { get; set; } = default!;
+        public string? TaskId { get; set; }
 
         [JsonProperty("text")]
         public string Text { get; set; } = default!;

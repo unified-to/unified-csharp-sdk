@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: bba5d3ebf913171b03ce2be8b22a3947
+  docChecksum: d121c23b689164804bad4c9617517509
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.28
-  configChecksum: 62efa40e6e1a8792e15ac841978bbad6
+  releaseVersion: 0.130.29
+  configChecksum: e943d12cf6d29c80f3f88e6ec4ee187e
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -7775,10 +7775,10 @@ examples:
         path:
           connection_id: "<id>"
       requestBody:
-        application/json: {"task_id": "<id>", "text": "<value>"}
+        application/json: {"text": "<value>"}
       responses:
         "200":
-          application/json: {"task_id": "<id>", "text": "<value>"}
+          application/json: {"text": "<value>"}
   createUcComment:
     speakeasy-default-create-uc-comment:
       parameters:
@@ -7797,7 +7797,7 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"task_id": "<id>", "text": "<value>"}
+          application/json: {"text": "<value>"}
   getUcComment:
     speakeasy-default-get-uc-comment:
       parameters:
@@ -7830,10 +7830,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {"task_id": "<id>", "text": "<value>"}
+        application/json: {"text": "<value>"}
       responses:
         "200":
-          application/json: {"task_id": "<id>", "text": "<value>"}
+          application/json: {"text": "<value>"}
   patchUcComment:
     speakeasy-default-patch-uc-comment:
       parameters:
@@ -7864,10 +7864,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {"task_id": "<id>", "text": "<value>"}
+        application/json: {"text": "<value>"}
       responses:
         "200":
-          application/json: {"task_id": "<id>", "text": "<value>"}
+          application/json: {"text": "<value>"}
   updateUcComment:
     speakeasy-default-update-uc-comment:
       parameters:
@@ -13767,7 +13767,7 @@ trackedFiles:
     pristine_git_object: 79341b26b57484f77f163ec183362b15853f80db
   UnifiedTo/Models/Components/TaskComment.cs:
     id: a15c8089b463
-    last_write_checksum: sha1:817e1d0dc0b6d8013ae250b101e7bcd9623217ae
+    last_write_checksum: sha1:e882932f3882cde9fbbe34c75855d011c547478e
     pristine_git_object: 1580460f72eb0b64e524ce982250205169f7ea84
   UnifiedTo/Models/Components/TaskMetadata.cs:
     id: 75fadc9e8a5c
@@ -16388,7 +16388,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListAdsReportsQueryParamFields.cs:
     last_write_checksum: sha1:aed6a9f16a17e929a283cb1d2fa3fd2f933cf6c6
   UnifiedTo/Models/Requests/ListAdsReportsRequest.cs:
-    last_write_checksum: sha1:c27752709bd9601feebbe0b5a4d7cbb02ba58ccd
+    last_write_checksum: sha1:f8ed1bea7b383e66fcce7fb29559cc109183dfcf
   UnifiedTo/Models/Requests/ListAdsReportsResponse.cs:
     last_write_checksum: sha1:66eab2f5aee44ca9ead9f77c7c34670aeffb4741
   UnifiedTo/Models/Requests/ListAssessmentPackagesRequest.cs:
@@ -19941,7 +19941,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:5e9c027b11d5b8144c6925a206926f4d092ceded
+    last_write_checksum: sha1:5e716d627735f4055e4471956d7c82bf911dd28a
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -20045,7 +20045,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:b50357fed763eef914c6fff403be3bd24196e530
+    last_write_checksum: sha1:28ae3608e187016b90dbaa220c5a09a84da25507
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -22341,7 +22341,7 @@ trackedFiles:
     pristine_git_object: 1efb76a3b8d2b57c5a455f83ad73f1b0e128df3b
   docs/Models/Components/TaskComment.md:
     id: 600386cde572
-    last_write_checksum: sha1:757877948a1ff390e334401111d0602d44b649d2
+    last_write_checksum: sha1:53bcbcfdd7d1255c35e15cf89c1ee0a64c9dde38
     pristine_git_object: dc601c6dc84e1ab89b15f1c64df7726445b88f96
   docs/Models/Components/TaskMetadata.md:
     id: 3d593485b428
@@ -24950,7 +24950,7 @@ trackedFiles:
   docs/Models/Requests/ListAdsReportsQueryParamFields.md:
     last_write_checksum: sha1:306bd426e11fb4c5a8f54831a3e6e36d28189d7f
   docs/Models/Requests/ListAdsReportsRequest.md:
-    last_write_checksum: sha1:778ada397fd433450b1763a15c5ee534461b0c7d
+    last_write_checksum: sha1:cf031ca2ed65fd27c60a43a3901556bca768743d
   docs/Models/Requests/ListAdsReportsResponse.md:
     last_write_checksum: sha1:6c50a0e514c488a2d0732e0b380a5720203e5cea
   docs/Models/Requests/ListAssessmentPackagesRequest.md:
@@ -28507,7 +28507,7 @@ trackedFiles:
     pristine_git_object: 704c79bd3e7e90360e18b5b05d1a60874613ed47
   docs/sdks/comment/README.md:
     id: e4246f80d976
-    last_write_checksum: sha1:f1fe1929dd43bc5ce0897ed76bd4d8722f0afd6a
+    last_write_checksum: sha1:a5afce2e25a7ba7380d2d60fb475c8b67fe7c13f
     pristine_git_object: 84bb39dc3b477fca6f39006b5fda8a02d3c893a1
   docs/sdks/commerce/README.md:
     id: ec0eedee4bc3
@@ -28837,7 +28837,7 @@ trackedFiles:
     pristine_git_object: 4e4ffce039e3b29440ecfdf1841051ebdd539078
   docs/sdks/task/README.md:
     id: ae2d0d96ea1f
-    last_write_checksum: sha1:aec2563bb7b9c2f929ae24dcaa35552882f45aae
+    last_write_checksum: sha1:cc27f2bbec3d9352a6841ae92e0ecc271da0b460
     pristine_git_object: 3e8a34f68ed1a7fd44ca5505d8878f79035f27de
   docs/sdks/taxrate/README.md:
     id: 626e6511cf80
