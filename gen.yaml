@@ -26,7 +26,7 @@ csharp:
   version: 0.130.29
   additionalDependencies: []
   author: Unified API Inc.
-  baseErrorName: UnifiedToError
+  baseErrorName: SDKBaseException
   clientServerStatusCodesAsErrors: true
   company: ""
   defaultErrorName: SDKException
