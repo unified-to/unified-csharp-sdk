@@ -65,6 +65,7 @@
 | `HrisTimeshift`           | hris_timeshift            |
 | `HrisDeduction`           | hris_deduction            |
 | `HrisBenefit`             | hris_benefit              |
+| `HrisBankaccount`         | hris_bankaccount          |
 | `MartechList`             | martech_list              |
 | `MartechMember`           | martech_member            |
 | `MartechCampaign`         | martech_campaign          |

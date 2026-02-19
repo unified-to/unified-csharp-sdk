@@ -135,6 +135,8 @@ namespace UnifiedTo.Models.Components
         HrisDeduction,
         [JsonProperty("hris_benefit")]
         HrisBenefit,
+        [JsonProperty("hris_bankaccount")]
+        HrisBankaccount,
         [JsonProperty("martech_list")]
         MartechList,
         [JsonProperty("martech_member")]

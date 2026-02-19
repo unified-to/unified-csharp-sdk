@@ -93,6 +93,7 @@ namespace UnifiedTo
         public IModel Model { get; }
         public IPrompt Prompt { get; }
         public IHris Hris { get; }
+        public IBankaccount Bankaccount { get; }
         public IBenefit Benefit { get; }
         public IDeduction Deduction { get; }
         public IDevice Device { get; }
@@ -170,7 +171,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.29";
+        private const string _sdkVersion = "0.130.30";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -239,6 +240,7 @@ namespace UnifiedTo
         public IModel Model { get; private set; }
         public IPrompt Prompt { get; private set; }
         public IHris Hris { get; private set; }
+        public IBankaccount Bankaccount { get; private set; }
         public IBenefit Benefit { get; private set; }
         public IDeduction Deduction { get; private set; }
         public IDevice Device { get; private set; }
@@ -440,6 +442,8 @@ namespace UnifiedTo
             Prompt = new Prompt(SDKConfiguration);
 
             Hris = new Hris(SDKConfiguration);
+
+            Bankaccount = new Bankaccount(SDKConfiguration);
 
             Benefit = new Benefit(SDKConfiguration);
 
@@ -743,6 +747,8 @@ namespace UnifiedTo
             Prompt = new Prompt(SDKConfiguration);
 
             Hris = new Hris(SDKConfiguration);
+
+            Bankaccount = new Bankaccount(SDKConfiguration);
 
             Benefit = new Benefit(SDKConfiguration);
 

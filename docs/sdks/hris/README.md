@@ -5,6 +5,7 @@
 
 ### Available Operations
 
+* [CreateHrisBankaccount](#createhrisbankaccount) - Create a bankaccount
 * [CreateHrisBenefit](#createhrisbenefit) - Create a benefit
 * [CreateHrisCompany](#createhriscompany) - Create a company
 * [CreateHrisDeduction](#createhrisdeduction) - Create a deduction
@@ -13,6 +14,7 @@
 * [CreateHrisGroup](#createhrisgroup) - Create a group
 * [CreateHrisLocation](#createhrislocation) - Create a location
 * [CreateHrisTimeshift](#createhristimeshift) - Create a timeshift
+* [GetHrisBankaccount](#gethrisbankaccount) - Retrieve a bankaccount
 * [GetHrisBenefit](#gethrisbenefit) - Retrieve a benefit
 * [GetHrisCompany](#gethriscompany) - Retrieve a company
 * [GetHrisDeduction](#gethrisdeduction) - Retrieve a deduction
@@ -23,6 +25,7 @@
 * [GetHrisPayslip](#gethrispayslip) - Retrieve a payslip
 * [GetHrisTimeoff](#gethristimeoff) - Retrieve a timeoff
 * [GetHrisTimeshift](#gethristimeshift) - Retrieve a timeshift
+* [ListHrisBankaccounts](#listhrisbankaccounts) - List all bankaccounts
 * [ListHrisBenefits](#listhrisbenefits) - List all benefits
 * [ListHrisCompanies](#listhriscompanies) - List all companies
 * [ListHrisDeductions](#listhrisdeductions) - List all deductions
@@ -33,6 +36,7 @@
 * [ListHrisPayslips](#listhrispayslips) - List all payslips
 * [ListHrisTimeoffs](#listhristimeoffs) - List all timeoffs
 * [ListHrisTimeshifts](#listhristimeshifts) - List all timeshifts
+* [PatchHrisBankaccount](#patchhrisbankaccount) - Update a bankaccount
 * [PatchHrisBenefit](#patchhrisbenefit) - Update a benefit
 * [PatchHrisCompany](#patchhriscompany) - Update a company
 * [PatchHrisDeduction](#patchhrisdeduction) - Update a deduction
@@ -41,6 +45,7 @@
 * [PatchHrisGroup](#patchhrisgroup) - Update a group
 * [PatchHrisLocation](#patchhrislocation) - Update a location
 * [PatchHrisTimeshift](#patchhristimeshift) - Update a timeshift
+* [RemoveHrisBankaccount](#removehrisbankaccount) - Remove a bankaccount
 * [RemoveHrisBenefit](#removehrisbenefit) - Remove a benefit
 * [RemoveHrisCompany](#removehriscompany) - Remove a company
 * [RemoveHrisDeduction](#removehrisdeduction) - Remove a deduction
@@ -49,6 +54,7 @@
 * [RemoveHrisGroup](#removehrisgroup) - Remove a group
 * [RemoveHrisLocation](#removehrislocation) - Remove a location
 * [RemoveHrisTimeshift](#removehristimeshift) - Remove a timeshift
+* [UpdateHrisBankaccount](#updatehrisbankaccount) - Update a bankaccount
 * [UpdateHrisBenefit](#updatehrisbenefit) - Update a benefit
 * [UpdateHrisCompany](#updatehriscompany) - Update a company
 * [UpdateHrisDeduction](#updatehrisdeduction) - Update a deduction
@@ -57,6 +63,47 @@
 * [UpdateHrisGroup](#updatehrisgroup) - Update a group
 * [UpdateHrisLocation](#updatehrislocation) - Update a location
 * [UpdateHrisTimeshift](#updatehristimeshift) - Update a timeshift
+
+## CreateHrisBankaccount
+
+Create a bankaccount
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.CreateHrisBankaccountAsync(
+    hrisBankaccount: new HrisBankaccount() {},
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `HrisBankaccount`                                                                                                                                | [HrisBankaccount](../../Models/Components/HrisBankaccount.md)                                                                                    | :heavy_check_mark:                                                                                                                               | Employee payroll bank account for direct deposit.                                                                                                |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateHrisBankaccountQueryParamFields](../../Models/Requests/CreateHrisBankaccountQueryParamFields.md)>                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateHrisBankaccountResponse](../../Models/Requests/CreateHrisBankaccountResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
 ## CreateHrisBenefit
 
@@ -386,6 +433,47 @@ var res = await sdk.Hris.CreateHrisTimeshiftAsync(
 ### Response
 
 **[CreateHrisTimeshiftResponse](../../Models/Requests/CreateHrisTimeshiftResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## GetHrisBankaccount
+
+Retrieve a bankaccount
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.GetHrisBankaccountAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Bankaccount                                                                                                                            |
+| `Fields`                                                                                                                                         | List<[GetHrisBankaccountQueryParamFields](../../Models/Requests/GetHrisBankaccountQueryParamFields.md)>                                          | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetHrisBankaccountResponse](../../Models/Requests/GetHrisBankaccountResponse.md)**
 
 ### Errors
 
@@ -803,6 +891,46 @@ var res = await sdk.Hris.GetHrisTimeshiftAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## ListHrisBankaccounts
+
+List all bankaccounts
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListHrisBankaccountsRequest req = new ListHrisBankaccountsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Hris.ListHrisBankaccountsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [ListHrisBankaccountsRequest](../../Models/Requests/ListHrisBankaccountsRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+
+### Response
+
+**[ListHrisBankaccountsResponse](../../Models/Requests/ListHrisBankaccountsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## ListHrisBenefits
 
 List all benefits
@@ -1203,6 +1331,48 @@ var res = await sdk.Hris.ListHrisTimeshiftsAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchHrisBankaccount
+
+Update a bankaccount
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchHrisBankaccountRequest req = new PatchHrisBankaccountRequest() {
+    HrisBankaccount = new HrisBankaccount() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Hris.PatchHrisBankaccountAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                           | Type                                                                                | Required                                                                            | Description                                                                         |
+| ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `request`                                                                           | [PatchHrisBankaccountRequest](../../Models/Requests/PatchHrisBankaccountRequest.md) | :heavy_check_mark:                                                                  | The request object to use for the request.                                          |
+
+### Response
+
+**[PatchHrisBankaccountResponse](../../Models/Requests/PatchHrisBankaccountResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchHrisBenefit
 
 Update a benefit
@@ -1546,6 +1716,45 @@ var res = await sdk.Hris.PatchHrisTimeshiftAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## RemoveHrisBankaccount
+
+Remove a bankaccount
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Hris.RemoveHrisBankaccountAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter             | Type                  | Required              | Description           |
+| --------------------- | --------------------- | --------------------- | --------------------- |
+| `ConnectionId`        | *string*              | :heavy_check_mark:    | ID of the connection  |
+| `Id`                  | *string*              | :heavy_check_mark:    | ID of the Bankaccount |
+
+### Response
+
+**[RemoveHrisBankaccountResponse](../../Models/Requests/RemoveHrisBankaccountResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## RemoveHrisBenefit
 
 Remove a benefit
@@ -1851,6 +2060,48 @@ var res = await sdk.Hris.RemoveHrisTimeshiftAsync(
 ### Response
 
 **[RemoveHrisTimeshiftResponse](../../Models/Requests/RemoveHrisTimeshiftResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateHrisBankaccount
+
+Update a bankaccount
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateHrisBankaccountRequest req = new UpdateHrisBankaccountRequest() {
+    HrisBankaccount = new HrisBankaccount() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Hris.UpdateHrisBankaccountAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [UpdateHrisBankaccountRequest](../../Models/Requests/UpdateHrisBankaccountRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+
+### Response
+
+**[UpdateHrisBankaccountResponse](../../Models/Requests/UpdateHrisBankaccountResponse.md)**
 
 ### Errors
 

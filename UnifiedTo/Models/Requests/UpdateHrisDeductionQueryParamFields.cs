@@ -41,6 +41,8 @@ namespace UnifiedTo.Models.Requests
         EndAt,
         [JsonProperty("is_active")]
         IsActive,
+        [JsonProperty("notes")]
+        Notes,
         [JsonProperty("raw")]
         Raw,
     }

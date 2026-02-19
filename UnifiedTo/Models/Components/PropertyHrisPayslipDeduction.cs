@@ -16,7 +16,7 @@ namespace UnifiedTo.Models.Components
     using UnifiedTo.Utils;
     
     /// <summary>
-    /// // The ID (and optionally name) of the employee deduction (if this detail represents a deduction)
+    /// The ID (and optionally name) of the employee deduction (if this detail represents a deduction)
     /// </summary>
     public class PropertyHrisPayslipDeduction
     {
@@ -47,6 +47,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
+
+        [JsonProperty("notes")]
+        public string? Notes { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }

@@ -28,7 +28,7 @@ namespace UnifiedTo.Models.Components
         public string? Currency { get; set; }
 
         /// <summary>
-        /// // The ID (and optionally name) of the employee deduction (if this detail represents a deduction)
+        /// The ID (and optionally name) of the employee deduction (if this detail represents a deduction)
         /// </summary>
         [JsonProperty("deduction")]
         public PropertyHrisPayslipDeduction? Deduction { get; set; }

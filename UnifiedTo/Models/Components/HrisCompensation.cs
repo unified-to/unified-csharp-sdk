@@ -28,6 +28,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("group_id")]
         public string? GroupId { get; set; }
 
+        [JsonProperty("notes")]
+        public string? Notes { get; set; }
+
         [JsonProperty("type")]
         public HrisCompensationType? Type { get; set; }
     }
