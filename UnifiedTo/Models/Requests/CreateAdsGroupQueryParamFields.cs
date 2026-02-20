@@ -37,6 +37,8 @@ namespace UnifiedTo.Models.Requests
         Targeting,
         [JsonProperty("bid_amount")]
         BidAmount,
+        [JsonProperty("currency")]
+        Currency,
         [JsonProperty("bid_strategy")]
         BidStrategy,
         [JsonProperty("budget_amount")]

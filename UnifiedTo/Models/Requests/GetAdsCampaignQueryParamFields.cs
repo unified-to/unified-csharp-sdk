@@ -35,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         BudgetAmount,
         [JsonProperty("budget_period")]
         BudgetPeriod,
+        [JsonProperty("currency")]
+        Currency,
         [JsonProperty("total_spend_amount")]
         TotalSpendAmount,
         [JsonProperty("targeting")]

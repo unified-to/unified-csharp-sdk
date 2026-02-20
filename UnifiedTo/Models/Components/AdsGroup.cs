@@ -51,6 +51,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("creative_ids")]
         public List<string>? CreativeIds { get; set; }
 
+        [JsonProperty("currency")]
+        public string? Currency { get; set; }
+
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 

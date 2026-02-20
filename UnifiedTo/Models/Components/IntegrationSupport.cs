@@ -281,6 +281,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("native_webhook_task_id")]
         public NativeWebhookTaskId? NativeWebhookTaskId { get; set; }
 
+        [JsonProperty("native_webhook_type")]
+        public NativeWebhookType? NativeWebhookType { get; set; }
+
         [JsonProperty("outbound_fields")]
         public Dictionary<string, string>? OutboundFields { get; set; }
 

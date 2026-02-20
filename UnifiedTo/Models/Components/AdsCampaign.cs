@@ -27,6 +27,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonProperty("currency")]
+        public string? Currency { get; set; }
+
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 

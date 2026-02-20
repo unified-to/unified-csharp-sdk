@@ -15,6 +15,7 @@
 | `EndAt`              | end_at               |
 | `BudgetAmount`       | budget_amount        |
 | `BudgetPeriod`       | budget_period        |
+| `Currency`           | currency             |
 | `TotalSpendAmount`   | total_spend_amount   |
 | `Targeting`          | targeting            |
 | `Raw`                | raw                  |
