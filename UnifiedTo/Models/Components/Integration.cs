@@ -60,6 +60,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        [JsonProperty("is_hidden")]
+        public bool? IsHidden { get; set; }
+
         [JsonProperty("logo_url")]
         public string? LogoUrl { get; set; }
 

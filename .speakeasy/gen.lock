@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 064bed284f2f86435722fec67549e099
+  docChecksum: 652ace824dae629e23fe1566cb364efb
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.32
-  configChecksum: f9a3f3585d15f68377768d7a87f55a93
+  releaseVersion: 0.130.33
+  configChecksum: 9890338d783975165b1a13e03a010cae
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -12638,7 +12638,7 @@ trackedFiles:
     pristine_git_object: 1bff4464e218e0fa308ac27cd030b47c69f10a82
   UnifiedTo/Models/Components/Integration.cs:
     id: 78865de2403d
-    last_write_checksum: sha1:8d4e7239825d1f43328a087a36904978e75ff35c
+    last_write_checksum: sha1:d0b1e0297757bec70f2a4f7e48833e50d08c0769
     pristine_git_object: 36d9f36d143860b38a2ff2a139e5f86a6949695d
   UnifiedTo/Models/Components/Integration1.cs:
     id: 11f50510d53b
@@ -21252,7 +21252,7 @@ trackedFiles:
     pristine_git_object: b533dc9bc6864446b86e7b4575f359bed1f9cc08
   docs/Models/Components/Integration.md:
     id: 4ae77c8ad6d4
-    last_write_checksum: sha1:22ba2d49b880a43fd050d28c3721a09ca189923a
+    last_write_checksum: sha1:8b847705f26c2d9a64ef2a9dd0cabbbdd9854445
     pristine_git_object: 82e5364f27c2f26ce6e2ecf466f8fb0e31c4ecde
   docs/Models/Components/Integration1.md:
     id: c5f126600c84
