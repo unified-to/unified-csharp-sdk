@@ -20,6 +20,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("max_tokens")]
         public double? MaxTokens { get; set; }
 
+        [JsonProperty("mcp_authorization_token")]
+        public string? McpAuthorizationToken { get; set; }
+
         [JsonProperty("mcp_deferred_tools")]
         public List<string>? McpDeferredTools { get; set; }
 

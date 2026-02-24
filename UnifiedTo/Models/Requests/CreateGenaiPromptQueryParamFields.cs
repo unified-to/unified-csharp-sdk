@@ -31,6 +31,8 @@ namespace UnifiedTo.Models.Requests
         McpUrl,
         [JsonProperty("mcp_deferred_tools")]
         McpDeferredTools,
+        [JsonProperty("mcp_authorization_token")]
+        McpAuthorizationToken,
         [JsonProperty("raw")]
         Raw,
     }
