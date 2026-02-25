@@ -35,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         Description,
         [JsonProperty("posted_at")]
         PostedAt,
+        [JsonProperty("source")]
+        Source,
         [JsonProperty("raw")]
         Raw,
     }

@@ -24,7 +24,7 @@ generation:
     allOfMergeStrategy: shallowMerge
   versioningStrategy: automatic
 csharp:
-  version: 0.130.34
+  version: 0.130.35
   additionalDependencies: []
   author: Unified API Inc.
   baseErrorName: UnifiedToError
@@ -34,6 +34,7 @@ csharp:
   disableNamespacePascalCasingApr2024: false
   dotnetVersion: net6.0
   enableCancellationToken: false
+  enableFormatting: false
   enableSourceLink: false
   flattenGlobalSecurity: false
   flatteningOrder: ""

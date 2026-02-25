@@ -45,6 +45,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("reference")]
         public string? Reference { get; set; }
 
+        [JsonProperty("source")]
+        public string? Source { get; set; }
+
         [JsonProperty("tax_amount")]
         public double? TaxAmount { get; set; }
 

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 10d21384d59617a5ae23a76cc75e1339
+  docChecksum: ff9e98d56a3f5cf54e98753d7490862e
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.34
-  configChecksum: c7df443c0882e06e6e6a6ec5a84d125d
+  releaseVersion: 0.130.35
+  configChecksum: 19b18cfa75ff81d5a64be2f0000d38f0
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   published: true
@@ -11750,7 +11750,7 @@ trackedFiles:
     pristine_git_object: 3da57fe50bb8352fa8e0efd1ff56284e6cf14780
   UnifiedTo/Models/Components/AccountingJournal.cs:
     id: fbd30c13d42a
-    last_write_checksum: sha1:a77152daacade6e74f1e39b95e17c9438cccf20d
+    last_write_checksum: sha1:9204871f4a742001358d387f5a174c87d04f19c8
     pristine_git_object: b903eefbb686ce52d7118fc4b9bbe81b1926804c
   UnifiedTo/Models/Components/AccountingJournalLineitem.cs:
     id: 1266dd78f5c2
@@ -14331,7 +14331,7 @@ trackedFiles:
     last_write_checksum: sha1:64655696989869cb83f9d712967a6212b4cf90d9
     pristine_git_object: 81d9f32f375b52e2478ee1346685ad09d484e4ac
   UnifiedTo/Models/Requests/CreateAccountingJournalQueryParamFields.cs:
-    last_write_checksum: sha1:8c095d5f64e0e3b370ae4b472edd14e7d9a2ac4a
+    last_write_checksum: sha1:560f4d410c02d75fbaa9a1b2f1f87be06819ad06
   UnifiedTo/Models/Requests/CreateAccountingJournalRequest.cs:
     id: a7424a188482
     last_write_checksum: sha1:c3588a8459f8b556e391c7c99f73937989218784
@@ -15275,7 +15275,7 @@ trackedFiles:
     last_write_checksum: sha1:3ad4049dbcb0163d73adbba7fa4076af624f4e3b
     pristine_git_object: 3eb5b01fb92fe29d4b10ca739a3f386332fee837
   UnifiedTo/Models/Requests/GetAccountingJournalQueryParamFields.cs:
-    last_write_checksum: sha1:e9492b5749dd3f36f10858cf50e991ac32323289
+    last_write_checksum: sha1:a6e5fb266e8be8b9b372ced64ad0040d62508ff8
   UnifiedTo/Models/Requests/GetAccountingJournalRequest.cs:
     id: e0a0c2041b45
     last_write_checksum: sha1:39501abb07db2ab997f174a619fc878a3836782c
@@ -16367,7 +16367,7 @@ trackedFiles:
     last_write_checksum: sha1:1d15dfb665a9f9d0bb1c83be64942dca29e9380e
     pristine_git_object: de27f0025f61f0a63a74460cb24875b56670abdf
   UnifiedTo/Models/Requests/ListAccountingJournalsQueryParamFields.cs:
-    last_write_checksum: sha1:31fbbc82572b10149b2781dc12bc01371693fc8f
+    last_write_checksum: sha1:dd8954c1aceb4855f356c056a8e57c47f6afeddc
   UnifiedTo/Models/Requests/ListAccountingJournalsRequest.cs:
     id: ed96933d6376
     last_write_checksum: sha1:3f60304c1fd96d5cf1833d9ccdd2046865d2475b
@@ -17497,7 +17497,7 @@ trackedFiles:
     last_write_checksum: sha1:1641b4fee1ce16bdb5ae8378c3b26d931d8d91ea
     pristine_git_object: 5fef0afd0fa97e72cc235e59060cd63532689186
   UnifiedTo/Models/Requests/PatchAccountingJournalQueryParamFields.cs:
-    last_write_checksum: sha1:7e1be0746b5bc27a9e09ffe1611b454334e5c597
+    last_write_checksum: sha1:82720658ea0a730d0be5c25db2617b5135535623
   UnifiedTo/Models/Requests/PatchAccountingJournalRequest.cs:
     id: 01ff4d9973e5
     last_write_checksum: sha1:5bd561e7784d0a1e575cc301ec29370e94c1bfe9
@@ -19137,7 +19137,7 @@ trackedFiles:
     last_write_checksum: sha1:bb152c261c6dc1e0f6dae470b044e06dcf0c5182
     pristine_git_object: e82f7cec4308de74e2351944cd0bc487c9987d5b
   UnifiedTo/Models/Requests/UpdateAccountingJournalQueryParamFields.cs:
-    last_write_checksum: sha1:687a3d78917e71587a9d88c27d231512524d9b0e
+    last_write_checksum: sha1:f3186cc6d60f1081db405a8ae7096ce65e91285d
   UnifiedTo/Models/Requests/UpdateAccountingJournalRequest.cs:
     id: 19948453f934
     last_write_checksum: sha1:ccaf462fb41e264346a2bb6950e69b54ab0a5c30
@@ -20080,7 +20080,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:cb9fefd5ee29cc214b0f3aa0d014ee93ae3c9c6d
+    last_write_checksum: sha1:9c1542f8290b122825e1ea2a596d8c1819748d20
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -20184,7 +20184,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:415b5ce0863f89f9204e8e364ed0db90e23011bb
+    last_write_checksum: sha1:ecd3879e6fecd554730150919d2c3187bdc89cd7
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -20364,7 +20364,7 @@ trackedFiles:
     pristine_git_object: f05412587097f08e92f0ec6ddfbcbfc964ace58f
   docs/Models/Components/AccountingJournal.md:
     id: 50a971d557f4
-    last_write_checksum: sha1:96f3d243c24749a10f45e1155afe1ff060eb16ab
+    last_write_checksum: sha1:b5e18de6f27a9a2cd0bc6e6069ff74e37f8b905e
     pristine_git_object: c61b3e720e36ddc614aac96e286d555bd041d557
   docs/Models/Components/AccountingJournalLineitem.md:
     id: 1e737503f778
@@ -22933,7 +22933,7 @@ trackedFiles:
     last_write_checksum: sha1:3d15412e694ab914b01763974ff8f6865dbaca12
     pristine_git_object: e511f1b5a1b6443052f2ccf2fcc292654c8a6caf
   docs/Models/Requests/CreateAccountingJournalQueryParamFields.md:
-    last_write_checksum: sha1:8a500c22dcbc6de84a4445807107a6f105e059d6
+    last_write_checksum: sha1:bf7ce3963cb4726af83a015217ba5166e98ac66a
   docs/Models/Requests/CreateAccountingJournalRequest.md:
     id: c3f63df3a2a6
     last_write_checksum: sha1:20dbe521ca5171e2e7bf88a06bf68c64fc1dde6e
@@ -23877,7 +23877,7 @@ trackedFiles:
     last_write_checksum: sha1:e0690c65fb04ac876dbbbde81daa6cb69851c76c
     pristine_git_object: 6571eba83a10a9b1f9cf9903c31a0d7ac9e07428
   docs/Models/Requests/GetAccountingJournalQueryParamFields.md:
-    last_write_checksum: sha1:a780946dd4cbdad401001d0c8a07f2450b7f0bc9
+    last_write_checksum: sha1:ea46f0d33d17833e3c56e850d342644b55461086
   docs/Models/Requests/GetAccountingJournalRequest.md:
     id: 1caa6b597faa
     last_write_checksum: sha1:116238320950c82ac52a950de8a923ee8bec54f5
@@ -24969,7 +24969,7 @@ trackedFiles:
     last_write_checksum: sha1:2b90a43eabe045d769b1e77a775aa01081a3a0f5
     pristine_git_object: 48cd1b4b6bc3c48bd737378b447f76640bc6566e
   docs/Models/Requests/ListAccountingJournalsQueryParamFields.md:
-    last_write_checksum: sha1:11993a803ac6663a3cf6d4c59ea0ff3ceab9d8bb
+    last_write_checksum: sha1:a9e00075635ae50113ad5626f4f091368262133d
   docs/Models/Requests/ListAccountingJournalsRequest.md:
     id: 9134a94733d4
     last_write_checksum: sha1:47d25abb69ee46be5f8f7d88f20cacc93ae1fdc0
@@ -26099,7 +26099,7 @@ trackedFiles:
     last_write_checksum: sha1:bcadb8daaa4ddceb8de3e43b8e264b326fc7505b
     pristine_git_object: 65893eb7b3d22383d21c6928430dd65f4f1a0b81
   docs/Models/Requests/PatchAccountingJournalQueryParamFields.md:
-    last_write_checksum: sha1:d12dae48f77cf4e308f7aef83e68572765bf4b18
+    last_write_checksum: sha1:36280e96a193d5ba80dc168af9a87d23b73c1196
   docs/Models/Requests/PatchAccountingJournalRequest.md:
     id: 67684bfb0111
     last_write_checksum: sha1:15373785cfafaa3adbf8d5249002eeccd1508629
@@ -27739,7 +27739,7 @@ trackedFiles:
     last_write_checksum: sha1:762c6297431c892abecd7168cea217d566bcc13e
     pristine_git_object: e2064c2c420bad33435271850e058a91773153fe
   docs/Models/Requests/UpdateAccountingJournalQueryParamFields.md:
-    last_write_checksum: sha1:f08959ab9100b664a6e7eb057f1cfa71a69b8271
+    last_write_checksum: sha1:05e6e93cc8c7034de82eaef30549533a70be8dc2
   docs/Models/Requests/UpdateAccountingJournalRequest.md:
     id: 402897188ab9
     last_write_checksum: sha1:2bee121deec1f072c0064b48584f63fc0a8c7c94
