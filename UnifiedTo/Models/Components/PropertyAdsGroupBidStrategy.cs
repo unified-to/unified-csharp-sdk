@@ -32,16 +32,19 @@ namespace UnifiedTo.Models.Components
         public double? PerformanceGoalAmount { get; set; }
 
         [JsonProperty("performance_goal_type")]
-        public PerformanceGoalType? PerformanceGoalType { get; set; }
+        public PropertyAdsGroupBidStrategyPerformanceGoalType? PerformanceGoalType { get; set; }
 
         [JsonProperty("raise_bid_for_deals")]
         public bool? RaiseBidForDeals { get; set; }
+
+        [JsonProperty("target_roas")]
+        public double? TargetRoas { get; set; }
 
         [JsonProperty("type")]
         public PropertyAdsGroupBidStrategyType Type { get; set; } = default!;
 
         [JsonProperty("youtube_and_partners_type")]
-        public YoutubeAndPartnersType? YoutubeAndPartnersType { get; set; }
+        public PropertyAdsGroupBidStrategyYoutubeAndPartnersType? YoutubeAndPartnersType { get; set; }
 
         [JsonProperty("youtube_and_partners_value")]
         public string? YoutubeAndPartnersValue { get; set; }

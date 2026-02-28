@@ -32,7 +32,7 @@ namespace UnifiedTo.Models.Components
         
         public static ExtraDataType Boolean { get { return new ExtraDataType("boolean"); } }
         
-        public static ExtraDataType ArrayOf5 { get { return new ExtraDataType("arrayOf5"); } }
+        public static ExtraDataType ArrayOfAtsMetadata5 { get { return new ExtraDataType("arrayOfAtsMetadata5"); } }
         
         public static ExtraDataType Null { get { return new ExtraDataType("null"); } }
 
@@ -44,7 +44,7 @@ namespace UnifiedTo.Models.Components
                 case "str": return Str;
                 case "number": return Number;
                 case "boolean": return Boolean;
-                case "arrayOf5": return ArrayOf5;
+                case "arrayOfAtsMetadata5": return ArrayOfAtsMetadata5;
                 case "null": return Null;
                 default: throw new ArgumentException("Invalid value for ExtraDataType");
             }
@@ -84,7 +84,7 @@ namespace UnifiedTo.Models.Components
         public bool? Boolean { get; set; }
 
         [SpeakeasyMetadata("form:explode=true")]
-        public List<Five>? ArrayOf5 { get; set; }
+        public List<AtsMetadata5>? ArrayOfAtsMetadata5 { get; set; }
 
         public ExtraDataType Type { get; set; }
 
@@ -121,11 +121,11 @@ namespace UnifiedTo.Models.Components
             return res;
         }
 
-        public static ExtraData CreateArrayOf5(List<Five> arrayOf5) {
-            ExtraDataType typ = ExtraDataType.ArrayOf5;
+        public static ExtraData CreateArrayOfAtsMetadata5(List<AtsMetadata5> arrayOfAtsMetadata5) {
+            ExtraDataType typ = ExtraDataType.ArrayOfAtsMetadata5;
 
             ExtraData res = new ExtraData(typ);
-            res.ArrayOf5 = arrayOf5;
+            res.ArrayOfAtsMetadata5 = arrayOfAtsMetadata5;
             return res;
         }
 
@@ -206,14 +206,14 @@ namespace UnifiedTo.Models.Components
 
                 try
                 {
-                    return new ExtraData(ExtraDataType.ArrayOf5)
+                    return new ExtraData(ExtraDataType.ArrayOfAtsMetadata5)
                     {
-                        ArrayOf5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<Five>>(json)
+                        ArrayOfAtsMetadata5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<AtsMetadata5>>(json)
                     };
                 }
                 catch (ResponseBodyDeserializer.MissingMemberException)
                 {
-                    fallbackCandidates.Add((typeof(List<Five>), new ExtraData(ExtraDataType.ArrayOf5), "ArrayOf5"));
+                    fallbackCandidates.Add((typeof(List<AtsMetadata5>), new ExtraData(ExtraDataType.ArrayOfAtsMetadata5), "ArrayOfAtsMetadata5"));
                 }
                 catch (ResponseBodyDeserializer.DeserializationException)
                 {
@@ -279,9 +279,9 @@ namespace UnifiedTo.Models.Components
                     writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
                     return;
                 }
-                if (res.ArrayOf5 != null)
+                if (res.ArrayOfAtsMetadata5 != null)
                 {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOf5));
+                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfAtsMetadata5));
                     return;
                 }
 

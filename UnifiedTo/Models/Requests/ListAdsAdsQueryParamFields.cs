@@ -53,6 +53,18 @@ namespace UnifiedTo.Models.Requests
         Targeting,
         [JsonProperty("is_active")]
         IsActive,
+        [JsonProperty("end_at")]
+        EndAt,
+        [JsonProperty("start_at")]
+        StartAt,
+        [JsonProperty("display_url")]
+        DisplayUrl,
+        [JsonProperty("path1")]
+        Path1,
+        [JsonProperty("path2")]
+        Path2,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

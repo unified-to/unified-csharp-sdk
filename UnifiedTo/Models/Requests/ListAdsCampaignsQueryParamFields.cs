@@ -35,22 +35,28 @@ namespace UnifiedTo.Models.Requests
         BudgetAmount,
         [JsonProperty("budget_period")]
         BudgetPeriod,
-        [JsonProperty("currency")]
-        Currency,
         [JsonProperty("total_spend_amount")]
         TotalSpendAmount,
         [JsonProperty("targeting")]
         Targeting,
-        [JsonProperty("raw")]
-        Raw,
         [JsonProperty("goal")]
         Goal,
         [JsonProperty("planned_spend_amount")]
         PlannedSpendAmount,
         [JsonProperty("frequency_cap")]
         FrequencyCap,
-        [JsonProperty("is_active")]
-        IsActive,
+        [JsonProperty("bid_strategy")]
+        BidStrategy,
+        [JsonProperty("special_ad_categories")]
+        SpecialAdCategories,
+        [JsonProperty("advertising_channel_type")]
+        AdvertisingChannelType,
+        [JsonProperty("campaign_budget_identifier")]
+        CampaignBudgetIdentifier,
+        [JsonProperty("currency")]
+        Currency,
+        [JsonProperty("raw")]
+        Raw,
     }
 
     public static class ListAdsCampaignsQueryParamFieldsExtension

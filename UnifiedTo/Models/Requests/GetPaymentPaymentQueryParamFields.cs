@@ -25,6 +25,8 @@ namespace UnifiedTo.Models.Requests
         TotalAmount,
         [JsonProperty("contact_id")]
         ContactId,
+        [JsonProperty("type")]
+        Type,
         [JsonProperty("payment_method")]
         PaymentMethod,
         [JsonProperty("currency")]
@@ -33,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         Notes,
         [JsonProperty("invoice_id")]
         InvoiceId,
+        [JsonProperty("bill_id")]
+        BillId,
         [JsonProperty("account_id")]
         AccountId,
         [JsonProperty("reference")]

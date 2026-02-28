@@ -24,6 +24,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("asset_urls")]
         public List<string>? AssetUrls { get; set; }
 
+        [JsonProperty("body")]
+        public string? Body { get; set; }
+
         [JsonProperty("campaign_id")]
         public string? CampaignId { get; set; }
 
@@ -32,6 +35,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("creative_type")]
         public CreativeType? CreativeType { get; set; }
+
+        [JsonProperty("cta")]
+        public string? Cta { get; set; }
 
         [JsonProperty("external_ad_reference")]
         public string? ExternalAdReference { get; set; }
@@ -54,14 +60,32 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("image_hash")]
+        public string? ImageHash { get; set; }
+
         [JsonProperty("item_id")]
         public string? ItemId { get; set; }
+
+        [JsonProperty("link_url")]
+        public string? LinkUrl { get; set; }
+
+        [JsonProperty("metadata")]
+        public List<AdsMetadata>? Metadata { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }
 
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
+
+        [JsonProperty("page_identifier")]
+        public string? PageIdentifier { get; set; }
+
+        [JsonProperty("path1")]
+        public string? Path1 { get; set; }
+
+        [JsonProperty("path2")]
+        public string? Path2 { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
@@ -72,11 +96,20 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("third_party_tag")]
         public string? ThirdPartyTag { get; set; }
 
+        [JsonProperty("thumbnail_url")]
+        public string? ThumbnailUrl { get; set; }
+
+        [JsonProperty("title")]
+        public string? Title { get; set; }
+
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
         [JsonProperty("vast_tag_url")]
         public string? VastTagUrl { get; set; }
+
+        [JsonProperty("video_id")]
+        public string? VideoId { get; set; }
 
         [JsonProperty("width")]
         public double? Width { get; set; }

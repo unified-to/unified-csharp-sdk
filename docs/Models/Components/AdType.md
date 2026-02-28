@@ -14,3 +14,7 @@
 | `Call`       | CALL         |
 | `Carousel`   | CAROUSEL     |
 | `Social`     | SOCIAL       |
+| `Display`    | DISPLAY      |
+| `Search`     | SEARCH       |
+| `Audio`      | AUDIO        |
+| `Youtube`    | YOUTUBE      |

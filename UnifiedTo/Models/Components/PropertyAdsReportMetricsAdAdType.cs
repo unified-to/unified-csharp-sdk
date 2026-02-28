@@ -33,6 +33,14 @@ namespace UnifiedTo.Models.Components
         Carousel,
         [JsonProperty("SOCIAL")]
         Social,
+        [JsonProperty("DISPLAY")]
+        Display,
+        [JsonProperty("SEARCH")]
+        Search,
+        [JsonProperty("AUDIO")]
+        Audio,
+        [JsonProperty("YOUTUBE")]
+        Youtube,
     }
 
     public static class PropertyAdsReportMetricsAdAdTypeExtension

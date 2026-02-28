@@ -18,6 +18,9 @@ namespace UnifiedTo.Models.Components
     public class PropertyAdsReportMetricsGroup
     {
 
+        [JsonProperty("ad_group_type")]
+        public string? AdGroupType { get; set; }
+
         [JsonProperty("bid_amount")]
         public double? BidAmount { get; set; }
 
@@ -26,6 +29,9 @@ namespace UnifiedTo.Models.Components
         /// </summary>
         [JsonProperty("bid_strategy")]
         public PropertyAdsReportMetricsGroupBidStrategy? BidStrategy { get; set; }
+
+        [JsonProperty("billing_event")]
+        public string? BillingEvent { get; set; }
 
         [JsonProperty("budget_allocation_type")]
         public PropertyAdsReportMetricsGroupBudgetAllocationType? BudgetAllocationType { get; set; }
@@ -54,6 +60,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
+        [JsonProperty("daily_spend_cap")]
+        public double? DailySpendCap { get; set; }
+
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
@@ -69,11 +78,17 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("insertionorder_id")]
         public string? InsertionorderId { get; set; }
 
-        [JsonProperty("is_active")]
-        public bool? IsActive { get; set; }
+        [JsonProperty("lifetime_spend_cap")]
+        public double? LifetimeSpendCap { get; set; }
+
+        [JsonProperty("metadata")]
+        public List<AdsMetadata>? Metadata { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }
+
+        [JsonProperty("optimization_goal")]
+        public string? OptimizationGoal { get; set; }
 
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }

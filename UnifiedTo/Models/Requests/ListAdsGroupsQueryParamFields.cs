@@ -37,8 +37,6 @@ namespace UnifiedTo.Models.Requests
         Targeting,
         [JsonProperty("bid_amount")]
         BidAmount,
-        [JsonProperty("currency")]
-        Currency,
         [JsonProperty("bid_strategy")]
         BidStrategy,
         [JsonProperty("budget_amount")]
@@ -65,8 +63,20 @@ namespace UnifiedTo.Models.Requests
         FrequencyCap,
         [JsonProperty("creative_ids")]
         CreativeIds,
-        [JsonProperty("is_active")]
-        IsActive,
+        [JsonProperty("optimization_goal")]
+        OptimizationGoal,
+        [JsonProperty("billing_event")]
+        BillingEvent,
+        [JsonProperty("daily_spend_cap")]
+        DailySpendCap,
+        [JsonProperty("lifetime_spend_cap")]
+        LifetimeSpendCap,
+        [JsonProperty("ad_group_type")]
+        AdGroupType,
+        [JsonProperty("currency")]
+        Currency,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

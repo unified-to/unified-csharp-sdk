@@ -15,10 +15,28 @@ namespace UnifiedTo.Models.Components
     
     public enum AdsGroupType
     {
-        [JsonProperty("DISPLAY")]
-        Display,
+        [JsonProperty("TEXT")]
+        Text,
+        [JsonProperty("IMAGE")]
+        Image,
         [JsonProperty("VIDEO")]
         Video,
+        [JsonProperty("RESPONSIVE")]
+        Responsive,
+        [JsonProperty("SHOPPING")]
+        Shopping,
+        [JsonProperty("APP")]
+        App,
+        [JsonProperty("CALL")]
+        Call,
+        [JsonProperty("CAROUSEL")]
+        Carousel,
+        [JsonProperty("SOCIAL")]
+        Social,
+        [JsonProperty("DISPLAY")]
+        Display,
+        [JsonProperty("SEARCH")]
+        Search,
         [JsonProperty("AUDIO")]
         Audio,
         [JsonProperty("YOUTUBE")]

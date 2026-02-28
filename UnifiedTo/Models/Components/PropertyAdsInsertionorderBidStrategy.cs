@@ -37,6 +37,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raise_bid_for_deals")]
         public bool? RaiseBidForDeals { get; set; }
 
+        [JsonProperty("target_roas")]
+        public double? TargetRoas { get; set; }
+
         [JsonProperty("type")]
         public PropertyAdsInsertionorderBidStrategyType Type { get; set; } = default!;
 

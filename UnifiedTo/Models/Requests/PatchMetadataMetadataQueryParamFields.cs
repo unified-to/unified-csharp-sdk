@@ -35,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         ObjectType,
         [JsonProperty("objects")]
         Objects,
+        [JsonProperty("is_required")]
+        IsRequired,
         [JsonProperty("raw")]
         Raw,
     }

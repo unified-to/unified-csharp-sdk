@@ -42,6 +42,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        [JsonProperty("display_url")]
+        public string? DisplayUrl { get; set; }
+
+        [JsonProperty("end_at")]
+        public DateTime? EndAt { get; set; }
+
         [JsonProperty("final_url")]
         public string? FinalUrl { get; set; }
 
@@ -60,14 +66,26 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("item_id")]
         public string? ItemId { get; set; }
 
+        [JsonProperty("metadata")]
+        public List<AdsMetadata>? Metadata { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
 
+        [JsonProperty("path1")]
+        public string? Path1 { get; set; }
+
+        [JsonProperty("path2")]
+        public string? Path2 { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
+
+        [JsonProperty("start_at")]
+        public DateTime? StartAt { get; set; }
 
         [JsonProperty("status")]
         public AdsAdStatus? Status { get; set; }

@@ -35,6 +35,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_benefit_id")]
         public ListBenefitId? ListBenefitId { get; set; }
 
+        [JsonProperty("list_bill_id")]
+        public ListBillId? ListBillId { get; set; }
+
         [JsonProperty("list_branch_id")]
         public ListBranchId? ListBranchId { get; set; }
 
@@ -317,6 +320,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("virtual_webhook_application_id")]
         public VirtualWebhookApplicationId? VirtualWebhookApplicationId { get; set; }
 
+        [JsonProperty("virtual_webhook_benefit_id")]
+        public string? VirtualWebhookBenefitId { get; set; }
+
+        [JsonProperty("virtual_webhook_bill_id")]
+        public VirtualWebhookBillId? VirtualWebhookBillId { get; set; }
+
         [JsonProperty("virtual_webhook_branch_id")]
         public VirtualWebhookBranchId? VirtualWebhookBranchId { get; set; }
 
@@ -374,6 +383,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("virtual_webhook_group_id")]
         public VirtualWebhookGroupId? VirtualWebhookGroupId { get; set; }
 
+        [JsonProperty("virtual_webhook_invoice_id")]
+        public VirtualWebhookInvoiceId? VirtualWebhookInvoiceId { get; set; }
+
         [JsonProperty("virtual_webhook_item_id")]
         public VirtualWebhookItemId? VirtualWebhookItemId { get; set; }
 
@@ -391,6 +403,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_limit")]
         public VirtualWebhookLimit? VirtualWebhookLimit { get; set; }
+
+        [JsonProperty("virtual_webhook_link_id")]
+        public VirtualWebhookLinkId? VirtualWebhookLinkId { get; set; }
 
         [JsonProperty("virtual_webhook_list_id")]
         public VirtualWebhookListId? VirtualWebhookListId { get; set; }

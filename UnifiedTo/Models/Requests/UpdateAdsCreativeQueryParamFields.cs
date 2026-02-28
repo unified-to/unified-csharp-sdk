@@ -43,6 +43,22 @@ namespace UnifiedTo.Models.Requests
         Height,
         [JsonProperty("asset_urls")]
         AssetUrls,
+        [JsonProperty("page_identifier")]
+        PageIdentifier,
+        [JsonProperty("link_url")]
+        LinkUrl,
+        [JsonProperty("body")]
+        Body,
+        [JsonProperty("title")]
+        Title,
+        [JsonProperty("cta")]
+        Cta,
+        [JsonProperty("thumbnail_url")]
+        ThumbnailUrl,
+        [JsonProperty("image_hash")]
+        ImageHash,
+        [JsonProperty("video_id")]
+        VideoId,
         [JsonProperty("third_party_tag")]
         ThirdPartyTag,
         [JsonProperty("vast_tag_url")]
@@ -53,6 +69,12 @@ namespace UnifiedTo.Models.Requests
         ExternalPlacementReference,
         [JsonProperty("external_ad_reference")]
         ExternalAdReference,
+        [JsonProperty("metadata")]
+        Metadata,
+        [JsonProperty("path1")]
+        Path1,
+        [JsonProperty("path2")]
+        Path2,
         [JsonProperty("raw")]
         Raw,
     }

@@ -32,6 +32,6 @@ namespace UnifiedTo.Models.Components
         public string? Slug { get; set; }
 
         [JsonProperty("value")]
-        public Value? Value { get; set; }
+        public AtsMetadataValue? Value { get; set; }
     }
 }

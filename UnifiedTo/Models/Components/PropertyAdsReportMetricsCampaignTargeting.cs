@@ -22,17 +22,29 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("audiences")]
         public List<string>? Audiences { get; set; }
 
+        [JsonProperty("behaviors")]
+        public List<string>? Behaviors { get; set; }
+
         [JsonProperty("companies")]
         public List<string>? Companies { get; set; }
 
         [JsonProperty("company_sizes")]
         public List<string>? CompanySizes { get; set; }
 
+        [JsonProperty("custom_audiences")]
+        public List<string>? CustomAudiences { get; set; }
+
         [JsonProperty("degrees")]
         public List<string>? Degrees { get; set; }
 
         [JsonProperty("devices")]
         public List<string>? Devices { get; set; }
+
+        [JsonProperty("excluded_audiences")]
+        public List<string>? ExcludedAudiences { get; set; }
+
+        [JsonProperty("excluded_locations")]
+        public List<string>? ExcludedLocations { get; set; }
 
         [JsonProperty("genders")]
         public List<string>? Genders { get; set; }

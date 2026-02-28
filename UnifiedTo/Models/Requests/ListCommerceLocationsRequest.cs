@@ -38,7 +38,7 @@ namespace UnifiedTo.Models.Requests
         public string? Order { get; set; }
 
         /// <summary>
-        /// The org ID to filter by
+        /// The org ID to filter by (reference to AccountingOrganization)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=org_id")]
         public string? OrgId { get; set; }

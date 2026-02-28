@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
     public class PaymentPayment
@@ -19,6 +20,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("account_id")]
         public string? AccountId { get; set; }
+
+        [JsonProperty("bill_id")]
+        public string? BillId { get; set; }
 
         [JsonProperty("contact_id")]
         public string? ContactId { get; set; }
@@ -49,6 +53,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("total_amount")]
         public double? TotalAmount { get; set; }
+
+        [JsonProperty("type")]
+        public PaymentPaymentType? Type { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
