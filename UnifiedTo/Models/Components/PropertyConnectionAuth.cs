@@ -29,6 +29,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("app_id")]
         public string? AppId { get; set; }
 
+        [JsonProperty("audience")]
+        public string? Audience { get; set; }
+
         [JsonProperty("authorize_url")]
         public string? AuthorizeUrl { get; set; }
 

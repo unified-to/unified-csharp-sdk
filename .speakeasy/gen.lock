@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: c49ff261f475ff6eee95b4805bd5de3f
+  docChecksum: d0897cf78de3efc63587534d3e4d713b
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.36
-  configChecksum: 23ec535644a427c3f68ba03387216566
+  releaseVersion: 0.130.37
+  configChecksum: 915fbac49b3b4a68249e509d3cac48ae
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -13493,7 +13493,7 @@ trackedFiles:
     pristine_git_object: e9b605c2879b5a77428e979b7a14a56515e4a6ae
   UnifiedTo/Models/Components/PropertyConnectionAuth.cs:
     id: ff03de0a368e
-    last_write_checksum: sha1:d220f13e4238bc2a1cf94f38c4eccf0076f5f766
+    last_write_checksum: sha1:2d088cb1e5670d90b82e347004912e8cb7891bb1
     pristine_git_object: 88da70331e889b5f4ce24f336098baf7d8952b05
   UnifiedTo/Models/Components/PropertyConnectionCategories.cs:
     id: b8b5cd39b135
@@ -20157,7 +20157,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:4c0db9677a76bb95fa1e3c51fa3b4136cace3e58
+    last_write_checksum: sha1:5931a1461ad05a37b849f50bf3f94d40e964293e
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -20261,7 +20261,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:c59c06f3be9642137a3d4d6254752c66db274c37
+    last_write_checksum: sha1:23c3394633fb1fba393073db8e8d9f8f45f842ac
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -22145,7 +22145,7 @@ trackedFiles:
     pristine_git_object: d31d63aa3ea9a8d874fbc4981a234b63c84a542f
   docs/Models/Components/PropertyConnectionAuth.md:
     id: 946181cdd7b5
-    last_write_checksum: sha1:56544514b2fa708fe0dfd1b3150b0009a49b0544
+    last_write_checksum: sha1:5a3785ccdced986d3c8d543fcee3d68993546057
     pristine_git_object: 77bd26706fb3da9b7b8724806838fdfa0adbd1e3
   docs/Models/Components/PropertyConnectionCategories.md:
     id: 6d04f43a81a7
