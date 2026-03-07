@@ -33,6 +33,8 @@ namespace UnifiedTo.Models.Requests
         ListIds,
         [JsonProperty("tags")]
         Tags,
+        [JsonProperty("status")]
+        Status,
         [JsonProperty("raw")]
         Raw,
     }

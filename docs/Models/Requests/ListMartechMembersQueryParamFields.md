@@ -14,4 +14,5 @@
 | `Emails`    | emails      |
 | `ListIds`   | list_ids    |
 | `Tags`      | tags        |
+| `Status`    | status      |
 | `Raw`       | raw         |

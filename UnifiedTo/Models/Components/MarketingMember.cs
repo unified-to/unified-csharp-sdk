@@ -51,6 +51,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        [JsonProperty("status")]
+        public MarketingMemberStatus? Status { get; set; }
+
         /// <summary>
         /// An array of tags associated with this member
         /// </summary>

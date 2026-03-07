@@ -7,48 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 #nullable enable
-namespace UnifiedTo.Models.Requests
+namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System;
     using UnifiedTo.Utils;
     
-    public enum CreateMartechMemberQueryParamFields
+    public enum MarketingMemberStatus
     {
-        [JsonProperty("id")]
-        Id,
-        [JsonProperty("created_at")]
-        CreatedAt,
-        [JsonProperty("updated_at")]
-        UpdatedAt,
-        [JsonProperty("name")]
-        Name,
-        [JsonProperty("first_name")]
-        FirstName,
-        [JsonProperty("last_name")]
-        LastName,
-        [JsonProperty("emails")]
-        Emails,
-        [JsonProperty("list_ids")]
-        ListIds,
-        [JsonProperty("tags")]
-        Tags,
-        [JsonProperty("status")]
-        Status,
-        [JsonProperty("raw")]
-        Raw,
+        [JsonProperty("SUBSCRIBED")]
+        Subscribed,
+        [JsonProperty("UNSUBSCRIBED")]
+        Unsubscribed,
+        [JsonProperty("CLEANED")]
+        Cleaned,
+        [JsonProperty("PENDING")]
+        Pending,
+        [JsonProperty("TRANSACTIONAL")]
+        Transactional,
     }
 
-    public static class CreateMartechMemberQueryParamFieldsExtension
+    public static class MarketingMemberStatusExtension
     {
-        public static string Value(this CreateMartechMemberQueryParamFields value)
+        public static string Value(this MarketingMemberStatus value)
         {
             return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
         }
 
-        public static CreateMartechMemberQueryParamFields ToEnum(this string value)
+        public static MarketingMemberStatus ToEnum(this string value)
         {
-            foreach(var field in typeof(CreateMartechMemberQueryParamFields).GetFields())
+            foreach(var field in typeof(MarketingMemberStatus).GetFields())
             {
                 var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
                 if (attributes.Length == 0)
@@ -61,14 +49,14 @@ namespace UnifiedTo.Models.Requests
                 {
                     var enumVal = field.GetValue(null);
 
-                    if (enumVal is CreateMartechMemberQueryParamFields)
+                    if (enumVal is MarketingMemberStatus)
                     {
-                        return (CreateMartechMemberQueryParamFields)enumVal;
+                        return (MarketingMemberStatus)enumVal;
                     }
                 }
             }
 
-            throw new Exception($"Unknown value {value} for enum CreateMartechMemberQueryParamFields");
+            throw new Exception($"Unknown value {value} for enum MarketingMemberStatus");
         }
     }
 
