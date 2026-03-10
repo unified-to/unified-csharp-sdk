@@ -321,7 +321,7 @@ namespace UnifiedTo.Models.Components
         public VirtualWebhookApplicationId? VirtualWebhookApplicationId { get; set; }
 
         [JsonProperty("virtual_webhook_benefit_id")]
-        public string? VirtualWebhookBenefitId { get; set; }
+        public VirtualWebhookBenefitId? VirtualWebhookBenefitId { get; set; }
 
         [JsonProperty("virtual_webhook_bill_id")]
         public VirtualWebhookBillId? VirtualWebhookBillId { get; set; }
@@ -427,6 +427,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_parent_id")]
         public VirtualWebhookParentId? VirtualWebhookParentId { get; set; }
+
+        [JsonProperty("virtual_webhook_payment_id")]
+        public VirtualWebhookPaymentId? VirtualWebhookPaymentId { get; set; }
 
         [JsonProperty("virtual_webhook_pipeline_id")]
         public VirtualWebhookPipelineId? VirtualWebhookPipelineId { get; set; }
