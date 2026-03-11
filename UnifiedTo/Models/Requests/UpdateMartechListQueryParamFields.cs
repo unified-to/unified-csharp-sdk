@@ -33,6 +33,18 @@ namespace UnifiedTo.Models.Requests
         UserId,
         [JsonProperty("is_active")]
         IsActive,
+        [JsonProperty("state")]
+        State,
+        [JsonProperty("from_name")]
+        FromName,
+        [JsonProperty("from_email")]
+        FromEmail,
+        [JsonProperty("subject")]
+        Subject,
+        [JsonProperty("language")]
+        Language,
+        [JsonProperty("address")]
+        Address,
         [JsonProperty("raw")]
         Raw,
     }

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: fca06522dcf65afa5ed17304efc0ad81
+  docChecksum: 315310e99bbf744b8760ffffe72f4d01
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.39
-  configChecksum: 07247f3f70f958ac1c5c75baaede3649
+  releaseVersion: 0.130.40
+  configChecksum: b92facd6b3e293e24f90eff832f45b94
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -682,6 +682,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEventsDeleted.cs
   - UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEventsUpdated.cs
   - UnifiedTo/Models/Components/PropertyLmsStudentAddress.cs
+  - UnifiedTo/Models/Components/PropertyMarketingListAddress.cs
   - UnifiedTo/Models/Components/PropertyMessagingEventButton.cs
   - UnifiedTo/Models/Components/PropertyMessagingEventChannel.cs
   - UnifiedTo/Models/Components/PropertyMessagingEventMessage.cs
@@ -3322,6 +3323,7 @@ generatedFiles:
   - docs/Models/Components/PropertyIntegrationSupportWebhookEventsDeleted.md
   - docs/Models/Components/PropertyIntegrationSupportWebhookEventsUpdated.md
   - docs/Models/Components/PropertyLmsStudentAddress.md
+  - docs/Models/Components/PropertyMarketingListAddress.md
   - docs/Models/Components/PropertyMessagingEventButton.md
   - docs/Models/Components/PropertyMessagingEventChannel.md
   - docs/Models/Components/PropertyMessagingEventMessage.md
@@ -13137,7 +13139,7 @@ trackedFiles:
     pristine_git_object: 17378975975c9dddd29907324c0f16160933eb57
   UnifiedTo/Models/Components/MarketingList.cs:
     id: 5981a961f2ed
-    last_write_checksum: sha1:a69bb581c62f64fd7a2276e9d5c99b7399dec0a3
+    last_write_checksum: sha1:1f83dbbb052000274caae2fff14d07f0897a8c25
     pristine_git_object: ad2dbaef0e211fa29b250240751e402a5bf14459
   UnifiedTo/Models/Components/MarketingMember.cs:
     id: 125c5309be96
@@ -13641,6 +13643,8 @@ trackedFiles:
     id: f641ea33d553
     last_write_checksum: sha1:6b993f7962723e9ee7867ae4f2cc36a8c423fd9f
     pristine_git_object: 34dc44b53d720edf8e5f88bdd804173b4ba89e67
+  UnifiedTo/Models/Components/PropertyMarketingListAddress.cs:
+    last_write_checksum: sha1:1687120bf5d5cab18cab46997eaa4db7c307713f
   UnifiedTo/Models/Components/PropertyMessagingEventButton.cs:
     last_write_checksum: sha1:0f16091899fd309dc5f3af9a7427e37312c8672f
   UnifiedTo/Models/Components/PropertyMessagingEventChannel.cs:
@@ -14984,7 +14988,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/CreateMartechCampaignResponse.cs:
     last_write_checksum: sha1:b1f97ed8af487984b1f91d669689b897d05de413
   UnifiedTo/Models/Requests/CreateMartechListQueryParamFields.cs:
-    last_write_checksum: sha1:7b3031beedd2c8df7400c8548f57eb09ffae31cd
+    last_write_checksum: sha1:d826db611578143495e285ca3a0d209416422697
   UnifiedTo/Models/Requests/CreateMartechListRequest.cs:
     id: 901ee0dce392
     last_write_checksum: sha1:36e9800025b0d83eb7077c1238993743f23e74fa
@@ -15994,7 +15998,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/GetMartechCampaignResponse.cs:
     last_write_checksum: sha1:e93a44aa3638f47141713b95fe89f2b9455f9185
   UnifiedTo/Models/Requests/GetMartechListQueryParamFields.cs:
-    last_write_checksum: sha1:1a48fcce5385d1bfafad0a8b88c2c3b3810daf4c
+    last_write_checksum: sha1:0a37215c588dd7eabaa74cff87fd8673aa766625
   UnifiedTo/Models/Requests/GetMartechListRequest.cs:
     id: 59111caac8f5
     last_write_checksum: sha1:1b0d16814b424f374620a2776604c68a510923d4
@@ -16555,7 +16559,7 @@ trackedFiles:
     last_write_checksum: sha1:96c1449ea94c44c79f91308095fa84c06b7a9d6a
   UnifiedTo/Models/Requests/ListAccountingTransactionsRequest.cs:
     id: f1d02cce2b07
-    last_write_checksum: sha1:24c2b242079488218cc07fa557ef879e2a423ae9
+    last_write_checksum: sha1:eed654b28704057417d8840f5acd347385cadde1
     pristine_git_object: b3079cc6978d3034eb261768b62bc8bff10d7d85
   UnifiedTo/Models/Requests/ListAccountingTransactionsResponse.cs:
     id: a14c2862f083
@@ -17128,7 +17132,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListMartechCampaignsResponse.cs:
     last_write_checksum: sha1:68ff46914632866f9677c854f0c865e3aeb9d05d
   UnifiedTo/Models/Requests/ListMartechListsQueryParamFields.cs:
-    last_write_checksum: sha1:ab621bce36139c2def35caf6389d0de904423756
+    last_write_checksum: sha1:7bd0486e598ae068cbeadb6e3d01b98805243e84
   UnifiedTo/Models/Requests/ListMartechListsRequest.cs:
     id: e4f3c7af19a1
     last_write_checksum: sha1:9ab8da1638f6e36ed0f19f1680dae440095e2f8d
@@ -17205,7 +17209,7 @@ trackedFiles:
     last_write_checksum: sha1:e21ac935f8da7028e48a5f48f6f2af58d517f869
   UnifiedTo/Models/Requests/ListPaymentPaymentsRequest.cs:
     id: 1ce2dab88463
-    last_write_checksum: sha1:d8a3a1648c1172e93447619d828a06ff76b9ddd2
+    last_write_checksum: sha1:70a41b6ffe41415eb0c42fb93d62681883729720
     pristine_git_object: fb19453b64d9cf5a515c59afa7f2bdb903015177
   UnifiedTo/Models/Requests/ListPaymentPaymentsResponse.cs:
     id: cbe89ab69d07
@@ -18136,7 +18140,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/PatchMartechCampaignResponse.cs:
     last_write_checksum: sha1:3b8947606f1dda43e4750e93e339194a2a9854cc
   UnifiedTo/Models/Requests/PatchMartechListQueryParamFields.cs:
-    last_write_checksum: sha1:a4cf2b47c7592c4fc84f6a239e12aa3e213db37e
+    last_write_checksum: sha1:d2c046dffe7d09f0556a428629e5ad65361c3357
   UnifiedTo/Models/Requests/PatchMartechListRequest.cs:
     id: b98564eb6048
     last_write_checksum: sha1:8ace6c6b810aad3c1c0ad0aa62b90928d47cb264
@@ -19776,7 +19780,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/UpdateMartechCampaignResponse.cs:
     last_write_checksum: sha1:33be64f0342560f065f46ba5b3000b07e1e4924a
   UnifiedTo/Models/Requests/UpdateMartechListQueryParamFields.cs:
-    last_write_checksum: sha1:206346fb14c52a5b41cfdecdb3846aa1d4b9adfc
+    last_write_checksum: sha1:585c8c26c2ae1a5ca4d367237b9ce40a2364c1b2
   UnifiedTo/Models/Requests/UpdateMartechListRequest.cs:
     id: ff2832e2b4f0
     last_write_checksum: sha1:15cabeac076b81f82169e4a8f90123432c025e0a
@@ -20185,7 +20189,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:06bef3b7fc8342a8b960a16e6d8ff0c83a593292
+    last_write_checksum: sha1:b7c09ffe35474e304e6321a60eeba5ca65a78734
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -20289,7 +20293,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:ac3a56d3da7008bd07326356a2a9da0bbe756242
+    last_write_checksum: sha1:9090ddc246bd7af38643eb150df3a66350306a58
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -21803,7 +21807,7 @@ trackedFiles:
     pristine_git_object: 24168d0820fa6fd3d7c3ea99b65bcd5c24b27323
   docs/Models/Components/MarketingList.md:
     id: 1436de7e4a52
-    last_write_checksum: sha1:36ceca469a2864ecbad8151fcbd77240a2d3c50f
+    last_write_checksum: sha1:5ceaebe8112b991365a50ccbd5d316a8a74f2b92
     pristine_git_object: 6a631457074f0b29c523ea08c183f19e04736a5c
   docs/Models/Components/MarketingMember.md:
     id: bcfe23bd96e4
@@ -22307,6 +22311,8 @@ trackedFiles:
     id: 9859e5a5304e
     last_write_checksum: sha1:68cbd9675a5683cff8ffb3f4bc0e5466c0222c94
     pristine_git_object: ae8fd19f41d3161403fa5f82cfcb079f585dca1a
+  docs/Models/Components/PropertyMarketingListAddress.md:
+    last_write_checksum: sha1:a730ed2125416567fe7c4873a5c64fa5b5975627
   docs/Models/Components/PropertyMessagingEventButton.md:
     last_write_checksum: sha1:32d4851ba744ef4b05a313864f8d637ae650c6e3
   docs/Models/Components/PropertyMessagingEventChannel.md:
@@ -23638,7 +23644,7 @@ trackedFiles:
   docs/Models/Requests/CreateMartechCampaignResponse.md:
     last_write_checksum: sha1:383c29a2ab2ecb5d239fe0cf466c9914ed1099d1
   docs/Models/Requests/CreateMartechListQueryParamFields.md:
-    last_write_checksum: sha1:33e5fe8aa517db45761b20fb2b73eca0840214e7
+    last_write_checksum: sha1:9b2eb84185f63fd97c0cdfde40ffc921161a712b
   docs/Models/Requests/CreateMartechListRequest.md:
     id: de3a9fd8af5a
     last_write_checksum: sha1:eb25ea27a5be76260f1093a377fef7f1ec77b780
@@ -24648,7 +24654,7 @@ trackedFiles:
   docs/Models/Requests/GetMartechCampaignResponse.md:
     last_write_checksum: sha1:b060eb20d9a7f1c32be187cfaca769990aefdcd7
   docs/Models/Requests/GetMartechListQueryParamFields.md:
-    last_write_checksum: sha1:a3b312c816716f5b51f27742fcd00358d267641d
+    last_write_checksum: sha1:02e2f6ffec48ce9bbb8b34200fd4747519aaf49c
   docs/Models/Requests/GetMartechListRequest.md:
     id: 873e0dac7e71
     last_write_checksum: sha1:29a22ebac9e5436d76af55b7fa7d054b7874e951
@@ -25209,7 +25215,7 @@ trackedFiles:
     last_write_checksum: sha1:9a4b260231417cf03bb01b1211917b5a4682da87
   docs/Models/Requests/ListAccountingTransactionsRequest.md:
     id: 1cd896d6ca78
-    last_write_checksum: sha1:3109c61d915a50ee4291dfdf5fd37c7c57d1a73a
+    last_write_checksum: sha1:6ff620d9f4f86d2dee4183aa350517344d8b8281
     pristine_git_object: d6ba07d4504ad37487d042577bb680808f23d316
   docs/Models/Requests/ListAccountingTransactionsResponse.md:
     id: 6f5ae4fbf776
@@ -25782,7 +25788,7 @@ trackedFiles:
   docs/Models/Requests/ListMartechCampaignsResponse.md:
     last_write_checksum: sha1:716d343d341ac681fb9ed22380e3af1bdec408cd
   docs/Models/Requests/ListMartechListsQueryParamFields.md:
-    last_write_checksum: sha1:3942d59412b2fa4b0ebcaa167a4acf89684fec23
+    last_write_checksum: sha1:f80705f2a609412f3a5fd524858036da566535a8
   docs/Models/Requests/ListMartechListsRequest.md:
     id: 57248df9ec1a
     last_write_checksum: sha1:468231dec048c90a197c7799ffd107d8c76a5108
@@ -25859,7 +25865,7 @@ trackedFiles:
     last_write_checksum: sha1:ae4ade48f12215b2bf972ae5cb997747b6551480
   docs/Models/Requests/ListPaymentPaymentsRequest.md:
     id: 144e234796c6
-    last_write_checksum: sha1:7b6e4db20a282145167c079369a5de2c624a1f45
+    last_write_checksum: sha1:87e14cde4f8d10e84f3ddbf4e7a468f8cca36218
     pristine_git_object: 0f32e7885f7544b24e72d0556a523bcf6b551d68
   docs/Models/Requests/ListPaymentPaymentsResponse.md:
     id: 2357dc4e92da
@@ -26790,7 +26796,7 @@ trackedFiles:
   docs/Models/Requests/PatchMartechCampaignResponse.md:
     last_write_checksum: sha1:232873c485da1242bb54e7171228ab2210d04d93
   docs/Models/Requests/PatchMartechListQueryParamFields.md:
-    last_write_checksum: sha1:47b54ab441d06430033e464a4f377b9d19cfbaca
+    last_write_checksum: sha1:1662b857b9ebdb41db211ae422e8f3cb94aa4812
   docs/Models/Requests/PatchMartechListRequest.md:
     id: 51651e2ae5f4
     last_write_checksum: sha1:0a1e6acb4072c576b06a79a4a095c1f8261296cf
@@ -28430,7 +28436,7 @@ trackedFiles:
   docs/Models/Requests/UpdateMartechCampaignResponse.md:
     last_write_checksum: sha1:87e215896a949764e7ecb3bdaaf0785545be144f
   docs/Models/Requests/UpdateMartechListQueryParamFields.md:
-    last_write_checksum: sha1:d6282d1b4f3007734f31d62870db32f45f135dd1
+    last_write_checksum: sha1:2ca21f4b1d2da014403cd843522caa5535305a6f
   docs/Models/Requests/UpdateMartechListRequest.md:
     id: 604c2385ce87
     last_write_checksum: sha1:ce27efe1063d12567ee8ac42fb14458fc2849e13

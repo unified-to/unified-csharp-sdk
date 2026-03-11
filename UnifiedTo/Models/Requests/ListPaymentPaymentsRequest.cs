@@ -35,6 +35,12 @@ namespace UnifiedTo.Models.Requests
         public string? ContactId { get; set; }
 
         /// <summary>
+        /// The end date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=end_lt")]
+        public string? EndLt { get; set; }
+
+        /// <summary>
         /// Fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
@@ -75,6 +81,12 @@ namespace UnifiedTo.Models.Requests
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")]
         public string? Sort { get; set; }
+
+        /// <summary>
+        /// The start date to filter by (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=start_gte")]
+        public string? StartGte { get; set; }
 
         /// <summary>
         /// The type to filter by

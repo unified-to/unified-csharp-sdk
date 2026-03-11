@@ -12,6 +12,7 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
     /// <summary>
@@ -19,6 +20,9 @@ namespace UnifiedTo.Models.Components
     /// </summary>
     public class MarketingList
     {
+
+        [JsonProperty("address")]
+        public PropertyMarketingListAddress? Address { get; set; }
 
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
@@ -29,11 +33,20 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
+        [JsonProperty("from_email")]
+        public string? FromEmail { get; set; }
+
+        [JsonProperty("from_name")]
+        public string? FromName { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
+
+        [JsonProperty("language")]
+        public string? Language { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }
@@ -43,6 +56,12 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
+
+        [JsonProperty("state")]
+        public string? State { get; set; }
+
+        [JsonProperty("subject")]
+        public string? Subject { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
