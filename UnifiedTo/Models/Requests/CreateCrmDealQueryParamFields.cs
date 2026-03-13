@@ -41,6 +41,8 @@ namespace UnifiedTo.Models.Requests
         PipelineId,
         [JsonProperty("stages")]
         Stages,
+        [JsonProperty("pipelines")]
+        Pipelines,
         [JsonProperty("source")]
         Source,
         [JsonProperty("probability")]
@@ -61,8 +63,6 @@ namespace UnifiedTo.Models.Requests
         Metadata,
         [JsonProperty("raw")]
         Raw,
-        [JsonProperty("pipelines")]
-        Pipelines,
     }
 
     public static class CreateCrmDealQueryParamFieldsExtension

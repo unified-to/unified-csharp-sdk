@@ -60,9 +60,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
-        [JsonProperty("image_hash")]
-        public string? ImageHash { get; set; }
-
         [JsonProperty("item_id")]
         public string? ItemId { get; set; }
 
@@ -77,9 +74,6 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }
-
-        [JsonProperty("page_identifier")]
-        public string? PageIdentifier { get; set; }
 
         [JsonProperty("path1")]
         public string? Path1 { get; set; }
@@ -96,9 +90,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("third_party_tag")]
         public string? ThirdPartyTag { get; set; }
 
-        [JsonProperty("thumbnail_url")]
-        public string? ThumbnailUrl { get; set; }
-
         [JsonProperty("title")]
         public string? Title { get; set; }
 
@@ -107,9 +98,6 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("vast_tag_url")]
         public string? VastTagUrl { get; set; }
-
-        [JsonProperty("video_id")]
-        public string? VideoId { get; set; }
 
         [JsonProperty("width")]
         public double? Width { get; set; }

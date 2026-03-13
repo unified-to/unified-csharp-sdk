@@ -15,7 +15,7 @@ namespace UnifiedTo.Models.Components
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class CommerceItemvariant1
+    public class CommerceItemvariant
     {
 
         [JsonProperty("available_at")]
@@ -46,7 +46,7 @@ namespace UnifiedTo.Models.Components
         public bool? IsVisible { get; set; }
 
         /// <summary>
-        /// Reference to CommerceItem
+        /// references CommerceItem
         /// </summary>
         [JsonProperty("items")]
         public List<CommerceReference>? Items { get; set; }
@@ -82,7 +82,7 @@ namespace UnifiedTo.Models.Components
         public bool? RequiresShipping { get; set; }
 
         [JsonProperty("size_unit")]
-        public CommerceItemvariantSizeUnit? SizeUnit { get; set; }
+        public SizeUnit? SizeUnit { get; set; }
 
         [JsonProperty("sku")]
         public string? Sku { get; set; }
@@ -100,7 +100,7 @@ namespace UnifiedTo.Models.Components
         public double? Weight { get; set; }
 
         [JsonProperty("weight_unit")]
-        public CommerceItemvariantWeightUnit? WeightUnit { get; set; }
+        public WeightUnit? WeightUnit { get; set; }
 
         [JsonProperty("width")]
         public double? Width { get; set; }

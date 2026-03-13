@@ -33,12 +33,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
-        [JsonProperty("from_email")]
-        public string? FromEmail { get; set; }
-
-        [JsonProperty("from_name")]
-        public string? FromName { get; set; }
-
         [JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -54,11 +48,20 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        [JsonProperty("sender_company")]
+        public string? SenderCompany { get; set; }
+
+        [JsonProperty("sender_email")]
+        public string? SenderEmail { get; set; }
+
+        [JsonProperty("sender_name")]
+        public string? SenderName { get; set; }
+
+        [JsonProperty("sender_phone")]
+        public string? SenderPhone { get; set; }
+
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
-
-        [JsonProperty("state")]
-        public string? State { get; set; }
 
         [JsonProperty("subject")]
         public string? Subject { get; set; }

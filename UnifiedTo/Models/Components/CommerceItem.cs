@@ -88,7 +88,7 @@ namespace UnifiedTo.Models.Components
         /// first variant is the default variant
         /// </summary>
         [JsonProperty("variants")]
-        public List<CommerceItemVariant>? Variants { get; set; }
+        public List<CommerceItemvariant>? Variants { get; set; }
 
         [JsonProperty("vendor_name")]
         public string? VendorName { get; set; }

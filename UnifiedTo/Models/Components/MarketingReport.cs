@@ -15,9 +15,6 @@ namespace UnifiedTo.Models.Components
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    /// <summary>
-    /// Campaign performance report
-    /// </summary>
     public class MarketingReport
     {
 

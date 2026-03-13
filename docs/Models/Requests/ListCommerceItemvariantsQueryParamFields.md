@@ -9,7 +9,6 @@
 | `CreatedAt`         | created_at          |
 | `UpdatedAt`         | updated_at          |
 | `Name`              | name                |
-| `Items`             | items               |
 | `PublicName`        | public_name         |
 | `Description`       | description         |
 | `PublicDescription` | public_description  |
@@ -32,4 +31,5 @@
 | `InventoryId`       | inventory_id        |
 | `RequiresShipping`  | requires_shipping   |
 | `Metadata`          | metadata            |
+| `Items`             | items               |
 | `Raw`               | raw                 |

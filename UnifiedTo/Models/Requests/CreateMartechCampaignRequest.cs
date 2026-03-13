@@ -17,9 +17,6 @@ namespace UnifiedTo.Models.Requests
     public class CreateMartechCampaignRequest
     {
 
-        /// <summary>
-        /// A marketing campaign or email send
-        /// </summary>
         [SpeakeasyMetadata("request:mediaType=application/json")]
         public MarketingCampaign MarketingCampaign { get; set; } = default!;
 

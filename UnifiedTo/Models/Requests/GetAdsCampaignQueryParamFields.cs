@@ -45,10 +45,6 @@ namespace UnifiedTo.Models.Requests
         PlannedSpendAmount,
         [JsonProperty("frequency_cap")]
         FrequencyCap,
-        [JsonProperty("bid_strategy")]
-        BidStrategy,
-        [JsonProperty("special_ad_categories")]
-        SpecialAdCategories,
         [JsonProperty("advertising_channel_type")]
         AdvertisingChannelType,
         [JsonProperty("campaign_budget_identifier")]

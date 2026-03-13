@@ -24,31 +24,16 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("city")]
         public string? City { get; set; }
 
-        [JsonProperty("company")]
-        public string? Company { get; set; }
-
         [JsonProperty("country")]
         public string? Country { get; set; }
 
-        [JsonProperty("from_email")]
-        public string? FromEmail { get; set; }
+        [JsonProperty("country_code")]
+        public string? CountryCode { get; set; }
 
-        [JsonProperty("from_name")]
-        public string? FromName { get; set; }
+        [JsonProperty("postal_code")]
+        public string? PostalCode { get; set; }
 
-        [JsonProperty("language")]
-        public string? Language { get; set; }
-
-        [JsonProperty("phone")]
-        public string? Phone { get; set; }
-
-        [JsonProperty("state")]
-        public string? State { get; set; }
-
-        [JsonProperty("subject")]
-        public string? Subject { get; set; }
-
-        [JsonProperty("zip")]
-        public string? Zip { get; set; }
+        [JsonProperty("region")]
+        public string? Region { get; set; }
     }
 }

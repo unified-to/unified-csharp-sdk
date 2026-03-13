@@ -17,6 +17,10 @@ namespace UnifiedTo.Models.Requests
     {
         [JsonProperty("id")]
         Id,
+        [JsonProperty("created_at")]
+        CreatedAt,
+        [JsonProperty("updated_at")]
+        UpdatedAt,
         [JsonProperty("name")]
         Name,
         [JsonProperty("type")]
@@ -37,10 +41,6 @@ namespace UnifiedTo.Models.Requests
         ReplyToEmail,
         [JsonProperty("send_at")]
         SendAt,
-        [JsonProperty("created_at")]
-        CreatedAt,
-        [JsonProperty("updated_at")]
-        UpdatedAt,
         [JsonProperty("raw")]
         Raw,
     }

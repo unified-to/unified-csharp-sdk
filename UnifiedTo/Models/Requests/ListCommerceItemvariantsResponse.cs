@@ -21,7 +21,7 @@ namespace UnifiedTo.Models.Requests
         /// <summary>
         /// Successful
         /// </summary>
-        public List<CommerceItemvariant1>? CommerceItemvariants { get; set; }
+        public List<CommerceItemvariant>? CommerceItemvariants { get; set; }
 
         /// <summary>
         /// HTTP response content type for this operation

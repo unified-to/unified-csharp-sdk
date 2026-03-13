@@ -32,7 +32,7 @@ namespace UnifiedTo.Models.Components
         public double? PerformanceGoalAmount { get; set; }
 
         [JsonProperty("performance_goal_type")]
-        public PropertyAdsGroupBidStrategyPerformanceGoalType? PerformanceGoalType { get; set; }
+        public PerformanceGoalType? PerformanceGoalType { get; set; }
 
         [JsonProperty("raise_bid_for_deals")]
         public bool? RaiseBidForDeals { get; set; }
@@ -44,7 +44,7 @@ namespace UnifiedTo.Models.Components
         public PropertyAdsGroupBidStrategyType Type { get; set; } = default!;
 
         [JsonProperty("youtube_and_partners_type")]
-        public PropertyAdsGroupBidStrategyYoutubeAndPartnersType? YoutubeAndPartnersType { get; set; }
+        public YoutubeAndPartnersType? YoutubeAndPartnersType { get; set; }
 
         [JsonProperty("youtube_and_partners_value")]
         public string? YoutubeAndPartnersValue { get; set; }

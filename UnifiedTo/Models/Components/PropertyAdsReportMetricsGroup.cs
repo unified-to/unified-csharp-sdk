@@ -18,9 +18,6 @@ namespace UnifiedTo.Models.Components
     public class PropertyAdsReportMetricsGroup
     {
 
-        [JsonProperty("ad_group_type")]
-        public string? AdGroupType { get; set; }
-
         [JsonProperty("bid_amount")]
         public double? BidAmount { get; set; }
 
@@ -60,9 +57,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("currency")]
         public string? Currency { get; set; }
 
-        [JsonProperty("daily_spend_cap")]
-        public double? DailySpendCap { get; set; }
-
         [JsonProperty("end_at")]
         public DateTime? EndAt { get; set; }
 
@@ -77,9 +71,6 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("insertionorder_id")]
         public string? InsertionorderId { get; set; }
-
-        [JsonProperty("lifetime_spend_cap")]
-        public double? LifetimeSpendCap { get; set; }
 
         [JsonProperty("metadata")]
         public List<AdsMetadata>? Metadata { get; set; }

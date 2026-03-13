@@ -23,8 +23,6 @@ namespace UnifiedTo.Models.Requests
         UpdatedAt,
         [JsonProperty("name")]
         Name,
-        [JsonProperty("items")]
-        Items,
         [JsonProperty("public_name")]
         PublicName,
         [JsonProperty("description")]
@@ -69,6 +67,8 @@ namespace UnifiedTo.Models.Requests
         RequiresShipping,
         [JsonProperty("metadata")]
         Metadata,
+        [JsonProperty("items")]
+        Items,
         [JsonProperty("raw")]
         Raw,
     }

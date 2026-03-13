@@ -31,9 +31,6 @@
 | `CreativeIds`          | creative_ids           |
 | `OptimizationGoal`     | optimization_goal      |
 | `BillingEvent`         | billing_event          |
-| `DailySpendCap`        | daily_spend_cap        |
-| `LifetimeSpendCap`     | lifetime_spend_cap     |
-| `AdGroupType`          | ad_group_type          |
 | `Currency`             | currency               |
 | `Metadata`             | metadata               |
 | `Raw`                  | raw                    |

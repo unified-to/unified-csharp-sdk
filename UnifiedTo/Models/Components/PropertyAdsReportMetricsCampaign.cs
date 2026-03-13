@@ -21,12 +21,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("advertising_channel_type")]
         public PropertyAdsReportMetricsCampaignAdvertisingChannelType? AdvertisingChannelType { get; set; }
 
-        /// <summary>
-        /// YOUTUBE_AND_PARTNERS
-        /// </summary>
-        [JsonProperty("bid_strategy")]
-        public PropertyAdsReportMetricsCampaignBidStrategy? BidStrategy { get; set; }
-
         [JsonProperty("budget_amount")]
         public double? BudgetAmount { get; set; }
 
@@ -65,9 +59,6 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
-
-        [JsonProperty("special_ad_categories")]
-        public List<string>? SpecialAdCategories { get; set; }
 
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }

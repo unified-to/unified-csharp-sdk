@@ -29,7 +29,7 @@ namespace UnifiedTo.Models.Requests
         public List<ListCommerceInventoriesQueryParamFields>? Fields { get; set; }
 
         /// <summary>
-        /// The item variant ID to filter by (reference to CommerceItemVariant)
+        /// The item variant ID to filter by (reference to CommerceCommerceItemvariant)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=item_variant_id")]
         public string? ItemVariantId { get; set; }

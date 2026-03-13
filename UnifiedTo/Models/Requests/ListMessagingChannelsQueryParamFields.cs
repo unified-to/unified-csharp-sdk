@@ -25,8 +25,6 @@ namespace UnifiedTo.Models.Requests
         Name,
         [JsonProperty("description")]
         Description,
-        [JsonProperty("parent_channel_id")]
-        ParentChannelId,
         [JsonProperty("parent_id")]
         ParentId,
         [JsonProperty("has_subchannels")]

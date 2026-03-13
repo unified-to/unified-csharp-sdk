@@ -1,34 +1,10 @@
 # VirtualWebhookBenefitId
 
 
-## Supported Types
+## Values
 
-### MapOfAny
-
-```csharp
-VirtualWebhookBenefitId.CreateMapOfAny(/* values here */);
-```
-
-### Str
-
-```csharp
-VirtualWebhookBenefitId.CreateStr(/* values here */);
-```
-
-### Number
-
-```csharp
-VirtualWebhookBenefitId.CreateNumber(/* values here */);
-```
-
-### Boolean
-
-```csharp
-VirtualWebhookBenefitId.CreateBoolean(/* values here */);
-```
-
-### ArrayOfIntegrationSupport5
-
-```csharp
-VirtualWebhookBenefitId.CreateArrayOfIntegrationSupport5(/* values here */);
-```
+| Name                | Value               |
+| ------------------- | ------------------- |
+| `SupportedRequired` | supported-required  |
+| `Supported`         | supported           |
+| `NotSupported`      | not-supported       |

@@ -6,6 +6,8 @@
 | Name           | Value          |
 | -------------- | -------------- |
 | `Id`           | id             |
+| `CreatedAt`    | created_at     |
+| `UpdatedAt`    | updated_at     |
 | `Name`         | name           |
 | `Type`         | type           |
 | `Status`       | status         |
@@ -16,6 +18,4 @@
 | `FromEmail`    | from_email     |
 | `ReplyToEmail` | reply_to_email |
 | `SendAt`       | send_at        |
-| `CreatedAt`    | created_at     |
-| `UpdatedAt`    | updated_at     |
 | `Raw`          | raw            |

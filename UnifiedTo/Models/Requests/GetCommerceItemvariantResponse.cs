@@ -20,7 +20,7 @@ namespace UnifiedTo.Models.Requests
         /// <summary>
         /// Successful
         /// </summary>
-        public CommerceItemvariant1? CommerceItemvariant { get; set; }
+        public CommerceItemvariant? CommerceItemvariant { get; set; }
 
         /// <summary>
         /// HTTP response content type for this operation

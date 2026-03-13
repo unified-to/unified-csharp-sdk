@@ -43,8 +43,6 @@ namespace UnifiedTo.Models.Requests
         Height,
         [JsonProperty("asset_urls")]
         AssetUrls,
-        [JsonProperty("page_identifier")]
-        PageIdentifier,
         [JsonProperty("link_url")]
         LinkUrl,
         [JsonProperty("body")]
@@ -53,12 +51,6 @@ namespace UnifiedTo.Models.Requests
         Title,
         [JsonProperty("cta")]
         Cta,
-        [JsonProperty("thumbnail_url")]
-        ThumbnailUrl,
-        [JsonProperty("image_hash")]
-        ImageHash,
-        [JsonProperty("video_id")]
-        VideoId,
         [JsonProperty("third_party_tag")]
         ThirdPartyTag,
         [JsonProperty("vast_tag_url")]

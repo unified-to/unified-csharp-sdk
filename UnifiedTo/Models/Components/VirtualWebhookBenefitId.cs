@@ -10,284 +10,50 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
     using System;
-    using System.Collections.Generic;
-    using System.Numerics;
-    using System.Reflection;
-    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-
-    public class VirtualWebhookBenefitIdType
+    public enum VirtualWebhookBenefitId
     {
-        private VirtualWebhookBenefitIdType(string value) { Value = value; }
-
-        public string Value { get; private set; }
-        public static VirtualWebhookBenefitIdType MapOfAny { get { return new VirtualWebhookBenefitIdType("mapOfAny"); } }
-        
-        public static VirtualWebhookBenefitIdType Str { get { return new VirtualWebhookBenefitIdType("str"); } }
-        
-        public static VirtualWebhookBenefitIdType Number { get { return new VirtualWebhookBenefitIdType("number"); } }
-        
-        public static VirtualWebhookBenefitIdType Boolean { get { return new VirtualWebhookBenefitIdType("boolean"); } }
-        
-        public static VirtualWebhookBenefitIdType ArrayOfIntegrationSupport5 { get { return new VirtualWebhookBenefitIdType("arrayOfIntegrationSupport5"); } }
-        
-        public static VirtualWebhookBenefitIdType Null { get { return new VirtualWebhookBenefitIdType("null"); } }
-
-        public override string ToString() { return Value; }
-        public static implicit operator String(VirtualWebhookBenefitIdType v) { return v.Value; }
-        public static VirtualWebhookBenefitIdType FromString(string v) {
-            switch(v) {
-                case "mapOfAny": return MapOfAny;
-                case "str": return Str;
-                case "number": return Number;
-                case "boolean": return Boolean;
-                case "arrayOfIntegrationSupport5": return ArrayOfIntegrationSupport5;
-                case "null": return Null;
-                default: throw new ArgumentException("Invalid value for VirtualWebhookBenefitIdType");
-            }
-        }
-        public override bool Equals(object? obj)
-        {
-            if (obj == null || GetType() != obj.GetType())
-            {
-                return false;
-            }
-            return Value.Equals(((VirtualWebhookBenefitIdType)obj).Value);
-        }
-
-        public override int GetHashCode()
-        {
-            return Value.GetHashCode();
-        }
+        [JsonProperty("supported-required")]
+        SupportedRequired,
+        [JsonProperty("supported")]
+        Supported,
+        [JsonProperty("not-supported")]
+        NotSupported,
     }
 
-
-    [JsonConverter(typeof(VirtualWebhookBenefitId.VirtualWebhookBenefitIdConverter))]
-    public class VirtualWebhookBenefitId {
-        public VirtualWebhookBenefitId(VirtualWebhookBenefitIdType type) {
-            Type = type;
-        }
-
-        [SpeakeasyMetadata("form:explode=true")]
-        public Dictionary<string, object>? MapOfAny { get; set; }
-
-        [SpeakeasyMetadata("form:explode=true")]
-        public string? Str { get; set; }
-
-        [SpeakeasyMetadata("form:explode=true")]
-        public double? Number { get; set; }
-
-        [SpeakeasyMetadata("form:explode=true")]
-        public bool? Boolean { get; set; }
-
-        [SpeakeasyMetadata("form:explode=true")]
-        public List<IntegrationSupport5>? ArrayOfIntegrationSupport5 { get; set; }
-
-        public VirtualWebhookBenefitIdType Type { get; set; }
-
-
-        public static VirtualWebhookBenefitId CreateMapOfAny(Dictionary<string, object> mapOfAny) {
-            VirtualWebhookBenefitIdType typ = VirtualWebhookBenefitIdType.MapOfAny;
-
-            VirtualWebhookBenefitId res = new VirtualWebhookBenefitId(typ);
-            res.MapOfAny = mapOfAny;
-            return res;
-        }
-
-        public static VirtualWebhookBenefitId CreateStr(string str) {
-            VirtualWebhookBenefitIdType typ = VirtualWebhookBenefitIdType.Str;
-
-            VirtualWebhookBenefitId res = new VirtualWebhookBenefitId(typ);
-            res.Str = str;
-            return res;
-        }
-
-        public static VirtualWebhookBenefitId CreateNumber(double number) {
-            VirtualWebhookBenefitIdType typ = VirtualWebhookBenefitIdType.Number;
-
-            VirtualWebhookBenefitId res = new VirtualWebhookBenefitId(typ);
-            res.Number = number;
-            return res;
-        }
-
-        public static VirtualWebhookBenefitId CreateBoolean(bool boolean) {
-            VirtualWebhookBenefitIdType typ = VirtualWebhookBenefitIdType.Boolean;
-
-            VirtualWebhookBenefitId res = new VirtualWebhookBenefitId(typ);
-            res.Boolean = boolean;
-            return res;
-        }
-
-        public static VirtualWebhookBenefitId CreateArrayOfIntegrationSupport5(List<IntegrationSupport5> arrayOfIntegrationSupport5) {
-            VirtualWebhookBenefitIdType typ = VirtualWebhookBenefitIdType.ArrayOfIntegrationSupport5;
-
-            VirtualWebhookBenefitId res = new VirtualWebhookBenefitId(typ);
-            res.ArrayOfIntegrationSupport5 = arrayOfIntegrationSupport5;
-            return res;
-        }
-
-        public static VirtualWebhookBenefitId CreateNull() {
-            VirtualWebhookBenefitIdType typ = VirtualWebhookBenefitIdType.Null;
-            return new VirtualWebhookBenefitId(typ);
-        }
-
-        public class VirtualWebhookBenefitIdConverter : JsonConverter
+    public static class VirtualWebhookBenefitIdExtension
+    {
+        public static string Value(this VirtualWebhookBenefitId value)
         {
+            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
+        }
 
-            public override bool CanConvert(System.Type objectType) => objectType == typeof(VirtualWebhookBenefitId);
-
-            public override bool CanRead => true;
-
-            public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
+        public static VirtualWebhookBenefitId ToEnum(this string value)
+        {
+            foreach(var field in typeof(VirtualWebhookBenefitId).GetFields())
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
+                if (attributes.Length == 0)
                 {
-                    return null;
+                    continue;
                 }
 
-                var fallbackCandidates = new List<(System.Type, object, string)>();
-
-                try
+                var attribute = attributes[0] as JsonPropertyAttribute;
+                if (attribute != null && attribute.PropertyName == value)
                 {
-                    return new VirtualWebhookBenefitId(VirtualWebhookBenefitIdType.MapOfAny)
+                    var enumVal = field.GetValue(null);
+
+                    if (enumVal is VirtualWebhookBenefitId)
                     {
-                        MapOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Dictionary<string, object>>(json)
-                    };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(Dictionary<string, object>), new VirtualWebhookBenefitId(VirtualWebhookBenefitIdType.MapOfAny), "MapOfAny"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-
-                if (json[0] == '"' && json[^1] == '"'){
-                    return new VirtualWebhookBenefitId(VirtualWebhookBenefitIdType.Str)
-                    {
-                        Str = json[1..^1]
-                    };
-                }
-
-                try
-                {
-                    var converted = Convert.ToDouble(json);
-                    return new VirtualWebhookBenefitId(VirtualWebhookBenefitIdType.Number)
-                    {
-                        Number = converted
-                    };
-                }
-                catch (System.FormatException)
-                {
-                    // try next option
-                }
-
-                try
-                {
-                    var converted = Convert.ToBoolean(json);
-                    return new VirtualWebhookBenefitId(VirtualWebhookBenefitIdType.Boolean)
-                    {
-                        Boolean = converted
-                    };
-                }
-                catch (System.FormatException)
-                {
-                    // try next option
-                }
-
-                try
-                {
-                    return new VirtualWebhookBenefitId(VirtualWebhookBenefitIdType.ArrayOfIntegrationSupport5)
-                    {
-                        ArrayOfIntegrationSupport5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<IntegrationSupport5>>(json)
-                    };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(List<IntegrationSupport5>), new VirtualWebhookBenefitId(VirtualWebhookBenefitIdType.ArrayOfIntegrationSupport5), "ArrayOfIntegrationSupport5"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-
-                if (fallbackCandidates.Count > 0)
-                {
-                    fallbackCandidates.Sort((a, b) => ResponseBodyDeserializer.CompareFallbackCandidates(a.Item1, b.Item1, json));
-                    foreach(var (deserializationType, returnObject, propertyName) in fallbackCandidates)
-                    {
-                        try
-                        {
-                            return ResponseBodyDeserializer.DeserializeUndiscriminatedUnionFallback(deserializationType, returnObject, propertyName, json);
-                        }
-                        catch (ResponseBodyDeserializer.DeserializationException)
-                        {
-                            // try next fallback option
-                        }
-                        catch (Exception)
-                        {
-                            throw;
-                        }
+                        return (VirtualWebhookBenefitId)enumVal;
                     }
                 }
-
-                throw new InvalidOperationException("Could not deserialize into any supported types.");
             }
 
-            public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
-            {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                VirtualWebhookBenefitId res = (VirtualWebhookBenefitId)value;
-                if (VirtualWebhookBenefitIdType.FromString(res.Type).Equals(VirtualWebhookBenefitIdType.Null))
-                {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                if (res.MapOfAny != null)
-                {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
-                    return;
-                }
-                if (res.Str != null)
-                {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
-                    return;
-                }
-                if (res.Number != null)
-                {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
-                    return;
-                }
-                if (res.Boolean != null)
-                {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
-                    return;
-                }
-                if (res.ArrayOfIntegrationSupport5 != null)
-                {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfIntegrationSupport5));
-                    return;
-                }
-
-            }
-
+            throw new Exception($"Unknown value {value} for enum VirtualWebhookBenefitId");
         }
-
     }
+
 }

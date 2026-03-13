@@ -15,9 +15,6 @@ namespace UnifiedTo.Models.Components
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    /// <summary>
-    /// Employee payroll bank account for direct deposit.
-    /// </summary>
     public class HrisBankaccount
     {
 

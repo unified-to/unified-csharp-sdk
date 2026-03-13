@@ -15,9 +15,6 @@ namespace UnifiedTo.Models.Components
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    /// <summary>
-    /// A marketing campaign or email send
-    /// </summary>
     public class MarketingCampaign
     {
 
@@ -34,7 +31,7 @@ namespace UnifiedTo.Models.Components
         public string? Id { get; set; }
 
         /// <summary>
-        /// Associated list/audience IDs
+        /// Associated listaudience IDs
         /// </summary>
         [JsonProperty("list_ids")]
         public List<string>? ListIds { get; set; }

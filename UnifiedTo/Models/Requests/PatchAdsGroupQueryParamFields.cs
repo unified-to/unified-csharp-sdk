@@ -67,12 +67,6 @@ namespace UnifiedTo.Models.Requests
         OptimizationGoal,
         [JsonProperty("billing_event")]
         BillingEvent,
-        [JsonProperty("daily_spend_cap")]
-        DailySpendCap,
-        [JsonProperty("lifetime_spend_cap")]
-        LifetimeSpendCap,
-        [JsonProperty("ad_group_type")]
-        AdGroupType,
         [JsonProperty("currency")]
         Currency,
         [JsonProperty("metadata")]

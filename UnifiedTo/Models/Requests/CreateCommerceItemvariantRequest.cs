@@ -18,7 +18,7 @@ namespace UnifiedTo.Models.Requests
     {
 
         [SpeakeasyMetadata("request:mediaType=application/json")]
-        public CommerceItemvariant1 CommerceItemvariant { get; set; } = default!;
+        public CommerceItemvariant CommerceItemvariant { get; set; } = default!;
 
         /// <summary>
         /// ID of the connection

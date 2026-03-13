@@ -190,7 +190,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.CreateCommerceItemvariantAsync(
-    commerceItemvariant: new CommerceItemvariant1() {},
+    commerceItemvariant: new CommerceItemvariant() {},
     connectionId: "<id>"
 );
 
@@ -201,7 +201,7 @@ var res = await sdk.Commerce.CreateCommerceItemvariantAsync(
 
 | Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `CommerceItemvariant`                                                                                                                            | [CommerceItemvariant1](../../Models/Components/CommerceItemvariant1.md)                                                                          | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `CommerceItemvariant`                                                                                                                            | [CommerceItemvariant](../../Models/Components/CommerceItemvariant.md)                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
 | `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
 | `Fields`                                                                                                                                         | List<[CreateCommerceItemvariantQueryParamFields](../../Models/Requests/CreateCommerceItemvariantQueryParamFields.md)>                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
 | `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
@@ -1056,7 +1056,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCommerceItemvariantRequest req = new PatchCommerceItemvariantRequest() {
-    CommerceItemvariant = new CommerceItemvariant1() {},
+    CommerceItemvariant = new CommerceItemvariant() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1631,7 +1631,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCommerceItemvariantRequest req = new UpdateCommerceItemvariantRequest() {
-    CommerceItemvariant = new CommerceItemvariant1() {},
+    CommerceItemvariant = new CommerceItemvariant() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };

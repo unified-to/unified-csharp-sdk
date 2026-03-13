@@ -1,34 +1,10 @@
 # VirtualWebhookPaymentId
 
 
-## Supported Types
+## Values
 
-### MapOfAny
-
-```csharp
-VirtualWebhookPaymentId.CreateMapOfAny(/* values here */);
-```
-
-### Str
-
-```csharp
-VirtualWebhookPaymentId.CreateStr(/* values here */);
-```
-
-### Number
-
-```csharp
-VirtualWebhookPaymentId.CreateNumber(/* values here */);
-```
-
-### Boolean
-
-```csharp
-VirtualWebhookPaymentId.CreateBoolean(/* values here */);
-```
-
-### ArrayOfIntegrationSupportSchemas5
-
-```csharp
-VirtualWebhookPaymentId.CreateArrayOfIntegrationSupportSchemas5(/* values here */);
-```
+| Name                | Value               |
+| ------------------- | ------------------- |
+| `SupportedRequired` | supported-required  |
+| `Supported`         | supported           |
+| `NotSupported`      | not-supported       |

@@ -43,7 +43,7 @@ namespace UnifiedTo
         /// <summary>
         /// Create an itemvariant
         /// </summary>
-        Task<CreateCommerceItemvariantResponse> CreateCommerceItemvariantAsync(CommerceItemvariant1 commerceItemvariant, string connectionId, List<CreateCommerceItemvariantQueryParamFields>? fields = null, string? raw = null);
+        Task<CreateCommerceItemvariantResponse> CreateCommerceItemvariantAsync(CommerceItemvariant commerceItemvariant, string connectionId, List<CreateCommerceItemvariantQueryParamFields>? fields = null, string? raw = null);
 
         /// <summary>
         /// Create a location
@@ -240,7 +240,7 @@ namespace UnifiedTo
     {
         public SDKConfig SDKConfiguration { get; private set; }
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.40";
+        private const string _sdkVersion = "0.130.41";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
 
@@ -522,7 +522,7 @@ namespace UnifiedTo
             throw new Models.Errors.SDKException("Unknown status code received", responseStatusCode, await httpResponse.Content.ReadAsStringAsync(), httpResponse);
         }
 
-        public async Task<CreateCommerceItemvariantResponse> CreateCommerceItemvariantAsync(CommerceItemvariant1 commerceItemvariant, string connectionId, List<CreateCommerceItemvariantQueryParamFields>? fields = null, string? raw = null)
+        public async Task<CreateCommerceItemvariantResponse> CreateCommerceItemvariantAsync(CommerceItemvariant commerceItemvariant, string connectionId, List<CreateCommerceItemvariantQueryParamFields>? fields = null, string? raw = null)
         {
             var request = new CreateCommerceItemvariantRequest()
             {
@@ -588,7 +588,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<CommerceItemvariant1>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<CommerceItemvariant>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new CreateCommerceItemvariantResponse()
                     {
                         StatusCode = responseStatusCode,
@@ -1201,7 +1201,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<CommerceItemvariant1>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<CommerceItemvariant>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new GetCommerceItemvariantResponse()
                     {
                         StatusCode = responseStatusCode,
@@ -1768,7 +1768,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<List<CommerceItemvariant1>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<List<CommerceItemvariant>>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new ListCommerceItemvariantsResponse()
                     {
                         StatusCode = responseStatusCode,
@@ -2338,7 +2338,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<CommerceItemvariant1>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<CommerceItemvariant>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new PatchCommerceItemvariantResponse()
                     {
                         StatusCode = responseStatusCode,
@@ -3500,7 +3500,7 @@ namespace UnifiedTo
             {
                 if(Utilities.IsContentTypeMatch("application/json", contentType))
                 {
-                    var obj = ResponseBodyDeserializer.Deserialize<CommerceItemvariant1>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
+                    var obj = ResponseBodyDeserializer.Deserialize<CommerceItemvariant>(await httpResponse.Content.ReadAsStringAsync(), NullValueHandling.Ignore);
                     var response = new UpdateCommerceItemvariantResponse()
                     {
                         StatusCode = responseStatusCode,

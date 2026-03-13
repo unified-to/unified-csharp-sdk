@@ -29,8 +29,6 @@ namespace UnifiedTo.Models.Requests
         Slug,
         [JsonProperty("description")]
         Description,
-        [JsonProperty("taxrate_id")]
-        TaxrateId,
         [JsonProperty("global_code")]
         GlobalCode,
         [JsonProperty("public_description")]
@@ -55,10 +53,12 @@ namespace UnifiedTo.Models.Requests
         AccountId,
         [JsonProperty("metadata")]
         Metadata,
-        [JsonProperty("raw")]
-        Raw,
         [JsonProperty("collections")]
         Collections,
+        [JsonProperty("taxrate_id")]
+        TaxrateId,
+        [JsonProperty("raw")]
+        Raw,
     }
 
     public static class PatchCommerceItemQueryParamFieldsExtension

@@ -17,9 +17,6 @@ namespace UnifiedTo.Models.Requests
     public class CreateHrisBankaccountRequest
     {
 
-        /// <summary>
-        /// Employee payroll bank account for direct deposit.
-        /// </summary>
         [SpeakeasyMetadata("request:mediaType=application/json")]
         public HrisBankaccount HrisBankaccount { get; set; } = default!;
 

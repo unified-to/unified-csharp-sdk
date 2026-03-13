@@ -10,284 +10,50 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;
     using System;
-    using System.Collections.Generic;
-    using System.Numerics;
-    using System.Reflection;
-    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-
-    public class VirtualWebhookPaymentIdType
+    public enum VirtualWebhookPaymentId
     {
-        private VirtualWebhookPaymentIdType(string value) { Value = value; }
-
-        public string Value { get; private set; }
-        public static VirtualWebhookPaymentIdType MapOfAny { get { return new VirtualWebhookPaymentIdType("mapOfAny"); } }
-        
-        public static VirtualWebhookPaymentIdType Str { get { return new VirtualWebhookPaymentIdType("str"); } }
-        
-        public static VirtualWebhookPaymentIdType Number { get { return new VirtualWebhookPaymentIdType("number"); } }
-        
-        public static VirtualWebhookPaymentIdType Boolean { get { return new VirtualWebhookPaymentIdType("boolean"); } }
-        
-        public static VirtualWebhookPaymentIdType ArrayOfIntegrationSupportSchemas5 { get { return new VirtualWebhookPaymentIdType("arrayOfIntegrationSupportSchemas5"); } }
-        
-        public static VirtualWebhookPaymentIdType Null { get { return new VirtualWebhookPaymentIdType("null"); } }
-
-        public override string ToString() { return Value; }
-        public static implicit operator String(VirtualWebhookPaymentIdType v) { return v.Value; }
-        public static VirtualWebhookPaymentIdType FromString(string v) {
-            switch(v) {
-                case "mapOfAny": return MapOfAny;
-                case "str": return Str;
-                case "number": return Number;
-                case "boolean": return Boolean;
-                case "arrayOfIntegrationSupportSchemas5": return ArrayOfIntegrationSupportSchemas5;
-                case "null": return Null;
-                default: throw new ArgumentException("Invalid value for VirtualWebhookPaymentIdType");
-            }
-        }
-        public override bool Equals(object? obj)
-        {
-            if (obj == null || GetType() != obj.GetType())
-            {
-                return false;
-            }
-            return Value.Equals(((VirtualWebhookPaymentIdType)obj).Value);
-        }
-
-        public override int GetHashCode()
-        {
-            return Value.GetHashCode();
-        }
+        [JsonProperty("supported-required")]
+        SupportedRequired,
+        [JsonProperty("supported")]
+        Supported,
+        [JsonProperty("not-supported")]
+        NotSupported,
     }
 
-
-    [JsonConverter(typeof(VirtualWebhookPaymentId.VirtualWebhookPaymentIdConverter))]
-    public class VirtualWebhookPaymentId {
-        public VirtualWebhookPaymentId(VirtualWebhookPaymentIdType type) {
-            Type = type;
-        }
-
-        [SpeakeasyMetadata("form:explode=true")]
-        public Dictionary<string, object>? MapOfAny { get; set; }
-
-        [SpeakeasyMetadata("form:explode=true")]
-        public string? Str { get; set; }
-
-        [SpeakeasyMetadata("form:explode=true")]
-        public double? Number { get; set; }
-
-        [SpeakeasyMetadata("form:explode=true")]
-        public bool? Boolean { get; set; }
-
-        [SpeakeasyMetadata("form:explode=true")]
-        public List<IntegrationSupportSchemas5>? ArrayOfIntegrationSupportSchemas5 { get; set; }
-
-        public VirtualWebhookPaymentIdType Type { get; set; }
-
-
-        public static VirtualWebhookPaymentId CreateMapOfAny(Dictionary<string, object> mapOfAny) {
-            VirtualWebhookPaymentIdType typ = VirtualWebhookPaymentIdType.MapOfAny;
-
-            VirtualWebhookPaymentId res = new VirtualWebhookPaymentId(typ);
-            res.MapOfAny = mapOfAny;
-            return res;
-        }
-
-        public static VirtualWebhookPaymentId CreateStr(string str) {
-            VirtualWebhookPaymentIdType typ = VirtualWebhookPaymentIdType.Str;
-
-            VirtualWebhookPaymentId res = new VirtualWebhookPaymentId(typ);
-            res.Str = str;
-            return res;
-        }
-
-        public static VirtualWebhookPaymentId CreateNumber(double number) {
-            VirtualWebhookPaymentIdType typ = VirtualWebhookPaymentIdType.Number;
-
-            VirtualWebhookPaymentId res = new VirtualWebhookPaymentId(typ);
-            res.Number = number;
-            return res;
-        }
-
-        public static VirtualWebhookPaymentId CreateBoolean(bool boolean) {
-            VirtualWebhookPaymentIdType typ = VirtualWebhookPaymentIdType.Boolean;
-
-            VirtualWebhookPaymentId res = new VirtualWebhookPaymentId(typ);
-            res.Boolean = boolean;
-            return res;
-        }
-
-        public static VirtualWebhookPaymentId CreateArrayOfIntegrationSupportSchemas5(List<IntegrationSupportSchemas5> arrayOfIntegrationSupportSchemas5) {
-            VirtualWebhookPaymentIdType typ = VirtualWebhookPaymentIdType.ArrayOfIntegrationSupportSchemas5;
-
-            VirtualWebhookPaymentId res = new VirtualWebhookPaymentId(typ);
-            res.ArrayOfIntegrationSupportSchemas5 = arrayOfIntegrationSupportSchemas5;
-            return res;
-        }
-
-        public static VirtualWebhookPaymentId CreateNull() {
-            VirtualWebhookPaymentIdType typ = VirtualWebhookPaymentIdType.Null;
-            return new VirtualWebhookPaymentId(typ);
-        }
-
-        public class VirtualWebhookPaymentIdConverter : JsonConverter
+    public static class VirtualWebhookPaymentIdExtension
+    {
+        public static string Value(this VirtualWebhookPaymentId value)
         {
+            return ((JsonPropertyAttribute)value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonPropertyAttribute), false)[0]).PropertyName ?? value.ToString();
+        }
 
-            public override bool CanConvert(System.Type objectType) => objectType == typeof(VirtualWebhookPaymentId);
-
-            public override bool CanRead => true;
-
-            public override object? ReadJson(JsonReader reader, System.Type objectType, object? existingValue, JsonSerializer serializer)
+        public static VirtualWebhookPaymentId ToEnum(this string value)
+        {
+            foreach(var field in typeof(VirtualWebhookPaymentId).GetFields())
             {
-                var json = JRaw.Create(reader).ToString();
-                if (json == "null")
+                var attributes = field.GetCustomAttributes(typeof(JsonPropertyAttribute), false);
+                if (attributes.Length == 0)
                 {
-                    return null;
+                    continue;
                 }
 
-                var fallbackCandidates = new List<(System.Type, object, string)>();
-
-                try
+                var attribute = attributes[0] as JsonPropertyAttribute;
+                if (attribute != null && attribute.PropertyName == value)
                 {
-                    return new VirtualWebhookPaymentId(VirtualWebhookPaymentIdType.MapOfAny)
+                    var enumVal = field.GetValue(null);
+
+                    if (enumVal is VirtualWebhookPaymentId)
                     {
-                        MapOfAny = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<Dictionary<string, object>>(json)
-                    };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(Dictionary<string, object>), new VirtualWebhookPaymentId(VirtualWebhookPaymentIdType.MapOfAny), "MapOfAny"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-
-                if (json[0] == '"' && json[^1] == '"'){
-                    return new VirtualWebhookPaymentId(VirtualWebhookPaymentIdType.Str)
-                    {
-                        Str = json[1..^1]
-                    };
-                }
-
-                try
-                {
-                    var converted = Convert.ToDouble(json);
-                    return new VirtualWebhookPaymentId(VirtualWebhookPaymentIdType.Number)
-                    {
-                        Number = converted
-                    };
-                }
-                catch (System.FormatException)
-                {
-                    // try next option
-                }
-
-                try
-                {
-                    var converted = Convert.ToBoolean(json);
-                    return new VirtualWebhookPaymentId(VirtualWebhookPaymentIdType.Boolean)
-                    {
-                        Boolean = converted
-                    };
-                }
-                catch (System.FormatException)
-                {
-                    // try next option
-                }
-
-                try
-                {
-                    return new VirtualWebhookPaymentId(VirtualWebhookPaymentIdType.ArrayOfIntegrationSupportSchemas5)
-                    {
-                        ArrayOfIntegrationSupportSchemas5 = ResponseBodyDeserializer.DeserializeUndiscriminatedUnionMember<List<IntegrationSupportSchemas5>>(json)
-                    };
-                }
-                catch (ResponseBodyDeserializer.MissingMemberException)
-                {
-                    fallbackCandidates.Add((typeof(List<IntegrationSupportSchemas5>), new VirtualWebhookPaymentId(VirtualWebhookPaymentIdType.ArrayOfIntegrationSupportSchemas5), "ArrayOfIntegrationSupportSchemas5"));
-                }
-                catch (ResponseBodyDeserializer.DeserializationException)
-                {
-                    // try next option
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-
-                if (fallbackCandidates.Count > 0)
-                {
-                    fallbackCandidates.Sort((a, b) => ResponseBodyDeserializer.CompareFallbackCandidates(a.Item1, b.Item1, json));
-                    foreach(var (deserializationType, returnObject, propertyName) in fallbackCandidates)
-                    {
-                        try
-                        {
-                            return ResponseBodyDeserializer.DeserializeUndiscriminatedUnionFallback(deserializationType, returnObject, propertyName, json);
-                        }
-                        catch (ResponseBodyDeserializer.DeserializationException)
-                        {
-                            // try next fallback option
-                        }
-                        catch (Exception)
-                        {
-                            throw;
-                        }
+                        return (VirtualWebhookPaymentId)enumVal;
                     }
                 }
-
-                throw new InvalidOperationException("Could not deserialize into any supported types.");
             }
 
-            public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
-            {
-                if (value == null) {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                VirtualWebhookPaymentId res = (VirtualWebhookPaymentId)value;
-                if (VirtualWebhookPaymentIdType.FromString(res.Type).Equals(VirtualWebhookPaymentIdType.Null))
-                {
-                    writer.WriteRawValue("null");
-                    return;
-                }
-                if (res.MapOfAny != null)
-                {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.MapOfAny));
-                    return;
-                }
-                if (res.Str != null)
-                {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Str));
-                    return;
-                }
-                if (res.Number != null)
-                {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Number));
-                    return;
-                }
-                if (res.Boolean != null)
-                {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.Boolean));
-                    return;
-                }
-                if (res.ArrayOfIntegrationSupportSchemas5 != null)
-                {
-                    writer.WriteRawValue(Utilities.SerializeJSON(res.ArrayOfIntegrationSupportSchemas5));
-                    return;
-                }
-
-            }
-
+            throw new Exception($"Unknown value {value} for enum VirtualWebhookPaymentId");
         }
-
     }
+
 }
