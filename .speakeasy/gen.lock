@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: f4616b1bed10ff19984980d59c784b0b
+  docChecksum: 1ecbe864c08b26a953eed6ae60fbd088
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.41
-  configChecksum: 035cf3f4e68178513db36f006cf716bc
+  releaseVersion: 0.130.42
+  configChecksum: 37bdb1f42c568fbcfcb5754012117921
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -447,6 +447,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListEventId.cs
   - UnifiedTo/Models/Components/ListExpand.cs
   - UnifiedTo/Models/Components/ListFormId.cs
+  - UnifiedTo/Models/Components/ListFulltext.cs
   - UnifiedTo/Models/Components/ListGroupId.cs
   - UnifiedTo/Models/Components/ListInstructorId.cs
   - UnifiedTo/Models/Components/ListInterviewId.cs
@@ -3071,6 +3072,7 @@ generatedFiles:
   - docs/Models/Components/ListEventId.md
   - docs/Models/Components/ListExpand.md
   - docs/Models/Components/ListFormId.md
+  - docs/Models/Components/ListFulltext.md
   - docs/Models/Components/ListGroupId.md
   - docs/Models/Components/ListInstructorId.md
   - docs/Models/Components/ListInterviewId.md
@@ -12697,7 +12699,7 @@ trackedFiles:
     pristine_git_object: c713343e8622b8cfb7c52924b3765b26217d6385
   UnifiedTo/Models/Components/IntegrationSupport.cs:
     id: a60768677b8a
-    last_write_checksum: sha1:d803789966c0a0930395ff0205022cd2fda737f3
+    last_write_checksum: sha1:89e4dabc8b547171a4f555a7368b153431d555c5
     pristine_git_object: df9a5cf369f1185b54a41e701ccea4848720d748
   UnifiedTo/Models/Components/IntervalUnit.cs:
     id: 8caa2a3c48ea
@@ -12857,6 +12859,8 @@ trackedFiles:
     pristine_git_object: 2278c9b1da6e32ce9f59fbdeb0b534471b749bc8
   UnifiedTo/Models/Components/ListFormId.cs:
     last_write_checksum: sha1:7742ab4767424ba743d2e4f76f9b25a0487e77a5
+  UnifiedTo/Models/Components/ListFulltext.cs:
+    last_write_checksum: sha1:b8702ea769334c24953f472cf064398f5d435c40
   UnifiedTo/Models/Components/ListGroupId.cs:
     last_write_checksum: sha1:09145e6ace1c6c8e1e2b6a69b2dbe04d6c0457fc
   UnifiedTo/Models/Components/ListInstructorId.cs:
@@ -16508,7 +16512,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListAdsAdsQueryParamFields.cs:
     last_write_checksum: sha1:025f07cd3118c5f25e3c518d3034c791abba10b6
   UnifiedTo/Models/Requests/ListAdsAdsRequest.cs:
-    last_write_checksum: sha1:f918835621ec6ca3ae51a43e336376dccb7cb9cc
+    last_write_checksum: sha1:36a5281c4ade01b937287b3553838f1fa5bc1a2a
   UnifiedTo/Models/Requests/ListAdsAdsResponse.cs:
     last_write_checksum: sha1:ed029a89ef902f2d565005d3814c58de91460924
   UnifiedTo/Models/Requests/ListAdsCampaignsQueryParamFields.cs:
@@ -16520,7 +16524,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListAdsCreativesQueryParamFields.cs:
     last_write_checksum: sha1:8232a0d035db0cf05471dbeca12184f5a93f9649
   UnifiedTo/Models/Requests/ListAdsCreativesRequest.cs:
-    last_write_checksum: sha1:f8607c2b545674b7c99ffc50a7df839e467fb049
+    last_write_checksum: sha1:f4b9a1ffdac7661e4bd03507eaf87a085b54e947
   UnifiedTo/Models/Requests/ListAdsCreativesResponse.cs:
     last_write_checksum: sha1:106b4c82c22c4b80a6d64bd92f6e18fd2a12daf3
   UnifiedTo/Models/Requests/ListAdsGroupsQueryParamFields.cs:
@@ -16544,7 +16548,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListAdsReportsQueryParamFields.cs:
     last_write_checksum: sha1:aed6a9f16a17e929a283cb1d2fa3fd2f933cf6c6
   UnifiedTo/Models/Requests/ListAdsReportsRequest.cs:
-    last_write_checksum: sha1:f8ed1bea7b383e66fcce7fb29559cc109183dfcf
+    last_write_checksum: sha1:31fbc9be23e4365e7f68fb3f5d319dfd64fd24d3
   UnifiedTo/Models/Requests/ListAdsReportsResponse.cs:
     last_write_checksum: sha1:66eab2f5aee44ca9ead9f77c7c34670aeffb4741
   UnifiedTo/Models/Requests/ListAssessmentPackagesRequest.cs:
@@ -17263,7 +17267,7 @@ trackedFiles:
     last_write_checksum: sha1:1697b3dca40a8aa13f5d43e2053214d7e34d951e
   UnifiedTo/Models/Requests/ListStorageFilesRequest.cs:
     id: 91710addbe08
-    last_write_checksum: sha1:d59ced2a595dcf4f4ae0d44a5f013bf4ebfd3e91
+    last_write_checksum: sha1:d940e216c033e84572bac065f1b715b724d9c820
     pristine_git_object: 14558c6590b0bfdba972ff1210bd65db19d1033e
   UnifiedTo/Models/Requests/ListStorageFilesResponse.cs:
     id: 4bb6d7c942a5
@@ -20119,7 +20123,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:8e0460dd8a5b4f1169accd827e08f3988a35a8d9
+    last_write_checksum: sha1:c3319ad95ffecf5427715d07a46872a57e5ab9e6
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -20223,7 +20227,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:4bca2118b8a406371c6e48498e2c74f2d4d631d0
+    last_write_checksum: sha1:9471e30ba8f85b69e314b934123ad81ecfdd3ecd
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -21329,7 +21333,7 @@ trackedFiles:
     pristine_git_object: a1bf4d40b69786c43195fd92204558699e7dac2f
   docs/Models/Components/IntegrationSupport.md:
     id: 6410e8499735
-    last_write_checksum: sha1:c14ada69ea4a6b8ed23d444f36b1bb58026e89b3
+    last_write_checksum: sha1:6e1f72b387aa8d6b99b4de272d52025cf73dbcb4
     pristine_git_object: d46883eaa7696d5c3e2ab66daacd0fa47d8c706d
   docs/Models/Components/IntervalUnit.md:
     id: 779660b22183
@@ -21489,6 +21493,8 @@ trackedFiles:
     pristine_git_object: 65e05adb9c7129d28a0ea649b67f58b67df371ce
   docs/Models/Components/ListFormId.md:
     last_write_checksum: sha1:41a3883b0495b5364c2e407ea0ed8ff51be3e4e7
+  docs/Models/Components/ListFulltext.md:
+    last_write_checksum: sha1:5785937b5dedcead96c6da8011b397b15ad042c9
   docs/Models/Components/ListGroupId.md:
     last_write_checksum: sha1:6ff19144dd0b09fa17ccc11041a20226cdb5cd8b
   docs/Models/Components/ListInstructorId.md:
@@ -25128,7 +25134,7 @@ trackedFiles:
   docs/Models/Requests/ListAdsAdsQueryParamFields.md:
     last_write_checksum: sha1:215e410d481c4b6bc374f54e67366abf7a3a6237
   docs/Models/Requests/ListAdsAdsRequest.md:
-    last_write_checksum: sha1:53df14c06301075362b025cdbbe81b646663a987
+    last_write_checksum: sha1:ea4c95450fc52bbbb3e0ba69c69b58819d54dabf
   docs/Models/Requests/ListAdsAdsResponse.md:
     last_write_checksum: sha1:ce45c955d39b246e4097d234622e1f70487fb6a7
   docs/Models/Requests/ListAdsCampaignsQueryParamFields.md:
@@ -25140,7 +25146,7 @@ trackedFiles:
   docs/Models/Requests/ListAdsCreativesQueryParamFields.md:
     last_write_checksum: sha1:59911083f1e1f677015a31e8d82031b9aae549a5
   docs/Models/Requests/ListAdsCreativesRequest.md:
-    last_write_checksum: sha1:45c1db73762fd3c0cec8b5239be7c92407548f17
+    last_write_checksum: sha1:108460ead3f6984f0b00fd6694ac4a8376026346
   docs/Models/Requests/ListAdsCreativesResponse.md:
     last_write_checksum: sha1:8193f670221d9cbac3c1e82443b3aa01573c5bd4
   docs/Models/Requests/ListAdsGroupsQueryParamFields.md:
@@ -25164,7 +25170,7 @@ trackedFiles:
   docs/Models/Requests/ListAdsReportsQueryParamFields.md:
     last_write_checksum: sha1:d07ae40f0c256fdb94015b9b5164a8684ec99ec1
   docs/Models/Requests/ListAdsReportsRequest.md:
-    last_write_checksum: sha1:cf031ca2ed65fd27c60a43a3901556bca768743d
+    last_write_checksum: sha1:3794ce1111fa5749221d3d3cf94af66509f0d573
   docs/Models/Requests/ListAdsReportsResponse.md:
     last_write_checksum: sha1:6c50a0e514c488a2d0732e0b380a5720203e5cea
   docs/Models/Requests/ListAssessmentPackagesRequest.md:
@@ -25883,7 +25889,7 @@ trackedFiles:
     last_write_checksum: sha1:04f2f77d7a177c9c9fc2fdb56fac6697f88e70a0
   docs/Models/Requests/ListStorageFilesRequest.md:
     id: 4e39fbf2af58
-    last_write_checksum: sha1:add76391dc8e832249dab088360cd83c8cd53de8
+    last_write_checksum: sha1:81c8a2094263b5c0adc1069a8e8b675ea4aa0bf1
     pristine_git_object: e0cbdaf04e36e86b2347ba44ecc16f4fca63a8a1
   docs/Models/Requests/ListStorageFilesResponse.md:
     id: ece559556fc7

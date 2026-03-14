@@ -101,6 +101,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_form_id")]
         public ListFormId? ListFormId { get; set; }
 
+        [JsonProperty("list_fulltext")]
+        public ListFulltext? ListFulltext { get; set; }
+
         [JsonProperty("list_group_id")]
         public ListGroupId? ListGroupId { get; set; }
 

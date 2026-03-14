@@ -23,10 +23,19 @@ namespace UnifiedTo.Models.Requests
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
+        /// Whether to flatten grouped or recurring items into individual entries.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=expand")]
+        public bool? Expand { get; set; }
+
+        /// <summary>
         /// Fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<ListStorageFilesQueryParamFields>? Fields { get; set; }
+
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fulltext")]
+        public string? Fulltext { get; set; }
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }

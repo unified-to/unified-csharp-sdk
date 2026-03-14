@@ -35,7 +35,7 @@ namespace UnifiedTo.Models.Requests
         public List<ListAdsAdsQueryParamFields>? Fields { get; set; }
 
         /// <summary>
-        /// The group ID to filter by (reference to HrisGroup)
+        /// The group ID to filter by (reference to AdsGroup)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=group_id")]
         public string? GroupId { get; set; }
