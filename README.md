@@ -180,6 +180,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [ListAdsInsertionorders](docs/sdks/ads/README.md#listadsinsertionorders) - List all insertionorders
 * [ListAdsOrganizations](docs/sdks/ads/README.md#listadsorganizations) - List all organizations
 * [ListAdsReports](docs/sdks/ads/README.md#listadsreports) - List all reports
+* [ListAdsTargets](docs/sdks/ads/README.md#listadstargets) - List all targets
 * [PatchAdsAd](docs/sdks/ads/README.md#patchadsad) - Update an ad
 * [PatchAdsCampaign](docs/sdks/ads/README.md#patchadscampaign) - Update a campaign
 * [PatchAdsCreative](docs/sdks/ads/README.md#patchadscreative) - Update a creative
@@ -1498,6 +1499,10 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [PatchPaymentSubscription](docs/sdks/subscription/README.md#patchpaymentsubscription) - Update a subscription
 * [RemovePaymentSubscription](docs/sdks/subscription/README.md#removepaymentsubscription) - Remove a subscription
 * [UpdatePaymentSubscription](docs/sdks/subscription/README.md#updatepaymentsubscription) - Update a subscription
+
+### [Target](docs/sdks/target/README.md)
+
+* [ListAdsTargets](docs/sdks/target/README.md#listadstargets) - List all targets
 
 ### [Task](docs/sdks/task/README.md)
 

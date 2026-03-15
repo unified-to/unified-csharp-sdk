@@ -23,4 +23,5 @@
 | `AdvertisingChannelType`   | advertising_channel_type   |
 | `CampaignBudgetIdentifier` | campaign_budget_identifier |
 | `Currency`                 | currency                   |
+| `Category`                 | category                   |
 | `Raw`                      | raw                        |

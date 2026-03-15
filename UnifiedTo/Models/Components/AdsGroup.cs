@@ -28,7 +28,7 @@ namespace UnifiedTo.Models.Components
         public PropertyAdsGroupBidStrategy? BidStrategy { get; set; }
 
         [JsonProperty("billing_event")]
-        public string? BillingEvent { get; set; }
+        public BillingEvent? BillingEvent { get; set; }
 
         [JsonProperty("budget_allocation_type")]
         public BudgetAllocationType? BudgetAllocationType { get; set; }
@@ -79,7 +79,7 @@ namespace UnifiedTo.Models.Components
         public string? Name { get; set; }
 
         [JsonProperty("optimization_goal")]
-        public string? OptimizationGoal { get; set; }
+        public OptimizationGoal? OptimizationGoal { get; set; }
 
         [JsonProperty("organization_id")]
         public string? OrganizationId { get; set; }

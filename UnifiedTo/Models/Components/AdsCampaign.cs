@@ -30,6 +30,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("campaign_budget_identifier")]
         public string? CampaignBudgetIdentifier { get; set; }
 
+        [JsonProperty("category")]
+        public string? Category { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 

@@ -34,6 +34,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]
         public List<ListStorageFilesQueryParamFields>? Fields { get; set; }
 
+        /// <summary>
+        /// The fulltext to filter by
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fulltext")]
         public string? Fulltext { get; set; }
 

@@ -11,75 +11,52 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
     public class PropertyAdsReportMetricsGroupTargeting
     {
 
-        [JsonProperty("age_ranges")]
-        public List<string>? AgeRanges { get; set; }
+        [JsonProperty("audience")]
+        public PropertyAdsReportMetricsGroupTargetingAudience? Audience { get; set; }
 
-        [JsonProperty("audiences")]
-        public List<string>? Audiences { get; set; }
+        /// <summary>
+        /// Brand safety (Meta: excluded_publisher_categories, etc.; Google
+        /// </summary>
+        [JsonProperty("brand_safety")]
+        public PropertyAdsReportMetricsGroupTargetingBrandSafety? BrandSafety { get; set; }
 
-        [JsonProperty("behaviors")]
-        public List<string>? Behaviors { get; set; }
+        [JsonProperty("content")]
+        public PropertyAdsReportMetricsGroupTargetingContent? Content { get; set; }
 
-        [JsonProperty("companies")]
-        public List<string>? Companies { get; set; }
+        /// <summary>
+        /// Demographic targeting (Meta: age_min, age_max, genders)
+        /// </summary>
+        [JsonProperty("demographic")]
+        public PropertyAdsReportMetricsGroupTargetingDemographic? Demographic { get; set; }
 
-        [JsonProperty("company_sizes")]
-        public List<string>? CompanySizes { get; set; }
+        [JsonProperty("device")]
+        public PropertyAdsReportMetricsGroupTargetingDevice? Device { get; set; }
 
-        [JsonProperty("custom_audiences")]
-        public List<string>? CustomAudiences { get; set; }
+        [JsonProperty("geographic")]
+        public PropertyAdsReportMetricsGroupTargetingGeographic? Geographic { get; set; }
 
-        [JsonProperty("degrees")]
-        public List<string>? Degrees { get; set; }
+        /// <summary>
+        /// Language targeting (Meta
+        /// </summary>
+        [JsonProperty("language")]
+        public PropertyAdsReportMetricsGroupTargetingLanguage? Language { get; set; }
 
-        [JsonProperty("devices")]
-        public List<string>? Devices { get; set; }
+        /// <summary>
+        /// Optimization (Meta: targeting_automation; Google: observation vs targeting mode)
+        /// </summary>
+        [JsonProperty("optimization")]
+        public PropertyAdsReportMetricsGroupTargetingOptimization? Optimization { get; set; }
 
-        [JsonProperty("excluded_audiences")]
-        public List<string>? ExcludedAudiences { get; set; }
+        [JsonProperty("placement")]
+        public PropertyAdsReportMetricsGroupTargetingPlacement? Placement { get; set; }
 
-        [JsonProperty("excluded_locations")]
-        public List<string>? ExcludedLocations { get; set; }
-
-        [JsonProperty("genders")]
-        public List<string>? Genders { get; set; }
-
-        [JsonProperty("industries")]
-        public List<string>? Industries { get; set; }
-
-        [JsonProperty("interests")]
-        public List<string>? Interests { get; set; }
-
-        [JsonProperty("job_functions")]
-        public List<string>? JobFunctions { get; set; }
-
-        [JsonProperty("job_titles")]
-        public List<string>? JobTitles { get; set; }
-
-        [JsonProperty("keywords")]
-        public List<string>? Keywords { get; set; }
-
-        [JsonProperty("languages")]
-        public List<string>? Languages { get; set; }
-
-        [JsonProperty("locations")]
-        public List<string>? Locations { get; set; }
-
-        [JsonProperty("placements")]
-        public List<string>? Placements { get; set; }
-
-        [JsonProperty("schools")]
-        public List<string>? Schools { get; set; }
-
-        [JsonProperty("seniorities")]
-        public List<string>? Seniorities { get; set; }
-
-        [JsonProperty("skills")]
-        public List<string>? Skills { get; set; }
+        [JsonProperty("schedule")]
+        public List<AdSchedule>? Schedule { get; set; }
     }
 }

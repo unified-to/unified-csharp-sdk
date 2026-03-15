@@ -51,6 +51,8 @@ namespace UnifiedTo.Models.Requests
         CampaignBudgetIdentifier,
         [JsonProperty("currency")]
         Currency,
+        [JsonProperty("category")]
+        Category,
         [JsonProperty("raw")]
         Raw,
     }
