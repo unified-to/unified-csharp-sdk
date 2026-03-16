@@ -61,8 +61,8 @@ namespace UnifiedTo.Models.Requests
         ExternalPlacementReference,
         [JsonProperty("external_ad_reference")]
         ExternalAdReference,
-        [JsonProperty("metadata")]
-        Metadata,
+        [JsonProperty("promoted")]
+        Promoted,
         [JsonProperty("path1")]
         Path1,
         [JsonProperty("path2")]

@@ -72,9 +72,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("insertionorder_id")]
         public string? InsertionorderId { get; set; }
 
-        [JsonProperty("metadata")]
-        public List<AdsMetadata>? Metadata { get; set; }
-
         [JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -89,6 +86,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; }
+
+        [JsonProperty("promoted")]
+        public List<AdsPromoted>? Promoted { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }

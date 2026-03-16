@@ -13,16 +13,19 @@ namespace UnifiedTo.Models.Components
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
-    public class AdsMetadata
+    /// <summary>
+    /// Promoted entity (e.g. page, app, product, tweet) for ads create
+    /// </summary>
+    public class AdsPromoted
     {
 
         [JsonProperty("id")]
-        public string? Id { get; set; }
+        public string Id { get; set; } = default!;
 
-        [JsonProperty("slug")]
-        public string? Slug { get; set; }
+        [JsonProperty("name")]
+        public string? Name { get; set; }
 
-        [JsonProperty("value")]
-        public Value? Value { get; set; }
+        [JsonProperty("type")]
+        public AdsPromotedType Type { get; set; } = default!;
     }
 }

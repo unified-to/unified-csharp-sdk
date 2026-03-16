@@ -253,6 +253,8 @@ namespace UnifiedTo.Models.Components
         AdsInsertionorder,
         [JsonProperty("ads_target")]
         AdsTarget,
+        [JsonProperty("ads_promoted")]
+        AdsPromoted,
         [JsonProperty("forms_form")]
         FormsForm,
         [JsonProperty("forms_submission")]

@@ -179,6 +179,7 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [ListAdsGroups](docs/sdks/ads/README.md#listadsgroups) - List all groups
 * [ListAdsInsertionorders](docs/sdks/ads/README.md#listadsinsertionorders) - List all insertionorders
 * [ListAdsOrganizations](docs/sdks/ads/README.md#listadsorganizations) - List all organizations
+* [ListAdsPromoteds](docs/sdks/ads/README.md#listadspromoteds) - List all promoteds
 * [ListAdsReports](docs/sdks/ads/README.md#listadsreports) - List all reports
 * [ListAdsTargets](docs/sdks/ads/README.md#listadstargets) - List all targets
 * [PatchAdsAd](docs/sdks/ads/README.md#patchadsad) - Update an ad
@@ -1279,6 +1280,10 @@ var res = await sdk.Accounting.CreateAccountingAccountAsync(
 * [PatchTaskProject](docs/sdks/project/README.md#patchtaskproject) - Update a project
 * [RemoveTaskProject](docs/sdks/project/README.md#removetaskproject) - Remove a project
 * [UpdateTaskProject](docs/sdks/project/README.md#updatetaskproject) - Update a project
+
+### [Promoted](docs/sdks/promoted/README.md)
+
+* [ListAdsPromoteds](docs/sdks/promoted/README.md#listadspromoteds) - List all promoteds
 
 ### [Prompt](docs/sdks/prompt/README.md)
 

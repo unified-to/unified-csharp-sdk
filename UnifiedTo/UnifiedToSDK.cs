@@ -53,6 +53,7 @@ namespace UnifiedTo
         public ICreative Creative { get; }
         public IGroup Group { get; }
         public IInsertionorder Insertionorder { get; }
+        public IPromoted Promoted { get; }
         public ITarget Target { get; }
         public IAssessment Assessment { get; }
         public IPackage Package { get; }
@@ -172,7 +173,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.43";
+        private const string _sdkVersion = "0.130.44";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -201,6 +202,7 @@ namespace UnifiedTo
         public ICreative Creative { get; private set; }
         public IGroup Group { get; private set; }
         public IInsertionorder Insertionorder { get; private set; }
+        public IPromoted Promoted { get; private set; }
         public ITarget Target { get; private set; }
         public IAssessment Assessment { get; private set; }
         public IPackage Package { get; private set; }
@@ -364,6 +366,8 @@ namespace UnifiedTo
             Group = new Group(SDKConfiguration);
 
             Insertionorder = new Insertionorder(SDKConfiguration);
+
+            Promoted = new Promoted(SDKConfiguration);
 
             Target = new Target(SDKConfiguration);
 
@@ -671,6 +675,8 @@ namespace UnifiedTo
             Group = new Group(SDKConfiguration);
 
             Insertionorder = new Insertionorder(SDKConfiguration);
+
+            Promoted = new Promoted(SDKConfiguration);
 
             Target = new Target(SDKConfiguration);
 

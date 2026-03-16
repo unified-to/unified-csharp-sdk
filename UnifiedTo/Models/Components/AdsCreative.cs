@@ -66,9 +66,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("link_url")]
         public string? LinkUrl { get; set; }
 
-        [JsonProperty("metadata")]
-        public List<AdsMetadata>? Metadata { get; set; }
-
         [JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -80,6 +77,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("path2")]
         public string? Path2 { get; set; }
+
+        [JsonProperty("promoted")]
+        public List<AdsPromoted>? Promoted { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }

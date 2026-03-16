@@ -457,6 +457,8 @@ namespace UnifiedTo.Models.Components
         AdsInsertionorderWrite,
         [JsonProperty("ads_target_read")]
         AdsTargetRead,
+        [JsonProperty("ads_promoted_read")]
+        AdsPromotedRead,
         [JsonProperty("forms_form_read")]
         FormsFormRead,
         [JsonProperty("forms_form_write")]

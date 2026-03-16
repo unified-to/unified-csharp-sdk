@@ -124,6 +124,7 @@
 | `AdsCreative`             | ads_creative              |
 | `AdsInsertionorder`       | ads_insertionorder        |
 | `AdsTarget`               | ads_target                |
+| `AdsPromoted`             | ads_promoted              |
 | `FormsForm`               | forms_form                |
 | `FormsSubmission`         | forms_submission          |
 | `ShippingCarrier`         | shipping_carrier          |

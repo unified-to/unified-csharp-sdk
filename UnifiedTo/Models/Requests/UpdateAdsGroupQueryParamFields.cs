@@ -69,8 +69,8 @@ namespace UnifiedTo.Models.Requests
         BillingEvent,
         [JsonProperty("currency")]
         Currency,
-        [JsonProperty("metadata")]
-        Metadata,
+        [JsonProperty("promoted")]
+        Promoted,
         [JsonProperty("raw")]
         Raw,
     }

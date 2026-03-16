@@ -27,8 +27,8 @@ Value.CreateNumber(/* values here */);
 Value.CreateBoolean(/* values here */);
 ```
 
-### ArrayOf5
+### ArrayOfAtsMetadata5
 
 ```csharp
-Value.CreateArrayOf5(/* values here */);
+Value.CreateArrayOfAtsMetadata5(/* values here */);
 ```

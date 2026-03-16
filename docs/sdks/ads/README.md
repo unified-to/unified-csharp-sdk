@@ -23,6 +23,7 @@
 * [ListAdsGroups](#listadsgroups) - List all groups
 * [ListAdsInsertionorders](#listadsinsertionorders) - List all insertionorders
 * [ListAdsOrganizations](#listadsorganizations) - List all organizations
+* [ListAdsPromoteds](#listadspromoteds) - List all promoteds
 * [ListAdsReports](#listadsreports) - List all reports
 * [ListAdsTargets](#listadstargets) - List all targets
 * [PatchAdsAd](#patchadsad) - Update an ad
@@ -769,6 +770,46 @@ var res = await sdk.Ads.ListAdsOrganizationsAsync(req);
 ### Response
 
 **[ListAdsOrganizationsResponse](../../Models/Requests/ListAdsOrganizationsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListAdsPromoteds
+
+List all promoteds
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListAdsPromotedsRequest req = new ListAdsPromotedsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Ads.ListAdsPromotedsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                   | Type                                                                        | Required                                                                    | Description                                                                 |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `request`                                                                   | [ListAdsPromotedsRequest](../../Models/Requests/ListAdsPromotedsRequest.md) | :heavy_check_mark:                                                          | The request object to use for the request.                                  |
+
+### Response
+
+**[ListAdsPromotedsResponse](../../Models/Requests/ListAdsPromotedsResponse.md)**
 
 ### Errors
 

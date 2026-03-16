@@ -53,8 +53,8 @@ namespace UnifiedTo.Models.Requests
         Path1,
         [JsonProperty("path2")]
         Path2,
-        [JsonProperty("metadata")]
-        Metadata,
+        [JsonProperty("promoted")]
+        Promoted,
         [JsonProperty("raw")]
         Raw,
     }

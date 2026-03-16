@@ -24,5 +24,5 @@
 | `DisplayUrl`       | display_url        |
 | `Path1`            | path1              |
 | `Path2`            | path2              |
-| `Metadata`         | metadata           |
+| `Promoted`         | promoted           |
 | `Raw`              | raw                |

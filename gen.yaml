@@ -24,7 +24,7 @@ generation:
     allOfMergeStrategy: shallowMerge
   versioningStrategy: automatic
 csharp:
-  version: 0.130.43
+  version: 0.130.44
   additionalDependencies: []
   author: Unified API Inc.
   baseErrorName: UnifiedToError
