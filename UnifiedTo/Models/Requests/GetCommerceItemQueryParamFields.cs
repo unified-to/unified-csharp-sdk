@@ -59,6 +59,22 @@ namespace UnifiedTo.Models.Requests
         TaxrateId,
         [JsonProperty("raw")]
         Raw,
+        [JsonProperty("is_visible")]
+        IsVisible,
+        [JsonProperty("is_featured")]
+        IsFeatured,
+        [JsonProperty("weight")]
+        Weight,
+        [JsonProperty("weight_unit")]
+        WeightUnit,
+        [JsonProperty("requires_shipping")]
+        RequiresShipping,
+        [JsonProperty("prices")]
+        Prices,
+        [JsonProperty("inventory_id")]
+        InventoryId,
+        [JsonProperty("total_stock")]
+        TotalStock,
     }
 
     public static class GetCommerceItemQueryParamFieldsExtension

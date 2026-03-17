@@ -100,7 +100,7 @@ namespace UnifiedTo.Models.Components
         public double? Weight { get; set; }
 
         [JsonProperty("weight_unit")]
-        public WeightUnit? WeightUnit { get; set; }
+        public CommerceItemvariantWeightUnit? WeightUnit { get; set; }
 
         [JsonProperty("width")]
         public double? Width { get; set; }

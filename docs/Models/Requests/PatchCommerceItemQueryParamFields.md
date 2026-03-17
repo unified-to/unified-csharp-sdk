@@ -27,3 +27,11 @@
 | `Collections`       | collections         |
 | `TaxrateId`         | taxrate_id          |
 | `Raw`               | raw                 |
+| `IsVisible`         | is_visible          |
+| `IsFeatured`        | is_featured         |
+| `Weight`            | weight              |
+| `WeightUnit`        | weight_unit         |
+| `RequiresShipping`  | requires_shipping   |
+| `Prices`            | prices              |
+| `InventoryId`       | inventory_id        |
+| `TotalStock`        | total_stock         |

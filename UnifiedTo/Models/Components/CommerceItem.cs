@@ -45,11 +45,20 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("inventory_id")]
+        public string? InventoryId { get; set; }
+
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
+        [JsonProperty("is_featured")]
+        public bool? IsFeatured { get; set; }
+
         [JsonProperty("is_taxable")]
         public bool? IsTaxable { get; set; }
+
+        [JsonProperty("is_visible")]
+        public bool? IsVisible { get; set; }
 
         [JsonProperty("media")]
         public List<CommerceItemMedia>? Media { get; set; }
@@ -60,6 +69,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        [JsonProperty("prices")]
+        public List<CommerceItemPrice>? Prices { get; set; }
+
         [JsonProperty("public_description")]
         public string? PublicDescription { get; set; }
 
@@ -69,6 +81,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        [JsonProperty("requires_shipping")]
+        public bool? RequiresShipping { get; set; }
+
         [JsonProperty("slug")]
         public string? Slug { get; set; }
 
@@ -77,6 +92,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("taxrate_id")]
         public string? TaxrateId { get; set; }
+
+        [JsonProperty("total_stock")]
+        public double? TotalStock { get; set; }
 
         [JsonProperty("type")]
         public string? Type { get; set; }
@@ -92,5 +110,11 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("vendor_name")]
         public string? VendorName { get; set; }
+
+        [JsonProperty("weight")]
+        public double? Weight { get; set; }
+
+        [JsonProperty("weight_unit")]
+        public WeightUnit? WeightUnit { get; set; }
     }
 }

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 6eefdfc44825d8c4165b112c6392dc3c
+  docChecksum: aac12ad0156f27f49fe3971109dbafae
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.44
-  configChecksum: e8665ca0ab90d06e4ae59da486d66de9
+  releaseVersion: 0.130.45
+  configChecksum: 35bc9d6ab97ce61904c635edb7acd6cd
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -283,6 +283,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/CommerceItemOption.cs
   - UnifiedTo/Models/Components/CommerceItemPrice.cs
   - UnifiedTo/Models/Components/CommerceItemvariant.cs
+  - UnifiedTo/Models/Components/CommerceItemvariantWeightUnit.cs
   - UnifiedTo/Models/Components/CommerceLocation.cs
   - UnifiedTo/Models/Components/CommerceMetadata.cs
   - UnifiedTo/Models/Components/CommerceMetadata1.cs
@@ -2998,6 +2999,7 @@ generatedFiles:
   - docs/Models/Components/CommerceItemOption.md
   - docs/Models/Components/CommerceItemPrice.md
   - docs/Models/Components/CommerceItemvariant.md
+  - docs/Models/Components/CommerceItemvariantWeightUnit.md
   - docs/Models/Components/CommerceLocation.md
   - docs/Models/Components/CommerceMetadata.md
   - docs/Models/Components/CommerceMetadata1.md
@@ -12411,7 +12413,7 @@ trackedFiles:
     pristine_git_object: 6db0c83e96478cc14a06e6b83b557564a7e8be1b
   UnifiedTo/Models/Components/CommerceItem.cs:
     id: 3205c4d36546
-    last_write_checksum: sha1:06a9a36834d514a8b6c328f39a9a64a08db52b7a
+    last_write_checksum: sha1:1bb1b95868f59f8ffef686e85de705af1237464b
     pristine_git_object: f76dd948e9a3b7124247809b6a0385981ada539f
   UnifiedTo/Models/Components/CommerceItemMedia.cs:
     id: 662c9235cc4b
@@ -12430,7 +12432,9 @@ trackedFiles:
     last_write_checksum: sha1:7aab6957e4735c9463ebbd59f82ab8b52976a127
     pristine_git_object: 792e0acd94b5d0d011a203a82ffc67b6f7c5b459
   UnifiedTo/Models/Components/CommerceItemvariant.cs:
-    last_write_checksum: sha1:1fbe99e046e6137f12a98920e5637c2541c6f2ef
+    last_write_checksum: sha1:956a6e9f38026a3224776300a2a4ffbb93f91a74
+  UnifiedTo/Models/Components/CommerceItemvariantWeightUnit.cs:
+    last_write_checksum: sha1:91c4d59265d1c0eeb1373cfcd02656eeec9395e7
   UnifiedTo/Models/Components/CommerceLocation.cs:
     id: 3cf6d1c71d6c
     last_write_checksum: sha1:3102c819ce376fd1133adc329b366bd00f307582
@@ -14970,7 +14974,7 @@ trackedFiles:
     last_write_checksum: sha1:b510ff5a19f23e006795c30391b8d839107d171d
     pristine_git_object: 9d567bb0f4869bed3ed3bd52c335345070217d66
   UnifiedTo/Models/Requests/CreateCommerceItemQueryParamFields.cs:
-    last_write_checksum: sha1:766b11b1ff4cc97563f0385e8198a3d9980aba40
+    last_write_checksum: sha1:50795cb04a775eb1fb5aeb3f872d1bf5543b5ecf
   UnifiedTo/Models/Requests/CreateCommerceItemRequest.cs:
     id: 022c1a3aa74c
     last_write_checksum: sha1:af375f08e22de50ac6896677c67bbd814809ae48
@@ -15964,7 +15968,7 @@ trackedFiles:
     last_write_checksum: sha1:2c6dfff0b7bf321e91ede70b7f0cfc43d85cc653
     pristine_git_object: 2d0fc493df44ca3418a7f0e0203bab661ac81847
   UnifiedTo/Models/Requests/GetCommerceItemQueryParamFields.cs:
-    last_write_checksum: sha1:4f8dc1078b383aed75145fd9ccf43346820a5e66
+    last_write_checksum: sha1:b175bdcab05dcfda030c0b651c68a472fd139505
   UnifiedTo/Models/Requests/GetCommerceItemRequest.cs:
     id: da7f64349468
     last_write_checksum: sha1:5f10c219262a10ccef6da317c4bdf53dc32c9b73
@@ -17094,7 +17098,7 @@ trackedFiles:
     last_write_checksum: sha1:6bbfe2d01d60ee0380841087533a315eb6ff2f5d
     pristine_git_object: e4078535dbfc8a20b8a74b4afd1a68c127a1e7cb
   UnifiedTo/Models/Requests/ListCommerceItemsQueryParamFields.cs:
-    last_write_checksum: sha1:bfd373d61e0f36532a78f500e11c89736a188f07
+    last_write_checksum: sha1:662cb525e8fdd2fe9587e073889ad42f0b09617f
   UnifiedTo/Models/Requests/ListCommerceItemsRequest.cs:
     id: b6d5cec63e93
     last_write_checksum: sha1:882d82314639b9e9e98b9eb4afe3e9ef4430549c
@@ -18154,7 +18158,7 @@ trackedFiles:
     last_write_checksum: sha1:c2cff4483492be464812c21c91eab01161dfdcc5
     pristine_git_object: c84741c9ba821b4b63c740032629a6f1a0698a61
   UnifiedTo/Models/Requests/PatchCommerceItemQueryParamFields.cs:
-    last_write_checksum: sha1:262c9e935f894b990aba590d751f653f5b588aea
+    last_write_checksum: sha1:cf75111163ee1a147fa3a338f4d6da7b7394a582
   UnifiedTo/Models/Requests/PatchCommerceItemRequest.cs:
     id: 1786100ea712
     last_write_checksum: sha1:d60cacff3553afd3e550d7315741130cabac91fa
@@ -19794,7 +19798,7 @@ trackedFiles:
     last_write_checksum: sha1:b144724e922978bd1f4b6d83b721da18dd409b69
     pristine_git_object: fc79194026aaa0ca091df69a106cc63dd0af839b
   UnifiedTo/Models/Requests/UpdateCommerceItemQueryParamFields.cs:
-    last_write_checksum: sha1:f8d6ed37601ea123ca0b7f6da19fbc2c2fb9a466
+    last_write_checksum: sha1:ecf8f8a3c239a9f419ecd8a1d15a09f7547f9eb1
   UnifiedTo/Models/Requests/UpdateCommerceItemRequest.cs:
     id: 76125932a9cf
     last_write_checksum: sha1:7c18771429c1520bad9208133940fdcbb4281ea2
@@ -21225,7 +21229,7 @@ trackedFiles:
     pristine_git_object: ec16d6b1c3d11a93f1a76b9b5317333e88abbef3
   docs/Models/Components/CommerceItem.md:
     id: 6c6560567c0f
-    last_write_checksum: sha1:a991c35984e0908518cc272804d1da5f4cfd37e0
+    last_write_checksum: sha1:56508a97a85ce373ea750fc1abd1e8f6f43fd021
     pristine_git_object: 035e5b4e749defd14ee1c39ab192a608d41fedbd
   docs/Models/Components/CommerceItemMedia.md:
     id: d5b5f94bb1e6
@@ -21244,7 +21248,9 @@ trackedFiles:
     last_write_checksum: sha1:9480c6d4d7264d277870a819c5a3b8924e70ea0b
     pristine_git_object: 7255809c8ac6f83424a9392915cc3b7fc2246dae
   docs/Models/Components/CommerceItemvariant.md:
-    last_write_checksum: sha1:b9818e9fe84b6da4f43888dea552cd0dbb9a75bf
+    last_write_checksum: sha1:3f8ddb1b9febf9168893c914d926f667691169c8
+  docs/Models/Components/CommerceItemvariantWeightUnit.md:
+    last_write_checksum: sha1:b05ff5ad2ed5e48181aa78f77a1628fb4a0b9546
   docs/Models/Components/CommerceLocation.md:
     id: 870004a73139
     last_write_checksum: sha1:e440eb40e02acd6ad24c2ff5b5176c85a662a5e4
@@ -23772,7 +23778,7 @@ trackedFiles:
     last_write_checksum: sha1:298dd3a35f6da5fb853fe7ef7b1e0057cb087cde
     pristine_git_object: 740f162e6c1f872cb7648b10d41e041ff6c8343b
   docs/Models/Requests/CreateCommerceItemQueryParamFields.md:
-    last_write_checksum: sha1:c597fec2d17e5cebfb18167abdc9e15c20e2aaa7
+    last_write_checksum: sha1:24102f0e827db03d0f073e7dc86c0529b23c0abf
   docs/Models/Requests/CreateCommerceItemRequest.md:
     id: 4d507b38f404
     last_write_checksum: sha1:44d92e5d721c90c50f60983042be146a7fd0072b
@@ -24766,7 +24772,7 @@ trackedFiles:
     last_write_checksum: sha1:73c443cf0eeae0ab0d18096a0850aa3d7f20819b
     pristine_git_object: 921f65ca4859b0e72433c58f81ca4dadc6dbec64
   docs/Models/Requests/GetCommerceItemQueryParamFields.md:
-    last_write_checksum: sha1:4911da2d0d07c1d0763189a6e00d12eb2a0de161
+    last_write_checksum: sha1:26095e588685db82cd9d68b4f4904ef2d0a3a3ec
   docs/Models/Requests/GetCommerceItemRequest.md:
     id: 8db2095c1104
     last_write_checksum: sha1:3a0e930845a28f5d73a74d766278f01ee484fb4e
@@ -25896,7 +25902,7 @@ trackedFiles:
     last_write_checksum: sha1:0e2b76009d85a27e796bb99c1ab8a2f173d030e9
     pristine_git_object: d61d6335908d1a7051186a3752798388b7f64ae5
   docs/Models/Requests/ListCommerceItemsQueryParamFields.md:
-    last_write_checksum: sha1:cf7563ae3de424f04816c56b310402facf19412c
+    last_write_checksum: sha1:678eb0b078cbb608f3b786e50e4fc709b0e55d55
   docs/Models/Requests/ListCommerceItemsRequest.md:
     id: ca1c70ff5f0d
     last_write_checksum: sha1:ae20efb783913bd95fbaa542e93f66f48720f88f
@@ -26956,7 +26962,7 @@ trackedFiles:
     last_write_checksum: sha1:2d8617a39e38bd150a9445ddb5acfc938dc1f34f
     pristine_git_object: 77bb82ea7f7b3fd328e9df4ad2581bdb5fab2ac8
   docs/Models/Requests/PatchCommerceItemQueryParamFields.md:
-    last_write_checksum: sha1:cf58faac62d52eae7ac31f4efdaef4df8ac2f40f
+    last_write_checksum: sha1:a6945efd2dd0152bc1b72ca75823fa0dfd8da43f
   docs/Models/Requests/PatchCommerceItemRequest.md:
     id: ee161eb6d385
     last_write_checksum: sha1:580b1a06e00e7be179cc0f1739047b0af58b0fc5
@@ -28596,7 +28602,7 @@ trackedFiles:
     last_write_checksum: sha1:bd02f9e70a8c469a2934a77d2a86608a54e69e36
     pristine_git_object: 420e1fd0ee4c120448aff87d720b39e95bf300f6
   docs/Models/Requests/UpdateCommerceItemQueryParamFields.md:
-    last_write_checksum: sha1:604ed792c04b48792f3df4fcfbc9bc8816e1856b
+    last_write_checksum: sha1:e951e8f74b37a8afbf10d33c2e829dc4d08297d0
   docs/Models/Requests/UpdateCommerceItemRequest.md:
     id: 01fe5b97b733
     last_write_checksum: sha1:13335f6f882e780c34edfd25bcea37839a6403d7
