@@ -32,4 +32,5 @@
 | `Type`                    | type                      |
 | `Attachments`             | attachments               |
 | `Send`                    | send                      |
+| `OrganizationId`          | organization_id           |
 | `Raw`                     | raw                       |

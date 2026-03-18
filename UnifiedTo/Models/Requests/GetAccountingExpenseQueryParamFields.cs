@@ -49,6 +49,8 @@ namespace UnifiedTo.Models.Requests
         ApproverUserId,
         [JsonProperty("lineitems")]
         Lineitems,
+        [JsonProperty("organization_id")]
+        OrganizationId,
         [JsonProperty("raw")]
         Raw,
     }

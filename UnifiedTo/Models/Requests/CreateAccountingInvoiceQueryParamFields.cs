@@ -69,6 +69,8 @@ namespace UnifiedTo.Models.Requests
         Attachments,
         [JsonProperty("send")]
         Send,
+        [JsonProperty("organization_id")]
+        OrganizationId,
         [JsonProperty("raw")]
         Raw,
     }

@@ -54,6 +54,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("notes")]
         public string? Notes { get; set; }
 
+        [JsonProperty("organization_id")]
+        public string? OrganizationId { get; set; }
+
         [JsonProperty("paid_amount")]
         public double? PaidAmount { get; set; }
 

@@ -116,6 +116,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_invoice_id")]
         public ListInvoiceId? ListInvoiceId { get; set; }
 
+        [JsonProperty("list_io_id")]
+        public ListIoId? ListIoId { get; set; }
+
         [JsonProperty("list_item_id")]
         public ListItemId? ListItemId { get; set; }
 
@@ -263,6 +266,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("native_webhook_form_id")]
         public NativeWebhookFormId? NativeWebhookFormId { get; set; }
 
+        [JsonProperty("native_webhook_io_id")]
+        public NativeWebhookIoId? NativeWebhookIoId { get; set; }
+
         [JsonProperty("native_webhook_label_id")]
         public NativeWebhookLabelId? NativeWebhookLabelId { get; set; }
 
@@ -388,6 +394,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_invoice_id")]
         public VirtualWebhookInvoiceId? VirtualWebhookInvoiceId { get; set; }
+
+        [JsonProperty("virtual_webhook_io_id")]
+        public VirtualWebhookIoId? VirtualWebhookIoId { get; set; }
 
         [JsonProperty("virtual_webhook_item_id")]
         public VirtualWebhookItemId? VirtualWebhookItemId { get; set; }

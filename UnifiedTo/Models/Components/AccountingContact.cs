@@ -60,6 +60,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        [JsonProperty("organization_id")]
+        public string? OrganizationId { get; set; }
+
         [JsonProperty("payment_methods")]
         public List<AccountingContactPaymentMethod>? PaymentMethods { get; set; }
 
