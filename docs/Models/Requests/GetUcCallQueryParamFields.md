@@ -16,3 +16,5 @@
 | `Contacts`  | contacts    |
 | `IsPrivate` | is_private  |
 | `Raw`       | raw         |
+| `UserName`  | user_name   |
+| `UserPhone` | user_phone  |

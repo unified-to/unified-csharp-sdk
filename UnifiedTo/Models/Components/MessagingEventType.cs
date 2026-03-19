@@ -33,6 +33,8 @@ namespace UnifiedTo.Models.Components
         ChannelCreated,
         [JsonProperty("CHANNEL_DELETED")]
         ChannelDeleted,
+        [JsonProperty("CHANNEL_RENAMED")]
+        ChannelRenamed,
         [JsonProperty("USER_CREATED")]
         UserCreated,
         [JsonProperty("USER_DELETED")]

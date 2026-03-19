@@ -37,6 +37,10 @@ namespace UnifiedTo.Models.Requests
         IsPrivate,
         [JsonProperty("raw")]
         Raw,
+        [JsonProperty("user_name")]
+        UserName,
+        [JsonProperty("user_phone")]
+        UserPhone,
     }
 
     public static class ListUcCallsQueryParamFieldsExtension

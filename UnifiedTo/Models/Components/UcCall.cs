@@ -53,5 +53,11 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("user_id")]
         public string? UserId { get; set; }
+
+        [JsonProperty("user_name")]
+        public string? UserName { get; set; }
+
+        [JsonProperty("user_phone")]
+        public string? UserPhone { get; set; }
     }
 }

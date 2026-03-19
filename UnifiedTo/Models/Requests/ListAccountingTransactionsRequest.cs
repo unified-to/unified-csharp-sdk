@@ -17,6 +17,12 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
+        /// The account ID to filter by (reference to AccountingAccount)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=account_id")]
+        public string? AccountId { get; set; }
+
+        /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]
@@ -48,6 +54,12 @@ namespace UnifiedTo.Models.Requests
 
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=order")]
         public string? Order { get; set; }
+
+        /// <summary>
+        /// The org ID to filter by (reference to AccountingOrganization)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=org_id")]
+        public string? OrgId { get; set; }
 
         /// <summary>
         /// Query string to search. eg. email address or name
