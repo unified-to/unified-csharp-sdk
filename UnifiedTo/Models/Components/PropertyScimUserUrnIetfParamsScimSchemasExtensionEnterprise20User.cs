@@ -30,6 +30,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("costCenter")]
         public string? CostCenter { get; set; }
 
+        [JsonProperty("currency")]
+        public string? Currency { get; set; }
+
         [JsonProperty("department")]
         public string? Department { get; set; }
 
