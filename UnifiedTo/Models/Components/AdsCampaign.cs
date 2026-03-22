@@ -48,6 +48,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("goal")]
         public Goal? Goal { get; set; }
 
+        [JsonProperty("has_eu_political_ads")]
+        public bool? HasEuPoliticalAds { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 

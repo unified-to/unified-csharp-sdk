@@ -24,4 +24,5 @@
 | `CampaignBudgetIdentifier` | campaign_budget_identifier |
 | `Currency`                 | currency                   |
 | `Category`                 | category                   |
+| `HasEuPoliticalAds`        | has_eu_political_ads       |
 | `Raw`                      | raw                        |

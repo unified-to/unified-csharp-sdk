@@ -23,6 +23,8 @@ namespace UnifiedTo.Models.Requests
         Value,
         [JsonProperty("type")]
         Type,
+        [JsonProperty("raw")]
+        Raw,
     }
 
     public static class ListAdsTargetsQueryParamFieldsExtension

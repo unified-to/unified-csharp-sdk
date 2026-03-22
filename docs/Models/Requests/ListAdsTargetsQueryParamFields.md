@@ -9,3 +9,4 @@
 | `Name`  | name    |
 | `Value` | value   |
 | `Type`  | type    |
+| `Raw`   | raw     |

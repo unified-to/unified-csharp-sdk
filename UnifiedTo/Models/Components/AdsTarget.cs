@@ -10,6 +10,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
@@ -24,6 +25,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("name")]
         public string? Name { get; set; }
+
+        [JsonProperty("raw")]
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("type")]
         public AdsTargetType? Type { get; set; }

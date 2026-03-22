@@ -53,6 +53,8 @@ namespace UnifiedTo.Models.Requests
         Currency,
         [JsonProperty("category")]
         Category,
+        [JsonProperty("has_eu_political_ads")]
+        HasEuPoliticalAds,
         [JsonProperty("raw")]
         Raw,
     }
