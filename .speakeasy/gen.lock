@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: ad0da19a48c2c6324b0575fb8bbcbe79
+  docChecksum: 4b6bb302afd17171c278cb7394f80ddb
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.49
-  configChecksum: d780459405df00913000f1bffb4ba7fe
+  releaseVersion: 0.130.50
+  configChecksum: f3b5072c8ce34880ffcd66f09f3de7e9
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -42,6 +42,7 @@ generatedFiles:
   - UnifiedTo/Assessment.cs
   - UnifiedTo/Ats.cs
   - UnifiedTo/Auth.cs
+  - UnifiedTo/Availability.cs
   - UnifiedTo/Balancesheet.cs
   - UnifiedTo/Bankaccount.cs
   - UnifiedTo/Benefit.cs
@@ -274,6 +275,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/CalendarWebinarRegistrant.cs
   - UnifiedTo/Models/Components/CalendarWebinarStatus.cs
   - UnifiedTo/Models/Components/CityTarget.cs
+  - UnifiedTo/Models/Components/CommerceAvailability.cs
   - UnifiedTo/Models/Components/CommerceCollection.cs
   - UnifiedTo/Models/Components/CommerceCollectionType.cs
   - UnifiedTo/Models/Components/CommerceInventory.cs
@@ -294,11 +296,15 @@ generatedFiles:
   - UnifiedTo/Models/Components/CommerceMetadataSchemas5.cs
   - UnifiedTo/Models/Components/CommerceMetadataValue.cs
   - UnifiedTo/Models/Components/CommerceReference.cs
+  - UnifiedTo/Models/Components/CommerceReservation.cs
+  - UnifiedTo/Models/Components/CommerceReservationStatus.cs
   - UnifiedTo/Models/Components/CommerceReview.cs
   - UnifiedTo/Models/Components/CommerceReviewComment.cs
   - UnifiedTo/Models/Components/CommerceReviewCommentStatus.cs
   - UnifiedTo/Models/Components/CommerceReviewStatus.cs
   - UnifiedTo/Models/Components/CommerceSaleschannel.cs
+  - UnifiedTo/Models/Components/CommerceTelephone.cs
+  - UnifiedTo/Models/Components/CommerceTelephoneType.cs
   - UnifiedTo/Models/Components/Connection.cs
   - UnifiedTo/Models/Components/ContentType.cs
   - UnifiedTo/Models/Components/ContentsType.cs
@@ -488,6 +494,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListRootId.cs
   - UnifiedTo/Models/Components/ListSaleschannelId.cs
   - UnifiedTo/Models/Components/ListShipmentId.cs
+  - UnifiedTo/Models/Components/ListSize.cs
   - UnifiedTo/Models/Components/ListSortByCreatedAt.cs
   - UnifiedTo/Models/Components/ListSortByName.cs
   - UnifiedTo/Models/Components/ListSortByUpdatedAt.cs
@@ -515,6 +522,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/LmsStudent.cs
   - UnifiedTo/Models/Components/LmsTelephone.cs
   - UnifiedTo/Models/Components/LmsTelephoneType.cs
+  - UnifiedTo/Models/Components/LocationType.cs
   - UnifiedTo/Models/Components/LookalikeAudience.cs
   - UnifiedTo/Models/Components/MaritalStatus.cs
   - UnifiedTo/Models/Components/MarketingCampaign.cs
@@ -546,6 +554,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/NativeWebhookCourseId.cs
   - UnifiedTo/Models/Components/NativeWebhookEventId.cs
   - UnifiedTo/Models/Components/NativeWebhookFormId.cs
+  - UnifiedTo/Models/Components/NativeWebhookIoId.cs
   - UnifiedTo/Models/Components/NativeWebhookLabelId.cs
   - UnifiedTo/Models/Components/NativeWebhookMemberId.cs
   - UnifiedTo/Models/Components/NativeWebhookOrderId.cs
@@ -1067,6 +1076,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateCommerceLocationQueryParamFields.cs
   - UnifiedTo/Models/Requests/CreateCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/CreateCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/CreateCommerceReservationQueryParamFields.cs
+  - UnifiedTo/Models/Requests/CreateCommerceReservationRequest.cs
+  - UnifiedTo/Models/Requests/CreateCommerceReservationResponse.cs
   - UnifiedTo/Models/Requests/CreateCommerceReviewQueryParamFields.cs
   - UnifiedTo/Models/Requests/CreateCommerceReviewRequest.cs
   - UnifiedTo/Models/Requests/CreateCommerceReviewResponse.cs
@@ -1384,6 +1396,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetCommerceLocationQueryParamFields.cs
   - UnifiedTo/Models/Requests/GetCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/GetCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/GetCommerceReservationQueryParamFields.cs
+  - UnifiedTo/Models/Requests/GetCommerceReservationRequest.cs
+  - UnifiedTo/Models/Requests/GetCommerceReservationResponse.cs
   - UnifiedTo/Models/Requests/GetCommerceReviewQueryParamFields.cs
   - UnifiedTo/Models/Requests/GetCommerceReviewRequest.cs
   - UnifiedTo/Models/Requests/GetCommerceReviewResponse.cs
@@ -1732,6 +1747,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListCalendarWebinarsQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListCalendarWebinarsRequest.cs
   - UnifiedTo/Models/Requests/ListCalendarWebinarsResponse.cs
+  - UnifiedTo/Models/Requests/ListCommerceAvailabilitiesQueryParamFields.cs
+  - UnifiedTo/Models/Requests/ListCommerceAvailabilitiesRequest.cs
+  - UnifiedTo/Models/Requests/ListCommerceAvailabilitiesResponse.cs
   - UnifiedTo/Models/Requests/ListCommerceCollectionsQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListCommerceCollectionsRequest.cs
   - UnifiedTo/Models/Requests/ListCommerceCollectionsResponse.cs
@@ -1747,6 +1765,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListCommerceLocationsQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListCommerceLocationsRequest.cs
   - UnifiedTo/Models/Requests/ListCommerceLocationsResponse.cs
+  - UnifiedTo/Models/Requests/ListCommerceReservationsQueryParamFields.cs
+  - UnifiedTo/Models/Requests/ListCommerceReservationsRequest.cs
+  - UnifiedTo/Models/Requests/ListCommerceReservationsResponse.cs
   - UnifiedTo/Models/Requests/ListCommerceReviewsQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListCommerceReviewsRequest.cs
   - UnifiedTo/Models/Requests/ListCommerceReviewsResponse.cs
@@ -2085,6 +2106,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchCommerceLocationQueryParamFields.cs
   - UnifiedTo/Models/Requests/PatchCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/PatchCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/PatchCommerceReservationQueryParamFields.cs
+  - UnifiedTo/Models/Requests/PatchCommerceReservationRequest.cs
+  - UnifiedTo/Models/Requests/PatchCommerceReservationResponse.cs
   - UnifiedTo/Models/Requests/PatchCommerceReviewQueryParamFields.cs
   - UnifiedTo/Models/Requests/PatchCommerceReviewRequest.cs
   - UnifiedTo/Models/Requests/PatchCommerceReviewResponse.cs
@@ -2343,6 +2367,8 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveCommerceItemvariantResponse.cs
   - UnifiedTo/Models/Requests/RemoveCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/RemoveCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceReservationRequest.cs
+  - UnifiedTo/Models/Requests/RemoveCommerceReservationResponse.cs
   - UnifiedTo/Models/Requests/RemoveCommerceReviewRequest.cs
   - UnifiedTo/Models/Requests/RemoveCommerceReviewResponse.cs
   - UnifiedTo/Models/Requests/RemoveCommerceSaleschannelRequest.cs
@@ -2578,6 +2604,9 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateCommerceLocationQueryParamFields.cs
   - UnifiedTo/Models/Requests/UpdateCommerceLocationRequest.cs
   - UnifiedTo/Models/Requests/UpdateCommerceLocationResponse.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceReservationQueryParamFields.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceReservationRequest.cs
+  - UnifiedTo/Models/Requests/UpdateCommerceReservationResponse.cs
   - UnifiedTo/Models/Requests/UpdateCommerceReviewQueryParamFields.cs
   - UnifiedTo/Models/Requests/UpdateCommerceReviewRequest.cs
   - UnifiedTo/Models/Requests/UpdateCommerceReviewResponse.cs
@@ -2784,6 +2813,7 @@ generatedFiles:
   - UnifiedTo/Report.cs
   - UnifiedTo/Repository.cs
   - UnifiedTo/Request.cs
+  - UnifiedTo/Reservation.cs
   - UnifiedTo/Review.cs
   - UnifiedTo/SDKConfig.cs
   - UnifiedTo/Saleschannel.cs
@@ -2992,6 +3022,7 @@ generatedFiles:
   - docs/Models/Components/CalendarWebinarRegistrant.md
   - docs/Models/Components/CalendarWebinarStatus.md
   - docs/Models/Components/CityTarget.md
+  - docs/Models/Components/CommerceAvailability.md
   - docs/Models/Components/CommerceCollection.md
   - docs/Models/Components/CommerceCollectionType.md
   - docs/Models/Components/CommerceInventory.md
@@ -3012,11 +3043,15 @@ generatedFiles:
   - docs/Models/Components/CommerceMetadataSchemas5.md
   - docs/Models/Components/CommerceMetadataValue.md
   - docs/Models/Components/CommerceReference.md
+  - docs/Models/Components/CommerceReservation.md
+  - docs/Models/Components/CommerceReservationStatus.md
   - docs/Models/Components/CommerceReview.md
   - docs/Models/Components/CommerceReviewComment.md
   - docs/Models/Components/CommerceReviewCommentStatus.md
   - docs/Models/Components/CommerceReviewStatus.md
   - docs/Models/Components/CommerceSaleschannel.md
+  - docs/Models/Components/CommerceTelephone.md
+  - docs/Models/Components/CommerceTelephoneType.md
   - docs/Models/Components/Connection.md
   - docs/Models/Components/ContentType.md
   - docs/Models/Components/ContentsType.md
@@ -3206,6 +3241,7 @@ generatedFiles:
   - docs/Models/Components/ListRootId.md
   - docs/Models/Components/ListSaleschannelId.md
   - docs/Models/Components/ListShipmentId.md
+  - docs/Models/Components/ListSize.md
   - docs/Models/Components/ListSortByCreatedAt.md
   - docs/Models/Components/ListSortByName.md
   - docs/Models/Components/ListSortByUpdatedAt.md
@@ -3233,6 +3269,7 @@ generatedFiles:
   - docs/Models/Components/LmsStudent.md
   - docs/Models/Components/LmsTelephone.md
   - docs/Models/Components/LmsTelephoneType.md
+  - docs/Models/Components/LocationType.md
   - docs/Models/Components/LookalikeAudience.md
   - docs/Models/Components/MaritalStatus.md
   - docs/Models/Components/MarketingCampaign.md
@@ -3264,6 +3301,7 @@ generatedFiles:
   - docs/Models/Components/NativeWebhookCourseId.md
   - docs/Models/Components/NativeWebhookEventId.md
   - docs/Models/Components/NativeWebhookFormId.md
+  - docs/Models/Components/NativeWebhookIoId.md
   - docs/Models/Components/NativeWebhookLabelId.md
   - docs/Models/Components/NativeWebhookMemberId.md
   - docs/Models/Components/NativeWebhookOrderId.md
@@ -3784,6 +3822,9 @@ generatedFiles:
   - docs/Models/Requests/CreateCommerceLocationQueryParamFields.md
   - docs/Models/Requests/CreateCommerceLocationRequest.md
   - docs/Models/Requests/CreateCommerceLocationResponse.md
+  - docs/Models/Requests/CreateCommerceReservationQueryParamFields.md
+  - docs/Models/Requests/CreateCommerceReservationRequest.md
+  - docs/Models/Requests/CreateCommerceReservationResponse.md
   - docs/Models/Requests/CreateCommerceReviewQueryParamFields.md
   - docs/Models/Requests/CreateCommerceReviewRequest.md
   - docs/Models/Requests/CreateCommerceReviewResponse.md
@@ -4101,6 +4142,9 @@ generatedFiles:
   - docs/Models/Requests/GetCommerceLocationQueryParamFields.md
   - docs/Models/Requests/GetCommerceLocationRequest.md
   - docs/Models/Requests/GetCommerceLocationResponse.md
+  - docs/Models/Requests/GetCommerceReservationQueryParamFields.md
+  - docs/Models/Requests/GetCommerceReservationRequest.md
+  - docs/Models/Requests/GetCommerceReservationResponse.md
   - docs/Models/Requests/GetCommerceReviewQueryParamFields.md
   - docs/Models/Requests/GetCommerceReviewRequest.md
   - docs/Models/Requests/GetCommerceReviewResponse.md
@@ -4449,6 +4493,9 @@ generatedFiles:
   - docs/Models/Requests/ListCalendarWebinarsQueryParamFields.md
   - docs/Models/Requests/ListCalendarWebinarsRequest.md
   - docs/Models/Requests/ListCalendarWebinarsResponse.md
+  - docs/Models/Requests/ListCommerceAvailabilitiesQueryParamFields.md
+  - docs/Models/Requests/ListCommerceAvailabilitiesRequest.md
+  - docs/Models/Requests/ListCommerceAvailabilitiesResponse.md
   - docs/Models/Requests/ListCommerceCollectionsQueryParamFields.md
   - docs/Models/Requests/ListCommerceCollectionsRequest.md
   - docs/Models/Requests/ListCommerceCollectionsResponse.md
@@ -4464,6 +4511,9 @@ generatedFiles:
   - docs/Models/Requests/ListCommerceLocationsQueryParamFields.md
   - docs/Models/Requests/ListCommerceLocationsRequest.md
   - docs/Models/Requests/ListCommerceLocationsResponse.md
+  - docs/Models/Requests/ListCommerceReservationsQueryParamFields.md
+  - docs/Models/Requests/ListCommerceReservationsRequest.md
+  - docs/Models/Requests/ListCommerceReservationsResponse.md
   - docs/Models/Requests/ListCommerceReviewsQueryParamFields.md
   - docs/Models/Requests/ListCommerceReviewsRequest.md
   - docs/Models/Requests/ListCommerceReviewsResponse.md
@@ -4802,6 +4852,9 @@ generatedFiles:
   - docs/Models/Requests/PatchCommerceLocationQueryParamFields.md
   - docs/Models/Requests/PatchCommerceLocationRequest.md
   - docs/Models/Requests/PatchCommerceLocationResponse.md
+  - docs/Models/Requests/PatchCommerceReservationQueryParamFields.md
+  - docs/Models/Requests/PatchCommerceReservationRequest.md
+  - docs/Models/Requests/PatchCommerceReservationResponse.md
   - docs/Models/Requests/PatchCommerceReviewQueryParamFields.md
   - docs/Models/Requests/PatchCommerceReviewRequest.md
   - docs/Models/Requests/PatchCommerceReviewResponse.md
@@ -5060,6 +5113,8 @@ generatedFiles:
   - docs/Models/Requests/RemoveCommerceItemvariantResponse.md
   - docs/Models/Requests/RemoveCommerceLocationRequest.md
   - docs/Models/Requests/RemoveCommerceLocationResponse.md
+  - docs/Models/Requests/RemoveCommerceReservationRequest.md
+  - docs/Models/Requests/RemoveCommerceReservationResponse.md
   - docs/Models/Requests/RemoveCommerceReviewRequest.md
   - docs/Models/Requests/RemoveCommerceReviewResponse.md
   - docs/Models/Requests/RemoveCommerceSaleschannelRequest.md
@@ -5295,6 +5350,9 @@ generatedFiles:
   - docs/Models/Requests/UpdateCommerceLocationQueryParamFields.md
   - docs/Models/Requests/UpdateCommerceLocationRequest.md
   - docs/Models/Requests/UpdateCommerceLocationResponse.md
+  - docs/Models/Requests/UpdateCommerceReservationQueryParamFields.md
+  - docs/Models/Requests/UpdateCommerceReservationRequest.md
+  - docs/Models/Requests/UpdateCommerceReservationResponse.md
   - docs/Models/Requests/UpdateCommerceReviewQueryParamFields.md
   - docs/Models/Requests/UpdateCommerceReviewRequest.md
   - docs/Models/Requests/UpdateCommerceReviewResponse.md
@@ -5488,6 +5546,7 @@ generatedFiles:
   - docs/sdks/assessment/README.md
   - docs/sdks/ats/README.md
   - docs/sdks/auth/README.md
+  - docs/sdks/availability/README.md
   - docs/sdks/balancesheet/README.md
   - docs/sdks/bankaccount/README.md
   - docs/sdks/benefit/README.md
@@ -5582,6 +5641,7 @@ generatedFiles:
   - docs/sdks/report/README.md
   - docs/sdks/repository/README.md
   - docs/sdks/request/README.md
+  - docs/sdks/reservation/README.md
   - docs/sdks/review/README.md
   - docs/sdks/saleschannel/README.md
   - docs/sdks/salesorder/README.md
@@ -11541,6 +11601,69 @@ examples:
       responses:
         "200":
           application/json: [{"id": "<id>", "type": "CUSTOM_CONVERSION_ID"}]
+  createCommerceReservation:
+    speakeasy-default-create-commerce-reservation:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getCommerceReservation:
+    speakeasy-default-get-commerce-reservation:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listCommerceAvailabilities:
+    speakeasy-default-list-commerce-availabilities:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listCommerceReservations:
+    speakeasy-default-list-commerce-reservations:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchCommerceReservation:
+    speakeasy-default-patch-commerce-reservation:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeCommerceReservation:
+    speakeasy-default-remove-commerce-reservation:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateCommerceReservation:
+    speakeasy-default-update-commerce-reservation:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
 persistentEdits:
@@ -11603,6 +11726,8 @@ trackedFiles:
     id: 988e435ad348
     last_write_checksum: sha1:b7022ea5dfec618c7c93d791c3757d1c9dd53e7d
     pristine_git_object: a8522da509402cf5fd40563bfe7525c99527a212
+  UnifiedTo/Availability.cs:
+    last_write_checksum: sha1:182f6cb0e14c4f6a646a82d20ec375e01e6a2c99
   UnifiedTo/Balancesheet.cs:
     id: e0a4a3508a1d
     last_write_checksum: sha1:20539325c19d3e9acc7f26ae2245097916577e76
@@ -11671,7 +11796,7 @@ trackedFiles:
     pristine_git_object: 5252bd7c9b81645608df4bbc13be2853e20d8d6f
   UnifiedTo/Commerce.cs:
     id: 5e9113a6f2e0
-    last_write_checksum: sha1:9dfc1080cc9c2780bb5f8ab1a6e43fd01f4bca81
+    last_write_checksum: sha1:f13b3ec57497fa01c734f99892a107e387f508ad
     pristine_git_object: e1893af2ab97b75e13a4b3e8bc496aeff32954a0
   UnifiedTo/Commit.cs:
     id: 9cfb2993670c
@@ -12403,6 +12528,8 @@ trackedFiles:
     last_write_checksum: sha1:5ca6110464c781ccf18056717dd944c43bd45951
   UnifiedTo/Models/Components/CityTarget.cs:
     last_write_checksum: sha1:e3d063a3fc9dfe72eba1cb2e7ea554cef0414773
+  UnifiedTo/Models/Components/CommerceAvailability.cs:
+    last_write_checksum: sha1:03ca01a2b15f1fd91a5020ead7b5734bfb9a09fc
   UnifiedTo/Models/Components/CommerceCollection.cs:
     id: 4f7cb066d071
     last_write_checksum: sha1:b21693facd1c51da27f85633fb80d661c0b71f38
@@ -12417,7 +12544,7 @@ trackedFiles:
     pristine_git_object: 6db0c83e96478cc14a06e6b83b557564a7e8be1b
   UnifiedTo/Models/Components/CommerceItem.cs:
     id: 3205c4d36546
-    last_write_checksum: sha1:1bb1b95868f59f8ffef686e85de705af1237464b
+    last_write_checksum: sha1:acf01e83e048086333168853d9c1538a9a350a70
     pristine_git_object: f76dd948e9a3b7124247809b6a0385981ada539f
   UnifiedTo/Models/Components/CommerceItemMedia.cs:
     id: 662c9235cc4b
@@ -12441,7 +12568,7 @@ trackedFiles:
     last_write_checksum: sha1:91c4d59265d1c0eeb1373cfcd02656eeec9395e7
   UnifiedTo/Models/Components/CommerceLocation.cs:
     id: 3cf6d1c71d6c
-    last_write_checksum: sha1:3102c819ce376fd1133adc329b366bd00f307582
+    last_write_checksum: sha1:5ca5951f8d5df464fc7f4442ba942309b007e499
     pristine_git_object: 2d334a6b86da1017e83c5a36807cb4c0a243c640
   UnifiedTo/Models/Components/CommerceMetadata.cs:
     id: 3582c3435751
@@ -12479,9 +12606,13 @@ trackedFiles:
     id: 13b15318e5ee
     last_write_checksum: sha1:6e15975468760f5fb3f7b8f5aa4c3e4412b5cf17
     pristine_git_object: 5a344b800f6204560d942b68c2c90eb4b7309d9a
+  UnifiedTo/Models/Components/CommerceReservation.cs:
+    last_write_checksum: sha1:3a35cdde553248f296c9249165f4c9426418be38
+  UnifiedTo/Models/Components/CommerceReservationStatus.cs:
+    last_write_checksum: sha1:24b3dcdb3a5be0842fbd8c27ecec20af590272b7
   UnifiedTo/Models/Components/CommerceReview.cs:
     id: aa69d5f13c5f
-    last_write_checksum: sha1:7e765a698fbc7f273dbd09d163bff1463833b5eb
+    last_write_checksum: sha1:2958b3cd69314a8f4f666dce0897bef6e5664558
     pristine_git_object: ee5c196532dc1c1deeedbc3b255c5c4a7597c933
   UnifiedTo/Models/Components/CommerceReviewComment.cs:
     id: 7cf520b72a4f
@@ -12499,6 +12630,10 @@ trackedFiles:
     id: 5520ecef62ad
     last_write_checksum: sha1:39575e87b40ef409f2c2de3be6b6a14f748d1e7a
     pristine_git_object: 56f729c5915fa3a4a2f6eaadbe3b54ae93002b01
+  UnifiedTo/Models/Components/CommerceTelephone.cs:
+    last_write_checksum: sha1:2f2fa0ab6eb862fa13f56d5c000d44b81f0f2cbc
+  UnifiedTo/Models/Components/CommerceTelephoneType.cs:
+    last_write_checksum: sha1:d0e8cfca8e9c71a9334c8886818b265ae470f033
   UnifiedTo/Models/Components/Connection.cs:
     id: 48bc2319d927
     last_write_checksum: sha1:2e5260008d472993aca52810ef72de236d072197
@@ -12917,7 +13052,7 @@ trackedFiles:
     pristine_git_object: c713343e8622b8cfb7c52924b3765b26217d6385
   UnifiedTo/Models/Components/IntegrationSupport.cs:
     id: a60768677b8a
-    last_write_checksum: sha1:785157f086fc160eb8fc340e8f47f832fad23b92
+    last_write_checksum: sha1:15b508899e0e80fbf030166580ef0270a80735d7
     pristine_git_object: df9a5cf369f1185b54a41e701ccea4848720d748
   UnifiedTo/Models/Components/IntervalUnit.cs:
     id: 8caa2a3c48ea
@@ -13195,6 +13330,8 @@ trackedFiles:
     pristine_git_object: 4afdc39d6361002cea6870bb195759592374e3a1
   UnifiedTo/Models/Components/ListShipmentId.cs:
     last_write_checksum: sha1:0570b24706f2978fc0b659b9d3c6b4cfa624c331
+  UnifiedTo/Models/Components/ListSize.cs:
+    last_write_checksum: sha1:dca26698c930e260f6ac9c797f3d0924cf89e291
   UnifiedTo/Models/Components/ListSortByCreatedAt.cs:
     id: a9e1239046d5
     last_write_checksum: sha1:52e313969832356b35724456591cb456c626436c
@@ -13295,6 +13432,8 @@ trackedFiles:
     id: 639f521056ea
     last_write_checksum: sha1:a4abd3214b3f3ec3fa9086395e4b9603214bcd24
     pristine_git_object: 0821346c500977e792d09e42d6b92a0a2154e4b9
+  UnifiedTo/Models/Components/LocationType.cs:
+    last_write_checksum: sha1:c7ad482974bcef645d718e643ec8e98aa86d9e8d
   UnifiedTo/Models/Components/LookalikeAudience.cs:
     last_write_checksum: sha1:a1888403c7903084e8127165593852de220a1c7c
   UnifiedTo/Models/Components/MaritalStatus.cs:
@@ -13389,6 +13528,8 @@ trackedFiles:
     pristine_git_object: 5fbb4a194cb625f54408adcb52898aa11cf877ee
   UnifiedTo/Models/Components/NativeWebhookFormId.cs:
     last_write_checksum: sha1:a6d77edb13a60d5a8cba352e516497fb5dff4074
+  UnifiedTo/Models/Components/NativeWebhookIoId.cs:
+    last_write_checksum: sha1:f91b16ac12afb4a34a04126a71cfec5310488b25
   UnifiedTo/Models/Components/NativeWebhookLabelId.cs:
     last_write_checksum: sha1:99c5e6be5c07d9693b6232a41796be3f448a5cdc
   UnifiedTo/Models/Components/NativeWebhookMemberId.cs:
@@ -13417,7 +13558,7 @@ trackedFiles:
     last_write_checksum: sha1:2600fee70f1e697d78687bf8756486885a2bc240
   UnifiedTo/Models/Components/ObjectType.cs:
     id: 8e5be1040e8b
-    last_write_checksum: sha1:3f3ad9c560d8237068f0317413e6bec4ef879e87
+    last_write_checksum: sha1:9fd28a0d99e0263a2db96c6badbe0380c8805a7b
     pristine_git_object: 8aa887cf95b9ca7e4de4189a0994cf8d7de53ac6
   UnifiedTo/Models/Components/One.cs:
     id: d6fa3c7b6dc5
@@ -13827,7 +13968,7 @@ trackedFiles:
     pristine_git_object: 058a7265ff607fc57d02159cac6833325b133d8b
   UnifiedTo/Models/Components/PropertyConnectionPermissions.cs:
     id: f924575570ed
-    last_write_checksum: sha1:d746b68eaf887ad9fd339b179e218e10b8544d53
+    last_write_checksum: sha1:b2c1f08f5c802a66e1dfd1deb0541457a11a3023
     pristine_git_object: 1fbf256600c76cb7463c9b53c5891696d45c4cd6
   UnifiedTo/Models/Components/PropertyCrmCompanyAddress.cs:
     id: 9ecc38382b6c
@@ -14982,7 +15123,7 @@ trackedFiles:
     last_write_checksum: sha1:b510ff5a19f23e006795c30391b8d839107d171d
     pristine_git_object: 9d567bb0f4869bed3ed3bd52c335345070217d66
   UnifiedTo/Models/Requests/CreateCommerceItemQueryParamFields.cs:
-    last_write_checksum: sha1:50795cb04a775eb1fb5aeb3f872d1bf5543b5ecf
+    last_write_checksum: sha1:4dc6f59e4e2179cb54335819848426c2557b9705
   UnifiedTo/Models/Requests/CreateCommerceItemRequest.cs:
     id: 022c1a3aa74c
     last_write_checksum: sha1:af375f08e22de50ac6896677c67bbd814809ae48
@@ -14998,7 +15139,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/CreateCommerceItemvariantResponse.cs:
     last_write_checksum: sha1:ed07c438e75eed0c73d5ca5bc879903b7514b412
   UnifiedTo/Models/Requests/CreateCommerceLocationQueryParamFields.cs:
-    last_write_checksum: sha1:376b715d1af57ab6b1835fd7eb656a4137d0d0c0
+    last_write_checksum: sha1:d66a00ed87cd2de6beb2562e85311e8af3a78b40
   UnifiedTo/Models/Requests/CreateCommerceLocationRequest.cs:
     id: eef9c1540bfb
     last_write_checksum: sha1:3570a56e3d251d1c41d41741aa0748d49f196fcd
@@ -15007,8 +15148,14 @@ trackedFiles:
     id: 61f40aebb6d7
     last_write_checksum: sha1:d0c20f510070baa143d76d90ddfb82aa30388b31
     pristine_git_object: d69295c0200806da343055df3646b80744ca96f9
+  UnifiedTo/Models/Requests/CreateCommerceReservationQueryParamFields.cs:
+    last_write_checksum: sha1:1794ff42b28fa17f772380ea7341cc2e405e680c
+  UnifiedTo/Models/Requests/CreateCommerceReservationRequest.cs:
+    last_write_checksum: sha1:884b1ef4ca5676f3d5891da5a57861bae0cf2da3
+  UnifiedTo/Models/Requests/CreateCommerceReservationResponse.cs:
+    last_write_checksum: sha1:1cb9c601da9d087bc89675bc121d01aeaea77fa4
   UnifiedTo/Models/Requests/CreateCommerceReviewQueryParamFields.cs:
-    last_write_checksum: sha1:8da068384cba9d2d97dc3c32c6cbc2f9237a1518
+    last_write_checksum: sha1:d0a5f20455c95e945c351181acdeb0b6a28a4a29
   UnifiedTo/Models/Requests/CreateCommerceReviewRequest.cs:
     id: 2e183fcf969e
     last_write_checksum: sha1:77a15f46098f03c663f7ba241c98f1df228904fc
@@ -15976,7 +16123,7 @@ trackedFiles:
     last_write_checksum: sha1:2c6dfff0b7bf321e91ede70b7f0cfc43d85cc653
     pristine_git_object: 2d0fc493df44ca3418a7f0e0203bab661ac81847
   UnifiedTo/Models/Requests/GetCommerceItemQueryParamFields.cs:
-    last_write_checksum: sha1:b175bdcab05dcfda030c0b651c68a472fd139505
+    last_write_checksum: sha1:2793a2b4ed4074726845e86a6afe30539c3ef497
   UnifiedTo/Models/Requests/GetCommerceItemRequest.cs:
     id: da7f64349468
     last_write_checksum: sha1:5f10c219262a10ccef6da317c4bdf53dc32c9b73
@@ -15992,7 +16139,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/GetCommerceItemvariantResponse.cs:
     last_write_checksum: sha1:3d385f4ad32789abd5fb8185638a3575d609b054
   UnifiedTo/Models/Requests/GetCommerceLocationQueryParamFields.cs:
-    last_write_checksum: sha1:d6b9109b73e1da973306e28a4d66ba7741f26815
+    last_write_checksum: sha1:49492cbad04d7fc4ea5b194682a57f5bcc8b0735
   UnifiedTo/Models/Requests/GetCommerceLocationRequest.cs:
     id: 3aaa729a25a7
     last_write_checksum: sha1:54022f0376f4fd9ba5c740502ef8e26514580986
@@ -16001,8 +16148,14 @@ trackedFiles:
     id: 8bb8c5288d9f
     last_write_checksum: sha1:84d29194a4047ac4d2b41d15b3d6526d0459ae18
     pristine_git_object: aca4e523a3674ae5ff205abc62fe75e07ac40318
+  UnifiedTo/Models/Requests/GetCommerceReservationQueryParamFields.cs:
+    last_write_checksum: sha1:1c59c4f3dfd12e039747bf30c26e2c69cba6562a
+  UnifiedTo/Models/Requests/GetCommerceReservationRequest.cs:
+    last_write_checksum: sha1:67ef39f3db4264e0c4b7c239c703b9e3f906998f
+  UnifiedTo/Models/Requests/GetCommerceReservationResponse.cs:
+    last_write_checksum: sha1:d0f56d7c345c661eca827f1b9480d0618c386bec
   UnifiedTo/Models/Requests/GetCommerceReviewQueryParamFields.cs:
-    last_write_checksum: sha1:e02e81ec0f6bfaa66d9ccc1dc150a41c3a037545
+    last_write_checksum: sha1:3f4f0a95e2e093424e8213c7c0a65c5b03cd97f1
   UnifiedTo/Models/Requests/GetCommerceReviewRequest.cs:
     id: c412afa01505
     last_write_checksum: sha1:51ac450babea1cb5c3d329b61be083350e3d637e
@@ -17085,6 +17238,12 @@ trackedFiles:
     last_write_checksum: sha1:763046e1fd16f519b7b203cb22294e362cf67463
   UnifiedTo/Models/Requests/ListCalendarWebinarsResponse.cs:
     last_write_checksum: sha1:e0fcea772d88a9346cedc5e56548279c2798babf
+  UnifiedTo/Models/Requests/ListCommerceAvailabilitiesQueryParamFields.cs:
+    last_write_checksum: sha1:89387cd9cd146dca6d87b6da86d3c258d8ccfd78
+  UnifiedTo/Models/Requests/ListCommerceAvailabilitiesRequest.cs:
+    last_write_checksum: sha1:b1972d4d1b4201fb7d50ea8941c579f043e590b2
+  UnifiedTo/Models/Requests/ListCommerceAvailabilitiesResponse.cs:
+    last_write_checksum: sha1:93389e7e4d98ddce601ecbcdaafe40d3f6055959
   UnifiedTo/Models/Requests/ListCommerceCollectionsQueryParamFields.cs:
     last_write_checksum: sha1:e8f0badaf8f91293dd5fbbb07487192c7d325ed3
   UnifiedTo/Models/Requests/ListCommerceCollectionsRequest.cs:
@@ -17106,7 +17265,7 @@ trackedFiles:
     last_write_checksum: sha1:6bbfe2d01d60ee0380841087533a315eb6ff2f5d
     pristine_git_object: e4078535dbfc8a20b8a74b4afd1a68c127a1e7cb
   UnifiedTo/Models/Requests/ListCommerceItemsQueryParamFields.cs:
-    last_write_checksum: sha1:662cb525e8fdd2fe9587e073889ad42f0b09617f
+    last_write_checksum: sha1:c65d0e9f91b6035de061a11975b14dfce943a227
   UnifiedTo/Models/Requests/ListCommerceItemsRequest.cs:
     id: b6d5cec63e93
     last_write_checksum: sha1:dcabacce6292c4a19f006ef8b4e31c940afc30b2
@@ -17122,7 +17281,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListCommerceItemvariantsResponse.cs:
     last_write_checksum: sha1:2d5e2c61130cd4883d9d75dc7af27dd533bce69e
   UnifiedTo/Models/Requests/ListCommerceLocationsQueryParamFields.cs:
-    last_write_checksum: sha1:400e9fea9b27432881350d1c64db8c78af82d15a
+    last_write_checksum: sha1:808c462d2ca2d772f9b594edae1e6e07532d90ab
   UnifiedTo/Models/Requests/ListCommerceLocationsRequest.cs:
     id: 2bc8e49092ef
     last_write_checksum: sha1:6a1d2efff24d992ea5ebd46a258ed8959a3a7c4a
@@ -17131,11 +17290,17 @@ trackedFiles:
     id: a03795d6af9d
     last_write_checksum: sha1:e3d1647aee2d0e230abe1ac3add2eca9d1f3d79c
     pristine_git_object: af1ffc271a831d147d8aa93c10b545109d044d21
+  UnifiedTo/Models/Requests/ListCommerceReservationsQueryParamFields.cs:
+    last_write_checksum: sha1:2af2260dbc7c2794d2620f035d136da69f14d238
+  UnifiedTo/Models/Requests/ListCommerceReservationsRequest.cs:
+    last_write_checksum: sha1:450fd567fa833ceee986e9fbe7d8ff188e436eff
+  UnifiedTo/Models/Requests/ListCommerceReservationsResponse.cs:
+    last_write_checksum: sha1:b7b99064684cc1817d776747978eceaa81bf419b
   UnifiedTo/Models/Requests/ListCommerceReviewsQueryParamFields.cs:
-    last_write_checksum: sha1:5d0be938e4b59bb7b9694706b97f40ebc0016dba
+    last_write_checksum: sha1:1843627fbe97036d41491e3573af5ecf6800727c
   UnifiedTo/Models/Requests/ListCommerceReviewsRequest.cs:
     id: 35c6385c3cdf
-    last_write_checksum: sha1:1282a97a4469d7a46dcdee6d2ba5e50af75c80d2
+    last_write_checksum: sha1:e425c1765e6f7936285fa1a1cbaa0afc59f7ac2f
     pristine_git_object: fdf2930182e5bccdaa8aaf23b9ecac707a72974a
   UnifiedTo/Models/Requests/ListCommerceReviewsResponse.cs:
     id: d70fc19ecdc0
@@ -18166,7 +18331,7 @@ trackedFiles:
     last_write_checksum: sha1:c2cff4483492be464812c21c91eab01161dfdcc5
     pristine_git_object: c84741c9ba821b4b63c740032629a6f1a0698a61
   UnifiedTo/Models/Requests/PatchCommerceItemQueryParamFields.cs:
-    last_write_checksum: sha1:cf75111163ee1a147fa3a338f4d6da7b7394a582
+    last_write_checksum: sha1:edccf3fd0214f280b7ee39867d3e6ee54adced85
   UnifiedTo/Models/Requests/PatchCommerceItemRequest.cs:
     id: 1786100ea712
     last_write_checksum: sha1:d60cacff3553afd3e550d7315741130cabac91fa
@@ -18182,7 +18347,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/PatchCommerceItemvariantResponse.cs:
     last_write_checksum: sha1:fbac0a23a96276133e661eafc9f6757f9bb44a67
   UnifiedTo/Models/Requests/PatchCommerceLocationQueryParamFields.cs:
-    last_write_checksum: sha1:3967957bde16ff61656cfdf863158afa27ec07f7
+    last_write_checksum: sha1:8f6a0c869302b86a7a2c6f258f66bd3946f5472a
   UnifiedTo/Models/Requests/PatchCommerceLocationRequest.cs:
     id: a28ad224ca47
     last_write_checksum: sha1:a9ee91915454d630a5a91e53fb4d4f95322b4030
@@ -18191,8 +18356,14 @@ trackedFiles:
     id: 445f08a6813e
     last_write_checksum: sha1:d35bf41d391330640c598bfda280aba3201b4c75
     pristine_git_object: e4ace03a80296e2ce53db4b35356b18dbdef6033
+  UnifiedTo/Models/Requests/PatchCommerceReservationQueryParamFields.cs:
+    last_write_checksum: sha1:06aac25fa8cf6a28606e00b8465984f5c11c6baf
+  UnifiedTo/Models/Requests/PatchCommerceReservationRequest.cs:
+    last_write_checksum: sha1:f2fb3b500a3b736f442cc2834695f0f14c992fe6
+  UnifiedTo/Models/Requests/PatchCommerceReservationResponse.cs:
+    last_write_checksum: sha1:3ba0e8d794a27b1e880e6b795d6e61bc8040b625
   UnifiedTo/Models/Requests/PatchCommerceReviewQueryParamFields.cs:
-    last_write_checksum: sha1:fc0dd84307229ceac9416b4ae616f4198ae32af2
+    last_write_checksum: sha1:853c77ca29652bdf13d351bce4904adbf1669966
   UnifiedTo/Models/Requests/PatchCommerceReviewRequest.cs:
     id: 716496d0d09a
     last_write_checksum: sha1:c874dfd818e514292c1b4a524667401a9aae8ec5
@@ -19037,6 +19208,10 @@ trackedFiles:
     id: 4dc0f6127411
     last_write_checksum: sha1:36679a758c66191e30a53cbdc1eff63e926b0076
     pristine_git_object: b38f7d110c6f0b7f5fbe02d3bd72ac3b0af97c32
+  UnifiedTo/Models/Requests/RemoveCommerceReservationRequest.cs:
+    last_write_checksum: sha1:8e7835561ddefc317b76465486b377e70d8b20a5
+  UnifiedTo/Models/Requests/RemoveCommerceReservationResponse.cs:
+    last_write_checksum: sha1:f453550fcf321687f3614128ed9fffdfd6fb868f
   UnifiedTo/Models/Requests/RemoveCommerceReviewRequest.cs:
     id: d998be0de1b8
     last_write_checksum: sha1:7955634e29467b4c34734c03dd91c791249f7113
@@ -19806,7 +19981,7 @@ trackedFiles:
     last_write_checksum: sha1:b144724e922978bd1f4b6d83b721da18dd409b69
     pristine_git_object: fc79194026aaa0ca091df69a106cc63dd0af839b
   UnifiedTo/Models/Requests/UpdateCommerceItemQueryParamFields.cs:
-    last_write_checksum: sha1:ecf8f8a3c239a9f419ecd8a1d15a09f7547f9eb1
+    last_write_checksum: sha1:310e058859ffd9cc405f71479b1eac2a37ea939d
   UnifiedTo/Models/Requests/UpdateCommerceItemRequest.cs:
     id: 76125932a9cf
     last_write_checksum: sha1:7c18771429c1520bad9208133940fdcbb4281ea2
@@ -19822,7 +19997,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/UpdateCommerceItemvariantResponse.cs:
     last_write_checksum: sha1:ec54555c7d5c1a3546fe68ff4339f0715a2085fe
   UnifiedTo/Models/Requests/UpdateCommerceLocationQueryParamFields.cs:
-    last_write_checksum: sha1:a0e8c06de90d480756e7bb638cf3915d44febcc5
+    last_write_checksum: sha1:55ec19178c36d87214a6c80d0a85d733625a19f9
   UnifiedTo/Models/Requests/UpdateCommerceLocationRequest.cs:
     id: 89c481eeeea3
     last_write_checksum: sha1:bc2fa1274fa1d77a7f7b767d3e830aba99c75b85
@@ -19831,8 +20006,14 @@ trackedFiles:
     id: 60b6b0cd224c
     last_write_checksum: sha1:318df038c4df1f34faee9160d51cd3f52c57b187
     pristine_git_object: 535c403973d9aeafcf9fd5798c9d78c6b7fd3734
+  UnifiedTo/Models/Requests/UpdateCommerceReservationQueryParamFields.cs:
+    last_write_checksum: sha1:4886c2d7318e8f2e8db0c991fdbb207d19b2087e
+  UnifiedTo/Models/Requests/UpdateCommerceReservationRequest.cs:
+    last_write_checksum: sha1:417674e6fe7c7b44b270a7cc0268e877f3b947a9
+  UnifiedTo/Models/Requests/UpdateCommerceReservationResponse.cs:
+    last_write_checksum: sha1:66c1049242dc697d42ce3fa1a0418ce2adde3258
   UnifiedTo/Models/Requests/UpdateCommerceReviewQueryParamFields.cs:
-    last_write_checksum: sha1:69a625e1be2436d6325790c21d12b97970dc35b0
+    last_write_checksum: sha1:1b4336fc9b04454c14731964811f7a52e079150e
   UnifiedTo/Models/Requests/UpdateCommerceReviewRequest.cs:
     id: 0a9baeee962c
     last_write_checksum: sha1:8ee09a911c617335ed3927287ec22cdd6b94a644
@@ -20503,13 +20684,15 @@ trackedFiles:
     id: fb0131ce6154
     last_write_checksum: sha1:8e36d829fec729e178806cbf4035f73f85f770d6
     pristine_git_object: cfd838322dab56466c6442ffa8d95fa3b543b000
+  UnifiedTo/Reservation.cs:
+    last_write_checksum: sha1:2591834bbbc0752ddea26a829ff9320782740e78
   UnifiedTo/Review.cs:
     id: e6da687ee886
     last_write_checksum: sha1:8e53327ccafee70dfbb455b72b4a13f8a8d6bba4
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:2d2082d1147c29fd11039ca2bb28f0f0955f6031
+    last_write_checksum: sha1:c2acd90baede65758ada8b5e03086da07bf990b0
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -20599,7 +20782,7 @@ trackedFiles:
     pristine_git_object: 883792bc149f1152a8331b8e409d591075c3a6bd
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
-    last_write_checksum: sha1:9f2d5487f945f138adc375f54017c9e2952ad6a7
+    last_write_checksum: sha1:6ebb9623ca7f74b8b03f7bca4081d88f24cbc851
     pristine_git_object: b2dbc023c5e4be2a5de721c2bbc9330db399f4bd
   UnifiedTo/User.cs:
     id: 603e44ffd153
@@ -20615,7 +20798,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:b29181de9a279857ea0daf0817cd6d596138161c
+    last_write_checksum: sha1:4c57c735db71aece100aacdec24bf8bb710d4e45
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -21223,6 +21406,8 @@ trackedFiles:
     last_write_checksum: sha1:04ef598387e278f5fdc280ecd9bf7928cd143ccc
   docs/Models/Components/CityTarget.md:
     last_write_checksum: sha1:6eaefefa4e85bd0ca93f1bf583a4a4b9324c9f8c
+  docs/Models/Components/CommerceAvailability.md:
+    last_write_checksum: sha1:91b34b7c600659a39c15c9153a0d1a16f66646cc
   docs/Models/Components/CommerceCollection.md:
     id: c9e302229c55
     last_write_checksum: sha1:3358985b3b8beeae79026d3c2746ea58c081c5fd
@@ -21237,7 +21422,7 @@ trackedFiles:
     pristine_git_object: ec16d6b1c3d11a93f1a76b9b5317333e88abbef3
   docs/Models/Components/CommerceItem.md:
     id: 6c6560567c0f
-    last_write_checksum: sha1:56508a97a85ce373ea750fc1abd1e8f6f43fd021
+    last_write_checksum: sha1:75c7e51b7d8d10bddc78bf2f85e2780837fa7a46
     pristine_git_object: 035e5b4e749defd14ee1c39ab192a608d41fedbd
   docs/Models/Components/CommerceItemMedia.md:
     id: d5b5f94bb1e6
@@ -21261,7 +21446,7 @@ trackedFiles:
     last_write_checksum: sha1:b05ff5ad2ed5e48181aa78f77a1628fb4a0b9546
   docs/Models/Components/CommerceLocation.md:
     id: 870004a73139
-    last_write_checksum: sha1:e440eb40e02acd6ad24c2ff5b5176c85a662a5e4
+    last_write_checksum: sha1:048741f2a0791fb084107dbc5392e661275a7da8
     pristine_git_object: d700891dd7711deec3d1322cb3883dd0ea9b241c
   docs/Models/Components/CommerceMetadata.md:
     id: d93420afe30f
@@ -21299,9 +21484,13 @@ trackedFiles:
     id: 63137d884f87
     last_write_checksum: sha1:ed65391d094bffa23db02c2a3a80b964c3895b12
     pristine_git_object: 9fd6f396f9ebe243cb859bb47280106583bffbc9
+  docs/Models/Components/CommerceReservation.md:
+    last_write_checksum: sha1:7679419486e4744ca90f81c846db9b0fe3012df2
+  docs/Models/Components/CommerceReservationStatus.md:
+    last_write_checksum: sha1:2b5d5a65d925ae434a13928eb80ba5a6bee99f30
   docs/Models/Components/CommerceReview.md:
     id: 4210a3497e5e
-    last_write_checksum: sha1:a3af9aad89d7aca6470b7dbebd764940de62bcfc
+    last_write_checksum: sha1:62020f0288e5a83b1eea9784d720dd00b056386c
     pristine_git_object: 35deecc121f4e53d1baabe3e715bfc392b6b2c72
   docs/Models/Components/CommerceReviewComment.md:
     id: f36e547f4649
@@ -21319,6 +21508,10 @@ trackedFiles:
     id: 924d0a95bf85
     last_write_checksum: sha1:e0c788efb65414fc2a5101a0aaba051195089525
     pristine_git_object: 811af0371aaf4c0dd40dd66ca429d18a08d21242
+  docs/Models/Components/CommerceTelephone.md:
+    last_write_checksum: sha1:b2d1e2a5a443166e82d8c436edb74e906ac5c012
+  docs/Models/Components/CommerceTelephoneType.md:
+    last_write_checksum: sha1:82837ff72c5af95226c83601473fcfd6b5d8b5a0
   docs/Models/Components/Connection.md:
     id: 5688c7e8f7e9
     last_write_checksum: sha1:1d375a96dc5491d066e5122075263774ef672692
@@ -21737,7 +21930,7 @@ trackedFiles:
     pristine_git_object: a1bf4d40b69786c43195fd92204558699e7dac2f
   docs/Models/Components/IntegrationSupport.md:
     id: 6410e8499735
-    last_write_checksum: sha1:db57233ac12846b73120342da802f26cc8c145d3
+    last_write_checksum: sha1:a2bec658255abec2d4cb938a48a6d0ae790b0445
     pristine_git_object: d46883eaa7696d5c3e2ab66daacd0fa47d8c706d
   docs/Models/Components/IntervalUnit.md:
     id: 779660b22183
@@ -22015,6 +22208,8 @@ trackedFiles:
     pristine_git_object: 9ac6c302dc616820eb3c9771b25c08b6d0ca1b7f
   docs/Models/Components/ListShipmentId.md:
     last_write_checksum: sha1:6b7844c72671c0c11a9d6c09d550091572349ffd
+  docs/Models/Components/ListSize.md:
+    last_write_checksum: sha1:2b6b2b4576fce1e879c757f376cd776dcd8e0f1a
   docs/Models/Components/ListSortByCreatedAt.md:
     id: fa5ddfc40fe9
     last_write_checksum: sha1:a311f0ace1c1b09d04c5a99becc0484239eabb75
@@ -22115,6 +22310,8 @@ trackedFiles:
     id: fa7b6f9e5ea3
     last_write_checksum: sha1:e212255b4c2edc049405a117a5f60c1d9b4f81a3
     pristine_git_object: 0fca2f3c76104ccf5d940e9dbdf316954955646d
+  docs/Models/Components/LocationType.md:
+    last_write_checksum: sha1:1cd6b130cf5b9509adeadc0e1ae148e10c49e8ce
   docs/Models/Components/LookalikeAudience.md:
     last_write_checksum: sha1:15f8bef8122ace09472301cfaf766a662c622fca
   docs/Models/Components/MaritalStatus.md:
@@ -22209,6 +22406,8 @@ trackedFiles:
     pristine_git_object: de99c1e83b269c9c1062713f2287c66d86f83549
   docs/Models/Components/NativeWebhookFormId.md:
     last_write_checksum: sha1:30d4143b83b7b529e7daa0563747271935525590
+  docs/Models/Components/NativeWebhookIoId.md:
+    last_write_checksum: sha1:8298cb5cfe43efa23c89248316130982b0b6296a
   docs/Models/Components/NativeWebhookLabelId.md:
     last_write_checksum: sha1:a9c25216ab70187347e79dd35f18fd0db4f6c171
   docs/Models/Components/NativeWebhookMemberId.md:
@@ -22237,7 +22436,7 @@ trackedFiles:
     last_write_checksum: sha1:1cad6af034766f255939e42484237ba47aed987a
   docs/Models/Components/ObjectType.md:
     id: 70698fd5bb26
-    last_write_checksum: sha1:c2e9d70902645848ce65d641db6bc03d2ad70cc4
+    last_write_checksum: sha1:7743734786165802b98451e0a6c175b663aca400
     pristine_git_object: 91af6f273850d152ad35aa723ed82eb7c07b6cff
   docs/Models/Components/One.md:
     id: 37e74752e70f
@@ -22647,7 +22846,7 @@ trackedFiles:
     pristine_git_object: 6b4bf574f578f75b9133779b9acde99497b64e46
   docs/Models/Components/PropertyConnectionPermissions.md:
     id: eb5eb79c93e6
-    last_write_checksum: sha1:73cbc85abad68efb7918e93e1fb32f82059eed27
+    last_write_checksum: sha1:11725219b03dd0205cd51c773a43494bc03ad337
     pristine_git_object: 152432bd22d8101ccd205bc3481571ae0fb148e0
   docs/Models/Components/PropertyCrmCompanyAddress.md:
     id: 5836e935161d
@@ -23790,7 +23989,7 @@ trackedFiles:
     last_write_checksum: sha1:298dd3a35f6da5fb853fe7ef7b1e0057cb087cde
     pristine_git_object: 740f162e6c1f872cb7648b10d41e041ff6c8343b
   docs/Models/Requests/CreateCommerceItemQueryParamFields.md:
-    last_write_checksum: sha1:24102f0e827db03d0f073e7dc86c0529b23c0abf
+    last_write_checksum: sha1:f8f7f975247a9bd33b34b858e2888068ff7dfafa
   docs/Models/Requests/CreateCommerceItemRequest.md:
     id: 4d507b38f404
     last_write_checksum: sha1:44d92e5d721c90c50f60983042be146a7fd0072b
@@ -23806,7 +24005,7 @@ trackedFiles:
   docs/Models/Requests/CreateCommerceItemvariantResponse.md:
     last_write_checksum: sha1:a6aec43f3cc5cf10c1dfba6d0f7341858034a540
   docs/Models/Requests/CreateCommerceLocationQueryParamFields.md:
-    last_write_checksum: sha1:3ee4f7a37baeb3828cd269c7b93fdaf68f3f2984
+    last_write_checksum: sha1:56127cf4f1a0bda22c24e78042e70891fc501f9f
   docs/Models/Requests/CreateCommerceLocationRequest.md:
     id: 78645036a98a
     last_write_checksum: sha1:4a1bba0aa9b72dbdc0a4d525147677f8d1243f83
@@ -23815,8 +24014,14 @@ trackedFiles:
     id: 1ebd1494a03e
     last_write_checksum: sha1:4f524d48413709438ae7bf4c0ca711183a90da69
     pristine_git_object: 21488d7000ce666cf2d0212ca6800e8d96e6fd57
+  docs/Models/Requests/CreateCommerceReservationQueryParamFields.md:
+    last_write_checksum: sha1:c31cc7e72859643dd4baf454b1db24f7c1a042c3
+  docs/Models/Requests/CreateCommerceReservationRequest.md:
+    last_write_checksum: sha1:1eec7064ea3a25dca933782aaa9ccc616fa7a2d3
+  docs/Models/Requests/CreateCommerceReservationResponse.md:
+    last_write_checksum: sha1:29d36b27d485c0f158b2c3816dba515338fc0dc2
   docs/Models/Requests/CreateCommerceReviewQueryParamFields.md:
-    last_write_checksum: sha1:448b3259009af1036ce4d13ba252240a4f3b8be9
+    last_write_checksum: sha1:54f2b23da6142a49e254ebc628621b95412e0245
   docs/Models/Requests/CreateCommerceReviewRequest.md:
     id: 96103a95b283
     last_write_checksum: sha1:249dde5455376f293cad469e5f870f72dd740cb7
@@ -24784,7 +24989,7 @@ trackedFiles:
     last_write_checksum: sha1:73c443cf0eeae0ab0d18096a0850aa3d7f20819b
     pristine_git_object: 921f65ca4859b0e72433c58f81ca4dadc6dbec64
   docs/Models/Requests/GetCommerceItemQueryParamFields.md:
-    last_write_checksum: sha1:26095e588685db82cd9d68b4f4904ef2d0a3a3ec
+    last_write_checksum: sha1:59b24e1336aaf02805ebd6826c810d1aacaac317
   docs/Models/Requests/GetCommerceItemRequest.md:
     id: 8db2095c1104
     last_write_checksum: sha1:3a0e930845a28f5d73a74d766278f01ee484fb4e
@@ -24800,7 +25005,7 @@ trackedFiles:
   docs/Models/Requests/GetCommerceItemvariantResponse.md:
     last_write_checksum: sha1:cf512b3dcb9551eef9c0bb80c84db8af21e84691
   docs/Models/Requests/GetCommerceLocationQueryParamFields.md:
-    last_write_checksum: sha1:c3f0fea90c51a701af9c7879c657932268618c11
+    last_write_checksum: sha1:57694d01ee99d65ff07c6eeb635dc4c198e03e96
   docs/Models/Requests/GetCommerceLocationRequest.md:
     id: fb329bea462c
     last_write_checksum: sha1:2b13108a8481324fa0a90157dfbde9f9984263e0
@@ -24809,8 +25014,14 @@ trackedFiles:
     id: a1154f11d966
     last_write_checksum: sha1:7c556aaba4687ee52cc3f767cb356789e3444620
     pristine_git_object: d6e356039af88ef12c56c892751dbf8f98292e69
+  docs/Models/Requests/GetCommerceReservationQueryParamFields.md:
+    last_write_checksum: sha1:1dda2142e9161a11980bbed5294c81d216356afc
+  docs/Models/Requests/GetCommerceReservationRequest.md:
+    last_write_checksum: sha1:2304db3286b9713feacbe79932e5c8cc3a0e9739
+  docs/Models/Requests/GetCommerceReservationResponse.md:
+    last_write_checksum: sha1:6780b7cb042784072339bc4bb0ffc1676db76d24
   docs/Models/Requests/GetCommerceReviewQueryParamFields.md:
-    last_write_checksum: sha1:87621b93ba1c0b4d62278fff8416521ae41d6dcc
+    last_write_checksum: sha1:db37851932923a1033ba0eab972b0479bc507e7e
   docs/Models/Requests/GetCommerceReviewRequest.md:
     id: e264a3d3994a
     last_write_checksum: sha1:11b2ea20759fe1af1b18b9f1a818b47ae8d89db1
@@ -25893,6 +26104,12 @@ trackedFiles:
     last_write_checksum: sha1:a61535a40bd8061ed9c9984c9a721cdd3efb7020
   docs/Models/Requests/ListCalendarWebinarsResponse.md:
     last_write_checksum: sha1:8426d1c3dc0adae8484f9cc678c96d3a79e4829a
+  docs/Models/Requests/ListCommerceAvailabilitiesQueryParamFields.md:
+    last_write_checksum: sha1:c4ae6e88b8846db7dc725a85e36f1247ab7817fb
+  docs/Models/Requests/ListCommerceAvailabilitiesRequest.md:
+    last_write_checksum: sha1:fe75cd6def7ea98362431db720ddaa3e59fde47b
+  docs/Models/Requests/ListCommerceAvailabilitiesResponse.md:
+    last_write_checksum: sha1:c306dccfa904143388d6fb4738890406dd20b979
   docs/Models/Requests/ListCommerceCollectionsQueryParamFields.md:
     last_write_checksum: sha1:d7746ba1d12243a9b72e2cf535f875c1cc8826fd
   docs/Models/Requests/ListCommerceCollectionsRequest.md:
@@ -25914,7 +26131,7 @@ trackedFiles:
     last_write_checksum: sha1:0e2b76009d85a27e796bb99c1ab8a2f173d030e9
     pristine_git_object: d61d6335908d1a7051186a3752798388b7f64ae5
   docs/Models/Requests/ListCommerceItemsQueryParamFields.md:
-    last_write_checksum: sha1:678eb0b078cbb608f3b786e50e4fc709b0e55d55
+    last_write_checksum: sha1:233992b473bf5464170c60351210dc7a8d001df2
   docs/Models/Requests/ListCommerceItemsRequest.md:
     id: ca1c70ff5f0d
     last_write_checksum: sha1:5e10741073b1d10ccdbd374dd34420c601dfe4c9
@@ -25930,7 +26147,7 @@ trackedFiles:
   docs/Models/Requests/ListCommerceItemvariantsResponse.md:
     last_write_checksum: sha1:73038c2a9826afda10559798f5c913b56c47631c
   docs/Models/Requests/ListCommerceLocationsQueryParamFields.md:
-    last_write_checksum: sha1:3e5c8c81f7ab7053225d0e2c9a49df9db5926e25
+    last_write_checksum: sha1:b5f7ab50fa62455f264f4a64545ab628fffe232b
   docs/Models/Requests/ListCommerceLocationsRequest.md:
     id: fa8d1a442518
     last_write_checksum: sha1:9610e8ae5b00bb3eefcce84e80896e65db51a18a
@@ -25939,11 +26156,17 @@ trackedFiles:
     id: 99e9e006038d
     last_write_checksum: sha1:dc72baae9e14e3c50640343a4d45e0c443c2591d
     pristine_git_object: 54ea63952f26d8429e7862a59b10d4d7cdff5a73
+  docs/Models/Requests/ListCommerceReservationsQueryParamFields.md:
+    last_write_checksum: sha1:04216ca91462481c113ce9ffe487b4fa28690650
+  docs/Models/Requests/ListCommerceReservationsRequest.md:
+    last_write_checksum: sha1:d4abe6b041b9ca6cb1b48a2817d8a95eee0e02bb
+  docs/Models/Requests/ListCommerceReservationsResponse.md:
+    last_write_checksum: sha1:01ef34b10a381ac33ff2d9a9732967011bef24e0
   docs/Models/Requests/ListCommerceReviewsQueryParamFields.md:
-    last_write_checksum: sha1:e7cb5a2ad8c0ffb07ade2ed637a3ab2ab8615bd2
+    last_write_checksum: sha1:5033c862e52e8261effbcea6cbf206959f7350e0
   docs/Models/Requests/ListCommerceReviewsRequest.md:
     id: e13a19c2de32
-    last_write_checksum: sha1:a5155f0c6c6a118ab555aa7609f62b09dedf14d8
+    last_write_checksum: sha1:eddc0abdc131e7d5d68ae280f573c66552c18f90
     pristine_git_object: 834474e1acb4b2d0cecf4608f94c353826ea7e34
   docs/Models/Requests/ListCommerceReviewsResponse.md:
     id: 241d4ec5b3e6
@@ -26974,7 +27197,7 @@ trackedFiles:
     last_write_checksum: sha1:2d8617a39e38bd150a9445ddb5acfc938dc1f34f
     pristine_git_object: 77bb82ea7f7b3fd328e9df4ad2581bdb5fab2ac8
   docs/Models/Requests/PatchCommerceItemQueryParamFields.md:
-    last_write_checksum: sha1:a6945efd2dd0152bc1b72ca75823fa0dfd8da43f
+    last_write_checksum: sha1:77804faee9965c421ec651b7f27151cf4cabc384
   docs/Models/Requests/PatchCommerceItemRequest.md:
     id: ee161eb6d385
     last_write_checksum: sha1:580b1a06e00e7be179cc0f1739047b0af58b0fc5
@@ -26990,7 +27213,7 @@ trackedFiles:
   docs/Models/Requests/PatchCommerceItemvariantResponse.md:
     last_write_checksum: sha1:cff97a7c41665cdfbd80ac8bfbaff26081b4b543
   docs/Models/Requests/PatchCommerceLocationQueryParamFields.md:
-    last_write_checksum: sha1:e699faa91d1d67535cbea08dd045f42e7a795d54
+    last_write_checksum: sha1:f43a0a28adb74eb15c1f5d279ead76324a5e4843
   docs/Models/Requests/PatchCommerceLocationRequest.md:
     id: 9ad596649215
     last_write_checksum: sha1:7f682b33eaf109701b3c11fcdccd93c8a3cc0d96
@@ -26999,8 +27222,14 @@ trackedFiles:
     id: b524bdfd7365
     last_write_checksum: sha1:0f671667701b4ba451f5f37d1641ab982aa65429
     pristine_git_object: 2f04f2cfa27c2961cf0c8bc2d85a1fd67ac4fb07
+  docs/Models/Requests/PatchCommerceReservationQueryParamFields.md:
+    last_write_checksum: sha1:baba7983839d31206a3f23d387508fa8127e62dd
+  docs/Models/Requests/PatchCommerceReservationRequest.md:
+    last_write_checksum: sha1:3240dae2f5d736faec8a9a0231478cf07d4a3f0c
+  docs/Models/Requests/PatchCommerceReservationResponse.md:
+    last_write_checksum: sha1:deddd59e95859469f0b52582d8819556ff7610b5
   docs/Models/Requests/PatchCommerceReviewQueryParamFields.md:
-    last_write_checksum: sha1:b7b6ef7ef583fd98d295638196ed6a6cb7dc75f0
+    last_write_checksum: sha1:342ddf714ed193a28393f614ae93e706e73ecf17
   docs/Models/Requests/PatchCommerceReviewRequest.md:
     id: ea132a1ed67e
     last_write_checksum: sha1:e7c42200e0ebafd53aae7b08f8800417a5890c4d
@@ -27845,6 +28074,10 @@ trackedFiles:
     id: b7f25120d117
     last_write_checksum: sha1:e152275b5a8304deac7a83a0a4cece2a5647f428
     pristine_git_object: f8336276382f840f94c4bd7ff554ff08242f9e91
+  docs/Models/Requests/RemoveCommerceReservationRequest.md:
+    last_write_checksum: sha1:2ceb75449d10d4f4a42a69b641bece2ce807edd3
+  docs/Models/Requests/RemoveCommerceReservationResponse.md:
+    last_write_checksum: sha1:f7b26d45e2bc135663ebc46fee71e857573f6245
   docs/Models/Requests/RemoveCommerceReviewRequest.md:
     id: 11b1a04f1a20
     last_write_checksum: sha1:f1649dc105067807fd8e38de8c5426cc81906467
@@ -28614,7 +28847,7 @@ trackedFiles:
     last_write_checksum: sha1:bd02f9e70a8c469a2934a77d2a86608a54e69e36
     pristine_git_object: 420e1fd0ee4c120448aff87d720b39e95bf300f6
   docs/Models/Requests/UpdateCommerceItemQueryParamFields.md:
-    last_write_checksum: sha1:e951e8f74b37a8afbf10d33c2e829dc4d08297d0
+    last_write_checksum: sha1:e72ac9e9083e5ee14bc151d828f83a6894f3a530
   docs/Models/Requests/UpdateCommerceItemRequest.md:
     id: 01fe5b97b733
     last_write_checksum: sha1:13335f6f882e780c34edfd25bcea37839a6403d7
@@ -28630,7 +28863,7 @@ trackedFiles:
   docs/Models/Requests/UpdateCommerceItemvariantResponse.md:
     last_write_checksum: sha1:1461d5ecc1dac097eb9631e09928cfd8c6aea2b2
   docs/Models/Requests/UpdateCommerceLocationQueryParamFields.md:
-    last_write_checksum: sha1:f5649a72a3e9728793afd7a06e2556a4a79741b8
+    last_write_checksum: sha1:3d544d636da9f7bc97bd0c38ef00ef33ebae5c67
   docs/Models/Requests/UpdateCommerceLocationRequest.md:
     id: 9e9aa516475d
     last_write_checksum: sha1:46eff528360011a2be76b6cecad61d7c57224a05
@@ -28639,8 +28872,14 @@ trackedFiles:
     id: 76ff6631a8a3
     last_write_checksum: sha1:ffd49402e5c829e3e4801184ceb7b22b2f424f52
     pristine_git_object: da1d2a2221c8852cce4566c7194b47a61ed0d724
+  docs/Models/Requests/UpdateCommerceReservationQueryParamFields.md:
+    last_write_checksum: sha1:f28d248c48512863414a9281899f296828d7b5bb
+  docs/Models/Requests/UpdateCommerceReservationRequest.md:
+    last_write_checksum: sha1:7b3cdd3d035569eb73638989d501b88e8abb5850
+  docs/Models/Requests/UpdateCommerceReservationResponse.md:
+    last_write_checksum: sha1:e75559b3fcb5f7a743c1e379e0b496f002a8510f
   docs/Models/Requests/UpdateCommerceReviewQueryParamFields.md:
-    last_write_checksum: sha1:0caec278da26949476674017710338bdbb2a1b04
+    last_write_checksum: sha1:d88f7d1a547b553bedc5fb1085dad2157df30c84
   docs/Models/Requests/UpdateCommerceReviewRequest.md:
     id: 8ab0ad2bc669
     last_write_checksum: sha1:e0885c2948f6cd7cb16148f041c178b0aecd0004
@@ -29257,6 +29496,8 @@ trackedFiles:
     id: e9724f17945f
     last_write_checksum: sha1:f5c8ff5979a6e6242b206a36bf0e6aa4ce997aba
     pristine_git_object: a475442b345b5d088305a238e0f7b2065a0f8479
+  docs/sdks/availability/README.md:
+    last_write_checksum: sha1:9e45e067b606e8682e7943cd6ac3eed48b1c88c3
   docs/sdks/balancesheet/README.md:
     id: b360644f6413
     last_write_checksum: sha1:bfdf33c64cfb593fec5e93bb44e4da094e7ff4b2
@@ -29325,7 +29566,7 @@ trackedFiles:
     pristine_git_object: 84bb39dc3b477fca6f39006b5fda8a02d3c893a1
   docs/sdks/commerce/README.md:
     id: ec0eedee4bc3
-    last_write_checksum: sha1:f77ec3e7b6ef45efe4ab6945548eb2646dc61ac3
+    last_write_checksum: sha1:1417c63ebc15d5232708f34c2debba61be2cbb23
     pristine_git_object: 6ab55720c7949b13683ba20a5c7e099e9e17e6b6
   docs/sdks/commit/README.md:
     id: bc22b8348fdb
@@ -29609,6 +29850,8 @@ trackedFiles:
     id: 546a59bbcd5e
     last_write_checksum: sha1:b62b6fcd2c4f9ca5be29894326391e8c76eeea22
     pristine_git_object: 5d194a733fa73ca5891560bc1ee69e0af66adcec
+  docs/sdks/reservation/README.md:
+    last_write_checksum: sha1:910f3df59c2f843fdd28d7b1f709867c9e65ec2e
   docs/sdks/review/README.md:
     id: c8de80641188
     last_write_checksum: sha1:3dfe8b40535d5934ddc9165f974d3505dfee5124

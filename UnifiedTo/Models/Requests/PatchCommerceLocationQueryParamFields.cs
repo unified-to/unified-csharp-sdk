@@ -35,8 +35,30 @@ namespace UnifiedTo.Models.Requests
         ParentId,
         [JsonProperty("currency")]
         Currency,
+        [JsonProperty("location_type")]
+        LocationType,
+        [JsonProperty("telephones")]
+        Telephones,
+        [JsonProperty("rating")]
+        Rating,
+        [JsonProperty("review_count")]
+        ReviewCount,
+        [JsonProperty("price_level")]
+        PriceLevel,
+        [JsonProperty("latitude")]
+        Latitude,
+        [JsonProperty("longitude")]
+        Longitude,
+        [JsonProperty("image_url")]
+        ImageUrl,
+        [JsonProperty("web_url")]
+        WebUrl,
+        [JsonProperty("media")]
+        Media,
         [JsonProperty("raw")]
         Raw,
+        [JsonProperty("categories")]
+        Categories,
     }
 
     public static class PatchCommerceLocationQueryParamFieldsExtension

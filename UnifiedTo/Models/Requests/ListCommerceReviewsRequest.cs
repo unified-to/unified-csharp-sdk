@@ -43,6 +43,12 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=limit")]
         public double? Limit { get; set; }
 
+        /// <summary>
+        /// The location ID to filter by (reference to CommerceLocation)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=location_id")]
+        public string? LocationId { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=offset")]
         public double? Offset { get; set; }
 

@@ -21,6 +21,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("address")]
         public PropertyCommerceLocationAddress? Address { get; set; }
 
+        [JsonProperty("categories")]
+        public List<string>? Categories { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -33,11 +36,26 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        [JsonProperty("image_url")]
+        public string? ImageUrl { get; set; }
+
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
 
         [JsonProperty("language_locale")]
         public string? LanguageLocale { get; set; }
+
+        [JsonProperty("latitude")]
+        public double? Latitude { get; set; }
+
+        [JsonProperty("location_type")]
+        public LocationType? LocationType { get; set; }
+
+        [JsonProperty("longitude")]
+        public double? Longitude { get; set; }
+
+        [JsonProperty("media")]
+        public List<CommerceItemMedia>? Media { get; set; }
 
         [JsonProperty("name")]
         public string Name { get; set; } = default!;
@@ -45,10 +63,25 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; }
 
+        [JsonProperty("price_level")]
+        public string? PriceLevel { get; set; }
+
+        [JsonProperty("rating")]
+        public double? Rating { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        [JsonProperty("review_count")]
+        public double? ReviewCount { get; set; }
+
+        [JsonProperty("telephones")]
+        public List<CommerceTelephone>? Telephones { get; set; }
+
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
+
+        [JsonProperty("web_url")]
+        public string? WebUrl { get; set; }
     }
 }

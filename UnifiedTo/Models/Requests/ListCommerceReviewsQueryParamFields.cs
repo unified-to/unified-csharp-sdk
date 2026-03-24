@@ -25,6 +25,8 @@ namespace UnifiedTo.Models.Requests
         ItemId,
         [JsonProperty("item_variant_id")]
         ItemVariantId,
+        [JsonProperty("location_id")]
+        LocationId,
         [JsonProperty("rating")]
         Rating,
         [JsonProperty("title")]
@@ -59,6 +61,8 @@ namespace UnifiedTo.Models.Requests
         Comments,
         [JsonProperty("metadata")]
         Metadata,
+        [JsonProperty("url")]
+        Url,
         [JsonProperty("raw")]
         Raw,
     }

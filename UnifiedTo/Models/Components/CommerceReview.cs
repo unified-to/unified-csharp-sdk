@@ -60,6 +60,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("item_variant_id")]
         public string? ItemVariantId { get; set; }
 
+        [JsonProperty("location_id")]
+        public string? LocationId { get; set; }
+
         /// <summary>
         /// Photosvideos attached to the review
         /// </summary>
@@ -86,6 +89,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
+
+        [JsonProperty("url")]
+        public string? Url { get; set; }
 
         [JsonProperty("verified_purchase")]
         public bool? VerifiedPurchase { get; set; }

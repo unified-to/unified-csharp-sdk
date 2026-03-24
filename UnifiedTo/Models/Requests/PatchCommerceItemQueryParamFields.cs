@@ -41,24 +41,6 @@ namespace UnifiedTo.Models.Requests
         VendorName,
         [JsonProperty("type")]
         Type,
-        [JsonProperty("variants")]
-        Variants,
-        [JsonProperty("tags")]
-        Tags,
-        [JsonProperty("media")]
-        Media,
-        [JsonProperty("collection_ids")]
-        CollectionIds,
-        [JsonProperty("account_id")]
-        AccountId,
-        [JsonProperty("metadata")]
-        Metadata,
-        [JsonProperty("collections")]
-        Collections,
-        [JsonProperty("taxrate_id")]
-        TaxrateId,
-        [JsonProperty("raw")]
-        Raw,
         [JsonProperty("is_visible")]
         IsVisible,
         [JsonProperty("is_featured")]
@@ -75,6 +57,28 @@ namespace UnifiedTo.Models.Requests
         InventoryId,
         [JsonProperty("total_stock")]
         TotalStock,
+        [JsonProperty("variants")]
+        Variants,
+        [JsonProperty("tags")]
+        Tags,
+        [JsonProperty("media")]
+        Media,
+        [JsonProperty("collection_ids")]
+        CollectionIds,
+        [JsonProperty("account_id")]
+        AccountId,
+        [JsonProperty("metadata")]
+        Metadata,
+        [JsonProperty("collections")]
+        Collections,
+        [JsonProperty("taxrate_id")]
+        TaxrateId,
+        [JsonProperty("location_id")]
+        LocationId,
+        [JsonProperty("duration")]
+        Duration,
+        [JsonProperty("raw")]
+        Raw,
     }
 
     public static class PatchCommerceItemQueryParamFieldsExtension

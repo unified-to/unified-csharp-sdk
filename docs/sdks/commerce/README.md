@@ -10,6 +10,7 @@
 * [CreateCommerceItem](#createcommerceitem) - Create an item
 * [CreateCommerceItemvariant](#createcommerceitemvariant) - Create an itemvariant
 * [CreateCommerceLocation](#createcommercelocation) - Create a location
+* [CreateCommerceReservation](#createcommercereservation) - Create a reservation
 * [CreateCommerceReview](#createcommercereview) - Create a review
 * [CreateCommerceSaleschannel](#createcommercesaleschannel) - Create a saleschannel
 * [GetCommerceCollection](#getcommercecollection) - Retrieve a collection
@@ -17,13 +18,16 @@
 * [GetCommerceItem](#getcommerceitem) - Retrieve an item
 * [GetCommerceItemvariant](#getcommerceitemvariant) - Retrieve an itemvariant
 * [GetCommerceLocation](#getcommercelocation) - Retrieve a location
+* [GetCommerceReservation](#getcommercereservation) - Retrieve a reservation
 * [GetCommerceReview](#getcommercereview) - Retrieve a review
 * [GetCommerceSaleschannel](#getcommercesaleschannel) - Retrieve a saleschannel
+* [ListCommerceAvailabilities](#listcommerceavailabilities) - List all availabilities
 * [ListCommerceCollections](#listcommercecollections) - List all collections
 * [ListCommerceInventories](#listcommerceinventories) - List all inventories
 * [ListCommerceItems](#listcommerceitems) - List all items
 * [ListCommerceItemvariants](#listcommerceitemvariants) - List all itemvariants
 * [ListCommerceLocations](#listcommercelocations) - List all locations
+* [ListCommerceReservations](#listcommercereservations) - List all reservations
 * [ListCommerceReviews](#listcommercereviews) - List all reviews
 * [ListCommerceSaleschannels](#listcommercesaleschannels) - List all saleschannels
 * [PatchCommerceCollection](#patchcommercecollection) - Update a collection
@@ -31,6 +35,7 @@
 * [PatchCommerceItem](#patchcommerceitem) - Update an item
 * [PatchCommerceItemvariant](#patchcommerceitemvariant) - Update an itemvariant
 * [PatchCommerceLocation](#patchcommercelocation) - Update a location
+* [PatchCommerceReservation](#patchcommercereservation) - Update a reservation
 * [PatchCommerceReview](#patchcommercereview) - Update a review
 * [PatchCommerceSaleschannel](#patchcommercesaleschannel) - Update a saleschannel
 * [RemoveCommerceCollection](#removecommercecollection) - Remove a collection
@@ -38,6 +43,7 @@
 * [RemoveCommerceItem](#removecommerceitem) - Remove an item
 * [RemoveCommerceItemvariant](#removecommerceitemvariant) - Remove an itemvariant
 * [RemoveCommerceLocation](#removecommercelocation) - Remove a location
+* [RemoveCommerceReservation](#removecommercereservation) - Remove a reservation
 * [RemoveCommerceReview](#removecommercereview) - Remove a review
 * [RemoveCommerceSaleschannel](#removecommercesaleschannel) - Remove a saleschannel
 * [UpdateCommerceCollection](#updatecommercecollection) - Update a collection
@@ -45,6 +51,7 @@
 * [UpdateCommerceItem](#updatecommerceitem) - Update an item
 * [UpdateCommerceItemvariant](#updatecommerceitemvariant) - Update an itemvariant
 * [UpdateCommerceLocation](#updatecommercelocation) - Update a location
+* [UpdateCommerceReservation](#updatecommercereservation) - Update a reservation
 * [UpdateCommerceReview](#updatecommercereview) - Update a review
 * [UpdateCommerceSaleschannel](#updatecommercesaleschannel) - Update a saleschannel
 
@@ -252,6 +259,47 @@ var res = await sdk.Commerce.CreateCommerceLocationAsync(
 ### Response
 
 **[CreateCommerceLocationResponse](../../Models/Requests/CreateCommerceLocationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## CreateCommerceReservation
+
+Create a reservation
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Commerce.CreateCommerceReservationAsync(
+    commerceReservation: new CommerceReservation() {},
+    connectionId: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `CommerceReservation`                                                                                                                            | [CommerceReservation](../../Models/Components/CommerceReservation.md)                                                                            | :heavy_check_mark:                                                                                                                               | N/A                                                                                                                                              |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Fields`                                                                                                                                         | List<[CreateCommerceReservationQueryParamFields](../../Models/Requests/CreateCommerceReservationQueryParamFields.md)>                            | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[CreateCommerceReservationResponse](../../Models/Requests/CreateCommerceReservationResponse.md)**
 
 ### Errors
 
@@ -548,6 +596,47 @@ var res = await sdk.Commerce.GetCommerceLocationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetCommerceReservation
+
+Retrieve a reservation
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Commerce.GetCommerceReservationAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Reservation                                                                                                                            |
+| `Fields`                                                                                                                                         | List<[GetCommerceReservationQueryParamFields](../../Models/Requests/GetCommerceReservationQueryParamFields.md)>                                  | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetCommerceReservationResponse](../../Models/Requests/GetCommerceReservationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## GetCommerceReview
 
 Retrieve a review
@@ -623,6 +712,46 @@ var res = await sdk.Commerce.GetCommerceSaleschannelAsync(
 ### Response
 
 **[GetCommerceSaleschannelResponse](../../Models/Requests/GetCommerceSaleschannelResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListCommerceAvailabilities
+
+List all availabilities
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListCommerceAvailabilitiesRequest req = new ListCommerceAvailabilitiesRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Commerce.ListCommerceAvailabilitiesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                       | Type                                                                                            | Required                                                                                        | Description                                                                                     |
+| ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| `request`                                                                                       | [ListCommerceAvailabilitiesRequest](../../Models/Requests/ListCommerceAvailabilitiesRequest.md) | :heavy_check_mark:                                                                              | The request object to use for the request.                                                      |
+
+### Response
+
+**[ListCommerceAvailabilitiesResponse](../../Models/Requests/ListCommerceAvailabilitiesResponse.md)**
 
 ### Errors
 
@@ -823,6 +952,46 @@ var res = await sdk.Commerce.ListCommerceLocationsAsync(req);
 ### Response
 
 **[ListCommerceLocationsResponse](../../Models/Requests/ListCommerceLocationsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListCommerceReservations
+
+List all reservations
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListCommerceReservationsRequest req = new ListCommerceReservationsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Commerce.ListCommerceReservationsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [ListCommerceReservationsRequest](../../Models/Requests/ListCommerceReservationsRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+
+### Response
+
+**[ListCommerceReservationsResponse](../../Models/Requests/ListCommerceReservationsResponse.md)**
 
 ### Errors
 
@@ -1126,6 +1295,48 @@ var res = await sdk.Commerce.PatchCommerceLocationAsync(req);
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## PatchCommerceReservation
+
+Update a reservation
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+PatchCommerceReservationRequest req = new PatchCommerceReservationRequest() {
+    CommerceReservation = new CommerceReservation() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Commerce.PatchCommerceReservationAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                   | Type                                                                                        | Required                                                                                    | Description                                                                                 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `request`                                                                                   | [PatchCommerceReservationRequest](../../Models/Requests/PatchCommerceReservationRequest.md) | :heavy_check_mark:                                                                          | The request object to use for the request.                                                  |
+
+### Response
+
+**[PatchCommerceReservationResponse](../../Models/Requests/PatchCommerceReservationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## PatchCommerceReview
 
 Update a review
@@ -1400,6 +1611,45 @@ var res = await sdk.Commerce.RemoveCommerceLocationAsync(
 ### Response
 
 **[RemoveCommerceLocationResponse](../../Models/Requests/RemoveCommerceLocationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## RemoveCommerceReservation
+
+Remove a reservation
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Commerce.RemoveCommerceReservationAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter             | Type                  | Required              | Description           |
+| --------------------- | --------------------- | --------------------- | --------------------- |
+| `ConnectionId`        | *string*              | :heavy_check_mark:    | ID of the connection  |
+| `Id`                  | *string*              | :heavy_check_mark:    | ID of the Reservation |
+
+### Response
+
+**[RemoveCommerceReservationResponse](../../Models/Requests/RemoveCommerceReservationResponse.md)**
 
 ### Errors
 
@@ -1694,6 +1944,48 @@ var res = await sdk.Commerce.UpdateCommerceLocationAsync(req);
 ### Response
 
 **[UpdateCommerceLocationResponse](../../Models/Requests/UpdateCommerceLocationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## UpdateCommerceReservation
+
+Update a reservation
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+UpdateCommerceReservationRequest req = new UpdateCommerceReservationRequest() {
+    CommerceReservation = new CommerceReservation() {},
+    ConnectionId = "<id>",
+    Id = "<id>",
+};
+
+var res = await sdk.Commerce.UpdateCommerceReservationAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                     | Type                                                                                          | Required                                                                                      | Description                                                                                   |
+| --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `request`                                                                                     | [UpdateCommerceReservationRequest](../../Models/Requests/UpdateCommerceReservationRequest.md) | :heavy_check_mark:                                                                            | The request object to use for the request.                                                    |
+
+### Response
+
+**[UpdateCommerceReservationResponse](../../Models/Requests/UpdateCommerceReservationResponse.md)**
 
 ### Errors
 

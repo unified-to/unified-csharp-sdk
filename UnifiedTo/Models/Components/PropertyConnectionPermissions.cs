@@ -133,6 +133,14 @@ namespace UnifiedTo.Models.Components
         CommerceItemvariantRead,
         [JsonProperty("commerce_itemvariant_write")]
         CommerceItemvariantWrite,
+        [JsonProperty("commerce_reservation_read")]
+        CommerceReservationRead,
+        [JsonProperty("commerce_reservation_write")]
+        CommerceReservationWrite,
+        [JsonProperty("commerce_availability_read")]
+        CommerceAvailabilityRead,
+        [JsonProperty("commerce_availability_write")]
+        CommerceAvailabilityWrite,
         [JsonProperty("verification_package_read")]
         VerificationPackageRead,
         [JsonProperty("verification_request_read")]

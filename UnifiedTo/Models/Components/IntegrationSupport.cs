@@ -200,6 +200,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_shipment_id")]
         public ListShipmentId? ListShipmentId { get; set; }
 
+        [JsonProperty("list_size")]
+        public ListSize? ListSize { get; set; }
+
         [JsonProperty("list_sort_by_created_at")]
         public ListSortByCreatedAt? ListSortByCreatedAt { get; set; }
 
@@ -265,6 +268,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("native_webhook_form_id")]
         public NativeWebhookFormId? NativeWebhookFormId { get; set; }
+
+        [JsonProperty("native_webhook_io_id")]
+        public NativeWebhookIoId? NativeWebhookIoId { get; set; }
 
         [JsonProperty("native_webhook_label_id")]
         public NativeWebhookLabelId? NativeWebhookLabelId { get; set; }

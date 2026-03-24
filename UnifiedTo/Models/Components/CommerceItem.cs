@@ -39,6 +39,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        [JsonProperty("duration")]
+        public double? Duration { get; set; }
+
         [JsonProperty("global_code")]
         public string? GlobalCode { get; set; }
 
@@ -59,6 +62,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("is_visible")]
         public bool? IsVisible { get; set; }
+
+        [JsonProperty("location_id")]
+        public string? LocationId { get; set; }
 
         [JsonProperty("media")]
         public List<CommerceItemMedia>? Media { get; set; }

@@ -10,6 +10,7 @@
 | `UpdatedAt`        | updated_at         |
 | `ItemId`           | item_id            |
 | `ItemVariantId`    | item_variant_id    |
+| `LocationId`       | location_id        |
 | `Rating`           | rating             |
 | `Title`            | title              |
 | `Content`          | content            |
@@ -27,4 +28,5 @@
 | `IsPublic`         | is_public          |
 | `Comments`         | comments           |
 | `Metadata`         | metadata           |
+| `Url`              | url                |
 | `Raw`              | raw                |

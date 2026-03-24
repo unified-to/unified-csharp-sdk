@@ -77,6 +77,10 @@ namespace UnifiedTo.Models.Components
         CommerceSaleschannel,
         [JsonProperty("commerce_itemvariant")]
         CommerceItemvariant,
+        [JsonProperty("commerce_reservation")]
+        CommerceReservation,
+        [JsonProperty("commerce_availability")]
+        CommerceAvailability,
         [JsonProperty("verification_package")]
         VerificationPackage,
         [JsonProperty("verification_request")]

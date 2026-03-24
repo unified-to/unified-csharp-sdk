@@ -74,11 +74,13 @@ namespace UnifiedTo
         public IRecording Recording { get; }
         public IWebinar Webinar { get; }
         public ICommerce Commerce { get; }
+        public IAvailability Availability { get; }
         public ICollection Collection { get; }
         public IInventory Inventory { get; }
         public IItem Item { get; }
         public IItemvariant Itemvariant { get; }
         public ILocation Location { get; }
+        public IReservation Reservation { get; }
         public IReview Review { get; }
         public ISaleschannel Saleschannel { get; }
         public ICrm Crm { get; }
@@ -173,7 +175,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.49";
+        private const string _sdkVersion = "0.130.50";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -223,11 +225,13 @@ namespace UnifiedTo
         public IRecording Recording { get; private set; }
         public IWebinar Webinar { get; private set; }
         public ICommerce Commerce { get; private set; }
+        public IAvailability Availability { get; private set; }
         public ICollection Collection { get; private set; }
         public IInventory Inventory { get; private set; }
         public IItem Item { get; private set; }
         public IItemvariant Itemvariant { get; private set; }
         public ILocation Location { get; private set; }
+        public IReservation Reservation { get; private set; }
         public IReview Review { get; private set; }
         public ISaleschannel Saleschannel { get; private set; }
         public ICrm Crm { get; private set; }
@@ -409,6 +413,8 @@ namespace UnifiedTo
 
             Commerce = new Commerce(SDKConfiguration);
 
+            Availability = new Availability(SDKConfiguration);
+
             Collection = new Collection(SDKConfiguration);
 
             Inventory = new Inventory(SDKConfiguration);
@@ -418,6 +424,8 @@ namespace UnifiedTo
             Itemvariant = new Itemvariant(SDKConfiguration);
 
             Location = new Location(SDKConfiguration);
+
+            Reservation = new Reservation(SDKConfiguration);
 
             Review = new Review(SDKConfiguration);
 
@@ -718,6 +726,8 @@ namespace UnifiedTo
 
             Commerce = new Commerce(SDKConfiguration);
 
+            Availability = new Availability(SDKConfiguration);
+
             Collection = new Collection(SDKConfiguration);
 
             Inventory = new Inventory(SDKConfiguration);
@@ -727,6 +737,8 @@ namespace UnifiedTo
             Itemvariant = new Itemvariant(SDKConfiguration);
 
             Location = new Location(SDKConfiguration);
+
+            Reservation = new Reservation(SDKConfiguration);
 
             Review = new Review(SDKConfiguration);
 
