@@ -18,6 +18,7 @@
 | `ContactPhone` | contact_phone  |
 | `UserId`       | user_id        |
 | `Media`        | media          |
-| `Raw`          | raw            |
 | `UserName`     | user_name      |
 | `UserPhone`    | user_phone     |
+| `Type`         | type           |
+| `Raw`          | raw            |

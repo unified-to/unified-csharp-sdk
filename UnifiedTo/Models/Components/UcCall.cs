@@ -48,6 +48,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("telephone")]
         public PropertyUcCallTelephone? Telephone { get; set; }
 
+        [JsonProperty("type")]
+        public UcCallType? Type { get; set; }
+
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

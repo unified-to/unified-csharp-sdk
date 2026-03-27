@@ -15,6 +15,7 @@
 | `UserId`    | user_id     |
 | `Contacts`  | contacts    |
 | `IsPrivate` | is_private  |
-| `Raw`       | raw         |
 | `UserName`  | user_name   |
 | `UserPhone` | user_phone  |
+| `Type`      | type        |
+| `Raw`       | raw         |

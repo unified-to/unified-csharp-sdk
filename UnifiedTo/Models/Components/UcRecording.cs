@@ -51,6 +51,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }
 
+        [JsonProperty("type")]
+        public UcRecordingType? Type { get; set; }
+
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

@@ -41,12 +41,14 @@ namespace UnifiedTo.Models.Requests
         UserId,
         [JsonProperty("media")]
         Media,
-        [JsonProperty("raw")]
-        Raw,
         [JsonProperty("user_name")]
         UserName,
         [JsonProperty("user_phone")]
         UserPhone,
+        [JsonProperty("type")]
+        Type,
+        [JsonProperty("raw")]
+        Raw,
     }
 
     public static class GetUcRecordingQueryParamFieldsExtension
