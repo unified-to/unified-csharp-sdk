@@ -59,6 +59,12 @@ namespace UnifiedTo.Models.Requests
         public string? Sort { get; set; }
 
         /// <summary>
+        /// The type to filter by
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=type")]
+        public string? Type { get; set; }
+
+        /// <summary>
         /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
