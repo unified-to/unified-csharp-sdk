@@ -17,6 +17,12 @@ namespace UnifiedTo.Models.Requests
     {
 
         /// <summary>
+        /// The account ID to filter by (reference to AccountingAccount)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=account_id")]
+        public string? AccountId { get; set; }
+
+        /// <summary>
         /// ID of the connection
         /// </summary>
         [SpeakeasyMetadata("pathParam:style=simple,explode=false,name=connection_id")]

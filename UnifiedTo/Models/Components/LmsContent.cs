@@ -52,7 +52,7 @@ namespace UnifiedTo.Models.Components
         public List<string>? Languages { get; set; }
 
         [JsonProperty("localizations")]
-        public List<LmsContentShapeLocalization>? Localizations { get; set; }
+        public List<LmsContentLocalization>? Localizations { get; set; }
 
         [JsonProperty("media")]
         public List<LmsMedia>? Media { get; set; }

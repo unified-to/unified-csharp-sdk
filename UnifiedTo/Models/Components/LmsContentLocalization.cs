@@ -10,10 +10,9 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
-    using System.Collections.Generic;
     using UnifiedTo.Utils;
     
-    public class LmsContentShapeLocalization
+    public class LmsContentLocalization
     {
 
         [JsonProperty("description")]
@@ -24,8 +23,5 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("name")]
         public string? Name { get; set; }
-
-        [JsonProperty("tags")]
-        public List<string>? Tags { get; set; }
     }
 }

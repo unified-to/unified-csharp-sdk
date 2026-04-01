@@ -37,6 +37,8 @@ namespace UnifiedTo.Models.Requests
         PostedAt,
         [JsonProperty("source")]
         Source,
+        [JsonProperty("organization_id")]
+        OrganizationId,
         [JsonProperty("raw")]
         Raw,
     }

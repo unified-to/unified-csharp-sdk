@@ -29,8 +29,6 @@ namespace UnifiedTo.Models.Components
         Text,
         [JsonProperty("HTML")]
         Html,
-        [JsonProperty("MARKDOWN")]
-        Markdown,
         [JsonProperty("OTHER")]
         Other,
     }

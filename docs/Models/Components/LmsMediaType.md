@@ -12,5 +12,4 @@
 | `Document` | DOCUMENT   |
 | `Text`     | TEXT       |
 | `Html`     | HTML       |
-| `Markdown` | MARKDOWN   |
 | `Other`    | OTHER      |

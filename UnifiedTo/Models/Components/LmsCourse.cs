@@ -21,6 +21,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("categories")]
         public List<string>? Categories { get; set; }
 
+        [JsonProperty("content_ids")]
+        public List<string>? ContentIds { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 
@@ -29,6 +32,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("description")]
         public string? Description { get; set; }
+
+        [JsonProperty("duration_minutes")]
+        public double? DurationMinutes { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }
@@ -54,8 +60,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("price_amount")]
         public double? PriceAmount { get; set; }
 
+        [JsonProperty("provider_name")]
+        public string? ProviderName { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
+
+        [JsonProperty("skills")]
+        public List<string>? Skills { get; set; }
 
         [JsonProperty("student_ids")]
         public List<string>? StudentIds { get; set; }

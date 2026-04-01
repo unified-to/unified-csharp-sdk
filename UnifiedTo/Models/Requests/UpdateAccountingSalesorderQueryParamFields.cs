@@ -41,6 +41,8 @@ namespace UnifiedTo.Models.Requests
         Lineitems,
         [JsonProperty("sales_channel")]
         SalesChannel,
+        [JsonProperty("organization_id")]
+        OrganizationId,
         [JsonProperty("raw")]
         Raw,
     }

@@ -18,4 +18,5 @@
 | `Status`          | status            |
 | `Lineitems`       | lineitems         |
 | `SalesChannel`    | sales_channel     |
+| `OrganizationId`  | organization_id   |
 | `Raw`             | raw               |

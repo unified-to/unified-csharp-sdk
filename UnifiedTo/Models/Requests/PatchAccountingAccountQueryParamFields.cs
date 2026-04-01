@@ -47,12 +47,12 @@ namespace UnifiedTo.Models.Requests
         Subgroup,
         [JsonProperty("parent_id")]
         ParentId,
-        [JsonProperty("organization_id")]
-        OrganizationId,
         [JsonProperty("taxonomy")]
         Taxonomy,
         [JsonProperty("raw")]
         Raw,
+        [JsonProperty("organization_id")]
+        OrganizationId,
     }
 
     public static class PatchAccountingAccountQueryParamFieldsExtension

@@ -17,6 +17,9 @@ namespace UnifiedTo.Models.Components
     public class LmsActivity
     {
 
+        [JsonProperty("assigned_grade")]
+        public string? AssignedGrade { get; set; }
+
         [JsonProperty("completed_at")]
         public DateTime? CompletedAt { get; set; }
 

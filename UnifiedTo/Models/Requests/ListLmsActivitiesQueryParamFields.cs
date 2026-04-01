@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Requests
         StudentId,
         [JsonProperty("duration_minutes")]
         DurationMinutes,
+        [JsonProperty("assigned_grade")]
+        AssignedGrade,
         [JsonProperty("is_completed")]
         IsCompleted,
         [JsonProperty("progress_percentage")]

@@ -35,6 +35,8 @@ namespace UnifiedTo.Models.Requests
         HasTasks,
         [JsonProperty("has_children")]
         HasChildren,
+        [JsonProperty("metadata")]
+        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

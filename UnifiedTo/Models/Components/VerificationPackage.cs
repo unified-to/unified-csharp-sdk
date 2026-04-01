@@ -82,7 +82,7 @@ namespace UnifiedTo.Models.Components
         public DateTime? UpdatedAt { get; set; }
 
         /// <summary>
-        /// {country}-{stateprovince/territory} or just {country} 2-digit ISO codes
+        /// {country}-{state/province/territory} or just {country} 2-digit ISO codes
         /// </summary>
         [JsonProperty("valid_regions")]
         public List<string>? ValidRegions { get; set; }

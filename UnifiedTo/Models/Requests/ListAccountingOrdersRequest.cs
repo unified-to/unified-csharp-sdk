@@ -23,6 +23,12 @@ namespace UnifiedTo.Models.Requests
         public string ConnectionId { get; set; } = default!;
 
         /// <summary>
+        /// The contact ID to filter by (reference to AccountingContact)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=contact_id")]
+        public string? ContactId { get; set; }
+
+        /// <summary>
         /// Fields to return
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=fields")]

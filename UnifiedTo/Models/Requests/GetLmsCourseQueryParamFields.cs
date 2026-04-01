@@ -43,6 +43,14 @@ namespace UnifiedTo.Models.Requests
         InstructorIds,
         [JsonProperty("student_ids")]
         StudentIds,
+        [JsonProperty("content_ids")]
+        ContentIds,
+        [JsonProperty("skills")]
+        Skills,
+        [JsonProperty("duration_minutes")]
+        DurationMinutes,
+        [JsonProperty("provider_name")]
+        ProviderName,
         [JsonProperty("raw")]
         Raw,
     }
