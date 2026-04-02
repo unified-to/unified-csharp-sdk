@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 3f87f13a8de294c45cde18ca6ba78168
+  docChecksum: 293e8f940db1edc64ea3bee29612e534
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.54
-  configChecksum: 035ae29cc23c1c19aa897cee11e62f45
+  releaseVersion: 0.130.55
+  configChecksum: 3358170013f566cc484263c61bbedd53
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -14149,7 +14149,7 @@ trackedFiles:
     last_write_checksum: sha1:6b993f7962723e9ee7867ae4f2cc36a8c423fd9f
     pristine_git_object: 34dc44b53d720edf8e5f88bdd804173b4ba89e67
   UnifiedTo/Models/Components/PropertyMarketingListAddress.cs:
-    last_write_checksum: sha1:11435c038a65ad698ae1b4be5132530b29079f6d
+    last_write_checksum: sha1:db201b0a91e6ce766d69668734a57725627b4aa4
   UnifiedTo/Models/Components/PropertyMessagingEventButton.cs:
     last_write_checksum: sha1:0f16091899fd309dc5f3af9a7427e37312c8672f
   UnifiedTo/Models/Components/PropertyMessagingEventChannel.cs:
@@ -23053,7 +23053,7 @@ trackedFiles:
     last_write_checksum: sha1:68cbd9675a5683cff8ffb3f4bc0e5466c0222c94
     pristine_git_object: ae8fd19f41d3161403fa5f82cfcb079f585dca1a
   docs/Models/Components/PropertyMarketingListAddress.md:
-    last_write_checksum: sha1:637109efdab0ba803f5342d21874428c86ff8692
+    last_write_checksum: sha1:ce442ce572fde1b71d6c08f98eba90be91ed6553
   docs/Models/Components/PropertyMessagingEventButton.md:
     last_write_checksum: sha1:32d4851ba744ef4b05a313864f8d637ae650c6e3
   docs/Models/Components/PropertyMessagingEventChannel.md:

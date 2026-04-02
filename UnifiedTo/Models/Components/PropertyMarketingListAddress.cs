@@ -35,5 +35,8 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("region")]
         public string? Region { get; set; }
+
+        [JsonProperty("region_code")]
+        public string? RegionCode { get; set; }
     }
 }
