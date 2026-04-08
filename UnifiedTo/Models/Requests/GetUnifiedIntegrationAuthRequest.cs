@@ -54,6 +54,9 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=state")]
         public string? State { get; set; }
 
+        /// <summary>
+        /// Optional tenant domain or subdomain for integrations that require it to build the authorize, token, or API URL. Depending on the integration, this may be a bare subdomain or a full domain/URL.
+        /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=subdomain")]
         public string? Subdomain { get; set; }
 

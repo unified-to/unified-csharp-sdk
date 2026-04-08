@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 293e8f940db1edc64ea3bee29612e534
+  docChecksum: 5aadf962c09ceec8ee8c741b10920bd7
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.55
-  configChecksum: 3358170013f566cc484263c61bbedd53
+  releaseVersion: 0.130.56
+  configChecksum: fb8e15d87cc86d2c30114c6153dba096
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -16868,7 +16868,7 @@ trackedFiles:
     pristine_git_object: 95b9609d5490c2b65850622aa6550f004583aa97
   UnifiedTo/Models/Requests/GetUnifiedIntegrationAuthRequest.cs:
     id: 53d8a4d1f190
-    last_write_checksum: sha1:f0e77d57d0e240b290c078fcb6392a1258d296e8
+    last_write_checksum: sha1:a8fe063fde17d0c38626c91d3a6afb1ba87677af
     pristine_git_object: dd1391e8dff3a8c826743fabdf6d4ad9c1f70017
   UnifiedTo/Models/Requests/GetUnifiedIntegrationAuthResponse.cs:
     id: 019c9eaad16e
@@ -17518,7 +17518,7 @@ trackedFiles:
     last_write_checksum: sha1:1de79ba18fbae136238561dc6ca29c98ebf91a4f
   UnifiedTo/Models/Requests/ListHrisDeductionsRequest.cs:
     id: 7ddf2380d433
-    last_write_checksum: sha1:2f08acf65dc92b9fdc4b3fb2a5541eb5fd8709ff
+    last_write_checksum: sha1:a2855fa4961e69530380c55fea780686bc04bccd
     pristine_git_object: e65d34bb88566708834f97f1393824449daa6c0d
   UnifiedTo/Models/Requests/ListHrisDeductionsResponse.cs:
     id: 50edb95686bb
@@ -20782,7 +20782,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:1507bc9c49c49dfc3ecb788afc4978b0448d91a1
+    last_write_checksum: sha1:282d83b30e84efb6b36021bdafa3fc1877b1be47
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -20888,7 +20888,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:92cc280f191c3279f89948535552a3e67e044fa4
+    last_write_checksum: sha1:b04d5b6c6379a981bbcb32c737eae45467667896
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -25760,7 +25760,7 @@ trackedFiles:
     pristine_git_object: 929e981f0fa165022681e8bd69e4c343c992c88c
   docs/Models/Requests/GetUnifiedIntegrationAuthRequest.md:
     id: 35de1c529267
-    last_write_checksum: sha1:5501899212aee00709b745d5cdd2ac2cb316eab8
+    last_write_checksum: sha1:1590121ff49dccb352e88b09dcdd54df65371992
     pristine_git_object: db1f0b237ddaaa0fadd59bc1baf224c424915496
   docs/Models/Requests/GetUnifiedIntegrationAuthResponse.md:
     id: 039686560a15
@@ -26410,7 +26410,7 @@ trackedFiles:
     last_write_checksum: sha1:fc3b9dbb076fd4700e6c970433cf709162e17cdb
   docs/Models/Requests/ListHrisDeductionsRequest.md:
     id: b6ba2e35ca92
-    last_write_checksum: sha1:c053483b39cdb9c2f3309f39bc8de72298ad0173
+    last_write_checksum: sha1:202540ca496ffc9b259ad2dbd44166046d9670f8
     pristine_git_object: f51c52c65e13521b5371a8c678f3361c321e46df
   docs/Models/Requests/ListHrisDeductionsResponse.md:
     id: fc85862a9678
