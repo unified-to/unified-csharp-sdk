@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 5aadf962c09ceec8ee8c741b10920bd7
+  docChecksum: 185e3f9bf567bcfb80297100b1c48628
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.56
-  configChecksum: fb8e15d87cc86d2c30114c6153dba096
+  releaseVersion: 0.130.57
+  configChecksum: 1ed6cf98a71dab396d7762a4b3ec65f1
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -243,6 +243,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/AtsMetadata5.cs
   - UnifiedTo/Models/Components/AtsOffer.cs
   - UnifiedTo/Models/Components/AtsOfferStatus.cs
+  - UnifiedTo/Models/Components/AtsReference.cs
   - UnifiedTo/Models/Components/AtsScorecard.cs
   - UnifiedTo/Models/Components/AtsScorecardQuestion.cs
   - UnifiedTo/Models/Components/AtsStatus.cs
@@ -3003,6 +3004,7 @@ generatedFiles:
   - docs/Models/Components/AtsMetadata5.md
   - docs/Models/Components/AtsOffer.md
   - docs/Models/Components/AtsOfferStatus.md
+  - docs/Models/Components/AtsReference.md
   - docs/Models/Components/AtsScorecard.md
   - docs/Models/Components/AtsScorecardQuestion.md
   - docs/Models/Components/AtsStatus.md
@@ -12442,7 +12444,7 @@ trackedFiles:
     pristine_git_object: 887daaca216a49bc084980e988083cb611e65e0e
   UnifiedTo/Models/Components/AtsJob.cs:
     id: fd3fe5e98d12
-    last_write_checksum: sha1:c1e9a7af6e693b80f8bbb36c36bd13edfa7abc6b
+    last_write_checksum: sha1:bbdd1b02f7709d09a969ebb881ed0bcc40b60ccf
     pristine_git_object: 18245244270f8833bf648d4d84633ef6c172208d
   UnifiedTo/Models/Components/AtsJobOpening.cs:
     id: 4a7e8fbbd52f
@@ -12488,6 +12490,8 @@ trackedFiles:
     id: 59d2cd074701
     last_write_checksum: sha1:149b39a8934737164cbd702541f950529c41776a
     pristine_git_object: 742a7f201d598dd3b41f93d70ef3385cc5907aff
+  UnifiedTo/Models/Components/AtsReference.cs:
+    last_write_checksum: sha1:010bf2622ab1f8ac6dbceca4efc07f6dc3e1c949
   UnifiedTo/Models/Components/AtsScorecard.cs:
     id: df52d02ef492
     last_write_checksum: sha1:9efc741b911664589a98dc331a5e7273e4eb5d03
@@ -15115,7 +15119,7 @@ trackedFiles:
     last_write_checksum: sha1:6f89a372db081ae8c1d0a08df115bee8645f144e
     pristine_git_object: 7a000710edeb3ba24384dc357c7c8d8e472db872
   UnifiedTo/Models/Requests/CreateAtsJobQueryParamFields.cs:
-    last_write_checksum: sha1:3e9b80beda0ebf427697da8229e68a8db8a9307b
+    last_write_checksum: sha1:18012b512dab14a8a1796013e38627409ed93127
   UnifiedTo/Models/Requests/CreateAtsJobRequest.cs:
     id: 22eef83bde6f
     last_write_checksum: sha1:647a74d2731ca165b073f95235ed6cc984034fc8
@@ -16111,7 +16115,7 @@ trackedFiles:
     last_write_checksum: sha1:7e400757a6b91a1b9f948042f48a548b96b37813
     pristine_git_object: 5ecfd807c00eb6aa22d85519c4e568e4c4fdcb67
   UnifiedTo/Models/Requests/GetAtsJobQueryParamFields.cs:
-    last_write_checksum: sha1:281d0fea0623b16117efd12daf7c3d1dc2413b91
+    last_write_checksum: sha1:201ba3a4466c9ee7d1e3956d06b907ea67297a3e
   UnifiedTo/Models/Requests/GetAtsJobRequest.cs:
     id: 140190d04547
     last_write_checksum: sha1:af3e1fd2b497b017c0892062cd34a454690a18fc
@@ -17237,7 +17241,7 @@ trackedFiles:
     last_write_checksum: sha1:07bf728eff6679e7d2b3130518d0dbb4de52051d
     pristine_git_object: c144d06800f04363608dcd6f86edbee0301f3a8a
   UnifiedTo/Models/Requests/ListAtsJobsQueryParamFields.cs:
-    last_write_checksum: sha1:833ef5c03826730232825c051ebb0ba1ea9b0752
+    last_write_checksum: sha1:2d73aa41788ef428219453ec0881864579a85f4e
   UnifiedTo/Models/Requests/ListAtsJobsRequest.cs:
     id: ca8d8a1aa549
     last_write_checksum: sha1:1188f471f76ed35f1e8baf4c378a4079122f9823
@@ -18329,7 +18333,7 @@ trackedFiles:
     last_write_checksum: sha1:469cba86ba6c9b4bbe1b3845bdca57384c24d946
     pristine_git_object: c3d709c0d0e15abd842003e403e2141224eadd49
   UnifiedTo/Models/Requests/PatchAtsJobQueryParamFields.cs:
-    last_write_checksum: sha1:ca14a5f5bdffefa715dd1bd8fb31072308c0fc82
+    last_write_checksum: sha1:c799b6da65b015a791c01389bce81a97e805b472
   UnifiedTo/Models/Requests/PatchAtsJobRequest.cs:
     id: 54d77537f08e
     last_write_checksum: sha1:f7ca702b4598df4e39350f646c09c127967a2c5c
@@ -19989,7 +19993,7 @@ trackedFiles:
     last_write_checksum: sha1:fadaddff7f5003127532cfb0b7f3ed12870ed840
     pristine_git_object: e5632b55667b6ac5c0f618b20804f3d6c2947159
   UnifiedTo/Models/Requests/UpdateAtsJobQueryParamFields.cs:
-    last_write_checksum: sha1:ebb51163ac412bd025d639dc4117e482186307b8
+    last_write_checksum: sha1:9853dcdc6e04a424c8135447920834f269b4c3b8
   UnifiedTo/Models/Requests/UpdateAtsJobRequest.cs:
     id: 89f273668634
     last_write_checksum: sha1:52eb850d5fe376a20b1d809aeabfbd07d135f012
@@ -21346,7 +21350,7 @@ trackedFiles:
     pristine_git_object: a3fbd20e2182232d483d7294411db68cf02e15f7
   docs/Models/Components/AtsJob.md:
     id: 27fad9d06952
-    last_write_checksum: sha1:e47404dfd23564adc6023da2948ae1c2ef9dec1c
+    last_write_checksum: sha1:7f80f773429e6a0d454afb0bcb4d2d47f92f316b
     pristine_git_object: b55c7de248bae01f0aba0630cf4d163151abbcd7
   docs/Models/Components/AtsJobOpening.md:
     id: 6faeeccc7a14
@@ -21392,6 +21396,8 @@ trackedFiles:
     id: 56c24908f337
     last_write_checksum: sha1:770903cb634240ddc7a90494911b010c00d3c204
     pristine_git_object: 0deb6387797b0da9e006ad05b4d7f1f35597262d
+  docs/Models/Components/AtsReference.md:
+    last_write_checksum: sha1:7ceabbac90c78e9af48aed97e2c98b8b15e796ed
   docs/Models/Components/AtsScorecard.md:
     id: 00b6dab6b933
     last_write_checksum: sha1:3e6d4659f49dc128c445df47c02ba9a20f370e80
@@ -24007,7 +24013,7 @@ trackedFiles:
     last_write_checksum: sha1:50af1f63015d312ae43eaac97bcda12bbedd38d5
     pristine_git_object: 007efee39a100e986597a44c2a61e553c19a9422
   docs/Models/Requests/CreateAtsJobQueryParamFields.md:
-    last_write_checksum: sha1:efc966409d33e3d65e4665008418bca4fc1d944c
+    last_write_checksum: sha1:b409573a3c36c6ddb3669a3a200dcd7122c50ee6
   docs/Models/Requests/CreateAtsJobRequest.md:
     id: 7ca4be341b9a
     last_write_checksum: sha1:eac6b1af8ef0868b8b62b617eb293ca0e13d869e
@@ -25003,7 +25009,7 @@ trackedFiles:
     last_write_checksum: sha1:9ed603e1cd0e3adaab26aaeff0c6d59a05bab25d
     pristine_git_object: c4c1fcf35123c6726c55d4b8eecf880df47c63fe
   docs/Models/Requests/GetAtsJobQueryParamFields.md:
-    last_write_checksum: sha1:dd19c8ae39054a91684e0152c1b09a0f6f6d7f3e
+    last_write_checksum: sha1:5a3b02ea94155fd2d032fd1881e32333f7fd7ab3
   docs/Models/Requests/GetAtsJobRequest.md:
     id: 74f9024ef6e5
     last_write_checksum: sha1:8a7c0e4a3a4e90b06225b45b320c338c7b971834
@@ -26129,7 +26135,7 @@ trackedFiles:
     last_write_checksum: sha1:254d2da8e6440838f7f715342cda74974a4ee1dd
     pristine_git_object: 9548bd74863bf23616252a996a7ad49b07ab8ad8
   docs/Models/Requests/ListAtsJobsQueryParamFields.md:
-    last_write_checksum: sha1:7898474d2d04d98533bce7edab296649c99ba013
+    last_write_checksum: sha1:0f9236a7bcea4c6019471e1a1e8598d145d66dfa
   docs/Models/Requests/ListAtsJobsRequest.md:
     id: bb2e98051331
     last_write_checksum: sha1:1ff219592da1dc8029b060cd2fe7ef4b96c76a96
@@ -27221,7 +27227,7 @@ trackedFiles:
     last_write_checksum: sha1:b820bfcbb5010ec5cec919b3af1145a3b1b0c2b3
     pristine_git_object: dd97900e339213bc7d267f036f0260616ca50fcb
   docs/Models/Requests/PatchAtsJobQueryParamFields.md:
-    last_write_checksum: sha1:fe8c69e886eba68e4cb08cc185d3698973979bf3
+    last_write_checksum: sha1:f1a3fd460d88ec4af18f71fdd6fbc2897c22007f
   docs/Models/Requests/PatchAtsJobRequest.md:
     id: 382ac007aeae
     last_write_checksum: sha1:ad470b442d21b2ca1469231279150f93470695c4
@@ -28881,7 +28887,7 @@ trackedFiles:
     last_write_checksum: sha1:c82af46914b5b6bcc48d8068b351d4c672064f3d
     pristine_git_object: 790625eded88594d62a84f553bd30d10c293d8b8
   docs/Models/Requests/UpdateAtsJobQueryParamFields.md:
-    last_write_checksum: sha1:e42cbf3ffd0e58fec972ac131d03aef0ade01d28
+    last_write_checksum: sha1:606f4b566c370305236abb6bc30065612647cb2a
   docs/Models/Requests/UpdateAtsJobRequest.md:
     id: f47644288c6f
     last_write_checksum: sha1:39d429ffdd9e32978f3201ba1f9ba88b7f85b269

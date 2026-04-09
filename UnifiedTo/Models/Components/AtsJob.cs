@@ -48,6 +48,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("hiring_manager_ids")]
         public List<string>? HiringManagerIds { get; set; }
 
+        [JsonProperty("hiring_managers")]
+        public List<AtsReference>? HiringManagers { get; set; }
+
         [JsonProperty("id")]
         public string? Id { get; set; }
 

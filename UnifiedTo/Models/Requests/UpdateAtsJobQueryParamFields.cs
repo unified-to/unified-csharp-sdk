@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Requests
         RecruiterIds,
         [JsonProperty("hiring_manager_ids")]
         HiringManagerIds,
+        [JsonProperty("hiring_managers")]
+        HiringManagers,
         [JsonProperty("status")]
         Status,
         [JsonProperty("closed_at")]
