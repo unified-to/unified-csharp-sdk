@@ -66,6 +66,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("interval")]
         public double? Interval { get; set; }
 
+        [JsonProperty("is_beta")]
+        public bool? IsBeta { get; set; }
+
         [JsonProperty("is_healthy")]
         public bool? IsHealthy { get; set; }
 

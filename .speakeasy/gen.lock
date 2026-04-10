@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 185e3f9bf567bcfb80297100b1c48628
+  docChecksum: 411f51acbf2ce7fbfc478c04772f380d
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.57
-  configChecksum: 1ed6cf98a71dab396d7762a4b3ec65f1
+  releaseVersion: 0.130.58
+  configChecksum: b5f43ffbc2c6460f1678eeac6415808a
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -14858,7 +14858,7 @@ trackedFiles:
     pristine_git_object: 12085218243468e4a8494de61a384548ed182a8f
   UnifiedTo/Models/Components/Webhook.cs:
     id: a175a09e326a
-    last_write_checksum: sha1:07a15a10d06bf771e672746c9fe870d73f1f7f5b
+    last_write_checksum: sha1:93d02951c537c880b82c547242625dd7e7daa819
     pristine_git_object: c0d1ca343167c79c8242d526e68d5738678d683f
   UnifiedTo/Models/Components/WebhookType.cs:
     id: 0d2a4a013f23
@@ -23764,7 +23764,7 @@ trackedFiles:
     pristine_git_object: 5e3c64653b2422bc150510e0455acf116b1c052b
   docs/Models/Components/Webhook.md:
     id: fca2770a666e
-    last_write_checksum: sha1:5bca59970d17e609db6fdd834c70d6b77b0fb3c8
+    last_write_checksum: sha1:411e0d01e46422437b93cb2ccf91be79b9b80f2e
     pristine_git_object: a93bcd71d10b2c8b57ee436d0358fb60a556fd1f
   docs/Models/Components/WebhookType.md:
     id: a85132fd56a5
