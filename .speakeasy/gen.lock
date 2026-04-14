@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 411f51acbf2ce7fbfc478c04772f380d
+  docChecksum: d9d06ebf4f927b0b7aaabb635a00340f
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.58
-  configChecksum: b5f43ffbc2c6460f1678eeac6415808a
+  releaseVersion: 0.130.59
+  configChecksum: add518907161787be221c8e04e8c4686
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -557,6 +557,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/NativeWebhookFormId.cs
   - UnifiedTo/Models/Components/NativeWebhookIoId.cs
   - UnifiedTo/Models/Components/NativeWebhookLabelId.cs
+  - UnifiedTo/Models/Components/NativeWebhookListId.cs
   - UnifiedTo/Models/Components/NativeWebhookMemberId.cs
   - UnifiedTo/Models/Components/NativeWebhookOrderId.cs
   - UnifiedTo/Models/Components/NativeWebhookParentId.cs
@@ -3318,6 +3319,7 @@ generatedFiles:
   - docs/Models/Components/NativeWebhookFormId.md
   - docs/Models/Components/NativeWebhookIoId.md
   - docs/Models/Components/NativeWebhookLabelId.md
+  - docs/Models/Components/NativeWebhookListId.md
   - docs/Models/Components/NativeWebhookMemberId.md
   - docs/Models/Components/NativeWebhookOrderId.md
   - docs/Models/Components/NativeWebhookParentId.md
@@ -13120,7 +13122,7 @@ trackedFiles:
     pristine_git_object: c713343e8622b8cfb7c52924b3765b26217d6385
   UnifiedTo/Models/Components/IntegrationSupport.cs:
     id: a60768677b8a
-    last_write_checksum: sha1:15b508899e0e80fbf030166580ef0270a80735d7
+    last_write_checksum: sha1:121ea4274c53603a260a79857e1ab7a4a58b9335
     pristine_git_object: df9a5cf369f1185b54a41e701ccea4848720d748
   UnifiedTo/Models/Components/IntervalUnit.cs:
     id: 8caa2a3c48ea
@@ -13600,6 +13602,8 @@ trackedFiles:
     last_write_checksum: sha1:f91b16ac12afb4a34a04126a71cfec5310488b25
   UnifiedTo/Models/Components/NativeWebhookLabelId.cs:
     last_write_checksum: sha1:99c5e6be5c07d9693b6232a41796be3f448a5cdc
+  UnifiedTo/Models/Components/NativeWebhookListId.cs:
+    last_write_checksum: sha1:2890e9a428b4902650deb44f24f896cbbd3da81b
   UnifiedTo/Models/Components/NativeWebhookMemberId.cs:
     last_write_checksum: sha1:e40fa32ed10c11caf6343c429644f88a52de6eb6
   UnifiedTo/Models/Components/NativeWebhookOrderId.cs:
@@ -20786,7 +20790,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:282d83b30e84efb6b36021bdafa3fc1877b1be47
+    last_write_checksum: sha1:a409c5ca944c43742dd1115b8d9527fda0f60888
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -20892,7 +20896,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:b04d5b6c6379a981bbcb32c737eae45467667896
+    last_write_checksum: sha1:53dfded13364f06845e72b0ee8029224c8e7d666
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -22026,7 +22030,7 @@ trackedFiles:
     pristine_git_object: a1bf4d40b69786c43195fd92204558699e7dac2f
   docs/Models/Components/IntegrationSupport.md:
     id: 6410e8499735
-    last_write_checksum: sha1:a2bec658255abec2d4cb938a48a6d0ae790b0445
+    last_write_checksum: sha1:b3d059c1aea4ab942c2f90ee1c909e171ed9135e
     pristine_git_object: d46883eaa7696d5c3e2ab66daacd0fa47d8c706d
   docs/Models/Components/IntervalUnit.md:
     id: 779660b22183
@@ -22506,6 +22510,8 @@ trackedFiles:
     last_write_checksum: sha1:8298cb5cfe43efa23c89248316130982b0b6296a
   docs/Models/Components/NativeWebhookLabelId.md:
     last_write_checksum: sha1:a9c25216ab70187347e79dd35f18fd0db4f6c171
+  docs/Models/Components/NativeWebhookListId.md:
+    last_write_checksum: sha1:56d93780d18cb09dc40b08dcaec03d0e22137399
   docs/Models/Components/NativeWebhookMemberId.md:
     last_write_checksum: sha1:83350169bd64d98b81c99f2b57a42f5184c4eb05
   docs/Models/Components/NativeWebhookOrderId.md:
