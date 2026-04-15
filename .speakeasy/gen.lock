@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: d9d06ebf4f927b0b7aaabb635a00340f
+  docChecksum: 97059ed622bfecd9741a74a3557254e7
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.59
-  configChecksum: add518907161787be221c8e04e8c4686
+  releaseVersion: 0.130.60
+  configChecksum: a908462e38029cbbe16f95f19eabe137
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -12382,7 +12382,7 @@ trackedFiles:
     pristine_git_object: 97a46f71e30b65f324804bcf65c80aba4d893cff
   UnifiedTo/Models/Components/AtsApplicationAnswer.cs:
     id: 738f91cf1d3a
-    last_write_checksum: sha1:15333fef27b19f7a373f93f8552e512726833f58
+    last_write_checksum: sha1:28a871622d97290c9b6f7845256e28230937e273
     pristine_git_object: a64f6cb42cb8c37d83af0e5b4aee8894bbf19a11
   UnifiedTo/Models/Components/AtsApplicationStatus.cs:
     id: 4e04d57a03af
@@ -21290,7 +21290,7 @@ trackedFiles:
     pristine_git_object: 9a3eea46b198f81c40a85f25830ef226c11b82f3
   docs/Models/Components/AtsApplicationAnswer.md:
     id: e6b46bb904d0
-    last_write_checksum: sha1:289e2974d431a9c31d7d79d96c582f49f7199440
+    last_write_checksum: sha1:01c766e8a8e10bf69e86fe4be5ac1f1d89f41a95
     pristine_git_object: e732e5e8a17b455d22067f16b561324fe17178ab
   docs/Models/Components/AtsApplicationStatus.md:
     id: 03301b00b12e

@@ -19,6 +19,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("answers")]
         public List<string> Answers { get; set; } = default!;
 
+        [JsonProperty("question")]
+        public string? Question { get; set; }
+
         [JsonProperty("question_id")]
         public string QuestionId { get; set; } = default!;
     }
