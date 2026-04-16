@@ -69,6 +69,8 @@ namespace UnifiedTo.Models.Requests
         Shipping,
         [JsonProperty("assessment")]
         Assessment,
+        [JsonProperty("signing")]
+        Signing,
     }
 
     public static class QueryParamCategoriesExtension

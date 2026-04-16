@@ -273,6 +273,12 @@ namespace UnifiedTo.Models.Components
         ShippingLabel,
         [JsonProperty("shipping_tracking")]
         ShippingTracking,
+        [JsonProperty("signing_document")]
+        SigningDocument,
+        [JsonProperty("signing_signatory")]
+        SigningSignatory,
+        [JsonProperty("signing_template")]
+        SigningTemplate,
     }
 
     public static class ObjectTypeExtension

@@ -230,6 +230,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_teacher_id")]
         public ListTeacherId? ListTeacherId { get; set; }
 
+        [JsonProperty("list_template_id")]
+        public ListTemplateId? ListTemplateId { get; set; }
+
         [JsonProperty("list_ticket_id")]
         public ListTicketId? ListTicketId { get; set; }
 
@@ -298,6 +301,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("native_webhook_task_id")]
         public NativeWebhookTaskId? NativeWebhookTaskId { get; set; }
+
+        [JsonProperty("native_webhook_template_id")]
+        public NativeWebhookTemplateId? NativeWebhookTemplateId { get; set; }
 
         [JsonProperty("native_webhook_type")]
         public NativeWebhookType? NativeWebhookType { get; set; }
@@ -478,6 +484,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_task_id")]
         public VirtualWebhookTaskId? VirtualWebhookTaskId { get; set; }
+
+        [JsonProperty("virtual_webhook_template_id")]
+        public VirtualWebhookTemplateId? VirtualWebhookTemplateId { get; set; }
 
         [JsonProperty("virtual_webhook_ticket_id")]
         public VirtualWebhookTicketId? VirtualWebhookTicketId { get; set; }

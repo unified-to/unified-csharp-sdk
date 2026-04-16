@@ -489,6 +489,16 @@ namespace UnifiedTo.Models.Components
         ShippingRateRead,
         [JsonProperty("shipping_carrier_read")]
         ShippingCarrierRead,
+        [JsonProperty("signing_document_read")]
+        SigningDocumentRead,
+        [JsonProperty("signing_document_write")]
+        SigningDocumentWrite,
+        [JsonProperty("signing_signatory_read")]
+        SigningSignatoryRead,
+        [JsonProperty("signing_signatory_write")]
+        SigningSignatoryWrite,
+        [JsonProperty("signing_template_read")]
+        SigningTemplateRead,
     }
 
     public static class PropertyConnectionPermissionsExtension

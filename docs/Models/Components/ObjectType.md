@@ -134,3 +134,6 @@
 | `ShippingShipment`        | shipping_shipment         |
 | `ShippingLabel`           | shipping_label            |
 | `ShippingTracking`        | shipping_tracking         |
+| `SigningDocument`         | signing_document          |
+| `SigningSignatory`        | signing_signatory         |
+| `SigningTemplate`         | signing_template          |

@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 97059ed622bfecd9741a74a3557254e7
+  docChecksum: 58164d1126b2fb763cc3eb594b45f20d
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.60
-  configChecksum: a908462e38029cbbe16f95f19eabe137
+  releaseVersion: 0.130.61
+  configChecksum: da0f0fc94ffaace28d5ff093c5571486
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -505,6 +505,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/ListStudentId.cs
   - UnifiedTo/Models/Components/ListTaskId.cs
   - UnifiedTo/Models/Components/ListTeacherId.cs
+  - UnifiedTo/Models/Components/ListTemplateId.cs
   - UnifiedTo/Models/Components/ListTicketId.cs
   - UnifiedTo/Models/Components/ListType.cs
   - UnifiedTo/Models/Components/ListUpdatedGte.cs
@@ -565,6 +566,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/NativeWebhookShipmentId.cs
   - UnifiedTo/Models/Components/NativeWebhookStudentId.cs
   - UnifiedTo/Models/Components/NativeWebhookTaskId.cs
+  - UnifiedTo/Models/Components/NativeWebhookTemplateId.cs
   - UnifiedTo/Models/Components/NativeWebhookType.cs
   - UnifiedTo/Models/Components/NonDeliveryOption.cs
   - UnifiedTo/Models/Components/ObjectType.cs
@@ -852,6 +854,12 @@ generatedFiles:
   - UnifiedTo/Models/Components/ShippingTrackingEvent.cs
   - UnifiedTo/Models/Components/ShippingTrackingEventStatus.cs
   - UnifiedTo/Models/Components/ShippingTrackingStatus.cs
+  - UnifiedTo/Models/Components/SigningDocument.cs
+  - UnifiedTo/Models/Components/SigningDocumentStatus.cs
+  - UnifiedTo/Models/Components/SigningSignatory.cs
+  - UnifiedTo/Models/Components/SigningSignatoryRole.cs
+  - UnifiedTo/Models/Components/SigningSignatoryStatus.cs
+  - UnifiedTo/Models/Components/SigningTemplate.cs
   - UnifiedTo/Models/Components/SizeUnit.cs
   - UnifiedTo/Models/Components/Status.cs
   - UnifiedTo/Models/Components/StorageFile.cs
@@ -959,6 +967,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/VirtualWebhookStatus.cs
   - UnifiedTo/Models/Components/VirtualWebhookStudentId.cs
   - UnifiedTo/Models/Components/VirtualWebhookTaskId.cs
+  - UnifiedTo/Models/Components/VirtualWebhookTemplateId.cs
   - UnifiedTo/Models/Components/VirtualWebhookTicketId.cs
   - UnifiedTo/Models/Components/VirtualWebhookType.cs
   - UnifiedTo/Models/Components/VirtualWebhookUpdatedGte.cs
@@ -1232,6 +1241,12 @@ generatedFiles:
   - UnifiedTo/Models/Requests/CreateShippingShipmentQueryParamFields.cs
   - UnifiedTo/Models/Requests/CreateShippingShipmentRequest.cs
   - UnifiedTo/Models/Requests/CreateShippingShipmentResponse.cs
+  - UnifiedTo/Models/Requests/CreateSigningDocumentQueryParamFields.cs
+  - UnifiedTo/Models/Requests/CreateSigningDocumentRequest.cs
+  - UnifiedTo/Models/Requests/CreateSigningDocumentResponse.cs
+  - UnifiedTo/Models/Requests/CreateSigningSignatoryQueryParamFields.cs
+  - UnifiedTo/Models/Requests/CreateSigningSignatoryRequest.cs
+  - UnifiedTo/Models/Requests/CreateSigningSignatoryResponse.cs
   - UnifiedTo/Models/Requests/CreateStorageFileQueryParamFields.cs
   - UnifiedTo/Models/Requests/CreateStorageFileRequest.cs
   - UnifiedTo/Models/Requests/CreateStorageFileResponse.cs
@@ -1566,6 +1581,15 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetShippingTrackingQueryParamFields.cs
   - UnifiedTo/Models/Requests/GetShippingTrackingRequest.cs
   - UnifiedTo/Models/Requests/GetShippingTrackingResponse.cs
+  - UnifiedTo/Models/Requests/GetSigningDocumentQueryParamFields.cs
+  - UnifiedTo/Models/Requests/GetSigningDocumentRequest.cs
+  - UnifiedTo/Models/Requests/GetSigningDocumentResponse.cs
+  - UnifiedTo/Models/Requests/GetSigningSignatoryQueryParamFields.cs
+  - UnifiedTo/Models/Requests/GetSigningSignatoryRequest.cs
+  - UnifiedTo/Models/Requests/GetSigningSignatoryResponse.cs
+  - UnifiedTo/Models/Requests/GetSigningTemplateQueryParamFields.cs
+  - UnifiedTo/Models/Requests/GetSigningTemplateRequest.cs
+  - UnifiedTo/Models/Requests/GetSigningTemplateResponse.cs
   - UnifiedTo/Models/Requests/GetStorageFileQueryParamFields.cs
   - UnifiedTo/Models/Requests/GetStorageFileRequest.cs
   - UnifiedTo/Models/Requests/GetStorageFileResponse.cs
@@ -1941,6 +1965,15 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListShippingShipmentsQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListShippingShipmentsRequest.cs
   - UnifiedTo/Models/Requests/ListShippingShipmentsResponse.cs
+  - UnifiedTo/Models/Requests/ListSigningDocumentsQueryParamFields.cs
+  - UnifiedTo/Models/Requests/ListSigningDocumentsRequest.cs
+  - UnifiedTo/Models/Requests/ListSigningDocumentsResponse.cs
+  - UnifiedTo/Models/Requests/ListSigningSignatoriesQueryParamFields.cs
+  - UnifiedTo/Models/Requests/ListSigningSignatoriesRequest.cs
+  - UnifiedTo/Models/Requests/ListSigningSignatoriesResponse.cs
+  - UnifiedTo/Models/Requests/ListSigningTemplatesQueryParamFields.cs
+  - UnifiedTo/Models/Requests/ListSigningTemplatesRequest.cs
+  - UnifiedTo/Models/Requests/ListSigningTemplatesResponse.cs
   - UnifiedTo/Models/Requests/ListStorageFilesQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListStorageFilesRequest.cs
   - UnifiedTo/Models/Requests/ListStorageFilesResponse.cs
@@ -2259,6 +2292,12 @@ generatedFiles:
   - UnifiedTo/Models/Requests/PatchShippingShipmentQueryParamFields.cs
   - UnifiedTo/Models/Requests/PatchShippingShipmentRequest.cs
   - UnifiedTo/Models/Requests/PatchShippingShipmentResponse.cs
+  - UnifiedTo/Models/Requests/PatchSigningDocumentQueryParamFields.cs
+  - UnifiedTo/Models/Requests/PatchSigningDocumentRequest.cs
+  - UnifiedTo/Models/Requests/PatchSigningDocumentResponse.cs
+  - UnifiedTo/Models/Requests/PatchSigningSignatoryQueryParamFields.cs
+  - UnifiedTo/Models/Requests/PatchSigningSignatoryRequest.cs
+  - UnifiedTo/Models/Requests/PatchSigningSignatoryResponse.cs
   - UnifiedTo/Models/Requests/PatchStorageFileQueryParamFields.cs
   - UnifiedTo/Models/Requests/PatchStorageFileRequest.cs
   - UnifiedTo/Models/Requests/PatchStorageFileResponse.cs
@@ -2473,6 +2512,10 @@ generatedFiles:
   - UnifiedTo/Models/Requests/RemoveShippingLabelResponse.cs
   - UnifiedTo/Models/Requests/RemoveShippingShipmentRequest.cs
   - UnifiedTo/Models/Requests/RemoveShippingShipmentResponse.cs
+  - UnifiedTo/Models/Requests/RemoveSigningDocumentRequest.cs
+  - UnifiedTo/Models/Requests/RemoveSigningDocumentResponse.cs
+  - UnifiedTo/Models/Requests/RemoveSigningSignatoryRequest.cs
+  - UnifiedTo/Models/Requests/RemoveSigningSignatoryResponse.cs
   - UnifiedTo/Models/Requests/RemoveStorageFileRequest.cs
   - UnifiedTo/Models/Requests/RemoveStorageFileResponse.cs
   - UnifiedTo/Models/Requests/RemoveTaskCommentRequest.cs
@@ -2762,6 +2805,12 @@ generatedFiles:
   - UnifiedTo/Models/Requests/UpdateShippingShipmentQueryParamFields.cs
   - UnifiedTo/Models/Requests/UpdateShippingShipmentRequest.cs
   - UnifiedTo/Models/Requests/UpdateShippingShipmentResponse.cs
+  - UnifiedTo/Models/Requests/UpdateSigningDocumentQueryParamFields.cs
+  - UnifiedTo/Models/Requests/UpdateSigningDocumentRequest.cs
+  - UnifiedTo/Models/Requests/UpdateSigningDocumentResponse.cs
+  - UnifiedTo/Models/Requests/UpdateSigningSignatoryQueryParamFields.cs
+  - UnifiedTo/Models/Requests/UpdateSigningSignatoryRequest.cs
+  - UnifiedTo/Models/Requests/UpdateSigningSignatoryResponse.cs
   - UnifiedTo/Models/Requests/UpdateStorageFileQueryParamFields.cs
   - UnifiedTo/Models/Requests/UpdateStorageFileRequest.cs
   - UnifiedTo/Models/Requests/UpdateStorageFileResponse.cs
@@ -2837,6 +2886,8 @@ generatedFiles:
   - UnifiedTo/Scorecard.cs
   - UnifiedTo/Shipment.cs
   - UnifiedTo/Shipping.cs
+  - UnifiedTo/Signatory.cs
+  - UnifiedTo/Signing.cs
   - UnifiedTo/Space.cs
   - UnifiedTo/Storage.cs
   - UnifiedTo/Student.cs
@@ -2845,6 +2896,7 @@ generatedFiles:
   - UnifiedTo/Target.cs
   - UnifiedTo/Task.cs
   - UnifiedTo/Taxrate.cs
+  - UnifiedTo/Template.cs
   - UnifiedTo/Ticket.cs
   - UnifiedTo/Ticketing.cs
   - UnifiedTo/Timeoff.cs
@@ -3267,6 +3319,7 @@ generatedFiles:
   - docs/Models/Components/ListStudentId.md
   - docs/Models/Components/ListTaskId.md
   - docs/Models/Components/ListTeacherId.md
+  - docs/Models/Components/ListTemplateId.md
   - docs/Models/Components/ListTicketId.md
   - docs/Models/Components/ListType.md
   - docs/Models/Components/ListUpdatedGte.md
@@ -3327,6 +3380,7 @@ generatedFiles:
   - docs/Models/Components/NativeWebhookShipmentId.md
   - docs/Models/Components/NativeWebhookStudentId.md
   - docs/Models/Components/NativeWebhookTaskId.md
+  - docs/Models/Components/NativeWebhookTemplateId.md
   - docs/Models/Components/NativeWebhookType.md
   - docs/Models/Components/NonDeliveryOption.md
   - docs/Models/Components/ObjectType.md
@@ -3614,6 +3668,12 @@ generatedFiles:
   - docs/Models/Components/ShippingTrackingEvent.md
   - docs/Models/Components/ShippingTrackingEventStatus.md
   - docs/Models/Components/ShippingTrackingStatus.md
+  - docs/Models/Components/SigningDocument.md
+  - docs/Models/Components/SigningDocumentStatus.md
+  - docs/Models/Components/SigningSignatory.md
+  - docs/Models/Components/SigningSignatoryRole.md
+  - docs/Models/Components/SigningSignatoryStatus.md
+  - docs/Models/Components/SigningTemplate.md
   - docs/Models/Components/SizeUnit.md
   - docs/Models/Components/Status.md
   - docs/Models/Components/StorageFile.md
@@ -3721,6 +3781,7 @@ generatedFiles:
   - docs/Models/Components/VirtualWebhookStatus.md
   - docs/Models/Components/VirtualWebhookStudentId.md
   - docs/Models/Components/VirtualWebhookTaskId.md
+  - docs/Models/Components/VirtualWebhookTemplateId.md
   - docs/Models/Components/VirtualWebhookTicketId.md
   - docs/Models/Components/VirtualWebhookType.md
   - docs/Models/Components/VirtualWebhookUpdatedGte.md
@@ -3993,6 +4054,12 @@ generatedFiles:
   - docs/Models/Requests/CreateShippingShipmentQueryParamFields.md
   - docs/Models/Requests/CreateShippingShipmentRequest.md
   - docs/Models/Requests/CreateShippingShipmentResponse.md
+  - docs/Models/Requests/CreateSigningDocumentQueryParamFields.md
+  - docs/Models/Requests/CreateSigningDocumentRequest.md
+  - docs/Models/Requests/CreateSigningDocumentResponse.md
+  - docs/Models/Requests/CreateSigningSignatoryQueryParamFields.md
+  - docs/Models/Requests/CreateSigningSignatoryRequest.md
+  - docs/Models/Requests/CreateSigningSignatoryResponse.md
   - docs/Models/Requests/CreateStorageFileQueryParamFields.md
   - docs/Models/Requests/CreateStorageFileRequest.md
   - docs/Models/Requests/CreateStorageFileResponse.md
@@ -4327,6 +4394,15 @@ generatedFiles:
   - docs/Models/Requests/GetShippingTrackingQueryParamFields.md
   - docs/Models/Requests/GetShippingTrackingRequest.md
   - docs/Models/Requests/GetShippingTrackingResponse.md
+  - docs/Models/Requests/GetSigningDocumentQueryParamFields.md
+  - docs/Models/Requests/GetSigningDocumentRequest.md
+  - docs/Models/Requests/GetSigningDocumentResponse.md
+  - docs/Models/Requests/GetSigningSignatoryQueryParamFields.md
+  - docs/Models/Requests/GetSigningSignatoryRequest.md
+  - docs/Models/Requests/GetSigningSignatoryResponse.md
+  - docs/Models/Requests/GetSigningTemplateQueryParamFields.md
+  - docs/Models/Requests/GetSigningTemplateRequest.md
+  - docs/Models/Requests/GetSigningTemplateResponse.md
   - docs/Models/Requests/GetStorageFileQueryParamFields.md
   - docs/Models/Requests/GetStorageFileRequest.md
   - docs/Models/Requests/GetStorageFileResponse.md
@@ -4702,6 +4778,15 @@ generatedFiles:
   - docs/Models/Requests/ListShippingShipmentsQueryParamFields.md
   - docs/Models/Requests/ListShippingShipmentsRequest.md
   - docs/Models/Requests/ListShippingShipmentsResponse.md
+  - docs/Models/Requests/ListSigningDocumentsQueryParamFields.md
+  - docs/Models/Requests/ListSigningDocumentsRequest.md
+  - docs/Models/Requests/ListSigningDocumentsResponse.md
+  - docs/Models/Requests/ListSigningSignatoriesQueryParamFields.md
+  - docs/Models/Requests/ListSigningSignatoriesRequest.md
+  - docs/Models/Requests/ListSigningSignatoriesResponse.md
+  - docs/Models/Requests/ListSigningTemplatesQueryParamFields.md
+  - docs/Models/Requests/ListSigningTemplatesRequest.md
+  - docs/Models/Requests/ListSigningTemplatesResponse.md
   - docs/Models/Requests/ListStorageFilesQueryParamFields.md
   - docs/Models/Requests/ListStorageFilesRequest.md
   - docs/Models/Requests/ListStorageFilesResponse.md
@@ -5020,6 +5105,12 @@ generatedFiles:
   - docs/Models/Requests/PatchShippingShipmentQueryParamFields.md
   - docs/Models/Requests/PatchShippingShipmentRequest.md
   - docs/Models/Requests/PatchShippingShipmentResponse.md
+  - docs/Models/Requests/PatchSigningDocumentQueryParamFields.md
+  - docs/Models/Requests/PatchSigningDocumentRequest.md
+  - docs/Models/Requests/PatchSigningDocumentResponse.md
+  - docs/Models/Requests/PatchSigningSignatoryQueryParamFields.md
+  - docs/Models/Requests/PatchSigningSignatoryRequest.md
+  - docs/Models/Requests/PatchSigningSignatoryResponse.md
   - docs/Models/Requests/PatchStorageFileQueryParamFields.md
   - docs/Models/Requests/PatchStorageFileRequest.md
   - docs/Models/Requests/PatchStorageFileResponse.md
@@ -5234,6 +5325,10 @@ generatedFiles:
   - docs/Models/Requests/RemoveShippingLabelResponse.md
   - docs/Models/Requests/RemoveShippingShipmentRequest.md
   - docs/Models/Requests/RemoveShippingShipmentResponse.md
+  - docs/Models/Requests/RemoveSigningDocumentRequest.md
+  - docs/Models/Requests/RemoveSigningDocumentResponse.md
+  - docs/Models/Requests/RemoveSigningSignatoryRequest.md
+  - docs/Models/Requests/RemoveSigningSignatoryResponse.md
   - docs/Models/Requests/RemoveStorageFileRequest.md
   - docs/Models/Requests/RemoveStorageFileResponse.md
   - docs/Models/Requests/RemoveTaskCommentRequest.md
@@ -5523,6 +5618,12 @@ generatedFiles:
   - docs/Models/Requests/UpdateShippingShipmentQueryParamFields.md
   - docs/Models/Requests/UpdateShippingShipmentRequest.md
   - docs/Models/Requests/UpdateShippingShipmentResponse.md
+  - docs/Models/Requests/UpdateSigningDocumentQueryParamFields.md
+  - docs/Models/Requests/UpdateSigningDocumentRequest.md
+  - docs/Models/Requests/UpdateSigningDocumentResponse.md
+  - docs/Models/Requests/UpdateSigningSignatoryQueryParamFields.md
+  - docs/Models/Requests/UpdateSigningSignatoryRequest.md
+  - docs/Models/Requests/UpdateSigningSignatoryResponse.md
   - docs/Models/Requests/UpdateStorageFileQueryParamFields.md
   - docs/Models/Requests/UpdateStorageFileRequest.md
   - docs/Models/Requests/UpdateStorageFileResponse.md
@@ -5679,6 +5780,8 @@ generatedFiles:
   - docs/sdks/scorecard/README.md
   - docs/sdks/shipment/README.md
   - docs/sdks/shipping/README.md
+  - docs/sdks/signatory/README.md
+  - docs/sdks/signing/README.md
   - docs/sdks/space/README.md
   - docs/sdks/storage/README.md
   - docs/sdks/student/README.md
@@ -5687,6 +5790,7 @@ generatedFiles:
   - docs/sdks/target/README.md
   - docs/sdks/task/README.md
   - docs/sdks/taxrate/README.md
+  - docs/sdks/template/README.md
   - docs/sdks/ticket/README.md
   - docs/sdks/ticketing/README.md
   - docs/sdks/timeoff/README.md
@@ -11732,6 +11836,133 @@ examples:
       responses:
         "200":
           application/json: {}
+  createSigningDocument:
+    speakeasy-default-create-signing-document:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getSigningDocument:
+    speakeasy-default-get-signing-document:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listSigningDocuments:
+    speakeasy-default-list-signing-documents:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchSigningDocument:
+    speakeasy-default-patch-signing-document:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeSigningDocument:
+    speakeasy-default-remove-signing-document:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateSigningDocument:
+    speakeasy-default-update-signing-document:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  createSigningSignatory:
+    speakeasy-default-create-signing-signatory:
+      parameters:
+        path:
+          connection_id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  getSigningSignatory:
+    speakeasy-default-get-signing-signatory:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getSigningTemplate:
+    speakeasy-default-get-signing-template:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listSigningSignatories:
+    speakeasy-default-list-signing-signatories:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listSigningTemplates:
+    speakeasy-default-list-signing-templates:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  patchSigningSignatory:
+    speakeasy-default-patch-signing-signatory:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
+  removeSigningSignatory:
+    speakeasy-default-remove-signing-signatory:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+  updateSigningSignatory:
+    speakeasy-default-update-signing-signatory:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      requestBody:
+        application/json: {}
+      responses:
+        "200":
+          application/json: {}
 examplesVersion: 1.0.2
 generatedTests: {}
 persistentEdits:
@@ -11916,7 +12147,7 @@ trackedFiles:
     pristine_git_object: 4e19d072507ab445b870eb28255c4bac265114e9
   UnifiedTo/Document.cs:
     id: 74c5ba2aec9d
-    last_write_checksum: sha1:30b5e4a24be7a5c8af24b5fbc568f7e737f0844c
+    last_write_checksum: sha1:d6338323c0555a52f0f9cc8fd0e55cbbc9a15678
     pristine_git_object: fecf226eb095e61db2d45448fc4dfe741fecb7dc
   UnifiedTo/Embedding.cs:
     id: 5a43183766d3
@@ -13122,7 +13353,7 @@ trackedFiles:
     pristine_git_object: c713343e8622b8cfb7c52924b3765b26217d6385
   UnifiedTo/Models/Components/IntegrationSupport.cs:
     id: a60768677b8a
-    last_write_checksum: sha1:121ea4274c53603a260a79857e1ab7a4a58b9335
+    last_write_checksum: sha1:84fea229d45431d75a2ebf3a91da9236a84999ac
     pristine_git_object: df9a5cf369f1185b54a41e701ccea4848720d748
   UnifiedTo/Models/Components/IntervalUnit.cs:
     id: 8caa2a3c48ea
@@ -13438,6 +13669,8 @@ trackedFiles:
     id: d06826098721
     last_write_checksum: sha1:64a2d921dbcae8a128872b685c8fc431104c32e2
     pristine_git_object: de1b219da27791483d147ea82411d756f5e77962
+  UnifiedTo/Models/Components/ListTemplateId.cs:
+    last_write_checksum: sha1:c3f111fff2d0acec8f6db9d5dea8fa5d14e30dfc
   UnifiedTo/Models/Components/ListTicketId.cs:
     id: 52ffa25f6e94
     last_write_checksum: sha1:8de133ce1437971f64050bd98215476bacda485a
@@ -13624,13 +13857,15 @@ trackedFiles:
     id: 1169621c54d0
     last_write_checksum: sha1:d86f98419f5269edbd8458ec1d928d22960c4711
     pristine_git_object: bb0bd2481948dbadeefd52638d2c39371c2a8a8f
+  UnifiedTo/Models/Components/NativeWebhookTemplateId.cs:
+    last_write_checksum: sha1:cbeee529d1ec891cdd51980002545936734bbf64
   UnifiedTo/Models/Components/NativeWebhookType.cs:
     last_write_checksum: sha1:b60e4921f540db6f4ccce33325124c2933e69e13
   UnifiedTo/Models/Components/NonDeliveryOption.cs:
     last_write_checksum: sha1:2600fee70f1e697d78687bf8756486885a2bc240
   UnifiedTo/Models/Components/ObjectType.cs:
     id: 8e5be1040e8b
-    last_write_checksum: sha1:9fd28a0d99e0263a2db96c6badbe0380c8805a7b
+    last_write_checksum: sha1:23d455f3d3b1754ff3e15fc6d3869990041ad759
     pristine_git_object: 8aa887cf95b9ca7e4de4189a0994cf8d7de53ac6
   UnifiedTo/Models/Components/One.cs:
     id: d6fa3c7b6dc5
@@ -14036,11 +14271,11 @@ trackedFiles:
     pristine_git_object: 88da70331e889b5f4ce24f336098baf7d8952b05
   UnifiedTo/Models/Components/PropertyConnectionCategories.cs:
     id: b8b5cd39b135
-    last_write_checksum: sha1:eef80fb9a7ba9d6c4b4d2876ddca2739d9e71ec6
+    last_write_checksum: sha1:d96ab60ab14163fc6a9bb636e661b922f2b33f40
     pristine_git_object: 058a7265ff607fc57d02159cac6833325b133d8b
   UnifiedTo/Models/Components/PropertyConnectionPermissions.cs:
     id: f924575570ed
-    last_write_checksum: sha1:b2c1f08f5c802a66e1dfd1deb0541457a11a3023
+    last_write_checksum: sha1:3bbd3b4068f22d0f59ddc7f8ab7a76c4abae0f3a
     pristine_git_object: 1fbf256600c76cb7463c9b53c5891696d45c4cd6
   UnifiedTo/Models/Components/PropertyCrmCompanyAddress.cs:
     id: 9ecc38382b6c
@@ -14134,7 +14369,7 @@ trackedFiles:
     pristine_git_object: 62e65daeb08ea5a1c2d63b5bc9393543227c406e
   UnifiedTo/Models/Components/PropertyIntegrationCategories.cs:
     id: 773f9e10ec65
-    last_write_checksum: sha1:51d71b0bb930f0cf9aff7d07f5b27548272cb1ec
+    last_write_checksum: sha1:b35da4b43aef9f205f88aa9cc1bd854a3c27b5a8
     pristine_git_object: 63f48e67cb238e7be87b62a93d76db69a5a224ab
   UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEvents.cs:
     id: 6efe6043edc2
@@ -14458,6 +14693,18 @@ trackedFiles:
     last_write_checksum: sha1:8ff5c0596659dc25adc66777413afda16ac948a3
   UnifiedTo/Models/Components/ShippingTrackingStatus.cs:
     last_write_checksum: sha1:46c6eb4c9e9a72f3699cc80af659c0eab1d71f98
+  UnifiedTo/Models/Components/SigningDocument.cs:
+    last_write_checksum: sha1:848d7b1f1cd495cab7a3b0442a6b76e0e6430502
+  UnifiedTo/Models/Components/SigningDocumentStatus.cs:
+    last_write_checksum: sha1:e384e5322de212c899c23ec61b9fb7d60d0617bd
+  UnifiedTo/Models/Components/SigningSignatory.cs:
+    last_write_checksum: sha1:1eb227a582515a220f18419ade1b395b1416c7f8
+  UnifiedTo/Models/Components/SigningSignatoryRole.cs:
+    last_write_checksum: sha1:685719acaab06394bf2be09f29661147aa5cf7ba
+  UnifiedTo/Models/Components/SigningSignatoryStatus.cs:
+    last_write_checksum: sha1:39ad71e6c4741f0682b5e8fa7309110e85cc9b9d
+  UnifiedTo/Models/Components/SigningTemplate.cs:
+    last_write_checksum: sha1:ce69328a566d5aa9f82b3ede26cddc2ea5fa373b
   UnifiedTo/Models/Components/SizeUnit.cs:
     id: b4fd0e29518d
     last_write_checksum: sha1:0037f784cff7f902f079bdb40f448995eea90d77
@@ -14840,6 +15087,8 @@ trackedFiles:
     id: 85dfa74396cb
     last_write_checksum: sha1:d8c72ef2ddb619478199f281275ac8da9a6f5065
     pristine_git_object: 9ef6ce4c84f1d1e67d834539ab291b5d47bca6bd
+  UnifiedTo/Models/Components/VirtualWebhookTemplateId.cs:
+    last_write_checksum: sha1:59c05e0469b795ebaefeb37508a55e53676e0d90
   UnifiedTo/Models/Components/VirtualWebhookTicketId.cs:
     id: 09fb2c469fda
     last_write_checksum: sha1:c8f72cee143ee13fd5d08f1941a6ea251dcb1a10
@@ -14892,7 +15141,7 @@ trackedFiles:
     pristine_git_object: 4b5f65720dcfff3c14180ee4700fb055bb7b1df5
   UnifiedTo/Models/Requests/Categories.cs:
     id: be86035d2e24
-    last_write_checksum: sha1:b408294e5d71a35d3fba77cdd73cb0c988895214
+    last_write_checksum: sha1:a240c02a080f87a12d1bc02d701cdf6970af5325
     pristine_git_object: b6621b30c7df7ff10d2b08421fa44b47bc74a74f
   UnifiedTo/Models/Requests/CreateAccountingAccountRequest.cs:
     id: 952a759eb731
@@ -15692,6 +15941,18 @@ trackedFiles:
     last_write_checksum: sha1:bf7514a4b8ab1513e8f13fbfea5c8b0a2bafbab7
   UnifiedTo/Models/Requests/CreateShippingShipmentResponse.cs:
     last_write_checksum: sha1:aea59ec0bad68ded32a5ccd981fe1505d6a98f38
+  UnifiedTo/Models/Requests/CreateSigningDocumentQueryParamFields.cs:
+    last_write_checksum: sha1:773ea321fcffcaf97f0d29400b21eee099e38ee7
+  UnifiedTo/Models/Requests/CreateSigningDocumentRequest.cs:
+    last_write_checksum: sha1:8ad3e03334a3087f9c8bf7f2f93a7543bf533d5a
+  UnifiedTo/Models/Requests/CreateSigningDocumentResponse.cs:
+    last_write_checksum: sha1:17671bb5e048c377629c65182e4079a1ebf48bfb
+  UnifiedTo/Models/Requests/CreateSigningSignatoryQueryParamFields.cs:
+    last_write_checksum: sha1:3a82857c830b467f337d836bd8815fdd522333fe
+  UnifiedTo/Models/Requests/CreateSigningSignatoryRequest.cs:
+    last_write_checksum: sha1:b8f92f68afaca389fad48210d16ec70e4dcc61e2
+  UnifiedTo/Models/Requests/CreateSigningSignatoryResponse.cs:
+    last_write_checksum: sha1:2014476135b368df68fad23d546d48df8f3e7b02
   UnifiedTo/Models/Requests/CreateStorageFileQueryParamFields.cs:
     last_write_checksum: sha1:48920a6b164b23d8924ebb92aaef3c73ae7e1eb3
   UnifiedTo/Models/Requests/CreateStorageFileRequest.cs:
@@ -16728,6 +16989,24 @@ trackedFiles:
     last_write_checksum: sha1:840312281f52d5ca747d950a5cf12c13fbf9a63c
   UnifiedTo/Models/Requests/GetShippingTrackingResponse.cs:
     last_write_checksum: sha1:125e16b396611085646ef31550b54ef506f08af0
+  UnifiedTo/Models/Requests/GetSigningDocumentQueryParamFields.cs:
+    last_write_checksum: sha1:2728520391bdf637c2df5e2bcdc8c51f6fd73380
+  UnifiedTo/Models/Requests/GetSigningDocumentRequest.cs:
+    last_write_checksum: sha1:3f5018a5a52c4a4a8d1be09247a45ac48e690f44
+  UnifiedTo/Models/Requests/GetSigningDocumentResponse.cs:
+    last_write_checksum: sha1:9e2b20e6eabdd645074621d16104957a43e051eb
+  UnifiedTo/Models/Requests/GetSigningSignatoryQueryParamFields.cs:
+    last_write_checksum: sha1:a010fd07a1d9ae7753c6421f0754c91ec4844b41
+  UnifiedTo/Models/Requests/GetSigningSignatoryRequest.cs:
+    last_write_checksum: sha1:8f12b8751ac248cb8a02e21c1870a3ba3bdae6a4
+  UnifiedTo/Models/Requests/GetSigningSignatoryResponse.cs:
+    last_write_checksum: sha1:21b13372d7d1d8731afe0902df809efe54a42809
+  UnifiedTo/Models/Requests/GetSigningTemplateQueryParamFields.cs:
+    last_write_checksum: sha1:20aa771c1aacf1e63ad5d8f0d5b59f8e1117427e
+  UnifiedTo/Models/Requests/GetSigningTemplateRequest.cs:
+    last_write_checksum: sha1:532950f533ca0e4c6ee62b5654970fb54faba33e
+  UnifiedTo/Models/Requests/GetSigningTemplateResponse.cs:
+    last_write_checksum: sha1:5a01c51a23725ad942e346df60669edf4f6b75a3
   UnifiedTo/Models/Requests/GetStorageFileQueryParamFields.cs:
     last_write_checksum: sha1:97f0738c3b5af17492bc054c09a6550527b149f6
   UnifiedTo/Models/Requests/GetStorageFileRequest.cs:
@@ -17894,6 +18173,24 @@ trackedFiles:
     last_write_checksum: sha1:1c84615c8c099163fd7f9252a3fd38f035166f57
   UnifiedTo/Models/Requests/ListShippingShipmentsResponse.cs:
     last_write_checksum: sha1:8e0163c34303a48d413e456aaf70682ff54fc12e
+  UnifiedTo/Models/Requests/ListSigningDocumentsQueryParamFields.cs:
+    last_write_checksum: sha1:a8ddacdcd222d396bb6c27cd5b9dbf9a2bf16cd4
+  UnifiedTo/Models/Requests/ListSigningDocumentsRequest.cs:
+    last_write_checksum: sha1:32d713cfccde7474e7c56a85841b1458473084f6
+  UnifiedTo/Models/Requests/ListSigningDocumentsResponse.cs:
+    last_write_checksum: sha1:e2ae803a152f8b1e82e53bc515239c6f58ecae4d
+  UnifiedTo/Models/Requests/ListSigningSignatoriesQueryParamFields.cs:
+    last_write_checksum: sha1:e5c26096d47008c146be57e5e98770b58c599031
+  UnifiedTo/Models/Requests/ListSigningSignatoriesRequest.cs:
+    last_write_checksum: sha1:0ef15263a0c4eadd479f1e2144a09cdbc2e851b1
+  UnifiedTo/Models/Requests/ListSigningSignatoriesResponse.cs:
+    last_write_checksum: sha1:4288c2660055797ff27a7b708833705d41ca01d5
+  UnifiedTo/Models/Requests/ListSigningTemplatesQueryParamFields.cs:
+    last_write_checksum: sha1:17aef2466bbb004d0fa722e0ff518546957295a9
+  UnifiedTo/Models/Requests/ListSigningTemplatesRequest.cs:
+    last_write_checksum: sha1:c1d8d870510a0b5d3030980027eb4218d7084d1a
+  UnifiedTo/Models/Requests/ListSigningTemplatesResponse.cs:
+    last_write_checksum: sha1:58fa913a345f97d539bd73f42f0e7c2482f5c905
   UnifiedTo/Models/Requests/ListStorageFilesQueryParamFields.cs:
     last_write_checksum: sha1:1697b3dca40a8aa13f5d43e2053214d7e34d951e
   UnifiedTo/Models/Requests/ListStorageFilesRequest.cs:
@@ -18054,7 +18351,7 @@ trackedFiles:
     pristine_git_object: 795e76a8b3d6c246fef192426606a725f1e76d58
   UnifiedTo/Models/Requests/ListUnifiedIntegrationsQueryParamCategories.cs:
     id: f789cc95e60f
-    last_write_checksum: sha1:4c34d10802fae87b6a4f3f7e2159c7a322497263
+    last_write_checksum: sha1:51a2c4329d376180e64189155a85df0f3691c624
     pristine_git_object: 80e0f27451ba33ad952c8243a18bfcd49e8b45f3
   UnifiedTo/Models/Requests/ListUnifiedIntegrationsRequest.cs:
     id: 8127ad4e769f
@@ -18886,6 +19183,18 @@ trackedFiles:
     last_write_checksum: sha1:2e8c5859c1d62ee92d01c088a4682a11928b85dc
   UnifiedTo/Models/Requests/PatchShippingShipmentResponse.cs:
     last_write_checksum: sha1:a71381c089a9d5ae72f44c56b6c7f4268240a87b
+  UnifiedTo/Models/Requests/PatchSigningDocumentQueryParamFields.cs:
+    last_write_checksum: sha1:5499db7934b5a55b639378bf1006bc52ba69ec3f
+  UnifiedTo/Models/Requests/PatchSigningDocumentRequest.cs:
+    last_write_checksum: sha1:e295c720ee9cb07067c96a2594b66c0186a84910
+  UnifiedTo/Models/Requests/PatchSigningDocumentResponse.cs:
+    last_write_checksum: sha1:792957742117cb5198ed5384e54c323f1f749c5e
+  UnifiedTo/Models/Requests/PatchSigningSignatoryQueryParamFields.cs:
+    last_write_checksum: sha1:d2000d7f4f2c5eaebbb428d643e6c10560affa26
+  UnifiedTo/Models/Requests/PatchSigningSignatoryRequest.cs:
+    last_write_checksum: sha1:927179638df5d13a3b1b80eceeadc50c532d1b04
+  UnifiedTo/Models/Requests/PatchSigningSignatoryResponse.cs:
+    last_write_checksum: sha1:3219a338b3ced2bb30ec1992fb572b9c9e93a15f
   UnifiedTo/Models/Requests/PatchStorageFileQueryParamFields.cs:
     last_write_checksum: sha1:60cc41470b85c1d660ea84859afa7698408f4bca
   UnifiedTo/Models/Requests/PatchStorageFileRequest.cs:
@@ -19032,7 +19341,7 @@ trackedFiles:
     pristine_git_object: 298c4f905bc9430bde149187d0951d6b7b29a9a7
   UnifiedTo/Models/Requests/QueryParamCategories.cs:
     id: 13362280c963
-    last_write_checksum: sha1:fa2195ac7812a722028e36001df389528fa1b89a
+    last_write_checksum: sha1:dbe10eb4d549c3882230e57c50d994f2c57ea739
     pristine_git_object: f40660e8cfc6d15d8e2b0f6945444c33943b3abe
   UnifiedTo/Models/Requests/QueryParamFields.cs:
     last_write_checksum: sha1:41045a372502f036c8e53f1fac912130bc22cc19
@@ -19640,6 +19949,14 @@ trackedFiles:
     last_write_checksum: sha1:15ecd9497546e1340c71bf39baacb83bdb886c59
   UnifiedTo/Models/Requests/RemoveShippingShipmentResponse.cs:
     last_write_checksum: sha1:b596725dbc46a8912e98c550d10d789e0ff818e1
+  UnifiedTo/Models/Requests/RemoveSigningDocumentRequest.cs:
+    last_write_checksum: sha1:079301781efb66d4a5e3a10f39aa3b704d7e1a8c
+  UnifiedTo/Models/Requests/RemoveSigningDocumentResponse.cs:
+    last_write_checksum: sha1:ad72efd0e41ee730872df7fd820280ceb1944035
+  UnifiedTo/Models/Requests/RemoveSigningSignatoryRequest.cs:
+    last_write_checksum: sha1:07871d5dd85dd79528dc38540ebea330ba6c7645
+  UnifiedTo/Models/Requests/RemoveSigningSignatoryResponse.cs:
+    last_write_checksum: sha1:167ecd677406418cc7591d84e945f70f55528f46
   UnifiedTo/Models/Requests/RemoveStorageFileRequest.cs:
     id: 11dfd6bec07a
     last_write_checksum: sha1:cfc0b23bd370629fc4be230b541a914ad395df9e
@@ -20546,6 +20863,18 @@ trackedFiles:
     last_write_checksum: sha1:9a3d0ec07dc02d097fc7292882442eeb705083cb
   UnifiedTo/Models/Requests/UpdateShippingShipmentResponse.cs:
     last_write_checksum: sha1:ad639d3cc6a9beb2e72d348f83bca9b0adf1df9b
+  UnifiedTo/Models/Requests/UpdateSigningDocumentQueryParamFields.cs:
+    last_write_checksum: sha1:2501c0345c729a84eebcdc07760324292832e1f9
+  UnifiedTo/Models/Requests/UpdateSigningDocumentRequest.cs:
+    last_write_checksum: sha1:492267a00ea3643c19147fe69df0983fc229e4af
+  UnifiedTo/Models/Requests/UpdateSigningDocumentResponse.cs:
+    last_write_checksum: sha1:2d58f3d6a5a2206b611cfbe5662ca49c2d84c9ea
+  UnifiedTo/Models/Requests/UpdateSigningSignatoryQueryParamFields.cs:
+    last_write_checksum: sha1:79ac60bf2f78f0edacdc6e39c50b13e649390157
+  UnifiedTo/Models/Requests/UpdateSigningSignatoryRequest.cs:
+    last_write_checksum: sha1:28794c9030593650dc4d7e4dd54efc8d88d2ff65
+  UnifiedTo/Models/Requests/UpdateSigningSignatoryResponse.cs:
+    last_write_checksum: sha1:c3ef402ff1f30bd5eae51c41d1cc7801c8ba21c5
   UnifiedTo/Models/Requests/UpdateStorageFileQueryParamFields.cs:
     last_write_checksum: sha1:728d990562bcbe94a43ba161fad3093f3ae5fac7
   UnifiedTo/Models/Requests/UpdateStorageFileRequest.cs:
@@ -20812,6 +21141,10 @@ trackedFiles:
     last_write_checksum: sha1:a6147c99644338ca19766a32747816608606b170
   UnifiedTo/Shipping.cs:
     last_write_checksum: sha1:8584ebb117f35eb62a3688a784f342ff565ba6c7
+  UnifiedTo/Signatory.cs:
+    last_write_checksum: sha1:55d59f2825c7619d3cd34a763c769f93a8ecf591
+  UnifiedTo/Signing.cs:
+    last_write_checksum: sha1:1ce09825d1dd896a6364f3154525e931ff87f385
   UnifiedTo/Space.cs:
     id: af5ac14a51ce
     last_write_checksum: sha1:4c6b1fb87768a836bdbd17ff3c2d8db998b23fc4
@@ -20840,6 +21173,8 @@ trackedFiles:
     id: f72339d245f3
     last_write_checksum: sha1:21db6fe7c57131dfdeb8cb2c7c17a83f66d976a9
     pristine_git_object: 42ac87754338f96448897a6d3cdbfd20ebc18c68
+  UnifiedTo/Template.cs:
+    last_write_checksum: sha1:ed8cd4290ea0880918c7bcb7f7afc92030a71312
   UnifiedTo/Ticket.cs:
     id: f72ca674868c
     last_write_checksum: sha1:21e79cc96c89a452e4a2fb90a2bccdb9360760c8
@@ -20880,7 +21215,7 @@ trackedFiles:
     pristine_git_object: 883792bc149f1152a8331b8e409d591075c3a6bd
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
-    last_write_checksum: sha1:6ebb9623ca7f74b8b03f7bca4081d88f24cbc851
+    last_write_checksum: sha1:e009a7951e0c9a258a885c43839c1d46e93cca1c
     pristine_git_object: b2dbc023c5e4be2a5de721c2bbc9330db399f4bd
   UnifiedTo/User.cs:
     id: 603e44ffd153
@@ -22030,7 +22365,7 @@ trackedFiles:
     pristine_git_object: a1bf4d40b69786c43195fd92204558699e7dac2f
   docs/Models/Components/IntegrationSupport.md:
     id: 6410e8499735
-    last_write_checksum: sha1:b3d059c1aea4ab942c2f90ee1c909e171ed9135e
+    last_write_checksum: sha1:7931d2e96441ba88ccaff19a4392f7ea77b222f8
     pristine_git_object: d46883eaa7696d5c3e2ab66daacd0fa47d8c706d
   docs/Models/Components/IntervalUnit.md:
     id: 779660b22183
@@ -22346,6 +22681,8 @@ trackedFiles:
     id: a07133b40f03
     last_write_checksum: sha1:bbea494f00bb21af1e8934abdc14cafec625e0f6
     pristine_git_object: cd6f4de02a707f80510f7454b51e13dd23255104
+  docs/Models/Components/ListTemplateId.md:
+    last_write_checksum: sha1:b3cd74a3df17b4d3af1657b46623731374038b0c
   docs/Models/Components/ListTicketId.md:
     id: f9aca2918196
     last_write_checksum: sha1:d64e300178cb7bad5763266cf638a195d380ed12
@@ -22532,13 +22869,15 @@ trackedFiles:
     id: 9d3349eb7954
     last_write_checksum: sha1:7dc9e442efb51c3af14336a2621268d049f000f9
     pristine_git_object: 4b3743a7dec83d7530294aa27581f508d223cd29
+  docs/Models/Components/NativeWebhookTemplateId.md:
+    last_write_checksum: sha1:94b5a27c6831aeb31fcff9ac2d72531ed628aabc
   docs/Models/Components/NativeWebhookType.md:
     last_write_checksum: sha1:e8d842277720dce60f89cfef37ca617964ebb848
   docs/Models/Components/NonDeliveryOption.md:
     last_write_checksum: sha1:1cad6af034766f255939e42484237ba47aed987a
   docs/Models/Components/ObjectType.md:
     id: 70698fd5bb26
-    last_write_checksum: sha1:7743734786165802b98451e0a6c175b663aca400
+    last_write_checksum: sha1:e652ed03d4632803147ef4bd6d3c31a936aa26e3
     pristine_git_object: 91af6f273850d152ad35aa723ed82eb7c07b6cff
   docs/Models/Components/One.md:
     id: 37e74752e70f
@@ -22944,11 +23283,11 @@ trackedFiles:
     pristine_git_object: 77bd26706fb3da9b7b8724806838fdfa0adbd1e3
   docs/Models/Components/PropertyConnectionCategories.md:
     id: 6d04f43a81a7
-    last_write_checksum: sha1:77711807df13a6914c8adf320ac0e39c4b6f117f
+    last_write_checksum: sha1:f2b8425aa1d962ac4f4ca53835398beb10a3c02c
     pristine_git_object: 6b4bf574f578f75b9133779b9acde99497b64e46
   docs/Models/Components/PropertyConnectionPermissions.md:
     id: eb5eb79c93e6
-    last_write_checksum: sha1:11725219b03dd0205cd51c773a43494bc03ad337
+    last_write_checksum: sha1:6007be8966de202c89c58c425704f3e1dc4b2663
     pristine_git_object: 152432bd22d8101ccd205bc3481571ae0fb148e0
   docs/Models/Components/PropertyCrmCompanyAddress.md:
     id: 5836e935161d
@@ -23042,7 +23381,7 @@ trackedFiles:
     pristine_git_object: 4da39ee270712de7ad8aa4f594c3ee39f4404634
   docs/Models/Components/PropertyIntegrationCategories.md:
     id: b3d3de106dce
-    last_write_checksum: sha1:c6952ab53dd93cd5b30bb05751235d10889b5691
+    last_write_checksum: sha1:1260995bde3f4e26c73e52f56f380842069ebbb6
     pristine_git_object: e2dfdcbbc86b5edebf3e7ad0033c8e86441387ab
   docs/Models/Components/PropertyIntegrationSupportWebhookEvents.md:
     id: 3bd0e3575268
@@ -23366,6 +23705,18 @@ trackedFiles:
     last_write_checksum: sha1:b5fd666e7e922b59df499734abfa99d485d96ab1
   docs/Models/Components/ShippingTrackingStatus.md:
     last_write_checksum: sha1:afea967d40e9ebcfff77fa169cd5b538a29720f5
+  docs/Models/Components/SigningDocument.md:
+    last_write_checksum: sha1:f28b5a6b1e22d022779dc99565aeeafa8067a3bb
+  docs/Models/Components/SigningDocumentStatus.md:
+    last_write_checksum: sha1:d808eff2ff71b5eb1c873f21fe19de6fdddc66e7
+  docs/Models/Components/SigningSignatory.md:
+    last_write_checksum: sha1:6bcf9da20b6f32d19ff3555c1ac15ea427700c60
+  docs/Models/Components/SigningSignatoryRole.md:
+    last_write_checksum: sha1:6fc8bf3cb8578df8baaeef4c136388b53d40ec2e
+  docs/Models/Components/SigningSignatoryStatus.md:
+    last_write_checksum: sha1:8bf454f770e70c1f734adbbca5d22bec9b5b6079
+  docs/Models/Components/SigningTemplate.md:
+    last_write_checksum: sha1:7c91aa82a8c3aa30ef38db05ec85b0b08d212876
   docs/Models/Components/SizeUnit.md:
     id: e7f15e9f1f20
     last_write_checksum: sha1:85b7b233e7def3c69a6cd179ed68e118645856ef
@@ -23748,6 +24099,8 @@ trackedFiles:
     id: 1e3a1b228e84
     last_write_checksum: sha1:eaf3489adf61e7c68d5ace57eccf6a6fbb4c99b9
     pristine_git_object: d53f947e3e636c90523262285c6f8451f2f4bd9a
+  docs/Models/Components/VirtualWebhookTemplateId.md:
+    last_write_checksum: sha1:bb1b2da047b29f0a47ab71360a8acfceb98fe271
   docs/Models/Components/VirtualWebhookTicketId.md:
     id: debf462261ce
     last_write_checksum: sha1:c08c9066db884c14fcd167e4c81c56918c2335da
@@ -23788,7 +24141,7 @@ trackedFiles:
     last_write_checksum: sha1:150a79cf72a0b5fca839db9ced258e9f8d3971bc
   docs/Models/Requests/Categories.md:
     id: 88c9c88a8ad5
-    last_write_checksum: sha1:5ccfc9e25790dae78c5e377a9ad350cc72fb613c
+    last_write_checksum: sha1:12cb82d0e2d721cc52e87373d7f9e7f607c32b01
     pristine_git_object: c1970f36dd8aca7c5fb19cb5f0ff95c163dac8b3
   docs/Models/Requests/CreateAccountingAccountRequest.md:
     id: 467a8e78b7f5
@@ -24588,6 +24941,18 @@ trackedFiles:
     last_write_checksum: sha1:7a1b381663685487304c3ded4bb597bdf5d08105
   docs/Models/Requests/CreateShippingShipmentResponse.md:
     last_write_checksum: sha1:b2bf71be64c13b6e36b32bd3c5dbb9594ef648e2
+  docs/Models/Requests/CreateSigningDocumentQueryParamFields.md:
+    last_write_checksum: sha1:a0d95ec10d2f6a4ab40aef0609085debb6c69d88
+  docs/Models/Requests/CreateSigningDocumentRequest.md:
+    last_write_checksum: sha1:f57258d12cfbe2a22e718f3f8f845b571579825e
+  docs/Models/Requests/CreateSigningDocumentResponse.md:
+    last_write_checksum: sha1:68237f2d26a34402f8483ccb0a5f3b2f47a8505a
+  docs/Models/Requests/CreateSigningSignatoryQueryParamFields.md:
+    last_write_checksum: sha1:644e49abc0396c71456ad9a316d63a4281e0f2e1
+  docs/Models/Requests/CreateSigningSignatoryRequest.md:
+    last_write_checksum: sha1:d116bf43045512bbae8f28712712b3ff59ad9662
+  docs/Models/Requests/CreateSigningSignatoryResponse.md:
+    last_write_checksum: sha1:5048291e91f0d47f0832960c153e8a904569b88d
   docs/Models/Requests/CreateStorageFileQueryParamFields.md:
     last_write_checksum: sha1:dcced9d823d03817ddc324bcaaf88747ec30f3a8
   docs/Models/Requests/CreateStorageFileRequest.md:
@@ -25624,6 +25989,24 @@ trackedFiles:
     last_write_checksum: sha1:c871443de564662961b438aa6e1ad1e6254d640e
   docs/Models/Requests/GetShippingTrackingResponse.md:
     last_write_checksum: sha1:ed1bb8009a8047378f1122dd77fca74932cb42eb
+  docs/Models/Requests/GetSigningDocumentQueryParamFields.md:
+    last_write_checksum: sha1:115dde9dfae27e3e6f453e6a2b165e92a59ab820
+  docs/Models/Requests/GetSigningDocumentRequest.md:
+    last_write_checksum: sha1:0139aba34024019b8c11c54413b1d1f9ad7cedb4
+  docs/Models/Requests/GetSigningDocumentResponse.md:
+    last_write_checksum: sha1:5c99a2235f02d57078d41800c9fef87132f34408
+  docs/Models/Requests/GetSigningSignatoryQueryParamFields.md:
+    last_write_checksum: sha1:38df8f50cc461e40e6c4c8b24f42ed89f7cca9fe
+  docs/Models/Requests/GetSigningSignatoryRequest.md:
+    last_write_checksum: sha1:038acdeeb19b97f2b20d3d8543584733e90fcee6
+  docs/Models/Requests/GetSigningSignatoryResponse.md:
+    last_write_checksum: sha1:2ec4d0f426c72ff271bd0b194a2015f981a81b86
+  docs/Models/Requests/GetSigningTemplateQueryParamFields.md:
+    last_write_checksum: sha1:a7e59c004336a0e4773930e52bc8406b239efa99
+  docs/Models/Requests/GetSigningTemplateRequest.md:
+    last_write_checksum: sha1:604609a2502ea541e443dd02a4f292f74e8dff96
+  docs/Models/Requests/GetSigningTemplateResponse.md:
+    last_write_checksum: sha1:716e602c7a2dcc6f6d52f9bb5e59aed8c221496b
   docs/Models/Requests/GetStorageFileQueryParamFields.md:
     last_write_checksum: sha1:30e039ae2f1fd33fc33c296255e248dd79c936fc
   docs/Models/Requests/GetStorageFileRequest.md:
@@ -26790,6 +27173,24 @@ trackedFiles:
     last_write_checksum: sha1:58d2b506c8e65bff71646b6d5a478ab4d7625b84
   docs/Models/Requests/ListShippingShipmentsResponse.md:
     last_write_checksum: sha1:2c3f1459850068bddd9ec7a32a5fa610177bc930
+  docs/Models/Requests/ListSigningDocumentsQueryParamFields.md:
+    last_write_checksum: sha1:049272494ab5fbc054bb725a25080610be9df85e
+  docs/Models/Requests/ListSigningDocumentsRequest.md:
+    last_write_checksum: sha1:2025727c427e1709ab8a17487ff845df5d39514a
+  docs/Models/Requests/ListSigningDocumentsResponse.md:
+    last_write_checksum: sha1:1823a7f38e3bd2b5a216db647cfbddc4d89c031f
+  docs/Models/Requests/ListSigningSignatoriesQueryParamFields.md:
+    last_write_checksum: sha1:c9b8fcdd2b89513ffc9bf3503d7f16ea8a88e6f9
+  docs/Models/Requests/ListSigningSignatoriesRequest.md:
+    last_write_checksum: sha1:b81a198dee7a629bfd1e31722a0644cd410ea16f
+  docs/Models/Requests/ListSigningSignatoriesResponse.md:
+    last_write_checksum: sha1:503b8f11a26972c1ad7862c0f03e2aca712a470f
+  docs/Models/Requests/ListSigningTemplatesQueryParamFields.md:
+    last_write_checksum: sha1:3145f526141d11446a37021f2035d8538376bff8
+  docs/Models/Requests/ListSigningTemplatesRequest.md:
+    last_write_checksum: sha1:cab32bc3a180b29cbaaffff461c7e1d0c655d2e2
+  docs/Models/Requests/ListSigningTemplatesResponse.md:
+    last_write_checksum: sha1:15f73955730db47534c69123cc2fed217531f04c
   docs/Models/Requests/ListStorageFilesQueryParamFields.md:
     last_write_checksum: sha1:04f2f77d7a177c9c9fc2fdb56fac6697f88e70a0
   docs/Models/Requests/ListStorageFilesRequest.md:
@@ -26950,7 +27351,7 @@ trackedFiles:
     pristine_git_object: a49fb8ffd762d1e1e74dd8d419afc979f54adbed
   docs/Models/Requests/ListUnifiedIntegrationsQueryParamCategories.md:
     id: 8f5711d6bd9e
-    last_write_checksum: sha1:feab2e5d4eb4a72db81567718e231a400b94f0f8
+    last_write_checksum: sha1:9fc41b3cc7844013dad2479b1e1518f7df4abaaa
     pristine_git_object: 8963ca701377acc821b2dd816885a8b4d9f3c124
   docs/Models/Requests/ListUnifiedIntegrationsRequest.md:
     id: 536e38e42533
@@ -27782,6 +28183,18 @@ trackedFiles:
     last_write_checksum: sha1:3a0f9879cab6e158e8e27ddbbdd75a480f6e66db
   docs/Models/Requests/PatchShippingShipmentResponse.md:
     last_write_checksum: sha1:845206ab651dd597bba35ab5da49bdff8c4ac826
+  docs/Models/Requests/PatchSigningDocumentQueryParamFields.md:
+    last_write_checksum: sha1:3c042f07886700adf3e4157e0ae58c8831ca85c8
+  docs/Models/Requests/PatchSigningDocumentRequest.md:
+    last_write_checksum: sha1:7fe403e8b62c44a029aeb222f758223575d0052f
+  docs/Models/Requests/PatchSigningDocumentResponse.md:
+    last_write_checksum: sha1:f1d75534215cf9e8ac8e71782b462616ae66f9c0
+  docs/Models/Requests/PatchSigningSignatoryQueryParamFields.md:
+    last_write_checksum: sha1:518378bed42a0b32c925af4d2afb5ae5e9ef8a0e
+  docs/Models/Requests/PatchSigningSignatoryRequest.md:
+    last_write_checksum: sha1:17769aaa0bfbf886f0639ac33943085b00569c70
+  docs/Models/Requests/PatchSigningSignatoryResponse.md:
+    last_write_checksum: sha1:8fc44ea51cefa0c2821bcebe201331ab4aea64e2
   docs/Models/Requests/PatchStorageFileQueryParamFields.md:
     last_write_checksum: sha1:47ecaa68f22ba0d04834ee6b806576e66947a805
   docs/Models/Requests/PatchStorageFileRequest.md:
@@ -27928,7 +28341,7 @@ trackedFiles:
     pristine_git_object: f24b2442445ef8c41077a0977ee707f104f6d8de
   docs/Models/Requests/QueryParamCategories.md:
     id: 0f8a6c57172d
-    last_write_checksum: sha1:777bc0d4802a624ee22a8cc1b5c38b7a805ae89e
+    last_write_checksum: sha1:15b704f7bac2e4cf8264fe32e15e06f87e712738
     pristine_git_object: 4671032408fc6ee6910e256aaaa2fc56cdeb99dc
   docs/Models/Requests/QueryParamFields.md:
     last_write_checksum: sha1:63c1321d86496342f84b6dc5b502944348f0fa37
@@ -28536,6 +28949,14 @@ trackedFiles:
     last_write_checksum: sha1:28b71d82b647747fe3e298620a7f6213fe3248e2
   docs/Models/Requests/RemoveShippingShipmentResponse.md:
     last_write_checksum: sha1:d4160d869c092f676aa455bead1784ffb0480f44
+  docs/Models/Requests/RemoveSigningDocumentRequest.md:
+    last_write_checksum: sha1:7a3ee6b27808d855b23642990fe87e506c841329
+  docs/Models/Requests/RemoveSigningDocumentResponse.md:
+    last_write_checksum: sha1:e878496f07fb6af868b541e99ea5b3a6c33da70c
+  docs/Models/Requests/RemoveSigningSignatoryRequest.md:
+    last_write_checksum: sha1:97fe9851dd54d366384d701e9c8d21de40839885
+  docs/Models/Requests/RemoveSigningSignatoryResponse.md:
+    last_write_checksum: sha1:28ba990b91393ef2fa04b0886163c6041dbf4185
   docs/Models/Requests/RemoveStorageFileRequest.md:
     id: de5ed63f3388
     last_write_checksum: sha1:da21ef884c63e7a3b9e731f58f5050769ca882c6
@@ -29442,6 +29863,18 @@ trackedFiles:
     last_write_checksum: sha1:9457c552af2d273a613e29d25e216768dc109994
   docs/Models/Requests/UpdateShippingShipmentResponse.md:
     last_write_checksum: sha1:30db3efa2d457819b63859258b3ac5b35bb76bb3
+  docs/Models/Requests/UpdateSigningDocumentQueryParamFields.md:
+    last_write_checksum: sha1:162955d465073252e9e00b04b943896374947a8e
+  docs/Models/Requests/UpdateSigningDocumentRequest.md:
+    last_write_checksum: sha1:b09459457f8e003ef82fee6ccadfeb53dcc42418
+  docs/Models/Requests/UpdateSigningDocumentResponse.md:
+    last_write_checksum: sha1:1d178eb9d8266a5898cd0293f0947b143c44da31
+  docs/Models/Requests/UpdateSigningSignatoryQueryParamFields.md:
+    last_write_checksum: sha1:d343a4a4dd77ef94d6cb5c4144b1c1e99a3d0bc9
+  docs/Models/Requests/UpdateSigningSignatoryRequest.md:
+    last_write_checksum: sha1:ce631f7b735a2ba64ca26fddb616e5bcfd0b182f
+  docs/Models/Requests/UpdateSigningSignatoryResponse.md:
+    last_write_checksum: sha1:11fb4d8c020a7fb40a8d0bec65abbf11794ff81f
   docs/Models/Requests/UpdateStorageFileQueryParamFields.md:
     last_write_checksum: sha1:33f73415a16306864cc09e4509fb3fdc431a9cdf
   docs/Models/Requests/UpdateStorageFileRequest.md:
@@ -29746,7 +30179,7 @@ trackedFiles:
     pristine_git_object: d5cbe2e0d48f5bf31fa56782d2a6a5f7db3f1e32
   docs/sdks/document/README.md:
     id: 6a8c24b11248
-    last_write_checksum: sha1:ecae312f54606057aa8de0136929270cd049b4d2
+    last_write_checksum: sha1:e1ed40548a251de9e0cd78f2be479a8e4addf9a5
     pristine_git_object: 162147af4873e1a3eee41eef70e26edcffbaf2c4
   docs/sdks/embedding/README.md:
     id: 754ecfe69fc2
@@ -30004,6 +30437,10 @@ trackedFiles:
     last_write_checksum: sha1:01e020a1c02f571eba6c94a651d4dc39aba7ef1e
   docs/sdks/shipping/README.md:
     last_write_checksum: sha1:d352f47917e9bb6b14c8e1e49ea7e3d400cd4860
+  docs/sdks/signatory/README.md:
+    last_write_checksum: sha1:7eb79045201fe1cf4414e658e815ef3c604bf2d7
+  docs/sdks/signing/README.md:
+    last_write_checksum: sha1:2158253c5f00084160e3f39c8ea1da52c0a439f8
   docs/sdks/space/README.md:
     id: b3ce86241634
     last_write_checksum: sha1:c2c52720b00908ade25460e2dbca75eaed91c783
@@ -30032,6 +30469,8 @@ trackedFiles:
     id: 626e6511cf80
     last_write_checksum: sha1:899a305983cd92d62ffe41bbc6dd6295db94f8ee
     pristine_git_object: 1ed7c978d8ae46bc4f19f3ed1411f54a4343e7a1
+  docs/sdks/template/README.md:
+    last_write_checksum: sha1:ac9924df266060692c2658db0f5a86e1bd6bce3f
   docs/sdks/ticket/README.md:
     id: df2d0dadc215
     last_write_checksum: sha1:2b828e8493863d9ecd2b242ebf557fd87c6d22b0

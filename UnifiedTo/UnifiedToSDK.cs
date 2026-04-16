@@ -140,6 +140,9 @@ namespace UnifiedTo
         public IRate Rate { get; }
         public IShipment Shipment { get; }
         public ITracking Tracking { get; }
+        public ISigning Signing { get; }
+        public ISignatory Signatory { get; }
+        public ITemplate Template { get; }
         public IStorage Storage { get; }
         public IFile File { get; }
         public ITask Task { get; }
@@ -175,7 +178,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.60";
+        private const string _sdkVersion = "0.130.61";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -291,6 +294,9 @@ namespace UnifiedTo
         public IRate Rate { get; private set; }
         public IShipment Shipment { get; private set; }
         public ITracking Tracking { get; private set; }
+        public ISigning Signing { get; private set; }
+        public ISignatory Signatory { get; private set; }
+        public ITemplate Template { get; private set; }
         public IStorage Storage { get; private set; }
         public IFile File { get; private set; }
         public ITask Task { get; private set; }
@@ -544,6 +550,12 @@ namespace UnifiedTo
             Shipment = new Shipment(SDKConfiguration);
 
             Tracking = new Tracking(SDKConfiguration);
+
+            Signing = new Signing(SDKConfiguration);
+
+            Signatory = new Signatory(SDKConfiguration);
+
+            Template = new Template(SDKConfiguration);
 
             Storage = new Storage(SDKConfiguration);
 
@@ -857,6 +869,12 @@ namespace UnifiedTo
             Shipment = new Shipment(SDKConfiguration);
 
             Tracking = new Tracking(SDKConfiguration);
+
+            Signing = new Signing(SDKConfiguration);
+
+            Signatory = new Signatory(SDKConfiguration);
+
+            Template = new Template(SDKConfiguration);
 
             Storage = new Storage(SDKConfiguration);
 
