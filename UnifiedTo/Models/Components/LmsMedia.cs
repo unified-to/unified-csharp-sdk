@@ -10,6 +10,7 @@
 namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
@@ -22,6 +23,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        [JsonProperty("languages")]
+        public List<string>? Languages { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -32,6 +36,6 @@ namespace UnifiedTo.Models.Components
         public LmsMediaType? Type { get; set; }
 
         [JsonProperty("url")]
-        public string Url { get; set; } = default!;
+        public string? Url { get; set; }
     }
 }

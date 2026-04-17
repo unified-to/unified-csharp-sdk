@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 58164d1126b2fb763cc3eb594b45f20d
+  docChecksum: efc57137c4f57a4f70fa46f0aef3548d
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.61
-  configChecksum: da0f0fc94ffaace28d5ff093c5571486
+  releaseVersion: 0.130.62
+  configChecksum: 89fdf3bc42db85aa47150c033e769122
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -13705,7 +13705,7 @@ trackedFiles:
     last_write_checksum: sha1:ef2a21e3847f0db90c70110e91fb3d47e4625e92
   UnifiedTo/Models/Components/LmsCourse.cs:
     id: ccf60a813ba6
-    last_write_checksum: sha1:0c423ed685cff14d1e83136d25abd1ed97e5b863
+    last_write_checksum: sha1:fc5e5d227227acd4b5652bbf5ecb13e4a39ee6ee
     pristine_git_object: 96d8b58e54c5ded4fd5f6d32b8323fa88a6a73c2
   UnifiedTo/Models/Components/LmsEmail.cs:
     id: 22283db33697
@@ -13717,7 +13717,7 @@ trackedFiles:
     pristine_git_object: 48fd3ddc14023e0b977379090859be4b05495448
   UnifiedTo/Models/Components/LmsMedia.cs:
     id: 074a284607ac
-    last_write_checksum: sha1:cb89a070096c3e67aec3739b664ad8424a95b083
+    last_write_checksum: sha1:fc2ffe193e4c6baa501298d06ccbfdfb057700e6
     pristine_git_object: eae367567bbbd522b1181e09fc783d700ba12ae6
   UnifiedTo/Models/Components/LmsMediaType.cs:
     id: 6e0e0319ae89
@@ -14541,7 +14541,7 @@ trackedFiles:
     last_write_checksum: sha1:065557a6c6bad25f06ab0f052baaa5341c858a93
   UnifiedTo/Models/Components/Role.cs:
     id: 98877f5f40cf
-    last_write_checksum: sha1:374c34fcfc4793108b7dfc19c9595ac7944cce40
+    last_write_checksum: sha1:17cee5549b37585a4e3444ada56d9288ba9e4986
     pristine_git_object: bb89c9613463911a2e0e970c0106df33fd56c45b
   UnifiedTo/Models/Components/Saml.cs:
     id: 31e8c8127144
@@ -14694,7 +14694,7 @@ trackedFiles:
   UnifiedTo/Models/Components/ShippingTrackingStatus.cs:
     last_write_checksum: sha1:46c6eb4c9e9a72f3699cc80af659c0eab1d71f98
   UnifiedTo/Models/Components/SigningDocument.cs:
-    last_write_checksum: sha1:848d7b1f1cd495cab7a3b0442a6b76e0e6430502
+    last_write_checksum: sha1:abe5a9721b7f522e6bbb8e580f13ea5b449e6d92
   UnifiedTo/Models/Components/SigningDocumentStatus.cs:
     last_write_checksum: sha1:e384e5322de212c899c23ec61b9fb7d60d0617bd
   UnifiedTo/Models/Components/SigningSignatory.cs:
@@ -15736,7 +15736,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/CreateLmsContentResponse.cs:
     last_write_checksum: sha1:0e4e8e01bac77adc9eec968140b07c8c39fd4308
   UnifiedTo/Models/Requests/CreateLmsCourseQueryParamFields.cs:
-    last_write_checksum: sha1:7d69e0068d3e955fd2e8a4a4e14754f8322116b0
+    last_write_checksum: sha1:fbc09179bd151d313a58d48a657295fe010ca551
   UnifiedTo/Models/Requests/CreateLmsCourseRequest.cs:
     id: 8bcfb6df8ece
     last_write_checksum: sha1:785e1bde1a64e8014a2a1dd6890de0e3cc1b3249
@@ -15942,7 +15942,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/CreateShippingShipmentResponse.cs:
     last_write_checksum: sha1:aea59ec0bad68ded32a5ccd981fe1505d6a98f38
   UnifiedTo/Models/Requests/CreateSigningDocumentQueryParamFields.cs:
-    last_write_checksum: sha1:773ea321fcffcaf97f0d29400b21eee099e38ee7
+    last_write_checksum: sha1:617d9e7682280661ba060f6be690e7109e31ad41
   UnifiedTo/Models/Requests/CreateSigningDocumentRequest.cs:
     last_write_checksum: sha1:8ad3e03334a3087f9c8bf7f2f93a7543bf533d5a
   UnifiedTo/Models/Requests/CreateSigningDocumentResponse.cs:
@@ -16764,7 +16764,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/GetLmsContentResponse.cs:
     last_write_checksum: sha1:7e642e4e52f20bc063bae03127d78a0b2a2eb75c
   UnifiedTo/Models/Requests/GetLmsCourseQueryParamFields.cs:
-    last_write_checksum: sha1:9f7906f63ebb5c10927f6e34029d6b95dbd7eecc
+    last_write_checksum: sha1:83427a92a0f563cceaea63a886dfdcfc23183316
   UnifiedTo/Models/Requests/GetLmsCourseRequest.cs:
     id: 4b69a15fe28f
     last_write_checksum: sha1:132478a4b27e2c4e6b7ac3f73c76172c4c30ed18
@@ -16990,7 +16990,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/GetShippingTrackingResponse.cs:
     last_write_checksum: sha1:125e16b396611085646ef31550b54ef506f08af0
   UnifiedTo/Models/Requests/GetSigningDocumentQueryParamFields.cs:
-    last_write_checksum: sha1:2728520391bdf637c2df5e2bcdc8c51f6fd73380
+    last_write_checksum: sha1:84894f28e29883ebd16735f5ee4fec03b1ad1bbe
   UnifiedTo/Models/Requests/GetSigningDocumentRequest.cs:
     last_write_checksum: sha1:3f5018a5a52c4a4a8d1be09247a45ac48e690f44
   UnifiedTo/Models/Requests/GetSigningDocumentResponse.cs:
@@ -17940,7 +17940,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListLmsContentsResponse.cs:
     last_write_checksum: sha1:e5d51c979181126f59d12f41861b9cdbb0c3f0ff
   UnifiedTo/Models/Requests/ListLmsCoursesQueryParamFields.cs:
-    last_write_checksum: sha1:2eaea51f488892a7be69dadac5f12ec8066f0f55
+    last_write_checksum: sha1:3bc3b8a4195f100910868d2e3add4dd706d60ff2
   UnifiedTo/Models/Requests/ListLmsCoursesRequest.cs:
     id: 19fe0c62e5d1
     last_write_checksum: sha1:347a2418f4b6af92c549646f2ba266b976c8f539
@@ -18174,7 +18174,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListShippingShipmentsResponse.cs:
     last_write_checksum: sha1:8e0163c34303a48d413e456aaf70682ff54fc12e
   UnifiedTo/Models/Requests/ListSigningDocumentsQueryParamFields.cs:
-    last_write_checksum: sha1:a8ddacdcd222d396bb6c27cd5b9dbf9a2bf16cd4
+    last_write_checksum: sha1:2b0de143db5b8aee6edc5c4b8ec53a52b88df959
   UnifiedTo/Models/Requests/ListSigningDocumentsRequest.cs:
     last_write_checksum: sha1:32d713cfccde7474e7c56a85841b1458473084f6
   UnifiedTo/Models/Requests/ListSigningDocumentsResponse.cs:
@@ -18978,7 +18978,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/PatchLmsContentResponse.cs:
     last_write_checksum: sha1:36a16fca320912434b7f65aec39b180226efddab
   UnifiedTo/Models/Requests/PatchLmsCourseQueryParamFields.cs:
-    last_write_checksum: sha1:31f6e5a2455f3369eaa2a2b11fa24da97724c277
+    last_write_checksum: sha1:53f6f2af691048cdf36d35b4d2942cd2e99bcf5c
   UnifiedTo/Models/Requests/PatchLmsCourseRequest.cs:
     id: 2a7285da06c5
     last_write_checksum: sha1:e3438536e3c246792d943fb6e29345e7299db049
@@ -19184,7 +19184,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/PatchShippingShipmentResponse.cs:
     last_write_checksum: sha1:a71381c089a9d5ae72f44c56b6c7f4268240a87b
   UnifiedTo/Models/Requests/PatchSigningDocumentQueryParamFields.cs:
-    last_write_checksum: sha1:5499db7934b5a55b639378bf1006bc52ba69ec3f
+    last_write_checksum: sha1:78bb359b86a8164d5b526c36be69ef923f8656dc
   UnifiedTo/Models/Requests/PatchSigningDocumentRequest.cs:
     last_write_checksum: sha1:e295c720ee9cb07067c96a2594b66c0186a84910
   UnifiedTo/Models/Requests/PatchSigningDocumentResponse.cs:
@@ -20658,7 +20658,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/UpdateLmsContentResponse.cs:
     last_write_checksum: sha1:13b5ffb3a9615e5c9c4293d50aba4756ec073814
   UnifiedTo/Models/Requests/UpdateLmsCourseQueryParamFields.cs:
-    last_write_checksum: sha1:0c2f00ad3e518a2aa46fe8f2015f1151a1cc3ce1
+    last_write_checksum: sha1:2a9377686791930e309c47a1d72be027553316b6
   UnifiedTo/Models/Requests/UpdateLmsCourseRequest.cs:
     id: aa0bda54002b
     last_write_checksum: sha1:0129a5e1d2da489d5026f1197d5641c4521a139d
@@ -20864,7 +20864,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/UpdateShippingShipmentResponse.cs:
     last_write_checksum: sha1:ad639d3cc6a9beb2e72d348f83bca9b0adf1df9b
   UnifiedTo/Models/Requests/UpdateSigningDocumentQueryParamFields.cs:
-    last_write_checksum: sha1:2501c0345c729a84eebcdc07760324292832e1f9
+    last_write_checksum: sha1:9561783efbe41f479e50b69feb0b8ba24f4fa81d
   UnifiedTo/Models/Requests/UpdateSigningDocumentRequest.cs:
     last_write_checksum: sha1:492267a00ea3643c19147fe69df0983fc229e4af
   UnifiedTo/Models/Requests/UpdateSigningDocumentResponse.cs:
@@ -21119,7 +21119,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:a409c5ca944c43742dd1115b8d9527fda0f60888
+    last_write_checksum: sha1:48496223d2fe3371fbd9ffa00e6a5ba2c26a2764
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -21231,7 +21231,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:53dfded13364f06845e72b0ee8029224c8e7d666
+    last_write_checksum: sha1:33f9f8dbc74ccc74618bd84dd55e88a3f7754562
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -22717,7 +22717,7 @@ trackedFiles:
     last_write_checksum: sha1:27400eb4bb7f2f74ecd3e9696fd3ad76ba28c0d7
   docs/Models/Components/LmsCourse.md:
     id: 7ed108a9deb1
-    last_write_checksum: sha1:0ab8c42cae3650637b07336dec0ca2ad415faca7
+    last_write_checksum: sha1:c5575ae603ffab42749229cbddff7af3d290834a
     pristine_git_object: c3e29fb471ebd9abb088604a766b83a47cacd881
   docs/Models/Components/LmsEmail.md:
     id: 8909f4be9ca8
@@ -22729,7 +22729,7 @@ trackedFiles:
     pristine_git_object: 6889490399dae38c0be024db8865cf2608b3a1f2
   docs/Models/Components/LmsMedia.md:
     id: c9edbd36d973
-    last_write_checksum: sha1:2ce3b6a65f6a57bcf5c1974861fc0255a9ca84ea
+    last_write_checksum: sha1:7ee64fe9099bcb1961b626f781c46f9ec0c43c2b
     pristine_git_object: 21b3221d5d34b04e78d81f1cb88186ea5c1f3d79
   docs/Models/Components/LmsMediaType.md:
     id: 47092b79dc51
@@ -23553,7 +23553,7 @@ trackedFiles:
     last_write_checksum: sha1:eb43be77f120351a62dc28ee3e4b98fc97d6a832
   docs/Models/Components/Role.md:
     id: d4558c89db70
-    last_write_checksum: sha1:c536906753e4ed426ec8ed7bcad85a86a374b4e7
+    last_write_checksum: sha1:27aca55b31d0d1c1cffbffaa6cffef4241a09c35
     pristine_git_object: ec046eb677110a2682fa24b1bbc32935c4bfce3f
   docs/Models/Components/Saml.md:
     id: e2e4a0a203fc
@@ -23706,7 +23706,7 @@ trackedFiles:
   docs/Models/Components/ShippingTrackingStatus.md:
     last_write_checksum: sha1:afea967d40e9ebcfff77fa169cd5b538a29720f5
   docs/Models/Components/SigningDocument.md:
-    last_write_checksum: sha1:f28b5a6b1e22d022779dc99565aeeafa8067a3bb
+    last_write_checksum: sha1:76b63e2217707aebe32784cf2896e4d9bc930279
   docs/Models/Components/SigningDocumentStatus.md:
     last_write_checksum: sha1:d808eff2ff71b5eb1c873f21fe19de6fdddc66e7
   docs/Models/Components/SigningSignatory.md:
@@ -24736,7 +24736,7 @@ trackedFiles:
   docs/Models/Requests/CreateLmsContentResponse.md:
     last_write_checksum: sha1:061439acfe2d475f1b37a9bf51a7b4e7e4c5d547
   docs/Models/Requests/CreateLmsCourseQueryParamFields.md:
-    last_write_checksum: sha1:206ea863cace0ca9af2ebf90532026624f4321c8
+    last_write_checksum: sha1:2c7468d60f1d223dca99264554115b720b779363
   docs/Models/Requests/CreateLmsCourseRequest.md:
     id: b890cee90db5
     last_write_checksum: sha1:2c6a16af6b7a2f43da13780c0d71861efdb7804e
@@ -24942,7 +24942,7 @@ trackedFiles:
   docs/Models/Requests/CreateShippingShipmentResponse.md:
     last_write_checksum: sha1:b2bf71be64c13b6e36b32bd3c5dbb9594ef648e2
   docs/Models/Requests/CreateSigningDocumentQueryParamFields.md:
-    last_write_checksum: sha1:a0d95ec10d2f6a4ab40aef0609085debb6c69d88
+    last_write_checksum: sha1:8346b40c96539c360340f4c2cdeadcc6a9118219
   docs/Models/Requests/CreateSigningDocumentRequest.md:
     last_write_checksum: sha1:f57258d12cfbe2a22e718f3f8f845b571579825e
   docs/Models/Requests/CreateSigningDocumentResponse.md:
@@ -25764,7 +25764,7 @@ trackedFiles:
   docs/Models/Requests/GetLmsContentResponse.md:
     last_write_checksum: sha1:499cbd2dac1122a0389b7deb9f9f3c49fd838c99
   docs/Models/Requests/GetLmsCourseQueryParamFields.md:
-    last_write_checksum: sha1:777481b9311a16b1cccb2dae3337226c71d269c3
+    last_write_checksum: sha1:63b9b7df2b86fa7cd713d139dc49702920a27b8d
   docs/Models/Requests/GetLmsCourseRequest.md:
     id: 5270b484d338
     last_write_checksum: sha1:c8135fa4d130549f617bcfad2c62c2516e928e5c
@@ -25990,7 +25990,7 @@ trackedFiles:
   docs/Models/Requests/GetShippingTrackingResponse.md:
     last_write_checksum: sha1:ed1bb8009a8047378f1122dd77fca74932cb42eb
   docs/Models/Requests/GetSigningDocumentQueryParamFields.md:
-    last_write_checksum: sha1:115dde9dfae27e3e6f453e6a2b165e92a59ab820
+    last_write_checksum: sha1:542c1cf63acb9e74922c51ac511c6986979c381c
   docs/Models/Requests/GetSigningDocumentRequest.md:
     last_write_checksum: sha1:0139aba34024019b8c11c54413b1d1f9ad7cedb4
   docs/Models/Requests/GetSigningDocumentResponse.md:
@@ -26940,7 +26940,7 @@ trackedFiles:
   docs/Models/Requests/ListLmsContentsResponse.md:
     last_write_checksum: sha1:33fbd6accda82a66e98e975c482de1814ca51121
   docs/Models/Requests/ListLmsCoursesQueryParamFields.md:
-    last_write_checksum: sha1:6375f1051e6607b7b214d027443675239d6a0e3a
+    last_write_checksum: sha1:c0f04165612979e8b684a09fed8c3a684d03bf7f
   docs/Models/Requests/ListLmsCoursesRequest.md:
     id: 7da00b294026
     last_write_checksum: sha1:7479a0b42d44b9cc965a51508dfa48b1596c25a1
@@ -27174,7 +27174,7 @@ trackedFiles:
   docs/Models/Requests/ListShippingShipmentsResponse.md:
     last_write_checksum: sha1:2c3f1459850068bddd9ec7a32a5fa610177bc930
   docs/Models/Requests/ListSigningDocumentsQueryParamFields.md:
-    last_write_checksum: sha1:049272494ab5fbc054bb725a25080610be9df85e
+    last_write_checksum: sha1:3fe6dd67513b3eb76a8bb964a56bcb449f00e500
   docs/Models/Requests/ListSigningDocumentsRequest.md:
     last_write_checksum: sha1:2025727c427e1709ab8a17487ff845df5d39514a
   docs/Models/Requests/ListSigningDocumentsResponse.md:
@@ -27978,7 +27978,7 @@ trackedFiles:
   docs/Models/Requests/PatchLmsContentResponse.md:
     last_write_checksum: sha1:2626670001a37594302f6c60bc08ab236fec3fb7
   docs/Models/Requests/PatchLmsCourseQueryParamFields.md:
-    last_write_checksum: sha1:7cff9b92798b23119026ce8ffa393294c0095ff5
+    last_write_checksum: sha1:d41e326848dddf2e78de5f687f5bcefc0ad38c9c
   docs/Models/Requests/PatchLmsCourseRequest.md:
     id: "368837877289"
     last_write_checksum: sha1:6c774b9e3dd0cfa69030e2bad0f43595cce7e9b7
@@ -28184,7 +28184,7 @@ trackedFiles:
   docs/Models/Requests/PatchShippingShipmentResponse.md:
     last_write_checksum: sha1:845206ab651dd597bba35ab5da49bdff8c4ac826
   docs/Models/Requests/PatchSigningDocumentQueryParamFields.md:
-    last_write_checksum: sha1:3c042f07886700adf3e4157e0ae58c8831ca85c8
+    last_write_checksum: sha1:b4a86ea9e62f0dc52b0528ea953b7639fb1363e1
   docs/Models/Requests/PatchSigningDocumentRequest.md:
     last_write_checksum: sha1:7fe403e8b62c44a029aeb222f758223575d0052f
   docs/Models/Requests/PatchSigningDocumentResponse.md:
@@ -29658,7 +29658,7 @@ trackedFiles:
   docs/Models/Requests/UpdateLmsContentResponse.md:
     last_write_checksum: sha1:911b206aa6e4539eeeee83a0595bd506e4b3466c
   docs/Models/Requests/UpdateLmsCourseQueryParamFields.md:
-    last_write_checksum: sha1:b723655219fe8a3b96026e07a613eb8b495f91c0
+    last_write_checksum: sha1:c6bee5389cb32af133f36aeacf85867e8235b67a
   docs/Models/Requests/UpdateLmsCourseRequest.md:
     id: 40038266ff79
     last_write_checksum: sha1:0ecfec146a796c97955b8d31fccde2258021f623
@@ -29864,7 +29864,7 @@ trackedFiles:
   docs/Models/Requests/UpdateShippingShipmentResponse.md:
     last_write_checksum: sha1:30db3efa2d457819b63859258b3ac5b35bb76bb3
   docs/Models/Requests/UpdateSigningDocumentQueryParamFields.md:
-    last_write_checksum: sha1:162955d465073252e9e00b04b943896374947a8e
+    last_write_checksum: sha1:ff72644ff35d9bddbd5b92105e47a67f7ba3f29c
   docs/Models/Requests/UpdateSigningDocumentRequest.md:
     last_write_checksum: sha1:b09459457f8e003ef82fee6ccadfeb53dcc42418
   docs/Models/Requests/UpdateSigningDocumentResponse.md:

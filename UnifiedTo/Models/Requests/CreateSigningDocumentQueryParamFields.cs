@@ -39,8 +39,6 @@ namespace UnifiedTo.Models.Requests
         DownloadUrl,
         [JsonProperty("creator_id")]
         CreatorId,
-        [JsonProperty("metadata")]
-        Metadata,
         [JsonProperty("raw")]
         Raw,
     }

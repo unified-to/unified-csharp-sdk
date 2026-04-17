@@ -39,12 +39,6 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
-        /// <summary>
-        /// Custom key-value pairs
-        /// </summary>
-        [JsonProperty("metadata")]
-        public Dictionary<string, string>? Metadata { get; set; }
-
         [JsonProperty("name")]
         public string? Name { get; set; }
 

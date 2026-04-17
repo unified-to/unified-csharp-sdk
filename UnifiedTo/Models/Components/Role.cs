@@ -19,6 +19,8 @@ namespace UnifiedTo.Models.Components
         System,
         [JsonProperty("USER")]
         User,
+        [JsonProperty("ASSISTANT")]
+        Assistant,
     }
 
     public static class RoleExtension

@@ -41,8 +41,12 @@ namespace UnifiedTo.Models.Requests
         Media,
         [JsonProperty("instructor_ids")]
         InstructorIds,
+        [JsonProperty("instructors")]
+        Instructors,
         [JsonProperty("student_ids")]
         StudentIds,
+        [JsonProperty("students")]
+        Students,
         [JsonProperty("content_ids")]
         ContentIds,
         [JsonProperty("skills")]
@@ -53,6 +57,10 @@ namespace UnifiedTo.Models.Requests
         ProviderName,
         [JsonProperty("raw")]
         Raw,
+        [JsonProperty("published_at")]
+        PublishedAt,
+        [JsonProperty("time_estimate_minutes")]
+        TimeEstimateMinutes,
     }
 
     public static class ListLmsCoursesQueryParamFieldsExtension

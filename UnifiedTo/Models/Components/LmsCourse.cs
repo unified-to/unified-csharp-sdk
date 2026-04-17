@@ -39,8 +39,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string? Id { get; set; }
 
+        /// <summary>
+        /// @deprecated; use instructors
+        /// </summary>
         [JsonProperty("instructor_ids")]
         public List<string>? InstructorIds { get; set; }
+
+        [JsonProperty("instructors")]
+        public List<LmsInstructor>? Instructors { get; set; }
 
         [JsonProperty("is_active")]
         public bool? IsActive { get; set; }
@@ -63,14 +69,26 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("provider_name")]
         public string? ProviderName { get; set; }
 
+        [JsonProperty("published_at")]
+        public DateTime? PublishedAt { get; set; }
+
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("skills")]
         public List<string>? Skills { get; set; }
 
+        /// <summary>
+        /// @deprecated; use students
+        /// </summary>
         [JsonProperty("student_ids")]
         public List<string>? StudentIds { get; set; }
+
+        [JsonProperty("students")]
+        public List<LmsStudent>? Students { get; set; }
+
+        [JsonProperty("time_estimate_minutes")]
+        public double? TimeEstimateMinutes { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
