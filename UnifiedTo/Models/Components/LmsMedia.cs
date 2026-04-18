@@ -23,6 +23,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("description")]
         public string? Description { get; set; }
 
+        /// <summary>
+        /// ISO 2-digit language codes
+        /// </summary>
         [JsonProperty("languages")]
         public List<string>? Languages { get; set; }
 

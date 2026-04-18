@@ -22,5 +22,5 @@
 | `Subgroup`            | subgroup              |
 | `ParentId`            | parent_id             |
 | `Taxonomy`            | taxonomy              |
-| `Raw`                 | raw                   |
 | `OrganizationId`      | organization_id       |
+| `Raw`                 | raw                   |

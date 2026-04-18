@@ -49,6 +49,8 @@ namespace UnifiedTo.Models.Requests
         Currency,
         [JsonProperty("contacts")]
         Contacts,
+        [JsonProperty("organization_id")]
+        OrganizationId,
         [JsonProperty("raw")]
         Raw,
     }

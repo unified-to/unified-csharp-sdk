@@ -29,6 +29,8 @@ namespace UnifiedTo.Models.Requests
         Rate,
         [JsonProperty("is_active")]
         IsActive,
+        [JsonProperty("organization_id")]
+        OrganizationId,
         [JsonProperty("raw")]
         Raw,
     }

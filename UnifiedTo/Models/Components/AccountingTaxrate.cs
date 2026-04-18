@@ -32,6 +32,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("name")]
         public string? Name { get; set; }
 
+        [JsonProperty("organization_id")]
+        public string? OrganizationId { get; set; }
+
         [JsonProperty("rate")]
         public double? Rate { get; set; }
 

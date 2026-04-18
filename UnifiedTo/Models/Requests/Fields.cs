@@ -49,10 +49,10 @@ namespace UnifiedTo.Models.Requests
         ParentId,
         [JsonProperty("taxonomy")]
         Taxonomy,
-        [JsonProperty("raw")]
-        Raw,
         [JsonProperty("organization_id")]
         OrganizationId,
+        [JsonProperty("raw")]
+        Raw,
     }
 
     public static class FieldsExtension

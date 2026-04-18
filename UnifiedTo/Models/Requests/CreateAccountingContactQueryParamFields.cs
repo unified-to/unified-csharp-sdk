@@ -57,10 +57,10 @@ namespace UnifiedTo.Models.Requests
         Identification,
         [JsonProperty("associated_contacts")]
         AssociatedContacts,
-        [JsonProperty("raw")]
-        Raw,
         [JsonProperty("organization_id")]
         OrganizationId,
+        [JsonProperty("raw")]
+        Raw,
     }
 
     public static class CreateAccountingContactQueryParamFieldsExtension
