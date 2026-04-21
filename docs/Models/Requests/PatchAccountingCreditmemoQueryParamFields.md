@@ -24,11 +24,11 @@
 | `Currency`                | currency                  |
 | `Notes`                   | notes                     |
 | `RefundReason`            | refund_reason             |
+| `OrganizationId`          | organization_id           |
 | `Lineitems`               | lineitems                 |
 | `Status`                  | status                    |
 | `Url`                     | url                       |
 | `PaymentCollectionMethod` | payment_collection_method |
 | `Attachments`             | attachments               |
 | `Send`                    | send                      |
-| `OrganizationId`          | organization_id           |
 | `Raw`                     | raw                       |

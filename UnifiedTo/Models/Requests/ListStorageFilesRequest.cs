@@ -67,6 +67,12 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=raw")]
         public string? Raw { get; set; }
 
+        /// <summary>
+        /// The referenced entity ID to filter by (e.g. linked accounting record for storage_file)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=reference")]
+        public string? Reference { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")]
         public string? Sort { get; set; }
 

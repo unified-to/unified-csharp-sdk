@@ -53,6 +53,8 @@ namespace UnifiedTo.Models.Requests
         Notes,
         [JsonProperty("refund_reason")]
         RefundReason,
+        [JsonProperty("organization_id")]
+        OrganizationId,
         [JsonProperty("lineitems")]
         Lineitems,
         [JsonProperty("status")]
@@ -65,8 +67,6 @@ namespace UnifiedTo.Models.Requests
         Attachments,
         [JsonProperty("send")]
         Send,
-        [JsonProperty("organization_id")]
-        OrganizationId,
         [JsonProperty("raw")]
         Raw,
     }

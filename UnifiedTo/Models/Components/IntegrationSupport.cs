@@ -188,6 +188,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("list_raw_fields")]
         public ListRawFields? ListRawFields { get; set; }
 
+        [JsonProperty("list_reference")]
+        public ListReference? ListReference { get; set; }
+
         [JsonProperty("list_repo_id")]
         public ListRepoId? ListRepoId { get; set; }
 
@@ -460,6 +463,9 @@ namespace UnifiedTo.Models.Components
 
         [JsonProperty("virtual_webhook_project_id")]
         public VirtualWebhookProjectId? VirtualWebhookProjectId { get; set; }
+
+        [JsonProperty("virtual_webhook_reference")]
+        public VirtualWebhookReference? VirtualWebhookReference { get; set; }
 
         [JsonProperty("virtual_webhook_repo_id")]
         public VirtualWebhookRepoId? VirtualWebhookRepoId { get; set; }

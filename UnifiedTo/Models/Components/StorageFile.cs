@@ -51,6 +51,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
+        [JsonProperty("references")]
+        public List<StorageReference>? References { get; set; }
+
         [JsonProperty("size")]
         public double? Size { get; set; }
 
