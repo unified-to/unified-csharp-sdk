@@ -49,7 +49,7 @@ namespace UnifiedTo.Models.Components
         public string? Reason { get; set; }
 
         [JsonProperty("start_at")]
-        public DateTime? StartAt { get; set; }
+        public DateTime StartAt { get; set; } = default!;
 
         [JsonProperty("status")]
         public HrisTimeoffStatus? Status { get; set; }

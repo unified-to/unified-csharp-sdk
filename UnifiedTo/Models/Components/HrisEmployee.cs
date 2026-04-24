@@ -135,6 +135,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("termination_reason")]
         public string? TerminationReason { get; set; }
 
+        [JsonProperty("timeoff_days_total")]
+        public double? TimeoffDaysTotal { get; set; }
+
+        [JsonProperty("timeoff_days_used")]
+        public double? TimeoffDaysUsed { get; set; }
+
         [JsonProperty("timezone")]
         public string? Timezone { get; set; }
 

@@ -93,6 +93,10 @@ namespace UnifiedTo.Models.Requests
         Relationships,
         [JsonProperty("has_mfa")]
         HasMfa,
+        [JsonProperty("timeoff_days_total")]
+        TimeoffDaysTotal,
+        [JsonProperty("timeoff_days_used")]
+        TimeoffDaysUsed,
         [JsonProperty("raw")]
         Raw,
     }
