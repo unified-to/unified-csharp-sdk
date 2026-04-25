@@ -15,29 +15,29 @@ namespace UnifiedTo.Models.Components
     
     public enum AdsTargetType
     {
-        [JsonProperty("interests")]
+        [JsonProperty("INTERESTS")]
         Interests,
-        [JsonProperty("behaviors")]
+        [JsonProperty("BEHAVIORS")]
         Behaviors,
-        [JsonProperty("locales")]
+        [JsonProperty("LOCALES")]
         Locales,
-        [JsonProperty("countries")]
+        [JsonProperty("COUNTRIES")]
         Countries,
-        [JsonProperty("regions")]
+        [JsonProperty("REGIONS")]
         Regions,
-        [JsonProperty("cities")]
+        [JsonProperty("CITIES")]
         Cities,
-        [JsonProperty("zips")]
+        [JsonProperty("ZIPS")]
         Zips,
-        [JsonProperty("us_dmas")]
+        [JsonProperty("US_DMAS")]
         UsDmas,
-        [JsonProperty("topics")]
+        [JsonProperty("TOPICS")]
         Topics,
-        [JsonProperty("user_lists")]
+        [JsonProperty("USER_LISTS")]
         UserLists,
-        [JsonProperty("age_ranges")]
+        [JsonProperty("AGE_RANGES")]
         AgeRanges,
-        [JsonProperty("genders")]
+        [JsonProperty("GENDERS")]
         Genders,
     }
 
