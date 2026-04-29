@@ -19,10 +19,12 @@ namespace UnifiedTo.Models.Requests
         Id,
         [JsonProperty("name")]
         Name,
-        [JsonProperty("value")]
-        Value,
         [JsonProperty("type")]
         Type,
+        [JsonProperty("is_active")]
+        IsActive,
+        [JsonProperty("parent_id")]
+        ParentId,
         [JsonProperty("raw")]
         Raw,
     }

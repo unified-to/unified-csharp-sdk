@@ -15,30 +15,36 @@ namespace UnifiedTo.Models.Components
     
     public enum AdsTargetType
     {
-        [JsonProperty("INTERESTS")]
-        Interests,
-        [JsonProperty("BEHAVIORS")]
-        Behaviors,
-        [JsonProperty("LOCALES")]
-        Locales,
-        [JsonProperty("COUNTRIES")]
-        Countries,
-        [JsonProperty("REGIONS")]
-        Regions,
-        [JsonProperty("CITIES")]
-        Cities,
-        [JsonProperty("ZIPS")]
-        Zips,
-        [JsonProperty("US_DMAS")]
-        UsDmas,
-        [JsonProperty("TOPICS")]
-        Topics,
-        [JsonProperty("USER_LISTS")]
-        UserLists,
-        [JsonProperty("AGE_RANGES")]
-        AgeRanges,
-        [JsonProperty("GENDERS")]
-        Genders,
+        [JsonProperty("INTEREST")]
+        Interest,
+        [JsonProperty("BEHAVIOR")]
+        Behavior,
+        [JsonProperty("LOCALE")]
+        Locale,
+        [JsonProperty("COUNTRY")]
+        Country,
+        [JsonProperty("REGION")]
+        Region,
+        [JsonProperty("CITY")]
+        City,
+        [JsonProperty("ZIP")]
+        Zip,
+        [JsonProperty("US_DMA")]
+        UsDma,
+        [JsonProperty("TOPIC")]
+        Topic,
+        [JsonProperty("USER_LIST")]
+        UserList,
+        [JsonProperty("AGE_RANGE")]
+        AgeRange,
+        [JsonProperty("GENDER")]
+        Gender,
+        [JsonProperty("CARRIER")]
+        Carrier,
+        [JsonProperty("DEVICE_MODEL")]
+        DeviceModel,
+        [JsonProperty("OS_VERSION")]
+        OsVersion,
     }
 
     public static class AdsTargetTypeExtension

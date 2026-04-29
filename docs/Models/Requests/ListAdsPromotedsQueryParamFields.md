@@ -8,3 +8,4 @@
 | `Id`   | id     |
 | `Name` | name   |
 | `Type` | type   |
+| `Raw`  | raw    |

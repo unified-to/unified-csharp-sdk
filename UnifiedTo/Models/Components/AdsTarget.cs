@@ -23,16 +23,19 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("id")]
         public string Id { get; set; } = default!;
 
+        [JsonProperty("is_active")]
+        public bool? IsActive { get; set; }
+
         [JsonProperty("name")]
         public string? Name { get; set; }
+
+        [JsonProperty("parent_id")]
+        public string? ParentId { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("type")]
         public AdsTargetType? Type { get; set; }
-
-        [JsonProperty("value")]
-        public string Value { get; set; } = default!;
     }
 }
