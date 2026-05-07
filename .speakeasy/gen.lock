@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 4f04f49fd35700b0721981b97c1208ae
+  docChecksum: 711c26f00585a8f5fdc28cc88a86d795
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.67
-  configChecksum: dd7ca6d0ed92a4160f98fcd91778dd68
+  releaseVersion: 0.130.68
+  configChecksum: c68c4a395fbc6156ab3805812e0f4e12
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -12657,7 +12657,7 @@ trackedFiles:
     pristine_git_object: 49e6e82063f59191760c9add7dd5fdf7b62dbb02
   UnifiedTo/Models/Components/AtsCandidate.cs:
     id: 899e46c850c0
-    last_write_checksum: sha1:c9282c5d99d22657d1bc3c36f0d0bb9eafc283d0
+    last_write_checksum: sha1:6dafd28420db1266aaaf16612c99cbedf005b61c
     pristine_git_object: 39d8ba97f25c262dc9b61ec9b737437e98a9a163
   UnifiedTo/Models/Components/AtsCandidateEducation.cs:
     id: 1b17cdb2cf8d
@@ -15374,7 +15374,7 @@ trackedFiles:
     last_write_checksum: sha1:0cbe2ab0e7c5c028b96db29a9b447301e39e9e35
     pristine_git_object: d86a3c17c02f6f1e35ef8782b4aaa99cb27c7e57
   UnifiedTo/Models/Requests/CreateAtsCandidateQueryParamFields.cs:
-    last_write_checksum: sha1:97377d7d1a5778cec3214b19def59ff5a1a8d564
+    last_write_checksum: sha1:16915a45b4c8c9ef3d90f2369cd82f7631f463fc
   UnifiedTo/Models/Requests/CreateAtsCandidateRequest.cs:
     id: af366951fada
     last_write_checksum: sha1:f07ccc9f1c0de330efc4ca7769538100d857a283
@@ -16394,7 +16394,7 @@ trackedFiles:
     last_write_checksum: sha1:f1b99d2fde78ee33ac3645c96c7f7889b724a78d
     pristine_git_object: 545297acd636264e2722bc1d5544e77285c6a0da
   UnifiedTo/Models/Requests/GetAtsCandidateQueryParamFields.cs:
-    last_write_checksum: sha1:3e5b4062213a5c4bdb908fd3ea2e8005e000f90a
+    last_write_checksum: sha1:bdd782f5653bd6ea3b3d3dad1cce52fa41dc22fa
   UnifiedTo/Models/Requests/GetAtsCandidateRequest.cs:
     id: dc84272dce9a
     last_write_checksum: sha1:3d1da4faee044ae42d6bb2031989d4115b5ebf2d
@@ -17521,7 +17521,7 @@ trackedFiles:
     last_write_checksum: sha1:c3e5f12934d7d16efa9ecf7e186c46733f5787c5
   UnifiedTo/Models/Requests/ListAtsApplicationsRequest.cs:
     id: 2a55eb6e80c0
-    last_write_checksum: sha1:3366df1517052dd79d3c61f27c41420fedd09a5b
+    last_write_checksum: sha1:58c01233d646bff280d9f442f27eb625ac4eba74
     pristine_git_object: b9555d283c5ec27ab6148499869256eaa63b66b8
   UnifiedTo/Models/Requests/ListAtsApplicationsResponse.cs:
     id: c811b59245a6
@@ -17538,7 +17538,7 @@ trackedFiles:
     last_write_checksum: sha1:04247efd1e3a6e8750b7157a2a6b9245a6a9544d
     pristine_git_object: 72fc69969a0a05e03abac7ba95dd53bd272ffc89
   UnifiedTo/Models/Requests/ListAtsCandidatesQueryParamFields.cs:
-    last_write_checksum: sha1:1916a37845f8483b6347aaac3231e52386b4b396
+    last_write_checksum: sha1:369032563b3c151037543032de7127c1473b776e
   UnifiedTo/Models/Requests/ListAtsCandidatesRequest.cs:
     id: 00867e431ba6
     last_write_checksum: sha1:24231f46ff920c180d976fa3069405941c05c5c1
@@ -18648,7 +18648,7 @@ trackedFiles:
     last_write_checksum: sha1:0086735aa0ed102933d8e5835362d157b97755c2
     pristine_git_object: cac45ec9d6c12e4b316f11a99f2e27faeefabdd3
   UnifiedTo/Models/Requests/PatchAtsCandidateQueryParamFields.cs:
-    last_write_checksum: sha1:9e38bbf8f41ea39c166ddc27ae539f58df761ced
+    last_write_checksum: sha1:2adf859caa0f921fd1dcd57b10500c22c84b95af
   UnifiedTo/Models/Requests/PatchAtsCandidateRequest.cs:
     id: a88c7eb1866a
     last_write_checksum: sha1:10c5501c592d20446142162a14ebb83e3812ab39
@@ -20328,7 +20328,7 @@ trackedFiles:
     last_write_checksum: sha1:4a89ca23722cd5315f408d2141845facc0fe6c98
     pristine_git_object: c20e5da1d97ecf652571508c2ee74f77f46bf059
   UnifiedTo/Models/Requests/UpdateAtsCandidateQueryParamFields.cs:
-    last_write_checksum: sha1:e88ed63acc6d1a86a791c3d9f0a9813bb562fc4f
+    last_write_checksum: sha1:47ad7921afb95ec48804ab44ba11777234de47c3
   UnifiedTo/Models/Requests/UpdateAtsCandidateRequest.cs:
     id: add8aa141e8f
     last_write_checksum: sha1:9f765b8c979f0faee474d836f606e740f1cb99e7
@@ -21173,7 +21173,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:4b5cbfb284f0348fac9f20b02a748b176cee689a
+    last_write_checksum: sha1:16bee84e7874493811935ec41b8bd971ef339a9a
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -21285,7 +21285,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:daf68a61c538fdfca12f579e6e1c69809c2adb01
+    last_write_checksum: sha1:efe8fe28c453ff6324464f436dbf283b16ebbf92
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -21687,7 +21687,7 @@ trackedFiles:
     pristine_git_object: 77deb7a29e58b1331f9c125f095371df4be4b4f4
   docs/Models/Components/AtsCandidate.md:
     id: ef7c8d1606e2
-    last_write_checksum: sha1:e06329fb28aa4c16b7fc64bde15ff3e3038aaafc
+    last_write_checksum: sha1:50f8982d22f6e393e69fad7eea13434e08db2644
     pristine_git_object: 1afe394487e28b08b4cf889f283c2353fd1d052a
   docs/Models/Components/AtsCandidateEducation.md:
     id: a729f40f2c89
@@ -24392,7 +24392,7 @@ trackedFiles:
     last_write_checksum: sha1:1a4438e81638717613bb497841f3d8fbc2e99623
     pristine_git_object: 2b2bedc2f0a04f28498f96dda947efe8428f3a7a
   docs/Models/Requests/CreateAtsCandidateQueryParamFields.md:
-    last_write_checksum: sha1:f30fa752e7b5bbe631bcd5e9bfb293e6a6a59687
+    last_write_checksum: sha1:97a79ad5a300e2758ecc911b9a366f07a5e1379c
   docs/Models/Requests/CreateAtsCandidateRequest.md:
     id: 1da4c4247050
     last_write_checksum: sha1:f88eaef75b7c73a4ae738e407f8f0005f8549fea
@@ -25412,7 +25412,7 @@ trackedFiles:
     last_write_checksum: sha1:04c54439c14e84c162605a7f0f987a3af6d7cb77
     pristine_git_object: 53a19b59b70e6bff3aeb2fb9156c3ededbfa02fb
   docs/Models/Requests/GetAtsCandidateQueryParamFields.md:
-    last_write_checksum: sha1:04b746feccb37d50ff854ab95018b695547757aa
+    last_write_checksum: sha1:869cea4a7414daa4e57fdf9f134cfae8b77213db
   docs/Models/Requests/GetAtsCandidateRequest.md:
     id: 0be4fe83e47b
     last_write_checksum: sha1:16f77df96a25568e64c49b994f24573f819d89bf
@@ -26539,7 +26539,7 @@ trackedFiles:
     last_write_checksum: sha1:d76354afa28c598f26ad75dd07a59d8907172063
   docs/Models/Requests/ListAtsApplicationsRequest.md:
     id: "219393581967"
-    last_write_checksum: sha1:d292e8d9640ff8be3b6d6b6ad1618fca8a35f875
+    last_write_checksum: sha1:534d9b9db1e28ae4bf6b586023311a9cae227e18
     pristine_git_object: d867d3433cd6e0e05416e6283bd6d891d1aa9f01
   docs/Models/Requests/ListAtsApplicationsResponse.md:
     id: 9adea3085f92
@@ -26556,7 +26556,7 @@ trackedFiles:
     last_write_checksum: sha1:313fb7d084f8bdc44d372410e03a60b89fe57194
     pristine_git_object: f0bcce150efaeabd403ac0a317b6ee4b5fb4343b
   docs/Models/Requests/ListAtsCandidatesQueryParamFields.md:
-    last_write_checksum: sha1:42c88175b1ab2af54b1acda3de6ec9950ead25f7
+    last_write_checksum: sha1:c4e84a0366bbe2ecedcdd80e4648729e1c4c06b0
   docs/Models/Requests/ListAtsCandidatesRequest.md:
     id: e668622fb726
     last_write_checksum: sha1:c1e605c903d99128682514881fcd0fde6b2eccfe
@@ -27666,7 +27666,7 @@ trackedFiles:
     last_write_checksum: sha1:23d3ab4e97c8583ef83b2f58a98f09f2722bdca7
     pristine_git_object: 2749e19bf621b89fa63f1334b1cb9cb0f238e3c1
   docs/Models/Requests/PatchAtsCandidateQueryParamFields.md:
-    last_write_checksum: sha1:7eecc15612717b010739c2cc17f872542ee9293f
+    last_write_checksum: sha1:1319419c937a236d18160e387b17fc9b7dabc672
   docs/Models/Requests/PatchAtsCandidateRequest.md:
     id: ea4d12aa5c1d
     last_write_checksum: sha1:1316a932de370b59bad0b1b05a594a94ecbb3ac1
@@ -29346,7 +29346,7 @@ trackedFiles:
     last_write_checksum: sha1:5eff50473c239527bf666ef483ebe5503173bfa1
     pristine_git_object: 523e2c3209df45184bfb93c49a8f4629070f6408
   docs/Models/Requests/UpdateAtsCandidateQueryParamFields.md:
-    last_write_checksum: sha1:f63b9883f3be5313a5f65f56f8b646d8dbc8ea68
+    last_write_checksum: sha1:fb403bd8972928c99478905c7430700e4a1b85ec
   docs/Models/Requests/UpdateAtsCandidateRequest.md:
     id: cb91df4c7b78
     last_write_checksum: sha1:d44fd557911afc7cc00b738c4ea7d5d3a9b92d66

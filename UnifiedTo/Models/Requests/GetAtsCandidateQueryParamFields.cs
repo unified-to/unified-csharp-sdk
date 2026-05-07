@@ -63,6 +63,8 @@ namespace UnifiedTo.Models.Requests
         Education,
         [JsonProperty("skills")]
         Skills,
+        [JsonProperty("job_ids")]
+        JobIds,
         [JsonProperty("metadata")]
         Metadata,
         [JsonProperty("raw")]

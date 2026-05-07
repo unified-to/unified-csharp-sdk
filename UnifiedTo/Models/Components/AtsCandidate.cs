@@ -54,6 +54,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("image_url")]
         public string? ImageUrl { get; set; }
 
+        [JsonProperty("job_ids")]
+        public List<string>? JobIds { get; set; }
+
         [JsonProperty("last_name")]
         public string? LastName { get; set; }
 
