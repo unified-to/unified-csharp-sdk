@@ -39,10 +39,12 @@ namespace UnifiedTo.Models.Requests
         ApprovedAt,
         [JsonProperty("comments")]
         Comments,
-        [JsonProperty("raw")]
-        Raw,
         [JsonProperty("reason")]
         Reason,
+        [JsonProperty("type")]
+        Type,
+        [JsonProperty("raw")]
+        Raw,
     }
 
     public static class CreateHrisTimeoffQueryParamFieldsExtension

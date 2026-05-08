@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 711c26f00585a8f5fdc28cc88a86d795
+  docChecksum: b92ae9b53e2fd3c68f3300b3a8bec89d
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.68
-  configChecksum: c68c4a395fbc6156ab3805812e0f4e12
+  releaseVersion: 0.130.69
+  configChecksum: e004e8f6cebace567dd7f232d1851438
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -408,6 +408,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/HrisTelephoneType.cs
   - UnifiedTo/Models/Components/HrisTimeoff.cs
   - UnifiedTo/Models/Components/HrisTimeoffStatus.cs
+  - UnifiedTo/Models/Components/HrisTimeoffType.cs
   - UnifiedTo/Models/Components/HrisTimeshift.cs
   - UnifiedTo/Models/Components/Integration.cs
   - UnifiedTo/Models/Components/Integration1.cs
@@ -3231,6 +3232,7 @@ generatedFiles:
   - docs/Models/Components/HrisTelephoneType.md
   - docs/Models/Components/HrisTimeoff.md
   - docs/Models/Components/HrisTimeoffStatus.md
+  - docs/Models/Components/HrisTimeoffType.md
   - docs/Models/Components/HrisTimeshift.md
   - docs/Models/Components/Integration.md
   - docs/Models/Components/Integration1.md
@@ -13341,12 +13343,14 @@ trackedFiles:
     pristine_git_object: 6cd6e2701078c75594bf7f359e5a418000fa1f50
   UnifiedTo/Models/Components/HrisTimeoff.cs:
     id: 37e14d49e2e0
-    last_write_checksum: sha1:fca6e673560d28e70d9c4ab304cc527b319298f1
+    last_write_checksum: sha1:7c6ac93f33e0073849580c6dcc0691178e15cf6b
     pristine_git_object: ab7326ebdfaa7530c2a18e98d9b2547f8223b664
   UnifiedTo/Models/Components/HrisTimeoffStatus.cs:
     id: 65303ab39aec
     last_write_checksum: sha1:1a152b560a1f6faeefed2dd0706974f15e234bd1
     pristine_git_object: 91b78ffb0b86856782edd4c91bd7c9e3d059abb5
+  UnifiedTo/Models/Components/HrisTimeoffType.cs:
+    last_write_checksum: sha1:e8e8f2da95bb1c0ded07fab9e8cc6b9940ad57de
   UnifiedTo/Models/Components/HrisTimeshift.cs:
     id: 71e48a293510
     last_write_checksum: sha1:bb6bb8f9a7f60624750cc49f4e7fb19fe40a7d55
@@ -15704,7 +15708,7 @@ trackedFiles:
     last_write_checksum: sha1:58f69ed02f35f5a6f98f61f542428d1f6dc01c75
     pristine_git_object: 1e5099215e1805f5e112f57868e43092038f5b2a
   UnifiedTo/Models/Requests/CreateHrisTimeoffQueryParamFields.cs:
-    last_write_checksum: sha1:2e79d1117627a5dee3e0e64dda7c0627d405c0e2
+    last_write_checksum: sha1:29946459e6e428c24cf5f0afdd611e26ed9cf691
   UnifiedTo/Models/Requests/CreateHrisTimeoffRequest.cs:
     last_write_checksum: sha1:a2f3eaa4fe5b303814e27e5449fa1aacdf4efdbf
   UnifiedTo/Models/Requests/CreateHrisTimeoffResponse.cs:
@@ -16740,7 +16744,7 @@ trackedFiles:
     last_write_checksum: sha1:dadc1291b096d26e59047864bf701196c030907e
     pristine_git_object: 8a91f1210c4333801a83007888a5760eeb389eb9
   UnifiedTo/Models/Requests/GetHrisTimeoffQueryParamFields.cs:
-    last_write_checksum: sha1:be59dffe2f6086f40529dcb6659670b61fe061b6
+    last_write_checksum: sha1:f43b0c6fd19b0348d2675627e6101fe2e3276ff4
   UnifiedTo/Models/Requests/GetHrisTimeoffRequest.cs:
     id: 8deebe183010
     last_write_checksum: sha1:3875e5d841c253a369039d88b27f4a63d615f96b
@@ -17916,7 +17920,7 @@ trackedFiles:
     last_write_checksum: sha1:4a9cf208f72fa032cec76d1a16337544b30c94fe
     pristine_git_object: f5da7a298fd4fe845bb711606a4b453ad2250ba7
   UnifiedTo/Models/Requests/ListHrisTimeoffsQueryParamFields.cs:
-    last_write_checksum: sha1:3552113b15be4ad963ccf6db9820674f8593b5c5
+    last_write_checksum: sha1:f95661ab95e5764e383497ac89c9da9962466248
   UnifiedTo/Models/Requests/ListHrisTimeoffsRequest.cs:
     id: 66fbcc9f3511
     last_write_checksum: sha1:0070c6732bcac9b607b46f0395ef7dee7d141299
@@ -18958,7 +18962,7 @@ trackedFiles:
     last_write_checksum: sha1:591576aa46975342a993709e42640a46c5da380c
     pristine_git_object: 9e1392f5de6d8e710f47db167bf50aaad6ca63e2
   UnifiedTo/Models/Requests/PatchHrisTimeoffQueryParamFields.cs:
-    last_write_checksum: sha1:1ecf850a4296b4f8373b05033df02ef0ed4fc376
+    last_write_checksum: sha1:f0a20c05285fcbdca9bd30ac01fb7f402a8b0806
   UnifiedTo/Models/Requests/PatchHrisTimeoffRequest.cs:
     last_write_checksum: sha1:3b049fad6ed26b7f221d943a0db9aecf72a9c189
   UnifiedTo/Models/Requests/PatchHrisTimeoffResponse.cs:
@@ -20638,7 +20642,7 @@ trackedFiles:
     last_write_checksum: sha1:73433993a949e35f9bd302994104cce44c36c69d
     pristine_git_object: 4d5c2b66b29ccedbddc3c083fe17c972e8d4fe82
   UnifiedTo/Models/Requests/UpdateHrisTimeoffQueryParamFields.cs:
-    last_write_checksum: sha1:0baee87e63441947df86b62735c9234458441563
+    last_write_checksum: sha1:5cfdba48914cc702ed51c628d99d7f2273f7d8b9
   UnifiedTo/Models/Requests/UpdateHrisTimeoffRequest.cs:
     last_write_checksum: sha1:90685b78c64badabf60f65d667979ed9d61d9a02
   UnifiedTo/Models/Requests/UpdateHrisTimeoffResponse.cs:
@@ -22371,12 +22375,14 @@ trackedFiles:
     pristine_git_object: 7c191c14b25ae14df483b040b01ced533d26f469
   docs/Models/Components/HrisTimeoff.md:
     id: fe88eaa680d8
-    last_write_checksum: sha1:bd3c92e0eb22035cdcc2b1c4abccd4257847afbb
+    last_write_checksum: sha1:7bee15b69abb7bc6dd14fe1ba0b2000a00e12cbd
     pristine_git_object: 0adfd67758ddf4e02393ffe3e04545ed3f7fc72d
   docs/Models/Components/HrisTimeoffStatus.md:
     id: 0ef2113e920f
     last_write_checksum: sha1:34b55048efce5a26e4aab3b75a18f39261995c9f
     pristine_git_object: 751835081010e1ab184accfdbd370790a9a1e981
+  docs/Models/Components/HrisTimeoffType.md:
+    last_write_checksum: sha1:1704ae9953be22889616506a0f8fb8566c20d537
   docs/Models/Components/HrisTimeshift.md:
     id: c7d188d2e74a
     last_write_checksum: sha1:40043e10adf36bd1e84e913e47e299ae9c4cceb2
@@ -24722,7 +24728,7 @@ trackedFiles:
     last_write_checksum: sha1:2ed6da1ce81ce6647cefc4cc63cb762730307809
     pristine_git_object: e59840b4820048017c0564db0195561ba9a50cd3
   docs/Models/Requests/CreateHrisTimeoffQueryParamFields.md:
-    last_write_checksum: sha1:1dd12d34c3108a7fe0e1cc78ac837d7d55480ced
+    last_write_checksum: sha1:4adbcbba14ea35f148d72ef53d18e3087aa71472
   docs/Models/Requests/CreateHrisTimeoffRequest.md:
     last_write_checksum: sha1:85782eef790d831efedd71713a43966c7ec586b7
   docs/Models/Requests/CreateHrisTimeoffResponse.md:
@@ -25758,7 +25764,7 @@ trackedFiles:
     last_write_checksum: sha1:e2721ff7557e0fafc57f4ebda93d3255dbdfafd6
     pristine_git_object: 496f62790c26a3b8b64f1177a9d26eb04fcf8c03
   docs/Models/Requests/GetHrisTimeoffQueryParamFields.md:
-    last_write_checksum: sha1:02f06e4c5d9c0c6b16289a00c24513c21510e1d2
+    last_write_checksum: sha1:e8c720d43cfcffc4ef9ca55a792ccb068a424c55
   docs/Models/Requests/GetHrisTimeoffRequest.md:
     id: 8de49b847e12
     last_write_checksum: sha1:12143f129a4764d54a1b7f893879fbf09b9b58d3
@@ -26934,7 +26940,7 @@ trackedFiles:
     last_write_checksum: sha1:bb068a80ec9a58a74c6ee7dba2a6c1df4f22d7fe
     pristine_git_object: e9ef6296ade2d6c8313f810f6a314a2581e5ab86
   docs/Models/Requests/ListHrisTimeoffsQueryParamFields.md:
-    last_write_checksum: sha1:5025fd7f7388e07a73b9f5bf4d87475d196c1cd1
+    last_write_checksum: sha1:df79a12bfca94c1901acb963c174ef9923ea1fed
   docs/Models/Requests/ListHrisTimeoffsRequest.md:
     id: 430d014b1c78
     last_write_checksum: sha1:dd6f07a9e673c1104300fd105c99ce54d5d2cb57
@@ -27976,7 +27982,7 @@ trackedFiles:
     last_write_checksum: sha1:1202336a90ddefd6e73b9f80991409640c3246d5
     pristine_git_object: 3efcc2187ac4d1982b44004ad30ba041b7580d7c
   docs/Models/Requests/PatchHrisTimeoffQueryParamFields.md:
-    last_write_checksum: sha1:d7518f8ec98524bbb6390f17c84c838992470679
+    last_write_checksum: sha1:b8a338b0a77eb15a2181e5d81fc545da15a2964a
   docs/Models/Requests/PatchHrisTimeoffRequest.md:
     last_write_checksum: sha1:8d620ea067feb4fbcc15249b1a2f53c596b046cb
   docs/Models/Requests/PatchHrisTimeoffResponse.md:
@@ -29656,7 +29662,7 @@ trackedFiles:
     last_write_checksum: sha1:208af856d26a4710a04f4405097e7bf97ec25b4b
     pristine_git_object: dfe8a4f1769ad17d3bdc86f44cc04635b6f42940
   docs/Models/Requests/UpdateHrisTimeoffQueryParamFields.md:
-    last_write_checksum: sha1:a53ef84babdec0b84a775c205b1721f5cd6f9e30
+    last_write_checksum: sha1:5d996f49cea9e0d062025ab672bd6f8d05f30645
   docs/Models/Requests/UpdateHrisTimeoffRequest.md:
     last_write_checksum: sha1:98fc5b533c3c2a9479115cc4ae5fa6409bf4ebbe
   docs/Models/Requests/UpdateHrisTimeoffResponse.md:

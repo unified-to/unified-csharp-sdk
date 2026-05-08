@@ -54,6 +54,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("status")]
         public HrisTimeoffStatus? Status { get; set; }
 
+        [JsonProperty("type")]
+        public HrisTimeoffType? Type { get; set; }
+
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
