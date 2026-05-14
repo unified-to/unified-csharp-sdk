@@ -338,6 +338,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("slow_fields")]
         public List<string>? SlowFields { get; set; }
 
+        [JsonProperty("virtual_webhook_account_id")]
+        public VirtualWebhookAccountId? VirtualWebhookAccountId { get; set; }
+
         [JsonProperty("virtual_webhook_ad_id")]
         public VirtualWebhookAdId? VirtualWebhookAdId { get; set; }
 

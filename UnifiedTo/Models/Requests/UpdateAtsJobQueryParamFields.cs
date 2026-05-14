@@ -67,6 +67,8 @@ namespace UnifiedTo.Models.Requests
         Skills,
         [JsonProperty("metadata")]
         Metadata,
+        [JsonProperty("user_id")]
+        UserId,
         [JsonProperty("raw")]
         Raw,
     }

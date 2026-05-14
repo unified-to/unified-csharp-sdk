@@ -30,6 +30,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("cc")]
         public List<AtsEmail>? Cc { get; set; }
 
+        [JsonProperty("company_id")]
+        public string? CompanyId { get; set; }
+
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
 

@@ -31,4 +31,5 @@
 | `MinimumDegree`          | minimum_degree           |
 | `Skills`                 | skills                   |
 | `Metadata`               | metadata                 |
+| `UserId`                 | user_id                  |
 | `Raw`                    | raw                      |

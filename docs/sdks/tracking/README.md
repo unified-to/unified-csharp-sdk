@@ -6,6 +6,7 @@
 ### Available Operations
 
 * [GetShippingTracking](#getshippingtracking) - Retrieve a tracking
+* [ListShippingTrackings](#listshippingtrackings) - List all trackings
 
 ## GetShippingTracking
 
@@ -41,6 +42,46 @@ var res = await sdk.Tracking.GetShippingTrackingAsync(
 ### Response
 
 **[GetShippingTrackingResponse](../../Models/Requests/GetShippingTrackingResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListShippingTrackings
+
+List all trackings
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListShippingTrackingsRequest req = new ListShippingTrackingsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Tracking.ListShippingTrackingsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                             | Type                                                                                  | Required                                                                              | Description                                                                           |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `request`                                                                             | [ListShippingTrackingsRequest](../../Models/Requests/ListShippingTrackingsRequest.md) | :heavy_check_mark:                                                                    | The request object to use for the request.                                            |
+
+### Response
+
+**[ListShippingTrackingsResponse](../../Models/Requests/ListShippingTrackingsResponse.md)**
 
 ### Errors
 

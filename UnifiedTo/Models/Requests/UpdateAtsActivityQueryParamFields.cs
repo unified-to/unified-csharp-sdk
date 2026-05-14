@@ -51,6 +51,8 @@ namespace UnifiedTo.Models.Requests
         Bcc,
         [JsonProperty("sub_type")]
         SubType,
+        [JsonProperty("company_id")]
+        CompanyId,
         [JsonProperty("raw")]
         Raw,
     }

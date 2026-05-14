@@ -69,5 +69,11 @@ namespace UnifiedTo.Models.Requests
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]
         public string? UpdatedGte { get; set; }
+
+        /// <summary>
+        /// The user/employee ID to filter by (reference to HrisEmployee)
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=user_id")]
+        public string? UserId { get; set; }
     }
 }
