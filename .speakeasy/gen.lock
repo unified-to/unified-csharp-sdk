@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 71e30ed7c0a4fabc725793c8d315129a
+  docChecksum: d0c51f91b1e66262f9489b66ca8d3b1f
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.71
-  configChecksum: 3bf93d64f22d453ffe29904c05ebce0e
+  releaseVersion: 0.130.72
+  configChecksum: bf00b78bc791a82224d607a6e18c8e02
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -7897,7 +7897,7 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"start_at": "2025-10-20T08:12:47.408Z"}
+          application/json: {}
   listHrisDevices:
     speakeasy-default-list-hris-devices:
       parameters:
@@ -11832,10 +11832,10 @@ examples:
         path:
           connection_id: "<id>"
       requestBody:
-        application/json: {"start_at": "2024-09-03T22:31:51.863Z"}
+        application/json: {}
       responses:
         "200":
-          application/json: {"start_at": "2026-06-15T05:46:27.150Z"}
+          application/json: {}
   patchHrisTimeoff:
     speakeasy-default-patch-hris-timeoff:
       parameters:
@@ -11843,10 +11843,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {"start_at": "2024-01-26T05:49:44.056Z"}
+        application/json: {}
       responses:
         "200":
-          application/json: {"start_at": "2024-11-03T06:01:35.702Z"}
+          application/json: {}
   removeHrisTimeoff:
     speakeasy-default-remove-hris-timeoff:
       parameters:
@@ -11860,10 +11860,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {"start_at": "2026-02-26T01:59:20.061Z"}
+        application/json: {}
       responses:
         "200":
-          application/json: {"start_at": "2025-05-04T04:02:48.766Z"}
+          application/json: {}
   createSigningDocument:
     speakeasy-default-create-signing-document:
       parameters:
@@ -13351,7 +13351,7 @@ trackedFiles:
     pristine_git_object: 6cd6e2701078c75594bf7f359e5a418000fa1f50
   UnifiedTo/Models/Components/HrisTimeoff.cs:
     id: 37e14d49e2e0
-    last_write_checksum: sha1:7c6ac93f33e0073849580c6dcc0691178e15cf6b
+    last_write_checksum: sha1:097a318bc3d98a7f58c735dfbb5fbb4a386e0a26
     pristine_git_object: ab7326ebdfaa7530c2a18e98d9b2547f8223b664
   UnifiedTo/Models/Components/HrisTimeoffStatus.cs:
     id: 65303ab39aec
@@ -21193,7 +21193,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:0f9946c56d2fff7af8d32be41951c16bfc5dc446
+    last_write_checksum: sha1:d02a8fb18d17385b93288d85182e0606f541a672
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -21305,7 +21305,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:0aea3ae313aa9b64923fe9c396daedcde025bd08
+    last_write_checksum: sha1:d846fab256e5a13e98f6d9c39efc0a2fe8de20b6
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -22391,7 +22391,7 @@ trackedFiles:
     pristine_git_object: 7c191c14b25ae14df483b040b01ced533d26f469
   docs/Models/Components/HrisTimeoff.md:
     id: fe88eaa680d8
-    last_write_checksum: sha1:7bee15b69abb7bc6dd14fe1ba0b2000a00e12cbd
+    last_write_checksum: sha1:86536faebd771847e41b06bfe60c83759b8f8a72
     pristine_git_object: 0adfd67758ddf4e02393ffe3e04545ed3f7fc72d
   docs/Models/Components/HrisTimeoffStatus.md:
     id: 0ef2113e920f
@@ -30325,7 +30325,7 @@ trackedFiles:
     pristine_git_object: 99cc06fb51a443fd99605c8cb7c23f796813735b
   docs/sdks/hris/README.md:
     id: 0baa868a038c
-    last_write_checksum: sha1:ff9c88cc5e39a4b27956fc7bea745fd6108bc447
+    last_write_checksum: sha1:61f0ae42b645a9d24c20f4d81ff43df4f8bd3e01
     pristine_git_object: a882173f5be927d02855943c318fb98d8a5d4d85
   docs/sdks/insertionorder/README.md:
     last_write_checksum: sha1:c2e53f7d77df988a17ffc0260b8765d886bf1ff6
@@ -30583,7 +30583,7 @@ trackedFiles:
     pristine_git_object: 1ea9d5a09d00507fadff76e8b7b3ea5a10019479
   docs/sdks/timeoff/README.md:
     id: 5dfa0f033e4a
-    last_write_checksum: sha1:b98c1620239183298923cc168debae7f359a2662
+    last_write_checksum: sha1:a500790fb5471c544cdf0f48ce0ad309d4684628
     pristine_git_object: 032ccd655011779a99392c56d5c7a61524a0ef75
   docs/sdks/timeshift/README.md:
     id: f11112fc9233
