@@ -35,10 +35,6 @@ namespace UnifiedTo.Models.Components
         Topic,
         [JsonProperty("USER_LIST")]
         UserList,
-        [JsonProperty("AGE_RANGE")]
-        AgeRange,
-        [JsonProperty("GENDER")]
-        Gender,
         [JsonProperty("CARRIER")]
         Carrier,
         [JsonProperty("DEVICE_MODEL")]

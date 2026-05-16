@@ -89,6 +89,12 @@ namespace UnifiedTo.Models.Requests
         public string? StartGte { get; set; }
 
         /// <summary>
+        /// The status to filter by
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=status")]
+        public string? Status { get; set; }
+
+        /// <summary>
         /// Return only results whose updated date is equal or greater to this value (ISO-8601 / YYYY-MM-DDTHH:MM:SSZ format)
         /// </summary>
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=updated_gte")]

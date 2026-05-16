@@ -15,8 +15,6 @@
 | `UsDma`       | US_DMA        |
 | `Topic`       | TOPIC         |
 | `UserList`    | USER_LIST     |
-| `AgeRange`    | AGE_RANGE     |
-| `Gender`      | GENDER        |
 | `Carrier`     | CARRIER       |
 | `DeviceModel` | DEVICE_MODEL  |
 | `OsVersion`   | OS_VERSION    |

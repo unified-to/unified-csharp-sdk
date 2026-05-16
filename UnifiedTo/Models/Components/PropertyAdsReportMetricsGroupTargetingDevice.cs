@@ -11,21 +11,22 @@ namespace UnifiedTo.Models.Components
 {
     using Newtonsoft.Json;
     using System.Collections.Generic;
+    using UnifiedTo.Models.Components;
     using UnifiedTo.Utils;
     
     public class PropertyAdsReportMetricsGroupTargetingDevice
     {
 
         [JsonProperty("carriers")]
-        public List<string>? Carriers { get; set; }
+        public List<DeviceTarget>? Carriers { get; set; }
 
         [JsonProperty("types")]
-        public List<string>? Types { get; set; }
+        public List<DeviceTarget>? Types { get; set; }
 
         [JsonProperty("user_device")]
-        public List<string>? UserDevice { get; set; }
+        public List<DeviceTarget>? UserDevice { get; set; }
 
         [JsonProperty("user_os")]
-        public List<string>? UserOs { get; set; }
+        public List<DeviceTarget>? UserOs { get; set; }
     }
 }
