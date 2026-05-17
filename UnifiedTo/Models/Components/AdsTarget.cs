@@ -20,6 +20,12 @@ namespace UnifiedTo.Models.Components
     public class AdsTarget
     {
 
+        [JsonProperty("audience_count_max")]
+        public double? AudienceCountMax { get; set; }
+
+        [JsonProperty("audience_count_min")]
+        public double? AudienceCountMin { get; set; }
+
         [JsonProperty("id")]
         public string Id { get; set; } = default!;
 

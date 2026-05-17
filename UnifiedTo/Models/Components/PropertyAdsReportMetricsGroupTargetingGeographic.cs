@@ -21,36 +21,36 @@ namespace UnifiedTo.Models.Components
         public List<CityTarget>? Cities { get; set; }
 
         [JsonProperty("countries")]
-        public List<GeoTarget>? Countries { get; set; }
+        public List<TargetRef>? Countries { get; set; }
 
         [JsonProperty("excluded_cities")]
         public List<CityTarget>? ExcludedCities { get; set; }
 
         [JsonProperty("excluded_countries")]
-        public List<GeoTarget>? ExcludedCountries { get; set; }
+        public List<TargetRef>? ExcludedCountries { get; set; }
 
         [JsonProperty("excluded_postal_codes")]
-        public List<GeoTarget>? ExcludedPostalCodes { get; set; }
+        public List<TargetRef>? ExcludedPostalCodes { get; set; }
 
         [JsonProperty("excluded_regions")]
-        public List<RegionTarget>? ExcludedRegions { get; set; }
+        public List<TargetRef>? ExcludedRegions { get; set; }
 
         [JsonProperty("excluded_us_dmas")]
-        public List<GeoTarget>? ExcludedUsDmas { get; set; }
+        public List<TargetRef>? ExcludedUsDmas { get; set; }
 
         [JsonProperty("location_types")]
         public List<PropertyAdsReportMetricsGroupTargetingGeographicLocationTypes>? LocationTypes { get; set; }
 
         [JsonProperty("postal_codes")]
-        public List<GeoTarget>? PostalCodes { get; set; }
+        public List<TargetRef>? PostalCodes { get; set; }
 
         [JsonProperty("presence_type")]
         public PropertyAdsReportMetricsGroupTargetingGeographicPresenceType? PresenceType { get; set; }
 
         [JsonProperty("regions")]
-        public List<RegionTarget>? Regions { get; set; }
+        public List<TargetRef>? Regions { get; set; }
 
         [JsonProperty("us_dmas")]
-        public List<GeoTarget>? UsDmas { get; set; }
+        public List<TargetRef>? UsDmas { get; set; }
     }
 }

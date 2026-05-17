@@ -7,6 +7,8 @@ Targeting search result (for ads_target list endpoint)
 
 | Field                                                     | Type                                                      | Required                                                  | Description                                               |
 | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- |
+| `AudienceCountMax`                                        | *double*                                                  | :heavy_minus_sign:                                        | N/A                                                       |
+| `AudienceCountMin`                                        | *double*                                                  | :heavy_minus_sign:                                        | N/A                                                       |
 | `Id`                                                      | *string*                                                  | :heavy_check_mark:                                        | N/A                                                       |
 | `IsActive`                                                | *bool*                                                    | :heavy_minus_sign:                                        | N/A                                                       |
 | `Name`                                                    | *string*                                                  | :heavy_minus_sign:                                        | N/A                                                       |

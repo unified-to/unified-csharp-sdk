@@ -18,15 +18,15 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("carriers")]
-        public List<DeviceTarget>? Carriers { get; set; }
+        public List<TargetRef>? Carriers { get; set; }
 
         [JsonProperty("types")]
-        public List<DeviceTarget>? Types { get; set; }
+        public List<TargetRef>? Types { get; set; }
 
         [JsonProperty("user_device")]
-        public List<DeviceTarget>? UserDevice { get; set; }
+        public List<TargetRef>? UserDevice { get; set; }
 
         [JsonProperty("user_os")]
-        public List<DeviceTarget>? UserOs { get; set; }
+        public List<TargetRef>? UserOs { get; set; }
     }
 }

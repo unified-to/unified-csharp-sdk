@@ -21,7 +21,7 @@ namespace UnifiedTo.Models.Components
         public List<AdsKeyword>? ExcludedKeywords { get; set; }
 
         [JsonProperty("excluded_topics")]
-        public List<TopicTarget>? ExcludedTopics { get; set; }
+        public List<TargetRef>? ExcludedTopics { get; set; }
 
         [JsonProperty("excluded_urls")]
         public List<string>? ExcludedUrls { get; set; }
@@ -30,7 +30,7 @@ namespace UnifiedTo.Models.Components
         public List<AdsKeyword>? Keywords { get; set; }
 
         [JsonProperty("topics")]
-        public List<TopicTarget>? Topics { get; set; }
+        public List<TargetRef>? Topics { get; set; }
 
         [JsonProperty("urls")]
         public List<string>? Urls { get; set; }

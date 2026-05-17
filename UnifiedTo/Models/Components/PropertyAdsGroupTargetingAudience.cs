@@ -18,25 +18,25 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("behaviors")]
-        public List<AudienceSegment>? Behaviors { get; set; }
+        public List<TargetRef>? Behaviors { get; set; }
 
         [JsonProperty("combination_spec")]
         public List<AudienceCombination>? CombinationSpec { get; set; }
 
         [JsonProperty("custom_audiences")]
-        public List<AudienceSegment>? CustomAudiences { get; set; }
+        public List<TargetRef>? CustomAudiences { get; set; }
 
         [JsonProperty("excluded_behaviors")]
-        public List<AudienceSegment>? ExcludedBehaviors { get; set; }
+        public List<TargetRef>? ExcludedBehaviors { get; set; }
 
         [JsonProperty("excluded_custom_audiences")]
-        public List<AudienceSegment>? ExcludedCustomAudiences { get; set; }
+        public List<TargetRef>? ExcludedCustomAudiences { get; set; }
 
         [JsonProperty("excluded_interests")]
-        public List<AudienceSegment>? ExcludedInterests { get; set; }
+        public List<TargetRef>? ExcludedInterests { get; set; }
 
         [JsonProperty("interests")]
-        public List<AudienceSegment>? Interests { get; set; }
+        public List<TargetRef>? Interests { get; set; }
 
         [JsonProperty("lookalike_audiences")]
         public List<LookalikeAudience>? LookalikeAudiences { get; set; }

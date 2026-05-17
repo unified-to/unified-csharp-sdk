@@ -25,6 +25,10 @@ namespace UnifiedTo.Models.Requests
         IsActive,
         [JsonProperty("parent_id")]
         ParentId,
+        [JsonProperty("audience_count_min")]
+        AudienceCountMin,
+        [JsonProperty("audience_count_max")]
+        AudienceCountMax,
         [JsonProperty("raw")]
         Raw,
     }

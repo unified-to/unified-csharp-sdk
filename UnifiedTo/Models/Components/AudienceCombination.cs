@@ -18,15 +18,15 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("behaviors")]
-        public List<AudienceSegment>? Behaviors { get; set; }
-
-        [JsonProperty("demographics")]
-        public List<AudienceSegment>? Demographics { get; set; }
+        public List<TargetRef>? Behaviors { get; set; }
 
         [JsonProperty("interests")]
-        public List<AudienceSegment>? Interests { get; set; }
+        public List<TargetRef>? Interests { get; set; }
 
         [JsonProperty("life_events")]
-        public List<AudienceSegment>? LifeEvents { get; set; }
+        public List<TargetRef>? LifeEvents { get; set; }
+
+        [JsonProperty("references")]
+        public List<TargetRef>? References { get; set; }
     }
 }

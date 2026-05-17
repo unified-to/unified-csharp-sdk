@@ -12,14 +12,11 @@ namespace UnifiedTo.Models.Components
     using Newtonsoft.Json;
     using UnifiedTo.Utils;
     
-    /// <summary>
-    /// states, provinces, regions
-    /// </summary>
-    public class RegionTarget
+    public class TargetRef
     {
 
         [JsonProperty("id")]
-        public string Id { get; set; } = default!;
+        public string? Id { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; }

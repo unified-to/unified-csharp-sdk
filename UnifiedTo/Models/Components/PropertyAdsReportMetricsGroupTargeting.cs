@@ -41,11 +41,8 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("geographic")]
         public PropertyAdsReportMetricsGroupTargetingGeographic? Geographic { get; set; }
 
-        /// <summary>
-        /// Language targeting (Meta
-        /// </summary>
         [JsonProperty("language")]
-        public PropertyAdsReportMetricsGroupTargetingLanguage? Language { get; set; }
+        public List<TargetRef>? Language { get; set; }
 
         /// <summary>
         /// Optimization (Meta: targeting_automation; Google: observation vs targeting mode)
