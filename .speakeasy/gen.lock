@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 98553c5a9c26bbe1e089cc9d09e3a8f2
+  docChecksum: 389d12ddd497f44c9fc1e4755d3d9af5
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.74
-  configChecksum: 6937fad2d69d127d2576ace080754a77
+  releaseVersion: 0.130.75
+  configChecksum: 89ab460fb6308c5a65dae51da60279cf
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -7887,7 +7887,7 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {}
+          application/json: {"start_at": "2025-10-20T08:12:47.408Z"}
   listHrisDevices:
     speakeasy-default-list-hris-devices:
       parameters:
@@ -9812,10 +9812,10 @@ examples:
         path:
           connection_id: "<id>"
       requestBody:
-        application/json: {"employee_user_id": "<id>", "end_at": "2025-10-18T00:03:45.822Z", "start_at": "2024-06-03T05:33:48.715Z"}
+        application/json: {"employee_user_id": "<id>"}
       responses:
         "200":
-          application/json: {"employee_user_id": "<id>", "end_at": "2025-04-02T06:29:45.209Z", "start_at": "2025-05-03T19:13:33.398Z"}
+          application/json: {"employee_user_id": "<id>"}
   getHrisTimeshift:
     speakeasy-default-get-hris-timeshift:
       parameters:
@@ -9824,7 +9824,7 @@ examples:
           id: "<id>"
       responses:
         "200":
-          application/json: {"employee_user_id": "<id>", "end_at": "2025-02-02T20:47:43.029Z", "start_at": "2023-11-12T09:20:44.392Z"}
+          application/json: {"employee_user_id": "<id>"}
   listHrisTimeshifts:
     speakeasy-default-list-hris-timeshifts:
       parameters:
@@ -9840,10 +9840,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {"employee_user_id": "<id>", "end_at": "2023-11-17T18:53:02.172Z", "start_at": "2023-01-19T02:48:41.002Z"}
+        application/json: {"employee_user_id": "<id>"}
       responses:
         "200":
-          application/json: {"employee_user_id": "<id>", "end_at": "2023-05-16T07:27:26.608Z", "start_at": "2024-07-25T03:16:34.281Z"}
+          application/json: {"employee_user_id": "<id>"}
   removeHrisTimeshift:
     speakeasy-default-remove-hris-timeshift:
       parameters:
@@ -9857,10 +9857,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {"employee_user_id": "<id>", "end_at": "2025-03-03T22:04:09.340Z", "start_at": "2024-05-30T21:19:58.772Z"}
+        application/json: {"employee_user_id": "<id>"}
       responses:
         "200":
-          application/json: {"employee_user_id": "<id>", "end_at": "2024-05-09T22:44:06.400Z", "start_at": "2023-11-14T18:28:16.870Z"}
+          application/json: {"employee_user_id": "<id>"}
   createAtsCompany:
     speakeasy-default-create-ats-company:
       parameters:
@@ -11822,10 +11822,10 @@ examples:
         path:
           connection_id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"start_at": "2024-09-03T22:31:51.863Z"}
       responses:
         "200":
-          application/json: {}
+          application/json: {"start_at": "2026-06-15T05:46:27.150Z"}
   patchHrisTimeoff:
     speakeasy-default-patch-hris-timeoff:
       parameters:
@@ -11833,10 +11833,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"start_at": "2024-01-26T05:49:44.056Z"}
       responses:
         "200":
-          application/json: {}
+          application/json: {"start_at": "2024-11-03T06:01:35.702Z"}
   removeHrisTimeoff:
     speakeasy-default-remove-hris-timeoff:
       parameters:
@@ -11850,10 +11850,10 @@ examples:
           connection_id: "<id>"
           id: "<id>"
       requestBody:
-        application/json: {}
+        application/json: {"start_at": "2026-02-26T01:59:20.061Z"}
       responses:
         "200":
-          application/json: {}
+          application/json: {"start_at": "2025-05-04T04:02:48.766Z"}
   createSigningDocument:
     speakeasy-default-create-signing-document:
       parameters:
@@ -13339,7 +13339,7 @@ trackedFiles:
     pristine_git_object: 6cd6e2701078c75594bf7f359e5a418000fa1f50
   UnifiedTo/Models/Components/HrisTimeoff.cs:
     id: 37e14d49e2e0
-    last_write_checksum: sha1:097a318bc3d98a7f58c735dfbb5fbb4a386e0a26
+    last_write_checksum: sha1:7c6ac93f33e0073849580c6dcc0691178e15cf6b
     pristine_git_object: ab7326ebdfaa7530c2a18e98d9b2547f8223b664
   UnifiedTo/Models/Components/HrisTimeoffStatus.cs:
     id: 65303ab39aec
@@ -13349,7 +13349,7 @@ trackedFiles:
     last_write_checksum: sha1:e8e8f2da95bb1c0ded07fab9e8cc6b9940ad57de
   UnifiedTo/Models/Components/HrisTimeshift.cs:
     id: 71e48a293510
-    last_write_checksum: sha1:bb6bb8f9a7f60624750cc49f4e7fb19fe40a7d55
+    last_write_checksum: sha1:4430cbf7b3e2b86646075c569488213b9c69bcdb
     pristine_git_object: 1bff4464e218e0fa308ac27cd030b47c69f10a82
   UnifiedTo/Models/Components/Integration.cs:
     id: 78865de2403d
@@ -22369,7 +22369,7 @@ trackedFiles:
     pristine_git_object: 7c191c14b25ae14df483b040b01ced533d26f469
   docs/Models/Components/HrisTimeoff.md:
     id: fe88eaa680d8
-    last_write_checksum: sha1:86536faebd771847e41b06bfe60c83759b8f8a72
+    last_write_checksum: sha1:7bee15b69abb7bc6dd14fe1ba0b2000a00e12cbd
     pristine_git_object: 0adfd67758ddf4e02393ffe3e04545ed3f7fc72d
   docs/Models/Components/HrisTimeoffStatus.md:
     id: 0ef2113e920f
@@ -22379,7 +22379,7 @@ trackedFiles:
     last_write_checksum: sha1:1704ae9953be22889616506a0f8fb8566c20d537
   docs/Models/Components/HrisTimeshift.md:
     id: c7d188d2e74a
-    last_write_checksum: sha1:40043e10adf36bd1e84e913e47e299ae9c4cceb2
+    last_write_checksum: sha1:73650c01837adebe4088ec524a96a2ad6a3ab89d
     pristine_git_object: b533dc9bc6864446b86e7b4575f359bed1f9cc08
   docs/Models/Components/Integration.md:
     id: 4ae77c8ad6d4
@@ -30295,7 +30295,7 @@ trackedFiles:
     pristine_git_object: 99cc06fb51a443fd99605c8cb7c23f796813735b
   docs/sdks/hris/README.md:
     id: 0baa868a038c
-    last_write_checksum: sha1:61f0ae42b645a9d24c20f4d81ff43df4f8bd3e01
+    last_write_checksum: sha1:14a14281e8f6cfd3d329bb159975194e503b24bf
     pristine_git_object: a882173f5be927d02855943c318fb98d8a5d4d85
   docs/sdks/insertionorder/README.md:
     last_write_checksum: sha1:c2e53f7d77df988a17ffc0260b8765d886bf1ff6
@@ -30553,11 +30553,11 @@ trackedFiles:
     pristine_git_object: 1ea9d5a09d00507fadff76e8b7b3ea5a10019479
   docs/sdks/timeoff/README.md:
     id: 5dfa0f033e4a
-    last_write_checksum: sha1:a500790fb5471c544cdf0f48ce0ad309d4684628
+    last_write_checksum: sha1:b98c1620239183298923cc168debae7f359a2662
     pristine_git_object: 032ccd655011779a99392c56d5c7a61524a0ef75
   docs/sdks/timeshift/README.md:
     id: f11112fc9233
-    last_write_checksum: sha1:ff290d55bd8cc5ee52a575eed9b9d3efac6f8de0
+    last_write_checksum: sha1:e6c421471dec9c65cee8b26a18d8805c5a8a1dea
     pristine_git_object: 15adb945ca7e159b8995a477c77e549cc2d9785f
   docs/sdks/tracking/README.md:
     last_write_checksum: sha1:bb2d55d2dab9b3f56ab4a07ee92e723d94283ced

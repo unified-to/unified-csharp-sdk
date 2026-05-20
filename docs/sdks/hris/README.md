@@ -405,6 +405,7 @@ Create a timeoff
 ### Example Usage
 
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -413,7 +414,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.CreateHrisTimeoffAsync(
-    hrisTimeoff: new HrisTimeoff() {},
+    hrisTimeoff: new HrisTimeoff() {
+        StartAt = System.DateTime.Parse("2024-09-03T22:31:51.863Z"),
+    },
     connectionId: "<id>"
 );
 
@@ -446,7 +449,6 @@ Create a timeshift
 ### Example Usage
 
 ```csharp
-using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -457,8 +459,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 var res = await sdk.Hris.CreateHrisTimeshiftAsync(
     hrisTimeshift: new HrisTimeshift() {
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2025-10-18T00:03:45.822Z"),
-        StartAt = System.DateTime.Parse("2024-06-03T05:33:48.715Z"),
     },
     connectionId: "<id>"
 );
@@ -1721,6 +1721,7 @@ Update a timeoff
 ### Example Usage
 
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1730,7 +1731,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchHrisTimeoffRequest req = new PatchHrisTimeoffRequest() {
-    HrisTimeoff = new HrisTimeoff() {},
+    HrisTimeoff = new HrisTimeoff() {
+        StartAt = System.DateTime.Parse("2024-01-26T05:49:44.056Z"),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1763,7 +1766,6 @@ Update a timeshift
 ### Example Usage
 
 ```csharp
-using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1775,8 +1777,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 PatchHrisTimeshiftRequest req = new PatchHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2023-11-17T18:53:02.172Z"),
-        StartAt = System.DateTime.Parse("2023-01-19T02:48:41.002Z"),
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2538,6 +2538,7 @@ Update a timeoff
 ### Example Usage
 
 ```csharp
+using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -2547,7 +2548,9 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateHrisTimeoffRequest req = new UpdateHrisTimeoffRequest() {
-    HrisTimeoff = new HrisTimeoff() {},
+    HrisTimeoff = new HrisTimeoff() {
+        StartAt = System.DateTime.Parse("2026-02-26T01:59:20.061Z"),
+    },
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -2580,7 +2583,6 @@ Update a timeshift
 ### Example Usage
 
 ```csharp
-using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -2592,8 +2594,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 UpdateHrisTimeshiftRequest req = new UpdateHrisTimeshiftRequest() {
     HrisTimeshift = new HrisTimeshift() {
         EmployeeUserId = "<id>",
-        EndAt = System.DateTime.Parse("2025-03-03T22:04:09.340Z"),
-        StartAt = System.DateTime.Parse("2024-05-30T21:19:58.772Z"),
     },
     ConnectionId = "<id>",
     Id = "<id>",

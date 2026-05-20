@@ -37,7 +37,7 @@ namespace UnifiedTo.Models.Components
         public string EmployeeUserId { get; set; } = default!;
 
         [JsonProperty("end_at")]
-        public DateTime EndAt { get; set; } = default!;
+        public DateTime? EndAt { get; set; }
 
         [JsonProperty("group_id")]
         public string? GroupId { get; set; }
@@ -58,7 +58,7 @@ namespace UnifiedTo.Models.Components
         public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("start_at")]
-        public DateTime StartAt { get; set; } = default!;
+        public DateTime? StartAt { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
