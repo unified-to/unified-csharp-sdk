@@ -31,7 +31,7 @@ namespace UnifiedTo.Models.Components
         public string? Notes { get; set; }
 
         [JsonProperty("payment_id")]
-        public string PaymentId { get; set; } = default!;
+        public string? PaymentId { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }
@@ -43,7 +43,7 @@ namespace UnifiedTo.Models.Components
         public PaymentRefundStatus? Status { get; set; }
 
         [JsonProperty("total_amount")]
-        public double TotalAmount { get; set; } = default!;
+        public double? TotalAmount { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

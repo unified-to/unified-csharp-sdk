@@ -17,7 +17,7 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("cost_amount")]
-        public double CostAmount { get; set; } = default!;
+        public double? CostAmount { get; set; }
 
         [JsonProperty("currency")]
         public string? Currency { get; set; }
@@ -29,6 +29,6 @@ namespace UnifiedTo.Models.Components
         /// Countryregion codes where this package is available ({country}-{state} or {country})
         /// </summary>
         [JsonProperty("regions")]
-        public List<string> Regions { get; set; } = default!;
+        public List<string>? Regions { get; set; }
     }
 }

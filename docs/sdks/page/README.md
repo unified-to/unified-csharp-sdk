@@ -28,7 +28,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Page.CreateKmsPageAsync(
     kmsPage: new KmsPage() {
-        Title = "<value>",
         Type = KmsPageType.Text,
     },
     connectionId: "<id>"
@@ -154,7 +153,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchKmsPageRequest req = new PatchKmsPageRequest() {
     KmsPage = new KmsPage() {
-        Title = "<value>",
         Type = KmsPageType.Other,
     },
     ConnectionId = "<id>",
@@ -238,7 +236,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateKmsPageRequest req = new UpdateKmsPageRequest() {
     KmsPage = new KmsPage() {
-        Title = "<value>",
         Type = KmsPageType.Other,
     },
     ConnectionId = "<id>",

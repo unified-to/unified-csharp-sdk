@@ -41,10 +41,10 @@ namespace UnifiedTo.Models.Requests
         NetAmount,
         [JsonProperty("details")]
         Details,
-        [JsonProperty("raw")]
-        Raw,
         [JsonProperty("deduction")]
         Deduction,
+        [JsonProperty("raw")]
+        Raw,
     }
 
     public static class ListHrisPayslipsQueryParamFieldsExtension

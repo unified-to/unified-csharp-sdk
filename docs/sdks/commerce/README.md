@@ -113,9 +113,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.CreateCommerceInventoryAsync(
-    commerceInventory: new CommerceInventory() {
-        Available = 7463.62D,
-    },
+    commerceInventory: new CommerceInventory() {},
     connectionId: "<id>"
 );
 
@@ -238,9 +236,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.CreateCommerceLocationAsync(
-    commerceLocation: new CommerceLocation() {
-        Name = "<value>",
-    },
+    commerceLocation: new CommerceLocation() {},
     connectionId: "<id>"
 );
 
@@ -322,9 +318,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Commerce.CreateCommerceReviewAsync(
-    commerceReview: new CommerceReview() {
-        ItemId = "<id>",
-    },
+    commerceReview: new CommerceReview() {},
     connectionId: "<id>"
 );
 
@@ -1139,9 +1133,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCommerceInventoryRequest req = new PatchCommerceInventoryRequest() {
-    CommerceInventory = new CommerceInventory() {
-        Available = 7859.84D,
-    },
+    CommerceInventory = new CommerceInventory() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1267,9 +1259,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
-    CommerceLocation = new CommerceLocation() {
-        Name = "<value>",
-    },
+    CommerceLocation = new CommerceLocation() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1353,9 +1343,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
-    CommerceReview = new CommerceReview() {
-        ItemId = "<id>",
-    },
+    CommerceReview = new CommerceReview() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1795,9 +1783,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCommerceInventoryRequest req = new UpdateCommerceInventoryRequest() {
-    CommerceInventory = new CommerceInventory() {
-        Available = 4497.29D,
-    },
+    CommerceInventory = new CommerceInventory() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1923,9 +1909,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
-    CommerceLocation = new CommerceLocation() {
-        Name = "<value>",
-    },
+    CommerceLocation = new CommerceLocation() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -2009,9 +1993,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
-    CommerceReview = new CommerceReview() {
-        ItemId = "<id>",
-    },
+    CommerceReview = new CommerceReview() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };

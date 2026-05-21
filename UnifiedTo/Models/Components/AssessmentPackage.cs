@@ -43,7 +43,7 @@ namespace UnifiedTo.Models.Components
         public bool? HasTargetUrl { get; set; }
 
         [JsonProperty("id")]
-        public string Id { get; set; } = default!;
+        public string? Id { get; set; }
 
         [JsonProperty("info_url")]
         public string? InfoUrl { get; set; }
@@ -58,7 +58,7 @@ namespace UnifiedTo.Models.Components
         public double? MaxScore { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
 
         [JsonProperty("needs_ip_address")]
         public bool? NeedsIpAddress { get; set; }

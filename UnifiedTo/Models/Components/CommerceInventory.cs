@@ -18,7 +18,7 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("available")]
-        public double Available { get; set; } = default!;
+        public double? Available { get; set; }
 
         [JsonProperty("id")]
         public string? Id { get; set; }

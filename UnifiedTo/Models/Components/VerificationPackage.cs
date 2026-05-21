@@ -46,7 +46,7 @@ namespace UnifiedTo.Models.Components
         public bool? HasTargetUrl { get; set; }
 
         [JsonProperty("id")]
-        public string Id { get; set; } = default!;
+        public string? Id { get; set; }
 
         [JsonProperty("info_url")]
         public string? InfoUrl { get; set; }

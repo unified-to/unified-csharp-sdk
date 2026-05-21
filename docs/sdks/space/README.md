@@ -27,9 +27,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Space.CreateKmsSpaceAsync(
-    kmsSpace: new KmsSpace() {
-        Name = "<value>",
-    },
+    kmsSpace: new KmsSpace() {},
     connectionId: "<id>"
 );
 
@@ -152,9 +150,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchKmsSpaceRequest req = new PatchKmsSpaceRequest() {
-    KmsSpace = new KmsSpace() {
-        Name = "<value>",
-    },
+    KmsSpace = new KmsSpace() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -235,9 +231,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateKmsSpaceRequest req = new UpdateKmsSpaceRequest() {
-    KmsSpace = new KmsSpace() {
-        Name = "<value>",
-    },
+    KmsSpace = new KmsSpace() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };

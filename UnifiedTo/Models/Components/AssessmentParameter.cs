@@ -30,7 +30,7 @@ namespace UnifiedTo.Models.Components
         public bool? IsRequired { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
 
         /// <summary>
         /// Options for MULTIPLE_CHOICE and MULTIPLE_SELECT

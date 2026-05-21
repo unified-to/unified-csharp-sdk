@@ -247,9 +247,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Hris.CreateHrisDeviceAsync(
-    hrisDevice: new HrisDevice() {
-        Name = "<value>",
-    },
+    hrisDevice: new HrisDevice() {},
     connectionId: "<id>"
 );
 
@@ -405,7 +403,6 @@ Create a timeoff
 ### Example Usage
 
 ```csharp
-using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 
@@ -415,7 +412,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Hris.CreateHrisTimeoffAsync(
     hrisTimeoff: new HrisTimeoff() {
-        StartAt = System.DateTime.Parse("2024-09-03T22:31:51.863Z"),
+        UserId = "<id>",
     },
     connectionId: "<id>"
 );
@@ -1560,9 +1557,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchHrisDeviceRequest req = new PatchHrisDeviceRequest() {
-    HrisDevice = new HrisDevice() {
-        Name = "<value>",
-    },
+    HrisDevice = new HrisDevice() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1721,7 +1716,6 @@ Update a timeoff
 ### Example Usage
 
 ```csharp
-using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -1732,7 +1726,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchHrisTimeoffRequest req = new PatchHrisTimeoffRequest() {
     HrisTimeoff = new HrisTimeoff() {
-        StartAt = System.DateTime.Parse("2024-01-26T05:49:44.056Z"),
+        UserId = "<id>",
     },
     ConnectionId = "<id>",
     Id = "<id>",
@@ -2377,9 +2371,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateHrisDeviceRequest req = new UpdateHrisDeviceRequest() {
-    HrisDevice = new HrisDevice() {
-        Name = "<value>",
-    },
+    HrisDevice = new HrisDevice() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -2538,7 +2530,6 @@ Update a timeoff
 ### Example Usage
 
 ```csharp
-using System;
 using UnifiedTo;
 using UnifiedTo.Models.Components;
 using UnifiedTo.Models.Requests;
@@ -2549,7 +2540,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateHrisTimeoffRequest req = new UpdateHrisTimeoffRequest() {
     HrisTimeoff = new HrisTimeoff() {
-        StartAt = System.DateTime.Parse("2026-02-26T01:59:20.061Z"),
+        UserId = "<id>",
     },
     ConnectionId = "<id>",
     Id = "<id>",

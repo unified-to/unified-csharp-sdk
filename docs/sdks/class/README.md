@@ -27,10 +27,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Class.CreateLmsClassAsync(
-    lmsClass: new LmsClass() {
-        CourseId = "<id>",
-        Name = "<value>",
-    },
+    lmsClass: new LmsClass() {},
     connectionId: "<id>"
 );
 
@@ -153,10 +150,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchLmsClassRequest req = new PatchLmsClassRequest() {
-    LmsClass = new LmsClass() {
-        CourseId = "<id>",
-        Name = "<value>",
-    },
+    LmsClass = new LmsClass() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -237,10 +231,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateLmsClassRequest req = new UpdateLmsClassRequest() {
-    LmsClass = new LmsClass() {
-        CourseId = "<id>",
-        Name = "<value>",
-    },
+    LmsClass = new LmsClass() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };

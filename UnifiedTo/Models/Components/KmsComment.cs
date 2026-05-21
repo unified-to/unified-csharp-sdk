@@ -19,7 +19,7 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("content")]
-        public string Content { get; set; } = default!;
+        public string? Content { get; set; }
 
         [JsonProperty("content_type")]
         public ContentType? ContentType { get; set; }

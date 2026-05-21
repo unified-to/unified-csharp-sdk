@@ -31,7 +31,7 @@ namespace UnifiedTo.Models.Components
         public string? AuthorName { get; set; }
 
         [JsonProperty("content")]
-        public string Content { get; set; } = default!;
+        public string? Content { get; set; }
 
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }

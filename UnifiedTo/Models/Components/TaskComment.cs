@@ -30,7 +30,7 @@ namespace UnifiedTo.Models.Components
         public string? TaskId { get; set; }
 
         [JsonProperty("text")]
-        public string Text { get; set; } = default!;
+        public string? Text { get; set; }
 
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }

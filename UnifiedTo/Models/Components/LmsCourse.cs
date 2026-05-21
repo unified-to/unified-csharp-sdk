@@ -61,7 +61,7 @@ namespace UnifiedTo.Models.Components
         public List<LmsMedia>? Media { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
 
         [JsonProperty("price_amount")]
         public double? PriceAmount { get; set; }

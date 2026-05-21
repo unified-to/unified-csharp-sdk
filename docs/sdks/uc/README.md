@@ -41,9 +41,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Uc.CreateUcCommentAsync(
-    ucComment: new UcComment() {
-        Content = "<value>",
-    },
+    ucComment: new UcComment() {},
     connectionId: "<id>"
 );
 
@@ -491,9 +489,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchUcCommentRequest req = new PatchUcCommentRequest() {
-    UcComment = new UcComment() {
-        Content = "<value>",
-    },
+    UcComment = new UcComment() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -736,9 +732,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateUcCommentRequest req = new UpdateUcCommentRequest() {
-    UcComment = new UcComment() {
-        Content = "<value>",
-    },
+    UcComment = new UcComment() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };

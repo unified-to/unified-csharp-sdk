@@ -19,7 +19,7 @@ namespace UnifiedTo.Models.Components
     {
 
         [JsonProperty("course_id")]
-        public string CourseId { get; set; } = default!;
+        public string? CourseId { get; set; }
 
         [JsonProperty("created_at")]
         public DateTime? CreatedAt { get; set; }
@@ -40,7 +40,7 @@ namespace UnifiedTo.Models.Components
         public List<LmsMedia>? Media { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }

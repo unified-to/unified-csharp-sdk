@@ -30,8 +30,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Assessment.CreateAssessmentPackageAsync(
     assessmentPackage: new AssessmentPackage() {
-        Id = "<id>",
-        Name = "<value>",
         Type = AssessmentPackageType.ReferenceCheck,
     },
     connectionId: "<id>"
@@ -194,8 +192,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Assessment.PatchAssessmentPackageAsync(
     assessmentPackage: new AssessmentPackage() {
-        Id = "<id>",
-        Name = "<value>",
         Type = AssessmentPackageType.BackgroundCheck,
     },
     connectionId: "<id>",
@@ -323,8 +319,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Assessment.UpdateAssessmentPackageAsync(
     assessmentPackage: new AssessmentPackage() {
-        Id = "<id>",
-        Name = "<value>",
         Type = AssessmentPackageType.Other,
     },
     connectionId: "<id>",

@@ -45,6 +45,12 @@ namespace UnifiedTo.Models.Requests
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=redirect")]
         public bool? Redirect { get; set; }
 
+        /// <summary>
+        /// Optional region index (into the integration api.urls array) selected by the end-user. Set automatically by the auth widget when the workspace integration has prompt_region=true.
+        /// </summary>
+        [SpeakeasyMetadata("queryParam:style=form,explode=true,name=region")]
+        public string? Region { get; set; }
+
         [SpeakeasyMetadata("queryParam:style=form,explode=true,name=scopes")]
         public List<string>? Scopes { get; set; }
 

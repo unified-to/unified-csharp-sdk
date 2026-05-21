@@ -55,7 +55,7 @@ namespace UnifiedTo.Models.Components
         public PaymentType? PaymentType { get; set; }
 
         [JsonProperty("raw")]
-        public Dictionary<string, object> Raw { get; set; } = default!;
+        public Dictionary<string, object>? Raw { get; set; }
 
         [JsonProperty("start_at")]
         public DateTime? StartAt { get; set; }

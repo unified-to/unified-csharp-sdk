@@ -49,7 +49,7 @@ namespace UnifiedTo.Models.Components
         public bool? IsActive { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
 
         [JsonProperty("published_url")]
         public string? PublishedUrl { get; set; }

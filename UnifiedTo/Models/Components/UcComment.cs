@@ -20,7 +20,7 @@ namespace UnifiedTo.Models.Components
         public string? CallId { get; set; }
 
         [JsonProperty("content")]
-        public string Content { get; set; } = default!;
+        public string? Content { get; set; }
 
         [JsonProperty("created_at")]
         public string? CreatedAt { get; set; }

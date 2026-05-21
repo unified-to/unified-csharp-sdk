@@ -30,7 +30,7 @@ namespace UnifiedTo.Models.Components
         public bool? IsPrimary { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
 
         [JsonProperty("raw")]
         public Dictionary<string, object>? Raw { get; set; }

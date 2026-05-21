@@ -33,9 +33,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Location.CreateCommerceLocationAsync(
-    commerceLocation: new CommerceLocation() {
-        Name = "<value>",
-    },
+    commerceLocation: new CommerceLocation() {},
     connectionId: "<id>"
 );
 
@@ -280,9 +278,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCommerceLocationRequest req = new PatchCommerceLocationRequest() {
-    CommerceLocation = new CommerceLocation() {
-        Name = "<value>",
-    },
+    CommerceLocation = new CommerceLocation() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -444,9 +440,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCommerceLocationRequest req = new UpdateCommerceLocationRequest() {
-    CommerceLocation = new CommerceLocation() {
-        Name = "<value>",
-    },
+    CommerceLocation = new CommerceLocation() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };

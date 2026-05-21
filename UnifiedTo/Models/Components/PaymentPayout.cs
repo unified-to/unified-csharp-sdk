@@ -36,7 +36,7 @@ namespace UnifiedTo.Models.Components
         public PaymentPayoutStatus? Status { get; set; }
 
         [JsonProperty("total_amount")]
-        public double TotalAmount { get; set; } = default!;
+        public double? TotalAmount { get; set; }
 
         [JsonProperty("updated_at")]
         public string? UpdatedAt { get; set; }

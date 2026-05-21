@@ -25,10 +25,10 @@ namespace UnifiedTo.Models.Requests
         TotalAmount,
         [JsonProperty("contact_id")]
         ContactId,
-        [JsonProperty("type")]
-        Type,
         [JsonProperty("payment_method")]
         PaymentMethod,
+        [JsonProperty("type")]
+        Type,
         [JsonProperty("currency")]
         Currency,
         [JsonProperty("notes")]
@@ -37,10 +37,14 @@ namespace UnifiedTo.Models.Requests
         InvoiceId,
         [JsonProperty("bill_id")]
         BillId,
+        [JsonProperty("link_id")]
+        LinkId,
         [JsonProperty("account_id")]
         AccountId,
         [JsonProperty("reference")]
         Reference,
+        [JsonProperty("organization_id")]
+        OrganizationId,
         [JsonProperty("raw")]
         Raw,
     }

@@ -27,9 +27,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Form.CreateFormsFormAsync(
-    formsForm: new FormsForm() {
-        Name = "<value>",
-    },
+    formsForm: new FormsForm() {},
     connectionId: "<id>"
 );
 
@@ -152,9 +150,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchFormsFormRequest req = new PatchFormsFormRequest() {
-    FormsForm = new FormsForm() {
-        Name = "<value>",
-    },
+    FormsForm = new FormsForm() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -235,9 +231,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateFormsFormRequest req = new UpdateFormsFormRequest() {
-    FormsForm = new FormsForm() {
-        Name = "<value>",
-    },
+    FormsForm = new FormsForm() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };

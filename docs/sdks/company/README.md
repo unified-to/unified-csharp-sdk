@@ -40,9 +40,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Company.CreateAtsCompanyAsync(
-    atsCompany: new AtsCompany() {
-        Name = "<value>",
-    },
+    atsCompany: new AtsCompany() {},
     connectionId: "<id>"
 );
 
@@ -446,9 +444,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchAtsCompanyRequest req = new PatchAtsCompanyRequest() {
-    AtsCompany = new AtsCompany() {
-        Name = "<value>",
-    },
+    AtsCompany = new AtsCompany() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -691,9 +687,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateAtsCompanyRequest req = new UpdateAtsCompanyRequest() {
-    AtsCompany = new AtsCompany() {
-        Name = "<value>",
-    },
+    AtsCompany = new AtsCompany() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };

@@ -27,9 +27,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Device.CreateHrisDeviceAsync(
-    hrisDevice: new HrisDevice() {
-        Name = "<value>",
-    },
+    hrisDevice: new HrisDevice() {},
     connectionId: "<id>"
 );
 
@@ -152,9 +150,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchHrisDeviceRequest req = new PatchHrisDeviceRequest() {
-    HrisDevice = new HrisDevice() {
-        Name = "<value>",
-    },
+    HrisDevice = new HrisDevice() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -235,9 +231,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateHrisDeviceRequest req = new UpdateHrisDeviceRequest() {
-    HrisDevice = new HrisDevice() {
-        Name = "<value>",
-    },
+    HrisDevice = new HrisDevice() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };

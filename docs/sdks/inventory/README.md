@@ -27,9 +27,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Inventory.CreateCommerceInventoryAsync(
-    commerceInventory: new CommerceInventory() {
-        Available = 7463.62D,
-    },
+    commerceInventory: new CommerceInventory() {},
     connectionId: "<id>"
 );
 
@@ -152,9 +150,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCommerceInventoryRequest req = new PatchCommerceInventoryRequest() {
-    CommerceInventory = new CommerceInventory() {
-        Available = 7859.84D,
-    },
+    CommerceInventory = new CommerceInventory() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -235,9 +231,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCommerceInventoryRequest req = new UpdateCommerceInventoryRequest() {
-    CommerceInventory = new CommerceInventory() {
-        Available = 4497.29D,
-    },
+    CommerceInventory = new CommerceInventory() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };

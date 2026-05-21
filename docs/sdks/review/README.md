@@ -27,9 +27,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Review.CreateCommerceReviewAsync(
-    commerceReview: new CommerceReview() {
-        ItemId = "<id>",
-    },
+    commerceReview: new CommerceReview() {},
     connectionId: "<id>"
 );
 
@@ -152,9 +150,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCommerceReviewRequest req = new PatchCommerceReviewRequest() {
-    CommerceReview = new CommerceReview() {
-        ItemId = "<id>",
-    },
+    CommerceReview = new CommerceReview() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -235,9 +231,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCommerceReviewRequest req = new UpdateCommerceReviewRequest() {
-    CommerceReview = new CommerceReview() {
-        ItemId = "<id>",
-    },
+    CommerceReview = new CommerceReview() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };

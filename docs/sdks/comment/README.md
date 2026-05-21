@@ -39,9 +39,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Comment.CreateKmsCommentAsync(
-    kmsComment: new KmsComment() {
-        Content = "<value>",
-    },
+    kmsComment: new KmsComment() {},
     connectionId: "<id>"
 );
 
@@ -82,9 +80,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Comment.CreateTaskCommentAsync(
-    taskComment: new TaskComment() {
-        Text = "<value>",
-    },
+    taskComment: new TaskComment() {},
     connectionId: "<id>"
 );
 
@@ -125,9 +121,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Comment.CreateUcCommentAsync(
-    ucComment: new UcComment() {
-        Content = "<value>",
-    },
+    ucComment: new UcComment() {},
     connectionId: "<id>"
 );
 
@@ -412,9 +406,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchKmsCommentRequest req = new PatchKmsCommentRequest() {
-    KmsComment = new KmsComment() {
-        Content = "<value>",
-    },
+    KmsComment = new KmsComment() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -456,9 +448,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchTaskCommentRequest req = new PatchTaskCommentRequest() {
-    TaskComment = new TaskComment() {
-        Text = "<value>",
-    },
+    TaskComment = new TaskComment() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -500,9 +490,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchUcCommentRequest req = new PatchUcCommentRequest() {
-    UcComment = new UcComment() {
-        Content = "<value>",
-    },
+    UcComment = new UcComment() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -661,9 +649,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateKmsCommentRequest req = new UpdateKmsCommentRequest() {
-    KmsComment = new KmsComment() {
-        Content = "<value>",
-    },
+    KmsComment = new KmsComment() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -705,9 +691,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateTaskCommentRequest req = new UpdateTaskCommentRequest() {
-    TaskComment = new TaskComment() {
-        Text = "<value>",
-    },
+    TaskComment = new TaskComment() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -749,9 +733,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateUcCommentRequest req = new UpdateUcCommentRequest() {
-    UcComment = new UcComment() {
-        Content = "<value>",
-    },
+    UcComment = new UcComment() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };

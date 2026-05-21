@@ -30,7 +30,7 @@ namespace UnifiedTo.Models.Components
         public bool? IsActive { get; set; }
 
         [JsonProperty("name")]
-        public string Name { get; set; } = default!;
+        public string? Name { get; set; }
 
         [JsonProperty("parent_id")]
         public string? ParentId { get; set; }

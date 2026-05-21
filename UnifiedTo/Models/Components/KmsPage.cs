@@ -46,7 +46,7 @@ namespace UnifiedTo.Models.Components
         public string? SpaceId { get; set; }
 
         [JsonProperty("title")]
-        public string Title { get; set; } = default!;
+        public string? Title { get; set; }
 
         [JsonProperty("type")]
         public KmsPageType Type { get; set; } = default!;

@@ -39,8 +39,14 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("invoice_id")]
         public string? InvoiceId { get; set; }
 
+        [JsonProperty("link_id")]
+        public string? LinkId { get; set; }
+
         [JsonProperty("notes")]
         public string? Notes { get; set; }
+
+        [JsonProperty("organization_id")]
+        public string? OrganizationId { get; set; }
 
         [JsonProperty("payment_method")]
         public string? PaymentMethod { get; set; }

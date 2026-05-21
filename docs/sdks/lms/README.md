@@ -104,10 +104,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lms.CreateLmsClassAsync(
-    lmsClass: new LmsClass() {
-        CourseId = "<id>",
-        Name = "<value>",
-    },
+    lmsClass: new LmsClass() {},
     connectionId: "<id>"
 );
 
@@ -230,9 +227,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Lms.CreateLmsCourseAsync(
-    lmsCourse: new LmsCourse() {
-        Name = "<value>",
-    },
+    lmsCourse: new LmsCourse() {},
     connectionId: "<id>"
 );
 
@@ -965,10 +960,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchLmsClassRequest req = new PatchLmsClassRequest() {
-    LmsClass = new LmsClass() {
-        CourseId = "<id>",
-        Name = "<value>",
-    },
+    LmsClass = new LmsClass() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1094,9 +1086,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchLmsCourseRequest req = new PatchLmsCourseRequest() {
-    LmsCourse = new LmsCourse() {
-        Name = "<value>",
-    },
+    LmsCourse = new LmsCourse() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1537,10 +1527,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateLmsClassRequest req = new UpdateLmsClassRequest() {
-    LmsClass = new LmsClass() {
-        CourseId = "<id>",
-        Name = "<value>",
-    },
+    LmsClass = new LmsClass() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -1666,9 +1653,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateLmsCourseRequest req = new UpdateLmsCourseRequest() {
-    LmsCourse = new LmsCourse() {
-        Name = "<value>",
-    },
+    LmsCourse = new LmsCourse() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };

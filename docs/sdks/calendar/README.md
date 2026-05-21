@@ -48,9 +48,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Calendar.CreateCalendarCalendarAsync(
-    calendarCalendar: new CalendarCalendar() {
-        Name = "<value>",
-    },
+    calendarCalendar: new CalendarCalendar() {},
     connectionId: "<id>"
 );
 
@@ -662,9 +660,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchCalendarCalendarRequest req = new PatchCalendarCalendarRequest() {
-    CalendarCalendar = new CalendarCalendar() {
-        Name = "<value>",
-    },
+    CalendarCalendar = new CalendarCalendar() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -990,9 +986,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateCalendarCalendarRequest req = new UpdateCalendarCalendarRequest() {
-    CalendarCalendar = new CalendarCalendar() {
-        Name = "<value>",
-    },
+    CalendarCalendar = new CalendarCalendar() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };

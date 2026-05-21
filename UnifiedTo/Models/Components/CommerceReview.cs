@@ -55,7 +55,7 @@ namespace UnifiedTo.Models.Components
         public bool? IsVerified { get; set; }
 
         [JsonProperty("item_id")]
-        public string ItemId { get; set; } = default!;
+        public string? ItemId { get; set; }
 
         [JsonProperty("item_variant_id")]
         public string? ItemVariantId { get; set; }

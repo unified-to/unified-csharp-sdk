@@ -39,9 +39,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.CreateKmsCommentAsync(
-    kmsComment: new KmsComment() {
-        Content = "<value>",
-    },
+    kmsComment: new KmsComment() {},
     connectionId: "<id>"
 );
 
@@ -83,7 +81,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 var res = await sdk.Kms.CreateKmsPageAsync(
     kmsPage: new KmsPage() {
-        Title = "<value>",
         Type = KmsPageType.Text,
     },
     connectionId: "<id>"
@@ -126,9 +123,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 var res = await sdk.Kms.CreateKmsSpaceAsync(
-    kmsSpace: new KmsSpace() {
-        Name = "<value>",
-    },
+    kmsSpace: new KmsSpace() {},
     connectionId: "<id>"
 );
 
@@ -413,9 +408,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchKmsCommentRequest req = new PatchKmsCommentRequest() {
-    KmsComment = new KmsComment() {
-        Content = "<value>",
-    },
+    KmsComment = new KmsComment() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -458,7 +451,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 PatchKmsPageRequest req = new PatchKmsPageRequest() {
     KmsPage = new KmsPage() {
-        Title = "<value>",
         Type = KmsPageType.Other,
     },
     ConnectionId = "<id>",
@@ -502,9 +494,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 PatchKmsSpaceRequest req = new PatchKmsSpaceRequest() {
-    KmsSpace = new KmsSpace() {
-        Name = "<value>",
-    },
+    KmsSpace = new KmsSpace() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -663,9 +653,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateKmsCommentRequest req = new UpdateKmsCommentRequest() {
-    KmsComment = new KmsComment() {
-        Content = "<value>",
-    },
+    KmsComment = new KmsComment() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
@@ -708,7 +696,6 @@ var sdk = new UnifiedToSDK(security: new Security() {
 
 UpdateKmsPageRequest req = new UpdateKmsPageRequest() {
     KmsPage = new KmsPage() {
-        Title = "<value>",
         Type = KmsPageType.Other,
     },
     ConnectionId = "<id>",
@@ -752,9 +739,7 @@ var sdk = new UnifiedToSDK(security: new Security() {
 });
 
 UpdateKmsSpaceRequest req = new UpdateKmsSpaceRequest() {
-    KmsSpace = new KmsSpace() {
-        Name = "<value>",
-    },
+    KmsSpace = new KmsSpace() {},
     ConnectionId = "<id>",
     Id = "<id>",
 };
