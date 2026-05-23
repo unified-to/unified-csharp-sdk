@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 1b6af68b3f4db0edf5a26e51c3a17b4f
+  docChecksum: 9ca4a9cacf171e8ac7c743dfb096d506
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.76
-  configChecksum: 29e9272778370730f336d9e1ad6c5569
+  releaseVersion: 0.130.77
+  configChecksum: c93b7240e36a6fb664d2781fa3e49f02
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -12753,7 +12753,7 @@ trackedFiles:
     pristine_git_object: 6299aa6362d3cfc4f7e981744cfa7aaa07190fbe
   UnifiedTo/Models/Components/AtsOffer.cs:
     id: 64f181267a6d
-    last_write_checksum: sha1:84a034c4d48385e7feb3d6f9368e8f707293022e
+    last_write_checksum: sha1:d1029bdc0ae8b13181da92c6a320a5f9cc75b0ce
     pristine_git_object: bb546796cd952176d9639b4e7c5413484a471596
   UnifiedTo/Models/Components/AtsOfferStatus.cs:
     id: 59d2cd074701
@@ -21173,7 +21173,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:06105744a970c967b865c434aaddfd6d360b2e51
+    last_write_checksum: sha1:07f3ea44ae0552a5038bb3fa74b78ae4883e2722
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -21285,7 +21285,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:abe0dc219ca5efbb97fdf5de1d830bdc348f1cf4
+    last_write_checksum: sha1:3a4d93262c42fbc064ffbfb29a24f22f3c63c974
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -21783,7 +21783,7 @@ trackedFiles:
     pristine_git_object: 6374f3a6934c18843bb0020e51313303d34f2e17
   docs/Models/Components/AtsOffer.md:
     id: 6a4600b90826
-    last_write_checksum: sha1:f134f7f138f6e6da880948ab53d55f5efbb693f8
+    last_write_checksum: sha1:c1ec2eda910e7f40dc61d46dc0585dc256e2fd22
     pristine_git_object: 37675c15240f12ea83c8682cea5e1b15305d1b27
   docs/Models/Components/AtsOfferStatus.md:
     id: 56c24908f337
