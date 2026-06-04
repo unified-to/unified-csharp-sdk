@@ -71,6 +71,8 @@ namespace UnifiedTo.Models.Requests
         Assessment,
         [JsonProperty("signing")]
         Signing,
+        [JsonProperty("clubs")]
+        Clubs,
     }
 
     public static class CategoriesExtension

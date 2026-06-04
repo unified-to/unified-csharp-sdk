@@ -9,9 +9,11 @@
 * [CreateHrisGroup](#createhrisgroup) - Create a group
 * [CreateScimGroups](#createscimgroups) - Create group
 * [GetAdsGroup](#getadsgroup) - Retrieve a group
+* [GetClubsGroup](#getclubsgroup) - Retrieve a group
 * [GetHrisGroup](#gethrisgroup) - Retrieve a group
 * [GetScimGroups](#getscimgroups) - Get group
 * [ListAdsGroups](#listadsgroups) - List all groups
+* [ListClubsGroups](#listclubsgroups) - List all groups
 * [ListHrisGroups](#listhrisgroups) - List all groups
 * [ListScimGroups](#listscimgroups) - List groups
 * [PatchAdsGroup](#patchadsgroup) - Update a group
@@ -188,6 +190,47 @@ var res = await sdk.Group.GetAdsGroupAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetClubsGroup
+
+Retrieve a group
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Group.GetClubsGroupAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Group                                                                                                                                  |
+| `Fields`                                                                                                                                         | List<[GetClubsGroupQueryParamFields](../../Models/Requests/GetClubsGroupQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetClubsGroupResponse](../../Models/Requests/GetClubsGroupResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## GetHrisGroup
 
 Retrieve a group
@@ -301,6 +344,46 @@ var res = await sdk.Group.ListAdsGroupsAsync(req);
 ### Response
 
 **[ListAdsGroupsResponse](../../Models/Requests/ListAdsGroupsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListClubsGroups
+
+List all groups
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListClubsGroupsRequest req = new ListClubsGroupsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Group.ListClubsGroupsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [ListClubsGroupsRequest](../../Models/Requests/ListClubsGroupsRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+
+### Response
+
+**[ListClubsGroupsResponse](../../Models/Requests/ListClubsGroupsResponse.md)**
 
 ### Errors
 

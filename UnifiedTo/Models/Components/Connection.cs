@@ -75,6 +75,12 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("permissions")]
         public List<PropertyConnectionPermissions> Permissions { get; set; } = default!;
 
+        [JsonProperty("secretsmanager_id")]
+        public string? SecretsmanagerId { get; set; }
+
+        [JsonProperty("secretsmanager_key")]
+        public string? SecretsmanagerKey { get; set; }
+
         [JsonProperty("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 

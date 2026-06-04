@@ -8,8 +8,10 @@
 * [CreateCalendarEvent](#createcalendarevent) - Create an event
 * [CreateCrmEvent](#createcrmevent) - Create an event
 * [GetCalendarEvent](#getcalendarevent) - Retrieve an event
+* [GetClubsEvent](#getclubsevent) - Retrieve an event
 * [GetCrmEvent](#getcrmevent) - Retrieve an event
 * [ListCalendarEvents](#listcalendarevents) - List all events
+* [ListClubsEvents](#listclubsevents) - List all events
 * [ListCrmEvents](#listcrmevents) - List all events
 * [PatchCalendarEvent](#patchcalendarevent) - Update an event
 * [PatchCrmEvent](#patchcrmevent) - Update an event
@@ -143,6 +145,47 @@ var res = await sdk.Event.GetCalendarEventAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetClubsEvent
+
+Retrieve an event
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Event.GetClubsEventAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Event                                                                                                                                  |
+| `Fields`                                                                                                                                         | List<[GetClubsEventQueryParamFields](../../Models/Requests/GetClubsEventQueryParamFields.md)>                                                    | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetClubsEventResponse](../../Models/Requests/GetClubsEventResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## GetCrmEvent
 
 Retrieve an event
@@ -217,6 +260,46 @@ var res = await sdk.Event.ListCalendarEventsAsync(req);
 ### Response
 
 **[ListCalendarEventsResponse](../../Models/Requests/ListCalendarEventsResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListClubsEvents
+
+List all events
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListClubsEventsRequest req = new ListClubsEventsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Event.ListClubsEventsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                 | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `request`                                                                 | [ListClubsEventsRequest](../../Models/Requests/ListClubsEventsRequest.md) | :heavy_check_mark:                                                        | The request object to use for the request.                                |
+
+### Response
+
+**[ListClubsEventsResponse](../../Models/Requests/ListClubsEventsResponse.md)**
 
 ### Errors
 

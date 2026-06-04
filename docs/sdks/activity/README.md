@@ -8,8 +8,10 @@
 * [CreateAtsActivity](#createatsactivity) - Create an activity
 * [CreateLmsActivity](#createlmsactivity) - Create an activity
 * [GetAtsActivity](#getatsactivity) - Retrieve an activity
+* [GetClubsActivity](#getclubsactivity) - Retrieve an activity
 * [GetLmsActivity](#getlmsactivity) - Retrieve an activity
 * [ListAtsActivities](#listatsactivities) - List all activities
+* [ListClubsActivities](#listclubsactivities) - List all activities
 * [ListLmsActivities](#listlmsactivities) - List all activities
 * [PatchAtsActivity](#patchatsactivity) - Update an activity
 * [PatchLmsActivity](#patchlmsactivity) - Update an activity
@@ -141,6 +143,47 @@ var res = await sdk.Activity.GetAtsActivityAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetClubsActivity
+
+Retrieve an activity
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Activity.GetClubsActivityAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Activity                                                                                                                               |
+| `Fields`                                                                                                                                         | List<[GetClubsActivityQueryParamFields](../../Models/Requests/GetClubsActivityQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetClubsActivityResponse](../../Models/Requests/GetClubsActivityResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## GetLmsActivity
 
 Retrieve an activity
@@ -215,6 +258,46 @@ var res = await sdk.Activity.ListAtsActivitiesAsync(req);
 ### Response
 
 **[ListAtsActivitiesResponse](../../Models/Requests/ListAtsActivitiesResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListClubsActivities
+
+List all activities
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListClubsActivitiesRequest req = new ListClubsActivitiesRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Activity.ListClubsActivitiesAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                         | Type                                                                              | Required                                                                          | Description                                                                       |
+| --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `request`                                                                         | [ListClubsActivitiesRequest](../../Models/Requests/ListClubsActivitiesRequest.md) | :heavy_check_mark:                                                                | The request object to use for the request.                                        |
+
+### Response
+
+**[ListClubsActivitiesResponse](../../Models/Requests/ListClubsActivitiesResponse.md)**
 
 ### Errors
 

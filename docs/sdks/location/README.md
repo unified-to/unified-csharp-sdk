@@ -7,8 +7,10 @@
 
 * [CreateCommerceLocation](#createcommercelocation) - Create a location
 * [CreateHrisLocation](#createhrislocation) - Create a location
+* [GetClubsLocation](#getclubslocation) - Retrieve a location
 * [GetCommerceLocation](#getcommercelocation) - Retrieve a location
 * [GetHrisLocation](#gethrislocation) - Retrieve a location
+* [ListClubsLocations](#listclubslocations) - List all locations
 * [ListCommerceLocations](#listcommercelocations) - List all locations
 * [ListHrisLocations](#listhrislocations) - List all locations
 * [PatchCommerceLocation](#patchcommercelocation) - Update a location
@@ -100,6 +102,47 @@ var res = await sdk.Location.CreateHrisLocationAsync(
 | ------------------------------------ | ------------------------------------ | ------------------------------------ |
 | UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
 
+## GetClubsLocation
+
+Retrieve a location
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+var res = await sdk.Location.GetClubsLocationAsync(
+    connectionId: "<id>",
+    id: "<id>"
+);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                                                                                        | Type                                                                                                                                             | Required                                                                                                                                         | Description                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `ConnectionId`                                                                                                                                   | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the connection                                                                                                                             |
+| `Id`                                                                                                                                             | *string*                                                                                                                                         | :heavy_check_mark:                                                                                                                               | ID of the Location                                                                                                                               |
+| `Fields`                                                                                                                                         | List<[GetClubsLocationQueryParamFields](../../Models/Requests/GetClubsLocationQueryParamFields.md)>                                              | :heavy_minus_sign:                                                                                                                               | Fields to return                                                                                                                                 |
+| `Raw`                                                                                                                                            | *string*                                                                                                                                         | :heavy_minus_sign:                                                                                                                               | Raw parameters to include in the 3rd-party request. Encoded as a URL component. eg. raw parameters: foo=bar&zoo=bar -> raw=foo%3Dbar%26zoo%3Dbar |
+
+### Response
+
+**[GetClubsLocationResponse](../../Models/Requests/GetClubsLocationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
 ## GetCommerceLocation
 
 Retrieve a location
@@ -175,6 +218,46 @@ var res = await sdk.Location.GetHrisLocationAsync(
 ### Response
 
 **[GetHrisLocationResponse](../../Models/Requests/GetHrisLocationResponse.md)**
+
+### Errors
+
+| Error Type                           | Status Code                          | Content Type                         |
+| ------------------------------------ | ------------------------------------ | ------------------------------------ |
+| UnifiedTo.Models.Errors.SDKException | 4XX, 5XX                             | \*/\*                                |
+
+## ListClubsLocations
+
+List all locations
+
+### Example Usage
+
+```csharp
+using UnifiedTo;
+using UnifiedTo.Models.Components;
+using UnifiedTo.Models.Requests;
+
+var sdk = new UnifiedToSDK(security: new Security() {
+    Jwt = "<YOUR_API_KEY_HERE>",
+});
+
+ListClubsLocationsRequest req = new ListClubsLocationsRequest() {
+    ConnectionId = "<id>",
+};
+
+var res = await sdk.Location.ListClubsLocationsAsync(req);
+
+// handle response
+```
+
+### Parameters
+
+| Parameter                                                                       | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `request`                                                                       | [ListClubsLocationsRequest](../../Models/Requests/ListClubsLocationsRequest.md) | :heavy_check_mark:                                                              | The request object to use for the request.                                      |
+
+### Response
+
+**[ListClubsLocationsResponse](../../Models/Requests/ListClubsLocationsResponse.md)**
 
 ### Errors
 

@@ -279,6 +279,16 @@ namespace UnifiedTo.Models.Components
         SigningSignatory,
         [JsonProperty("signing_template")]
         SigningTemplate,
+        [JsonProperty("clubs_group")]
+        ClubsGroup,
+        [JsonProperty("clubs_member")]
+        ClubsMember,
+        [JsonProperty("clubs_activity")]
+        ClubsActivity,
+        [JsonProperty("clubs_location")]
+        ClubsLocation,
+        [JsonProperty("clubs_event")]
+        ClubsEvent,
     }
 
     public static class ObjectTypeExtension

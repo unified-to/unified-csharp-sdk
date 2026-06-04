@@ -73,13 +73,15 @@ namespace UnifiedTo
         public ILink Link { get; }
         public IRecording Recording { get; }
         public IWebinar Webinar { get; }
+        public IClubs Clubs { get; }
+        public ILocation Location { get; }
+        public IMember Member { get; }
         public ICommerce Commerce { get; }
         public IAvailability Availability { get; }
         public ICollection Collection { get; }
         public IInventory Inventory { get; }
         public IItem Item { get; }
         public IItemvariant Itemvariant { get; }
-        public ILocation Location { get; }
         public IReservation Reservation { get; }
         public IReview Review { get; }
         public ISaleschannel Saleschannel { get; }
@@ -117,7 +119,6 @@ namespace UnifiedTo
         public IStudent Student { get; }
         public IMartech Martech { get; }
         public IList List { get; }
-        public IMember Member { get; }
         public IMessaging Messaging { get; }
         public IChannel Channel { get; }
         public IMessage Message { get; }
@@ -178,7 +179,7 @@ namespace UnifiedTo
         public SDKConfig SDKConfiguration { get; private set; }
 
         private const string _language = "csharp";
-        private const string _sdkVersion = "0.130.77";
+        private const string _sdkVersion = "0.130.78";
         private const string _sdkGenVersion = "2.632.2";
         private const string _openapiDocVersion = "1.0";
         public IAccounting Accounting { get; private set; }
@@ -227,13 +228,15 @@ namespace UnifiedTo
         public ILink Link { get; private set; }
         public IRecording Recording { get; private set; }
         public IWebinar Webinar { get; private set; }
+        public IClubs Clubs { get; private set; }
+        public ILocation Location { get; private set; }
+        public IMember Member { get; private set; }
         public ICommerce Commerce { get; private set; }
         public IAvailability Availability { get; private set; }
         public ICollection Collection { get; private set; }
         public IInventory Inventory { get; private set; }
         public IItem Item { get; private set; }
         public IItemvariant Itemvariant { get; private set; }
-        public ILocation Location { get; private set; }
         public IReservation Reservation { get; private set; }
         public IReview Review { get; private set; }
         public ISaleschannel Saleschannel { get; private set; }
@@ -271,7 +274,6 @@ namespace UnifiedTo
         public IStudent Student { get; private set; }
         public IMartech Martech { get; private set; }
         public IList List { get; private set; }
-        public IMember Member { get; private set; }
         public IMessaging Messaging { get; private set; }
         public IChannel Channel { get; private set; }
         public IMessage Message { get; private set; }
@@ -417,6 +419,12 @@ namespace UnifiedTo
 
             Webinar = new Webinar(SDKConfiguration);
 
+            Clubs = new Clubs(SDKConfiguration);
+
+            Location = new Location(SDKConfiguration);
+
+            Member = new Member(SDKConfiguration);
+
             Commerce = new Commerce(SDKConfiguration);
 
             Availability = new Availability(SDKConfiguration);
@@ -428,8 +436,6 @@ namespace UnifiedTo
             Item = new Item(SDKConfiguration);
 
             Itemvariant = new Itemvariant(SDKConfiguration);
-
-            Location = new Location(SDKConfiguration);
 
             Reservation = new Reservation(SDKConfiguration);
 
@@ -504,8 +510,6 @@ namespace UnifiedTo
             Martech = new Martech(SDKConfiguration);
 
             List = new List(SDKConfiguration);
-
-            Member = new Member(SDKConfiguration);
 
             Messaging = new Messaging(SDKConfiguration);
 
@@ -736,6 +740,12 @@ namespace UnifiedTo
 
             Webinar = new Webinar(SDKConfiguration);
 
+            Clubs = new Clubs(SDKConfiguration);
+
+            Location = new Location(SDKConfiguration);
+
+            Member = new Member(SDKConfiguration);
+
             Commerce = new Commerce(SDKConfiguration);
 
             Availability = new Availability(SDKConfiguration);
@@ -747,8 +757,6 @@ namespace UnifiedTo
             Item = new Item(SDKConfiguration);
 
             Itemvariant = new Itemvariant(SDKConfiguration);
-
-            Location = new Location(SDKConfiguration);
 
             Reservation = new Reservation(SDKConfiguration);
 
@@ -823,8 +831,6 @@ namespace UnifiedTo
             Martech = new Martech(SDKConfiguration);
 
             List = new List(SDKConfiguration);
-
-            Member = new Member(SDKConfiguration);
 
             Messaging = new Messaging(SDKConfiguration);
 

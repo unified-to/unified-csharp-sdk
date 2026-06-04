@@ -499,6 +499,26 @@ namespace UnifiedTo.Models.Components
         SigningSignatoryWrite,
         [JsonProperty("signing_template_read")]
         SigningTemplateRead,
+        [JsonProperty("clubs_group_read")]
+        ClubsGroupRead,
+        [JsonProperty("clubs_group_write")]
+        ClubsGroupWrite,
+        [JsonProperty("clubs_member_read")]
+        ClubsMemberRead,
+        [JsonProperty("clubs_member_write")]
+        ClubsMemberWrite,
+        [JsonProperty("clubs_activity_read")]
+        ClubsActivityRead,
+        [JsonProperty("clubs_activity_write")]
+        ClubsActivityWrite,
+        [JsonProperty("clubs_location_read")]
+        ClubsLocationRead,
+        [JsonProperty("clubs_location_write")]
+        ClubsLocationWrite,
+        [JsonProperty("clubs_event_read")]
+        ClubsEventRead,
+        [JsonProperty("clubs_event_write")]
+        ClubsEventWrite,
     }
 
     public static class PropertyConnectionPermissionsExtension

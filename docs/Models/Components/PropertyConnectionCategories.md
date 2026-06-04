@@ -33,3 +33,4 @@
 | `Shipping`     | shipping       |
 | `Assessment`   | assessment     |
 | `Signing`      | signing        |
+| `Clubs`        | clubs          |

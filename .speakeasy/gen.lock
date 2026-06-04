@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 9ca4a9cacf171e8ac7c743dfb096d506
+  docChecksum: 1e1eded8b22781b031016e09bbf41ef9
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.77
-  configChecksum: c93b7240e36a6fb664d2781fa3e49f02
+  releaseVersion: 0.130.78
+  configChecksum: 6f2278d037c2d93a37931c79b48a7d0d
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -59,6 +59,7 @@ generatedFiles:
   - UnifiedTo/Change.cs
   - UnifiedTo/Channel.cs
   - UnifiedTo/Class.cs
+  - UnifiedTo/Clubs.cs
   - UnifiedTo/Collection.cs
   - UnifiedTo/Comment.cs
   - UnifiedTo/Commerce.cs
@@ -275,6 +276,15 @@ generatedFiles:
   - UnifiedTo/Models/Components/CalendarWebinarRegistrant.cs
   - UnifiedTo/Models/Components/CalendarWebinarStatus.cs
   - UnifiedTo/Models/Components/CityTarget.cs
+  - UnifiedTo/Models/Components/ClubsActivity.cs
+  - UnifiedTo/Models/Components/ClubsActivityType.cs
+  - UnifiedTo/Models/Components/ClubsEvent.cs
+  - UnifiedTo/Models/Components/ClubsEventStatus.cs
+  - UnifiedTo/Models/Components/ClubsEventType.cs
+  - UnifiedTo/Models/Components/ClubsGroup.cs
+  - UnifiedTo/Models/Components/ClubsLocation.cs
+  - UnifiedTo/Models/Components/ClubsMember.cs
+  - UnifiedTo/Models/Components/ClubsMemberMembershipStatus.cs
   - UnifiedTo/Models/Components/CommerceAvailability.cs
   - UnifiedTo/Models/Components/CommerceCollection.cs
   - UnifiedTo/Models/Components/CommerceCollectionType.cs
@@ -368,6 +378,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/GenaiPrompt.cs
   - UnifiedTo/Models/Components/Gender.cs
   - UnifiedTo/Models/Components/Goal.cs
+  - UnifiedTo/Models/Components/GroupType.cs
   - UnifiedTo/Models/Components/HostingSource.cs
   - UnifiedTo/Models/Components/HrisBankaccount.cs
   - UnifiedTo/Models/Components/HrisBenefit.cs
@@ -538,6 +549,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/MarketingReport.cs
   - UnifiedTo/Models/Components/MarketingReportLink.cs
   - UnifiedTo/Models/Components/MatchType.cs
+  - UnifiedTo/Models/Components/MembershipStatus.cs
   - UnifiedTo/Models/Components/MessagingAttachment.cs
   - UnifiedTo/Models/Components/MessagingButton.cs
   - UnifiedTo/Models/Components/MessagingChannel.cs
@@ -725,6 +737,8 @@ generatedFiles:
   - UnifiedTo/Models/Components/PropertyCalendarRecordingTranscriptAttendeeStatus.cs
   - UnifiedTo/Models/Components/PropertyCalendarWebinarOrganizer.cs
   - UnifiedTo/Models/Components/PropertyCalendarWebinarOrganizerStatus.cs
+  - UnifiedTo/Models/Components/PropertyClubsGroupAddress.cs
+  - UnifiedTo/Models/Components/PropertyClubsLocationAddress.cs
   - UnifiedTo/Models/Components/PropertyCommerceLocationAddress.cs
   - UnifiedTo/Models/Components/PropertyConnectionAuth.cs
   - UnifiedTo/Models/Components/PropertyConnectionCategories.cs
@@ -857,6 +871,7 @@ generatedFiles:
   - UnifiedTo/Models/Components/SigningSignatoryStatus.cs
   - UnifiedTo/Models/Components/SigningTemplate.cs
   - UnifiedTo/Models/Components/SizeUnit.cs
+  - UnifiedTo/Models/Components/SportType.cs
   - UnifiedTo/Models/Components/Status.cs
   - UnifiedTo/Models/Components/StorageFile.cs
   - UnifiedTo/Models/Components/StorageFileType.cs
@@ -1409,6 +1424,21 @@ generatedFiles:
   - UnifiedTo/Models/Requests/GetCalendarWebinarQueryParamFields.cs
   - UnifiedTo/Models/Requests/GetCalendarWebinarRequest.cs
   - UnifiedTo/Models/Requests/GetCalendarWebinarResponse.cs
+  - UnifiedTo/Models/Requests/GetClubsActivityQueryParamFields.cs
+  - UnifiedTo/Models/Requests/GetClubsActivityRequest.cs
+  - UnifiedTo/Models/Requests/GetClubsActivityResponse.cs
+  - UnifiedTo/Models/Requests/GetClubsEventQueryParamFields.cs
+  - UnifiedTo/Models/Requests/GetClubsEventRequest.cs
+  - UnifiedTo/Models/Requests/GetClubsEventResponse.cs
+  - UnifiedTo/Models/Requests/GetClubsGroupQueryParamFields.cs
+  - UnifiedTo/Models/Requests/GetClubsGroupRequest.cs
+  - UnifiedTo/Models/Requests/GetClubsGroupResponse.cs
+  - UnifiedTo/Models/Requests/GetClubsLocationQueryParamFields.cs
+  - UnifiedTo/Models/Requests/GetClubsLocationRequest.cs
+  - UnifiedTo/Models/Requests/GetClubsLocationResponse.cs
+  - UnifiedTo/Models/Requests/GetClubsMemberQueryParamFields.cs
+  - UnifiedTo/Models/Requests/GetClubsMemberRequest.cs
+  - UnifiedTo/Models/Requests/GetClubsMemberResponse.cs
   - UnifiedTo/Models/Requests/GetCommerceCollectionQueryParamFields.cs
   - UnifiedTo/Models/Requests/GetCommerceCollectionRequest.cs
   - UnifiedTo/Models/Requests/GetCommerceCollectionResponse.cs
@@ -1784,6 +1814,21 @@ generatedFiles:
   - UnifiedTo/Models/Requests/ListCalendarWebinarsQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListCalendarWebinarsRequest.cs
   - UnifiedTo/Models/Requests/ListCalendarWebinarsResponse.cs
+  - UnifiedTo/Models/Requests/ListClubsActivitiesQueryParamFields.cs
+  - UnifiedTo/Models/Requests/ListClubsActivitiesRequest.cs
+  - UnifiedTo/Models/Requests/ListClubsActivitiesResponse.cs
+  - UnifiedTo/Models/Requests/ListClubsEventsQueryParamFields.cs
+  - UnifiedTo/Models/Requests/ListClubsEventsRequest.cs
+  - UnifiedTo/Models/Requests/ListClubsEventsResponse.cs
+  - UnifiedTo/Models/Requests/ListClubsGroupsQueryParamFields.cs
+  - UnifiedTo/Models/Requests/ListClubsGroupsRequest.cs
+  - UnifiedTo/Models/Requests/ListClubsGroupsResponse.cs
+  - UnifiedTo/Models/Requests/ListClubsLocationsQueryParamFields.cs
+  - UnifiedTo/Models/Requests/ListClubsLocationsRequest.cs
+  - UnifiedTo/Models/Requests/ListClubsLocationsResponse.cs
+  - UnifiedTo/Models/Requests/ListClubsMembersQueryParamFields.cs
+  - UnifiedTo/Models/Requests/ListClubsMembersRequest.cs
+  - UnifiedTo/Models/Requests/ListClubsMembersResponse.cs
   - UnifiedTo/Models/Requests/ListCommerceAvailabilitiesQueryParamFields.cs
   - UnifiedTo/Models/Requests/ListCommerceAvailabilitiesRequest.cs
   - UnifiedTo/Models/Requests/ListCommerceAvailabilitiesResponse.cs
@@ -3098,6 +3143,15 @@ generatedFiles:
   - docs/Models/Components/CalendarWebinarRegistrant.md
   - docs/Models/Components/CalendarWebinarStatus.md
   - docs/Models/Components/CityTarget.md
+  - docs/Models/Components/ClubsActivity.md
+  - docs/Models/Components/ClubsActivityType.md
+  - docs/Models/Components/ClubsEvent.md
+  - docs/Models/Components/ClubsEventStatus.md
+  - docs/Models/Components/ClubsEventType.md
+  - docs/Models/Components/ClubsGroup.md
+  - docs/Models/Components/ClubsLocation.md
+  - docs/Models/Components/ClubsMember.md
+  - docs/Models/Components/ClubsMemberMembershipStatus.md
   - docs/Models/Components/CommerceAvailability.md
   - docs/Models/Components/CommerceCollection.md
   - docs/Models/Components/CommerceCollectionType.md
@@ -3191,6 +3245,7 @@ generatedFiles:
   - docs/Models/Components/GenaiPrompt.md
   - docs/Models/Components/Gender.md
   - docs/Models/Components/Goal.md
+  - docs/Models/Components/GroupType.md
   - docs/Models/Components/HostingSource.md
   - docs/Models/Components/HrisBankaccount.md
   - docs/Models/Components/HrisBenefit.md
@@ -3361,6 +3416,7 @@ generatedFiles:
   - docs/Models/Components/MarketingReport.md
   - docs/Models/Components/MarketingReportLink.md
   - docs/Models/Components/MatchType.md
+  - docs/Models/Components/MembershipStatus.md
   - docs/Models/Components/MessagingAttachment.md
   - docs/Models/Components/MessagingButton.md
   - docs/Models/Components/MessagingChannel.md
@@ -3548,6 +3604,8 @@ generatedFiles:
   - docs/Models/Components/PropertyCalendarRecordingTranscriptAttendeeStatus.md
   - docs/Models/Components/PropertyCalendarWebinarOrganizer.md
   - docs/Models/Components/PropertyCalendarWebinarOrganizerStatus.md
+  - docs/Models/Components/PropertyClubsGroupAddress.md
+  - docs/Models/Components/PropertyClubsLocationAddress.md
   - docs/Models/Components/PropertyCommerceLocationAddress.md
   - docs/Models/Components/PropertyConnectionAuth.md
   - docs/Models/Components/PropertyConnectionCategories.md
@@ -3680,6 +3738,7 @@ generatedFiles:
   - docs/Models/Components/SigningSignatoryStatus.md
   - docs/Models/Components/SigningTemplate.md
   - docs/Models/Components/SizeUnit.md
+  - docs/Models/Components/SportType.md
   - docs/Models/Components/Status.md
   - docs/Models/Components/StorageFile.md
   - docs/Models/Components/StorageFileType.md
@@ -4231,6 +4290,21 @@ generatedFiles:
   - docs/Models/Requests/GetCalendarWebinarQueryParamFields.md
   - docs/Models/Requests/GetCalendarWebinarRequest.md
   - docs/Models/Requests/GetCalendarWebinarResponse.md
+  - docs/Models/Requests/GetClubsActivityQueryParamFields.md
+  - docs/Models/Requests/GetClubsActivityRequest.md
+  - docs/Models/Requests/GetClubsActivityResponse.md
+  - docs/Models/Requests/GetClubsEventQueryParamFields.md
+  - docs/Models/Requests/GetClubsEventRequest.md
+  - docs/Models/Requests/GetClubsEventResponse.md
+  - docs/Models/Requests/GetClubsGroupQueryParamFields.md
+  - docs/Models/Requests/GetClubsGroupRequest.md
+  - docs/Models/Requests/GetClubsGroupResponse.md
+  - docs/Models/Requests/GetClubsLocationQueryParamFields.md
+  - docs/Models/Requests/GetClubsLocationRequest.md
+  - docs/Models/Requests/GetClubsLocationResponse.md
+  - docs/Models/Requests/GetClubsMemberQueryParamFields.md
+  - docs/Models/Requests/GetClubsMemberRequest.md
+  - docs/Models/Requests/GetClubsMemberResponse.md
   - docs/Models/Requests/GetCommerceCollectionQueryParamFields.md
   - docs/Models/Requests/GetCommerceCollectionRequest.md
   - docs/Models/Requests/GetCommerceCollectionResponse.md
@@ -4606,6 +4680,21 @@ generatedFiles:
   - docs/Models/Requests/ListCalendarWebinarsQueryParamFields.md
   - docs/Models/Requests/ListCalendarWebinarsRequest.md
   - docs/Models/Requests/ListCalendarWebinarsResponse.md
+  - docs/Models/Requests/ListClubsActivitiesQueryParamFields.md
+  - docs/Models/Requests/ListClubsActivitiesRequest.md
+  - docs/Models/Requests/ListClubsActivitiesResponse.md
+  - docs/Models/Requests/ListClubsEventsQueryParamFields.md
+  - docs/Models/Requests/ListClubsEventsRequest.md
+  - docs/Models/Requests/ListClubsEventsResponse.md
+  - docs/Models/Requests/ListClubsGroupsQueryParamFields.md
+  - docs/Models/Requests/ListClubsGroupsRequest.md
+  - docs/Models/Requests/ListClubsGroupsResponse.md
+  - docs/Models/Requests/ListClubsLocationsQueryParamFields.md
+  - docs/Models/Requests/ListClubsLocationsRequest.md
+  - docs/Models/Requests/ListClubsLocationsResponse.md
+  - docs/Models/Requests/ListClubsMembersQueryParamFields.md
+  - docs/Models/Requests/ListClubsMembersRequest.md
+  - docs/Models/Requests/ListClubsMembersResponse.md
   - docs/Models/Requests/ListCommerceAvailabilitiesQueryParamFields.md
   - docs/Models/Requests/ListCommerceAvailabilitiesRequest.md
   - docs/Models/Requests/ListCommerceAvailabilitiesResponse.md
@@ -5712,6 +5801,7 @@ generatedFiles:
   - docs/sdks/change/README.md
   - docs/sdks/channel/README.md
   - docs/sdks/class/README.md
+  - docs/sdks/clubs/README.md
   - docs/sdks/collection/README.md
   - docs/sdks/comment/README.md
   - docs/sdks/commerce/README.md
@@ -11999,6 +12089,91 @@ examples:
       responses:
         "200":
           application/json: {"id": "<id>"}
+  getClubsGroup:
+    speakeasy-default-get-clubs-group:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listClubsGroups:
+    speakeasy-default-list-clubs-groups:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  getClubsActivity:
+    speakeasy-default-get-clubs-activity:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listClubsActivities:
+    speakeasy-default-list-clubs-activities:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  getClubsEvent:
+    speakeasy-default-get-clubs-event:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listClubsEvents:
+    speakeasy-default-list-clubs-events:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  getClubsLocation:
+    speakeasy-default-get-clubs-location:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  getClubsMember:
+    speakeasy-default-get-clubs-member:
+      parameters:
+        path:
+          connection_id: "<id>"
+          id: "<id>"
+      responses:
+        "200":
+          application/json: {}
+  listClubsLocations:
+    speakeasy-default-list-clubs-locations:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
+  listClubsMembers:
+    speakeasy-default-list-clubs-members:
+      parameters:
+        path:
+          connection_id: "<id>"
+      responses:
+        "200":
+          application/json: [{}]
 examplesVersion: 1.0.2
 generatedTests: {}
 persistentEdits:
@@ -12033,7 +12208,7 @@ trackedFiles:
     pristine_git_object: 8e2310315aa68c528d6c4321ffdb5a3ebff3b422
   UnifiedTo/Activity.cs:
     id: 123cf0ad32c5
-    last_write_checksum: sha1:d749f0fbcdf7e299536ae15cc24c8136682f54fa
+    last_write_checksum: sha1:640df2b1b1a7cdaa50e66eaa225418befc1fb3ad
     pristine_git_object: b3d30fb52c485380a2c0f2c0171df2ade61cccbe
   UnifiedTo/Ad.cs:
     last_write_checksum: sha1:c955a46b1466675c3c17033ea438f053cf667184
@@ -12121,6 +12296,8 @@ trackedFiles:
     id: 8d80f23e5da3
     last_write_checksum: sha1:ab0f2303a81b0956bd7d7b40196d757f65d9995b
     pristine_git_object: b758b4856eb4a09f31b614709fc47c4732762cfa
+  UnifiedTo/Clubs.cs:
+    last_write_checksum: sha1:1aa3f0d6b7ff66e40877d4bc640cac4ecebcadce
   UnifiedTo/Collection.cs:
     id: 86b043437bb8
     last_write_checksum: sha1:de0f13def8c102c7befcba3e10c17a3745ad8c04
@@ -12203,7 +12380,7 @@ trackedFiles:
     pristine_git_object: 442cc1d2f1c9a2c314c643661b12ae28ca156bbd
   UnifiedTo/Event.cs:
     id: 99e807e5eabd
-    last_write_checksum: sha1:48cd1d55cbb33f2b9fd438d474bb544423ccb577
+    last_write_checksum: sha1:341f581d864b642a27e493733700188590907dd1
     pristine_git_object: bf5943a8fc4c990f22e2289629a7fa34de26c136
   UnifiedTo/Expense.cs:
     id: cede45b1edc2
@@ -12223,7 +12400,7 @@ trackedFiles:
     pristine_git_object: 5cb4a3863573dd0fd655b3e11e744227a378960e
   UnifiedTo/Group.cs:
     id: e1c9cb0d3739
-    last_write_checksum: sha1:e1b39ed9f70187c3e34cbfa206e1465ea4e47413
+    last_write_checksum: sha1:6b7b354129a3beb1e8515627c42e30fe4c420e6b
     pristine_git_object: 3b054b946da8fede58f67ff11bb46bd339d76da4
   UnifiedTo/Hooks/HookTypes.cs:
     id: 4f447444c982
@@ -12301,7 +12478,7 @@ trackedFiles:
     pristine_git_object: 73a0c4d382cd6dba63efbdb17da2e1ed5ee09ba5
   UnifiedTo/Location.cs:
     id: e60e8ad44df7
-    last_write_checksum: sha1:fd1312a5dd794c7fbb71e45548108bc5ba2c55d0
+    last_write_checksum: sha1:d147e99bae0696ffa55270096fa0fc6a7e913e2c
     pristine_git_object: e0496b548cad7bab6fcb0d2697a2a9be3b5a8f6a
   UnifiedTo/Login.cs:
     id: 205ee111ff7f
@@ -12313,7 +12490,7 @@ trackedFiles:
     pristine_git_object: d90f12eb5abe12e89753f1d4de756e3a4d2fc831
   UnifiedTo/Member.cs:
     id: 954dc7fb2b1b
-    last_write_checksum: sha1:25ad7540a62b52bbae7083bdcac98f244af1b672
+    last_write_checksum: sha1:3130fe4c726845209a6f03c05be78044a0da48a3
     pristine_git_object: 706b4c730ac2284b13e13e106b40d7dff5a4b1a3
   UnifiedTo/Message.cs:
     id: f487b06e2b4f
@@ -12863,6 +13040,24 @@ trackedFiles:
     last_write_checksum: sha1:5ca6110464c781ccf18056717dd944c43bd45951
   UnifiedTo/Models/Components/CityTarget.cs:
     last_write_checksum: sha1:e3d063a3fc9dfe72eba1cb2e7ea554cef0414773
+  UnifiedTo/Models/Components/ClubsActivity.cs:
+    last_write_checksum: sha1:4769cb3c73996ab235c8da7f8468794bbec1df52
+  UnifiedTo/Models/Components/ClubsActivityType.cs:
+    last_write_checksum: sha1:e6dba3c65b8fe6bf57c4098ad31e3da9a52be26d
+  UnifiedTo/Models/Components/ClubsEvent.cs:
+    last_write_checksum: sha1:b2aca626ef2077d34afa5e145d758f8fbe1855ce
+  UnifiedTo/Models/Components/ClubsEventStatus.cs:
+    last_write_checksum: sha1:28ad2265cdd2e25ea472182e60a6bc451492917f
+  UnifiedTo/Models/Components/ClubsEventType.cs:
+    last_write_checksum: sha1:85787609457455ec8304f6be7bba099cd0c481ef
+  UnifiedTo/Models/Components/ClubsGroup.cs:
+    last_write_checksum: sha1:4873d2bf70e25942da07fddd25214a3cc194748f
+  UnifiedTo/Models/Components/ClubsLocation.cs:
+    last_write_checksum: sha1:3ba19c19679c55f43c0bd14bb4de85956d2a1976
+  UnifiedTo/Models/Components/ClubsMember.cs:
+    last_write_checksum: sha1:0619bb8c2fcec638f5d90d17201e8c742fc90703
+  UnifiedTo/Models/Components/ClubsMemberMembershipStatus.cs:
+    last_write_checksum: sha1:1f53d1b821eff7a8852d2efdb5239d5fcd4c62eb
   UnifiedTo/Models/Components/CommerceAvailability.cs:
     last_write_checksum: sha1:03ca01a2b15f1fd91a5020ead7b5734bfb9a09fc
   UnifiedTo/Models/Components/CommerceCollection.cs:
@@ -12971,7 +13166,7 @@ trackedFiles:
     last_write_checksum: sha1:d0e8cfca8e9c71a9334c8886818b265ae470f033
   UnifiedTo/Models/Components/Connection.cs:
     id: 48bc2319d927
-    last_write_checksum: sha1:2e5260008d472993aca52810ef72de236d072197
+    last_write_checksum: sha1:ed5b98bdf37b354d9ea08dffa013c087fc927ae7
     pristine_git_object: ed254c08145d8dcbe037bf58cff50ae6200dce72
   UnifiedTo/Models/Components/ContentType.cs:
     id: 3bb0b21cabdc
@@ -13197,6 +13392,8 @@ trackedFiles:
     pristine_git_object: 9f6490d730e5fa085732692c9ef7fb3168830ce5
   UnifiedTo/Models/Components/Goal.cs:
     last_write_checksum: sha1:87d0f9a64e00fc86f4f33018a4c5b1622223b503
+  UnifiedTo/Models/Components/GroupType.cs:
+    last_write_checksum: sha1:f68c49bda0a6ad4b2bfc577fcc54b32d002df54c
   UnifiedTo/Models/Components/HostingSource.cs:
     last_write_checksum: sha1:1893e56374bd95c616bca542852025d8cf5f8678
   UnifiedTo/Models/Components/HrisBankaccount.cs:
@@ -13809,6 +14006,8 @@ trackedFiles:
     last_write_checksum: sha1:99bd38911e2468f90cd8fa11d891ac61cbcd12e1
   UnifiedTo/Models/Components/MatchType.cs:
     last_write_checksum: sha1:2c8062d5a3f48d17df558b998379762ca2765800
+  UnifiedTo/Models/Components/MembershipStatus.cs:
+    last_write_checksum: sha1:0d6406c4f7e89d2c3d5bebfc0ddf69779977198a
   UnifiedTo/Models/Components/MessagingAttachment.cs:
     id: 5fc489ad76c2
     last_write_checksum: sha1:f63797939db8d622b6c1e9d7352e259f7cd368b0
@@ -13903,7 +14102,7 @@ trackedFiles:
     last_write_checksum: sha1:2600fee70f1e697d78687bf8756486885a2bc240
   UnifiedTo/Models/Components/ObjectType.cs:
     id: 8e5be1040e8b
-    last_write_checksum: sha1:23d455f3d3b1754ff3e15fc6d3869990041ad759
+    last_write_checksum: sha1:b69edf40da22a965d0260776b174221859c17fd4
     pristine_git_object: 8aa887cf95b9ca7e4de4189a0994cf8d7de53ac6
   UnifiedTo/Models/Components/One.cs:
     id: d6fa3c7b6dc5
@@ -14291,6 +14490,10 @@ trackedFiles:
     last_write_checksum: sha1:13801ae79832fbe194f82a20c777f9c8f85891df
   UnifiedTo/Models/Components/PropertyCalendarWebinarOrganizerStatus.cs:
     last_write_checksum: sha1:63e77ff9d023cecdd409e72370070fbb3ea20181
+  UnifiedTo/Models/Components/PropertyClubsGroupAddress.cs:
+    last_write_checksum: sha1:6710ea162de97e96e1febce6a90f9d7f813d2257
+  UnifiedTo/Models/Components/PropertyClubsLocationAddress.cs:
+    last_write_checksum: sha1:c8211438a946e4c632b40159a38638431c287125
   UnifiedTo/Models/Components/PropertyCommerceLocationAddress.cs:
     id: 4c3702c9ef8a
     last_write_checksum: sha1:3c64793ffb5e6f0d4b3164345aea815c083f14bb
@@ -14301,11 +14504,11 @@ trackedFiles:
     pristine_git_object: 88da70331e889b5f4ce24f336098baf7d8952b05
   UnifiedTo/Models/Components/PropertyConnectionCategories.cs:
     id: b8b5cd39b135
-    last_write_checksum: sha1:d96ab60ab14163fc6a9bb636e661b922f2b33f40
+    last_write_checksum: sha1:8bc1055dfab10ec906bc7440dbfa4a4760d47f29
     pristine_git_object: 058a7265ff607fc57d02159cac6833325b133d8b
   UnifiedTo/Models/Components/PropertyConnectionPermissions.cs:
     id: f924575570ed
-    last_write_checksum: sha1:3bbd3b4068f22d0f59ddc7f8ab7a76c4abae0f3a
+    last_write_checksum: sha1:417d54a161cc6ea9593efc7d5a623d2faa7914e3
     pristine_git_object: 1fbf256600c76cb7463c9b53c5891696d45c4cd6
   UnifiedTo/Models/Components/PropertyCrmCompanyAddress.cs:
     id: 9ecc38382b6c
@@ -14399,7 +14602,7 @@ trackedFiles:
     pristine_git_object: 62e65daeb08ea5a1c2d63b5bc9393543227c406e
   UnifiedTo/Models/Components/PropertyIntegrationCategories.cs:
     id: 773f9e10ec65
-    last_write_checksum: sha1:b35da4b43aef9f205f88aa9cc1bd854a3c27b5a8
+    last_write_checksum: sha1:68eb24c5a937ba455c0eefd13ff015edef9bff18
     pristine_git_object: 63f48e67cb238e7be87b62a93d76db69a5a224ab
   UnifiedTo/Models/Components/PropertyIntegrationSupportWebhookEvents.cs:
     id: 6efe6043edc2
@@ -14737,6 +14940,8 @@ trackedFiles:
     id: b4fd0e29518d
     last_write_checksum: sha1:0037f784cff7f902f079bdb40f448995eea90d77
     pristine_git_object: 348db8d1324eca54ed0970a97cae303f33463285
+  UnifiedTo/Models/Components/SportType.cs:
+    last_write_checksum: sha1:9931419f0831ad332f7c5a36723b469a4baab31e
   UnifiedTo/Models/Components/Status.cs:
     id: 0b89036d8a1b
     last_write_checksum: sha1:b44b86a88d0da4b41a0830fb0976b16e0059a004
@@ -15177,7 +15382,7 @@ trackedFiles:
     pristine_git_object: 4b5f65720dcfff3c14180ee4700fb055bb7b1df5
   UnifiedTo/Models/Requests/Categories.cs:
     id: be86035d2e24
-    last_write_checksum: sha1:a240c02a080f87a12d1bc02d701cdf6970af5325
+    last_write_checksum: sha1:b4096d30a24d9d3720f38f2d626e8052049f6f79
     pristine_git_object: b6621b30c7df7ff10d2b08421fa44b47bc74a74f
   UnifiedTo/Models/Requests/CreateAccountingAccountRequest.cs:
     id: 952a759eb731
@@ -16493,6 +16698,36 @@ trackedFiles:
     last_write_checksum: sha1:2cc66701651988c3723aaf845884ba071abdffaf
   UnifiedTo/Models/Requests/GetCalendarWebinarResponse.cs:
     last_write_checksum: sha1:077f62c17d472813cb8b214a08fa2980330db50a
+  UnifiedTo/Models/Requests/GetClubsActivityQueryParamFields.cs:
+    last_write_checksum: sha1:430c2032fff4f9a9cb67515fe850eb47005e898c
+  UnifiedTo/Models/Requests/GetClubsActivityRequest.cs:
+    last_write_checksum: sha1:fed9cd4dc483508ca1c7e9233082b3304f26403b
+  UnifiedTo/Models/Requests/GetClubsActivityResponse.cs:
+    last_write_checksum: sha1:f506e6ff7aa91248e4a64eb77fe805da99352c95
+  UnifiedTo/Models/Requests/GetClubsEventQueryParamFields.cs:
+    last_write_checksum: sha1:76444d59121b2b14da67f095efdde233df051f71
+  UnifiedTo/Models/Requests/GetClubsEventRequest.cs:
+    last_write_checksum: sha1:780a5af359c2da4aec8031e362ea69dc67a42773
+  UnifiedTo/Models/Requests/GetClubsEventResponse.cs:
+    last_write_checksum: sha1:f68a0304a53e979eea5fe2df08dd5be95150ce1e
+  UnifiedTo/Models/Requests/GetClubsGroupQueryParamFields.cs:
+    last_write_checksum: sha1:1932a78156f2aeab00de7425bda8d041b384a825
+  UnifiedTo/Models/Requests/GetClubsGroupRequest.cs:
+    last_write_checksum: sha1:b6619855c1980f6b824d2bd6f2202b34ec3595f3
+  UnifiedTo/Models/Requests/GetClubsGroupResponse.cs:
+    last_write_checksum: sha1:a7d95e05f59618af2f607b7a8f2d70427d74d8c9
+  UnifiedTo/Models/Requests/GetClubsLocationQueryParamFields.cs:
+    last_write_checksum: sha1:bfe0b1a7852de8ba2e7f545d83fdc32db17f5a5e
+  UnifiedTo/Models/Requests/GetClubsLocationRequest.cs:
+    last_write_checksum: sha1:38c8d01719409c1544368620f7cf51df1d4b975b
+  UnifiedTo/Models/Requests/GetClubsLocationResponse.cs:
+    last_write_checksum: sha1:1cb823ca196faf4b56a15971df486a0497c247e9
+  UnifiedTo/Models/Requests/GetClubsMemberQueryParamFields.cs:
+    last_write_checksum: sha1:60d3378530f9fd6f32a062e057c9e9003677fad3
+  UnifiedTo/Models/Requests/GetClubsMemberRequest.cs:
+    last_write_checksum: sha1:4e62d354aae377eca98672d7170dfb2efb4b0fb2
+  UnifiedTo/Models/Requests/GetClubsMemberResponse.cs:
+    last_write_checksum: sha1:7b610fdaba74e45fcb81e242acd056ae6f499ba0
   UnifiedTo/Models/Requests/GetCommerceCollectionQueryParamFields.cs:
     last_write_checksum: sha1:3883cd23e8db21e55f6829abf2a81f22d1e0c1c6
   UnifiedTo/Models/Requests/GetCommerceCollectionRequest.cs:
@@ -17647,6 +17882,36 @@ trackedFiles:
     last_write_checksum: sha1:763046e1fd16f519b7b203cb22294e362cf67463
   UnifiedTo/Models/Requests/ListCalendarWebinarsResponse.cs:
     last_write_checksum: sha1:e0fcea772d88a9346cedc5e56548279c2798babf
+  UnifiedTo/Models/Requests/ListClubsActivitiesQueryParamFields.cs:
+    last_write_checksum: sha1:c11f9df15b784c71394c3debcbe20bd97619a644
+  UnifiedTo/Models/Requests/ListClubsActivitiesRequest.cs:
+    last_write_checksum: sha1:245bcffa3b3a122d1d1ccc4ec3db5051a9eb96d4
+  UnifiedTo/Models/Requests/ListClubsActivitiesResponse.cs:
+    last_write_checksum: sha1:aeb779c5e1e8871884dcf9f3230e58638fcad2a4
+  UnifiedTo/Models/Requests/ListClubsEventsQueryParamFields.cs:
+    last_write_checksum: sha1:cf0d48a9cb7df7dcfb0cb5c3972bc2a2c1064d4d
+  UnifiedTo/Models/Requests/ListClubsEventsRequest.cs:
+    last_write_checksum: sha1:06725b913c3979ccf2687388e6f519daba08bbf5
+  UnifiedTo/Models/Requests/ListClubsEventsResponse.cs:
+    last_write_checksum: sha1:4a7720b8188cbb415325c56ab6c2603c2ee02072
+  UnifiedTo/Models/Requests/ListClubsGroupsQueryParamFields.cs:
+    last_write_checksum: sha1:089bf4f2b765dae6cea1d357b4d490c1ca5ebb68
+  UnifiedTo/Models/Requests/ListClubsGroupsRequest.cs:
+    last_write_checksum: sha1:a9bcba13939b34dadca5b1c950827cf540171f3a
+  UnifiedTo/Models/Requests/ListClubsGroupsResponse.cs:
+    last_write_checksum: sha1:8ca41b27e2879066878667dccecd4f24f591ae5c
+  UnifiedTo/Models/Requests/ListClubsLocationsQueryParamFields.cs:
+    last_write_checksum: sha1:2cbac62d4a59e0ab375ab17f5c599630efc013dd
+  UnifiedTo/Models/Requests/ListClubsLocationsRequest.cs:
+    last_write_checksum: sha1:e9af02f7c8b90457e38aec6627c6b7be1de23996
+  UnifiedTo/Models/Requests/ListClubsLocationsResponse.cs:
+    last_write_checksum: sha1:27bcf3b902739547fe60af8321eb11cfeaa23845
+  UnifiedTo/Models/Requests/ListClubsMembersQueryParamFields.cs:
+    last_write_checksum: sha1:fe4d2ffbced1bbc6311b161ddfb59042e954be6b
+  UnifiedTo/Models/Requests/ListClubsMembersRequest.cs:
+    last_write_checksum: sha1:5180f4e2b05db8686d728e02fa0d042b937eaeba
+  UnifiedTo/Models/Requests/ListClubsMembersResponse.cs:
+    last_write_checksum: sha1:3037e99a9fba3801f0bb120dca80355b1432c8d9
   UnifiedTo/Models/Requests/ListCommerceAvailabilitiesQueryParamFields.cs:
     last_write_checksum: sha1:89387cd9cd146dca6d87b6da86d3c258d8ccfd78
   UnifiedTo/Models/Requests/ListCommerceAvailabilitiesRequest.cs:
@@ -18405,7 +18670,7 @@ trackedFiles:
     pristine_git_object: 795e76a8b3d6c246fef192426606a725f1e76d58
   UnifiedTo/Models/Requests/ListUnifiedIntegrationsQueryParamCategories.cs:
     id: f789cc95e60f
-    last_write_checksum: sha1:51a2c4329d376180e64189155a85df0f3691c624
+    last_write_checksum: sha1:a91909869c77b763cabd77f2601d7201bb74d1dd
     pristine_git_object: 80e0f27451ba33ad952c8243a18bfcd49e8b45f3
   UnifiedTo/Models/Requests/ListUnifiedIntegrationsRequest.cs:
     id: 8127ad4e769f
@@ -19395,7 +19660,7 @@ trackedFiles:
     pristine_git_object: 298c4f905bc9430bde149187d0951d6b7b29a9a7
   UnifiedTo/Models/Requests/QueryParamCategories.cs:
     id: 13362280c963
-    last_write_checksum: sha1:dbe10eb4d549c3882230e57c50d994f2c57ea739
+    last_write_checksum: sha1:55f2e0062159d9746557e37cf320fae0ed831898
     pristine_git_object: f40660e8cfc6d15d8e2b0f6945444c33943b3abe
   UnifiedTo/Models/Requests/QueryParamFields.cs:
     last_write_checksum: sha1:6aa4ff1b51036c043d63b639d82ea7f3e0e5d284
@@ -21173,7 +21438,7 @@ trackedFiles:
     pristine_git_object: 67a2f39b3a481cfbe4bd7b53bc56d5b134e59328
   UnifiedTo/SDKConfig.cs:
     id: 09cceb5aefba
-    last_write_checksum: sha1:07f3ea44ae0552a5038bb3fa74b78ae4883e2722
+    last_write_checksum: sha1:62eee19bca141c10358a68e2a66f97ad94a13a5e
     pristine_git_object: ec77e7a7d30360c30e5a4f23ada5497b3cffbd3f
   UnifiedTo/Saleschannel.cs:
     id: e3fa53aaefd1
@@ -21269,7 +21534,7 @@ trackedFiles:
     pristine_git_object: 883792bc149f1152a8331b8e409d591075c3a6bd
   UnifiedTo/UnifiedToSDK.cs:
     id: 1cd9e95575c5
-    last_write_checksum: sha1:e009a7951e0c9a258a885c43839c1d46e93cca1c
+    last_write_checksum: sha1:2521f4fe5ce7da64d95edfbb206ea0f352d5d245
     pristine_git_object: b2dbc023c5e4be2a5de721c2bbc9330db399f4bd
   UnifiedTo/User.cs:
     id: 603e44ffd153
@@ -21285,7 +21550,7 @@ trackedFiles:
     pristine_git_object: 91a7e3528f22deb98cae5dc6801c1917efa6be58
   UnifiedTo/Utils/Constants.cs:
     id: 250092c1ed41
-    last_write_checksum: sha1:3a4d93262c42fbc064ffbfb29a24f22f3c63c974
+    last_write_checksum: sha1:a10dde29f1ac2607e056b0b304f9ae83d9be4cc6
     pristine_git_object: 952ec8e968c3b100932e057a9caefa2693720ca3
   UnifiedTo/Utils/DecimalStrConverter.cs:
     id: eb575c2baa28
@@ -21893,6 +22158,24 @@ trackedFiles:
     last_write_checksum: sha1:04ef598387e278f5fdc280ecd9bf7928cd143ccc
   docs/Models/Components/CityTarget.md:
     last_write_checksum: sha1:6eaefefa4e85bd0ca93f1bf583a4a4b9324c9f8c
+  docs/Models/Components/ClubsActivity.md:
+    last_write_checksum: sha1:cd895ddad07db06ad70f327d196bfa22fae17e22
+  docs/Models/Components/ClubsActivityType.md:
+    last_write_checksum: sha1:24e8de49e8ff007972e4bb0d63c1131e7ffc33a9
+  docs/Models/Components/ClubsEvent.md:
+    last_write_checksum: sha1:82d98dc65acd3d7dfdf25d43537e14f8804f3ced
+  docs/Models/Components/ClubsEventStatus.md:
+    last_write_checksum: sha1:115d86907be13b7101c6bea9669511890f0ed02b
+  docs/Models/Components/ClubsEventType.md:
+    last_write_checksum: sha1:cf143770db993416d138ae886e18451bbda0ab69
+  docs/Models/Components/ClubsGroup.md:
+    last_write_checksum: sha1:34ebede83a8be66a0a17d15e2007ebf4c4c385a0
+  docs/Models/Components/ClubsLocation.md:
+    last_write_checksum: sha1:a5bffbfd426975df02faa1f90e454e7b257e5036
+  docs/Models/Components/ClubsMember.md:
+    last_write_checksum: sha1:cdf231d8856a1fb3d8d8a966be3fd73b66774a6d
+  docs/Models/Components/ClubsMemberMembershipStatus.md:
+    last_write_checksum: sha1:b46533a91f383a8f1009d46422884ba6cebd7975
   docs/Models/Components/CommerceAvailability.md:
     last_write_checksum: sha1:91b34b7c600659a39c15c9153a0d1a16f66646cc
   docs/Models/Components/CommerceCollection.md:
@@ -22001,7 +22284,7 @@ trackedFiles:
     last_write_checksum: sha1:82837ff72c5af95226c83601473fcfd6b5d8b5a0
   docs/Models/Components/Connection.md:
     id: 5688c7e8f7e9
-    last_write_checksum: sha1:1d375a96dc5491d066e5122075263774ef672692
+    last_write_checksum: sha1:84b898123caffe6aa4ab66c4dca64fe037fd6995
     pristine_git_object: 43aca14537445b6f8a753627a823a48cd67d2288
   docs/Models/Components/ContentType.md:
     id: 89ba6a58f12b
@@ -22227,6 +22510,8 @@ trackedFiles:
     pristine_git_object: 42928c802734549101ea810c164264a4c123d71e
   docs/Models/Components/Goal.md:
     last_write_checksum: sha1:2d19ba14805579536cd07c16cb726b66c510d528
+  docs/Models/Components/GroupType.md:
+    last_write_checksum: sha1:db00607c6e535d1b009af186e91aa56354999384
   docs/Models/Components/HostingSource.md:
     last_write_checksum: sha1:71441a237c24bbfa9861f1a1e3a3c40038d52db0
   docs/Models/Components/HrisBankaccount.md:
@@ -22839,6 +23124,8 @@ trackedFiles:
     last_write_checksum: sha1:cac5f9b12a7eeb95ce26f866babe24c3afb002d0
   docs/Models/Components/MatchType.md:
     last_write_checksum: sha1:4415bef6177fef0993bb5ec499253228f007379e
+  docs/Models/Components/MembershipStatus.md:
+    last_write_checksum: sha1:79f2cb5a096c6583cebe9fffbf7e5f9456fe92e4
   docs/Models/Components/MessagingAttachment.md:
     id: 2a5b603e5312
     last_write_checksum: sha1:e2b212cb5c8170dac648c904e998fe9c4abaefb2
@@ -22933,7 +23220,7 @@ trackedFiles:
     last_write_checksum: sha1:1cad6af034766f255939e42484237ba47aed987a
   docs/Models/Components/ObjectType.md:
     id: 70698fd5bb26
-    last_write_checksum: sha1:e652ed03d4632803147ef4bd6d3c31a936aa26e3
+    last_write_checksum: sha1:273bf2e7fb3abfcdfd9e323fa699b29d12b36f51
     pristine_git_object: 91af6f273850d152ad35aa723ed82eb7c07b6cff
   docs/Models/Components/One.md:
     id: 37e74752e70f
@@ -23321,6 +23608,10 @@ trackedFiles:
     last_write_checksum: sha1:84ce0973054b8df8e7b112daf5bff1d3094fdc90
   docs/Models/Components/PropertyCalendarWebinarOrganizerStatus.md:
     last_write_checksum: sha1:aa522666a41976692d88e463a61a18d8d80cb0ce
+  docs/Models/Components/PropertyClubsGroupAddress.md:
+    last_write_checksum: sha1:4162f53d6941ee35b2baa2fdce66c255593dc7cd
+  docs/Models/Components/PropertyClubsLocationAddress.md:
+    last_write_checksum: sha1:69f759bc6538581febd6490fa61025423f47135b
   docs/Models/Components/PropertyCommerceLocationAddress.md:
     id: c875398d47c3
     last_write_checksum: sha1:de299d1f6da3e22d8d6f8517326bf8648cadf4f8
@@ -23331,11 +23622,11 @@ trackedFiles:
     pristine_git_object: 77bd26706fb3da9b7b8724806838fdfa0adbd1e3
   docs/Models/Components/PropertyConnectionCategories.md:
     id: 6d04f43a81a7
-    last_write_checksum: sha1:f2b8425aa1d962ac4f4ca53835398beb10a3c02c
+    last_write_checksum: sha1:b341f2ee8ca631cf3e716284dc6b1d6b8a8968ba
     pristine_git_object: 6b4bf574f578f75b9133779b9acde99497b64e46
   docs/Models/Components/PropertyConnectionPermissions.md:
     id: eb5eb79c93e6
-    last_write_checksum: sha1:6007be8966de202c89c58c425704f3e1dc4b2663
+    last_write_checksum: sha1:f3888b26d19abcff31341165ce35175508519233
     pristine_git_object: 152432bd22d8101ccd205bc3481571ae0fb148e0
   docs/Models/Components/PropertyCrmCompanyAddress.md:
     id: 5836e935161d
@@ -23429,7 +23720,7 @@ trackedFiles:
     pristine_git_object: 4da39ee270712de7ad8aa4f594c3ee39f4404634
   docs/Models/Components/PropertyIntegrationCategories.md:
     id: b3d3de106dce
-    last_write_checksum: sha1:1260995bde3f4e26c73e52f56f380842069ebbb6
+    last_write_checksum: sha1:2b274f54c37ae092fbd4a3e9ddf67b6b4bd1dee1
     pristine_git_object: e2dfdcbbc86b5edebf3e7ad0033c8e86441387ab
   docs/Models/Components/PropertyIntegrationSupportWebhookEvents.md:
     id: 3bd0e3575268
@@ -23767,6 +24058,8 @@ trackedFiles:
     id: e7f15e9f1f20
     last_write_checksum: sha1:85b7b233e7def3c69a6cd179ed68e118645856ef
     pristine_git_object: 6323e125e270f41da7c9ee35383c286694e9446b
+  docs/Models/Components/SportType.md:
+    last_write_checksum: sha1:838eb443fa19cd08a4b9620ee8bef15d49e0d193
   docs/Models/Components/Status.md:
     id: 71d0264ee613
     last_write_checksum: sha1:90ebc945477a14fbb5d7b52d6f8d04e62c59c73d
@@ -24195,7 +24488,7 @@ trackedFiles:
     last_write_checksum: sha1:150a79cf72a0b5fca839db9ced258e9f8d3971bc
   docs/Models/Requests/Categories.md:
     id: 88c9c88a8ad5
-    last_write_checksum: sha1:12cb82d0e2d721cc52e87373d7f9e7f607c32b01
+    last_write_checksum: sha1:7282a6780aa7668bc0a5ee1d85e47a0b4cb56c64
     pristine_git_object: c1970f36dd8aca7c5fb19cb5f0ff95c163dac8b3
   docs/Models/Requests/CreateAccountingAccountRequest.md:
     id: 467a8e78b7f5
@@ -25511,6 +25804,36 @@ trackedFiles:
     last_write_checksum: sha1:10707be5fc4e854d3a78d820cbf3e86c28c979df
   docs/Models/Requests/GetCalendarWebinarResponse.md:
     last_write_checksum: sha1:a7a3d664c02f4a549ea5b8035c43eb77a996adff
+  docs/Models/Requests/GetClubsActivityQueryParamFields.md:
+    last_write_checksum: sha1:b19fde610da2914912a0981011448606435f39c4
+  docs/Models/Requests/GetClubsActivityRequest.md:
+    last_write_checksum: sha1:9cc4563a72f3a19b5ab701b195d1706f6053f8ad
+  docs/Models/Requests/GetClubsActivityResponse.md:
+    last_write_checksum: sha1:312dd202ae38e9fe1bcc544143fdbd77716c1e9e
+  docs/Models/Requests/GetClubsEventQueryParamFields.md:
+    last_write_checksum: sha1:0973f71e4dd8859fe12e7c20466a7faf98b970d1
+  docs/Models/Requests/GetClubsEventRequest.md:
+    last_write_checksum: sha1:29f9735a2d3598debe169b2902f3cecd0b9f4f23
+  docs/Models/Requests/GetClubsEventResponse.md:
+    last_write_checksum: sha1:985eeefb76195a3022a677b4fa64cf6d6ea0f18c
+  docs/Models/Requests/GetClubsGroupQueryParamFields.md:
+    last_write_checksum: sha1:590d63219713037635a0261f9f73a6a155a7761f
+  docs/Models/Requests/GetClubsGroupRequest.md:
+    last_write_checksum: sha1:47ba0558e8c5ad06eb3ca916014d6285f3880248
+  docs/Models/Requests/GetClubsGroupResponse.md:
+    last_write_checksum: sha1:c9c8b857e7f06438f7ca82046f5edae8675c3f42
+  docs/Models/Requests/GetClubsLocationQueryParamFields.md:
+    last_write_checksum: sha1:2ed36fef76b22bb3b2bde5bb8d6beef5045e0a64
+  docs/Models/Requests/GetClubsLocationRequest.md:
+    last_write_checksum: sha1:f44e0f0c2786b4bfdf77519b763f37ffa542c295
+  docs/Models/Requests/GetClubsLocationResponse.md:
+    last_write_checksum: sha1:459defa7693736358b85447cb92d7931bfa9ed65
+  docs/Models/Requests/GetClubsMemberQueryParamFields.md:
+    last_write_checksum: sha1:b3df39d526ca18185676bc9d553b28d6d637fddb
+  docs/Models/Requests/GetClubsMemberRequest.md:
+    last_write_checksum: sha1:27eb13aed52b5d5548611b8783f3e4c071f02f90
+  docs/Models/Requests/GetClubsMemberResponse.md:
+    last_write_checksum: sha1:2be60f357fd89d3d8d1545c73e6abf3d5c24fd77
   docs/Models/Requests/GetCommerceCollectionQueryParamFields.md:
     last_write_checksum: sha1:a6a097ef7e3ccabfd5c3db3fe1b3ae8c50291da2
   docs/Models/Requests/GetCommerceCollectionRequest.md:
@@ -26665,6 +26988,36 @@ trackedFiles:
     last_write_checksum: sha1:a61535a40bd8061ed9c9984c9a721cdd3efb7020
   docs/Models/Requests/ListCalendarWebinarsResponse.md:
     last_write_checksum: sha1:8426d1c3dc0adae8484f9cc678c96d3a79e4829a
+  docs/Models/Requests/ListClubsActivitiesQueryParamFields.md:
+    last_write_checksum: sha1:ea4d72713d1ebcef7cf22f1907a0b2642d77c810
+  docs/Models/Requests/ListClubsActivitiesRequest.md:
+    last_write_checksum: sha1:f9a105b656acd6d0cef37019426c1df2d28e8343
+  docs/Models/Requests/ListClubsActivitiesResponse.md:
+    last_write_checksum: sha1:20c1243e51eb38970a179ceab78d9781cee8488b
+  docs/Models/Requests/ListClubsEventsQueryParamFields.md:
+    last_write_checksum: sha1:ac9bc55ada9f9e8849e275d9074926a7019f0099
+  docs/Models/Requests/ListClubsEventsRequest.md:
+    last_write_checksum: sha1:795c3567172b4462d8881a61f757d5d0320289da
+  docs/Models/Requests/ListClubsEventsResponse.md:
+    last_write_checksum: sha1:ddf316cb7edc97b3fc0cb1910f26de076a632d92
+  docs/Models/Requests/ListClubsGroupsQueryParamFields.md:
+    last_write_checksum: sha1:a2f102076e45a139bac936c87ce4ed1711b4ccb5
+  docs/Models/Requests/ListClubsGroupsRequest.md:
+    last_write_checksum: sha1:40bb7e53ce00496d76e5681cf9b4f7862b0e79fb
+  docs/Models/Requests/ListClubsGroupsResponse.md:
+    last_write_checksum: sha1:ff48818b5829c2fe1e7f78b451ac773d2f3f6d30
+  docs/Models/Requests/ListClubsLocationsQueryParamFields.md:
+    last_write_checksum: sha1:7da9c6eb91992e8fa042073639733c54e4cff93c
+  docs/Models/Requests/ListClubsLocationsRequest.md:
+    last_write_checksum: sha1:aa1af0f412dc35d6d2cad0e583282a047f30e32d
+  docs/Models/Requests/ListClubsLocationsResponse.md:
+    last_write_checksum: sha1:32926d5df366d63599d09e28b89b7e7763b98322
+  docs/Models/Requests/ListClubsMembersQueryParamFields.md:
+    last_write_checksum: sha1:867b38a856b64fef0497fee363e2f6865560497a
+  docs/Models/Requests/ListClubsMembersRequest.md:
+    last_write_checksum: sha1:35097a4fcd846ac2fa4fe0eee25e12d45574a4db
+  docs/Models/Requests/ListClubsMembersResponse.md:
+    last_write_checksum: sha1:6085c066fb32c01c47b6bb04a78b21435bbeca23
   docs/Models/Requests/ListCommerceAvailabilitiesQueryParamFields.md:
     last_write_checksum: sha1:c4ae6e88b8846db7dc725a85e36f1247ab7817fb
   docs/Models/Requests/ListCommerceAvailabilitiesRequest.md:
@@ -27423,7 +27776,7 @@ trackedFiles:
     pristine_git_object: a49fb8ffd762d1e1e74dd8d419afc979f54adbed
   docs/Models/Requests/ListUnifiedIntegrationsQueryParamCategories.md:
     id: 8f5711d6bd9e
-    last_write_checksum: sha1:9fc41b3cc7844013dad2479b1e1518f7df4abaaa
+    last_write_checksum: sha1:bd5ff5112410146db6273734d9844aeac840e297
     pristine_git_object: 8963ca701377acc821b2dd816885a8b4d9f3c124
   docs/Models/Requests/ListUnifiedIntegrationsRequest.md:
     id: 536e38e42533
@@ -28413,7 +28766,7 @@ trackedFiles:
     pristine_git_object: f24b2442445ef8c41077a0977ee707f104f6d8de
   docs/Models/Requests/QueryParamCategories.md:
     id: 0f8a6c57172d
-    last_write_checksum: sha1:15b704f7bac2e4cf8264fe32e15e06f87e712738
+    last_write_checksum: sha1:ba315cfeb405bb9b658e3226721943b6700e5527
     pristine_git_object: 4671032408fc6ee6910e256aaaa2fc56cdeb99dc
   docs/Models/Requests/QueryParamFields.md:
     last_write_checksum: sha1:3b9dcbd788bb2dff5b0f31757f75e37ac8a1b5e1
@@ -30101,7 +30454,7 @@ trackedFiles:
     pristine_git_object: b0a38baa71424f1acc7629ee0ad97e7aedccf06d
   docs/sdks/activity/README.md:
     id: f6e8241fca80
-    last_write_checksum: sha1:73aee74ae86479fa94156ae4cd448e90dc075142
+    last_write_checksum: sha1:cf65a2173f5905ff49f4a94c9ba417b05a559b14
     pristine_git_object: 6d14ba18d8ca8c6ce1a6d4c28f7e401411e22443
   docs/sdks/ad/README.md:
     last_write_checksum: sha1:823d813b314ec633cec427245f088bff77357bb8
@@ -30189,6 +30542,8 @@ trackedFiles:
     id: 3d83b7f3788f
     last_write_checksum: sha1:d70c4f4235ccec200daa05443403fe9f6bf117a1
     pristine_git_object: a80a6ef0a249e81aecaa97f47fc2e7407c39e870
+  docs/sdks/clubs/README.md:
+    last_write_checksum: sha1:bb3bc7a3459696e0055c9c2c8fb7bdb48b79e4eb
   docs/sdks/collection/README.md:
     id: 8e08642c5af2
     last_write_checksum: sha1:4076398806b5b44e6df14f75e14ae8f8cfe002c1
@@ -30271,7 +30626,7 @@ trackedFiles:
     pristine_git_object: 1b72660558917b2ec51da2d18ce9d451835743b6
   docs/sdks/event/README.md:
     id: 38354de266eb
-    last_write_checksum: sha1:9c6b8ac6395373386888b84a7e06bab95c04b3a9
+    last_write_checksum: sha1:318b8d943375010cbfd7606dc322847814d3ea36
     pristine_git_object: 451d249a7c45db16a61c57e8ff07b0c567383a92
   docs/sdks/expense/README.md:
     id: 8bba157370c0
@@ -30291,7 +30646,7 @@ trackedFiles:
     pristine_git_object: e1d674ff5ac805c1d972692cbfc203580752ec62
   docs/sdks/group/README.md:
     id: dd48bfd789de
-    last_write_checksum: sha1:08cf657f8376ce584561b18c2cbdd38815a4ca8c
+    last_write_checksum: sha1:a124acde9c83365814c2df2aed817a6bfa52b8e7
     pristine_git_object: 99cc06fb51a443fd99605c8cb7c23f796813735b
   docs/sdks/hris/README.md:
     id: 0baa868a038c
@@ -30361,7 +30716,7 @@ trackedFiles:
     pristine_git_object: 718681c30fd22b589732b66eadc61dc62e4c0c44
   docs/sdks/location/README.md:
     id: f174fc17f497
-    last_write_checksum: sha1:44dc9c71c9da60da4d7123d9783e55554ac8acd1
+    last_write_checksum: sha1:685873301747010e3ba896afed9562ab12f7ec5f
     pristine_git_object: f47da22de2c3089dead315e05ad387cfdcc90bd6
   docs/sdks/login/README.md:
     id: 795cc2a6ce04
@@ -30373,7 +30728,7 @@ trackedFiles:
     pristine_git_object: d6f8eaa0246e1c7263c79ad8edfebb7f1d79de17
   docs/sdks/member/README.md:
     id: 699c1c3b93e4
-    last_write_checksum: sha1:07d391cef25f0f3a28ebd103f156ec84b49d63dc
+    last_write_checksum: sha1:916f62303bcf7e753009f9a88370ef6d03dca2ab
     pristine_git_object: 2abb987112dd58c653e64def255fa2dd2b3cc45c
   docs/sdks/message/README.md:
     id: 0f53e7699429
