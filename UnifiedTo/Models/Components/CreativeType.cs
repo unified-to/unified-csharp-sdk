@@ -25,8 +25,12 @@ namespace UnifiedTo.Models.Components
         Video,
         [JsonProperty("NATIVE")]
         Native,
+        [JsonProperty("IMAGE")]
+        Image,
         [JsonProperty("AUDIO")]
         Audio,
+        [JsonProperty("DOCUMENT")]
+        Document,
         [JsonProperty("PUBLISHER_HOSTED")]
         PublisherHosted,
         [JsonProperty("ASSET_BASED")]

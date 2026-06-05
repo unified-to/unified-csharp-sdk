@@ -39,6 +39,9 @@ namespace UnifiedTo.Models.Components
         [JsonProperty("cta")]
         public string? Cta { get; set; }
 
+        [JsonProperty("data")]
+        public string? Data { get; set; }
+
         [JsonProperty("external_ad_reference")]
         public string? ExternalAdReference { get; set; }
 

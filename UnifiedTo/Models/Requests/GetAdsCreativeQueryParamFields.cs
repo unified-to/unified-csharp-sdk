@@ -33,6 +33,8 @@ namespace UnifiedTo.Models.Requests
         OrganizationId,
         [JsonProperty("status")]
         Status,
+        [JsonProperty("data")]
+        Data,
         [JsonProperty("creative_type")]
         CreativeType,
         [JsonProperty("hosting_source")]

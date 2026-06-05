@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: c404c8f6-c703-473f-a13e-c76ff7d93d9e
 management:
-  docChecksum: 1e1eded8b22781b031016e09bbf41ef9
+  docChecksum: ff73cdfe71796ae093211cf878d62ce8
   docVersion: "1.0"
   speakeasyVersion: 1.568.0
   generationVersion: 2.632.2
-  releaseVersion: 0.130.78
-  configChecksum: 6f2278d037c2d93a37931c79b48a7d0d
+  releaseVersion: 0.130.79
+  configChecksum: f1399ba85752635a6b45267ad9c3ab15
   repoURL: https://github.com/unified-to/unified-csharp-sdk.git
   repoSubDirectory: .
   installationURL: https://github.com/unified-to/unified-csharp-sdk
@@ -12725,21 +12725,21 @@ trackedFiles:
   UnifiedTo/Models/Components/AdsAd.cs:
     last_write_checksum: sha1:f384f550d04f4ca0bec51408b43fd24a4fe90ae4
   UnifiedTo/Models/Components/AdsAdStatus.cs:
-    last_write_checksum: sha1:f36d3c2c4d360b85bd3fe13f4f8056ebc360d920
+    last_write_checksum: sha1:e8bb798c350686eea282a955219f08f4c034ad6f
   UnifiedTo/Models/Components/AdsCampaign.cs:
     last_write_checksum: sha1:f418f1a30350a70d0d14eae4729eb15781d97528
   UnifiedTo/Models/Components/AdsCampaignStatus.cs:
-    last_write_checksum: sha1:504cd49cdd903222be649084ee3da3ad81ad4248
+    last_write_checksum: sha1:6a7f1e42080b3111c2f38f79c6c0a7d39db95488
   UnifiedTo/Models/Components/AdsCreative.cs:
-    last_write_checksum: sha1:a2bf6b26e3d9dc5cb7cd07dabe9aa731d1079d5c
+    last_write_checksum: sha1:0c0ab1734e1f25c6aee67c2804329f62ecdb94ce
   UnifiedTo/Models/Components/AdsCreativeStatus.cs:
-    last_write_checksum: sha1:206b3ba411c4e6125d9255f1efe3724e262f3e8e
+    last_write_checksum: sha1:222df84818081d3dd0291094489317aba08137df
   UnifiedTo/Models/Components/AdsGroup.cs:
     last_write_checksum: sha1:fe71139931af3099d01e421dae4d9d452297a326
   UnifiedTo/Models/Components/AdsGroupBudgetPeriod.cs:
     last_write_checksum: sha1:32337d8d8cbcaeec029837390597cab786cb1f73
   UnifiedTo/Models/Components/AdsGroupStatus.cs:
-    last_write_checksum: sha1:5ab3a194293b631eb12bdff96294c843dd9f7833
+    last_write_checksum: sha1:23993415d6cd8b9f45a1cec265889f3a798b0e93
   UnifiedTo/Models/Components/AdsGroupType.cs:
     last_write_checksum: sha1:241899e74f07dbd853380616a4410b344cb7709a
   UnifiedTo/Models/Components/AdsInsertionorder.cs:
@@ -12749,7 +12749,7 @@ trackedFiles:
   UnifiedTo/Models/Components/AdsInsertionorderBudgetUnit.cs:
     last_write_checksum: sha1:be56c3d0d9026b74f6150148ffad974c0c541261
   UnifiedTo/Models/Components/AdsInsertionorderStatus.cs:
-    last_write_checksum: sha1:320e7c27b4908f23ff31cc8c5af30be57dc57052
+    last_write_checksum: sha1:d2b750e3d97e5bac31611ad1143f5f5584c1bd82
   UnifiedTo/Models/Components/AdsKeyword.cs:
     last_write_checksum: sha1:d59d0552a4395512e9c9eed50e95df727c33cfd2
   UnifiedTo/Models/Components/AdsOrganization.cs:
@@ -13181,7 +13181,7 @@ trackedFiles:
   UnifiedTo/Models/Components/CoverageType.cs:
     last_write_checksum: sha1:4309fa0bd6a973f25164d0d258e16a448fc51f06
   UnifiedTo/Models/Components/CreativeType.cs:
-    last_write_checksum: sha1:c7800c40b34f979d92a11504f58f60b661958351
+    last_write_checksum: sha1:b92cf07682d8b28513aca17898e9219003549e8a
   UnifiedTo/Models/Components/CrmCompany.cs:
     id: a3a18469f555
     last_write_checksum: sha1:8d6fa6feaffffa3d43316ba0d55beebbd42628a5
@@ -14331,7 +14331,7 @@ trackedFiles:
   UnifiedTo/Models/Components/PropertyAdsReportMetricsAdAdType.cs:
     last_write_checksum: sha1:de9ddec6eef512d9528af41e1cc058cefd0362f0
   UnifiedTo/Models/Components/PropertyAdsReportMetricsAdStatus.cs:
-    last_write_checksum: sha1:c1e181764646f81838b55b0e16f233100b0d5e5e
+    last_write_checksum: sha1:d32847e87c9d8f0619911c0ece276e137bb1ba4f
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaign.cs:
     last_write_checksum: sha1:8c14da6a444841c719c10bbbd26aaaca9ce98043
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignAdvertisingChannelType.cs:
@@ -14345,7 +14345,7 @@ trackedFiles:
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignGoal.cs:
     last_write_checksum: sha1:024ccac6e2659b7bb9d88703f35817b485ffdfcc
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignStatus.cs:
-    last_write_checksum: sha1:3ba313a2e3210ff78ad3b06c44da67449d2aa22b
+    last_write_checksum: sha1:adbe0caed37c56176cb93c4503c50e3b481bbc92
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignTargeting.cs:
     last_write_checksum: sha1:9f8005ab8accdc50657834cf1e3cc44242c72c22
   UnifiedTo/Models/Components/PropertyAdsReportMetricsCampaignTargetingAudience.cs:
@@ -14409,7 +14409,7 @@ trackedFiles:
   UnifiedTo/Models/Components/PropertyAdsReportMetricsGroupPacingPeriod.cs:
     last_write_checksum: sha1:025625391cfccad74233669e23702201fb43a907
   UnifiedTo/Models/Components/PropertyAdsReportMetricsGroupStatus.cs:
-    last_write_checksum: sha1:71a6034bafad92060dd43c8c567572665bf2f72e
+    last_write_checksum: sha1:867c8fcd93bdafb834bd8aee03f028ac271cfa6c
   UnifiedTo/Models/Components/PropertyAdsReportMetricsGroupTargeting.cs:
     last_write_checksum: sha1:514aa0f0200e1a7bebb359413bd03400c6a991e1
   UnifiedTo/Models/Components/PropertyAdsReportMetricsGroupTargetingAudience.cs:
@@ -15525,7 +15525,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/CreateAdsCampaignResponse.cs:
     last_write_checksum: sha1:367aaeb71b2e4c25edeeb47d5b7d4a0a1eec07cb
   UnifiedTo/Models/Requests/CreateAdsCreativeQueryParamFields.cs:
-    last_write_checksum: sha1:00a3577b362ef8a3f6082efa210f90e807c71741
+    last_write_checksum: sha1:0ff95ded39f3550d27226fb654130d29849d2435
   UnifiedTo/Models/Requests/CreateAdsCreativeRequest.cs:
     last_write_checksum: sha1:98be344f2ebedb1abb8c251407e55fe3808e16e8
   UnifiedTo/Models/Requests/CreateAdsCreativeResponse.cs:
@@ -16533,7 +16533,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/GetAdsCampaignResponse.cs:
     last_write_checksum: sha1:bbbf40e49eb2d39475fd015f47426719e3416d6a
   UnifiedTo/Models/Requests/GetAdsCreativeQueryParamFields.cs:
-    last_write_checksum: sha1:97d84b4082e74ad4551e9eeb3e4f92b2753267be
+    last_write_checksum: sha1:3c0a118159ff06407e049f90a3c95f5dee1b4575
   UnifiedTo/Models/Requests/GetAdsCreativeRequest.cs:
     last_write_checksum: sha1:69f9c2130a2b20a304756b2e712f91bf32663b16
   UnifiedTo/Models/Requests/GetAdsCreativeResponse.cs:
@@ -17691,7 +17691,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/ListAdsCampaignsResponse.cs:
     last_write_checksum: sha1:972ee8ab3dca9e04eaa0e91f440f6523aaf80a4f
   UnifiedTo/Models/Requests/ListAdsCreativesQueryParamFields.cs:
-    last_write_checksum: sha1:912fb6e305e21c615dc90bc061f52e6df56bab5e
+    last_write_checksum: sha1:9f08b0815f1d207750693bd37d1cf54a1811688a
   UnifiedTo/Models/Requests/ListAdsCreativesRequest.cs:
     last_write_checksum: sha1:8859ded8e3608ff18797f48424f35e7548557d89
   UnifiedTo/Models/Requests/ListAdsCreativesResponse.cs:
@@ -18859,7 +18859,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/PatchAdsCampaignResponse.cs:
     last_write_checksum: sha1:d868716e6fc321e79df326401fb601d9fe58b399
   UnifiedTo/Models/Requests/PatchAdsCreativeQueryParamFields.cs:
-    last_write_checksum: sha1:b7dce4867a957c0746286407b408957c00563ab5
+    last_write_checksum: sha1:306b83454f3215a21804c7170c0206c7f219c6cb
   UnifiedTo/Models/Requests/PatchAdsCreativeRequest.cs:
     last_write_checksum: sha1:0e46ebf8e670cc054f1c15167da87e6c39afd531
   UnifiedTo/Models/Requests/PatchAdsCreativeResponse.cs:
@@ -20539,7 +20539,7 @@ trackedFiles:
   UnifiedTo/Models/Requests/UpdateAdsCampaignResponse.cs:
     last_write_checksum: sha1:0ac676898e8303720be58ae38b0393b01232f5a3
   UnifiedTo/Models/Requests/UpdateAdsCreativeQueryParamFields.cs:
-    last_write_checksum: sha1:6203cf06cafa2b263c359e06d03bf5bfde655346
+    last_write_checksum: sha1:8f80ed2178e2b7fec0923ef7c12aa35b54bf98aa
   UnifiedTo/Models/Requests/UpdateAdsCreativeRequest.cs:
     last_write_checksum: sha1:21c3d600578ae0f708020ade5a18423e6c81dbbc
   UnifiedTo/Models/Requests/UpdateAdsCreativeResponse.cs:
@@ -21843,21 +21843,21 @@ trackedFiles:
   docs/Models/Components/AdsAd.md:
     last_write_checksum: sha1:56b4c40aa302546239321e7d107d504bd399fda2
   docs/Models/Components/AdsAdStatus.md:
-    last_write_checksum: sha1:ef02e14cf2f2206567def230bc4fb98fbc2bb613
+    last_write_checksum: sha1:e553d8ff73607cbcd7193c6a571266b14fe239b0
   docs/Models/Components/AdsCampaign.md:
     last_write_checksum: sha1:3afc6886e6b4533f955377b70634428ba72bd9a0
   docs/Models/Components/AdsCampaignStatus.md:
-    last_write_checksum: sha1:2f8d4cc2d48a3da5a28712c66edf06ab4081c10c
+    last_write_checksum: sha1:c53310c9777b1d78edc097324715a4f443b9aa9d
   docs/Models/Components/AdsCreative.md:
-    last_write_checksum: sha1:4db448c0f95e27aa86d939a4e9b6f50d4f404c8d
+    last_write_checksum: sha1:b45e8aada76dc675d839298bd2ef182472781923
   docs/Models/Components/AdsCreativeStatus.md:
-    last_write_checksum: sha1:b4df668a84aed16898c2deb41a26bea3930118c8
+    last_write_checksum: sha1:9345c62392e3a4280f725a4c4450af9753f8b244
   docs/Models/Components/AdsGroup.md:
     last_write_checksum: sha1:779b217318335910874ac71b698f9ce87e4e93f2
   docs/Models/Components/AdsGroupBudgetPeriod.md:
     last_write_checksum: sha1:831f0d0f9a6f05017f104d5f7ea027e55c16810b
   docs/Models/Components/AdsGroupStatus.md:
-    last_write_checksum: sha1:0207a41aa9adf974d4ff69faaf50e8f5c57a02ca
+    last_write_checksum: sha1:ef3ad6f68f0446abaa9bc9156931e7fc157163e7
   docs/Models/Components/AdsGroupType.md:
     last_write_checksum: sha1:1107c2eccf0f12430b14310a178f54585eb7b2b0
   docs/Models/Components/AdsInsertionorder.md:
@@ -21867,7 +21867,7 @@ trackedFiles:
   docs/Models/Components/AdsInsertionorderBudgetUnit.md:
     last_write_checksum: sha1:b86da39d1ddb997fe784ca316e9ba856e833ede1
   docs/Models/Components/AdsInsertionorderStatus.md:
-    last_write_checksum: sha1:1073c3260c9b9cc7655b1eb1b9f0d095de8bf765
+    last_write_checksum: sha1:be786a493aec8102c424f4d298c93c0f0226547e
   docs/Models/Components/AdsKeyword.md:
     last_write_checksum: sha1:67baabb0d46f7a96c08d95715a5b7f7568c5f5ad
   docs/Models/Components/AdsOrganization.md:
@@ -22299,7 +22299,7 @@ trackedFiles:
   docs/Models/Components/CoverageType.md:
     last_write_checksum: sha1:ef9e14d67629d8c85296773987e89b51bd3a7e68
   docs/Models/Components/CreativeType.md:
-    last_write_checksum: sha1:caf21939590ce13cb7f2f8fbb6946a1745bbb189
+    last_write_checksum: sha1:97967603fa22f0708e9b7ce2592935945fbed06c
   docs/Models/Components/CrmCompany.md:
     id: 34d38bdf2496
     last_write_checksum: sha1:d68d5253842192bf062d37ff0f975009c51598fd
@@ -23449,7 +23449,7 @@ trackedFiles:
   docs/Models/Components/PropertyAdsReportMetricsAdAdType.md:
     last_write_checksum: sha1:9a7e3c438d545bce679f134aaf418fe110382d61
   docs/Models/Components/PropertyAdsReportMetricsAdStatus.md:
-    last_write_checksum: sha1:66cade5c8e996d4919baccccbe4d0c113292833d
+    last_write_checksum: sha1:a46ad15d468abbead3126307bca62d24b66765e7
   docs/Models/Components/PropertyAdsReportMetricsCampaign.md:
     last_write_checksum: sha1:a4646289e4aa5abc0467c26c6e5be4d7a13078dd
   docs/Models/Components/PropertyAdsReportMetricsCampaignAdvertisingChannelType.md:
@@ -23463,7 +23463,7 @@ trackedFiles:
   docs/Models/Components/PropertyAdsReportMetricsCampaignGoal.md:
     last_write_checksum: sha1:ca0b7e74b15292306b6a31416c51501e0690aa96
   docs/Models/Components/PropertyAdsReportMetricsCampaignStatus.md:
-    last_write_checksum: sha1:1c92f822d5d51011f231bc31b69af1475b8d591b
+    last_write_checksum: sha1:c6f45407c3ee51f9704c906b2965354273d54e47
   docs/Models/Components/PropertyAdsReportMetricsCampaignTargeting.md:
     last_write_checksum: sha1:6b89f3d93944162171e7e3880ad4f6bbda1e1066
   docs/Models/Components/PropertyAdsReportMetricsCampaignTargetingAudience.md:
@@ -23527,7 +23527,7 @@ trackedFiles:
   docs/Models/Components/PropertyAdsReportMetricsGroupPacingPeriod.md:
     last_write_checksum: sha1:bedddbde3ce91e60267e6aa21151e78620ed8160
   docs/Models/Components/PropertyAdsReportMetricsGroupStatus.md:
-    last_write_checksum: sha1:56db20f00ff3a0c64a280a74a27dacf73feaf604
+    last_write_checksum: sha1:c417a1675c20cbcf9bffee7b48db9f25697146fc
   docs/Models/Components/PropertyAdsReportMetricsGroupTargeting.md:
     last_write_checksum: sha1:e68382ef32c1e993c7d6804188b75c38daf0790b
   docs/Models/Components/PropertyAdsReportMetricsGroupTargetingAudience.md:
@@ -24631,7 +24631,7 @@ trackedFiles:
   docs/Models/Requests/CreateAdsCampaignResponse.md:
     last_write_checksum: sha1:91ad2118508148c783c493a7e779511f614decb4
   docs/Models/Requests/CreateAdsCreativeQueryParamFields.md:
-    last_write_checksum: sha1:5ec8ae8f579d004c51ed9905af5d6b23a9d2086c
+    last_write_checksum: sha1:062425d9e4a2706d22c1fbe075787d3a75ed229f
   docs/Models/Requests/CreateAdsCreativeRequest.md:
     last_write_checksum: sha1:2d3f6efc9f61f23f61d6768c3f7152f5dec82131
   docs/Models/Requests/CreateAdsCreativeResponse.md:
@@ -25639,7 +25639,7 @@ trackedFiles:
   docs/Models/Requests/GetAdsCampaignResponse.md:
     last_write_checksum: sha1:c674cc593d1a3685ca5194c2300e8292b6944c3d
   docs/Models/Requests/GetAdsCreativeQueryParamFields.md:
-    last_write_checksum: sha1:1da0b8c2eab668511962297b44ee6879f45e2b09
+    last_write_checksum: sha1:d92b02f4a58bc76fa3b1e0ecd66378daec91a792
   docs/Models/Requests/GetAdsCreativeRequest.md:
     last_write_checksum: sha1:da4b888397e7016a16f1f21b36cc38d510ea5749
   docs/Models/Requests/GetAdsCreativeResponse.md:
@@ -26797,7 +26797,7 @@ trackedFiles:
   docs/Models/Requests/ListAdsCampaignsResponse.md:
     last_write_checksum: sha1:26579ef96c505bd48944c820693b7fe56ec01c93
   docs/Models/Requests/ListAdsCreativesQueryParamFields.md:
-    last_write_checksum: sha1:c57bf0e5885bc9ec3afd8683643a3f7e1bc4045d
+    last_write_checksum: sha1:1603dd786c82cfc6bf04b6a2a58ecf0ef5b3083b
   docs/Models/Requests/ListAdsCreativesRequest.md:
     last_write_checksum: sha1:888ac7608a0bd27805a24301811e5c3a55e8988c
   docs/Models/Requests/ListAdsCreativesResponse.md:
@@ -27965,7 +27965,7 @@ trackedFiles:
   docs/Models/Requests/PatchAdsCampaignResponse.md:
     last_write_checksum: sha1:cef4cdc74b4b75fa13f47e4c52a4af8a45703b42
   docs/Models/Requests/PatchAdsCreativeQueryParamFields.md:
-    last_write_checksum: sha1:02c6cf8062ab2fe99330762ba37756fa9984fcf8
+    last_write_checksum: sha1:ff75ded4442df1e0dec37f684107f79f4f5b1264
   docs/Models/Requests/PatchAdsCreativeRequest.md:
     last_write_checksum: sha1:8172aaf48e37d8e1151e793850e797301519b5b2
   docs/Models/Requests/PatchAdsCreativeResponse.md:
@@ -29645,7 +29645,7 @@ trackedFiles:
   docs/Models/Requests/UpdateAdsCampaignResponse.md:
     last_write_checksum: sha1:4c0ed5d64300a57d368339eb06d5880a995c953c
   docs/Models/Requests/UpdateAdsCreativeQueryParamFields.md:
-    last_write_checksum: sha1:e8e178a0ec1fba03cbc492072a76627d18515078
+    last_write_checksum: sha1:13a44db2fd2498dd9653b2e337151656ffb88350
   docs/Models/Requests/UpdateAdsCreativeRequest.md:
     last_write_checksum: sha1:bcbbe25fec62fede4de409c459fc50c4f4d47023
   docs/Models/Requests/UpdateAdsCreativeResponse.md:
